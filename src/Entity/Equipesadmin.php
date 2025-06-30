@@ -15,6 +15,7 @@ use phpDocumentor\Reflection\Types\Nullable;
 
 
 #[ORM\Entity(repositoryClass: EquipesadminRepository::class)]
+#[ORM\Table(options: ["collate" => "utf8mb4_unicode_ci", "charset" => "utf8mb4"])]
 class Equipesadmin
 {
     #[ORM\Id]

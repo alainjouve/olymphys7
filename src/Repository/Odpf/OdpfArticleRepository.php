@@ -82,6 +82,7 @@ class OdpfArticleRepository extends ServiceEntityRepository
             ->setMaxResults(5)
             ->getQuery()
             ->getResult();
+
         // liste des 5 dernières actus publiées, classées par date descendante
         for ($i = 0; $i < count($affActus); $i++) {
             $texte = $affActus[$i]->getTexte();
@@ -89,6 +90,8 @@ class OdpfArticleRepository extends ServiceEntityRepository
             $texte = $this->couper($chaine, 30);
             // découpe les 30 premiers mots de l'actu
             $affActus[$i]->setTexte($texte);
+            $affActus[$i]->setTitre( iconv("LATIN1", "UTF-8//TRANSLIT//IGNORE", $affActus[$i]->getTitre()));
+            $affActus[$i]->setTitreObjectifs( iconv("LATIN1", "UTF-8//TRANSLIT//IGNORE", $affActus[$i]->getTitre()));
         }
 
         $tab['affActus'] = $affActus;

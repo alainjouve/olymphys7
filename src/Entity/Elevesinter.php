@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Integer;
 
 #[ORM\Entity(repositoryClass: ElevesinterRepository::class)]
+#[ORM\Table(options: ["collate" => "utf8mb4_unicode_ci", "charset" => "utf8mb4"])]
 class Elevesinter
 {
     #[ORM\Id]

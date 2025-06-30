@@ -6,6 +6,7 @@ use App\Repository\Odpf\OdpfCategorieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OdpfCategorieRepository::class)]
+#[ORM\Table(options: ["collate" => "utf8mb4_unicode_ci", "charset" => "utf8mb4"])]
 class OdpfCategorie
 {
     #[ORM\Id]
