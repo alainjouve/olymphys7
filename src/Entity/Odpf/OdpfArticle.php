@@ -64,7 +64,7 @@ class OdpfArticle
     // ++++ RUSTINE TEMPORAIRE ???? ++++
     // pour corriger l'affichage incorrect des caractères accentués des chaînes binaires
     // Bug apparu en ligne fin juin 2025, alors que tout marche en local
-    private function convertBinaryString(string $string)
+    private function convertBinaryString(?string $string)
     {
         if (mb_check_encoding($string)) {
             return $string;
