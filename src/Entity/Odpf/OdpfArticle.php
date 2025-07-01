@@ -66,8 +66,8 @@ class OdpfArticle
     // Bug apparu en ligne fin juin 2025, alors que tout marche en local
     private function convertBinaryString(string $string)
     {
-        if(mb_check_encoding($string)) {
-            return $string)
+        if (mb_check_encoding($string)) {
+            return $string;
         } else {
             return iconv("LATIN1", "UTF-8//TRANSLIT//IGNORE", $string);
         }
@@ -94,7 +94,7 @@ class OdpfArticle
 
     public function getTitre(): ?string
     {
-        return convertBinaryString($this->titre)
+        return $this->convertBinaryString($this->titre);
     }
 
     public function setTitre(?string $titre): self
@@ -140,7 +140,7 @@ class OdpfArticle
 
     public function getTitreObjectifs(): ?string
     {
-        return convertBinaryString($this->titre_objectifs);
+        return $this->convertBinaryString($this->titre_objectifs);
     }
 
     public function setTitreObjectifs(?string $titre_objectifs): self
