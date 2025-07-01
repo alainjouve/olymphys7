@@ -90,14 +90,6 @@ class OdpfArticleRepository extends ServiceEntityRepository
             $texte = $this->couper($chaine, 30);
             // découpe les 30 premiers mots de l'actu
             $affActus[$i]->setTexte($texte);
-
-            // pour corriger l'affichage incorrect des caractères accentués des chaînes binaires
-            // Bug apparu en ligne fin juin 2025, alors que tout marche en local
-            // Les deu lignes qui suivent sont commentées car le correctif est maintenant 
-            // dans les getter de src/Entity/Odpf/OdpfArticle.php
-
-            // $affActus[$i]->setTitre( iconv("LATIN1", "UTF-8//TRANSLIT//IGNORE", $affActus[$i]->getTitre()));
-            // $affActus[$i]->setTitreObjectifs( iconv("LATIN1", "UTF-8//TRANSLIT//IGNORE", $affActus[$i]->getTitre()));
         }
 
         $tab['affActus'] = $affActus;

@@ -7,6 +7,9 @@ use App\Repository\Odpf\OdpfArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+// pour corriger bug affichage chaînes binaires
+use App\Utils\StringUtils;
+
 #[ORM\Entity(repositoryClass: OdpfArticleRepository::class)]
 #[ORM\Table(options: ["collate" => "utf8mb4_unicode_ci", "charset" => "utf8mb4"])]
 class OdpfArticle
@@ -61,17 +64,6 @@ class OdpfArticle
     #[ORM\OneToOne(mappedBy: 'article', cascade: ['persist', 'remove'])]
     private ?OdpfEditionsPassees $odpfEditionsPassees = null;
 
-    // ++++ RUSTINE TEMPORAIRE ???? ++++
-    // pour corriger l'affichage incorrect des caractères accentués des chaînes binaires
-    // Bug apparu en ligne fin juin 2025, alors que tout marche en local
-    private function convertBinaryString(?string $string)
-    {
-        if (mb_check_encoding($string)) {
-            return $string;
-        } else {
-            return iconv("LATIN1", "UTF-8//TRANSLIT//IGNORE", $string);
-        }
-    }
 
     public function __construct()
     {
@@ -94,7 +86,7 @@ class OdpfArticle
 
     public function getTitre(): ?string
     {
-        return $this->convertBinaryString($this->titre);
+        return StringUtils::convertBinaryString($this->titre);
     }
 
     public function setTitre(?string $titre): self
@@ -140,7 +132,7 @@ class OdpfArticle
 
     public function getTitreObjectifs(): ?string
     {
-        return $this->convertBinaryString($this->titre_objectifs);
+        return  StringUtils::convertBinaryString($this->titre_objectifs);
     }
 
     public function setTitreObjectifs(?string $titre_objectifs): self
