@@ -13,9 +13,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\JoinColumn;
 use phpDocumentor\Reflection\Types\Nullable;
 
-
-#[ORM\Entity(repositoryClass: EquipesadminRepository::class)]
 #[ORM\Table(options: ["collate" => "utf8mb4_unicode_ci", "charset" => "utf8mb4"])]
+#[ORM\Entity(repositoryClass: EquipesadminRepository::class)]
+
 class Equipesadmin
 {
     #[ORM\Id]
