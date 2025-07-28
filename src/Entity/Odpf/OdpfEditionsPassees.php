@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
-use App\Utils\StringUtils;
+// use App\Utils\StringUtils;
 
 #[ORM\Entity(repositoryClass:OdpfEditionsPasseesRepository::class)]
 class OdpfEditionsPassees
@@ -158,7 +158,8 @@ class OdpfEditionsPassees
 
     public function getNomParrain(): ?string
     {
-        return StringUtils::convertBinaryString($this->nomParrain);
+        // return StringUtils::convertBinaryString($this->nomParrain);
+        return $this->nomParrain;
     }
 
     public function setNomParrain(?string $nomParrain): self
@@ -170,7 +171,8 @@ class OdpfEditionsPassees
 
     public function getTitreParrain(): ?string
     {
-        return StringUtils::convertBinaryString($this->titreParrain);
+        // return StringUtils::convertBinaryString($this->titreParrain);
+        return $this->titreParrain;
     }
 
     public function setTitreParrain(?string $titreParrain): self
