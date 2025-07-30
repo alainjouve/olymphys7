@@ -50,6 +50,7 @@ class JuresCrudController extends AbstractCrudController
         }
         $this->requestStack->getSession()->set('lettres', $lettres);//variable globale utilisée par l'index_jures.html.twig pour les entêtes des colonnes
         return $crud
+            ->showEntityActionsInlined()
             ->setPaginatorPageSize(30)
             ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/index_jures.html.twig']);
     }
@@ -57,7 +58,13 @@ class JuresCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $gestionjures = Action::new('gestionjures')->createAsGlobalAction()->linkToRoute('secretariatjury_gestionjures');
-        return $actions->add(Crud::PAGE_INDEX, $gestionjures);
+            return $actions ->update('index', Action::DELETE,function  (Action $action) {
+            return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+             )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )->
+        add(Crud::PAGE_INDEX, $gestionjures);
     }
 
     public function configureFields(string $pageName): iterable

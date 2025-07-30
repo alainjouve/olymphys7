@@ -45,7 +45,8 @@ class CadeauxCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud
+        return $crud->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setEntityLabelInSingular('Cadeaux')
             ->setEntityLabelInPlural('Cadeaux')
             ->setSearchFields(['id', 'contenu', 'fournisseur', 'montant', 'raccourci']);
@@ -57,7 +58,11 @@ class CadeauxCrudController extends AbstractCrudController
             ->linkToRoute('cadeaux_tableau_excel')
             ->createAsGlobalAction();
 
-        return $actions->add(Crud::PAGE_INDEX, $tableauExcel)
+        return $actions->update('index', Action::EDIT, function  (Action $action) {
+                    return $action->setIcon('fa fa-pencil-alt')->setLabel(false);})
+            ->update('index', Action::DELETE, function  (Action $action) {
+                    return $action->setIcon('fa fa-trash-alt')->setLabel(false);})
+            ->add(Crud::PAGE_INDEX, $tableauExcel)
             ->add(Crud::PAGE_EDIT, 'index');
     }
 

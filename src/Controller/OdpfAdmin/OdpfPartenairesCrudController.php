@@ -22,7 +22,9 @@ class OdpfPartenairesCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
     }
 
     public function configureFields(string $pageName): iterable
@@ -58,7 +60,14 @@ class OdpfPartenairesCrudController extends AbstractCrudController
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_NEW, Action::INDEX)
             ->remove(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER)
-            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN');
+            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
+        ;
         return $actions;
     }
 

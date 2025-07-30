@@ -122,7 +122,8 @@ class ElevesinterCrudController extends AbstractCrudController
         return $crud
             //->setSearchFields(['nom', 'prenom', 'courriel', 'equipe.id', 'equipe.edition', 'equipe.numero', 'equipe.titreProjet', 'equipe.lettre'])
             //overrideTemplate('crud/detail', 'bundles/EasyAdminBundle/detail_autorisations.html.twig')
-            ->overrideTemplate('layout', 'bundles/EasyAdminBundle/list_eleves.html.twig');
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
     }
 
     public function configureFilters(Filters $filters): Filters
@@ -201,10 +202,15 @@ class ElevesinterCrudController extends AbstractCrudController
 
         }
 
-        $actions->add(Crud::PAGE_INDEX, Action::DETAIL)
+        $actions
+            ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->remove(Crud::PAGE_INDEX, Action::NEW)
-            ->remove(Crud::PAGE_INDEX, Action::DELETE);
+            ->remove(Crud::PAGE_INDEX, Action::DELETE)
+            ->update('index', Action::EDIT, function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);})
+            ->update('index', Action::DETAIL, function  (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);});
         return $actions;
     }
 

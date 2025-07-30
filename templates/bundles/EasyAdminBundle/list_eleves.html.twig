@@ -33,7 +33,9 @@
                                 {% endblock %}
                             </h3>
                         </div>
+                    </div>
                         {% block page_actions_wrapper %}
+                            <div>
                             <div class="page-actions">
                                 {{ parent() }}
 
@@ -78,6 +80,7 @@
             {% block main %}
 
                 {{ parent() }}
+
             {% endblock %}
         </section>
     </div>

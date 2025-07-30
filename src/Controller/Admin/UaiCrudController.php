@@ -86,7 +86,7 @@ class UaiCrudController extends AbstractCrudController
 
 
         }
-        $qb = $this->get(EntityRepository::class)->createQueryBuilder($searchDto, $entityDto, $fields, $filters)
+        $qb = $this->createQueryBuilder($searchDto, $entityDto, $fields, $filters)
             ->leftJoin('entity.equipes', 'eq')
             ->andWhere('eq.edition =:edition')
             ->setParameter('edition', $edition)

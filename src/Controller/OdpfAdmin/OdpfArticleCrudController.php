@@ -53,6 +53,8 @@ class OdpfArticleCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
             ->setPaginatorPageSize(100);
     }
@@ -61,7 +63,7 @@ class OdpfArticleCrudController extends AbstractCrudController
     {
         $listCarousels = $this->doctrine->getRepository(OdpfCarousels::class)->findAll();
 
-        yield IdField::new('id')->hideOnForm();
+        yield IdField::new('id')->hideOnForm()->hideOnDetail();
 
         // Add a tab
         yield FormField::addTab('Article ');
@@ -110,7 +112,15 @@ class OdpfArticleCrudController extends AbstractCrudController
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_NEW, Action::INDEX)
-            ->remove(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER);
+            ->remove(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER)
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            ) ->update('index', Action::DETAIL,function  (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);}
+            );
         //->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN');
         return $actions;
     }

@@ -35,6 +35,8 @@ class OdpfLogosCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setEntityLabelInSingular('OdpfLogos')
             ->setEntityLabelInPlural('OdpfLogos')
             ->setPageTitle(Crud::PAGE_INDEX, '<h2>Les logos pour le site</h2>')
@@ -52,7 +54,14 @@ class OdpfLogosCrudController extends AbstractCrudController
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_NEW, Action::INDEX)
-            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN');;
+            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            ) ->update('index', Action::DETAIL,function  (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);}
+            );
     }
 
     public function configureFields(string $pageName): iterable

@@ -40,7 +40,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use function PHPUnit\Framework\directoryExists;
 
-class AdminsiteCrudController extends AbstractCrudController
+class AdminEditionCrudController extends AbstractCrudController
 {
     private RequestStack $requestStack;
     private EntityManagerInterface $em;
@@ -59,10 +59,10 @@ class AdminsiteCrudController extends AbstractCrudController
     {
         return Edition::class;
     }
-
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud
+        return $crud->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setPageTitle(Crud::PAGE_INDEX, 'Réglage des éditions')
             ->setSearchFields(['id', 'ed', 'ville', 'lieu'])
             ->setPaginatorPageSize(30)
@@ -99,9 +99,13 @@ class AdminsiteCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
 
-        $creerEditionPassee = Action::new('creer_edition_passee', 'Creer une édition passée', 'fa fa-cubes')
-            ->linkToCrudAction('creer_edition_passee');//->createAsBatchAction();
-        return $actions->add(Crud::PAGE_INDEX, $creerEditionPassee);
+        $creerEditionPassee = Action::new('creer_edition_passee', '', 'fa fa-cubes')
+            ->linkToCrudAction('creer_edition_passee')->setHtmlAttributes(['title'=>'Créer l\'édition passée']);//->createAsBatchAction();
+        return $actions->update('index', Action::EDIT, function  (Action $action) {
+                            return $action->setIcon('fa fa-pencil-alt')->setLabel(false);})
+                         ->update('index', Action::DELETE, function  (Action $action) {
+                         return $action->setIcon('fa fa-trash-alt')->setLabel(false);})
+                            ->add(Crud::PAGE_INDEX, $creerEditionPassee);
 
 
     }

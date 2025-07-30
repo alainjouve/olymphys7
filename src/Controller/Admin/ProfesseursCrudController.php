@@ -66,6 +66,8 @@ class ProfesseursCrudController extends AbstractCrudController
             $crud->setPageTitle('index', 'Liste des professeurs de la ' . $editionEd . $exp . ' édition ');
         }
         return $crud
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setPageTitle(Crud::PAGE_DETAIL, 'Professeur')
             ->setSearchFields(['id', 'lettre', 'numero', 'titreProjet', 'nomLycee', 'denominationLycee', 'lyceeLocalite', 'lyceeAcademie', 'prenomProf1', 'nomProf1', 'prenomProf2', 'nomProf2', 'uai', 'contribfinance', 'origineprojet', 'recompense', 'partenaire', 'description'])
             ->setPaginatorPageSize(50);
@@ -118,6 +120,12 @@ class ProfesseursCrudController extends AbstractCrudController
             ->linkToRoute('profs_tableau_excel_mailing_tous')
             ->createAsGlobalAction();
         return $actions
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
             ->add(Crud::PAGE_INDEX, $tableauexcelsel)
