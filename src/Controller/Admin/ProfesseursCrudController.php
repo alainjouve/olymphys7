@@ -120,12 +120,7 @@ class ProfesseursCrudController extends AbstractCrudController
             ->linkToRoute('profs_tableau_excel_mailing_tous')
             ->createAsGlobalAction();
         return $actions
-            ->update('index', Action::DELETE,function  (Action $action) {
-                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
-            )
-            ->update('index', Action::EDIT,function  (Action $action) {
-                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
-            )
+
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
             ->add(Crud::PAGE_INDEX, $tableauexcelsel)
@@ -136,7 +131,10 @@ class ProfesseursCrudController extends AbstractCrudController
             ->remove(Crud::PAGE_INDEX, Action::EDIT)
             ->remove(Crud::PAGE_DETAIL, Action::EDIT)
             ->remove(Crud::PAGE_INDEX, Action::DELETE)
-            ->remove(Crud::PAGE_DETAIL, Action::DELETE);
+            ->remove(Crud::PAGE_DETAIL, Action::DELETE)
+            ->update('index', Action::DETAIL,function  (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);})
+            ;
 
     }
 
