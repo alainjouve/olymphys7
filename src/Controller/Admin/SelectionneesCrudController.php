@@ -61,7 +61,7 @@ class SelectionneesCrudController extends AbstractCrudController
         return $crud
             ->showEntityActionsInlined()
             ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
-            ->setSearchFields(['id', 'lettre', 'titreProjet', 'ordre', 'heure', 'salle', 'total', 'classement', 'rang', 'nbNotes', 'sallesecours', 'code'])
+            ->setSearchFields(['id', 'lettre', 'titreProjet', 'ordre', 'heure', 'salle', 'total', 'classement', 'rang', 'nbNotes', 'code'])
             ->setPaginatorPageSize(26);
     }
 
