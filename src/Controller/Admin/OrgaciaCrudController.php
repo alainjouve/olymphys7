@@ -6,6 +6,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Orgacia;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -32,5 +34,17 @@ class OrgaciaCrudController extends AbstractCrudController
         } elseif (Crud::PAGE_EDIT === $pageName) {
             return [$user, $centre];
         }
+    }
+    public function configureActions(Actions $actions): Actions{
+        return $actions->update('index', Action::DELETE,function  (Action $action) {
+            return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+        )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            );
+    }
+    public function configureCrud(Crud $crud): Crud {
+        return $crud->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
     }
 }

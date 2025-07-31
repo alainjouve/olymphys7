@@ -20,7 +20,9 @@ class CategorieAideCrudController extends AbstractCrudController
         return CategorieAide::class;
     }
     public function configureCrud(Crud $crud): Crud    {
-        return $crud->setPageTitle('index','Catégories de l\'aide');
+        return $crud->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
+            ->setPageTitle('index','Catégories de l\'aide');
 
     }
     public function configureFields(string $pageName): iterable

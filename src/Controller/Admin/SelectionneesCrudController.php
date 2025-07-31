@@ -59,8 +59,10 @@ class SelectionneesCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setSearchFields(['id', 'lettre', 'titreProjet', 'ordre', 'heure', 'salle', 'total', 'classement', 'rang', 'nbNotes', 'sallesecours', 'code'])
-            ->setPaginatorPageSize(25);
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
+            ->setSearchFields(['id', 'lettre', 'titreProjet', 'ordre', 'heure', 'salle', 'total', 'classement', 'rang', 'nbNotes', 'code'])
+            ->setPaginatorPageSize(26);
     }
 
     public function configureActions(Actions $actions): Actions
@@ -73,7 +75,12 @@ class SelectionneesCrudController extends AbstractCrudController
         $tableauExcel = Action::new('equipes_tableau_excel', 'Extraire un tableau Excel', 'fa fa_array')
             ->linkToRoute('equipes_sel_tableau_excel')
             ->createAsGlobalAction();
-        return $actions
+        return $actions->update('index', Action::DELETE,function  (Action $action) {
+            return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+        )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_INDEX, $attribHeuresSalles)

@@ -93,9 +93,9 @@ class EquipesadminCrudController extends AbstractCrudController
         $crud->setPageTitle(Crud::PAGE_NEW, 'Ajouter une équipe')
             ->setSearchFields(['id', 'lettre', 'numero', 'titreProjet', 'nomLycee', 'denominationLycee', 'lyceeLocalite', 'lyceeAcademie', 'prenomProf1', 'nomProf1', 'prenomProf2', 'nomProf2', 'uai', 'contribfinance', 'origineprojet', 'recompense', 'partenaire', 'description'])
             ->setPaginatorPageSize(50)
-            ->renderContentMaximized();
-
-        //->overrideTemplates(['layout'=> 'bundles/EasyAdminBundle/list_equipescia.html.twig', ]);
+            ->renderContentMaximized()
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
 
         return $crud;
 
@@ -161,6 +161,15 @@ class EquipesadminCrudController extends AbstractCrudController
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
+            ->update('index', Action::DELETE,function  (Action $action) {
+                            return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
+            ->update('index', Action::DETAIL,function  (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);}
+            )
             ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN')
             ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
             ->setPermission(Action::EDIT, 'ROLE_COMITE');

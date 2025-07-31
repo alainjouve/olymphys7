@@ -322,6 +322,12 @@ class FichiersequipesCrudController extends AbstractCrudController
 
                 return $action->setLabel('Nouveau fichier')->setHtmlAttributes(['typefichier' => $this->requestStack->getCurrentRequest()->getSession()->get('typefichier')]);
             })
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
             ->add(Crud::PAGE_INDEX, $telechargerUnFichier)
             ->remove(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER);
 

@@ -49,7 +49,8 @@ class VideosequipesCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud
+        return $crud->showEntityActionsInlined()
+                ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setEntityLabelInSingular('Videosequipes')
             ->setEntityLabelInPlural('Videosequipes')
             ->setPageTitle(Crud::PAGE_INDEX, '<p style="color:yellow"><h2>Les vidéos des équipes</h2></p>')
@@ -128,9 +129,15 @@ class VideosequipesCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-            // ...
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
             ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
-                return $action->setLabel('Déposer un nouveau lien vidéo');
+                return $action
+                    ->setLabel('Déposer un nouveau lien vidéo');
             });
     }
 

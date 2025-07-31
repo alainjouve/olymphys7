@@ -50,7 +50,8 @@ class OdpfEditionsPasseesCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud
+        return $crud->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setDefaultSort(['edition' => 'DESC'])
             ->overrideTemplate('crud/edit','bundles/EasyAdminBundle/crud/edit_edition.html.twig');
 
@@ -141,7 +142,18 @@ class OdpfEditionsPasseesCrudController extends AbstractCrudController
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->remove(Crud::PAGE_INDEX, Action::NEW)
             ->add(Crud::PAGE_EDIT, Action::INDEX, 'Retour à la liste')
-            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN');;
+            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::DETAIL,function  (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);}
+            );
     }
 
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void

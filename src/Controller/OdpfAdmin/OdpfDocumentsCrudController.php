@@ -35,13 +35,15 @@ class OdpfDocumentsCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setEntityLabelInSingular('OdpfDocuments')
             ->setEntityLabelInPlural('OdpfDocuments')
             ->setPageTitle(Crud::PAGE_INDEX, '<h2>Les documents pour le site</h2>')
             ->setPageTitle(Crud::PAGE_EDIT, 'Edite le document')
             ->setPageTitle(Crud::PAGE_NEW, 'Nouveau document')
             ->setSearchFields(['id', 'fichier', 'type', 'titre', 'description'])
-            ->setPaginatorPageSize(10);
+            ->setPaginatorPageSize(100);
     }
 
     public function configureFields(string $pageName): iterable
@@ -76,7 +78,17 @@ class OdpfDocumentsCrudController extends AbstractCrudController
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_NEW, Action::INDEX)
             ->remove(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER)
-            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN');
+            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
+            ->update('index', Action::DETAIL,function  (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);}
+            )
+            ;
         return $actions;
     }
 }

@@ -83,6 +83,11 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
         return Photos::class;
     }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
+    }
 
 
     public function configureFilters(Filters $filters): Filters
@@ -378,7 +383,14 @@ class OdpfPhotosCrudController extends AbstractCrudController
                 return $action->setLabel('Déposer une photo')->setHtmlAttributes(['concours' => $this->requestStack->getCurrentRequest()->query->get('concours')]);
             })
             ->add(Crud::PAGE_INDEX, $attribEditionPassee)
-            ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN');;
+            ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
+           ;
 
     }
 

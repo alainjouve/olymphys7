@@ -88,6 +88,8 @@ class PhotosCrudController extends AbstractCrudController
 
 
         return $crud
+            ->showEntityActionsInlined()
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
             ->setPageTitle(Crud::PAGE_INDEX, '<h2 class="rougeodpf">Les photos du ' . $edition->getEd() . '<sup>e</sup> concours ' . $concours . '</h2>')
             ->setPageTitle(Crud::PAGE_EDIT, 'Modifier une photo du concours ' . $concours)
             ->setPageTitle(Crud::PAGE_NEW, 'Déposer une  photo du concours ' . $concours)
@@ -124,6 +126,12 @@ class PhotosCrudController extends AbstractCrudController
             ->update(Crud::PAGE_EDIT, Action::INDEX, function (Action $action) {
                 return $action->setLabel('Retour à la liste')->setHtmlAttributes(['concours' => $this->requestStack->getCurrentRequest()->query->get('concours')]);
             })
+            ->update('index', Action::DELETE,function  (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            )
+            ->update('index', Action::EDIT,function  (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            )
             ->add(Crud::PAGE_INDEX, $attribEditionPassee)
             ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN');
 
