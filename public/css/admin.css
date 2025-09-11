@@ -10,3 +10,25 @@
     --border-radius: 10px;
 
 }
+.btn-outline-primary:hover{
+
+}
+.btn {
+
+    font-size: large;
+}
+.btn:hover{
+
+}
+
+.btn:hover{
+    color: #ffffff;
+}
+
+hr{
+    border: 0;
+    border-top: 1px
+    solid #9f1239;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
