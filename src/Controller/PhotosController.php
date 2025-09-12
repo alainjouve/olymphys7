@@ -523,6 +523,7 @@ class PhotosController extends AbstractController
             $photos = $repositoryPhotos->findBy(['equipepassee' => $equipe]);
             $listeEquipes = [$equipe];
             $edition = $equipe->getEditionspassees();
+
             return $this->render('photos/affiche_galerie_equipe.html.twig', ['photos' => $photos, 'liste_equipes' => $listeEquipes, 'edition' => $edition, 'photosequipes' => $photosequipes,'numero_prec'=>$numeroprec,'numero_suiv'=>$numerosuiv   ]);
 
         }
@@ -697,9 +698,9 @@ class PhotosController extends AbstractController
     #[Route("/photos/carousel_equipe,{equipeId},{photoId}", name: "carousel_equipe")]
     public function carousel_equipe(Request $request, $equipeId, $photoId)// Affiche le carousel des grandes photos
     {
-        $equipe = $this->doctrine->getRepository(Equipesadmin::class)->find($equipeId);
+        $equipe = $this->doctrine->getRepository(OdpfEquipesPassees::class)->find($equipeId);
         $photo = $this->doctrine->getRepository(Photos::class)->find($photoId);
-        $photos = $this->doctrine->getRepository(Photos::class)->findBy(['equipe' => $equipe]);
+        $photos = $this->doctrine->getRepository(Photos::class)->findBy(['equipepassee' => $equipe]);
         $photoreord = [];
         $i = 0;
         foreach ($photos as $photo) {//reclasse les photos pour que la photo sur laquelle on a cliqué soit active dans le carousel des grandes photos
