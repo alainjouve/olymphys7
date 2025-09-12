@@ -148,6 +148,7 @@
 
                                             <twig:ea:ActionMenu:Overlay>
                                                 <twig:ea:ActionMenu:ActionList>
+                                                    <div style="width: 100px">
                                                     {% for action in entity.actions %}
 
                                                         <twig:ea:ActionMenu:ActionList:Item
@@ -157,6 +158,7 @@
                                                                 label="{{ action.label|trans }}" label:class="action-label" renderLabelRaw />
 
                                                     {% endfor %}
+                                                    </div>
                                                 </twig:ea:ActionMenu:ActionList>
                                             </twig:ea:ActionMenu:Overlay>
                                         </twig:ea:ActionMenu>
