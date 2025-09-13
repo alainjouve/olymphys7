@@ -64,7 +64,7 @@ class Uai
 
     public function __toString()
     {
-        return $this->uai;
+        return $this->uai.' - '.$this->nom.' - '.$this->commune.' - '.$this->academie;
     }
 
     public function getId(): ?int

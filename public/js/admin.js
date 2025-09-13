@@ -14,3 +14,24 @@ window.onload = function() {
 $(document).ready(function () {
     $('#modalinfo').modal('show');
 });
+
+
+var listUai = document.getElementById('Equipesadmin_uaiId')
+var listProf1=document.getElementById('')
+if(listUai!==null){
+    listUai.addEventListener('change', function(){
+
+
+
+
+
+
+
+    })
+
+
+
+
+
+
+}
