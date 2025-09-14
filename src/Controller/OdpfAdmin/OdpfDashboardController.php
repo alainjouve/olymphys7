@@ -16,6 +16,7 @@ use App\Entity\Odpf\OdpfLogos;
 use App\Entity\Odpf\OdpfPartenaires;
 use App\Entity\Odpf\OdpfVideosequipes;
 use App\Entity\Photos;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -52,7 +53,13 @@ class OdpfDashboardController extends AbstractDashboardController
         return Dashboard::new()
             ->setTitle('<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo_odpf_long.png" alt="logo des OdpF"  width="160"/>');
     }
+    public function configureAssets(): Assets
+    {
 
+        return Assets::new()->addCssFile('css/admin.css')
+            ->addJsFile("https://code.jquery.com/jquery-3.6.0.min.js")
+            ->addJsFile('js/admin.js');
+    }
     public function configureCrud(): Crud
     {
         return Crud::new()

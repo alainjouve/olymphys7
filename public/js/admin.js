@@ -14,3 +14,24 @@ $(document).ready(function () {
 
     $('#modalinfo').modal('show');
 });
+
+function choixedition(s){
+    var ideditionpassee=s.value;
+    console.log(ideditionpassee);
+    $.ajax({
+        url: '/photos/choixeditionpassee',
+        type: "POST",
+        data: {idEdPassee:ideditionpassee},
+
+        success: function () {
+            location.reload();
+        },
+
+        error: function (data) {
+            alert("Error while submitting Data");
+        },
+    })
+
+
+
+}

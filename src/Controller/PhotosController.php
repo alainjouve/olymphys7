@@ -751,5 +751,8 @@ class PhotosController extends AbstractController
         }
         return $equipes;
     }
+
+
+
 }
 

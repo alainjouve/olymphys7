@@ -1,0 +1,51 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col text-center">
+            Pour choisir une autre édition :
+           <select id="editions" name="editions" onchange="choixedition(this)">
+               {% for edition in listeEditionsPassees %}
+                <option value="{{ edition.id }}"
+                {% if edition.id==editionPassee.id %}
+                selected
+                {% endif %}
+
+                >{{ edition.edition }} - {{ edition.annee }}</option>
+
+
+               {% endfor %}
+           </select>
+        </div>
+    </div>
+    {{ form_start(form) }}
+    <div class="row">
+
+        {% for formphoto in form.children %}
+        <div class="col">
+            {% if formphoto.vars.attr!=[]  %}
+                {% if formphoto.vars.attr['id'] is defined %}
+                    {% for photo in listePhotos %}
+                        {% if  formphoto.vars.attr['id'] == photo.id%}
+
+                            <img src="{{ asset('odpf/odpf-archives/'~editionPassee.edition~'/photoseq/thumbs/'~photo.photo) }}" class="photolist">
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+        {% endif %}
+        {{ form_row(formphoto) }}
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block content_title %}
+<h1>Liste des photos de l'édition {{ editionPassee.edition }}</h1>
+    <br> {{ listePhotos|length }} photos
+{% endblock %}
+

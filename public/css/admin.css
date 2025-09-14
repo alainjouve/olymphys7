@@ -10,3 +10,10 @@
     --border-radius: 10px;
 
 }
+
+.photolist:hover {
+    transform: scale(1.8);
+}
+.photolist {
+
+}
