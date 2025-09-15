@@ -374,12 +374,13 @@ class OdpfPhotosCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+
+        $this->requestStack->getSession()->set('idEdPassee',null);//remise à zéro de l'affichage de la planche contact
         $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
             ->linkToRoute('charge-photos')->createAsGlobalAction();
-        $ed=$this->requestStack->getSession()->get('edition')->getEd()-1;//L'édition qui précéde l'édition en cours
 
         $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos', 'fa fa-file')
-            ->linkToRoute('affiche_table_photos')->createAsGlobalAction();
+            ->linkToRoute('affiche_table_photos')->createAsGlobalAction();//affichage de la page des planches contact
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->remove(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE)
@@ -448,12 +449,12 @@ class OdpfPhotosCrudController extends AbstractCrudController
         $ed=$this->requestStack->getSession()->get('edition')->getEd()-1;//L'édition qui précéde l'édition en cours
         $idEdPassee=$this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $ed])->getId();
 
-        if($this->requestStack->getSession()->get('idEdPassee')){
+        if($this->requestStack->getSession()->get('idEdPassee')){//Dans ce cas un choix de l'édition a été réalisée sur la planche contact
            // dd($this->requestStack->getSession()->get('idEdPassee'));
             $idEdPassee=$this->requestStack->getSession()->get('idEdPassee');
         }
         $editionPassee=$this->doctrine->getRepository(OdpfEditionsPassees::class)->find($idEdPassee);
-        $listeEditionsPassees=$this->doctrine->getRepository(OdpfEditionsPassees::class)->createQueryBuilder('p')
+        $listeEditionsPassees=$this->doctrine->getRepository(OdpfEditionsPassees::class)->createQueryBuilder('p')//Pour les choix des éditions de l'input select
             ->where('p.edition >:value')
             ->setParameter('value', 20)
             ->orderBy('p.edition', 'DESC')
@@ -529,7 +530,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
         return $this->render('bundles/EasyAdminBundle/table_photos.html.twig', ['form' => $form->createView(),'listePhotos'=>$listePhotos,'editionPassee'=>$editionPassee,'listeEditionsPassees'=>$listeEditionsPassees]);
 
     }
-    #[Route("/photos/choixeditionpassee", name: "choixeditionpassee")]
+    #[Route("/photos/choixeditionpassee", name: "choixeditionpassee")]//Permet de contourner la création d'une url admin dans la fonction js
     public function choixEdition(Request $request) :Response
     {
 
@@ -537,8 +538,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
         {
             $idEdPassee=$request->get('idEdPassee');
         }
-        $this->requestStack->getSession()->set('idEdPassee',$request->get('idEdPassee'));
-        $editionPassee=$this->doctrine->getRepository(OdpfEditionsPassees::class)->find($idEdPassee);
+        $this->requestStack->getSession()->set('idEdPassee',$request->get('idEdPassee'));//On transmet l'id de l'édition passée par une variable de session
         $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
             ->setDashboard(OdpfDashboardController::class)
             ->generateUrl();
