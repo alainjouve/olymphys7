@@ -38,7 +38,8 @@
         {{ form_row(formphoto) }}
         </div>
         {% endfor %}
-
+<p>Nombre de photos sélectionnées : <span id="sp_nbPhotosSel">0</span></p>
+<button type="button" onclick="raz_sel()">Supprimer la sélection</button>
     </div>
 
 
@@ -55,9 +56,27 @@
  {{ parent() }}
  <script>
 //  inversion de l'état de la checkbox quand on clique sur l'image
+var nbPhSel = 0
  function imClick(id) {
     var chkBox = document.getElementById('form_photo-' + id);
     chkBox.checked = !chkBox.checked
+    if (chkBox.checked) {
+        nbPhSel += 1
+    } else {
+        nbPhSel -= 1
+    }
+    document.getElementById('sp_nbPhotosSel').innerHTML = nbPhSel
+ }
+
+ function raz_sel() {
+    var chkBoxes = document.getElementsByClassName("form-check-input");
+    
+    nbPhSel = 0;
+    document.getElementById('sp_nbPhotosSel').innerHTML = nbPhSel
+    for (c of chkBoxes) {
+        c.checked = false
+    }
+
  }
  </script>
  {% endblock body_javascript %}
