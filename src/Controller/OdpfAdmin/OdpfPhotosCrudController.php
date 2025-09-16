@@ -493,7 +493,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
             if ($photosChoisies != []) {
                 $zipFile = new ZipArchive();
                 $now = new \DateTime();
-                $fileNameZip = 'Telechargement_olymphys_Photos-' . $now->format('d-m-Y\-His');
+                $fileNameZip = 'Telechargement_olymphys_Photos-' . $now->format('d-m-Y\-His') . '.zip';
 
                 if (($zipFile->open($fileNameZip, ZipArchive::CREATE) === TRUE) and (null !== $photosChoisies)) {
 
