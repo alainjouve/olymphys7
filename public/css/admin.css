@@ -12,6 +12,59 @@
 }
 
 .photolist:hover {
-    transform: scale(1.8);
+    transform: scale(1.2);
+}
+.header-photos{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+
 }
 
+.scroll-btn {
+    position: fixed;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.scroll-btn:hover {
+    background-color: #555;
+}
+
+#scroll-top-btn {
+    bottom: 500px;
+    right: 20px;
+}
+
+#scroll-bottom-btn {
+    bottom: 400px;
+    right: 20px;
+}
+@media only screen and (max-height: 500px) {
+    #scroll-top-btn {
+        bottom: 250px;
+        right: 20px;
+    }
+
+    #scroll-bottom-btn {
+        bottom: 150px;
+        right: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    font-size: 2rem;
+
+
+}

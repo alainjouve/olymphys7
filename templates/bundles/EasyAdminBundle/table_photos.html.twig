@@ -1,50 +1,79 @@
 {% extends '@!EasyAdmin/layout.html.twig' %}
 
 {% block main %}
-    <div class="row">
-        <div class="col text-center">
-            Pour choisir une autre édition :
-           <select id="editions" name="editions" onchange="choixedition(this)">
-               {% for edition in listeEditionsPassees %}
-                <option value="{{ edition.id }}"
-                {% if edition.id==editionPassee.id %}
-                selected
-                {% endif %}
+    <button id="scroll-top-btn" class="scroll-btn">↑</button>
+    <button id="scroll-bottom-btn" class="scroll-btn">↓</button>
+    <div class="container-fluid">
+    <div class="header-photos">
+        <div class="row">
+            <div class="col">
+                Pour télécharger des photos cliquer sur la case à cocher ou la photo elle-même. Ensuite, tout en bas de la page, cliquer sur télécharger.
+                <br>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                Pour choisir une autre édition :
+               <select id="editions" name="editions" onchange="choixedition(this)">
+                   {% for edition in listeEditionsPassees %}
+                    <option value="{{ edition.id }}"
+                    {% if edition.id==editionPassee.id %}
+                    selected
+                    {% endif %}
 
-                >{{ edition.edition }} - {{ edition.annee }}</option>
+                    >{{ edition.edition }} - {{ edition.annee }}</option>
 
 
-               {% endfor %}
-           </select>
+                   {% endfor %}
+               </select>
+            </div>
         </div>
     </div>
+    <hr>
     {{ form_start(form) }}
+
     <div class="row">
 
         {% for formphoto in form.children %}
-        <div class="col">
-            {% if formphoto.vars.attr!=[]  %}
-                {% if formphoto.vars.attr['id'] is defined %}
-                    {% for photo in listePhotos %}
-                        {% if  formphoto.vars.attr['id'] == photo.id%}
+            {% if formphoto.vars.name!='telecharger' %}
+                <div class="col">
+                    {% if formphoto.vars.attr!=[]  %}
+                        {% if formphoto.vars.attr['id'] is defined %}
+                            {% for photo in listePhotos %}
+                                {% if  formphoto.vars.attr['id'] == photo.id%}
 
-                            <img src="{{ asset('odpf/odpf-archives/'~editionPassee.edition~'/photoseq/thumbs/'~photo.photo) }}" 
-                            class="photolist"
-                            onclick="imClick('{{photo.id}}')"> 
+                                    <img src="{{ asset('odpf/odpf-archives/'~editionPassee.edition~'/photoseq/thumbs/'~photo.photo) }}"
+                                    class="photolist"
+                                    onclick="imClick('{{photo.id}}')">
+                                {% endif %}
+                            {% endfor %}
                         {% endif %}
-                    {% endfor %}
-                {% endif %}
-        {% endif %}
-        {{ form_row(formphoto) }}
-        </div>
+                    {% endif %}
+                    {{ form_row(formphoto) }}
+                </div>
+                {% else %}
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                    <p>Nombre de photos sélectionnées : <span id="sp_nbPhotosSel">0</span></p>
+                        </div>
+
+                        <div class="col">
+                            <button  class="btn btn-secondary" onclick="raz_sel()">Supprimer la sélection</button>
+                        </div>
+                        <div class="col">
+                            {{ form_widget(formphoto) }}
+                        </div>
+                    </div>
+            {% endif %}
         {% endfor %}
-<p>Nombre de photos sélectionnées : <span id="sp_nbPhotosSel">0</span></p>
-<button type="button" onclick="raz_sel()">Supprimer la sélection</button>
-    </div>
+
+
 
 
     {{ form_end(form) }}
-
+    </div>
 {% endblock %}
 
 {% block content_title %}
@@ -52,31 +81,3 @@
     <br> {{ listePhotos|length }} photos
 {% endblock %}
 
- {% block body_javascript %}
- {{ parent() }}
- <script>
-//  inversion de l'état de la checkbox quand on clique sur l'image
-var nbPhSel = 0
- function imClick(id) {
-    var chkBox = document.getElementById('form_photo-' + id);
-    chkBox.checked = !chkBox.checked
-    if (chkBox.checked) {
-        nbPhSel += 1
-    } else {
-        nbPhSel -= 1
-    }
-    document.getElementById('sp_nbPhotosSel').innerHTML = nbPhSel
- }
-
- function raz_sel() {
-    var chkBoxes = document.getElementsByClassName("form-check-input");
-    
-    nbPhSel = 0;
-    document.getElementById('sp_nbPhotosSel').innerHTML = nbPhSel
-    for (c of chkBoxes) {
-        c.checked = false
-    }
-
- }
- </script>
- {% endblock body_javascript %}

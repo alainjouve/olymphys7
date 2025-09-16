@@ -459,7 +459,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
             ->setParameter('value', 20)
             ->orderBy('p.edition', 'DESC')
             ->getQuery()->getResult();
-        $listePhotos=$this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee]);
+        $listePhotos=$this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee],['equipepassee' => 'ASC']);
 
         $builder=$this->createFormBuilder();
         foreach ($listePhotos as $photo) {
