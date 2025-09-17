@@ -55,24 +55,31 @@
                 {% else %}
                     </div>
                     <div class="row text-center">
-                        <div class="col-lg-3 col-md-12 col-sm-12 text-center">
+                        {# <div class="col-lg-3 col-md-12 col-sm-12 text-center">
                                 <p>Nombre de photos sélectionnées : <span id="sp_nbPhotosSel">0</span></p>
                         </div>
 
                         <div class="col-lg-3 col-md-12 col-sm-12 text-center">
                             <button  class="btn btn-secondary" onclick="raz_sel()">Supprimer la sélection</button>
-                        </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12 text-center">
+                        </div> #}
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                             {{ form_widget(formphoto) }}
                         </div>
                     </div>
             {% endif %}
         {% endfor %}
-
-
-
-
     {{ form_end(form) }}
+
+<div class="row text-center">
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                <p>Nombre de photos sélectionnées : <span id="sp_nbPhotosSel">0</span></p>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+            <button  class="btn btn-secondary" onclick="raz_sel()">Supprimer la sélection</button>
+        </div>
+    </div>
+
     </div>
 {% endblock %}
 
