@@ -41,39 +41,43 @@ function choixedition(s){//pour la planche contact
 }
 function imClick(id) {
     var chkBox = document.getElementById('form_photo-' + id);
-    chkBox.checked = !chkBox.checked
+    if(chkBox) {
+        chkBox.checked = !chkBox.checked
 
 
 // Création de l'événement
-    const changeEvent = new Event('change', {
-        bubbles: true,
-        cancelable: true
-    });
+        const changeEvent = new Event('change', {
+            bubbles: true,
+            cancelable: true
+        });
 
 // Dispatch de l'événement
-    chkBox.dispatchEvent(changeEvent);
+        chkBox.dispatchEvent(changeEvent);
+    }
 
 }
 function raz_sel() {
     var chkBoxes = document.getElementsByClassName("form-check-input");
-
-    nbPhSel = 0;
-    document.getElementById('sp_nbPhotosSel').innerHTML = nbPhSel
-    for (c of chkBoxes) {
-        c.checked = false
+    if(chkBoxes) {
+        nbPhSel = 0;
+        document.getElementById('sp_nbPhotosSel').innerHTML = nbPhSel
+        for (c of chkBoxes) {
+            c.checked = false
+        }
     }
 
 }
 $(document).ready(function () {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach((checkbox) => {
-       checkbox.addEventListener("change",(event) => {
-           var checkboxeschecked = document.querySelectorAll('input[type="checkbox"]:checked');
-           document.getElementById('sp_nbPhotosSel').innerHTML = checkboxeschecked.length;
-        })
-    });
+    if(checkboxes) {
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", (event) => {
+                var checkboxeschecked = document.querySelectorAll('input[type="checkbox"]:checked');
+                document.getElementById('sp_nbPhotosSel').innerHTML = checkboxeschecked.length;
+            })
 
-
+        });
+    }
 
     var btup=document.getElementById('scroll-top-btn')
     if(btup!==null) {
