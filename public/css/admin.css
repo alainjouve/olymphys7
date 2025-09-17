@@ -13,6 +13,7 @@
 
 .photolist:hover {
     transform: scale(1.2);
+
 }
 .header-photos{
     padding-top: 20px;
@@ -37,6 +38,7 @@
 
 .scroll-btn:hover {
     background-color: #555;
+
 }
 
 #scroll-top-btn {
@@ -47,7 +49,9 @@
 #scroll-bottom-btn {
     bottom: 400px;
     right: 20px;
+
 }
+
 @media only screen and (max-height: 500px) {
     #scroll-top-btn {
         bottom: 250px;
@@ -66,8 +70,10 @@
         font-size: 2rem;
     }
     .btn {
+
         font-size: 2rem;
     }
+
 
 }
 @media only screen and (max-width: 950px) {
@@ -75,6 +81,7 @@
         font-size: 1.5rem;
     }
     .btn {
+
         font-size: 1.5rem;
     }
 
