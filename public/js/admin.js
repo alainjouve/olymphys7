@@ -64,6 +64,7 @@ function raz_sel() {
         for (c of chkBoxes) {
             c.checked = false
         }
+        document.getElementById('form_telecharger').disabled = true
     }
 
 }
@@ -74,10 +75,11 @@ $(document).ready(function () {
             checkbox.addEventListener("change", (event) => {
                 var checkboxeschecked = document.querySelectorAll('input[type="checkbox"]:checked');
                 document.getElementById('sp_nbPhotosSel').innerHTML = checkboxeschecked.length;
+                document.getElementById('form_telecharger').disabled = (checkboxeschecked.length == 0)
             })
-
         });
     }
+    document.getElementById('form_telecharger').disabled = true;
 
     var btup=document.getElementById('scroll-top-btn')
     if(btup!==null) {
