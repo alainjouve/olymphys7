@@ -55,6 +55,9 @@ class Photos
     #[ORM\JoinColumn(name:"equipepassee_id",  referencedColumnName:"id",nullable:true)]
     private ?OdpfEquipesPassees $equipepassee;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $typeSujet = null;
+
     public function __construct()
     {
         $this->setUpdatedAt(new DateTime('now'));
@@ -237,6 +240,18 @@ class Photos
         $imagesCreateThumbs->createThumbs($this);
         return $this;
 
+    }
+
+    public function getTypeSujet(): ?string
+    {
+        return $this->typeSujet;
+    }
+
+    public function setTypeSujet(?string $typeSujet): static
+    {
+        $this->typeSujet = $typeSujet;
+
+        return $this;
     }
 
 }

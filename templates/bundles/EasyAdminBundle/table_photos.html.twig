@@ -52,7 +52,11 @@
                         {% endif %}
                     {% endif %}
                     {{ form_widget(formphoto) }}
+                    <select id="typeSujet" class="" onchange="setSujetPhoto({{ photo.id }})">
+                        <option value="experience">Expérience</option>
+                        <option value="groupe">Groupe</option>
 
+                    </select>
                 </div>
                 {% else %}
                     </div>

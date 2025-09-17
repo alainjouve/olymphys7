@@ -98,4 +98,13 @@ $(document).ready(function () {
                 });
             });
     }
+
+
+
 })
+
+function setSujetPhoto(id){
+       
+
+
+}
