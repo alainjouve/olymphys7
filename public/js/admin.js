@@ -29,7 +29,7 @@ function choixedition(s){//pour la planche contact
         data: {idEdPassee:ideditionpassee},
 
         success: function () {
-            location.reload();
+            window.location.reload();
         },
 
         error: function (data) {
@@ -106,7 +106,41 @@ $(document).ready(function () {
 })
 
 function setSujetPhoto(id){
-       
+    var input=document.getElementById('sujet_photo-'+id)
+    var typeSujet=input.value
+
+    $.ajax({
+        url: '/photos/set_type_sujet_photo',
+        type: "POST",
+        data: {idPhoto: id, sujetPhoto: typeSujet},
+
+
+        error: function (data) {
+            alert("Error while submitting Data");
+        },
+
+    })
+
+}
+function choixtypesujet(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
+    {
+    //var select=document.getElementById('choixtypesujet');
+    var typesujet=s.value;
+
+    $.ajax({
+        url: '/photos/choix_type_sujet_photo',
+        type: "POST",
+        data: {sujetPhoto: typesujet},
+        success: function () {
+            window.location.reload();
+        },
+
+        error: function (data) {
+            alert("Error while submitting Data");
+        },
+
+    })
+
 
 
 }

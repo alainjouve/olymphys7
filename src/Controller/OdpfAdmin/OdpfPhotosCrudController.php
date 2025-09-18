@@ -32,6 +32,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
 use EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
@@ -71,11 +72,11 @@ class OdpfPhotosCrudController extends AbstractCrudController
 {
     private RequestStack $requestStack;
     private AdminContextProvider $adminContextProvider;
-    private ManagerRegistry $doctrine;
+    private EntityManagerInterface $doctrine;
     private AdminUrlGenerator $adminUrlGenerator;
 
 
-    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, ManagerRegistry $doctrine, AdminUrlGenerator $adminUrlGenerator)
+    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, EntityManagerInterface $doctrine, AdminUrlGenerator $adminUrlGenerator)
     {
         $this->adminUrlGenerator = $adminUrlGenerator;
         $this->requestStack = $requestStack;;
@@ -106,38 +107,35 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
 
-
-        $id = IntegerField::new('id', 'ID');
-        $equipe = AssociationField::new('equipepassee');
-        $editionpassee = AssociationField::new('editionspassees', 'edition')->setSortable(true);
-        $photo = TextField::new('photo')
+        return[
+        IntegerField::new('id', 'ID')->onlyOnDetail(),
+        AssociationField::new('equipepassee', 'Projet')->onlyOnIndex(),
+        TextField::new('equipepassee.lettre', 'Lettre équipe')->setSortable(true)->hideOnForm(),
+        IntegerField::new('equipepassee.numero', 'N° équipe')->setSortable(true)->hideOnForm(),
+        AssociationField::new('editionspassees', 'edition')->setSortable(true),
+        TextField::new('photo')
             ->setTemplatePath('bundles\EasyAdminBundle\photos.html.twig')
             ->setLabel('Photo')->setSortable(false)
-            ->setFormTypeOptions(['disabled' => 'disabled']);
-        $coment = TextField::new('coment', 'commentaire');
-        $national = Field::new('national');
-        $updatedAt = DateTimeField::new('updatedAt', 'Déposé le ');
-        $equipeTitreprojet = AssociationField::new('equipepassee', 'Projet') ;
-        $equipeLettre = TextField::new('equipepassee.lettre', 'Lettre équipe')->setSortable(true);
-        $equipenumero = IntegerField::new('equipepassee.numero', 'N° équipe')->setSortable(true);
-        $imageFile = Field::new('photoFile')
+            ->setFormTypeOptions(['disabled' => 'disabled'])->hideOnForm(),
+        TextField::new('coment', 'commentaire'),
+        Field::new('national')->hideOnIndex(),
+        DateTimeField::new('updatedAt', 'Déposé le ')->hideOnForm(),
+
+       Field::new('photoFile')
             ->setFormType(FileType::class)
             ->setLabel('Photo')
-            ->onlyOnForms();
+            ->onlyOnForms(),
+       TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm(),
+       TextField::new('typeSujet','Choix Type de sujet')->setFormType(ChoiceType::class)
+            ->setFormTypeOptions([
+                'choices' => [
+                    ''=>'',
+                    'Eleve manipulant'=>'elevemanipule',
+                    'Expérience'=>'experience',
+                    'Groupe'=>'groupe',]
+            ])->onlyOnForms(),
+        ];
 
-        if (Crud::PAGE_INDEX === $pageName) {
-
-            return [$editionpassee, $equipenumero, $equipeLettre, $equipeTitreprojet, $photo, $coment, $updatedAt];
-
-
-        } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$id, $photo, $coment, $national, $updatedAt, $equipe, $editionpassee];
-        } elseif (Crud::PAGE_NEW === $pageName) {
-            return [$equipe, $imageFile, $coment, $national];
-        } elseif (Crud::PAGE_EDIT === $pageName) {
-
-            return [$photo, $imageFile, $equipe, $national, $coment];
-        }
     }
 
     public function deleteEntity(EntityManagerInterface $entityManager, $entityInstance): void
@@ -356,8 +354,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
                     $photo->setEditionspassees($equipe->getEditionspassees());
                     $photo->setNational($national);
                     $photo->setPhotoFile($photoFile);
-                    $this->doctrine->getManager()->persist($photo);
-                    $this->doctrine->getManager()->flush();
+                    $this->doctrine->persist($photo);
+                    $this->doctrine->flush();
                 }
             }
             $url = $this->adminUrlGenerator
@@ -379,7 +377,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
         $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
             ->linkToRoute('charge-photos')->createAsGlobalAction();
 
-        $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos', 'fa fa-file')
+        $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos', 'fa fa-th')
             ->linkToRoute('affiche_table_photos')->createAsGlobalAction();//affichage de la page des planches contact
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
@@ -446,9 +444,11 @@ class OdpfPhotosCrudController extends AbstractCrudController
     #[Route("/photos/afficheTablePhotos", name: "affiche_table_photos")]
     public function afficheTablePhotos(Request $request) : Response
     {
+
+
         $ed=$this->requestStack->getSession()->get('edition')->getEd()-1;//L'édition qui précéde l'édition en cours
         $idEdPassee=$this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $ed])->getId();
-
+        $typeSujet=$this->requestStack->getSession()->get('typesujet');
         if($this->requestStack->getSession()->get('idEdPassee')){//Dans ce cas un choix de l'édition a été réalisée sur la planche contact
            // dd($this->requestStack->getSession()->get('idEdPassee'));
             $idEdPassee=$this->requestStack->getSession()->get('idEdPassee');
@@ -459,8 +459,15 @@ class OdpfPhotosCrudController extends AbstractCrudController
             ->setParameter('value', 20)
             ->orderBy('p.edition', 'DESC')
             ->getQuery()->getResult();
-        $listePhotos=$this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee],['equipepassee' => 'ASC']);
+        if($typeSujet!=null or $typeSujet!='') {
+            $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee, 'typeSujet' => $typeSujet], ['equipepassee' => 'ASC']);
+        }
+        else{
+            $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee], ['equipepassee' => 'ASC']);
 
+
+        }
+        $typesSujets=['', 'elevemanipule','experience','groupe'];
         $builder=$this->createFormBuilder();
         foreach ($listePhotos as $photo) {
 
@@ -527,17 +534,19 @@ class OdpfPhotosCrudController extends AbstractCrudController
             }
         }
 
-        return $this->render('bundles/EasyAdminBundle/table_photos.html.twig', ['form' => $form->createView(),'listePhotos'=>$listePhotos,'editionPassee'=>$editionPassee,'listeEditionsPassees'=>$listeEditionsPassees]);
+        return $this->render('bundles/EasyAdminBundle/table_photos.html.twig', [
+            'form' => $form->createView(),
+            'listePhotos'=>$listePhotos,
+            'editionPassee'=>$editionPassee,
+            'listeEditionsPassees'=>$listeEditionsPassees,
+            'listeTypesSujets'=>$typesSujets,
+            ]);
 
     }
     #[Route("/photos/choixeditionpassee", name: "choixeditionpassee")]//Permet de contourner la création d'une url admin dans la fonction js
     public function choixEdition(Request $request) :Response
     {
 
-        if($request->get('idEdPassee')!=null)
-        {
-            $idEdPassee=$request->get('idEdPassee');
-        }
         $this->requestStack->getSession()->set('idEdPassee',$request->get('idEdPassee'));//On transmet l'id de l'édition passée par une variable de session
         $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
             ->setDashboard(OdpfDashboardController::class)
@@ -547,5 +556,29 @@ class OdpfPhotosCrudController extends AbstractCrudController
 
     }
 
+    #[Route("/photos/set_type_sujet_photo", name: "set_type_sujet_photo")]//Permet de contourner la création d'une url admin dans la fonction js
+    public function setTypeSujetPhoto(Request $request) :Response
+    {
+            $idPhoto=$request->get('idPhoto');
+            $sujetPhoto=$request->get('sujetPhoto');
+            $photo=$this->doctrine->getRepository(Photos::class)->find($idPhoto);
+            $photo->setTypeSujet($sujetPhoto);
+            $this->doctrine->persist($photo);
+            $this->doctrine->flush();
+            $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
+                ->setDashboard(OdpfDashboardController::class)
+                ->generateUrl();
+            return $this->redirect($url);
+    }
+    #[Route("/photos/choix_type_sujet_photo", name: "choix_type_sujet_photo")]//Permet de contourner la création d'une url admin dans la fonction js
+    public function choixTypeSujetPhoto(Request $request) :Response
+    {
+        $sujet=$request->get('sujetPhoto');
+        $this->requestStack->getSession()->set('typesujet',$sujet);
+        $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
+            ->setDashboard(OdpfDashboardController::class)
+            ->generateUrl();
+        return $this->redirect($url);
+    }
 
 }
