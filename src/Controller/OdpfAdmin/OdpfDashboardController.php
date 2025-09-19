@@ -14,6 +14,7 @@ use App\Entity\Odpf\OdpfFichierspasses;
 use App\Entity\Odpf\OdpfLogos;
 
 use App\Entity\Odpf\OdpfPartenaires;
+use App\Entity\Odpf\OdpfSujetsPhotos;
 use App\Entity\Odpf\OdpfVideosequipes;
 use App\Entity\Photos;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
@@ -90,6 +91,8 @@ class OdpfDashboardController extends AbstractDashboardController
 
             MenuItem::linkToCrud('Les  photos', 'fas fa-images', Photos::class)
                 ->setController(OdpfPhotosCrudController::class),
+            MenuItem::linkToCrud('Types sujets des photos', 'fas fa-list', OdpfSujetsPhotos::class)
+                ->setController(OdpfSujetsPhotosCrudController::class),
             MenuItem::linkToCrud('Les  vidéos', 'fas fa-images', OdpfVideosequipes::class)
                 ->setController(OdpfVideosEquipesCrudController::class),
 

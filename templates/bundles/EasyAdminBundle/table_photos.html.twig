@@ -32,12 +32,12 @@
                 Pour choisir un type sujet :
                 <select id="choixtypesujet" autocomplete="off" name="choixtypesujet" onchange="choixtypesujet(this)">
                     {% for typeSujet in listeTypesSujets %}
-                        <option value={{ typeSujet }}
-                                {% if app.session.get('typesujet')==typeSujet %}
+                        <option value={{ typeSujet.id }}
+                                {% if app.session.get('idTypesujet')==typeSujet.id %}
                                     selected
                                 {% endif %}
 
-                        >{{ typeSujet }}</option>
+                        >{{ typeSujet.libelle }}</option>
 
 
                     {% endfor %}
@@ -67,11 +67,11 @@
                                             <select id="sujet_photo-{{ photo.id }}" autocomplete="off" name="sujet_photo" onchange="setSujetPhoto({{ photo.id }})">
 
                                                 {% for typeSujet in listeTypesSujets %}
-                                                    <option value="{{ typeSujet }}"
-                                                    {% if photo.typeSujet==typeSujet %}
+                                                    <option value="{{ typeSujet.id }}"
+                                                    {% if photo.typeSujet==typeSujet.libelle %}
                                                             selected
                                                     {% endif %}
-                                                            >{{ typeSujet }}</option>
+                                                            >{{ typeSujet.libelle }}</option>
                                                 {% endfor %}
                                             </select>
                                         </div>

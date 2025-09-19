@@ -112,7 +112,7 @@ function setSujetPhoto(id){
     $.ajax({
         url: '/photos/set_type_sujet_photo',
         type: "POST",
-        data: {idPhoto: id, sujetPhoto: typeSujet},
+        data: {idPhoto: id, idSujetPhoto: typeSujet},
 
 
         error: function (data) {
@@ -130,7 +130,7 @@ function choixtypesujet(s)//Permet de sélectionner le type de sujet des phtos d
     $.ajax({
         url: '/photos/choix_type_sujet_photo',
         type: "POST",
-        data: {sujetPhoto: typesujet},
+        data: {idSujetPhoto: typesujet},
         success: function () {
             window.location.reload();
         },
