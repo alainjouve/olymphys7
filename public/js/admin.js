@@ -79,7 +79,9 @@ $(document).ready(function () {
             })
         });
     }
-    document.getElementById('form_telecharger').disabled = true;
+    if(document.getElementById('form_telecharger')!==null) {
+        document.getElementById('form_telecharger').disabled = true;
+    }
 
     var btup=document.getElementById('scroll-top-btn')
     if(btup!==null) {
@@ -100,7 +102,33 @@ $(document).ready(function () {
                 });
             });
     }
+    var inputPhoto=document.getElementById('Photos_photoFile')
+    var image=document.getElementById('photo')
+    var nom_photo=document.getElementById('nom_photo')
+    if(inputPhoto!== null) {
+        inputPhoto.addEventListener('change', function (event) {
+            image.src = inputPhoto.value;
+            console.log(event.target.files[0])
+            const file = event.target.files[0]; // Récupère le fichier sélectionné
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
 
+                // Lors de la lecture du fichier
+                reader.onload = function (e) {
+                    // Met à jour la source de l'image avec le contenu lu
+                    image.src = e.target.result;
+                    nom_photo.innerHTML=event.target.files[0].name;
+                };
+
+                // Lecture du fichier sous forme d'URL de données
+                reader.readAsDataURL(file);
+            } else {
+                // Si le fichier n'est pas une image ou si aucun fichier n'est sélectionné
+                image.src = '';
+            }
+
+        });
+    }
 
 
 })

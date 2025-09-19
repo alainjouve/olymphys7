@@ -20,7 +20,11 @@ class OdpfSujetsPhotos
     {
         return $this->id;
     }
+    public function __toString(){
 
+
+        return $this->libelle;
+    }
     public function getLibelle(): ?string
     {
         return $this->libelle;

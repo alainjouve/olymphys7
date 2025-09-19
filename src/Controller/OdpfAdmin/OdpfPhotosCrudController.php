@@ -18,6 +18,7 @@ use App\Entity\Photos;
 use App\Form\Type\Admin\CustomEquipespasseesFilterType;
 use App\Service\ImagesCreateThumbs;
 use Doctrine\DBAL\Types\BooleanType;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
@@ -77,12 +78,13 @@ class OdpfPhotosCrudController extends AbstractCrudController
     private AdminUrlGenerator $adminUrlGenerator;
 
 
-    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, EntityManagerInterface $doctrine, AdminUrlGenerator $adminUrlGenerator)
+    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, EntityManagerInterface $doctrine,AdminUrlGenerator $adminUrlGenerator)
     {
         $this->adminUrlGenerator = $adminUrlGenerator;
         $this->requestStack = $requestStack;;
         $this->adminContextProvider = $adminContextProvider;
         $this->doctrine = $doctrine;
+
 
     }
 
@@ -93,7 +95,9 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
+                'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
+                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',]);
     }
 
 
@@ -107,17 +111,27 @@ class OdpfPhotosCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        $typesSujets=$this->doctrine->getRepository(OdpfSujetsPhotos::class)->findAll();
+        $listeTypesSujets=[];
+        foreach ($typesSujets as $typeSujet) {
+
+            $listeTypesSujets[$typeSujet->getLibelle()]=$typeSujet->getLibelle();
+
+        }
 
         return[
         IntegerField::new('id', 'ID')->onlyOnDetail(),
-        AssociationField::new('equipepassee', 'Projet')->onlyOnIndex(),
+        AssociationField::new('equipepassee', 'Projet'),
         TextField::new('equipepassee.lettre', 'Lettre équipe')->setSortable(true)->hideOnForm(),
         IntegerField::new('equipepassee.numero', 'N° équipe')->setSortable(true)->hideOnForm(),
-        AssociationField::new('editionspassees', 'edition')->setSortable(true),
+        AssociationField::new('editionspassees', 'edition')->setQueryBuilder(
+            fn (QueryBuilder $queryBuilder)=> $queryBuilder
+                ->orderBy('entity.edition', 'DESC')
+        )->setSortable(true),
         TextField::new('photo')
             ->setTemplatePath('bundles\EasyAdminBundle\photos.html.twig')
             ->setLabel('Photo')->setSortable(false)
-            ->setFormTypeOptions(['disabled' => 'disabled'])->hideOnForm(),
+            ->setFormTypeOptions(['disabled' => 'disabled','id'=>'photo'])->hideOnForm(),
         TextField::new('coment', 'commentaire'),
         Field::new('national')->hideOnIndex(),
         DateTimeField::new('updatedAt', 'Déposé le ')->hideOnForm(),
@@ -127,13 +141,9 @@ class OdpfPhotosCrudController extends AbstractCrudController
             ->setLabel('Photo')
             ->onlyOnForms(),
        TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm(),
-       TextField::new('typeSujet','Choix Type de sujet')->setFormType(ChoiceType::class)
+       TextField::new('typeSujet','Choix du type de sujet')->setFormType(ChoiceType::class)
             ->setFormTypeOptions([
-                'choices' => [
-                    ''=>'',
-                    'Eleve manipulant'=>'elevemanipule',
-                    'Expérience'=>'experience',
-                    'Groupe'=>'groupe',]
+                'choices' => $listeTypesSujets
             ])->onlyOnForms(),
         ];
 
@@ -163,7 +173,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
             $originalFilename = $file->getClientOriginalName();
             $parsedName = explode('.', $originalFilename);
             $ext = end($parsedName);// détecte les .JPG et .HEIC
-            $nameExtLess = explode('.' . $ext, $originalFilename)[0];
+            //$nameExtLess = explode('.' . $ext, $originalFilename)[0];
             if (($typeImage != 'jpg') or ($ext != 'jpg')) {// dans ce cas on change la compression du fichier en jpg.
                 // création du fichier temporaire pour la transformation en jpg
 
@@ -176,8 +186,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
                 } catch (FileException $e) {
 
                 }
-                $nameExtLess = $parsedName[0];
-                $imax = count($parsedName);
+                $nameExtLess = $parsedName[0];//nom sans le n° d'identification et l'extension
+                $imax = count($parsedName);//Normalement imax=3 si la transformation en assci a fonctionné correctement
                 for ($i = 1; $i <= $imax - 2; $i++) {// dans le cas où le nom de  fichier comporte plusieurs points
                     $nameExtLess = $nameExtLess . '.' . $parsedName[$i];
                 }
@@ -216,8 +226,17 @@ class OdpfPhotosCrudController extends AbstractCrudController
         //{  Il faut donc modifier le nom de la  photos déposée et de sa vignette "à la main"
 
         $name = $entityInstance->getPhoto();
-        $parseOldName = explode('-', $name);
-        $endName = end($parseOldName);
+        $parseOldName = explode('.', $name);//Pour isoler le n° d'identification+extension
+
+        if (count($parseOldName) > 2) //Le nom contient plusieurs points
+        {
+            $endName = $parseOldName[count($parseOldName) - 2] . '.' . $parseOldName[count($parseOldName) - 1];
+        }
+        else{//Le n° d'identification est séparé par un tiret
+            $parseName=explode('-', $parseOldName[0]);
+            $num=end($parseName);
+            $endName =$num.'.'.end($parseOldName);
+        }
         $slugger = new AsciiSlugger();
         $ed = $entityInstance->getEditionspassees()->getEdition();
         $equipepassee = $entityInstance->getEquipepassee();
@@ -226,22 +245,22 @@ class OdpfPhotosCrudController extends AbstractCrudController
 
                 $nlleEquipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition' => $equipe->getEdition(), 'numero' => $equipe->getNumero()]);//il faut réattribuer la bonne équipe la photo
                 $entityInstance->setEquipe($nlleEquipe);
-             }
-            $centre = ' ';
-            $lettre_equipe = '';
-            if ($equipe) {
-                if ($equipe->getCentre()) {
+        }
+        $centre = ' ';
+        $lettre_equipe = '';
+        if ($equipe) {
+                if ($equipe->getCentre()) {//le centre est perdu pour les éditions passées
                     $centre = $equipe->getCentre()->getCentre() . '-eq';
-                } else(
-                $centre = 'CIA-eq'
-                );
+                } else {
+                    $centre = 'CIA-eq';
+          };
 
-            }
+        }
             $numero_equipe = $equipepassee->getNumero();
             $nom_equipe = $equipepassee->getTitreProjet();
             $nom_equipe = $slugger->slug($nom_equipe)->toString();
             if ($entityInstance->getNational() == FALSE) {
-                $newFileName = $slugger->slug($ed . '-' . $centre .'-'.$numero_equipe . '-' . $nom_equipe . '.' . $endName);
+                $newFileName = $slugger->slug($ed . '-' . $centre .'-'.$numero_equipe . '-' . $nom_equipe ). '.' . $endName;
             }
             if (($entityInstance->getNational() == TRUE) or ($entityInstance->getEquipepassee()->getNumero()>=100) ) {
                 $equipepassee->getLettre() === null ? $idEquipe = $equipepassee->getNumero() : $idEquipe = $equipepassee->getLettre();
