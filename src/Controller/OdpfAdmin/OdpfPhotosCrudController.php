@@ -407,7 +407,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
         $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
             ->linkToRoute('charge-photos')->createAsGlobalAction();
 
-        $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos', 'fa fa-th')
+        $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos dans un tableau', 'fa fa-th')
             ->linkToRoute('affiche_table_photos')->createAsGlobalAction();//affichage de la page des planches contact
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
@@ -429,6 +429,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
             )
           ->add(Crud::PAGE_INDEX, $afficheTablePhotos)
+
 
 
            ;
