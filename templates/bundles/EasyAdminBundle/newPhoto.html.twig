@@ -2,12 +2,6 @@
 {# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
 {% extends '@!EasyAdmin/crud/new.html.twig' %}
 
-{% block content_title %}
-    {%- set custom_page_title = ea.crud.customPageTitle('new', null, ea.i18n.translationParameters, ea.i18n.translationDomain) -%}
-    {{- custom_page_title is null
-        ? ea.crud.defaultPageTitle('new', null, ea.i18n.translationParameters)|trans|raw
-        : custom_page_title|trans|raw -}}
-{% endblock %}
 
 {% block page_actions %}
     {% for action in entity.actions %}
@@ -22,40 +16,43 @@
         <div class="row">
     
             <div class="col-md-6 col-sm-12">
-                <div class="card tex-center">
-                    {{ form_label(new_form.equipepassee) }}
+                <div class="card ">
+                <h3>{{ form_label(new_form.equipepassee) }}</h3>
+
                     {{ form_widget(new_form.equipepassee) }}
-                    <span id="nom_photo">{{ entity.instance.photo }}</span>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Photo
+                    </div>
+                    <div class="card-body">
+                        <span id="nom_photo">{{ entity.instance.photo }}</span>
                     {% if entity.instance.photo != null %}
-                        <img src="{{ asset('odpf/odpf-archives/'~entity.instance.editionspassees.newion~'/photoseq/'~entity.instance.photo) }}" class="img-fluid" style=" margin: auto; width:240px"  id="photo">
+                        <img src="{{ asset('odpf/odpf-archives/'~entity.instance.editionspassees.newion~'/photoseq/'~entity.instance.photo) }}" class="photolist" style=" margin: auto; width:240px"  id="photo">
                     {% else %}
                         <img src="{{ asset('odpf/odpf-images/site-logo-150x43.png') }}" class="photolist" style=" margin: auto;  width:240px" id="photo">
                     {% endif %}
-                    Choisir un fichier : <br>
+                    <br>Choisir un fichier : <br>
                     {{ form_widget(new_form.photoFile) }}
-                    {{ form_label(new_form.typeSujet) }}
-                    {{ form_widget(new_form.typeSujet) }}
+
+                    </div>
                 </div>
     
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="card text-center">
-                    {{ form_row(new_form.national) }}
-                    {{ form_row(new_form.editionspassees) }}
+
+                    {{ form_widget(new_form.national) }}
                     {{ form_row(new_form.coment) }}
-    
+                    {{ form_label(new_form.typeSujet) }}
+                    {{ form_widget(new_form.typeSujet) }}
                 </div>
             </div>
     
         </div>
-
-
-    {{ form_end(new_form) }} 
-        
-        
-        
-        
-        
-        
+    {{ form_end(new_form) }}
     {% endblock new_form %}
+{% endblock %}
+{% block content_title %}
+            <h4>Déposer une nouvelle photo</h4>
 {% endblock %}

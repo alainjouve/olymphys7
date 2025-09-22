@@ -166,6 +166,24 @@ function choixtypesujet(s)//Permet de sélectionner le type de sujet des phtos d
         error: function (data) {
             alert("Error while submitting Data");
         },
+    })
+}
+function choixEquipe(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
+{
+    //var select=document.getElementById('choixtypesujet');
+    var idEquipe=s.value;
+
+    $.ajax({
+        url: '/photos/choix_equipe_photo',
+        type: "POST",
+        data: {idEquipe: idEquipe},
+        success: function () {
+            window.location.reload();
+        },
+
+        error: function (data) {
+            alert("Error while submitting Data");
+        },
 
     })
 

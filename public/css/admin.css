@@ -16,8 +16,9 @@
 
 }
 .header-photos{
+    position: static;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom:20px;
 
 
 }

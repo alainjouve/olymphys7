@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Entity\Odpf\OdpfEditionsPassees;
 use App\Entity\Odpf\OdpfEquipesPassees;
+use App\Entity\Odpf\OdpfSujetsPhotos;
 use App\Repository\PhotosRepository;
 use App\Service\ImagesCreateThumbs;
 use DateTime;
@@ -55,8 +56,9 @@ class Photos
     #[ORM\JoinColumn(name:"equipepassee_id",  referencedColumnName:"id",nullable:true)]
     private ?OdpfEquipesPassees $equipepassee;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $typeSujet = null;
+    #[ORM\ManyToOne(targetEntity:OdpfSujetsPhotos::class)]
+    #[ORM\JoinColumn(name:"sujetsphotos_id",  referencedColumnName:"id",nullable:true)]
+    private ?OdpfSujetsPhotos $typeSujet = null;
 
     public function __construct()
     {
@@ -242,12 +244,12 @@ class Photos
 
     }
 
-    public function getTypeSujet(): ?string
+    public function getTypeSujet(): ?OdpfSujetsPhotos
     {
         return $this->typeSujet;
     }
 
-    public function setTypeSujet(?string $typeSujet): static
+    public function setTypeSujet(?OdpfSujetsPhotos $typeSujet): static
     {
         $this->typeSujet = $typeSujet;
 

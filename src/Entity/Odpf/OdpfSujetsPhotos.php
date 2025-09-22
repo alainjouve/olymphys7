@@ -22,8 +22,11 @@ class OdpfSujetsPhotos
     }
     public function __toString(){
 
-
-        return $this->libelle;
+        $libelle='';
+        if($this->libelle!=null) {
+            $libelle = $this->libelle;
+        }
+        return $libelle;
     }
     public function getLibelle(): ?string
     {

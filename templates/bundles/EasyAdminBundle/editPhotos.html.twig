@@ -9,26 +9,30 @@
 
                 <div class="col-md-6 col-sm-12">
                     <div class="card tex-center">
-                        {{ form_label(edit_form.equipespassee) }}
+                        <h3>{{ form_label(edit_form.equipepassee) }}</h3>
                         {{ form_widget(edit_form.equipepassee) }}
+                    </div>
+                    <div class="card">
+                    <div class="card-header">Photo</div>
+                    <div class="card-body text-center">
                         <span id="nom_photo">{{ entity.instance.photo }}</span>
                         {% if entity.instance.photo != null %}
-                            <img src="{{ asset('odpf/odpf-archives/'~entity.instance.editionspassees.edition~'/photoseq/'~entity.instance.photo) }}" class="img-fluid" style=" margin: auto; width:240px"  id="photo">
+                            <img src="{{ asset('odpf/odpf-archives/'~entity.instance.editionspassees.edition~'/photoseq/'~entity.instance.photo) }}" class="photolist" style=" margin: auto; width:240px"  id="photo">
                         {% else %}
                             <img src="{{ asset('odpf/odpf-images/site-logo-150x43.png') }}" class="photolist" style=" margin: auto" id="picture">
                         {% endif %}
-                        {{ form_row(edit_form.photoFile) }}
-                        {{ form_label(edit_form.typeSujet) }}
-                        {{ form_widget(edit_form.typeSujet) }}
+                        <br>Choisir un autre fichier : <br>
+                        {{ form_widget(edit_form.photoFile) }}
+                    </div>
                     </div>
 
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="card text-center">
                         {{ form_row(edit_form.national) }}
-                        {{ form_row(edit_form.editionspassees) }}
                         {{ form_row(edit_form.coment) }}
-
+                        {{ form_label(edit_form.typeSujet) }}
+                        {{ form_widget(edit_form.typeSujet) }}
                     </div>
                 </div>
 
@@ -41,4 +45,7 @@
     {% block delete_form %}
         {{ include('@EasyAdmin/crud/includes/_delete_form.html.twig', { entity_id: entity.primaryKeyValue }, with_context = false) }}
     {% endblock delete_form %}
+{% endblock %}
+{% block content_title %}
+            <h4>Modification d'une photo</h4>
 {% endblock %}
