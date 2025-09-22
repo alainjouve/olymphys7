@@ -36,13 +36,18 @@ use EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Imagick;
 use PHPUnit\Exception;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 
 //use Symfony\Component\HttpFoundation\File\File;
@@ -112,6 +117,7 @@ class PhotosCrudController extends AbstractCrudController
         $urlIndex = $this->generateUrl('admin', ['crudAction' => 'index', 'crudController' => 'photosCrudController', 'concours' => $concours]);
         $attribEditionPassee = Action::new('attribEditionsPassees', 'Attribuer les éditions passéées', 'fa fa-file-download')
             ->linkToRoute('attribEditionsPassees')->createAsGlobalAction();
+
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->remove(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE)
@@ -610,5 +616,7 @@ class PhotosCrudController extends AbstractCrudController
         return $this->redirect($url);
 
     }
+
+
 
 }
