@@ -1,12 +1,5 @@
-# MT 
-/composer.lock
-
-# pour phpStorm
 /.idea
-
 ###> symfony/framework-bundle ###
-.env
-.env.test
 /.env
 /.env.local
 /.env.local.php
@@ -27,7 +20,6 @@
 ###< phpunit/phpunit ###
 
 
-/public/tmp/
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
@@ -40,21 +32,15 @@ yarn-error.log
 /public/.tmb/
 /public/images/
 /public/odpf-archives/
+/public/images/
+/public/docequipes/
+/public/docequipes/
 /public/docequipes/
 /public/odpf-documents/
 /public/odpf-images/
 /public/odpf-logos/
-.vscode/launch.json
-public/error_log
-/public/search/
-
-
-# Project exclude paths
-/public/build/
-/public/images/
-
-# Project exclude paths
-/public/build/
-/public/images/
-/public/bundles/
+/public/odpf-documents/
+/public/odpf-images/
+/public/odpf/
 /bundles/
+/public/bundles/fosckeditor/

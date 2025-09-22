@@ -44,7 +44,6 @@ use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Settings;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -124,8 +123,7 @@ class ElevesinterCrudController extends AbstractCrudController
             //->setSearchFields(['nom', 'prenom', 'courriel', 'equipe.id', 'equipe.edition', 'equipe.numero', 'equipe.titreProjet', 'equipe.lettre'])
             //overrideTemplate('crud/detail', 'bundles/EasyAdminBundle/detail_autorisations.html.twig')
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEleves.html.twig', ])
-            ->setPaginatorPageSize(100);
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
     }
 
     public function configureFilters(Filters $filters): Filters
@@ -178,21 +176,21 @@ class ElevesinterCrudController extends AbstractCrudController
 
             }
             $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations')->linkToRoute('attestations_eleves_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
-                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+                ->createAsGlobalAction();
             $attestationsElevesNat = Action::new('Attestions_eleves_nat', 'Créer les attestations des élèves sélectionnés')->linkToRoute('attestations_eleves_nat_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
-                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+                ->createAsGlobalAction();
             $tableauexcelnonsel = Action::new('eleves_tableau_excel', 'Créer un tableau excel des élèves non sélectionnés', 'fas fa_array',)
                 ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
-                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+                ->createAsGlobalAction();
             $tableauexceleleves = Action::new('eleves_tableau_excel_tous', 'Créer un tableau excel des tous les élèves', 'fas fa_array',)
                 ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId . '-na'])
-                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+                ->createAsGlobalAction();
             $elevessel = Action::new('eleves_tableau_excel_sel', 'Créer un tableau excel des élèves sélectionnés', 'fas fa_array',)
                 ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
-                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+                ->createAsGlobalAction();
             $invitationsCN = Action::new('invitationsCN', 'Créer les invitations au CN')->linkToRoute('invitations',
                 ['editionIdequipeId' => $edition->getId()])
-                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+                ->createAsGlobalAction();
             $actions->add(Crud::PAGE_INDEX, $tableauexcelnonsel)
                 ->add(Crud::PAGE_INDEX, $attestationsEleves)
                 ->add(Crud::PAGE_INDEX, $attestationsElevesNat)
@@ -207,14 +205,12 @@ class ElevesinterCrudController extends AbstractCrudController
         $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
-            ->update(Crud::PAGE_INDEX, Action::NEW, function  (Action $action) {
-                return $action->setIcon('fa fa-plus')->setLabel('Inscrire un nouvel élève')->setCssClass('btn btn-success');})
-            ->setPermission('new','ROLE_SUPER_ADMIN')
+            ->remove(Crud::PAGE_INDEX, Action::NEW)
             ->remove(Crud::PAGE_INDEX, Action::DELETE)
             ->update('index', Action::EDIT, function  (Action $action) {
-                return $action->setIcon('fa fa-pencil fa-lg')->setLabel(false);})
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);})
             ->update('index', Action::DETAIL, function  (Action $action) {
-                return $action->setIcon('fa fa-eye fa-lg')->setLabel(false);});
+                return $action->setIcon('fa fa-eye')->setLabel(false);});
         return $actions;
     }
 
@@ -236,14 +232,7 @@ class ElevesinterCrudController extends AbstractCrudController
             yield TextField::new('prenom')->setSortable(true),
             yield TextField::new('courriel')->setSortable(true),
             yield TextField::new('genre'),
-            yield TextField::new('classe')->setFormType(ChoiceType::class)->setFormTypeOptions(
-                ['choices'=>[
-                    '2nde' => '2nde',
-                    '1ère' => '1ere',
-                    'Term' => 'Term',]
-                ]
-
-            )->hideOnIndex(),
+            yield TextField::new('classe')->hideOnIndex()->hideOnForm(),
             yield TextField::new('equipe')->onlyOnIndex(),
             yield AssociationField::new('equipe')->setFormTypeOptions(['choices' => $listEquipes])->setSortable(true)->hideOnIndex(),
             yield AssociationField::new('autorisationphotos', 'Autorisation photos')->setTemplatePath('bundles/EasyAdminBundle/detail_autorisations.html.twig')

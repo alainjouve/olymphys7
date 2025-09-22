@@ -171,9 +171,6 @@ class EquipesadminCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-eye')->setLabel(false);}
             )
             ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN')
-            ->update('index', Action::NEW,function  (Action $action) {
-                return $action->setLabel('Nouvelle équipe');
-            })
             ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
             ->setPermission(Action::EDIT, 'ROLE_COMITE');
 
@@ -211,15 +208,13 @@ class EquipesadminCrudController extends AbstractCrudController
         $centre = AssociationField::new('centre')->setFormTypeOptions(['choices' => $listeCentres, 'required' => false]);
         $IdProf1 = AssociationField::new('idProf1', 'Prof1')->setColumns(1)->setFormTypeOptions(['choices' => $listProfs])->setFormTypeOption('required', false);
         $IdProf2 = AssociationField::new('idProf2', 'Prof2')->setColumns(1)->setFormTypeOptions(['choices' => $listProfs])->setFormTypeOption('required', false);
-
         $selectionnee = BooleanField::new('selectionnee');
         $selectionneeForm = BooleanField::new('selectionnee')->renderAsSwitch(false);
         $id = IntegerField::new('id', 'ID');
-        $nomLycee = TextField::new('nomLycee', 'Lycée')->setColumns(10)->hideOnIndex();
-        $denominationLycee = TextField::new('denominationLycee')->hideOnIndex();
-        $lyceeLocalite = TextField::new('lyceeLocalite', 'Ville')->hideOnIndex();
-        $lyceeAcademie = TextField::new('lyceeAcademie', 'Académie')->hideOnIndex();
-        $lyceeNomAcademie=TextField::new('lyceeNomAcademie', 'Nom/Ville/Académie')->onlyOnIndex();
+        $nomLycee = TextField::new('nomLycee', 'Lycée')->setColumns(10);
+        $denominationLycee = TextField::new('denominationLycee');
+        $lyceeLocalite = TextField::new('lyceeLocalite', 'Ville');
+        $lyceeAcademie = TextField::new('lyceeAcademie', 'Académie');
         $uai = TextField::new('uaiId.uai', 'Code UAI')->setFormTypeOption('required', false);
         $lyceeAdresse = TextField::new('uaiId.adresse', 'Adresse');
         $lyceeCP = TextField::new('uaiId.codePostal', 'Code Postal');
@@ -257,7 +252,7 @@ class EquipesadminCrudController extends AbstractCrudController
 
                 return [$lyceePays, $lyceeAcademie, $nomLycee, $lyceeAdresse, $lyceeCP, $lyceeLocalite, $uai];
             } else {
-                return [$numero, $lettre, $centreCentre, $titreProjet, $IdProf1, $IdProf2, $lyceeNomAcademie, $selectionnee, $nbeleves, $inscrite,$createdAt];
+                return [$numero, $lettre, $centreCentre, $titreProjet, $IdProf1, $IdProf2, $nomLycee, $lyceeLocalite, $lyceeAcademie, $selectionnee, $contribfinance, $nbeleves, $inscrite, $origineprojet, $createdAt];
             }
         } elseif (Crud::PAGE_DETAIL === $pageName) {
 
@@ -542,9 +537,9 @@ class EquipesadminCrudController extends AbstractCrudController
 
     }
 
-
-    #[Route("/Admin/EquipesadminCrud/etablissements_tableau_excel,{ideditioncentre}", name:"etablissements_tableau_excel")]
-
+    /**
+     * @Route("/Admin/EquipesadminCrud/etablissements_tableau_excel,{ideditioncentre}", name="etablissements_tableau_excel")
+     */
     public function etablissementstableauexcel($ideditioncentre)
     {
         $idedition = explode('-', $ideditioncentre)[0];
