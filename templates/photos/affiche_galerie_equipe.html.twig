@@ -96,7 +96,7 @@
                                                          data-numimage="{{ i }}">
                                                         <div class="d-flex h-100 align-items-center justify-content-center">
                                                             <div class="p-2">
-                                                                <a href="{{ path('carousel_equipe',{'equipeId':photo.equipepassee.id,'photoId':photo.id}) }}">
+                                                                <a href="{{ path('carousel_equipe',{'equipeId':photo.equipe.id,'photoId':photo.id}) }}">
                                                                     <img src="{{ asset('odpf/odpf-archives/'~edition.edition~'/photoseq/thumbs/'~photo.photo) }}"
                                                                          class="img-fluid" id="photo{{ i }}">
                                                                 </a>
@@ -124,7 +124,7 @@
                                                          data-numimage="{{ i }}">
                                                         <div class="d-flex h-100 align-items-center justify-content-center">
                                                             <div class="p-2">
-                                                                <a href="{{ path('carousel_equipe',{'equipeId':photo.equipepassee.id,'photoId':photo.id}) }}">
+                                                                <a href="{{ path('carousel_equipe',{'equipeId':photo.equipe.id,'photoId':photo.id}) }}">
                                                                     <img src="{{ asset('odpf/odpf-archives/'~edition.edition~'/photoseq/thumbs/'~photo.photo) }}"
                                                                          class="img-fluid" id="photo{{ i }}">
                                                                 </a>

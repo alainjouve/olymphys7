@@ -1,13 +1,13 @@
 {% extends('base1.html.twig') %}
 {% block title %}
 
-    {{ equipe.editionspassees.edition }}   Les photos des Olympiades de Physique {% endblock %}
+    {{ equipe.edition.ed }}   Les photos des Olympiades de Physique {% endblock %}
 
 
 {% block titre3 %}
 
     <div style="text-align: center; color:blue" class="color">
-        <h4>Les photos de la {{ equipe.editionspassees.edition }}<sup>e</sup> édition <br></h4>
+        <h4>Les photos de la {{ equipe.edition.ed }}<sup>e</sup> édition <br></h4>
 
         <h4>Equipe {{ equipe.numero }}
             {% if equipe.lettre!=null %}
@@ -46,14 +46,14 @@
                             {% if i==0 %}
                                 <div class="carousel-item active">
                                     <img class="d-block w-100"
-                                         src="{{ asset('odpf/odpf-archives/'~photo.equipepassee.editionspassees.edition~'/photoseq/'~photo.photo) }}"
+                                         src="{{ asset('odpf/odpf-archives/'~photo.equipe.edition.ed~'/photoseq/'~photo.photo) }}"
                                          alt="{{ photo.photo }}">
                                 </div>
                             {% endif %}
                             {% if i>0 %}
                                 <div class="carousel-item">
                                     <img class="d-block w-100"
-                                         src="{{ asset('odpf/odpf-archives/'~photo.equipepassee.editionspassees.edition~'/photoseq/'~photo.photo) }}"
+                                         src="{{ asset('odpf/odpf-archives/'~photo.equipe.edition.ed~'/photoseq/'~photo.photo) }}"
                                          alt="{{ photo.photo }}"></div>
                             {% endif %}
                             {% set  i = i + 1 %}

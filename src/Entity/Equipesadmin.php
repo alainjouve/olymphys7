@@ -561,6 +561,11 @@ class Equipesadmin
 
         return $this;
     }
+    public function getLyceeNomAcademie(): ?string
+    {
+
+        return $this->nomLycee.'/'.$this->lyceeLocalite.'/'.$this->lyceeAcademie;
+    }
 
 
 }
