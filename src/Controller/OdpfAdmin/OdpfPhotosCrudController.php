@@ -508,10 +508,10 @@ class OdpfPhotosCrudController extends AbstractCrudController
             $typeSujet = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->find($idTypeSujet);
             if($typeSujet->getLibelle()!=null and $typeSujet->getLibelle()!='Tous') {
                 if( $equipe!== null){
-                    $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['equipepassee' => $equipe, 'typeSujet' => $typeSujet->getLibelle()], ['equipepassee' => 'ASC']);
+                    $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['equipepassee' => $equipe, 'typeSujet' => $typeSujet], ['equipepassee' => 'ASC']);
                 }
                 else{
-                    $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee, 'typeSujet' => $typeSujet->getLibelle()], ['equipepassee' => 'ASC']);
+                    $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee, 'typeSujet' => $typeSujet], ['equipepassee' => 'ASC']);
                 }
             }
         }
