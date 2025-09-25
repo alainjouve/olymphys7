@@ -54,13 +54,15 @@
                     </div>
                     <hr>
             {% endif %}
-            {%  if count(global_actions)>0 %}
+            {%  if global_actions|length>0 %}
                 {% set action_new=false %}
-                {%  set action_autre=false%}
                 {% for action in global_actions %}
-
+                        {% if action.name=='new' %}
+                            {%set action_new=true %}
+                        {% endif %}
 
                 {% endfor %}
+                {% if (action_new==true and  global_actions|length>1) or (action_new==false and  global_actions|length>0) %}
                 <div class="accordion" id="accordionGobalActions">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -84,6 +86,7 @@
                         </div>
                     </div>
                 </div>
+             {% endif %}
         {% endif %}
     <hr>
         <div class="row>">
