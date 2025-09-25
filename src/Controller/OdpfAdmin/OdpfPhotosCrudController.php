@@ -152,10 +152,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
             ->setLabel('Photo')
             ->onlyOnForms(),
        TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm(),
-       TextField::new('typeSujet','Choix du type de sujet')->setFormType(ChoiceType::class)
-            ->setFormTypeOptions([
-                'choices' => $listeTypesSujets
-            ])->onlyOnForms(),
+       AssociationField::new('typeSujet','Choix du type de sujet')->onlyOnForms(),
         ];
 
     }
