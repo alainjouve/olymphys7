@@ -56,6 +56,7 @@ class DashboardController extends AbstractDashboardController
     {
         return Assets::new()
             ->addCssFile('css/fonts.css')
+            ->addCssFile('css/admin.css')
             ->addJsFile("https://code.jquery.com/jquery-3.6.0.min.js")
             ->addJsFile('js/admin.js');
     }

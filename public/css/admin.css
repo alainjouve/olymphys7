@@ -10,6 +10,7 @@
     --border-radius: 10px;
     /* dynamic height of sticky header set via JS; fallback 0 */
     --header-index-height: 0px;
+    --responsive-header-bg: #FFFFFF
 }
 .ck-editor__editable {
     min-height: 500px;
@@ -17,14 +18,16 @@
 .header-index {
     position: sticky;
     top: 0;
-    z-index: 1030; /* above content but below modals/navbar if any */
-    background: #ffffff; /* ensure content doesn’t show through */
+    z-index: 200; /* above content but below modals/navbar if any */
+    background: var(--responsive-header-bg);
+    /*background: #ffffff; /* ensure content doesn’t show through */
 }
 .content-header {
     position: sticky;
     top: 0;
-    z-index: 1030; /* above content but below modals/navbar if any */
-    background: #ffffff;
+    z-index: 20; /* above content but below modals/navbar if any */
+    background: var(--responsive-header-bg);
+    /*background: #ffffff;*/
 
 }
 
@@ -41,7 +44,8 @@
     position: sticky;
     top: var(--header-index-height, 0px);
     z-index: 20;
-    background: #ffffff; /* keep header readable when sticky */
+    background: var(--responsive-header-bg);
+    /*ackground: #ffffff; /* keep header readable when sticky */
 }
 
 .photolist:hover {
