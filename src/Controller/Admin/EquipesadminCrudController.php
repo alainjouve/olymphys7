@@ -157,7 +157,7 @@ class EquipesadminCrudController extends AbstractCrudController
             //->displayAsButton()->setCssClass('btn btn-primary');
         }
 
-        return $actions
+            $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
@@ -176,6 +176,14 @@ class EquipesadminCrudController extends AbstractCrudController
             })
             ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
             ->setPermission(Action::EDIT, 'ROLE_COMITE');
+        if (isset($_REQUEST['lycees'])) {
+
+            $actions->remove(Crud::PAGE_INDEX,'new')
+            ->remove(Crud::PAGE_INDEX,'delete')
+            ->remove(Crud::PAGE_INDEX,'edit');
+        }
+
+        return $actions;
 
     }
 

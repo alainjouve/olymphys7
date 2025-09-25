@@ -98,7 +98,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
         return $crud->showEntityActionsInlined()
             ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
                 'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
-                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',]);
+                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',])
+            ->setPageTitle('index','Les photos des éditions');
     }
 
 
@@ -404,8 +405,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
 
         $this->requestStack->getSession()->set('idEdPassee',null);//remise à zéro de l'affichage de la planche contact
-        $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
-            ->linkToRoute('charge-photos')->createAsGlobalAction();
+       /* $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
+            ->linkToRoute('charge-photos')->createAsGlobalAction();*/ //fonction qui n'a servi que lors du passe de odpf.org à olymphys.
 
         $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos dans un tableau', 'fa fa-th')
             ->linkToRoute('affiche_table_photos')->createAsGlobalAction();//affichage de la page des planches contact
@@ -420,8 +421,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
             ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
                 return $action->setLabel('Déposer une photo')->setHtmlAttributes(['concours' => $this->requestStack->getCurrentRequest()->query->get('concours')]);
             })
-            ->add(Crud::PAGE_INDEX, $attribEditionPassee)
-            ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')
+            //->add(Crud::PAGE_INDEX, $attribEditionPassee)
+           // ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')
             ->update('index', Action::DELETE,function  (Action $action) {
                 return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
             )

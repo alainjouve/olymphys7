@@ -36,8 +36,11 @@ class OdpfSujetsPhotosCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
             )
             ->update('new', Action::SAVE_AND_ADD_ANOTHER,function  (Action $action) {
-                return $action->setLabel(false);}
+                return $action->setLabel('Sauvegarder puis créer un nouveau sujet');}
             )
+            ->add('new',Action::INDEX)
+            ->update('new',Action::INDEX,function  (Action $action) {
+                return $action->setLabel('Annuler');})
             ->add('edit',Action::INDEX);
     }
 

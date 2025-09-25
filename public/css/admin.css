@@ -8,7 +8,40 @@
     --font-size-base: 18px;
     /* remove all border radius to make corners straight */
     --border-radius: 10px;
+    /* dynamic height of sticky header set via JS; fallback 0 */
+    --header-index-height: 0px;
+}
+.ck-editor__editable {
+    min-height: 500px;
+}
+.header-index {
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* above content but below modals/navbar if any */
+    background: #ffffff; /* ensure content doesn’t show through */
+}
+.content-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* above content but below modals/navbar if any */
+    background: #ffffff;
 
+}
+
+/* Optional: ensure the header content stays readable when sticky */
+.header-index .row {
+    align-items: center;
+}
+
+/* If the table appears under the sticky header when jumping anchors, keep some spacing */
+.table.datagrid {
+    scroll-margin-top: var(--header-index-height, 0px); /* align anchor jumps below sticky header */
+}
+.datagrid thead th {
+    position: sticky;
+    top: var(--header-index-height, 0px);
+    z-index: 20;
+    background: #ffffff; /* keep header readable when sticky */
 }
 
 .photolist:hover {
@@ -16,19 +49,20 @@
 
 }
 .header-photos{
-    position: static;
+    position: sticky;
     padding-top: 20px;
     padding-bottom:20px;
 
 
 }
 
+
 .scroll-btn {
     position: fixed;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #333;
+    background-color: #B21B16;
     color: white;
     border: none;
     font-size: 20px;
@@ -38,7 +72,8 @@
 }
 
 .scroll-btn:hover {
-    background-color: #555;
+    background: #000000;
+    color: white;
 
 }
 

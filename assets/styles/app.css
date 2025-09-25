@@ -1,0 +1,16 @@
+.header-index {
+  position: sticky;
+  top: 0;
+  z-index: 1030; /* above content but below modals/navbar if any */
+  background: #ffffff; /* ensure content doesn’t show through */
+}
+
+/* Optional: ensure the header content stays readable when sticky */
+.header-index .row {
+  align-items: center;
+}
+
+/* If the table appears under the sticky header when jumping anchors, keep some spacing */
+.table.datagrid {
+  scroll-margin-top: var(--header-index-height, 0px); /* adjust to the sticky header height */
+}

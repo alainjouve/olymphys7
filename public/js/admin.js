@@ -130,6 +130,21 @@ $(document).ready(function () {
         });
     }
 
+    // Compute and expose the height of the header-index for sticky offsets
+    function updateHeaderIndexHeight() {
+        var headers = document.getElementsByClassName('header-index');
+        if (headers && headers.length > 0) {
+            var rect = headers[0].getBoundingClientRect();
+            var height = Math.round(rect.height);
+            document.documentElement.style.setProperty('--header-index-height', height + 'px');
+        } else {
+            // reset to 0 if header not present
+            document.documentElement.style.setProperty('--header-index-height', '0px');
+        }
+    }
+    updateHeaderIndexHeight();
+    window.addEventListener('resize', updateHeaderIndexHeight);
+
 
 })
 
@@ -177,6 +192,29 @@ function choixEquipe(s)//Permet de sélectionner le type de sujet des phtos de l
         url: '/photos/choix_equipe_photo',
         type: "POST",
         data: {idEquipe: idEquipe},
+        success: function () {
+            window.location.reload();
+        },
+
+        error: function (data) {
+            alert("Error while submitting Data");
+        },
+
+    })
+
+
+
+}
+
+function choixcategoriearticle(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
+{
+    //var select=document.getElementById('choixtypesujet');
+    var idCategorie=s.value;
+
+    $.ajax({
+        url: '/articles/choix_categorie_article',
+        type: "POST",
+        data: {idCategorie: idCategorie},
         success: function () {
             window.location.reload();
         },
