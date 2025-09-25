@@ -15,6 +15,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
 use EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto;
@@ -22,26 +23,37 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Orm\EntityRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
 
 class OdpfArticleCrudController extends AbstractCrudController
 {
 
     private ManagerRegistry $doctrine;
     private AdminContextProvider $adminContextProvider;
+    private RequestStack $requestStack;
+    private AdminUrlGenerator $adminUrlGenerator;
 
-    public function __construct(ManagerRegistry $doctrine, AdminContextProvider $adminContextProvider)
+    public function __construct(ManagerRegistry $doctrine, AdminContextProvider $adminContextProvider, RequestStack $requestStack, AdminUrlGenerator $adminUrlGenerator)
     {
 
         $this->doctrine = $doctrine;
         $this->adminContextProvider = $adminContextProvider;
+        $this->requestStack = $requestStack;
+        $this->adminUrlGenerator = $adminUrlGenerator;
     }
 
 
@@ -54,7 +66,8 @@ class OdpfArticleCrudController extends AbstractCrudController
     {
         return $crud
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
+            ->setPageTitle(Crud::PAGE_INDEX, 'Articles et pages du site')
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexArticles.html.twig', ])
             ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
             ->setPaginatorPageSize(100);
     }
@@ -62,7 +75,10 @@ class OdpfArticleCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         $listCarousels = $this->doctrine->getRepository(OdpfCarousels::class)->findAll();
-
+        $pathpluginsAutogrow = '../public/bundles/fosckeditor/plugins/autogrow/'; // with trailing slash sur le site
+        if ($_SERVER['SERVER_NAME'] == '127.0.0.1' or $_SERVER['SERVER_NAME'] == 'localhost') {
+            $pathpluginsAutogrow = 'bundles/fosckeditor/plugins/autogrow/';// with trailing slash en local
+        }
         yield IdField::new('id')->hideOnForm()->hideOnDetail();
 
         // Add a tab
@@ -73,10 +89,24 @@ class OdpfArticleCrudController extends AbstractCrudController
 
         yield TextField::new('titre')->setSortable(true);
         yield AssociationField::new('categorie')->setSortable(true);
-        yield TextField::new('choix','Choix : Ecrire <b>"actus"</b> pour une actualité')->setSortable(true);
-        yield AdminCKEditorField::new('texte');
-        yield TextField::new('alt_image');
-        yield AdminCKEditorField::new('descr_image');
+        yield TextField::new('choix','Choix : Ecrire <b>"actus"</b> pour une actualité')->setSortable(true)->hideOnIndex();
+        yield AdminCKEditorField::new('texte')->setFormTypeOptions([
+            'config' => array(
+                'extraPlugins' => 'autogrow',
+
+            ),
+            'plugins' => array(
+                'autogrow' => array(
+                    'path' => $pathpluginsAutogrow,
+                    'filename' => 'plugin.js',
+                    'autoGrowEnabled' => true,
+                    'autoGrow_minHeight' => 200,
+                    'autoGrow_maxHeight' => 600,
+                    'autoGrow_bottomSpace' => 50
+                ))])->onlyOnForms();
+        yield TextField::new('texte')->setTemplatePath('bundles/EasyAdminBundle/ckeditorField.html.twig')->hideOnForm();
+        yield TextField::new('alt_image')->hideOnIndex();
+        yield AdminCKEditorField::new('descr_image')->hideOnIndex();
         yield FormField::addPanel('Autre');
         yield TextField::new('titre_objectifs');
         yield AdminCKEditorField::new('texte_objectifs');
@@ -99,12 +129,12 @@ class OdpfArticleCrudController extends AbstractCrudController
 
     }
 
-    public function configureFilters(Filters $filters): Filters
+   /* public function configureFilters(Filters $filters): Filters
     {
         return $filters
             ->add(EntityFilter::new('categorie'));
 
-    }
+    }*/
 
     public function configureActions(Actions $actions): Actions
     {
@@ -113,6 +143,9 @@ class OdpfArticleCrudController extends AbstractCrudController
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_NEW, Action::INDEX)
             ->remove(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER)
+            ->update('index',Action::NEW, function  (Action $action) {
+                return $action->setLabel('Créer un nouvel article');}
+            )
             ->update('index', Action::DELETE,function  (Action $action) {
                 return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
             )
@@ -161,6 +194,11 @@ class OdpfArticleCrudController extends AbstractCrudController
             $response->OrderBy('entity.updatedAt', 'DESC');
 
         }
+        if($this->requestStack->getSession()->get('categorieChoisie')!=null){
+
+            $response->andWhere('entity.categorie =:categorie')
+            ->setParameter('categorie',$this->requestStack->getSession()->get('categorieChoisie'));
+        }
 
         return $response;
     }
@@ -169,5 +207,25 @@ class OdpfArticleCrudController extends AbstractCrudController
         $entityInstance->setUpdatedAt(new \DateTime());
         parent::updateEntity($entityManager, $entityInstance); // TODO: Change the autogenerated stub
     }
-
+    public function index(AdminContext $context)
+    {
+        $categories=$this->doctrine->getRepository(OdpfCategorie::class)->findBy([],['categorie'=>'ASC']);
+        if($this->requestStack->getSession()->get('categorieChoisie')==null)
+        {
+            $this->requestStack->getSession()->set('categorieChoisie', null);//lors de la première connexion à cette page, la variable de session categorieChoisie n'est pas définie
+        }
+        $this->requestStack->getSession()->set('liste_categories',$categories);
+        return parent::index($context); // TODO: Change the autogenerated stub
+    }
+    #[Route("/articles/choix_categorie_article", name: "choix_categorie_article")]//Permet de contourner la création d'une url admin dans la fonction js
+    public function choixCategorieArticle(Request $request) :Response
+    {
+        $idCategorie=$request->get('idCategorie');
+        $categorie=$this->doctrine->getRepository(OdpfCategorie::class)->find($idCategorie);
+        $this->requestStack->getSession()->set('categorieChoisie',$categorie);
+        $url=$this->adminUrlGenerator->setAction('index')
+            ->setDashboard(OdpfDashboardController::class)
+            ->generateUrl();
+        return $this->redirect($url);
+    }
 }

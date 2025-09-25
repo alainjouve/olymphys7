@@ -1,0 +1,17 @@
+
+<a href="#" data-bs-toggle="modal" data-bs-target="#modalTextArticle{{ entity.instance.id }}"><i class="fa fa-list-alt" ></i>Voir le contenu</a>
+<div class="modal  fade" id="modalTextArticle{{ entity.instance.id }}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                    {{ entity.instance.texte|raw }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
