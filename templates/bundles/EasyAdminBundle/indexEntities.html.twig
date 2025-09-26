@@ -60,7 +60,6 @@
                         {% if action.name=='new' %}
                             {%set action_new=true %}
                         {% endif %}
-
                 {% endfor %}
                 {% if (action_new==true and  global_actions|length>1) or (action_new==false and  global_actions|length>0) %}
                 <div class="accordion" id="accordionGobalActions">
@@ -73,7 +72,7 @@
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionGlobalActions">
                             <div class="accordion-body">
                                 {% for action in global_actions %}
-                                    {% if action.name!='new' %}
+                                    {% if action.name!='new' or action.name!='afficheTablePhotos'%}
                                                 <div class="row">
                                                     <div class="col">
                                                         <a href="{{ action.linkUrl }}" type="button" class="btn btn-warning"><i class="{{ action.icon }}"></i> {{ action.label}}</a>
@@ -91,7 +90,7 @@
     <hr>
         <div class="row>">
             {% for action in global_actions %}
-                {% if action.name=='new' %}
+                {% if action.name=='new' or action.name=='afficheTablePhotos'%}
                     <div class="col">
 
                         {{ include(action.templatePath, { action: action }, with_context = false) }}
@@ -99,6 +98,7 @@
                 <hr>
                 {% endif %}
             {% endfor %}
+
             {% if has_batch_actions %}
                 <div class="col batch-actions d-none">
                     {% for action in batch_actions %}

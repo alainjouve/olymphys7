@@ -95,7 +95,7 @@ class PhotosCrudController extends AbstractCrudController
         return $crud
             ->showEntityActionsInlined()
             ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
-            ->setPageTitle(Crud::PAGE_INDEX, '<h2 class="rougeodpf">Les photos du ' . $edition->getEd() . '<sup>e</sup> concours ' . $concours . '</h2>')
+            ->setPageTitle(Crud::PAGE_INDEX, '<h2 class="rougeodpf">Les photos du ' . $edition->getEd() . '<sup>e</sup> concours ' . $concours . '</h2><br><h5>Pour les photos des éditions antérieures aller dans l\'administration du site OdPF</h5>')
             ->setPageTitle(Crud::PAGE_EDIT, 'Modifier une photo du concours ' . $concours)
             ->setPageTitle(Crud::PAGE_NEW, 'Déposer une  photo du concours ' . $concours)
             ->setSearchFields(['id', 'photo', 'coment'])
@@ -278,10 +278,10 @@ class PhotosCrudController extends AbstractCrudController
             }
 
         } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$id, $photo, $coment, $national, $updatedAt, $equipe, $edition];
+            return [$id, $photo, $coment, $national, $updatedAt, $equipe, $edition, $equipeCentreCentre];
         } elseif (Crud::PAGE_NEW === $pageName) {
             //$this->requestStack->getSession()->set('concours', $concours);
-            return [$panel1, $equipe, $imageFile, $coment, $national];
+            return [$panel1, $equipe, $imageFile, $coment,  $national];
 
         } elseif (Crud::PAGE_EDIT === $pageName) {
             //$this->requestStack->getSession()->set('concours', $concours);

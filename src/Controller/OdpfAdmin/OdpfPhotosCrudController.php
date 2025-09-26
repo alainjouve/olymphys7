@@ -170,7 +170,11 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $oldEntity = $this->doctrine->getRepository(Photos::class)->findOneBy(['id' => $entityInstance->getId()]);
-
+        $entityInstance->setEditionspassees($entityInstance->getEquipepassee()->getEditionspassees());//L
+        $edition=$this->doctrine->getRepository(Edition::class)->findOneBy(['ed'=>$entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
+        $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition'=>$edition,'numero'=>$entityInstance->getEquipepassee()->getNumero()]);
+        $equipe === null ? $entityInstance->setEquipe(null) : $entityInstance->setEquipe($equipe);
+        $equipe === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($edition);
 
         if ($entityInstance->getPhotoFile() !== null) //on dépose une nouvelle photo
         {
@@ -288,6 +292,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
             }
 
         //}
+
         parent::updateEntity($entityManager, $entityInstance);
         //$entityInstance->createThumbs($entityInstance);
     }
@@ -312,7 +317,10 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $entityInstance->setEditionspassees($entityInstance->getEquipepassee()->getEditionspassees());//L
-        $entityInstance->getEquipe() === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($entityInstance->getEquipe()->getEdition());
+        $edition=$this->doctrine->getRepository(Edition::class)->findOneBy(['ed'=>$entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
+        $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition'=>$edition,'numero'=>$entityInstance->getEquipepassee()->getNumero()]);
+        $equipe === null ? $entityInstance->setEquipe(null) : $entityInstance->setEquipe($equipe);
+        $equipe === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($edition);
 
         if ($entityInstance->getEquipePassee()->getNumero()>=100){
             $entityInstance->setNational(true);

@@ -55,8 +55,8 @@
             <div class="col text-center">
                 Pour choisir une équipe :
                 <select id="choixequipe" autocomplete="off" name="choixequipe" onchange="choixEquipe(this)" >
+                    <option value="">Toutes</option>
                     {% for equipe in listeEquipes %}
-                        <option value="">Toutes</option>
                         <option value={{ equipe.id }}
                                 {% if app.session.get('idEquipe')==equipe.id %}
                                 selected
