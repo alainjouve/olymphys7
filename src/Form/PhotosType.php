@@ -51,7 +51,7 @@ class PhotosType extends AbstractType
                 ->addOrderBy('ed.ed','DESC');
         if ($valSel==false){
             $qb->andWhere('e.numero <100')//Pour ne pas avoir les équipes "techniques" du national
-            ->orWhere('e.numero >200');//pour avoir les équipes "techniques" des CIA
+            ->orWhere('e.numero >200');//pour avoir les équipes "techniques" des CIA : photos des centres
             $infoEquipe='infoequipe';
         }
         if ($valSel==true){
@@ -108,6 +108,7 @@ class PhotosType extends AbstractType
             'mapped' => false,
             'required' => false,
             'multiple' => true,
+            'attr'=>['id'=>'photos_files']
         ])
             ->add('Valider', SubmitType::class);
 

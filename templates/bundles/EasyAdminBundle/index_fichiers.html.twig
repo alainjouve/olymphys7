@@ -111,7 +111,7 @@
 
     <span style="font-weight: bold ">{{ app.session.get('bilan_depots')[1] }}  {{ typefichier }} déposé{{ genre }}s sur {{ app.session.get('bilan_depots')[2] }}</span>
     <table class="table datagrid {{ entities is empty ? 'datagrid-empty' }}">
-        {% if num_results > 0 %}e
+        {% if num_results > 0 %}
             <thead>
             {% block table_head %}
                 <tr>

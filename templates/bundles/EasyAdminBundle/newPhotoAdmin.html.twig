@@ -1,0 +1,60 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
+{% extends '@!EasyAdmin/crud/new.html.twig' %}
+
+
+{% block page_actions %}
+    {% for action in entity.actions %}
+        {{ include(action.templatePath, { action: action }, with_context = false) }}
+    {% endfor %}
+{% endblock %}
+
+{% block main %}
+    {% block new_form %}
+        {{ form_start(new_form) }}
+    <div class="container">
+        <div class="row">
+    
+            <div class="col-md-6 col-sm-12">
+                <div class="card ">
+                <h3>{{ form_label(new_form.equipe) }}</h3>
+
+                    {{ form_widget(new_form.equipe) }}
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Photo
+                        </div>
+
+                    <div class="card-body">
+                        <span id="nom_photo">{{ entity.instance.photo }}</span>
+                    {% if entity.instance.photo != null %}
+                           <img src="{{ asset('odpf/odpf-archives/'~entity.instance.editionspassees.newion~'/photoseq/'~entity.instance.photo) }}" class="photolist" style=" margin: auto; width:240px"  id="photo">
+                    {% else %}
+                       <span id="messagechoixphoto"><p style="color:red" > Choisir le fichier à déposer pour la  {{ app.session.get('edition').ed }}<sup>e</sup> édition</p></span>
+                       <p class="text-center"><img src="{{ asset('odpf/odpf-images/site-logo-150x43.png') }}" class="photolist" style=" margin: auto;  width:240px" id="photo"></p>
+                    {% endif %}
+                    <br>Choisir un fichier : <br>
+                    {{ form_widget(new_form.photoFile) }}
+
+                    </div>
+                </div>
+    
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="card text-center">
+
+                    {{ form_widget(new_form.national) }}
+                    {{ form_row(new_form.coment) }}
+                    {{ form_label(new_form.typeSujet) }}
+                    {{ form_widget(new_form.typeSujet) }}
+                </div>
+            </div>
+    
+        </div>
+    {{ form_end(new_form) }}
+    {% endblock new_form %}
+{% endblock %}
+{% block content_title %}
+            <h4>Déposer une nouvelle photo</h4>
+{% endblock %}

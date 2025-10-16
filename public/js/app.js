@@ -3,6 +3,55 @@ $(document).ready(function () {
     $("#form1").on('change', function () {
         $("#form1").submit();
     });
+
+    var inputPhoto=document.getElementById('photos_photoFiles')
+    var image=document.getElementById('photo_preview')
+    var affichephotos=document.getElementById('affichephotos')
+        if(inputPhoto!== null) {
+
+        inputPhoto.addEventListener('change', function (event) {
+            affichephotos.innerHTML = '';
+            image.src = inputPhoto.value;
+            console.log(event.target)
+            var files = event.target.files; // Récupère le fichier sélectionné
+            for (var i=0; i < files.length; i++) {
+
+                const file = files[i];
+                if (!file.type.startsWith('image/')) {
+                    alert("Veuillez sélectionner uniquement des images");
+                    continue;
+                }
+
+                //image=document.getElementById('photo_preview' + i);
+                const image = document.createElement('img');
+                const checkbox=document.createElement("input");
+                checkbox.type = 'checkbox';
+                checkbox.name = 'checkbox-'+i;
+                image.width = 220;
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    affichephotos.appendChild( '<div class="card">');
+                    image.src = e.target.result;
+                    affichephotos.appendChild(image);
+                    affichephotos.appendChild('<br>')
+                        affichephotos.appendChild(checkbox);
+                    affichephotos.appendChild('</div>');
+                };
+
+                reader.readAsDataURL(file);
+            }
+
+
+
+
+
+        })
+        }
+
+
+
+
 });
 
 
@@ -64,9 +113,11 @@ $(window).on("unload", function () {//Pour que lors de la saisie de la répartit
 });
 $(window).on("load", function () {
     var tableau = document.getElementById("changejurescontainer")
-    tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
-    tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
-    window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
+    if(tableau) {
+        tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
+        tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
+        window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
+    }
 
 });
 

@@ -71,7 +71,12 @@
                         {{ form_row(form.equipe,{'label': 'Choisissez l\'équipe'}) }}
                     </div>
                     <div class="form-group col-6">
-                        {{ form_row(form.photoFiles,{'label': 'Choisissez le fichier'}) }}
+                        {{ form_row(form.photoFiles,{'label': 'Choisissez le(s) fichier(s) max 5 '}) }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <span id="affichephotos">     <img src="{{ asset('odpf/odpf-images/no_image_avalaible.png') }}" id="photo_preview" width="220px"></span>
                     </div>
                 </div>
                 <div class="form-row">

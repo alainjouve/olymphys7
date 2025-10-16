@@ -105,10 +105,11 @@ $(document).ready(function () {
     var inputPhoto=document.getElementById('Photos_photoFile')
     var image=document.getElementById('photo')
     var nom_photo=document.getElementById('nom_photo')
+    var message_choix_photo=document.getElementById('messagechoixphoto')
     if(inputPhoto!== null) {
         inputPhoto.addEventListener('change', function (event) {
             image.src = inputPhoto.value;
-            console.log(event.target.files[0])
+            //console.log(event.target.files[0])
             const file = event.target.files[0]; // Récupère le fichier sélectionné
             if (file && file.type.startsWith('image/')) {
                 const reader = new FileReader();
@@ -118,6 +119,7 @@ $(document).ready(function () {
                     // Met à jour la source de l'image avec le contenu lu
                     image.src = e.target.result;
                     nom_photo.innerHTML=event.target.files[0].name;
+                    message_choix_photo.innerHTML=null;
                 };
 
                 // Lecture du fichier sous forme d'URL de données

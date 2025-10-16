@@ -54,6 +54,7 @@ class CoreController extends AbstractController
             $dateconnect = new datetime('now');
             $concours = '';
             if ($dateconnect > $datecia) {
+
                 $concours = 'national';
             } else {
                 $concours = 'interacadémique';
