@@ -595,7 +595,9 @@ class ProfesseursCrudController extends AbstractCrudController
             ->setCellValue('C' . $ligne, 'Courriel')
             ->setCellValue('D' . $ligne, 'Centre Cia')
             ->setCellValue('E' . $ligne, 'N° Equipe')
-            ->setCellValue('F' . $ligne, 'Nom Equipe');
+            ->setCellValue('F' . $ligne, 'Nom Equipe')
+            ->setCellValue('G' . $ligne, 'Adresse Centre')
+            ->setCellValue('H' . $ligne, 'Organisteur');
 
 
         $ligne += 1;
@@ -606,9 +608,14 @@ class ProfesseursCrudController extends AbstractCrudController
                     ->setCellValue('B' . $ligne, $prof->getUser()->getPrenom())
                     ->setCellValue('C' . $ligne, $prof->getUser()->getEmail());
                 if ($equipe != null) {
+                    if($equipe->getCentre()!=null){
                     $sheet->setCellValue('D' . $ligne, $equipe->getCentre()->getCentre())
-                        ->setCellValue('E' . $ligne, $equipe->getNumero())
-                        ->setCellValue('F' . $ligne, $equipe->getTitreProjet());
+                        ->setCellValue('G' . $ligne, $equipe->getCentre()->getLieu())
+                        ->setCellValue('H' . $ligne, $equipe->getCentre()->getOrganisateur());;
+                    }
+                     $sheet->setCellValue('E' . $ligne, $equipe->getNumero())
+                        ->setCellValue('F' . $ligne, $equipe->getTitreProjet())
+                         ;
                 }
                 $ligne += 1;
             }
