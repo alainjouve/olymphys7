@@ -109,7 +109,7 @@ class ProfesseursCrudController extends AbstractCrudController
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId,'sel'=>false])
             ->createAsGlobalAction();
-        $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs pour mailings', 'fas fa-columns')
+        $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs pour mailings info centrecia en octobre', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_mailing', ['idEdition' => $editionId])
