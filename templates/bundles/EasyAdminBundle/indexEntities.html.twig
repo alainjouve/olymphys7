@@ -1,7 +1,7 @@
 {# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
 {# @var entities \EasyCorp\Bundle\EasyAdminBundle\Collection\EntityCollection #}
 {# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
-{% extends '@!EasyAdmin/page/content.html.twig' %}
+{% extends '@EasyAdmin/page/content.html.twig' %}
 {% trans_default_domain ea.i18n.translationDomain %}
 
 
@@ -233,5 +233,18 @@
     </div>
     {% if has_filters %}
         {{ include('@EasyAdmin/crud/includes/_filters_modal.html.twig') }}
+    {% endif %}
+
+
+    {% block delete_form %}
+        {{ include('@EasyAdmin/crud/includes/_delete_form.html.twig', with_context = false) }}
+    {% endblock delete_form %}
+
+    {% if has_filters %}
+        {{ include('@EasyAdmin/crud/includes/_filters_modal.html.twig') }}
+    {% endif %}
+
+    {% if has_batch_actions %}
+        {{ include('@EasyAdmin/crud/includes/_batch_action_modal.html.twig', {}, with_context = false) }}
     {% endif %}
 {% endblock main %}

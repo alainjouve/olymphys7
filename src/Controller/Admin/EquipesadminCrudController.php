@@ -157,7 +157,7 @@ class EquipesadminCrudController extends AbstractCrudController
             //->displayAsButton()->setCssClass('btn btn-primary');
         }
 
-        return $actions
+        $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
@@ -176,7 +176,12 @@ class EquipesadminCrudController extends AbstractCrudController
             })
             ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
             ->setPermission(Action::EDIT, 'ROLE_COMITE');
-
+        if(isset($_REQUEST['lycees'])) {
+            $actions->remove(Crud::PAGE_INDEX, Action::NEW)
+            ->remove(Crud::PAGE_INDEX, Action::DELETE)
+            ->remove(Crud::PAGE_INDEX, Action::EDIT);
+        }
+        return $actions;
     }
 
     public function configureFilters(Filters $filters): Filters
@@ -214,8 +219,8 @@ class EquipesadminCrudController extends AbstractCrudController
 
         $selectionnee = BooleanField::new('selectionnee');
         $selectionneeForm = BooleanField::new('selectionnee')->renderAsSwitch(false);
-        $id = IntegerField::new('id', 'ID');
-        $nomLycee = TextField::new('nomLycee', 'Lycée')->setColumns(10)->hideOnIndex();
+        $id = IntegerField::new('id', 'ID')->hideOnIndex();
+        $nomLycee = TextField::new('nomLycee', 'Lycée')->setColumns(10);
         $denominationLycee = TextField::new('denominationLycee')->hideOnIndex();
         $lyceeLocalite = TextField::new('lyceeLocalite', 'Ville')->hideOnIndex();
         $lyceeAcademie = TextField::new('lyceeAcademie', 'Académie')->hideOnIndex();

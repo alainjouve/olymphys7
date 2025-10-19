@@ -79,7 +79,7 @@
                     <div class="col">
                         <b>{{ equipe.numero }}</b> - {{ equipe.titreProjet }}
                         {% if is_granted('ROLE_PROF' ) %}
-                            <h8><i> (Lycee {{ equipe.uaiId.nom }}, {{ equipe.uaiId.commune }})</i></h8>
+                            <h8><i> ({{ equipe.uaiId.nom }}, {{ equipe.uaiId.commune }})</i></h8>
                         {% endif %}
                         {% if equipe.inscrite== false %}
                             <div class="inscritered"><i>(Equipe non inscrite)</i></div>
@@ -113,13 +113,13 @@
                     </div>
                 </div>
             {% endif %}
-            {% if is_granted('ROLE_JURY') %}
+          {#   {% if is_granted('ROLE_JURY') %}
                 <div class="row">
                     <a href="{{ path('invitations_cn') }}" type="button" class="btn btn-warning">Obtenir une invitation
                         pour le concours national</a>
                     <br>
                 </div>
-            {% endif %}
+            {% endif %}#}
             <hr>
             {% for equipe in liste_equipes %}
                 <div class="row">
@@ -128,7 +128,7 @@
                             <b>{{ equipe.numero }}</b>{% endif %}
                         - {{ equipe.titreProjet }}
                         {% if is_granted('ROLE_PROF') %}
-                            <h8><i> (Lycee {{ equipe.uaiId.nom }}, {{ equipe.uaiId.commune }})</i></h8>
+                            <h8><i> ( {{ equipe.uaiId.nom }}, {{ equipe.uaiId.commune }})</i></h8>
                         {% endif %}
 
                     </div>
