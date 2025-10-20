@@ -82,6 +82,7 @@ class PhotosController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $equipe = $form->get('equipe')->getData();
 //$equipe=$repositoryEquipesadmin->findOneBy(['id'=>$id_equipe]);
             $nom_equipe = $equipe->getTitreProjet();
@@ -93,90 +94,97 @@ class PhotosController extends AbstractController
             $type = true;
             if ($files) {
                 $nombre = count($files);
+
                 $fichiers_erreurs = [];
                 $i = 0;
                 foreach ($files as $file) {
-                    $violations = $validator->validate(
-                        $file,
-                        [
-                            new NotBlank(),
-                            new File([
-                                'maxSize' => '13000k',
-                            ])
-                        ]
-                    );
-                    $typeImage = $file->guessExtension();//Les .HEIC donnent jpg
-                    $originalFilename = $file->getClientOriginalName();
-                    $parsedName = explode('.', $originalFilename);
-                    $ext = end($parsedName);// détecte les .JPG et .HEIC
-
-                    if (($typeImage != 'jpg') or ($ext != 'jpg')) {// on transforme  le fichier en .JPG
-                        // dd('OK');
-                        $nameExtLess = $parsedName[0];
-                        $imax = count($parsedName);
-                        for ($i = 1; $i <= $imax - 2; $i++) {// dans le cas où le nom de  fichier comporte plusieurs points
-                            $nameExtLess = $nameExtLess . '.' . $parsedName[$i];
-                        }
-                        try {//on dépose le fichier dans le temp
-                            $file->move(
-                                'temp/',
-                                $originalFilename
-                            );
-                        } catch (FileException $e) {
-
-                        }
-                        $this->setImageType($originalFilename, $nameExtLess, 'temp/');//appelle de la fonction de transformation de la compression
-
-                        if (isset($_REQUEST['erreur'])) {
-
-                            unlink('temp/' . $originalFilename);
-                            $type = false;
-                        }
-                        if (!isset($_REQUEST['erreur'])) {
-                            $type = true;
-                            if (file_exists('temp/' . $nameExtLess . '.jpg')) {
-                                $size = filesize('temp/' . $nameExtLess . '.jpg');
-                            } else($size = 10000000);
-                            $file = new UploadedFile('temp/' . $nameExtLess . '.jpg', $nameExtLess . '.jpg', $size, null, true);
-                            //unlink('temp/' . $originalFilename);
-                        }
-                    }
 
 
-                    if (($violations->count() > 0) or ($type == false)) {
-                        $violation = '';
-                        /** @var ConstraintViolation $violation */
-                        if (isset($violations[0])) {
-                            $violation = 'fichier de taille supérieure à 7 M';
-                        }
-                        /*if ($ext != 'jpg') {
-                            $violation = $violation . ':  fichier non jpeg ';
-                        }*/
-                        $fichiers_erreurs[$i] = $file->getClientOriginalName() . ' : ' . $violation;
-                        $i++;
-                    } else {
-                        $photo = new Photos();
-                        $photo->setEdition($edition);
-                        $photo->setEditionspassees($editionpassee);
-                        if ($concours == 'inter') {//Un membre du comité peut vouloir déposer une photo interacadémique lors du concours national
-                            $photo->setNational(FALSE);
-                        }
-                        if (($equipe->getLettre() !== null) and ($concours == 'cn')) {
 
-                            $photo->setNational(TRUE);
-                        }
-                        if ($equipe->getNumero() >= 100) { //ces "équipes" sont des équipes techniques remise des prix, ambiance du concours, etc, ...
-                            $photo->setNational(TRUE);
-                        }
-                        if ($equipe->getNumero() >= 200) { //ces "équipes" sont des équipes techniques des CIA, ambiance du concours, etc, ...
-                            $photo->setNational(FALSE);
-                        }
-                        $photo->setPhotoFile($file);//Vichuploader gère l'enregistrement dans le bon dossier, le renommage du fichier
-                        $photo->setEquipe($equipe);
-                        $photo->setEquipepassee($equipepassee);
-                        $em->persist($photo);
-                        $em->flush();
+                    //La checkbox m'apparaît pas dans la liste des paramètres transmis si elle est décochée
+                    if (isset($_REQUEST['checkbox-' . explode('.',$file->getClientOriginalName())[0]])) {
+                        $violations = $validator->validate(
+                            $file,
+                            [
+                                new NotBlank(),
+                                new File([
+                                    'maxSize' => '13000k',
+                                ])
+                            ]
+                        );
+                        $typeImage = $file->guessExtension();//Les .HEIC donnent jpg
+                        $originalFilename = $file->getClientOriginalName();
+                        $parsedName = explode('.', $originalFilename);
+                        $ext = end($parsedName);// détecte les .JPG et .HEIC
 
+                        if (($typeImage != 'jpg') or ($ext != 'jpg')) {// on transforme  le fichier en .JPG
+                            // dd('OK');
+                            $nameExtLess = $parsedName[0];
+                            $imax = count($parsedName);
+                            for ($i = 1; $i <= $imax - 2; $i++) {// dans le cas où le nom de  fichier comporte plusieurs points
+                                $nameExtLess = $nameExtLess . '.' . $parsedName[$i];
+                            }
+                            try {//on dépose le fichier dans le temp
+                                $file->move(
+                                    'temp/',
+                                    $originalFilename
+                                );
+                            } catch (FileException $e) {
+
+                            }
+                            $this->setImageType($originalFilename, $nameExtLess, 'temp/');//appelle de la fonction de transformation de la compression
+
+                            if (isset($_REQUEST['erreur'])) {
+
+                                unlink('temp/' . $originalFilename);
+                                $type = false;
+                            }
+                            if (!isset($_REQUEST['erreur'])) {
+                                $type = true;
+                                if (file_exists('temp/' . $nameExtLess . '.jpg')) {
+                                    $size = filesize('temp/' . $nameExtLess . '.jpg');
+                                } else($size = 10000000);
+                                $file = new UploadedFile('temp/' . $nameExtLess . '.jpg', $nameExtLess . '.jpg', $size, null, true);
+                                //unlink('temp/' . $originalFilename);
+                            }
+                        }
+
+
+                        if (($violations->count() > 0) or ($type == false)) {
+                            $violation = '';
+                            /** @var ConstraintViolation $violation */
+                            if (isset($violations[0])) {
+                                $violation = 'fichier de taille supérieure à 7 M';
+                            }
+                            /*if ($ext != 'jpg') {
+                                $violation = $violation . ':  fichier non jpeg ';
+                            }*/
+                            $fichiers_erreurs[$i] = $file->getClientOriginalName() . ' : ' . $violation;
+                            $i++;
+                        } else {
+                            $photo = new Photos();
+                            $photo->setEdition($edition);
+                            $photo->setEditionspassees($editionpassee);
+                            if ($concours == 'inter') {//Un membre du comité peut vouloir déposer une photo interacadémique lors du concours national
+                                $photo->setNational(FALSE);
+                            }
+                            if (($equipe->getLettre() !== null) and ($concours == 'cn')) {
+
+                                $photo->setNational(TRUE);
+                            }
+                            if ($equipe->getNumero() >= 100) { //ces "équipes" sont des équipes techniques remise des prix, ambiance du concours, etc, ...
+                                $photo->setNational(TRUE);
+                            }
+                            if ($equipe->getNumero() >= 200) { //ces "équipes" sont des équipes techniques des CIA, ambiance du concours, etc, ...
+                                $photo->setNational(FALSE);
+                            }
+                            $photo->setPhotoFile($file);//Vichuploader gère l'enregistrement dans le bon dossier, le renommage du fichier
+                            $photo->setEquipe($equipe);
+                            $photo->setEquipepassee($equipepassee);
+                            $em->persist($photo);
+                            $em->flush();
+
+                        }
                     }
                 }
 
