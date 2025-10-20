@@ -98,7 +98,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
         return $crud->showEntityActionsInlined()
             ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
                 'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
-                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',]);
+                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',])
+            ->setPageTitle('index','Les photos des éditions');
     }
 
 
@@ -151,10 +152,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
             ->setLabel('Photo')
             ->onlyOnForms(),
        TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm(),
-       TextField::new('typeSujet','Choix du type de sujet')->setFormType(ChoiceType::class)
-            ->setFormTypeOptions([
-                'choices' => $listeTypesSujets
-            ])->onlyOnForms(),
+       AssociationField::new('typeSujet','Choix du type de sujet')->onlyOnForms(),
         ];
 
     }
@@ -172,7 +170,11 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $oldEntity = $this->doctrine->getRepository(Photos::class)->findOneBy(['id' => $entityInstance->getId()]);
-
+        $entityInstance->setEditionspassees($entityInstance->getEquipepassee()->getEditionspassees());//L
+        $edition=$this->doctrine->getRepository(Edition::class)->findOneBy(['ed'=>$entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
+        $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition'=>$edition,'numero'=>$entityInstance->getEquipepassee()->getNumero()]);
+        $equipe === null ? $entityInstance->setEquipe(null) : $entityInstance->setEquipe($equipe);
+        $equipe === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($edition);
 
         if ($entityInstance->getPhotoFile() !== null) //on dépose une nouvelle photo
         {
@@ -314,7 +316,10 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $entityInstance->setEditionspassees($entityInstance->getEquipepassee()->getEditionspassees());//L
-        $entityInstance->getEquipe() === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($entityInstance->getEquipe()->getEdition());
+        $edition=$this->doctrine->getRepository(Edition::class)->findOneBy(['ed'=>$entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
+        $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition'=>$edition,'numero'=>$entityInstance->getEquipepassee()->getNumero()]);
+        $equipe === null ? $entityInstance->setEquipe(null) : $entityInstance->setEquipe($equipe);
+        $equipe === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($edition);
 
         if ($entityInstance->getEquipePassee()->getNumero()>=100){
             $entityInstance->setNational(true);
@@ -404,10 +409,10 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
 
         $this->requestStack->getSession()->set('idEdPassee',null);//remise à zéro de l'affichage de la planche contact
-        $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
-            ->linkToRoute('charge-photos')->createAsGlobalAction();
+       /* $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
+            ->linkToRoute('charge-photos')->createAsGlobalAction();*/ //fonction qui n'a servi que lors du passe de odpf.org à olymphys.
 
-        $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos', 'fa fa-th')
+        $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos dans un tableau', 'fa fa-th')
             ->linkToRoute('affiche_table_photos')->createAsGlobalAction();//affichage de la page des planches contact
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
@@ -420,8 +425,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
             ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
                 return $action->setLabel('Déposer une photo')->setHtmlAttributes(['concours' => $this->requestStack->getCurrentRequest()->query->get('concours')]);
             })
-            ->add(Crud::PAGE_INDEX, $attribEditionPassee)
-            ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')
+            //->add(Crud::PAGE_INDEX, $attribEditionPassee)
+           // ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')
             ->update('index', Action::DELETE,function  (Action $action) {
                 return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
             )
@@ -524,6 +529,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
                 'required'=>false,
                 'label'=>false,
                 'attr' => ['id' => $photo->getId()],
+                'empty_data' => ' ',
 
             ]);
 
