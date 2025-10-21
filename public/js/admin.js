@@ -150,7 +150,7 @@ function setSujetPhoto(id){
     })
 
 }
-function choixtypesujet(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
+function choixtypesujet(s)//Permet de sélectionner le type de sujet des photos de la table des photos
     {
     //var select=document.getElementById('choixtypesujet');
     var typesujet=s.value;
@@ -168,7 +168,7 @@ function choixtypesujet(s)//Permet de sélectionner le type de sujet des phtos d
         },
     })
 }
-function choixEquipe(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
+function choixEquipe(s)//Permet de sélectionner le type de sujet des photos de la table des photos
 {
     //var select=document.getElementById('choixtypesujet');
     var idEquipe=s.value;

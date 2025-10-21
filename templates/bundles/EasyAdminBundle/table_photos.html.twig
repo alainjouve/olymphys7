@@ -63,7 +63,7 @@
                                 selected
                                 {% endif %}
 
-                        >{{ equipe|u.truncate(20,'...') }}</option>
+                        >{{ equipe|slice(1,12) }}</option>
 
 
                     {% endfor %}

@@ -71,11 +71,20 @@ class OdpfDashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        $submenu1 = [
+        return [
+            MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home'),
+            MenuItem::linkToCrud('Articles', 'fas fa-list', OdpfArticle::class),
+            MenuItem::linkToCrud('Categories', 'fas fa-list', OdpfCategorie::class)->setPermission('ROLE_SUPER_ADMIN'),
+            MenuItem::linkToCrud('Documents du site', 'fas fa-book', OdpfDocuments::class)
+                ->setDefaultSort(['updatedAt'=>'DESC']),
+            MenuItem::linkToCrud('Logos du site', 'fa-solid fa-icons', OdpfLogos::class),
+            MenuItem::linkToCrud('Carrousels', 'fa-solid fa-clapperboard', OdpfCarousels::class),
+            MenuItem::linkToCrud('Partenaires', 'fa-solid fa-list', OdpfPartenaires::class),
+            MenuItem::subMenu('Les éditions passées', 'fa-solid fa-book-bookmark')->setSubItems([
             MenuItem::linkToCrud('Les éditions passées', 'fas fa-list', OdpfEditionsPassees::class),
             MenuItem::linkToCrud('Les équipes passées', 'fa-solid fa-user-group', OdpfEquipesPassees::class),
 
-            MenuItem::linkToCrud('Les mémoires', 'fas fa-book', OdpfFichierspasses::class)
+           MenuItem::linkToCrud('Les mémoires', 'fas fa-book', OdpfFichierspasses::class)
                 ->setController(OdpfFichiersPassesCrudController::class)
                 ->setQueryParameter('typefichier', 0),
 
@@ -94,22 +103,16 @@ class OdpfDashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Types sujets des photos', 'fas fa-list', OdpfSujetsPhotos::class)
                 ->setController(OdpfSujetsPhotosCrudController::class),
             MenuItem::linkToCrud('Les  vidéos', 'fas fa-images', OdpfVideosequipes::class)
-                ->setController(OdpfVideosEquipesCrudController::class),
+                ->setController(OdpfVideosEquipesCrudController::class)]),
 
-        ];
 
-        yield MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home');
-        yield MenuItem::linkToCrud('Articles', 'fas fa-list', OdpfArticle::class);
-        yield MenuItem::linkToCrud('Categories', 'fas fa-list', OdpfCategorie::class)->setPermission('ROLE_SUPER_ADMIN');
-        yield MenuItem::linkToCrud('Documents du site', 'fas fa-book', OdpfDocuments::class)
-            ->setDefaultSort(['updatedAt'=>'DESC']);
-        yield MenuItem::linkToCrud('Logos du site', 'fa-solid fa-icons', OdpfLogos::class);
-        yield MenuItem::linkToCrud('Carrousels', 'fa-solid fa-clapperboard', OdpfCarousels::class);
-        yield MenuItem::linkToCrud('Partenaires', 'fa-solid fa-list', OdpfPartenaires::class);
-        yield MenuItem::subMenu('Les éditions passées', 'fa-solid fa-book-bookmark')->setSubItems($submenu1)->setCssClass('text-bold');
-        yield MenuItem::linktoRoute('Aller à l\'admin du concours', 'fa-solid fa-marker', 'admin');
-        yield MenuItem::linktoRoute('Retour à la page d\'accueil', 'fas fa-home', 'core_home');
-        yield MenuItem::linkToLogout('Déconnexion', 'fas fa-door-open');
+
+
+        //MenuItem::subMenu('Les éditions passées', 'fa-solid fa-book-bookmark')->setSubItems($submenu1)->setCssClass('text-bold'),
+        MenuItem::linktoRoute('Aller à l\'admin du concours', 'fa-solid fa-marker', 'admin'),
+        MenuItem::linktoRoute('Retour à la page d\'accueil', 'fas fa-home', 'core_home'),
+        MenuItem::linkToLogout('Déconnexion', 'fas fa-door-open')
+                ];
     }
 
 
