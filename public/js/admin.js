@@ -23,8 +23,13 @@ $(document).ready(function () {
 function choixedition(s){//pour la planche contact
     var ideditionpassee=s.value;
     console.log(ideditionpassee);
+    var url = '/public/index.php/photos/choixeditionpassee'
+    if(window.location.href.includes('localhost')){
+        url='/photos/choixeditionpassee'
+    }
+
     $.ajax({
-        url: '/photos/choixeditionpassee',
+        url:url,
         type: "POST",
         data: {idEdPassee:ideditionpassee},
 
@@ -136,9 +141,12 @@ $(document).ready(function () {
 function setSujetPhoto(id){
     var input=document.getElementById('sujet_photo-'+id)
     var typeSujet=input.value
-
+    var url = '/public/index.php/photos/set_type_sujet_photo'
+    if(window.location.href.includes('localhost')){
+        url='/photos/set_type_sujet_photo'
+    }
     $.ajax({
-        url: '/photos/set_type_sujet_photo',
+        url: url,
         type: "POST",
         data: {idPhoto: id, idSujetPhoto: typeSujet},
 
@@ -154,27 +162,33 @@ function choixtypesujet(s)//Permet de sélectionner le type de sujet des photos 
     {
     //var select=document.getElementById('choixtypesujet');
     var typesujet=s.value;
+        var url = '/public/index.php/photos/choix_type_sujet_photo'
+        if(window.location.href.includes('localhost')){
+            url='/photos/choix_type_sujet_photo'
+        }
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {idSujetPhoto: typesujet},
+            success: function () {
+                window.location.reload();
+            },
 
-    $.ajax({
-        url: '/photos/choix_type_sujet_photo',
-        type: "POST",
-        data: {idSujetPhoto: typesujet},
-        success: function () {
-            window.location.reload();
-        },
-
-        error: function (data) {
-            alert("Error while submitting Data");
-        },
+            error: function (data) {
+                alert("Error while submitting Data");
+            },
     })
 }
 function choixEquipe(s)//Permet de sélectionner le type de sujet des photos de la table des photos
 {
     //var select=document.getElementById('choixtypesujet');
     var idEquipe=s.value;
-
+    var url = '/public/index.php/photos/choix_equipe_photo'
+    if(window.location.href.includes('localhost')){
+        url='/photos/choix_equipe_photo'
+    }
     $.ajax({
-        url: '/photos/choix_equipe_photo',
+        url: url,
         type: "POST",
         data: {idEquipe: idEquipe},
         success: function () {
