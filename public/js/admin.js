@@ -113,7 +113,7 @@ $(document).ready(function () {
     if(inputPhoto!== null) {
         inputPhoto.addEventListener('change', function (event) {
             image.src = inputPhoto.value;
-            console.log(event.target.files[0])
+
             const file = event.target.files[0]; // Récupère le fichier sélectionné
             if (file && file.type.startsWith('image/')) {
                 const reader = new FileReader();
@@ -130,6 +130,8 @@ $(document).ready(function () {
             } else {
                 // Si le fichier n'est pas une image ou si aucun fichier n'est sélectionné
                 image.src = '';
+                inputPhoto.value=null;
+                alert("Cette photo n'est pas conforme");
             }
 
         });

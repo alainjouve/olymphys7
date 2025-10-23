@@ -94,7 +94,9 @@ class PhotosCrudController extends AbstractCrudController
 
         return $crud
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', 'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
+                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',])
+
             ->setPageTitle(Crud::PAGE_INDEX, '<h2 class="rougeodpf">Les photos du ' . $edition->getEd() . '<sup>e</sup> concours ' . $concours . '</h2>')
             ->setPageTitle(Crud::PAGE_EDIT, 'Modifier une photo du concours ' . $concours)
             ->setPageTitle(Crud::PAGE_NEW, 'Déposer une  photo du concours ' . $concours)
@@ -241,7 +243,7 @@ class PhotosCrudController extends AbstractCrudController
             ->setLabel('Photo')
             ->setFormTypeOptions(['disabled' => 'disabled']);
         //
-
+        $typesujet=AssociationField::new('typeSujet');
         $coment = TextField::new('coment', 'Commentaire');
         $concours == 'national' ? $valnat = true : $valnat = false;
         $national = BooleanField::new('national')->setFormTypeOption('data', $valnat);
@@ -272,21 +274,21 @@ class PhotosCrudController extends AbstractCrudController
 
         if (Crud::PAGE_INDEX === $pageName) {
             if ($concours == 'interacademique') {
-                return [$editionpassee, $equipeCentreCentre, $equipeNumero, $equipeTitreprojet, $photo, $coment, $updatedAt];
+                return [$editionpassee, $equipeCentreCentre, $equipeNumero, $equipeTitreprojet, $photo, $typesujet, $coment, $updatedAt];
             }
             if ($concours == 'national') {
-                return [$editionpassee, $equipeLettre, $equipeTitreprojet, $photo, $coment, $updatedAt];
+                return [$editionpassee, $equipeLettre, $equipeTitreprojet, $photo, $typesujet, $updatedAt];
             }
 
         } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$id, $photo, $coment, $national, $updatedAt, $equipe, $edition];
+            return [$id, $photo, $typesujet, $coment, $national, $updatedAt, $equipe, $edition];
         } elseif (Crud::PAGE_NEW === $pageName) {
             //$this->requestStack->getSession()->set('concours', $concours);
-            return [$panel1, $equipe, $imageFile, $coment, $national];
+            return [$panel1, $equipe, $typesujet, $imageFile, $coment, $national];
 
         } elseif (Crud::PAGE_EDIT === $pageName) {
             //$this->requestStack->getSession()->set('concours', $concours);
-            return [$photo, $imageFile, $equipe, $coment, $national];
+            return [$photo, $typesujet  ,$typesujet, $imageFile, $equipe, $coment, $national];
         }
     }
 

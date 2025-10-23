@@ -17,10 +17,18 @@
     
             <div class="col-md-6 col-sm-12">
                 <div class="card ">
-                <h3>{{ form_label(new_form.equipepassee) }}</h3>
+                {% if new_form.equipepassee is defined %}
+                    <h3>{{ form_label(new_form.equipepassee) }}</h3>
 
-                    {{ form_widget(new_form.equipepassee) }}
-                </div>
+                        {{ form_widget(new_form.equipepassee) }}
+                    </div>
+                {% endif %}
+                {% if new_form.equipe is defined %}
+                <h3>{{ form_label(new_form.equipe) }}</h3>
+
+                {{ form_widget(new_form.equipe) }}
+            </div>
+            {% endif %}
                 <div class="card">
                     <div class="card-header">
                         Photo
