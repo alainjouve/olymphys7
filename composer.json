@@ -17,7 +17,7 @@
     "doctrine/doctrine-migrations-bundle": "^3.1",
     "doctrine/orm": "^2.9",
     "dompdf/dompdf": "^2.0",
-    "easycorp/easyadmin-bundle": "^4.8",
+    "easycorp/easyadmin-bundle": "^v4.20.0",
     "egulias/email-validator": "^3.1",
     "fpdf/fpdf": "^1.86",
     "friendsofsymfony/ckeditor-bundle": "^2.4",
@@ -72,7 +72,7 @@
     "twig/cssinliner-extra": "^3.5",
     "twig/inky-extra": "^3.5",
     "twig/twig": "^2.12|^3.0",
-    "vich/uploader-bundle": "*",
+    "vich/uploader-bundle": "2.4.0",
     "victor-prdh/recaptcha-bundle": "^1.7"
   },
   "config": {
