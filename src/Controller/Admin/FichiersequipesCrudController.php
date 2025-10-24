@@ -204,7 +204,7 @@ class FichiersequipesCrudController extends AbstractCrudController
         $crud->setPageTitle('new', 'Nouveau fichier')
             ->setPageTitle('edit', 'Modifier le fichier')
             ->setPageTitle('detail', 'Détail du fichier')
-            ->overrideTemplate('crud/index','bundles/EasyAdminBundle/index_fichiers.html.twig')
+            ->overrideTemplate('crud/index','bundles/EasyAdminBundle/indexEntities.html.twig')
             ->showEntityActionsInlined();
         $_REQUEST['typefichier'] = $typefichier;
         $_REQUEST['concours'] = $concours;
@@ -292,17 +292,17 @@ class FichiersequipesCrudController extends AbstractCrudController
 
         }
 
-        $telechargerFichiers = Action::new('telecharger', 'Télécharger  les fichiers', 'fa fa-file-download')
+        $telechargerFichiers = Action::new('telecharger', 'Télécharger les fichiers', 'fa fa-file-download')
             ->linkToRoute('telechargerFichiers', ['ideditionequipe' => $editionId . '-' . $equipeId . '-' . $concours . '-' . $typefichier . '-' . $typefichierfiltre])
             ->createAsGlobalAction();
         //->displayAsButton()            ->setCssClass('btn btn-primary');;
-        $telechargerUnFichier = Action::new('telechargerunfichier', 'Télécharger le fichier', 'fa fa-file-download')
+        $telechargerUnFichier = Action::new('telechargerunfichier', '', 'fa fa-file-download')
             ->linkToRoute('telechargerUnFichier', function (Fichiersequipes $fichier): array {
                 return [
                     'idEntity' => $fichier->getId(),
 
                 ];
-            });
+            })->setHtmlAttributes(['title' => 'Telecharger ce fichier']);
 
         $newFichier = Action::new('deposer', 'Déposer un fichier')->linkToCrudAction('new')->setHtmlAttributes(['typefichier' => $this->requestStack->getCurrentRequest()->query->get('typefichier')])->createAsGlobalAction();
         $actions = $actions
@@ -647,7 +647,7 @@ class FichiersequipesCrudController extends AbstractCrudController
                 ->setFormTypeOptions(['required' => true])
                 ->setColumns('col-sm-4 col-lg-3 col-xxl-2'),
             yield BooleanField::new('publie')->renderAsSwitch(true),//Le basculement du bouton publie ne tranfert pas le fichier, il faut appeler update
-            yield DateTimeField::new('updatedAt')->onlyOnIndex(),];
+            yield DateTimeField::new('updatedAt','Mis à jour le ')->onlyOnIndex(),];
 
             }
         if ($numtypefichier != 6 and $numtypefichier >1) //autres fichiers hors autorisations photos

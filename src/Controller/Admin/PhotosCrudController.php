@@ -3,8 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\Filter\CustomPhotosEquipesFilter;
-use App\Controller\OdpfAdmin\OdpfDashboardController;
-use App\Controller\OdpfAdmin\OdpfPhotosCrudController;
 use App\Entity\Edition;
 use App\Entity\Equipesadmin;
 use App\Entity\Odpf\OdpfEditionsPassees;
@@ -79,8 +77,7 @@ class PhotosCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-        $concours = $this->requestStack->getSession()->get('concours');
-
+        $concours = $this->requestStack->getCurrentRequest()->query->get('concours');
         if ($concours === null) {
             $concours = $this->requestStack->getSession()->get('concours');
 
@@ -93,18 +90,14 @@ class PhotosCrudController extends AbstractCrudController
         if (new Datetime('now') < $this->requestStack->getSession()->get('edition')->getDateouverturesite()) {
             $edition = $repositoryEdition->findOneBy(['ed' => $edition->getEd() - 1]);
         }
-        $url=$this->adminUrlGenerator->setDashboard(OdpfDashboardController::class)
-            ->setController(OdpfPhotosCrudController::class)
-            ->setAction('index')->generateUrl();
+
 
         return $crud
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
-                'crud/new'=> 'bundles/EasyAdminBundle/newPhotoAdmin.html.twig',
-                'crud/edit'=> 'bundles/EasyAdminBundle/editPhotoAdmin.html.twig',])
-            ->setPageTitle(Crud::PAGE_INDEX, '<h2 class="rougeodpf">Les photos du ' . $edition->getEd()
-                . '<sup>e</sup> concours ' . $concours . '</h2><br><h5>Pour les photos des éditions antérieures aller 
-                dans <a href="'.$url.'" type="button" class="btn btn-warning">l\'administration du site OdPF</a></h5>')
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', 'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
+                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',])
+
+            ->setPageTitle(Crud::PAGE_INDEX, '<h2 class="rougeodpf">Les photos du ' . $edition->getEd() . '<sup>e</sup> concours ' . $concours . '</h2>')
             ->setPageTitle(Crud::PAGE_EDIT, 'Modifier une photo du concours ' . $concours)
             ->setPageTitle(Crud::PAGE_NEW, 'Déposer une  photo du concours ' . $concours)
             ->setSearchFields(['id', 'photo', 'coment'])
@@ -122,10 +115,11 @@ class PhotosCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        $concours = $this->requestStack->getSession()->get('concours');
+        $concours = $this->requestStack->getCurrentRequest()->query->get('concours');
         $urlIndex = $this->generateUrl('admin', ['crudAction' => 'index', 'crudController' => 'photosCrudController', 'concours' => $concours]);
-       /* $attribEditionPassee = Action::new('attribEditionsPassees', 'Attribuer les éditions passéées', 'fa fa-file-download')
-            ->linkToRoute('attribEditionsPassees')->createAsGlobalAction();*/
+        $attribEditionPassee = Action::new('attribEditionsPassees', 'Attribuer les éditions passéées', 'fa fa-file-download')
+            ->linkToRoute('attribEditionsPassees')->createAsGlobalAction();
+
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->remove(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE)
@@ -146,8 +140,8 @@ class PhotosCrudController extends AbstractCrudController
             ->update('index', Action::EDIT,function  (Action $action) {
                 return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
             )
-           /* ->add(Crud::PAGE_INDEX, $attribEditionPassee)
-            ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')*/;
+            ->add(Crud::PAGE_INDEX, $attribEditionPassee)
+            ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN');
 
     }
 
@@ -177,7 +171,7 @@ class PhotosCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        $concours = $this->requestStack->getSession()->get('concours');
+        $concours = $this->requestStack->getCurrentRequest()->query->get('concours');
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);
         $edition = $this->requestStack->getSession()->get('edition');
         if (new DateTime('now') < $this->requestStack->getSession()->get('edition')->getDateouverturesite()) {
@@ -215,7 +209,6 @@ class PhotosCrudController extends AbstractCrudController
         */
         $concours == 'national' ? $tag = 1 : $tag = 0;
         $listeEquipes = null;
-
         if ($concours != 'national') {
             $listeEquipes = $this->doctrine->getRepository(Equipesadmin::class)->createQueryBuilder('e')
                 ->andWhere('e.edition =:edition')
@@ -235,7 +228,8 @@ class PhotosCrudController extends AbstractCrudController
         }
 
 
-       $equipe = AssociationField::new('equipe')
+        $panel1 = FormField::addPanel('<p style="color:red" > Choisir le fichier à déposer pour la ' . $edition->getEd() . '<sup>e</sup> édition</p> ');
+        $equipe = AssociationField::new('equipe')
             ->setFormTypeOptions(['class' => Equipesadmin::class,
                 'choices' => $listeEquipes,
 
@@ -249,14 +243,13 @@ class PhotosCrudController extends AbstractCrudController
             ->setLabel('Photo')
             ->setFormTypeOptions(['disabled' => 'disabled']);
         //
-
+        $typesujet=AssociationField::new('typeSujet');
         $coment = TextField::new('coment', 'Commentaire');
         $concours == 'national' ? $valnat = true : $valnat = false;
         $national = BooleanField::new('national')->setFormTypeOption('data', $valnat);
 
         $updatedAt = DateTimeField::new('updatedAt', 'Déposé le ')->setSortable(true);
-        $typeSujet= TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm();
-        $typeSujet= AssociationField::new('typeSujet','Choix du type de sujet')->onlyOnForms();
+
 
         $equipeCentreCentre = TextField::new('equipe.centre', 'Centre académique')->setSortable(true);
         $equipeNumero = IntegerField::new('equipe.numero', 'N° équipe')->setSortable(true);
@@ -280,29 +273,29 @@ class PhotosCrudController extends AbstractCrudController
             ;*/
 
         if (Crud::PAGE_INDEX === $pageName) {
-            if ($concours == 'interacadémique') {
-                return [$editionpassee, $equipeCentreCentre, $equipeNumero, $equipeTitreprojet, $photo, $coment, $updatedAt];
+            if ($concours == 'interacademique') {
+                return [$editionpassee, $equipeCentreCentre, $equipeNumero, $equipeTitreprojet, $photo, $typesujet, $coment, $updatedAt];
             }
             if ($concours == 'national') {
-                return [$editionpassee, $equipeLettre, $equipeTitreprojet, $photo, $coment, $updatedAt];
+                return [$editionpassee, $equipeLettre, $equipeTitreprojet, $photo, $typesujet, $updatedAt];
             }
 
         } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$id, $photo, $coment, $national, $updatedAt, $equipe, $edition, $equipeCentreCentre];
+            return [$id, $photo, $typesujet, $coment, $national, $updatedAt, $equipe, $edition];
         } elseif (Crud::PAGE_NEW === $pageName) {
             //$this->requestStack->getSession()->set('concours', $concours);
-            return [ $equipe, $imageFile, $coment, $typeSujet,  $national];
+            return [$panel1, $equipe, $typesujet, $imageFile, $coment, $national];
 
         } elseif (Crud::PAGE_EDIT === $pageName) {
             //$this->requestStack->getSession()->set('concours', $concours);
-            return [ $imageFile, $equipe, $coment, $typeSujet, $national];
+            return [$photo, $typesujet  ,$typesujet, $imageFile, $equipe, $coment, $national];
         }
     }
 
     public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
 
     {
-        $concours = $this->requestStack->getSession()->get('concours');
+        $concours = $this->requestStack->getCurrentRequest()->query->get('concours');
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);
         if (null == $concours) {
             $concours = $this->requestStack->getSession()->get('concours');
@@ -625,5 +618,7 @@ class PhotosCrudController extends AbstractCrudController
         return $this->redirect($url);
 
     }
+
+
 
 }

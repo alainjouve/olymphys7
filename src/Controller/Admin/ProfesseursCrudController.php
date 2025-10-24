@@ -67,7 +67,7 @@ class ProfesseursCrudController extends AbstractCrudController
         }
         return $crud
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexProfesseur.html.twig', ])
             ->setPageTitle(Crud::PAGE_DETAIL, 'Professeur')
             ->setSearchFields(['id', 'lettre', 'numero', 'titreProjet', 'nomLycee', 'denominationLycee', 'lyceeLocalite', 'lyceeAcademie', 'prenomProf1', 'nomProf1', 'prenomProf2', 'nomProf2', 'uai', 'contribfinance', 'origineprojet', 'recompense', 'partenaire', 'description'])
             ->setPaginatorPageSize(50);
@@ -109,7 +109,7 @@ class ProfesseursCrudController extends AbstractCrudController
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId,'sel'=>false])
             ->createAsGlobalAction();
-        $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs pour mailings', 'fas fa-columns')
+        $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs pour mailings info centrecia en octobre', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_mailing', ['idEdition' => $editionId])
@@ -595,7 +595,9 @@ class ProfesseursCrudController extends AbstractCrudController
             ->setCellValue('C' . $ligne, 'Courriel')
             ->setCellValue('D' . $ligne, 'Centre Cia')
             ->setCellValue('E' . $ligne, 'N° Equipe')
-            ->setCellValue('F' . $ligne, 'Nom Equipe');
+            ->setCellValue('F' . $ligne, 'Nom Equipe')
+            ->setCellValue('G' . $ligne, 'Adresse Centre')
+            ->setCellValue('H' . $ligne, 'Organisteur');
 
 
         $ligne += 1;
@@ -606,9 +608,14 @@ class ProfesseursCrudController extends AbstractCrudController
                     ->setCellValue('B' . $ligne, $prof->getUser()->getPrenom())
                     ->setCellValue('C' . $ligne, $prof->getUser()->getEmail());
                 if ($equipe != null) {
+                    if($equipe->getCentre()!=null){
                     $sheet->setCellValue('D' . $ligne, $equipe->getCentre()->getCentre())
-                        ->setCellValue('E' . $ligne, $equipe->getNumero())
-                        ->setCellValue('F' . $ligne, $equipe->getTitreProjet());
+                        ->setCellValue('G' . $ligne, $equipe->getCentre()->getLieu())
+                        ->setCellValue('H' . $ligne, $equipe->getCentre()->getOrganisateur());;
+                    }
+                     $sheet->setCellValue('E' . $ligne, $equipe->getNumero())
+                        ->setCellValue('F' . $ligne, $equipe->getTitreProjet())
+                         ;
                 }
                 $ligne += 1;
             }

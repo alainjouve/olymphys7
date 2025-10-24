@@ -45,9 +45,8 @@
                     {{ form_widget(form.idProf1,{'label':'*'} ) }}
                 </div>
                 <div class="col px-md-4">Le second encadrant(éventuellement)
-                    <button data-toggle="modal"
-                                                                                 data-target="#modalinfoprof2"  title="Comment incrire un prof2"><i
-                                class="fa fa fa-exclamation-circle fa-2x" aria-hidden="true"></i></button>:
+                    <a  id="bouttoninfoprof2" data-toggle="modal" data-target="#modalinfoprof2"  title="Comment inscrire un prof2"><i
+                                class="fa fa fa-exclamation-circle fa-2x" aria-hidden="true"></i></a>:
                     {{ form_widget(form.idProf2,{'label':' '}) }}
                 </div>
             </div>
@@ -438,7 +437,7 @@
     </div>
     {{ include('modales/modale_infoprof2.html.twig') }}
     {# #############################MODAL###################################### #}
-    <div class="modal fade" id="modalconfirm" tabindex="-1" role="dialog">//Confirmation suppression d'un élève
+    <div class="modal fade" id="modalconfirm" tabindex="-1" role="dialog"><!--Confirmation suppression d'un élève-->
         <div class="modal-dialog" role="document">
 
             <!-- Modal content-->

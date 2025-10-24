@@ -68,7 +68,7 @@ class JuryCiaController extends AbstractController
 
         $id_jure = $jure->getId();
 
-        $equipes = $jure->getEquipes();
+        $equipesJures = $jure->getEquipes();
 
         $repositoryEquipes = $this->doctrine
             ->getManager()
@@ -83,7 +83,7 @@ class JuryCiaController extends AbstractController
 
         $progression = array();
         $memoires = array();
-        $listeEquipes = $repositoryEquipes->createQueryBuilder('e')
+        $equipes = $repositoryEquipes->createQueryBuilder('e')
             ->where('e.edition =:edition')
             ->setParameter('edition', $edition)
             ->andWhere('e.centre =:centre')
@@ -95,12 +95,24 @@ class JuryCiaController extends AbstractController
             ->leftJoin('h.equipe', 'eq')
             ->where('eq.centre =:centre')
             ->andWhere('eq.edition =:edition')
+            ->addOrderBy('h.horaire', 'ASC')
             ->setParameters(['centre' => $jure->getCentrecia(), 'edition' => $this->requestStack->getSession()->get('edition')])
             ->getQuery()->getResult();
+        $listeEquipes=[];
+        foreach ($horaires as $horaire) {
+            foreach($equipes as $equipe) {
+                if ($horaire->getEquipe() == $equipe) {
 
-        foreach ($listeEquipes as $equipe) {
+                    $listeEquipes[$equipe->getId()] = $equipe;
+                }
 
-            foreach ($equipes as $equipejure) {
+            }
+
+        }
+        foreach ($equipes as $equipe) {
+
+
+            foreach ($equipesJures as $equipejure) {
 
                 if ($equipejure == $equipe) {
                     $key = $equipe->getNumero();
@@ -120,6 +132,7 @@ class JuryCiaController extends AbstractController
                         $memoires[$key] = null;
                     }
                 }
+
             }
         }
 
@@ -224,7 +237,7 @@ class JuryCiaController extends AbstractController
     public function evaluer_une_equipe_cia(Request $request, $id): RedirectResponse|Response
     {
 
-        if (new DateTime('now') >= $this->requestStack->getSession()->get('edition')->getConcourscia()) {
+        if (new DateTime('now') <= $this->requestStack->getSession()->get('edition')->getConcourscia()) {
             $user = $this->getUser();
             $jure = $this->doctrine->getRepository(JuresCia::class)->findOneBy(['iduser' => $user]);
             if ($jure->getCentrecia()->getVerouClassement() != true) {

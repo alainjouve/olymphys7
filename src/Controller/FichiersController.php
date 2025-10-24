@@ -481,7 +481,7 @@ class FichiersController extends AbstractController
 
                 }
             } catch (Exception $e) {
-                dd($e);
+
             }
 
 

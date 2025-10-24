@@ -10,33 +10,55 @@ $(document).ready(function () {
         if(inputPhoto!== null) {
 
         inputPhoto.addEventListener('change', function (event) {
-            affichephotos.innerHTML = '';
+
             image.src = inputPhoto.value;
-            console.log(event.target)
             var files = event.target.files; // Récupère le fichier sélectionné
+            const paragraph = document.createElement('p');
+            paragraph.innerHTML = '';
+            affichephotos.innerHTML='';
+            var container=document.createElement('div');
+            container.className = 'row';
+            affichephotos.appendChild(container);
             for (var i=0; i < files.length; i++) {
 
                 const file = files[i];
-                if (!file.type.startsWith('image/')) {
+                /*if (!file.type.startsWith('image/')) {
                     alert("Veuillez sélectionner uniquement des images");
                     continue;
-                }
+                }*/
+                console.log(file);
+                var nameCheckbox=file.name.split('.')[0];
 
                 //image=document.getElementById('photo_preview' + i);
                 const image = document.createElement('img');
                 const checkbox=document.createElement("input");
                 checkbox.type = 'checkbox';
-                checkbox.name = 'checkbox-'+i;
+                checkbox.name = 'checkbox-'+ nameCheckbox;
+                checkbox.label = 'Cocher pour téléverser';
+                checkbox.checked = !checkbox.checked;
                 image.width = 220;
+                image.setAttribute('name', file.name);
                 const reader = new FileReader();
-
                 reader.onload = function(e) {
-                    affichephotos.appendChild( '<div class="card">');
+
+                    var div0=document.createElement('div');
+                    div0.className='col';
+                    var div1 =document.createElement( "div");
+                    div1.setAttribute('class', 'card');
+                    div1.style.width = '250px';
+                    var div2=document.createElement( "div");
+                    div2.setAttribute('class', 'card-header');
+                    div2.innerHTML='photo-'+file.name;
+                    var div3=document.createElement( "div");
+                    div3.setAttribute('class', 'card-body');
+                    container.append(div0);
+                    div0.appendChild(div1);
+                    div1.appendChild(div2);
+                    div1.appendChild(div3);
                     image.src = e.target.result;
-                    affichephotos.appendChild(image);
-                    affichephotos.appendChild('<br>')
-                        affichephotos.appendChild(checkbox);
-                    affichephotos.appendChild('</div>');
+                    div3.appendChild(image);
+                    div3.appendChild(checkbox);
+
                 };
 
                 reader.readAsDataURL(file);
@@ -113,11 +135,9 @@ $(window).on("unload", function () {//Pour que lors de la saisie de la répartit
 });
 $(window).on("load", function () {
     var tableau = document.getElementById("changejurescontainer")
-    if(tableau) {
-        tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
-        tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
-        window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
-    }
+    tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
+    tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
+    window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
 
 });
 

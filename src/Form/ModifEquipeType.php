@@ -142,7 +142,7 @@ class ModifEquipeType extends AbstractType
             $i++;
         }
 
-        for ($i = $nbEleves + 1; $i < 7; $i++) {
+        for ($i = $nbEleves + 1; $i < 6; $i++) {
 
 
             $builder->add('prenomeleve' . $i, TextType::class, [
@@ -209,7 +209,7 @@ class ModifEquipeType extends AbstractType
                 'mapped' => true,
                 'required' => true,
             ])
-            ->add('description', TextareaType::class, [
+            ->add('description', TextType::class, [
 
                 'required' => true,
                 'mapped' => true,

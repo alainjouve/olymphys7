@@ -32,7 +32,10 @@ class Centrescia
     private ?int $nbselectionnees = null;
 
     #[ORM\Column(nullable: true)]
-    private ?bool $verouClassement = null;//sert au blocage de la procédure de modification de classement après la délibération
+    private ?bool $verouClassement = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $organisateur = null;//sert au blocage de la procédure de modification de classement après la délibération
 
 
     public function __toString():string
@@ -112,6 +115,18 @@ class Centrescia
     {
 
         $this->verouClassement = $verouClassement;
+
+        return $this;
+    }
+
+    public function getOrganisateur(): ?string
+    {
+        return $this->organisateur;
+    }
+
+    public function setOrganisateur(?string $organisateur): static
+    {
+        $this->organisateur = $organisateur;
 
         return $this;
     }

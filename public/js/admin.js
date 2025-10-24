@@ -23,8 +23,13 @@ $(document).ready(function () {
 function choixedition(s){//pour la planche contact
     var ideditionpassee=s.value;
     console.log(ideditionpassee);
+    var url = '/public/index.php/photos/choixeditionpassee'
+    if(window.location.href.includes('localhost')){
+        url='/photos/choixeditionpassee'
+    }
+
     $.ajax({
-        url: '/photos/choixeditionpassee',
+        url:url,
         type: "POST",
         data: {idEdPassee:ideditionpassee},
 
@@ -105,11 +110,10 @@ $(document).ready(function () {
     var inputPhoto=document.getElementById('Photos_photoFile')
     var image=document.getElementById('photo')
     var nom_photo=document.getElementById('nom_photo')
-    var message_choix_photo=document.getElementById('messagechoixphoto')
     if(inputPhoto!== null) {
         inputPhoto.addEventListener('change', function (event) {
             image.src = inputPhoto.value;
-            //console.log(event.target.files[0])
+
             const file = event.target.files[0]; // Récupère le fichier sélectionné
             if (file && file.type.startsWith('image/')) {
                 const reader = new FileReader();
@@ -119,7 +123,6 @@ $(document).ready(function () {
                     // Met à jour la source de l'image avec le contenu lu
                     image.src = e.target.result;
                     nom_photo.innerHTML=event.target.files[0].name;
-                    message_choix_photo.innerHTML=null;
                 };
 
                 // Lecture du fichier sous forme d'URL de données
@@ -127,25 +130,12 @@ $(document).ready(function () {
             } else {
                 // Si le fichier n'est pas une image ou si aucun fichier n'est sélectionné
                 image.src = '';
+                inputPhoto.value=null;
+                alert("Cette photo n'est pas conforme");
             }
 
         });
     }
-
-    // Compute and expose the height of the header-index for sticky offsets
-    function updateHeaderIndexHeight() {
-        var headers = document.getElementsByClassName('header-index');
-        if (headers && headers.length > 0) {
-            var rect = headers[0].getBoundingClientRect();
-            var height = Math.round(rect.height);
-            document.documentElement.style.setProperty('--header-index-height', height + 'px');
-        } else {
-            // reset to 0 if header not present
-            document.documentElement.style.setProperty('--header-index-height', '0px');
-        }
-    }
-    updateHeaderIndexHeight();
-    window.addEventListener('resize', updateHeaderIndexHeight);
 
 
 })
@@ -153,9 +143,12 @@ $(document).ready(function () {
 function setSujetPhoto(id){
     var input=document.getElementById('sujet_photo-'+id)
     var typeSujet=input.value
-
+    var url = '/public/index.php/photos/set_type_sujet_photo'
+    if(window.location.href.includes('localhost')){
+        url='/photos/set_type_sujet_photo'
+    }
     $.ajax({
-        url: '/photos/set_type_sujet_photo',
+        url: url,
         type: "POST",
         data: {idPhoto: id, idSujetPhoto: typeSujet},
 
@@ -167,56 +160,39 @@ function setSujetPhoto(id){
     })
 
 }
-function choixtypesujet(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
+function choixtypesujet(s)//Permet de sélectionner le type de sujet des photos de la table des photos
     {
     //var select=document.getElementById('choixtypesujet');
     var typesujet=s.value;
+        var url = '/public/index.php/photos/choix_type_sujet_photo'
+        if(window.location.href.includes('localhost')){
+            url='/photos/choix_type_sujet_photo'
+        }
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {idSujetPhoto: typesujet},
+            success: function () {
+                window.location.reload();
+            },
 
-    $.ajax({
-        url: '/photos/choix_type_sujet_photo',
-        type: "POST",
-        data: {idSujetPhoto: typesujet},
-        success: function () {
-            window.location.reload();
-        },
-
-        error: function (data) {
-            alert("Error while submitting Data");
-        },
+            error: function (data) {
+                alert("Error while submitting Data");
+            },
     })
 }
-function choixEquipe(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
+function choixEquipe(s)//Permet de sélectionner le type de sujet des photos de la table des photos
 {
     //var select=document.getElementById('choixtypesujet');
     var idEquipe=s.value;
-
+    var url = '/public/index.php/photos/choix_equipe_photo'
+    if(window.location.href.includes('localhost')){
+        url='/photos/choix_equipe_photo'
+    }
     $.ajax({
-        url: '/photos/choix_equipe_photo',
+        url: url,
         type: "POST",
         data: {idEquipe: idEquipe},
-        success: function () {
-            window.location.reload();
-        },
-
-        error: function (data) {
-            alert("Error while submitting Data");
-        },
-
-    })
-
-
-
-}
-
-function choixcategoriearticle(s)//Permet de sélectionner le type de sujet des phtos de la table des photos
-{
-    //var select=document.getElementById('choixtypesujet');
-    var idCategorie=s.value;
-
-    $.ajax({
-        url: '/articles/choix_categorie_article',
-        type: "POST",
-        data: {idCategorie: idCategorie},
         success: function () {
             window.location.reload();
         },

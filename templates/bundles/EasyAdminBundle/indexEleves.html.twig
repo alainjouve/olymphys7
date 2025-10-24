@@ -1,85 +1,83 @@
 {# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
 {# @var entities \EasyCorp\Bundle\EasyAdminBundle\Collection\EntityCollection #}
 {# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
-{% extends '@EasyAdmin/page/content.html.twig' %}
+{% extends '@!EasyAdmin/page/content.html.twig' %}
 {% trans_default_domain ea.i18n.translationDomain %}
 
 
 
 {% block main %}
-    <div class="header-index">
-        <div class="row">
-            <div class="col content_title"><h1>{{ ea.crud.customPageTitle|raw }}</h1></div>
-            <hr>
-        </div>
-        {# sort can be multiple; let's consider the sorting field the first one #}
-        {% set sort_field_name = app.request.get('sort')|keys|first %}
-        {% set sort_order = app.request.get('sort')|first %}
-        {% set some_results_are_hidden = entities|reduce((some_results_are_hidden, entity) => some_results_are_hidden or not entity.isAccessible, false) %}
-        {% set has_footer = entities|length != 0 %}
-        {% set has_search = ea.crud.isSearchEnabled %}
-        {% set has_filters = filters|length > 0 %}
-        {% set num_results = entities|length %}
-        {% set has_batch_actions = batch_actions|length > 0 %}
 
-                {% if filters|length > 0 %}
-                    <div class="row">
-                        <div class="col" style="text-align: right">
-                            Pour sélectionner des résultats sur une équipe ou une autre édition utiliser les filtres  :
-                        </div>
-                    <div class="col">
-                    <div class="datagrid-filters">
-                        {% block filters %}
-                            {% set applied_filters = ea.request.query.all['filters']|default([])|keys %}
-                            <div class="btn-group action-filters">
-                                <a href="#" data-href="{{ ea_url().setAction('renderFilters') }}" class="btn btn-secondary btn-labeled btn-labeled-right action-filters-button disabled {{ applied_filters ? 'action-filters-applied' }}" data-bs-toggle="modal" data-bs-target="#modal-filters">
-                                    <twig:ea:Icon name="internal:filter" /> {{ t('filter.title', ea.i18n.translationParameters, 'EasyAdminBundle')|trans }}{% if applied_filters %} <span class="action-filters-button-count">({{ applied_filters|length }})</span>{% endif %}
-                                </a>
-                                {% if applied_filters %}
-                                    <a href="{{ ea_url().unset('filters').setAction('index') }}" class="btn btn-secondary action-filters-reset">
-                                        <twig:ea:Icon name="internal:xmark" />
-                                    </a>
-
-                                {% endif %}
-                            </div>
-                    </div>
-                        {% endblock filters %}
-
-                    </div>
-                    </div>
-                    <hr>
-                {% endif %}
-                {% for action in global_actions %}
-                    {% if action.name!='new' %}
-                        <div class="row">
-                        <div class="col-md-6 col-sm-12" >
-                        <i class="{{ action.icon }}"></i> {{ action.label}} :</div>
-                        <div class="col-md-6 col-sm-12"> <a href="{{ action.linkUrl }}" type="button" class="btn btn-warning">OK</a>
-                        </div>
-                        </div><hr>
-                    {% endif %}
-                {% endfor %}
-        {% if has_batch_actions %}
-            <div class="batch-actions d-none">
-                {% for action in batch_actions %}
-                    {{ include(action.templatePath, { action: action }, with_context = false) }}
-                {% endfor %}
-            </div>
-        {% endif %}
-
+    <div class="row">
+        <div class="col content_title"><h1>{{ ea.crud.customPageTitle|raw }}</h1></div>
         <hr>
-        <div class="row>">
-            {% for action in global_actions %}
-                {% if action.name=='new' %}
-                    <div class="col">
+    </div>
+    {# sort can be multiple; let's consider the sorting field the first one #}
+    {% set sort_field_name = app.request.get('sort')|keys|first %}
+    {% set sort_order = app.request.get('sort')|first %}
+    {% set some_results_are_hidden = entities|reduce((some_results_are_hidden, entity) => some_results_are_hidden or not entity.isAccessible, false) %}
+    {% set has_footer = entities|length != 0 %}
+    {% set has_search = ea.crud.isSearchEnabled %}
+    {% set has_filters = filters|length > 0 %}
+    {% set num_results = entities|length %}
+    {% set has_batch_actions = batch_actions|length > 0 %}
 
-                        {{ include(action.templatePath, { action: action }, with_context = false) }}
+            {% if filters|length > 0 %}
+                <div class="row">
+                    <div class="col" style="text-align: right">
+                        Pour sélectionner des résultats sur une équipe ou une autre édition utiliser les filtres  :
                     </div>
+                <div class="col">
+                <div class="datagrid-filters">
+                    {% block filters %}
+                        {% set applied_filters = ea.request.query.all['filters']|default([])|keys %}
+                        <div class="btn-group action-filters">
+                            <a href="#" data-href="{{ ea_url().setAction('renderFilters') }}" class="btn btn-secondary btn-labeled btn-labeled-right action-filters-button disabled {{ applied_filters ? 'action-filters-applied' }}" data-bs-toggle="modal" data-bs-target="#modal-filters">
+                                <twig:ea:Icon name="internal:filter" /> {{ t('filter.title', ea.i18n.translationParameters, 'EasyAdminBundle')|trans }}{% if applied_filters %} <span class="action-filters-button-count">({{ applied_filters|length }})</span>{% endif %}
+                            </a>
+                            {% if applied_filters %}
+                                <a href="{{ ea_url().unset('filters').setAction('index') }}" class="btn btn-secondary action-filters-reset">
+                                    <twig:ea:Icon name="internal:xmark" />
+                                </a>
 
+                            {% endif %}
+                        </div>
+                </div>
+                    {% endblock filters %}
+
+                </div>
+                </div>
+                <hr>
+            {% endif %}
+
+
+
+
+
+
+            {% for action in global_actions %}
+                {% if action.name!='new' %}
+                    <div class="row">
+                    <div class="col-md-6 col-sm-12" >
+                        {{ action.label}} :</div>
+                    <div class="col-md-6 col-sm-12"> <a href="{{ action.linkUrl }}" type="button" class="btn btn-warning">OK</a>
+                    </div>
+                    </div><hr>
                 {% endif %}
             {% endfor %}
 
-        </div>
+
+    <hr>
+    <div class="row>">
+        {% for action in global_actions %}
+            {% if action.name=='new' %}
+                <div class="col">
+
+                    {{ include(action.templatePath, { action: action }, with_context = false) }}
+                </div>
+            {% endif %}
+        {% endfor %}
+
     </div>
     <table class="table datagrid {{ entities is empty ? 'datagrid-empty' }}">
         {% if num_results > 0 %}
@@ -96,7 +94,7 @@
 
                     {% set ea_sort_asc = constant('EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Option\\SortOrder::ASC') %}
                     {% set ea_sort_desc = constant('EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Option\\SortOrder::DESC') %}
-                    <th style="width: 200px">
+                    <th class="{{ ea.crud.showEntityActionsAsDropdown ? 'actions-as-dropdown-table-head' }}" dir="{{ ea.i18n.textDirection }}">
                         <span class="visually-hidden">{{ t('action.entity_actions', ea.i18n.translationParameters, 'EasyAdminBundle')|trans }}</span>
                     </th>
                     {% for field in entities|filter(e => e.isAccessible)|first.fields ?? [] %}
@@ -140,7 +138,7 @@
                             </td>
                         {% endif %}
                         {% block entity_actions %}
-                            <td style="width: 150px">
+                            <td class="actions {{ ea.crud.showEntityActionsAsDropdown ? 'actions-as-dropdown' }}">
                                 {% if entity.actions.count > 0 %}
                                     {% if ea.crud.showEntityActionsAsDropdown %}
                                         <twig:ea:ActionMenu class="dropdown-actions">
@@ -150,6 +148,7 @@
 
                                             <twig:ea:ActionMenu:Overlay>
                                                 <twig:ea:ActionMenu:ActionList>
+                                                    <div style="width: 100px">
                                                     {% for action in entity.actions %}
 
                                                         <twig:ea:ActionMenu:ActionList:Item
@@ -159,6 +158,7 @@
                                                                 label="{{ action.label|trans }}" label:class="action-label" renderLabelRaw />
 
                                                     {% endfor %}
+                                                    </div>
                                                 </twig:ea:ActionMenu:ActionList>
                                             </twig:ea:ActionMenu:Overlay>
                                         </twig:ea:ActionMenu>
@@ -233,18 +233,5 @@
     </div>
     {% if has_filters %}
         {{ include('@EasyAdmin/crud/includes/_filters_modal.html.twig') }}
-    {% endif %}
-
-
-    {% block delete_form %}
-        {{ include('@EasyAdmin/crud/includes/_delete_form.html.twig', with_context = false) }}
-    {% endblock delete_form %}
-
-    {% if has_filters %}
-        {{ include('@EasyAdmin/crud/includes/_filters_modal.html.twig') }}
-    {% endif %}
-
-    {% if has_batch_actions %}
-        {{ include('@EasyAdmin/crud/includes/_batch_action_modal.html.twig', {}, with_context = false) }}
     {% endif %}
 {% endblock main %}
