@@ -96,7 +96,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud->showEntityActionsInlined()
-            ->overrideTemplates([//'crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
+            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
                 'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
                 'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',]);
     }
