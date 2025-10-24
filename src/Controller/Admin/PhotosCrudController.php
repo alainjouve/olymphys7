@@ -177,7 +177,6 @@ class PhotosCrudController extends AbstractCrudController
         if (new DateTime('now') < $this->requestStack->getSession()->get('edition')->getDateouverturesite()) {
             $edition = $repositoryEdition->findOneBy(['ed' => $edition->getEd() - 1]);
         }
-        //dd($_REQUEST);
         if ($concours === null) {
             $concours = $this->requestStack->getSession()->get('concours');
 
@@ -185,28 +184,7 @@ class PhotosCrudController extends AbstractCrudController
         if ($concours !== null) {
             $this->requestStack->getSession()->set('concours', $concours);
         }
-        //dd($this->requestStack->getSession()->get('concours'));
-        /*if($_REQUEST['crudAction']=='index') {
-            if ($concours == null) {
-                $_REQUEST['menuIndex'] == 10 ? $concours = 'national' : $concours = 'interacadémique';
-            }
-        }
-        if($_REQUEST['crudAction']=='edit') {
-            if ($concours == null) {
-              $this->doctrine->getRepository(Photos::class)->find($_REQUEST['entityId'])->getNational()==true?$concours='natiuonal': $concours = 'interacadémique' ;
-            }
-        }
 
-        $context = $this->adminContextProvider->getContext();
-
-        if($_REQUEST['crudAction']=='index') {
-            //$_REQUEST['menuIndex'] == 10 ? $concours = 'national' : $concours = 'interacadémique';
-            $concours = $_REQUEST['concours'];
-        }
-        if($_REQUEST['crudAction']=='edit') {
-                    $this->doctrine->getRepository(Photos::class)->find($_REQUEST['entityId'])->getNational()==true?$concours='national': $concours = 'interacadémique' ;
-        }
-        */
         $concours == 'national' ? $tag = 1 : $tag = 0;
         $listeEquipes = null;
         if ($concours != 'national') {
@@ -228,12 +206,16 @@ class PhotosCrudController extends AbstractCrudController
         }
 
 
+
         $panel1 = FormField::addPanel('<p style="color:red" > Choisir le fichier à déposer pour la ' . $edition->getEd() . '<sup>e</sup> édition</p> ');
         $equipe = AssociationField::new('equipe')
             ->setFormTypeOptions(['class' => Equipesadmin::class,
                 'choices' => $listeEquipes,
+                'required' => true,
+                'empty_data' => null,
+                'placeholder'=>'Choisir une équipe'
 
-            ])->setSortable(true);
+            ])->setRequired(true)->setSortable(true);
 
         $edition = AssociationField::new('edition')->setSortable(true);
         $editionpassee = AssociationField::new('editionspassees', 'Edition')->setSortable(true);
@@ -257,6 +239,9 @@ class PhotosCrudController extends AbstractCrudController
         $equipeLettre = TextField::new('equipe.lettre', 'Lettre')->setSortable(true);
         $imageFile = Field::new('photoFile')
             ->setFormType(FileType::class)
+            ->setFormTypeOptions([
+                'required' => true,
+            ])
             ->setLabel('Photo')
             ->onlyOnForms()/*->setFormTypeOption('constraints', [
                             'mimeTypes' => ['image/jpeg','image/jpg'],
