@@ -243,13 +243,20 @@ class PhotosCrudController extends AbstractCrudController
                 'required' => true,
             ])
             ->setLabel('Photo')
-            ->onlyOnForms()/*->setFormTypeOption('constraints', [
+            ->onlyWhenCreating()/*->setFormTypeOption('constraints', [
                             'mimeTypes' => ['image/jpeg','image/jpg'],
                             'mimeTypesMessage' => 'Déposer un  document jpg',
                             'data_class'=>'photos'
                     ]
                 )*/
         ;
+        $imageFile = Field::new('photoFile')
+            ->setFormType(FileType::class)
+            ->setFormTypeOptions([
+                'required' => false,
+            ])
+            ->setLabel('Photo')
+            ->onlyWhenUpdating();
         /*$imagesMultiples=CollectionField::new('photoFile')
             ->setLabel('Photo(s)')
 

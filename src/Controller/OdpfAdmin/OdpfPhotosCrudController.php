@@ -158,12 +158,18 @@ class OdpfPhotosCrudController extends AbstractCrudController
            ->setFormTypeOptions([
                'required' => true,
            ])
-            ->onlyOnForms(),
+            ->onlyWhenCreating(),
+       Field::new('photoFile')
+                ->setFormType(FileType::class)
+                ->setLabel('Photo')
+                ->setFormTypeOptions([
+                    'required' => false,
+                ])
+                ->onlyWhenUpdating(),
        TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm(),
-       TextField::new('typeSujet','Choix du type de sujet')->setFormType(ChoiceType::class)
-            ->setFormTypeOptions([
-                'choices' => $listeTypesSujets
-            ])->onlyOnForms(),
+       AssociationField::new('typeSujet','Choix du type de sujet')
+            ->setFormTypeOptions(['required' => false, 'placeholder'=>'Choisir un type de sujet'])
+           ->onlyOnForms(),
         ];
 
     }
@@ -324,6 +330,10 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
         $entityInstance->setEditionspassees($entityInstance->getEquipepassee()->getEditionspassees());//L
         $entityInstance->getEquipe() === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($entityInstance->getEquipe()->getEdition());
+        $edition=$this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
+        if($edition){
+            $entityInstance->setEdition ($edition);
+        }
 
         if ($entityInstance->getEquipePassee()->getNumero()>=100){
             $entityInstance->setNational(true);
