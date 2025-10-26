@@ -117,8 +117,7 @@ class PhotosCrudController extends AbstractCrudController
     {
         $concours = $this->requestStack->getCurrentRequest()->query->get('concours');
         $urlIndex = $this->generateUrl('admin', ['crudAction' => 'index', 'crudController' => 'photosCrudController', 'concours' => $concours]);
-        $attribEditionPassee = Action::new('attribEditionsPassees', 'Attribuer les éditions passéées', 'fa fa-file-download')
-            ->linkToRoute('attribEditionsPassees')->createAsGlobalAction();
+
 
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
@@ -139,9 +138,8 @@ class PhotosCrudController extends AbstractCrudController
             )
             ->update('index', Action::EDIT,function  (Action $action) {
                 return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
-            )
-            ->add(Crud::PAGE_INDEX, $attribEditionPassee)
-            ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN');
+            );
+
 
     }
 
@@ -237,19 +235,22 @@ class PhotosCrudController extends AbstractCrudController
         $equipeNumero = IntegerField::new('equipe.numero', 'N° équipe')->setSortable(true);
         $equipeTitreprojet = TextareaField::new('equipe.titreProjet', 'Projet')->setSortable(true);
         $equipeLettre = TextField::new('equipe.lettre', 'Lettre')->setSortable(true);
+        $required=false;
+        if( $pageName=='new') $required=true;
         $imageFile = Field::new('photoFile')
             ->setFormType(FileType::class)
             ->setFormTypeOptions([
-                'required' => true,
+                'required' => $required,
             ])
             ->setLabel('Photo')
-            ->onlyOnForms()/*->setFormTypeOption('constraints', [
+            ->onlyonForms()/*->setFormTypeOption('constraints', [
                             'mimeTypes' => ['image/jpeg','image/jpg'],
                             'mimeTypesMessage' => 'Déposer un  document jpg',
                             'data_class'=>'photos'
                     ]
                 )*/
         ;
+
         /*$imagesMultiples=CollectionField::new('photoFile')
             ->setLabel('Photo(s)')
 
@@ -343,7 +344,7 @@ class PhotosCrudController extends AbstractCrudController
 
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
-
+        try {
         $edition = $entityInstance->getEquipe()->getEdition();
 
         $editionpassee = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $edition->getEd()]);
@@ -405,6 +406,9 @@ class PhotosCrudController extends AbstractCrudController
             $this->requestStack->getSession()->set('national', $entityInstance->getNational());
             $entityManager->persist($entityInstance);
             $entityManager->flush();
+        }}
+        catch (\Exception $e) {
+            $this->requestStack->getSession()->set('info','Veuillez choisir une équipe');
         }
 
     }
@@ -603,7 +607,6 @@ class PhotosCrudController extends AbstractCrudController
         return $this->redirect($url);
 
     }
-
 
 
 }

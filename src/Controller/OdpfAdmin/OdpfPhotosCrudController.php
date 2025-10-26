@@ -98,8 +98,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
         return $crud->showEntityActionsInlined()
             ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
                 'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
-                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',])
-            ->setPageTitle('index','Les photos des éditions');
+                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',]);
     }
 
 
@@ -122,6 +121,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
         }
         $editions=$this->doctrine->getRepository(OdpfEditionsPassees::class)->findAll();
         $editionEnCours=end($editions);
+        $required=false;
+           if( $pageName=='new') $required=true;
 
         return[
         IntegerField::new('id', 'ID')->onlyOnDetail(),
@@ -137,6 +138,12 @@ class OdpfPhotosCrudController extends AbstractCrudController
                 ->orderBy('ed.edition','DESC')
                 ->addOrderBy('entity.numero', 'ASC')
         )
+            ->setFormTypeOptions([
+                'required' => true,
+                'empty_data' => null,
+                'placeholder'=>'Choisir une équipe'
+
+            ])->setRequired(true)
             ->setSortable(true)
             ,
         TextField::new('photo')
@@ -150,9 +157,15 @@ class OdpfPhotosCrudController extends AbstractCrudController
        Field::new('photoFile')
             ->setFormType(FileType::class)
             ->setLabel('Photo')
-            ->onlyOnForms(),
+           ->setFormTypeOptions([
+               'required' => $required,
+           ])
+            ->onlyonForms(),
+
        TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm(),
-       AssociationField::new('typeSujet','Choix du type de sujet')->onlyOnForms(),
+       AssociationField::new('typeSujet','Choix du type de sujet')
+            ->setFormTypeOptions(['required' => false, 'placeholder'=>'Choisir un type de sujet'])
+           ->onlyOnForms(),
         ];
 
     }
@@ -292,7 +305,6 @@ class OdpfPhotosCrudController extends AbstractCrudController
             }
 
         //}
-
         parent::updateEntity($entityManager, $entityInstance);
         //$entityInstance->createThumbs($entityInstance);
     }

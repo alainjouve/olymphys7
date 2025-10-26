@@ -26,7 +26,7 @@
                 {% if new_form.equipe is defined %}
                 <h3>{{ form_label(new_form.equipe) }}</h3>
 
-                {{ form_widget(new_form.equipe) }}
+                {{ form_widget(new_form.equipe,{'required':true, 'placeholder':'Choisir une équipe'}) }}
             </div>
             {% endif %}
                 <div class="card">
@@ -60,7 +60,12 @@
         </div>
     {{ form_end(new_form) }}
     {% endblock new_form %}
+    {% if app.session.get('info'!=null) %}
+        {{ include('modales/modale_info.html.twig') }}
+        {{ app.session.set('info', null) }}
+    {% endif %}
 {% endblock %}
+
 {% block content_title %}
             <h4>Déposer une nouvelle photo</h4>
 {% endblock %}

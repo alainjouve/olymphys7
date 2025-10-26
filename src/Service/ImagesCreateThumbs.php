@@ -118,6 +118,7 @@ class ImagesCreateThumbs
                 $imageOrig = new Imagick($fileImage);
                 $imageOrig->readImage($path . $image->getPhoto());
                 $properties = $imageOrig->getImageProperties();
+                //dd($properties);
                 $heightOrig = $imageOrig->getImageHeight();
                 $widthOrig = $imageOrig->getImageWidth();
                 if (isset($properties['exif:Orientation'])) {
@@ -131,6 +132,11 @@ class ImagesCreateThumbs
                         $heightOrig = $imageOrig->getImageWidth();
                         $widthOrig = $imageOrig->getImageHeight();
                         $imageOrig->rotateImage('#000', 90);
+                    }
+                    if ($properties['exif:Orientation'] == 3) {//oriention inverse : tourner de 180°
+                        $heightOrig = $imageOrig->getImageHeight();
+                        $widthOrig = $imageOrig->getImageWidth();
+                        $imageOrig->rotateImage('#000', 180);
                     }
                 }
                 $percent = 200 / $heightOrig;
