@@ -9,8 +9,14 @@
 
                 <div class="col-md-6 col-sm-12">
                     <div class="card tex-center">
+                        {% if edit_form.equipepassee is defined %}
                         <h3>{{ form_label(edit_form.equipepassee) }}</h3>
                         {{ form_widget(edit_form.equipepassee) }}
+                        {% endif %}
+                         {% if edit_form.equipe is defined %}
+                        <h3>{{ form_label(edit_form.equipe) }}</h3>
+                        {{ form_widget(edit_form.equipe) }}
+                        {% endif %}
                     </div>
                     <div class="card">
                     <div class="card-header">Photo</div>
