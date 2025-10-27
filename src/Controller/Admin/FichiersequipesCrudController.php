@@ -810,7 +810,7 @@ class FichiersequipesCrudController extends AbstractCrudController
             if (isset($_REQUEST['filters']['equipe'])) {
                 $idEquipe = $_REQUEST['filters']['equipe'];
                 $equipe = $repositoryEquipe->find($idEquipe);
-                if ($typefichier == 0) {
+                if ($typefichier < 2) {
                     $qb->andWhere('entity.typefichier <=:typefichier');
                     $typefichier = $typefichier + 1;
                 }
@@ -842,9 +842,9 @@ class FichiersequipesCrudController extends AbstractCrudController
                     $typefichier = $_REQUEST['filters']['typefichier'];
                 }
 
-                if ($typefichier == 0) {
-                    $qb->andWhere('entity.typefichier <=:typefichier');
-                    $typefichier = $typefichier + 1;
+                if ($typefichier <=1) {
+                    $qb->andWhere('entity.typefichier =:typefichier');
+
                 }
                 if ($typefichier > 1) {
                     if ($typefichier != 4) {
@@ -1183,11 +1183,22 @@ class FichiersequipesCrudController extends AbstractCrudController
         $nbrequis = count($equipes_inscrites);//Pour les fichiers hors autorisation en ne comptabilisant pas les annexes dans le cas des mémoires
         $liste=null;
         if($typefichier!=6) {//POur les fichiers sans les autorisations photos
+            if ($typefichier==0){
+                foreach ($liste_fichiers as $fichier) {
+                    foreach ($equipes_inscrites as $equipe) {
+                        if ($fichier->getEquipe() == $equipe and $fichier->getTypefichier() == 0) {
+                            $n++;
+                        }
+                    }
+                }
 
-            foreach ($liste_fichiers as $fichier) {
-                foreach ($equipes_inscrites as $equipe) {
-                    if($fichier->getEquipe()==$equipe) {
-                        $n++;
+            }
+            else {
+                foreach ($liste_fichiers as $fichier) {
+                    foreach ($equipes_inscrites as $equipe) {
+                        if ($fichier->getEquipe() == $equipe) {
+                            $n++;
+                        }
                     }
                 }
             }
@@ -1232,8 +1243,8 @@ class FichiersequipesCrudController extends AbstractCrudController
         }
 
 
-        $type=$this->getParameter('type_fichier_lit')[$typefichier];
-
+        $type=ucfirst($this->getParameter('type_fichier_lit')[$typefichier]);
+        if($n>1)$type=$type.'s';
         return [$type,$n,$nbrequis];
     }
 

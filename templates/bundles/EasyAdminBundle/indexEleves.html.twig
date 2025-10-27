@@ -79,6 +79,13 @@
         {% endfor %}
 
     </div>
+    {% if entities|length > 0 %}
+        <div class="content-panel-footer without-padding without-border">
+            {% block paginator %}
+                {{ include(ea.templatePath('crud/paginator'), { render_detailed_pagination: not some_results_are_hidden }) }}
+            {% endblock paginator %}
+        </div>
+    {% endif %}
     <table class="table datagrid {{ entities is empty ? 'datagrid-empty' }}">
         {% if num_results > 0 %}
             <thead>
@@ -163,9 +170,15 @@
                                             </twig:ea:ActionMenu:Overlay>
                                         </twig:ea:ActionMenu>
                                     {% else %}
-                                        {% for action in entity.actions %}
-                                            {{ include(action.templatePath, { action: action, entity: entity, isIncludedInDropdown: ea.crud.showEntityActionsAsDropdown }, with_context = false) }}
-                                        {% endfor %}
+                                        <table>
+                                        <tr>
+                                            {% for action in entity.actions %}
+                                                <td>
+                                                    {{ include(action.templatePath, { action: action, entity: entity, isIncludedInDropdown: ea.crud.showEntityActionsAsDropdown }, with_context = false) }}
+                                                </td>
+                                            {% endfor %}
+                                        </tr>
+                                        </table>
                                     {% endif %}
                                 {% endif %}
                             </td>
@@ -225,9 +238,9 @@
     <div class="row">
         {% if entities|length > 0 %}
             <div class="content-panel-footer without-padding without-border">
-                {% block paginator %}
+                {% block paginator2 %}
                     {{ include(ea.templatePath('crud/paginator'), { render_detailed_pagination: not some_results_are_hidden }) }}
-                {% endblock paginator %}
+                {% endblock paginator2 %}
             </div>
         {% endif %}
     </div>

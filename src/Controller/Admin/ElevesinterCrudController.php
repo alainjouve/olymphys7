@@ -177,9 +177,9 @@ class ElevesinterCrudController extends AbstractCrudController
                 //$editionEd = $this->doctrine->getRepository(Edition::class)->findOneBy(['id' => $editionId]);
 
             }
-            $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations')->linkToRoute('attestations_eleves_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
+            $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations des élèves non sélectionnés(après CIA)')->linkToRoute('attestations_eleves_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
-            $attestationsElevesNat = Action::new('Attestions_eleves_nat', 'Créer les attestations des élèves sélectionnés')->linkToRoute('attestations_eleves_nat_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
+            $attestationsElevesNat = Action::new('Attestions_eleves_nat', 'Créer les attestations des élèves sélectionnés(après CN)')->linkToRoute('attestations_eleves_nat_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
             $tableauexcelnonsel = Action::new('eleves_tableau_excel', 'Créer un tableau excel des élèves non sélectionnés', 'fas fa_array',)
                 ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
@@ -526,6 +526,7 @@ class ElevesinterCrudController extends AbstractCrudController
         $repositoryEquipes = $this->doctrine->getRepository(Equipesadmin::class);
         $edition = $repositoryEdition->findOneBy(['id' => $idedition]);
         $queryBuilder = $repositoryEleves->createQueryBuilder('e');
+
         if ($idequipe == 'na') {
 
             $queryBuilder->leftJoin('e.equipe', 'eq')
@@ -675,7 +676,8 @@ class ElevesinterCrudController extends AbstractCrudController
     }
 
     #[Route("/Admin/ElevesinteradminCrud/attestationsElevesTwig,{ideditionequipe}", name: "attestations_eleves_pdf")]
-    public function attestationsElevesPdf($ideditionequipe)//Un essais de conversion d'un twig avec  $knpSnappyPdf mais problème du this->render qui va chercher dans les templates, répertoire protégé;
+    public function attestationsElevesPdf($ideditionequipe)//Ceete fonction crée les deux fichiers word et pdf en même temps
+        //Un essais de conversion d'un twig avec  $knpSnappyPdf mais problème du this->render qui va chercher dans les templates, répertoire protégé;
     {
         $slugger = new AsciiSlugger();
         $idedition = explode('-', $ideditionequipe)[0];
@@ -686,7 +688,7 @@ class ElevesinterCrudController extends AbstractCrudController
         $repositoryEquipes = $this->doctrine->getRepository(Equipesadmin::class);
         $edition = $repositoryEdition->findOneBy(['id' => $idedition]);
         $queryBuilder = $repositoryEleves->createQueryBuilder('e');
-        if ($idequipe == 'na') {
+        if ($idequipe == 'na') {//na si aucun filtre a été utilisé
 
             $queryBuilder->leftJoin('e.equipe', 'eq')
                 ->andWhere('eq.edition =:edition')
@@ -695,24 +697,27 @@ class ElevesinterCrudController extends AbstractCrudController
                 ->orderBy('eq.centre', 'ASC')
                 ->addOrderBy('eq.numero', 'ASC');
             if (isset(explode('-', $ideditionequipe)[2])) {
-                explode('-', $ideditionequipe)[2] == 'ns' ? $queryBuilder->andWhere('eq.selectionnee = 0') : $queryBuilder->andWhere('eq.selectionnee = 1');
+                explode('-', $ideditionequipe)[2] == 'ns' ? $queryBuilder->andWhere('eq.selectionnee = 0 or eq.selectionnee is null') : $queryBuilder->andWhere('eq.selectionnee = 1');//
 
             }
 
         }
-        if ($idequipe != 'na') {
+        if ($idequipe != 'na') {//un filtre a été utilisé
             $equipe = $repositoryEquipes->findOneBy(['id' => $idequipe]);
             $queryBuilder
                 ->andWhere('e.equipe =:equipe')
                 ->setParameter('equipe', $equipe);
         }
         $liste_eleves = $queryBuilder->getQuery()->getResult();
+
         $zipFile = new ZipArchive();
         $now = new DateTime('now');
         $fileNameZip = $edition->getEd() . '-Attestations_eleves_non_selectionnes-' . $now->format('d-m-Y\-His') . '.zip';
         if ($zipFile->open($fileNameZip, ZipArchive::CREATE) === TRUE) {
             if ($liste_eleves != null) {
+
                 foreach ($liste_eleves as $eleve) {
+
                     $centre = '';
                     $lieu = '';
                     if ($eleve->getEquipe()->getCentre() != null) {
@@ -723,6 +728,7 @@ class ElevesinterCrudController extends AbstractCrudController
                     $filenameword = $this->getParameter('app.path.tempdirectory') . '/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($centre . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.doc';
                     $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($centre . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.pdf';
                     $filenameTemplate = '/templates/attestations/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($centre . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.html.twig';
+
                     //$filesystem = new Filesystem();
                     //$filesystem->copy($filename, $filenameTemplate);
                     //$twig = fopen($filename, 'w+');
@@ -736,20 +742,20 @@ class ElevesinterCrudController extends AbstractCrudController
                     $pdf->SetRightMargin(20);
                     $pdf->AddPage();
                     $pdf->image('https://www.olymphys.fr/public/odpf/odpf-images/site-logo-398x106.png', 20, null, 60);
-                    $str = 'Paris le 1er février 2025';
+                    $str = iconv('UTF-8', 'windows-1252','Paris le '.$this->date_in_french($this->requestStack->getSession()->get('edition')->getConcoursCia()->format('Y-m-d')));
                     $wstr = $pdf->getStringWidth($str);
-                    $str_1 = 'Paris le 1';
-                    $str_2 = 'er';
-                    $str_3 = ' février 2025';
+                    $str_1 = 'Paris le 3';
+                    $str_2 = ' ';
+                    $str_3 = 'décembre 2025';
                     $str_1 = iconv('UTF-8', 'windows-1252', $str_1);
                     $str_2 = iconv('UTF-8', 'windows-1252', $str_2);
                     $str_3 = iconv('UTF-8', 'windows-1252', $str_3);
                     $pdf->setXY(190 - $wstr, $pdf->GetY());
-                    $pdf->Cell(0, 30, $str_1, 0, 0, 'L');
-                    $pdf->setXY($pdf->getX(), $pdf->GetY() - 2);
-                    $pdf->Cell(0, 30, $str_2, 0, 0, 'L');
-                    $pdf->setXY($pdf->getX(), $pdf->GetY() + 2);
-                    $pdf->Cell(0, 30, $str_3 . "\n", 0, 0, 'L');
+                    $pdf->Cell(0, 30, $str, 0, 0, 'L');
+                   // $pdf->setXY($pdf->getX(), $pdf->GetY() - 2);
+                   // $pdf->Cell(0, 30, $str_2, 0, 0, 'L');
+                    //$pdf->setXY($pdf->getX(), $pdf->GetY() + 2);
+                    //$pdf->Cell(0, 30, $str_3 . "\n", 0, 0, 'L');
                     //$pdf->Cell(0, 30, $str, 0, 0, 'R');
                     $pdf->SetFont('helvetica', 'B', 18);
                     $str1 = 'Attestation de participation';
@@ -962,15 +968,16 @@ class ElevesinterCrudController extends AbstractCrudController
                         //$pdfWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpPdf, 'PDF');
 
                     } catch (\PhpOffice\PhpWord\Exception\Exception $e) {
-                        dd($e);
+                        $this->requestStack->getSession()->set('info','une erreur est survenue lors de la création des fichiers');
                     }
                     $objWriter->save($filenameword);
                     $zipFile->addFromString(basename($filenameword), file_get_contents($filenameword));;
-                    break;
+
                 }
 
             }
         }
+
         $zipFile->close();
         $response = new Response(file_get_contents($fileNameZip));//voir https://stackoverflow.com/questions/20268025/symfony2-create-and-download-zip-file
         $disposition = HeaderUtils::makeDisposition(
@@ -1460,9 +1467,7 @@ class ElevesinterCrudController extends AbstractCrudController
                     }
                     $objWriter->save($fileName);
                     $zipFile->addFromString(basename($fileName), file_get_contents($fileName));
-
                 }
-
             }
         }
         $zipFile->close();
