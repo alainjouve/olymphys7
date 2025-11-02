@@ -20,17 +20,23 @@ class ConseilJuryCiaType extends AbstractType
     {
 
         $pathpluginsWordcount = '../public/bundles/fosckeditor/plugins/wordcount/'; // with trailing slash sur le site
+        $pathpluginsAutogrow = '../public/bundles/fosckeditor/plugins/autogrow/';
         if ($_SERVER['SERVER_NAME'] == '127.0.0.1' or $_SERVER['SERVER_NAME'] == 'localhost') {
             $pathpluginsWordcount = 'bundles/fosckeditor/plugins/wordcount/';// with trailing slash en local
+            $pathpluginsAutogrow = 'bundles/fosckeditor/plugins/autogrow/';
         }
         $builder
             ->add('texte', CKEditorType::class, [
                 'required' => false,
                 'config' => array(
-                    'extraPlugins' => 'wordcount',),
+                    'extraPlugins' => 'wordcount,autogrow',),
                 'plugins' => array(
                     'wordcount' => array(
                         'path' => $pathpluginsWordcount,
+                        'filename' => 'plugin.js',
+                    ),
+                    'autogrow' => array(
+                        'path' => $pathpluginsAutogrow,
                         'filename' => 'plugin.js',
                     ))
             ],

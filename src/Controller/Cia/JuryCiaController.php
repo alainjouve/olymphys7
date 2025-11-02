@@ -564,8 +564,9 @@ class JuryCiaController extends AbstractController
                 $rangEquipeUp = $this->doctrine->getRepository(RangsCia::class)->createQueryBuilder('r')
                     ->leftJoin('r.equipe', 'eq')
                     ->where('eq.centre =:centre')
+                    ->andWhere('eq.edition =:edition')
                     ->andWhere('r.rang =:rang')
-                    ->setParameters(['centre' => $equipe->getCentre(), 'rang' => $rangEquipe->getRang() - 1])
+                    ->setParameters(['centre' => $equipe->getCentre(),'edition'=>$this->requestStack->getSession()->get('edition'), 'rang' => $rangEquipe->getRang() - 1])
                     ->getQuery()->getOneOrNullResult();
 
                 $nouveauRang = $rangEquipe->getRang() - 1;
@@ -579,8 +580,9 @@ class JuryCiaController extends AbstractController
                 $rangEquipeDown = $this->doctrine->getRepository(RangsCia::class)->createQueryBuilder('e')
                     ->leftJoin('e.equipe', 'eq')
                     ->where('eq.centre =:centre')
+                    ->andWhere('eq.edition =:edition')
                     ->andWhere('e.rang =:rang')
-                    ->setParameters(['centre' => $equipe->getCentre(), 'rang' => $rangEquipe->getRang() + 1])
+                    ->setParameters(['centre' => $equipe->getCentre(),'edition'=>$this->requestStack->getSession()->get('edition'), 'rang' => $rangEquipe->getRang() + 1])
                     ->getQuery()->getOneOrNullResult();
                 $nouveauRang = $rangEquipe->getRang() + 1;
                 $rangEquipeDown->setRang($rangEquipe->getRang());

@@ -11,7 +11,7 @@ fos_ck_editor:
       toolbar: full
       filebrowserBrowseRoute: elfinder
       filebrowserBrowseRouteParameters: [ ]
-      extraPlugins: 'wordcount,notification, autogrow'
+      config.extraPlugins: 'wordcount,notification,autogrow'
       width: 900px
 
     main_config:

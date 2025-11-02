@@ -63,6 +63,7 @@ class NotesCiaRepository extends EntityRepository
 
     public function EquipeDejaNotee($jure_id, $equipe_id)
     {
+        //dd($jure_id, $equipe_id);
         $queryBuilder = $this->createQueryBuilder('n');  // n est un alias, un raccourci donné à l'entité du repository. 1ère lettre du nom de l'entité
 
         // On ajoute des critères de tri, etc.

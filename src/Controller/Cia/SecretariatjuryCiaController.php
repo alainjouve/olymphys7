@@ -935,7 +935,23 @@ class SecretariatjuryCiaController extends AbstractController
         if ($form->isSubmitted() and $form->isValid()) {
             if ($noteequipe !== null) {
                 $nllEquipe = $form->get('equipe')->getData();//equipe B dans laquelle la note de l'équipe A doivent être transférées
-                $notenllequipe = new NotesCia();//notes de l'équipe B dans laquelle la note de l'équipe A doivent être transférées
+                $notenllequipe = new NotesCia();
+                $noteTemp=[];
+                $remplace=false;
+                if ($this->doctrine->getRepository(NotesCia::class)->findOneBy(['jure' => $jure, 'equipe' => $nllEquipe])!=null){
+                    $notenllequipe=$this->doctrine->getRepository(NotesCia::class)->findOneBy(['jure' => $jure,'equipe' => $nllEquipe]);
+                    $noteTemp['ecrit']=$notenllequipe->getEcrit();
+                    $noteTemp['Exper']=$notenllequipe->getExper();
+                    $noteTemp['Demarche']=$notenllequipe->getDemarche();
+                    $noteTemp['Oral']=$notenllequipe->getOral();
+                    $noteTemp['Repquestions']=$notenllequipe->getRepquestions();
+                    $noteTemp['Wgroupe']=$notenllequipe->getWgroupe();
+                    $noteTemp['Total']=$notenllequipe->getTotal();
+                    $noteTemp['Origin']=$notenllequipe->getOrigin();
+                    $remplace=true;
+                }
+
+                //notes de l'équipe B dans laquelle la note de l'équipe A doivent être transférées
                 $notenllequipe->setJure($jure);  //transfert de la note de l'équipe A vers l'équipe B
                 $notenllequipe->setEquipe($nllEquipe);
                 $notenllequipe->setEcrit($noteequipe->getEcrit());
@@ -950,12 +966,26 @@ class SecretariatjuryCiaController extends AbstractController
                 $total = $notenllequipe->getPoints();
                 $notenllequipe->setTotal($total);
                 $this->doctrine->getManager()->persist($notenllequipe);//enregistrement de la notes de l'équipe B
-                $this->doctrine->getManager()->remove($noteequipe);//suppresion de la notes de l'équipe A
-                $jure->addEquipe($nllEquipe);//affectation de l'équipe B au juré
+                if($remplace==false){//la nouvelle équipe n'avait pas de note
+                    $this->doctrine->getManager()->remove($noteequipe);//suppresion de la notes de l'équipe A
+                }
+                else{//on échange les notes en injectant la note de l'éqyupe B dans l'équipe A
+                    $noteequipe->setEcrit($noteTemp['ecrit']);
+                    $noteequipe->setExper($noteTemp['Exper']);
+                    $noteequipe->setDemarche($noteTemp['Demarche']);
+                    $noteequipe->setOral($noteTemp['Oral']);
+                    $noteequipe->setOrigin($noteTemp['Origin']);
+                    $noteequipe->setRepquestions($noteTemp['Repquestions']);
+                    $noteequipe->setWgroupe($noteTemp['Wgroupe']);
+                    $noteequipe->setTotal($noteTemp['Total']);
+                    $this->doctrine->getManager()->persist($noteequipe);
+                }
+               $jure->addEquipe($nllEquipe);//affectation de l'équipe B au juré si ce n'était pas le cas au départ
                 $this->doctrine->getManager()->persist($notenllequipe);//hydratation de la base
-                $jure->removeEquipe($equipe);//supression de l'équipe A dans la liste équipes du juré
-                $this->doctrine->getManager()->persist($jure);//enregistrement du juré
+                //$jure->removeEquipe($equipe);//supression de l'équipe A dans la liste équipes du juré si la note de la nouvelle équipe n'existait pas
+                //$this->doctrine->getManager()->persist($jure);//enregistrement du juré
                 $this->doctrine->getManager()->flush();
+
             } else {
 
                 $this->requestStack->getSession()->set('info', 'Le juré n\'a pas encore noté l\'équipe, veuillez modifier l\'affectation de ce juré dans le tableau de gestion des jurés');
@@ -1144,6 +1174,7 @@ class SecretariatjuryCiaController extends AbstractController
         $centrescia = $this->doctrine->getRepository(Centrescia::class)->findBy(['actif' => true]);
         $equipes = $repositoryEquipes->createQueryBuilder('e')
             ->andWhere('e.inscrite =:value')
+            ->andWhere('e.edition =:edition')
             ->andWhere('e.numero <:numero')
             ->setParameters(['value' => true, 'edition' => $this->requestStack->getSession()->get('edition'), 'numero' => 100])
             ->getQuery()->getResult();
