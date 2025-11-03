@@ -18,7 +18,8 @@
     <hr>
     <a href="{{ asset('odpf/odpf-documents/CyberjuryCia_jure.pdf') }}" type="button" class="btn btn-warning" target="_blank">Aide du cyberjury</a>
     <hr>
-
+    <a href="#" data-toggle="modal" data-target="#modalinfonotationjury"><i class="fa fa-info-circle fa-3x" aria-hidden="true" title="Comment est notée un équipe"></i>
+    </a>
     {% if horaires|length == listeEquipes|length %}
         <div>Dans l'ordre chronologique de passage des équipes</div>
         {% for horaire in horaires %}
@@ -112,5 +113,5 @@
         {{ include('modales/modale_info.html.twig') }}
         {{ app.session.set('info',null) }}
     {% endif %}
-
+{{ include('modales/modale_infonotation jury.html.twig') }}
 {% endblock %}

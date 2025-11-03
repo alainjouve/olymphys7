@@ -1,0 +1,33 @@
+<div class="modal" id="modalinfonotationjury" tabindex="-1" role="dialog">{# affiche les infos #}
+    <div class="modal-dialog modal-lg" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalinfoLabel">Information </h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                Chaque équipe est évaluée selon la grille d'évaluation que vous avez dû recevoir<br>
+
+                <div class="text-center">
+              <img src="{{ asset('odpf/odpf-images/grille_d_evaluatione.png') }}" width="400" style="margin: auto"><br>
+                </div>
+                    On calcule d'abord la moyenne des totaux attribués par chaque juré, hors les points d'écrit. Soit Total_1 cette moyenne.<br>
+                L'écrit correspond au mémoire et n'est évalué que par le rapporteur et le lecteur.<br>
+                On calcule la moyenne Mécr des deux notes d'écrit.<br>
+                Cette moyenne est ajoutée au Total_1.<br>
+                On obtient alors le total qui apparaît dans le tableau général du classement des équipes.<br>
+                <span style="text-align: center">Total=Mécr + Total_1</span>
+
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+
+        </div>
+    </div>
+</div>
