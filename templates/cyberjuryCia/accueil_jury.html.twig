@@ -18,8 +18,9 @@
     <hr>
     <a href="{{ asset('odpf/odpf-documents/CyberjuryCia_jure.pdf') }}" type="button" class="btn btn-warning" target="_blank">Aide du cyberjury</a>
     <hr>
-    <a href="#" data-toggle="modal" data-target="#modalinfonotationjury"><i class="fa fa-info-circle fa-3x" aria-hidden="true" title="Comment est notée un équipe"></i>
-    </a>
+    Comment est calculé le total d'une équipe :<span style="margin-inside: center"><a href="#" data-toggle="modal" data-target="#modalinfonotationjury"><i class="fa fa-info-circle fa-3x" aria-hidden="true" title="Comment est notée un équipe" style="margin:auto; vertical-align: center  "></i>
+    </a></span>
+    <hr>
     {% if horaires|length == listeEquipes|length %}
         <div>Dans l'ordre chronologique de passage des équipes</div>
         {% for horaire in horaires %}

@@ -14,12 +14,19 @@
                 <div class="text-center">
               <img src="{{ asset('odpf/odpf-images/grille_d_evaluatione.png') }}" width="400" style="margin: auto"><br>
                 </div>
-                    On calcule d'abord la moyenne des totaux attribués par chaque juré, hors les points d'écrit. Soit Total_1 cette moyenne.<br>
+                On calcule d'abord  les points attribués par chaque juré, hors les points d'écrit.<br>
+                On utilise la formule suivante : <br>
+                <b>TotalJure=15xQualExpérience + 10xDemScientifique + 10xOral + 10xRepQuestions + 10xOriginal + 5xTravailEquipe</b>
+                <br>
+                Pour chaque item  : insuffisant = 1, moyen = 2, bien = 3, excellent = 4.<br>
+                On calcule ensuite la moyenne, appelée Total1,  des totaux attribués par les jurés <span style="font-size: larger; font-weight: bold">ayant examiné l'équipe. </span><br>
+                <b>Total1=(TotalJuré1 +....+TotalJuréN)/N si N est le nombre de jurés ayant examiné l'équipe.</b><br>
                 L'écrit correspond au mémoire et n'est évalué que par le rapporteur et le lecteur.<br>
-                On calcule la moyenne Mécr des deux notes d'écrit.<br>
-                Cette moyenne est ajoutée au Total_1.<br>
+                On calcule la moyenne M_Ecrit avec les deux notes d'écrit.<br>
+                <b>M_Ecrit=15x(EcritJuréL+EcritJureR)/2</b><br>
+                Cette moyenne est ajoutée au Total1.<br>
                 On obtient alors le total qui apparaît dans le tableau général du classement des équipes.<br>
-                <span style="text-align: center">Total=Mécr + Total_1</span>
+                <span style="text-align: center"><b>TotalEquipe=M_Ecrit + Total1</b></span>
 
 
             </div>
