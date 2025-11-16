@@ -284,7 +284,7 @@ class PhotosController extends AbstractController
 
         $editionN = $repositoryEdition->find(['id' => $concourseditioncentre[1]]);
         $editionN1 = $repositoryEdition->findOneBy(['ed' => $editionN->getEd() - 1]);
-        new DateTime('now') >= $this->requestStack->getSession()->get('edition')->getDateOuvertureSite() ? $edition = $editionN : $edition = $editionN1;
+        new \DateTime('now') >= $this->requestStack->getSession()->get('edition')->getDateOuvertureSite() ? $edition = $editionN : $edition = $editionN1;
         $datecia = $this->requestStack->getSession()->get('edition')->getConcoursCia()->format('Y-m-d');
         $datelimite = date_modify(new \DateTime($datecia), '+30days');
         if (new \DateTime('now') <= $edition->getDateOuvertureSite()) {//Dans la période de 30 jours qui suit le CIA , les profs peuvent gérer les photos des cia
@@ -611,7 +611,7 @@ class PhotosController extends AbstractController
             ->getRepository(Photos::class);
         $listePhotos = null;
         $editionN1 = $repositoryEdition->findOneBy(['ed' => $editionN->getEd() - 1]);
-        new DateTime('now') >= $editionN->getDateOuvertureSite() ? $edition = $editionN : $edition = $editionN1;
+        new \DateTime('now') >= $editionN->getDateOuvertureSite() ? $edition = $editionN : $edition = $editionN1;
 
         if (in_array('ROLE_ORGACIA', $user->getRoles())) {
             $listePhotos = $repositoryPhotos->createQueryBuilder('p')

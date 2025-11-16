@@ -129,7 +129,7 @@ class Equipesadmin
             if ($this->getLettre() != null) {
                 return $ed . '-' . $this->numero . '-' . $this->lettre . '-' . $this->titreProjet;
             } else {
-                return $ed . '-' . $this->numero . '-' . $this->titreProjet;
+                return $ed . '-' .$this->centre.'-'. $this->numero . '-' . $this->titreProjet;
             }
         }
         return '';
@@ -188,15 +188,10 @@ class Equipesadmin
             $Numero = $this->numero . '-' . $this->getLettre();
         }
         $edition = $this->getEdition();
-        if ($centre = $this->getCentre()) {
-            $nomcentre = $this->getCentre()->getCentre() . '-';
-        }
-
-
         $nom_equipe = $this->getTitreProjet();
         $ville = $this->getLyceeLocalite();
 
-        $infoequipe = $edition->getEd() . '-' . 'Eq ' . $Numero . ' - ' . $nom_equipe . ' - ' . $ville;
+        $infoequipe = $edition->getEd() .'-'.$this->centre.'-' . 'Eq ' . $Numero . ' - ' . $nom_equipe . ' - ' . $ville;
         return $infoequipe;
     }
 

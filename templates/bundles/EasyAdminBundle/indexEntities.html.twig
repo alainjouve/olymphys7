@@ -81,10 +81,18 @@
 
         </div>
     </div>
-    {% if entities|length > 0 %}
+
+    {% if entities|length > 0  %}
+
         {% if app.session.get('bilan_depots')!=null %}
 
             Fichiers déposés : {{app.session.get('bilan_depots')[1]  }} {{ app.session.get('bilan_depots')[0] }} sur   {{ app.session.get('bilan_depots')[2] }}
+            {{ app.session.set('bilan_depots',null) }}
+        {% endif %}
+        {% if app.session.get('bilanEquipes')!=null %}
+           <span style="font-weight: bold"> Nombre d'équipes inscrites : {{ app.session.get('bilanEquipes')['nbEquipes'] }}<br>
+               Nombre d'abandons :  {{ app.session.get('bilanEquipes')['nbAbandons'] }}</span>
+            {{ app.session.set('bilanEquipes',null) }}
         {% endif %}
         <div class="content-panel-footer without-padding without-border">
             {% block paginator %}

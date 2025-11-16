@@ -44,9 +44,6 @@
         {% endfor %}
     </div>
 
-    <progress id="progressBar" hidden></progress><div id="status">0%</div>
-
-
     <div class="well">
         {% if app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
 

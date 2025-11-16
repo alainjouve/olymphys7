@@ -1176,10 +1176,11 @@ class FichiersequipesCrudController extends AbstractCrudController
         $liste_fichiers=$this->doctrine->getRepository(Fichiersequipes::class)->findBy(['edition'=>$edition,'typefichier'=>$typefichier]);
         $n=0;
         $equipes_inscrites = $this->doctrine->getRepository(Equipesadmin::class)->createQueryBuilder('e')
-        ->where('e.edition =:edition')
-        ->andWhere('e.inscrite =:inscrite')
-        ->setParameters(['edition' => $edition, 'inscrite' => 1])
-        ->getQuery()->getResult();
+            ->where('e.edition =:edition')
+            ->andWhere('e.inscrite = :inscrite')
+            ->andWhere('e.numero < 100')
+            ->setParameters(['edition' => $edition, 'inscrite' => 1])
+            ->getQuery()->getResult();
         $nbrequis = count($equipes_inscrites);//Pour les fichiers hors autorisation en ne comptabilisant pas les annexes dans le cas des mémoires
         $liste=null;
         if($typefichier!=6) {//POur les fichiers sans les autorisations photos
