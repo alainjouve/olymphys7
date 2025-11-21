@@ -437,7 +437,7 @@ class FichiersequipesCrudController extends AbstractCrudController
         if ($fichiers != []) {
             $zipFile = new ZipArchive();
             $now = new DateTime();
-            $fileNameZip = 'Telechargement_olymphys_' . $this->getParameter('type_fichier')[$typefichier] . '_' . $now->format('d-m-Y\-His');
+            $fileNameZip = 'Telechargement_olymphys_' . $this->getParameter('type_fichier')[$typefichier] . '_' . $now->format('d-m-Y\-His').'.zip';
 
             if (($zipFile->open($fileNameZip, ZipArchive::CREATE) === TRUE) and (null !== $fichiers)) {
 
