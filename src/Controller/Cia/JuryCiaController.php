@@ -98,6 +98,7 @@ class JuryCiaController extends AbstractController
             ->addOrderBy('h.horaire', 'ASC')
             ->setParameters(['centre' => $jure->getCentrecia(), 'edition' => $this->requestStack->getSession()->get('edition')])
             ->getQuery()->getResult();
+
         $listeEquipes=[];
         foreach ($horaires as $horaire) {
             foreach($equipes as $equipe) {
@@ -139,6 +140,7 @@ class JuryCiaController extends AbstractController
         $content = $this->renderView('cyberjuryCia/accueil_jury.html.twig',
             array(
                 'listeEquipes' => $listeEquipes,
+                'equipesjure'=> $equipesJures,
                 'progression' => $progression,
                 'jure' => $jure,
                 'memoires' => $memoires,

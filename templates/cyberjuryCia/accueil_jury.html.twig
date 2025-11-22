@@ -21,7 +21,7 @@
     Comment est calculé le total d'une équipe :<span style="margin-inside: center"><a href="#" data-toggle="modal" data-target="#modalinfonotationjury"><i class="fa fa-info-circle fa-3x" aria-hidden="true" title="Comment est notée un équipe" style="margin:auto; vertical-align: center  "></i>
     </a></span>
     <hr>
-    {% if horaires|length == listeEquipes|length %}
+    {% if listeEquipes!=null and horaires|length == listeEquipes|length %}
         <div>Dans l'ordre chronologique de passage des équipes</div>
         {% for horaire in horaires %}
             {% if horaire.equipe.numero in progression|keys and horaire.equipe.inscrite==true %}
@@ -51,6 +51,13 @@
                             {% endif %}
                         {% endif %}
                     {% endfor %}
+                    {% for num in jure.lecteur %}
+                        {% if num==horaire.equipe.numero %}<span style="color: #0a53be"> Vous êtes lecteur de cette équipe</span> {% endif %}
+                    {% endfor %}
+                    {% for num in jure.rapporteur %}
+
+                        {% if num==horaire.equipe.numero %} <span style="color: #0a53be">  Vous êtes rapporteur de cette équipe</span> {% endif %}
+                    {% endfor %}
                     <a href="{{ path('fichiers_afficher_liste_fichiers_prof', {'infos': horaire.equipe.id~'-interacadémique-'~app.user.centrecia} ) }}"
                        class="fas fa-info-circle"
                        title="En savoir plus sur cette équipe"> </a> Heure de passage
@@ -61,7 +68,7 @@
             {% endif %}
         {% endfor %}
     {% else %}
-        {% for equipes in listeEquipes %}
+        {% for equipes in equipesjure %}
 
             {% if equipes.numero in progression|keys and equipes.inscrite==true %}
 
@@ -93,7 +100,12 @@
                     <a href="{{ path('fichiers_afficher_liste_fichiers_prof', {'infos': equipes.id~'-interacadémique-'~app.user.centrecia} ) }}"
                        class="fas fa-info-circle"
                        title="En savoir plus sur cette équipe"> </a>
-
+                    {% for num in jure.lecteur %}
+                        {% if num==equipes.numero %}<span style="color: #0a53be"> Vous êtes lecteur de cette équipe</span>{% endif %}
+                    {% endfor %}
+                    {% for num in jure.rapporteur %}
+                        {% if num==equipes.numero %}<span style="color: #0a53be">  Vous êtes rapporteur de cette équipe </span>{% endif %}
+                    {% endfor %}
                     {% if horaires!=null %}
                         {% for horaire in horaires %}
                             {% if horaire.equipe==equipes %}
