@@ -3,11 +3,8 @@
 {# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
 {% extends '@EasyAdmin/page/content.html.twig' %}
 {% trans_default_domain ea.i18n.translationDomain %}
-
-
-
 {% block main %}
-    <div class="header-index">
+    <div class="container-fluid">
         <div class="row">
             <div class="col content_title"><h1>{{ ea.crud.customPageTitle|raw }}</h1></div>
             <hr>
