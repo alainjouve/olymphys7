@@ -1,0 +1,829 @@
+The Hair link
+
+Malvache Zélie
+Pinchon-dhenin Arthur
+Oger charlotte
+Vanhée Lilou
+
+Remerciements
+Nous souhaitons tout d’abord remercier notre professeur de physique-chimie
+M. Thibaut qui nous a accompagnés tout au long de notre aventure. Il a su nous
+conseiller, nous écouter et nous rassurer. Sans lui, nous n’aurions jamais pu participer
+aux Olympiades de Physique. Nous voudrions évidemment remercier Julie, la
+préparatrice en laboratoire qui nous a gentiment ouvert les portes des labos.
+Nous remercions notre lycée qui nous a fourni des moyens pour accomplir ce
+projet. Le lycée et l’ensemble de l’équipe enseignante nous ont soutenus dans notre
+démarche.
+Enfin, nous remercions l’ISA de Lille et notamment M. Foukhani qui nous a
+chaleureusement accueillis et qui nous a consacré une précieuse partie de son temps.
+Nous n’oublions pas nos nombreux donateurs qui ont cru en notre projet et qui
+n’ont pas hésité à nous confier leurs cheveux.
+
+1
+
+Sommaire :
+Introduction
+I/ Présentation du cheveu
+1) Structure d’un cheveu
+2) Différentes phases de croissance d’un cheveu
+3) Caractéristiques
+II/ Diffraction
+1) Présentation du principe de diffraction
+2) Mesures préalables
+3) Mesures et Graphiques
+III/ Élasticité
+1) Présentation du principe d’élasticité
+2) Mesures réalisées au lycée
+3) Mesures réalisées à l’ISA
+4) Mesures réalisées à Actemium Dunkerque
+IV/ Modèle macroscopique
+Conclusion
+Sources
+
+2
+
+Introduction
+Qui sommes-nous ?
+Nous sommes quatre lycéens du nord de la France, Arthur, Charlotte, Lilou et
+Arthur, passionnés par la physique. Depuis la seconde, nous attendons avec
+impatience notre tour pour participer aux Olympiades de Physique. En effet, nous
+avons pu suivre les exploits des groupes nous précédant. Afin de trouver un sujet,
+nous nous sommes questionnés sur le monde qui nous entoure et ses particularités…
+Nous nous sommes intéressés à une vidéo d’un homme, Thamer Le Terrible,
+capable de tirer un train de 39 tonnes avec ses cheveux. Cette vidéo nous a intrigués
+et nous avons voulu savoir comment les cheveux pouvaient tirer une masse aussi
+importante. Nous nous sommes donc posés la question suivante :
+Comment les cheveux de Thamer Le Terrible peuvent-ils tracter un train de
+plusieurs tonnes ?
+Nous avons commencé par émettre des hypothèses. Nous avons tout d’abord
+supposé qu’il y avait un lien entre l’épaisseur et l’élasticité du cheveu. En effet, nous
+imaginions que plus le cheveu est fin, moins il sera élastique et inversement. De plus,
+nous pensions que la résistance du cheveu variait en fonction de son épaisseur (si le
+cheveu est plus épais, il est plus résistant).
+Pour répondre à la problématique et vérifier nos hypothèses, nous avons
+commencé par mesurer les cheveux en utilisant le phénomène de diffraction. Puis,
+nous avons mesuré leur élasticité.
+
+3
+
+I/ Présentation des cheveux
+1) Structure d’un cheveu
+Le cheveu est un poil relié composé d'une racine, d'une tige, d'un bulbe et relié au cuir
+chevelu par un follicule pileux. Le nombre de follicules pileux est déterminé
+génétiquement et est d'environ 150 par cm². Le cheveu contient de la kératine qui en
+est l'élément prépondérant ainsi que de la mélanine qui lui donne sa couleur. La
+kératine est une protéine dont sa structure est constituée de 18 acides aminés. Le
+cheveu se compose de différents compartiments : la moelle, composée de cellules
+hélicoïdales fibreuses, le cortex contentant des cellules de kératine appelées cellules
+corticales et d'une cuticule, composée de cellules de kératine superposées entre elles
+et reliées par un ciment riche en lipide. Tous ces compartiments s'agrègent entre eux
+pour former la tige du cheveu.
+
+Le cheveu est donc composé de longues chaînes de molécules aussi appelées
+polymères entre lesquelles existent des liaisons liées au phénomène de réticulation.
+On retrouve ce phénomène dans d'autres matériaux comme le caoutchouc. C’est pour
+cela que nous avons choisi une bande de sachet plastique pour notre modèle
+macroscopique (cf modèle macroscopique).
+
+4
+
+2) Phases de croissance
+La pousse des cheveux se fait sous forme de cycle. À chaque fin de cycle le cheveu
+tombe et un nouveau pousse. Un cycle se décompose en plusieurs phases :
+-La phase de croissance : lors de cette phase la structure, couleur et forme du cheveu
+est formée. Elle dure plusieurs mois à plusieurs années.
+- La phase d'atrophie : pendant cette période la croissance est ralentie mais ne cesse
+pas, elle est d'environ 1 cm par mois.
+-La phase de repos : cette dernière phase dure 5 à 6 semaines. Lors de cette phase
+les cellules se préparent déjà à la pousse du nouveau cheveu.
+3) Types de cheveux
+On peut classer les cheveux suivant leurs formes : du type 1, le plus lisse, au type 8,
+le plus crépu.
+On peut aussi les classer selon leur forme déterminée génétiquement. Il en existe 3
+types : le type caucasien, asiatique et africain.
+
+II/ Diffraction
+1) Description
+La diffraction est l'interception d’un phénomène ondulatoire par une ouverture
+ou un objet. Ce phénomène ne peut se réaliser que sous certaines conditions : la
+distance entre l’objet et l’écran doit être la plus grande possible et la taille de l’objet ou
+de l’ouverture doit être du même ordre de grandeur que la longueur d’onde de l’onde
+utilisée.
+De plus, selon le théorème de Babinet, on peut remplacer l’objet par son
+complémentaire et on obtient la même figure de diffraction.
+
+montage expérimental
+Dans notre montage, le faisceau d’un laser de longueur d’onde  = 650 nm rencontre
+un cheveu d’épaisseur inconnue. Nous savons aussi que l’épaisseur a du cheveu qui
+se mesure en μm est inversement proportionnelle à la taille de la tâche. Donc si la
+
+5
+
+largeur de la tâche augmente, c’est parce que l'épaisseur de l’objet diminue, et
+inversement. Nous pouvons ainsi en déduire cette équation qui nous permet de
+connaître l'épaisseur d’un cheveu :
+
+𝑎 =
+
+2𝜆𝐷
+𝐿
+
+2) Les mesures préalables
+Nous avons commencé par mesurer un cheveu au niveau de la racine, du
+milieu et de la pointe. Nous voulions savoir si l’épaisseur d’un cheveu était constante
+sur toute la longueur ou si elle variait. Comme les valeurs obtenues étaient des valeurs
+assez similaires nous en avons conclu que nous pouvions prendre le milieu du cheveu
+pour le reste de nos mesures sans gros écarts sur les résultats.
+Lorsque nous avons débuté les manipulations de diffraction des cheveux, nous
+pensions que tous les cheveux d’une même personne avaient la même épaisseur. Or
+nous nous sommes vite aperçus que le diamètre des cheveux d’un individu pouvait
+varier d’environ 20 µm.
+par exemple : prenons les cheveux de Charlotte
+Tableau présentant les épaisseurs de cinq cheveux différents en μm.
+97.5
+
+92.9
+
+78.0
+
+82.9
+
+77.3
+
+3) Nos mesures et graphiques
+Afin de nous familiariser avec la manipulation et la relation que nous allions
+utiliser, nous avons commencé par mesurer des fils d’épaisseurs connues. Nous
+avons obtenu des figures de diffraction comme la suivante :
+
+Tache de diffraction obtenue pour un fil de 80 µm
+
+Nous avons retrouvé l’épaisseur de notre fil par le calcul (ici de 80µm). Nous
+savions donc pour la suite de nos expériences que le montage de diffraction
+fonctionnait bien.
+
+6
+
+Nous avons donc mesuré différents cheveux appartenant à nos camarades (les
+mesures suivantes ont été calculées avec une longueur d’onde = 650 nm et une
+distance écran laser D = 241.2 cm). Nous avons pu calculer l'incertitude grâce au
+calcul suivant :
+
+𝑢(𝑎)
+=
+𝑎
+
+𝑢(𝐿)
+𝐿
+
++
+
+𝑢(𝐷)
+𝐷
+
+La longueur d’onde du laser ayant une très grande précision, nous pouvons considérer
+qu’elle n’influence pas la précision de la mesure de l’épaisseur du cheveu.
+Nous avons obtenu un tableau de valeurs :
+Donateur du
+Cheveu
+
+Type du cheveu
+
+Longueur de la
+Epaisseur du
+tâche de diffraction cheveu (en µm)
+(en cm)
+
+Lilou
+
+Lisse et décoloré
+
+4.3 ± 0.1
+
+73 ± 2
+
+Anouck
+
+Lisse
+
+4.1 ± 0.1
+
+76 ± 2
+
+Arthur
+
+Lisse
+
+3.1 ± 0.1
+
+101 ± 4
+
+Zélie
+
+Lisse
+
+4.0 ± 0.1
+
+78 ± 2
+
+Charlotte
+
+Ondulé
+
+3.5 ± 0.1
+
+90 ± 3
+
+Pour donner suite à nos recherches sur la porosité du cheveu, nous avons
+voulu comparer l’épaisseur d’un même cheveu sec et mouillé. Nous avons donc
+mesuré l’épaisseur d’un cheveu à l’état sec. Nous l’avons ensuite trempé durant 4 min
+dans une eau à température ambiante (température de l’eau du robinet). Enfin, nous
+avons mesuré son épaisseur. Nous avons répété cette expérience pour 2 cheveux de
+types différents.
+Nous avons regroupé nos mesures dans un tableau et nous avons mesuré l'incertitude
+de chaque mesure grâce à un tableau excel.
+Donateur du
+cheveu
+
+Type du cheveu
+
+Epaisseur du
+cheveu sec
+(en µm)
+
+Température
+de l’eau
+(en °C)
+
+Epaisseur du
+cheveu mouillé
+(en µm)
+
+Zélie
+
+Lisse
+
+60 ±1
+
+21.9 ± 0.1
+
+110±3
+
+Hélia
+
+Bouclé
+
+76±1
+
+21.6 ± 0.1
+
+78±2
+
+7
+
+Nous avons donc conclu que le cheveu de Zélie absorbait énormément l’eau
+contrairement à celui d’Hélia. Cela peut être dû à sa nature bouclée.
+Après nous être intéressés à l’épaisseur d’un cheveu et aux différentes
+variations, nous avons continué nos recherches en nous penchant sur l’élasticité d’un
+cheveu.
+
+II/ L'élasticité du cheveu
+1) Présentation
+L’élasticité des cheveux est la propriété du cheveu de se détendre et de
+reprendre sa forme initiale sans se casser ou se rompre, après avoir été étiré ou
+soumis à une contrainte mécanique.
+L’élasticité des cheveux serait définie comme la capacité du cheveu à s’étirer jusqu’à
+20 à 50 % de sa longueur initiale sans se rompre, en fonction de la température et de
+l’humidité. Les cheveux avec une élasticité élevée sont considérés comme sains et
+résistants, tandis que ceux avec une élasticité faible sont plus vulnérables aux
+dommages.
+L’élasticité des cheveux est influencée par plusieurs facteurs, notamment :
+- la composition chimique du cheveu (kératine, lipides, eau)
+- la structure du cuir chevelu et des écailles du cheveu, …
+L’élasticité peut être représentée par une loi physique, la loi de Hooke. La loi de Hooke
+est valable tant que la déformation du matériau reste dans la phase d’élasticité, c'està-dire que le matériau retrouve sa forme d'origine une fois que la force appliquée est
+retirée. Au-delà de l'élasticité, le matériau peut subir des déformations permanentes
+ou se rompre. La loi de Hooke ne s'applique donc plus.
+
+La loi de Hooke est modélisée par la formule suivante :
+
+𝐹 = −𝐾 × 𝛥𝑙
+où F est la force exercée sur le cheveu en N, K est une constante et 𝛥𝑙 est
+l’allongement du cheveu.
+
+8
+
+Pour pouvoir mesurer l’élasticité d’un cheveu nous avons tenté de le
+suspendre. Nous avons finalement décidé d’utiliser une potence à laquelle nous
+attachons le cheveu et y suspendre un sachet dans lequel on ajoute progressivement
+du riz.
+Nous avons constaté que le cheveu se détend pendant un long moment avant
+de se stabiliser. C’est pourquoi nous avons attendu un certain temps entre chaque
+masse ajoutée.
+2) Mesures prises au lycée
+Au lycée, nous avons réalisé différentes expériences concernant l’élasticité
+d’un cheveu. Nous avons tout d’abord observé ce qui se passait lorsqu’on laissait une
+masse m = 25 g suspendue à notre cheveu. Notre objectif était de savoir si
+l’allongement d’un cheveu se stabilise à partir d’un certain moment.
+
+Photo du montage où le cheveu
+à une épaisseur de 84 µm et
+supporte une masse de 25 g
+
+Nous avons observé qu’au bout de 100 minutes, le cheveu n’était toujours pas
+cassé. Cependant, nous avons pu constater que sa longueur avait augmenté de
+2.2 ± 0.2 cm. En effet, à t = 0, le cheveu mesurait 16.2±0.1 cm et à t =100 min, le
+cheveu mesurait 18.4±0.1 cm. On constate donc une augmentation d’environ 13%.
+Nous avons ensuite réalisé une seconde expérience. Nous avons suspendu un
+cheveu d’une longueur de 21.0 cm à une potence et nous avons ajouté des masses
+de plus en plus élevées à des intervalles de temps égaux. Nous avons donc mesuré
+l'allongement du cheveu à chaque ajout. Nous avons obtenu le tableau de valeurs
+suivant:
+Temps t
+
+Masse
+suspendue m
+(en g)
+
+Force exercée F
+(en Newton)
+
+Longueur du
+cheveu l (en cm)
+
+Allongement du
+cheveu 𝛥l (en cm)
+
+Epaisseur du
+cheveu (en µm)
+
+1
+
+0
+
+0.000 ± 0.002
+
+23.0 ± 0.1
+
+0.0 ± 0.1
+
+72 ± 1
+
+2
+
+5 ± 0.1
+
+0.049 ± 0.002
+
+23.6 ± 0.1
+
+0.6 ± 0.1
+
+71 ± 1
+
+3
+
+10 ± 0.1
+
+0.098 ± 0.002
+
+23.8 ± 0.1
+
+0.8 ± 0.1
+
+71 ± 1
+
+9
+
+4
+
+15 ± 0.1
+
+0.147 ± 0.002
+
+24.3 ± 0.1
+
+1.3 ± 0.1
+
+70 ± 1
+
+5
+
+20 ± 0.1
+
+0.196 ± 0.002
+
+24.5 ± 0.1
+
+1.5 ± 0.1
+
+68 ± 1
+
+6
+
+25 ± 0.1
+
+0.245 ± 0.002
+
+24.7 ± 0.1
+
+1.7 ± 0.1
+
+67 ± 1
+
+7
+
+30 ± 0.1
+
+0.294 ± 0.002
+
+24.7 ± 0.1
+
+1.7 ± 0.1
+
+67 ± 1
+
+8
+
+35 ± 0.1
+
+0.343 ± 0.002
+
+24.7 ± 0.1
+
+1.7 ± 0.1
+
+67 ± 1
+
+9
+
+40 ± 0.1
+
+0.392 ± 0.002
+
+25.0 ± 0.1
+
+2.0 ± 0.1
+
+66 ± 1
+
+10
+
+45 ± 0.1
+
+0.441 ± 0.002
+
+26.0 ± 0.1
+
+3.0 ± 0.1
+
+66 ± 1
+
+11
+
+50 ± 0.1
+
+0.490 ± 0.002
+
+29.8 ± 0.1
+
+6.8 ± 0.1
+
+63 ± 1
+
+12
+
+55 ± 0.1
+
+0.539 ± 0.002
+
+30.9 ± 0.1
+
+7.9 ± 0.1
+
+61 ± 1
+
+13
+
+60 ± 0.1
+
+0.588 ± 0.002
+
+33.0 ± 0.1
+
+10 ± 0.1
+
+61 ±1
+
+14
+
+65 ± 0.1
+
+0.637 ± 0.002
+
+33.5 ± 0.1
+
+10.5 ± 0.1
+
+60 ± 1
+
+15
+
+70 ± 0.1
+
+0.686 ± 0.002
+
+34.3 ± 0.1
+
+11.3 ± 0.1
+
+59 ± 1
+
+16
+
+75 ± 0.1
+
+0.735 ± 0.002
+
+35.4 ± 0.1
+
+12.4 ± 0.1
+
+58 ± 1
+
+17
+
+80 ± 0.1
+
+0.785 ± 0.002
+
+RUPTURE
+
+RUPTURE
+
+RUPTURE
+
+En cm
+
+Nous avons voulu réaliser un graphique représentant la force F exercée sur le
+cheveu en fonction de l’allongement du cheveu.
+Nous avons voulu comparer ce graphique obtenu avec un cheveu sec avec un
+graphique
+que
+l’on
+aurait
+obtenu
+avec
+un
+cheveu
+mouillé.
+Nous avons donc réalisé la même expérience mais cette fois-ci avec un cheveu
+mouillé. Nous avons regroupé nos mesures dans un graphique. Nous avons obtenu
+ceci :
+
+10
+
+encm
+
+Nous avons donc pu conclure que le cheveu sec et mouillé s’allonge selon une même
+courbe. Nous avons cherché à comprendre pourquoi nous avons obtenu ces
+graphiques et nous avons découvert que l’allongement d’un cheveu pouvait se
+découper en 3 phases :
+1. Phase d’élasticité, lors de cette phase, les chaînes qui composent les cheveux
+se déplient.
+2. Phase de plasticité, lors de cette phase, les liaisons entre chaînes s’allongent.
+3. Phase de rupture, lors de cette phase, les liaisons inter-chaînes subissent une
+forte contrainte ce qui augmente la raideur du cheveu jusqu’à sa rupture.
+
+Schéma des
+3 phases
+représentant
+l’allongement
+d’un cheveu
+
+11
+
+Lors de nos recherches bibliographiques, nous avons découvert le modèle
+élastique d’une fibre cylindrique. En effet, aux faibles valeurs de F, l’allongement de
+la fibre est proportionnel à la valeur de la force appliquée et satisfait la loi de Hooke :
+𝛥𝑙 =
+
+𝐹×𝐿0
+𝐸×𝜋×𝑟2
+
+où E est une constante appelée “module de traction” qui dépend de la nature de la
+fibre et r est le rayon du cheveu.
+
+Notre objectif était donc de trouver une valeur proche au module de traction du
+cheveu.
+Nous avons d’abord réalisé ce calcul sur cheveu sec.
+.
+
+∗
+
+𝐸=
+
+∗
+
+=
+
+∗
+∗
+
+(
+
+∗
+
+∗
+
+)²
+
+≃ 3.3 ∗ 10 𝑁𝑚
+
+Puis, nous l’avons réalisé sur cheveu mouillé et nous avons obtenu :
+
+0.35 ∗ 21 ∗ 10
+1.0 ∗ 10
+𝐸=
+≃ 2 ∗ 10 𝑁𝑚
+𝜋 ∗ (110 ∗ 10 )
+Nous avons donc trouvé deux valeurs du module de traction du cheveu plus ou moins
+proche de la valeur usuelle. Nous pensons que notre expérience est peu précise et
+ne nous permet pas d’avoir des résultats plus justes. C’est pourquoi nous avons
+contacté l’ISA de Lille.
+3) Mesures prises à l’ISA
+Le mercredi 27 novembre nous sommes attendus à l’ISA (Institut Supérieur
+d’Agriculture) de Lille pour effectuer des mesures d’élasticité plus précises sur nos
+cheveux. Mr Foukhani, professeur de physique nous a donc expliqué comment nous
+pouvions utiliser cette machine qui sert à mesurer l’allongement du cheveu lorsqu’il
+subit une force de traction. Cette machine est appelée extensomètre. Nous avons
+ainsi pu mesurer avec précisions l’allongement de différents cheveux.
+
+12
+
+Photos de la manipulation prises lors de notre sortie à l’ISA
+Nous avons réalisé la même manipulation pour 3 cheveux appartenant à une
+même personne. Nous avons obtenu les courbes suivantes :
+
+Courbes de trois cheveux d’une même personne mis en tension avec l'extensomètre
+(Force en gramme et Distance en millimètre )
+Nous avons bien retrouvé les 3 phases de l’élasticité. On retrouve la phase 1
+d’élasticité, la phase 2 de plasticité et la phase 3 de rupture.
+4) Mesures réalisées à Actemium Dunkerque
+Après avoir étudié la résistance d’un cheveu, nous avons voulu nous intéresser
+à la résistance de plusieurs cheveux. Nous avions émis l’hypothèse que lorsque les
+cheveux sont tressés comme des cordes, ils sont plus résistants. Nous nous sommes
+13
+
+donc rendus à Actemium Dunkerque afin d’utiliser une de leurs machines capable
+d’étirer des câbles électriques, ainsi nous espérions qu’elle nous permettrait d’obtenir
+des résultats sur des cheveux. Nous avons donc décidé de mesurer la résistance de
+cinq cheveux non tressés puis tressés. Nous avons répété l'expérience pour dix
+cheveux tressés et non tressés. Il est important de noter que la machine que nous
+avons utilisée est très puissante c’est pourquoi nous avons obtenus des courbes si
+épaisses. Voici les courbes obtenues. (La force est en kilonewton et l’allongement en
+millimètres).
+
+Courbe obtenue avec 5 cheveux non tressés
+
+Courbe obtenue avec 5 cheveux tressés
+
+Cette première expérience nous a permis de réfuter notre hypothèse. En effet, nous
+avons pu constater que la résistance du cheveu ne varie pas si les cheveux sont
+tressés.
+
+Courbe obtenue avec 10 cheveux non tressés
+
+Courbe obtenue avec 10 cheveux tressés
+
+Nous sommes arrivés à la même conclusion lors de cette expérience sur 10 cheveux
+tressés et non tressés. Tresser les cheveux ne les rend pas plus résistants, du moins
+14
+
+pas avec 5 ou 10 cheveux. Peut-être qu’avec plus de cheveux et une machine moins
+puissante nous pourrions obtenir des résultats plus représentatifs.
+Cependant, nous avons pu constater que la résistance des cheveux s'additionne. En
+effet, la résistance d’un cheveu avant d’entrer dans la phase de plasticité est d’environ
+0,5 N (cf. Graphique des mesures prises à l’ISA). La résistance de 5 cheveux avant
+d’entrer dans la phase de plasticité est de 2,5 N soit 5 fois plus que celle d’un cheveu.
+Enfin, pour 10 cheveux, la résistance est de 5 N soit 10 fois plus que pour un cheveu.
+Cela nous a permis de mieux comprendre comment réagissent les cheveux lorsqu’on
+les regroupe.
+
+Modèle macroscopique
+Afin de pouvoir mieux visualiser ce qu’il se passe sur nos cheveux lorsque l’on
+tire dessus, nous avons décidé de réaliser un modèle macroscopique.
+Pour ce modèle nous avons choisi d’utiliser une languette de sac poubelle. En effet,
+le plastique est une polymérisation de certains matériaux tels que l’éthylène, le
+propylène, le styrène c’est pourquoi nous avons pensé aux sacs plastiques car la
+kératine contenue dans le cheveu est également un polymère.
+En faisant les expériences d’élasticité nous avons remarqué qu’il se comporte comme
+les cheveux pendant l’élasticité. On observe deux phases au cours desquelles les
+chaînes qui composent le plastique se déplient puis s’allongent. La troisième phase
+étant trop difficile à visualiser, on suppose tout de même que le plastique et les
+cheveux ont des capacités assez similaires d’un point de vue de l’élasticité.
+
+On observe que
+les chaînes
+s’allongent
+
+Section de sac
+
+Les chaînes s’allongent Les chaînes se déplient
+
+15
+
+Réponse à la problématique
+Dans le cadre de ce projet, nous avons analysé les propriétés physiques des
+cheveux en les confrontant aux contraintes nécessaires pour réaliser un exploit
+spectaculaire : tracter une masse de 39 tonnes. Nos observations combinent des
+aspects biologiques et mécaniques pour comprendre pourquoi les cheveux, en dépit
+de leur apparence fragile, peuvent résister à de telles forces.
+Les cheveux humains, bien qu’ayant une apparence fragile à première vue, se sont
+révélés être des matériaux remarquablement résistants et élastiques. Nos
+observations ont mis en lumière deux caractéristiques fondamentales.
+-
+
+Structure et composition
+
+La kératine, qui constitue la principale protéine des cheveux, leur confère une
+robustesse mécanique impressionnante. Grâce à des mesures de diffraction, nous
+avons pu évaluer leur épaisseur et constater que des cheveux plus épais (comme
+ceux d'Arthur ou Zélie) offrent une plus grande résistance aux forces appliquées.
+-
+
+Interaction avec l'humidité
+
+Les cheveux réagissent fortement à l'humidité. Cette propriété permet aux cheveux
+de se déformer sous tension tout en revenant à leur forme initiale une fois la contrainte
+relâchée, un comportement crucial dans la gestion des charges importantes.
+
+-
+
+Calcul des forces appliquées
+
+Force de traction nécessaire Ft
+Pour déterminer la force minimale requise pour déplacer la masse de 39 tonnes sur
+des rails, nous avons utilisé :
+𝐹𝑡𝑜𝑡𝑎𝑙𝑒 = 𝐹𝑎 + 𝐹𝑓𝑟𝑜𝑡𝑡𝑒𝑚𝑒𝑛𝑡𝑠
+𝐹𝑎 = 𝑎 × 𝑚
+𝐹𝑓 = µ × 𝑁(𝑁 = 𝑓𝑜𝑟𝑐𝑒 𝑛𝑜𝑟𝑚𝑎𝑙 𝑠𝑜𝑖𝑡 𝑚 ⋅ 𝑔)
+que l’on simplifie en :
+𝐹𝑡 = 𝑚(𝑎 + µ𝑔)
+Avec 𝑚 = 39000 𝑘𝑔 (masse totale du train), 𝑎 = 0.4 𝑚/𝑠² (accélération mesurée
+via la vidéo de l'exploit), µ = 0.005 (coefficient de frottement des rails) et 𝑔 =
+9.81𝑚/𝑠² (gravité)
+En calculant Ft, on obtient 𝐹𝑡 = 39 000 × (0.4 + 0.005 × 9.81) ≈ 17 513 𝑁
+
+16
+
+La force nécessaire est donc de 17 513 N.
+Pour évaluer si les cheveux de Thamer peuvent supporter cette force, nous avons
+estimé leur résistance à partir des données suivantes :
+- Nombre moyen de cheveux : 125 000.
+- Résistance moyenne d’un cheveu :
+- À la racine : 0.7 N/cheveu, soit 𝐹𝑚𝑟 = 125 000 × 0.7 = 87 500 𝑁.
+- En lui-même : 0.75 N/cheveu, soit 𝐹𝑚𝑐 = 125 000 × 0.75 =
+93 750 𝑁.
+En effet, nous avons montré que la résistance des cheveux s’additionne
+
+La force maximale que les cheveux de Thamer peuvent supporter dépasse largement
+les 17 513 N requis, que ce soit à la racine ou sur leur longueur.
+Pour vérifier si les cheveux ont été déformés sous cette charge, nous avons calculé
+leur résistance pour un seuil de 30 g par cheveu soit 0.3N :
+𝐹𝑚𝑐 = 125 000 × 0.3 = 37 500 𝑁.
+Cette valeur est également bien supérieure à la force de 17 513 N. Ainsi, les cheveux
+de Thamer n’ont pas été déformés lors de l’exploit.
+Les résultats de nos analyses confirment que l'exploit réalisé par Thamer Le Terrible
+est non seulement plausible, mais également explicable par les propriétés
+mécaniques exceptionnelles des cheveux humains. Ces fibres naturelles allient
+légèreté, résistance et élasticité, leur permettant de supporter des forces bien au-delà
+des apparences. Ce projet nous a permis de mieux comprendre non seulement les
+cheveux en tant qu’éléments biologiques, mais aussi de révéler l'importance des
+principes physiques, tels que l'élasticité et la diffraction, dans l'étude de matériaux
+naturels.
+
+17
+
+Sources
+-
+
+dictionnaire de français Larousse
+https://www.renefurterer.com/fr-fr/conseil/cuir-chevelu/la-physiologie-du-cuirchevelu
+https://www.aroma-zone.com/page/porosite-cheveux
+https://www.typology.com/carnet/anatomie-du-cheveu-de-quoi-est-il-compose
+https://www.futura-sciences.com/sciences/definitions/physique-loi-hooke2086/
+http://maths-sciences-lp.acamiens.fr/IMG/pdf/M.12_Constante_de_raideur_d_un_ressort.pdf
+https://crlab.com/fr_fr/domaine-scientifique/cheveux-et-cuir-chevelu/structureet-composition-chimique-du-cuir-chevelu/
+https://www.refletsdelaphysique.fr/articles/refdp/pdf/2011/04/refdp201126p10.
+pdf
+https://www.dynveo.fr/blog/keratine-cheveux-n138
+https://www.sciencedirect.com/science/article/abs/pii/S1624568710000582
+https://mohani.fr/blog/hair-structure-types-care/
+https://www.bio-meca.com/fr/glomeca-3-loi-hooke/
+https://chirurgieesthetiquelavocat.com/structure-cheveu.html
+https://www.researchgate.net/publication/249784629_The_StressStrain_Curv
+e_of_Keratin_Fibers_and_the_Structure_of_the_Intermediate_Filament
+
+18
+
+

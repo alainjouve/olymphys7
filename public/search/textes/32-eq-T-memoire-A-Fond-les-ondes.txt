@@ -1,0 +1,708 @@
+​
+
+2024-2025 – 32ème édition​
+
+À fond les ondes !
+BODERE Anouk
+GUELLOUL Tigane
+LUNVEN Maïwenn
+STELANDRE Anna
+Encadré par : SCHOLLHAMMER Gaëlle
+LE MEN Gaëlle
+
+Lycée Polyvalent Vauban – Brest
+Équipe T n°28
+
+1
+
+Table des matières​
+Remerciements​
+1. Introduction​
+2. Histoire de l’effet Doppler-Fizeau​
+2.1. Christian Doppler (1803-1853)​
+2.2. Christoph Hendrik Buys-Ballot (1817-1890)​
+2.3. Hippolyte Fizeau (1819-1896)​
+3. L’effet Doppler​
+3.1. Généralités sur les ondes mécaniques et électromagnétiques​
+3.1.1. Ondes mécaniques, électromagnétiques, fréquence, période, vitesse du son​
+3.2. Analyse physique du phénomène​
+3.2.1. Pour les ondes mécaniques​
+3.2.2. Pour les ondes électromagnétiques​
+3.3. Partie théorique de l’Effet Doppler pour les radars​
+4. Partie expérimentale​
+4.1. A partir d’une expérience réalisée au lycée​
+4.1.1. Matériel et protocole expérimental​
+4.1.2. Valeurs de fréquences et de vitesses calculées​
+4.2. Remplacement de l’acquisition de LatisPro par Arduino​
+4.2.1. Test de différents programmes Arduino (mesures de fréquence)​
+4.2.2. Les 3 programmes Arduino testés​
+4.2.3. Conclusions sur les 3 programmes testés​
+4.2.4. Mesure de la vitesse du chariot d’imprimante Avec Arduino​
+
+4.3. Remplacement du chariot d’imprimante par une table à coussin d’air​
+4.3.1. Matériel expérimental​
+4.3.2. Programme​
+4.3.3. Principe de mesure et montage​
+4.4. Expérience avec un module Doppler HB100​
+4.4.1. Matériel et protocole expérimental​
+4.4.2. Principe de mesure​
+5. Conclusion​
+6. Sources​
+
+3
+3
+4
+4
+4
+4
+5
+5
+5
+6
+6
+6
+7
+8
+8
+8
+10
+11
+11
+11
+13
+14
+
+15
+15
+16
+16
+17
+17
+18
+18
+19
+
+2
+
+Remerciements
+Avant tout, nous tenons à remercier Gaëlle SCHOLLHAMMER, notre professeure de
+Physique-Chimie au lycée Vauban de Brest, pour nous avoir encadrés, accompagnés et aidés tout au long
+de cette aventure, mais également de nous avoir lancés, conseillés et soutenus sur ce projet.
+Nous souhaitons également remercier le personnel de laboratoire Rémy CORRE et Gaëlle LE MEN,
+pour nous avoir fournis avec confiance le matériel nécessaire à notre projet et d’avoir pris le temps de
+répondre à nos questions.
+Et enfin, un grand merci aux organisateurs des Olympiades de Physique pour nous avoir offert
+l’opportunité de réaliser ce superbe projet.
+
+1.​Introduction
+
+Nous sommes quatre élèves de Terminale Générale du lycée Vauban de Brest et chacun d’entre
+nous manifeste un intérêt particulier pour les sciences, plus particulièrement pour la physique.
+Dans le cadre du programme scolaire, nous avons été amenés à étudier l’effet Doppler et nous
+nous sommes penchés sur l’aspect expérimental de cette notion en nous demandant : comment
+pouvons-nous expérimenter et faire des mesures de vitesse par effet Doppler au lycée ? Nous avons
+décidé de participer aux Olympiades de Physique et de présenter nos recherches et expériences sur
+l’effet Doppler dans le cadre de mesures de fréquence et calculs de vitesse.
+Dans ce projet, notre sujet sera exploité sous deux points de vue. Le premier sera uniquement
+historique et théorique, et le second sera consacré aux expériences que nous avons pu réaliser au sein
+du lycée.
+L’effet Doppler est un phénomène physique couramment utilisé, dans le domaine médical avec
+notamment les échographies Doppler qui servent à visualiser les flux sanguins ou encore les Doppler
+transcrâniens, qui permettent de visualiser le flux sanguin arrivant au cerveau, dans les radars ou encore
+en astronomie avec l’effet Doppler-Fizeau.
+
+3
+
+2.​Histoire de l’effet Doppler-Fizeau
+2.1.​Christian Doppler (1803-1853)
+Christian Doppler était un mathématicien et physicien autrichien. Il était
+enseignant en mathématiques et en géométrie pratique au sein de l’École
+Polytechnique de Prague.
+En 1842, il montre que la fréquence d’une oscillation (son, lumière) subit un
+changement quand la source ou l’observateur sont en mouvement. Il soutient
+ainsi que le mouvement des étoiles a une influence sur leur couleur apparente,
+la fréquence des ondes lumineuses perçue par l’observateur étant modifiée.
+
+2.2.​Christoph Hendrik Buys-Ballot (1817-1890)
+Scientifique néerlandais, il démontra la validité de la théorie de l’effet Doppler
+découverte par Christian Doppler. Pour ce faire, en 1845, il enregistre la
+différence entre la fréquence d’une note bien précise jouée par groupe de
+musiciens dans un train s’approchant puis s’éloignant de la gare et celle perçue
+sur un quai par un observateur pour confirmer la théorie développée par
+Christian Doppler en 1842.
+
+2.3.​Hippolyte Fizeau (1819-1896)
+En 1848, le physicien et astronome français Hippolyte Fizeau développe le
+même principe que Christian Doppler, de manière indépendante, sur les ondes
+électromagnétiques.
+Parallèlement à ces travaux, il démontra que le mouvement d’une source
+lumineuse par rapport à l’observateur se traduit par un déplacement des raies
+du spectre et donc que le principe énoncé par Christian Doppler pour les
+ondes sonores est valable en optique. Ce principe de Doppler-Fizeau est à la
+base de nombreuses mesures en astrophysique et a notamment permis de
+mieux comprendre le modèle de l’expansion de l’Univers.
+
+4
+
+3.​L’effet Doppler
+
+3.1.​Généralités sur les ondes mécaniques et électromagnétiques
+3.1.1.​Ondes mécaniques, électromagnétiques, fréquence, période, vitesse du son
+Une onde est la propagation d’une perturbation qui se déplacent à une vitesse déterminée qui dépend
+des caractéristiques du milieu de propagation, c’est un phénomène physique décrit par une fonction
+dépendant de l’espace et du temps avec transport d’énergie et pas de transport de matière.
+Une onde est caractérisée par différentes grandeurs physiques :
+-​ Une périodicité temporelle T en seconde (s) qui correspond à la durée d’un motif élémentaire
+-​ Une périodicité spatiale λ (ou longueur d’onde) en mètre (m)
+-​ Une fréquence en hertz (Hz) qui correspond au nombre de fois qu'un phénomène périodique se
+1
+
+reproduit par unité de temps. On l’obtient par la relation 𝑓 = 𝑇 .
+
+Une onde mécanique nécessite un milieu matériel pour se propager, il n’y a pas de propagation dans le
+vide (ex : le son).
+Une onde électromagnétique correspond quant à elle à une onde qui ne nécessite pas de milieu matériel
+pour se propager (ex : la lumière).
+
+3.2.​Analyse physique du phénomène
+Que ce soit pour les ondes mécaniques ou électromagnétiques, l’effet Doppler se définit par la
+modification apparente de la fréquence d’un signal due au mouvement relatif de la source et de l’observateur.
+
+5
+
+3.2.1.​Pour les ondes mécaniques
+
+Dans le cas d’une onde mécanique sonore, lorsque la source du signal s’approche de l’observateur, celui-ci
+le percevra plus aigu, et inversement, lorsque la source s’éloigne, l’observateur percevra un son plus grave, du fait
+de la modification de la fréquence émise par la source.​
+
+3.2.2.​ Pour les ondes électromagnétiques
+Dans le cas des ondes électromagnétiques du domaine visible, lorsque la source émettrice s’approche de
+l'observateur, celui-ci percevra une onde de longueur d’onde plus courte, on parle alors de décalage vers le bleu.
+Inversement, lorsque la source émettrice s’éloigne de l'observateur, celui-ci percevra une onde de longueur d’onde
+plus longue, on parle alors de décalage vers le rouge.
+L’effet Doppler est appelé effet Doppler-Fizeau dans le cas d’ondes lumineuses, du fait de la découverte de
+H. Fizeau concernant le phénomène dans ce cas.
+
+​
+C’est ce décalage spectral vers le rouge des galaxies, en anglais « redshift », observé par E.
+Hubble qui a permis la découverte du modèle de l’expansion de l’Univers.
+
+6
+
+3.3.​Partie théorique de l’Effet Doppler pour les radars
+Dans le cas d’un radar, on observe un double effet Doppler :
+
+Dans un premier temps, on a la source de l’onde de fréquence fE, (1) qui correspond au radar et qui est
+immobile alors que la surface réceptrice de l’onde s’approche. On est donc dans un premier cas d’effet Doppler
+où :
+Avec f1 : fréquence reçue en (2), fE : fréquence émise par la source (1), c :
+vitesse de l’onde (340 m∙s-1 pour une onde sonore ou 3∙108 m∙s-1 pour une onde
+électromagnétique), v : vitesse de la surface (2) s’approchant de la source.
+
+Dans un second temps, on a (2) qui, en réfléchissant l’onde qu’il reçoit, devient source de cette onde, en
+s’approchant du récepteur (1). On a donc un second cas de l’effet Doppler où :
+Avec fR : fréquence reçue par le récepteur du radar (1), f1 : fréquence différente
+de fE émise par (2), c : vitesse de l’onde (340 m∙s-1 pour une onde sonore ou
+3∙108 m∙s-1 pour une onde électromagnétique), v : vitesse de la surface émettrice
+(2) s’approchant du récepteur (1).
+On peut exprimer fR avec fE :
+
+Finalement, on détermine la différence totale de fréquence entre l’émission (fE) et la réception (fR) :
+
+On détermine donc la vitesse par la relation :
+Avec v : vitesse de la surface (2), c : vitesse de l’onde (340 m∙s-1 pour une onde
+sonore ou 3∙108 m∙s-1 pour une onde électromagnétique), fE : fréquence émise par la source (1),
+Δf : différence entre les fréquences émise et reçue
+
+7
+
+4.​Partie expérimentale
+4.1.​ A partir d’une expérience réalisée au lycée
+Dans un premier temps, nous avons cherché à mesurer une vitesse par l’effet Doppler grâce à un montage
+existant au lycée : mesure du déplacement d’un chariot d’imprimante avec des ondes ultrasonores (cf photo
+ci-dessous).
+
+4.1.1.​Matériel et protocole expérimental
+Le matériel expérimental utilisé était prévu pour mesurer des vitesses par effet Doppler tout en
+comparant le résultat obtenu par mesure de la vitesse moyenne v. Ainsi , avec la distance d parcourue par la
+𝑑
+
+chariot et la durée Δt du déplacement, on en déduit la vitesse de déplacement du chariot : 𝑣 = Δ𝑡 .
+
+(1) : Oscilloscope / (2) : Générateur Basse Fréquence (GBF), f0 = 40,0 kHz / (3) : Alimentation DC sortie 2 fois 30V – 5A /
+(4) : Ordinateur avec logiciel LatisPro / (5) : Alimentation 15 V – 150 mA / (6) : Multiplieur / (7) : Circuit d’imprimante
+avec chariot se déplaçant à une vitesse que l’on cherche à déterminer / (8) : Carte d’acquisition SYSAM-SP5
+
+Dans ce montage, une onde de fréquence f0 = 40,0 kHz, déterminée par le générateur basse fréquence,
+est émise par l’émetteur, placé face au chariot sur l’axe d’imprimante. Cette onde est ensuite réfléchie sur le
+chariot se déplaçant suivant l’axe grâce à une courroie entraînée par un moteur. Cette onde réfléchie est captée
+par un récepteur R à ultrason situé à côté de l'émetteur E.
+8
+
+L’onde émise f0 et celle reçue fR sont alors traitées dans un multiplieur et un filtre passe-bas, puis par une
+carte d’acquisition SYSAM-SP5. Celle-ci envoie alors les données acquises à l’ordinateur, qui renvoie alors les
+résultats sous forme de signal pseudo-périodique de période égale à Δf. Exemple :
+
+La courbe obtenue peut alors permettre d’obtenir facilement la différence entre les deux fréquences
+Δf = fR - f0. La différence Δf obtenue permet ainsi de calculer la vitesse de déplacement du chariot grâce à la
+formule du double effet Doppler :
+
+Principe de mesure
+Dans le cadre de cette expérience, on cherche à mesurer la vitesse v du chariot à partir de la différence
+entre les fréquences des ondes émises et reçues. L’émetteur à ultrasons émet un signal de fréquence f0 = 40,0 kHz
+en direction du chariot. Celle-ci est réfléchie par le chariot avec une fréquence différente f1. Le récepteur fait
+l’acquisition de l’onde réfléchie. La différence de fréquences déterminée par LatisPro permet de calculer la vitesse
+du chariot.
+Pour comparer ces résultats, nous déterminons, par lecture graphique de la courbe de l’onde reçue pour
+déterminer de temps Δt du chariot à faire un aller entre sa position initiale et sa position finale proche de
+l’émetteur/récepteur à US. On mesure également la distance d entre ces deux positions, et calculons par la suite la
+vitesse du chariot par la relation v = Δ𝑡 .
+𝑑
+
+Dans l’exemple suivant, nous obtenons une période de 35ms pour 14 motifs, on détermine alors par
+application de la relation précédente une période pour 1 motif de T = 0.0025s.
+
+La fréquence ainsi obtenue est de
+Δf = 400 Hz. Par application de la
+relation du double effet Doppler, la
+vitesse du chariot pour cette valeur de
+Δf est de v = 1,70 m∙s-1.
+
+9
+
+4.1.2.​Résultats des mesures
+Nous calculons la vitesse du chariot par deux méthodes et obtenons les valeurs indiquées dans le tableau
+ci-dessous :
+●​ Par mesure de la différence de fréquences émise et reçue donnée par LatisPro correspondant au Δf.
+●​ A partir de la distance et de la durée du mouvement.
+Tension (V) f ( 𝑇 )= Δf (Hz) Δt (s)
+6,4
+83,3
+11
+186,3
+14,5
+259,7
+17
+307,9
+20
+357,1
+1
+
+𝑐•Δ𝑓
+
+v ( 2•𝑓 ) (m∙s-1)
+
+0,67
+0,32
+0,23
+0,19
+0,16
+
+0,36
+0,79
+1,09
+1,31
+1,52
+
+v ( Δ𝑡 ) (m∙s-1)
+𝑑
+
+d (m)
+0,38
+0,25
+0,78
+0,25
+1,07
+0,25
+1,29
+0,25
+1,55
+0,25
+
+Nous pouvons constater que les mesures réalisées par effet Doppler et par le simple calcul de la distance
+sur le temps donnent des résultats proches validant ainsi ce premier protocole par effet Doppler.
+
+4.2.​ Remplacement de l’acquisition de LatisPro par Arduino
+Nous souhaitions ensuite remplacer la carte d'acquisition et l’ordinateur par un microcontrôleur type
+Arduino Uno afin de rendre notre expérience plus mobile. L'idée étant que le microcontrôleur mesure la
+fréquence reçue au niveau du récepteur puis calcule et affiche directement la vitesse du chariot. Pour cela, nous
+avons donc testé différents programmes Arduino nous permettant de mesurer des fréquences de signaux
+périodiques à fréquences élevées (de l’ordre de 40 kHz) avec une bonne précision.
+
+4.2.1.​Test de différents programmes Arduino (mesures de fréquence)
+Dans un premier temps nous allons mesurer, sur un Arduino Uno, la fréquence d’un signal périodique issu
+d’un GBF. Le signal sera directement envoyé sur une carte Arduino, ce qui permettra de tester différents
+programmes. Nous testerons 3 programmes différents.
+Ces essais ont pour but de déterminer quel programme Arduino, parmi les trois choisis, est le plus adapté à nos
+mesures de fréquences ultérieures. Le montage est le suivant :
+
+Il se compose d’un générateur basse fréquence (GBF) branché directement à une carte Arduino Uno.
+Les mesures de fréquences, par série de 100 mesures environ, sont récupérées dans le moniteur série et
+sont traitées par un programme python, capable de calculer la moyenne des fréquences et l’écart type des
+mesures effectuées. Pour tester ces trois programmes, on fera varier la fréquence du signal GBF entre 40,0 Hz et
+10
+
+4,00 MHz, la forme du signal (carré, sinusoïdal et triangulaire) et l’amplitude du signal. Le traitement des données
+se fera par un programme python.
+
+4.2.2.​Les 3 programmes Arduino testés
+Après des recherches sur internet, nous avons sélectionné 3 programmes Arduino permettant de mesurer des
+fréquences de tensions périodiques :
+●​ un programme utilisant la fonction PulseIn
+●​ un programme utilisant la bibliothèque FreqCount
+●​ et un autre la bibliothèque FreqMeasure
+Ces programmes sont conçus pour réaliser 100 mesures de fréquences consécutivement.
+Vous trouverez plus de détails concernant ces programmes et les mesures réalisées dans l’annexe 1
+
+La fonction pulseIn :​
+
+​
+
+​
+
+​
+
+La bibliothèque FreqMeasure :
+
+La bibliothèque FreqCount :
+
+11
+
+Pour que ce soit plus clair, vous trouverez ci-dessous un exemple de mesures réalisées avec la fonction PulsIn,
+pour un signal de 40,07 Hz (affichage GBF) et d’amplitude 5,0 V, 100 mesures ont été réalisées.
+Voici un extrait de l’affichage moniteur série
+
+Puis par traitement des données reçus sur le moniteur série, par le programme python, voici ce que l’on obtient:​
+Signal carré
+​ signal sinusoïdal
+​ signal triangulaire
+Nombre de mesures 100
+Moyenne : 40.34
+Écart-type : 0.01
+
+Nombre de mesures 100
+Moyenne : 40.34
+Écart-type : 0.03
+
+Nombre de mesures 100
+Moyenne : 40.33
+Écart-type : 0.04
+
+Toutes les mesures réalisées sont dans l’annexe 1 : mesures obtenues avec les 3 programmes et en modifiant la
+fréquence et l’amplitude du signal GBF.
+
+4.2.3.​Conclusions sur les 3 programmes testés
+A partir de la fonction pulseIn :
+Le programme mesure le temps t1 durant lequel le signal entrant reste à l’état haut (5V), puis le temps t2 à l’état
+bas (0V). Il en déduit la période T par une simple addition T = t1 + t2, et la fréquence par un simple calcul f = 1/T.
+On ajoute un compteur afin que le programme effectue 100 mesures puis s’arrête. La mesure est effectuée toutes
+les 100 ms, ce délai peut être diminué à 10 ms.
+Conclusion : à partir d’un signal de fréquence supérieur à 4 kHz, les mesures réalisées par la fonction pulseIn, ne
+sont plus fiables, les écarts-types sont trop élevés et les valeurs moyennes s’écartent des valeurs affichées par le
+GBF. Cette fonction peut être utilisée pour des signaux, de préférence carrés et de fréquence inférieure à 400 Hz
+et d’amplitude crête à crête supérieure à 0,8 V. Par contre, la mesure des fréquences est rapide.
+
+A partir des bibliothèques FreqMeasure et FreqCount :
+FreqCount mesure la fréquence d’un signal en comptant le nombre d’impulsions pendant une durée déterminée,
+FreqMeasure mesure le temps écoulé pendant chaque cycle d’une fréquence d’entrée. Cela nécessite l’installation
+des bibliothèques FreqCount.h et FreqMeasure.h de Paul Stoffregen.
+
+12
+
+D’après les résultats précédents, on établir les conclusions suivantes :
+●​ La bibliothèque FreqMeasure pourra être utilisée pour des fréquences de signaux périodiques pas trop
+élevées, inférieures à 4 kHz. Pour des fréquences inférieures 100 Hz, la forme du signal (carré, sinusoïdal
+ou triangulaire), affecte peu les résultats des mesures. Les mesures peuvent être prises de façon rapide.
+L’amplitude du signal doit être au minimum de 0,5 V. Les mesures sont rapides.
+●​ La bibliothèque FreqCount pourra être utilisée pour des fréquences de signaux périodiques allant jusqu’à
+4 MHz (maximum obtenu avec notre GBF) avec une bonne fiabilité et reproductibilité sans être affectée
+par la forme du signal. Par contre, le temps entre deux mesures consécutives est d’environ 1s.
+
+4.2.4.​Mesure de la vitesse du chariot d’imprimante Avec Arduino
+Montage pour les mesures de vitesses :
+Les essais précédents ont montré que nous ne pourrons pas utiliser l’Arduino Uno pour mesurer
+directement la fréquence de l’onde reçue par le récepteur lors de l’expérience où le chariot se déplace. En effet, il
+s’agit de mesurer des fréquences d’ordre de grandeur égale à 40 kHz et de façon assez rapide car le déplacement
+du chariot le long de l’axe dure environ 0,5 s. La bibliothèque FreqCount est la seule qui permette des mesures
+fiables de 40 kHz mais les mesures sont réalisées trop lentement. Nous devons donc nous résoudre à garder le
+module (multiplieur et filtre pass-bas) qui permet de récupérer un signal de fréquence Δf.
+Nous savons, grâce à l’expérience p.10, que Δf varie entre 100 et 450 Hz selon la vitesse de déplacement
+du chariot et que c’est un signal pseudo-périodique dont l’amplitude varie entre 1 et 5 V. Les deux programmes
+Arduino pouvant être utilisés pour récupérer Δf sont celui utilisant la bibliothèque FreqMeasure et celui utilisant
+la fonction PulseIn.
+Nous avons réalisé 5/6 séries de mesures en appliquant une tension de 11 V aux bornes du moteur puis en
+appliquant une tension de 17 V. Les résultats sont donnés en annexe 2.
+
+Montage n°1 :
+
+13
+
+On constate que :
+●​ Les mesures sont concordantes d’une série à l’autre.
+●​ On a une plus grande régularité des mesures avec le programme Arduino utilisant la bibliothèque
+FreqMeasure.
+●​ Il est nécessaire de supprimer la première mesure correspondant au démarrage du chariot et de
+conserver uniquement les 6 mesures suivantes (ou 9 selon le programme choisi). Les dernières mesures
+correspondant à l’arrivée du chariot au niveau de l’émetteur/récepteur, nous les supprimons également.
+Cependant, nous constatons aussi des différences notables entre les mesures faites en utilisant Arduino et celles
+obtenues par Latispro. Ces dernières ayant été réalisées lors de l’expérience N°1 et donc pas au même moment,
+pourrait être l’explication.
+
+Dans un deuxième temps, nous avons cherché à améliorer la forme du signal rentrant dans l’Arduino, en le
+rendant carré, de tension toujours positive et égale à 5 V au maximum. Pour cela, nous avons rajouté au montage
+précédent un comparateur (qui transforme le signal en signal carré), une diode de redressement (afin d’ôter la
+partie négative du signal) et un potentiomètre pour rabaisser la tension à 5 v.
+
+Montage n°2 :
+
+Les résultats concordent avec les mesures
+réalisées par Arduino dans l’expérience précédente
+(montage N°1), nous n’améliorons pas les résultats,
+mais le programme est en mesure de fournir
+davantage de mesures lors d’une série, sans doute
+car le signal d’entrée sur la broche 8 de l’Arduino est
+plus propre.
+
+14
+
+4.3.​ Remplacement du chariot d’imprimante par une table à coussin d’air
+Dans la continuité de ces expériences, nous souhaitions remplacer l’entièreté du système de mesure de
+vitesse avec l’axe horizontal d’imprimante par des mobiles à coussin d’air sur une table prévue à cet effet, et par
+déplacement de l’un des mobiles vers l’autre, sur lequel on dispose le module émetteur/récepteur ultrasonore,
+puis le module radar HB100, on obtient la vitesse de déplacement du mobile. Ce remplacement de
+l’expérimentation nous permettra ainsi d’obtenir une valeur de vitesse sans frottements de contact avec la table,
+du fait du coussin d’air.
+
+4.3.1.​Matériel expérimental
+
+Mobile autoporteur à coussin d’air
+
+4.3.2.​Programme
+Afin de mesurer la vitesse de déplacement du mobile autoporteur, on utilise le programme Arduino avec
+la fonction FreqMeasure, ce qui permet d’obtenir le Δf entre l’onde émise par l’émetteur / récepteur à ultrasons
+directement dans le moniteur série.
+
+4.3.3.​Principe de mesure et montage
+
+15
+
+On place l’émetteur / récepteur d’ondes ultrasonores sur la table, face au mobile autoporteur. L’émetteur
+envoie une onde sonore de fréquence fE générée par le GBF, vers le mobile autoporteur. Celui-ci réfléchit cette
+onde de fréquence f1 différente de fE, qui est ainsi reçue par le récepteur puis envoyée à la carte Arduino, qui
+l’exprime avec Δf. A partir de la valeur de ce Δf, on calcule la vitesse de déplacement du mobile.
+Pour comparer la valeur calculée de la vitesse par le Δf mesuré par la carte Arduino, on détermine grâce
+un pointage effectué par impulsions du mobile autoporteur, la vitesse du mobile grâce au tracé de sa trajectoire.
+Ce pointage, réalisé à Δt connu (40 ou 60 ms), permet par une mesure de distance entre un nombre de points n,
+𝑑
+
+de calculer la vitesse par la relation : 𝑣 = 𝑛 𝑥 Δ𝑡 .
+
+Dans cet exemple, on a Δf mesuré par Arduino de 47,9 Hz, correspondant à une vitesse de déplacement
+du mobile de v = 0,21 ms-1. On compare ce résultat à la vitesse calculée grâce au pointage du déplacement du
+mobile, ici, pour entre le 1er et le 15ème point, on mesure une distance de 12,7 cm. Cette distance, associé dans
+𝑑
+
+la relation de la vitesse 𝑣 = Δ𝑡 , à la durée entre chaque point, ici Δt = 60 ms = 60 x 10-3 s permet de déterminer
+une valeur de vitesse de 0,21 ms-1. Les deux valeurs déterminés sont cohérentes, on peut donc en déduire que la
+mesure de vitesse est plus précise grâce au mobile autoporteur, qui permet de ne plus avoir de frottements de
+contact avec la table, forces qui entraînaient, lors de la première expérimentation avec le chariot, une diminution
+de la précision des résultats.
+
+L'utilisation des ondes ultrasonores pour mesurer des vitesses par effet Doppler a ses limites. En effet, la capacité
+de détection des objets est de l’ordre de quelques dizaines de centimètres et les ondes ultrasonores sont plus
+sensibles aux conditions environnementales. Il nous a semblé intéressant d’utiliser les ondes électromagnétiques
+pour poursuivre la mesure des vitesses par effet Doppler. Nous nous sommes donc intéressés à ce qui existe sur le
+marché, et le module HB100 semblait correspondre à nos attentes. D’autant que nous souhaitions également
+coupler ce module avec un Arduino afin de réaliser nos mesures sur des dispositifs mobiles à faible coût.
+16
+
+4.4.​ Expérience avec un module Doppler HB100
+Le Module Doppler HB100 est un dispositif à micro-ondes qui utilise l’effet Doppler pour mesurer la vitesse
+des objets en mouvement à proximité. Le capteur émet des ondes électromagnétiques à haute fréquence (gamme
+de fréquence de 10,525 GHz) et mesure les variations de la fréquence de réflexion des ondes lorsque celles-ci sont
+renvoyées par un objet en mouvement. (fiche technique : Annexe 3)
+
+4.4.1.​Principe de fonctionnement du module HB100
+
+Le module dispose d'un émetteur (oscillator) qui transmet en
+continu un signal de 10,525 GHz via ses antennes Tx.
+Lorsqu’un objet se trouve à proximité, les ondes réfléchies
+sont alors captées par les antennes Rx. Les ondes émises et
+réfléchies sont envoyées dans le multiplieur (Mixer) qui
+génère un signal (le signal IF) de fréquence égale à Δf.
+Le signal étant de faible amplitude, il est nécessaire de
+l’amplifier et de le filtrer.
+
+4.4.2.​Protocole expérimental
+Pour tester le module HB100, nous utilisons un petit robot programmable que nous avions déjà utilisé en
+spécialité Sciences de l'Ingénieur lors de notre année de Première. L'avantage de ce robot réside dans le fait que
+sa vitesse et la durée de son déplacement sont facilement programmables. Afin d'améliorer la réflexion des ondes
+électromagnétiques, nous l'équipons d'une plaque métallique. Le signal à la sortie du HB100 et le signal amplifié
+sont observés sur un oscilloscope. La mesure de la fréquence du signal amplifié se fait à l’oscilloscope.
+
+On constate que :
+●​ Le signal à la sortie du module HB100 est de faible amplitude
+●​ L’amplification (circuit présentée en Annexe 3) fonctionne bien, les deux signaux ont même allure
+
+17
+
+Vérifions que la fréquence mesurée sur l’oscilloscope permet de retrouver la vitesse du robot. Pour cela nous
+réalisons plusieurs mesures en modifiant la vitesse du robot.
+
+4.4.3.​Résultats des mesures
+Vitesse de rotation
+(tr/min)
+
+Vitesse Théorique (v = R*ω)
+(m/s)
+
+Vitesse Expérimentale (v = (c*Δf)/(2*f_e)) fréquence Δf
+(m/s)
+(Hz)
+
+50,0
+
+0,165
+
+0,159
+
+11,2
+
+60,0
+
+0,198
+
+0,191
+
+13,4
+
+120
+
+0,396
+
+0,395
+
+27,8
+
+150
+
+0,495
+
+0,498
+
+35,0
+
+En utilisant le robot MBot 2 (cf. Protocole Expérimental), nous avons pu trouver les résultats ci-dessus, et l’on
+observe que dans des faibles vitesses (⪅ 0.2 m/s), on obtient des valeurs expérimentales plus approximatives,
+alors qu’à partir de 0.25 - 0.3 m/s, les résultats sont plus en accord avec les valeurs théoriques. Ceci reflète la
+difficulté de travailler avec des fréquences aussi faibles car plus la fréquence est faible, plus la marge d’erreur
+s'agrandit.
+
+4.4.4.​Utilisation de l’Arduino pour déterminer la vitesse du robot
+Dans cette expérience, nous utilisons un module Doppler HB100, connecté à une carte Arduino afin de réaliser des
+mesures à l’extérieur en ayant un montage mobile.
+
+Afin d’obtenir une vitesse grâce à une fréquence reçue par le Module
+Doppler HB100, nous devons faire un programme capable de lire et
+interpréter les valeurs reçues par la carte Arduino, et qui puisse le faire
+assez rapidement pour que ça soit précis et utilisable. Les pistes actuelles
+sont une adaptation du programme FreqMeasure (cf. Les 3 programmes
+Arduino testés) afin de faire des mesures sur les ondes électromagnétiques
+du HB100, ou un programme utilisant la fonction ‘pulseIn()’ pouvant
+marcher à des fréquences relativement faibles et ayant une vitesse de prise
+de mesure suffisamment élevée pour rendre les résultats précis.
+
+4.4.5.​Principe de mesure
+Le capteur HB100 utilise l'effet Doppler pour détecter les mouvements en émettant une onde de 10.525
+GHz qui se réfléchit sur les objets en déplacement. En comparant la fréquence de l'onde émise fE avec celle de
+l'onde réfléchie fR, il génère un signal correspondant au Δf, permettant ainsi de mesurer la vitesse de l'objet. Pour
+cela, il est couplé à un amplificateur d’onde et d’un filtre afin d’amplifier l’intensité du signal reçu (≅0.1V → 5V) et
+de supprimer le bruit généré par des interférences environnantes (Bluetooth, Téléphones en Données Mobiles,...)
+18
+
+et pour transformer le signal sinusoïdale renvoyé par le module, on utilise un Comparateur Opérationnel (CMP)
+pour avoir un signal logique ayant une phase BAS et une phase HAUT proportionnelle à la valeur de Δf . Cette
+manipulation nous permet d’obtenir un signal électrique lisible par la Arduino UNO R3.
+Pour le programme, le void loop() est constitué d’une ligne assignant la valeur reçue par la broche A0 à
+une variable, qui est ensuite traité par la fonction map() qui convertit ‘valeurCapteur’ en une fréquence supposée
+proportionnelle au signal mesuré. Ici, une relation linéaire est utilisée pour simplifier : la valeur de ‘valeurCapteur’
+est mappée entre 0 Hz et 50,000 Hz (fréquence maximale ajustable). Ensuite, on convertit la fréquence émise et
+∆𝑓•𝑐
+
+reçue en vitesse avec la formule 𝑣 = 2•𝑓𝐸 , dérivée de la formule du décalage Doppler Δ𝑓 =
+
+2•𝑣•𝑓𝐸
+, pour un
+𝑐
+
+objet qui se rapproche.
+Pour des améliorations à venir, nous ajouterons une détection du sens du mouvement et on utilisera la
+formule adaptée. Pour finir, les valeurs de ‘frequenceDoppler’ et ‘vitesse’ sont renvoyées dans la console.
+
+5.​Conclusion
+​
+Grâce à ce projet, nous avons pu enrichir, développer et approfondir nos connaissances dans le domaine
+de la Physique, que ce soit par la programmation, l’expérimentation, mais également par la recherche. La
+manipulation des différentes expériences mises en place nous a permis de mieux comprendre les applications de
+l’effet Doppler ainsi que ses différentes utilisations telles que dans les radars.
+Nous tenons encore une fois à remercier notre professeure de Physique-Chimie, Gaëlle SCHOLLHAMMER,
+ainsi que les enseignants et personnels de laboratoire qui ont pris le temps de répondre à nos questions et nous
+ont aidés tout au long de ce projet.
+
+6.​Sources
+-​
+
+SUARDET René, Physique Ondulatoire, Tec et Doc, 1993
+
+-​
+
+STOCKER Horst, JUNDT Francis, GUILLAUME George, Toute la Physique, DUNOD, 1999
+
+-​
+
+SERRES Michel, FAROUKI Nayla, Dictionnaire des Sciences, Flammarion, 1997
+
+-​
+
+PICKOVER Clifford A., Le Beau Livre de la Physique, Flammarion, 2011
+
+-​
+
+SARMANT J.P, Dictionnaire de Physique, Hachette, 1988
+
+-​
+
+DESMEULES Eric, ROYNARD Denis, Optique Ondulatoire, MASSON, 1997
+
+-​
+
+AMZALLAG Emile, CIPRIANI Joseph, PICCIOLI Norbert, Ondes, DUNOD, 1997
+
+-​
+
+ZAREMBOWITCH André, Les ultrasons, PUF, 2003
+
+-​
+
+https://www.pjrc.com/teensy/td_libs_FreqMeasure.html
+
+19
+
+-​
+
+BULLETIN DE L'UNION DES PHYSICIENS, N° 804, Changement de fréquence, effet Doppler par Yves
+BAIMA, André JORANDON, Sylvie MORLEN et Marc VINCENT
+
+-​
+
+BULLETIN DE L'UNION DES PHYSICIENS, Une imprimante recyclée pour les ultrasons, par Julien BARTHES
+et Pascal LANGLOIS
+
+-​
+
+Radars et Effet Doppler, de Jean-François RECOCHE
+
+20
+
+

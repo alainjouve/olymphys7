@@ -1,0 +1,1151 @@
+Rapport de l’équipe
+VocalTeam - Sons et phonèmes
+Donnez de la voix à vos idées : venez explorer les sons et
+phonèmes avec VocalTeam
+
+Présenté par : Jakub Nowak • Julien Dupuis • Martino Cosma • Eliaz Sciortino
+Monaco • Arthur Seban • Mathieu Lin
+Encadrés par : Léo Fischer-Côte et Jordan Barbier
+
+1
+VocalTeam
+
+Sommaire
+Introduction ............................................................................................................................................................................ 3
+I – Résonance et production de Voyelles ............................................................................................................................... 4
+A)
+
+Les bases du son : Spectre, fréquences fondamentale et harmoniques, et résonance d’un tuyau ............. 4
+
+B)
+
+Notion de formant ..................................................................................................................................... 4
+
+C)
+
+Utilisation de sonagrammes pour détecter les formants et enregistrement numérique ............................ 5
+
+II – Mise en œuvre et étude de résonateurs de voyelles ......................................................................................................... 6
+A)
+
+La création de voyelles synthétiques avec résonateur .............................................................................. 6
+
+B)
+
+Modèle théorique des résonateurs et prédictions des fréquences des formants sur l’exemple de la voyelle A
+7
+
+C)
+
+L’influence de différents paramètres sur le son des résonateurs ............................................................ 10
+
+D)
+
+Construction des résonateurs d’autres voyelles ...................................................................................... 14
+
+E) Comparaison des sons obtenus avec la Voix Humaine ................................................................................ 16
+III - Application à la reconnaissance automatique de la parole ........................................................................................... 17
+A)
+
+L’algorithme KNN .................................................................................................................................. 17
+
+B)
+
+Application et reconnaissance de voyelles avec KNN ........................................................................... 18
+
+Conclusion ............................................................................................................................................................................ 20
+
+2
+VocalTeam
+
+Introduction
+Une grande partie des animaux y compris les humains, utilisent comme moyen de communication principal le langage
+vocal. Ce dernier est composé de sons divers et varié, différent pour chaque espèce. Lorsque nous parlons, les sons que
+nous utilisons sont produis dans notre gorge par les cordes vocales qui peuvent former une grande variété de sons. Notre
+langage est donc basé sur la phonétique, ces sons que nous produisons sont représentés par les lettres : classés en consonnes
+et voyelles. Nous étudierons les voyelles, constituant les éléments principaux des syllabes. Chaque voyelle a une sonorité
+distincte, caractérisé par des fréquences spécifiques appelés formants qui dépendent principalement de la cavité buccale et
+de la position de la langue. Ce projet cherche à mieux comprendre les mécanismes physiques permettant la formation des
+voyelles et à tester si des résonateurs bien calibrés peuvent, par leur forme et leur taille, reproduire les caractéristiques
+acoustiques des voyelles produites par la voix humaine.
+Problématique :
+Comment les principes acoustiques et les algorithmes informatiques peuvent-ils être combinés pour réaliser une
+reconnaissance vocale efficace ?
+
+En utilisant des résonateurs de voyelles, conçus pour imiter la cavité buccale humaine, nous cherchons à explorer les
+mécanismes de résonance acoustique spécifiques aux sons des voyelles. Notre objectif est d’établir un lien entre la forme
+du résonateur et les fréquences formantiques produites, et de voir dans quelle mesure ces fréquences peuvent reproduire
+les caractéristiques acoustiques des voyelles naturelles.
+En parallèle, cette étude nous souhaitons nous intéresser à la possible application de ces découvertes dans le domaine de
+l’identification vocale. La capacité à reproduire et à modéliser les fréquences caractéristiques des voyelles pourrait en effet
+ouvrir la voie à la conception de dispositifs capables de reconnaître et de distinguer des identités vocales. Ces dispositifs,
+en se basant sur les caractéristiques acoustiques propres à chaque individu.
+Pour répondre à notre problématique, ce rapport se divise en deux grandes parties :
+•
+
+•
+
+Dans un premier temps, nous examinerons les phénomènes de résonance acoustique et la production des voyelles
+en laboratoire. Nous approfondirons les principes de résonance, la caractérisation des formants associés aux
+voyelles, et nous comparerons les sons générés par les résonateurs de voyelles à ceux produits par la voix humaine.
+Dans un second temps, nous explorerons les applications potentielles de cette recherche dans le domaine de la
+détection vocale. Nous analyserons l’utilisation des formants pour l’identification vocale, en présentant des
+expériences de démonstration de reconnaissance à partir des résonateurs, et en discutant des perspectives
+d’application dans les domaines de la biométrie et de la sécurité.
+
+3
+VocalTeam
+
+I – Résonance et production de Voyelles
+A) Les bases du son : Spectre, fréquences fondamentale et harmoniques, et résonance d’un
+
+tuyau
+On remarque, en étudiant comment l’être humain produit des voyelles, que l’un des principaux facteurs semble être la
+longueur des différentes cavités par lesquelles le son passe.
+Lorsqu’un humain parle, ses cordes vocales vibrent à une certaine fréquence (nombre de vibrations par seconde), c’est la
+fréquence fondamentale qui est notée 𝑓1 et qui est exprimée en Hz (cf. Figure 1), c’est cette fréquence qui détermine la
+hauteur du son. Cependant, la fréquence fondamentale n’est pas suffisante pour caractériser un signal sonore.
+Un son peut éventuellement être constitué de fréquences harmoniques qui sont multiples de la fréquence fondamentale
+(c’est-à-dire qu’il existe un entier 𝑛 ≥ 2 tel que la fréquence de cette harmonique soit 𝑓𝑛 = 𝑛 × 𝑓1 ).
+
+Figure 1 : Spectre sonore avec la fréquence
+fondamentale mise en avant et les fréquences
+harmoniques qui sont les autres pics.
+
+On parle fréquemment de fréquences, mais il peut être complexe
+de déterminer précisément quelles fréquences composent un
+signal sonore. En effet, lorsque des données sont enregistrées par
+un microphone, elles ne fournissent pas directement l’information
+sur les fréquences présentes dans le signal. Afin d’analyser les
+fréquences qui composent un son, nous utilisons des spectres que
+nous traçons grâce à la transformée de Fourier. (Cf. Annexe 2),
+permettant de décomposer un signal en ses fréquences
+constitutives, et ainsi d’en analyser l’influence sur la perception
+du son.
+
+Lors de l’analyse du signal sonore produit par une voyelle, il
+apparaît que certaines fréquences harmoniques sont amplifiées ou
+atténuées. En enregistrant plusieurs personnes prononçant la même voyelle, on observe que les fréquences amplifiées sont
+remarquablement similaires d’une personne à l’autre, quel que soit le ton ou la hauteur du son. La question qu'il convient
+alors de se poser est de savoir pourquoi et comment certaines de ces fréquences spécifiques sont amplifiées.
+Cette observation peut être expliquée par le fait que, lorsque le son se propage dans une cavité telle que la bouche, il
+s’établit un système d’ondes stationnaires, un principe fondamental dans l’étude des résonances acoustiques.
+La résonance est un phénomène explicable grâce aux ondes stationnaires (cf. Annexe 1).
+
+B) Notion de formant
+Les formants sont des fréquences caractéristiques qui jouent un rôle essentiel dans la distinction des voyelles. Ils
+correspondent aux pics de résonance du conduit vocal, qui agit comme un filtre acoustique en modifiant et amplifiant
+certains harmoniques produits par les cordes vocales plus que d’autres. Chaque voyelle est définie par un ensemble de
+formants principaux, les deux premiers étant généralement notés F 1 et F2. Ces fréquences dépendent principalement de la
+forme de la cavité buccale et de la position des organes articulatoires, tels que la langue, les lèvres et le palais.
+La série d’images ci-dessous (cf. Figure 2) illustre la manière dont le résonateur amplifie certaines fréquences.
+En haut, on observe le spectre du son émis et en bas le spectre de ce même son en sortie du résonateur. Des formants, ou
+fréquences formantes sont apparues sur le spectre correspondant aux fréquences des maxima de l’enveloppe du spectre,
+c’est-à-dire les pics formés par l’amplification du résonateur, en rouge sur le graphique du milieu.
+Le spectre du son produit est en réalité obtenu par produit, du spectre de la source, de la fonction amplification du
+résonateur.
+
+4
+VocalTeam
+
+Figure 2 : Le spectre sonore de source (spectre de gauche) est multiplié à l’amplification du résonateur (spectre du milieu) pour obtenir le
+spectre sonore produit (spectre de droite). En rouge, nous pouvons y lire les fréquences des formants sur le spectre de l’amplification du
+résonateur qui correspondent aux maxima locaux sur l’enveloppe du spectre final.
+
+Le rôle des formants est fondamental pour la reconnaissance des voyelles, car ils permettent de différencier les sons
+produits, indépendamment de la hauteur du son (la fréquence fondamentale). Ainsi, même si deux personnes prononcent
+une même voyelle avec des voix très différentes, les fréquences des formants restent suffisamment similaires pour qu’on
+reconnaisse la voyelle.
+Le graphe ci-après illustre la répartition typique des fréquences des formants F1 et F2 pour chaque voyelle (cf. Figure 3).
+Sur ce graphe, chaque zone représente une voyelle, et sa position est déterminée par les valeurs de F1 et F2, qui sont
+mesurées en Hertz (Hz). Ce type de représentation, souvent appelée diagramme des formants, est un outil clé en phonétique
+pour analyser et comprendre les différences acoustiques entre les voyelles.
+
+Figure 3 : Graphe présentant les formants
+spécifiques à quelques voyelles
+
+C) Utilisation de sonagrammes pour détecter les formants et enregistrement numérique
+Les sonagrammes, aussi appelés spectrogrammes, sont des outils utiles dans l'analyse acoustique, et plus particulièrement
+dans la détection des formants qui sont des bandes de fréquences amplifiées dans le signal vocal. Le sonagramme est une
+représentation du spectre de Fourier en fonction du temps, ce qui permet une analyse en direct les fréquences présentes
+dans un signal acoustique. Dans un sonagramme, le son est décomposé en ses différentes composantes fréquentielles grâce
+à la transformée de Fourier, ce qui conduit à la réalisation d’un spectrogramme où nous avons le temps en abscisse. Les
+formants apparaissent comme des bandes intenses et horizontales sur le sonagramme, signifiant que certaines fréquences
+sont plus intenses que d’autres à la sortie du résonateur. En repérant les fréquences précises de ces bandes, on peut extraire
+les formants du signal et ainsi caractériser les propriétés acoustiques des sons étudiés, ce qui nous a permis d'analyser
+rapidement les sons au cours de notre étude.
+Nous avons utilisé le logiciel Praat pour détecter les formants en raison du fait qu’Audacity est prédisposé à l’édition de
+fichiers audio mais non à l’analyse des formants, contrairement à Praat qui est plus spécialisé pour ce type d’analyse.
+Dans Praat, l’algorithme de détection de formants utilise des méthodes de prédiction linéaire (Linear Predictive Coding,
+ou LPC) qui permettent de capturer les variations de fréquence avec une grande sensibilité, même dans des sons complexes.
+En visualisant les formants sous forme de spectrogrammes ou de courbes de fréquence, Praat rend possible l'identification
+exacte des fréquences de formant (F1, F2, F3, etc.) (cf. Annexe 4), ainsi que leur évolution dans le temps. Ce qui en fait un
+outil utile pour l'analyse de la parole, car les formants déterminent les caractéristiques des voyelles. (Cf. : Figure 4)
+
+5
+VocalTeam
+
+Lors de l’enregistrement nous respecterons le théorème de Shanon (cf. Annexe 3).
+
+Figure 4 enregistrement d’un [a] d’une voix humaine
+
+II – Mise en œuvre et étude de résonateurs de voyelles
+A) La création de voyelles synthétiques avec résonateur
+Simulation du conduit buccal :
+Pour créer un résonateur de voyelle, nous avons conçu un dispositif à partir de tubes en PVC, dans lesquels sont insérés
+des segments de manchon en mousse. Ces segments, soigneusement découpés à des dimensions spécifiques, permettent de
+simuler les variations géométriques du conduit vocal humain. Les tailles et les positions des morceaux de mousse sont
+calculées en fonction des formants caractéristiques de la voyelle à reproduire, en tenant compte des zones de rétrécissement
+ou d'élargissement du conduit vocal (voir paragraphe suivant).
+Cette configuration vise à imiter la cavité buccale humaine, où les changements de section jouent un rôle essentiel dans la
+création des pics de résonance associés aux formants. En ajustant les dimensions et les distances entre les segments de
+mousse, nous pouvons reproduire les résonances acoustiques typiques des voyelles, offrant ainsi un modèle physique
+simple mais efficace pour étudier les phénomènes de résonance.
+La voix est un son initialement produit par les vibrations des cordes vocales, ce son est ensuite amplifié et modifié par la
+cavité buccale. Le son dépend de la forme de cette cavité. Ainsi, la forme de la cavité buccale diffère lors de la prononciation
+d’un U et d’un I. (Cf. : Figure 5)
+
+Figure 5 : Images IRM d’une personne prononçant les
+voyelles [ɑ], [i] et [u]. Les cordes vocales sont situées
+sur la ligne rouge
+
+Simulation des cordes vocales :
+Pour simuler les vibrations des cordes vocales, nous avons choisi d’utiliser un appeau à canard, d’abord imprimé en 3D.
+Nous avons choisi l’appeau car celui-ci produit un son riche en harmoniques, ce qui est essentiel afin de moduler le son
+émis et ainsi amplifier/réduire les bonnes fréquences à l’aide de résonateurs et ainsi imiter la forme de la cavité des cordes
+vocale
+6
+VocalTeam
+
+Figure 6: A gauche l'appeau seul à droite le résonateur a
+
+L’appeau émet sur beaucoup de fréquences (cf. Figure 6) et quand on insère un résonateur, les fréquences des formants du
+A sont amplifiées créant ainsi des « pics » pour reproduire nos formants humains et les fréquences au-dessus de 2000 Hz
+sont réduites d’où le choix de l’appeau.
+
+Fonctionnement de l’appeau : (Cf. Figure 7)
+•
+•
+
+•
+
+Un tube d’entrée : Ce tube agit à la fois comme une coque et comme un conduit permettant de souffler dans
+l’appeau. Il canalise le flux d’air vers la languette vibrante tout en servant de support structurel à l’ensemble.
+Une languette vibrante : La languette, conçue pour être suffisamment flexible, vibre sous l’effet de l’air soufflé
+dans l’appeau. Ces vibrations sont à l’origine du son produit par l’appeau, simulant ainsi les vibrations des cordes
+vocales.
+Un support acoustique (sounding board) : Ce composant dirige le flux d’air et amplifie les vibrations de la
+languette. Il joue un rôle similaire au rôle de la glotte et des structures avoisinantes dans la voix humaine.
+
+Nous voyons dans la figure 8 l’appeau imprimé assemblé à gauche et les différents composants de l’appeau à droite.
+
+Sounding board
+
+Languette
+
+Tube d’entrée
+
+Figure 7 Appeau imprimé en
+3 dimensions
+
+B) Modèle théorique des résonateurs et prédictions des fréquences des formants sur
+
+l’exemple de la voyelle A
+1.
+
+La voyelle A
+
+La production des voyelles repose sur des résonances acoustiques (cf. Annexe 1) dans le conduit vocal, modélisées par
+des formants. Sachant que la valeur des formants d’une voyelle est différente selon les personnes, nous prenons une
+7
+VocalTeam
+
+valeur dans un intervalle en croisant 3 sources, [7], [8], [9]. Pour la voyelle [a], les fréquences des deux premiers
+formants F1 et F2 sont typiquement d’environ :
+•
+•
+
+𝐹1 ≈ 730𝐻𝑧
+𝐹2 ≈ 1050𝐻𝑧
+
+Ces formants peuvent être reproduits expérimentalement en utilisant des tubes de PVC simulant les cavités du conduit
+vocal. La longueur théorique des tubes à utiliser peut être calculée à partir de la relation entre la vitesse du son c dans
+𝑐
+l’air, la fréquence f, et la longueur d’onde λ, donnée par : 𝜆 = 𝑓 où 𝑐 ≈ 340 𝑚 ⋅ 𝑠 −1 (vitesse du son dans l’air à 20°C).
+En observant la forme de la cavité buccale lors de la prononciation d’un [a], on comprend qu’il est possible de la
+modéliser expérimentalement par une série de deux tubes consécutifs de longueurs d1 et d2, le premier étant d’un
+diamètre plus faible que le second.
+Pour comprendre le choix de d1 et d2 :
+Dans un tuyau résonnant, les fréquences des formants correspondent à des ondes stationnaires dont la longueur d’onde
+dépend des conditions aux extrémités (Cf. :Figure 8) :
+•
+
+Pour un tuyau fermé à une extrémité et ouvert à l’autre, la longueur d du tuyau
+est liée à la longueur d’onde par : d = 4λ, correspondant au premier mode de
+vibration permettant une onde stationnaire. Les fréquences de résonance
+𝜆
+
+suivantes étant données par la relation : 𝑑 = 4
+Calcul des longueurs des parties :
+𝑐
+
+340
+
+𝑓 = 4𝑑 = 4𝑑
+
+⇔
+
+340
+
+𝑑 = 4𝑓
+
+d2 =
+
+340
+
+d1 = 4∗730 = 0.11m = 11cm
+340
+= 0.08𝑚 = 8𝑐𝑚
+4 ∗ 1050
+
+Ces longueurs calculées d1 et d2 donnent des approximations des dimensions des
+Figure 8 : Schéma d’une onde
+résonateurs nécessaires. Cependant, dans la pratique, ces longueurs peuvent être ajustées
+stationnaire dans un tube fermépour tenir compte :
+ouvert
+•
+•
+
+des effets d’extrémité (correction liée à l’ouverture du tuyau).
+de l’interaction entre les deux résonateurs, car la cavité buccale n’est pas un système acoustique strictement
+isolé.
+
+Conclusion :
+Pour obtenir les fréquences formantes de la voyelle [a], les longueurs théoriques des tubes à utiliser sont d’environ 12 cm
+pour L1 et 8 cm pour L2. Ces dimensions permettent de modéliser efficacement les propriétés acoustiques de la voyelle
+et peuvent être affinées expérimentalement pour reproduire fidèlement les résonances attendues.
+2.
+
+D’autres voyelles
+
+Nous avons premièrement rencontré des difficultés à estimer les longueurs des cavités nécessaires à la production d’autres
+voyelles car le modèle précédemment utilisé pour calculer les distances nécessaires au résonateur A une fois utilisé sur
+d’autres voyelles renvoyaient des longueurs incohérentes comme un L1 de 34,0 cm. Cela est premièrement dû au fait que
+notre modèle était adapté pour un résonateur fermé-ouvert mais si on regarde les IRM d’autres voyelles que le [a], les
+cavités sont souvent dans une configuration différente que fermé-ouvert et présentent plus que 2 cavités. Nous avons donc
+décidé d’utiliser une autre méthode afin d’estimer ces distances qui est la formule d’Helmholtz [2] (Voir démonstration
+annexe 5) qui permet de calculer la résonance produite par une cavité large puis étroite fermé-ouverte. (Cf. : Figure 9)
+La formule d’Helmholtz est bien plus complète que celle précédemment utilisée et prend en compte plus de paramètres.
+8
+VocalTeam
+
+Figure 9 : Schéma d'un résonateur de Helmholtz composé d'un tube
+en PVC et d'une mousse.
+
+- c la vitesse du son dans l’air en m/s
+- V le volume de la grande cavité en m^3
+- A2 : l’aire de la cavité étroite en m2
+- A1 : l’aire de la cavité large en m2
+- l1 : la longueur de la cavité large en m
+- l2 la longueur de la cavité étroite en m
+- D2 : le diametre de la cavité étroite en m
+- D1 : le diametre de la cavité large en m
+
+Figure 10 : A gauche la représentation graphique de la formule de résonance de Helmholtz en fonction du produit des longueurs l1 et l2.
+A droite la représentation graphique de la formule de résonance d'une onde stationnaire dans une cavité fermé ouverte en fonction de la
+longueur de la cavité
+
+Un résonateur de Helmholtz [6] permet de faire résonner un tube sur des fréquences plus basse qu’une cavité fermé ouverte.
+Comme nous le voyons dans la courbe représentative de la formule de Helmholtz en prenant comme variable x le produit
+des longueurs des deux cavités (Cf. Figure 10), nous remarquons qu’un résonateur de Helmholtz peut amplifier des
+fréquences entre 700Hz et 200Hz sur un intervalle de longueurs réalistes par rapport à la longueur du tractus vocal humain.
+A partir de la fonction nous en déduisons le produit des longueurs des deux cavités d’un résonateur de Helmholtz ce qui
+nous permet d’en déduire les longueurs des cavités du résonateur de Helmholtz.
+3.
+
+Résonateur A et écart entre la théorie et la pratique
+
+Conception des résonateurs respectant les longueurs de tube trouvées
+Relever les fréquences des formants et calculs d’écart entre la théorie et la pratique avec un calcul d’incertitude !
+Pour évaluer la variabilité des valeurs des fréquences formantes dans le cadre de notre étude et comparer notre résonateur
+expérimental à la voix humaine, nous avons évalué les incertitudes de type A sur les fréquences des formants.
+Nous avons effectué 10 mesures indépendantes de la fréquence des formants, pour la voix humaine et pour le résonateur.
+Ce qui permet de tenir compte des variations naturelles dans le processus de mesure. Une fois ces mesures recueillies, vous
+avez des données sur la fréquence de chaque formant pour les deux situations :
+•
+•
+
+La voix humaine : où vous mesurez la fréquence des formants pour une voyelle produite par un locuteur humain.
+Le résonateur fabriqué pour la voyelle [a] couplé avec un appeau de canard : dans ce cas, un système
+acoustique artificiel qui émet la voyelle [a].
+
+L'incertitude de type A est ensuite calculée à partir de la variabilité des mesures répétées. La formule standard pour calculer
+𝑠
+l'incertitude de type A sur une mesure répétée (ici, la fréquence des formants) est la suivante : 𝑢 =
+où u est
+√𝑛
+
+l'incertitude type A, s est l'écart-type des 10 mesures répétées et n est le nombre de répétitions (dans notre cas n=10).
+9
+VocalTeam
+
+Cette démarche nous a permis d'estimer l'incertitude
+associée à la mesure de chaque formant pour les deux
+systèmes acoustiques (voix humaine et résonateur
+artificiel) qui sont présentées dans le tableau ci-dessous
+(cf. Error! Reference source not found.) :
+Les écarts par rapport aux valeurs théoriques sont
+relativement faibles pour le formant F1 (résonateur
+proche de la théorie), mais plus marqués
+pour F2 (surtout pour le résonateur), probablement en
+raison des caractéristiques spécifiques à l'appeau à
+canard.
+
+Voyelle A
+Mesure de
+
+F1(Hz)
+
+F2(Hz)
+
+Résonateur couplé à l’appeau
+à canard
+Valeur théorique
+
+764.41
+± 3.29
+650-800
+
+1214
+±5
+1100-1250
+
+Figure 11 : Tableau comparant les valeurs expérimentales et
+théoriques pour la voyelle A
+
+C) L’influence de différents paramètres sur le son des résonateurs
+1.
+
+Influence de la longueur du tube
+
+Pour étudier l'influence de la longueur du tube sur la production d'une voyelle, nous utilisons des tubes de longueurs variées
+(18 cm, 19 cm, 20 cm) dans lesquels nous insérons des mousses de longueurs différentes (3 cm, 6 cm, 9 cm, 11 cm, 15
+cm). Ces configurations permettent d'obtenir des longueurs “d1” et “d2” variables afin d'évaluer leur impact sur les
+formants du son produit (Cf. : Figure 13). Nous analysons les spectrogrammes des sons générés par ces tubes, en mesurant
+leurs formants et en les comparant avec ceux de la voyelle [a] émise par une voix humaine (F1 = 640 Hz, F2 = 1050 Hz
+pour un homme). Cette comparaison nous permet ainsi de déterminer quelle est l’influence de la longueur du tube sur les
+formants du son, par conséquent, de caractériser le timbre de la voyelle produite.
+
+Figure 13 : A gauche une image IRM d'un humain prononçant un [a] / au centre modélisation par un système résonateur constitué de 2
+tuyaux / à droite : Schéma présentant le premier mode de vibration stationnaire d'un tel résonateur
+
+10
+VocalTeam
+
+Mesure de d1 ; d2
+
+Formant 1 (F1)
+
+Formant 2 (F2)
+
+3cm ; 15cm
+
+600Hz
+
+1600Hz
+
+6cm ; 12cm
+
+700Hz
+
+2000Hz
+
+9cm ; 9cm
+
+850Hz
+
+1100Hz
+
+11cm ; 7cm
+
+1200Hz
+
+2200Hz
+
+15cm ; 3cm
+
+500Hz
+
+2100Hz
+
+3cm ; 16cm
+
+1600Hz
+
+2500Hz
+
+6cm ; 13cm
+
+800Hz
+
+1800Hz
+
+9cm ; 10cm
+
+700Hz
+
+2240Hz
+
+11cm ; 8cm
+
+850Hz
+
+2700Hz
+
+15cm ; 4cm
+
+1600Hz
+
+2700Hz
+
+9cm ; 11cm
+
+800Hz
+
+1050Hz
+
+11cm ; 9cm
+
+740Hz
+
+1100Hz
+
+Figure 12 : Tableau de mesure des formants en fonction des longueurs d1 et d2
+
+A l’aide de ces données (Cf. : Error! Reference source not found.), nous avons tracé le graphique (Cf. : Figure 14) cidessous présentant l’évolution de la fréquence des formants F1 et F2 du son produit en fonction de la longueur d1 de la
+partie de diamètre réduit du résonateur.
+
+Figure 14 : Courbe représentant la fréquence des formants F1 et F2 en fonction de la longueur d1, à gauche pour L = 19 cm, à droite
+pour L = 18 cm
+
+Nous remarquons ainsi qu’une mousse dans les environs de 9cm et 11cm permet d’avoir des formants plus proches du [a]
+(F1=700Hz, F2=1050Hz), de plus la longueur du tube “L” a une influence sur les formants du son émis. Nous traçons alors
+les graphiques (Cf. : Figure 15) de la fréquence F1 et F2 en fonction de la longueur L avec une longueur d1=9cm puis
+d1=11cm. En faisant varier la longueur L en gardant une longueur d1 fixe, nous faisons varier la longueur d2.
+Nous observons que l'insertion d'une mousse d'environ 9 cm à 11 cm et donc la réduction de la largeur du tuyau sonore sur
+cette distance, permet d'obtenir des formants plus proches de ceux de la voyelle [a] (F1 = 700 Hz, F2 = 1050 Hz).
+De plus, on constante que la longueur du tube "L" influence les fréquences des formants du son émis. Pour approfondir
+cette observation, nous traçons les courbes représentant la fréquence F1 et F2 en fonction de la longueur du tube "L", en
+prenant successivement des longueurs de mousse de 9cm et 11cm. Ces graphiques nous permettent ainsi de visualiser plus
+précisément l'impact de la longueur du tube sur les formants et de mieux comprendre la relation entre ces paramètres.
+Avec 𝑑1 = 9𝑐𝑚.
+
+Avec 𝑑1 = 11𝑐𝑚.
+
+Figure 15: Courbe représentant la fréquence des formants F1 et F2 en fonction de la longueur L, à gauche pour d1 = 9cm, à droite
+pour d1 = 11 cm
+
+Nous remarquons aussi que le tube de mesure L = 20 cm, d1 = 11 cm et d2 = 9 cm possède les formants les plus proches
+du [a] humain, il s’agit donc de la longueur de résonateur idéale pour reproduire un [a] avec un tube de résonance. Ces
+distances sont proches a 1cm pres de celles que nous avions estimées préalablement pour le [a] dans le 1).
+Alors, puisque les formants varient selon la longueur du tube et selon la différence de longueur entre la partie étroites
+(section réduite) et la partie large du tube, la longueur du tube et de la mousse exercent une influence sur le son produit.
+11
+VocalTeam
+
+2.
+
+Influence de la largeur du tuyau
+
+Afin d’évaluer si la largeur du tuyau exerce une influence sur le son produit nous enregistrons et étudions les sons produits
+par des résonateurs de voyelle [a], fabriqués avec des tuyaux et mousses de diamètre différent (Cf. Figure 16). Nous avons
+utilisé un tube “T1” de diamètre 2cm et un tube “T2” de diamètre 4cm. Nous insérons une mousse “D1” de diamètre interne
+0,7cm et une autre “D2” de diamètre interne 1,5cm et obtenons les résultats.
+Nous remarquons (Cf. : Figure 17) que la largeur du tube exerce une influence sur le son produit, en effet si la différence
+entre la largeur du tube et de la mousse et trop petite, alors le principe de résonance de deux tuyaux sonores indépendants
+ne s’applique plus et le résonateur modifie très peu le son émis par l’appeau.
+En conclusion, le tuyau de diamètre 4cm avec une mousse permettant de réduire le diamètre à 0,7cm semblent les mieux
+adaptés pour fabriquer le résonateur souhaité. En effet, l‘utilisation du tube de diamètre le plus grand et de la mousse de
+diamètre interne le plus petit permet de maximiser l’effet de la résonance de deux tuyaux sonores indépendants et permet
+ainsi d‘obtenir un son ressemblant fortement au son émis par un humain.
+
+Tube T2
+
+Tuyau et Mousse
+
+F1
+
+F2
+
+Tube T1
+
+T1, D1
+
+1400Hz
+
+1840Hz
+
+Mousse
+D2
+Mousse D1
+
+T1, D2
+
+840Hz
+
+2010Hz
+
+T2, D1
+
+740Hz
+
+1100Hz
+
+Mousse D1 adapté au tube
+T2
+
+T2, D2
+
+1100Hz
+
+1900Hz
+
+Figure 16 : Image des tubes et mousses pour fabriquer un résonateur avec les tubes de Figure 17 Tableau des mesures des formants F1 et F2
+diamètres T1 à gauche et T2 à droite, et les mousses de diamètre D1 à gauche, D1 en fonction du diamètre interne du tube et de la mousse
+adapté pour le tube de diamètre T2 au milieu et D2 à droite
+
+3.
+
+Influence du type de mousse
+
+Afin d‘étudier l‘influence du type de mousse utilisé sur le son produit nous avons utilisé une mousse rigide “MR” et une
+mousse souple “MS” et étudié le son produit par des résonateurs de voyelle [a] identiques, la seule nature de la mousse
+étant modifiée. Les résultats obtenus sont présentés dans le tableau (Cf. : Figure 19)
+Nous avons observé que le type de mousse influe de manière limitée
+sur le son produit. La fréquence du premier formant varie peu entre
+une mousse rigide et une mousse souple, tandis que le deuxième
+formant est davantage affecté. (Cf. : Figure 18).
+Type de mousse
+
+F1
+
+F2
+
+MR
+
+740Hz
+
+1100Hz
+
+MS
+
+720Hz
+
+930Hz
+
+Figure 19 : Tableau des mesures des formants F1 et F2 en fonction du
+type de mousse
+
+Figure 18 Résonateurs de la voyelle A avec mousse
+rigide à gauche et mousse souple à droite
+
+En conclusion, la mousse rigide s’avère être le choix optimal, car les formants qu’elle génère se rapprochent davantage de
+ceux d’un [a] humain. Par ailleurs, la mousse souple absorbe davantage le son de l’appeau, ce qui réduit sa portée auditive.
+12
+VocalTeam
+
+Pour garantir que le son produit soit clairement distinguable à l’oreille humaine, il est donc préférable d’utiliser une mousse
+rigide, qui rend le son [a] plus audible et fidèle.
+
+4.
+
+Influence de la forme de la mousse au niveau du changement de cavité
+
+Forme de la mousse
+
+F1
+
+F2
+
+ME
+
+840Hz
+
+1100Hz
+
+MD
+
+740Hz
+
+1100Hz
+
+Figure 20 : Tableau des mesures des formants F1 et F2 en
+fonction de la forme de la mousse au niveau du changement
+de cavité
+Figure 21 : Schéma des différentes formes de mousse au niveau
+du changement de cavité pour un tube produisant un « A ».
+
+Pour déterminer si la forme de la mousse, notamment au niveau du changement de cavité, influence le son produit, nous
+avons découpé l’extrémité de la mousse de deux manières différentes : en forme d’entonnoir (« ME ») et avec une coupe
+droite (« MD »).
+Nous avons ensuite enregistré les sons issus de ces résonateurs et comparé les formants produits par les tubes équipés de
+ces deux types de découpe (Cf. : Figure 21)
+Nous constatons (Cf. : Figure 20) que la forme de la mousse au niveau du changement de cavité n’a pas d’influence
+significative sur le son émis. En effet, les formants produits par les tubes équipés de mousses « ME » et « MD » sont
+quasiment identiques. Nous en déduisons que la forme de la mousse au niveau du changement de cavité n’impacte pas le
+son tant que son diamètre et sa longueur restent constants.
+5.
+
+Paramètres finaux de notre résonateur de la voyelle [a]
+
+Pour que les formants émis par notre résonateur soient optimaux,
+nous avons retenu les paramètres suivants (Cf. : Figure 22) :
+-
+
+Un tube de diamètre 4 cm et de longueur 20 cm
+Une mousse rigide coupée droite de diamètre intérieur 8
+cm et de longueur 11 cm
+Un appeau canard à languette fine
+
+Nous avons vu précédemment que les paramètres suivants donnent
+Figure 22 : Tube, mousse et appeau permettant de
+les formants ”F1 = 740Hz ; F2 =1100Hz” soit les formants les plus construire le résonateur de la voyelle A
+proches de la voyelle “A” émise par une voix humaine, que nous
+soyons parvenus à obtenir avec un résonateur.
+
+13
+VocalTeam
+
+D) Construction des résonateurs d’autres voyelles
+1.
+
+La différence entre la résonance d’une cavité en mousse et sans mousse.
+
+Lorsque nous construisons un résonateur pour un tube utilisant un résonateur de Helmholtz pour former le premier formant
+nous devons savoir si nous faisons résonner le deuxième dans une cavité en mousse ou sans mousse (Cf. : Figure 23). Pour
+cela nous comparons les amplitudes d’un résonateur de la voyelle u ([y] en phonétique) qui fait résonner le deuxième
+formant avec de la mousse et sans mousse. Nous comparons alors avec un u humain (Cf. : Figure 24) et voir lequel et le
+plus proche.
+
+Figure 23 : A gauche le spectre de Fourier d'un tube d'un voyelle u avec une cavité sans mousse pour produire le
+deuxième formant. A droite le spectre de Fourier d'un tube d'un voyelle u avec une cavité avec mousse pour produire
+le deuxième formant.
+
+En comparant les amplitudes des différents formants, nous remarquons
+que lorsque l’on fait résonner le deuxième formant avec de la mousse
+l’amplitude est très basse, à environ de 0,0005(unité arbitraire) par
+rapport à un premier formant à environ 0,0075(unité arbitraire). Ce qui
+fait que le premier formant est 15 fois plus grand que le deuxième
+formant.
+Cela est différent d’un résonateur faisant résonner le deuxième formant
+avec une cavité sans mousse. Qui fait résonner le deuxième formant à
+environ 0,0015(unité arbitraire) et le premier formant à environ
+Figure 24 : Spectre de Fourier d'un u produit par un 0,0035(unité arbitraire). Ce qui fait que le premier formant est 2,3 fois
+humain
+plus grand que le deuxième formant.
+Pour la voix humaine le premier formant résonne à une amplitude à environ 0,0075(unité arbitraire) et un deuxième formant
+à environ 0,0015(unité arbitraire). Ce qui fait que le premier formant est 5 fois plus grand que le deuxième formant. Ainsi
+nous en déduisons qu’utiliser une cavité sans mousse pour faire résonner le deuxième formant est plus optimal qu’utiliser
+une cavité en mousse. Cela est dû au fait que la mousse absorbe plus le son que le PVC car c’est un matériau plus poreux
+et moins dense.
+
+14
+VocalTeam
+
+2.
+
+Pour des formants plus bas
+
+Figure 25 : A gauche le spectre de Fourier d'un tube d'une voyelle o avec une cavité sans mousse pour produire le deuxième formant.
+Au milieu le spectre de Fourier d'un tube d'un voyelle o avec une cavité avec mousse pour produire le deuxième formant. A droite le
+Spectre de Fourier d'un u produit par un humain
+
+Le modèle suivant de représentation de spectre de Fourier permet efficacement de voir les formants s’ils sont éloignés mais
+entraine des confusions lorsqu’ils sont rapprochés, nous utilisons Audacity pour visualiser avec plus de précisions bien que
+les formants soient eux plus difficiles à voir (Cf. : Figure 25). Nous utilisons l’exemple du O qui a des formants rapprochés
+à F1 = 349Hz, F2 = 772Hz. Ici il est plus optimal de faire résonner le deuxième formant dans de la mousse car sinon il aura
+une amplitude plus grande que le premier formant, F1 à -12dB, F2 à -10dB, (plus l’amplitude est grande plus le niveau
+d’intensité sonore est grand) or dans le cas de voix humaine le premier formant a une amplitude plus grande que le deuxième
+formant, F1 à -12dB, F2 à -20dB, et c’est le cas aussi du tube qui fait résonner le deuxième formant dans de la mousse, F1
+à -5dB, F2 à -18dB.
+Nous en déduisons que du fait que l’appeau canard génère un spectre dont les harmoniques ont une amplitude de plus en
+plus basse plus les fréquences sont hautes (Cf. : Figure 6). Le son doit ainsi être plus amplifié si les formants sont hauts
+que si les formants sont bas. Ainsi nous généralisons qu’un haut deuxième formant doit être amplifié par une cavité large
+et un bas deuxième formant doit être amplifié par une cavité étroite. Cela confirme l’efficacité de faire résonner le formant
+2 du tube de la voyelle A avec une cavité en mousse (cavité en mousse plus longue fait résonner le deuxième formant, alors
+que la cavité sans mousse fait résonner le premier formant).
+3.
+
+La voyelle i
+
+Figure 26 : Schéma d'un résonateur de
+la voyelle i
+
+Pour la voyelle [i] le premier formant est entre 238Hz à 330Hz (on calcule pour 300Hz) et le deuxième est entre 1920Hz
+et 2200Hz (on calcule donc pour 2125Hz). Il faut alors un résonateur de Helmholtz et une cavité fermé-ouverte. Nous
+avons un tube de diamètre interne 4,5cm et une mousse de diamètre interne 1,2cm. Nous avons besoin d’un tube à 3
+cavités. Une cavité de 7cm sans mousse puis 3cm en mousse pour former un résonateur de Helmholtz et une cavité de
+4cm sans mousse (pour un haut F2) faisant résonner le deuxième formant. (Cf. : Figure 26)
+4.
+
+La voyelle u
+
+Figure 27 : Schéma d'un résonateur de la
+voyelle u
+
+Pour la voyelle u ([y] en alphabet
+phonétique), le premier formant est entre 250Hz à 320Hz (on calcule
+pour 255Hz) et le deuxième formant entre 1650Hz et 1750Hz (on calcule pour 1700Hz). Avec le même matériel, nous
+15
+VocalTeam
+
+utilisions alors un résonateur de Helmholtz avec une cavité sans mousse de 8cm puis une cavité avec mousse de 4 cm et
+un espace fermé ouvert de 5cm sans mousse (pour un haut F2) pour faire résonner le deuxième formant. (Cf. : Figure 27)
+5.
+
+La voyelle o
+
+Figure 28 : Schéma d'un résonateur de la
+voyelle o
+
+Pour la voyelle [o] le premier formant est entre 325Hz et 400Hz (on calcule pour 349Hz) et le deuxième formant entre
+700Hz et 840Hz (on calcule pour 772Hz). Avec le même matériel nous utilisions alors une cavité fermée ouverte en mousse
+de 11cm pour former le deuxième formant et un résonateur de Helmholtz avec une cavité de 6cm sans mousse puis une
+cavité de 3cm en mousse (pour un bas F2) pour former le premier formant. (Cf. : Figure 28)
+
+6.
+
+Production des tubes et comparaison courte avec la valeur théorique ?
+
+Nous évaluons l’efficacité de nos tubes en les comparant aux valeurs que peuvent théoriquement prendre les formant d’une
+voyelle humaine à la voyelle produite par notre tube. Si les formants tombent dans le bon intervalle, alors le tube produit
+la bonne voyelle. Nous remarquons (cf. Figure 29 : Tableau de comparaison des mesures des formants F1 et F2 entre le
+résonateur et la valeur théorique, pour la voyelle O, I et U
+) que les formants du tube du O, I et U correspondent à l’intervalle des formants O, I et U que peut produire un humain,
+les tubes produisent donc les bonnes voyelles.
+Voyelle O
+
+Voyelle I
+
+Voyelle U
+
+Mesure de
+
+F1 (Hz)
+
+F2 (Hz)
+
+F1 (Hz)
+
+F2 (Hz)
+
+F1 (Hz)
+
+F2 (Hz)
+
+Valeur mesurée
+
+325±1
+
+770±3
+
+269±0,3
+
+2083±3
+
+294±1
+
+1783±0,7
+
+Valeur
+théorique
+
+325 - 400
+
+700 - 840
+
+238 - 330
+
+1920 - 2200
+
+250 - 320
+
+1650 - 1790
+
+Figure 29 : Tableau de comparaison des mesures des formants F1 et F2 entre le résonateur et la valeur théorique, pour la voyelle O, I et U
+
+E) Comparaison des sons obtenus avec la Voix Humaine
+Maintenant analysons les sons produits par les résonateurs de voyelles avec les enregistrements de voix humaine. En effet
+les résonateurs de voyelles ne font qu’imiter la forme que prend notre tractus vocal lorsque nous disons une voyelle, ils ne
+reproduisent donc pas exactement la forme que prend notre tractus vocal qui a une structure bien plus complexe. De plus
+nous utilisons un appeau-canard afin de simuler le son que nos cordes vocales font lorsqu’elles vibrent, cependant cela
+reste une approximation du son émis par nos cordes vocales. Il est donc essentiel de comparer les différences entre les
+voyelles produites par une voix humaine et celle produite par notre résonateur.
+Afin de comparer des sons différents nous allons utiliser les mêmes méthodes que celles utilisées précédemment c’est-àdire l’analyse formantique. Prenons plusieurs « A » humains et le « A » produits par notre résonateur et regardons quels
+sont leurs formants pour comparer l’écart qu’il y a entre nos voix humaines et le résonateur. (Cf. : Error! Reference source
+not found.)
+F1 Résonateur
+
+F2 Résonateur
+
+F1 Humain
+
+F2 Humain
+
+Voyelle A : Incertitude type (Hz)
+
+3.29
+
+5.07
+
+15
+
+17
+
+Écart-type (Hz)
+
+13.17
+
+20.29
+
+66,49
+
+76,0
+
+16
+Figure 30 : Tableau du relevé de l'analyse de formants au cours de temps sur une voix humaine et sur le résonateur A, avec
+
+VocalTeam
+les moyennes et les écarts types, pour 20 enregistrements
+
+Moyenne (Hz)
+
+764.41
+
+1214.39
+
+731,8
+
+1104,4
+
+Moyenne ± incertitude type (Hz)
+
+764 ± 3
+
+1214 ± 5
+
+732 ± 15
+
+1104 ± 17
+
+Interprétation : les écarts types pour les formants F1 et F2 (résonateur) sont très faibles par rapport à leur moyenne, c’est
+réaliste en effet notre résonateur ne change pas au cours de l’expérience et on essaie de garder le même débit de souffle
+lors de l’expérience. Tandis que l’écart type sur les valeurs des formants mesurés pour des enregistrements de voix
+humaines sont très hauts cet écart est encore une fois réaliste car nous ne produisons pas un son monotone avec notre voix.
+
+Conclusion : Le résonateur avec l’appeau a une variabilité moindre des valeurs des formants que la voix humaine. Ainsi
+nos résonateurs de voyelles ne reproduisent pas à l’identique les voyelles émises par notre voix, cependant elles restent
+reconnaissables à l’oreille humaine et nous sommes capables de comprendre la voyelle jouée sans que ses formants soient
+identiques à ceux d’une voix humaine. Comment donc pouvons-nous reconnaitre une voyelle à partir d’un signal sonore ?
+
+III - Application à la reconnaissance automatique de la parole
+A) L’algorithme KNN
+À partir de nos résultats, nous avons pris l’initiative de créer notre propre détecteur de voyelles avec l’aide d’algorithmes
+informatiques. Pour ce faire, il est nécessaire de choisir un algorithme de classification adapté. Pour notre premier
+prototype, nous avons opté pour l’algorithme KNN (K-Nearest Neighbors, K-Plus Proches Voisins en anglais). Nous avons
+fait ce choix car cet algorithme est plutôt simple et efficace, surtout dans des cas où la base de données est de relativement
+petite taille, comme c’est le cas dans notre projet. Pour voir l’explication du fonctionnement de l’algorithme KNN, il faut
+se référer à l’annexe 7.
+1.
+
+La base de données
+
+Au cours de notre expérience nous avons déduit que les
+voyelles sont distinguables par leurs deux premiers
+formants. Ainsi ces fréquences sont les caractéristiques
+acoustiques les plus pertinentes pour différencier les
+voyelles. Pour construire la base de données nécessaire à
+l’algorithme, nous avons fait des enregistrements de
+plusieurs personnes différentes (hommes et femmes)
+prononçant 5 voyelles : [a], [ø], [i], [o] et [u] (A ; E ; I ; O ;
+OU) chacun avec 2 secondes par voyelle. Puis pour chaque
+voyelle de chaque personne nous avons calculé la médiane
+des 2 premiers formants et avons répertoriés ces formants
+dans une base de données (cf. Figure31).
+Figure 31 : Représentation de notre base de données à l’aide de la librairie
+python ‘matplotlib’ avec en abscisse F1 en Hz et en ordonné F2 en Hz. (30
+données par voyelles).
+
+2.
+
+Détection numérique des formants
+
+Pour obtenir les formants, on utilise Praat pour des enregistrements (Code : cf. Annexe 3), et pour l’automatisation, on
+avait plusieurs alternatives, mais on a choisi de faire la détection nous-même en calculant le spectre et l’autocorrélation.
+
+17
+VocalTeam
+
+B) Application et reconnaissance de voyelles avec KNN
+1.
+
+Code de l’algorithme
+
+Notre Code KNN est consultable (cf. Annexe 7)
+2.
+
+Test de l’algorithme sur les voix humaines et pourcentage de réussite
+
+Maintenant que nous avons un algorithme permettant de reconnaître les voyelles, nous testons son efficacité sur les
+différentes voyelles mesurer la marge d’erreur selon les voyelles. Pour cela nous enregistrons des personnes plusieurs fois
+la même voyelle et noter le pourcentage de réussite du programme pour reconnaître la bonne voyelle. Nous répétons
+l’opération pour les différentes voyelles [a], [ø], [i], [o], [u].
+Alors le modèle KNN à partir de la mesure de formants est adapté pour les voyelles [a] et [i] car elle a un haut pourcentage
+de succès pour reconnaitre la bonne voyelle, cela s’explique par le fait que leurs formants sont très différents des autres
+voyelles que l’on mesure faisant qu’il y a une plus faible chance de confusion. Cependant pour les voyelles [ø], [i] et [y],
+ce modèle est moins adapté car le taux de succès pour reconnaître la bonne voyelle est basse car leurs formants sont plus
+proches ce qui entraîne des confusions.
+
+Mesures et Validation
+Pour évaluer la performance de notre détecteur de voyelles basé sur l'algorithme KNN, nous avons effectué des tests sur
+les données collectées. Le tableau suivant (cf. Figure 32) résume les résultats obtenus :
+
+Voyelles
+
+Nombre total
+d’échantillons
+
+Nombre de
+classifications
+correctes
+
+Pourcentage de
+réussite
+
+A
+
+100
+
+85
+
+85 %
+
+E
+
+100
+
+78
+
+78 %
+
+O
+
+100
+
+60
+
+60 %
+
+I
+
+100
+
+89
+
+89 %
+
+OU
+
+100
+
+65
+
+65 %
+
+Figure 32 Tableau des pourcentages de réussite de l'algorithme KNN en fonction des voyelles, A, E, I, O et OU
+
+Ces résultats montrent que notre détecteur est plus précis pour certaines voyelles, comme I (89 %) et A (85 %), tandis que
+la reconnaissance est plus faible pour les voyelles O (60 %) et U (65 %). Ces écarts peuvent s'expliquer par la proximité
+des formants des voyelles mal reconnues, ce qui peut rendre leur classification plus difficile. En revanche, les voyelles
+comme I et A, dont les formants sont bien distincts, sont correctement identifiées dans la majorité des cas.
+Précision globale :
+•
+•
+
+Nombre total d'échantillons : 100 + 100 + 100 + 100 + 100 = 500
+Nombre total de classifications correctes : 85 + 78 + 60 + 89 + 65 = 377
+
+•
+
+Calcul de la précision globale :
+
+377
+500
+
+. 100 = 75,4%
+
+Ce résultat reflète la capacité globale du modèle à classer correctement les échantillons pour toutes les voyelles.
+
+18
+VocalTeam
+
+Ces performances valident en partie la capacité de notre modèle à différencier les voyelles, mais elles mettent également
+en lumière des limites à améliorer pour garantir une classification plus robuste et uniforme. Parmi les axes d'amélioration
+envisagés, on pourrait :
+•
+•
+•
+•
+
+augmenter la base de données, une base de données plus grande et diversifiée permettrait au programme de
+mieux généraliser et de mieux gérer les cas ambigus.
+ajouter d’autres caractéristiques acoustiques en complément des formants, comme la durée des voyelles ou
+l’intensité, pour enrichir les données utilisées par le modèle.
+normaliser les données pour réduire l’impact des variations dues à l’enregistrement ou aux conditions
+acoustiques.
+tester d’autres algorithmes de classification plus complexe, bien que KNN soit simple et efficace, d'autres
+algorithmes comme les arbres de décision, les réseaux neuronaux ou les modèles SVM (Support Vector
+Machines) pourraient offrir de meilleures performances, notamment pour des cas complexes.
+
+C) Prototype de modèle de reconnaissance automatique de la parole
+Nous avons conçu un modèle d’intelligence artificielle plus poussé basé sur l’extraction de données plus complexes et
+détaillées que les formants, et caractérisant le filtre de la voix. Ces notions sont expliquées en détails à l’annexe 6.
+Le signal est d’abord transformé en paramètres acoustiques. On a, pour cela, besoin des MFCC et de l’énergie du signal,
+mais on doit aussi connaître la façon dont varient ces paramètres. On en prend donc les delta et delta-delta : en
+reconnaissance automatique de la parole, c’est la façon de faire référence aux variations d’ordre 1 et 2 respectivement des
+caractéristiques.
+Ces paramètres alimentent ensuite un modèle probabiliste, un modèle de Markov caché (HMM), qui associe les
+observations acoustiques aux phonèmes. Ce modèle permet de capturer à la fois les propriétés physiques du signal et sa
+variation au cours du temps, fournissant une première étape vers la compréhension automatique de la parole.
+Pour un algorithme complet, il faudrait en effet ajouter ce qu’on appelle un modèle de langage, qui permet de traduire les
+phonèmes en mots, et d’une façon qui a un vrai sens. Par exemple, en anglais, un mauvais modèle pourrait confondre les
+phrases “let us pray” et “lettuce spray”.
+Cependant, nous nous concentrerons uniquement sur la partie physique, donc le modèle acoustique, qui n’est que la
+première étape du modèle final.
+
+19
+VocalTeam
+
+Conclusion
+Au cours de cette étude, nous avons analysé les voyelles et expliqué leur formation physique, en les reproduisant
+artificiellement à l’aide de tubes en PVC simulant la forme de la cavité buccale, ainsi qu’un appeau à canard en guise de
+cordes vocales. Après avoir détaillé ce processus de formation, nous avons mené une étude numérique sur ces voyelles,
+constituant une base de données conséquente permettant d’appliquer l’algorithme KNN pour reconnaître une voyelle en
+temps réel.
+Cependant, notre projet ouvre de nombreuses perspectives d’évolution. Par exemple, il serait possible de reconnaitre
+différentes personnes grâce à leur timbre ou bien distinguer un homme d’une femme avec une base de données plus
+importante. Ces pistes s’inscrivent dans un domaine en plein essor, où les avancées technologiques permettent des
+applications remarquables, telles que les assistants vocaux Siri et Alexa, ou encore des systèmes capables d’imiter avec
+précision des voix humaines spécifiques.
+Enfin, ce projet soulève des questions plus larges sur l’avenir des interfaces homme-machine et de la place des technologies
+vocales dans notre quotidien. La capacité à reproduire ou à analyser la voix humaine pourrait révolutionner des domaines
+aussi variés que la santé, la communication ou encore les arts numériques, rendant ces recherches encore plus passionnantes
+pour les années à venir.
+
+Bibliographie
+La bibliographie est consultable au début des annexes.
+
+20
+VocalTeam
+
+

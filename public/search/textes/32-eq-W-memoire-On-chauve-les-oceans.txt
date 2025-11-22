@@ -1,0 +1,638 @@
+Olympiades de physique années 2024/2025
+
+On chauve les océans !
+Comment préserver les océans avec nos cheveux…
+
+Anaïs Pargny, Emma Gaudin, Camille Werner, Aude Le Nezet
+Encadré par Julie Roman et Astrid Peytavin
+Lycée Blanche de Castille, Chesnay-Rocquencourt
+
+1
+
+Table des matières :
+
+1. Introduction :..................................................................................................3
+2. Le cheveu comme solution, description du phénomène...........................5
+2.1. Le cheveu, une solution ….......................................................................5
+2.2. Est-il possible de recycler les boudins de cheveux?................................ 6
+3. Dispositifs expérimentaux............................................................................ 6
+3.1. Création du boudin idéal.......................................................................... 6
+3.1.1. Diffraction..........................................................................................7
+3.1.2. Tests pH-métriques...........................................................................8
+3.1.3. Confirmation par spectrophotométrie............................................. 10
+3.1.4. Quantification par décantation........................................................ 13
+3.2. Un recyclage possible ?......................................................................... 14
+3.2.1 La distillation.................................................................................. 14
+3.2.2 Le nettoyage au shampoing............................................................ 15
+4. Conclusion................................................................................................... 16
+4.1. Conclusion des expériences.................................................................. 16
+4.2. Impact financier, un projet réalisable ?...................................................16
+4.3. Justice pour l’écrevisse !........................................................................ 17
+5. Bibliographie................................................................................................ 18
+6. Remerciements............................................................................................ 18
+
+2
+
+1. Introduction :
+Une expérience à s’en tirer les cheveux !
+Bienvenue à bord du projet « On chauve les
+océans »! Préparez vous à immerger dans le
+récit de quatre petits scientifiques aux
+incroyables idées et découvrez nos
+raisonnements, nos recherches et nos
+expériences menées pour la protection des
+océans. Le but de nos recherches est de
+tenter de trouver des solutions réalisables
+pour protéger nos océans de ses plus
+grands fléaux : les activités humaines.
+Nous nous concentrerons donc sur la protection des espaces marins de la pollution causée
+par les marées noires et également la crème solaire.
+En effet, les catastrophes sur les espaces marins engendrent de nombreuses conséquences.
+La première est une conséquence écologique, avec la dégradation massive des
+écosystèmes implantés dans ce milieu. De plus, les marées noires bloquent le réseau
+trophique, c'est-à-dire l’ensemble des relations existant entre les diverses catégories
+d’animaux (producteurs, consommateurs et décomposeurs). La seconde conséquence
+s’applique au niveau sanitaire. En effet, le pétrole déversé par des bateaux en pleine mer et
+ramené vers les côtes par l’action des marées et des vents présente des dangers pour les
+êtres humains. En effet, l’inhalation, l’ingestion ou le contact avec la peau nue peuvent
+engendrer des maladies comme le cancer. Par exemple, une étude menée sur les
+populations bénévoles et professionnelles ayant aidé le nettoyage des plages suite au
+naufrage du navire Erika en 2000 sur la côte Atlantique montre que les produits présents
+dans le pétrole ont engendré la formation de différentes maladies : troubles du système
+respiratoire, troubles digestifs, cancers pulmonaires, …
+Les écrans solaires, quant à eux, sont un indispensable des vacanciers lorsqu’ils partent à la
+mer, mais se rendent-ils compte que son utilisation peut participer à la pollution des océans
+et ainsi à la destruction des écosystèmes ?
+Chaque année environ 25 000 tonnes de crème solaire sont déversées dans les océans, ce
+qui correspond à 48 litres de crème solaire versés chaque minute à l’échelle de la planète
+d’après la fondation pour la nature et pour l’homme.
+La cause majeure est due à la mauvaise adhérence de la crème sur notre peau : environ
+25% de la quantité de crème étalée se dilue en 20 minutes dans la mer, libérant donc des
+produits chimiques nocifs pour les coraux dans l’eau.
+
+3
+
+Il est donc important de sensibiliser le plus grand nombre pour lutter et préserver notre
+planète. Pour cela, nous devons toucher le grand public par des problèmes concrets.
+Nous verrons donc comment les cheveux peuvent être une solution concrète pour
+lutter contre la pollution des eaux.
+La première idée qui nous est venue à l’esprit pour répondre au problème est l’utilisation des
+cheveux. En effet, l'utilisation des cheveux est un moyen pour lutter contre la pollution des
+eaux. C’est pourtant un sujet assez peu connu de tous. Ils sont déjà mis à contribution lors
+notamment des marées noires ou équipent encore des postes d’avitaillement de navires,
+comme ceux du Vieux Port à Marseille. Ils sont également utilisés à des fins de prévention
+de fuites au fond des cales, et peuvent également servir à la dépollution des récupérateurs
+d’eaux fluviales.
+Nous sont alors venues plusieures questions :
+-​ Qu’est ce qui fait du cheveu une bonne solution à la dépollution ?
+-​ Quels sont les éléments qui influencent sa qualité ?
+-​ Pouvons-nous récupérer les hydrocarbures adsorbés ?
+Nous chercherons à étudier ces questions à travers les raisonnements à suivre.
+
+4
+
+2. Le cheveu comme solution, description du phénomène
+2.1. Le cheveu, une solution …
+Le cheveu de prime abord paraît être une solution étrange au traitement de notre sujet. Mais
+quand on analyse bien ses propriétés, on se demande pourquoi on n’y a pas pensé plus tôt !
+En effet, le cheveu est lipophile, c’est-à-dire qu’il adsorbe les graisses des hydrocarbures et
+des huiles solaires.
+Ce phénomène s’explique par la polarité des espèces chimiques qui entrent en jeu, que ce
+soit celle du cheveu, ou celle des hydrocarbures.
+La polarité fait référence à la distribution des charges électriques à l’intérieur d’une molécule,
+qui influence son comportement et ses interactions.
+Le cuir chevelu est constitué à 95% de
+kératine, une protéine fibreuse formée de
+chaînes de 18 acides aminés synthétisée
+par des cellules situées au fond du follicule
+pileux. La polarité de la kératine joue un
+rôle crucial dans la structure des cheveux.
+Les chaînes de kératine s’organisent en
+hélices et se lient entre elles grâce à des
+ponts disulfures et des liaisons de Van Der
+Waals, ce qui la rend apolaire et une
+affinité avec des substances non-polaires
+(comme les huiles et le sébum).
+Le caractère lipophile de la kératine facilite ainsi l’adsorption des hydrocarbures, qui sont des
+composés majoritairement hydrophobes. Et comme dit le dicton : qui se ressemble
+s’assemble, les cheveux, apolaires, vont attirer les graisses elles mêmes apolaires. Lorsque
+les cheveux sont placés dans l’eau contaminée, les graisses s’attachent aux surfaces des
+cheveux, permettant ainsi de les récupérer efficacement.
+La kératine en plus de sa polarité présente de nombreuses propriétés utiles à son emploi
+dans le combat contre les marées noires : imperméabilité, résistance, élasticité et brillance.
+Un cheveu présente une bonne résistance et élasticité. Ces deux propriétés sont exploitables
+afin d’avoir un emploi simple et efficace. La résistance va permettre de créer des boudins de
+cheveux relativement compacts ce qui pourra permettre d’avoir un moyen durable et fiable.
+L’élasticité elle, est utile pour la maniabilité des boudins : en effet, il est important de pouvoir
+manier simplement et facilement le moyen déployé car l’objectif est de réduire le plus
+5
+
+possible les dégâts écologiques et économique et donc de stopper le plus rapidement
+possible l’expansion de la marée noire. La brillance témoigne de la bonne santé du cheveux,
+ce qui peut être un indicateur de l’efficacité ainsi que du repérage dans le lieu où sont
+déposés les boudins : il est important de savoir précisément où sont situés les différents
+moyens déployés afin d’avoir la meilleure gestion de l'opération.
+
+2.2. Est-il possible de recycler les boudins de cheveux?
+Les boudins sont censés être recyclables six à huit fois selon l’association des Coiffeurs
+Justes. Pour les recycler, il faut séparer les graisses récupérées des boudins.
+Nous voudrions voir s’il est possible de réutiliser les huiles solaires mais surtout les
+hydrocarbures après récupération dans les boudins. Ces derniers pourraient être utiles pour
+des besoins du quotidien : tondeuse… Et peut-être à plus bas prix. Pour séparer les graisses
+des cheveux, il faut choisir un solvant miscible avec l’huile et apolaire. Nous avons choisi
+l’éthanol. Le solvant, miscible avec l’huile solaire, permet d’extraire cette dernière du cheveu.
+
+3. Dispositifs expérimentaux
+Le but des expériences à suivre est d’analyser si l’épaisseur des cheveux influe sur la qualité
+des boudins en mer.
+Nous avons concentré nos recherches sur la capacité de nos boudins à adsorber l’huile
+solaire car plus facile à utiliser dans le laboratoire du lycée que les hydrocarbures.
+Nous allons réaliser deux grandes phases de test. La première va consister à créer des
+boudins optimaux en analysant les propriétés lipophiles du cheveu et l’influence de
+l’épaisseur des cheveux.
+Dans un second temps, nous avons voulu étudier s’il était possible de récupérer l’huile
+adsorbée par les cheveux afin de la réutiliser. Nous avons également voulu vérifier que les
+boudins sont utilisables plusieurs fois et chercher la méthode de lavage permettant de
+conserver au mieux leur efficacité.
+
+3.1. Création du boudin idéal
+Pour utiliser les cheveux de manière pratique, on réunit ces derniers en boudins que l’on fait
+flotter sur les océans. C’est ce que l’on a essayé de reproduire dans nos laboratoires en
+utilisant des collants.
+Pour constituer les meilleurs boudins, nous avons effectué une série d’expériences basée
+sur l'épaisseur du cheveu.
+
+6
+
+3.1.1. Diffraction
+Nous avons sélectionné différents cheveux et
+mesuré leur épaisseur grâce à la diffraction, le but
+étant de pouvoir analyser leur efficacité en prenant
+comme seul facteur qui varie leur épaisseur.
+La diffraction est un phénomène physique par lequel
+une onde qui rencontre un obstacle ou une ouverture
+de même ordre de grandeur que la longueur d'onde
+subit un étalement des directions de sa propagation.
+Dans les laboratoires de notre lycée, nous avons
+donc pu analyser l'épaisseur de 6 échantillons de
+cheveux d’individus différents.
+Un laser projette une lumière rouge de longueur
+d’onde λ=650nm pour former une figure de
+diffraction sur notre écran, une feuille blanche située
+à une distance D=3,00m. Nous avons ensuite placé
+un cheveu de chaque échantillon dans une
+diapositive devant le laser puis mesuré le plus grand
+nombre de taches L formées à l’aide d’une règle de
+précision 0,5 mm, pour calculer la taille de la tache
+centrale L de manière précise. Après avoir effectué toutes nos mesures, nous avons calculé
+l’épaisseur d’un cheveu (a).
+
+7
+
+Grâce à la formule a=
+
+2λ𝐷
+𝐿
+
+démontrée en annexe, nous avons calculé l’épaisseur de
+
+différents cheveux que nous avons répertoriées dans le tableau suivant, les cheveux étant
+classés du plus fin au plus épais :
+Echantillon
+
+Mesures de L
+
+L
+
+a
+
+1 cheveux bruns lisses
+
+2L = 17,7 cm
+
+L = 8,3 cm
+
+a = 4,4E-5 m
+
+2 cheveux blonds bouclés
+
+3L = 17,8 cm
+
+L = 5,9 cm
+
+a = 6,6E-5 m
+
+3 cheveux bruns bouclés
+
+2L = 9,2 cm
+
+L = 4,6 cm
+
+a = 8,5E-5 m
+
+4 cheveux châtains ondulés
+
+2L = 8,5 cm
+
+L = 4,3 cm
+
+a = 9,2E-5 m
+
+5 cheveux brun foncé ondulés
+
+4L = 15,1 cm
+
+L = 3,8 cm
+
+a = 1,0E-4 m
+
+6 cheveux bruns lisses
+
+7L = 20,3 cm
+
+L = 2,9 cm
+
+a = 1,3E-4 m
+
+Le coefficient devant L correspond aux nombres de taches mesurées sur la figure de
+diffraction, nous avions ensuite divisé la mesure obtenue par ce coefficient.
+Nous pouvons ainsi conclure que nos cheveux sont tous différents, plus ou moins épais. Ces
+différences vont nous permettre de pouvoir étudier si l’épaisseur du cheveux impacte la
+capacité d’adsorption des huiles des boudins de cheveux.
+
+3.1.2. Tests pH-métriques
+Nous avons réalisé 3 boudins de cheveux de même masse m=7,00g à
+l’aide de collants. Le seul paramètre que nous avons fait varier est le type
+de cheveu contenu dans les boudins : un contient les cheveux les plus
+fins (n°1 dans tableau de diffraction), un autre les deuxièmes plus épais
+(n°5 dans tableau de diffraction) et enfin un dernier contenant un mélange
+de cheveux différents en épaisseur. Nous avons placé ces 3 boudins dans
+3 béchers différents de 200 mL chacun contenant 150 mL d’eau de mer et
+10,20g d’huile solaire.
+Nous les y avons laissés deux jours avant d’enlever les boudins pour réaliser différents tests
+sur l’eau de mer restant dans les béchers afin d’analyser l’efficacité de chacun des boudins
+et ainsi les comparer. Afin d’obtenir des résultats exploitables, nous ne faisons varier qu’un
+paramètre, l’épaisseur des cheveux dans le boudin.
+Premièrement juste en se basant sur le visuel des béchers après avoir enlevé les cheveux,
+celui restant le plus trouble et légèrement jaune est celui qui contenait le boudin de cheveux
+fin, celui semblant le plus clair est celui qui contenait le boudin de cheveux épais et enfin
+celui contenant le mélange de cheveux semblait être entre les deux précédents.
+
+8
+
+Nous sommes donc partis de l’hypothèse que plus les cheveux sont épais, plus ils adsorbent
+les huiles.
+Pour confirmer cette hypothèse, nous réalisons dans un
+second temps une étude pH-métrique de l’eau de mer après y
+avoir laissé les boudins et l’huile solaire.
+Pour réaliser cette expérience, nous avons dans un premier
+temps utilisé les pH-mètres de nos laboratoires. Mais les
+résultats que nous avons trouvés sont proches les uns des
+autres et l’incertitude reste trop élevée.
+C’est pourquoi nous avons cherché un endroit où nous
+pourrions avoir accès à un matériel plus précis.
+Nous avons donc contacté un professeur de l’Ecole normale
+supérieure de Paris-Saclay qui nous a gentiment ouvert les
+portes de leur laboratoire. Nous avons donc pu remener alors
+notre étude pH-métrique.
+Après avoir préalablement étalonné le pH-mètre, nous
+plaçons la sonde dans un bécher de 200 mL contenant
+150 mL d’eau de mer afin de connaître son pH. Nous
+obtenons un pH = 7,90.
+Nous réitérons la manipulation avec le contenu restant
+dans les trois béchers après avoir enlevé les boudins qui y
+sont restés deux jours ainsi qu’avec un bécher témoin
+contenant de l’eau de mer et de l’huile.
+Nous avons répertorié les résultats dans le tableau suivant:
+Contenu du bécher
+
+Résultat
+
+Eau de mer
+
+pH = 7,9
+
+Huile solaire
+
+pH = 5,4
+
+Eau de mer et huile solaire
+
+pH = 6,8
+
+Eau et huile restant après avoir enlevé le boudin de cheveux fins
+
+pH = 7,1
+
+Eau et huile restant après avoir enlevé le boudin de cheveux de différents types
+Eau et huile restant après avoir enlevé le boudin de cheveux épais
+
+pH = 7,3
+
+pH = 7,5
+
+9
+
+Nos mesures étant encore relativement proches, nous les avons réalisées 7 fois. Ensuite
+nous avons créé un programme python qui nous a permis de calculer une valeur moyenne et
+l’incertitude de chaque mesure. Cf. annexe.
+Grâce à ce programme, nous pouvons observer que la plupart de nos mesures sont
+cohérentes.
+Cependant, nos valeurs restant tout de même très proches, nous ne pouvons baser notre
+analyse seulement sur un test pH-métrique, c’est pourquoi nous avons mené une nouvelle
+expérience…
+
+3.1.3. Confirmation par spectrophotométrie
+Enfin nous avons utilisé un spectrophotomètre pour confirmer les résultats des tests
+pH-métriques et voir si nous pouvions détecter la présence d’huile grâce au spectre
+d’absorption.
+En effet, nous utilisons les huiles ou crèmes solaires puisque elles créent un écran solaire
+chimique qui absorbe les rayons UV pour nous en protéger. Ainsi, si l'eau de mer contient de
+l’huile solaire, il est possible de la détecter en analysant son spectre d’absorption. Si l’eau
+contient de l’huile, nous devrions trouver des pics d’absorption aux alentours de 300 nm-400
+nm principalement puisque les filtres chimiques qu’elle contient absorbent les UV dont les UV
+A dont la longueur d’onde se rapproche du domaine du visible. De plus, notre huile solaire
+est jaune donc si il y en a dans l’échantillon testé nous devrions trouver un pic important
+autour des 400 nm.
+En effet d’après la synthèse additive des couleurs, le jaune est obtenu par l’addition du rouge
+et du vert donc un échantillon de couleur jaune diffuse les rayons de longueur d’onde
+environnant les 560 nm.
+L’échantillon contenant du jaune absorbe sa couleur complémentaire : le violet obtenu par la
+synthèse additive du bleu et du rouge. Si il y a de l’huile solaire, nous devrions observer un
+pic d’absorption aux alentours de 400 nm (violet), un autre vers 490 nm (bleu) et un dernier
+vers 650 nm (rouge).
+Nous avons donc utilisé un spectrophotomètre UV visible de nos laboratoires. Nous avons
+obtenu des spectres exploitables pour la solution témoin (eau huile) et la cuve avec boudin
+de cheveux fins, mais pas pour les deux autres où il restait moins d’huile. C’est pour cela que
+nous sommes allés à l’ENS.
+
+10
+
+Dans nos laboratoires, nous avons obtenu les spectres suivants :
+Cuve Témoin : solution sans cheveux :
+
+On observe un pic très important d’absorption à 400 nm et une quasi-linéarité du spectre ce
+qui traduit de la très forte présence d’huile.
+
+CUVE 1 : solution qui contenait le boudin de cheveux fins (44,1 µm)
+
+Le spectre d’absorption présente 3 pics majeurs témoignant de la présence d’huile :
+-​ le plus grand à λ= 408,5 nm avec une absorbance égale à A=0,7032
+-​ un deuxième à λ=540,8 nm avec une absorbance A = 0,1585
+-​ le plus petit à λ= 685,4 nm avec une absorbance A=0,05135
+Les spectrophotomètres de nos laboratoires n’allant pas plus bas que 400 nm, nous avons
+cherché d’autres appareils nous permettant plus de précision.
+C’est pourquoi nous avons aussi refait cette expérience dans les laboratoires de l’ENS.
+Nous avons réalisé 5 cuves :
+-​ Une première avec de l’eau de mer pour faire le réglage du blanc, c’est à dire avec le
+solvant de nos expériences, ici l’eau de mer.(cuve 1)
+-​ Une deuxième (cuve 2) avec la solution issue du bécher dans lequel nous avions
+placé les cheveux fins qui semblent avoir le moins bien absorbé les graisses.
+11
+
+-​ Une troisième (cuve 3) avec la solution issue du bécher dans lequel nous avions placé
+les cheveux mixtes qui semblent avoir mieux absorber les graisses.
+-​ Une quatrième (cuve 4) avec la solution issue du bécher dans lequel nous avions
+placé les cheveux épais qui semblent être les plus efficaces.
+-​ une cinquième (cuve 5) avec la solution témoin : huile et eau de mer sans boudin
+Nous avons alors pu obtenir les spectres suivants :
+
+On observe un pic très important pour toutes les solutions entre 385 nm et 420 nm ce qui
+montre la présence d’huile solaire dans une quantité plus ou moins importante.
+En effet, le pic est le plus important pour la cuve 5 contenant la solution témoin qui n’a pas
+eu de boudins, et donc celle où il reste le plus d’huile puisqu’elle n’a pas pu être adsorbée.
+De plus la solution où nous avions placé les cheveux absorbant le plus autour de cette
+longueur d’onde, et donc celle où il reste le plus d’huile correspond à celle où il y a eu le
+boudin de cheveux fins (cuve 2), suivie de celle contenant le boudin de cheveux mixtes (cuve
+3) et enfin celle absorbant le moins cette longueur d’onde est celle contenant le boudin de
+cheveux épais (cuve 4). C’est donc le boudin de cheveux qui a le plus adsorbé l’huile solaire.
+Ces résultats confirment nos premières observations et hypothèses, plus le cheveux est
+épais, plus il adsorbe les huiles. Pour avoir un boudin des plus efficaces, il faudrait n’utiliser
+que les cheveux les plus épais. Néanmoins, ce tri n’est pas possible chez les coiffeurs qui ne
+peuvent savoir à l'œil nu l’épaisseur des cheveux. Le boudin qui se rapproche le plus de la
+réalité bien qu’ils soient tous différents serait celui composé de cheveux mixtes.
+12
+
+3.1.4. Quantification par décantation
+Pour calculer plus précisément la masse d’huile restante après avoir enlevé les boudins,
+nous avons essayé de séparer la phase huileuse de la phase aqueuse.
+Pour cela nous avons placé dans une burette graduée les solutions restantes dans les
+béchers. N’ayant une contenance que de 25 mL, nous avons dû d'abord attendre la
+décantation dans ces 25 mL pour isoler l’huile et ainsi vider la phase aqueuse avant de la
+remplir, et ainsi réaliser cette manipulation jusqu’à ce que toute la solution de chaque bécher
+ait été décantée.
+Cette manipulation est réalisable grâce à la densité de l’huile qui est inférieure à celle de
+l’eau de mer : en effet 𝑑𝑒𝑎𝑢 𝑑𝑒 𝑚𝑒𝑟=1,025 et nous avons calculé celle de notre huile solaire :
+𝑚ℎ𝑢𝑖𝑙𝑒=12,37g 𝑉ℎ𝑢𝑖𝑙𝑒=15,0mL
+𝑚ℎ𝑢𝑖𝑙𝑒
+
+= 𝑉
+ℎ𝑢𝑖𝑙𝑒
+
+donc ρ
+
+= 0,825 g/mL
+
+ℎ𝑢𝑖𝑙𝑒
+
+𝑑ℎ𝑢𝑖𝑙𝑒=
+
+ρℎ𝑢𝑖𝑙𝑒
+ρ𝑒𝑎𝑢
+
+=
+
+0,825
+= 0,825
+1,000
+
+𝑑ℎ𝑢𝑖𝑙𝑒< 𝑑𝑒𝑎𝑢 𝑑𝑒 𝑚𝑒𝑟 , donc la phase huileuse sera bien au-dessus de la phase aqueuse.
+
+Voici les résultats obtenus :
+
+Cheveux épais : ​ ​
+​
+​
+0,40 mL d’huile restante soit 0,33 g​
+
+​
+​
+
+Cheveux fins : ​
+​
+​
+2,5 mL d’huile restante soit 2,1 g
+
+13
+
+3.2. Un recyclage possible ?
+Nous avons décidé dans cette partie d’étudier la suite du cycle du boudin après son
+utilisation: son recyclage. D’après l’association des Coiffeurs Justes, les boudins seraient
+réutilisables au moins six fois. Des entreprises comme Sol-Hair insulation ou encore Ecofhair
+réalisent des projets autour du recyclage de cheveux avec par exemple la création de
+panneaux d’isolation thermiques. Nous nous sommes donc demandés comment on pourrait
+recycler ces cheveux, et, si les huiles qu’on en extrait pourraient aussi être réutilisables.
+Pour recycler l’huile et les cheveux, il faut les séparer. C’est ce que nous avons cherché à
+faire. Pour cela, nous avons utilisé deux techniques : la distillation et le nettoyage.
+
+3.2.1. La distillation
+La technique de la distillation peut nous permettre de récupérer l’huile
+adsorber par les cheveux. Nous avons sélectionné pour cette partie le
+boudin de cheveux épais, car c’est avec celui-ci que nous avons pu
+récolter le plus d’huile.
+Pour séparer le boudin de cheveux de l’huile adsorbée, on utilise le
+principe d'extraction par solvant.
+Nous plaçons d'abord les cheveux ayant adsorbé l’huile solaire
+dans un bécher et ajoutons de l’éthanol C₂H₆O. En effet, ce
+dernier est miscible avec l’huile et non avec l’eau grâce à ses
+propriétés physico-chimiques.
+
+Les cheveux doivent être immergés pour que l’extraction
+soit la plus efficace possible, nous avons mis 8,0 mL
+d’éthanol.
+Nous remuons le bécher pour que l’action soit plus efficace.
+On fait ensuite reposer le mélange contenu dans le bécher
+pendant environ 10 à 15 minutes.
+Après le repos, on enlève le boudin du bécher et on le presse à l’aide d’une seringue pour en
+récupérer le plus de solution possible. De cette manière, on obtient un mélange solvant et
+huile solaire d’un côté et les cheveux de l’autre.
+Afin de récupérer l’huile sans le solvant utilisé pour l’extraction, on utilise ensuite le principe
+d’évaporation par distillation.
+En effet, on peut utiliser le principe de l’évaporation car l’éthanol et l’huile n’ont pas la même
+température de vaporisation.
+
+14
+
+T° de vaporisation de l’éthanol : 78,37 °C à pression atmosphérique normale (1 atm)
+T° de vaporisation de l’huile solaire : dépend des composants des huiles mais varie entre
+150 et 300 °C.
+La température de vaporisation du solvant étant largement
+inférieure à celle de l’huile, si on chauffe les deux, la vaporisation
+de l’éthanol va se faire, se séparant ainsi de l’huile qui elle reste à
+l’état liquide dans le ballon.
+Ce principe peut être adapté aux hydrocarbures afin de les
+récupérer.
+Nous avons pesé le ballon et la solution avant distillation
+m=126,42 g et après m=119,09 g. On a réussi à récupérer 7,33 g
+d’huile.
+Nous avons réitéré la manipulation pour le boudin de cheveux
+moyens et nous avons réussi à récupérer m=7,26 g d’huile.
+Ensuite, nous avons cherché à savoir si le boudin de cheveux aussi pouvait être réutilisé
+après en avoir extrait l’huile par solvant. Nous avons donc replongé le boudin de cheveux
+épais dans les mêmes conditions que dans la partie 3.1.2. Pour tester son efficacité, nous
+avons refait une décantation et avons trouvé une quantité d’huile de 2 mL soit 1,65 g. En
+comparaison, c’est cinq fois plus que lors de sa première utilisation. On peut donc constater
+que la qualité du boudin s’est dégradée entre les deux mais le boudin garde tout de même
+une certaine efficacité car il a adsorbé 8,55 g d’huile.
+
+3.2.2. Le nettoyage au shampoing
+Ensuite nous avons réfléchi à une manière plus simple de traiter les boudins. S’il on nettoie
+nos cheveux avec du shampoing, pourquoi ne pourrions nous pas faire de même avec nos
+boudins ?
+Nous avons donc pris le boudin de cheveux fins de la partie 3.1.2 et l’avons placé dans une
+bassine d’eau. Nous avons rajouté du shampoing et avons pressé le boudin. Nous avons pu
+constater rien que visuellement que l’huile en sortait. Nous avons réitéré le même procédé
+que pour le boudin de cheveux épais et après décantation de la solution d’eau de mer et
+d’huile après deux jours avec le boudin de cheveux fins, il restait 2,7 mL d’huile dans la
+solution contre 2,5 mL à la première utilisation. Les résultats sont presque identiques.
+Cela démontre une bonne efficacité de cette technique, qu’on pourrait plus démocratiser que
+la distillation. Cependant, ce nettoyage ne permet de récupérer que les boudins, et non les
+huiles…
+
+15
+
+Les associations assurent qu’après le recyclage des boudins dans la mer, ces derniers sont
+récupérés pour servir d’isolant dans le secteur de la construction. La vie de nos cheveux ne
+s’arrête donc jamais !
+
+4. Conclusion
+4.1. Conclusion des expériences
+La réalisation de nos expériences nous a permis de confirmer notre hypothèse de départ :
+l’épaisseur des cheveux influe sur la qualité des boudins.
+La première partie de nos expériences nous a permis de comprendre et de réaliser le
+phénomène étudié.
+Nous avons pu mettre en évidence l’acidité des huiles solaires qui sont, de ce fait, un danger
+pour l’équilibre des écosystèmes marins. L’ajout d’huile solaire dans l’eau de mer a acidifié la
+solution tandis que nous avons pu observer que plus les cheveux étaient épais, plus le pH
+était haut ce qui témoigne du bon fonctionnement de l’adsorption par les cheveux.
+Enfin nous avons vérifié ces résultats grâce à la spectrophotométrie qui nous a permis de
+mettre en avant plus précisément l’efficacité des boudins. Cette expérience a confirmé les
+résultats des précédentes : le boudin le plus efficace est celui composé de cheveux épais
+suivi de près par celui composé d’un mélange de cheveux et enfin celui contenant les
+cheveux fins.
+Néanmoins, cela prend du temps de trier les cheveux en fonction de leur épaisseur, et
+comme l’efficacité du boudin de cheveux mixtes est assez proche de celui des cheveux
+épais, pour une utilisation à grande échelle comme pour lutter contre les marées noires, il
+vaut mieux réaliser le plus grand nombre possible de boudins composés de tous les types de
+cheveux pour une plus grande efficacité.
+Le recyclage des boudins et des huiles est aussi possible. Avec deux manières de procéder,
+les huiles et/ou les boudins peuvent être réutilisables.
+
+4.2. Impact financier, un projet réalisable ?
+Tout le monde va régulièrement chez le coiffeur pour se faire couper les cheveux. Les
+poubelles des coiffeurs sont composées à 50% de cheveux et ils sont jetés par kilos tous les
+jours, une quantité qui représente 200 L de cheveux par an et par coiffeur. Un sac de
+recyclage peut contenir environ 220 coupes soit environ 2 kg de cheveux. Mais ces coupes
+peuvent permettre à la planète un avenir durable sans pour autant nécessiter de moyens
+financiers astronomiques ni l’utilisation de ressources rares.
+
+16
+
+Des associations ont déjà développé des systèmes permettant de récupérer les cheveux
+comme celle que nous avons citée précédemment, les Coiffeurs Justes. Ainsi chaque
+coiffeur doit verser 25 euros pour participer au programme, une participation qui permet de
+financer les différents coûts de la mise en place du projet mais qui n’arrête pas les 3500
+salons partenaires. Ils doivent également financer les sacs de recyclage, à hauteur de 1 euro
+l’unité; ces sacs sont évidemment éco-responsables car fabriqués à partir de bois français, et
+utilisant de la colle de maïs et de l’encre alimentaire, ces sacs étant entièrement
+biodégradables.
+L’envoi de 2 kilos de cheveux, soit un sac de recyclage, représente un coût de 6 euros via
+Mondial Relay, à la charge du coiffeur qui s’ajoutent aux nombreux coûts du salon.
+Néanmoins, un système de participation de la clientèle peut être mis en place afin
+d’encourager ces pratiques sans pénaliser les coiffeurs. Si chacun fait un geste, le coût sera
+vite comblé.
+Grâce à cet engagement, 40 tonnes de cheveux sont récupérées tous les ans.
+La piste de quantification du produit répandu à la surface est également une question
+importante puisque sa connaissance permet de mettre en place des dispositifs à la hauteur
+des dégâts et de la quantité d’huile (ou hydrocarbures dans de vraies conditions) et donc de
+potentiellement limiter le coût de la mise en place de l’opération.
+
+4.3. Justice pour l’écrevisse !
+Finalement, notre projet a pour but de réduire fortement les dégâts causés par ces marées
+noires et autres pollutions de ce genre dans l’océan. La faune et la flore qui y vivent créent
+un écosystème important, qui est déjà menacé par les déchets que les humains rejettent.
+Tout type de polluant déversé peut être fatal pour une espèce que ce soit pour les coraux, les
+poissons, les algues ou encore des espèces plus importantes comme des requins ou des
+dauphins. Cette question de la protection de l’environnement est encore aujourd’hui difficile à
+résoudre mais notre projet aide à mieux comprendre les dispositifs déjà mis en place par de
+nombreuses associations.
+
+17
+
+5. Bibliographie
+https://www.wedemain.fr/decouvrir/ces-coiffeurs-ecolos-recyclent-vos-cheveux-pour-nettoyerles-oceans_a4316-html/
+https://coiffeurs-justes.co
+https://www.parlonsplanete.com/planete/preservation-respect/cheveux-pollution-ocean
+https://www.parismatch.be/actualites/environnement/2019/07/27/vos-cheveux-peuvent-ils-co
+ntribuer-a-la-depollution-des-oceans-JX2Q3XL66VEYLB2UK2SABNH3EI/
+https://www.wedemain.fr/decouvrir/ces-coiffeurs-ecolos-recyclent-vos-cheveux-pour-nettoyerles-oceans_a4316-html/
+Nos cheveux pour lutter contre les marées noires ? - C Jamy
+https://www.francetvinfo.fr/replay-radio/le-billet-vert/environnement-quel-est-limpact-des-crem
+es-solaires-sur-les-oceans_5210290.html
+
+6. Remerciements
+Nous remercions Madame Roman, notre professeure de physique et professeure principale,
+de nous avoir accompagnés tout au long de nos expériences, de nous avoir soutenus et
+encouragés avec le sourire tout au long du projet.
+Nous remercions aussi Madame Peytavin, notre laborantine, pour son aide précieuse au sein
+des laboratoires.
+Nous remercions également nos partenaires qui nous ont aidé à réaliser ce projet grâce à du
+matériel performant : l’Ecole Normale Supérieure de Paris Saclay et le Lycée et Classe
+Préparatoire Sainte Geneviève à Versailles qui nous ont ouvert leurs laboratoires.
+Merci à Thierry Roland, qui nous a aidé dans notre collecte de cheveux, ainsi qu’à François
+chez Franck Provost à Vaucresson.
+Enfin merci à tous nos donateurs de cheveux qui nous ont permis de réaliser ce projet !
+
+18
+
+

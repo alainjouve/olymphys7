@@ -1,0 +1,1692 @@
+Qu’il soit fondu, solide, noir, au lait, ou blanc, le chocolat est une merveille
+à déguster. Notre équipe y a vu le prétexte parfait pour faire des sciences
+physiques… Et le moins que l’on puisse dire, c’est qu’il donne matière à
+explorer ! Découvrez, au travers d’expériences uniques, et de leurs
+analyses, ses propriétés fluides qui restent encore peu connues.
+C’est en 2022 que, pour la première fois, notre lycée présente avec une équipe de 6 élèves
+accompagnés de M. CROS, un projet intitulé « La physique du chocolat » aux Olympiades de
+Physique. L’objectif était de montrer en quoi l’étude des propriétés physiques du chocolat permettent
+de mieux comprendre comment le travailler, ainsi que de le déguster.
+Notre équipe, encadrée par M. CROS, souhaite cette année poursuivre le projet autour du
+chocolat, en amenant une toute nouvelle dynamique ! Notre intérêt s’est porté sur les propriétés
+fluides du chocolat et son étude rhéologique, jamais abordée jusqu’à présent aux Olympiades de
+Physique. Préparé sur 9 mois, le projet s’articule autour de la détermination du type de fluide du
+chocolat, sur la mesure de sa viscosité avec le matériel dont nous disposons au lycée, et enfin son
+étude rhéologique avec l’aide de Mme JORGENSEN du laboratoire ESPCI à Paris.
+Nous tenons à remercier tout particulièrement
+Mme Loren JORGENSEN du laboratoire ESPCI à Paris.
+Nous sommes extrêmement reconnaissants de l’accueil
+qu’elle nous a réservé et de l’expertise qu’elle nous a
+partagée pour la prise de mesures et leurs analyses.
+Nous remercions Mme Marie-Françoise CREPIN,
+professeure de mathématiques pour sa relecture et ses
+aides pour utiliser le logiciel Excel. Nous remercions les
+intervenants de notre lycée qui nous ont aidés à la
+préparation du matériel et à leur achat, ainsi que nos
+familles et amis pour leur soutien indéfectible.
+Notre équipe à l’Université Paris – Cité le samedi 3 février 2024
+Salma TOUFIK, Minnâ SALAMA, Sabrina BERKANI, Thuy Trang DUONGMANIVONG,
+Razvan POP, et M. CROS Indy (Notre camarade Loris LENFANT était absent ce jour-là)
+
+Pour l’ensemble des manipulations à venir, nous utilisons le chocolat
+noir Barry Mexique (66% de cacao). Nous allons d’ailleurs l’utiliser fondu étant
+donné que nous étudions les propriétés fluides du chocolat dans tout le
+mémoire.
+Au laboratoire avec Mme JORGENSEN en partie 7 du dossier annexe,
+nous avons utilisé le chocolat au lait Barry Alunga (44% de cacao), et le
+chocolat blanc Zephyr (34% de cacao). Par manque de temps, nous n’avons
+pas pu effectuer l’ensemble des mesures avec ces derniers.
+1
+
+I.
+
+QUEL TYPE DE FLUIDE POUR LE CHOCOLAT ?
+
+Cette partie vise à déterminer de façon expérimentale le caractère Newtonien ou non du
+chocolat lorsqu’il est liquide et donc fluide. Ce dernier étant constitué de cacao (solide) et de beurre
+de cacao (liquide), nous tenterons de déterminer aussi le caractère Newtonien ou non du beurre de
+cacao, la matrice structurelle du chocolat, qui lui confère sa propriété fluide. Pour cela, on peut
+s’intéresser au débit massique de fluide qui s’écoule le long d’un tube cylindrique.
+
+1. Principe expérimental
+On remplit une burette graduée cylindrique de rayon 𝑅, sectionnée à son extrémité inférieure,
+du fluide de masse volumique 𝜌 que l’on souhaite étudier. La burette graduée
+contient initialement une masse de fluide 𝑚0 = 𝑚(𝑡 = 0), remplissant une
+hauteur initiale ℎ0 = ℎ(𝑡 = 0). On suppose pour la suite que l’intégralité du
+fluide s’écoule durant la prise de mesures.
+À l’instant 𝑡 = 0, on ouvre l’extrémité inférieure pour laisser le fluide
+s’écouler : la hauteur de fluide dans la burette graduée diminue : sa valeur à
+un instant 𝑡 est notée ℎ(𝑡) ; 𝑚(𝑡) est la masse de fluide restant dans la burette
+au même instant et 𝑉(𝑡) son volume.
+Les parois de la burette étant fixes dans le référentiel du laboratoire
+supposé Galiléen, on suppose que la couche fine de fluide, en contact avec
+les parois, a une vitesse verticale nulle : 𝑣𝑥=0 = 𝑣𝑥=2𝑅 = 0. La vitesse verticale
+du fluide au centre du tube est notée 𝑣(𝑡) = 𝑣𝑥=𝑅 (𝑡) : c’est à cet endroit là que
+la vitesse du fluide est maximale, étant donné que c’est cette portion de
+couche de fluide qui est localement la plus éloignée des parois.
+Figure 1 : représentation schématique du montage expérimental
+
+2. Expressions de la contrainte de cisaillement et du gradient de
+vitesse
+On exprime pour la suite la contrainte de cisaillement 𝜏 et le gradient du vitesse 𝛾̇ du fluide à
+l’altitude 𝑦 = 0. L’action mécanique modélisée qui agit sur la partie du fluide à l’altitude 𝑦 = 0 est
+égale au poids de fluide présent dans la burette. La contrainte de cisaillement 𝜏 s’exprime :
+𝐹 𝑚(𝑡). 𝑔 𝜌. 𝑉(𝑡). 𝑔 𝜌. 𝜋. 𝑅 2 . ℎ(𝑡). 𝑔
+=
+=
+=
+= 𝜌. 𝑔. ℎ(𝑡)
+𝑆
+𝜋. 𝑅 2
+𝜋. 𝑅 2
+𝜋. 𝑅 2
+L’expression du gradient de vitesse 𝛾̇ à l’altitude 𝑦 = 0 est :
+∆𝑣 𝑣𝑥=𝑅 (𝑡) − 𝑣𝑥=0 (𝑡) 𝑣𝑥=𝑅 (𝑡) 𝑣(𝑡)
+𝛾̇ =
+=
+=
+=
+∆𝑥
+𝑅−0
+𝑅
+𝑅
+On en déduit l’expression de la viscosité 𝜂 du fluide à un instant 𝑡 :
+𝜏 𝜌. 𝑔. ℎ(𝑡) 𝜌. 𝑔. 𝑅. ℎ(𝑡)
+𝜂= =
+=
+𝑣(𝑡)
+𝛾̇
+𝑣(𝑡)
+𝑅
+Les valeurs de 𝜌, 𝑔 et 𝑅 étant fixées, la viscosité 𝜂 ne dépend que du rapport de la hauteur de
+𝜏=
+
+ℎ(𝑡)
+
+fluide dans la burette par la vitesse d’écoulement du fluide 𝑣(𝑡).
+
+CONCLUSION
+𝒉(𝒕)
+Si le rapport 𝒗(𝒕) est constant
+
+Si le rapport 𝒗(𝒕) n’est pas constant
+
+𝒉(𝒕)
+
+La viscosité est constante
+Le fluide est qualifié de Newtonien
+
+La viscosité varie
+Le fluide est qualifié de non Newtonien
+2
+
+3. Lien avec le débit massique
+On mesure la masse écoulée de la burette notée 𝑚𝑏 (𝑡) au cours du temps à l’aide d’une
+balance et d’une caméra pour davantage de précision, sachant que :
+𝑚𝑏 (𝑡) = 𝑚0 − 𝑚(𝑡).
+Il vient alors que 𝑚(𝑡) = 𝑚0 − 𝑚𝑏 (𝑡).
+La hauteur ℎ(𝑡) de fluide restant dans la burette à un instant 𝑡 s’exprime :
+ℎ(𝑡) =
+
+𝑚(𝑡)
+𝑚0 − 𝑚𝑏 (𝑡)
+=
+2
+𝜌. 𝜋. 𝑅
+𝜌. 𝜋. 𝑅 2
+
+Le débit massique de fluide écoulé s’exprime alors en fonction de la masse 𝑚𝑏 (𝑡) mesurée
+par la balance :
+
+𝑑(𝑚(𝑡))
+𝑑
+𝑑
+= 𝑑𝑡 (𝑚0 − 𝑚𝑏 (𝑡)) = − 𝑑𝑡 (𝑚𝑏 (𝑡))
+𝑑𝑡
+
+On peut aussi exprimer le débit massique de fluide à partir de données utiles :
+𝑑(𝑚(𝑡)) 𝑑
+𝑑
+𝑑(ℎ(𝑡))
+= (𝜌. 𝑉(𝑡)) = (𝜌. 𝜋. 𝑅 2 . ℎ(𝑡)) = 𝜌. 𝜋. 𝑅 2 .
+𝑑𝑡
+𝑑𝑡
+𝑑𝑡
+𝑑𝑡
+
+On sait que la hauteur de fluide diminue au cours du temps, cela signifie que ℎ(𝑡) est une
+fonction décroissante, et donc que
+
+𝑑(ℎ(𝑡))
+< 0.
+𝑑𝑡
+
+Sachant que la vitesse 𝑣(𝑡) du fluide est la dérivée de la hauteur de fluide par rapport au
+𝑑ℎ(𝑡)
+
+temps et qu’elle est positive, on note que : 𝑣(𝑡) = − 𝑑𝑡 . On peut en déduire que :
+𝑣(𝑡) = −
+
+1
+𝑑𝑚(𝑡)
+1
+𝑑𝑚𝑏 (𝑡)
+.
+=
+.
+2
+2
+𝜌. 𝜋. 𝑅
+𝑑𝑡
+𝜌. 𝜋. 𝑅
+𝑑𝑡
+
+On détermine alors si le rapport suivant est constant ou non pour en déduire la caractéristique
+Newtonienne ou non du fluide :
+𝒉(𝒕)
+=
+𝒗(𝒕)
+
+𝒎𝟎 − 𝒎𝒃 (𝒕)
+𝒎𝟎 − 𝒎𝒃 (𝒕)
+𝝆. 𝝅. 𝑹𝟐
+=
+𝒅𝒎𝒃 (𝒕)
+𝒅𝒎𝒃 (𝒕)
+𝟏
+.
+𝒅𝒕
+𝒅𝒕
+𝝆. 𝝅. 𝑹𝟐
+
+Où 𝒎𝟎 est la masse de fluide initialement introduite dans la burette graduée dont on
+suppose qu’elle va intégralement s’écouler, et 𝒎𝒃 (𝒕) la masse de fluide effectivement écoulée
+de la burette à l’instant 𝒕, mesurée par la balance.
+
+4. Expérimentation avec le chocolat
+Le procédé de la Partie 2 du dossier annexe testé avec le miel au préalable
+est mis en œuvre avec du chocolat fondu afin qu’il soit fluide. On s’attend à ce que
+ce dernier soit très visqueux tout comme le miel, nous allons donc réinvestir nos
+aptitudes mises en œuvre précédemment avec le miel. On remplit la burette graduée
+(précédemment chauffée avec un sèche-cheveux) avec du chocolat et on filme la
+balance durant l’écoulement pour déterminer la valeur de la masse de chocolat
+ℎ (𝑡)
+
+écoulée 𝑚𝑏𝑐 (𝑡), puis le débit massique, et le quotient 𝑣𝑐(𝑡) au cours du temps. Nous
+𝑐
+
+utilisons le sèche-cheveu pour que les parois restent chaudes et que le chocolat ne
+cristallise pas. Cette fois en revanche, il nous sera impossible de voir si des bulles
+d’air sont présentes dans la burette, étant donné que le chocolat est opaque.
+Figure 2 : Photographie du montage expérimental
+
+Une très grande partie du chocolat est restée collée sur la burette et ne s’est pas écoulée
+(seulement 19 𝑔, nous utiliserons d’ailleurs cette valeur pour 𝑚0 ).
+Lors de nos recherches préalables en rhéologie, nous avons pu lire que le ketchup ou le
+dentifrice par exemple étaient des fluides à seuil, c’est-à-dire que leur écoulement ne peut pas avoir
+lieu que si la contrainte de cisaillement a une valeur minimale, dite seuil.
+3
+
+Masse de chocolat écoulée (g)
+
+Rapidement, nous émettons l’hypothèse que le chocolat possède cette
+propriété (nous en discuterons dans la suite). Durant la prise de mesures, on
+observe que le débit du chocolat est plus important en début d’écoulement qu’en
+fin d’écoulement, car le « filet » de chocolat se rétrécit jusqu’à ne couler qu’en
+paquets pour 𝑡 > 63𝑠.
+Figure 3 : photographies des types d’écoulement observés
+Le graphique 𝑚𝑏𝑐 = 𝑓(𝑡) ci-dessous
+L'évolution de la masse de chocolat
+(valeurs dans le tableau 2 du dossier annexe),
+écoulée en fonction du temps
+illustre bien cela, puisqu’on voit que la masse
+20
+écoulée au cours du temps est de plus en plus
+15
+faible. On exclut les mesures pour 𝑡 > 63 𝑠 car le
+chocolat s’écoulait en paquets irréguliers, ce qui
+10
+va à l’encontre de l’écoulement de nos hypothèses
+5
+de départ (vitesse au centre continue). On peut
+0
+supposer que le débit massique est donc de plus
+0
+50
+100
+150
+en plus faible.
+Temps (s)
+Figure 4 : graphique 𝑚𝑏𝑐 = 𝑓(𝑡)
+ℎ (𝑡)
+
+On trace le graphique 𝑣𝑐(𝑡) = 𝑓(𝑡) ci-contre.
+
+Evolution du quotient h(t)/v(t) en fonction
+du temps pour le chocolat
+
+Nous allons étudier le tracé pour lequel
+l’écoulement était constant, c’est-à-dire pour les
+durées 𝑡 ∈ [0 ; 63]𝑠. Sur cet intervalle, on peut
+exclure que le quotient est constant : la viscosité
+n’est donc vraisemblablement pas constante. Si
+on considère l’allure générale du tracé, le quotient
+semble augmenter au cours du temps sur
+l’intervalle de temps considéré.
+
+Quotient h(t)/v(t) (s)
+
+𝑐
+
+100
+80
+60
+40
+20
+0
+0
+
+50
+
+100
+
+150
+
+Temps (s)
+
+ℎ (𝑡)
+Figure 5 : graphique 𝑣𝑐(𝑡) = 𝑓(𝑡)
+𝑐
+ℎ(𝑡)
+ℎ (𝑡)
+Etant donné que 𝜂 = 𝜌. 𝑔. 𝑅. 𝑣(𝑡), la viscosité a les mêmes variations que le quotient 𝑣𝑐(𝑡). On
+𝑐
+
+peut donc conclure d’après nos résultats expérimentaux que la viscosité semble augmenter au
+cours de l’écoulement, lorsque la quantité de chocolat écoulée est de plus en plus faible, c’est à
+dire lorsque le débit massique
+débit massique diminue, alors
+
+𝑑(𝑚(𝑡))
+𝑑𝑡
+𝑑(ℎ(𝑡))
+𝑑𝑡
+
+du chocolat diminue. Or,
+
+𝑑(𝑚(𝑡))
+𝑑𝑡
+
+= 𝜌. 𝜋. 𝑅 2 .
+
+𝑑(ℎ(𝑡))
+𝑑𝑡
+
+, donc si le
+
+𝑑ℎ(𝑡)
+
+diminue aussi, et puisque 𝑣(𝑡) = − 𝑑𝑡 , cela signifie que la
+
+vitesse et donc le gradient de vitesse 𝛾̇ diminuent eux aussi.
+On peut donc en déduire que le chocolat serait un fluide non newtonien rhéofluidifiant ou
+de Bingham car la valeur de la viscosité augmente lorsque le gradient de vitesse 𝜸̇ diminue.
+
+5. Expérimentation avec le beurre de cacao
+Le chocolat est constitué de cacao (solide) et de beurre de cacao (fluide si fondu). C’est
+d’ailleurs ce dernier qui confère au chocolat ses propriétés solides et fluides selon sa température.
+Le chocolat semblant être non newtonien d’après nos résultats précédents, nous avons souhaité
+faire les mêmes mesures pour le beurre de cacao.
+De la même façon que pour l’eau ou pour l’huile, le beurre de cacao s’est écoulé trop
+rapidement et il était impossible d’effectuer des mesures. Serait-ce un indice quant à ses
+caractéristiques ? Le beurre de cacao étant constitué de 5 molécules grasses principales, dont
+l’acide oléique ou palmitique (qu’on retrouve dans l’huile d’olive ou l’huile de palme par exemple),
+on pourrait imaginer à cette étape qu’il soit Newtonien (voir partie 7 B) du dossier annexe).
+4
+
+6. Incertitudes de mesures
+Les termes suivants ont souvent été employé dans les parties précédentes : « hypothèse »,
+« considéré », étant donné les importantes incertitudes de mesures auxquelles nous avons été
+confrontés. Nous proposons de lister les principales ci-dessous.
+Valeur de la masse affichée par la balance : précision de l’appareil, différence de masse pas
+suffisamment importante au cours du temps pour que ce dernier détecte une différence au bon
+moment. En effet, nous n’avons pas au lycée un système d’acquisition informatisé de la masse.
+Valeur du temps estimée à l’aide de la vidéo : nous notons la valeur de la durée entière en
+seconde (peu précise) lorsque la balance affiche un gramme supplémentaire. Par manque de
+temps, nous n’avons pas pu faire avec un logiciel de traitement vidéo plus élaboré.
+Calcul du débit massique : nous avons approché le débit massique
+
+𝑑(𝑚(𝑡))
+
+au quotient de la
+
+𝑑𝑡
+∆𝑚𝑏𝑐
+𝑚𝑏𝑐 (𝑖+1)−𝑚𝑏𝑐 (𝑖)
+variation de masse par la variation de temps : ∆𝑡 =
+, alors que dans la définition de
+𝑡𝑖+1 −𝑡𝑖
+
+la dérivée, il faut que la valeur de ∆𝑡 tende vers 0, c’est-à-dire qu’elle soit la plus petite possible,
+ce qui n’est pas le cas ici. Pour faire nos mesures, nous avions besoin d’avoir des écoulements
+pas trop rapides pour que la balance puisse effectuer correctement la mesure.
+Vitesse du fluide considéré : nous avons approché la vitesse du fluide mesurée
+expérimentalement à la dérivée de la hauteur de fluide par rapport au temps, ce qui suppose que
+la vitesse du fluide serait constante au centre et sur les parois, ce qui n’est pas le cas d’après
+l’expression du gradient de vitesse. Nous avons dû faire cette approximation pour que la valeur
+de la vitesse du fluide puisse être déterminée à l’aide de nos mesures.
+Masse de miel écoulée : on voit que la partie de miel en écoulement en sortie de burette forme
+un filet, dont l’épaisseur est moins importante que le diamètre de la burette 1,0 𝑐𝑚), alors que
+dans l’expression du gradient de vitesse, le fluide est supposé s’écouler sur tout le diamètre de la
+burette. Il y a donc une erreur importante quant à la détermination de la vitesse du fluide 𝑣(𝑡) à
+partir de la hauteur de fluide et donc de sa masse, puisque tout le fluide ne coule pas en sortie de
+burette (25% de fluide n’a pas coulé). Le rayon « équivalent » par lequel s’écoule effectivement
+le fluide en sortie de burette devrait donc être bien inférieur à celui de la burette. A l’aide de la
+photographie Figure A, on peut déterminer le diamètre du filet de fluide qui s’écoule directement
+en sortie de burette, qui vaut 0,4 𝑐𝑚 < 1,0 𝑐𝑚. On a pu faire la même observation avec le chocolat.
+Ecoulement du chocolat : Une masse de 19 𝑔 seulement de chocolat s’est écoulée au cours de
+l’expérience ; on peut se demander si cette quantité est suffisante. De plus, dans nos hypothèses,
+nous supposions que la hauteur de fluide était liée à sa masse, or le chocolat ne coule pas
+intégralement de la burette, et une grande partie reste sur les bords, on peut donc se demander
+si les mesures sont cohérentes avec nos hypothèses.
+Différence de pression suffisante pour une contrainte de cisaillement qui évolue au cours
+du temps : lorsque la burette graduée est totalement remplie, il y a une hauteur ∆𝑦 = 42 𝑐𝑚 de
+fluide. La différence de pression entre la surface inférieure et supérieure du fluide est :
+∆𝑃 = 𝜌. 𝑔. ∆𝑦 = 1,19 × 103 𝑘𝑔. 𝑚−3 × 9,81 𝑚. 𝑠 −2 × 0,42𝑚 = 4,9 × 103 𝑃𝑎 ≈ 0,05 𝑏𝑎𝑟
+Sachant que la pression atmosphérique vaut 𝑃𝑎𝑡ℎ𝑚 ≈ 1,01 𝑏𝑎𝑟, la pression à laquelle est soumise
+0,05
+le fluide dans la partie la plus en profondeur à 𝑡 = 0 est 1,01 × 100 ≈ 5% plus élevée. On peut se
+
+demander si cette différence de pression engendre un taux de cisaillement suffisamment élevé
+pour que les mesures soient significatives.
+(Remarque : la masse volumique du chocolat est déterminée en partie 5 du dossier annexe).
+Détermination de l’ordre de grandeur de la viscosité du miel : Avec les ordres de grandeur
+ℎ(𝑡)
+
+des quotients 𝑣(𝑡) mesurées, on peut déterminer l’ordre de grandeur des viscosités pour le miel :
+𝜂(𝑚𝑖𝑒𝑙) =
+
+𝜌.𝑔.𝑅.ℎ(𝑡)
+𝑣(𝑡)
+
+1,2
+
+= 1,42 × 103 × 9,81 × 2 × 10−2 × 12,4 = 1036 𝑃𝑎. 𝑠, ce qui est bien supérieur
+
+aux valeurs attendues que l’on peut trouver sur internet : 6 < 𝜂(𝑚𝑖𝑒𝑙) (𝑃𝑎. 𝑠) < 10. Les trop
+grandes incertitudes de mesures peuvent permettre d’expliquer cet écart 102 fois plus élevé en
+ordre de grandeur.
+5
+
+II. DÉTERMINATION DE LA VISCOSITÉ DU CHOCOLAT PAR CHUTE D ’UNE BILLE
+Nous cherchons à déterminer la ou les valeur(s) de la viscosité (apparente) du chocolat. Une
+méthode fréquemment employée pour les fluides Newtonien étant celle du « viscosimètre à chute
+de bille ». Nous devrons aussi discuter de l’importance du caractère Newtonien ou non du chocolat
+pour la détermination de sa viscosité (apparente).
+
+1. Principe de la méthode du viscosimètre à chute de bille
+On lâche sans vitesse initiale une bille dans un fluide non opaque supposé
+Newtonien : cette dernière chute dans le fluide avec une trajectoire rectiligne sous
+l’effet de son poids. L’acquisition du mouvement, par exemple avec une vidéo, permet
+de déterminer la vitesse de chute de la bille dans le fluide au cours du temps.
+Au bout d’un certain temps, la bille atteint une vitesse limite, dont la valeur
+permet d’estimer la viscosité du fluide (voir partie II. 2.). Le chocolat étant opaque, il
+est impossible de visualiser le mouvement de la bille lors de sa chute. Il faudra donc
+concevoir et mettre au point un montage expérimental permettant de restituer une
+partie du mouvement de la bille, et déterminer la valeur sa vitesse lors de la chute.
+Figure 6 : photographie d’un viscosimètre à chute de bille dans un shampoing
+
+Notons pour la suite de notre démarche qu’on fait l’hypothèse que le chocolat est un fluide
+Newtonien, puisque la modélisation des forces de frottements de Stokes de la bille dans le fluide
+n’est valable que dans ce cas. Nous reviendrons sur cette hypothèse dans la suite du mémoire.
+
+2. Détermination de l’expression de la viscosité d’un fluide par viscosimètre
+Le système étudié dans cette partie est la bille de rayon 𝑅, de masse 𝑚𝐵 , de volume 𝑉𝐵 et de
+masse volumique 𝜌𝐵 . La bille est lâchée sans vitesse initiale au niveau de la surface du chocolat :
+𝑣𝐵 (𝑡 = 0) = 0. On étudie son mouvement dans le référentiel du laboratoire
+supposé Galiléen, du fait de la faible durée de l’expérience. On note 𝜌𝑐 la masse
+volumique du chocolat (que nous déterminerons dans la suite du sujet). Les
+actions mécaniques modélisées par des vecteurs force exercées sur la bille sont :
+- Son poids : 𝑃 = 𝑚𝐵 . 𝑔 ;
+- La poussée d’Archimède, correspondant au poids de chocolat déplacé :
+𝑃𝐴 = 𝜌𝑐 . 𝑉𝐵 . 𝑔 ;
+- Les forces de frottements, modélisés par la loi de Stokes, qui dépendent
+notamment de la viscosité du fluide notée 𝜂 (𝑃𝑎. 𝑠), constante si le fluide
+est supposé Newtonien (ici le chocolat) et de la vitesse 𝑣𝐵 (𝑡) de la bille
+𝑓 = 6𝜋. 𝑅. 𝜂. 𝑣𝐵 (𝑡).
+Figure 7 : représentation qualitative des vecteurs force qui s’exercent sur la bille lors de
+sa chute dans le chocolat
+
+La seconde loi de Newton s’écrit donc :
+∑𝑖 ⃗⃗⃗⃗⃗⃗⃗⃗⃗
+𝐹𝑒𝑥𝑡,𝑖 = 𝑃⃗ + ⃗⃗⃗⃗
+𝑃𝐴 + 𝑓 = 𝑚𝐵 . 𝑎
+
+avec 𝑎 le vecteur accélération de la bille
+
+Par projection sur l’axe 𝑦, on obtient l’expression suivante :
+(
+
+0
+0
+0
+𝑎𝑥 (𝑡)
+)+(
+)+(
+) = 𝑚𝐵 . (
+)
+𝑚𝐵 . 𝑔
+−𝜌𝑐 . 𝑉𝐵 . 𝑔
+−6𝜋. 𝑅. 𝜂. 𝑣𝐵 (𝑡)
+𝑎𝑦 (𝑡)
+
+Donc l’expression des coordonnées du vecteur accélération de la bille sont :
+𝑎𝑥 (𝑡) = 0
+6𝜋. 𝑅. 𝜂
+𝜌𝑐 . 𝑉𝐵
+{
+𝑎𝑦 (𝑡) = −
+. 𝑣𝐵 (𝑡) + 𝑔. (1 −
+)
+𝑚𝐵
+𝑚𝐵
+6
+
+Le mouvement est supposé strictement vertical étant donné la direction des vecteurs force,
+l’accélération horizontale est nulle, donc 𝑎𝐵 (𝑡) = 𝑎𝑦 (𝑡) =
+
+𝑑𝑣𝑦 (𝑡)
+𝑑𝑡
+
+=
+
+𝑑𝑣𝐵 (𝑡)
+.
+𝑑𝑡
+
+On en déduit :
+𝑑𝑣𝐵 (𝑡)
+6𝜋. 𝑅. 𝜂
+𝜌𝑐 . 𝑉𝐵
+=−
+. 𝑣𝐵 (𝑡) + 𝑔. (1 −
+)
+𝑑𝑡
+𝑚𝐵
+𝑚𝐵
+
+(𝐸)
+
+Equation différentielle du premier ordre à coefficients constants vérifiée par la vitesse de la bille
+au cours de sa chute dans le chocolat, supposé Newtonien.
+Cette équation différentielle est du type :
+𝑑𝑣𝐵 (𝑡)
+= 𝑞. 𝑣𝐵 (𝑡) + 𝑝
+𝑑𝑡
+
+;
+
+6𝜋.𝑅.𝜂
+
+avec 𝑞 et 𝑝 ∈ ℝ tels que : 𝑞 = − 𝑚
+
+𝐵
+
+;
+
+𝜌 .𝑉
+
+𝑐 𝐵
+𝑝 = 𝑔. (1 − 𝑚
+)
+𝐵
+
+Une équation différentielle de la forme 𝑦 ′ = 𝑞𝑦 + 𝑝 admet une solution du type :
+𝑝
+𝑦(𝑡) = 𝐾. exp(𝑞𝑡) − 𝑞, avec 𝐾 ∈ ℝ.
+La solution de l’équation différentielle (𝐸) est de la forme :
+𝜌𝑐 .𝑉𝐵
+
+𝑣𝐵 (𝑡) = 𝐾. exp (−
+
+𝑔.(1−
+)
+6𝜋.𝑅.𝜂
+𝑚𝐵
+. 𝑡) −
+, avec 𝐾 ∈ ℝ.
+6𝜋.𝑅.𝜂
+𝑚𝐵
+−
+𝑚𝐵
+
+𝜌𝑐 . 𝑉𝐵
+𝜌𝑐 . 𝑉𝐵
+𝑔. (1 − 𝑚
+)
+𝑚𝐵 . 𝑔. (1 − 𝑚
+)
+6𝜋. 𝑅. 𝜂
+6𝜋. 𝑅. 𝜂
+𝐵
+𝐵
+𝑣𝐵 (𝑡) = 𝐾. exp (−
+. 𝑡) −
+= 𝐾. exp (−
+. 𝑡) +
+6𝜋. 𝑅. 𝜂
+𝑚𝐵
+𝑚𝐵
+6𝜋. 𝑅. 𝜂
+−
+𝑚𝐵
+
+On détermine la valeur de 𝐾 à l’aide des conditions initiales sur la valeur de la vitesse du système.
+Conditions initiales, valeur de 𝑣𝐵 à 𝑡 = 0 : détermination de 𝐾.
+Conditions expérimentales
+Expression mathématique
+𝜌𝑐 . 𝑉𝐵
+𝑚𝐵 . 𝑔. (1 − 𝑚
+)
+6𝜋. 𝑅. 𝜂
+𝐵
+𝑣𝐵 (0) = 𝐾. exp (−
+× 0) +
+𝑚𝐵
+6𝜋. 𝑅. 𝜂
+𝜌𝑐 . 𝑉𝐵
+𝜌𝑐 . 𝑉𝐵
+𝑚𝐵 . 𝑔. (1 − 𝑚
+)
+𝑚𝐵 . 𝑔. (1 − 𝑚
+)
+𝐵
+𝐵
+(0)
+𝑣𝐵
+=𝐾×1+
+=𝐾+
+6𝜋. 𝑅. 𝜂
+6𝜋. 𝑅. 𝜂
+
+𝑣𝐵 (0) = 0
+(vitesse initiale nulle)
+
+Conclusion : 𝑲 +
+Donc : 𝒗𝑩 (𝒕) = −
+
+𝝆 .𝑽
+𝒎𝑩 .𝒈.(1− 𝒄 𝑩 )
+𝒎𝑩
+
+6𝝅.𝑹.𝜼
+
+𝝆 .𝑽
+𝒎𝑩 .𝒈.(1− 𝒄 𝑩 )
+𝒎𝑩
+
+6𝝅.𝑹.𝜼
+
+= 0 donc : 𝑲 = −
+
+𝝆 .𝑽
+𝒎𝑩 .𝒈.(1− 𝒄 𝑩 )
+𝒎𝑩
+
+6𝝅.𝑹.𝜼
+𝝆𝒄 .𝑽𝑩
+
+𝒎𝑩 .𝒈.(1−
+)
+6𝝅.𝑹.𝜼
+𝒎𝑩
+. 𝐞𝐱𝐩 (−
+. 𝒕) +
+𝒎𝑩
+6𝝅.𝑹.𝜼
+
+6𝝅.𝑹.𝜼
+𝑩 − 𝝆𝒄 .𝑽𝑩 )
+Solution de l’équation différentielle : 𝒗𝑩 (𝒕) = 𝒈.(𝒎6𝝅.𝑹.𝜼
+. (1 − 𝐞𝐱𝐩 (− 𝒎 . 𝒕))
+𝑩
+
+Expression de la vitesse 𝒗𝑩 (𝒕) d’une bille sphérique de rayon 𝑹, de masse 𝒎𝑩 et de volume 𝑽𝑩
+au cours du temps 𝒕 lors de son mouvement de chute dans un fluide Newtonien de viscosité
+𝜼 de masse volumique 𝝆𝑪 dans un champ de pesanteur 𝒈, lâchée sans vitesse initiale.
+6𝜋.𝑅.𝜂
+
+On sait que lim exp (− 𝑚
+𝑡→+∞
+
+𝐵
+
+. 𝑡) = 0, on peut donc en déduire l’expression de 𝑣𝐵 (𝑙𝑖𝑚) au bout d’un temps
+
+de chute suffisamment long :
+𝑔. (𝑚𝐵 − 𝜌𝑐 . 𝑉𝐵 )
+6𝜋. 𝑅. 𝜂
+𝑔. (𝑚𝐵 − 𝜌𝑐 . 𝑉𝐵 )
+lim 𝑣𝐵 (𝑡) =
+. (1 − exp (−
+. 𝑡)) =
+. (1 − 0)
+𝑡→+∞
+6𝜋. 𝑅. 𝜂
+𝑚𝐵
+6𝜋. 𝑅. 𝜂
+La vitesse de la bille au bout d’un temps suffisamment long est donc une valeur finie, que l’on note 𝑣𝐵 (lim) :
+𝑚𝐵 − 𝜌𝑐 . 𝑉𝐵
+𝑣𝐵 (𝑙𝑖𝑚) = 𝑔.
+6𝜋. 𝑅. 𝜂
+La courbe 𝑣𝐵 = 𝑓(𝑡) a donc une asymptote horizontale d’équation : 𝑦𝐷 = 𝑣𝐵 (𝑙𝑖𝑚).
+7
+
+4
+
+En sachant que le volume de la bille s’exprime : 𝑉𝐵 = 3 . 𝜋 × 𝑅 3, on peut en déduire l’expression de
+la viscosité 𝜂 du chocolat :
+4
+3
+𝑔. (𝑚𝐵 − 𝜌𝑐 . 𝑉𝐵 ) 𝑔. (𝜌𝐵 . 𝑉𝐵 − 𝜌𝑐 . 𝑉𝐵 ) 𝑔. 𝑉𝐵 (𝜌𝐵 − 𝜌𝑐 ) 𝑔. 3 . 𝜋. 𝑅 . (𝜌𝐵 − 𝜌𝑐 ) 2𝑅 2 . 𝑔. (𝜌𝐵 − 𝜌𝑐 )
+𝜂=
+=
+=
+=
+=
+6𝜋. 𝑅. 𝑣𝐵 (𝑙𝑖𝑚)
+6𝜋. 𝑅. 𝑣𝐵 (𝑙𝑖𝑚)
+6𝜋. 𝑅. 𝑣𝐵 (𝑙𝑖𝑚)
+6𝜋. 𝑅. 𝑣𝐵 (𝑙𝑖𝑚)
+9𝑣𝐵 (𝑙𝑖𝑚)
+𝜼=
+
+2𝑹2 . 𝒈. (𝝆𝑩 − 𝝆𝒄 )
+9𝒗𝑩 (𝒍𝒊𝒎)
+
+Expression de la viscosité 𝜼 d’un fluide de masse volumique 𝝆𝑪 supposé Newtonien, établie
+lorsqu’une bille sphérique de rayon 𝑹 et de masse volumique 𝝆𝑩 , lâchée sans vitesse
+initiale, a atteint sa vitesse limite 𝒗𝑩 (𝒍𝒊𝒎) sous l’effet d’un champ de pesanteur 𝒈.
+
+3. Mise au point d’un viscosimètre à chute de bille dans le chocolat
+La détermination expérimentale de la viscosité d’un fluide Newtonien nécessite de mesurer
+la valeur de la vitesse limite d’une bille sphérique lorsqu’elle chute dans ce fluide. Dans le cas du
+chocolat, à cause de son opacité, il est impossible de mettre en œuvre un pointage vidéo pour
+déterminer la valeur de la vitesse limite. Nous devons mettre au point un montage permettant
+d’enregistrer les positions de la bille au cours du temps pour déterminer la valeur de sa vitesse.
+Notre première idée était de fixer un fil sur la bille, ce dernier reposant sur une poulie,
+suffisamment long pour pouvoir faire l’acquisition de mouvement d’un point du fil que
+nous aurions marqué. Rapidement, cette idée a été rejetée car la présence du fil aurait
+été non négligeable sur le mouvement de la bille (présence du fil dans le fluide, maintien
+du fil sur la poulie, masse du fil, …).
+Il existe de nombreux systèmes de détection non lumineux dans notre
+technologie. Nous avons rapidement pensé à utiliser une bille aimantée, dont la
+présence serait enregistrée par un capteur sensible au champ magnétique de la bille,
+lorsqu’elle serait placée suffisamment à proximité.
+Figure 8 : schéma du premier dispositif expérimental envisagé, utilisant un fil avec une marque
+colorée, attaché à une bille et relié à une poulie
+
+Après quelques recherches, notre attention s’est portée sur les capteurs (ou sondes) à Effet
+Hall analogiques. Ces derniers mesurent une valeur de tension qui dépend de la valeur au champ
+magnétique local auquel est soumis le capteur, donc de la position de la bille par rapport au capteur.
+
+Utilisation d’un capteur à Effet Hall
+Etant donné la taille de la bille que nous envisagions (quelques cm), nous
+avons cherché des capteurs suffisamment petits pour effectuer des mesures
+adaptées par rapport à la taille de la bille. Nous avons choisi les capteurs à effet
+Hall utilisés en électronique, notamment le modèle ci-contre.
+Figure 9 : « module à effet Hall KY024LM » du site GoTronic utilisé
+
+De nombreux sites indiquaient que ces capteurs étaient adaptés à une utilisation avec
+Arduino, que nous n’avions jamais utilisé auparavant. Nous avons dû nous former à son utilisation
+et au codage informatique permettant de commander les capteurs pour qu’ils effectuent les mesures
+dont nous avions besoin. Ces capteurs possèdent 4
+Broche
+A0
+G
++
+D0
+broches : « A0, G, +, D0 ».
+capteur
+Avant de commencer nos mesures, nous devions
+Pin
+A0, A1, GND 5V 0, 1,
+déterminer quelle est l’influence de l’orientation de la bille Arduino …, A5
+…,
+par rapport au capteur sur la mesure qu’effectue ce dernier pour pouvoir analyser au mieux nos
+résultats. La partie 4 du dossier annexe rassemble les mesures et analyses réalisées pour cela.
+8
+
+4. Mesure de la viscosité à l’aide du viscosimètre
+A) Mise au point d’un programme Arduino
+Afin de mesurer la viscosité du chocolat, nous devons déterminer la valeur de la vitesse de
+cette dernière lors de sa chute dans le chocolat. Nous devons connaître donc une partie de sa
+position au cours du temps (notamment lorsqu’elle atteint sa vitesse limite). Pour cela, il faut faire
+l’acquisition de la tension mesurée par plusieurs capteurs au cours du temps : chaque extremum
+de tension permettra de déterminer l’instant où la bille passe devant le capteur, et donc de restituer
+une partie de son mouvement pour calculer sa vitesse.
+Le dispositif Arduino nous a semblé le plus approprié pour l’étude étant donné qu’il permet
+de faire des acquisitions et aussi de commander de nouveaux capteurs numériques
+par exemple, apportant de nouvelles opportunités. Nous avons pensé par exemple
+à positionner des LEDS que nous qualifierons d’externe en face de chaque capteur,
+et de commander à chacune de s’allumer lorsque la différence de tension mesurée
+par le capteur atteint une valeur seuil. Ce qui permet aux expérimentateurs de
+« visualiser » en quelque sorte où se situe la bille sans la voir dans le chocolat !
+N'ayant jamais utilisé Arduino en cours, nous nous sommes grandement
+aidés du livre « Arduino pour les nuls » pour nous former au codage informatique.
+Le programme Arduino sous forme de codage que nous avons écrit, en document 2 dans le
+dossier Annexe, commande :
+- Aux capteurs de mesurer la tension au cours du temps durant 17 𝑠, toutes les 60 𝑚𝑠 ;
+- De noter les valeurs de tension et du temps mesurées dans un tableau ;
+- Aux LEDS externes de s’allumer lorsqu’une différence seuil est atteinte, propre à ce qui
+a été écrit par le constructeur dans le programme de fonctionnement du capteur.
+En effet, nous avons tenté à plusieurs reprises de déterminer une valeur seuil pour l’allumage
+des LEDS externes, mais étant donné que les évolutions n’étaient pas toujours les mêmes selon
+l’orientation de la bille par rapport au capteur, nous avons préféré utiliser le seuil programmé pour
+allumer les LEDS intrinsèques au capteur afin d’allumer les LEDS externes.
+
+B) Mise en place du montage de viscosimètre à chute de bille
+Une fois le dispositif en place (éprouvette remplie de chocolat de température
+mesurée, capteurs et LEDS en place, programme téléversé sur la carte Arduino), on
+ouvre le logiciel Coolterm qui permet de copier/coller les valeurs mesurées par les
+capteurs sous forme d’un tableau lors de l’acquisition (impossible avec Arduino).
+Etant donné que l’éprouvette de 250 𝑚𝐿 que nous utilisons mesure 32 𝑐𝑚, nous
+décidons d’espacer les capteurs d’une distance 𝑑 = 4,0 𝑐𝑚 afin de les placer à partir de
+4,0 𝑐𝑚 jusqu’à 28,0 𝑐𝑚 du fond de l’éprouvette.
+Figure 10 : photographie du dispositif
+En effet, d’une part nous souhaitons mesurer la vitesse limite de la bille, il est
+donc inutile pour nous de mesurer sa vitesse aux premiers instants lorsqu’elle accélère ;
+et d’autre part nous ne voulons pas mesurer une vitesse qui serait inférieure à la vitesse limite du
+fait que le fond du récipient ralentit la bille.
+Nous utilisons un laser afin de placer la première LED en face du premier capteur pour que
+ces derniers soient au même niveau (les LEDS sont aussi séparées d’une distance 𝑑 = 4,0 𝑐𝑚). On
+remarque d’ailleurs que le centre de l’éprouvette et le capteur sont séparés d’une distance 𝑑′
+comprise entre 3 𝑒𝑡 4 𝑐𝑚, étant donné que les broches des capteurs et les branches ne sont pas
+toutes au même niveau (problème constructeur), ce qui est cohérent avec notre hypothèse partie 3
+du dossier annexe, concernant la distance minimale centre de la bille – capteur si on suppose que
+la bille sera effectivement bien positionnée au centre de l’éprouvette. Au cours des 7 séances de
+travail dédiées à cette partie, nous avons effectué des mesures à des températures différentes.
+9
+
+C) Acquisition et tracé des évolutions de tension
+Dans un premier temps, nous utilisons la bille de « taille 1 »
+(diamètre 𝐷 = 25 𝑚𝑚) que nous avons acheté sur le site
+Magnosphère, dont les caractéristiques sont notées ci-contre.
+𝑚
+
+0,062176𝑘𝑔
+
+Masse volumique : 𝜌 = 𝑉 = 8,181×10−6𝑚3 = 7,600 × 103 𝑚3
+
+Tension (V)
+
+On démarre l’acquisition par le logiciel, puis on lâche la bille
+sans vitesse initiale dans le chocolat (la bille est légèrement
+immergée). Les LEDS s’allument effectivement à tour de rôle,
+preuve que la bille est bien en mouvement de chute dans le
+chocolat. Une fois l’acquisition terminée au bout de 17 𝑠, on copie
+et colle les données dans le logiciel Excel en prenant soin de remplacer les points par des virgules,
+puis on trace l’évolution de la tension mesurée au cours du temps par chaque capteur. Voici le
+graphique obtenu pour l’essai 1, avec la bille de taille 1 à une température de 𝜃1 = 49,3°𝐶.
+2,8
+2,6
+2,4
+2,2
+2
+1,8
+1,6
+1,4
+1,2
+1
+0,8
+-0,5
+
+Evolution de la tension mesurée par chaque capteur en fonction du temps pour la bille
+de D = 25mm, à θ = 49,3°C (essai 1)
+
+Tension1 (V)
+1,5
+
+3,5
+
+Tension2 (V)
+5,5
+
+Tension3 (V)
+7,5
+
+Temps (s)
+
+9,5
+
+Tension4 (V)
+11,5
+
+Tension5 (V)
+13,5
+
+Tension6 (V)
+15,5
+17,5
+
+Figure 11 : Graphique de l’évolution de la tension mesurée par chaque capteur en fonction du temps
+
+Pour ce premier essai, nous n’avons pas lâché la bille en tenant compte de son orientation,
+car nous souhaitions déterminer son influence. Dans le cas présent, l’orientation de la bille à chaque
+capteur était NORD puisque chaque tension présente un minimum.
+On peut écarter l’hypothèse d’une rotation significative de la bille au cours du mouvement
+étant donné que les tensions 1 à 5 présentent des allures symétriques. En revanche, on peut
+affirmer qu’il y a eu rotation de la bille au niveau du sixième capteur, car l’évolution n’est pas
+symétrique ; de plus la tension dépasse la valeur de la tension seuil que nous avions mesuré à 2,5 𝑉
+pour chaque évolution : la bille a tourné vers les orientations SUD, puisque sa tension augmente
+davantage que le seuil que nous pouvons observer quelques instants auparavant pour ce même
+capteur.
+Il s’agit peut-être d’un effet du fond de l’éprouvette, où le chocolat ne s’écoule pas de la même
+manière que précédemment lorsque la bille arrive. On peut aussi faire la même remarque
+concernant les valeurs pour la tension 1 pour 𝑡 < 2𝑠, la bille a surement subi une légère rotation
+sans que cela ait une influence sur la suite de la prise de mesures. On peut enfin noter que la valeur
+du seuil de tension pour chaque capteur est différente : chaque capteur a sa propre sensibilité, qui
+varie de quelques centièmes de Volts.
+En effet, la plaque conductrice du capteur permettant la mesure de la tension de Hall que
+nous mesurons peut avoir une taille ou une épaisseur très légèrement différente, ce qui fait varier
+la quantité d’électrons qui s’accumulent sur la plaque, et donc la valeur de la tension de Hall
+mesurée (ainsi que la tension seuil). Cela n’a pas d’influence sur nos mesures, car c’est l’évolution
+des valeurs que nous étudions et pas les valeurs de façon individuelle.
+
+10
+
+D) Détermination de la vitesse de la bille et de la viscosité du chocolat
+Afin de déterminer la valeur de la vitesse de la bille, nous devons déterminer les instants
+auxquels elle se situe devant le capteur (instant de passage), on les note 𝑡𝑝1 , … , 𝑡𝑝6 . Nous pourrions
+les déterminer graphiquement, mais nous avons décidé d’écrire un programme sur Excel qui
+automatise l’ensemble des mesures afin de faciliter les calculs pour les essais suivants. La colonne
+A contient les valeurs du temps, les colonnes B à G contiennent les valeurs des Tensions 1 à 6.
+Tracé du graphique de l’évolution de la tension de chaque capteur en fonction du temps
+On trace tout d’abord le graphique de l’évolution de la tension mesurée par chaque capteur
+en fonction du temps afin d’apprécier si l’évolution de chaque tension présente un maximum ou un
+minimum (l’évolution dépend de l’orientation de la bille : partie 3 du dossier annexe). Cela va nous
+permettre d’écrire la suite du programme. Ici (voir Figure 11), chaque tension présente un minimum.
+Détermination de l’extremum de tension 1
+Dans la case I2, on rentre la formule notée dans la case ci-dessous. Elle commande au
+logiciel de vérifier si la case B2 (première valeur de la tension 1 mesurée par le premier capteur)
+présente la valeur minimale de l’ensemble des valeurs de la tension 1
+présentes des cases B2 à B270 (la dernière case), et si tel est le cas
+d’afficher cette valeur ; et une case vide sinon. En appliquant cette
+formule à l’ensemble des lignes de la colonne I, la valeur minimale
+atteinte par la tension 1 devrait apparaître dans une ou plusieurs lignes.
+Figure 12 : présentation de la case conditionnelle pour la tension 1
+
+Détermination de l’instant de passage de la bille devant le capteur 𝒕𝒑𝟏
+Pour déterminer l’abscisse correspondant à l’extremum de tension 1, on écrit la formule en
+O2 notée dans la case ci-dessous. Elle commande au logiciel de lire la case I2 : si elle ne présente
+rien d’écrit, la case O2 sera vide ; sinon, la case O2 devra recopier
+la valeur de A2. On applique cette formule à l’ensemble des lignes
+de la colonne. Si une seule case affiche une valeur, il s’agit de 𝑡𝑝1 .
+Figure 13 : première case conditionnelle pour 𝑡𝑝
+
+Si plusieurs cases affichent une valeur, elles correspondent aux valeurs du temps pour
+laquelle la tension est minimale. On doit choisir une de ces valeurs pour 𝑡𝑝1 . Dans l’hypothèse où la
+bille ne subit pas de rotation lors de la chute, le tracé de chaque tension doit présenter une certaine
+symétrie dans la partie où le seuil n’est pas atteint. On peut alors supposer que la valeur de 𝑡𝑝1 est
+donc la médiane des valeurs.
+Dans le tableau qui présentera les différentes valeurs de 𝑡𝑝1 , … , 𝑡𝑝6 , on écrit la formule :
+=MEDIANE(O2:O270) qui calcule la médiane des valeurs de 𝑡𝑝1 . Dans le cas où il n’y aurait qu’une
+valeur, cette dernière sera affichée inchangée dans la case (voir Figure 14 ci-dessous).
+Détermination des instants de passage de la bille devant les autres capteurs : 𝒕𝒑𝟐 , … , 𝒕𝒑𝟔
+En case J2, …, N2, on écrit des formules analogues à celle de I2. En case P2, …, T2, on
+écrit des formules analogues à celle de O2. Finalement, le tableau contient toutes les valeurs de 𝑡𝑝 .
+
+Figure 14 : valeurs de la médiane du ou des minimum / minima approximé(s) pour la valeur de 𝑡𝑝
+
+Détermination de la vitesse de la bille
+Dans un nouveau tableau, on souhaite calculer et noter les valeurs de la vitesse de la bille.
+Sachant que les capteurs sont séparés par 𝑑 = 4,0 𝑐𝑚, on peut noter la formule suivante pour le
+calcul de la vitesse notée 𝑣2 entre les instants 𝑡𝑝1 (case V2) et 𝑡𝑝2 (case W2) : =0,040/(W2-V2). Et
+on procède de même pour les vitesses suivantes 𝑣3 à 𝑣6 .
+11
+
+Détermination de la viscosité du chocolat
+Enfin, on écrit la formule suivante pour déterminer la valeur de la viscosité 𝜂1 entre les
+instants 𝑡𝑝1 et 𝑡𝑝2 dans une case d’un nouveau tableau qui présentera les valeurs de viscosité du
+chocolat (dont l’expression a été déterminée en partie III 2.) :
+=2*(0,025/2)^2*9,81*(7600 - 1200)/(9*Tableau624[v2 (m/s)]). On procède de même pour
+les autres valeurs de viscosité. Enfin, on trace les graphiques correspondants.
+
+Figure 15 : résultats des mesures pour l’essai 1 (bille de 𝐷 = 25𝑚𝑚, à la température 𝜃 = 49,3°𝐶).
+
+Nous allons analyser dans les parties suivantes ces données.
+
+E) Influence de la température
+
+Tension (V)
+
+Pour la bille de taille 2 (𝐷 = 25𝑚𝑚), nous avons réalisé 10 essais, dont les valeurs mesurées
+sont données dans le tableau 4 du dossier annexe.
+Sur le graphique Figure 11, la rotation de la bille jusqu’au 6ème capteur était négligeable,
+puisque les évolutions de tension étaient
+L'évolution de la valeur de la tension mesurée
+par chaque capteur au cours du temps
+similaires. Les valeurs de vitesse étaient
+d’ailleurs très proches. Dans ce cas, les
+capteurs ont affiché des valeurs de tensions
+2,5
+comparables les unes avec les autres
+puisque le champ magnétique local créé par
+2
+la bille et reçu par le capteur avait une même
+Temps (s)
+orientation. Il en est de même pour le
+1,5
+premier essai à 𝜃 = 57,2°𝐶 comme le
+0
+5
+10
+15
+20
+montre le graphique ci-contre
+Figure 16 : Evolution des tensions mesurées pour chaque capteur à 𝜃 = 57,2°𝐶
+
+En revanche, on peut remarquer que les valeurs de vitesse sont proches mais pas
+constantes ; même si la rotation de la bille dans ce cas n’est pas très importante, elle l’est
+suffisamment pour que les évolutions de chaque tension ne soient pas similaires, et donc que la
+valeur des durées des temps de passage 𝑡𝑝 devant chaque capteur ne soient pas bien estimées
+par nos calculs.
+
+12
+
+Analysons l’essai de la température 𝜃 = 52,4°𝐶 (voir Figure 17 page suivante) ; on remarque
+que les évolutions de tension d’une part ne sont pas symétriques, et d’autres part inversées pour
+certaines tensions : cela signifie que la bille a subie de nombreuses rotations durant sa chute. Les
+valeurs de vitesses bien différentes en attestent.
+
+Figure 17 : Evolution des tensions mesurées
+pour chaque capteur à 𝜃 = 52,4°𝐶
+
+L'évolution de la valeur de la tension mesurée par
+chaque capteur au cours du temps θ = 51,4°C
+2,6
+
+Tension (V)
+
+Il nous semble en effet surprenant que
+la bille subisse de tels changements de
+vitesse. On peut interpréter les évolutions de
+tensions pour en déduire les rotations subies
+par la bille lors de sa chute.
+
+2,5
+2,4
+2,3
+
+On peut voir que la tension 1 présente
+2,2
+Temps (s)
+un minimum avant de présenter un
+2,1
+maximum, ce qui signifie que la bille a subi
+0
+5
+10
+15
+une rotation NORD vers SUD lors du
+passage devant le capteur 1, selon les
+conventions
+précédemment
+formulées
+(Partie 4 du dossier annexe). La tension 2 présente un maximum, ce qui indique que la bille est bien
+orientée SUD. La tension 3 présente un minimum puis un maximum, ce qui indique que la bille est
+en rotation de SUD vers NORD au moment de son passage vers le capteur 3 : il est donc impossible
+de déterminer l’instant de passage de la bille devant le capteur. Les évolutions suivantes indiquent
+que la bille a subi une rotation de SUD vers NORD entre les capteurs 4 et 5. Dans cet exemple-là
+particulièrement, la détermination des instants de passage, et donc de la vitesse puis de la viscosité
+de façon précise est impossible avec ces valeurs.
+
+Viscosité (Pa.s)
+
+Pour déterminer son influence, on trace l’évolution de la valeur de la viscosité du chocolat en
+fonction de la température. Nous utilisons les valeurs moyennes de viscosité et de vitesse, afin de
+réduire l’impact des valeurs aberrantes, et de travailler avec un nombre de valeurs plus retreintes.
+De plus, il nous semble tout à fait légitime de
+L'évolution de la viscosité du chocolat
+considérer que, pour un même essai, le calcul de la
+en fonction de la température pour la
+moyenne des vitesses permet de réduire les écarts
+bille de diamètre D = 25 mm
+entre les valeurs, notamment si la bille a été en
+200
+rotation. Pour les essais où la bille a eu une rotation
+négligeable lors de sa chute, on a pu observer que
+150
+la vitesse de cette dernière semblait constante. Pour
+100
+les autres essais, la vitesse de la bille l’est sûrement
+aussi, mais sa rotation ne nous permet pas de le
+50
+vérifier avec les valeurs, bien que les conditions
+0
+expérimentales mises en œuvre étaient les mêmes.
+0
+20
+40
+60
+80
+En calculant la valeur moyenne, on peut avoir une
+Température (°C)
+idée de ce que serait la valeur de cette vitesse limite
+si la rotation de la bille était négligeable.
+Figure 18 : Répartition des valeurs de viscosité du chocolat en fonction de la température
+
+Les résultats expérimentaux ne nous permettent pas d’établir de lien entre l’évolution
+des valeurs de température et de viscosité. On peut mettre en cause les mesures de
+température du fait que le chocolat soit dans une éprouvette de longue taille et de petit
+diamètre : la température n’est sans doute pas uniforme du fait de la surface de contact
+importante du chocolat avec le milieu extérieur de température moins élevée ; ainsi que les
+valeurs de vitesse, et donc de viscosité, qui n’ont pas été calculées avec des valeurs
+suffisamment précises avec les instants de passage de la bille devant chaque capteur.
+Pour conclure de façon fiable, nous avons besoin d’un matériel plus adapté à la prise
+de mesures de façon précises et fiables, ce que ne permet pas notre dispositif.
+13
+
+F) Influence de la taille de la bille
+On utilise une bille de diamètre 𝐷′ = 15 𝑚𝑚, et une autre de 𝐷′′ = 12,7 𝑚𝑚 cette fois. On
+donne ci-dessous les valeurs de vitesse et de viscosité des deux billes pour différentes
+températures. Nous n’avons malheureusement pas eu le temps de faire plus de mesures.
+Bille de diamètre 𝐷′ = 15𝑚𝑚
+𝜽 = 𝟓𝟓, 𝟖°𝑪
+̅
+𝒗 = 𝟎, 𝟎𝟏𝟗𝒎. 𝒔−𝟏
+𝜼 = 𝟏𝟐𝟑 𝑷𝒂. 𝒔
+𝜽 = 𝟑𝟓, 𝟕°𝑪
+̅ = 𝟎, 𝟎𝟏𝟗𝒎. 𝒔−𝟏
+𝒗
+𝜼 = 𝟏𝟐𝟓 𝑷𝒂. 𝒔
+
+Bille de diamètre 𝐷′′ = 12,7𝑚𝑚
+𝜽 = 𝟒𝟒, 𝟏°𝑪
+̅ = 𝒎. 𝒔−𝟏
+𝒗
+𝜼 = 𝑷𝒂. 𝒔
+Figure 19 : Valeurs de vitesse et de viscosité pour les billes de diamètres 𝐷′ = 15 𝑚𝑚 et
+𝐷 ′′ = 12,7 𝑚𝑚 à différentes températures
+
+Avec la bille de diamètre 𝐷′′ = 12,7 𝑚𝑚, il est difficile d’obtenir des tracés corrects, car les
+évolutions présentent des valeurs beaucoup trop proches. Nous ne pouvons pas conclure, si ce
+n’est que la vitesse de la bille semble plus élevée, à cause des effets de bord qui sont moins
+importants que pour les billes de diamètre plus large (voir partie II. 4. G)).
+La bille de diamètre 𝐷′ = 15𝑚𝑚 présente des vitesses comparables à celles mesurées pour
+la bile de diamètre 𝐷 = 25 𝑚𝑚. Nous restons prudent sur cette affirmation car nous ne disposons
+pas de suffisamment de mesures pour conclure de façon sûre. On peut remarquer en revanche que
+nos essais avec cette bille n’ont montré une rotation significative de cette dernière lors de sa chute.
+On peut supposer que c’est à cause des effets de bords moins importants : le chocolat qui se
+déplace autour d’elle a moins à « forcer le passage » pour circuler ; ainsi elle est beaucoup moins
+susceptible de subir une rotation importante. Là encore, pour valider cette hypothèse, nous aurions
+besoin de plus de temps pour faire davantage d’essais.
+
+G) CONCLUSION
+Le viscosimètre à chute de bille que nous avons conçu avait pour objectif de détecter le
+passage d’une bille aimantée de façon précise à partir des valeurs de tensions mesurées par
+différents capteurs à effet Hall. On peut supposer que les effets de bords (lorsque la bille et
+l’éprouvette ont des diamètres proches) influencent d’autant la rotation de cette dernière, puisqu’une
+partie du chocolat « remonte » lorsque la bille coule : le chocolat « force le passage », et met
+davantage la bille en rotation, puisqu’il a moins de place pour se déplacer. Les valeurs ainsi
+mesurées par les capteurs ne suivent pas des évolutions permettant la mesure des instants de
+passage suffisamment précisément. Nous avions supposé pour déterminer la valeur de la viscosité
+que le chocolat était un fluide Newtonien, pour utiliser la modélisation des forces de frottements de
+Stokes. A cette étape nous ne sommes pas en mesure d’affirmer ou non si cette hypothèse était
+valable. Si tel n’était pas le cas, il faudrait déterminer si le viscosimètre était bien adapté pour nos
+mesures, et parler dans ce cas de viscosité apparente (viscosité pour un certain gradient de vitesse
+𝛾̇ ) pour l’ensemble de nos mesures. Nous devons pour cela disposer d’un appareil permettant de
+faire des mesures fiables et précises.
+14
+
+III. MESURES RHÉOLOGIQUES AU LABORATOIRE ESPCI PARIS
+Forts de notre expérience avec le viscosimètre à chute de bille qui ne nous a franchement
+pas permis de conclure de façon précise, nous avons souhaité utiliser un rhéomètre afin de
+déterminer les caractéristiques fluides du
+chocolat. Nous nous sommes pour cela
+rendus au laboratoire ESPCI à Paris, où nous
+avons été si bien accueillis par Mme Loren
+JORGENSEN, chercheuse en rhéologie, que
+nous remercions chaleureusement. Merci
+pour votre disponibilité, vos conseils, et votre
+expertise.
+Figure 20 : notre équipe au laboratoire ESPCI, 10 rue Vauquelin à Paris
+
+Figure 21 : graphique 𝜏 = 𝑓(𝛾̇ ) pour les
+deux géométries
+
+Contrainte d cisaillement (Pa)
+
+1. Détermination du type de géométrie à utiliser
+Au laboratoire, Mme JORGENSEN
+L'évolution de la contrainte de cisaillement du
+nous propose d’effectuer des mesures de
+chocolat noir en fonction de faibles gradients
+contrainte de cisaillement 𝜏 pour de faibles
+de vitesse pour le cône plan et le plan rugueux
+gradients de vitesse 𝛾̇ afin de déterminer le
+à θ = 45 °C
+type de géométrie le plus adapté pour nos
+100
+mesures (c’est ce qui est habituellement fait
+10
+pour les mesures rhéologiques). Le tableau
+1
+5 du dossier annexe présente les valeurs
+correspondantes au graphique ci-contre.
+0,1
+0,001
+
+0,01
+
+0,1
+
+1
+
+10
+
+Gradient de vitesse (s-1)
+cone-plan (lisse)
+
+plan rugueux
+
+On peut déjà se rendre compte que pour 𝛾̇ 𝜖 [1 ; 2,00]𝑠 −1 , il y a un écart entre les valeurs
+mesurées à cause de la géométrie différente utilisée. En effet, il faudrait calculer la correction à
+appliquer aux valeurs correspondant au plan rugueux pour ce fluide pour que ces dernières
+présentent des erreurs moins importantes. Comme nous l’avons vu précédemment, la géométrie
+cône – plan présente l’avantage d’imposer une contrainte de cisaillement et un gradient de vitesse
+qui sont constants dans tout l’échantillon, il n’y a donc pas de correction à déterminer.
+Pour les gradients de vitesse plus faibles 𝛾̇ 𝜖 [0,001 ; 1]𝑠 −1 , les écarts importants entre les
+valeurs indiquent qu’il y a un glissement important : le chocolat glisse sur le cône plan sans être
+entraîné (il faudrait que les valeurs mesurées avec les deux géométries aient une évolution similaire,
+les valeurs devraient avoir des écarts semblables à ceux observés pour 𝛾̇ > 1 𝑠 −1 ).
+On a ainsi montré le compromis qu’on doit faire entre le cône plan lisse, où il y a du
+glissement pour les faibles gradients de vitesse 𝜸̇ < 𝟏 𝒔−𝟏 et le plan rugueux, sachant qu’il y
+a un décalage entre les valeurs à cause de la géométrie comme on peut le voir pour des
+gradients de vitesse plus élevés 𝜸̇ > 𝟏 𝒔−𝟏 .
+Pour de faibles gradients de vitesse, on choisira la géométrie plan rugueux (même si
+les valeurs présentes des erreurs à cause de la correction que l’on ne connaît pas), et le cône
+plan lisse pour de plus grands gradients de vitesse, sachant qu’aucune correction n’est à
+appliquer aux valeurs.
+
+15
+
+80
+70
+60
+50
+40
+30
+20
+
+θ = 35°C
+
+10
+
+θ = 45°C
+
+θ = 60°C
+
+0
+0,01
+
+2,01
+
+4,01
+
+6,01
+
+8,01
+
+10,01
+
+Gradient de vitesse (s-1)
+
+L'évolution de la viscosité en fonction du
+gradient de vitesse pour le chocolat noir à
+différentes températures pour le plan rugueux
+
+Viscosité (Pa.s)
+
+L'évolution de la contrainte de cisaillement
+en fonction du gradient de vitesse pour le
+chocolat noir à différentes températures
+
+Contrainte de cisaillement (Pa)
+
+2. Détermination du type de fluide et caractéristiques de la viscosité
+Nous utilisons la géométrie plan rugueux et nous mesurons l’évolution de la contrainte de
+cisaillement 𝜏 en fonction du gradient de vitesse 𝛾̇ à trois températures : 𝜃 = 35°𝐶 ; 45 °𝐶 et 60°𝐶.
+Les données correspondantes au graphique ci-dessous sont rassemblées dans les tableaux 6 du
+dossier annexe.
+
+350
+300
+250
+200
+150
+100
+50
+0
+
+θ = 35°C
+
+0
+
+2
+
+4
+
+θ = 45°C
+
+6
+
+θ = 60°C
+
+8
+
+10
+
+12
+
+Gradient de vitesse (s-1)
+
+Figures 22 et 23 : graphique 𝜏 = 𝑓(𝛾̇ ) et 𝜂 = 𝑓(𝛾̇ )
+
+On remarque que la contrainte de cisaillement 𝜏 et le gradient de vitesse 𝛾̇ ne sont pas
+proportionnels car le tracé de 𝜏 = 𝑓(𝛾̇ ) ne peut pas être modélisé par une droite passant par l’origine
+et au plus près de tous les points : cela signifie que la viscosité n’est pas constante. Le tracé n’est
+pas non plus du type affine. Le chocolat noir est donc un fluide non Newtonien.
+De plus, on observe avec le tracé 𝜂 = 𝑓(𝛾̇ ) que la viscosité diminue lorsque le gradient de
+vitesse augmente, le chocolat noir est donc rhéofluidifiant (pas de Bingham car 𝜏 = 𝑓(𝛾̇ ) n’est pas
+affine). On peut aussi remarquer que la viscosité ne dépend quasiment pas de la température.
+Le chocolat est donc un fluide non Newtonien, rhéofluidifiant. Sa viscosité ne dépend
+quasiment pas de la température. Ainsi, pour qualifier une valeur de viscosité particulière à
+un certain gradient de vitesse, on utilisera le terme « viscosité apparente 𝜼𝑨 ».
+
+Contrainte d cisaillement (Pa)
+
+L'évolution de la contrainte de cisaillement du
+3. Détermination d’un seuil
+chocolat noir en fonction de faibles gradients
+On vient de voir que le chocolat est
+de vitesse pour le plan rugueux à θ = 45 °C
+un fluide non Newtonien. En analysant de
+nouveau le graphique 𝜏 = 𝑓(𝛾̇ ) pour le plan
+100
+rugueux Figure 24 (pour éviter le
+glissement du fluide), on peut se rendre
+compte qu’il existe une valeur non nulle de
+la contrainte de cisaillement 𝜏 pour de très
+faibles gradients de vitesse 𝛾̇ (on utilise
+25,9423
+une échelle logarithmique pour mieux voir
+10
+les valeurs aux faibles gradients de
+0,001
+0,01
+0,1
+1
+10
+vitesse). Avec le cône plan, on ne peut pas
+-1
+Gradient de vitesse (s )
+se rendre compte qu’il y a un seuil. On peut
+d’ailleurs considérer que ce seuil ne
+dépendrait pas de la température, d’après la partie III. 2.
+Figure 24 : Graphique 𝜏 = 𝑓(𝛾̇ )
+Puisque le chocolat noir que nous avons étudié est un fluide à seuil, qui ne dépend
+quasiment pas de la température, on peut déterminer plus précisément quelle serait la loi
+d’écoulement (Bingham, Casson, Herschel – Bulkley).
+On peut d’ailleurs estimer le seuil à : 𝝉𝟎 ≈ 𝟐𝟔 𝑷𝒂 (plan rugueux).
+16
+
+4. Un modèle d’écoulement fluide à seuil : Casson
+On propose de déterminer si le modèle de Casson est adapté pour le chocolat noir, car
+c’est un modèle très classique de fluide à seuil, ou à contrainte critique. Nous réalisons nos mesures
+avec le cône plan, car nous n’avons pas la correction (due à la géométrie) pour le plan rugueux.
+Ces derniers entrent en écoulement dès lors que la contrainte de cisaillement appliquée
+au fluide dépasse une certaine valeur appelée contrainte critique et notée 𝜏0 : dès que 𝜏 > 𝜏0
+l’écoulement du fluide peut se produire car il y a rupture de la cohésion qui existe entre les particules
+du fluide (on parle de seuil d’écoulement).
+Le modèle de Casson est du type affine, et s’exprime sous la forme :
+√𝜏 = √𝜏0 + √𝜂𝑝 . 𝛾̇
+
+On mesure la valeur de la
+contrainte de cisaillement 𝜏 en fonction du
+gradient
+de
+vitesse
+𝛾̇
+tels
+que
+−1
+𝛾̇ 𝜖 [1 ; 100 ]𝑠 . Dans ce cas le glissement :
+est faible, on peut utiliser la géométrie cône
+– plan pour laquelle aucune correction des
+valeurs n’est nécessaire. On calcule les
+valeurs √𝜏 et √𝛾̇ (voir tableau 7 du dossier
+annexe), puis on trace √𝜏 = 𝑓(√𝛾̇ ), qu’on
+modélise avec une régression linéaire affine.
+
+𝜏0 ∶ contrainte critique (𝑃𝑎)
+𝛾̇ ∶ gradient de vitesse (𝑠 −1 )
+
+Racine de la contrainte de
+cisaillement (Pa1/2)
+
+𝜏 ∶ contrainte de cisaillement (𝑃𝑎)
+𝜂𝑝 ∶ viscosité plastique (𝑃𝑎. 𝑠)
+
+Modèle de Casson : l'évolution de la racine
+de la contrainte de cisaillement en fonction
+de la racine du gradient de vitesse
+20
+
+y = 1,4357x + 2,6506
+r² = 0,9982
+
+15
+
+10
+5
+0
+0
+
+2
+
+Figure 25 : graphique √𝜏 = 𝑓(√𝛾̇ )
+
+4
+
+6
+
+8
+
+10
+
+Racine du gradient de vitesse (s-1/2)
+
+2
+
+𝑦 = (2,6506 + 1,4357√𝛾̇ ) ; on se rend compte que la
+loi de Casson ne modélise pas bien les valeurs à faible
+gradient de vitesse. On peut au mieux dire qu’il y a
+bien un seuil, mais on ne peut pas bien estimer sa
+valeur précisément avec le cône-plan du fait du
+glissement. Il faudrait utiliser le plan rugueux en
+appliquant la correction, et analyser si la loi de Casson
+est fiable pour modéliser les valeurs.
+
+Contreainte de cisaillement (Pa)
+
+La valeur du coefficient de corrélation 𝑟 2 = 0,9982 est proche de 1, ce qui indique que le
+modèle de Casson modélise bien l’écoulement fluide du chocolat noir que nous avons utilisé.
+D’après son expression : √𝜏 = √𝜏0 + √𝜂𝑝 . 𝛾̇ , on déduit des résultats de la régression linéaire les
+valeurs de la viscosité plastique et de la contrainte critique qu’on peut « extrapoler » :
+𝜂𝑝 = (1,4357)2 = 2,06 𝑃𝑎. 𝑠 ≈ 2 𝑃𝑎. 𝑠 ;
+𝜏0 = (2,6505)2 = 7,03 𝑃𝑎 ≈ 7 𝑃𝑎.
+La valeur de la contrainte seuil « extrapolée » avec le modèle de Casson vaut: 𝜏0 ≈ 7 𝑃𝑎, alors
+qu’avec le plan rugueux en partie III. 3., nous avions mesuré : 𝜏0 = 26 𝑃𝑎. On explique les écarts
+entre ces valeurs d’une part car nous n’avons pas la
+L'évolution de la contrainte de
+correction à appliquer aux valeurs mesurées avec le
+cisaillement en fonction du gradient
+plan rugueux ; ces dernières présentent donc des
+de vitesse
+erreurs. D’autre part, pour les gradients de vitesse
+60
+50
+faibles, si on trace le graphique 𝜏 = 𝑓(𝛾̇ ) avec les
+40
+valeurs mesurées et celles calculées avec la
+30
+régression linéaire de Casson, sans les racines :
+20
+10
+0
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+Gradient de vitesse (s-1)
+Valeurs mesurées
+
+Figure 26 : Graphique 𝜏 = 𝑓(𝛾̇ )
+17
+
+5. Retour sur nos mesures avec le viscosimètre à chute de bille
+Nous souhaitons revenir, dans cette partie, sur les mesures de viscosités apparentes que
+nous avons mesuré avec le viscosimètre à chute de bille, et sur l’approximation du caractère
+Newtonien du chocolat pour cette expérience. Pour cela, nous devons déterminer l’ordre de
+grandeur du taux de cisaillement, afin de comparer les mesures obtenues avec le viscosimètre à
+chute de bille et celles au laboratoire de rhéologie. Nous n’avions pas pu établir de lien entre
+l’évolution de la viscosité apparente en fonction de la température, ce que nous avons mis en
+évidence au laboratoire en partie III. 2. Nous allons déterminer l’incertitude par méthode de type A,
+puisque la température n’a pas d’influence sur la viscosité apparente, et on suppose aussi sur la
+vitesse, dans le cas où on pourrait approcher le chocolat à un fluide Newtonien. On utilise les valeurs
+moyennes de vitesse et de viscosité (apparente) pour la bille de diamètre 𝐷 = 25 𝑚𝑚 du tableau 4
+du dossier annexe. Nous déterminons les valeurs des incertitudes-types par méthode A de
+répétabilité, puisque les mesures ont été réalisées dans des conditions expérimentales similaires
+(peu d’influence de la température, bille de même diamètre, même éprouvette).
+Ecart-type (arrondi à l’excès)
+Incertitude-type (méthode A) :
+Niveau de confiance 95 %
+Valeur de la mesure avec son
+incertitude-type
+
+Vitesse de la bille
+𝜎𝑣 = 0,003 𝑚. 𝑠 −1
+𝑘. 𝜎𝑣 2 × 0,003 𝑚. 𝑠 −1
+𝑈(𝑣) =
+=
+√𝑛
+√10
+= 0,002 𝑚. 𝑠 −1
+𝑣 = (0,018 ± 0; 002) 𝑚. 𝑠 −1
+0,016 ≤ 𝑣 (𝑚. 𝑠 −1 ) ≤ 0,020
+
+Viscosité apparente du chocolat
+𝜎𝜂 = 14 𝑃𝑎. 𝑠
+𝑘. 𝜎𝑣 2 × 14
+𝑈(𝜂𝐴 ) =
+=
+= 8,85 𝑃𝑎. 𝑠
+√𝑛
+√10
+𝑈(𝜂𝐴 ) ≈ 9 𝑃𝑎. 𝑠
+𝜂𝐴 = (137,4 ± 9) 𝑃𝑎. 𝑠
+𝜂𝐴 ≈ (137 ± 9) 𝑃𝑎. 𝑠
+128 ≤ 𝜂𝐴 (𝑃𝑎. 𝑠) ≤ 146
+
+En supposant que la vitesse du chocolat est nulle sur les bords de l’éprouvette de diamètre
+3,8 𝑐𝑚, et maximale au centre, on peut déterminer une valeur approchée de l’encadrement du
+gradient de vitesse avec les encadrements précédents :
+Δ𝑣
+
+𝛾̇ (𝑚𝑎𝑥) = Δ𝑥 =
+
+(0,020−0)𝑚.𝑠−1
+3,8
+×10−2 𝑚
+2
+
+Δ𝑣
+
+= 1,0 𝑠 −1 ; 𝛾̇ (𝑚𝑖𝑛) = Δ𝑥 =
+
+(0,016−0)𝑚.𝑠−1
+3,8
+×10−2 𝑚
+2
+
+= 0,84 𝑠 −1
+
+Les valeurs de viscosités apparentes pour 0,84 𝑠 −1 ≤ 𝛾̇ (𝑠 −1 ) ≤ 1,0 déterminées à la partie III.
+2., sont comprises entre : 36 ≤ 𝜂𝐴 (𝑃𝑎. 𝑠) ≤ 42. Mme JORGENSEN nous a dit que nous avions fait
+une grande approximation en supposant que le chocolat était un fluide Newtonien, alors qu’il ne
+l’est pas. D’après la Figure 24, on peut voir que dans ces valeurs de gradient de vitesse 𝛾̇ , la
+contrainte de cisaillement 𝜏 est presque constante, et proche du seuil, donc le fluide « résiste plus »
+qu’un fluide Newtonien : le gradient de vitesse réel est donc encore plus faible que l’ordre de
+grandeur calculé (la géométrie de la bille apporte une correction qui n’est pas connue). Ce n’est
+donc pas surprenant que la viscosité effective que nous avons calculé avec l’expérience du
+viscosimètre à chute de bille soit plus élevée que la valeur de la viscosité mesurée au rhéomètre.
+Si on discute en ordre de grandeur, dans ces valeurs de contrainte de cisaillement 𝜏, le rhéomètre
+mesure une viscosité apparente en ordre de grandeur égal à 101 𝑃𝑎. 𝑠, alors que notre viscosimètre
+nous permet de mesurer une viscosité (apparente) de 102 𝑃𝑎. 𝑠 en ordre de grandeur. Pour autant,
+l’écoulement pour ces vitesses est à peine laminaire ; l’approximation du chocolat à un fluide
+Newtonien pour notre sujet n’est donc pas à rejeter. Avec un dispositif expérimental plus adapté à
+des mesures plus précises, il semblerait possible de mesurer une viscosité apparente plus proche
+des valeurs attendues.
+Les effets de bords dont nous avons discuté précédemment ne sont donc finalement pas un
+frein à nos mesures, étant donné que nous voulons déterminer la valeur de la viscosité apparente
+pour un gradient de vitesse en particulier. Il n’est donc pas nécessaire de réduire les effets de bords,
+mais seulement de déterminer avec précision la vitesse de la bille. Nous avions déjà réfléchi à un
+dispositif où la bille serait accrochée à un fil et une poulie afin de ne pas subir de rotations ; il faudrait
+cependant déterminer l’influence de la poulie et du fil sur les mesures effectuées.
+18
+
+IV. MISE EN ÉVIDENCE EXPÉRIMENTALE ET MESURE D ’UN SEUIL
+On a vu précédemment que le chocolat noir que nous étudions était un fluide seuil, et que son
+écoulement pouvait être modélisé avec la loi de Casson. On souhaite dans cette partie montrer de
+façon expérimentale l’existence d’un seuil et le mesurer.
+
+1. Principe expérimental
+Nous devons montrer que ce dernier se met en écoulement dès lors que la contrainte qui lui
+est appliquée dépasse une certaine valeur, qualifiée de critique et notée 𝜏0 : 𝜏 > 𝜏0. L’écoulement
+du chocolat peut se produire car il y a rupture de la cohésion qui existe entre les particules du fluide.
+Nous utilisons des sphères de volumes 𝑉𝑠 égaux mais de masses 𝑚𝑠 différentes. Elles doivent
+avoir une masse volumique supérieure à celle du chocolat afin que la poussée d’Archimède 𝐹𝐴𝑠 de
+la sphère soit inférieure à son poids 𝑃𝑠 . En effet, si 𝐹𝐴𝑆 > 𝑃𝑆 , le seuil n’existe pas puisque la sphère
+ne peut dans tous les cas pas couleur dans le chocolat. On détermine la masse critique 𝑚0 pour
+laquelle le chocolat se met en écoulement. Dans le cas présenté ici, la contrainte de
+cisaillement 𝜏 est due à l’action mécanique exercée par la sphère sur le chocolat,
+sachant qu’on peut considérer que la moitié inférieure de la surface de la sphère met
+𝐹
+𝑃 −𝐹
+𝑚 .𝑔−𝜌 .𝑉 .𝑔
+𝑚𝑠 −𝜌𝑐 .𝑉𝑠
+le chocolat en écoulement : 𝜏 = 𝑆 = 𝑠 𝑆 𝐴𝑠 = 𝑠 4𝜋.𝑅2𝑐 𝑠 = 𝑔. 2𝜋.𝑅
+2
+𝑠
+
+𝑠
+
+2
+
+Figure 27 : représentation des actions mécaniques sur la sphère dans le chocolat
+
+2. Test pour le chocolat noir
+Nos capsules emboîtables, de diamètre 𝐷𝑠 = 3,8 𝑐𝑚 ; sont identiques et
+étanches afin de pouvoir les remplir avec des masses différentes.
+Figure 28 : modèle de capsule acheté sur Internet
+Déterminons la masse minimale de la sphère pour que 𝐹𝐴𝑆 > 𝑃𝑆 ∶
+4
+
+4
+
+3,0
+
+3
+
+𝑚𝑚𝑖𝑛,𝑠 = 𝜌𝑐 × 𝑉𝑠 = 𝜌𝑐 × 3 × 𝜋 × 𝑅𝑠3 = 1,2𝑔. 𝑚𝐿−1 × 3 × 𝜋 × ( 2 𝑐𝑚) ≈ 17 𝑔
+On arrondit le résultat de la masse minimale de la sphère 𝑚𝑚𝑖𝑛,𝑆 à l’excès pour ne pas la
+sous-estimer et écarter toute influence de la poussée d’Archimède. Nous remplissons plusieurs
+sphères avec des billes en plomb qui ont une masse volumique bien supérieure à celle du chocolat.
+On lâche sans vitesse initiale la sphère à mi-hauteur, immergée à la surface. Si cette dernière
+chute et coule dans le chocolat, cela signifie que la contrainte de cisaillement 𝜏 exercée par la
+sphère sur le chocolat a dépassé la contrainte critique 𝜏0 (seuil dépassé) ; et inversement sinon.
+
+Figure 29 : photographies des différentes sphères dans le chocolat lors de la finale régionale le 11
+décembre 2024
+
+Il est difficile de déterminer avec précision la masse critique étant donné que les sphères
+coulent lentement dans le chocolat. Pour ces échantillons tout particulièrement, on remarque que
+le mouvement de la sphère est très lent, ce qui indique que sa vitesse est proche de 0, et donc qu’il
+en est de même pour le gradient de vitesse 𝛾̇ , ce qui n’est pas surprenant puisqu’on détermine le
+seuil avec la modélisation de Casson à l’aide de la valeur de l’ordonnée à l’origine (lorsque 𝛾̇ = 0).
+Dans les conditions expérimentales de l’expérience menée à la finale nationale, on peut évaluer la
+masse critique à 35g (la photographie a été prise après que le dispositif ait été déplacé).
+19
+
+Estimons la valeur du seuil 𝜏0 à partir de la masse critique 𝑚𝑠0 = 35 𝑔 :
+3
+
+4
+3,0 × 10−2
+35,0 × 10−3 𝑘𝑔 − 1,2 × 103 𝑘𝑔. 𝑚−3 × 𝜋 × (
+𝑚)
+𝑚𝑠0 − 𝜌𝑐 . 𝑉𝑠
+3
+2
+−2
+𝜏0 = 𝑔.
+=
+9,81
+𝑚.
+𝑠
+×
+≈ 125 𝑃𝑎.
+2
+2𝜋. 𝑅𝑠2
+3,0 × 10−2
+2𝜋 × (
+𝑚)
+2
+
+Pour rappel, avec le plan rugueux (III. 3.), nous avions mesuré un seuil: 𝝉𝟎 = 𝟐𝟔 𝑷𝒂, (et
+𝝉𝟎 = 𝟕 𝑷𝒂 avec le modèle de Casson). La valeur calculée ici est donc assez éloignée de celle
+que nous avons mesurée avec le plan rugueux, à de faibles gradients de vitesse. On peut
+mettre en cause notamment la géométrie sphérique, différente de celles utilisées pour le
+rhéomètre.
+
+CONCLUSION
+L’étude de la viscosité et du comportement rhéologique du chocolat doit se faire avec un
+matériel adapté, en capacité de faire des mesures précises. Le chocolat noir que nous avons étudié
+dans tout le mémoire est un fluide non newtonien, et rhéofluidifiant : cela signifie que sa viscosité
+n’est pas constante, et qu’elle diminue lorsque le gradient de vitesse augmente. On a pu voir que la
+viscosité de ce chocolat ne dépend que très peu de la température pour 𝜃 ∈ [35°𝐶 ; 60 °𝐶].
+Ce chocolat est un fluide à seuil, rentrant en écoulement si la contrainte de cisaillement qui
+lui est appliquée dépasse une certaine valeur appelée contrainte critique. La valeur que nous avons
+déterminée expérimentalement est très proche de celle mesurée à de faibles gradients de vitesse
+avec la géométrie plan rugueux. Le modèle de Casson décrit bien son comportement rhéologique
+pour des gradients de vitesse supérieurs à 𝛾̇ > 1 𝑠 −1 . Pour un industriel qui travaillerait avec du
+chocolat pour un enrobage par exemple, le modèle de Casson constitue un très bon moyen de
+modéliser sa loi d’écoulement si le chocolat s’écoule à une vitesse suffisamment élevée.
+En revanche, le beurre de cacao, qui donne sa structure au chocolat (ses propriétés solides
+et fluide), est un fluide newtonien dont la viscosité est constante et ne dépend que de la température.
+Les proportions de cacao, de sucre, de beurre de cacao, et des additifs éventuels ont un effet
+sur les propriétés rhéologiques des chocolats blanc, au lait (et noir « maison »), pouvant faire penser
+à de la thixotropie à de faibles gradients de vitesse. Une étude plus poussée, en connaissant la
+correction à appliquer aux mesures faites avec le plan rugueux serait nécessaire.
+Pour des gradients de vitesse faible, le viscosimètre à chute de bille que nous avons conçu
+n’est pas totalement capable de déterminer la position de la bille, à cause d’une rotation importante
+de cette dernière. En ordre de grandeur, les mesures de viscosités apparentes sont 101 fois plus
+élevées que les valeurs mesurées au laboratoire ESPCI. Les effets de bords du fait que la bille a
+un diamètre proche de celui de l’éprouvette la font ralentir. Ce n’est pas gênant pour d’éventuelles
+mesures étant donné que la viscosité apparente est définie pour un gradient de vitesse précis.
+Une solution envisagée pour éventuellement éviter la rotation de la bille serait de la fixer à
+un fil fin de type fil de pêche qui reposerait sur une poulie pour éviter sa rotation. Dans ce cas, nous
+devrons déterminer l’influence de ce montage sur les mesures effectuées.
+Il y a bien d’autres expériences que nous avons faites mais que nous n’avons pas pu vous
+présenter (diffraction des grains de cacao avec le modèle d’Airy, mesure de l’indice de réfraction du
+beurre de cacao, détermination de la capacité calorifique massique du chocolat et vérification par
+DSC) car nous avons préféré nous concentrer sur l’étude du comportement fluide du chocolat.
+Il est certain que le chocolat ne nous a pas encore délivré tous ses secrets. En étudiant son
+comportement rhéologique, c’est toute la nature des sciences physiques que nous avons pu mettre
+en lumière, en dépassant les notions scolaires, au travers de notre démarche scientifique : observer,
+comprendre, analyser, agir, travailler en équipe. Ce ne sont pas seulement les propriétés fluides du
+chocolat que nous avons découvert pour ce projet ; mais aussi une part de nous : celle qui révèle
+les clés de notre humanité pour rechercher, innover, et repousser les limites du savoir.
+20
+
+

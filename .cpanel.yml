@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/olymphys/olympessais.fr/
+    - /bin/cp -Rup ./* $DEPLOYPATH
