@@ -1,0 +1,1084 @@
+Concours National des Olympiades de Physique France
+A l’Université Saint -Charles de Marseille
+Vendredi 31 janvier 2025
+
+Inès LISSARRE
+
+Juliette VAAST
+
+Louise THOREZ
+
+Lilou LACROIX
+
+Jeanne DELEPOUVE Tom PAUCHET
+Présentent
+
+Branly : des ondes au brouillard
+Encadrés par Olivier BURIDANT et Didier SORET
+
+1
+
+Résumé
+Après une première expérience aux Olympiades de Physique, nous avons entrepris d’explorer le fonctionnement des brumisateurs à
+ultrasons. Ces dispositifs utilisent des vibrations ultrasonores pour générer un brouillard composé de fines gouttelettes d’eau. En
+étudiant ces phénomènes, nous avons établi un lien avec les ondes stationnaires à la surface de l’eau, observées grâce à des vibrations
+générées par des haut-parleurs.
+Nous avons également contacté M. Emmanuel FORT, chercheur à l’ESPCI. Ce dernier a confirmé la validité de nos observations et nous
+a orientés dans l’étude des instabilités de Faraday, un phénomène où des ondes stationnaires entraînent l’émission régulière de
+gouttelettes. Dans le cadre de nos recherches, nous avons analysé avec précision l’influence de la fréquence, de l’amplitude et de la
+viscosité.
+Enfin, nous avons conclu nos travaux en illustrant clairement le lien entre les vibrations et le processus de brumisation. Nous nous
+préparons désormais à présenter une nouvelle expérience dans le cadre du concours national à Marseille.
+
+Partenaires
+
+2
+
+Remerciements
+M. Éric LENGAGNE, proviseur, Mme Delphine ANQUEZ, proviseur adjointe, M. Régis LOONIS, chef des travaux, et Mme Sophie
+NEYRINCK, agent comptable, constituent les personnels de direction du lycée E. BRANLY. Leur engagement, leur détermination
+et la confiance qu'ils ont su instiller ont été des facteurs essentiels à la réussite de nombreux projets.
+M. Christophe BEAUMONT ainsi que ses équipes techniques s'adaptent à leur planning en libérant des créneaux chaque
+mercredi après-midi, alors que nous utilisons des salles habituellement inoccupées.
+M. Didier SORET, professeur de mathématiques retraité depuis plus de 10 ans, reste néanmoins présent chaque mercredi
+après-midi pour nous encadrer, nous aider et nous soutenir dans ce projet, en nous consacrant généreusement son précieux
+temps chaque semaine.
+Les personnels de laboratoire, et tout particulièrement Mme REMOND, technicienne, pour son aide précieuse, sa patience et
+son écoute attentive tout au long de notre projet.
+Mme Sophie DEPERLECQUE, Mme Claire LISSARRE et Mme Sandrine THOREZ pour les nombreuses relectures et corrections
+qu'elles ont apportées à notre dossier.
+M. Stéphane DEMARTHE, professeur de sciences de l’ingénieur et numérique et sciences informatiques, et M. Guillaume GAIGNEUR (OdP
+2004), professeur de physique et de SNT (Sciences Numériques et Technologie) au lycée Branly, pour son aide précieuse dans
+la gestion et l'élaboration des différents programmes Python.
+l’ensemble des professeurs de « SOS Math », qui assurent un soutien quotidien dans notre lycée entre 12 h et 14 h. Leur aide
+précieuse dans nos démonstrations et leurs nombreuses vérifications ont grandement contribué à la rigueur de notre travail.
+M. Emmanuel FORT, professeur à l'ESPCI Paris, directeur de l'espace Pierre-Gilles de Gennes et spécialiste de l'interaction
+onde-matière, qui nous a conseillés, soutenus et consacré beaucoup de son temps. Grâce à lui, nous avons énormément appris
+lors de la visioconférence qu'il nous a offerte. Nous le remercions également pour son invitation à visiter l'ESPCI et l'EPGG.
+M. Alain LEFEBVRE, Directeur d'IFREMER Boulogne-Sur-Mer, ainsi que MM. Gaël DANEL et Romain LAMARRE, techniciens au
+lycée Léonard-de-Vinci de Calais, pour leur contribution aux mesures de viscosité des solutions de glycérol.
+M. Olivier GENOUX, CPE au lycée Branly et président de la Maison des Lycéens, qui a accepté de nous prêter l’ensemble ampli
+et haut-parleur puissant de la Maison des Lycéens, comme il l’avait fait en 2007 avec M. Philippe LANCEL.
+MM. Nicolas PERNET, Doctorant ESPCI 139ème promotion (OdP 2009 & 2010, TS2 Promotion Philippe LANCEL), Stéphane
+BRANLY, Étudiant UTCéen Data Scientist à l'EPSF (OdP 2018, TS2 promotion Cédric VILLANI), Louis VADET, Étudiant
+polytechnicien (OdP 2018 & 2019, TS2 promotion Jean-Michel COURTY), Cédric MANIER, professeur agrégé (OdP 2019, TS2
+promotion Dominique LANGEVIN), Melles Eugénie GOBERT, Ingénieure EdF (OdP 2012 & 2013, TS2 promotion Kamil FADEL),
+Laurine ANDRIEUX, Ingénieure (OdP 2014 & 2015, TS2 promotion Pierre Gilles de GENNES), Juliette CHAVALLE, Étudiante ENV
+Lyon (OdP 2018, TS2 promotion Cédric VILLANI), Léa DEMARTHE, Étudiante ENS Saclay (OdP 2020, TG2 promotion Julien
+BOBROF) Aurore MARÉCHAL, Clara DEFRETIN (OdP 2021 & 2022, TG2 promotion José BICO) Pour leurs idées, leurs conseils, et
+surtout pour la richesse de leur bibliographie ainsi que le matériel précieux qu’ils ont laissé dans le local des Olympiades.
+Les jurys des finales nationales des Olympiades de Physique France et du concours C.Génial, qui nous ont sélectionnés et
+permis de vivre une aventure extraordinaire tout au long de notre année de première.
+M. Michel FOULON,Professeur émérite des Universités, Université de Lille, et M. Jean-Marc BOUGENIÈRE, Professeur CPGE
+retraité, nos rapporteurs lors du concours interacadémique d’Hazebrouck, le 11 décembre 2024, pour leurs précieux conseils
+et leur expertise.
+Nos camarades des différents groupes des Olympiades, avec qui nous avons partagé des moments inoubliables, et dont les
+observations pertinentes ont enrichi notre travail.
+Nos premiers spectateurs, nos familles, qui nous ont aidés à améliorer notre projet en y apportant un regard extérieur et de
+précieux conseils sur l’utilisation des différents logiciels. Ils ont également su adapter leurs emplois du temps pour nous
+permettre de rester au lycée aussi longtemps que nécessaire afin de faire avancer notre travail.
+Un grand merci à toutes celles et à tous ceux qui, depuis 1992, rendent les Olympiades de Physique possibles grâce à leur
+engagement et leur dévouement. Leur investissement permet de faire perdurer cet événement chaque année, offrant ainsi à
+de nouveaux élèves l’opportunité de vivre une aventure aussi enrichissante sur le plan humain que scientifique.
+Notre professeur de physique au lycée E. BRANLY, M. Olivier BURIDANT, qui nous consacre chaque mercredi après-midi de
+longues heures, ainsi que d’autres moments dans la semaine, pour nous permettre d’explorer notre projet sous toutes ses
+facettes. Bien plus qu’un simple transmetteur de connaissances, il nous inspire l’envie et le plaisir d’apprendre, tout en nous
+encourageant à nous dépasser pour aller toujours plus loin.
+
+3
+
+Sommaire
+Résumé _________________________________________________________________________________________________ 2
+Partenaires____________________________________________________________________________________________ 2
+Remerciements _______________________________________________________________________________________ 3
+Introduction___________________________________________________________________________________________ 5
+Du brumisateur aux ondes de surface ___________________________________________________________ 6
+Nos premiers essais avec le brumisateur _____________________________________________________ 6
+Le passage à l’eau vibrée __________________________________________________________________ 7
+Première analogie eau / corde vibrante ______________________________________________________ 8
+
+Visio conférence avec Monsieur FORT ___________________________________________________________ 9
+Le botafumeiro ________________________________________________________________________ 10
+
+Étude des instabilités de Faraday_______________________________________________________________ 12
+Technique de mesure de l’amplitude d’un vibreur ____________________________________________ 12
+Le miroir plan________________________________________________________________________________ 12
+La méthode dite de Poggendorff _________________________________________________________________ 12
+La boule réfléchissante ________________________________________________________________________ 13
+
+Mesure de l’amplitude de notre haut‐parleur ________________________________________________ 16
+Influence de l’amplitude sur le seuil d’apparition des instabilités de Faraday ______________________ 17
+Influence de la viscosité sur l'apparition des instabilités de Faraday ______________________________ 17
+
+L’expérience de Monsieur FORT _________________________________________________________________ 18
+Retour sur la brumisation________________________________________________________________________ 19
+Conclusion ___________________________________________________________________________________________ 19
+Bibliographie _______________________________________________________________________________________ 20
+
+Annexes
+Sommaire des annexes _____________________________________________________________________________ III
+Annexe A : Démonstration de la relation de tangente thêta ________________________________ III
+Annexe B : Relation entre les vecteurs unitaires incident et réfléchi ____________________ VII
+Annexe C : Signification physique du motif M _________________________________________________ VII
+Annexe D : Code python pour visualiser la variation de tan(θ) en fonction de h _____ VIII
+Annexe E : Test de la limite de validité du modèle _____________________________________________ X
+Annexe F :Quelques rappels _____________________________________________________________________ XIV
+Annexe G : Les Olympiades vues par Inès. _____________________________________________________ XV
+Annexe H : Les Olympiades vues par Jeanne _________________________________________________ XVI
+Annexe I : Les Olympiades vues par Juliette_________________________________________________ XVII
+Annexe J : Les Olympiades vues par Lilou __________________________________________________ XVIII
+Annexe K : Les Olympiades vues par Louise __________________________________________________ XIX
+Annexe L : Les Olympiades vues par Tom______________________________________________________ XX
+
+4
+
+Introduction
+.
+
+2024 restera une année extraordinaire, marquée par l’incroyable ferveur des Jeux Olympiques de Paris. Des lieux emblématiques tels
+que la Tour Eiffel, le Trocadéro, le Grand Palais ou encore le Château de Versailles ont accueilli des épreuves spectaculaires, devenues
+de véritables célébrations collectives du sport et de ses valeurs. Personne n’oubliera les exploits de Léon Marchand, de Teddy Riner, ni
+des milliers d’autres athlètes qui ont illuminé ces jeux.
+Si Paris célébrait en 2024 l’excellence sportive des Jeux Olympiques, nous avons, à notre échelle, vécu notre propre aventure olympique
+sur le terrain de la physique, avec la même passion et la quête de dépassement de soi. Nous y avons découvert la joie de l’universalité
+de la science et le plaisir du partage d’expériences. Après une première aventure avec notre projet « Le turbulent et Zadig »(1), qui nous
+a menés jusqu’à la finale nationale des Olympiades de Physique France à Paris et au prestigieux concours C.Génial sous le Concorde,
+notre motivation est à son comble pour relever un nouveau défi.
+Cette première participation a été une expérience extrêmement enrichissante, tant sur le plan de la rigueur scientifique que du
+développement de nos capacités d’analyse. Au-delà de l’aspect purement scientifique, elle nous a permis de renforcer notre esprit de
+camaraderie, d’améliorer notre travail en équipe et d’acquérir des compétences en communication. Ce projet nous offre l’opportunité
+de partager nos idées, de nous inspirer des approches variées et d’aller bien au-delà des connaissances dispensées dans les cours
+classiques.
+Le concours national s'achève en apothéose par une journée d’exposition ouverte à un public incroyablement diversifié, une véritable
+effervescence d’idées, de découvertes et d’échanges. Nous explorons les projets des groupes voisins, fascinés par leurs démarches et
+leurs trouvailles, tout en accueillant les regards curieux de professeurs et de chercheurs venus jauger les idées des "petits jeunes",
+souvent avec des conseils bienveillants et inspirants.Mais ce sont les enfants qui laissent une empreinte particulière dans nos souvenirs.
+Leurs yeux brillent de cette curiosité pure, ce mélange d’émerveillement et de soif de comprendre. Il faut alors trouver les bons mots,
+les bonnes images, pour expliquer simplement ce qui, pour nous, représente des mois de travail acharné. Et lorsque l’un d’eux revient
+quelques minutes plus tard, tenant fièrement la main de sa mamie pour lui montrer ce qu’il a appris, nous savons que nous avons
+touché quelque chose de profond.
+C’est une expérience à la fois intense et bouleversante, un moment suspendu où les générations se croisent, où la passion de
+transmettre et de partager devient palpable. C’est une aventure que chacun devrait avoir la chance de vivre, ne serait-ce qu’une fois,
+pour ressentir cette magie unique et cette humanité partagée.
+
+Un souvenir emblématique, chargé d’émotion et de fierté, qui illumine notre année de première au lycée.
+
+Après cette journée riche en échanges, une conférence accessible au grand public précède la cérémonie de remise des prix. Lors de la
+cérémonie qui clôture ces Olympiades, M. Jean-François Aubry a remis le prix de la "Focused Ultrasound Foundation" au lycée BernardPalissy d’Agen. Plus tôt dans la journée, nous avions eu le plaisir d’échanger avec lui. Son laboratoire développe des techniques
+innovantes pour détruire des tumeurs cérébrales grâce aux ultrasons. Ils ne sont pas uniquement un outil de diagnostic mais sont
+également un outil thérapeutique, il nous met sur la piste des brumisateurs à ultrasons : l’idée est née. Ce sera le support de notre sujet
+d’Olympiades 2025.
+Portés par l’inspiration de notre rencontre avec M. Aubry et le bouillonnement d’idées suscité par les Olympiades, nous avons entamé
+l’approfondissement de notre cours sur les ondes. Ce nouvel apprentissage, centré sur la célérité des ondes à la surface de l’eau, marque
+les premières étapes de notre réflexion pour 2025.
+•
+•
+
+Comment fonctionne un brumisateur à ultrasons ?
+Peut-on établir une analogie avec des phénomènes que nous connaissons déjà ?
+
+Pour répondre à ces questions, nous avons eu la chance de pouvoir contacter M. Emmanuel FORT. Grâce à ses explications
+précieuses, il nous a grandement aidés à approfondir notre travail.
+5
+
+Du brumisateur aux ondes de surface
+Nos premiers essais avec le brumisateur
+Les brumisateurs à ultrasons sont largement utilisés, tant à des fins décoratives que médicales. En effet, bien qu'ils soient
+fréquemment choisis pour produire un brouillard esthétique et apaisant, ces appareils
+s jouent également un rôle clé dans le domaine de la santé, notamment dans les inhalateurs à basse température utilisés pour
+traiter les affections respiratoires. Ils sont également couramment employés dans les élevages de volailles et les serres pour réguler
+l'humidité. Leur utilisation est donc très répandue.
+Nous avons acquis un brumisateur pour quelques euros..
+
+Notre brumisateur
+
+L'appareil se compose d'un bloc d'alimentation et d'un transducteur. Ce dernier contient un circuit électronique qui fait vibrer une
+pastille de céramique à une fréquence élevée de 15 MHz, selon la notice de l'appareil. Son fonctionnement est simple : il suffit de
+le plonger dans l'eau, puis, une fois mis sous tension, un brouillard apparaît rapidement à la surface. C'est cet effet que l'on cherche
+généralement à obtenir.
+
+Ce brouillard est froid et constitué de fines gouttelettes d'eau, facilement condensables. La température de l'eau dans le récipient reste
+stable et proche de celle de la pièce. Cependant, lorsque l'on pose un doigt au-dessus de la cellule, sur la surface de l'eau, on ressent
+un picotement thermique sur la peau, ce qui incite à retirer rapidement le doigt. Un thermomètre placé à cet endroit ne révèle aucune
+température dangereuse. Mais que mesurons-nous réellement ? L'eau, libre de circuler, montre même des mouvements à sa surface.
+Nous avons compartimenté notre récipient en cellules élémentaires à l'aide de films alimentaires, et il semble que les ultrasons
+traversent ces cloisons, provoquant un phénomène de surface similaire à celui observé dans le reste du récipient.
+
+Ne disposant pas d'instruments pour détecter les ultrasons, nous n'avons pas pu cartographier l'intensité des ondes ultrasonores dans
+notre récipient. Nous avons donc cherché à comprendre l'origine de la formation des gouttelettes. Très rapidement, lors de nos
+recherches en ligne, nous avons découvert un site de physique de l’Université de Lille (https://phymain.unisciel.fr/le-brumisateur-etles-ondes-de-faraday/index.html) qui nous a orientés vers l'étude des vibrations dans un récipient d'eau.
+
+6
+
+Le passage à l’eau vibrée
+Pour étudier le comportement de l'eau lorsqu'elle est soumise à une sollicitation alternative verticale, nous avons choisi de placer un
+bécher sur un haut-parleur. La vibration de la membrane du haut-parleur se transmet ainsi à la colonne d'eau qui se trouve au-dessus,
+permettant d'observer l'effet des oscillations sur le liquide. Le montage expérimental que nous avons utilisé était le suivant :
+Bécher
+contenant de
+l’eau distillée
+
+30,0 Hz
+
+GBF
+
+OO
+Haut-parleur
+sur potence
+
+Très rapidement, afin d'éviter tout risque d'accident, nous avons stabilisé le haut-parleur et le bécher en les fixant ensemble à l'aide de
+pâte adhésive (Blu Tack™). En étudiant l'influence de la quantité d'eau, nous avons constaté que la masse du bécher en verre était
+parfois plus importante que celle de l'eau elle-même. Nous avons donc opté pour des contenants en plastique à fond plat : des pots
+plastiques remplis de résine pour aplatir le fond, ou encore des boîtes de Petri jetables, que nous avons empruntées aux laboratoires
+de biochimie et de SVT de notre lycée.
+Boîte de pétri
+contenant de l’eau
+(sur une cale de positionnement)
+
+30,0 Hz
+
+GBF
+
+O
+Haut-parleur
+sur potence
+
+En augmentant la fréquence progressivement, nous avons pu observer qu’au-delà d’un certain seuil, on voit apparaitre des ondulations
+à la surface de l’eau, des vagues apparaissent à la surface de l’eau.
+
+Schéma d’une coupe de boîte de Pétri présentant des vagues à la surface
+
+Pour photographier le phénomène vous avons choisi de mettre un colorant alimentaire.
+
+Onde à la surface de la boite de Petri sans et avec colorant
+
+Les observations sont assez difficiles à visualiser sur ces photos. Pour y remédier, nous avons opté pour une cuve légère, permettant
+de prendre des photos de côté : une boîte de Tic-Tac™.
+
+7
+
+Première analogie eau / corde vibrante
+Ces vagues qui se forment à la surface de l'eau, nous rappellent le phénomène des ondes sur la corde de Melde(2–4), abordé en cours
+d'enseignement scientifique dans le cadre de l'acoustique musicale.
+Une corde est fixée entre un vibreur vertical et une poulie, une masse permet de la tendre et de régler sa tension.
+
+Lorsque le GBF n'est pas en marche, il est possible de faire vibrer la corde en la grattant ou en la frappant, comme on le ferait avec une
+corde de guitare ou de piano. Dans ce cas, elle oscille librement.
+Lorsque le GBF est en fonctionnement, les oscillations deviennent forcées. À une fréquence spécifique, la corde adopte la forme d'un
+fuseau.
+
+Lorsque la corde entre en résonance, l'amplitude du mouvement au centre de la corde devient bien supérieure à celle près de
+l'extrémité du vibreur. Cette fréquence est appelée fréquence fondamentale.
+En augmentant progressivement la fréquence, on observe l'apparition de différents modes de vibration, appelés harmoniques.
+•
+
+Fondamental : f1
+
+•
+
+Harmonique 2 : f2 = 2f1
+
+•
+
+Harmonique 3 : f3 = 3f1
+
+•
+
+Harmonique 4 : f4 = 4f1
+
+Les zones où l'amplitude des vibrations est maximale sont appelées "ventres de vibration", alors que les zones où il n'y a pas de
+mouvement sont appelées "nœuds de vibration".
+La fréquence du fondamental est donnée par la relation.
+
+f1 =
+
+1
+T
+√
+2L
+µ
+
+Où :
+•
+•
+•
+
+L est la longueur de la corde en mètre, m,
+T, la force de tension en newton, N,
+µ, la masse linéique, la masse d’un mètre de corde, en kg.m–1.
+
+Selon M.FORT les instabilités de Faraday sont des ondes stationnaires.
+
+8
+
+Visio conférence avec Monsieur FORT
+Nous avons tenté de contacter plusieurs chercheurs afin d'obtenir leur aide pour mieux comprendre les phénomènes observés, mais
+malheureusement, nous avons reçu un grand nombre de réponses négatives ou aucune réponse. Heureusement, M. Emmanuel FORT,
+professeur à l'ESPCI Paris, Directeur de l’espace Pierre Gilles de Gennes, spécialiste de l'interaction onde-matière, a accepté de répondre
+à notre demande par e-mail.
+Cette réponse s'est révélée être une véritable mine d'informations. M. FORT nous a proposé plusieurs articles, ainsi que des sujets de
+concours(5), dont certains sont en français, un article de Nature1(6), et la thèse de l'un de ses étudiants(7). Bien que l'Anglais soit assez
+accessible, ces documents restent bien au-delà de notre niveau de terminale. Notre professeur éprouve également des difficultés à
+tout saisir, il nous autorise à le dire. Cependant, comme il nous le répète souvent, depuis Newton, les articles sont généralement bien
+illustrés, et les schémas aident grandement à la compréhension des concepts. C'est ce que nous faisons : nous nous appuyons sur ces
+illustrations pour corriger certaines erreurs que nous avons commises et, surtout, pour identifier de nouvelles pistes qui nous
+permettront de continuer à progresser dans notre compréhension.
+Surtout le mail de Monsieur FORT se terminait par : « Bonne continuation et n’hésitez pas à revenir vers moi pour toute question
+complémentaire (On peut faire un zoom si vous voulez) ». Évidemment, nous avons accepté, en précisant toutefois nos contraintes liées
+à nos emplois du temps, aux devoirs surveillés, compétitions sportives et aux inscriptions au bac. Eh bien, un scientifique de cette
+envergure, certainement très occupé, a réussi à se libérer pour organiser avec nous une visioconférence un mercredi en début d’aprèsmidi.
+
+Photos prises lors de la visioconférence avec M. SORET
+
+La visioconférence se déroule en toute simplicité, donnant l'impression que lui et son doctorant sont venus nous rendre visite
+spontanément au lycée. Nous projetons les images sur le vidéoprojecteur et avons disposé notre matériel sur la table. Nous avons
+l’impression très agréable de revivre l’atmosphère de l’exposition publique du concours national. La discussion est fluide, directe et
+dépourvue de tout artifice.
+Nos deux interlocuteurs s'adaptent à notre niveau de compréhension : ils s'expriment en termes simples et s'assurent que nous
+comprenons bien leurs explications. Nous abordons de nombreux points techniques, notamment sur les vibreurs, les haut-parleurs, les
+amplificateurs, la forme des signaux, les mesures d'amplitude et l'évaluation de l'accélération. Monsieur FORT nous impressionne car il
+reconnaît immédiatement le modèle de notre vibreur de Melde dès que nous le lui présentons. Il identifie le modèle et se rappelle
+même qu'il est équipé d'un fusible intégré d'un ampère, ce que Monsieur BURIDANT confirme. Nos GBF ne semblent pas assez
+puissants. Les intensités délivrées sont probablement bien inférieures à leur valeur maximale possible, ce qui limite l’amplitude de nos
+signaux. On nous recommande donc d’utiliser un amplificateur… de guitare.
+Nous abordons également des notions théoriques et des termes spécifiques, tels que l’origine des ondes observées ou leurs
+caractéristiques. Ils confirment le lien entre les ondes à la surface de l’eau et le nébulisateur à ultrasons : tout se résume à une question
+de fréquence. Nos spécialistes, toujours avec la même bienveillance exemplaire, s’efforcent de transmettre des explications claires et
+accessibles, en vulgarisant sans jamais tomber dans la simplification excessive. Ils nous proposent des expériences supplémentaires
+accompagnées de très précieux conseils pour les mener à bien. Enfin, ils nous encouragent à partager avec eux nos résultats et même
+à envisager une prochaine visioconférence pour poursuivre les échanges.
+Pour terminer la visioconférence, M. FORT nous a invités à visiter son laboratoire dès que possible, que ce soit en groupe ou
+individuellement, selon nos disponibilités. Cette occasion nous permettra non seulement de refaire nos expériences dans un cadre
+professionnel, mais aussi de découvrir le métier de chercheur et les perspectives offertes par une classe préparatoire. Nous avons déjà
+commencé à organiser notre visite.
+Enfin, nous souhaitons remercier chaleureusement M. FORT pour sa disponibilité, sa gentillesse et sa bienveillance. Prendre le temps
+d’aider de jeunes lycéens confrontés à des expériences complexes est un geste rare, surtout pour un chercheur avec autant de
+responsabilités et un emploi du temps si chargé. Merci, Monsieur, pour cette après-midi à la fois constructive et très enrichissante.
+Remarque : cette page a été publiée après relecture et approbation des intervenants concernés.
+1
+
+Nature est une revue scientifique de référence, reconnue mondialement pour sa rigueur et son prestige. Dans le domaine de la physique, l'une de ses principales
+publications est Nature Physics, elle est accessible à l'adresse suivante : https://www.nature.com/nphys/. Cette revue, sérieuse et de grande qualité, est également
+présente sur Instagram à l'adresse https://www.instagram.com/nature.physics/, et offre un accès plus interactif à ses contenus et à ses dernières publications.
+
+9
+
+Le botafumeiro
+Le Botafumeiro est le nom donné à l'encensoir emblématique de la cathédrale de Saint-Jacques-de-Compostelle. Cet objet liturgique
+impressionne par ses dimensions : il mesure 1,60 mètre de haut, pèse 54 kg et est suspendu à une hauteur de 32 mètres. Sa
+manipulation requiert la coordination de huit moines, appelés thuriféraires.
+Le mouvement de l'encensoir est particulièrement spectaculaire : ses oscillations lui permettent d’atteindre une hauteur de plus de 20
+mètres, soit presque l’équivalent de la hauteur de notre lycée. Ce phénomène illustre parfaitement le principe d’un oscillateur
+paramétrique(8–11).
+Un pendule simple est constitué par un objet ponctuel de masse m suspendu à un point O fixe par un fil inextensible de longueur L.
+𝑧
+O
+
+𝐿
+𝜃
+
+𝐺
+𝑥′
+
+𝑥
+
+𝐺0
+𝑧′
+
+Schéma de principe d’un pendule simple
+
+Pour de petites oscillations, on parle d’isochronisme(4,9–11) car la période est identique et vaut :
+𝑇 = 2𝜋√
+•
+•
+•
+
+𝐿
+𝑔
+
+T est la période en seconde, s.
+L la longueur du pendule en mètre, m.
+g, l’accélération de la pesanteur, g=9,81 m.s–2.
+
+Pour un petit pendule de 25,0 cm
+𝑇 = 2𝜋√
+
+0,250
+= 1,00 𝑠
+9,81
+
+Nous avons une fréquence de 1Hz.
+Pour mieux comprendre le mécanisme du Botafumeiro, nous avons réalisé un montage destiné à reproduire et expliquer son
+mouvement.
+Poulie
+
+Vibreur
+
+𝜃𝑚𝑎𝑥
+
+Amplitude
+des
+oscillations
+
+Photo de notre montage
+
+Verticale
+Pendule
+simple
+
+10
+
+On peut schématiser le mouvement du pendule comme ci-dessous (les allures des tractions et relâchements ne sont pas réalistes mais simplifiées)
+ Relâchement
+Relâchement
+Montée
+fil court
+
+Montée
+fil court
+ Traction
+Descente
+fil long
+
+Descente
+fil long
+
+Remarque importante :
+Les allures des tractions et
+relâchements ne sont pas
+réalistes mais simplifiées
+
+Pendule
+
+L’opération est cyclique.
+
+Traction
+
+∆ℎℎ𝑎𝑢𝑡
+
+∆ℎ𝑏𝑎𝑠
+
+Si l'on simplifie en considérant que les allongements et raccourcissements des cordes se produisent uniquement aux sommets et aux
+points bas, les différences de hauteur entre la fin de la descente et le début de la montée (∆ℎ𝑏𝑎𝑠 ) et entre la fin de la montée et le
+début de la descente (∆ℎℎ𝑎𝑢𝑡 ) ne sont pas identiques. Cette asymétrie introduit une légère quantité d'énergie dans le système à chaque
+cycle. Par conséquent, l'amplitude des oscillations augmente progressivement, entraînant le système en résonance.
+On réalise deux manœuvres par oscillation du pendule. Par conséquent, la fréquence excitatrice, 𝑓𝑒 , vaut deux fois la fréquence propre
+du pendule simple 𝑓0 .
+𝑓𝑒 = 2𝑓0
+C’est une signature de ce type d’oscillateur paramétrique.
+Cela nous rappelle un autre phénomène. Le problème de la queue de cheval est bien connu de toutes les filles lors des cours de sport.
+Lorsqu’on court elle fait un aller-retour tous les deux impacts au sol. La fréquence de ces oscillations est la moitié de celle des impacts
+au sol.
+
+Images extraites d’une vidéo faite dans la mezzanine de notre lycée
+
+Ici, les cheveux oscillent de gauche à droite. La queue de cheval effectue 1,5 oscillations pour 3 impacts au sol. La fréquence d’oscillation
+des cheveux est la moitié de celles des pas (12,13).
+Il n’est pas utile d’aller à Saint Jacques de Compostelle pour observer des oscillateurs de ce type là.
+
+11
+
+Étude des instabilités de Faraday
+Nous avons décidé d’étudier les instabilités de Faraday, un phénomène qui apparait à la surface d’un fluide soumis à une excitation
+verticale périodique. Notre objectif est d’analyser les paramètres influençant ces instabilités, tels que la fréquence, l’amplitude de
+vibration et les propriétés du fluide. En observant les formes des ondes générées, nous chercherons à comprendre comment ces
+paramètres modifient la stabilité et l’organisation des motifs.
+
+Technique de mesure de l’amplitude d’un vibreur
+L'amplitude du vibreur influence directement celle des ondes à la surface de la cuve. Nous avons observé visuellement que l'amplitude
+du haut-parleur varie en fonction de la fréquence. À des fréquences très basses, de l'ordre de quelques millihertz, il est relativement
+facile de mesurer l'écart entre les positions extrêmes à l'aide d'une règle graduée. Toutefois, lorsque la fréquence atteint quelques
+dizaines de hertz, cette mesure devient beaucoup plus complexe. Comment peut-on mesurer cette amplitude avec précision ? Dès le
+début, nous avons naturellement envisagé d'utiliser des méthodes optiques.
+Le miroir plan
+La première idée qui nous est venue (partagée également par notre jury académique) consiste à placer un miroir plan sur la membrane.
+Cependant, une simple analyse géométrique basée sur la symétrie montre que si le miroir s’élève d’une hauteur ℎ, la position du spot
+réfléchi sur l’écran se déplace d’une hauteur double, soit 2ℎ.
+Rayon réfléchi position h
+
+𝒩0
+
+𝒩ℎ
+Rayon incident
+
+Ascension du rayon sur l’écran
+d’une hauteur 2h
+
+Rayon réfléchi position 0
+
+𝑖
+
+𝑟
+
+Miroir position h
+
+𝑖 𝑟
+
+Ascension du miroir d’une hauteur h
+
+Miroir position 0
+
+Cela revient simplement à transférer le problème de la mesure du déplacement de la membrane du haut-parleur à celui de l’écran. Si
+cela offre un léger gain en confort, cela n’améliore ni la précision ni la simplicité de la méthode.
+La méthode dite de Poggendorff
+Bien que de nombreux exercices fassent référence à cette technique, nous n'avons trouvé aucune source bibliographique établissant
+un lien direct entre cette méthode et Johann Christian Poggendorff. Elle repose sur l’utilisation d’un miroir tournant pour mesurer des
+déplacements ou des oscillations. En réfléchissant un faisceau lumineux, le miroir amplifie les petits mouvements grâce à l’angle de
+rotation, permettant ainsi une mesure indirecte et précise des variations de position.
+𝑟𝑎𝑦𝑜𝑛 𝑖𝑛𝑐𝑖𝑑𝑒𝑛𝑡
+
+𝒩
+
+𝑟𝑎𝑦𝑜𝑛 𝑟é𝑓𝑙é𝑐ℎ𝑖
+𝑝𝑜𝑠𝑖𝑡𝑖𝑜𝑛 1
+
+𝒩
+𝑟𝑎𝑦𝑜𝑛 𝑟é𝑓𝑙é𝑐ℎ𝑖
+𝑝𝑜𝑠𝑖𝑡𝑖𝑜𝑛 2
+
+2𝛼
+
+𝑀𝑖𝑟𝑜𝑖𝑟 𝑝𝑜𝑠𝑖𝑡𝑖𝑜𝑛 1
+
+𝛼
+𝑀𝑖𝑟𝑜𝑖𝑟 𝑝𝑜𝑠𝑖𝑡𝑖𝑜𝑛 2
+
+On démontre facilement qu’une rotation du miroir d’un angle 𝛼 entraîne une rotation du rayon réfléchi de 2𝛼. Cette propriété est au
+cœur des exercices portant sur la méthode dite de Poggendorff.
+
+12
+
+𝑟𝑎𝑦𝑜𝑛 𝑖𝑛𝑐𝑖𝑑𝑒𝑛𝑡
+
+Nous avons tenté de positionner un miroir en appui sur
+deux points : d’un côté, une cale légère fixée à la
+membrane d’un haut-parleur, et de l’autre, un support
+rigide. L’idée est que les mouvements de va-et-vient de la
+membrane, transmis par la cale, induisent une oscillation
+d’un côté du miroir. Plus la longueur du miroir est réduite,
+plus la variation de son angle par rapport à l’horizontale
+devient significative, amplifiant ainsi les petits
+déplacements de la membrane.
+
+𝑟𝑎𝑦𝑜𝑛 𝑟é𝑓𝑙é𝑐ℎ𝑖
+
+𝑚𝑜𝑢𝑣𝑒𝑚𝑒𝑛𝑡
+𝑑𝑒 𝑙𝑎 𝑐𝑎𝑙𝑒
+
+↑↓
+
+HP
+
+𝑀𝑖𝑟𝑜𝑖𝑟
+
+L’idée est séduisante en théorie, mais sa mise en œuvre s’avère délicate pour plusieurs raisons. Tout d’abord, les amplitudes de
+déplacement, pouvant dépasser un centimètre, posent des contraintes importantes. De plus, des phénomènes de flexion se produisent
+au niveau du point d’appui sur la cale. À ce jour, aucun adhésif, ni même un joint en silicone, n’a été capable de résister durablement à
+des flexions répétées à une fréquence de 10 oscillations par seconde ou plus.
+Après plusieurs tentatives infructueuses, une idée nous est venue en réutilisant les décorations de Noël.
+La boule réfléchissante
+Le principe est simple : l'angle du rayon réfléchi par une boule réfléchissante dépend de la position du point d'incidence, à condition
+que le rayon incident ne soit pas parallèle à la direction de déplacement de la boule.
+Notre montage :
+Laser fixe
+
+Rayon incident
+Rayon réfléchi
+
+Écran lointain
+
+Sphère
+métallique
+
+Haut-parleur
+ou vibreur
+
+Schéma de principe de notre montage pour mesurer l’amplitude
+
+Faisons un schéma pour expliquer :
+
+𝐿𝑎𝑠𝑒𝑟 𝑓𝑖𝑥𝑒
+
+Photo de notre montage depuis l’écran
+
+Faisceau incident
+
+𝐻
+
+Faisceau réfléchi
+position 0
+
+𝒩0
+𝛼
+
+𝑖0
+
+𝑟0
+𝜃0
+
+Horizontale passant par𝐼0
+
+𝐼0
+𝒫0
+
+𝐶0
+𝑅
+
+13
+
+Un faisceau laser, formant un angle 𝛼 avec la verticale (coupée en 𝐻), est envoyé sur une sphère de rayon 𝑅 de centre 𝐶0 . Le rayon
+incident atteint la sphère en 𝐼0 . On définit 𝛽 comme l'angle entre la verticale et le segment ሾ𝐶0 𝐼0 ሿ . Un plan 𝒫0 test alors défini comme
+étant tangent à la sphère en 𝐼0 , et une normale 𝒩0 de même direction que le rayon ሾ𝐶0 𝐼0 ሿ. On note 𝑖0 l'angle entre le faisceau incident
+et la normale, et 𝑟0 l'angle entre le faisceau réfléchi et cette perpendiculaire au dioptre.
+Selon la première loi de Descartes
+𝑖0 = 𝑟0
+Nous nous intéressons à l’angle 𝜃0 formé entre l'horizontale et le faisceau réfléchi.
+Si on élève la sphère d’une hauteur h, la situation devient la suivante:
+𝐿𝑎𝑠𝑒𝑟 𝑓𝑖𝑥𝑒
+
+𝛼
+
+𝒫ℎ
+
+Faisceau réfléchi
+position h
+
+𝒩ℎ
+
+𝐻
+
+𝑖ℎ
+
+𝑟ℎ
+𝜃ℎ
+
+Horizontale passant par𝐼ℎ
+
+𝐼ℎ
+
+𝐶ℎ
+Élévation h
+
+𝐶0
+
+𝑅
+
+Seuls le rayon 𝑅 , le point 𝐻 et l’angle 𝛼 demeurent constants. Tous les autres paramètres varient, notamment l'angle 𝜃0 qui devient
+𝜃ℎ .
+Nous avons d’abord réalisé une simulation dans Géogébra2 pour enregistrer les valeurs de𝜃ℎ en fonction de ℎ dans un tableur intégré,
+qui permet également de calculer tan(𝜃ℎ ).
+Pour un rayon 𝑅 = 5,0 𝑐𝑚 , un point 𝐻 = 10,0 𝑐𝑚 et un angle 𝛼 = 20° nous obtenons le graphique suivant pour des valeurs
+de ℎ comprises entre 0 et 1,5 cm.
+
+Nous avons réussi à modéliser les variations de tan(𝜃ℎ ) en fonction des différents paramètres, et nous avons développé un programme
+en Python pour visualiser ces variations (voir annexes A à E).
+Compte tenu des excellentes corrélations observées, nous pouvons conclure que tan(𝜃ℎ ) varie de manière linéaire avec ℎ. Nous avons
+donc choisi d'utiliser cette méthode pour mesurer l'amplitude de notre vibreur.
+Explication des phénomènes observés
+Nous avons constaté qu’au cours de l’utilisation de notre système composé d’un laser et d’une boule, le faisceau subissait un
+élargissement considérable. Dans un premier temps, nous avons envisagé que ce phénomène soit dû à la diffraction, un concept
+récemment étudié en classe. Cependant, nous avons rapidement écarté cette hypothèse pour plusieurs raisons : l’absence d’éléments
+diffractants tels qu’une fente, un fil ou un motif texturé sur la surface de la sphère (hormis de légères traces de doigts), et surtout le
+
+2
+
+Géogébra est un logiciel libre que nous utilisons depuis le collège en mathématiques, il est téléchargeable sur https://www.geogebra.org/ ou utilisable en ligne
+
+14
+
+fait que nous observons un unique spot lumineux sans la présence d’anneaux concentriques caractéristiques des figures de diffraction,
+comme les anneaux d’Airy(2).
+Nous avons alors pris en compte deux caractéristiques importantes de notre laser : d'une part, il ne s'agit pas d'un faisceau idéal comme
+dans les modèles théoriques, car il possède une épaisseur finie ; d'autre part, il n'est pas strictement unidirectionnel, puisqu'il présente
+une légère divergence(9–11). Pour intégrer ces paramètres à notre analyse, nous avons apporté des modifications à notre programme
+Python afin de simuler leur influence et d’évaluer leurs effets sur les résultats.
+Influence de la largeur du faisceau
+Selon la documentation technique de notre laser, le diamètre du faisceau est de 2 mm. Pour simuler cet aspect, nous avons modélisé
+la propagation de trois rayons idéaux aux hauteurs H de 9,9 cm, 10,0 cm et 10,1 cm. Les résultats de cette simulation sont présentés
+ci-dessous.
+Tout d'abord, nous constatons une excellente corrélation constante
+et une faible erreur absolue moyenne relative. Les coefficients
+directeurs des rayons sont très proches, indiquant que ces derniers
+évoluent presque parallèlement pour toutes les altitudes h.
+Concentrons-nous sur le cas h = 0 cm. En examinant les ordonnées
+à l'origine des simulations : pour H= 9,90 cm, la valeur est de 0,4547
+et pour H = 0,10 cm , elle est de 0,4109 Le différentiel entre ces
+valeurs est 0,4547 – 0,4109 = 0,0438.
+Ce différentiel des tangentes implique qu’à une distance de 1 m de
+l’écran, l’écart entre ces deux rayons idéaux atteint 4,4 cm, révélant
+un élargissement significatif du faisceau.
+Influence de la divergence du faisceau
+Selon les spécifications techniques de notre laser, la divergence du faisceau est de 1,2 mrad. Cela correspond à une divergence d'environ
+0,60 mrad de chaque côté par rapport à l'axe central, soit approximativement un angle total de 0,05°.
+Pour tenir compte de cette caractéristique, nous avons modifié notre programme afin de simuler la propagation de trois rayons idéaux
+inclinés respectivement à 19,95°, 20° et 20,05°. Les résultats de cette simulation sont présentés ci-dessous.
+Une nouvelle fois, nous observons une corrélation remarquable et
+une erreur absolue moyenne très faible. Les coefficients directeurs
+des droites de régression étant très similaires, cela montre qu'ils
+évoluent de manière quasi identique pour toutes les altitudes
+En examinant le cas h = 0 cm. Les ordonnées à l'origine des
+simulations : pour 𝛼= 19,95°, la valeur est de 0,4370 et pour
+𝛼 = 20,05° , elle est de 0,4285. La différence entre ces valeurs est
+0,4370 – 0,4285 = 0,0085.
+Cette différence montre qu’à une distance de 1 m de l’écran,
+l’écart entre ces deux rayons idéaux atteint près de 9 mm, il y a un
+élargissement significatif du faisceau du fait de la divergence du
+faisceau.
+La géométrie réelle du faisceau laser contribue effectivement à l’élargissement du spot sur l’écran. Parmi les facteurs étudiés, l’effet de
+la largeur initiale du faisceau s’avère significativement plus important que celui de sa divergence naturelle. Afin de réduire cet
+élargissement, nous avons décidé de diminuer le diamètre du faisceau à 1 mm. Bien que cette modification introduise un phénomène
+de diffraction, la principale limitation réside dans la perte de luminosité qui en résulte.
+La taille de la tâche de diffraction peut être estimée à l’aide de la relation suivante :
+𝜃𝑡𝑟𝑜𝑢 =
+
+1,22 𝜆
+𝑎
+
+Où 𝜆 est la longueur d’onde du laser (ici 𝜆 = 532 𝑛𝑚), et a est le diamètre de l’ouverture, fixé à 1,0 mm.
+En effectuant le calcul :
+𝜃𝑡𝑟𝑜𝑢 =
+
+1,22 × 532.10−9
+= 6,5.10−5 𝑟𝑎𝑑 = 0,65 𝑚𝑟𝑎𝑑
+1,0.10−3
+
+Nous constatons ainsi que la diffraction ajoute une contribution angulaire équivalente à celle de la divergence initiale du faisceau. Cette
+contrainte est plus faible que l’effet de la largeur du faisceau.
+15
+
+Mesure de l’amplitude de notre haut‐parleur
+Nous avons mesuré le mouvement de la membrane d’un haut-parleur. Pour cela, nous avons utilisé un GBF et un haut-parleur provenant
+d’une dotation de 1992. Le montage consistait à fixer une boule réfléchissante sur la membrane, éclairée par un laser. Le faisceau était
+projeté sur un mur blanc au fond de la salle (à 10,62 m), où une bande de papier servait à noter les positions relevées.
+
+Principe de la mesure
+
+Paramètres négligés devant D ou H
+
+Hauteur retenue crête à crête
+
+La tangente de l’angle de sortie étant liée à l’amplitude du mouvement, nous avons relevé deux points :
+• Le premier point : À une fréquence de 200 mHz (cycle de 5 secondes), l’amplitude crête-à-crête du vibreur est de 13,28 mm, et le
+spot lumineux se déplace de 2,285 m sur l’écran.
+• Le second point : Lorsque le vibreur est à l’arrêt, le spot reste fixe, indiquant aucun déplacement.
+En négligeant :
+• les variations de hauteur liées à l’altitude du point d’incidence,
+• et les variations de distance entre ce point et l’écran,
+on peut estimer que la position du spot sur l’écran est proportionnelle à l’amplitude du déplacement.
+Nous avons mesuré l’amplitude en fonction de la fréquence, mais une difficulté est vite apparue : représenter des ordonnées en
+millimètres et mètres, ainsi que des abscisses allant de 0,2 Hz à 200 Hz. Pour mieux visualiser ces données, nous avons utilisé une
+échelle logarithmique, ce qui a facilité la comparaison sur une large plage. Les données ont été tracées sur un tableur, avec une
+amplitude du GBF fixée à 10 V, mesurée au multimètre3.
+
+Premier constat : les résultats varient en fonction du haut-parleur utilisé. Pour le vibreur de Melde et le modèle de 1992, l’amplitude
+est élevée à basse fréquence, mais décroît rapidement pour devenir très faible. En revanche, le haut-parleur Garosa™ acheté sur
+Amazon semble avoir une conception différente, avec une amplitude atteignant un maximum à une fréquence différente des basses
+fréquences. Cela confirme l’appellation « Haut-parleur de Résonance 50 mm ».
+Le second constat est que l’amplitude varie systématiquement avec la fréquence. Cependant, pour le modèle que nous avons acheté,
+la réponse reste d’un ordre de grandeur comparable pour des fréquences basses, inférieures à 20 Hz. Nous supposons qu’une différence
+de technologie est à l’origine de ce comportement distinct.
+Dernier constat : l’amplitude, qui dépend de la force exercée sur la membrane du haut-parleur, est proportionnelle à l’intensité du
+courant. Si l’on assimile notre vibreur à une résistance, le courant qui le traverse est directement lié à la tension appliquée à ses bornes.
+Cela nous offre un moyen efficace de réguler l’amplitude en ajustant la tension.
+
+3
+
+Nous sommes conscients que nous mesurons la tension efficace, 𝑈eff , et pas 𝑈𝑚𝑎𝑥 et reconnaissons qu’il s’agit d’un abus de langage pour parler d’amplitude.
+
+16
+
+Influence de l’amplitude sur le seuil d’apparition des instabilités de Faraday
+Nous avons étudié les conditions d’apparition des instabilités de Faraday.
+
+Boîte de pétri
+contenant de l’eau
+(sur une cale magnétique)
+
+30,0 Hz
+
+HP
+
+GBF
+
+O
+Haut-parleur
+sur potence
+
+V
+
+Com
+
+Schéma de principe de nos mesures
+
+Nous avons repris notre montage classique en y apportant quelques améliorations. Nous avons ajouté de petits aimants plats,
+positionnés sous le récipient et sur la membrane du haut-parleur afin de faciliter le changement rapide de contenant ou de contenu.
+De plus, un voltmètre a été connecté aux bornes du générateur pour mesurer la tension à laquelle les instabilités apparaissent en
+fonction de la fréquence.
+Nous avons choisi d’utiliser un haut-parleur Garosa, non seulement parce qu’il est plus récent et donc moins usé mais aussi en raison
+de sa réponse quasi identique aux basses fréquences.
+
+Nous avons tracé l’évolution de la tension minimale du GBF nécessaire pour déclencher les instabilités de Faraday en fonction de la
+fréquence d'excitation. De plus, l’évolution de l’amplitude représentée en gris, a été ajoutée sur le même graphique à titre de rappel.
+Nous observons que, quelle que soit la profondeur (7 mm ou 11 mm), la tension seuil augmente avec la fréquence. À 7 mm, le seuil
+passe de 15 mV à près de 110 mV, tandis qu’à 11 mm, il varie de 20 mV à 120 mV. En résumé, sur cette plage de fréquences, l’amplitude
+du signal excitateur est multipliée par un facteur de 6.
+Parallèlement, la réponse du haut-parleur augmente de 0,45 mm à 0,97 mm pour une tension de 10 V. Bien qu'il soit difficile de trancher
+de manière définitive, on peut affirmer qu'à mesure que la fréquence augmente, le seuil semble également devoir être plus élevé.
+Il serait pertinent de réaliser ces mesures en fonction de l’amplitude du vibreur pour pouvoir confirmer cette tendance. Nous tenterons
+de le faire pour le concours national de Marseille.
+Cependant, nous pouvons affirmer sans trop de risques que la tension seuil augmente avec la quantité d'eau présente dans le récipient.
+
+Influence de la viscosité sur l'apparition des instabilités de Faraday
+Lors de notre visioconférence avec M. FORT, il a mentionné l’impact de la viscosité sur le seuil d’apparition des instabilités de Faraday,
+en précisant que : « ... à viscosité nulle, il n’y a pas de seuil ». Il nous a encouragés à explorer cette influence en étudiant différentes
+solutions présentant des viscosités variées.
+L’an dernier, dans le cadre de notre projet « Le turbulent et Zadig »(1), nous avions précisément étudié la viscosité de solutions de glycérol
+dont nous disposons encore en stock. Par curiosité, nous avons décidé d’examiner l’influence de ce paramètre sur le seuil d’apparition
+des instabilités de Faraday.
+17
+
+Voici les valeurs de viscosité établies grâce à M. Lefebvre de l’IFREMER de Boulogne-sur-Mer, que nous avons eu le plaisir de rencontrer
+à nouveau lors de la Fête de la Science.
+Solution
+Eau
+Glycérol 10%
+Glycérol 20%
+Glycérol 30%
+Glycérol 40%
+Glycérol 50%
+Glycérol 60%
+Glycérol 70%
+Glycérol 80%
+Glycérol 90%
+Glycérol 100 %
+
+𝜂, en Pa.s
+Moyenne sur
+Écart type
+10 mesures
+0,968× 10−3
+0,071 × 10−3
+1,19× 10−3
+0,076× 10−3
+1,65× 10−3
+0,116× 10−3
+2,28× 10−3
+0,161× 10−3
+3,35× 10−3
+0,173× 10−3
+5,70× 10−3
+0,300× 10−3
+10,1× 10−3
+0,593× 10−3
+22,1× 10−3
+1,32× 10−3
+55,4× 10−3
+3,07× 10−3
+0,207
+13,1× 10−3
+1,39
+73,9× 10−3
+
+Valeur
+Handbook
+(en Pa.s)
+1,01 × 10−3
+1,26 × 10−3
+1,74 × 10−3
+2,46 × 10−3
+3,65 × 10−3
+6,04 × 10−3
+10,6 × 10−3
+23,2 × 10−3
+59,9 × 10−3
+0,219
+1,41
+
+Erreur relative
+en %
+-4,12
+-4,77
+-5,17
+-7,03
+-5,50
+-5,24
+-4,57
+-4,71
+-7,40
+-5,28
+-6,15
+
+Voici nos résultats obtenus pour un volume de 10 mL mesuré à l’aide d’une éprouvette graduée. Cette courbe présente les tensions
+seuil en fonction de la fraction massique Φ de glycérol et en fonction de la viscosité pour une fréquence de 50 Hz.
+Tension du
+en
+
+En fonction de la fraction massique
+
+F
+
+Représentation semi-logarithmique pour la viscosité
+
+La représentation sur un repère classique révèle que, pour des fractions massiques comprises entre 0 et 15-20 %, la tension seuil varie
+peu. Cependant, entre 20 % et 85-90 %, la tension seuil est Fortement influencée. Au-delà de 90 %, elle semble atteindre un plateau.
+Enfin, à des fractions supérieures à 96 % de glycérol, nous n'avons jamais réussi à observer des instabilités de Faraday. La courbe en
+pointillé a une allure sigmoïde, caractérisée par deux zones de concavité distinctes et un point d'inflexion apparent. Elle a été tracée à
+la main comme une interprétation artistique, sans s'appuyer sur un modèle mathématique précis.
+Nous avons opté pour une représentation semi-logarithmique, qui nous semble plus adaptée qu’une échelle linéaire pour mettre en
+évidence l’effet de la viscosité. La courbe tracée manuellement ne correspond à aucun modèle établi, mais reflète une tendance
+générale que nous ne sommes pas encore en mesure d’interpréter. Elle suggère cependant une possible corrélation entre le seuil
+d’apparition des instabilités de FARADAY et le logarithme de la viscosité. L’augmentation de la viscosité tend à amortir les ondes de
+surface, rendant ainsi l’apparition des instabilités de Faraday plus difficile.
+
+L’expérience de Monsieur FORT
+Nous n’avons jamais observé d’instabilité de Faraday avec nos systèmes actuels au lycée pour une fraction massique supérieure à 96
+%. Après en avoir discuté avec M. FORT, il nous a expliqué que cela était lié à une question d’amplitude. Il nous a recommandé d’utiliser
+des dispositifs plus puissants pour agiter la cuve. Suite à ses conseils, nous avons décidé d’employer un haut-parleur de 300 W ainsi que
+l’amplificateur de sonorisation de la Maison des Lycéens, habituellement utilisés pour les concerts dans notre établissement.
+Après avoir résolu les problèmes de connectique et réalisé quelques essais préliminaires, nous avons rencontré de nouveaux défis : la
+fixation de la cuve et la génération d’un signal audio. Pour la fixation, nous avons opté pour une solution provisoire avec un pistolet à
+colle, une méthode efficace qui permet de remplacer ou d’expérimenter différents contenants facilement. Concernant la génération
+du signal, nous avons choisi de créer un son par voie informatique en utilisant le logiciel Audacity, un outil que nous maîtrisons bien
+grâce à son usage fréquent en cours de langue.
+Dès le premier essai avec ce nouvel équipement, nous avons observé des instabilités de Faraday à une fréquence de 50 Hz, puis à 100
+Hz, en utilisant du glycérol pur. Suivre les conseils avisés d’un spécialiste a été déterminant dans cette réussite. Au-delà de l’intérêt
+scientifique, cette exploration découle également d’un défi lancé par M. FORT lors de sa visioconférence.
+À son invitation, nous explorons également un autre phénomène fascinant : le comportement de bulles d’air dans le glycérol soumis à
+des vibrations. Cette étude, que nous avons nommée l’"expérience de M. FORT", constitue un défi scientifique captivant. Si nos résultats
+18
+
+s’avèrent concluants, nous sommes invités à lui transmettre des photos ou des vidéos pour partager nos observations. Nous espérons
+également avoir l’opportunité de présenter ces travaux lors du concours national.
+
+Retour sur la brumisation
+Revenons à notre sujet initial : la brumisation. Selon M. FORT le phénomène est analogue, à la différence que le vibreur est directement
+dans la cuve ; ce qui rend une transmission beaucoup plus efficace à la colonne d’eau qui est située au-dessus. D’autant plus que l’eau
+a une très faible viscosité.
+Lorsqu’on fait vibrer de l’eau dans un récipient et que l’on augmente progressivement l’amplitude des oscillations, une série de
+phénomènes se succède.
+À partir d'une certaine amplitude, pour une fréquence donnée, des ondes stationnaires apparaissent clairement à la surface de la cuve.
+Elles montrent un équilibre entre la fréquence de vibration et les propriétés physiques du fluide.
+
+Lorsque l'amplitude du signal excitateur (assurée par la membrane du haut-parleur) augmente, l'amplitude des ondes générées à la
+surface du fluide augmente également, traduisant une intensification de l'énergie transmise au milieu.
+
+En augmentant davantage l’amplitude du vibreur, l’amplitude des ondes continue de croître. Le système tend à devenir instable.
+
+Au-delà d’une amplitude critique, le système devient instable. Les crêtes des ondes commencent à émettre de petites gouttelettes de
+manière quasi synchrone et régulièrement espacées. Ces gouttelettes sont projetées dans l’air avant de retomber à la surface, qu’elles
+déstabilisent.
+
+Nous observons que les gouttelettes émises ont une taille approximative correspondant à un quart de la longueur d'onde des ondes
+générées. Il semble y avoir une corrélation entre leur dimension et les caractéristiques de la vibration du système.
+À des fréquences élevées, comme. f=15MHz, la tension superficielle 𝛾 domine le comportement des ondes. La relation de dispersion
+devient :
+𝜔02 =
+
+𝛾𝑘 3
+𝜌
+
+(7)
+
+–1
+
+2𝜋
+
+où 𝜔 = 2𝜋𝑓, 𝛾 la tension superficielle de l’eau (0,0728 N.m )(14), 𝜌 sa masse volumique (1000 𝑘𝑔. 𝑚−3 ) et 𝑘 = 𝜆 le nombre
+d’onde.
+Pour f=15MHz, la résolution de cette équation donne une longueur d’onde 𝜆 = 1,27µ𝑚. Cela correspond à des gouttelettes d’un
+diamètre typique de 0,40μm, caractéristiques d’un brouillard dense.
+Des ondes de cette dimension ne peuvent pas être directement observées à la surface de l'eau en raison de limitations physiques et
+expérimentales. Par conséquent, il ne s'agit pas d'une instabilité de Faraday au sens strict, mais plutôt d'un phénomène analogue qui
+partage certaines caractéristiques fondamentales, comme la dépendance aux forces capillaires et la fréquence d'excitation.
+
+Conclusion
+Comment fonctionne un brumisateur à ultrasons ?
+Peut-on établir une analogie avec des phénomènes que nous connaissons déjà ?
+Notre participation aux Olympiades de Physique, inspirée par le voyage de Zadig (1), nous a offert de nombreuses rencontres
+marquantes, notamment celle avec M. Aubry. Une discussion avec lui nous a orienté vers une première étude consacrée à la
+brumisation. En utilisant un brumisateur fonctionnant à très haute fréquence, nous avons observé que les vibrations qu’il génère
+
+19
+
+produisent des ondes mécaniques à l’interface eau/air, formant un brouillard de fines gouttelettes d’eau liquide sans atteindre le point
+d’ébullition.
+Cependant, nos premiers résultats étaient limités, et la compréhension des phénomènes restait imprécise. Pour approfondir notre
+étude, nous nous sommes intéressés au comportement de l’eau soumise à des vibrations dans des récipients simples, comme des
+béchers. Lors de ces expériences, nous avons observé que des vibrations verticales appliquées à un récipient contenant de l’eau
+induisaient des motifs réguliers à sa surface. Dans un récipient plat, une coupe transversale révèle un phénomène semblable à celui
+observé sur une corde de Melde, avec la formation d’ondes stationnaires.
+Pour valider nos hypothèses, nous avons sollicité M. Emmanuel Fort, spécialiste des interactions entre ondes et matière. Il a confirmé
+notre première hypothèse et identifié le phénomène observé comme une instabilité de Faraday. Il nous a également encouragé à établir
+une analogie avec un oscillateur paramétrique bien connu : le botafumeiro. Cet oscillateur, tout comme le mouvement d’une queue de
+cheval lors d’un exercice physique, oscille à une fréquence correspondant à la moitié de la fréquence d’excitation. En utilisant la
+stroboscopie, nous avons observé un comportement similaire dans les ondes de surface, confirmant ainsi la nature paramétrique du
+phénomène.
+Afin de mesurer la magnitude des oscillations, nous avons testé divers dispositifs et conçu une méthode originale reposant sur une
+boule de Noël, une idée absente de la littérature scientifique. Initialement, cette approche s’appuyait sur une simple simulation réalisée
+avec un logiciel de géométrie. Malgré des difficultés, nous avons persévéré et développé une solution analytique, intégrée par la suite
+dans une simulation logicielle. Les résultats obtenus ont non seulement validé notre simulation initiale, mais également permis
+d’expliquer les problèmes expérimentaux rencontrés.
+En parallèle, nous avons mesuré l’amplitude de notre vibreur et analysé son effet sur les ondes de surface. M. Fort nous a ensuite
+suggéré d’examiner l’impact de la viscosité sur l’apparition des instabilités de Faraday. Nos expériences ont révélé que l’augmentation
+de la viscosité retarde significativement l’apparition des perturbations, ce qui ouvre des perspectives intéressantes pour le contrôle de
+ces instabilités.
+Dans un esprit d’innovation, M. Fort nous a proposé une dernière expérience spectaculaire : étudier le comportement des bulles d’air
+dans du glycérol vibré. Cette expérience, illustrée sur la couverture de notre dossier, sera présentée en direct lors du concours national.
+Par sa nature visuellement captivante, elle promet de susciter l’intérêt du public tout en illustrant élégamment les phénomènes
+physiques que nous avons étudié.
+Tout comme Édouard BRANLY, qui découvrit le détecteur d’ondes en étudiant la conductivité des limailles de fer(15), notre exploration
+du brouillard généré par la brumisation nous a conduits à mettre en évidence des propriétés fondamentales des ondes à la surface de
+l’eau que nous ignorions. Ce parcours, jalonné de découvertes et de collaborations, témoigne de l’importance de l’expérimentation et
+de l’échange scientifique dans la compréhension des phénomènes complexes.
+
+Bibliographie
+1.
+
+Lissarre I, Vaast J, Thorez L, Lacroix L, Delepouve J, Pauchet T. Le turbulent et Zadig. Paris,Université Paris Campus des Grands Moulins:
+Olympiades de physique; 2024 févr . 20 p. (Concours National des Olympiades de Physique France).
+
+2.
+
+Hecht E. Optique. Pearson Education. 2005. 736 p.
+
+3.
+4.
+
+Melde F. Ueber die Erregung stehender Wellen eines fadenförmigen Körpers. Ann Phys (Berlin). 1860;109(2):193‑215.
+Buridant O, Ducrocq F, Gomez G, Magartit M, Magarit A, Maurin JL, et al. Travaux pratiques de physique chimie, de la seconde à la terminale.
+Bordas. Paris; 2003. 224 p.
+
+5.
+
+École Polytechnique, ESPCI. Physique A (XE) – Concours d’admission 2022, filière PC. 2022.
+
+6.
+
+Apffel B, Novkoski F, Eddi A, Fort E. Floating under a levitating liquid. Nature. sept 2020;585(7823):48‑52.
+
+7.
+
+Apffel B. Du contrôle spatio-temporel d’ondes de surface à la stabilisation dynamique d’interfaces Thèse. Université Paris sciences et lettres;
+2022.
+
+8.
+
+Sanmartín JR. O Botafumeiro: Parametric pumping in the Middle Ages. American Journal of Physics. 1 oct 1984;52(10):937‑45.
+
+9.
+
+Tomasino A, Fauris M, Parent C, Patrigeon C, Simon C. Physique Terminale S, enseignement obligatoire. Nathan. Paris; 1995.
+
+10. Duboc C, Dulac Y, Fromont JC, Garay B, Nordmann J. Physique Terminale S. Didier. Paris; 1995. 448 p. (Secrétan D. D. Secrétan).
+11. Durandeau JP, Bramand P, Faye M, Thomassier G, Martegoutes R, Sahun R. Physique: Term. S. Hachette; 1995. 352 p.
+12. Plaut RH, Virgin LN. Pendulum models of ponytail motion during walking and running. Journal of Sound and Vibration. 5 août
+2013;332(16):3768‑80.
+13. Keller JB. Ponytail Motion. SIAM J Appl Math. janv 2010;70(7):2667‑72.
+14. Haynes WM. Handbook of chemistry and physics. CRC Press. Vol. 95. Boca Raton, Florida; 2014. 2704 p.
+15. Patin C, Lacheré G, Sanssoucy E. 2011, sur les pas d’Édouard BRANLY 1911. Palais de la Découverte, Paris: Olympiades de physique; 2012
+janv 32 p. . (Concours National des Olympiades de Physique France).
+16. Taillet R. Python pour la physique Calcul, graphisme, simulation. De Boeck Supérieur. Paris; 2020. 320 p.
+
+20
+
+

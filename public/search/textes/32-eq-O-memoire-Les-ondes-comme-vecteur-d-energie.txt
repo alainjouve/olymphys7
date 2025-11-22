@@ -1,0 +1,1116 @@
+Les ondes comme
+vecteur d’énergie
+OLYMPIADES DE PHYSIQUE – 32EME EDITION
+
+Aux Lazaristes -Lyon
+Mathis Blachon, Anaïs Luong, Chloé Capelli
+
+Sommaire
+Sommaire
+
+1
+
+Partie 1 : Mise en évidence de l’induction électromagnétique
+
+2
+
+Introduction et objectif
+
+2
+
+Hypothèse
+
+3
+
+Matériel et méthode
+
+3
+
+Résultats
+
+3
+
+Traitement des données
+
+3
+
+Discussion et interprétation
+
+4
+
+Conclusion
+
+4
+
+Partie 2 : Transmission d’énergie à distance avec émission omnidirectionnelle
+
+4
+
+Introduction et objectif
+
+4
+
+Hypothèse
+
+4
+
+Matériel et méthode
+
+4
+
+Résultats
+
+5
+
+Traitement des données
+
+6
+
+Discussion et interprétation
+
+6
+
+Conclusion
+
+6
+
+Amélioration du rendement, expériences sur les ondes mécaniques
+
+6
+
+Partie 3 : Optimisation de la transmission d’énergie par émission focalisée
+
+7
+
+Introduction et objectif
+
+7
+
+Hypothèse
+
+8
+
+Matériel et méthode
+
+8
+
+Traitement des données
+
+9
+
+Discussion et interprétation
+
+9
+
+Conclusion
+
+10
+
+Partie 4 : Optimisation de la transmission d’énergie par beamforming
+
+10
+
+Introduction et objectif
+
+10
+
+Hypothèses
+
+10
+
+Matériel et méthode
+
+11
+
+Mesures et observations
+
+11
+
+Traitement des données
+
+13
+
+Discussion et interprétation
+
+13
+
+Conclusion
+
+13
+
+Conclusion
+
+14
+
+Remerciements
+
+15
+
+Bibliographie
+
+15
+
+Listes des abréviations scientifiques utilisées
+
+15
+
+1
+
+Objectif
+L'objectif de ce projet est d'identifier et d'optimiser des dispositifs permettant de transporter efficacement l'énergie à
+l'aide d'ondes.
+Avant d’entrer dans le cœur du projet, l’introduction de quelques notions, qui ont guidées notre démarche. Tout d’abord,
+une onde est un phénomène correspondant à la propagation d’une perturbation, entraînant un transfert d’énergie sans
+déplacement de matière. Elle se caractérise par son amplitude, sa phase et sa fréquence. Parmi les différentes catégories
+d’ondes, les ondes électromagnétiques se distinguent par leur capacité à se propager sans support matériel, avec une
+vitesse proche de celle de la lumière.
+En 1865, Maxwell unifie électricité et magnétisme dans la théorie de l’électromagnétisme. Deux de ses équations
+⃗ induit un champ électrique 𝐸⃗ et inversement.
+montrent que la variation du champ magnétique 𝐵
+⃗∇ ∧ ⃗E = −
+
+⃗
+∂𝐵
+∂𝑡
+
+⃗∇ ∧ ⃗B = μ0𝐽 + μ0ε0
+
+∂𝐸⃗
+∂𝑡
+
+L'induction est donc le phénomène physique, évoqué ci-dessus, par lequel une variation du flux magnétique à travers
+un circuit électrique induit une force électromotrice (FEM) dans ce circuit. Ce principe repose sur les lois fondamentales
+de l'électromagnétisme, notamment celle de Faraday, qui établit que la FEM induite est proportionnelle à la variation
+temporelle du flux magnétique. Il s’agit du phénomène mis en jeu dans les alternateurs, qui permettent de convertir
+l’énergie mécanique en électrique.
+En 1888, Hertz confirme les équations de Maxwell en démontrant l’existence des ondes radio. Ces ondes, émises par des
+antennes, sont générées par un courant alternatif qui fait osciller les électrons d’une tige métallique, engendrant une
+variation de champ électrique, qui induit un champ magnétique, formant ainsi une onde électromagnétique se
+propageant dans l’espace. Une antenne réceptrice capte cette onde, provoquant une oscillation des électrons et
+reproduisant le courant alternatif d’origine, atténué par la distance.
+En utilisant un dispositif producteur d’énergie en continu, il est possible d’envisager l’alimentation continue d’appareils
+portatifs dans la vie quotidienne. Le projet se concentre ainsi sur le phénomène d’induction électromagnétique afin de
+transmettre de l’énergie à un dispositif en mouvement dans l’espace. La démarche débute par la mise en évidence
+empirique de ce phénomène. Une antenne omnidirectionnelle sert ensuite à transmettre l’énergie à distance, une
+antenne réceptrice similaire assurant la captation partielle de cette énergie. Enfin, l’amélioration du rendement de cette
+transmission s’appuie sur des systèmes optimisant la directionnalité de l’onde.
+
+Partie 1 : Mise en évidence de l’induction électromagnétique
+Introduction et objectif
+L'induction électromagnétique est le phénomène par lequel une variation de champ magnétique à travers un circuit
+induit un courant électrique dans celui-ci (loi de Faraday). Elle est à la base du fonctionnement des transformateurs. Un
+transformateur comprend deux bobines, dites bobine primaire et bobine secondaire, reliées par un noyau de fer doux
+qui canalise le flux magnétique dans un chemin défini, minimisant ainsi les fuites de flux. L’énergie est transférée de l’une
+à l’autre des bobines uniquement par le champ magnétique, sans contact direct entre les deux circuits.
+La tension induite dans la bobine secondaire dépend du rapport entre le nombre de spires des enroulements primaire
+et secondaire. Elle peut être augmentée (transformateur élévateur) ou diminuée (transformateur abaisseur). Ce rapport
+U
+N
+I
+de transformation est donné par la relation : UB = NB = IA
+A
+
+A
+
+B
+
+L'oscillation des tensions alternatives est caractérisée par l'amplitude maximale U max et la tension efficace U eff, cette
+dernière étant la valeur d'une tension continue produisant la même dissipation thermique que la tension alternative.
+L'objectif de cette partie est de mettre en évidence le phénomène d'induction électromagnétique et les pertes associées.
+
+2
+
+Hypothèse
+Si un courant est présent dans la bobine primaire, alors une tension sera mesurée dans la bobine secondaire et
+l’induction électromagnétique sera mise en évidence. En revanche, en l'absence de courant dans la bobine primaire,
+aucune tension ne sera induite dans la bobine secondaire et il n’aura pas de phénomène d’induction.
+
+Matériel et méthode
+Matériel
+•
+
+Générateur à basses fréquences (GBF) METRIX MTX 3240, mode alternatif, 200 Hz, 5,0V
+
+•
+
+Bobine A
+
+Imax = 1 A
+
+R = 2,5 Ω
+
+NA = 200
+
+•
+
+Bobine B
+
+Imax = 0,3 A
+
+R = 39,5 Ω
+
+NB = 1000
+2 voltmètres
+Noyau de fer doux
+Câblages et matériel électronique
+
+•
+•
+•
+
+Schéma 1 : Schéma électrique du transformateur
+
+Méthode
+Un voltmètre est branché en dérivation à chaque bobine. La bobine A (bobine primaire) est branchée au GBF. La tension
+de la bobine B est notée lorsque la bobine A n’est pas alimentée par le GBF. La tension efficace en entrée et en sortie
+est mesurée lorsque la bobine A est alimentée par le GBF.
+
+Résultats
+Bobine A
+
+Bobine B
+
+GBF (V)
+
+5
+
+Umax (V)
+
+0,716
+
+2,838
+
+Ueff (V)
+
+0.506
+
+2.007
+
+Expérience témoin : Ueff
+(V)
+
+0
+
+0
+
+Tableau 1 : Tensions expérimentales de la mise en évidence de l’induction électromagnétique
+
+Traitement des données
+Analyses prévues
+Calculs des incertitudes de mesures liées aux multimètres, grâce à la formule donnée par la notice du multimètre :
+
+𝑢(𝑚𝑒𝑠𝑢𝑟𝑒) = 𝑚𝑒𝑠𝑢𝑟𝑒 × 1% + 5𝑝𝑡𝑠
+1
+
+𝑈𝑚𝑎𝑥 𝐵𝑜𝑏𝑖𝑛𝑒 𝐴 = 0,716 ± ( 100 × 0,716 + 0,006 × 5) = 0,716 ± 0,037 V
+1
+
+𝑈𝑒𝑓𝑓 𝐵𝑜𝑏𝑖𝑛𝑒 𝐴 = 0,506 ± (100 × 0,506 + 0,006 × 5) = 0,506 ± 0,035 V
+1
+
+𝑈𝑚𝑎𝑥 𝐵𝑜𝑏𝑖𝑛𝑒 𝐵 = 2,838 ± (100 × 2,838 + 0,008 × 5) = 2,838 ± 0,068 V
+1
+
+𝑈𝑒𝑓𝑓 𝐵𝑜𝑏𝑖𝑛𝑒 𝐵 = 2,007 ± (100 × 2,007 + 0,007 × 5) = 2,007 ± 0,055 V
+
+3
+
+Discussion et interprétation
+Grâce à l'expérience, il a été observé qu'une tension est mesurable dans la bobine B lorsque la bobine A est alimentée,
+tandis qu'elle est absente lorsque la bobine A ne l'est pas, ce qui permet de mettre en évidence le phénomène
+d'induction électromagnétique. Cependant, les résultats expérimentaux présentent un écart par rapport aux valeurs
+théoriques. En effet, la tension mesurée dans la bobine A est nettement inférieure à celle mesurée dans la bobine B. Il
+est possible de conjecturer que les limites de l'expérience proviennent des pertes par effet Joule dans les fils et les
+composants électriques, des pertes magnétiques dans le noyau de fer doux (en raison de défauts ou d'impuretés), d'un
+mauvais alignement des bobines, d'incertitudes liées aux bobines et aux multimètres, ainsi que des champs
+électromagnétiques provenant d'autres appareils, qui pourraient influencer les mesures.
+
+Conclusion
+Les tensions mesurées aux bornes de la bobine primaire étaient de 0,716 V (tension maximale) et 0,506 V (tension
+efficace), tandis que celles de la bobine secondaire étaient de 2,838 V (tension maximale) et 2,007 V (tension efficace).
+L'expérience a permis de démontrer la transmission d'énergie à distance grâce au principe de l'induction
+électromagnétique. L'obtention d'une tension mesurable, bien que réduite, dans la bobine secondaire prouve la
+présence du phénomène d'induction : le champ magnétique variable généré par la bobine primaire induit une tension
+dans la bobine secondaire. Cela est également confirmé par l’absence de tension dans la bobine secondaire lorsqu’aucun
+courant n’est envoyé dans la bobine primaire. Pour améliorer l'efficacité de l'induction, il serait pertinent d'explorer l’effet
+de la fréquence du courant alternatif sur l'induction, ainsi que de tester des instruments de mesure plus précis afin de
+réduire les incertitudes liées aux mesures.
+
+Partie 2 : Transmission d’énergie à distance avec émission omnidirectionnelle
+Introduction et objectif
+Lorsqu’une bobine est parcourue par un courant alternatif, elle génère un champ
+magnétique oscillant. Les bobines utilisées étant circulaires, le champ produit a une
+composante principale perpendiculaire au plan de la bobine, avec des lignes de champ
+formant des boucles fermées. Ce champ magnétique n’est donc pas concentré dans une
+seule direction, mais rayonne tout autour de la bobine. Ainsi, dans l'espace environnant,
+le champ produit est accessible depuis différentes directions, permettant à une bobine
+réceptrice, de capter l'énergie dans n'importe quelle position autour de la bobine
+
+Schéma 2 : Schéma des lignes de
+champ autour de la bobine
+
+émettrice. Dans cette optique, il est possible d’assimiler la transmission d’énergie avec
+des bobines à une transmission peu directive, voire omnidirectionnelle.
+L’objectif de cette partie est de calculer le rendement de la transmission d’énergie omnidirectionnelle en fonction de la
+distance.
+
+Hypothèse
+L’intensité d’une onde électromagnétique diminue en proportion du carré de la distance par rapport à la source, sous
+𝑃
+
+forme sphérique. Mathématiquement, cette relation s’écrit : 𝐼 = 4𝜋𝑟2 . Ainsi, lorsque la distance double, l’intensité
+diminue d’un facteur quatre. Par conséquent, plus la distance entre les deux bobines sera grande, plus l’intensité sera
+faible, et donc plus le rendement sera faible.
+
+Matériel et méthode
+Matériel
+•
+
+Générateur à basses fréquences (GBF) METRIX MTX 3240, mode alternatif, 4927 Hz, 20,0V
+
+4
+
+•
+
+Bobine A
+
+•
+
+o Imax = 5,0 A
+o R = 0,6 Ω
+o NA = 250
+Bobine B
+
+•
+•
+•
+•
+•
+
+o Imax = 5,0 A
+o R = 0,6 Ω
+o NB = 250
+Schéma 3 : Schéma électrique de l’expérience
+4 multimètres (2 ampèremètres & 2 voltmètres)
+Résistance de 220 Ω
+Capteur Arduino Nano 33 BLE Sense Rev2 & l’interface Phyphox sur téléphone
+Câblages et matériel électronique
+Règle millimétrée
+
+Méthode
+La bobine A (bobine primaire) est branchée au GBF. Un voltmètre est branché en dérivation à chaque bobine. Deux
+ampèremètres sont ajoutés en série avec une résistance placée entre la bobine B et la borne de l’ampèremètre. La
+distance d entre les bobines est modifiée. La tension efficace et l’intensité en sortie sont mesurées.
+
+Résultats
+Par définition, 𝑃 = 𝑈 × 𝐼
+𝑃utile
+Et, ƞ =
+𝑃fournie
+Distance d (cm)
+
+0,0
+
+3,0
+
+6,0
+
+9,0
+
+12,0
+
+Tension du GBF (V)
+
+20,0
+
+20,0
+
+20,0
+
+20,0
+
+20,0
+
+Fréquence (kHz)
+
+4,927
+
+4,927
+
+4,927
+
+4,927
+
+4,927
+
+UA (V)
+
+5,23 ± 0,20
+
+5,23 ± 0,20
+
+5,23 ± 0,20
+
+5,23 ± 0,20
+
+5,23 ± 0,20
+
+UB (V)
+
+4,93E-1 ± 0,02
+
+2,32E-1 ± 0,01
+
+1,10E-1 ± 0,05
+
+6,0E-2 ± 0,30
+
+4,2E-2 ± 0,20
+
+IA (A)
+
+6,8E-2 ± 0,04
+
+6,8E-2 ± 0,04
+
+6,8E-2 ± 0,04
+
+6,8E-2 ± 0,04
+
+6,8E-2 ± 0,04
+
+IB (A)
+
+2,88E-3 ± 0,004
+
+1,33E-3 ± 0,001
+
+6,0E-4 ± 0,003
+
+3,4E-4 ± 0,002
+
+1,9E-4 ± 0,001
+
+PA (W)
+
+3,556E-1 ± 0,2
+
+3,556E-1 ± 0,2
+
+3,556E-1 ± 0,2
+
+3,556E-1 ± 0,2
+
+3,556E-1 ± 0,2
+
+PB (W)
+
+1,42E-3 ± 2,0E-3
+
+3,09E-4 ± 2,0E-4
+
+6,60E-5 ± 3,0E-4
+
+2,04E-5 ± 1,6E-4
+
+7,98E-6 ± 4,5E-5
+
+Rendement (%)
+
+3,99E-1
+
+8,7E-2
+
+1,9E-2
+
+6,0E-3
+
+2,0E-3
+
+Tableau 2 : Mesures expérimentales de la transmission d’énergie à distance
+
+Graphique 1 : Graphique de la norme du champ magnétique en
+fonction du temps, Application Phyphox
+
+5
+
+Traitement des données
+Analyses prévues
+Calculs des incertitudes de mesures liées aux multimètres, grâce à la formule donnée par la notice du multimètre :
+𝑢(𝑈) 2
+
+𝑢(𝐼) 2
+
+𝑢(𝑃) = 𝑃√( 𝑈 ) + ( 𝐼 ) avec 𝑢(𝑚𝑒𝑠𝑢𝑟𝑒 𝑡𝑒𝑛𝑠𝑖𝑜𝑛) = 𝑚𝑒𝑠𝑢𝑟𝑒 × 1% + 5𝑝𝑡𝑠 𝑒𝑡 𝑢(𝑚𝑒𝑠𝑢𝑟𝑒 𝑖𝑛𝑡𝑒𝑛𝑠𝑖𝑡é) = 𝑚𝑒𝑠𝑢𝑟𝑒 × 1,5 % + 5𝑝𝑡𝑠
+
+Graphiques ou courbes
+
+Graphique 2 : Graphique du rendement de la
+transmission en fonction de la distance
+
+Discussion et interprétation
+À l'aide de la carte Arduino Nano, l'évolution du champ magnétique autour de la bobine B en fonction du temps a été
+enregistrée et analysée. Les variations de la valeur de ce champ sont directement liées à l'augmentation de la distance
+entre la bobine et la carte Arduino. Cependant, cette dernière ne permet pas de mesurer directement l'intensité et la
+tension électriques. Lorsque le capteur Arduino est placé à proximité ou à l'intérieur de la bobine, un champ magnétique
+intense et non uniforme est détecté, caractérisé par des variations significatives dans les composantes (xxx, yyy, zzz), en
+raison de la géométrie de la bobine et de son positionnement. La norme totale du champ magnétique, mesurée à 88,01
+μT, diminue rapidement à mesure que le capteur s'éloigne de la bobine, conformément à la loi de décroissance des
+champs magnétiques. Ces résultats confirment que l'intensité et la direction du champ magnétique sont fortement
+influencées par la distance, validant le comportement théorique attendu pour une bobine électromagnétique.
+L'expérience met en évidence que le rendement de transfert d'énergie entre les deux bobines diminue fortement avec
+l'augmentation de la distance. Lorsque les bobines sont proches (0 cm), le rendement reste très faible, à environ 0,4 %,
+et chute rapidement pour atteindre des valeurs quasi nulles dès 9 à 12 cm. Même à courte distance, le rendement
+demeure faible, ce qui peut être attribué à des pertes énergétiques dans le système, notamment des pertes par effet
+Joule dans les fils et des fuites de champ magnétique. Ces pertes sont probablement amplifiées par la géométrie et la
+nature des matériaux constituant les bobines.
+
+Conclusion
+D’après les calculs, le rendement dépend fortement de la distance entre les bobines. En effet, ce dernier diminue selon
+le modèle d’une exponentielle décroissante : 𝑦 = 1,2825𝑒 −1,327 𝑥 . Cela est dû au fait que le champ magnétique généré
+par la bobine A décroît avec la distance, ce qui réduit l'induction électromagnétique dans la bobine B.
+Ainsi, l’utilisation d’antennes omnidirectionnelles (bobines) présente plusieurs inconvénients, notamment un rendement
+très faible et de nombreuses pertes.
+
+Amélioration du rendement, expériences sur les ondes mécaniques
+Après avoir mis en évidence le phénomène d’induction dans la première partie, un rendement expérimental du transfert
+d’énergie a été mesuré en utilisant les ondes électromagnétiques dans la seconde partie. Suite à ce calcul, l’objectif a
+
+6
+
+été d’améliorer ce rendement, en explorant différentes méthodes pour augmenter la quantité d’énergie reçue par le
+récepteur.
+Toutefois, un problème de matériel est survenu lors de la réalisation de nos expériences. En effet, pour émettre une
+onde électromagnétique, un courant alternatif doit être transmis dans une tige en métal, qui constitue une antenne,
+dont la longueur doit être d’environ la longueur d’onde utilisée. Avec les générateurs à notre disposition, la fréquence
+maximale pouvant être émise est de 2 MHz. La relation reliant la longueur d’onde à la fréquence pour des ondes
+électromagnétiques se déplaçant à la vitesse de la lumière, stipule que : 𝜆 =
+
+𝑐
+
+𝑓
+
+. La longueur d'onde à utiliser est donc :
+
+3×108
+
+λ = 𝑓 = 2×106 = 150 m. Avec les moyens disponibles, il est donc impossible de créer une antenne de cette taille. Une
+𝑐
+
+augmentation de la fréquence nécessiterait des dispositifs également hors de notre portée.
+La contrainte matérielle a conduit à l’utilisation des ondes mécaniques. En effet, celles-ci sont bien plus simples à
+manipuler à l'échelle expérimentale, et certaines d’entre elles sont invisibles et inaudibles, permettant de conserver un
+effet similaire à celui d’une onde électromagnétique du point de vue d’un observateur humain. Le choix s'est d'abord
+porté sur les ondes ultrasonores, répondant à tous les critères nécessaires, avec des générateurs, émetteurs et récepteurs
+déjà disponibles. Par la suite, les ondes sonores ont été privilégiées, les générateurs ultrasonores fournissant des ondes
+de trop faible intensité pour générer des interférences suffisantes.
+L'objectif est de faire le lien entre la décroissance de l’intensité en fonction de la distance à l’emetteur pour ces deux
+types d'ondes dans l'espace, afin de les relier qualitativement, puis par une relation mathématique. Il s'agirait de plus de
+calculer un coefficient k, en fonction de la distance, permettant de relier le rendement d'une transmission par ondes
+ultrasonores à celui théorique mesuré dans des conditions équivalentes avec des ondes électromagnétiques.
+Dans le cas d’ondes sphériques, il est établi pour les deux types d'onde que :
+𝑃𝑡𝑜𝑡𝑎𝑙𝑒
+𝑃(𝑟) =
+× 𝑒 (−𝛼𝑟)
+4𝜋𝑟 2
+𝛼 est un coefficient d’atténuation spécifique pour chaque type d’onde donc :
+Pour les ondes électromagnétiques :
+𝑃𝑟EM =
+
+𝑃𝑡EM −α 𝑟
+𝑒 EM
+4π𝑟 2
+
+𝑃𝑟son =
+
+𝑃𝑡son −α 𝑟
+𝑒 son
+4π𝑟 2
+
+Pour les ondes sonores :
+
+Les formules initiales étant ainsi valables pour les deux types d’ondes, elles décroissent de la même manière selon la
+distance : sous la forme d’une exponentielle décroissante. Toutefois, il n’a pas été possible de calculer les coefficients
+d’atténuation correspondants. Il pourrait être possible de déterminer expérimentalement ces deux coefficients,
+notamment en traçant les courbes de la puissance en fonction de la distance entre l’émetteur et le récepteur.
+L’utilisation des ondes mécaniques (sonores et ultrasonores) demeure donc cohérente dans le cadre de ces recherches,
+dont l’objectif est d’utiliser les ondes électromagnétiques pour transmettre de l’énergie.
+
+Partie 3 : Optimisation de la transmission d’énergie par émission focalisée
+Introduction et objectif
+Les ultrasons sont des ondes mécaniques se propageant au travers des fluides (gaz, liquides) et des solides. Ils sont
+nommés ainsi car leur fréquence est supérieure à 20000 Hz, qui est le seuil des fréquences perçues par l’oreille humaine
+(20 à 20000 Hz). La fréquence des ultrasons est comprise entre 20 kHz et 10 MHz. La production d’ultrasons peut se
+faire de trois manières différentes, mais les générateurs piézoélectriques sont ceux utilisés pour notre projet. Ils sont
+constitués d'un triplet, c'est-à-dire d'une mosaïque de lamelles de quartz d'orientation et d'épaisseur rigoureusement
+identiques, collées entre deux disques d'acier. Ces deux disques sont reliés aux bornes d'une source de courant alternatif.
+Sous l’excitation du signal sinusoïdal appliqué par le courant alternatif, les lamelles de quartz se déforment en se
+contractant, et ce, à la même fréquence que le courant alternatif. Ces vibrations mécaniques sont alors transmises aux
+disques d’acier et au milieu dans lequel se trouve l’appareil. L’amplitude de déplacement des disques va de quelques
+micromètres à 20 µm de crête à crête. Le rendement électrique est de l’ordre de 95%.
+
+7
+
+La “réception” d’ultrasons consiste dans notre cas à convertir l’énergie mécanique de ces ondes en énergie électrique, à
+l’aide d’un récepteur à ultrasons.
+L’objectif de cette partie est de tenter de minimiser les pertes d’énergie liées à une émissions omnidirectionnelle de
+l’onde mécanique, en s’intéressant à la transmission directionnelle.
+
+Hypothèse
+L'association d'un émetteur d'ondes ultrasonores à un réflecteur parabolique devrait optimiser significativement la
+directivité et l'efficacité de la propagation de l'onde mécanique dans une direction spécifique. Plus précisément, cette
+configuration permet de concentrer l'énergie acoustique en un faisceau collimaté, augmentant ainsi la portée et la
+précision de la transmission ultrasonore par rapport à un émetteur conventionnel sans réflecteur. Cette amélioration
+devrait se traduire par une réduction mesurable de la dispersion du signal et une augmentation quantifiable de l'intensité
+acoustique dans l'axe principal de propagation.
+
+Matériel et méthode
+Matériel
+•
+•
+•
+•
+
+•
+•
+
+Générateur Ultrasonore Sordalab, 40 kHz, mode continu
+
+Emetteur et récepteur à ultrasons Sordalab de forme tube (diamètre 2cm).
+2 potences avec leurs pinces
+Réflecteur parabolique imprimé en 3D
+o Parois de 2mm et remplissage de 30%
+o 10 cm de diamètre, 2 cm de profondeur
+Câblages et matériel électronique
+Interface Capstone 550
+
+Photo 1 : Parabole imprimé en 3D
+
+Informations sur la parabole
+Pour un générateur à ondes ultrasonores émettant à une fréquence de 40 kHz, la longueur d'onde λ peut être calculée
+à l'aide de la relation :
+λ=
+
+343,000 (m/s)
+= 8,575𝐸 − 3 m = 8,575 mm
+40 × 103, 000 (Hz)
+
+À partir de cette longueur d’onde, un réflecteur d’un diamètre D = 10 cm = 0,10 m, supérieur à 10 fois la longueur
+d’onde, est choisi, conformément aux recommandations pour maximiser le gain. Pour calculer la distance focale 𝐹, il faut
+fixer la profondeur de la parabole. Cette profondeur doit valoir environ 20 % du diamètre de la parabole, soit d = 2 cm =
+0,02 m.
+𝐹=
+
+𝐷2
+16𝑑
+
+𝐹=
+
+(0,10)2
+0,01
+=
+= 3,125𝐸 − 2 m = 31,25 mm
+16 × 0,02 0,32
+
+Le point focal se situe donc à 31,25 𝑚𝑚 = 3,125 𝑐𝑚 du sommet de la parabole
+
+Méthode
+L’émetteur et le récepteur ultrasonores sont placés sur une même potence à l’aide
+
+de pinces. La parabole est fixée sur une autre potence. L’interface Capstone est
+branchée au récepteur, en mode oscilloscope. Le récepteur est orienté de manière
+à aligner la parabole et celui-ci. La distance entre l’émetteur et le récepteur est
+ensuite modifiée et la courbe représentant la fonction, qui associe une tension
+reçue mesurée à une distance fixée, est tracée.
+Photo 2 : Montage de l’expérience
+
+8
+
+Mesures et observations
+
+Avec parabole
+
+Sans parabole
+
+Graphiques 3 et 4: Graphique de la tension reçue en fonction du temps par l’oscilloscope Capstone
+
+Distance
+(cm)
+Amplitude
+crète à
+crète (V)
+
+0,0
+
+2,0
+
+4,0
+
+6,0
+
+8,0
+
+0,818
+
+0,622
+
+0,492
+
+0,249
+
+0,013
+
+Tableau 3 : Mesures expérimentales de la tension reçue en fonction
+de la distance entre l’émetteur et le récepteur
+
+Graphique 5 : Graphique de la tension reçue en fonction du
+temps par l’oscilloscope Capstone, distance de 0cm
+
+Traitement des données
+Graphique
+
+Graphique 6 : Graphique de l’amplitude de tension
+reçue en fonction de la distance
+
+Discussion et interprétation
+Lorsque l’émetteur et le récepteur sont séparés d’une distance d = 0 cm, les pertes de tension sont déjà égales à 2,5 −
+1,75 = 0,75 𝑉 d’après les mesures réalisées grâce à l’oscilloscope. La qualité du matériel, la construction du matériel
+(pertes de vibration de la membrane, protections autour de l’émetteur) ou encore de transport de l’onde semble à
+l’origine de cette perte. La parabole permet néanmoins de réfléchir une plus grande partie des ondes que sans,
+comme l’illustre les captures d’écran de l’oscilloscope : la tension reçue est d’environ 2 𝑉 avec la parabole, et est nulle
+sans le dispositif.
+
+9
+
+Les amplitudes reçues dans les expériences avec et sans parabole, permettent d’affirmer que la parabole améliore la
+transmission des ondes. Cependant, des pertes subsistent, en partie à cause de la largeur de l’émetteur par rapport à
+celle du faisceau réfléchi par la parabole.
+La distance entre l’émetteur et la parabole influe directement sur le rendement du dispositif, comme l’illustre les
+différentes mesures de tensions. En effet, alors que collés, la tension reçue est de 0,818 𝑉, lorsque l’émetteur et le
+récepteur sont espacés de 6 𝑐𝑚, la tension reçue n’est plus que de 0,249 𝑉. Toutefois, bien que l’amplitude crête à
+crête mesurée à une distance de 8 𝑐𝑚 soit presque nulle (0,013 𝑉), ces faibles résultats peuvent être attribués à
+plusieurs facteurs, tels que les pertes d’énergie dans l’air, l’imprécision des instruments de mesure, ainsi que la faible
+puissance de l’émetteur ultrasonore.
+
+Conclusion
+Lorsque la parabole est utilisée, le signal reçu reste significatif malgré les pertes dues à la propagation dans l’air. En effet,
+l’émetteur génère un faisceau d’ondes qui se propage initialement sous forme de cône, avec une divergence naturelle.
+La parabole capte ce faisceau conique et le redirige en un faisceau cylindrique, parfaitement orienté vers le récepteur.
+Grâce à sa forme géométrique, la parabole réfléchit et focalise les ondes de manière optimale, tout en réduisant les
+dispersions latérales. Ce phénomène de réflexion devient particulièrement évident lorsque la parabole est retirée : sans
+elle, le signal reçu devient négligeable. Ces résultats démontrent que sans un dispositif de focalisation, les ondes se
+propagent de manière dispersée dans plusieurs directions, et bien qu'une partie de l'énergie atteigne le récepteur, elle
+est largement dissipée dans l’espace, rendant le signal beaucoup moins intense. Notre parabole permet donc de
+minimiser les pertes d'énergie dans l’air, car sans elle, pratiquement aucun signal n’est reçu.
+
+Partie 4 : Optimisation de la transmission d’énergie par beamforming
+Introduction et objectif
+Le filtrage spatial, ou formation de faisceaux, plus communément appelé beamforming, est une technique de traitement
+de signal, notamment utilisé dans le contrôle de la directivité des ondes sonores ou électromagnétiques. Le principe
+s’appuie sur l’utilisation d’un réseau d’émetteur et de récepteurs pour concentrer le signal d’émission dans une zone
+précise. Le beamforming nécessite de créer des interférences constructives dans la zone souhaitée, et des interférences
+destructives dans les zones alentours.
+Pour des raisons pratiques, nous avons choisi une fréquence de travail en fonction de la distance entre les 2 émetteurs
+sonores utilisés ici 10 𝑐𝑚. Les émetteurs doivent être séparés d’une demi-longueur d’onde, soit 𝜆 = 0,20 𝑚. La fréquence
+nécessaire pour l’expérience est calculée selon la formule : 𝑓 =
+
+𝑐
+λ
+
+343
+= 1715 𝐻𝑧
+0,2
+L’objectif de cette partie est de concentrer une plus grande énergie vers le récepteur tout en minimisant la
+propagation d’onde dans des zones périphériques par l’utilisation d’interférences constructives et destructives.
+
+Hypothèses
+En utilisant plusieurs émetteurs sonores qui, combinés, forment des interférences constructives en direction du
+récepteur, et des interférences destructives dans les autres directions, le rendement pourrait être amélioré.
+
+10
+
+Matériel et méthode
+Liste complète des équipements
+•
+
+2 émetteurs sonores
+
+•
+
+GBF, 1715 𝐻𝑧
+
+•
+
+Fixation pour les émetteurs
+
+•
+
+Récepteur à ondes ultrasonores
+
+•
+
+Diode lumineuse
+
+•
+
+4 multimètres (2 ampèremètres & 2 voltmètres)
+
+•
+
+Règle millimétrée
+
+•
+
+Rapporteur avec graduation millimétrée
+
+•
+
+Interface Capstone 550
+
+•
+
+Câblage et matériel électronique
+
+Schéma 4 : Schéma du montage de l’expérience
+
+Étapes détaillées
+Les émetteurs et le générateur sont placés sur une surface stable, orienté vers le récepteur. Les émetteurs sont mis en
+phase. Le récepteur, à l’aide d’une règle millimétrée, est placé à 20 𝑐𝑚 des émetteurs, à la même hauteur. Une diode
+lumineuse est branchée au répéteur. Un ampèremètre et un voltmètre sont branchés à chacun des émetteurs. La diode
+s’allume. Les tensions et intensité délivrées par le générateur sont relevées. L’angle entre les émetteurs et le récepteur
+est modifié à l’aide du rapporteur et pour chaque angle, les tensions et intensités sont relevées. Le dispositif est
+replacé selon les conditions initiales et la distance est cette fois modifiée.
+
+Mesures et observations
+Angle (°)
+
+Intensité acoustique au pic (V)
+0
+
+0,33
+
+20
+
+0,22
+
+40
+
+0,19
+
+45
+
+0,18
+
+60
+
+0,12
+
+80
+
+0,1
+
+90
+
+0,08
+
+Tension émise (V)
+
+0,4
+
+Tableau 4 : Mesures expérimentales de la tension reçue en fonction de l’angle entre les émetteurs et le récepteur
+
+11
+
+Angle de
+0°
+
+L’intensité acoustique est élevée lorsque le récepteur est en
+face des enceintes.
+Valeur de 0,33 𝑉 à son pic.
+Le rendement est donc élevé pour cet angle
+
+Angle de
+45°
+
+L’intensité acoustique est moyenne lorsque le récepteur est
+décalé de 45° par rapport aux enceintes.
+Valeur de 0,18 𝑉 à son pic.
+Le rendement semble donc moyen.
+
+Angle de
+90°
+
+L’intensité acoustique est faible voire inexistante lorsque le
+récepteur est décalé de 90° par rapport aux enceintes.
+Valeur proche de 0,08 𝑉 à son pic.
+Le rendement est proche de 0.
+
+Tableau 5 : Mesures expérimentales de l’intensité acoustique reçue avec des haut-parleurs séparés d’une demi-longueur d’onde
+
+Intensité acoustique reçue de
+0,21 𝑉
+
+Angle de 0°
+
+Intensité acoustique reçue proche
+de 0 𝑉
+
+Angle de 90°
+
+Tableau 6 : Mesures expérimentales de l’intensité acoustique reçue avec des haut-parleurs séparés d’une longueur d’onde
+
+12
+
+Traitement des données
+Graphiques ou courbes
+
+Graphique 7 : Graphique de l’intensité acoustique mesurée en fonction de l’angle
+entre les enceintes et le récepteur
+
+Discussion et interprétation
+L’intensité reçue est maximale pour un angle de 0°, c’est-à-dire lorsque les haut-parleurs et le récepteur sont en face,
+avec une valeur de 0,33 𝑉. Au contraire, pour un angle de 90°, l’intensité reçue est seulement de 0,08 𝑉. La diminution
+de l’intensité sonore reçue à mesure que l’angle augmente est modélisé selon l’équation :
+𝑉 = −0,0024 ×  (𝑒𝑛 °) + 0,2835. Le lobe d’interférence constructives est donc orienté vers l’avant
+Lorsque les enceintes sont séparées d’une longueur d’onde avec un angle de 0°, l’intensité maximale reçue est seulement
+de 0,21 𝑉. Au contraire, pour une séparation d’une demi-longueur d’onde à angle égal, l’intensité maximale reçue est
+de 0,33 𝑉.
+Ainsi, une séparation des haut-parleurs correspondant à une demi-longueur d’onde constitue la configuration idéale
+pour générer des interférences constructives dans l’axe avant du montage, tout en produisant des interférences
+destructives sur les côtés. Cette disposition permet d’optimiser la directionnalité et l’efficacité du transfert d’énergie
+sonore.
+
+Conclusion
+L’expérience met en évidence les principes d’interférences sonores et leur application pour gérer la directivité de la
+transmission d’énergie par le biais d’ondes mécaniques sonores. L’intensité acoustique varie selon deux facteurs
+principaux : l’angle d’émission et la distance séparant les haut-parleurs.
+En exploitant des interférences constructives vers l’avant et des interférences destructives sur les côtés, la transmission
+des ondes, et donc d’énergie est plus importante vers le récepteur, tandis qu’elle est minimisée dans les zones
+périphériques. Ainsi, cette transmission d’énergie améliore le rendement de la transmission d’énergie, par rapport à une
+émission omnidirectionnelle.
+
+13
+
+Conclusion
+Dans une première expérience, le phénomène d’induction a été mis en évidence, puis exploité pour étudier l’influence
+de la distance sur l’importance du champ électrique. D’après les expériences de Faraday et d’Oersted, le passage d’un
+aimant dans une bobine alimentée en courant alternatif induit un champ magnétique. De plus, entre deux bobines
+reliées par un noyau de fer doux, un champ magnétique se crée. Dans une deuxième expérience, ce phénomène a été
+utilisé pour démontrer qu’un champ magnétique permet d’induire une tension dans une seconde bobine. Les résultats
+de l’expérience permettent de valider l’efficacité du principe d’induction, tout en démontrant ses limites. En effet, des
+pertes significatives dues en partie à la perte par effet Joule, à des fuites de champs magnétiques, et à l’imperfection du
+matériel utilisé sont à noter.
+Dans un deuxième temps, en choisissant d’assimiler les bobines à des antennes omnidirectionnelles, la transmission peu
+directive d’énergie a été étudiée. Ce mode d’émission présente des rendements très faibles, même à courte distance.
+Nos mesures ont montré que l’énergie reçue décroît rapidement, confirmant l’idée que la transmission
+omnidirectionnelle disperse la puissance dans toutes les directions, rendant ainsi inefficace une transmission à longue
+portée.
+Pour tenter de répondre à ce problème et donc d’améliorer le rendement, deux systèmes ont été mis en place. Ces
+systèmes utilisent des ondes sonores et ultrasonores, reliées aux ondes électromagnétiques par un modèle de
+décroissance similaire. En effet, les ondes sonores et ultrasonores étaient expérimentalement réalisables, contrairement
+aux ondes électromagnétiques.
+Un réflecteur parabolique a ainsi été utilisé pour diriger les ondes ultrasonores dans une direction précise. Cette
+approche s’est révélée efficace pour augmenter la puissance reçue au niveau du récepteur, en limitant les pertes dans
+le milieu de transmission. Cependant, les mesures expérimentales montrent qu'il subsiste des pertes résiduelles
+importantes (qualité des émetteurs et des récepteurs, dissipation dans l’air, etc.). La concentration des ondes
+électromagnétiques à l’aide d’une antenne directionnelle améliorerait donc grandement le rendement d’une
+transmission d’énergie à distance.
+Une approche complémentaire, mettant en jeu les interférences constructives et destructives, a également été étudiée.
+Plusieurs émetteurs ont été alignés et en mis en phase. Cette méthode a permis de concentrer davantage l’énergie émise
+dans une zone spécifique, augmentant de manière significative le rendement par rapport à une transmission
+omnidirectionnelle. L’expérience a montré que la formation de « lobes » d’interférences constructives permet
+d’augmenter la puissance reçue dans une direction souhaitée, tandis que les ondes s’annulent vers les « côtés » du
+dispositif. Cette méthode permettrait donc de réduire les interférences entre antennes, dans un réseau de
+télécommunications aujourd’hui surchargé, en plus d’augmenter le rendement de la transmission d’énergie à distance.
+Ces travaux mettent donc en évidence plusieurs points essentiels. Tout d’abord, bien que la transmission d’énergie par
+onde soit réalisable, elle reste limitée par des facteurs cruciaux tels que la distance de transmission, les pertes inhérentes
+au matériel utilisé et à la dispersion dans le milieu. Ensuite, les méthodes directionnelles, comme l’utilisation de
+réflecteurs focaux ou d’interférences constructives, sont des solutions prometteuses pour optimiser le transfert d’énergie
+dans des systèmes à courte, voire à moyenne distance.
+Les résultats obtenus tout au long de ces expériences ouvrent la voie à plusieurs perspectives intéressantes. Il s’agirait
+d’améliorer la qualité du matériel utilisé afin de réduire considérablement les pertes et ainsi augmenter l’efficacité des
+systèmes de transmission. De plus, bien que la transmission à grande distance reste pour nous hors de portée, nous
+espérons que notre projet a permis de mettre en lumière cette nouvelle méthode de transmission d’énergie à distance.
+En effet, des applications à grande échelle pourraient être envisagées, telles que l’alimentation de dispositifs portatifs.
+C’est déjà le cas avec plusieurs entreprises, comme Energous, qui propose de mettre en place un système bien plus
+avancé que le nôtre, permettant de minimiser les pertes. Des investissements conséquents en termes de recherche et
+développement dans ces entreprises multinationales pourraient permettre, à terme, une réduction de l’utilisation des
+batteries et des câbles d’alimentation dans des dispositifs portables alimentés en continu. Les progrès dans le domaine
+de l’intelligence artificielle pourraient être combinés avec nos observations pour tenter de mettre en place des systèmes
+
+14
+
+intelligents permettant d’adapter en temps réel la direction et la fréquence du signal envoyé, en fonction des besoins
+précis de l’utilisateur.
+
+Remerciements
+Nous remercions toutes les personnes qui ont contribué à la réalisation de ce projet et qui nous ont soutenus tout au
+long de son développement. Nous adressons nos remerciements les plus sincères à nos professeurs de Physique et
+Chimie, Aude Leray, Carlos Alves Da Silva et Sylvain Fischer. C’est grâce à leurs conseils éclairés et à leur suivi attentif
+que ce projet a pu voir le jour et être mené à bien.
+Nous exprimons également notre gratitude à Raymond Piccoli, directeur du Laboratoire de Recherche sur la Foudre,
+pour son précieux temps à nous aider pour trouver un sujet. Finalement, nous remercions le lycée qui nous a permis
+d’établir ce groupe scientifique !
+
+Bibliographie
+CEA, 31 mai 2018, Les ondes électromagnétiques dans le domaine de la communication
+MATLAB, 9 Novembre 2022, What Are Phased Arrays? Video YouTube
+Iain Explains Signals, Systems, and Digital Comms, 29 Juin 2020, What is Beamforming?
+Femto, Mars 2021, Induction électromagnétique
+Joshua Pinchault, 30 avril 2018, L'émission et la réception des ondes radio - fonctionnement d'une antenne radio
+Wikipédia, Antenne radioélectrique
+Guillaume Darding, 7 janvier 2021, Technique : l'alternateur
+ZONETRONIK, Charger des batteries sans fil de façon compacte et efficace
+Antoine vs Physique, 10 octobre 2018, COMMENT FONCTIONNENT LES CHARGEURS SANS-FIL ?
+Wikipédia, Câble coaxial
+Académie de Bordeaux, De l'alternatif au continu
+
+Listes des abréviations scientifiques utilisées
+U : Tension (en volts, V)
+I : Intensité du courant (en ampères, A)
+R : Résistance électrique (en ohms, Ω)
+P : Puissance (en watts, W)
+N : Nombre de spires
+P(r) la puissance reçue à la distance r de
+l’émetteur
+Ptotale la puissance émise
+
+ƞ Le rendement (sans unité)
+λ désignant la longueur d’onde ( m. s−1)
+𝑣 La vitesse de propagation de l’onde
+( m. s−1)
+𝑓 La fréquence (en Hz)
+μ0 Est la perméabilité du vide (4π ×
+10−7 N ⋅ A−2)
+α le coefficient d’atténuation (en 𝑚−1 )
+dépendant du milieu dans lequel évolue
+l’onde. Il existe des différences
+importantes dans la manière dont ce
+coefficient d'atténuation est déterminé
+pour chaque type d'onde. Le terme
+𝑒 −𝛼𝑟 prend donc en compte la perte
+d'énergie supplémentaire causée par
+l'absorption ou l'atténuation dans le
+milieu (par exemple, l'air dans notre cas,
+l'eau ou un matériau).
+
+15
+
+𝐽 Est vecteur densité de courant (en
+ampères par mètre carré (𝐴. 𝑚−2)
+ε0 Est la permittivité du vide (8.854 ×
+10−12 F ⋅ m−1 )
+∂𝐸⃗
+Est la variation temporelle du champ
+∂𝑡
+−1 −1
+
+électrique (en V. m . s )
+𝐸⃗ Est le vecteur champ électrique (en
+V. m−1)
+
+⃗ Est le vecteur champ magnétique (en
+𝐵
+teslas, T)
+
+

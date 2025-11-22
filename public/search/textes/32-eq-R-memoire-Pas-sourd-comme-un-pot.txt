@@ -1,0 +1,864 @@
+1
+
+Résumé :
+Vous en avez marre de passer des heures sur votre téléphone et de perdre du temps ? Quoi de mieux
+que de revenir à l’appareil le plus rudimentaire pour communiquer à distance, le yaourtophone ; vous
+savez, ces deux pots de yaourt reliés par une ficelle qu’on utilisait étant petits. Nous nous sommes alors
+demandés si ça fonctionnait vraiment, si oui, comment. Puis, de fil en aiguille, de nombreuses autres
+questions ont fait surface… Comment optimiser la communication à travers de ce dispositif ? Et, au fait,
+qu’est-ce que cela peut bien vouloir dire, une “communication optimale” dans notre cas ? Est-ce que
+le matériau du fil reliant les pots est important ? Et celui des pots ? Qu’en est-il de leur configuration
+géométrique ? Comment décrire qualitativement et quantitativement l’onde qui se propage d’un pot à
+l’autre ? Une chose est certaine : ce projet nous a donné (et nous donne toujours) du fil à retordre…
+
+Sommaire :
+I – Le yaourtophone – Présentation du dispositif – Caractéristiques
+
+Page 3
+
+1 ) Un peu d’histoire :
+2 ) Communiquer par le biais d’une ficelle… est-ce possible ?
+3 ) Quelles sont les caractéristiques du dispositif ?
+
+Page 3
+Page 4
+Page 6
+
+II – Comment rendre le yaourtophone le plus efficace ?
+
+Page 13
+
+1 ) Influence de la tension de la ficelle
+Page 13
+2 ) Le yaourtophone est-il plus efficace si le son produit à l’émission est de forte amplitude ?
+3 ) Influence de la nature du fil
+Page 17
+4 ) Influence du pot
+Page 19
+Conclusion
+
+Page 20
+
+Bibliographie – webographie :
+« Micrographia, ou quelques descriptions physiologiques de corps minuscules faites à la loupe, avec
+observations et recherches à ce sujet », Livre de Robert Hooke
+Ondes stationnaires :
+https://physique.cmaisonneuve.qc.ca/svezina/nyc/note_nyc/NYC_XXI_Chap%201.12a.pdf
+
+2
+
+Introduction :
+Alors que les smartphones ont envahi la planète, reposant sur la propagation d’ondes
+électromagnétiques, nous avons souhaité revenir à l’âge de pierre… enfin… disons plutôt à l’âge de la
+ficelle.
+En effet, avant de pouvoir communiquer via les technologies actuelles, différents systèmes existaient.
+Il existait, par exemple, des langages utilisant les signaux de fumée ou les pales des moulins à vent, qui
+en fonction de leur aspect, pouvaient prévenir la population à distance d'évènements importants. Dans
+ces deux exemples, la vue était alors sollicitée. Mais il a aussi existé une communication filaire sans
+mettre en jeu les ondes électromagnétiques. Il s’agit du téléphone à ficelle, que nous pouvons appeler
+le yaourtophone. C’est le nom qu’on lui donne habituellement car son utilisation aujourd’hui est
+essentiellement faite par les enfants à l’aide de pots de yaourt et de ficelles. Cela dit, on trouve
+également ce dispositif de yaourtophone dans un laboratoire de renommée très locale : le labo de
+physique du LP2I, dans lequel le club sciences est hébergé !
+Il s’y trouve car cette année, pour notre année de terminale, nous voulions faire un projet de science
+tout en nous amusant. Nous avons donc eu l’idée de retourner dans notre enfance (ce qui est une
+manière de dire aussi que nous n’en sommes pas sortis), et d’étudier ce dispositif de façon scientifique.
+Quelles sont ses caractéristiques et comment faire pour avoir un yaourtophone performant ?
+Ce sont les principales questions auxquelles nous allons tenter de répondre en menant une démarche
+expérimentale.
+
+I – Le yaourtophone – Présentation du dispositif Caractéristiques
+1 ) Un peu d’histoire :
+Le yaourtophone, avant d’être un jeu, fut une véritable expérience scientifique qui a très probablement
+participé à l’histoire des télécommunications. Dans la littérature scientifique, on attribue cette étude à
+Hooke, qui publia, en 1665, dans un livre intitulé « Micrographia, ou quelques descriptions
+physiologiques de corps minuscules faites à la loupe, avec observations et recherches à ce sujet » :
+« Et comme les verres ont grandement favorisé notre vue, il n’est pas improbable qu’on trouve de
+nombreuses inventions mécaniques pour améliorer nos autres sens, l’ouïe, l’odorat, le goût, le toucher.
+Il n’est pas impossible d’entendre un murmure à une distance d’un furlong, cela ayant déjà été fait ; et
+peut-être la nature de la chose ne rendrait-elle pas cela plus impossible, même si ce furlong était
+multiplié par dix. Et bien que certains auteurs célèbres aient affirmé qu’il est impossible d’entendre à
+travers la plus fine plaque de verre de Moscovie, je connais cependant un moyen par lequel il est assez
+facile d’entendre quelqu’un parler à travers un mur d’un mètre d’épaisseur. On n’a pas encore examiné
+à fond jusqu’à quel point les otocoustiques peuvent être améliorés, ni quels autres moyens il peut y
+avoir d’accélérer notre audition, ou de transmettre le son à travers d’autres corps que l’air : car comme
+ce n’est pas le seul moyen, je peux assurer au lecteur que j’ai, à l’aide d’un fil distendu, propagé le son
+à une distance très considérable en un instant, ou avec un mouvement apparemment aussi rapide que
+3
+
+celui de la lumière, du moins incomparablement plus rapide que celui qui se propageait au même
+moment dans l’air ; et cela non seulement en ligne droite ou directe, mais en une ligne courbée sous
+plusieurs angles… ».
+
+2 ) Communiquer par le biais d’une ficelle… est-ce possible ?
+Et bien réalisons le dispositif suivant et testons : figure 1
+
+figure 1 : le yaourtophone de façon subjective
+Nous pouvons répondre par « oui » ! Ecoutez !
+Mais effectivement, la réponse donnée ici fait plus appel à une force de persuasion qu’à une preuve
+scientifique. Alors complétons le dispositif par des capteurs dépourvus de conscience humaine (même si
+l’actualité nous fait parfois penser que certaines oreilles ne cachent aucune conscience humaine…) – figure 2
+Micro 1
+
+Émetteur
+Micro 2
+
+figure 2 : le yaourtophone de façon objective
+
+4
+
+Nous avons alors parlé côté émetteur en disant « J’aime la physique et je voudrais en faire mon métier »
+en exagérant sur la prononciation (mais pas sur le fond de la phrase), et avons recueilli le signal sonore
+enregistré par le micro 1 et le micro 2.
+L’idée est donc double : prouver de façon objective que le dispositif fonctionne, et voir s’il est plus
+efficace pour certaines consonnances que pour d’autres. Une fois les sons enregistrés, nous les avons
+analysés avec le logiciel Latis Pro.
+Remarques :
+-
+
+Le fait de placer de la mousse acoustique permet de minimiser l’amplitude de l’onde sonore
+qui pourrait se propager par l’air depuis l’émetteur vers les micros.
+La comparaison est possible si les deux micros ont les mêmes performances. De ce fait, même
+si les micros étaient deux modèles identiques, nous avons alors préalablement vérifié cela en
+disposant les deux micros côte à côte en face d’un émetteur, et nous avons analysé les signaux
+recueillis. L’expérience a confirmé que leurs performances sont bien équivalentes.
+
+Voici l’évolution de l’amplitude sonore enregistrée par 3 micros à différents endroits lors de la
+prononciation de la phrase : figure 3
+Amplitude micro côté émetteur
+Amplitude micro 1 côté récepteur dans le pot
+
+temps (s)
+figure 3 : comparaison entre les amplitudes sonores des micro dans le pot récepteur, et à côté du pot
+récepteur : le dispositif permet bien la transmission des sons, mais n’a pas la même efficacité pour les
+différentes consonnances
+Dans l’enregistrement ci-dessus, le signal à l’émetteur est en bleu, le signal en rouge est celui reçu dans
+le pot et celui en rose, le signal reçu par le micro à l’extérieur du pot. On remarque que le signal reçu à
+l’intérieur du pot possède une amplitude plus importante que celui reçu hors du pot ce qui montre
+donc bien l’efficacité du dispositif. De plus, on observe qu’entre les date t = 1,3 et 1,5 s, la différence
+d’amplitude entre les signaux rouge et rose est plus importante, ce qui indique que le dispositif est plus
+efficace pour certaine consonnances que pour d’autres.
+
+5
+
+Conclusion :
+Maintenant que nous avons prouvé que le dispositif fonctionne, nous pouvons étudier ses
+performances, ses limites, ce qu’on pourrait alors appeler les caractéristiques de ce moyen de
+télécommunication.
+
+3 ) Quelles sont les caractéristiques du dispositif ?
+Nous avons recensé différentes caractéristiques, dont l’une est mentionnée dans le livre de Hooke cité
+en introduction : la vitesse à laquelle se propage l’information, la bande passante du dispositif, et s’il
+s’agit d’un système globalement dispersif ou pas.
+
+A –Quelle est la célérité des ondes et la nature des ondes qui se propagent ?
+a ) Mesure de la célérité des ondes :
+Pour mesurer la célérité des ondes, nous avons cette fois-ci émis un clap bref en tapant deux morceaux
+de bois l’un contre l’autre et nous avons enregistré le son capté par le micro situé au niveau de
+l’émetteur, ainsi que celui capté par le micro 1 situé dans le pot. L’exploitation de ces signaux est alors
+réalisée avec le logiciel Latis pro. figure 4
+
+Amplitudes (V)
+
+figure 4 : mesure de la célérité des ondes dans le fil
+En vert : signal sonore enregistré au niveau de l’émetteur
+En noir : signal sonore enregistré par le micro 2 à côté du pot récepteur
+En rouge : signal sonore enregistré par le micro situé dans le pot récepteur
+On peut donc identifier :
+6
+
+-
+
+Le moment où le micro 1 capte le son qui s’est propagé dans l’air, puisque le micro 2 le capte
+en même temps (pointillés noirs sur la figure).
+Le moment où le micro 1 capte le son qui s’est propagé dans le fil (pointillés bleus).
+t = 0 correspond à la date à laquelle le signal part du pot émetteur.
+
+L’exploitation indique alors une durée de Δt2 = 10,30 ms pour que le signal parcourt une distance
+D
+= 3,63 m dans l’air, et une durée Δt1 =3,83 ms pour parcourir cette même distance via le yaourtophone.
+Avec de telles durées, nous mesurons une célérité des ondes sonores dans l’air égale à c = 352 m/s.
+Quant à la célérité du signal via le yaourtophone, elle vaut 9,48.10² m/s. Comme les microphones sont
+situés à la sortie des pots, que la profondeur des pots est 𝑥 = 6,5 cm, et que la longueur de la ficelle est
+de 3,51 m, on peut préciser que la célérité de l’onde dans la ficelle est :
+𝑐𝑓𝑖𝑙 =
+
+𝑑
+3,51
+=
+= 1,01. 103 𝑚/𝑠
+2𝑥∆𝑡2
+2 × 0,065 × 10,33. 10−3
+−3
+∆𝑡1 − 𝐷
+3,83. 10 −
+3,51 + 2 × 0,065
+
+On comprend donc parfaitement la phrase écrite par Hooke concernant la vitesse de propagation du
+signal dans le yaourtophone, même si on reste tout de même bien loin de la célérité de la lumière. Et
+pour cause, il s’agit ici d’ondes mécaniques et non pas d’ondes électromagnétiques.
+Commentaire :
+Nous savons que pour une corde de guitare, la célérité des ondes dépend de la tension de la corde :
+plus la tension de la corde est grande, plus la fréquence de vibration fondamentale de la corde est
+élevée. Et comme la longueur d’onde du mode propre ne change pas, la célérité est alors plus grande.
+Il est possible qu’il en soit de même concernant le yaourtophone. Cela dit, il nous semble qu’il y a une
+grande différence entre la corde de guitare et le fil du yaourtophone. En effet, les ondes qui
+s’établissent dans une corde de guitare sont des ondes transversales alors que les ondes sonores sont
+des ondes longitudinales. Mais finalement, est-ce bien le cas ? Est-ce que le fil transporte des ondes
+longitudinales ? On peut se poser la question car il n’est pas évident que de la ficelle puisse propager
+des perturbations qui se présentent comme des compressions / élongations de ce milieu particulier.
+
+b ) Nature des ondes se propageant dans le fil : transversales ou longitudinales ?
+Et bien pour le savoir, il suffit de mesurer ou de calculer la célérité des ondes transversales dans la
+ficelle. Et pour cela, nous pouvons utiliser le fait que le mode fondamental de vibration transversale a
+une longueur d’onde 𝜆 = 2𝑑 (où d est la longueur de la ficelle), et que la fréquence du mode
+fondamental est :
+𝐹=
+
+1 𝑇
+√
+2𝑑 𝜇
+
+Ainsi, la célérité des ondes transversale sur la corde est :
+𝑇
+𝑐=√
+𝜇
+
+7
+
+Nous avons alors pris une ficelle de longueur d = 2,50 m entre les pots de yaourt, et nous avons
+accroché une masse de 100 g à une extrémité de la ficelle, ce qui soumet donc la corde à une tension
+T = 0,981 N. (voir figure 5). Nous avons par ailleurs mesuré sa masse linéique 𝜇 = 3,738. 10−4 𝑘𝑔/𝑚.
+Avec de telles valeurs, nous trouvons une célérité égale à 51,5 m/s pour les ondes transversales
+
+Micro 1
+Émetteur
+
+Poulie
+Micro 2
+Masse
+figure 5 : les ondes sont-elles transversales ou longitudinales ?
+
+Nous avons pu vérifier expérimentalement cette valeur en soulevant légèrement la corde en son centre
+(pour exciter davantage le mode fondamental transversale), puis en la lâchant pour la laisser vibrer. En
+analysant la vidéo de l’expérience, nous avons pu mesurer que la fréquence du mode fondamental de
+la corde est 10,4 Hz. Et comme
+𝐹=
+
+1
+𝑐
+2𝑑
+
+On obtient 𝑐 = 2𝑑𝐹 = 2 × 2,5 × 10,4 = 52,0 𝑚/𝑠 !
+Comme nous avions changé la longueur de la corde ainsi que la tension par rapport aux conditions
+établies dans le paragraphe 2 ) A – a ) , nous avons à nouveau mesuré la célérité des ondes sonores qui
+se propagent dans le fil tendu à 0,981N pour la comparer à la célérité des ondes transversales, et nous
+avons trouvé 1,1.103 m/s.
+La comparaison de ces célérités montre clairement que l’onde qui se propage dans le fil n’est pas une
+onde transversale. Il s’agit donc d’ondes longitudinales.
+Intéressons-nous maintenant à une autre caractéristique très importante d’un système de
+communication : la bande passante du yaourtophone.
+
+2 ) Quelle est la bande passante du yaourtophone ?
+Pour répondre à cette question, nous avons émis des sons purs dans le pot émetteur, avec des
+fréquences comprises entre 100 et 3500 Hz, en incrémentant la fréquence de 100 Hz entre chaque
+
+8
+
+mesure. Nous avons alors relevé les niveaux sonores 𝐿𝑒 en décibels au niveau de l’émetteur et au
+niveau du pot récepteur 𝐿𝑟 à l’aide d’un sonomètre. figure 6
+
+Sonomètre 1
+𝑳𝒆
+𝑳𝒓
+Émetteur
+
+Poulie
+𝑳𝒂
+Sonomètre 2
+
+Masse
+
+figure 6 : mesure de la bande passante du dispositif
+
+Nous pouvons alors faire une représentation de la bande passante du yaourtophone en traçant la
+différence 𝐿𝑒 − 𝐿𝑟 en fonction de la fréquence 𝐹.
+MAIS… Il fallait aussi tenir compte du fait qu’une partie des ondes reçues par le microphone dans le
+pot pouvaient s’être propagées dans l’air et non via la ficelle. De ce fait, nous avons également
+positionné un sonomètre hors du pot récepteur pour mesurer le niveau sonore 𝐿𝑎 des ondes passant
+dans l’air. En effet, l’intensité sonore mesurée dans le pot est la somme de l’intensité sonore du son qui
+s’est propagé via la ficelle, plus l’intensité sonore du son qui s’est propagé dans l’air.
+En appelant 𝐼𝑟 l’intensité de l’onde reçue dans le pot, 𝐼𝑎 l’intensité sonore captée par le micro à
+l’extérieur du pot et 𝐼𝑓 la partie de l’intensité sonore correspondant uniquement à l’onde transmise par
+la ficelle, captée par le micro à l’intérieur du pot, on peut écrire que :
+𝐼𝑟 = 𝐼𝑓 + 𝐼𝑎
+𝐿𝑟
+
+𝐿𝑎
+
+𝐿𝑓 = 10𝑙𝑜𝑔 (1010 − 1010 )
+Et pour pouvoir évaluer la bande passante, nous avons alors tracé 𝐿𝑒 − 𝐿𝑓 en fonction de la
+fréquence. Voici le résultat obtenu : figure 7
+5
+
+(𝐿𝑒 − 𝐿𝑓 )(dB)
+
+𝐹𝑟é𝑞𝑢𝑒𝑛𝑐𝑒(Hz)
+
+0
+-5
+
+0
+
+500
+
+1000
+
+1500
+
+2000
+
+2500
+
+3000
+
+3500
+
+4000
+
+-10
+-15
+-20
+-25
+
+figure 7 : bande passante du dispositif
+
+9
+
+On peut donc estimer que la bande passante va environ de 500 à 2000 Hz, ce qui en soit n’est pas le
+plus pratique, car pour le genre masculin, la voix est plutôt comprise entre 100 et 200 Hz alors qu’une
+femme parle généralement entre 200 et 300 Hz.
+Commentaires :
+-
+
+Les sonomètres utilisés ont une bande passante de 31,5 à 8 kHz (donnée constructeur).
+La bande passante que nous avons mesurée est celle du dispositif dans sa globalité. Nous avons
+voulu avoir une idée de la bande passante uniquement de la ficelle. Pour cela, nous avons
+cherché à savoir si les pots de yaourt amplifiaient des fréquences plus que d’autres, afin de
+comprendre leur contribution au niveau de la bande passante du dispositif. Normalement,
+pour un tube de longueur L = 6,5 cm, ouvert à une extrémité, et fermé à l’autre, le tube résonne
+à une fréquence fondamentale :
+𝑐
+340
+𝐹=
+=
+= 1,4. 103 𝐻𝑧
+4𝐿 4 × 0,065
+Mais vu la géométrie du pot, avec un diamètre pratiquement aussi grand que sa profondeur, il
+doit y avoir une différence entre la fréquence de résonance théorique valable pour un tube de
+faible diamètre par rapport à la longueur et la fréquence de résonance du pot de yaourt pour
+lequel ce n’est pas le cas. Alors nous avons tracé la courbe de réponse expérimentale du pot
+de yaourt en envoyant un son de fréquence variable à l’intérieur du pot et en mesurant
+l’amplitude sonore en sortie. Et pour bien identifier les fréquences amplifiées par le pot de
+celles émises par l’émetteur, nous avons préalablement mesuré l’amplitude du signal émis par
+le haut-parleur en fonction de la fréquence, sans la présence du pot (figure 8). Les
+enregistrements figure 8 représentent les analyses de Fourier de ces deux signaux.
+Et les résultats sont très intéressants, car ils montrent que le pot a tendance à amplifier des
+fréquences comprises entre 850 et 1150 Hz. En revanche, il n’amplifie pas les fréquences
+comprises entre 500 et 800 Hz, ni de 1100 à 3500 Hz. On peut donc affirmer que ces parties-là
+de la bande passante sont davantage dues aux caractéristiques de la ficelle qu’au pot. C’est très
+intéressant d’avoir pu étudier la ficelle indépendamment du reste du dispositif pour ensuite
+comparer à d’autres matériaux.
+𝑨𝒎𝒑𝒍𝒊𝒕𝒖𝒅𝒆 𝒅𝒖 𝒉𝒂𝒖𝒕 − 𝒑𝒂𝒓𝒍𝒆𝒖𝒓 𝒔𝒆𝒖𝒍
+
+𝑨𝒎𝒑𝒍𝒊𝒕𝒖𝒅𝒆 𝒆𝒏 𝒔𝒐𝒓𝒕𝒊𝒆 𝒅𝒖 𝒑𝒐𝒕
+
+figure 8 : Comparaison de :
+l’amplitude du haut-parleur seul en fonction de la fréquence (en haut)
+à la réponse du pot récepteur (en bas)
+
+10
+
+Voyons maintenant si ce dispositif est dispersif pour la transmission des ondes sonores.
+
+3 ) Est-ce que le yaourtophone est dispersif pour les ondes sonores ?
+Il faut savoir si deux ondes de fréquences différentes se propagent avec des célérités différentes. Le
+problème, c’est qu’on ne peut pas faire un son pur et très bref. Alors nous avons eu une autre idée :
+Nous allons émettre un son pur en continu côté yaourt émetteur, et nous allons tenter de visualiser le
+signal le long de la ficelle ainsi que le signal émis, mais comment ? Nous avons pensé qu’il était possible
+de visualiser le signal le long de la ficelle en accrochant une autre ficelle de très petite taille (10 cm), reliée
+à un troisième pot dans lequel se trouve un micro 2, comme le montre le schéma suivant : figure 9
+
+𝟑𝒊è𝒎𝒆 𝒑𝒐𝒕
+
+figure 9 : Dispositif pour savoir si le milieu est dispersif
+L’idée est de chercher une position du 3ième pot de telle sorte que le signal soit en phase avec celui de
+l’émetteur, puis on recule ce troisième pot. Le signal du 3ième pot se déphase par rapport à celui de
+l’émetteur. Puis, on continue de reculer le 3ième pot pour rechercher la nouvelle position à laquelle le
+signal revient en phase avec celui de l’émetteur. La distance entre les deux positions en phase
+correspond donc à la longueur d’onde de l’onde, ce qui nous permettra de déterminer la célérité
+puisqu’on connaît les fréquences des ondes envoyées dans la ficelle (figure 10).
+
+figure 10 : mesure de la longueur d’onde
+Alors avant de se lancer dans cette expérience, il faut avoir une idée des longueurs d’onde le long de la
+ficelle : sachant que 𝜆 = 𝑐/𝐹, en travaillant avec des ondes entre 500 et 1100 Hz, et une célérité que
+nous avons mesurée égale à 1100 m/s, les longueurs d’ondes peuvent atteindre des valeurs supérieures
+à 2m. Pour pouvoir alors voir plusieurs longueurs d’onde le long de la ficelle, nous avons choisi de
+
+11
+
+travailler avec une ficelle de longueur 7m au bout de laquelle nous avons fait pendre une masse de
+300g. Cette masse nous assurait ainsi de garder une tension constante dans la corde.
+Et ça fonctionne ! on récupère bien un signal sonore dans ce troisième pot, que l’on peut ainsi envoyer
+vers un oscilloscope pour chercher les positions successives où le signal sera en phase avec celui de
+l’émetteur (figure 11).
+
+figure 11 : A gauche : signal du pot 3 en phase avec l’émetteur – Au milieu, signal du pot 3 en opposition
+de phase avec le signal émetteur. A droite, dispositif expérimental avec table mobile portant le pot 3
+
+Mais problème : voici les résultats obtenus : Connaissant la fréquence et mesurant la longueur
+d’onde, nous avons mesuré la célérité dans la troisième colonne :
+Fréquence (Hz)
+635
+885
+1050
+
+Longueur d’onde
+mesurée (m)
+3,26
+2,65
+2,19
+
+𝒄 = 𝝀𝑭
+2,07.103
+2,35.103
+2,30.103
+
+Les célérités que l’on trouve sont beaucoup trop grandes par rapport à ce que nous avons pu mesurer
+auparavant. Nous avons refait nos mesures sans que cela change. En fait, soit la méthode que nous
+utilisons n’est pas bonne d’un point de vue expérimental, soit il se passe autre chose dans le fil, comme
+par exemple la possibilité qu’il y ait une partie des ondes qui fassent des ondes stationnaires au sein
+de la ficelle. Et dans ce cas-là, il devient beaucoup plus délicat de lier les endroits où les deux signaux
+visualisés sont en phase, à la longueur d’onde du signal. Nous n’avons pas alors pu aller au bout de
+notre étude sur l’aspect dispersif ou non du dispositif.
+Par contre, cela nous a donné envie de vérifier s’il y avait des ondes stationnaires au sein de la ficelle.
+Car si c’est le cas, ce serait un mauvais point pour ce système de communication.
+
+4 ) Est-ce que le yaourtophone est le siège d’ondes stationnaires ?
+Si c’est le cas, alors il doit exister des longueurs de corde pour lesquelles, conformément à un
+phénomène de résonance, une fréquence sonore conduisent à une amplitude maximale au niveau du
+pot récepteur. Pour le savoir, nous avons pris une ficelle de 7m de long, nous avons fait pendre une
+masse de 300 g à une extrémité, et nous avons envoyé successivement 4 signaux purs de fréquences
+différentes. Nous avons alors mesuré l’amplitude sonore dans le pot récepteur. Une fois ces 4 mesures
+réalisées, nous avons coupé la ficelle afin de réduire sa longueur et nous avons à nouveau envoyé les 4
+signaux purs, et ainsi de suite. Voici alors les amplitudes sonores que nous avons mesurées au niveau
+du pot récepteur, en fonction de la longueur de la ficelle, pour l’ensemble des fréquences testées :
+12
+
+Amplitude
+
+Amplitude
+
+650 Hz
+
+500 Hz
+
+Longueur du fil (m)
+
+800 Hz
+
+Amplitude
+
+Longueur du fil (m)
+
+Amplitude
+
+1000 Hz
+
+Longueur du fil (m)
+
+Longueur du fil (m)
+
+figure 12 : est ce que le yaourtophone est siège d’ondes stationnaires ? Mesure de l’amplitude sonore dans le pot
+récepteur en fonction de la longueur de la ficelle pour 4 fréquences différentes du son émis
+
+Conclusion, ce comportement semble bien indiquer qu’il existe des fréquences d’ondes sonores qui
+conduisent à des amplitudes maximales en certains endroits de la ficelle, ce qui indique la présence de
+modes propres de vibration de la corde, donc d’ondes stationnaires. Cela dit, l’exploitation de ces ondes
+stationnaires reste compliquée, probablement due au fait que le taux d’ondes stationnaires doit être
+faible. Si les ondes stationnaires dominaient dans le dispositif, la distance entre 2 amplitudes maximales
+serait égale non pas à la longueur d’onde, mais à ½ longueur d’onde, ce qui ne permettrait pas de
+retrouver des valeurs cohérentes pour la célérité des ondes. En effet, pour les 4 fréquences étudiées,
+on aurait alors des célérités calculées trop élevées :
+Fréquence (Hz)
+500
+650
+800
+1000
+
+Longueur d’onde (m)
+2,5 x 2
+2x2
+1,5 x 2
+1x2
+
+Célérité (m/s)
+2,6.103
+2,6.103
+2,4.103
+2,0.103
+
+Nous venons de passer en revue plusieurs caractéristiques du yaourtophone. Nous sommes
+maintenant prêts à faire varier certains d’entre elles, à modifier le dispositif, pour voir comment le
+rendre optimal, ou au moins, pour savoir comment cela va affecter ses performances.
+
+13
+
+II – Comment rendre le yaourtophone le plus efficace ?
+1 ) Influence de la tension de la ficelle
+Nous nous sommes demandés si, comme pour une corde de guitare, et bien que les ondes soient ici
+longitudinales et non transversales, la tension avait une influence sur la célérité des ondes. Pour le
+vérifier, nous avons refait l’expérience présentée au paragraphe I – 2 ) A – a ) , sauf que cette fois-ci,
+nous avons accroché une masse variable à l’extrémité de la ficelle. Nous avons alors fait varier la
+valeur de la masse pour modifier la tension de la corde, avec des masses allant de 10g à 1kg. Pour
+chacune des masses, nous avons réalisé 10 mesures, de sorte à pouvoir calculer une incertitude sur
+les mesures de la célérité. Voici alors les résultats obtenus :
+2000
+
+Célérité(m/s)
+
+1800
+
+1600
+
+1400
+
+1200
+
+1000
+
+800
+
+Tension (N)
+600
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+figure 13 : célérité des ondes en fonction de la tension de la ficelle
+Les résultats montrent clairement une dépendance envers la masse. Une modélisation par une loi de
+puissance semble alors le plus approprié, et on obtient 𝑐(𝑇) = 1,2. 103 × 𝑇 0,18.
+Une ficelle plus tendue aura donc le mérite de propager l’information plus rapidement. Mais est-ce
+que cela affectera également d’autres paramètres, en particulier la bande passante ?
+
+14
+
+En faisant un balayage en fréquence de 100 à 3000 Hz avec 2 tensions différentes, l’une à 100g,
+l’autre à 300 g, nous obtenons les résultats suivants : figures 15 et 16
+log(Amplitude récepteur/émetteur)
+
+Fréquence (Hz)
+figure 15 : Bande passante pour tension de 1N
+log(Amplitude récepteur/émetteur)
+
+Fréquence (Hz)
+figure 16 : bande passante pour tension de 3 N
+On constate alors que la tension influence peu, voire pas l’amplitude du signal. Ayant réalisé cette étude
+récemment, nous n’avons à ce jour réalisé cette mesure uniquement pour 2 tensions différentes, et
+nous devons donc faire de même pour d’autres tensions pour confirmer la conclusion établie.
+
+2 ) Le yaourtophone est-il plus efficace si le son produit à l’émission
+est de forte amplitude ?
+La question posée est en fait de savoir s’il est utile de s’égosiller dans le pot émetteur ou non pour que
+le son à l’arrivée soit de plus grande amplitude. Et si oui, peut-on avoir une idée d’une limite ?
+Pour le savoir, nous avons produit un son avec une certaine amplitude, que nous avons envoyé dans le
+mot émetteur. Nous avons fait varier cette amplitude depuis une valeur initiale à cette valeur multipliée
+par 10, et nous avons relevé l’amplitude reçue par un micro placé dans le pot de yaourt.
+Voici les mesures réalisées : en bleu, nous pouvons observer l’amplitude du signal émis au cours du
+temps, nommée EA0 dans le logiciel Latis pro, et en rouge l’amplitude du signal reçu au cours du temps
+dans le pot récepteur, nommée EA1. figure 17
+15
+
+Amplitude micro côté émetteur
+Amplitude micro 1 côté récepteur dans le pot
+
+figure 17 : Amplitude sonore du récepteur en fonction de l’amplitude sonore de l’émetteur
+A partir de cette courbe, nous avons décidé de tracer l’amplitude EA1 en fonction de EA0. Voici ce que
+nous obtenons : figure 17 bis
+300
+
+amplitude sonore récepteur
+
+250
+200
+
+y = 0,28x
+150
+100
+50
+
+amplitude sonore émetteur
+
+0
+0
+
+100
+
+200
+
+300
+
+400
+
+500
+
+600
+
+700
+
+800
+
+900
+
+1000
+
+figure 17 bis : Amplitude sonore du récepteur en fonction de l’amplitude sonore de l’émetteur
+La courbe linéaire montre alors une parfaite proportionnalité entre le signal reçu et le signal émis. Nous
+n’avons pas pu atteindre de limite car pour un son émis avec trop d’intensité, le micro dans le pot aurait
+été affecté par le signal issu de l’émetteur en passant par l’air et non par le fil.
+Nous pouvons conclure que, dans la gamme d’amplitude étudiée, le milieu se comporte de façon
+linéaire en termes d’amplitude. Il peut donc être intéressant de parler fort pour bien se faire entendre.
+En fait, cette étude que nous venons de faire à propos de l’amplitude du signal reçu dans le pot
+récepteur nous a amené à la question suivante :
+16
+
+Est-ce que si on met deux écouteurs, l’amplitude est divisée par 2 ?
+Nous avons réalisé l’expérience : dans un temps, nous avons mesuré l’intensité sonore reçue dans le
+pot récepteur avec un fil composé de 8 brins principaux, et nous avons tracé le rapport de l’amplitude
+sonore reçue divisée par l’amplitude sonore émise, en fonction de la fréquence (voir courbe rouge sur
+la figure 18).
+Puis nous avons divisé l’extrémité de la ficelle en
+2, de sorte que 4 brins aillent dans un pot, et 4
+autres brins aillent dans un autre pot, comme le
+montre le schéma ci-contre :
+Nous avons mesuré l’intensité sonore reçue dans les 2 pots récepteurs, et nous avons tracé la somme
+des rapports de l’amplitude sonore reçue divisée par l’amplitude sonore émise, en fonction de la
+fréquence (voir courbe bleue sur la figure 18).
+Le résultat est donc cohérent avec la conservation de l’énergie.
+Avec la ficelle non divisée, donc 1 seul pot
+Somme avec la ficelle divisée en 2, donc avec les 2 pots
+
+rouge
+
+Figure 18 : la somme des amplitude sonores issue des 2 micros (en bleu) est égale à deux fois l’amplitude sonore issue de la ficelle non divisée (en rouge)
+
+en effet, la courbe représentative de la somme de l’amplitude du signal reçu par les deux récepteurs
+reliés chacun à 4 brins de la ficelle correspond environ à celle reçue avec un seul récepteur relié à 8
+brins de la ficelle. Nous pouvons en conclure qu’ajouter un deuxième récepteur divise l’amplitude du
+signal et que le yaourtophone ne permettra donc pas de communiquer avec une assemblée de
+personnes.
+Voyons maintenant ce qu’il se passe si on modifie la nature du fil qui relie les deux pots.
+
+3 ) Influence de la nature du fil transportant l’information
+Nous avons tenté de remplacer la ficelle par du fil de pêche, par du fil de cuivre et de la ficelle de plus
+gros diamètre.
+a ) Influence de la nature du fil sur la célérité des ondes :
+Les expériences ont été réalisées avec une seule tension de corde égale à 3N, avec 10 mesures pour
+chaque matériau dans le but de faire une valeur moyenne. Voici les valeurs trouvées :
+Fil de pêche :
+𝑐 = (1,38 ± 0,18). 103 𝑚/𝑠
+On trouve une valeur très similaire à celle trouvée avec la ficelle. Il est intéressant toutefois de noter
+que cette même célérité est ici obtenue avec un fil de pêche de diamètre 0,4 mm contre 1,0 mm pour
+17
+
+la ficelle. Nous pensons alors que c’est la plus grande densité du fil de pêche par rapport à la ficelle qui
+permet de toujours avoir une grande célérité de communication.
+Ficelle de plus gros diamètre :
+𝑐 = (1,19 ± 0,09). 103 𝑚/𝑠
+Il est assez étonnant de voir que, pour la ficelle de plus gros diamètre, la célérité soit légèrement
+inférieure (d’environ 200 m/s) à celle trouvée avec le fil avec lequel nous avons fait toutes nos mesures
+précédentes. Intuitivement, nous aurions plutôt tendance à dire que plus le diamètre du fil est grand,
+plus l’information peut circuler facilement. Cette mesure étant récente, nous vérifierons si la nature
+des 2 ficelles utilisées est identique.
+Câble en cuivre de section 1,5 mm² :
+𝑐 = (4,18 ± 0,44). 103 𝑚/𝑠
+La célérité obtenue avec le câble de cuivre remporte donc haut la main le concours des vitesses. Cela
+dit, le yaourtophone avec un câble de cuivre est inutilisable car l’amplitude du son que l’on récupère
+dans le pot récepteur est extrêmement faible. A l’oreille, nous n’entendons pour ainsi dire… rien. Et il
+n’y a que si l’on cogne directement le fil de cuivre dans le pot émetteur que l’on parvient à entendre
+quelque chose dans le pot récepteur.
+Conclusion : il semble en fait que le paramètre principalement mis en jeu, concernant la vitesse à
+laquelle se propage les ondes dans le matériau soit son module d’Young. En effet, nous avons pu lire
+que le cuivre a un module d’Young de l’ordre de 110 à 120 GPa, alors que le fil de pêche (ici en nylon)
+à un module d’Young de l’ordre de 2 à 4 GPa. La ficelle en coton que nous utilisons a également un
+module d’Young de l’ordre du GPa.
+b ) Influence de la nature du fil sur la bande passante :
+Voici la bande passante que l’on obtient pour un yaourtophone composé de 2 pots de yaourt et du fil
+de pêche.
+0
+0
+-5
+
+500
+
+1000
+
+1500
+
+2000
+
+2500
+
+3000
+
+3500
+
+4000
+
+log(Amplitude récepteur/émetteur)
+
+-10
+
+-15
+
+-20
+
+Fréquence (Hz)
+-25
+
+figure 19 : bande passante que l’on obtient pour un yaourtophone composé de 2 pots de yaourt et du fil de pêche
+Puisque le but est d’étudier plus précisément l’influence du fil de pêche comparé à la ficelle, on peut
+se rappeler des caractéristiques du pot uniquement à l’aide des figures 8 : le pot a tendance à résonner
+pour des fréquences comprises entre 200 et 500 Hz mais aussi 850 et 1100 Hz. Cela peut ici
+18
+
+correspondre au pic encadré sur la figure ci-dessus. Dans ce cas-là, on en déduit que le fil transmet
+particulièrement bien les fréquences comprises entre 200 et 500 Hz mais aussi 850 et 1100 Hz, ce qui
+est beaucoup plus pratique que ce que l’on a pu observer avec la ficelle dans l’idée de transporter la
+voix humaine.
+La comparaison de la bande passante obtenue avec le fil de pêche et avec la ficelle nous donne
+également une autre idée.
+Pour rappel, voici la bande passante obtenue avec la ficelle :
+5
+
+log(Amplitude récepteur/émetteur)
+
+Fréquence (Hz)
+
+0
+0
+
+500
+
+1000
+
+1500
+
+2000
+
+2500
+
+3000
+
+3500
+
+4000
+
+-5
+-10
+-15
+-20
+
+figure
+-25 20 : bande passante que l’on obtient pour un yaourtophone composé de 2 pots de yaourt et la ficelle
+On remarque que ces bandes passantes sont assez complémentaires. L’idée nous est alors venue de
+mettre à la fois une ficelle et un fil de pêche entre les deux pots de yaourt, pour augmenter la bande
+passante du dispositif. On aurait ainsi un dispositif analogue à une enceinte contenant plusieurs hautparleurs possédant chacun une bande passante différente. Nous essaierons de faire cela par la suite.
+Par contre, comme les signaux ne se propagent pas à la même célérité dans ces deux matériaux, il
+faudra ajuster les tensions pour que cela ne conduise pas à une déformation du signal.
+
+4 ) Influence du pot :
+Nous nous sommes beaucoup attardés sur le fil, mais il ne faut pas oublier que dans la chaîne de
+transmission du son, il y a le pot. Or, on l’a vu dans le cas du pot de yaourt (figure 8) celui-ci peut
+amplifier certaines fréquences. L’idéal serait qu’il amplifie en réalité toutes les fréquences de la même
+manière. En effet, si dans la chaîne de transmission, une bande de fréquence de faible largeur est
+amplifiée, cela vient nuire à la qualité du signal récupéré dans le pot récepteur.
+Nous avons alors testé différents pots, dont les caractéristiques géométriques sont les suivantes :
+
+19
+
+Amplitude sans pot (témoin)
+Fréquence
+Amplitude Pot de yaourt
+
+Fréquence
+Amplitude Pot liégeois
+
+Fréquence
+Amplitude Gobelet café
+Fréquence
+Amplitude Pot Aluminium
+
+Fréquence
+Amplitude Pot skyr
+
+En envoyant dans le pot une onde sonore
+dont on fait varier la fréquence entre 0 et
+2000 Hz, un microphone placé en sortie du
+pot récupère un signal dont voici la
+transformée de Fourier :
+Le pot a donc bien une importance non
+négligeable car celui étudié ici amplifie bien
+une large bande de fréquences, entre environ
+1300 et 1900 Hz pour le pot en aluminium, et
+une bande plus étroite comprise entre
+environ 800 et 1200 Hz pour le pot liégeois.
+Malheureusement,
+ces
+bandes
+de
+fréquences ne nous intéressent pas, car bien
+trop élevées par rapport aux fréquences de la
+voix. Comme nous pouvons le voir, le pot de
+skyr, de par sa taille plus grande, permet
+d’amplifier des fréquences plus faibles, mais
+toujours pas assez faibles par rapport à celles
+de la voix. Mais le grand diamètre su pot de
+sky risque tout de même de ne pas être bien
+adapté à la taille de l’oreille pour récupérer
+une bonne intensité sonore.
+
+Fréquence
+
+Amplitude flûte champagne
+figure 21 : Etude de la résonance des pots seuls
+Fréquence
+
+Conclusion
+Nous pouvons d’ores et déjà attester que ce phénomène existe réellement, et qu’il est bien plus
+complexe que l’on pourrait le croire de prime abord. Nous nous sommes intéressés aux caractéristiques
+qui influent sur le fonctionnement du système, et avons étudié de nombreux aspects d’un point de vue
+physique, tels que la nature des ondes ou même leur célérité. De plus, nous avons découvert que ce
+système était en fait un milieu non dispersif, mais aussi le siège d’ondes stationnaires.
+Notre but a ensuite été de découvrir quels paramètres étaient propices à la meilleure communication
+possible, que ce soit le rôle que joue la tension de la ficelle, ou l’importance de l’amplitude du signal
+émis, mais également à quel point les caractéristiques du fil et des pots étaient déterminantes dans le
+fonctionnement du système. Nos objectifs sont dorénavant tous tracés : nous aimerions approfondir
+notre recherche sur les caractéristiques susceptibles d’améliorer la communication, notamment
+en nous intéressant au module d’Young du fil utilisé, pour voir si sa rigidité influe sur les performances
+du dispositif. Nous avons également des échanges prévus avec un ingénieur issu de télécom sudParis,
+ce qui nous permettra d’avoir un aperçu plus général des qualités d’un moyen de communication et ce
+qui nous ouvrira sans doute de nouvelles perspectives.
+20
+
+

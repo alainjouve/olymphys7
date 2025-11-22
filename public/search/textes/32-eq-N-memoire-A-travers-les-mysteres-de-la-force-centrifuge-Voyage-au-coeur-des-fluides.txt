@@ -1,0 +1,1312 @@
+A travers les mystères de l'eet centrifuge :
+voyage au c÷ur des uides
+
+Afonso Maud
+
+Bernard-Massias Aymeric
+
+Professeurs encadrants :
+
+Durand Julien
+
+Belin Stéphane
+
+2024/2025
+
+Valette Gabriel
+
+Pouquet Céline
+
+Table des matières
+1 Introduction
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+
+2 Forme d'un liquide dans une cuve en rotation à vitesse angulaire constante . . . . . . . . . . . . . .
+
+3
+
+2.1
+
+Montage de l'expérience et matériel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3
+
+2.2
+
+Première observation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+Étude théorique . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.3
+
+2.4
+
+2.5
+
+2.3.1
+
+Notion de force d'inertie . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.3.2
+
+Référentiel tournant : la force centrifuge . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+
+2.3.3
+
+Démonstration de l'équation de la surface libre
+
+6
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+Étude expérimentale . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+2.4.1
+
+Forme obtenue avec des uides newtoniens incompressibles
+
+8
+
+2.4.2
+
+Forme obtenue avec un uide non-newtonien
+
+Conclusion
+
+. . . . . . . . . . . . . . . . . . . . . .
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+
+3 Mouvement d'une balle immergée . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.1
+
+Étude expérimentale . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+10
+
+3.2
+
+Bilan des forces exercées sur le système étudié . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+11
+
+3.2.1
+
+Poussée d'Archimède . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+11
+
+3.2.2
+
+Poussée d'Archimède d'un point de vue qualitatif . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+12
+
+3.2.3
+
+Bilan des forces sur la balle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+14
+
+3.3
+
+Exploitation des mesures . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+15
+
+3.4
+
+Conclusion
+
+15
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4 Seau de Newton . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.1
+
+Étapes de l'expérience
+
+4.2
+
+Conclusion
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+16
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+17
+
+5 Conclusion générale . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+6 Bibliographie et Remerciements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+6.1
+
+Bibliographie
+
+6.2
+
+Remerciements
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+1
+
+19
+19
+
+Introduction
+
+Imaginez-vous dans un manège à grande vitesse, projetés contre les parois de celui-ci ; vous ressentez
+une force appelée "centrifuge". Bien que familière, cette force nous a, dès le début de nos recherches,
+intrigués. C'est pourquoi nous avons choisi de l'expérimenter en la mettant en relation avec des uides,
+newtoniens ou non.
+
+−−→
+
+En eet, les liquides nous ont semblé très intéressants, car en subissant la force centrifuge Fcen =
+
+−−→
+−−→
+mω 2 HM , où m représente la masse du système, ω la vitesse angulaire et HM
+
+la distance à l'axe de
+
+rotation, nous pourrions voir apparaître une courbure particulière qui pourrait varier en fonction de
+diérents paramètres comme la vitesse angulaire ω , la masse volumique ρ ou la viscosité η .
+
+Ainsi notre travail se construit autour de l'étude de la courbe obtenue. Nous verrons aussi si le
+mouvement d'un objet immergé soumis à la force d'inertie d'entrainement est le même qu'un objet
+non-immergé.
+
+Nous nous sommes aussi intéressés à l'aspect historique de la notion de force centrifuge. Elle a
+suscité l'intérêt des physiciens et scientiques, notamment Isaac Newton. Son expérience de pensée, le
+seau de Newton, illustre ce phénomène. Cette expérience consiste à faire tourner un seau rempli d'eau
+suspendu à une corde et à observer la surface de l'eau.
+
+Nous sommes ainsi ravis de vous présenter notre étude ; toutefois, attention à bien vous accrocher
+car l'aventure va vous emporter !
+
+2
+
+Forme d'un liquide dans une cuve en rotation
+à vitesse angulaire constante
+Comment réagit un uide soumis à l'eet centrifuge ? Voici la première question à laquelle nous
+avions envie de répondre. Nous avons donc commencé à y rééchir avec l'aide précieuse de nos professeurs référents, M. Belin et Mme Pouquet.
+
+2.1
+
+Montage de l'expérience et matériel
+
+Pour la réalisation de cette expérience il nous a semblé intéressant de travailler avec l'IUT à Tulle,
+plus précisément avec M. Philippe Houillon, professeur de sciences de l'ingénieur de l'IUT, avec qui
+nous avons élaboré le dispositif d'étude.
+
+Figure 2.1  Montage de la machine à l'atelier de l'IUT
+
+3
+
+An de mesurer la vitesse angulaire de rotation, nous avons utilisé un micro-contrôleur M5Stack.
+Celui-ci est programmé en langage Python. Il mesure la vitesse angulaire grâce au gyroscope intégré
+par intervalle de temps de 0.1s, et il permet aussi de calculer l'accélération en divisant les vitesses
+successives par la diérence de temps dt. Voici le code :
+
+import
+
+mpu6886
+
+from
+
+machine
+
+import
+
+I2C ,
+
+from
+
+m5stack
+
+import
+
+*
+
+import
+
+time
+
+import
+
+math
+
+i 2 c = I2C ( s c l =P i n ( 2 2 ) ,
+
+Pin
+
+s d a=P i n ( 2 1 ) )
+
+s e n s o r = mpu6886 . MPU6886 ( i 2 c ,
+
+g y r o _ f s=mpu6886 . GYRO_FS_SEL_2000DPS)
+
+t0 = time . time ( )
+prev_gyr = s e n s o r . gyro
+prev_time = time . time ( )
+#
+
+Initialisation
+
+de
+
+l ' ecran
+
+lcd . clear ()
+l c d . f o n t ( l c d . FONT_DejaVu24 )
+lcd . text (70 ,
+
+90 ,
+
+lcd . text (70 ,
+
+170 ,
+
+while
+
+" rad / s ")
+" rad / s2 ")
+
+True :
+
+current_time = time . time ( )
+dt = current_time
+
+= prev_time
+
+gyr = s e n s o r . gyro
+# Calculer
+
+l ' acceleration
+
+angulaire
+
+a n g u l a r _ a c c e l e r a t i o n = ( gyr [1] = prev_gyr [ 1 ] ) / dt
+# Afficher
+
+la
+
+vitesse
+
+angulaire
+
+l c d . f o n t ( l c d . FONT_7seg )
+gyr_text =
+
+s t r ( r o u n d (= g y r [ 1 ] ,
+
+lcd . text (70 ,
+
+60 ,
+
+5))
+
+gyr_text )
+
+# Afficher
+
+l ' acceleration
+
+acc_text =
+
+s t r ( round ( a n g u l a r _ a c c e l e r a t i o n ,
+
+lcd . text (70 ,
+
+140 ,
+
+angulaire
+2))
+
+acc_text )
+
+prev_gyr = gyr
+prev_time = c u r r e n t _ t i m e
+time . s l e e p ( 0 . 1 )
+
+La liste du matériel utilisé, les photos du dispositif ainsi que le cahier des charges sont disponibles
+dans l'annexe A.
+
+4
+
+2.2
+
+Première observation
+
+Dès la mise en route de la machine avec de l'eau, qui a eu lieu dans l'atelier de l'IUT, nous avons
+constaté la formation d'une courbure parabolique, donnant ainsi un premier élément observable signicatif.
+
+2.3
+
+Étude théorique
+
+2.3.1
+
+Notion de force d'inertie
+
+La force d'inertie doit être distinguée des forces modélisant une interaction. Elle apparaît dans les
+référentiels non galiléens (comme un référentiel tournant) et résulte d'un choix de description plutôt
+que d'une interaction physique réelle. Elle est introduite pour expliquer les eets observés dans ces
+référentiels sans recourir à un référentiel inertiel.
+On considère un point matériel M xe dans la cuve. Il est donc animé d'un mouvement circulaire
+uniforme dans le référentiel terrestre. Dans le repère de Frenet, l'accélération du point matériel est
+donnée par :
+
+2
+
+v → dv →
+→
+−
+a (M ) = −
+un + −
+ut
+r
+dt
+Or dans notre situation : v = rω = cste. Alors l'expression devient :
+
+−
+=⇒ →
+a (M ) =
+
+r2 ω 2 −
+→ = ω 2 r−
+→
+u
+u
+n
+n
+r
+
+Cette accélération est dirigée vers le centre de rotation.
+Dans le référentiel galiléen on obtient, d'après le principe fondamentale de la dynamique :
+
+X→
+X→
+X→
+−
+−
+− −−→ →
+−
+−
+−
+→ ⇐⇒
+→=→
+2 −
+Fi = m→
+a = mω 2 r−
+u
+F
+−
+mω
+r
+u
+0
+⇐⇒
+Fi + Fcen = 0
+n
+i
+n
+i
+
+i
+
+−−→
+2
+avec Fcen = −mω r u
+⃗t
+
+i
+
+Il est équivalent d'utiliser le principe fondamental de la dynamique pour un système en mouvement
+dans le référentiel terrestre et le principe fondamental de la dynamique pour le système immobile dans
+le référentiel de la cuve, en tenant compte de la force centrifuge.
+
+5
+
+2.3.2
+
+Référentiel tournant : la force centrifuge
+
+La force centrifuge est une force d'inertie apparaissant dans un référentiel en rotation. Elle est donnée
+par :
+
+−−→
+Fcen = mω 2 re⃗r
+→
+−
+
+→
+−
+
+où m est la masse, ω la vitesse angulaire, r la distance radiale à l'axe de rotation et er = − ut le vecteur
+unitaire selon l'axe Or (abscisses). Cette force tend à pousser les objets vers l'extérieur, mais il est
+crucial de noter qu'elle n'existe pas dans un référentiel inertiel galiléen.
+
+2.3.3
+
+Démonstration de l'équation de la surface libre
+
+Nos manipulations nous ont permis d'observer que la surface du uide avait une forme parabolique
+sous l'eet de la force centrifuge. Par la suite, nous avons donc cherché à retrouver l'équation qui décrit
+cette courbe à l'aide de la modélisation ci-dessous :
+
+Figure 2.2  Schéma (sans soucis d'échelle) de la courbe obtenue dans la cuve
+
+Par hypothèse, le uide est immobile dans le référentiel de la cuve, une fois la vitesse angulaire
+
+−
+→
+
+−
+→
+
+constante atteinte, les forces de viscosité Fη et de Coriolis FC sont donc absentes. Nous allons donc
+supposer que, dans la cuve, les particules de uide subissent l'action de trois forces : le poids
+
+−−→
+
+−
+→
+
+→
+−
+P , la
+
+force centrifuge Fcen et la force de pression Fp . Ensuite, nous déterminons l'équivalent volumique de
+chaque force considérée :
+
+→
+−
+−
+P = −mg →
+ez
+
+
+
+−−→
+−
+Fcen = mω 2 r→
+er
+ZZ
+
+
+−
+→
+−
+→
+
+Fp = −
+p(r, z) dS
+
+−−−→
+→
+−
+
+
+fvol,pes = −ρg ez
+−−→
+−
+⇐⇒
+fvol,e = ρω 2 r→
+er
+
+
+−−→
+−−→
+fvol,p = −grad p
+
+S
+En statique des uides, la somme des forces appliquées à la particule est nulle :
+
+X −−→ →
+−−→
+∂p −
+∂p −
+→
+−
+−
+→
+−
+−
+−
+−
+−
+fvol,i = 0 ⇔ −ρg →
+ez + ρω 2 r→
+er − grad p = 0 ⇔ −ρg →
+ez + ρω 2 r→
+er − →
+ez − →
+er = 0
+∂z
+∂r
+i
+6
+
+Remarque : la composante du gradient de pression
+de l'axe Oz .
+
+→
+−
+−
+1 ∂p →
+e = 0 car le système est invariant autour
+r ∂θ θ
+
+→
+−
+
+→
+−
+
+Grâce au produit scalaire, respectivement selon ez puis selon er , nous pouvons transformer l'unique
+expression vectorielle en deux expressions scalaires, puis isoler les dérivées partielles dans chacune
+d'elles :
+
+D'une part :
+
+− ρg −
+
+∂p
+∂p
+= 0 =⇒
+= −ρg
+∂z
+∂z
+
+et d'autre part :
+
+ρω 2 r −
+
+∂p
+∂p
+= 0 =⇒
+= ρω 2 r
+∂r
+∂r
+
+Désormais, cherchons l'expression de la pression p ; en primitivant la première équation, on obtient :
+
+Z
+⇒ p(r, z) =
+
+∂p
+dz = −ρgz + C(r)
+∂z
+
+De plus, en dérivant par rapport à r :
+
+∂p
+dC(r)
+r2
+=
+= ρω 2 r ⇒ C(r) = ρω 2 + A
+∂r
+dr
+2
+Donc :
+
+p = −ρgz + ρω 2
+
+r2
++A
+2
+
+Or, en r = 0 et en z = z0 , p = p0 ; donc :
+
+p0 = −ρgz0 + A ⇔ A = ρgz0 + p0
+Ainsi, on obtient l'expression complète de la pression :
+
+p = −ρgz + ρω 2
+
+r2
++ ρgz0 + p0
+2
+
+Ainsi, plus z est grand, plus la pression est faible ; et plus r est grand, plus la pression est élevée.
+Forme des isobares :
+
+=⇒ z = −
+
+p
+ω 2 r2
+p0
++
++ z0 +
+ρg
+2g
+ρg
+
+Remarque : les isobares ont une forme de parabole.
+
+Forme de la surface libre :
+Soit zL la surface de la courbe. En z = zL , on a p = p0
+
+⇒ p0 = −ρgzL + ρω 2
+
+r2
++ ρgz0 + p0 ⇔
+2
+
+Ainsi, l'équation de la courbe est de la forme zL = ar
+
+2
+
+zL =
+
+ω2 2
+r + z0
+2g
+2
+
++ z0 , avec a = ω2g .
+
+Le paramètre étant r , élevé au carré, la courbe obtenue sera, a priori, une parabole. Ce seul paramètre
+de réglage de la position du foyer de la parabole est proportionnel à la vitesse de la rotation au carré.
+
+7
+
+2.4
+
+Étude expérimentale
+
+2.4.1
+
+Forme obtenue avec des uides newtoniens incompressibles
+
+Après réalisation de mesures et de photographies, nous avons pu étudier les courbes obtenues de
+manière plus précise, et ce grâce au logiciel de traitement Regressi.
+
+Résultats avec de l'eau
+Voici un exemple de traitement graphique, à la vitesse angulaire de 11, 24
+
+rad · s−1 . Les autres
+
+résultats sont disponibles dans le document " Annexe_B.pdf ".
+
+Figure 2.3  Photo de la cuve en rotation à 11,24 rad/s
+
+Figure 2.4  Modélisation graphique avec le logiciel Regressi
+
+Les valeurs achées sur Regressi après la modélisation sont résumées dans le tableau suivant : on y
+retrouve les valeurs de a, théoriques (a(th)) et expérimentales (a(exp)), ainsi que les vitesses angulaires
+
+ω achées par le micro-contrôleur. Les deux dernières colonnes concernent respectivement l'incertitude
+|a(exp)−a(th)|
+sur a(exp) obtenue avec Regressi, ainsi que le Z-score Zsc =
+.
+u(a(exp))
+
+8
+
+ω en rad.s−1
+
+−1
+a(th) en m
+
+−1
+a(exp) en m
+
+u(a(exp))
+
+Zsc
+
+5,08
+
+1,316
+
+1,311
+
+0,024
+
+0,21
+
+7,74
+
+3,054
+
+3,058
+
+0,022
+
+0,18
+
+10,21
+
+5, 315
+
+5, 330
+
+0,030
+
+0,50
+
+11,24
+
+6,441
+
+6,480
+
+0,050
+
+0,78
+
+La proximité entre les mesures théoriques et expérimentales semble valider le modèle prévu par la
+formule au 2.3.3 (Zsc < 2). En outre, nous pouvons vérier ce résultat graphiquement : Il nous sut
+2
+2
+de tracer a(exp) en fonction de ω et de comparer avec la courbe ath (ω ). Voici le résultat :
+
+Résultats avec d'autres uides de viscosité diérentes de celle de l'eau
+Nous aurions pu tester avec de l'huile, mais on peut conjecturer une analogie des résultats que l'on
+obtiendrait avec d'autres types de uides newtoniens incompressibles. En eet, dans l'équation de la
+parabole (cf 2.3), il n'y a pas de coecient de viscosité η , c'est pourquoi la forme obtenue ne dépend
+pas de la viscosité du liquide. En d'autres termes, ce paramètre ne modiera aucunement la forme
+parabolique obtenue.
+
+2.4.2
+
+Forme obtenue avec un uide non-newtonien
+
+Les résultats avec le uide non-newtonien sont analogues à ceux obtenus avec l'eau. Ils sont disponibles dans l'annexe C.
+
+2.5
+
+Conclusion
+
+Par conséquent, nous remarquons que les comportements prévus par notre modélisation sur les
+uides incompressibles et soumis à l'eet centrifuge à vitesse angulaire constante, correspondent aux
+expériences que nous avons réalisées. De plus, nos observations sur les uides non newtoniens, soumis
+eux aussi à cet eet centrifuge, montrent qu'ils réagissent étonnamment de la même manière que les
+uides newtoniens. Ainsi, peu importe la viscosité du uide, qu'il soit newtonien ou non, les expériences
+nous donnent une forme parabolique.
+
+9
+
+Mouvement d'une balle immergée
+Dans le prolongement de ces recherches sur le comportement des uides, nous décidons d'ajouter
+une balle en liège tenue par un l de pêche au fond de la cuve. En eet, il nous semblait intéressant
+d'étudier le mouvement d'un objet immergé sous l'eet centrifuge. Nous nous attendions à ce que la
+balle se déplace dans le même sens que la force centrifuge, c'est-à-dire vers l'extérieur de la cuve.
+L'observation nous a troublés : la balle se dirige vers le centre.
+
+3.1
+
+Étude expérimentale
+
+Figure 3.1  Angle
+
+formé entre la position de la balle et la verticale (ici de 105,146°-90° = 15,146°)
+
+Résultats obtenus grâce à ImageJ .
+Les résultats permettent de dresser le tableau de données ci-dessous, qui résume les diérents angles
+
+α mesurés en degré (°), en fonction de la vitesse angulaire ω en rad · s−1
+α (◦ )
+ω (rad · s−1 )
+
+0
+
+6,19
+
+6,45
+
+8,88
+
+9,9
+
+11,31
+
+11,25
+
+13,81
+
+13,42
+
+19,98
+
+0
+
+3,55
+
+3,55
+
+4,110
+
+4,26
+
+4,83
+
+4,88
+
+5,57
+
+5,58
+
+7,19
+
+La suite de cette étude se concentre sur la détermination de l'expression de la poussée d'Archimède
+an d'eectuer le bilan des forces exercées sur la balle. Celui-ci permettra l'obtention d'un modèle
+théorique, expliquant le mouvement contre-intuitif du système étudié.
+
+10
+
+3.2
+
+Bilan des forces exercées sur le système étudié
+
+→
+−
+
+Lorsque la cuve est en rotation, les forces s'exerçant sur la balle sont : le poids P , la tension du l
+
+−
+→
+→
+−
+→
+−
+T et la force centrifuge fie , et il ne faut pas oublier la poussée d'Archimède Π !
+3.2.1
+
+Poussée d'Archimède
+
+Nous nous intéressons à une particule de uide de volume V , dans le référentiel de la cuve, qui est
+non-galiléen. L'objectif est ici de déterminer l'expression vectorielle de la poussée d'Archimède.
+
+Figure 3.2  Schéma (sans soucis d'échelle) des forces sur une particule de uide
+
+→
+−
+Π =? ;
+
+→
+−
+−
+−
+P = −mg →
+ez = −ρV g →
+ez
+
+et
+
+−
+→
+−
+−
+fie = mω 2 r→
+er = ρV ω 2 r→
+er
+
+La particule étant immobile :
+
+X→
+→ →
+→
+−
+→
+− →
+− −
+→
+−
+→
+− −
+→
+−
+→
+−
+−
+−
+−
+F = 0 ⇔ Π + P + fie = 0 ⇒ Π = − P − fie =⇒ Π = ρV g →
+ez − ρV ω 2 r→
+er
+Maintenant que nous avons l'expression de
+
+→
+−
+Π , nous pouvons déterminer l'angle θ (cf schéma) :
+
+ρV ω 2 r
+ω2r
+tan(θ) =
+=
+⇒ θ = arctan
+ρV g
+g
+
+11
+
+
+
+ω2r
+g
+
+
+
+3.2.2
+
+Poussée d'Archimède d'un point de vue qualitatif
+
+La poussée d'Archimède, qui est la résultante des forces de pressions, exercée par le uide sur un
+corps immergé, peut être mieux comprise en comparant les cas d'un uide statique et d'un uide en
+rotation.
+
+Fluide en référentiel galiléen
+La pression dans un uide statique augmente avec la profondeur en raison du poids de la colonne
+de uide au-dessus :
+
+p = p0 − ρgz
+où ρ est la densité du uide, g l'accélération due à la gravité, et h la profondeur. La poussée d'Archimède
+est donc proportionnelle au volume immergé et à la masse volumique du uide :
+
+→
+−
+Π = ρV g e⃗z
+
+(dirigée vers le haut.)
+
+Fluide en rotation par rapport au référentiel galiléen
+Dans un uide en rotation, la pression dépend à la fois de la gravité et de l'eet centrifuge. D'après
+l'étude théorique faite précédemment, on a montré que la pression et la poussée d'Archimède s'expriment sous la forme, respectivement :
+
+ω 2 r2
+p(r, z) = p0 + ρ −gz +
+2
+
+
+
+
+
+→
+−
+Π = ρV g⃗ez − ω 2 r⃗er
+Elle présente une composante radiale en raison de la rotation, ce qui pourrait expliquer le déplacement latéral des corps immergés.
+
+Figure 3.3  Schéma (sans soucis d'échelle) des pressions autour d'une particule de uide
+
+12
+
+Le schéma ci-dessus montre les pressions se situant autour de la particule de uide : à gauche
+(pgauche ), à droite (pdroite ), en haut (phaut ) et en bas (pbas ).
+La pression en haut est inférieure à la pression en bas, due à la profondeur, d'où une composante ver-
+
+−
+→
+
+ticale vers le haut de la poussée d'Archimède (Πz ). Mais il faut aussi considérer les pressions radiales.
+
+−
+→
+pgauche est inférieure à pdroite illustrant une composante horizontale de la poussée d'Archimède (Πr ),
+orientée vers le centre.
+
+→
+−
+
+La résultante de ces deux composantes nous donne ainsi une poussée positive selon ez et négative selon
+
+→
+−
+er .
+
+Ainsi nous savons que :
+ Pour un uide statique, la poussée d'Archimède est purement verticale.
+ Pour un uide en rotation, la force a une composante horizontale due à l'eet centrifuge, inuençant le mouvement du corps immergé.
+
+Hypothèses testées et explications
+
+Les corps moins denses que le uide se déplacent vers le centre de la cuve
+Exemple : Une goutte d'huile.
+Explication : Dans un uide en rotation, la poussée d'Archimède possède une composante radiale
+dirigée vers le centre de la cuve, car la distribution de la pression est inuencée par l'eet centrifuge.
+Pour un corps moins dense que le uide, cette poussée radiale est plus grande que la force centrifuge,
+ce qui entraîne le déplacement du corps vers le centre.
+
+Les corps plus denses que le uide se déplacent vers les bords de la cuve
+Exemple : Une goutte de glycérol.
+Explication : Pour les corps plus denses que le uide, la force centrifuge, qui augmente avec la masse,
+domine la poussée d'Archimède. Par conséquent, ces corps se déplacent vers l'extérieur de la cuve,
+suivant la direction radiale imposée par la force centrifuge.
+
+Les corps de densité proche de celle du uide restent en équilibre
+Lorsque la densité du corps est similaire à celle du uide, la force centrifuge et la composante radiale
+de la poussée d'Archimède s'équilibrent. Le corps peut rester stable à une certaine position radiale,
+sans se déplacer ni vers le centre ni vers les bords.
+
+13
+
+3.2.3
+
+Bilan des forces sur la balle
+
+Le bilan des forces exercées sur la balle de baby foot dans le référentiel de la cuve en rotation nous
+permettra de déterminer l'expression de la tension
+
+→
+−
+T =? ;
+
+→
+−
+−
+P = −mg →
+ez ;
+
+→
+−
+T due au l. On a :
+
+→
+−
+−
+−
+Π = ρV g →
+ez − ρV ω 2 r→
+er
+
+et
+
+−
+→
+−
+fie = mω 2 r→
+er
+
+Figure 3.4  Schéma (sans soucis d'échelle) des forces exercées sur la balle immergée
+
+La balle étant immobile :
+
+X→
+→ →
+−
+→
+−
+→
+− −
+−
+→
+−
+→
+−
+−
+−
+−
+−
+−
+F = m→
+a = 0 ⇒ T = − P − fie − Π ⇒ T = mg →
+ez − mω 2 r→
+er − ρV g →
+ez + ρV ω 2 r→
+er
+→
+−
+−
+−
+er
+=⇒ T = (m − ρV ) g →
+ez + (ρV − m) rω 2 →
+
+avec
+
+m − ρV < 0
+
+et
+
+ρV − m > 0
+
+→
+−
+
+→
+−
+→
+−
+→
+−
+T est orienté comme indiqué sur le schéma. Le l est bien dirigé vers le centre de la cuve.
+Enn, nous pouvons de la même manière vérier que l'angle α est exprimé par :
+
+La composante de T selon le vecteur unitaire er est positive, celle selon ez est négative. Le vecteur
+
+=⇒ tan(α) =
+
+rω 2
+g
+
+Remarque : α = θ , c'est-à-dire que la direction du l est identique à celle de la poussée d'Archimède.
+
+14
+
+3.3
+
+Exploitation des mesures
+
+La vérication de notre modèle peut se faire graphiquement, en traçant
+1
+Nous devrions trouver une fonction linéaire de pente .
+g
+
+tan(α)
+2
+en fonction de ω .
+r
+
+Le modèle linéaire prévu par notre modélisation semble compatible avec les points expérimentaux.
+1
+2
+−1
+Mais la pente obtenue est de 0, 115 s · m
+alors qu'en théorie elle devrait être de
+= 0, 102 s2 · m−1 .
+g
+Une explication pourrait être l'imprécision due à la courbure de l'image.
+Pour y remédier, il faudrait reculer davantage la caméra.
+
+3.4
+
+Conclusion
+
+Ainsi, le comportement d'une balle en équilibre maintenue par un l à l'intérieur de la cuve, met en
+évidence l'aspect contre-intuitif de notre postulat de départ dû à la poussée d'Archimède en référentiel
+non-galiléen. Plus la vitesse angulaire est élevée, plus la balle se rapproche du centre de l'axe de rotation,
+contrairement à ce que l'on pourrait penser, validant ainsi le modèle proposé au 3.2.
+
+15
+
+Seau de Newton
+
+Cette expérience soulève des questions fondamentales voire philosophiques sur la nature du mouvement et de l'espace. Newton l'utilisait pour argumenter en faveur de l'existence d'un espace absolu :
+lorsque le seau est en rotation, l'eau adopte une forme parabolique. Pour Newton, cette déformation
+prouvait que l'eau "sent" une rotation absolue, par rapport à un espace absolu, et non simplement un
+mouvement relatif entre l'eau et le seau.
+
+4.1
+
+Étapes de l'expérience
+
+L'expérience du seau tournant de Newton est une démonstration célèbre qui illustre le concept de
+mouvement absolu. Elle se déroule en trois phases distinctes :
+ 1) Étape initiale : Newton suspend un seau rempli d'eau à une corde qu'il a préalablement enroulé. À ce stade, le seau et l'eau sont immobiles, et la surface de l'eau est parfaitement plane.
+ 2) Étape transitoire : Newton libère le seau, qui commence à tourner sous l'eet du déroulement de la corde. Pendant cette phase, le seau tourne, mais l'eau reste initialement immobile par
+inertie. La surface de l'eau demeure plane, malgré le mouvement relatif entre l'eau et le seau.
+Progressivement, l'eau est entraînée par le mouvement du seau et se met à tourner.
+ 3) Étape nale : L'eau et le seau tournent alors à la même vitesse. La surface de l'eau prend alors
+une forme concave, créant un paraboloïde de révolution.
+
+16
+
+4.2
+
+Conclusion
+
+L'analyse moderne de cette expérience utilise deux référentiels : (R0 ) lié au sol (supposé galiléen) et
+
+(R) lié au eau tournant. Cette analyse révèle une asymétrie fondamentale entre ces deux référentiels.
+La rotation de l'eau par rapport à un référentiel galiléen se manifeste par une courbure de sa surface,
+suggérant un caractère absolu du mouvement de rotation. Newton y voyait la preuve de l'existence
+d'un espace absolu, (R0 ) étant xe par rapport à cet espace, tandis que (R) serait en rotation.
+
+17
+
+Conclusion générale
+
+Notre projet nous a permis de fabriquer un dispositif permettant d'étudier les uides en rotation.
+
+Nous avons obtenu des résultats signicatifs sur le comportement des uides sous l'eet de la force
+centrifuge. Les expériences ont conrmé que les uides newtoniens et non-newtoniens, lorsqu'ils sont
+soumis à une rotation constante, adoptent une forme parabolique prévisible. Ils donnent des résultats
+similaires. Cette observation a été validée par des mesures expérimentales qui concordent étroitement
+avec les prédictions théoriques.
+
+Nous avons également eu l'occasion d'étudier la poussée d'Archimède dans ces uides en rotation.
+Nous avons notamment observé et expliqué le mouvement contre-intuitif d'une balle en liège tenue par
+un l depuis le fond de la cuve.
+
+L'expérience humaine et scolaire acquise au cours de ce projet a été inestimable. Travailler avec
+l'IUT à Tulle a non seulement renforcé nos compétences techniques, mais a aussi favorisé la collaboration et l'innovation. Nous avons appris à concevoir, réaliser et analyser des expériences scientiques
+rigoureuses, tout en développant notre capacité à résoudre des problèmes complexes.
+
+Ces travaux ouvrent ainsi la voie à de nouvelles expériences passionnantes, telles que l'étude du comportement de rayons lumineux sur un miroir parabolique. Cette prochaine étape pourrait approfondir
+notre compréhension des applications pratiques de la mécanique des uides et de l'optique, consolidant
+ainsi notre engagement dans la recherche scientique.
+
+18
+
+Bibliographie et Remerciements
+6.1
+
+Bibliographie
+
+- Logiciels et applications utilisés : Regressi, ImageJ, Mu Editor, Spyder, TexStudio (LaTeX)
+- Démonstration de l'équation de la surface libre : https://www.youtube.com/watch?v=lLtiNcQd2yU
+- Article du BUP sur la poussée d'Archimède :
+
+https://perso.ens-lyon.fr/thierry.dauxois/PAPERS/BUP870_1.pdf
+- Documentation sur les uides non-newtoniens :
+
+https://www.sciencesalecole.org/wp-content/uploads/2019/10/LYC62_CR.pdf
+- "Comment les uides coulent-ils ?" de Nicolas Taberlet
+
+https://culturesciencesphysique.ens-lyon.fr/ressource/comment-coulent-les-fluides.xml
+- Sujet d'agrégation 2024 : problème de physique :
+
+http://b.louchart.free.fr/Documents/CE/01/Agregation/Agreg_ext_Physique_2024_C_Enonce.
+pdf
+- Vidéo sur l'expérience du Seau de Newton : https://youtu.be/Jz3mOlUOGoY?si=y-qKCdR9xSTHywIU
+- Article du BUP sur le seau de Newton :
+
+http://materiel-physique.ens-lyon.fr/Logiciels/CD%20N%C2%B0%203%20BUP%20DOC%20V%204.0/
+Disk%202/TEXTES/1981/06310673.PDF
+6.2
+
+Remerciements
+
+- Nous remercions chaleureusement nos professeurs, Mme Céline Pouquet et M. Stéphane Belin,
+pour leur accompagnement, leur disponibilité et leurs conseils qui nous ont permis de progresser dans
+cette étude expérimentale.
+- Nos remerciements les plus sincères vont aussi pour l'IUT à Tulle, et en particulier à M. Philippe
+Houillon, professeur de sciences de l'ingénieur à l'IUT, pour son aide précieuse en amont du projet.
+Sans lui, l'aboutissement de l'expérience aurait été impossible, ou alors les résultats obtenus n'auraient
+pas été de ce niveau de précision.
+- Merci également à M. Rémy Fayet, de l'équipe technique du lycée, pour sa disponibilité lorsque
+nous cherchions du matériel et des outils.
+- Merci à M. Christophe Vergnaud, écrivain et professeur de philosophie du lycée pour son aide sur
+la compréhension de l'aspect philosophique du problème du Seau de Newton.
+- Nous remercions le Comité des Olympiades de Physique pour l'organisation et la gestion de cette
+32ème édition du concours.
+- Et enn, merci à notre entourage pour le soutien et leurs encouragements.
+
+19
+
+

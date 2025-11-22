@@ -1,0 +1,845 @@
+2025
+
+(Crédit photo : Warka Water / Photographe : Arturo Vittori)
+
+Une source qui ne manque pas d’air
+
+LYCÉE JEAN BART
+DUNKERQUE
+
+Wendie DEPRET
+Océane FRISCOURT
+Valentin LUSSET
+Chloé QUESNOIT
+Nina VARVENNE
+
+Une source qui ne manque pas d’air
+
+Résumé
+Il existe différents moyens de récupérer l’eau contenue dans l’air humide pour en faire une source
+d’eau potable accessible aux populations, même dans les régions les plus sèches. Notre étude
+cherche tout d’abord à comprendre et à caractériser l’humidité relative dans l’air, puis à déterminer
+la quantité d’eau dans l’air d’une pièce en mesurant la température de rosée. Parmi les systèmes
+de récupération de l’eau dans l’air, les Warka Towers, inventées par l’architecte italien Arturo Vittori,
+utilisent un filet placé à l’intérieur d’une structure en bambou. Nous avons construit notre prototype
+de tour et nous avons étudié sa résistance face au vent. Enfin, nous nous sommes intéressés à la
+capture des gouttelettes contenues dans le brouillard en étudiant le comportement de différents
+matériaux textiles. En associant des matériaux avec des propriétés différentes vis-à-vis de l’eau,
+nous avons tenté de reproduire des structures existant dans la nature par biomimétisme.
+
+2
+
+Introduction
+L’accès à l’eau est un enjeu majeur, notamment dans les régions sèches et isolées qui doivent s’adapter au
+changement climatique. Une solution, proposée par l’architecte italien Arturo Vittori, est la construction
+d’édifices en bambou qui permettraient de récupérer l’eau contenue dans l’air humide ou dans le brouillard. Il
+s’agit d’un projet peu coûteux qui vise à installer des tours, appelées Warka Towers (ou tours Warka), dans
+les endroits les plus pauvres du monde et ainsi d’apporter de l’eau potable aux personnes qui ne peuvent pas
+y avoir accès, afin d’améliorer les conditions de vie du village qui pourra désormais avoir une clinique, des
+sanitaires, un potager...
+Le nom « Warka » provient d’un arbre d’Éthiopie (le figuier Warka ou ficus vasta) qui forme à sa base une
+large surface ombragée sous laquelle les populations se rassemblent traditionnellement. La forme des tours
+mime celle de l’arbre et permet de remplir les mêmes fonctions, tout en servant de source d’eau potable. La
+Warka Tower est une tour de 8 à 10 mètres de haut construite avec des matériaux locaux (en bambou en
+Ethiopie ou en bois au Cameroun). Au centre de la structure se trouve un filet qui capte l’humidité de l’air, la
+rosée du matin et les gouttes de pluie. L’eau ruisselle ainsi le long du cordage et se dépose dans un récipient
+à la base de la tour. Ce système peut ainsi recueillir jusqu’à 100 litres d’eau par jour.
+Notre projet Une source qui ne manque pas d’air se propose de comprendre les conditions physiques qui
+permettent la récupération de l’eau contenue dans l’air humide, de caractériser la structure de la tour et de
+mettre en évidence certaines propriétés physiques des matériaux qui permettraient la récupération de l’eau.
+
+(Source : Warka Water Project)
+
+Sommaire
+Première partie : comprendre l’humidité dans l’air
+Mesure de la pression de vapeur saturante de l’eau
+Comment liquéfier la vapeur d’eau ?
+Principe de l’hygromètre à point de rosée
+
+Deuxième partie : une tour pour récupérer de l’eau
+Réalisation d’un prototype de tour
+Action du vent sur la tour
+Dimensionnement du socle
+
+Troisième partie : attraper des gouttelettes de brouillard
+Du brouillard fait maison
+Des matériaux textiles aux propriétés étonnantes
+Vers du biomimétisme
+3
+
+Première partie
+Comprendre l’humidité dans l’air
+Lorsque l’on sort une bouteille du réfrigérateur ou que l’on sert une boisson fraîche dans un verre, il apparaît
+rapidement de la buée à la surface, sous la forme d’un ensemble de petites gouttelettes d’eau. De manière
+analogue, le miroir de la salle de bains se couvre de buée quand on prend sa douche. Ces observations simples
+montrent bien la présence d’eau dans l’air, à l’origine de l’existence des nuages et de la plupart des
+phénomènes météorologiques, mais aussi des problèmes d’humidité dans la maison…
+Pour mesurer l’humidité de l’air, on utilise un hygromètre. Notre hygromètre placé dans la salle de classe
+indique par exemple 51 % d’humidité pour une température de 22 °C… qu’est-ce que cela signifie ? Quelle
+quantité d’eau se trouve dans l’air de la pièce ? ça veut dire quoi 100 % d’humidité ?
+L’air sec est un mélange de gaz : principalement du diazote N2 (78 %), du dioxygène O2 (21 %) et un peu
+d’autres gaz comme de l’Argon Ar ou du dioxyde de carbone CO2… L’air humide est un mélange d’air sec et
+de vapeur d’eau H2O(g).
+En supposant que l’air sec et la vapeur d’eau se comportent comme des gaz parfaits, on peut écrire l’équation
+d’état des gaz parfaits pour l’air contenu dans la classe de volume V = 150 m3 (10 m x 5 m x 3 m) où règne la
+pression atmosphérique p0 = 1,0.105 Pa = 1,0 bar et la température T = 22 °C = 295 K :
+p0V = ntot RT
+avec R = 8,31 J/K/mol la constante des gaz parfaits.
+pV
+Ainsi, il y a dans la classe : ntot = 0 = 6,1.103 mol de gaz (air sec + vapeur d’eau)
+RT
+
+peauV
+où peau
+RT
+est la pression partielle en eau, c’est-à-dire la pression qu’il y aurait dans la pièce s’il n’y avait que de la
+vapeur d’eau.
+Lorsque la pression partielle atteint la pression de vapeur saturante, on dit que l’air humide est à saturation,
+la vapeur d’eau dans l’air se liquéfie (ou se condense) et il apparaît des gouttelettes d’eau liquide. La quantité
+p (T )V
+maximale de vapeur d’eau que peut contenir l’air vaut donc : neau max = sat
+.
+RT
+Par définition, l’humidité relative est le rapport de la pression partielle en eau sur la pression de vapeur
+peau
+saturante à la température T :  =
+.
+psat (T )
+La pression de vapeur saturante de l’eau est aussi la pression de la vapeur d’eau lorsqu’il y a équilibre entre
+la vapeur d’eau et l’eau liquide, par exemple à la surface de l’eau. On peut ainsi mesurer sa valeur en fonction
+de la température en considérant un système contenant uniquement de l’eau liquide en équilibre avec de l’eau
+vapeur.
+On peut de même évaluer la quantité d’eau (sous forme vapeur) contenue dans la classe : neau =
+
+Mesure de la pression de vapeur saturante de l’eau
+On verse de l’eau distillée dans un ballon, que l’on chauffe jusqu’à ébullition à l’aide d’un chauffe-ballon. Il
+est important de laisser l’eau bouillir plusieurs minutes pour que la vapeur d’eau qui apparaît puisse chasser
+l’air du ballon. On retire ensuite le chauffe-ballon, on ferme hermétiquement le ballon avec un bouchon et on
+enregistre avec un ordinateur à la fois la température et la pression lors du refroidissement lent du système.
+La pression mesurée correspond alors à la pression de vapeur saturante de l’eau. En entourant le ballon avec
+de la laine de verre, on a pu ainsi observer le refroidissement du système de 100 °C à 33°C pendant presque 9
+heures. Les détails de cette expérience sont proposés en ANNEXE 1.
+
+4
+
+mesure de la pression et de la
+température au cours du temps
+thermomètre
+
+manomètre
+
+mélange
+eau liquide + eau vapeur
+
+ballon
+
+On obtient les courbes suivantes :
+
+puis on trace la pression de vapeur saturante de l’eau en fonction de la température (courbe rouge) :
+
+27 hPa
+22 °C
+
+5
+
+On constate que la pression de vapeur saturante diminue lorsque la température diminue. On a superposé à
+titre de comparaison la courbe basée sur la formule de Clapeyron (courbe bleue) : psat (T ) = p0 e
+
+−
+
+M eau lvap  1 1 
+ − 
+R
+ T T0 
+
+(où T0 = 100 °C, p0 = 1,0.105 Pa, R est la constante des gaz parfaits, lvap = 2,3.106 J/kg est l’enthalpie massique
+de vaporisation de l’eau et Meau = 18 g/mol). Les résultats sont très proches, notamment entre 90°C et 100°C.
+Nous avons remarqué que les différences observées sont probablement dues à des fuites d’air au niveau du
+bouchon (voir ANNEXE 1). On utilise dans la suite la courbe bleue qui donne la pression de vapeur saturante
+à des températures plus basses.
+Comment liquéfier la vapeur d’eau ?
+On peut maintenant connaître la pression de vapeur saturante de l’eau dans la salle de classe, pour une
+température de 22 °C : psat(22 °C) = 27 hPa (voir graphe), puis la pression partielle de vapeur d’eau pour une
+humidité relative de 51 % : peau = φ psat = 0,51 x 27 hPa = 14 hPa.
+p VM eau
+= 1,5 kg .
+La masse totale d’eau sous forme de vapeur dans la classe vaut donc : meau = neau M eau = eau
+RT
+Si on pouvait récupérer cette eau sous forme liquide, on pourrait remplir complètement une bouteille de 1,5 L !
+Mais comment peut-on forcer la vapeur d’eau à se liquéfier pour pouvoir la récupérer ?
+Pour le comprendre nous avons réalisé l’expérience qualitative suivante. Nous avons placé une coupelle audessus d’un récipient dans trois situations différentes : une coupelle à température ambiante, une coupelle
+chaude (chauffée au sèche-cheveux) et une coupelle froide (sortie du congélateur).
+
+On verse alors de l’eau bouillante (chauffée à la bouilloire électrique) dans chaque récipient et on observe la
+surface inférieure de chaque coupelle. Les résultats sont dans le tableau suivant :
+Coupelle
+
+Température ambiante
+
+Chaude
+
+Froide
+
+Observations
+
+Il apparaît quelques
+gouttes d’eau liquide
+
+La surface reste
+parfaitement sèche
+
+La surface se couvre
+complètement d’eau
+liquide
+
+Ainsi, lorsque la surface est suffisamment froide, la vapeur d’eau contenue dans l’air peut se liquéfier.
+Calculons l’humidité relative de l’air lorsque la température diminue :
+On prend par exemple la salle de classe à 22 °C et 51 % d’humidité.
+6
+
+Quelle serait l’humidité relative pour une température de la pièce à 15 °C ?
+D’après le graphe précédent, la pression de vapeur saturante à 15 °C vaut : psat(15 °C) = 17,5 hPa
+La masse d’eau dans l’air humide n’a pas changé (en supposant que la saturation ne soit pas atteinte), on a
+p VM eau
+m RT
+= 1,5 kg , donc la pression partielle vaut maintenant : peau = eau
+= 13,3 hPa .
+toujours : meau = eau
+RT
+M eauV
+Elle a à peine diminué car la température est seulement passée de 22 °C (295 K) à 15 °C (288 K).
+peau
+= 0, 76 .
+La nouvelle humidité relative vaut ainsi :  =
+psat (15°C)
+L’humidité relative a augmenté, passant de 51 % à 76 % d’humidité lorsque la température diminue.
+Pour liquéfier l’eau contenue dans l’air humide, il suffit donc de baisser suffisamment la température pour
+arriver à la saturation, correspondant à une humidité relative de 100 %.
+La température pour laquelle l’air humide est à saturation s’appelle la température de rosée (en référence à la
+rosée que l’on peut observer le matin sur les feuilles ou les toiles d’araignées).
+Pour déterminer la température de rosée, les professionnels de la climatisation utilisent le diagramme
+psychrométrique de l’eau (ou diagramme de l’air humide) qui ressemble au graphe suivant :
+
+Humidité relative
+
+51 %
+
+C
+
+B
+
+D
+Température (°C)
+
+A
+
+Pour déterminer la température de rosée de la salle de classe on procède comme suit : on repère la température
+de la pièce (ici 22 °C, point A), on trace une ligne verticale jusqu’à atteindre l’humidité relative de la pièce
+(ici 51 %, point B), puis une ligne horizontale jusqu’à la courbe de saturation (humidité relative de 100 %,
+point C) et enfin on reporte sur l’axe des abscisses pour obtenir la température de rosée (point D). On mesure
+ici une température de rosée de 11 °C.
+Principe de l’hygromètre à point de rosée
+La mesure de la température de rosée permet à l’inverse de déterminer l’humidité relative de l’air humide.
+Nous avons ainsi réalisé notre propre prototype d’hygromètre à point de rosée.
+Le principe est simple : il suffit de refroidir une surface jusqu’à observer l’apparition de gouttelettes sous
+forme de buée. L’air au voisinage de la surface est alors à saturation à la température de rosée.
+7
+
+Notre hygromètre utilise un miroir plan placé sur un récipient métallique. On refroidit le miroir avec quelques
+glaçons placés dans le récipient. On mesure la température à la surface du miroir à l’air d’un thermomètre
+relié à un ordinateur. L’observation de la buée peut se faire directement à l’œil, mais il est plus précis d’utiliser
+un détecteur de buée. On utilise ainsi un faisceau laser qui se réfléchit sur le miroir avant d’arriver sur une
+photorésistance. Lorsque la buée apparait à la surface, l’intensité du faisceau réfléchi diminue car la lumière
+est envoyée dans toutes les directions à cause des gouttelettes. On mesure alors la tension aux bornes d’une
+photorésistance parcourue par un courant constant : puisque la résistance du composant augmente quand
+l’intensité lumineuse diminue, la tension mesurée augmente lors de l’apparition de la buée.
+thermomètre
+
+récipient avec
+glaçons
+
+thermomètre
+
+laser
+laser
+
+miroir
+
+miroir
+
+photorésistance
+
+photorésistance
+
+T > Trosée
+Pas de buée sur le miroir
+
+T < Trosée
+Il apparaît de la buée et la
+lumière du laser est diffusée
+
+On enregistre les courbes suivantes :
+
+température de rosée
+
+apparition de la buée
+
+8
+
+Dans cette expérience, à partir de 280 s le signal délivré par la photorésistance augmente à cause de
+l’apparition de la buée. En reportant sur la courbe de la température, on peut lire directement la température
+de rosée, soit ici environ 10 °C. On utilise enfin le diagramme psychrométrique de l’eau et la température de
+la pièce pour déterminer l’humidité relative. Pour une température de 22 °C, on obtient ainsi 50 % d’humidité
+relative le jour de l’expérience, ce qui correspond assez bien à la valeur de 51 % donnée par l’hygromètre.
+Ce montage a l’avantage d’être simple, mais la mesure reste approximative car la température de la surface
+évolue au cours du temps, ce qui rend peu précis le moment d’apparition de la buée. La température minimale
+atteinte est également limitée par le système de refroidissement utilisant des glaçons. Une autre solution
+consisterait à contrôler la température du miroir en utilisant par exemple un module à effet Peltier.
+Finalement, pour liquéfier la vapeur d’eau contenue dans l’air humide, il suffit de baisser la
+température en dessous du point de rosée.
+Ce principe est utilisé dans les déshumidificateurs d’air. Certaines sociétés proposent ainsi des systèmes
+électriques capables de récupérer l’eau potable pour la consommer.
+
+Exemples de systèmes de production d’eau potable (Société Water from air)
+Ces solutions nécessitent cependant de l’énergie électrique (pour pouvoir refroidir la surface notamment) et
+les systèmes utilisant des panneaux solaires reviendraient très chers à l’achat.
+On souhaite dans notre projet pouvoir récupérer l’eau contenue dans l’air humide par un processus passif,
+c’est-à-dire qui ne consomme pas d’énergie, afin d’être utilisable dans des régions isolées avec peu de moyens.
+Dans la partie suivante on propose une étude d’un prototype de Warka Tower.
+
+Deuxième partie
+Une tour pour récupérer de l’eau
+Réalisation d’un prototype de tour
+Afin de nous rendre compte des contraintes imposées pour construire une tour avec des matériaux locaux,
+nous avons voulu fabriquer notre propre modèle réduit d’une Warka Tower. Nous avons utilisé du bambou et
+du fil de fer pour réaliser un modèle simple de tour d’une hauteur de 1,50 m. Nous avons ainsi fabriqué deux
+prototypes de tour avec des structures différentes (voir ANNEXE 2).
+
+9
+
+Pour mieux comprendre le rôle de la forme de la structure en bambou, nous avons contacté l’École Nationale
+Supérieure d’Architecture et de Paysage de Lille (ENSAPL). Au cours de notre visite, nous avons compris
+qu’un projet d’architecture doit tout d’abord répondre aux besoins des habitants et s’insérer au mieux dans le
+paysage. Le bambou est par ailleurs un matériau local facile à travailler, qui permet notamment de réaliser une
+structure à la fois légère et résistante à base de réseaux de barres, que l’on appelle grid shell en architecture.
+Dans ce type de structure, il faut favoriser les formes triangulaires qui réalisent un contreventement permettant
+de consolider l’édifice tout en gardant un rendu aéré. Pour maintenir la tour en place et éviter qu’elle ne
+bascule, on peut utiliser des cordages pour la fixer au sol ou utiliser un socle (avec du sable par exemple) si la
+structure est assez rigide.
+Action du vent sur la tour
+Nous avons décidé de nous intéresser à l’action du vent sur notre prototype de tour. Si la tour était simplement
+posée sur le sol, la moindre rafale de vent pourrait la faire basculer, c’est pourquoi il est nécessaire de la lester
+avec du sable réparti au niveau de sa base.
+La vitesse du vent dépend de la localisation du lieu choisi. A Dunkerque, la vitesse moyenne du vent est
+d’environ 20 km/h, avec des rafales de l’ordre de 50 km/h, voire plus de 100 km/h en cas de tempête.
+La force exercée par l’air sur un obstacle est appelée la force de traînée. Elle est dirigée dans le sens du vent
+et s’exprime par :
+F = 12  air CSv 2
+où v est la vitesse du vent (en m/s), ρair = 1,2 kg/m3 est la masse volumique de l’air, S est la surface frontale
+de l’obstacle (c’est-à-dire la surface « vue » par le vent) et C est le coefficient de traînée qui caractérise la
+forme de l’obstacle.
+
+h = 1,50 m
+vent
+
+d = 0,40 m
+On suppose pour simplifier que notre tour est cylindrique de hauteur h et de diamètre d, on a alors :
+S = d  h = 0,60 m2
+1000 50
+=
+= 14 m/s
+Pour un vent de vitesse 50 km/h, on a : v = 50 
+3600 3, 6
+Pour pouvoir calculer la force exercée par l’air sur la tour, il faut maintenant connaître le coefficient C.
+Nous avons donc fabriqué un banc de tests avec une soufflerie pour créer un écoulement à vitesse connue
+autour d’une tour miniature assimilée à un tube en PVC (de diamètre d’ = 32 mm et de hauteur h’ = 107 mm).
+
+10
+
+soufflerie
+
+tube
+
+axe de
+rotation
+h’
+d’
+
+axe de
+rotation
+
+dynamomètre
+
+dynamomètre
+
+Le cylindre est monté sur un bras en rotation autour d’un axe. La force F ' exercée par l’air sur le tube peut
+ainsi être mesurée directement par un dynamomètre car l’axe de rotation est situé au milieu de la barre.
+On peut modifier la vitesse de l’air en réglant la tension U aux bornes du moteur de la soufflerie. On procède
+tout d’abord à un étalonnage de notre banc de test en mesurant la vitesse v’ de l’air avec un anémomètre à fil
+chaud en fonction de la tension U.
+soufflerie
+
+anémomètre
+On obtient une droite d’étalonnage de la forme : v ' = k U avec k = 0,087 m/s/V
+On mesure enfin la force exercée par l’air sur la tour pour différentes tensions :
+U (V)
+
+75
+
+90
+
+105
+
+120
+
+135
+
+150
+
+165
+
+F’ (N)
+
+0,07
+
+0,10
+
+0,16
+
+0,21
+
+0,25
+
+0,30
+
+0,35
+
+La force s’exprime comme précédemment par : F ' = 12  air CS ' v '2 avec S ' = d ' h ' = 3, 4.10−3 m2
+11
+
+On trace donc F’ en fonction de v’2 :
+
+On trouve bien graphiquement une relation de la forme : F ' = a  v '2 avec a = 1,8.10−3 N.m-2 .s2 obtenu grâce
+à une régression linéaire.
+2a
+= 0,86 .
+On en déduit le coefficient C (qui ne dépend que de la forme de l’obstacle) : C =
+air S '
+Si on tient compte de la répartition statistique des points on obtient : C = 0,86  0,10 .
+Cette valeur semble cohérente, intermédiaire entre la sphère (C = 0,47) et le cube (C = 1,1) (Wikipédia).
+On peut maintenant calculer la force exercée par un vent de 50 km/h sur la tour de hauteur 1,50 m :
+F = 12  air CSv 2 = 12  1, 2  0,86  0, 60  14 2 = 61 N
+Dimensionnement du socle
+Cette force va s’appliquer au milieu de la tour et aura tendance à la faire basculer. On souhaite donc fixer la
+tour sur un socle contenant du sable et on cherche à estimer la masse de sable nécessaire. On utilise un modèle
+simple de la tour permettant de calculer cette masse.
+
+vent
+
+socle
+
+O
+
+O
+
+Pour éviter que la tour ne pivote autour du point O, le moment du poids doit être supérieur au moment de la
+Fh
+611,50
+=
+= 23,3 kg .
+force de traînée : Mg  d2  F  h2 , c’est-à-dire : M 
+gd 9,81 0, 40
+Un sac de sable de 25 kg sera donc suffisant pour maintenir notre tour en place dans ces conditions.
+
+12
+
+En pratique les architectes et les ingénieurs utilisent des logiciels qui calculent directement les efforts sur les
+bâtiments, ce qui leur permet d’adapter par exemple la taille des poutres ou de rajouter des renforts sous la
+forme de contreventements si nécessaire.
+Notre Warka Tower peut maintenant être munie de son filet de récupération.
+La partie suivante propose une étude de la capture des gouttelettes de brouillard par différents matériaux.
+
+Troisième partie
+Attraper des gouttelettes de brouillard
+Certaines régions du monde sont peu irriguées par les pluies, mais selon les conditions météorologiques, il
+peut apparaître régulièrement du brouillard.
+Le brouillard, constitué de fines gouttelettes d’eau, peut aussi être une source d’eau potable pour les habitants.
+Les plantes et les animaux sont généralement bien adaptés pour capter ces gouttelettes et permettre leur survie
+en milieu hostile. Par exemple, le ténébrion du désert (onymacris unguicularis) ou encore le stenocara sont
+des coléoptères de la région du désert du Namib (Namibie, Afrique) capables de capter le brouillard sur leur
+carapace pour s’hydrater (Wikipédia).
+De manière analogue, les filets à brouillard, comme les Warka Towers, permettent la récupération des
+gouttelettes d’eau avec un rendement de l’ordre de 10 L d’eau récupérée par jour et par mètre carré.
+
+Ténébrion du désert (Source : Wikipédia)
+
+Filet à brouillard au Chili (Source : Wikipédia)
+
+Quelles sont les caractéristiques des matériaux qui pourraient optimiser la récupération des gouttelettes ?
+Du brouillard fait maison
+Nous avons fabriqué un banc d’essais permettant de tester les capacités de récupération de gouttelettes de
+différents matériaux plongés dans le brouillard.
+Nous avons ainsi transformé une boîte en plastique en chambre de stockage de brouillard. Un défroisseur à
+vêtements constitue le générateur de brouillard et un ventilateur de sèche-cheveux sert de soufflerie pour
+éjecter le brouillard à une vitesse variable (jusqu’à 2 m/s) sur un échantillon.
+L’humidité relative dans la boîte atteint ainsi 90 % pour une température de l’ordre de 40 °C.
+
+13
+
+générateur de
+brouillard
+
+alimentation
+de la soufflerie
+hygromètre
+
+soufflerie
+échantillon
+chambre de
+stockage
+Nous avons placé des pailles alimentaires dans le tuyau de sortie pour stabiliser l’écoulement d’air et obtenir
+un jet régulier de brouillard. Nous avons ensuite procédé à un étalonnage de la soufflerie en mesurant la vitesse
+de l’écoulement à l’aide d’un anémomètre à fil chaud en fonction de la tension appliquée au moteur. Il sera
+ainsi possible de reproduire les expériences en maîtrisant les différents paramètres.
+
+chambre de
+stockage
+
+buse de sortie
+structure en nid d’abeilles
+pour stabiliser l’écoulement
+
+Pour nos premiers essais, nous avons réalisé un modèle simple de filet que nous avons placé dans le jet de
+gouttelettes à la sortie de la chambre à brouillard. La tension appliquée au moteur vaut 4,0 V. Nous avons testé
+l’expérience avec deux types de fils différents : du coton et du polypropylène.
+
+fils de
+polypropylène
+
+fils de coton
+
+14
+
+Lorsque le filet est plongé dans le brouillard, les fils se chargent de gouttelettes qui finissent par ruisseler et
+tomber. On compte alors le nombre de gouttes récupérées au cours du temps. Nous avons rassemblé les
+résultats sur le graphe suivant :
+
+Avec le fil de coton, la première goutte apparaît après plus de 18 minutes dans l’écoulement. Les gouttes
+tombent ensuite avec une durée moyenne de 90 s entre deux gouttes.
+Avec le fil de polypropylène, la première goutte très rapidement, après seulement 2 minutes dans l’écoulement.
+Les gouttent tombent ensuite toutes les 170 s en moyenne.
+Une goutte pèse en moyenne 0,03 g (mesure effectuée sur plusieurs gouttes similaires avec une balance
+précise) et a donc un volume de 3.10-5L. La surface de capture correspond à un disque de 40 mm de diamètre
+(taille de l’écoulement en sortie), soit 1,3.10-3 m2. Avec une goutte toutes les 90 s, le filet en coton a une
+3.10−5
+efficacité de capture de
+= 2, 6.10−4 L.m-2 .s -1 , soit encore 23 L par m2 et par jour (24 h, soit
+90 1,3.10−3
+24 x 3600 s). Le même calcul appliqué au filet de polypropylène donne un rendement de 12 L par m2 et par
+jour. Notre système reproduit fidèlement le principe du filet à brouillard, mais les résultats semblent dépendre
+fortement du matériau utilisé. En particulier, on se demande pourquoi il faut attendre si longtemps avant
+d’obtenir la première goutte avec le coton et pourquoi le rendement est plus faible avec le polypropylène…
+Des matériaux textiles aux propriétés étonnantes
+Les matériaux utilisés généralement pour récupérer les gouttelettes sont des matériaux textiles. Pour en savoir
+plus à ce sujet nous avons pris contact avec l’École Nationale Supérieure des Arts et Industries Textiles
+(ENSAIT) de Roubaix près de Lille et nous avons rencontré des professeurs et des chercheurs qui ont pu nous
+éclairer sur les différentes spécificités de chaque matériau.
+Nous avons ainsi appris à comprendre les matériaux textiles en découvrant leur processus de fabrication.
+Tout commence avec la fibre, qui est la plus petite unité des matériaux textiles. Une fibre est un filament fin
+et souple, souvent d’origine naturelle (comme le coton ou la laine) ou synthétique (comme le polyester ou le
+polypropylène).
+Ces fibres sont ensuite transformées en fil grâce à un processus appelé filature, où les fibres sont torsadées
+ensemble pour former une structure continue et résistante. On obtient alors un fil qui est plus résistant et de
+longueur aussi grande que nous le souhaitons, que l’on pourra tisser ou tricoter.
+Le fil est ensuite utilisé pour créer différentes structures textiles :
+- Le tissu est fabriqué par un procédé de tissage, où deux ensembles de fils sont croisés perpendiculairement
+pour former une surface plane et solide.
+- Le tricot, lui, est réalisé en croisant les fils sous forme de boucles. Cela rend le tricot plus extensible et doux
+que le tissu, ce qui est idéal pour des vêtements comme les pulls ou les t-shirts.
+- Le matériau intissé, contrairement au tissu et au tricot, n’utilise pas de fil. Il est fabriqué directement à partir
+de fibres qui sont liées entre elles par des procédés mécaniques (comme le feutrage), thermiques (chauffage)
+15
+
+ou chimiques (liants). Cela donne un matériau souvent plus léger et plus facile à produire, on les utilise en
+majorité pour des applications comme les lingettes ou les filtres.
+
+Tissu
+
+Tricot
+
+Intissé
+
+Source : www.testextextile.com
+
+Suite à notre visite et grâce à l’implication des chercheurs de l’ENSAIT (en particulier Christine Campagne,
+Ostyn Hubert, Stéphane Giraud et Philippe Vroman), nous avons pu obtenir des échantillons de tissus, de
+tricots et de textiles intissés avec des matériaux différents réalisés spécialement pour notre projet.
+Avant de placer les matériaux dans le jet de brouillard, on souhaite d’abord étudier leur comportement vis-àvis des gouttelettes d’eau.
+Nous disposons de 7 échantillons de textiles intissés avec des compositions différentes. Les caractéristiques
+(nature et taille des fibres) sont rassemblées dans le tableau ci-dessous :
+Référence
+
+Composition
+100 % PP
+
+MB 0.8
+
+(fibres submicroniques 0,8 µm)
+
+100 % PET
+
+PET 0.8
+
+(fibres microniques 9 µm)
+
+40 % PET, 30 % PA6, 30 % coton
+
+DU 61
+
+(60 % supermicrofibre + coton hydrophile)
+
+40 % PET, 30 % PA6, 30 % viscose
+
+DU 62Ic
+
+(60 % supermicrofibre + viscose hydrophile)
+
+70 % PET, 30 % PA6
+
+DU63
+
+(60 % supermicrofibre + fibre standard PET)
+
+70 % PET, 30 % PA6
+
+DU64
+
+(60 % supermicrofibre + microfibre)
+
+PW2.80 150 c
+
+60 % PET, 40 % PA6
+
+(80 % supermicrofibre)
+PP : polypropylène, PET : polyéthylène téréphtalate
+PA6 : polyamide (nylon)
+
+Nous avons déposé une goutte d’eau (avec un compte-gouttes) sur chaque échantillon posé à plat et observé
+son évolution au cours du temps en vidéo. Voici quelques clichés obtenus :
+
+Pas d’évolution
+dans le temps
+PET 0.8
+
+MB 0.8
+PW 2.8 150 c
+
+0
+
+3s
+
+32 s
+16
+
+temps
+
+Pour des matériaux comme le MB 0.8 et le PET 0.8, la goutte d’eau déposée sur la surface reste stable dans le
+temps. On peut alors mesurer l’angle de mouillage qui caractérise le degré d’hydrophobie du matériau :
+MB 08
+Référence
+
+Angle de mouillage θ
+
+MB 0.8
+
+entre 120° et 130°
+
+PET 0.8
+
+entre 120° et 130°
+
+θ
+
+La mesure de l’angle de mouillage est délicate à effectuer car le résultat dépend de l’orientation de la caméra.
+La surface est dite hydrophile lorsque θ < 90° et hydrophobe pour θ > 90°. Avec ici un angle de mouillage
+θ > 120° les matériaux MB 0.8 et PET 0.8 sont même super hydrophobes !
+Pour les autres matériaux intissés la mesure de l’angle de mouillage est rendue difficile par le fait que la goutte
+finit par être absorbée par le textile. Il apparaît cependant des différences dans les durées de vie caractéristiques
+des gouttes à la surface selon le matériau utilisé que l’on peut analyser à l’aide des vidéos.
+On dépose la goutte à l’instant initial et on observe la goutte à la surface. A partir d’un instant noté t1, la goutte
+commence à être absorbée, jusqu’à l’instant t2 où elle a complètement disparu. On reporte les instants t1 et t2
+pour les différents échantillons dans le tableau suivant, que l’on visualise avec le graphique ci-dessous (en
+bleu la goutte reste à la surface et en rouge la goutte est en train d’être absorbée jusqu’à disparition totale) :
+Référence
+
+t1 (s)
+
+t2 (s)
+
+DU 61
+
+0,7
+
+3,6
+
+DU 62Ic
+
+0
+
+0,7
+
+DU63
+
+3,1
+
+8,5
+
+DU64
+
+2,1
+
+17,2
+
+PW2.80 150 c
+
+3,2
+
+31,8
+
+Ainsi les matériaux comme le DU62 et le DU61 sont particulièrement hydrophiles et vont absorber très
+rapidement une goutte déposée en surface (le DU62 ne laisse même pas le temps à la goutte de se former à la
+surface qu’elle est déjà absorbée !). Les matériaux DU63, DU64 et PW2.80 150 c sont également hydrophiles,
+avec des temps caractéristiques d’absorption plus importants.
+On peut déduire simplement de ces observations que le fil en coton que nous avons utilisé pour le filet est un
+matériau plutôt hydrophile (comme dans le DU61), tandis que le fil en polypropylène (PP) est un matériau
+plutôt hydrophobe (comme dans le MB 0.8). Quand le filet en coton est plongé dans les gouttelettes du
+17
+
+brouillard, les gouttes qui se forment à la surface sont, dans un premier temps, absorbées par le matériau
+hydrophile. Lorsque les fibres de coton sont complètement remplies d’eau, les gouttelettes supplémentaires
+ne peuvent plus être absorbées et finissent par ruisseler, ce qui explique le retard observé lors de l’apparition
+des gouttes. Avec le filet en polypropylène, les gouttes qui apparaissent à la surface ne sont pas absorbées et
+tombent dès qu’elles sont suffisamment lourdes.
+En pratique, le choix du matériau pour une Warka Tower devra aussi tenir compte du coût du matériau, de la
+facilité de mise en place et de la durabilité dans le temps. En général, le filet utilisé est en polypropylène qui
+a l’avantage d’avoir une bonne résistance mécanique, ainsi qu’une bonne résistance à l’humidité et au soleil.
+Vers du biomimétisme
+La nature offre déjà des solutions efficaces pour capter les gouttelettes de brouillard, même dans des conditions
+difficiles. Ainsi la carapace du ténébrion du désert est une surface hydrophobe parsemée de petites pointes
+hydrophiles. Les gouttelettes d’eau sont capturées par les zones hydrophiles, grossissent pour former des
+gouttes qui vont pouvoir s’écouler sur la surface hydrophobe et atteindre la bouche du coléoptère pour
+l’hydrater.
+
+Source : https://bionique.artbite.fr/Un-scarabee-capteur-debrouillard.html
+
+pointes hydrophiles
+
+surface hydrophobe
+
+On peut s’inspirer de la nature en associant un matériau hydrophile et un matériau hydrophobe pour augmenter
+l’efficacité de la récupération des gouttes. C’est le principe du biomimétisme.
+On dispose de deux échantillons similaires constitués de l’association de deux tricots, un tricot fait de fils de
+coton (hydrophile) et un tricot fait de fils de polyester (hydrophobe). Dans l’échantillon 1, les tricots sont
+assemblés par du fil de coton. Dans l’échantillon 2, les tricots sont assemblés par du fil de polyester.
+
+face polyester
+
+face polyester
+
+fil coton
+
+fil polyester
+
+face coton
+
+face coton
+Échantillon 1
+
+Échantillon 2
+18
+
+On obtient ainsi plusieurs configurations possibles : surface hydrophile (face coton) avec points hydrophiles
+ou surface hydrophobe (face polyester) avec points hydrophiles pour l’échantillon 1 ; surface hydrophile (face
+coton) avec points hydrophobes ou surface hydrophobe (face polyester) avec points hydrophobes pour
+l’échantillon 2. Pour tester le comportement de chaque face vis-à-vis des gouttelettes, on dépose à nouveau
+une goutte à la surface et on mesure la durée d’absorption par le matériau textile.
+On obtient les résultats suivants (en bleu la goutte n’évolue pas, en rouge la goutte est absorbée) :
+
+On note quelques différences dues à la structure composite du textile. La face coton est toujours hydrophile,
+que le fil soit en coton ou en polyester (avec peu de différences entre les deux). La face polyester avec fil
+polyester est complètement hydrophobe. En revanche, la face polyester (hydrophobe) parsemée de fils de
+coton (hydrophile) devient hydrophile : une goutte d’eau déposée à la surface est absorbée par le fil de coton.
+On aurait ici une surface analogue à la carapace du ténébrion du désert…
+Nous avons placé ces échantillons à la sortie de notre générateur de brouillard pour voir quelle face permettrait
+de capturer le plus de gouttelettes. Avec les expériences réalisées jusqu’à présent, nous n’avons récupéré
+aucune gouttelette, même après une demi-heure dans le jet de brouillard. En particulier avec l’échantillon
+présentant la face polyester avec fil coton côté brouillard, la face arrière en coton se charge d’eau sans arrêt
+car les gouttelettes sont transférées d’une face à l’autre par le fil de coton. Il ne semble donc pas possible de
+récupérer l’eau par ruissellement dans ces conditions.
+Pour remédier à ce problème, Philippe Vroman, chercheur au laboratoire GEMTEX de l’ENSAIT, propose de
+réaliser pour notre projet un assemblage de fibres intissées qui pourrait imiter la carapace du ténébrion du
+désert. Il s’agit de superposer une couche super hydrophobe (comme le MB 0.8 étudié précédemment) avec
+une couche super hydrophile (comme le DU62 ou le DU61), puis de faire dépasser des fibres hydrophiles à
+travers la surface hydrophobe à l’aide d’aiguilles régulièrement réparties sur la surface.
+surface hydrophobe
+
+surface hydrophile
+
+aiguilles passant à
+travers les couches
+
+fibres hydrophiles dépassant de
+la surface hydrophobe
+
+La courte fibre hydrophile à la surface pourrait ainsi se charger facilement en eau et permettre la création
+d’une goutte qui pourra ruisseler sur la surface hydrophobe. Il reste encore à réaliser ces échantillons au
+laboratoire GEMTEX et à tester l’efficacité de cette méthode de récupération du brouillard… affaire à suivre !
+
+19
+
+Conclusion
+Notre étude a permis de mettre en évidence les conditions de récupération de l’eau contenue dans l’air humide.
+On peut ainsi forcer la liquéfaction de la vapeur d’eau sur une surface dont la température est inférieure à la
+température de rosée (qui dépend de l’humidité relative et de la température de l’air). Parmi les différents
+systèmes de récupération de l’eau atmosphérique, les Warka Towers sont une solution simple et élégante qui
+permet de concilier efficacité et esthétique. La structure en bambou doit cependant être suffisamment solide
+pour pouvoir soutenir le filet de récupération et résister au vent. Enfin, il est possible de concevoir des
+techniques de récupération des gouttelettes d’eau contenues dans le brouillard par biomimétisme en utilisant
+des surfaces combinant des matériaux hydrophiles et des matériaux hydrophobes. En réalisant des échantillons
+à base de textiles intissés de différentes propriétés il sera possible de déterminer la configuration optimale et
+peut-être d’obtenir une efficacité de récupération proche de la carapace du ténébrion du désert.
+
+Bibliographie et références
+• Pour comprendre l’humidité dans l’air
+Courty, J.-M., Kierlik, E. Un verre de rosée ou de brouillard ? Dans La physique buissonnière (pp. 66-69).
+Éditions Belin-Pour la science.
+Courty, J.-M., Kierlik, E. Vapeurs sous pression. Dans La physique buissonnière (pp. 58-61). Éditions
+Belin-Pour la science
+Corboz, Y. (2000). Condensation et condensation ! Bulletin de l’Union des Physiciens (BUP), 94(820),
+Janvier.
+Site wikipédia : https://fr.wikipedia.org/wiki/Pression_de_vapeur_saturante
+• Sur le projet des Warka Towers et la construction du prototype :
+Site officiel du projet Warka Water : https://warkawater.org/
+Laboratoire de Tribologie et Dynamique des Systèmes (Centrale Lyon) : https://ltds.ec-lyon.fr/?p=1891
+• Entreprise de récupération de l’eau sur le principe du déshumidificateur d’air :
+https://waterfromair.fr/
+• Principe des systèmes de récupération de l’eau dans l’air :
+Guyon, E., Hulin, J.-P., Moisy, F., Rabaud, M. Ratisser les eaux du ciel. Dans L’impermanence du monde
+(pp. 32-41). Éditions Flammarion.
+• A propos du ténébrion du désert et sa capacité à capter le brouillard :
+Site wikipédia : https://fr.wikipedia.org/wiki/Onymacris_unguicularis
+• Principe de l’expérience de récupération des gouttelettes de brouillard :
+Labbé, R., Duprat, C. (2019). Capturing aerosol droplets with fibers. Soft Matter, 15, 6946-6951.
+
+Remerciements
+Nous tenons à remercier Christine Campagne de l’ENSAIT (École Nationale Supérieure des Arts et Industries
+Textiles) à Roubaix pour la visite de l’école et son aide apportée pour l’étude des matériaux textiles, Philippe
+Vroman du laboratoire GEMTEX de l’ENSAIT pour les échantillons de textiles intissés et ses explications,
+Nadia Lecocq de l’ENSAPL (École Nationale Supérieure d’Architecture et de Paysage de Lille) pour la visite
+de l’école d’architecture et son aide dans notre projet, Delphine Désert et Mohammad Mansouri, enseignants
+à l’ENSAPL, pour leurs explications complémentaires sur la structure architecturale de la Warka Tower et
+Stéphane Beaudonnet pour la visite de l’atelier. Merci à nos professeurs encadrants Pascaline Dépret et Benoît
+Dépret pour nous avoir accompagnés tout le long de ce projet.
+20
+
+

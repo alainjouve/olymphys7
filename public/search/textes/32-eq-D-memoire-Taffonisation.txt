@@ -1,0 +1,622 @@
+Olympiades de Physique France
+Concours 2024 - 2025
+
+Taffonisation
+Club Sciences du Lycée Jeanne d’Arc Bastia
+
+BELINE Timon (Tle)
+BODSON Tia, DARY Jean-Antoine (2de)
+GEIGER Jules, HASSAM ISMAIL Ugo (1re)
+MONTAGGIONI Dorothée (Professeur SVT)
+PIACENTINI Joseph (Professeur Physique-Chimie)
+
+1
+
+Sommaire
+
+I.
+
+Introduction
+
+page 3
+
+II.
+
+Découvrir le site
+
+page 4
+
+III. Caractériser l’action du gel et du dégel
+
+page 5
+
+IV. Caractériser les conditions atmosphériques sous le rocher
+
+page 7
+
+V.
+
+page 9
+
+Caractériser l’action du sel marin
+
+VI. Conclusion
+
+page 16
+
+VII. Annexes
+
+page 16
+
+VIII.Bibliographie
+
+page 16
+
+IX. Remerciements
+
+page 17
+
+2
+
+Taffonisation
+I. Introduction
+Il y a quelques années, des élèves du Club Sciences de notre établissement s’étaient intéressés
+à un énorme rocher oscillant de près de 45 tonnes qu’un enfant pouvait mettre en mouvement.
+L’an passé, nous avons décidé de partir en montagne, découvrir cet environnement particulier.
+Nos pérégrinations au milieu de ce chaos granitique nous laissent observer un paysage
+étonnant, véritable bestiaire de rochers sculptés (Fig.1)
+
+Fig.1 : Rochers observés sur le plateau du Coscione. Hautes Terres de l’Alta Rocca.
+
+Les roches présentes ici montrent des cavités de toutes tailles qui semblent s’être creusées par
+en dessous. Dès la préhistoire les taffoni1 ont été occupés, fermés par des branchages ou des
+murets de pierres sèches (Fig.2).
+
+Fig.2 : Elèves du Club Sciences abrités dans un taffonu ouvert.
+
+Un des rochers a attiré notre attention. Ce n’est pas le plus gros ni le plus spectaculaire, mais
+sous un certain angle il ressemble à un chapeau de Napoléon. Posé sur un sol de granite, ses
+appuis réduits peuvent laisser penser qu’il est en lévitation. Une fissure d’une dizaine de
+centimètres l’éloigne du sol et une ouverture circulaire laisse entrevoir une large cavité
+creusée sous le rocher. Cependant, impossible de s’y glisser (Fig.3).
+
+Fig.3 : Vue du paysage. La flèche positionne le rocher ayant fait l’objet de notre étude.
+
+1 Le mot « taffoni » désigne le terme géologique qui décrit ce phénomène étrange à première vue de roches qui
+
+se creusent par en-dessous. - Corse Matin, « Taffoni et orii, la pierre et ses mystères à Roccapina » - https://
+www.corsematin.com/article/sartene/taffoni-et-orii-la-pierre-et-ses-mysteres-a-roccapina
+
+3
+
+Comment expliquer la formation de telles cavités sous ces blocs aux formes arrondies ?
+Le géologue Alain Gauthier expliquait lors de la journée du patrimoine : « La taffonisation est
+due à 4 malfaiteurs : le vent qui transporte les embruns, la pluie qui fait ruisseler l'eau salée
+dans les failles de la roche, le soleil qui cristallise le sel et enfin le sel lui-même qui fait
+éclater le granite, dissociant ses grains de quartz, feldspaths et micas »2.
+Ces affirmations nous interrogent et on se demande si le froid n’aurait pas aussi un rôle à
+jouer dans ce paysage de montagne. Plusieurs hypothèses sont envisagées.
+Cette érosion particulière pourrait-être expliquée par l’action du gel et du dégel, mais un
+microclimat plus froid règne-t-il sous ce rocher au point d’écailler sa surface ?
+Cette érosion particulière pourrait être expliquée par la cristallisation du sel marin, mais du sel
+marin peut-il être déposé sous ce rocher situé à 1300 m d’altitude et 30 Km de la mer, dans
+une anfractuosité aussi protégée ? Ce sel en cristallisant exerce-t-il des forces pressantes qui
+disloqueraient le granite ?
+Notre enquête sur la taffonisation est lancée !
+
+II. Découvrir le site
+La cavité sous le rocher étant quasi inaccessible, nous avons imaginé utiliser un Rover
+Arduino télécommandé, équipé d’une tourelle montée d’un dispositif sonar ultrason. Le
+dispositif pourrait emprunter l’étroite fissure, rouler sous le rocher, balayer la cavité
+d’ultrasons et en donner une image en 3 dimensions sous la forme d’un nuage de points.
+(Fig.4) (Voir Annexe 1).
+
+Fig.4 : Une maquette pour tester le Rover Arduino. Le résultat permet d’obtenir une image en
+3D caractérisée par un nuage de points. Si on reconnait la forme générale de la cavité, la
+mesure des distances montre parfois de grandes incertitudes. La précision de la mesure dépend
+de l’angle d’incidence de l’onde et de la distance entre l’émetteur et l’obstacle.
+
+Cependant, contraints par le choix d’une bonne fenêtre météo, nous optons pour une option
+plus facile à mettre en œuvre, utilisée en archéologie ou en architecture, la photogrammétrie
+(Fig.5). De nombreuses photographies sont réalisées, les données sont exploitées à l’aide du
+logiciel Polycam et une image numérique est obtenue3.
+2 Corse Matin, « Taffoni et orii, la pierre et ses mystères à Roccapina » - https://www.corsematin.com/article/
+
+sartene/taffoni-et-orii-la-pierre-et-ses-mysteres-a-roccapina
+https://youtube.com/shorts/4pHsVgBlYBc?si=dZbbTPLDnhfnkVrQ - Un lien pour visualiser l’animation
+obtenue.
+3
+
+4
+
+Fig.5 : Timon, photographiant le rocher à l’aide de
+son téléphone portable. 604 photographies ont été
+réalisées pour modéliser l’extérieur du rocher, 512
+photographies ont été réalisées pour modéliser
+l’intérieur du rocher.
+
+III. Caractériser l’action du gel et du dégel
+1. Des expériences pour mettre en évidence le phénomène
+Dans l'immense majorité des cas, l'état solide d'un corps, où les molécules sont plus
+ordonnées, occupe moins de place que l'état liquide. Pour l'eau, c'est l’inverse4. Ainsi, nous
+avons tous entendu des histoires sur des bouteilles éclatées parce qu’elles avaient été oubliées
+au congélateur.
+Mais le phénomène est-il identique lorsque une bouteille d’eau en verre est fermée, ouverte,
+ou à moitié pleine ?
+Nous avons sollicité Mr. Salge Simon, maitre artisan glacier à Saint Florent, qui nous a
+autorisé à utiliser sa chambre froide réglée à -25°C pour réaliser notre expérience.
+La bouteille pleine et bouchée a éclaté : la formation de glace génère une augmentation de
+pression dans la bouteille qui éclate. Comme on peut observer que le bouchon a été poussé
+par la glace, on suppose que la pression a été relativement forte. La bouteille pleine et ouverte
+a également éclaté : elle montre la formation d’un bouchon de glace qui a conduit au même
+résultat. On suppose que cette situation est celle qui illustre le mieux la dégradation à la
+surface du rocher par l'action du gel et du dégel. Par contre, la bouteille à demi-pleine a résisté
+: la glace s’est développée vers le haut et les contraintes latérales, si elles existent, ne sont pas
+mises en évidence (Fig.6).
+
+1
+
+2
+
+Fig.6 : Observations des bouteilles de verre placées à
+-25°C.
+1 : Bouteille pleine et bouchée montrant le
+déplacement du bouchon poussé par la glace.
+2 : Bouteille pleine et bouchée, bouteille pleine et
+ouverte, bouteille à moitié pleine et ouverte.
+Les bouteilles pleines ont éclaté alors que la bouteille
+à moitié pleine est restée intacte.
+
+Des forces pressantes semblent donc exister, mais comment les mesurer ?
+2. Des expériences pour mesurer les forces pressantes mises en jeu
+Notre première idée, basée sur les observations du bouchon soulevé, consiste à réaliser
+plusieurs mesures de pression. Un manomètre électronique est relié au bouchon percé d’un
+tube à essais contenant de l’eau et plongé dans un mélange réfrigérant constitué de glace pilée
+et de chlorure de sodium. Ce dispositif nous permet de vérifier que la variation de pression de
+l’air au-dessus du volume d’eau prenant en glace augmente avec la masse d’eau, mais dépend
+également du volume d’air emprisonné au-dessus de l’eau.
+
+4 https://www.futura-sciences.com/sciences/questions-reponses/molecule-glace-prend-elle-plus-place-eau-
+
+liquide-7327/ - Portail d'information multidisciplinaire, animé par une équipe de journalistes couvrant 5
+domaines de l'actualité : santé, sciences, maison, tech et planète.
+
+5
+
+Une autre série de mesures est effectuée à l’aide d’une balance électronique supportant une
+masse reposant sur un plateau soulagé par la poussée de la glace en expansion dans un tube à
+essais. Mais ce dispositif ne nous donne pas non plus satisfaction.
+Ces différents protocoles (Voir Annexe 2) posent problème et nous réalisons finalement que
+nous avons fait fausse route : il nous faut mesurer la pression de l’eau qui fait éclater la
+bouteille lorsqu’une partie de cette eau prend en glace dans un volume fini.
+Notre deuxième idée consiste à réaliser plusieurs mesures de résistances. Un capteur résistif,
+constitué d'une résistance déformable au sein d’un film plastique, est relié à un ohmmètre et
+placé dans une bouteille avec de l’air sous pression croissante (Fig.7). Comme nous
+n’observons aucune variation, nous supposons que les actions pressantes s’exerçant à
+l’identique sur les deux faces du capteur ne produisent pas sa déformation.
+
+1
+
+2
+
+Fig.7 : Dispositif utilisant le capteur résistif. 1 - Le capteur résistif est
+3
+constitué d’une piste métallique emprisonnée dans un film plastique.
+2 - La gomme au bout du crayon déforme le capteur couché sur le
+plateau d’une balance électronique. La masse affichée par la balance est en rapport avec l’action et
+la pression exercées sur le capteur. L’ohmmètre affiche la résistance du capteur qui diminue lorsque
+la valeur de l’action mécanique sur le capteur augmente. 3 - Le bouchon d’une bouteille est équipé
+d’une valve afin de pouvoir mettre l’air intérieur sous pression, à l’aide d’une pompe à vélo. Le
+capteur est scotché sur la paroi interne de la bouteille. Aucune variation de résistance n’est
+observée, alors que la pression de l’air augmente jusqu’à 8 bar. Les forces pressantes s’exerçant de
+la même façon sur les deux faces, le capteur ne se déforme pas.
+
+Finalement nous décidons d’utiliser un capteur piézoélectrique que nous relions à un microcontrôleur Arduino (Fig.8) : la tension de sortie du capteur est ici proportionnelle à la pression
+du liquide dans lequel il est plongé. Alimenté en 5 Volt, une tension de sortie de 0,5V
+correspond alors à une pression de 1 bar.
+Fig.8 : Spécifications du capteur piézoélectrique.
+Marque : Yosoo Health Gear
+Dimensions : L = 10mmm ; l = 10mm ; H = 10mm
+Matériau : Acier inoxydable
+Tension : DC 5 V
+Pression : 150 psi
+Précision : à 2 % de la lecture (pleine échelle).
+Câblage : rouge pour + 5 V ; Noir pour le sol ; Bleu pour la sortie du signal.
+Sortie : sortie de tension linéaire de 0,5 V ~ 4,5 V.
+Précision : à 2 % de la lecture (pleine échelle).
+Capacité de surcharge : 2 à 4 fois la pression nominale
+Température de fonctionnement : - 40°C ~ +120°C.
+Température de compensation : 0℃ ~ +80℃
+Classe de protection : IP67
+Support d'impression : pétrole, gaz et eau, compatible avec l'acier inoxydable 316L
+Temps de réponse : ≤1 ms
+
+Une bouteille en verre ouverte contenant le capteur de pression plongé dans un litre d’eau, est
+placée à -18°C dans le congélateur de la cantine du lycée. Après environ 5 heures (Fig.9) nous
+observons que la tension en sortie, image de la pression mesurée, augmente lentement et
+6
+
+qu’un bouchon de glace s’est formé dans le goulot. Cependant la pression chute brusquement
+et nous entendons simultanément le bruit d’une fuite. À quatre reprises, sous l’effet de la
+pression, le bouchon de glace a laissé échapper une giclée d’eau, avant que la fuite ne soit
+colmatée par le gel. Après environ 1160 secondes nous observons une brusque augmentation
+de pression, certainement expliquée par la prise en glace d’une partie de l’eau en surfusion.
+Le bouchon de glace cède encore, et nous ne tardons pas à mettre fin à l’expérience, la
+pression de l’eau dans la bouteille étant supérieure à la valeur limite de 10 bar que l’on peut
+mesurer avec ce capteur. A cet instant, la bouteille n’est toujours pas cassée. Il nous faudrait
+disposer d’un capteur offrant une plage de mesure plus grande pour mesurer la pression de
+l’eau qui fracture le verre de la bouteille.
+
+Tension (v)
+
+Temps (secondes)
+
+Fig.9 : Evolution de la tension en sortie du capteur en fonction du temps. La tension mesurée est
+l’image de la pression de l’eau à l’intérieur de la bouteille. 1V = 2bar. Les données affichées
+correspondent à celles relevées après 5h à -18°C.
+
+Ainsi, même si nos expériences ne sont pas toutes abouties, on peut admettre que les
+pressions mesurées lors de la prise en glace de l’eau dans un volume fini peuvent atteindre des
+valeurs importantes susceptibles de générer des désordres dans la structure de la roche.
+
+IV. Caractériser les conditions atmosphériques sous le rocher
+À l’automne 2023 nous avions caché deux capteurs enregistreurs de température et
+d’hygrométrie. L’un à côté du rocher, accroché sur une branche de bruyère, l’autre dans la
+cavité. Les capteurs avaient été paramétrés afin d’enregistrer la température et l’hygrométrie
+toutes les heures. Nous les avons retrouvés lors de notre nouvelle expédition cet automne
+2024. Une fois les données récupérées, nous les avons traitées à l’aide un programme Python
+(Fig.10).
+(Voir Annexe 3).
+
+7
+
+Fig.10 Haut : Traitement des
+données issues du capteur
+positionné à coté du rocher ;
+Bas : Traitement des données
+issues du capteur positionné sous
+le rocher. La courbe rouge montre
+l’évolution de la température en
+fonction des jours, la courbe
+bleue montre l’évolution de
+l’hygrométrie en fonction des
+jours. L’hygrométrie est au plus
+haut lorsque la température de
+l’air atteint le point de rosée
+(Dew point), moment où la
+vapeur se liquéfie et forme la
+rosée sur les végétaux et/ou la
+roche.
+
+Fig.5.2 : Traitement des données issues du capteur positionné sous le
+
+Comme nous avions imaginé que l’action du gel et du dégel était le principal moteur de cette
+érosion spectaculaire, nous nous sommes focalisés sur les jours de grand froid en négligeant
+les nombreuses variations d’hygrométrie. Toutefois, nous sommes surpris par le faible
+nombre de jours où la température de l’air est descendue en dessous de 0°C, à 1300 m
+d’altitude au centre de la Corse : 5 jours seulement.
+Cependant, la comparaison des données obtenues sous le rocher et à coté de celui-ci laisse
+penser qu’un microclimat peut exister sous ce rocher. S’il ne fait pas toujours plus froid en
+hiver sous le rocher (Fig.11) l’évolution des grandeurs atmosphériques enregistrées semble
+être « lissées » dans la cavité (Fig.12) laissant apparaitre moins de variations des paramètres
+atmosphériques sous le rocher qu’en dehors.
+Date et heure
+
+Température extérieure
+
+Température sous rocher
+
+19 janv 2024 ; 7h40
+
+-3,0°C
+
+5°C
+
+21 janv 2024 ; 0h40
+
+6,0°C
+
+-2°C
+
+22 janv 2024 ; 6h05
+
+-0,5°C
+
+0,5°C
+
+Fig.11 : Quelques températures enregistrées. Les données obtenues ne permettent pas d’affirmer
+qu’il fait toujours moins froid sous le rocher.
+
+8
+
+Fig.12 Haut : Traitement des données issues du capteur positionné à coté du rocher ; Bas :
+Traitement des données issues du capteur positionné sous le rocher. Une observation sur une
+semaine permet de confirmer les faibles variations de température et d’hygrométrie sous le rocher.
+
+Ainsi, plus que l’action du gel et du dégel, une plus grande inertie de la température et de
+l’hygrométrie pourrait expliquer cette curieuse érosion.
+
+V.Caractériser l’action du sel marin
+1. Des expériences pour mettre en évidence la cristallisation
+À l’image de l’eau qui prend en glace et exerce une action pressante sur son contenant, on
+s’est posé la question de savoir si du sel ou du sucre qui cristallise dans un tube à essais peut
+en entraîner l’éclatement.
+Nous avons mis dans des tubes à essais et des boîtes de pétri des solutions saturées, sucrées et
+salées, que nous avons laissées durant plusieurs semaines à température ambiante. Nous avons
+pu observer que toute l’eau ne s’évapore pas et que la cristallisation est différentes : alors que
+les cristaux de sucre se forment dans les contenants et y restent, les cristaux de sel semblent
+« s’en échapper » (Fig.13)
+
+Fig.13. : La cristallisation du sel et du sucre. Les cristaux de sel ont tendance
+à migrer hors de leur contenant, alors que les cristaux de sucre ne montrent
+pas ce phénomène.
+
+9
+
+Les résultats observés nous ont longuement interrogés. La porosité de la structure de chlorure
+de sodium pourrait-elle être une explication ?
+2. Des expériences pour mettre en évidence la présence de sel marin
+Lors de notre première expédition, en même temps que les capteurs de température et
+d’hygrométrie, nous avions placé dans l’anfractuosité deux « pièges à sel », constitués de
+deux pots en verre collés sur un caillou plat. Un des deux pots était ouvert en direction du
+plafond de la cavité, l’autre était surmonté par son couvercle décollé d’un centimètre pour ne
+collecter que ce qui serait apporté par le flux d’air horizontal (Fig.14).
+
+Fig.14 : « Piège à sel ». Les deux pots en verre son placés sous le rocher afin de récolter le dépôts
+présents dans la cavité.
+
+Après avoir récupéré les « pièges », nous avons décollé les dépôts du fond des pots et les
+avons dissouts avec un peu d’eau distillée. Des gouttes de cette solution ont été déposées sur
+une lamelle de verre en vue d’une observation microscopique. Après évaporation, si des
+cristaux de chlorure de sodium sont présents, ils devraient cristalliser.
+Nous avons sollicité Mr. Quilichini Yann, ingénieur de recherche au laboratoire UMR CNRS
+Sciences Pour l’Environnement (SPE) de l’Université de Corse, qui est responsable du
+microscope électronique à balayage (MEB).
+Notre échantillon est expertisé et comparé à une préparation témoin réalisée avec quelques
+gouttes d’eau de mer. Un ciblage sur la lamelle de verre est aussi réalisé pour vérifier sa
+composition et confirmer qu’elle ne peut induire d’erreur d’interprétation (Fig.15).
+
+Fig.15 : Résultat d’analyse de la lamelle de verre. La composition révèle la présence d’ions
+silicium (Si), sodium (Na), oxygène (O), calcium (Ca), magnésium (Mg) et carbone (C) mais
+l’absence d’ion chlorure.
+
+10
+
+L’oeil expert de Mr. Quilichini permet d’identifier que notre échantillon contient des pollens,
+le ciblage des cristaux observés dans l’échantillon (Fig.16) montre la même signature que
+ceux observés pour le témoin d’eau de mer (Fig.17), ce qui nous permet de confirmer la
+présence de chlorure de sodium. Le ciblage de la lamelle de verre ne révélant aucune présence
+de chlorure permet d’envisager l’origine de ce chlorure de sodium
+
+Fig.16 : Résultat d’analyse de la lamelle témoin, contenant de l’eau de mer. Le criblage des
+cristaux révèle la présence d’ions Na (sodium) et Cl (chlorure) qui permettent d’identifier les
+cristaux de sel (NaCl).
+
+Fig.17 : Résultat d’analyse de notre échantillon. Le criblage des cristaux révèle la présence
+d’ions Na (sodium) et Cl (chlorure) qui permettent d’identifier ces cristaux de sel.
+
+Ainsi, l’analyse réalisée à l’Université de Corse confirme la présence, dans cette cavité sous
+rocher, de sel qui semble être marin.
+
+11
+
+De plus, en nous basant sur la publication Wikipédia5, « La composition chimique moyenne
+du granite est : 74,5 % de SiO2, 14 % de Al2O3, 9,5 % de (Na2O, K2O), 2 % d'autres oxydes
+(Fe, Mn, Mg, Ca) » on peut admettre que si l’élément sodium entre bien dans la composition
+du granite et pourrait être issu ce celui-ci, l’élément chlore est absent de la roche et ne peut
+provenir que d’un apport extérieur.
+3. Des expériences pour expliquer le dépôt de sel marin au sommet de
+la cavité
+Nous avons d’abord imaginé une maquette permettant de modéliser la circulation de l’eau
+dans le rocher.
+Nous avons réalisé un profil de la cavité en « plexiglas » sur le principe d’un empilement de
+trois plaques. Mr. Bandini Gérard, de l’association OPRA à Bastia, nous a expliqué le
+fonctionnement de la machine découpe-laser que l’on a pu utiliser pour donner forme aux 3
+plaques que l’on a assemblées à l’aide de vis papillon. De retour au lycée, après avoir relié la
+maquette à un robinet, nous étions prêts à observer le mouvement de l’eau au sein de la
+cavité. Pour rendre le phénomène facilement observable nous avons injecté, par la cheminée,
+du colorant alimentaire bleu (Fig.18)
+Cependant, la mise en fonctionnement n’est pas si simple. Il faut être capable de gérer les
+coups de bélier dans la canalisation, les fuites au niveau de l’entrée d’eau, la pression d’eau
+afin qu’elle ne repousse pas le colorant vers le haut et une bulle d’air très difficile à éliminer
+de la cavité. On se propose alors d’immerger la maquette dans un aquarium ce qui permet de
+résoudre le problème et de visualiser le trajet de l’eau6.
+
+1
+
+3
+
+2
+
+4
+
+Fig.18 : Maquette permettant de modéliser le mouvement du fluide dans la cavité. Du colorant injecté par
+la cheminée montre l’existence d’un tourbillon.
+
+5https://fr.wikipedia.org/wiki/Granite# - Le granite.
+
+https://youtube.com/shorts/ApOUyQ_9GUY?feature=share - Vidéo de l’expérience réalisée montrant le trajet
+de l’eau dans la maquette.
+6
+
+12
+
+Si le vent dans la cavité se comporte comme ce courant d’eau nous pouvons imaginer que des
+embruns peuvent être déposés au plafond de la cavité sous rocher.
+Cependant, comment confirmer que l’air se comporterait dans une cavité bien plus
+grande comme l’eau dans cette petite maquette ?
+Pour cela, nous avons contacté un ancien élève du club Sciences, Mr. Nikolaev Mikhail qui
+est ingénieur et passionné de mécanique des fluides. Lors d’une visioconférence il nous a
+expliqué le fonctionnement du logiciel de simulation ANSYS ce qui nous a permis d’obtenir
+une modélisation du flux d’air circulant dans la cavité à échelle réelle (Fig.19)7.
+
+Fig.19 : Modélisation réalisée à
+partir du logiciel ANSYS. Les vecteurs
+vitesse rendent compte du mouvement
+du fluide.
+
+Cette démarche de simulation avec le logiciel ANSYS nous permet de confirmer le dépôt
+possible d’embruns marins au plafond de la cavité.
+4. Des expériences pour mesurer la pression de cristallisation
+Nos recherches menées sur le net nous ont permis de découvrir un article retraçant « un
+entretien avec Julie Desarnaud sur la cristallisation des sels »8 traitant de l’effet des sels sur
+les matériaux de construction en lien avec la dégradation des monuments.
+Mme. Desarnaud travaille actuellement en Belgique à l’IRPA (Institut Royal du Patrimoine
+Artistique) au sein d’un laboratoire dédié à la préservation des monuments et des œuvres
+d’art. Nous décidons de contacter cette scientifique. Elle accepte très volontiers et nous
+propose une visioconférence.
+Lors de sa thèse9, Mme. Desarnaud a infirmé la notion de pression de cristallisation et l’idée
+qu’en cristallisant, les sels comme le chlorure de potassium, exerceraient des actions
+pressantes au niveau des micro-fissures dans lesquelles l’eau salée se serait infiltrée par
+capillarité10.
+Essayer de mesurer une force pressante lors de la cristallisation de chlorure de sodium est
+donc peine perdue.
+7
+
+https://youtu.be/Unjfi-4zUUc - Vidéo de la modélisation du trajet de l’air dans le rocher
+
+http://doc.lerm.fr/entretien-avec-julie-desarnaud-sur-la-cristallisation-des-sels/ - « Entretien avec Julie
+Desarnaud sur la cristallisation des sels » - Site documentaire du Lerm, laboratoire Indépendant & Expertise
+Qualité du groupe Setec, entreprise d’ingénierie pluridisciplinaire française.
+8
+
+9 Mécanisme de croissance et dissolution de cristaux de KCl sous charge : Apport dans la connaissance des
+
+mécanismes d'altération des pierres par les sels - TEL - Thèses en ligne (hal.science) - Thèse 2009 - Julie
+Desarnaud.
+10 « En aucun cas, le monocristal de KCl ne développe de pression de cristallisation. Il semble improbable qu'un
+
+cristal du type KCl puisse dégrader une pierre en exerçant par pression de cristallisation » - Extrait issu du
+résumé de la thèse de Julie Desarnaud.
+
+13
+
+Mme. Desarnaud nous suggère de réaliser des prélèvements par forages de 1 cm de
+profondeur sur les blocs de granite afin de quantifier la quantité de chlorure de sodium
+présente sur les parois de granite.
+Un prélèvement a été réalisé sur une partie sommitale exposée à la pluie, le second au plafond
+d’une cavité accessible. Le tout est envoyé en Belgique.
+L’analyse des échantillons a permis d’en déterminer leur composition (Fig.20)
+
+Fig.20 : Résultat d’analyse de nos échantillons par chromatographie ionique, exprimés
+en pourcentage massique de matière sèche. On peut remarquer que la quantité de
+chlorure de sodium (NaCl) sur le rocher est d’environ 10 fois supérieure à celle sous le
+rocher. On peut également noter que d’autres sels sont présents.
+
+L’étude thermodynamique des équilibres de solubilité a permis aux scientifiques de l’IRPA,
+de nous proposer des graphiques montrant les variations du volume de sel cristallisé en
+fonction de l’hygrométrie (Fig.21).
+Sur le rocher.
+
+Sous le rocher.
+
+Fig.21 : Variations du volume de sel cristallisé en fonction de l’hygrométrie.
+Sur le rocher : Les représentations cumulées montrent que les sels les plus abondants sont NaCl et KNO3.
+La plupart des sels vont cristalliser à une humidité comprise entre 55% et 63%. Si l’humidité relative de
+l’air dépasse 63% les sels resteront en solution et ne cristalliseront pas ; si l’humidité relative de l’air est
+inférieure à 55% tous les sels seront cristallisés. NB : à 35% la nitromagnésite va cristalliser mais il faut
+garder en tête que 35% est une humidité relative très faible.
+Sous le rocher : Les représentations cumulées montrent que les sels les plus abondants sont carnalite, NaCl
+et KNO3. La fourchette où les sels peuvent cristalliser est plus large que sur le rocher, avec une humidité
+relative allant de 40% à 75%. Ainsi, on peut dire que la zone à risque d’altération est plus large dans la
+14
+cavité qu’en dehors.
+
+On peut alors identifier que les sels les plus abondants sont le chlorure de sodium (NaCl) et le
+nitrate de potassium (KNO3). On peut également remarquer que la quantité NaCl sur le rocher
+est d’environ 10 fois supérieure à celle sous le rocher. La présence de sel abaissant la
+température de solidification de l’eau, la formation de gel en période de basse température est
+favorisée sous le rocher. Même si notre étude n’a pas révélé une longue période de grand
+froid, ce paramètre est certainement à prendre en considération.
+De plus, il est possible de déterminer 3 plages d’hygrométrie : une première plage où les sels
+sont cristallisés (pas de modification de volume des cristaux), une deuxième plage où on peut
+observer des dissolutions partielles (variation de volume des cristaux) et une troisième plage
+d’hygrométrie où les sels sont entièrement dissouts.
+Selon Julie Desarnaud ce sont les nombreuses variations de volume des cristaux de sel qui
+sont responsables de l’altération des roches.
+Ainsi, l’étude basée sur les échantillons prélevés, sur et sous le rocher, montre que les
+variations de volume de sel sont davantage possibles sous le rocher, la plage d’hygrométrie
+permettant les phénomènes de dissolution/cristallisation étant plus large.
+Finalement, ce sont les variations journalières d’hygrométrie, que nous pensions sans intérêt,
+qui semblent être à l’origine de la dégradation du granite par l’action du sel marin. Ces
+nombreux cycles de dissolution-cristallisation semblent venir à bout de la cohésion entre les
+minéraux qui constituent la roche.
+Julie Desarnaud poursuit encore ses explications avec la notion de pression de disjonction.
+Entre le cristal en croissance et la paroi granitique existe une lame nanométrique de solution
+sursaturée. La surface du cristal de NaCl apparait comme négative de part la taille plus
+importante des ions chlorures par rapport aux ions sodium. La surface du granite en
+interaction avec la solution aqueuse se polarise négativement. Des forces répulsives
+apparaissent entre les couches en vis à vis portant des charges de même signe. Au gré des
+fluctuations d’hygrométrie les variations d’épaisseur de la couche nanométrique sursaturée
+fragilisent la cohésion entre les minéraux de la roche (Fig.22)11.
+Fig.22 : Schéma de la double couche électrique. Le modèle de
+Gouy-Chapman-Stern permet de comprendre les interactions
+colombiennes répulsives au sein de la lame manométrique
+sursaturée. La surface du NaCL ainsi que celle du granite
+apparaissent chargée négativement. La répartition des charges qui
+en résulte au sein de la lame sursaturée génère des forces
+répulsives.
+
+Ainsi, ce n’est pas la « pression de cristallisation » générée par un cristal en croissance qui
+exerce des forces pressantes sur la roche mais la « pression de disjonction » générée par les
+variations des forces répulsives au sein de la lame en sursaturation.
+
+11 https://fr.wikipedia.org/wiki/Double_couche_électrique - Wikipédia
+
+15
+
+VI.Conclusion
+La taffonisation est une érosion spectaculaire qui sculpte les paysages de Corse. Notre
+investissement dans la compréhension de ce phénomène fascinant multi-factoriel nous a
+amené à aborder différents domaines de la physique et de nouer des relations enrichissantes.
+Si l’alternance de gel et de dégel de l’eau peut être un facteur d’altération de la roche, il n’en
+n’est pas aujourd’hui le principal moteur. Le piège à sel, la maquette, la simulation
+informatique et l’analyse des échantillons nous ont prouvé que, même loin de la mer, le vent
+pouvait déposer des embruns au plafond de la cavité. Cependant, la notion de « pression de
+cristallisation » pendant longtemps admise est désormais abandonnée pour la notion de
+« pression de disjonction » proposée par Julie Desarnaud.
+Les nombreuses fluctuations d’hygrométrie, plus que le grand froid, semblent être le principal
+moteur de la Taffonisation.
+Nos recherches et nos expériences ne doivent pas nous faire oublier que l’érosion du granite
+est un phénomène très lent. « I stantari », les menhirs sculptés à l’âge du bronze, en sont le
+témoignage.
+
+VII.Annexes
+Annexe 1 : Une image de la cavité scannée par un Rover ultrasons.
+Page 2
+Annexe 2 : Comment mesurer la pression générée par l’eau qui prend en glace ? Quatre
+démarches qui ne nous ont pas donné satisfaction.
+Page 7
+Annexe 3 : Un programme pour traiter les données de température et d’hygrométrie.
+Page 11
+Annexe 4 : Utilisation d’un logiciel de simulation pour modéliser le flux d’air dans la cavité.
+Page : 18
+
+VIII.Bibliographie
+https://www.corsematin.com/article/sartene/taffoni-et-orii-la-pierre-et-ses-mysteres-aroccapina
+https://www.futura-sciences.com/sciences/questions-reponses/molecule-glace-prend-elle-plusplace-eau-liquide-7327/
+https://fr.wikipedia.org/wiki/Granite#
+http://doc.lerm.fr/entretien-avec-julie-desarnaud-sur-la-cristallisation-des-sels/
+Mécanisme de croissance et dissolution de cristaux de KCl sous charge : Apport dans la
+connaissance des mécanismes d'altération des pierres par les sels - TEL - Thèses en ligne
+(hal.science)
+https://fr.wikipedia.org/wiki/Double_couche_électrique
+16
+
+IX.Remerciements
+Mr. BANDINI Gérard, Animateur EPN / Fabmanager, Association OPRA, Bastia.
+Dr. DESARNAUD Julie, Materials Scientist, Institut Royal du Patrimoine Artistique,
+Jubelpark 1, 1000 Brussel, Belgium.
+Mr. NIKOLAEV Mikhail, Ingénieur, (Ancien élève du Club Sciences du Collège-Lycée
+Jeanne d’Arc Bastia), Paris.
+PAOLI Eloïse: À l’automne 2023, non loin du rocher objet de notre étude, Eloïse PAOLI,
+élève en classe de seconde, a escaladé la roche alvéolée pour y cacher un capteur de
+température et d’hygrométrie. Expatriée cette année au Québec, elle n’a pu poursuivre
+l’aventure des Olympiades de Physique France avec nous. Nous la remercions pour
+l’autorisation de publication de la photographie figurant en page de garde.
+Mr. QUILICHINI Yann, Ingénieur de recherche, UMR CNRS Sciences Pour
+l’Environnement (SPE), Université de Corse, Laboratoire, Corte.
+
+17
+
+

@@ -1,0 +1,645 @@
+Lycée Jean Paul II
+
+Olympiades
+Nationales de
+physique
+Le marnage face au barrage
+
+EVEN-HERNANDEZ Nathan, TALLUR Elijah, TISSOT
+Luc, VEILLAUX Victor
+2024 2025
+
+Table des matières
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+7.
+
+Introduction ..................................................................................................... 2
+1.1.
+
+Notre projet .............................................................................................. 2
+
+1.2.
+
+Une courte histoire du barrage ................................................................... 2
+
+1.3.
+
+Son fonctionnement .................................................................................. 3
+
+La loi de la conservation de l'énergie .................................................................. 4
+2.1.
+
+Base ......................................................................................................... 4
+
+2.2.
+
+Les énergies exploitées par le barrage de la Rance ....................................... 4
+
+Modélisation du barrage par une maquette ........................................................ 8
+3.1.
+
+Réalisation de la maquette ......................................................................... 8
+
+3.2.
+
+Exploitation et calculs................................................................................ 9
+
+3.3.
+
+Calcul du débit volumétrique en fonction du temps ................................... 10
+
+La production en fonction de la marée ............................................................. 11
+4.1.
+
+Fonctionnement ...................................................................................... 11
+
+4.2.
+
+Protocole ................................................................................................ 12
+
+4.3.
+
+Simulation numérique ............................................................................. 13
+
+Protection cathodique .................................................................................... 14
+5.1.
+
+La Protection cathodique à courant imposé .............................................. 14
+
+5.2.
+
+Vérification expérimentale ....................................................................... 15
+
+Les tourbillons ............................................................................................... 17
+6.1.
+
+Apparition ............................................................................................... 17
+
+6.2.
+
+Modélisation ........................................................................................... 18
+
+Conclusion et remerciements ......................................................................... 19
+
+1. Introduction
+1.1. Notre projet
+Dans le cadre des Olympiades Nationales de Physique, nous avons choisi d’explorer le
+barrage marémoteur de La Rance, un sujet à la croisée de la physique appliquée et des
+enjeux énergétiques. Ce site emblématique, situé en Bretagne, est le premier barrage
+marémoteur au monde et reste, à ce jour, un exemple phare de l’exploitation des
+énergies renouvelables. L'intérêt de cette infrastructure réside dans sa complexité et la
+diversité des phénomènes physiques que nous pouvons étudier sur cette base.
+Notre projet a pour objectif d'étudier en profondeur les principes physiques et les défis
+technologiques qui sous-tendent son fonctionnement. Grâce à des expérimentations et
+des modélisations, nous tenterons de répondre aux questions suivantes :
+-
+
+Quels sont les mécanismes physiques qui permettent de transformer l’énergie
+potentielle des marées en électricité ?
+En quoi les choix de conception influencent-ils les performances énergétiques ?
+
+Ce travail s’inscrit dans une démarche scientifique rigoureuse alliant observations de
+terrain, simulations numériques, expérimentations et réflexions prospectives. En
+explorant ce sujet, nous espérons non seulement mieux comprendre les défis de la
+transition énergétique, mais également sensibiliser à l’importance de l’innovation pour
+répondre aux enjeux énergétiques.
+Ce projet illustre notre engagement à mettre en lumière l’alliance entre science et
+technologie, tout en explorant l'une des merveilles de l’ingénierie française. En effet,
+l'énergie est nécessaire à presque tous les aspects de la vie moderne, qu'il s'agisse de la
+production d'électricité, du transport, de l'industrie ou des technologies de l'information.
+Comprendre comment l'énergie est transformée et utilisée permet de développer des
+solutions plus efficaces et durables pour répondre aux besoins énergétiques croissants
+de notre société.
+
+1.2. Une courte histoire du barrage
+Le barrage de la Rance, situé en Bretagne, est emblématique de l'exploitation de
+l'énergie marémotrice.
+L'idée de construire ce type de barrages remonte aux années 1920, mais c'est après la
+Seconde Guerre mondiale que le projet prend véritablement forme. Dans un contexte de
+reconstruction et de développement énergétique, la France cherche à diversifier ses
+sources d'énergies et l'utilisation des marées, un phénomène abondant sur la côte
+bretonne, apparaît comme une solution prometteuse.
+Robert Gibrat, polytechnicien et directeur de l'électricité au ministère des Travaux
+publics supervise la construction. En 1956, le gouvernement français approuve le projet,
+
+et les travaux de construction du barrage débutent en 1961. Ceux-ci rencontrent
+toutefois de nombreuses difficultés techniques et logistiques en raison de la complexité
+de la région, avec ses marées puissantes et son relief.
+D'une durée de six ans, le chantier a nécessité la mise en place de structures innovantes
+pour relier les deux rives de la Rance et construire une centrale capable de résister à la
+force des marées. Le barrage est finalement inauguré en 1967, après d'importants
+travaux de transformation de cette portion du fleuve.
+Cet ouvrage d'ingénierie représente une avancée technologique importante et marque
+un jalon dans l’histoire de l’exploitation des énergies renouvelables en France.
+Cependant cet ouvrage français a été dépassé en termes de puissance en aout 2011 par
+la centrale de Shiwa en Corée du Sud (254 MW) la puissance de l’usine bretonne est-elle
+de 240 MW.
+
+FIGURE 1 : Photographie aérienne du barrage de la rance par Dinard tourisme avec le côté mer à droite et le
+coté rance à gauche
+
+1.3. Son fonctionnement
+Le barrage de la Rance fonctionne selon le principe de l'énergie marémotrice, en
+exploitant les variations du niveau de la mer dues aux marées pour produire de
+l'électricité. Le barrage, qui mesure 750 mètres de long1, comporte une série de turbines
+et de portes. Lors de la marée montante, l'eau de la mer s'engouffre dans l’estuaire de la
+
+1 D’APRES (1962) L'USINE MAREMOTRICE DE LA RANCE, LA HOUILLE BLANCHE, 48:2, 117-129, DOI:
+10.1051/LHB/1962028
+
+Rance, qui constitue le bassin de retenue. A marée haute, les portes du barrage sont
+fermées pour créer une différence de niveau entre le bassin et la mer. Ensuite, lors de la
+marée descendante, les portes sont ouvertes et l'eau du bassin est relâchée à travers
+des turbines, générant de l'électricité. Le barrage peut également produire de l'électricité
+pendant la marée montante en inversant le flux d'eau. Ce mécanisme réversible permet
+au barrage de fonctionner régulièrement, produisant de l'énergie à chaque cycle de
+marée, avec une production maximale pendant les grandes marées. En tout, 24 turbines2
+sont utilisées pour transformer l'énergie des marées en électricité.
+
+2. La loi de la conservation de l'énergie
+Nous commencerons par examiner la loi de conservation de l'énergie, puis nous
+procéderons aux calculs de la puissance électrique nominale des alternateurs et de
+l'énergie fournie aux turbines. Cela nous permettra de déterminer les différentes
+énergies en jeu.
+
+2.1. Base
+Formulée par Hermann von Helmholtz en 1847, la loi de conservation de l'énergie affirme
+que l'énergie totale d'un système reste constante au cours du temps. Pour simplifier,
+l'énergie ne peut ni être créée ni détruite ; elle peut seulement être convertie d'une forme
+à une autre. Cette loi fondamentale de la physique est essentielle pour comprendre les
+processus énergétiques qui sous-tendent le fonctionnement du barrage.
+𝐸𝑚 = 𝐸𝑐 + 𝐸𝑝
+𝑬𝒎 l’énergie mécanique
+𝑬𝒄 l’énergie cinétique
+𝑬𝒑 l’énergie potentielle
+
+2.2. Les énergies exploitées par le barrage de la Rance
+Une turbine est composée d’un système de pales et d’un alternateur. C’est ce dernier
+qui permet de transformer l’énergie mécanique en énergie électrique. L’énergie
+générée par le barrage de la Rance
+Dans notre cas, le barrage se situe dans un estuaire soumis à différents courants :
+
+2 D’APRES HILLAIRET, P. 1984. “VINGT ANS APRES LA RANCE, UNE EXPERIENCE MAREMOTRICE.” LA HOUILLE BLANCHE
+70 (8): 571–82. DOI:10.1051/LHB/1984043.
+
+-
+
+Le débit de la Rance : Le débit moyen de la Rance3 est inférieur à 10 m³/s. Ce
+débit peut être négligé dans notre analyse pour plusieurs raisons. Tout d'abord,
+comparé aux volumes d'eau déplacés par les marées, ce débit est relativement
+faible par rapport à celui d’un groupe bulbe qui peut être de 275 m³/s. De plus, les
+variations de débit de la Rance sont généralement lentes et prévisibles, ce qui
+permet de les intégrer dans les modèles de gestion du barrage sans qu'elles
+n'affectent significativement les calculs de puissance potentielle. En négligeant
+ce débit, nous simplifions les calculs sans perdre en précision significative,
+surtout lorsque nous nous concentrons sur les effets des marées.
+
+-
+
+Le courant induit par les marées : Ce courant, bien que non exploité
+directement, joue un rôle crucial dans le fonctionnement du barrage. Les marées
+créent des différences de hauteur d'eau de part et d'autre du barrage, générant
+ainsi une différence de pression qui peut être convertie en énergie4.
+
+L’énergie cinétique étant donc négligée, l’expression de l’énergie mécanique devient
+donc :
+𝐸𝑚 = 𝐸𝑝
+On peut donc calculer la puissance potentielle grâce à la relation :
+𝑃𝑝 = Δ𝑃 × 𝑄 = 𝜌 × 𝑔 × Δℎ × 𝑄 avec
+𝝆 la masse volumique de l’eau qui est égale à 1000 + 33 = 1033 g/L (qui est la
+moyenne des données de la FIGURE 2).
+𝒈 la constante gravitationnelle environ égale à 9,80665 N/kg.
+𝜟𝑷 la différence de pression de l’eau entre chaque côté du barrage.
+𝑸 le débit d’eau du groupe Bulbe (Voir ci-après).
+𝜟𝒉 la différence d hauteur d’eau entre chaque côté du barrage.
+
+3 D’APRES HYDROPORTAIL - STATION HYDROMETRIQUE J710301001. DONNEES DE DEBIT D’EAU INSTANTANE MAXIMAL N
+JOURNALIER (N=1, NON GLISSANT) ENTRE LE 1 JANVIER 2023 ET LE 1 JANVIER 2024.
+4 D’APRES SEBASTIEN DE LA VALLEE POUSSIN (1991) CONDUITE AUTOMATIQUE DE L'USINE MAREMOTRICE DE LA RANCE,
+LA HOUILLE BLANCHE, 77:2, 131-140, DOI: 10.1051/LHB/1991010
+
+FIGURE 2 : Mesure de la salinité de l’eau de la Rance en juillet 2020 5.
+
+La hauteur de chute d’eau exploitée est entre 1,2 m et 4,0 m selon les précisions
+apportés par un ingénieur EDF rencontré lors d’une visite privée que nous avons eu la
+chance de pouvoir organiser sur le site.
+Le débit d’un seul groupe bulbe est de 260 m3/s ou de 275 m3/s (en surrégime lors des
+cas de hautes productions). 6
+
+D’APRES RTIMI, RAJAE, ALDO SOTTOLICHIO, PABLO TASSI, CHRISTINE BERTIER, MATTHIEU LE BRUN, MARINE
+VANDENHOVE, AND LUCA PARQUET. 2022. “THREE-DIMENSIONAL HYDRODYNAMIC MODEL OF THE RANCE ESTUARY
+(FRANCE) INFLUENCED BY THE WORLD’S SECOND LARGEST TIDAL POWER PLANT.” LHB 108 (1).
+DOI:10.1080/27678490.2021.2016025.
+6
+D’APRES EDF : PRODUIRE DE L'ELECTRICITE SUR LA RANCE, DISPONIBLE EN LIGNE : HTTPS://WWW.EDF.FR/USINEMAREMOTRICE-RANCE/PRODUIRE-DE-LELECTRICITE
+5
+
+FIGURE 3 : Graphique représentant l’évolution de la puissance potentielle en fonction de la différence de
+hauteur d’eau entre le coté estuaire et le côté mer pour deux débits différents.
+
+Par lecture de ce graphique et pour une hauteur d’eau de 4,0 m :
+-
+
+-
+
+Avec un débit de 260 m3/s on peut voir que la puissance potentielle est d’environ
+10,5 MW. Cela veut donc dire qu'environ 0,5 MW sont dissipés lors de cette
+deuxième conversion d’énergie mécanique en énergie électrique.
+Avec un débit de 275 m3/s on peut voir que la puissance potentielle est d’environ
+11,2 MW. Cela veut donc dire qu'environ 1,2 MW sont dissipées lors de cette
+deuxième conversion d’énergie mécanique en énergie électrique.
+
+Cette dissipation est due aux différents frottements qui ralentissent le mouvement de
+rotation. De surcroît, les électrons rencontrent de la résistance dans les fils électriques.
+Cela provoque, comme tous types de frottements, un échauffement.
+Cependant 6 alternateurs sur les 24 de l’usine ont fait l’objet d’une révision et de
+quelques changements de pièces permettant ainsi de pouvoir générer 11,0 MW et non
+pas 10,0 MW.
+Ainsi, concernant ces 6 alternateurs
+-
+
+Pour un débit de 260 m3/s l’alternateur produit donc moins que sa puissance
+nominale.
+
+-
+
+Pour un débit de 275 m3/s seulement 0,2 MW sont dissipées.
+
+Supposons que l’usine tourne à plein régime pour un débit Q = 275 m3/s pendant une
+heure, on a :
+𝐸𝑝𝑜𝑡𝑒𝑛𝑡𝑖𝑒𝑙𝑙𝑒 = 11,2𝑀𝑊 × 24 × 1,00ℎ ≈ 269 𝑀𝑊ℎ
+𝐸𝑒𝑙𝑒𝑐𝑡𝑟𝑖𝑞𝑢𝑒 = (11,0𝑀𝑊 × 6) + (10,0𝑀𝑊 × 18) × 1,00ℎ = 246 𝑀𝑊ℎ
+𝐸𝑑𝑖𝑠𝑠𝑖𝑝é = 269𝑀𝑊 − 246𝑀𝑊 = 23 𝑀𝑊ℎ
+Soit une énergie dissipée ou non exploitée de 23MWh sur l’ensemble de l’usine tournant
+à plein régime pendant une heure.
+
+FIGURE 4 : Schéma énergétique pour l’usine marémotrice de la rance
+
+3. Modélisation du barrage par une maquette
+Dans cette partie nous traiterons de la réalisation du barrage par une maquette.
+
+3.1. Réalisation de la maquette
+La maquette a pour but de représenter un modèle proche de la réalité. Ainsi elle se
+compose de deux éprouvettes graduées représentants les côtés mer et estuaires. De
+plus il y a une vanne de chaque côté de la turbine qui modélisent les batardeaux (voir
+« portes » dans 1.3). Ceux-ci permettent d’isoler la turbine pour des travaux par exemples
+ou de pouvoir créer une différence de hauteur entre les deux côtés du barrage.
+Dans notre maquette la turbine est modélisée par une pompe à laquelle nous avons
+retiré ses éléments électriques pour ne garder que le conduit étanche et la pale
+dissociée du moteur afin de supprimer les frottements provenant de celui-ci. Cette pale
+n’est pas de type Kaplan et pourrait donc faire l’objet d’une amélioration ultérieure. En
+effet, c’est une roue à aube plus souvent utilisé pour des chutes d’eau verticales. Cette
+modélisation met en évidence le fait qu’une chute d’eau n’est pas nécessaire pour
+produire de l’électricité. En effet la force de pression apportée à un certain volume d’eau,
+lorsque celui-ci rencontre un volume d’eau différent, est assez forte pour causer le
+
+mouvement de la turbine et donc produire de l’électricité. Enfin, pour une utilisation plus
+facile de ce modèle, nous avons ajouté un robinet pour vidanger le système.
+
+FIGURE 5 : Photo de la maquette
+
+3.2. Exploitation et calculs
+Pour commencer, il est nécessaire d'introduire le niveau d'eau souhaité dans le tuyau de
+droite afin que la roue à aubes puisse tourner.
+Dans la maquette, les tuyaux sont remplis avant leur utilisation pour représenter les 13
+mètres sous le niveau de la mer. Le niveau choisi pour la modélisation dans l'éprouvette
+est de 42,5 cm, correspondant à 2 litres d'eau, afin de simuler les 13,5 mètres de
+marnage observés lors des plus forts coefficients de marée. Ainsi, la différence de
+hauteur d'eau dans le barrage est représentée par 42,5 cm sur la maquette, ce qui
+correspond à une échelle de 1/62. En effet, en appliquant cette échelle, 0,425 m sur la
+maquette représente 26,35 m dans la réalité (60 * 0,425 = 26,35 m). Cette modélisation
+
+permet ainsi de reproduire à échelle réduite les variations de hauteur d'eau dans le
+barrage.
+
+Calculs de pression :
+𝑃𝑎𝑏𝑠𝑜𝑙𝑢𝑒 = 𝑃𝑒𝑎𝑢 + 𝑃𝑎𝑡𝑚
+𝑃𝑒𝑎𝑢 = 𝜌 × 𝑔 × ℎ
+𝝆 la masse volumique de l’eau (égale à 1033kg/m3)
+𝒈 la constante de gravitation (environ égale à 9,81m/s2)
+h la hauteur d’eau (42,5 cm pour la maquette et 26,50 m pour le barrage)
+D’ou :
+𝑃𝑒𝑎𝑢1 = 1000 × 9,81 × 0,425 et 𝑃𝑒𝑎𝑢0 = 1033 × 9,81 × 26,5
+𝑃𝑒𝑎𝑢1 = 41,7 hPa et 𝑃𝑒𝑎𝑢0 = 268 × 101 hPa
+Donc pour une pression atmosphérique standard de :
+𝑃𝑎𝑏𝑠1 = 1013,25 + 41,7 et 𝑃𝑎𝑏𝑠0 = 1013,25 + 2680
+𝑃𝑎𝑏𝑠1 = 1054,95 hPa et 𝑃𝑎𝑏𝑠0 = 3693,25 hPa
+Nous avons rempli à droite le tube modélisant le côté rance du barrage à une hauteur
+(verticale) de 42,5 cm. Après avoir ouvert le circuit et attendu la fin de l’écoulement de
+l’eau on mesure que la hauteur d’eau de chaque côté est maintenant de 21 cm (1L).
+Soit :
+𝑃𝑒𝑎𝑢2 = 1000 × 9,81 × 0,21
+𝑃𝑒𝑎𝑢2 = 20,6 hPa
+𝑃𝑎𝑏𝑠2 = 1013,25 + 20,6
+𝑃𝑎𝑏𝑠2 = 1033,85 hPa
+
+3.3. Calcul du débit volumétrique en fonction du temps
+Nous avons filmé le mouvement de la turbine au ralenti durant un cycle de
+fonctionnement. Ainsi à l’aide d’un programme informatique que nous avons développé
+en python7 nous avons mesuré le nombre de tour par minute à chaque instant. Pour ce
+faire il nous a fallu analyser la couleur d’un pixel de la vidéo situé plus ou moins au centre
+7
+
+https://github.com/Elijaht-dev/onp_tc
+
+de la turbine qui passait du jaune (couleur originale de la turbine qui recouvre les ¾ de
+sa surface) au noir (coloré à l’aide d’un marker indélébile qui recouvre 1/4 de sa surface).
+
+Figure 6: Graphique du débit volumétrique en fonction de la durée de la vidéo
+
+4. La production en fonction de la marée
+Dans cette partie nous allons expliquer le fonctionnement des marées, la raison de la
+construction dans cette zone du barrage et comment l’énergie électrique est
+effectivement générée. Puis, nous modéliserons cette production par le biais d’une
+simulation informatique.
+
+4.1. Fonctionnement
+La marée est un phénomène complexe qui grâce aux positions de la Terre, de la Lune et
+du Soleil influe sur la masse d’eau présente sur Terre. C'est donc une variation du niveau
+des mers et des océans.
+Cette variation est plus ou moins importante en fonction de notre région d’étude. En
+bretagne cette variation est l’une des plus importante du monde. En effet le marnage qui
+est la différence entre la pleine mer et la basse mer peut atteindre 13,5 m8.
+Cette force, générée par le déplacement de cette grande masse d’eau, est donc
+exploitée par l’usine à marée montante.
+Les 24 groupes bulbes sont équipés de turbines dites de types Kaplan. Ces turbines sont
+adaptées pour de faibles hauteurs de chutes variant de 2 à 25 mètres. Ses pâles
+D’APRES (1962) L'USINE MAREMOTRICE DE LA RANCE, LA HOUILLE BLANCHE, 48:2, 117-129,
+DOI: 10.1051/LHB/1962028
+8
+
+orientables dont on peut faire varier le pas pendant le fonctionnement permettent aussi
+bien de produire de l’électricité dans les sens estuaire vers mer ; mais donc aussi de la
+mer vers estuaire grâce à la marée.
+En effet, lors d’une marée avec un faible marnage, l’usine peut dans certains cas isoler
+la partie mer de la partie Rance à l’aide de batardeaux (voir FIGURE 7) et exploiter la
+différence de hauteur entre les deux cotés et par conséquent la différence de pression
+(voir partie 0).
+
+FIGURE 7 : Illustration d’un batardeau permettant d’isoler un coté de la turbine de la partie rance ou de la
+partie mer, 48 (24x2) sont donc disposé le long du barrage et utilisé dès que nécessaire 9.
+
+4.2. Protocole
+Tout d’abord, nous avons tracé la courbe montrant l’évolution du niveau de la mer en
+fonction du temps (les deux cycles de marées quotidiens). Puis nous avons superposé
+la courbe du niveau de la Rance. Celle-ci suit celle de la mer jusqu’à son maximum
+ensuite les batardeaux isolent les deux côtés. Ainsi lorsque, grâce à la marée
+descendante il y a une hauteur de chute de 4,0 m la production commence et la courbe
+du niveau de la Rance descend au rythme de 6600 m3/s (24 x 275 m3/s). Enfin quand les
+deux courbes se rejoignent un deuxième cycle commence.
+Lors de cette modélisation nous n’avons pas pris en compte la notion de pompage, ce
+point pourrait donc être amélioré. Notre courbe ne prend donc en compte que le
+turbinage direct.
+9 D’APRES TRAVAUX-SOUS-MARINS-MARITIMES.COM ; MISE EN PLACE DE BATARDEAUX AU BARRAGE DE LA RANCE ; 10
+FEVRIER 2021
+
+4.3. Simulation numérique
+Nous avons décidé de simuler la production électrique de l’usine pour mettre en
+évidence l’utilité de nos modélisations précédentes. Pour cela nous avons codé un
+programme python en utilisant les librairies :
+-
+
+request pour l’acquisition des données de marée
+matplotlib pour la modélisation
+numpy pour le calcul de Riemann afin de calculer l’énergie totale générée en
+fonction de la puissance électrique variable durant la génération
+time pour le formatage informatique des dates
+PyQt5 pour l’interface graphique.
+Voir Figure 1 annexe pour le programme python.
+
+Nous utilisons tout d’abord l’api (interface permettant d’échanger des données entre
+deux systèmes informatiques indépendants) de World Tide (seul service gratuit
+accessible au grand public) afin d’acquérir les informations de la hauteur de la marée
+pour la date donnée par intervalles de 2 minutes (intervalle la plus précise possible pour
+la récupération des données). Ensuite nous générons les données de la hauteur de l’eau
+côté Rance en utilisant le débit de l’eau qui se vide pour connaitre la baisse de l’eau de
+ce côté durant la génération en se basant sur un débit d’eau de 6600m3/s (24 x 275 m3/s)
+dont voici le calcul par intervalle de 2 minutes :
+∆ℎ𝑣𝑖𝑑é𝑒 =
+
+𝑄×∆𝑡
+𝑆
+
+avec :
+
+∆𝒉𝒗𝒊𝒅é𝒆 la hauteur d’eau qui se vide par intervalle de deux minutes en m
+𝑸 le débit d’eau (6600 m3/s comme expliqué précédemment)
+∆𝒕 la durée de l’intervalle de temps entre chaque donnée en s (120s ici)
+𝑺 la surface de la retenue en m2 (qui est de 22 000 000m2)10
+ℎ𝑣𝑖𝑑é𝑒 =
+
+6600 × 120
+= 0.036𝑚
+22000000
+
+Nous comparons les hauteurs côté mer et côté Rance et calculons ensuite la différence
+d’eau entre les 2 côtés (la hauteur d’eau côté mer étant la hauteur de la marée) pour
+chaque tranche de 2 minutes en ne gardant que les données correspondant à une
+différence entre 1,2m et 4,0m. Nous calculons pour chacune de ses tranches de 2
+minutes la puissance de génération et les ajoutons à un tableau de type “numpy array”
+et utilisons la fonction “sum” de numpy pour calculer le nombre de MWh générés durant
+10 D’APRES COMITE FRANÇAIS DES BARRAGES ET RESERVOIRS – MONOGRAPHIE DETAILLEE DU BARRAGE DE L’USINE
+MAREMOTRICE DE LA RANCE, PUBLIE EN 2022, DISPONIBLE EN LIGNE : HTTPS://WWW.BARRAGESCFBR.EU/IMG/PDF/MONOBAR_RANCE.PDF
+
+la période donnée (voir 0). Nous affichons ensuite ces données dans un tableau avec
+Matplotlib que nous intégrons dans une interface graphique de PyQt5.
+L’affichage des résultats se présente comme suit avec l’énergie électrique générée en
+Wh sur 24h au-dessus d’un graphique représentant le niveau côté mer et côté Rance
+pour le jour donné :
+
+FIGURE 8 : Capture d'écran du résultat du programme pour la date du 23 novembre 2024
+
+Il est important de noter que ces simulations ne tiennent pas compte du pompage et que
+par conséquent il n’est pas possible de simuler la production pour les plus petites
+marées (coefficient de marée inférieur à 30). La production durant de telles marées étant
+très basse cela est négligeable.
+
+5. Protection cathodique
+5.1. La Protection cathodique à courant imposé
+La protection cathodique à courant imposé est une technique électrochimique qui vise
+à prévenir la corrosion des métaux en les polarisant de manière cathodique. Dans le cas
+du barrage de la Rance, cette méthode consiste à appliquer un courant électrique
+continu aux structures métalliques via des anodes (électrode où a lieu la réaction
+d'oxydation - cela signifie qu'elle perd des électrons) inertes, transformant ainsi toute
+leur surface en cathode (électrode où a lieu la réaction de réduction - cela signifie qu'elle
+
+gagne des électrons). Ce processus empêche les réactions d'oxydation responsables de
+la corrosion, protégeant efficacement les matériaux contre les effets corrosifs de l'eau
+de mer. Les anodes inertes, souvent fabriquées en matériaux comme le titane revêtu de
+dioxyde de plomb ou de platine, sont utilisées pour fournir le courant nécessaire sans se
+dégrader, assurant ainsi une protection durable et fiable.
+
+5.2. Vérification expérimentale
+Afin de vérifier cette protection cathodique nous avons réalisé une expérience sur une
+semaine à l’aide de :
+-
+
+4 agitateurs magnétiques et 4 barreaux aimantés
+4 béchers
+Du sel
+De l’eau distillée
+Deux générateurs
+4 plaques de fer de taille et de masse identique
+2 électrodes en carbone
+4 fils électriques + 4 pinces crocodiles
+
+Nous avons commencé par la réalisation de deux solutions à partir d’eau distillée et de
+sel. La première solution S1 de concentration massique en sel (NaCl) 33 g/L (valeur
+moyenne de la masse volumique de l’eau au niveau du barrage de la Rance voir FIGURE 2)
+et la deuxième solution S2 de concentration 357 g/L (solution froide saturée en sel pour
+obtenir un résultat plus prononcé). Ainsi nous avons pris :
+-
+
+𝑚1 = 33,0 × 0,250 = 8,25g de sel pour S1 d’un volume de 250mL
+𝑚2 = 357 × 0,250 = 89,3g de sel pour S2 d’un volume de 250mL
+
+Puis nous avons préparé les deux béchers pour chacune des solutions en y ajoutant
+ensuite de 250 ml d’eau distillée depuis une éprouvette graduée.
+Puis nous avons disposé nos quatre béchers sur les agitateurs magnétiques et après
+nous avions ajouté un barreau aimanté qui nous a permis de diluer au mieux le sel dans
+l’eau.
+Ensuite nous avons pris deux béchers contenant respectivement les solutions S1 et S2
+dans lesquelles nous avons ajouté une plaque de fer de dimensions et de masse
+connues (120 mm de longueur, 29 mm de largeur et 2 mm d’épaisseur et une masse de
+55,37g) dont la partie immergée était de 5,0 cm dans le but de pouvoir observer la rouille
+qui pourrait se former au cours de la semaine.
+
+FIGURE 9 : Photographie des 2 solutions (à gauche saturée et à droite non saturée) non protégés au début
+de l'expérience
+
+Les deux béchers restants contiennent respectivement les solutions S1 et S2 et, ont suivi
+le même protocole. Une différence est cependant importante car, pour chacun des
+béchers, la plaque de fer est reliée à la borne négative d’un générateur. Nous y avons
+ajouté et immergé une anode inerte de carbone. Ces dernières sont reliées à la borne
+négative du générateur. Une tension continue de 3,0 V est alors appliquée. L’ajout d’une
+anode inerte permet de faire passer un courant entre ces deux éléments reproduisant
+alors une situation de protections cathodiques.
+Voir figure 4 annexe : Photographie de la Solution S1 et du générateur au début de
+l'expérience
+Au bout d’une semaine nous avons donc retiré les quatre plaques de fer.
+Avant l’expérience une plaque avait une masse de 55,37 grammes. Or après avoir
+mesuré la masse de chacune des plaques, on peut voir que les plaques par lesquelles le
+courant passait, celle-ci on exactement la même masse ce qui confirme que celle-ci ne
+se sont pas oxydées même en présence de sel et d’oxygène. L’oxydation a pu être
+empêchée au cours de la semaine. L’équation de la réaction d’oxydation à l’anode est :
+2𝐶𝑙⁻(𝑎𝑞) = 𝐶𝑙₂(𝑔) + 2𝑒⁻
+L’équation de la réaction de réduction qui se produit sur la plaque de fer protégée est :
+𝑂₂(g) + 2𝐻₂𝑂(l) + 4𝑒⁻ = 4𝑂𝐻⁻(aq)
+L’équation bilan est :
+4𝐶𝑙⁻(𝑎𝑞) +𝑂₂(g)+ 2𝐻₂𝑂(l) ⇌ 2𝐶𝑙₂(𝑔)+4𝑂𝐻⁻(aq)
+
+Toutefois, dans les cas où les plaques de fer ne sont pas polarisées, le fer rouille. En
+effet, la rouille est le résultat d'une réaction d'oxydoréduction lorsque le fer est exposé à
+l'eau et à l'oxygène. Cette réaction chimique a pour conséquence un gain de masse via
+l’apport d’oxygène. Cette réaction est notamment accélérée en présence de sel, comme
+dans les solutions S1 et S2, car le sel augmente la conductivité de l'eau, facilitant ainsi
+le transfert d'électrons et donc, accélère la corrosion.
+Toutefois d’après notre expérience (voir figure 3 annexe) nous avons pu remarquer un
+fort contraste entre les plaques de fer plongées dans un milieu saturé en sel. En effet
+nous pouvons constater que la plaque de fer polarisée ne présente pas de rouille à sa
+surface tandis que l’autre présente une forte couche de rouille à sa surface. Nous
+pouvons donc en déduire que les électrons apportés par le générateur permettent
+d’empêcher l’oxydation du fer, soit la formation de la rouille.
+En l'absence de protection, comme une anode sacrificielle ou une source d'électricité
+pour fournir les électrons manquants, le fer continue de s’oxyder et donc de se dégrader
+(voir figure 4 annexe). En effet la rouille se formant du fait de la perte d’électrons par le
+fer ne peux pas se former car le courant électrique fournit des électrons de façon à
+“compenser” ceux perdus par le fer.
+En résumé, sans protection adéquate pour combler le déficit d’électrons, le fer continue
+de s'oxyder, ce qui est observé dans les deux solutions S1 et S2. Cette formation de
+rouille présente alors un problème pour le barrage car la rouille est extrêmement friable.
+Cette grande friabilité fragiliserait les pales, en plus de diminuer le rendement des
+turbines qui devraient alors être changés et/ou réparés à haute fréquence. De plus, il est
+compliqué en raison de la nature unique de ce site de se procurer des pales de
+rechanges selon les dires de l’ingénieur EDF rencontré lors de notre visite.
+
+6. Les tourbillons
+L’un des autres problèmes auquel doit faire face le barrage est le phénomène de
+tourbillons qui représentent un danger pour les animaux et les hommes à proximité.
+
+6.1. Apparition
+Les tourbillons sont générés par le fonctionnement des turbines et l'écoulement
+hydraulique sur les bords. Ce phénomène est lié à la forme du barrage et au fait que le
+débit (l’aspiration) soit situé en point bas (environ 15 à 20 m en-dessous du niveau de
+l'eau), cela génère des lignes de courant qui ont tendance à descendre tout en tournant,
+créant ainsi un tourbillon. Le principe est le même que lorsque l'on vide une baignoire.
+Ces tourbillons peuvent présenter un danger pour les animaux mais aussi pour les
+hommes en raison de la force importante d’aspiration créée par le fonctionnement de la
+turbine. C'est pourquoi ces zones sont inaccessibles.
+Voir Figure 5 annexe : Schéma de la formation des tourbillons au barrage
+
+6.2. Modélisation
+Nous avons donc voulu modéliser l’attraction du tourbillon pour mettre en évidence la
+dangerosité de ce phénomène. Pour cela nous avons créé un vortex dans un bécher de
+2L grâce à un agitateur magnétique. Nous avons ensuite mis un morceau de carton dans
+le bécher, permettant de modéliser un objet, et filmé son déplacement, avec deux
+caméras. L’une était positionnée parallèlement à la surface, au-dessus de l’axe du
+vortex avec une potence et une pince et la seconde était positionnées sur le côté du
+bécher et maintenu grâce à une autre potence.
+
+FIGURE 10 : Photographies du bécher avec l'objet et du tourbillon durant l'expérience
+
+Les vidéos nous ont ensuite permis de réaliser des pointages pour mettre en évidence le
+mouvement du morceau de carton autour du vortex après les avoir synchronisées grâce
+à un repère sonore. Nous avons fait un pointage avec le logiciel Tracker, ce qui nous a
+ensuite permis de déterminer notre échelle sur le logiciel grâce au diamètre du bécher.
+Voir Figure 6 annexe : Capture d'écran d'un pointage numérique du mouvement d'un
+objet dans un tourbillon de 4cm.
+Puis nous avons utilisé les valeurs x et y des deux vidéos pour avoir les coordonnées x, y
+et z du morceau de carton au cours du temps. Et enfin nous avons utilisé un programme
+python dans lequel nous avons rentré les coordonnées du carton pour modéliser son
+trajet en trois dimensions.
+Voir Figure 7 annexe : programme python de modélisation 3D
+Voir Figure 8 annexe : Capture d'écran du tourbillon de 4cm en trois dimensions
+Ainsi cela permet de comprendre la dangerosité des tourbillons et ce qu’il se passerait
+si une personne tombait dans l’un d’eux. Cette réalité doit nous pousser à s’interroger
+sur les différents moyens qui pourront être mis en œuvre à l’avenir pour améliorer la
+sécurité, de la faune et aussi des hommes. L’une des solutions serait de réduire
+l’écoulement hydraulique sur les bords et de rehausser le point d’aspiration.
+
+7. Conclusion et remerciements
+En conclusion, notre exploration du barrage marémoteur de la Rance dans le cadre des
+Olympiades Nationales de Physique nous a permis de mieux comprendre les principes
+physiques et les défis technologiques associés à l'exploitation des énergies
+renouvelables. Ce projet a mis en lumière l'importance de l'innovation et de la rigueur
+scientifique dans la transition énergétique, tout en soulignant l'alliance essentielle entre
+science et technologie.
+Nous avons pu observer comment le barrage de la Rance transforme l'énergie potentielle
+des marées en énergie électrique. Les expérimentations et modélisations réalisées nous
+ont permis de répondre à des questions cruciales sur les mécanismes physiques en jeu,
+les performances énergétiques et les solutions d'optimisation pour ce type
+d'infrastructure. La protection cathodique à courant imposé s'est révélée être une
+technique efficace pour prévenir la corrosion des structures métalliques, essentielle
+pour la durabilité et la fiabilité des installations maritimes.
+Les simulations informatiques ont également démontré l'utilité de nos modélisations
+pour estimer la production énergétique en fonction des marées. Enfin, l'étude des
+tourbillons générés par le fonctionnement des turbines nous a permis de mieux
+comprendre les phénomènes hydrauliques complexes en jeu, soulignant l'importance
+de la conception et de la gestion des écoulements pour optimiser les performances du
+barrage.
+Nous tenons à remercier chaleureusement nos professeurs et mentors pour leur soutien
+et leurs conseils précieux tout au long de ce projet. Nous exprimons également notre
+gratitude envers les équipes de l'usine marémotrice de la Rance pour leur accueil et leur
+collaboration, qui ont grandement enrichi notre expérience.
+Nous remercions particulièrement Mme Brunard et M. Labbé pour leur soutien constant
+et leurs précieux conseils. Nous tenons également à remercier Monsieur Vivier pour son
+aide lors de la visite du barrage et de l’expérience sur la protection cathodique, ainsi
+qu'Anthony pour son aide dans la réalisation de la maquette et Giovani pour son soutien
+dans le développement du programme informatique. Enfin, nous remercions l’ensemble
+des professeurs de physique du lycée pour leurs retours constructifs.
+Ce projet n’aurait pas été possible sans l’engagement et le soutien de toutes ces
+personnes. Nous vous remercions sincèrement pour votre aide et votre encouragement
+tout au long de ce parcours.
+
+

@@ -1,0 +1,598 @@
+Magnus Pocus
+Et la physique vous fait tourner la tête!
+
+BODILIS Jules
+FLEISCHEL–DEFER Matthias
+SERRA–KRAUS Lucas
+BECKER Louis
+REMMY Nicolas
+
+Sous la direction de
+LOHNER Franck
+Le Gymnase Jean STURM-Strasbourg
+Académie de Strasbourg
+
+Sommaire
+1.
+
+2.
+
+3.
+4.
+
+5.
+6.
+7.
+8.
+9.
+
+Introduction………………………………………………………………1
+1.1. L’équipe et la genèse du projet………………………...………….1
+1.2. L’effet Magnus…………………………………………………….1
+1.3. Problématique…………………………………………….………..2
+La soufflerie………………………………………………………………2
+2.1 Cahier des charges ………………………………………………...3
+2.2 Assemblage de la structure………………………………………...4
+2.2.1 Le corps de la soufflerie…………………………………….5
+2.2.2 Le système d’extraction d’air……………………………….5
+2.2.3 L’entrée d’air………………. ...……………………………6
+2.2.4 Le système de rotation………………………………………7
+2.2.5 Les cylindres………………………………………………..7
+2.3 Les capteurs…………………………………………………………..8
+2.3.1 La sonde Pitot………………………………………………8
+2.3.2 Système pour compter les tours……………………..….…11
+2.3.3 Le capteur pour mesurer la force Magnus………………...12
+Mise au point d’un modèle Python……………………………………...13
+Étude de la force Magnus sur un cylindre………………………………14
+4.1 Protocole et prise de mesures…………………………………….14
+4.2 Analyse…………………………………………………………...15
+4.2.1. Incertitudes et graphique type……………………………..15
+4.2.2 L'influence du diamètre du cylindre……………………….16
+4.2.3. L’influence de la rugosité………………………………….16
+4.2.4. L’influence des disques……………………………………17
+4.3 La configuration ultime…………………………………………..18
+Comparaison avec la littérature scientifique……………………………19
+Conclusion………………………………………………………………19
+Applications……………………………………………………………..20
+Bibliographie……………………………………………………………20
+Remerciements………………………………………………………….20
+
+Introduction
+1.1 L’équipe et la genèse du projet :
+Fin mai 2024, les professeurs du lycée nous ont informés de la possibilité de participer aux
+olympiades nationales de physique. L’idée d’aborder un sujet non traité en cours a tout de suite plu à quatre
+d’entre nous et très vite un autre ami nous a rejoint. Tous les cinq, nous sommes animés par la volonté de
+mener un projet ensemble, de nous dépasser et de sortir du cadre purement scolaire pour oser aller plus loin.
+Notre équipe est ainsi constituée de cinq membres, nous sommes tous élèves de terminale au
+Gymnase Jean Sturm et passionnés de physique :
+-
+
+Louis Becker
+Jules Bodilis
+Matthias Fleischel--Defer
+Nicolas Remmy
+Lucas Serra–Kraus
+
+Après la constitution de notre équipe, l’idée de traiter un sujet en rapport avec la dynamique des
+fluides nous est venue. Certains d’entre nous pratiquent des sports de balle et nous souhaitions comprendre
+comment les effets donnés à une balle peuvent influencer sa trajectoire. Après avoir réfléchi à différents sujets
+en rapport avec cette thématique nous avons décidé naturellement d’aborder l’effet magnus.
+
+1.2 L’effet Magnus
+Autour de nous, nous faisons régulièrement face à cet
+effet aérodynamique. La plupart du temps, nous le rencontrons
+lors d'événements sportifs. En effet, sans le savoir de nombreux
+sportifs (pongistes, joueurs de tennis, footballeurs) utilisent parfois
+cet effet pour déstabiliser leurs adversaires sans savoir que ce
+dernier est directement lié à des lois physiques. Nombreux sont les
+amateurs de foot qui connaissent le célèbre coup-franc de Roberto
+Carlos contre la France en 1997 où le ballon semble partir sur le
+côté avant de revenir dans les cages.
+Au tennis et au tennis de table, les effets donnés à la balle
+sont d’une importance cruciale. L’effet dit “lifté” permet à la balle
+de retomber plus vite, tandis que l’effet dit “slicé” donne
+l’impression que la balle flotte.
+Tous ces effets sont dus à l’effet Magnus, un phénomène physique qui explique les trajectoires
+déviées des balles en fonction de leur rotation. L'effet Magnus survient lorsque la balle tourne sur elle-même
+en même temps qu'elle se déplace dans l'air. Cette rotation génère une différence de pression de part et d’autre
+de la balle, modifiant sa trajectoire de manière surprenante.
+
+1
+
+Fig 2
+Fig 1
+Modélisation de l’effet Magnus
+cours de l’université Lyon 1
+
+Modélisation du flux d’air autour d’un plan d’aile tiré d’un
+Wikipédia
+
+La force Magnus que crée la rotation d’un objet sphérique ou cylindrique dans un fluide est
+comparable à la portance. En effet, ces deux phénomènes découlent du principe de Bernoulli. Selon ce
+principe, dans un fluide s’écoulant horizontalement, la pression du fluide, aux points où sa vitesse est élevée,
+est plus faible que la pression du fluide aux points où sa vitesse est plus faible.
+Dans le cas des ailes d’avion, le haut de l’aile (extrados) est légèrement bombé par rapport au dessous
+(intrados), cette différence entraîne une différence de vitesse d’écoulement de l’air et donc de pression. La
+pression sur l’extrados sera plus faible que sur l’intrados ce qui “aspire” en quelque sorte l’aile, c’est la
+portance.
+Dans le cas d’une balle de tennis en rotation dans un flux d’air (configuration de la figure 1), la
+vitesse relative de l’air (ou du fluide) par rapport à la surface de la balle, sur la partie supérieure, est moins
+importante que sur la partie inférieure à cause de la rotation de la balle. Cette différence de vitesse crée une
+différence de pression entre les deux parties de la balle et entraîne donc, par aspiration, la balle vers le haut,
+c’est l’effet Magnus ou force Magnus.
+
+Caractéristiques de la force Magnus:
+Cette force s’applique sur un objet (principalement un cylindre ou une sphère) en rotation sur luimême et soumis à un flux d’air (ou de tout autre fluide).
+La force Magnus est perpendiculaire à la tangente de la trajectoire (ou plus simplement au flux), son
+sens dépend du sens de rotation de l’objet.
+La norme de cette force dépend de la force de frottement de l’objet et donc, de son coefficient de
+traînée, de celui de frottement de sa surface, de sa vitesse de rotation, ainsi que de la vitesse de l’objet dans le
+fluide
+
+1.3 Problématique
+Pour notre projet, nous cherchons à quantifier la force Magnus et à nous intéresser aux phénomènes
+physiques autour d’un cylindre en rotation permettant d’observer la force Magnus. Pour cela, nous allons
+déterminer expérimentalement la valeur de la force Magnus en faisant varier plusieurs paramètres tels que la
+vitesse relative de l’air, la vitesse de rotation du système et la rugosité du système (et donc du coefficient de
+frottement de sa surface). Enfin nous allons, dans un second temps, comparer nos résultats avec ceux qui
+existent dans la littérature scientifique.
+Pour cela, nous avons mis au point une soufflerie permettant de reproduire les mesures tout en faisant
+varier les conditions, afin de trouver la configuration générant la plus grande force Magnus.
+
+2
+
+La soufflerie
+2.1 Cahier des charges.
+La soufflerie a pour but de créer un environnement expérimental dans lequel le flux d’air sert à
+simuler le déplacement de l’objet d’étude dans son environnement. Ce flux d’air doit être représentatif de la
+vitesse de l’objet lors de son mouvement. Le flux d’air doit ainsi atteindre au moins 6 m/s pour avoir une force
+significative. Il est nécessaire d’avoir un appareil de mesure de ce flux. Il existe plusieurs appareils
+permettant de mesurer un flux d’air comme un manomètre numérique ou une sonde Pitot.
+Le diamètre du tube où le flux d’air passe ne doit pas être trop grand, car il faudrait alors un débit
+considérable pour avoir une vitesse conséquente. Mais il ne doit pas non plus être trop petit, car il faut que
+notre objet d’étude ne soit pas trop proche du bord pour éviter les perturbations.
+Le flux d’air doit par ailleurs être laminaire, avec le moins de perturbations possible. Il est donc
+impératif d’avoir une entrée d’air permettant d’obtenir un tel flux et de s’assurer que le flux soit laminaire
+dans le tube.
+La vitesse de rotation du système doit être d'environ 3 000 tours par minute, ce qui est une vitesse
+proche de celles retrouvées à l’occasion de tirs sportifs de haut niveau au tennis ou au tennis de table. La
+vitesse de rotation est très importante car d’elle dépend en partie la force de Magnus. Pour pouvoir être
+mesurée, celle-ci doit être significative. Pour pouvoir réaliser les mesures de cette vitesse de rotation,
+différentes techniques existent comme utiliser un tachymètre ou alors se servir d’une vidéo au ralenti pour
+mesurer la période de rotation.
+Pour mesurer la force de magnus générée par le système, nous avons choisi d’utiliser une balance.
+Soit le système se soulève, soit la force générée par le système appuie sur la balance ce qui fait varier la
+masse, nous pouvons ainsi en déduire la force qu’applique le système en connaissant la masse du support et
+l’intensité de la pesanteur.
+
+Schéma de notre idée :
+
+3
+
+2.2 Assemblage de la structure principale
+2.2.1 Le corps de la soufflerie
+Le corps de la soufflerie est constitué d’un tube en PVC de 80 cm de long pour
+un diamètre de 15 cm. Ce diamètre permet, grâce à un flux d’environ 950 m^3/h,
+d’obtenir une vitesse de 12 m/s dans le tube. Un extracteur d’air de ce débit est
+trouvable à un prix raisonnable dans le commerce. La longueur du tuyau nous
+permettra également de placer tous nos appareils de mesure.
+Pour pouvoir utiliser notre premier système d’extraction d’air, nous
+avons construit un cône à l’aide de plâtre grillagé qui a ensuite été réutilisé pour
+notre dernier système d’extraction d’air.
+
+2.2.2 Le système d’extraction d’air
+Pour permettre à notre soufflerie de fonctionner, il nous a fallu rajouter de part et d’autre du tuyau un
+cône de ventilation et une entrée d’air permettant le flux laminaire.Le cône est un élément essentiel de notre
+soufflerie. Dans notre plan initial il nous a servi pour relier la structure des ventilateurs au tuyau. Le cône est
+constitué d’un cadre en bois sur lequel est fixée une structure métallique. Cette structure métallique permet de
+relier le cadre en bois (carré) au tube (rond). Après avoir fait cette structure en métal, nous l’avons recouverte
+de plâtre à l’extérieur et de vernis étanchéifiant à l’intérieur. Ce cône accueille dans son cadre en bois une
+structure de 9 ventilateurs pour ordinateur. Ces derniers ont une base carrée de 120 mm de côté et un débit
+unitaire de 87,5 m3/h. Ce modèle de ventilateur fonctionne à pleine puissance à une tension de 12V et une
+intensité de 0,2 A. Nous avons donc choisi un montage en série avec un générateur de 12 V et 1,8 A.
+Nous avons d’abord collé les ventilateurs, avant de les insérer dans leur socle en bois et de regrouper
+les câbles pour qu’ils sortent tous au même endroit. Il a ensuite fallu souder les câbles entre eux sur un socle
+pour les connecter au générateur.
+
+Notre montage en configuration aspiration était alors le suivant :
+4
+
+Nous avons cependant remarqué que les ventilateurs ne nous donnaient pas une vitesse d’air satisfaisante dans
+le tuyau. Nous avons commandé un extracteur d’air cylindrique avec un débit de 1000 m3/h, la vitesse
+théorique dans un tuyau d’environ 15,7 m/s. Avec notre sonde Pitot, nous trouvons une valeur d’environ 7,8
+m/s ce qui est toujours trop faible par rapport à notre objectif de 12 m/s. Nous nous équipons alors d’un
+nouvel extracteur d’air d’un débit de 1 680 m3/h.
+Notre extracteur d’air principal
+
+Pour faciliter la circulation du flux d’air, nous avons alors eu l’idée de
+mettre notre extracteur d’air de 1 000 m3/h devant l’entrée d’air en laissant
+un espace en plus de celui fixé sur le cône. Après plusieurs tests, nous
+avons atteint une vitesse d’environ 10 m/s, ce qui est suffisant pour
+commencer nos mesures sur l’effet Magnus.
+Ainsi notre soufflerie est constituée de deux extracteurs d’air, le principal en sortie et le second en
+entrée pour faciliter la circulation de l’air.
+Notre version actuelle de la soufflerie.
+
+5
+
+2.2.3 L’entrée d’air
+L’entrée d’air permet d’avoir un flux d’air laminaire avec le moins de perturbations possible. Un flux
+laminaire est l’inverse d’un flux turbulent. Il décrit un flux dans lequel les différents filets d’air suivent tous la
+même trajectoire sans interférer avec les autres filets.
+Pour obtenir un flux laminaire dans notre tube, nous avons décidé de coller des pailles d’½ centimètre
+de diamètre l’une à l’autre. Nous avons ainsi fabriqué l’entrée sur-mesure pour le tuyau.
+
+L’air entre dans les pailles de façon turbulente puis est canalisé sur 10 cm de longueur
+avant de ressortir de façon laminaire. Pour vérifier la laminarité du flux, nous avons
+percé des trous à intervalle régulier dans le tuyau pour y glisser une tige métallique sur
+laquelle nous avons positionné 6 fils. Une fois les ventilateurs activés, les fils se sont
+placés dans le lit du flux de façon très stable. Nous en avons conclu que l’entrée d’air
+était tout à fait efficace.
+Après avoir pris des mesures de vitesse, nous nous sommes rendus compte que nous
+étions très loin de la vitesse théorique (2 fois moins rapide). Cette différence est due
+principalement à la résistance lorsque le flux passe dans le tuyau et dans les pailles.
+Pour ce rendre compte de ce phénomène, il suffit de prendre une paille, d'essayer
+d’aspirer le plus fort possible à travers cette paille puis de réaliser la même expérience,
+mais sans la paille. Il est nettement plus facile d’aspirer sans paille. C’est la même chose ici, l’extracteur d’air
+aspire un flux d’air qui rencontre une résistance en passant par les pailles, le ralentissant.Nous avons donc
+décidé de diviser le bloc de paille. Grâce à une découpe avec un fil chaud nous avons séparé un bloc d’un
+centimètre de long. Après avoir refait les tests de vitesse et de laminarité, le nouveau bloc était tout à fait
+satisfaisant. L’écart avec la vitesse sans les pailles est devenu négligeable.
+Malgré tout, nous avons voulu tester d’autres systèmes. Tout d’abord nous avons utilisé un bouche
+d’aération achetée dans le commerce mais cette dernière n’était pas suffisante pour obtenir un flux laminaire.
+Nous avons enfin construit une nouvelle entrée d’air constituée cette fois, de pailles de 1cm de diamètre.
+Grâce à ce dernier système nous avons obtenu une laminarité très correcte ainsi qu’une vitesse de flux
+supérieure à celle obtenue avec les pailles d’½ centimètre de diamètre.
+
+6
+
+En nous appuyant sur les capacités de ces différentes entrées d’air et pour éviter la
+création de légères turbulences, nous avons finalement modélisé et imprimé en 3D
+une structure alvéolaire qui entre parfaitement dans le tuyau et permet l’obtention
+d’un flux laminaire avec une vitesse satisfaisante.
+
+2.2.4 Système de rotation
+-
+
+Le système de rotation est constitué de trois grandes parties essentielles :
+Un axe de 3 mm sur lequel deux rondelles maintiennent notre objet d’étude
+Un socle imprimé en 3D qui se fixe sur la balance, contenant un roulement à bille à une extrémité et
+un moteur à l’autre
+Un moteur permettant de faire tourner l’axe
+
+Suite à son usage intensif, notre moteur initial a cessé de fonctionner. Nous avons tout d’abord pensé
+à le remplacer par un moteur avec un tachymètre intégré, mais nous n’avons trouvé que des moteurs
+ayant une vitesse maximum inférieure à 2 000 tours par minute ce qui est trop faible pour nos
+mesures.
+Nous avons donc acheté un moteur plus puissant d’une puissance
+de 90W, pouvant atteindre en théorie 19 500 tr/min. Cependant ce moteur
+a un diamètre supérieur à l’ancien, nous avons donc modélisé une pièce
+permettant de le relier au socle.
+
+2.2.5 Les cylindres
+Pour avoir des objets de tailles différentes et dont nous pouvons faire varier facilement la surface,
+nous avons opté pour des cylindres imprimés à l’aide d’une imprimante 3D. La forme cylindrique étant plus
+simple à étudier que celle d’une sphère.
+Voici les cylindres que nous avons fabriqué et sur lesquels nous avons réalisés les mesures:
+
+7
+
+De gauche à droite les cylindres de 30, 50 et 70 mm.
+
+Cependant, nous n’avons pas réussi à mesurer de valeurs
+significatives de force avec le cylindre nu de 30 mm. Nous
+avons également modélisé et imprimé des disques à placer aux
+extrémités voire au centre des cylindres.
+
+Notre cylindre de 50mm de diamètre avec quatre disques et celui avec deux disques
+
+2.3 Les capteurs
+2.3.1 La sonde Pitot
+Nous avons tout d’abord pensé utiliser un anémomètre numérique. Mais pour utiliser des notions
+étudiées lors de nos cours de spécialité, nous avons finalement préféré construire une sonde Pitot.
+Une sonde Pitot est un dispositif utilisé pour mesurer la vitesse d'un fluide (comme l'air ou l'eau) en
+mouvement, en exploitant les principes de la mécanique des fluides. Découvert en 1732 par le physicien Henri
+Pitot, il est fréquemment utilisé en aéronautique pour déterminer la vitesse d'un avion dans l’air et se base sur
+la différence de deux pressions :
+-
+
+Une pression statique du fluide (dans notre cas l’air) notée Ps
+Une pression dynamique, face au flux d’air, notée PtLe flux d’air
+entrant dans le tube crée une surpression dans le tube, ce qui
+déplace le fluide s’y trouvant (ici de l’eau). On mesure ensuite la
+différence de hauteur du fluide dans le tube.
+Schéma de notre sonde Pitot→
+
+Pour déterminer la vitesse d’un flux grâce à un tube Pitot, il faut utiliser les
+formules de dynamiques des fluides.
+
+8
+
+D’après la statique des fluides :
+
+Avec Zs (en mètres) la hauteur du fluide du côté de la pression statique et
+Zt celle de la pression dynamique. ρ est la masse volumique en g/L et P est
+la pression en Pascal. v(flux) est la vitesse du flux en m/s
+On obtient aussi:
+
+En égalisant et simplifiant on obtient :
+
+Nous avons donc entrepris la construction d’une sonde Pitot. Nous l’avons modélisée puis imprimée
+en 3D. Nous pensions au départ utiliser un tube en verre mais après plusieurs échecs (notamment la casse des
+tubes et l’apparition de bulles d’air dans l’eau lors des mesures), nous avons décidé d’utiliser des durites en
+plastique.
+
+Plan 3D du nez de la sonde
+
+Version finale de notre sonde Pitot
+
+Lors de nos mesures, la sonde est inclinée, cela permet d’obtenir une plus grande variation visible de
+la hauteur de l’eau. La variation de hauteur verticale correspond au sinus de l’angle d’inclinaison de la sonde
+par rapport au sol, multiplié par la variation de hauteur observée.
+
+9
+
+2.3.2 Système pour compter les tours
+Nous avons dans un premier temps pensé à utiliser un tachymètre laser. Cependant nous avons préféré
+mettre en œuvre une méthode moins coûteuse.
+Première méthode : avec une caméra
+Cette méthode a été choisie car elle ne nécessite que l’utilisation de la caméra d’un téléphone portable
+et est très facile à mettre en place. En effet, nous avons juste fixé une rondelle en plastique, que nous avons
+marquée d’un trait noir, à l’extrémité de l’axe de rotation. Nous l’avons ensuite filmée lorsque le système était
+en rotation puis nous avons compté le nombre d’images qu’il y avait par tour grâce au site internet somewes
+(lien : https://somewes.com/frame-count/) qui permet de regarder la vidéo image par image. Ensuite,
+connaissant le nombre d’images par seconde (240 fps), nous avons pu déterminer la vitesse de rotation. La
+méthode fonctionne pour une vitesse de rotation faible (moins de 1 500 tours/min). Cependant, lorsque la
+vitesse de rotation est trop élevée, l’image devient floue et il n’est alors plus possible de voir le trait et donc de
+compter les tours. De plus, cette méthode nécessite une analyse vidéo et est donc impossible à réaliser en
+direct au cours des expériences. Nous avons donc décidé de mettre en place une autre méthode de mesure.
+Deuxième méthode : avec une carte Arduino
+Cette méthode est plus compliquée à mettre en place mais elle est plus fiable à haute vitesse et elle
+permet d’obtenir des mesures rapides.
+Mise en place de la méthode : nous avons inséré une led dans un trou percé dans le socle de rotation.
+Nous avons percé la rondelle fixée sur l’axe et, en face des deux trous, nous avons installé une
+photorésistance. Ainsi, quand le trou de la rondelle est aligné avec la led, la lumière traverse le système et
+vient éclairer la photorésistance. Ainsi, grâce à un programme et une carte arduino, nous détectons le moment
+où l'état de la photorésistance passe d’un niveau bas à haut (seuil déterminé grâce à une analyse des valeurs
+affichées sur le moniteur série) afin de compter le nombre de tours. Ensuite, grâce à la fonction “millis()”
+d’arduino, nous mesurons la durée que prend l’axe pour faire 1 tour. Cependant, la fonction millis() renvoie le
+nombre de millisecondes depuis le lancement du programme. Ainsi, à 2000rpm, l’axe fait un tour en 30
+millisecondes. Avec une précision de seulement une milliseconde avec la fonction millis, cela entraîne une
+incertitude de +/-50 rpm. (Cette imprécision a par la suite été corrigée par l’utilisation de la fonction
+“micros()”, précise à 4µs près. Cependant, nous avons utilisé que
+récemment la fonction “micros()” et la plupart de mesures ont
+malheureusement été faites avec la fonction millis)
+En moyenne, avec une tension de 10V et une intensité de 0,9A, le
+moteur nous permet d’avoir une vitesse d’environ 3 000 tours par minute.
+Finalement, afin de vérifier la validité
+de cette dernière technique, nous avons
+confronté les deux méthodes et nous avons
+trouvé des valeurs sensiblement identiques
+(environ 20/30 rpm d’écart à 1200 rpm, ce qui
+est négligeable (2 % d’écart) Nous pouvons
+donc conclure que la méthode par Arduino est
+fiable et nous avons retenu cette dernière. Nous
+avons donc mesuré une vitesse de rotation maximale d’environ 3 000 tours/min.
+Pour augmenter la précision de notre capteur, nous nous sommes procuré un petit
+capteur Arduino qui remplace aujourd’hui le système LED-Photorésistance.
+
+10
+
+2.3.3 Capteur de mesure de la force Magnus
+L’idée est d’utiliser une balance pour mesurer la variation de la masse (support de l’axe + moteur +
+cylindre) puis d’y soustraire la force appliquée par le système sans rotation. Ici, P est le poids en N, m la
+masse en kg, g l’intensité de la pesanteur en N/kg, M la force Magnus en N et F la force exercée sur la
+balance.
+Sans rotation, la force exercée sur la balance dépend uniquement du poids du système et vaut donc :
+Avec la rotation créant une force Magnus vers le bas, la force exercée sur la balance est la somme du
+poids du système et de la force Magnus et vaut :
+Avec la rotation créant une force Magnus vers le haut, la force exercée sur la balance est la différence
+du poids du système et de la force Magnus et vaut :
+
+Mise au point d’un modèle
+Afin de visualiser l’effet Magnus, nous avons décidé de réaliser la modélisation de la trajectoire d’une
+balle de tennis en rotation grâce à un programme python. Le référentiel est celui du court de tennis supposé
+galiléen et le repère est le plan xOy, avec la projection sur le sol de l’endroit où est lancée la balle comme
+origine du repère, l’axe x allant horizontalement vers la droite et l’axe y allant verticalement vers le haut.
+Pour modéliser une telle trajectoire en prenant en compte la force Magnus, réaliser les équations
+horaires du mouvement est très complexe. En effet la force Magnus est toujours perpendiculaire à la
+trajectoire et donc varie au cours du temps. Nous avons donc décidé de partir du principe que sur un intervalle
+de temps très court (de l’ordre d’un millième de seconde), la vitesse reste constante. Ainsi, chaque
+milliseconde, la différence de vitesse est calculée grâce à la deuxième loi de Newton à partir de l’expression
+des vecteurs forces qui s’exercent sur la balle (poids, force Magnus et frottements de l’air). Cette différence de
+vitesse ainsi calculée s’ajoute à la vitesse précédente et pendant un millième de seconde, comme la vitesse est
+supposée constante, on peut calculer la distance parcourue et ainsi la nouvelle position.
+Maintenant que la trajectoire est obtenue, afin de l’afficher, nous avons réalisé une
+chronophotographie qui affiche la position de la balle toutes les 50 ms grâce à la bibliothèque
+matplotlib.pyplot. De plus, cette librairie permet d’afficher les vecteurs forces qui s’exercent sur la balle, ce
+qui permet non seulement de vérifier qu’ils sont bien orientés (et donc que nous n’avons pas fait d’erreur
+d’expression des forces) mais aussi de rendre la représentation plus intuitive. Enfin, nous avons trouvé
+pertinent d’afficher la trajectoire de la balle lancée avec la même vitesse initiale mais sans rotation, afin de
+vérifier l’importance de la force Magnus. Cette dernière trajectoire est représentée par les petits points.
+
+11
+
+Voici les graphiques obtenus grâce à notre modélisation:
+Avec une rotation dans le sens anti-horaire :
+
+Avec une rotation dans le sens horaire :
+
+Etude de la force Magnus sur un cylindre
+4.1 Protocole et prise de mesures
+Pour nos mesures de la force Magnus, nous avons fait varier trois paramètres: la vitesse du flux, la
+vitesse de rotation et l'architecture du cylindre. Pour une configuration donnée, nous allumons tout d’abord les
+extracteurs d’air puis nous mesurons la vitesse du flux ainsi que la masse affichée sur la balance. Nous faisons
+ensuite tourner le cylindre. Dès que la vitesse de rotation de celui-ci est stabilisée, nous prenons la masse
+affichée sur la balance. Par la suite, nous faisons varier l’intensité reçue par le moteur en réglant le générateur
+(voir image) pour faire varier la vitesse de rotation du moteur et pouvoir prendre d’autres mesures. Pour faire
+varier la vitesse du flux d’air, nous jouons sur la tension reçue par le gros extracteur à l’aide d’un variateur de
+
+12
+
+tension.
+La vitesse du flux est déterminée par la sonde Pitot, la vitesse de rotation par le compte-tour et la
+force avec la variation de masse sur la balance.
+Chacun est assigné à un poste : Louis s’occupe d’allumer les ventilateurs et régler la vitesse du flux,
+Lucas est chargé de lire la variation de hauteur de l’eau dans la sonde Pitot ainsi que la masse affichée par la
+balance, Matthias règle le générateur, tandis que Nicolas lit la vitesse de rotation renvoyée par le programme
+Arduino et enfin Jules rentre les données dans un tableur.
+Lors de la prise de mesures, nous avons rencontré de nombreux problèmes que nous avons dû
+surmonter : les moteurs avaient tendance à tourner sur eux-mêmes, entraînant les câbles avec eux, nous avons
+dû revoir notre système de fixation en conséquence. Les premiers moteurs s'échauffaient très vite, ce qui les
+fait s'arrêter de fonctionner, nous avons donc opté pour un moteur avec des aérations.
+
+4.2 Analyse
+4.2.1 Incertitudes et graphique type
+A l’aide d’un logiciel de modélisation, nous obtenons des graphiques comme celui-ci:
+
+Il s’agit de la force Magnus (en N) en fonction de la vitesse de rotation (en tr/min) à une vitesse de
+flux de 7,8 m/s pour le cylindre de 50 mm de diamètre nu. Les cercles autour des points correspondent à
+l’incertitude. En effet nous lisons la masse sur la balance dans un intervalle de 2 g (à cause des vibrations). Ce
+qui nous donne une incertitude sur la force Magnus d’environ + ou - 0,01 N. Comme expliqué dans la partie
+sur le compte tour, celui-ci nous donne la vitesse dans un intervalle de 100 tr/min, soit une incertitude de + ou
+- 50 tr/min.
+Sur ce graphique, nous pouvons voir que la force générée par le cylindre augmente selon la vitesse de
+rotation de manière quasi linéaire jusqu’à environ 3 700 tr/min avant de décrocher et de se stabiliser. Nous
+essayerons d’expliquer ce décrochage plus tard, mais nous pouvons déjà confirmer que la force Magnus
+dépend en partie de la vitesse de rotation de l’objet. Plus celle-ci est grande, plus la force générée est grande.
+
+13
+
+4.2.2 L’influence du diamètre du cylindre
+
+En bleu, les mesures du cylindre de 50 mm de diamètre avec disques aux extrémités et en noir les
+mesures du cylindre de 70 mm de diamètre avec disques aux extrémités.
+Nous pouvons observer une différence de force générée très importante entre ces deux cylindres. La
+surface du cylindre de 70 mm de diamètre exposée au flux est environ deux fois plus importante que celle du
+cylindre de 50 mm de diamètre. On retrouve ce facteur deux dans la force générée. La surface du cylindre est
+proportionnelle au carré du rayon de ce cylindre, on peut donc en déduire que la force Magnus sur un cylindre,
+est aussi proportionnelle au carré du rayon.
+
+4.2.3 L'influence de la rugosité de la surface
+Nous avons étudié l’influence de la rugosité sur le cylindre de 50 mm de diamètre et avec un flux d’air de 8,7
+m/s.
+
+Sur ce graphique, se trouvent en vert les mesures pour le cylindre enroulé de papier ponce et en violet
+les mesures pour le cylindre « nu ».
+Tout d’abord, nous voyons que le cylindre dont la surface est recouverte de papier ponce génère une force
+plus importante que le cylindre nu à des vitesses de rotations et flux égaux. Cette différence de force pourrait
+être expliquée par le fait que le papier ponce engendre plus de frottement avec l’air que la surface du cylindre
+14
+
+seule, et donc, que l’air “accroche” en quelque sorte mieux au cylindre, ce qui génère une plus grande force.
+Par ailleurs, nous pouvons observer que le cylindre nu décroche comme sur le premier graphique, à
+partir d’environ 3 000 tr/min tandis que le cylindre avec du papier ponce ne décroche pas, ou du moins plus
+tard. Pour vérifier cela, il faudrait faire des mesures à de plus grandes vitesses de rotation mais à partir de 4
+000 tr/min, nous faisons face à des vibrations trop importantes. L’air accrochant mieux au papier ponce qu’à
+la surface nue du cylindre, nous pouvons en déduire qu’à partir d’une certaine vitesse de rotation, ou vitesse
+de flux, l’air adhère moins bien au cylindre nu et commence à “glisser” dessus, générant donc moins de force
+que sur le cylindre recouvert de papier ponce.
+
+4.2.4 L'influence des disques disposés aux extrémités
+Nous avons étudié travaillé avec le cylindre de 50 mm de diamètre et avec un flux d’air de 8,7 m/s.
+
+En bleu les mesures de la force de Magnus exercée sur le cylindre avec des disques de 70 mm placés
+sur ses extrémités et en rouge sur le cylindre sans disques aux extrémités.
+En premier lieu, nous voyons que la force de Magnus générée par le cylindre avec des disques est
+supérieure à celle du cylindre sans disque. Notre hypothèse est que l’air a tendance à s’échapper par les bords
+du cylindre et donc ne pas s’écouler jusqu’au bout. L’air ne s'écoulant pas jusqu’au bout, cela diminue la force
+générée. Les disques permettent d'empêcher l’air de fuir par les côtés. Pour vérifier notre hypothèse nous
+avons essayé de visualiser l’écoulement de l’air grâce à de la fumée mais cela n’a pas été concluant.
+Toutefois, nous avons observé, en faisant des mesures avec un cylindres de 50 mm de diamètre muni
+4 disques répartis à équidistance, que la force générée n’est pas supérieure à celle générée par un cylindre
+ayant seulement 2 disques aux extrémités, cette force était même légèrement inférieure. On peut donc en
+déduire que c’est bien le placement des cylindres qui joue un rôle clé dans la force générée.
+En bleu le cylindre avec deux disques et en violet celui avec 4 disques.
+En second lieu, nous observons que les cylindres avec disques ne semblent pas subir de décrochage,
+ou du moins pas dans ces vitesses de rotation. Le décrochage de l’air pourrait donc être accentué par la fuite
+de l’air sur les côtés, phénomène fortement limité par la présence de disques aux extrémités.
+
+15
+
+4.3 La configuration ultime
+Grâce à nos mesures et observations, nous avons vu que la rugosité et la présence ou non de disques
+aux extrémités jouaient un rôle clé dans l’intensité de la force Magnus. Pour mettre au point une architecture
+de cylindre générant la force la plus importante, nous avons donc enroulé de la laine autour du cylindre pour
+augmenter la rugosité et placé des disques aux extrémités. Bien que nous ayons vu que le diamètre du cylindre
+influe sur la force générée, nous n’avons pas pu utiliser notre cylindre de 70 mm de rayon car il aurait fallu
+des disques d’au moins 90 mm de diamètre, ce qui est trop grand pour notre tube.
+
+En bleu les mesures de notre cylindre “ultime” (avec disques et laine), en rouge celles de celui de 50 mm avec
+disques et en vert celles de celui de 50 mm avec papier ponce. Tous les cylindres étant soumis à un flux d’air
+de 8,7 m/s.
+
+16
+
+Nous voyons que la force générée par notre cylindre “ultime” à 2 500 tr/min est
+presque comparable à celle générée par le cylindre avec les disques à 4 000 tr/min.
+
+Notre cylindre “ultime”
+
+Comparaison avec la littérature scientifique
+Dans l’article sur l’effet Magnus écrit par Gilbert Gastebois, nous trouvons l’expression simplifiée de
+la force Magnus suivante :
+
+Avec R le rayon de la sphère en m, ρ la masse volumique de l’air en kg/m³, ω en rad/s, M en N et v en m/s.
+A noter cependant, cette expression est valable pour des vitesses allant de 10 à 40 m/s alors que nos
+mesures ne dépassent pas les 8,7 m/s et concerne les sphères. Toutefois nous pouvons faire un rapprochement
+avec nos observations, nous avons vu que la force générée est quasiment proportionnelle à la vitesse de
+rotation comme dans cette expression (attention ici il s’agit d’une fréquence de rotation).
+Nous avons également observé que plus la vitesse du flux est grande, plus la force générée est
+importante, ce qui est en accord avec la formule précédente. Nous avons aussi vu que la force Magnus semble
+proportionnelle au carré du rayon du cylindre, car bien que dans cette expression elle soit proportionnelle au
+cube du rayon, il s’agit du rayon d’une sphère, cela est donc cohérent.
+Nous trouvons aussi dans la littérature des expressions faisant intervenir le coefficient de frottement
+de la surface de l’objet. Or comme nous l’avons vu, lorsque nous mettons une surface plus rugueuse, avec un
+coefficient de frottement de surface plus important, la force générée est plus importante que lorsque la surface
+du cylindre est nue et donc plutôt lisse. Nous avons donc vérifié expérimentalement la présence du coefficient
+de frottement de la surface de l’objet d'étude dans l’expression de la force Magnus.
+
+Conclusion
+Nos mesures et observations nous ont amenés à faire des hypothèses que nous avons tentées de
+vérifier. Grâce à nos manipulations, nous avons remarqué que la force Magnus dépend de la surface du
+cylindre (le coefficient de frottement de sa surface), de la vitesse du flux et de la vitesse de rotation du
+cylindre. Nous avons aussi observé que la présence de disques aux extrémités permet d’obtenir une force
+Magnus plus importante.
+Au cours de notre exploration de l'effet Magnus, nous avons conçu et testé une soufflerie
+expérimentale afin de créer et d'étudier les paramètres influençant cette force. Nos travaux ont permis de
+confirmer plusieurs relations théoriques, telles que l'importance de la vitesse de rotation, de la vitesse du flux
+d'air, ainsi que l'impact de la rugosité et de l'architecture du cylindre sur l'intensité de la force Magnus. Ces
+résultats sont en accord avec ceux de la littérature scientifique. Cela nous a aussi permis d’enrichir notre
+compréhension du phénomène en apportant des observations pratiques.
+17
+
+Nous avons également mis en évidence que l'optimisation de la géométrie et des matériaux, comme
+l'ajout de disques aux extrémités et l'utilisation de surfaces rugueuses, permet d'améliorer significativement la
+génération de cette force. Bien que certaines limitations expérimentales subsistent, nos résultats démontrent la
+robustesse de notre méthodologie et ouvrent des perspectives pour de futures observations, notamment en
+augmentant les vitesses de rotation et de flux et en testant de nouveaux designs.
+Ce projet a été pour notre équipe une expérience enrichissante, mêlant rigueur scientifique, créativité
+et esprit collaboratif.
+
+Applications
+La compréhension de l’effet Magnus et de ses spécificités permet d’envisager différentes applications
+notamment dans le domaine des transports. Des prototypes de bateaux fonctionnent déjà en partie avec ce
+système de propulsion réduisant de façon significative le recours aux moteurs traditionnels. Mieux
+comprendre cet effet aérodynamique pourrait améliorer son efficacité. Il serait aussi envisageable d’adapter
+son utilisation à d’autres applications : dans l’aviation, dans l’automobile, … L’effet Magnus contribuerait
+alors à minimiser notre impact environnemental.
+
+Bibliographie
+-
+
+Vidéo de M. Bidouille sur l’effet Magnus, dernière consultation le 23/11/24
+La page Wikipédia consacrée à l’effet Magnus, dernière consultation le 24/11/24
+L’effet Magnus par Gilbert Gastebois, dernière consultation le 25/11/24
+
+Remerciements
+Nous tenons à remercier chaleureusement M. Franck Lohner, professeur de physique au Gymnase
+Jean Sturm, qui nous accompagne dans notre aventure au pays de Magnus. Un grand merci à Mme Elophe,
+préparatrice du laboratoire de Physique/Chimie, pour nous avoir fourni du matériel ainsi qu’à M. Baert,
+professeur de science de l’ingénieur, pour nous avoir imprimé des objets en 3D.
+Par ailleurs, nous souhaitons également ajouter une mention spéciale à Clémence Sovann, notre camarade de
+classe, pour avoir spécialement créé un logo ainsi qu’à Lucas Frantzen pour sa bonne humeur et son “coup de
+perceuse”. Enfin, nous remercions M. Lambs qui a facilité notre travail en découpant le capot de notre tube.
+
+18
+
+

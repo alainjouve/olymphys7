@@ -1,0 +1,841 @@
+Rubens’ fire:
+Vers un
+nouveau
+tube de
+Rubens
+
+Par les élèves de l'atelier physique du lycée Palissy
+
+Avec LACLAVERIE Jean-Michel
+Professeur encadrant
+Lycée Bernard Palissy- AGEN
+Académie de Bordeaux
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 1
+
+Table des matières
+
+Problématique:
+2
+Remerciements:
+2
+Introduction (Lilou):
+3
+A- Résonance d’une colonne d’air dans un tube cylindrique
+4
+A-1 Résonance d’une colonne d’air (Axel)
+4
+A-2 Etude expérimentale des fréquences de résonance d’une colonne d’air ouverte aux
+deux extrémités (Sam)
+5
+A3- Variation de l’amplitude autour de la résonance à 350 Hz (Axel)
+8
+A4- Variation de l’amplitude en fonction de la position dans le tube (Axel)
+9
+B- A la recherche d’un dispositif de visualisation de la pression acoustique avec un
+oscillateur en polystyrène (Antoine).
+10
+B 1- Oscillateur de visualisation polystyrène et laser
+10
+B-2 Amélioration de notre montage
+11
+B-3 Amplitude des oscillations du vibrateur
+12
+C- A la recherche d’un dispositif de visualisation de la pression acoustique avec des
+bulles de savon.
+13
+C-1 Vibrations de bulles de savon (Eloïse)
+13
+C-2 Visioconférence avec Monsieur Baudouin (Loïs)
+14
+C-3 Etude quantitative des vibrations d’une bulle (Eloïse)
+15
+C-4 Visualisation des bulles dans le tube à l’aide de 5 caméras (Loïs)
+17
+D- Et si nous faisions aussi un tube à gaz ou à fumée…(Axel)
+19
+D-1 Tube à fumigène
+19
+D2- Tube et machine à fumée
+19
+Conclusion (Lilou)
+19
+
+Problématique:
+Est-il possible de visualiser les ventres et les nœuds de pression dans une colonne d’air
+résonnante sans utiliser de méthane en combustion?
+
+Remerciements:
+Merci à Monsieur Augustin Ernoult pour avoir accepté de répondre à nos questions
+ainsi qu’une visioconférence avec notre enseignant. Il est chercheur en acoustique
+au sein de l'équipe Makutu d'Inria.
+Merci à Monsieur Fernando Leal Calderon de l'ENSCBP pour son aide sur
+l’interprétation des vibrations des films de savon ainsi qu’à Madame Reynier,
+professeure ingénieure de notre lycée qui a transmis nos demandes.
+Merci à Monsieur Michael Baudouin de l’université de Lille pour la visioconférence
+qu’il a faite avec nous.
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 2
+
+Introduction (Lilou):
+Le tube du Rubens est un dispositif qui permet de mesurer une longueur d'onde et de
+visualiser les ventres et les nœuds de pression. Il est constitué d’un tuyau au niveau duquel
+on a creusé des petits trous à intervalles réguliers afin de laisser passer le gaz combustible.
+Les deux côtés de ce dernier sont fermés par un capuchon le plus souvent métallique et de
+l'autre côté par une membrane vibrante. Une fois que le tube est rempli de gaz, on allume ce
+dernier au niveau des trous. La hauteur des flammes étant d'abord au même niveau,
+lorsqu'on place une source sonore, comme un haut parleur, alimenté par un générateur de
+fréquences, l'onde sonore va se propager et se réfléchir sur le capuchon métallique puis sur
+la membrane; ainsi, lorsque les ondes de même fréquence, de même amplitude mais de
+sens opposé vont se rencontrer, des interférences ont lieu et donnent des ondes
+stationnaires. Ces dernières vont affecter le débit de gaz dans le tube à différents endroits,
+qui est lui-même responsable de la hauteur des flammes.
+
+https://fr.wikipedia.org/wiki/Tube_de_Rubens
+Le principal problème pour nous est que ce beau dispositif est interdit d’utilisation dans notre
+lycée depuis plus de 10 ans. Il a même été jeté avec la disparition des arrivées de gaz.
+Nous voulons donc essayer de comprendre son fonctionnement et de trouver un moyen de
+rendre visible les variations de pression acoustique dans le tube sans méthane et sans
+flamme.
+Pour cela nous allons débuter en étudiant la résonance d’un tube ouvert aux deux
+extrémités, puis nous chercherons à associer au tube résonnant plusieurs dispositifs
+sensibles à la pression acoustique pour essayer d’obtenir les mêmes visualisations qu’avec
+le tube de Rubens original : vibrateur léger réfléchissant avec lumière laser, membrane de
+savon éclairée filmée à la webcam, fumée de fumigène ou de machine à fumée. Nous avons
+aussi fait fabriquer un tube de Rubens à méthane par les agents du lycée, qui a été testé
+chez notre professeur.
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 3
+
+A- Résonance d’une colonne d’air dans un tube
+cylindrique
+Nous avons fait préparer par les agents du lycée un tube PVC de 10 cm de diamètre et de
+deux mètres de long. Ils ont positionné tous les 10 centimètres des trous de 5 mm de
+diamètre. Le tube est ouvert aux deux extrémités, ce qui est plus simple à manipuler pour
+nous qu’un tube fermé comme l’était le tube de Rubens. Nous avons d’abord cherché à
+comprendre l’aspect théorique de l’expérience (3 mercredis après-midi) avec les relations
+fréquence longueur du tube et leur établissement par l’équation de d’Alembert et les
+modèles de l’oscillateur harmonique (comme en prépa), puis nous avons étudié
+expérimentalement ces fréquences de résonance.
+
+A-1 Résonance d’une colonne d’air (Axel)
+On peut trouver en ligne plusieurs projets expérimentaux étudiant les ondes acoustiques
+dans un tube, notamment certains de notre lycée, présentés aux concours des Olympiades
+de physique et C.Génial. Lorsqu’une colonne d’air est excitée par un haut-parleur soumis à
+un signal sinusoïdal, certaines fréquences sont favorisées. Nous les entendons plus
+fortement. Ce sont les modes propres de vibration de la colonne qui sont quantifiés. Les
+ondes sonores qui sont longitudinales permette l’établissement d’ondes stationnaires dans
+le tube, qui est une cavité acoustique résonnante.
+Il faut distinguer les modes de résonance des colonnes d’air ouvertes aux deux extrémités,
+fermées aux deux extrémités et celles des colonnes d’air fermées à une extrémité.
+Soit c la vitesse du son dans l’air et L la longueur de la colonne d’air, toujours plus longue
+que le tube. Pour un tuyau sonore ouvert aux deux extrémités ou fermé aux deux
+extrémités, la fréquence fondamentale est :
+𝑐
+f1 =
+2𝐿
+Les fréquences des harmoniques sont des multiples de cette fréquence
+fondamentale
+Pour un tuyau sonore fermé à une extrémité, la fréquence du fondamental est :
+𝑐
+f1 =
+4𝐿
+Les fréquences harmoniques sont les multiples impairs de cette fréquence fondamentale.
+Certains d’entre nous envisagent des études d’ingénieur et espèrent intégrer une classe
+préparatoire scientifique. Nous avons voulu approfondir le sujet avec des cours de PC et
+PCSI.
+L’ onde stationnaire qui s’établit dans un tube est régie par l’équation de d’Alembert:(SAM)
+
+avec
+
+et avec ω = k c.
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 4
+
+(source: https://pedagotech.inp-toulouse.fr/210619/res/polyfiles_3.eWeb/00chapter.pdf)
+Nous avons travaillé 3 mercredis après-midi pour comprendre un peu mieux les solutions de
+l’équation de d’Alembert, et leur lien avec les oscillateurs harmoniques. Ce travail n’est pas
+dans le mémoire mais nous espérons être capable de répondre à vos questions sur le sujet.
+Les nœuds de vibration correspondent à des ventres de pression, c'est-à-dire une forte
+pression acoustique. Si le tube est ouvert, on a un ventre de vibration c'est-à-dire un nœud
+de pression acoustique à l’extrémité. Le microphone est sensible à la pression acoustique.
+
+A-2 Etude expérimentale des fréquences de résonance d’une
+colonne d’air ouverte aux deux extrémités (Sam)
+Le tube de Rubens fonctionnait avec du gaz inflammable et pour permettre son débit
+uniquement par les petits trous percés sur le dessus du dispositif, il fallait que le tube soit
+fermé aux deux extrémités, raison de sécurité oblige. Nous n’avons pas cette contrainte et
+nous allons donc étudier un tube ouvert aux deux extrémités et un tube ouvert à une seule
+extrémité, avec ou sans trous.
+Montage expérimental:
+Caractéristiques du tube:
+Longueur du tube L= 200.0 cm. Ces mesures sont faites à la règle en double mesure.
+L’incertitude type est égale à une graduation sur racine de 6: u(L) =
+
+1𝑚𝑚
+√6
+
+= 0.5 mm
+
+donc L = 200.0 ± 0.5 cm
+Diamètre du tube plastique d= 9.2 ± 0.5 cm
+Diamètre du tube métallique d= 8.2 ± 0.5 cm
+Protocole:
+Un haut parleur est placé à l’extrémité du tube ouvert. Le micro est positionné à l’autre
+extrémité. On fait varier grâce à un générateur de signaux la fréquence d’une tension
+sinusoïdale de 50 Hz à 1000 Hz.
+On recherche les fréquences de résonance, c’est-à-dire les fréquences pour lesquelles
+l’amplitude passe par un maximum.
+Résultats expérimentaux et analyse:
+Tube métallique ouverts aux deux extrémités sans trous diamètre 8.2 cm:
+f mesurée(Hz)
+
+λ(m)
+
+k
+
+L (m)
+
+83.4
+
+4.08
+
+1/2
+
+2.04
+
+166.35
+
+2.04
+
+1
+
+2.04
+
+251.0
+
+1.35
+
+3/2
+
+2.04
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 5
+
+334.0
+
+1.02
+
+2
+
+2.04
+
+avec k, un multiple de ½.
+Ces résultats sont cohérents entre eux et montrent que la colonne d’air résonante est plus
+longue que le tube (écart de 2%).
+Voici le résultat de la modélisation obtenue sur le démonstrateur des fréquences de
+résonance du site de l’INRIA, indiqué par Augustin Ernoult.
+(https://demo-openwind.inria.fr/#geometryTables) :
+
+On retrouve aux extrémités du tube la pression de l’atmosphère. Le décalage au niveau de
+la position zéro pour la modélisation d’openwind est due à la présence de la bouche du
+musicien. On peut visualiser sur le graphique ci-dessus les positions attendues des maxima
+de pression pour chaque harmonique.
+Nous avons un écart de 3.2 % entre la fréquence fondamentale calculée sur openwind et
+celle que nous avons mesurée, principalement due à la présence de la bouche du musicien
+dans le modèle ainsi que du diamètre du tube, et pas dans notre expérience.
+Tube PVC ouvert à une extrémité avec trous diamètre 9.5 cm:
+Numéro de la
+résonance
+
+fréquences
+mesurées (Hz)
+
+delta f (Hz)
+
+Amplitude (V)
+
+1
+
+138
+
+64
+
+0.51
+
+2
+
+202
+
+72
+
+1.37
+
+3
+
+272
+
+76
+
+2.8
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 6
+
+4
+
+350
+
+82
+
+3.34
+
+5
+
+426
+
+78
+
+2.8
+
+6
+
+510
+
+84
+
+3.4
+
+7
+
+753
+
+92
+
+3.3
+
+8
+
+845
+
+80
+
+2.3
+
+9
+
+925
+
+2.2
+
+Il est plus difficile de déterminer avec précisions les fréquences de résonance de ce tube
+que du tube sans trous. Nous pouvons supposer que la présence des trous de visualisation
+perturbe la colonne d’air et l’établissement des résonances.
+Moyenne delta f : 78.5 Hz
+Ecart type : σ = 8.3 Hz
+Les fréquences de résonances d’un tube de longueur L Ouvert-Fermé sont données par la
+𝑘.𝑐
+relation : f=
+avec k un entier et c=340 m/s car la température de la salle est 20°C.
+4𝐿
+Donc la fréquence fondamentale attendue pour une colonne d’air de 200.0 cm est de 42.5
+Hz. C’est indétectable avec notre micro. La valeur attendue de la fréquence séparant deux
+harmoniques impairs est de 85.5 Hz. Nous avons donc une différence entre l’expérience et
+la formule théorique comme cela a été observée dans de nombreux autres mémoires. On
+peut expliquer certains des écarts entre les fréquences calculées et mesurées par longueur
+de la colonne d’air qui diffère de la longueur
+du tube.
+Pour notre expérience la différence de
+fréquence entre deux harmoniques est
+proche de 78.5 Hz soit une longueur de la
+colonne d’air de 216.6 cm. La colonne d’air
+résonante est plus longue que le tube avec
+un écart de 8.3 %.
+Nous n’avons pas réussi à voir toutes les
+fréquences de résonance, peut-être à cause
+de la sensibilité de notre microphone. Voici
+l’allure des courbes de pression sur openwind
+Voici les simulations obtenues sur openwind pour un un tube de 2,00 m de long de diamètre
+intérieur 9,5 cm:
+- Pour un tube sans trous ouvert à une extrémité et fermé à l’autre.
+- Pour un tube avec trous tous les 10 cm, de 5 mm de diamètre, ouvert à une
+extrémité et fermé à l’autre.
+- Pour un tube avec trous tous les 10 cm ouvert aux deux extrémités.
+Tube sans trou OF(Hz)
+
+Tube avec trous OF(Hz)
+
+Tube avec trous OO (Hz)
+
+37.6
+
+38.0
+
+77.2
+
+115.7
+
+116.1
+
+155.8
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 7
+
+195.9
+
+196.2
+
+237.0
+
+278.3
+
+278.5
+
+321.0
+
+364.8
+
+364.9
+
+410.8
+
+Nous remarquons que ces résultats s’écartent un peu des prévisions que nos formules
+précédentes donnent car elles ne tiennent pas compte du diamètre du tube et d’autres
+paramètres comme la position et la taille des trous de visualisation.
+Pour le fondamental du tube OO avec trous nous calculons 85.0 Hz, nous mesurons 83.4 Hz
+au lieu de 77.2 Hz obtenu par la simulation de l’INRIA soit un écart de 10,1 %. La simulation
+comme nos mesures confirment que la colonne d’air est plus longue que le tube.
+
+A3- Variation de l’amplitude autour de la résonance à 350 Hz
+(Axel)
+Pour notre expérience du tube de Rubens, il est important de connaître la position des
+maxima de pression et l’allure des courbes de pression. Nous allons maintenant étudier le
+profil de variation de l’amplitude du microphone autour d’une des résonances les plus
+visibles à 350 Hz. Nous estimons la précision de la lecture de la fréquence à 1 Hz près et
+celle de l’amplitude à 0.03 V. Les valeurs indiquées par Latispro outils mesures
+automatiques ne sont pas stables.
+
+L’amplitude maximale est de 3.2 V. La largeur du pic est de 10 Hz à
+
+𝑈𝑚𝑎𝑥
+0.5
+
+2
+
+. La résonance est
+
+assez marquée.
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 8
+
+A4- Variation de l’amplitude en fonction de la position dans le
+tube (Axel)
+Nous déplaçons pour cette expérience un microphone dans le tube en mesurant sa position
+et l’amplitude de sa tension sur Latispro pour le quatrième harmonique tuyau OO.
+
+Courbe de l’amplitude de la tension du microphone (V) en fonction de sa position (cm) dans
+le tube.
+Nous visualisons 4 fuseaux correspondant au quatrième harmonique. C;est ce que nous
+essayerons de visualiser avec notre montage final. Mais notre courbe manque de points
+pour identifier plus précisément les minima et maxima. Il est pénible de manipuler longtemps
+à cause du bruit. Nous recommençons cependant l’expérience uniquement pour le premier
+fuseau avec davantage de points de mesure.
+
+Courbe de l’amplitude de la tension du microphone (V) en fonction de sa position (cm) dans
+le tube pour le premier fuseau.
+Nous observons une courbe montrant des pics assez marqués. La valeur maximale est de
+1.35 V. Nous avons une largeur de 23 cm pour la tension de
+
+1.35
+0.5
+
+2
+
+= 0.95 V.
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 9
+
+Nous voulons maintenant visualiser ces fuseaux sans micro, sans flamme, sans méthane et
+sans danger.
+
+B- A la recherche d’un dispositif de visualisation de
+la pression acoustique avec un oscillateur en
+polystyrène (Antoine).
+Nous pensons à plusieurs pistes pour remplacer les flammes permettant de visualiser les
+maxima et minima de pression dans notre tube:
+- utiliser un oscillateur de visualisation très léger, du polystyrène par exemple, posé
+sur un trou du tube de Rubens et associé à un petit miroir et un laser. La réflexion de
+la lumière laser sur le miroir, projetée sur le mur pourra jouer le même rôle que la
+flamme du tube historique
+- utiliser des bulles de savon posées sur les trous du tube et observer leurs vibrations.
+- utiliser des membranes de microphone ou des capteurs piézoélectriques couplés à
+un dispositif de visualisation (idée abandonnée par la suite)
+- Utiliser de la fumée
+Une difficulté dont il faut tenir compte est la faible valeur de la pression acoustique (0.1 Pa)
+face à la pression atmosphérique (105 Pa)
+
+B 1- Oscillateur de visualisation polystyrène et laser
+Puisque les flammes nous sont interdites, nous pensons utiliser un petit bout de
+polystyrène avec du papier aluminium sur sa face supérieure, le tout éclairé par un laser
+dont la lumière se réfléchit sur un écran. Nous avons choisi la fréquence de résonance de
+350 Hz pour nos premiers essais d’oscillateurs de visualisation car l’amplitude obtenue sur
+la tension du micro est élevée et le son n’est pas trop désagréable à supporter. Nous
+plaçons au niveau du premier maximum ( à 27 cm du haut-parleur) et au-dessus d’un petit
+trou un petit bout de polystyrène recouvert d’une feuille de papier aluminium.
+
+Nous l’éclairons avec laser , et nous observons l’image réfléchie sur un écran blanc (feuille
+de papier). Nous voyons une image diffuse du laser qui vibre de manière très visible (Elle
+n’est pas sans rappeler les flammes du vrai tube de Rubens), à la fréquence de 350 Hz. Si
+nous nous éloignons de cette fréquence, les vibrations s’arrêtent.
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 10
+
+Ainsi, un petit oscillateur de visualisation en polystyrène permet d’observer un ventre de
+vibration. C’est un premier petit succès pour nous!
+Pour optimiser notre premier essai nous devons :
+- fabriquer un dispositif pour l’empêcher de s’éloigner du trou: joints de plomberie
+- remplacer le papier aluminium qui se plie par une paroi réfléchissante et plane:
+scotch métallique rond environ 0.05g diamètre 5 mm.
+
+Voici les résonances que ce premier oscillateur nous a permis de visualiser:
+Fréquences de résonance Tube OO:
+Fréquences de résonance Tube OF:
+fréquences (Hz)
+141
+183
+247
+260
+341
+498
+
+fréquences (Hz)
+179
+238
+311
+395
+470
+550
+
+Il est difficile d’évaluer le maximum de vibration de notre petit oscillateur pour déterminer la
+fréquence de résonance avec précision. C’est pour cela que nous constatons des écarts
+avec les mesures au microphone. Nous voulons améliorer notre vibrateur en optimisant sa
+forme et sa masse.
+
+B-2 Amélioration de notre montage
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 11
+
+Nous commandons 15 diodes laser que nous allons monter sur un support et une
+alimentation pour bâtir un système permettant d’éclairer 15 trous et d’obtenir l’équivalent de
+15 flammes. Antoine est l’artisan principal de notre montage expérimental. Il n’a pas hésité à
+acheter lui-même du matériel (voir en annexe). Le 25 septembre, première séance de mise
+au point de nos montages avec 10 lasers et 5 webcams( voir partie suivante)
+On s'aperçoit que les lasers bleus sont inutilisables car leur lumière n’est pas visible. On
+essaye de projeter au plafond mais la lumière est un peu trop faible. On choisit donc
+d’interposer un écran fait maison à 70 cm du tube pour obtenir des signaux lumineux bien
+visibles et comparables à des flammes.
+Les essais avec des vibrateurs de forme rectangulaire ne sont pas satisfaisants car ils se
+bloquent,
+on
+les
+retaille en rond. Les
+résultats
+sont
+meilleurs.
+Nous
+visualisons
+“
+les
+flammes lasers ” sur
+un écran en papier
+puis sur la fumée
+d’une
+machine
+à
+fumée. Notre système
+fonctionne.
+Les
+nombreux essais de vibrateur ont permis d’optimiser leur forme et d’obtenir la visualisation
+des nœuds et des ventres.
+
+B-3 Amplitude des oscillations du vibrateur
+Nous voulons maintenant savoir si les vibrations de nos petits systèmes réfléchissant la
+lumière laser sont à l’image de l’amplitude de la tension du microphone au même point.
+Nous avons étudié pour cela:
+- l’amplitude en mV du signal du microphone enregistré sur Latispro
+- l’amplitude en cm de vibration du signal lumineux sur un écran placé à 75 cm du
+tube.
+Nos mesures ont été faites autour de la fréquence de 350 Hz, une des moins pénibles à
+étudier.
+Nous constatons que l’amplitude de vibration du signal lumineux n’est pas proportionnelle à
+l’amplitude du signal du microphone. Cependant l’amplitude est maximale pour la
+résonance.
+Notre dispositif est donc adapté pour visualiser la résonance.
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 12
+
+C- A la recherche d’un dispositif de visualisation
+de la pression acoustique avec des bulles de
+savon.
+C-1 Vibrations de bulles de savon (Eloïse)
+Nous débutons une recherche documentaire et trouvons la thèse d’Aymeric Roux
+:Bulles et antibulles armurées et pression de radiation auto-induite (Armoured bubbles and
+antibubbles and auto-induced radiation pressure) (univ-lille.fr). Ce jour 14 février 2024, Loïs
+contacte le directeur de recherche, Michael Baudoin en lui demandant une piste pour utiliser
+les bulles dans notre montage. Il accepte de nous aider et
+nous propose une vidéo-conférence afin de répondre à nos
+questions.
+Nous avons aussi débuté les expériences en plaçant
+un film de savon sur un trou du tube de Rubens. Nous
+avons choisi d’utiliser le liquide d’un jouet d’enfant servant à
+faire des bulles. Le film est plus résistant qu’avec des
+liquides que nous avions préparés à partir de glycérol, eau
+et liquide vaisselle. On observe des irisations sur le film et
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 13
+
+des vibrations de ces couleurs pour les fréquences de résonance du tube. Ce sont les
+interférences de la lumière qui provoquent ce phénomène. Les ondes réfléchies à l’interface
+air savon interfèrent avec celles réfléchies à l’interface savon air. La différence de chemin
+optique provoque des maxima et minima de lumière. Nous avons reproduit l’expérience sur
+un cercle en fil de fer pour qu’elle soit plus visible.
+C’est beau mais comment utiliser ce résultat pour une visualisation comparable à
+celle du tube original de Rubens? De plus quand on place une bulle au-dessus du trou il y a
+toujours en même temps un film directement dans le trou qui vibre alors que la bulle
+elle-même au-dessus montre des irisations. Cependant, la plupart du temps, lorsque nous
+essayons de placer les bulles au-dessus des trous, elles éclatent ; mais le film de savon au
+niveau des trous restent quand même. A cause de la fragilité des bulles, malgré plusieurs
+recettes, nous choisissons d’étudier les films dans les trous et pas au-dessus.
+Nous dirigeons le laser vers la membrane de savon placée dans un trou du tube,
+nous observons sur un écran proche une réflexion qui vibre en fonction de la résonance.
+Cette expérience est moins probante qu’avec les oscillateurs en aluminium ou polystyrène.
+
+Nous explorons alors une autre voie. Nous remarquons qu’à l’approche de la
+résonance l’image de l’éclairage de la salle sur le film change. Nous observons deux zones
+lumineuses, qui s’étendent et se rapprochent lorsque la fréquence se rapproche de la
+fréquence de résonance. C’est ce phénomène que nous allons visualiser avec des
+webcams.
+
+C-2 Visioconférence avec Monsieur Baudouin (Loïs)
+Aujourd’hui, 13 mars 2024, nous avons fait la visio-conférence avec Michael Baudouin,
+professeur à l’université de Lille. Nous avons voulu savoir s’il était possible de visualiser les
+vibrations d’une bulle de savon en l’éclairant avec un laser, en observant l’image sur un
+écran blanc. Pour commencer, nous avons présenté notre projet à monsieur Baudouin. Puis,
+pour gagner en notions, il nous a parlé de la pression interne de la bulle, qui est différente
+de la pression extérieure, de la tension superficielle, qui maintient la forme de la bulle, forme
+qui doit avoir un volume minimal pour être le moins énergivore possible, et qui est donc une
+sphère, étant donné que c’est la forme qui utilise le moins d’énergie d’interface.
+La différence entre les pressions internes et externes s'exprime par:
+
+∆𝑝 =
+
+4σ
+𝑟
+
+σ = 𝑡𝑒𝑛𝑠𝑖𝑜𝑛 𝑠𝑢𝑝𝑒𝑟𝑓𝑖𝑐𝑖𝑒𝑙𝑙𝑒 et r le rayon de la bulle
+Plus le rayon est petit, plus on comprime la bulle et donc par conséquent plus la bulle est
+petite moins elle bouge, il est donc difficile de voir les différences de fréquences.Nous
+souhaitons donc visualiser les différences de pression, nous avons donc besoin de bulles
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 14
+
+homogènes et grandes. On nous a donc conseillé d’utiliser une caméra rapide afin de
+visualiser les changements de fréquence. Nous avons donc besoin d’une caméra à 3500 Hz
+ou plus. Cependant nous pouvons aussi utiliser un stroboscope.
+Monsieur Baudouin nous a expliqué les changements de forme de la bulle, ainsi selon la
+fréquence, on constate différents modes d'oscillation. Elle peut se déformer radialement,
+c'est-à-dire que sa pression interne change, cela correspond aux basses fréquences donc
+nous souhaitons de fortes fréquences avec des grandes bulles de taille homogène.
+Le glycérol nous permet de former des bulles plus grosses et plus solides. De plus, le
+glycérol est plus visqueux ainsi il coule moins sur les paroies du tube et il attire l’humidité de
+l’air ce qui contre l’évaporation et donc une éventuelle explosion de la bulle. Il faudra donc
+jouer sur le facteur d’une bulle stable pour pouvoir visualiser le tracé du laser à travers cette
+dernière. La densité du glycérol ne va rien affecter de même que la masse du liquide qui ne
+vont pas changer les vibrations.
+Pour notre expérience il faudrait des dômes (de bulles) au-dessus des trous et pour ceux-ci
+il faudrait plonger une partie du tube, où il y a les trous pour ensuite fermer hermétiquement
+le tube avec une pompe à vélo à l'extrémité du tube pour pouvoir maintenir la pression des
+bulles. Dans notre projet c’est la membrane formée dans le trou du tube qui fausse les
+résultats car sa surface est trop petite ce qui nous amène à la solution de la pompe à vélo.
+Nous avons appris que la taille de la bulle dépend de la tension superficielle.
+Mise en oeuvre expérimentale:
+Après cet échange nous avons placé une bulle sur chaque trou et mis le tube sous pression
+grâce à une pompe à vélo. Le tube est fermé aux deux extrémités (Haut-parleur fixé sur le
+tube fermé à gauche et pompe à vélo à droite). Mais les bulles sont instables et éclatent
+assez vite. La mise sous pression n’est pas la solution pour obtenir des bulles utilisables.
+
+C-3 Etude quantitative des vibrations d’une bulle (Eloïse)
+Nous sommes rassemblés ce 03 avril 2024 pour mettre en œuvre un protocole de
+visualisation des vibrations des membranes de savons sur notre tube de Rubens. Nous
+avons préparé un mélange 100 mL d'eau, 25 mL de liquide vaisselle et 8 mL de glycérol. Le
+tube est fermé aux deux extrémités et associé à un haut parleur et une pompe à vélo(suite
+au conseil de monsieur Baudouin). Nous filmons le comportement des bulles sur les trous
+lorsque la fréquence change. Cette étude sera reproduite en septembre-octobre 2024.
+Nous recherchons les fréquences de résonance de ce tube avec un microphone. Nous
+avons ici choisi de présenter les résultats pour un trou placé sur un ventre de vibration, où
+nous attendions donc le maximum de vibration à la résonance. Nous avons fait varier la
+fréquence de 50Hz à 1000 Hz en quelques secondes et nous avons enregistré un film de
+l’expérience, avec donc à la fois l’image du film de savon et le son. Nous extrayons le son
+du film pour l’étudier sur Audacity. Nous déterminons pour différentes dates la fréquence du
+signal. Pour cela, nous zoomons sur le signal pour visualiser une période dont nous
+déterminons la durée en échantillons (pour un résultat plus précis que l’affichage par défaut
+d’Audacity). Nous convertissons le nombre d’échantillons en durée en connaissant la
+fréquence d'échantillonnage du fichier ici 48000 Hz: période = nombre d’échantillons/48000.
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 15
+
+Puis sur loggerPro nous étudions le
+film en déterminant la distance entre
+les zones lumineuses pour différents
+instants. (voir tableaux de mesures en
+annexe). On observe sur l’image un
+trait vert pour l’étalonnage (diamètre
+du trou) et un autre pour la mesure de
+distance entre les deux zones
+lumineuses avec l’outil distance photo.
+En rapprochant les résultats des deux
+expériences nous obtenons le graphe suivant:
+
+Nous constatons que la distance entre les deux figures lumineuses diminue lorsqu’on se
+rapproche de la résonance et s’annule à la résonance.
+Conclusion : Les bulles de savon éclairées par la lumière peuvent servir à visualiser les
+résonances de la colonne d’air du tube de Rubens. Nous nous sommes intéressés ici aux
+mesures pour une seule fréquence de résonance pour un seul point du tube, mais nous
+l’avons visualisé pour plusieurs autres.
+Influence de la position du film de savon sur le tube:
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 16
+
+Pour obtenir une visualisation des fuseaux, il faut qu'à la résonance les films de savons
+placés loin des ventres de pression vibrent moins que ceux sur les ventres et que cela se
+traduise par une différence de distance entre les zones lumineuses des différents films.
+Cette expérience est en cours car pour cela il nous faut exploiter en même temps plusieurs
+flux vidéos( voir partie suivante) et la mise au point n’est pas finie à ce jour. Mais
+l’observation qualitative des film de savon éclairé nous a permis de constater que c’est bien
+le cas.
+
+A gauche sur un ventre de pression à la résonance et à droite à 20 cm du ventre.
+Interprétation du phénomène: Après l’expérience nous cherchons à interpréter le
+phénomène. Grâce à Madame Reynier, ingénieur et professeur de physique dans notre
+lycée, nous transmettons le film de notre expérience à un enseignant chercheur bordelais.
+Le 11 avril 2024, monsieur Fernando Leal Calderon, de l’ENSMAC de Bordeaux INP a
+partagé avec nous une explication du phénomène que nous observions. Il nous a indiqué
+que notre expérience était une illustration des deux formes possibles d'un film de savon :
+- le common black film qui est épais.
+- le Newton film qui est très très mince.
+La transition CBF-NBF nécessite le franchissement d'une barrière énergétique. Les ondes
+acoustiques provoquent des fluctuations erratiques de l'épaisseur qui se traduisent par la
+transition locale d'un état à l'autre. C'est très spectaculaire. Les films dits "communs" sont
+des films épais, avec des épaisseurs de l'ordre de la longueur d'onde de la lumière. Il
+réfléchissent de ce fait la lumière et apparaissent soit blancs lorsqu'ils sont très épais, soit
+irisés lorsqu'ils sont un peu plus fins. Les films dits "noirs" sont au contraire fins, leur
+épaisseur étant de l'ordre de quelques nanomètres à quelques dizaines de nanomètres. De
+ce fait, ils ne réfléchissent pas la lumière et apparaissent noirs en réflexion. Ceci semble être
+le cas dans notre expérience. (Le phénomène est expliqué dans le lien suivant :
+https://www.123couleurs.fr/exp%C3%A9riences/exp%C3%A9riences-mati%C3%A8re/em-co
+uleursinterf/)
+
+C-4 Visualisation des bulles dans le tube à l’aide de 5 caméras
+(Loïs)
+Afin de mieux visualiser les phénomènes que l’on pouvait observer avec nos bulles, nous
+avons eu l’idée d’utiliser des webcams. En effet l’expérience précédente n’a été faite
+qu’avec une seule webcam pour visualiser le film sur un seul trou. Notre idée est de
+visualiser en même temps les flux de plusieurs webcam, chacune filmant un trou différent
+pour observer des différences d’amplitude de vibration et donc les fuseaux comme sur la
+corde ou le vrai tube de Rubens..
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 17
+
+Pendant les vacances d’été, un élève du groupe Loïs s’est proposé d’écrire un script python
+qui affiche les flux vidéos de 5 caméras dans une fenêtre ainsi qu’une image du tube
+montrant les trous auxquels correspond chaque caméra.
+Notre première idée a été d’utiliser des
+hubs USB afin de pouvoir brancher un
+grand nombre de caméras sur le même
+ordinateur.
+Nous
+avons
+donc
+commencé à rédiger le script en python
+à l'aide de la bibliothèque cv2 qui
+permet la captation des flux vidéos et
+l’affichage de ceux-ci. Afin d’afficher les
+différents flux il nous a fallu utiliser la
+méthode cv2.hconcat() qui rassemble
+plusieurs flux vidéos horizontalement
+dans la même fenêtre. Au moment de
+l’exécution, les caméras ne sont pas
+détectées. Après de nombreuses
+recherches, nous découvrons qu’il est
+impossible d’afficher les différents flux
+vidéos provenant d’un seul et même hub USB en même temps.
+
+Lors de la mise au point du montage avec les webcams le premier support s’est révélé
+inadapté, les webcams sont trop loins des trous à filmer. Antoine va fabriquer des X pour
+placer le support des webcams directement au-dessus des trous à quelques centimètres.
+Loïs a consacré avec Lilou ce mercredi 25 septembre à gérer les flux de webcams qui se
+mélangent et font parfois apparaître la même image 3 fois. Finalement, problème résolu
+même si l’ordinateur chauffe.
+Mercredi 09 octobre c’est la catastrophe, le programme ne fonctionne plus, il y a des
+erreurs. On choisit de préparer deux
+versions : une avec un ordinateur
+portable et 1 webcam sur 1 port USB et
+une avec l’ordinateur compact et 5
+webcams sur 5 ports USB.
+Mercredi 6 novembre: Loïs a réussi à
+améliorer le système pendant les
+vacances de Toussaint. L’ordinateur ne
+chauffe plus et gère correctement les 5
+flux vidéos. Une version avec une
+webcam pour un ordinateur portable
+est prête au cas où un problème
+surviendrait.
+Nous
+vous
+ferons
+découvrir les images lors de l’oral.
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 18
+
+D- Et si nous faisions aussi un tube à gaz ou à
+fumée…(Axel)
+D-1 Tube à fumigène
+En dehors du lycée, un essai avec un tube de Rubens à gaz a été fait chez notre professeur.
+Ayant un peu peur d’y mettre le gaz nous avons pensé à une bombe à fumée. Nous avons
+fait un essai avec un fumigène et un trompettiste :
+
+La fumée n’a pas rempli de manière homogène le tube et elle est ressortie par nos trous
+d’observations sur seulement la moitié de la longueur du tube. Nous distinguons deux
+fuseaux au milieu de beaucoup de fumée. Le tube chauffe. Mais les flux de fumée sont trop
+importants et gênent le musicien. Il faut explorer une autre
+piste : la machine à fumée .
+
+D2- Tube et machine à fumée
+Loïs possède une machine à fumée que nous testons au
+lycée le mercredi 16 octobre. Nous espérons pouvoir
+remplir de manière homogène le tube et obtenir une
+visualisation des ventres sans intoxiquer personne. Le test
+est plus concluant que celui avec le fumigène. La fumée
+sort des trous lors des pics de résonance mais elle sort
+aussi pendant toute la durée de l’expérience. Lors de la
+résonance, elle est éjectée plus violemment et on voit des fuseaux se dessiner.
+
+Conclusion (Lilou)
+Depuis la fin de notre année de seconde, nous avons eu la chance de pouvoir nous investir
+dans deux projets expérimentaux pour les concours scientifiques des Olympiades de
+physique et C.Génial. Le projet du Tube de Rubens nous a fait découvrir les ondes
+stationnaires dans un tube et un moyen de les visualiser. Il est frustrant de ne pas pouvoir
+utiliser le gaz au lycée. Les flammes pour mesurer la longueur d’onde du son ne nous sont
+pas autorisées. Nous avons donc cherché d’autres moyens de visualisation avec des bulles
+de savon et des petits vibrateurs réfléchissant en polystyrène, des webcams. Beaucoup de
+programmation python et de nombreux bricolages. Nous avons aussi expérimenté en dehors
+du lycée sur un vrai tube de Rubens à gaz avec des fumigènes. Des échecs, des réussites
+et des échanges avec des scientifiques. Ce fut un projet passionnant et très prenant. Nous
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 19
+
+avons atteint notre objectif. il est bien possible de visualiser les ventres et noeuds de
+pression dans le tube sans utiliser de méthane.
+
+sources: https://www.instructables.com/Rubens-Tube-Standing-Wave-Flame/
+https://www.instructables.com/How-to-make-a-Rubens-Tube/
+
+Lycée Bernard Palissy d’Agen / Vers un nouveau tube de Rubens / page 20
+
+

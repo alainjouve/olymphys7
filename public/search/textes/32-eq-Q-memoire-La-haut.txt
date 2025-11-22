@@ -1,0 +1,1215 @@
+Compte-rendu
+Olympiades de physique
+2024/2025
+Équipe : “Là-Haut !”
+
+Image d’illustration de notre projet
+
+Victor Dumont, Victor Guerin, Adrien Manville, Noé Mérigot, Charlie Reychman-Thomas
+Lycée Paul Bert, 7-8 Rue Huyghens, 75014 Paris
+
+Sommaire
+1-Introduction....................................................................................................................................................................................................2
+2- Le ballon-Sonde......................................................................................................................................................................................... 3
+I- Conception de la nacelle................................................................................................................................................................................................... 3
+1.1 Transfert thermique dans l’atmosphère....................................................................................................................................................... 3
+1.2 La fabrication....................................................................................................................................................................................................................4
+1.3 Le parachute.................................................................................................................................................................................................................... 5
+II- L'électronique............................................................................................................................................................................................................................6
+1.1 Principe................................................................................................................................................................................................................................. 6
+1.2 Montage et schéma....................................................................................................................................................................................................6
+3- Modélisation................................................................................................................................................................................................. 7
+I- Composition de l’atmosphère.........................................................................................................................................................................................7
+1.1 Description de l’atmosphère................................................................................................................................................................................. 7
+1.2 Modélisation des conditions expérimentales......................................................................................................................................... 8
+II- Loi des gaz parfaits et conséquences sur le ballon..................................................................................................................................10
+III- Poussée d’Archimède......................................................................................................................................................................................................10
+IV- Forces de frottements.....................................................................................................................................................................................................11
+V- Modélisation de l’ascension..........................................................................................................................................................................................11
+4- Résultats attendus et expérimentation.........................................................................................................................................12
+I- Tests en laboratoire..............................................................................................................................................................................................................12
+II- Interprétation des mesures...........................................................................................................................................................................................13
+1.1 Analyse des courbes de température........................................................................................................................................................ 13
+1.2 Analyse des courbes d’humidité.................................................................................................................................................................... 16
+5- Conclusion...................................................................................................................................................................................................18
+6- Remerciements.........................................................................................................................................................................................18
+7- Bibliographie.............................................................................................................................................................................................. 19
+
+1-Introduction
+5 lycéens. 1 ambition. 4 mois pour agir dans un contexte où le secteur de l'aérospatial commence tout
+juste à intégrer les enjeux environnementaux dans ses innovations, nous avons donc décidé de nous lancer
+dans un défi scientifique et technique en totale autonomie.
+Nous sommes 5 lycéens du lycée Paul-Bert, à Paris et avons relevé le défi de réaliser un projet dont
+l’idée est née début septembre 2024 lors d’une discussion en cours de physique, où nous avons abordé les défis
+auxquels sont confrontés les appareils opérant dans des environnements extrêmes, notamment à haute
+altitude. Au vu de notre passion commune pour l’espace et les sciences qui étudient, nous avons voulu nous
+lancer un défi, afin de sortir de notre zone de confort qu’est la sphère scolaire, ainsi que de découvrir et
+d’étudier un monde enrichissant sous toutes ses coutures. C’est ainsi que l’idée de concevoir, fabriquer et lancer
+un ballon-sonde à haute altitude est née, dans l’optique de recueillir des données sur des comportements de
+matériaux choisis dans des conditions extrêmes.
+Les Olympiades nationales de Physique ont été le catalyseur de ce projet, nous donnant une opportunité
+concrète de le réaliser et d’en faire part à autrui, tout en nous motivant au cours de cette aventure. Une fois
+inscrits et sûrs de notre participation, nous n’avons pas attendu pour nous mettre au travail, étant donné que le
+temps qui nous était imparti était limité à moins de 4 mois. En plus de la contrainte que nous ont imposée les
+échéances, nous avons également affronté des contraintes budgétaires, celles-ci ont influencé chaque choix
+technique afin de respecter le budget restreint sans compromettre la qualité scientifique de nos
+expérimentations.
+Nous espérons que notre démarche saura témoigner de notre engagement dans ce projet et de notre passion
+pour les sciences.
+Notre projet consiste à envoyer un ballon-sonde gonflé à l’hélium jusque dans la stratosphère, soit à 30 km
+d’altitude, afin de mesurer les effets des variations de température et d’humidité que subissent différents
+matériaux au cours de leur vol. Nous mesurerons ces variations grâce à des capteurs disposés à l’intérieur de
+“boîtes test”, au nombre de 4, que nous appellerons "boîtiers expérience" ou “cubes expérience”.
+Ainsi, ce projet vise à explorer les conditions extrêmes de la stratosphère, où la température peut atteindre
+-60°C. Cet environnement pose des contraintes importantes, il est donc crucial de comprendre comment les
+différents matériaux réagissent dans ces conditions dans le but d’optimiser leur utilisation.
+Avant de commencer à réfléchir sur le projet, nous nous sommes intéressés aux matériaux utilisés dans le
+domaine du spatial pour les ballons sondes tels que les matériaux composites ou les plastiques. Ces matériaux
+sont polluants et se retrouvent trop souvent au fond de l'océan, dans des cours d’eau ou dans la nature. Notre
+projet vise donc à explorer de nouvelles solutions pour réduire l’impact des ballons sondes sur l'environnement
+et les rendre plus durables à terme.
+Dans un premier temps, nous avons rigoureusement analysé et sélectionné des matériaux en tenant compte de
+leurs propriétés physiques, leur coût, et leur impact environnemental. Cette étape a été suivie de tests pour
+étudier leurs performances à haute altitude. En comparant leur capacité à isoler thermiquement et à résister à
+l’humidité, nous espérons proposer des solutions pour améliorer l’efficacité des futures missions de
+ballons-sondes.
+Ce projet offre aussi une dimension de réalisation pratique importante, car nous souhaitons lancer dans le futur
+des ballons bien plus élaborés, qui iraient bien plus loin et plus haut et dans le but de tester de nouveaux
+matériaux plus écologiques pour de futurs ballons sonde . Ce projet a donc pour but personnel de trouver le ou
+les matériaux optimaux nous permettant donc de réduire les risques d’échec liés à des conditions extrêmes, et
+de garantir la protection des instruments électroniques embarqués en maximisant les chances de récupérer
+des données exploitables. Cela permettrait de limiter les essais coûteux, réduisant ainsi les dépenses
+matérielles car nous avons un budget très limité.
+Par mesure de sécurité, avant le lancement réel du ballon prévu entre le 21 et le 27 janvier 2025, nous avons
+voulu faire des tests en conditions réelles dans un laboratoire. Nous avons donc contacté Trescal, un laboratoire
+
+leader mondial en étalonnage d’appareils. Ces derniers nous ont répondu favorablement et nous ont permis
+d’utiliser une enceinte climatique dans leur laboratoire situé à Roissy pour une demi-journée.
+Ce mémoire détaille chaque étape de notre projet : de la conception et la sélection des matériaux jusqu’à
+l’interprétation des données, en passant par les tests que nous avons réalisés. Nous avons tout au long de notre
+projet veillé à la bonne gestion de notre budget, et avons contacté une multitude d’entreprise avec pour
+objectifs d’être sponsorisé et de nous permettre d’investir plus de fonds dans le projet. Nous espérons qu’il
+reflète notre travail d’équipe et notre curiosité.
+Ainsi, nous vous invitons à vous plonger dans ces pages, avec l'espoir qu'elles déposent, dans vos regards,
+l'éclat des étoiles..
+
+2- Le Ballon-Sonde
+I- Conception de la nacelle
+1.1 Transfert thermique dans l’atmosphère
+Quatre matériaux ont retenu notre attention : le polyéthylène, le plexiglas, le carton coton, et l’aluminium
+doublé de polystyrène.
+Ce choix résulte d’une réflexion basée sur leurs propriétés physiques et leur coût.
+1.​ Polyéthylène : matériau léger et résistant à l’humidité qui possède une bonne inertie thermique, c’est un
+candidat idéal pour résister aux conditions extrêmes en haute altitude. Il est par ailleurs peu coûteux et
+nous pouvons facilement nous en procurer.
+2.​ Plexiglas : polymère transparent qui possède une grande résistance mécanique et une faible
+conductivité thermique. Bien que plus lourd que les autres matériaux, il reste un choix très intéressant.
+Son utilisation nous permet d’évaluer les performances d’un matériau rigide face aux variations de
+température tout en étant exposé à l’humidité.
+3.​ Carton coton : matériau constitué d’un cœur en coton et d’une enveloppe de carton, il est ultra léger et
+isolant. À priori plus fragile que les autres, il a des propriétés intéressantes pour protéger des
+composants pouvant être endommagés s’ils subissent des chocs, ou alors dans des conditions extrêmes
+sans user de matériaux excessivement lourds.
+4.​ Aluminium doublé de polystyrène : combinaison qui associe la solidité (mais la conductivité thermique
+élevée) de l’aluminium à l’excellent pouvoir isolant du polystyrène. L'ensemble est très solide : intéressant
+pour protéger un composant fragile face à des chocs. Nous souhaitons tester son efficacité face aux
+basses températures rencontrées à 30 km d’altitude.
+Matériaux non retenus et raisons du rejet :
+1.​ Verre : assez bonnes propriétés isolantes mais beaucoup trop dense pour notre projet et présente un
+risque de casse élevé, peu pratique en vol.
+2.​ Autres métaux que l’aluminium :
+a.​ Cuivre : de par sa mauvaise isolation thermique, son coût élevé et sa densité important, il nous est
+apparu inadapté à notre expérience
+b.​ Plomb : avec une densité très élevée, il nous est apparu incompatible avec la capacité de portance
+de notre ballon. De plus, il s’agit d’un matériau toxique, ce qui complique son utilisation dans un
+cadre pédagogique et sécurisé.
+3.​ Bois : matériau naturel qui correspond bien à nos attentes, mais hygroscopique (absorbe l’humidité) et
+nous a donc semblé inadapté pour tester des performances dans des conditions où l’humidité est un
+facteur déterminant.
+
+Matériau
+
+Conductivité
+thermique λ ​
+en 𝑊/(𝑚 · 𝐾)
+[1, p. 4]
+
+Plexiglas
+
+Polyéthylène
+
+0,22
+
+0,4
+
+𝑒
+
+Carton
+Coton
+
+Verre
+
+Cuivre
+
+Plomb
+
+Bois
+
+0.04
+(coton)
+0.11
+(carton)
+
+0,8
+
+400
+
+35
+
+0,2
+
+2.55
+
+0.005
+
+0.06
+
+10.2
+
+PS : 6.81
+
+0,072
+carton
+0,05 coton
+
+Alu : 218
+PS : 0,03
+
+Résistance
+Thermique
+surfacique
+de conduction
+
+Alu : 0,008
+
+2
+
+𝑅𝑠 = λ en 𝑚 · 𝐾/𝑊
+
+Aluminium
+recyclé doublé
+de polystyrène
+PS
+
+10.7
+
+6.18
+
+Avec :
+𝑒 épaisseur :
+𝑒 = 1 𝑐𝑚
+λ la conductivité
+thermique
+Masse volumique
+g/cm³ [2]
+
+1,18
+
+0,91 - 0,96
+
+2,7
+
+0,2 - 0,5
+
+2,5
+
+8,96
+
+11,34
+
+1,2
+
+Prix massique
+€/kg
+
+3,5
+
+1,2
+
+Alu : 2,5
+PS : 1
+
+5
+
+2
+
+8
+
+2
+
+0,5
+
+Résistance à la
+traction
+MPa [2]
+
+70
+
+10 - 30
+
+100 à 400
+
+10 à 20
+
+30-60
+
+220
+
+17
+
+40 - 100
+
+Rigide
+Solide
+
+Résistant à
+l'humidité
+
+Rigide
+Solide
+
+Hydrophile
+
+Cassant
+
+Dense
+
+Toxique
+
+Hydrophile
+
+6,0
+
+2,0
+
+1,0
+
+4,5
+
+0.85
+
+4.0
+
+2,5
+
+Compensé
+
+Autres
+considérations
+Impact
+environmental
+kg CO2/Kg matière
+
+Ces comparaisons montrent que les matériaux que nous avons retenus – le polyéthylène, le plexiglas,
+le carton coton et l’aluminium doublé de polystyrène – combinent à priori légèreté, résistance et
+pertinence pour notre expérience. Le choix des matériaux repose sur une optimisation entre leurs
+propriétés physiques, leur coût, tout en prenant en compte leur impact environnemental et leur facilité
+d’intégration dans notre projet.
+
+1.2 La fabrication
+Nous avons fabriqué la nacelle nous-mêmes pour qu’elle corresponde parfaitement à nos attentes. Nous avons
+choisi le matériau polystyrène, car léger et facile à manipuler, ainsi que du scotch tressé, de la colle et joint
+spécialement conçus pour les conditions extrêmes.
+Pour la colle nous avons étudié différents types, et nous avons estimé que l'acétone présent dans certaines
+colles produirait un effet corrosif sur le polystyrène. Pour pallier cela nous appliquons la colle sur le polystyrène
+par l'intermédiaire de bandes de scotch. Nous avons donc mesuré puis coupé un grand nombre de plaques de
+polystyrène puis nous avons fabriqué deux parties s’emboitant parfaitement. Nous avons par la suite formé des
+attaches robustes (Figure 4). Le fil que nous utilisons pour les attaches est le même que celui qui relie la
+nacelle et le ballon, soit un fil de nylon de 0,8 mm de diamètre, Nous avons également procédé à une
+expérimentation pour vérifier sa résistance au poids de la nacelle (Figures 5 et 6).
+
+Après avoir terminé la partie principale de la nacelle, nous l’avons recouverte de scotch pour éviter que le
+polystyrène ne rentre en contact avec l’eau, puis nous avons confectionné un couvercle s’introduisant
+parfaitement dans le rebord prévu à cet effet.
+Nous avons, en parallèle, fabriqué les boîtiers expériences qui seront rattachés à notre nacelle principale.
+●​ le boîtier expérience de polyéthylène: (Figure 10)
+●​ le boîtier expérience aluminium doublé de polystyrène: (Figure 9)
+●​ le boîtier expérience de carton coton: (Figure 7)
+●​ le boîtier expérience de plexiglas: (Figure 8)
+
+1.3 Le parachute
+Après avoir réalisé son ascension, la nacelle doit revenir sur la terre ferme pour que nous puissions extraire les
+données et les traiter. Pour cela nous devons lui attacher un parachute afin de ralentir sa descente et éviter
+qu'elle ne se détruise à sa retombée ou qu’elle ne cause des dommages [3]. Nous considérons 5 mètres par
+seconde comme la vitesse maximale de retombée au sol au niveau de la mer pour éviter les dégâts à la fois sur
+la surface sur laquelle elle tomberait et sur sa propre intégrité ainsi que pour respecter la législation sur les
+ballons sonde définie dans Les règles de l’air [4].Nous avons donc la vitesse de descente : (Figure 11.1)
+2×𝑚𝑛𝑎𝑐𝑒𝑙𝑙𝑒×𝑔𝑧
+
+𝑉𝑑𝑒𝑠𝑐𝑒𝑛𝑡𝑒 =
+
+ρ𝑎𝑖𝑟×𝑆×𝐶𝑥
+
+​
+
+Avec :
+𝑚𝑛𝑎𝑐𝑒𝑙𝑙𝑒 la masse de la nacelle ici 𝑚𝑛𝑎𝑐𝑒𝑙𝑙𝑒 = 1, 3 𝑘𝑔.
+ρ𝑎𝑖𝑟 la densité de l’air
+𝑆 la surface du parachute
+𝐶𝑥 le coefficient de traînée du parachute d'après le constructeur ici 𝐶𝑥 = 1, 36
+−1
+
+𝑔 la moyenne de l'accélération gravitationnelle pendant le vol : 𝑔 = 9, 75 𝑁 · 𝑘𝑔
+
+pour calculer la surface de parachute nécessaire nous prennent tout de même 𝑔 lorsque 𝑧 = 0 m
+−1
+
+et nous avons donc 𝑔0l'accélération gravitationnelle prise égale à 9, 81 𝑁 · 𝑘𝑔
+
+−1
+
+Pour la surface du parachute minimale pour une vitesse au sol inférieur à 5 𝑚 · 𝑠
+𝑆=
+
+2×𝑚𝑛𝑎𝑐𝑒𝑙𝑙𝑒×𝑔0
+2
+
+𝑝0×𝐶𝑥×𝑣
+
+​
+
+et donc 𝑆 =
+
+nous avons :
+
+2
+
+2×1.3×9,81
+2
+
+1,23×1,36×5
+
+= 0, 610 𝑚 ​​
+
+Nous avons donc besoin d’un parachute de au minimum 0,610 m2 de surface totale.
+Pour avoir de la marge et être sûrs de ne pas endommager les composants à l'intérieur, nous utilisons un
+parachute de type PC-110 de 1 m2 de surface totale et nous permet d’obtenir la courbe de la vitesse en fonction
+de l'altitude lors de la descente (Figure 11).
+−1
+
+−1
+
+Nous calculons la vitesse moyenne lors de la descente qui est donc de 17,1 𝑚 · 𝑠 ou de 61.6 𝑘𝑚 · ℎ
+pour une descente depuis 34,5 km nous avons :
+
+𝑡𝑑𝑒𝑠𝑐𝑒𝑛𝑡𝑒 =
+
+34.5
+61,6
+
+donc
+
+= 0, 56 ℎ = 34 𝑚𝑖𝑛
+
+Le temps que la nacelle prendra pour atteindre le sol à partir du moment où le ballon éclatera sera donc de 34
+minutes.
+La trajectoire exacte de la nacelle est déterminée grâce à https://predict.sondehub.org/ : (Ex pour le 21 janvier
+2025)
+(Figure 11.2)
+
+II- L'électronique
+1.1 Principe
+Notre ballon nécessite des capteurs pour mesurer les différentes humidités et températures auxquelles seront
+confrontés nos boîtiers expériences lors du vol. Nous avons choisi Arduino pour ses qualités, notamment sa
+facilité d'utilisation et sa fiabilité.
+Pour la température, nous avons décidé d'utiliser des capteurs DHT22 [5] capables d'aller de -45 °C à plus de
+120 °C, ainsi que de mesurer l'humidité relative de 0 à 99 %.
+Pour pouvoir connaître la vitesse du ballon et son altitude finale nous avons mis un capteur de pression MS5611
+capable de mesurer des pression allant de 1200 hPa à 1 hPa.
+Ces capteurs sont alimentés par huit piles de 1,5 V, connectées en série, chacune ayant une capacité de
+2500 mAh.
+
+1.2 Montage et schéma
+Pour le montage nous avons fait un schéma électronique afin de nous rendre compte du nombre de
+composants et des câbles à connecter. (Figure 12 et 13)
+Nous avons fait des recherches sur les différentes façons de mesurer le taux d'humidité et la température et
+avons choisi des capteurs DHT 22. Ils possèdent plusieurs avantages : taille, mesure d’humidité et de
+température en même temps, fiabilité, compatibilité avec l'écosystème Arduino et facilité de programmation.
+Ces capteurs sont connectés au port VCC (câble rouge) de la carte, au GND (câble noir) de la carte et à la
+broche digitale (câble vert) de la carte Arduino. D'après la fiche du fabricant, ces capteurs ont une plage de
+données pour la température de -45 à 80 °C ± 0.5 °C et pour l'humidité de 0 à 100 % RH ± 2 % RH. Ils
+consomment 1,5 mA par capteur avec 0,5 Hz de taux d'échantillonnage (une donnée toutes les 2 secondes).
+Toute l'électronique du ballon est connectée à une carte Arduino UNO qui permet le traitement des données
+pour les stocker sur une carte SD via un adaptateur micro SD. L'adaptateur micro SD est branché sur la carte
+Arduino avec un port VCC, un port GND et 5 ports de DATA, l'adaptateur consomme 100 mA.
+La carte est alimentée par 8 piles branchées en série. Lors de nos tests en laboratoire à des températures de
+-30°C, notre boîtier est resté alimenté pendant plus de 26h et dans chaque pile la tension résultant était de
+1, 01 𝑉. De plus, lors d’un test de décharge totale des piles, notre nacelle est restée alimentée pendant plus de
+53 h, ce qui nous permet de considérer notre test comme suffisant pour la durée du vol.
+Le GPS n'est pas branché au reste du circuit car il comporte une batterie interne. Il s'agit d'un GPS connecté au
+réseau : GSM/GPRS. Le réseau GSM (Global System for Mobile Communications) est une norme pour les
+communications mobiles, offrant des appels vocaux et des SMS. Le GPRS (General Packet Radio Service) est
+une extension du GSM, permettant la transmission de données en mode paquet sur la 2G.
+
+1.3 Description du programme
+Étant assez peu expérimentés en programmation nous avons dû apprendre le C++ (langage de programmation
+d'Arduino).
+Nous avons reçu de l'aide de Monsieur Miquel Responsable Innovation à France Telecom et Orange pour le
+programme. Il nous a expliqué comment faire fonctionner des programmes basiques et nous a été d’une
+grande aide pendant le projet pour toute la partie informatique ainsi que pour le GPS.
+
+3- Modélisation
+I- Composition de l’atmosphère
+1.1 Description de l’atmosphère
+L’atmosphère terrestre est une enveloppe qui protège et maintient la vie sur Terre. Elle régule la température,
+contrôle l’humidité et constitue un bouclier contre les rayonnements solaires. Elle est structurée en plusieurs
+couches, chacune jouant un rôle spécifique dans l’équilibre climatique et la protection de notre planète.
+L’atmosphère est divisée en couches principales, classées selon l’altitude : Troposphère (0 à 10 km) et
+Stratosphère (10 à 50 km).
+La stratosphère offre des conditions uniques :
+●​ Température extrême : entre 10 km et 20 km d’altitude, la température avoisine -60 °C.
+●​ Humidité quasi nulle : une humidité proche de 0 %,
+●​ Stabilité des vents : contrairement à la troposphère, où les vents sont souvent violents et imprévisibles,
+la stratosphère est relativement stable, ce qui facilite les mesures et protège l'intégrité du ballon-sonde.
+●​ Pression atmosphérique faible : la pression dans la stratosphère est environ 1000 fois plus faible qu’au
+niveau de la mer, offrant des conditions proches du vide. Cela permet d'approcher le comportement des
+matériaux dans l'espace.
+
+L'altitude de 30 km représente une limite intéressante :
+●​ Elle est suffisamment élevée pour rencontrer les conditions extrêmes de la stratosphère, tout en restant
+dans une zone atteignable par un ballon-sonde gonflé à l’hélium.
+●​ Elle permet de tester les matériaux dans un environnement plus proche de celui des missions spatiales
+que de la surface terrestre.
+●​ Il est difficile de tester précisément toutes les conditions en laboratoire, c’est pourquoi un lancer est
+nécessaire.
+
+1.2 Modélisation des conditions expérimentales
+L'atmosphère terrestre a un impact non négligeable sur plusieurs propriétés physiques, notamment la pression,
+la température, la viscosité et la densité des gaz. Pour nos prévisions et calculs pour la confection du ballon et
+pour les calculs relatifs au ballon, nous avons besoin de connaître précisément l’évolution des grandeurs en
+fonction de l’altitude, c’est pourquoi nous avons utilisé différentes relations et modèles pour prévoir la
+température, la pression, la densité de l’air et de l’hélium et la pesanteur. Nous avons utilisé un modèle simplifié
+de l’atmosphère établi par l’Organisation Internationale de Normalisation en 1975, afin de prendre en compte
+l’évolution des conditions expérimentales tout en conservant la possibilité de les calculer. Pour la température
+et la pression, nous avons employé plusieurs relations, car les différentes couches de l’atmosphère influencent
+les comportements physiques de ces grandeurs.La température et la pression sont les principales grandeurs
+qui évoluent significativement en fonction de l’altitude. Les autres grandeurs varient en corrélation avec
+l’évolution de ces deux paramètres. Ces valeurs nous permettront ensuite de calculer les forces qui
+s'appliquent au système du {ballon + nacelle} lors de la montée. Ceci nous permettra ensuite d’estimer le temps
+de vol et donc de prévoir l’autonomie nécessaire pour l'électronique mais aussi la charge maximale de la
+nacelle pour le vol.(Figure 15).
+Expression de la température en fonction de l’altitude 𝑇(𝑧) :
+La température sera exprimée en kelvin (K) selon les unités de base du Système International (SI).
+Expression de 𝑇1(𝑧) dans la troposphère : [6, p. 3]
+𝑇1(𝑧) = 𝑇1 − 𝐿 · 𝑧
+Avec :
+●​ 𝑇1 la température à l’altitude la plus basse soit l’altitude au niveau de la mer, d’après la norme (ISA)
+de l'Organisation de l’Aviation Civile Internationale : 𝑇1 = 288, 15 𝐾 ;
+●​ 𝐿 le gradient thermique adiabatique vertical dans la troposphère [6, p. 4] : 𝐿 = 0. 0065 𝐾/𝑚 ;
+●​ 𝑧 l’altitude (m).
+Expression de 𝑇2(𝑧) dans la stratosphère basse : [6, p. 3]​
+𝑇2(𝑧) = 216, 65 𝐾 ​
+Dans la stratosphère basse [6, p. 4], la température est une constante égale à 216, 65 𝐾.
+Expression de 𝑇3(𝑧) dans la stratosphère haute : [6, p. 3]​
+𝑇3(𝑧) = 𝑇3 + 𝐿 · (𝑧 − 20000) ​
+Avec :
+●​ 𝑇3 la température constante dans la stratosphère basse : 𝑇3 = 216, 65 𝐾 ;
+●​ 𝐿 le gradient thermique adiabatique vertical dans la stratosphère haute [6, p. 4] : 𝐿 = 0. 001 𝐾/𝑚 ;
+●​ 𝑧 − 20000 l’altitude (m) moins l’altitude des couches inférieures.
+Expression de 𝑇4(𝑧) dans la stratopause : [6, p. 3]​
+𝑇4(𝑧) = 𝑇4 + 𝐿 · (𝑧 − 32000) ​
+Avec :
+●​ 𝑇4 la température max dans la stratosphère haute : 𝑇4 = 228, 65 𝐾 ;
+●​ 𝐿 le gradient thermique adiabatique vertical dans la stratosphère haute [6, p. 4] : 𝐿 = 0. 0028 𝐾/𝑚 ;
+●​ 𝑧 − 32000 l’altitude (m) moins l’altitude des couches inférieures.
+L’ensemble nous donne la courbe (Figure 16)
+
+Expression de la pression en fonction de l’altitude 𝑃(𝑧) :​
+La pression comme la température ne suit pas un modèle linéaire uniforme et se calcule avec plusieurs
+relations en fonction de l’altitude. Nous avons utilisé deux relations, une pour entre 0 km et 11 km (𝑃1(𝑧)) l’autre
+pour 11 km à 40 km (𝑃2(𝑧)). La pression atmosphérique sera exprimée en Pa selon les unités de base du
+Système International (SI).
+Expression de 𝑃1(𝑧) dans la troposphère : [3]​
+−5
+
+𝑃1(𝑧) = 𝑃0 · (1 − 3, 32 × 10
+
+7
+2
+
+× 𝑧) ​
+
+Avec :
+●​ 𝑃0 la pression au niveau de la mer d’après la norme (ISA) de l’Organisation de l’Aviation Civile
+Internationale : 𝑃0 = 101325 𝑃𝑎 ;
+●​ 𝑧 l’altitude (m).
+Expression de 𝑃2(𝑧) pour une altitude supérieure à 11 km : [3]​
+−4
+
+𝑃2(𝑧) = 𝑃0 × 0, 204 · 𝑒𝑥𝑝(− 1, 56 × 10
+
+× (𝑧 − 11000))​
+
+Avec :
+●​ 𝑃0 la pression au niveau de la mer d’après la norme (ISA) de l’Organisation de l’Aviation Civile
+Internationale : 𝑃0 = 101325 𝑃𝑎.
+●​ 𝑧 − 11000 permet de prendre en compte l’altitude à partir de 11 km.
+L’ensemble nous donne la courbe (Figure 17)
+Expression de la densité de l’air et de l’hélium en fonction de l’altitude ρ𝑎𝑖𝑟(𝑧) et ρℎ𝑒𝑙𝑖𝑢𝑚(𝑧):​
+Les densités de l’air et de l’hélium sont deux densités importantes pour calculer par exemple la poussée
+d’Archimède et de la vitesse d'ascension. Nos calculs de densité sont en kg/m3 selon les unités de base du
+Système International (SI) et grâce à la loi des gaz parfaits.​
+𝑃(𝑧)·𝑀
+
+ρ(𝑧) = 𝑅·𝑇(𝑧) ​
+Avec :
+−3
+
+●​ ρ la densité en 𝑘𝑔 · 𝑚 .
+●​ 𝑃(𝑧) la pression en fonction de l’altitude calculée par les relations présentées précédemment en 𝑃𝑎.
+−1
+
+●​ 𝑀 la masse molaire de l’air ou de l’hélium en 𝑘𝑔 · 𝑚𝑜𝑙
+
+−1
+
+soit : 𝑀(𝐴𝑖𝑟) = 0, 02896 𝑘𝑔 · 𝑚𝑜𝑙
+
+et
+
+−1
+
+𝑀(𝐻𝑒𝑙𝑖𝑢𝑚) = 0, 00400 𝑘𝑔 · 𝑚𝑜𝑙 .
+Nous obtenons les courbes (Figures 18 (densité air) et 19 (densité hélium))
+Expression de l' accélération de pesanteur en fonction de l’altitude 𝑔(𝑧) : (Figure 19 page 9)​
+Afin de disposer de résultats plus précis, nous avons calculé l’accélération de pesanteur en fonction de
+l’altitude. [7, p. 4]​
+𝑔(𝑧) = 𝐺 · (
+
+𝑀
+2
+
+(𝑅+𝑧)
+
+)​
+
+Avec :
+−11
+
+●​ 𝐺 la constante gravitationnelle universelle : 𝐺 = 6, 674 × 10
+24
+
+●​ 𝑀 la masse Terrestre : 𝑀 = 5, 972 × 10
+
+3
+
+−1
+
+𝑚 · 𝑘𝑔
+
+−2
+
+·𝑠 .
+
+𝑘𝑔.
+6
+
+●​ 𝑅 le rayon moyen de la Terre : 𝑅 = 6, 371 × 10 𝑚.
+●​ 𝑧 l’altitude (m).
+Nous obtenons la courbe (Figure 20)
+−1
+
+−1
+
+Pendant le vol g varie donc entre 9, 806 𝑁 · 𝑘𝑔 pour z = 0 m et 9, 684 𝑁 · 𝑘𝑔 pour z = 34 500 km soit 1,2 % de
+variation. Pour simplifier, l'étude du mouvement, on prendra g constant et égal à sa valeur moyenne entre 0 et
+
+−1
+
+34,5 km soit 𝑔 = 𝑔𝑚𝑜𝑦𝑒𝑛 = 9, 75 𝑁 · 𝑘𝑔 permettant des calculs sans négliger l’évolution de g et en simplifiant les
+expressions.
+
+II- Loi des gaz parfaits et conséquences sur le ballon
+Grâce aux conditions initiales de l'atmosphère et aux données du constructeur, nous pouvons en déduire le
+volume du ballon en fonction de l’altitude pour déterminer la hauteur que le ballon va atteindre avant
+d’exploser. Pour cela nous utilisons la loi des gaz parfaits : 𝑃𝑉 = 𝑛𝑅𝑇
+En l’appliquant au sol, on a 𝑃0 𝑉0 = 𝑛 𝑅 𝑇0 avec 𝑃0 la pression au sol : 𝑃0 = 101325 𝑃𝑎 ; 𝑉0 le volume du ballon
+3
+
+au sol 𝑉0 = 2. 60 𝑚 ; 𝑛 le nombre de mol d'hélium ; 𝑅 la constante universelle des gaz parfaits :
+−1
+
+−1
+
+𝑅 = 8. 314 𝐽. 𝑚𝑜𝑙 . 𝐾
+
+; 𝑇0 la température au sol 𝑇0 = 288, 15𝐾
+
+Grâce à la loi des gaz parfaits nous pouvons exprimer 𝑛, la quantité de matière d'hélium contenue dans notre
+ballon, qui sera considérée comme constante au cours de l'ascension :
+𝑛=
+
+ρ0× 𝑉0
+𝑅×𝑇
+
+ce qui fait 𝑛 = 110 𝑚𝑜𝑙
+
+Nous avons donc, grâce au calcul (Figure 15) sur la composition de l'atmosphère en fonction de l’altitude, le
+𝑛×𝑅×𝑇(𝑧)
+𝑃(𝑧)
+
+volume pour 𝑉𝑧avec z l’altitude en mètres : 𝑉𝑧 =
+
+, ce qui donne 𝑉𝑧 =
+
+110×8,314×𝑇(𝑧)
+𝑃(𝑧)
+
+et nous permet
+
+d’obtenir la courbe représentant le volume du ballon en fonction de l’altitude : voir (Figure 21)
+3
+
+Nous trouvons qu'à 34, 5 𝑘𝑚 (l’altitude d'éclatement donnée par le fournisseur) le ballon a pour volume 369 𝑚 .
+3
+
+Ce résultat est en accord avec les valeurs que nous ont transmis les constructeurs soit V = 375 𝑚 pour une
+altitude de 34, 5 𝑘𝑚.
+
+III- Poussée d’Archimède
+Afin de calculer la vitesse de montée du ballon, nous avons fait le bilan des forces et nous avons donc eu
+besoin de calculer la poussée d’Archimède. Cette force varie en fonction de l’altitude, c’est pourquoi nous avons
+fait un tableau Excel calculant en fonction de l’altitude plusieurs grandeurs qui varient. Nous avons calculé la
+norme de la poussée d’Archimède avec la relation [3]:
+|Π| = ρ(𝑧) × 𝑉(𝑧) × 𝑔
+Avec :
+●​ ρ (𝑧) la densité de l’air
+●​ 𝑉(𝑧) le volume du ballon en fonction de l’altitude.
+●​ 𝑔 la moyenne de l'accélération de la pesanteur
+Nous avons également défini :
+−1
+
+●​ ρ0 la densité de l’air au sol : ρ0 = 1, 2250 𝑘𝑔 · 𝑚 ,
+3
+
+●​ 𝑉0 le volume du ballon au sol 𝑉0 = 2, 6 𝑚 .
+−1
+
+●​ 𝑔 la moyenne de l'accélération de la pesanteur prise égale à 𝑔𝑚𝑜𝑦𝑒𝑛 = 9, 75 𝑁 · 𝑘𝑔
+
+Grâce à ces valeurs initiales au sol nous avons calculé la norme de la poussée d’Archimède au sol :
+−2
+
+|Π| = 𝑀𝑎𝑖𝑟 × 𝑛ℎ𝑒 × 𝑔 ⇔ |Π| = 2, 896 × 10
+
+× 109. 8 × 9, 750 ⇔ |Π| = 31, 00 𝑁.
+
+Ensuite nous avons calculé la norme de la poussée d’Archimède en fonction de l’altitude en faisant :
+Π(𝑧) = ρ(𝑧) × 𝑉(𝑧) × 𝑔 et grâce à l’expression de ρ𝑧et 𝑉𝑧 on obtient Π(𝑧) = 𝑀𝑎𝑖𝑟 × 𝑛ℎ𝑒 × 𝑔 , expression qui ne
+dépend que de grandeur constante par rapport à l’altitude : on en déduit donc que la poussée d'archimède est
+constante pendant tout le vol.
+Grâce au calcul de la norme de la poussée d’Archimède, nous sommes en capacité de calculer la vitesse de
+montée en utilisant la seconde loi de Newton.
+
+IV- Forces de frottements
+Au fur et à mesure que le ballon se déplace dans l'atmosphère, la résistance de l'air induit une force de traînée𝑓
+qui s'oppose au mouvement agissant sur le ballon [3]. L'équation de la force de traînée pour un ballon se
+2
+
+déplaçant verticalement dans l'air s'écrit comme suit |𝑓| = 1/2 𝐶𝑥 × 𝑆 × 𝑣 × ρ
+Avec :
+●​ 𝐶𝑥 le coefficient de traînée qu’on considère comme constant pendant tout le vol
+●​ 𝑆 (𝑧) la surface de référence définie par 𝑆 = π ×
+
+𝐷𝑧 2
+2
+
+( ) avec D le diamètre en fonction de l’altitude
+
+●​ 𝑣 (𝑧) la vitesse de l'objet
+●​ ρ (𝑧) la densité de l’air
+
+V- Modélisation de l’ascension
+Nous appliquons la seconde loi de Newton au système {Ballon} dans le
+→
+
+→
+
+référentiel géocentrique supposé galiléen : Σ𝐹 = 𝑚 × 𝑎
+→
+
+Les force appliquée au système sont le Poids 𝑃, les forces de
+→
+
+→
+
+frottement 𝑓 et la poussée d'Archimède Π.
+→
+
+→
+
+→
+
+→
+
+Donc ici, 𝑃𝑡𝑜𝑡 + 𝑓 + Π = 𝑚 × 𝑎
+
+Nous projetons sur le repère unidimensionnel (Oz) ci-contre, et
+nous obtenons : 𝑎 = 𝑎𝑧 =
+
+Π−𝑓−𝑃−𝑃ℎ𝑒𝑙𝑖𝑢𝑚
+𝑚
+2
+
+𝑎=
+
+𝑀𝑎𝑖𝑟×𝑛ℎ𝑒×𝑔−1/2×ρ𝑧 ×𝐶𝑥×𝑆𝑧×𝑣𝑧 −𝑚𝑡𝑜𝑡×𝑔
+𝑚
+
+ceci nous permet donc d’obtenir l'équation différentielle de coefficient non constant
+2
+
+𝑑𝑣
+𝑑𝑡
+
+=
+
+𝑀𝑎𝑖𝑟×𝑛ℎ𝑒×𝑔−1/2×ρ𝑧 × 𝐶𝑥×𝑆𝑧×𝑣𝑧 −𝑚𝑡𝑜𝑡×𝑔
+𝑚
+
+Nous utilisons la méthode d'itération de Euler grâce à Excel. [8]
+qui nous permet de modéliser la courbe représentant la vitesse en fonction de l’altitude:
+Nous pouvons donc prévoir la vitesse moyenne jusqu’à
+34,5 km (la hauteur d’éclatement) et nous en déduisons le
+temps total de montée. en déterminant la vitesse
+moyenne.
+Nous obtenons avec ce modèle que
+−1
+
+𝑉𝑚𝑜𝑦𝑒𝑛𝑛𝑒 = 4, 41 𝑚 · 𝑠
+
+et donc un temps d’ascension de
+
+132 min
+En conclusion, la durée totale du vol est donc de :
+
+𝑡𝑎𝑠𝑐𝑒𝑛𝑠𝑖𝑜𝑛 + 𝑡𝑑𝑒𝑠𝑐𝑒𝑛𝑡𝑒 = 132 + 34 = 166 𝑚𝑖𝑛 = 2ℎ46
+L’autonomie des piles pourra donc alimenter la nacelle pendant toute la durée du vol de plus, nous avons
+comparé les données obtenues grâce notre modélisation concernant le temps de montée et descente avec
+celle obtenue d’après le modèle du Cambridge University Spaceflight Landing Predictor, à savoir un temps de
+vol de 2h54, avec un temps de montée de 2h08 et un temps de descente de 46 minutes. Nous avons donc
+considéré notre modèle comme fiable avec une incertitude de ±15 min.
+
+4- Résultats attendus et expérimentation
+I- Tests en laboratoire
+Avant de réaliser un lancer nécessitant des mois de préparation, nous avons voulu vérifier le fonctionnement
+des composants essentiels à la collecte de données. Nous avons testé l’autonomie des piles et la résistance aux
+températures extrêmes de l’électronique de la nacelle, tout en recueillant des données expérimentales
+comparables à celles du lancer. Nos tests ont été réalisés chez Trescal, leader mondial en métrologie, au sein
+de leur agence de Roissy, spécialisée dans le calibrage et l’étalonnage de nombreux appareils.
+Nous avons été reçus par le directeur de l’agence, M. Dhedin, qui nous a présenté les techniciens qui s’occupent
+d’étalonner et de réparer des appareils de mesure, que ce soit des thermomètres pouvant mesurer des petites
+grandeurs à certains permettant de mesurer des températures supérieures à 1200°C ou encore des tensions
+supérieures à 100 kV.
+Lors de cette expérience, nous avons utilisé une enceinte climatique pour simuler, de manière séparée, les
+conditions d’humidité et de température auxquelles sera soumis le ballon-sonde lors du lancer. Nous avons
+procédé ainsi car l’enceinte climatique ne pouvait pas effectuer les variations des paramètres simultanément, ce
+qui n’était pas problématique étant donné qu’il était plus intéressant dans un premier temps d’analyser les
+paramètres uns par uns afin d’étudier leur influence sur les matériaux plus précisément. Toutefois, cette
+modélisation n’est pas parfaite, étant donné que le ballon sonde subira les variations des deux paramètres
+simultanément lors de son vol.
+Le but de cette expérience est de récolter des données expérimentales grâce aux capteurs dans les 4 boîtiers
+expériences constitués de différents matériaux.
+Pour la première partie de l’expérience (phase 1), l’enceinte a été paramétrée avec des paliers de températures
+variables et une humidité relative de 0%. Pour la 2ème partie de l’expérience (phase 2), l’enceinte à été
+paramétrée avec une température de 20 °C et une humidité relative de 50 %. La programmation de l’enceinte
+pendant toute l’expérience est exposée dans le tableau ci-dessous :
+Durée [hh:mm:ss]
+
+Température [°C]
+
+Phase 1 - étape 1 : 0-9 km
+
+01:00:00
+
+-20,0
+
+Phase 1 - étape 2 : 9-26 km
+
+01:40:00
+
+-40,0
+
+Phase 1 - étape 3 : 27-35 km
+
+00:50:00
+
+-30,0
+
+Phase 2 - Humidité à 50%
+
+01:00:00
+
+20,0
+
+Phase 3 - sans humidité
+
+01:00:00
+
+20,0
+
+Pour la première partie, décomposée en 3 étapes, chaque palier correspond à une phase du vol. Le
+ballon-sonde passe 2 fois par chaque phase (lors de la montée et lors de la descente). Chaque phase de vol est
+représentée par une température, calculée en faisant la moyenne des températures dans cette phase. Nous
+utilisons les calculs de vitesse d’ascension et de descente pour prévoir les temps de chaque phase en ajoutant
+une marge pour toute erreur et imprévu lors du vol.
+La deuxième phase (température à 20°C et humidité relative à 50%) vise à tester la réaction des matériaux à une
+humidité variable (l’enceinte ne permettait pas de fixer une humidité relative différente de 0% à des
+températures négatives).
+La troisième phase sert de comparant à la deuxième phase pour analyser l’influence de l’humidité sur les
+matériaux.
+
+II- Interprétation des mesures
+
+1.1 Analyse des courbes de température
+Dans les graphes (Figure 24) et (Figure 28), la courbe bleue (CC) représente les données recueillies par le
+capteur placé dans le boitier expérience fait de carton coton, la courbe rouge (PLX) est celle du capteur du
+boitier expérience de plexiglas, la courbe jaune (AL) est celle du capteur du boitier expérience fait d’aluminium
+et de polystyrène, et la courbe verte (CB) est celle du capteur du boitier expérience fait de carton et de
+polyéthylène. Dans les deux graphes (Figure 24) et (Figure 28), nous avons représenté les paramètres auxquels
+nous nous intéressons en fonction du temps.
+Dans le graphe (Figure 24), nous avons représenté l’ensemble des valeurs de température pendant les
+premières 4h30 de l’expérience. Dans les 10 premières minutes, nous constatons que les 4 capteurs
+enregistrent une température qui augmente, ce qui est anormal étant donné que la température était censée
+chuter directement. Nous pouvons proposer comme explication le temps de mise en place des conditions de
+température dans l’enceinte et la chaleur générée par les capteurs dans les boîtiers expériences. Nous nous
+concentrerons donc par la suite sur les valeurs mesurées entre 𝑡 = 10 min et 𝑡 = 270 min.
+De 𝑡 = 10 minutes à 𝑡 = 25 minutes, les capteurs détectent une baisse de 23°𝐶 à -16°𝐶, simulant l’ascension de
+0 à 10 km, et nous pouvons constater que la courbe rouge et la courbe jaune, respectivement celles des
+capteurs dans les boîtiers expériences plexiglas et aluminium, se démarquent des autres. La courbe rouge
+(plexiglas) possède une inclinaison plus forte et baisse donc plus vite que les autres, tandis que la jaune
+(aluminium) baisse moins vite que les 3 autres. La verte et la bleue (carton+coton et carton+polyéthylène)
+évoluent de manière relativement similaire..
+À partir de 𝑡 = 25 minutes, représentant la montée en altitude de 0 à 9 km, la température se stabilise autour
+de -17°𝐶 et nous constatons que la courbe du boitier en plexiglas remonte au dessus des autres, tandis que la
+jaune (aluminium) se place en dessous.
+S’ensuit ensuite une phase de diminution de la température, allant de -17°𝐶 à environ -35°𝐶. Celle-ci modélise la
+montée en altitude de 9 à 26 km. Nous constatons que les différences entre les courbes des différents capteurs
+sont bien plus marquées que lors des paliers de température précédents, ce qui peut s’expliquer par la valeur
+extrême de la température et le stress thermique que subissent les différents matériaux, mettant en évidence
+leur différence de comportement.
+
+À partir de 𝑡 = 90 minutes, la température se stabilise autour de -35°𝐶. Nous constatons que la courbe rouge
+(plexiglas) et la courbe bleue (carton coton) sont 3 à 4°𝐶 au dessus des courbes vertes et jaunes, qui se
+rapprochent plus des -40°𝐶.
+À 𝑡 = 90 heures, la température entre dans une phase d’augmentation, passant de -35°𝐶 aux alentours de ​
+-30°𝐶, modélisant l’ascension du ballon-sonde jusqu’à 35 km. La courbe rouge (plexiglas) se démarque encore
+une fois, suivant une augmentation plus rapide que les autres .
+Après une quinzaine de minutes, la température se stabilise autour de -28°C, et la courbe rouge reste
+au-dessus des 3 autres, avec une différence d’environ 2°C.
+Pour finir, à 𝑡 = 3 heures 50, nous constatons que les courbes recommencent à augmenter, passant de -30°𝐶 à
+20°𝐶. Le phénomène se répète : la courbe rouge (plexiglas) se démarque des autres en augmentant plus vite,
+tandis que les autres restent groupées.
+L’évolution des courbes associées aux paramètres de températures de l’enceinte climatique et aux valeurs des
+conductivités thermiques de chaque matériau nous permettent de tirer des conclusions quant à l’isolation
+thermique des différents boîtiers expériences, et donc des matériaux qui les composent.
+En exploitant les données expérimentales, nous pouvons apercevoir des différences entre les variations de
+température de chaque boîte nonobstant le couple formé par les courbes représentant les températures des
+boîtes respectivement composées de carton enrobé de polyéthylène et d'aluminium. Même si ces résultats ont
+défié nos pronostics, les variations de températures elles-mêmes étaient attendues. En effet, la manière dont la
+température évolue à travers un matériau se mesure par la conductivité thermique de chaque matériau
+concerné. La conductivité thermique (notée λ et exprimée en 𝑊/(𝑚 · 𝐾)) représente le flux d’énergie thermique
+(ou puissance thermique, en watts) qui traverse une surface d’un mètre carré de matériau, d’une épaisseur d’un
+mètre, lorsque la différence de température entre les deux faces est d’un kelvin.
+Conductivité thermique : [1] (Figure 27)
+Φ𝑑
+
+λ = ∆𝑇 𝑆
+Avec:
+●​
+●​
+●​
+●​
+●​
+
+en 𝑊/(𝑚 · 𝐾)
+
+λ conductivité thermique des matériaux : 𝑊/(𝑚 · 𝐾)
+Φ le flux thermique en W
+𝑑 l’épaisseur (m)
+∆𝑇 la différence de température entre les deux faces du matériau en K
+S la surface à travers laquelle la chaleur est transférée en m²
+
+Ici, nous ne pouvons interpréter les courbes uniquement grâce à la conductivité thermique des matériaux car
+l’épaisseur de chacune varie, nous allons donc utiliser la résistance thermique de surface qui prend en compte
+l’épaisseur de chaque boîte.
+Nous calculons la résistance thermique surfacique de conduction [1] de chaque boîtier expérience:
+𝑒
+
+𝑅𝑠 = λ en 𝑚2 · 𝐾/𝑊
+Avec :
+●​ 𝑒 épaisseur : 𝑒 = 1 𝑐𝑚
+●​ λ conductivité thermique des matériaux : 𝑊/(𝑚 · 𝐾)
+
+Nous savons grâce au tableau donné dans la partie 2.1.1 “conception de la nacelle” que :
+
+Modèle
+
+Résistance thermique
+surfacique de conduction
+2
+(en 𝑚 · 𝐾/𝑊)
+
+Conductivité thermique λ ​
+(en 𝑊/(𝑚 · 𝐾))
+
+Épaisseur
+en m
+
+Aluminium + polys
+
+0,033
+
+218 et 0,03
+
+0,007 et 0,001
+
+Carton avec coton
+
+0,072 + 0,05 = 0,012
+
+0,11 et 0,040
+
+2 x 0,004 et 0,002
+
+Carton avec
+polyéthylène
+
+0,01
+
+0,2
+
+0,002
+
+Plexiglas
+
+0,014
+
+0,21
+
+0,003
+
+Nous remarquons que la résistance thermique surfacique de conduction est pratiquement la même pour tous
+les boîtiers expériences sauf pour le boîtier expérience aluminium+polystyrène qui est trois fois supérieure,
+donc nous comprenons pourquoi nos courbes se confondent sur le graphique (Figure 24) qui modélise la
+température. Au final, du point de vue de la valeur de la résistance thermique surfacique de conduction, le
+boîtier expérience le plus performant devrait être l’aluminium+polystyrène, ce qui n’est pas vérifié
+expérimentalement. Nous émettons l’hypothèse que ce résultat surprenant vient d’un problème d’herméticité
+du boîtier expérience : nous pouvons supposer que le problème vient de la colle qui n’a sûrement pas supporté
+les conditions du test en particulier de la chute de température brusque et extrême.
+De plus, l’allure de la courbe du boitier plexiglas est surprenante. En effet, elle se démarque des autres, ce qui
+2
+va à l’encontre de sa valeur de résistance thermique surfacique de conduction, qui est de 0,14 𝑚 · 𝐾/𝑊, ce qui
+est similaire aux autres. On s’attendrait donc à ce que sa courbe soit quasi confondue avec les autres, ce qui
+n’est pas le cas. On peut donc en déduire que certains cubes possèdent un défaut d’herméticité, sans doute dû
+à la colle utilisée et à la dilatation des matériaux (voir plus loin).
+C’est donc une des limites de cette expérience. À l‘avenir, afin d’améliorer nos chances de réussite, nous devons
+nous procurer une colle résistante aux contractions causées par les températures extrêmement basses, et
+potentiellement mettre au point un système de jointure plus souple.
+
+1.2 Analyse des courbes d’humidité
+Pour créer les courbes montrant l’évolution de l'humidité mesurée par les capteurs en fonction du temps, nous
+avons répété la même manipulation que pour la courbe précédente. Cette dernière représente l’ensemble des
+valeurs d’humidité en humidité relative pendant 4h30. Nous étudions donc les valeurs récoltées entre 𝑡 = 0
+heure et 𝑡 = 4 heures 30 .
+Le graphique (Figure 28), montre l’évolution de l’humidité relative en fonction du temps pour quatre matériaux :
+le carton coton (HumCC, courbe bleue), le plexiglas (HumPLX, courbe rouge), l’aluminium doublé de
+polystyrène (HumAL, courbe jaune) et un carton enrobé de polyéthylène (Hum CB, courbe verte).
+L'humidité relative est le rapport, exprimé en pourcentage, entre la quantité de vapeur d'eau présente dans l'air
+et la quantité maximale que l'air peut contenir à une température donnée (point de saturation). Une humidité
+relative de 100 % indique que l'air est saturé en vapeur d'eau et donc la formation d’eau liquide.
+Programme :
+Durée [hh:mm:ss]
+
+Humidité relative [%]
+
+2H00
+
+50% fixée par l’enceinte
+
+2H00
+
+<50%
+
+Dans la phase initiale, de 𝑡 = 0 heure jusqu'à 𝑡 = 2 heures, l’enceinte a été paramétrée pour une humidité de
+50%, avec une température constante de 20°𝐶 : les courbes d’humidité décroissent progressivement, mais à des
+rythmes différents. Les boîtiers expériences retiennent l’humidité de la phase précédente (le test en
+température), enregistrant donc des données supérieures à 50%. Cette phase révèle des différences
+significatives entre les matériaux : ainsi l’aluminium et le plexiglas sont les deux matériaux qui semblent les plus
+perméables avec une humidité relative entre 70% et 65%. Le carton+coton et le carton+polyéthylène
+maintiennent des niveaux d’humidité plus faibles, autour de 60 %,
+Puis lors de la deuxième phase de 𝑡 = 2 heures jusqu'à 𝑡 = 4 heures, le niveau d’humidité maintenu par la
+machine baisse doucement mais garde une température constante de 20°𝐶. L’humidité relative dans les boîtiers
+expériences en carton coton et le carton bâche (polyéthylène) baisse mais se maintient à des valeurs similaires
+soit entre 55% et 60 % jusqu'à atteindre 50% d’humidité relative à 𝑡 = 4 heures, tandis que pour les boîtiers
+expériences en plexiglas et en aluminium, l’humidité décroît plus nettement de 75% à 40% arrivant à un niveau
+très bas.
+Cela semble étonnant car sur le graphique Figure 28), entre 𝑡 = 2 heures et 𝑡 = 4 heures lorsque les cubes
+expériences étaient soumis à une atmosphère avec une humidité relative de 50%, l'humidité à l'intérieur des
+cubes en plexiglas et aluminium était la plus faible. Nous avons donc posé l’hypothèse que la transition de
+température a endommagé l'étanchéité de ces boîtiers expériences avec la colle utilisée pour fermer les
+boîtiers expériences qui a dû souffrir du passage à -40°𝐶 du fait de la dilatation des matériaux.
+Dilatation estimée de chaque arrête des faces : [9] (Figure 29)
+
+∆𝐿 = 𝐿0 · α · ∆𝑇
+●​ ∆𝐿 : variation de longueur (m)
+●​ 𝐿 ​: longueur initiale (m) ici 7 cm soit 7,0 × 10−2 m
+0
+
+●​ α : coefficient de dilatation thermique linéaire (°C−1)
+●​ ∆𝑇 : variation de température (°C) pour une variation de température différente : de 20 °C à -40 °C, soit
+une variation totale de ΔT = 60 °C.
+
+Coefficient de dilatation
+linéaire
+
+Dilatation estimée de
+chaque arrête des faces
+
+Variation de la surface
+
+Aluminium
+
+23 × 10−6
+
+0,0097 mm
+
+6 𝑚𝑚
+
+Polyéthylène
+
+2×10−4
+
+0,84 mm
+
+116 𝑚𝑚
+
+Plexiglas
+
+80× 10−6
+
+0,034 mm
+
+23 𝑚𝑚
+
+pas de valeur
+standardisée
+
+pas de valeur
+standardisée
+
+pas de valeur
+standardisée
+
+Matériau
+
+Carton coton
+
+2
+
+2
+
+2
+
+Les faces ayant été fabriquées au millimètre près, leur dilatation a probablement mis la colle sous tension
+mécanique lors des températures les plus basses, et nous pensons que des micro-fissures sont apparues lors
+du test en température. Ceci est une information primordiale, car nous souhaitons faire un lâché réel du ballon,
+nous pouvons donc anticiper ces déformations.
+Interprétation et conclusion
+Les cubes carton coton (CC) et le polyéthylène (CB) sont moins perméables à l’humidité que les boîtiers
+expériences aluminium (AL) et plexiglas (PLX). En phase 2 lorsque l’humidité relative décroît, leurs courbes
+diminuent également mais pas autant que celles des boîtiers expériences d’aluminium (AL) et de plexiglas
+(PLX). Nous faisons l’hypothèse que ce résultat comme les précédents (étudiant les variations de température)
+reflètent l’étanchéité ou le manque d’étanchéité des boîtiers expériences : c’est donc une des limites de notre
+expérience et une amélioration à apporter à notre ballon avant le lâcher.
+
+5- Conclusion
+Le projet Là-Haut ! s'est révélé être bien plus qu'une simple expérimentation technique. En cherchant à
+explorer les conditions extrêmes de l'atmosphère nous avons pu découvrir une multitude de principes de la
+physique atmosphérique.
+À travers la conception de notre ballon-sonde, nous avons démontré que des matériaux variés comme le
+plexiglas, le polyéthylène, le carton coton et l'aluminium offrent des réponses différenciées face aux variations
+thermiques et hygrométriques en fonction de l'altitude. Les résultats de nos tests, bien que parfois
+contre-intuitifs, mettent en lumière des nuances importantes dans la performance des matériaux. Par exemple,
+l'apparente vulnérabilité du carton coton à l'humidité a été compensée par sa remarquable capacité d'isolation
+thermique, ce qui ouvre des perspectives intéressantes car c’est un matériau peu dense et peu coûteux. À
+l'inverse, des limites structurelles telles que des problèmes d'étanchéité ont mis en exergue l'importance
+d'optimiser les techniques d'assemblage pour les environnements extrêmes, comme par exemple la colle, qui
+n'a pas su supporter les conditions des tests. Nous souhaiterions également remplacer les capteurs actuels par
+des capteurs plus précis et plus fiables, et cela serait également l’occasion d’ajouter un capteur de pression
+dans la nacelle principale, ou encore - si nous trouvons de nouveaux partenaires - d’ajouter un système de
+télémesure qui nous transmettra les données en temps réel. Nous avons également conclu qu’au vu des
+données enregistrées sur le carton coton, le bois ne serait pas forcément à exclure, il pourrait être un sérieux
+prétendant face aux autres matériaux.
+Les implications de ce travail vont au-delà de la simple réalisation d’un défi scolaire. Le projet en lui-même nous
+a permis d’acquérir différentes compétences grâce à ce projet notamment numériques comme le code en C++
+mais aussi calculatoires avec la résolution d’une équation différentielle à coefficients non constant par la
+méthode d'Euler, toutes ces acquis ne seront pas vains puisqu’ils nous seront bénéfiques tant sur notre parcours
+scolaire que professionnel. Ainsi ce projet nous a également apporté de la rigueur,, car la réalisation de cette
+étude nous a tous passionnés et nous avons appris à travailler en équipe sur un projet de taille, à discuter avec
+des entreprises spécialisées, à chercher des sponsors ou des partenaires ou encore l’affront constant des délais
+académiques ainsi que les contraintes budgétaires, ce que nous n'avons pas l’occasion de faire lors de projets
+scolaires. Nos observations et hypothèses ouvrent la voie à des développements futurs, comme pour le
+
+lancement de notre ballon, que nous voulons réaliser avant la finale nationale, le 24 janvier pour affiner notre
+projet, aller jusqu’au bout de notre démarche et de notre objectif initial.
+Nous avons souhaité partager ce que nous avons ressenti à travers ce mémoire. Bien que certaines limites
+expérimentales aient été rencontrées, elles nous ont permis de cultiver une vision critique et de poser des
+bases solides pour nos futurs ballons-sondes.
+
+6- Remerciements
+Tout d'abord nous souhaitons remercier Mme Routier, professeure de Physique-Chimie au Lycée Paul Bert
+Paris 14ème, une enseignante d’exception sans qui le projet n’aurait jamais vu le jour à la mi-septembre, et qui
+malgré l’aspect tardif de notre démarche a su nous guider dans le cheminement de nos réflexions. Nous
+remercions également tous nos partenaires et les personnes qui nous ont apporté du soutien dans la réalisation
+de notre projet, sans omettre l’ensemble du personnel administratif et pédagogique du Lycée Paul Bert Paris
+14ème qui nous a aidé et soutenu à de nombreuses reprises pour pouvoir continuer le projet sans gêner nos
+heures de cours. Nos remerciements s’adressent également à nos nombreux partenaires : au groupe Trescal
+France qui nous a permis d’avoir accès à du matériel d’exception pour nos tests, et plus précisément M. Caroit,
+M. Vasty, M. Dhedin et Mme Raoult ; à DMC FINS qui nous a accordé un financement pour l’achat de l’hélium,
+un gaz extrêmement coûteux qui était hors de notre budget et qui nous permettra de lancer notre ballon-sonde
+au mois de janvier 2025 ; au GAREF aérospatial de nous avoir autorisé à utiliser leur locaux pour la fabrication,
+et la soudure de nos pièces et à l’équipe d’Orange qui nous a guidé sur la réalisation de nos programmes
+informatiques. Pour finir, nous vous remercions d’avoir lu notre mémoire relatant notre démarche dans la
+réalisation d’un projet que nous avons vécu comme une expérience enrichissante et stimulante, tant au niveau
+personnel que académique.
+
+7- Bibliographie
+[1]​
+[2]​
+[3]​
+[4]​
+[5]​
+[6]​
+[7]​
+[8]​
+[9]​
+
+F. De Ponte et S. Klarsfeld, « Conductivité thermique des isolants », Tech. Ing., 2002, [En ligne]. Disponible sur: https://www.techniques-ingenieur.fr/
+« Website about Elements and Materials », Material Properties. [En ligne]. Disponible sur: https://material-properties.org/
+J. C. Germain, CNES, et Planete Sciences, « Caractéristiques de l’atmosphère moyenne & Mécanique du vol », 2004, [En ligne]. Disponible sur:
+https://www.planete-sciences.org/espace/IMG/pdf/caracteristiques-atmosphere_meca-vol-ballon.pdf
+« Document SERA complet - règles de l’air – services de la circulation aérienne - mise en oeuvre du règlement N° 923/2012 (« SERA ») en France ».
+Ministères aménagement du territoire transition écologique, 2023. [En ligne]. Disponible sur:
+https://www.ecologie.gouv.fr/sites/default/files/documents/sera_complet_version01072023.pdf
+« Arduino Utiliser capteur DHT22 datasheet », Arduino France. [En ligne]. Disponible sur: https://arduino-france.site/dht22-arduino/
+Standard Atmosphere, ISO-2533-1975, 1975. [En ligne]. Disponible sur:
+https://cdn.standards.iteh.ai/samples/7472/c203e9121d4c40e5bdc98844b1a1e2f4/ISO-2533-1975.pdf
+X. Shi, Xingsheng Wang, L. Zhang, et K. Guo, « Influence Factors of Gravitational Acceleration near the Earth », J. Phys. Conf. Ser., no 1865 022014, 2021,
+[En ligne]. Disponible sur: https://iopscience.iop.org/article/10.1088/1742-6596/1865/2/022014/pdf
+J. C. Butcher, « Numerical Differential Equation Methods », in Numerical Methods for Ordinary Differential Equations, John Wiley&Sons, Ltd., 2016, p.
+55‑142. [En ligne]. Disponible sur: https://doi.org/10.1002/9781119121534.ch2
+N. Tessier-Doyen, « Étude expérimentale et numérique du comportement thermomécanique de matériaux réfractaires modèles », Université de
+Limoges, 2003. [En ligne]. Disponible sur: https://cdn.unilim.fr/files/theses-doctorat/2003LIMO0030.pdf
+
+

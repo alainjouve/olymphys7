@@ -1,0 +1,694 @@
+Olympiades de Physique 2024-2025
+Ça ne tient qu’à un fil !
+
+Maxime Grober, Maxence Moreau, Marie Oudot, Ajlina Selmani,
+Thomas Grand, Johanna Thorel
+sous la supervision de M. Barthes et M. Lefranc
+
+1
+
+Résumé
+Notre projet consiste à étudier le vol d’une araignée grâce au fil qu’elle produit. L’idée de
+ce projet est née de la découverte d’une histoire de Charles Darwin observant une pluie
+d’araignées sur son bateau, à 96 km des côtes. Nous avons trouvé cette histoire amusante
+et surprenante, c’est pourquoi nous nous sommes appuyés dessus pour notre projet. Le
+phénomène du ballooning, un phénomène de locomotion aérienne utilisé par les araignées
+et autres acariens, était alors au centre de nos expériences. À travers ces dernières, nous
+avons étudié les différents paramètres influant sur le vol de l’araignée. Nous nous sommes
+demandés si le diamètre, la longueur du fil avaient une influence sur le vol de l’araignée.
+Mais nous nous sommes également intéressés à la vitesse du vent, la rigidité d’un fil ou
+encore à l’influence des interactions électrostatiques entre les fils créés par l’araignée.
+
+Sommaire
+1
+
+Influence du diamètre d’un fil
+1.1 Dispositif expérimental . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2 Étude des moments des forces . . . . . . . . . . . . . . . . . . . . . . . .
+1.2.1 Fils de pêche . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+4
+5
+6
+
+2 Influence de la vitesse
+2.1 Étalonnage de la soufflerie . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Modèle de force de frottement fluide . . . . . . . . . . . . . . . . . . . .
+2.2.1 Protocole . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+7
+7
+8
+10
+
+3 Influence de la longueur
+3.1 Protocole et résultats . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.1.1 Influence de la rigidité . . . . . . . . . . . . . . . . . . . . . . . .
+3.2 Influence du champ électrique . . . . . . . . . . . . . . . . . . . . . . . .
+
+10
+10
+12
+14
+
+4 Bibliographie
+
+18
+
+Préambule
+Nous sommes 6 élèves aujourd’hui en classe de terminale au Lycée Carnot, à Dijon.
+Lorsque, il y a un an, notre professeur de Physique Chimie nous a parlé des "Olympiades
+de Physique", celles-ci ont attisé notre curiosité. Cette longue aventure a démarré autour
+d’une discussion entre amis en avril 2024, tous férus de sciences physiques et impatients
+de savoir ce que cette aventure allait leur offrir. Nous nous sommes donc engagés, et
+lors de notre première séance, l’objectif était évidemment de se fixer sur un sujet. Nous
+cherchions quelque chose d’amusant, qui nous parlait, sur lequel nous pouvions dire à nos
+parents: "Regarde, le sujet qu’on a choisi aujourd’hui, il est trop drôle!" Entre les idées
+de sujets dont nous avons parlées, collectivement et à l’unanimité , l’une a retenu notre
+attention: le ballooning.
+
+2
+
+Introduction
+Octobre 1832. Charles Darwin, âgé de 23 ans, contemple des centaines de minuscules
+araignées suspendues à de courts fils de soie flotter sur le HMS Beagle (cf. fig.1) alors
+que le navire navigue vers Buenos Aires, très loin de la terre ferme. Darwin estime que
+les araignées devaient s’être deplacées sur au moins 96 kilomètres avant d’atteindre le
+navire. Mais même s’il s’émerveillait de leurs pitreries aériennes, un débat était en cours
+sur la façon dont les araignées sont devenues aéroportées.
+
+Figure 1: HMS Beagle, de Charles Darwin par Owen Stanley, 1841
+
+Aujourd’hui, nous aimerions vous parler d’un phénomène aussi surprenant qu’élégant
+: le ballooning. Derrière ce mot qui fait penser à des montgolfières ou des ballons gonflés à
+l’hélium, il y a en réalité une stratégie fascinante utilisée par. . . les araignées ! Repensez
+à vos rêves d’enfants, à ces héros de la maison d’édition Marvel, à ce super-héros au
+costume bleu et rouge, le célèbre Spiderman! Il existe pour de vrai! Imaginez une petite
+araignée, presque invisible à l’œil nu, qui se lance dans le vide et s’envole dans les airs
+grâce à ses propres fils de soie. Pas d’ailes, pas de moteur, juste un peu de vent et
+beaucoup d’ingéniosité et de physique. Cette technique, appelée ballooning, leur permet
+de parcourir parfois des kilomètres, traversant des champs, des rivières, et même des
+océans. Cette observation particulière, à l’époque, avait également été rapportée plus tôt
+aux XVIIe et XIXe siècles, et se produisait couramment par temps relativement calme.
+Ainsi, au cours de cette aventure, notre objectif est d’étudier et de répondre à la question
+suivante: Comment les caractéristiques du fil influencent-elles le vol des araignées lors du
+phénomène de ballooning?
+
+3
+
+1
+
+Influence du diamètre d’un fil
+
+1.1
+
+Dispositif expérimental
+
+Figure 2: Balance
+
+Figure 3: Fil de cuivre en U
+
+Figure 4: Schema de l’installation en U
+
+Nous avons légérement modifié une balance de type Roberval en alongeant un des côtés
+du fléau par un fil de cuivre en U sur lequel nous avons fixé un fil (cf. fig.2). Ce dernier
+est positionné horizontalement dans la soufflerie verticale. La balance est préalablement
+mise à l’équilibre en l’absence de soufflerie. (cf. fig.3). En évaluant la masse rajoutée
+sur le fléau lorsque la soufflerie est présente ou non, nous pouvons remonter à la force
+4
+
+exercée par le flux d’air sur le fil. Grâce à plusieurs fils de pêche calibrés (cf. fig. 6), nous
+pouvons évaluer l’influence du diamètre sur la force exercée par l’air. Nous partons du
+fil avec le plus petit diamètre pour terminer avec le plus gros. En ajoutant des masses
+afin de retrouver l’équilibre de la balance, nous obtenons les forces exercées par chaque
+fil. Avant chaque mesure, l’équilibre du système a été rétabli en absence de flux d’air. Le
+déséquilibre mesuré correspond donc à la masse mforce qui peut être associé à la force de
+frottement de l’air en utilisant la notion de moment d’une force.
+1.2
+
+Étude des moments des forces
+
+Le moment des forces, défini comme le produit de la force exercée sur le fil par la distance
+entre le point d’application de la force et l’axe de rotation, est une grandeur clé dans cette
+expérience. Une augmentation du diamètre du fil influence la force exercée par le flux
+laminaire, probablement en raison d’une augmentation de la surface d’interaction avec
+l’air. Cette augmentation du moment des forces génère une meilleure capacité du fil à se
+mettre en mouvement et à s’élever dans le flux.
+:
+
+Le moment d’une force, par rapport à un axe de rotation ∆, est défini par la formule
+M∆ = d × F
+
+où :
+• F est la force appliquée,
+• D est la distance de l’axe de rotation au point d’application de la force.
+Calcul des Forces et Masse pour un Fil de Rôti Blanc
+La relation d’équilibre des moments s’exprime par :
+F · d = F ′ · d′
+où :
+• F et d représentent la force et la distance entre l’axe de rotation et le fil,
+• F ′ et d′ représentent la force et la distance entre l’axe de rotation et les masses.
+
+Figure 5: Schéma du moment des forces du système étudié
+
+5
+
+Exemple de mesure :
+
+Pour une masse m′ = 1, 35 g, la force F ′ est donnée par :
+
+F ′ = m′ × g = 1, 35 · 10−3 × 9, 81 = 13, 2 mN
+Puisqu’à l’équilibre F · d = F ′ · d′ , avec les distances d′ = 9, 7 cm et d = 28, 2cm, on
+peut obtenir la force F associée au frottement de l’air (cf. fig.5):
+F = 4, 531 mN
+Nous avons estimé l’incertitude de mesure par la précision à laquelle nous mettons les
+masses dans le réceptacle, soit
+u(m) = 0, 01 g
+Pour F = 4.531 × 10−3 N, l’incertitude associée est calculée par :
+u(F ) =
+
+u(m)gd′
+≈ 0, 3mN.
+d
+
+Ainsi, nous avons mesuré une force de :
+F = (4, 5 ± 0, 3) mN.
+1.2.1
+
+Fils de pêche
+
+Afin de mesurer l’influence du diamètre, nous avons utilisé des fils calibrés pour des
+diamètres allant de 0.30 mm à 0.45 mm (cf. fig.6).
+d (mm)
+
+0,30
+
+0,35
+
+0,40
+
+0,45
+
+Table 1: Diamètres des fils de pèche calibrés
+
+Figure 6: Boîtes de fils de pêche commerciales
+
+En mesurant les forces sur les différents fils, nous avons obtenu l’évolution de la force
+en fonction du diamètre (cf. fig.7)
+Les résultats expérimentaux ont montré que, pour une vitesse constante du flux, une
+augmentation du diamètre du fil entraîne une augmentation significative du moment de
+la force appliquée sur celui-ci. La loi semble proportionnelle et semble cohérente avec une
+force de frottement quadratique (voir plus loin).
+
+6
+
+2.2
+2
+
+Force (mN)
+
+1.8
+1.6
+1.4
+1.2
+1
+0.8
+0.6
+0.1
+
+0.15
+
+0.2
+
+0.25
+0.3
+0.35
+Diamètre (mm)
+
+0.4
+
+0.45
+
+Figure 7: Force de frottement sur un fil de longueur ℓ = 9, 8cm en fonction de son diamètre
+
+2
+
+Influence de la vitesse
+
+2.1
+
+Étalonnage de la soufflerie
+
+L’objectif de cette sous-section est de connaître la vitesse du vent de la soufflerie en
+fonction de la tension produite par le générateur. Pour cela, nous avons utilisé un souffleur
+à feuilles que nous avons démonté (cf. fig.8) et sur lequel nous avons soudé des câbles
+conducteurs afin de pouvoir le brancher sur un générateur continu réglable.
+
+Figure 8: Réalisation d’une soufflerie "maison"
+
+7
+
+Nous avons également contrôlé la vitesse en effectuant le repérage de la position d’une
+particule de polystyrène sur une vidéo lorsque la particule est emportée dans le flux d’air,
+à l’aide du logiciel Tracker
+En fixant un anémomètre (cf. fig.9) au-dessus de la soufflerie et en reproduisant le
+montage présenté au 1), nous avons fait varier la tension parcourant la soufflerie et avons
+donc pu mesurer la vitesse du vent (cf. fig.11). L’anémomètre qui nous a permis ceci
+présente une plage de mesure de [0 m.s−1 ; 30 m.s−1 ], avec une incertitude de ±5% (cf.
+fig.10) .
+
+Figure 9: Anémomètre utilisé
+Figure 10:
+l’anémomètre
+
+2.2
+
+Fiche
+
+technique
+
+de
+
+Modèle de force de frottement fluide
+
+Écoulement laminaire ou turbulent, nombre de Reynolds
+
+Notre objectif est de savoir si notre écoulement est laminaire ou turbulent. Un flux
+laminaire, ou écoulement laminaire, est un type d’écoulement de fluide dans lequel le
+fluide se déplace en douceur ou selon des trajectoires régulières, contrairement à un flux
+turbulent, où ces particules se déplacent de manière chaotique et désordonnées les unes
+par rapport aux autres. Nous utilisons le nombre de Reynolds, noté Re, un paramètre
+utilisé en dynamique des fluides pour décrire les caractéristiques de l’écoulement d’un
+fluide, de formule:
+V ·D
+Re =
+ν
+Calcul du nombre de Reynolds
+
+où :
+
+• V est la vitesse débitante du flux, exprimée en m · s−1 : V = 10 m · s−1 ,
+• D est le diamètre du fil, exprimé en m : D = 0.35 mm de l’ordre de 10−3 m par excès,
+• ν est la viscosité cinématique de l’air, exprimée en m2 · s−1 : ν = 15.6 × 10−6 m2 · s−1 .
+8
+
+18
+
+Données expérimentales
+
+16
+
+Vitesse (m.s−1 )
+
+14
+12
+10
+8
+6
+4
+2
+0
+2
+
+4
+
+6
+
+8
+
+10
+12
+Tension (V)
+
+14
+
+16
+
+18
+
+Figure 11: Courbe d’étalonnage : vitesse en fonction de la tension d’alimentation, avec u(V ) =
+0, 05m · s−1 .
+Conséquences :
+
+En substituant les valeurs dans la formule, nous obtenons :
+Re =
+
+10 · 10−3
+0.01
+=
+≈ 103
+−6
+−6
+15.6 × 10
+15.6 × 10
+
+Par conséquent, avec Re ≫ 1, la force de frottement fluide est dite quadratique.
+Expression de la force de frottement
+
+La force de frottement quadratique s’exprime sous la forme :
+F =
+
+1
+· Cx · ρ · S · v 2
+2
+
+où :
+• ρ : la masse volumique de l’air, en kg · m−3 ,
+• Cx : le coefficient de traînée est une quantité sans dimension utilisée pour quantifier
+la traînée ou la résistance d’un objet dans un environnement fluide, tel que l’air ou
+l’eau,
+• S : la surface de la section transversale en m2 ,
+• v : la vitesse du flux, en m · s−1 .
+Concernant la masse volumique de l’air, nous avons pris pour une température de
+20°C (source : ThermExcel) :
+ρ = 1, 204kg · m−3
+
+9
+
+Figure 12: Cx = 1, 17
+
+La valeur du coefficient de trainée dépend de sa forme, nous avons pour un fil de
+section cylindrique: (cf. fig.12), d’après :Wikipedia)
+2.2.1
+
+Protocole
+
+Déterminer le nombre de Reynolds nous permet de calculer la force exercée par un flux
+visqueux sur un objet, ici des fils en utilisant la formule adéquate. En faisant varier la
+vitesse, nous avons mesuré la force exercée sur le fil. Les résultats obtenus sont représentés
+ci-dessous (cf. fig.13) où nous avons ajouté le modèle de la force de frottement fluide.
+
+Figure 13: Représentation graphique de la force de frottement en fonction de la vitesse
+
+u(F ) = ±0, 01 N
+On remarque que le modèle correspond de façon assez correcte avec cependant un léger
+décalage aux forces mesurées. De plus, il est compatible avec une force proportionnelle
+au diamètre.
+
+3
+
+Influence de la longueur
+
+3.1
+
+Protocole et résultats
+
+Les expériences sur le vol des fils s’effectuent dans ce tube en PVC (cf. fig.14) au bout
+duquel nous avons fixé un cylindre de pailles (cf. fig.15) qui est utilisé pour limiter les
+turbulences que les fils pourraient subir afin d’obtenir un flux en sortie de l’aération le plus
+précis possible. Il est équipé d’une fente recouverte d’un plastique transparent amovible
+(cf. fig.16) afin de pouvoir introduire le fléau de la balance ainsi que le fil à l’intérieur
+et de pouvoir réaliser l’expérience. La balance permet d’équilibrer le dispositif à chaque
+10
+
+mesure et de mesurer la masse, d’en déduire le poids et donc la force que subit le fil. À
+l’intérieur, un fil de grande longueur est placé de façon à ce qu’il puisse interagir avec le
+flux d’air généré par notre souffleur (cf. fig.14).
+
+Figure 15:
+pailles
+
+Cylindre de
+
+Figure 16:
+avec fil
+
+Figure 14: Tube en PVC
+
+Tube en PVC
+
+Nous avons réalisé une expérience permettant de montrer l’influence de la longueur du
+fil sur la force de traction de celui-ci. Cette expérience s’effectue selon le même montage
+que celui présenté au 2.1.
+Pour cette expérience, nous équilibrons d’abord le fléau sans fil mais en présence de la
+soufflerie. Nous introduisons ensuite un fil fixé à celui-ci à l’intérieur du flux en marche.
+Pour une meilleure précision nous marquons à l’aide d’un marqueur à quelle profondeur se
+trouve le fil dans le tube. Nous pouvons maintenant placer des masses dans les réceptacles
+afin d’équilibrer la balance.
+Dans une situation sans fil, l’équilibre correspond à une compensation des forces de
+l’air sur le fléau et au poids du fléau. Cette méthode permet de simplifier les calculs et
+permet de se concentrer sur la force de traction appliquée sur le fléau par le fil. La masse
+ajoutée nécessaire à la nouvelle position d’équilibre en présence du fil correspond à la
+force de traction du fil qui est la résultante de la force de frottement de l’air et le poids
+du fil.
+Pour différentes longueur de fil, nous mesurons la masse ajoutée que nous convertissons
+en force de traction en utilisant la notion de moment évoquée ci-dessus. Nous pouvons
+rentrer les mesures obtenues dans un tableur et tracer la courbe de force de traction en
+fonction de la longueur du fil(cf. fig.17).
+
+11
+
+0.1
+
+Force (mN)
+
+5 · 10−2
+0
+−5 · 10−2
+−0.1
+−0.15
+0
+
+5
+
+10
+
+15
+
+20 25 30
+longueur (cm)
+
+35
+
+40
+
+45
+
+50
+
+Figure 17: Force de frottement sur un fil de laine diamètre d = 3mm en fonction de sa longueur.
+Les mesures de force ont été faites avec une précision de u(F ) = ±0, 3 mN.
+
+Nous avons été surpris de constater que la force est d’abord décroissante et négative.
+En effet pour une petite longueur de fil, la force de frottement est faible et ne compense
+pas le poids. Le fil étant dans le sens du flux, le vent ne se voit opposé aucune résistance
+de la part du fil. La force est négative puisque le poids du fil augmente sans que la force de
+frottement de l’air intervienne. Puis, plus la longueur augmente plus la force de traction
+du fil augmente. Il faut au moins 14 cm de fil pour que la force de frottement compense
+le poids du fil. Finalement, lorsque la longueur du fil atteint 35 cm, on observe un palier.
+Il semble donc qu’il y ait une longueur de fil optimale pour l’envol de l’araignée. En
+effet, pour l’araignée, le coût de fabrication est proportionnel à la masse de fil, donc à sa
+longueur. La présence d’un palier sur notre courbe suggère une longueur caractéristique
+de 30 cm environ au-delà de laquelle le gain en force de traction semble très faible.
+3.1.1
+
+Influence de la rigidité
+
+Nous avons supposé que la force de traction "négative" pour de faibles longueurs de fil
+était due à la rigidité du fil. Cette rigidité permet donc au fil d’être vertical sans l’aide
+du vent. La force exercée par le vent sur le fil est donc nulle, la force de traction est alors
+négative en raison du poids du fil.
+
+12
+
+Figure 18: Différence entre fil avec (gauche) et sans amidon (droite)
+
+Nous avons alors voulu vérifier cette observation en rigidifiant un fil identique, en le
+faisant tremper dans de l’empois d’amidon (cf. fig.18). Selon nos conventions, la force
+de traction est alors toujours négative, c’est-à-dire que pour un fil amidonné, la force de
+frottement de l’air n’est jamais suffisante pour compenser le poids du fil (cf. fig.19).
+0
+
+Force (mN)
+
+−5 · 10−2
+
+−0.1
+
+−0.15
+
+0
+
+5
+
+10
+15
+longueur (cm)
+
+20
+
+25
+
+Figure 19: Force de frottement sur un fil de laine amidonné de diamètre d = 3mm en fonction
+de sa longueur.
+
+Nous pouvons donc conclure qu’au fur et à mesure que la taille du fil augmente, sa
+13
+
+rigidité n’est plus assez efficace pour lui permettre de se tenir droit tout seul, donc le fil a
+besoin de la force du vent pour s’orienter dans son sens. Il semblerait que les turbulences
+et les mouvements chaotiques du fil ballotté par le vent joue un rôle crucial dans la force
+de traction.
+3.2
+
+Influence du champ électrique
+
+Dans le cadre de l’utilisation du ballooning, l’araignée utilise des phénomènes électrostatiques présents dans l’environnement et la soie pour faciliter l’extension de ses fils de soie.
+En effet, ces derniers sont souvent trop fins pour être séparés manuellement, et c’est là
+qu’intervient l’électricité statique. Lorsque l’araignée produit un fil de soie et le soumet
+à un champ électrostatique, des charges de même signe se fixent sur les différentes sections du fil. Comme les charges similaires se repoussent mutuellement, les brins de soie
+s’écartent naturellement, s’étendant sous l’effet de cette répulsion.
+Ce phénomène d’extension des brins de soie est crucial pour l’araignée, car il lui
+permet d’augmenter la surface de contact avec le vent. Une surface plus grande permet
+à la force aérodynamique du vent d’agir plus efficacement, générant ainsi une portance
+suffisante pour que l’araignée puisse se propulser dans l’air. Le rôle de l’électrostatique
+dans ce processus est donc de créer les conditions nécessaires à l’extension des fils de soie,
+facilitant ainsi le déplacement de l’araignée via le ballooning.
+En présence d’un champ électrostatique, la distance séparant deux fils parallèles devient un paramètre essentiel. En l’absence de charges électriques, les fils sont soumis
+d’une part à seulement leur poids et aux forces de tension (cf. fig.20), puis exclusivement
+aux forces exercées par le flux d’air et à leur poids. Pour simuler le champ électrostatique,
+la charge des fils (cf. fig.21, fig.22) se fait en utilisant un générateur de Van de Graaf.
+Le générateur (cf. fig.24) utilise le mouvement d’une courroie isolante pour accumuler
+en continu des charges électriques sur une électrode terminale, typiquement une sphère
+métallique fixe et creuse.
+
+14
+
+Figure 20: Fils soumis à leur
+poids et aux forces de tension
+
+Figure 21: Fils de la figure 19 soumis également aux
+forces éléctrostatiques
+
+Figure 22: Figure 20 vue du
+dessus
+
+Nous avons montré que la force de traction était proportionnelle au diamètre du fil.
+La séparation de plusieurs petits fils par l’électricité statique permettrait d’augmenter la
+surface apparente au contact du flux d’air et ainsi d’améliorer la force de traction.
+
+15
+
+Figure 23: Schéma de l’expérience envisagée
+
+Figure 24: Machine Van de Graaf
+
+Conclusion
+Nous avons au cours de ces recherches parcouru toutes sortes de paramètres influant sur le
+vol des araignées grâce au ballooning. Nous en avons ainsi déduit les conditions optimales
+permettant aux araignées de s’envoler et donc d’atteindre le fameux bâteau de Charles
+Darwin. Nos expériences ont montré des conclusions quant à l’influence du diamètre, de
+la longueur du fil et de la vitesse du vent sur le vol de l’araignée. Cependant, il reste
+important de noter que reproduire le vol des araignées sur des distances de dizaines de
+kilomètres à l’aide d’un souffleur et de fils non identiques à ceux des araignées est un
+véritable défi. Le fonctionnement du ballooning est complexe et nous avons donc essayé
+de le reproduire du mieux que nous pouvions. Nous avons notamment fait face à la
+problématique de devoir créer un flux d’air uniforme avec un tube en PVC qui nous a
+quelque peu restreint dans nos mesures.
+Durant nos dernières expériences, nous avons tenté d’observer le vol de balles de pingpong sous différentes conditions (cf. fig.25). En effet nous avons d’abord soumis une balle
+de ping-pong, modélisant une araignée, simplement à un flux d’air et nous avons observé
+que celle-ci ne s’envolait que très peu, à environ 3 cm au dessus du sèche-cheveux. Puis,
+nous avons réalisé cette même expérience avec une balle de ping-pong à laquelle nous
+avons collé un ruban droit (dimensions : L=24cm,l=0,5cm) et nous avons alors observé
+
+16
+
+Figure 25: Expérience des balles de ping pong
+
+que la balle s’envolait bien plus haut, à environ 30cm. Enfin la dernière expérience est
+identique a la précédente, mais le ruban est cette fois-ci torsadé et on observe que la
+balle s’envole a environ 45cm de hauteur. Nous avons vu précédemment (3.1.1) que la
+force de traction dépend de la turbulence. Ainsi comme on peut le voir dans la deuxième
+expérience, c’est la souplesse du fil qui lui confère une force plus grande et qui lui permet
+de s’envoler haut. De plus, on a montré que la force était plus importante en fonction du
+diamètre (1.2.1). Ainsi, comme on le voit avec la troisième expérience un ruban épais ou
+torsadé impose une force de traction plus grande et donc la balle s’envole nettement plus
+haut.
+
+Remerciements
+Nous tenons à remercier nos enseignants M. Lefranc et M. Barthes de nous avoir accompagné dans ce projet, de nous avoir accordé du temps durant plusieurs mois, depuis avril
+2024.
+Grâce a leur pédagogie, leur écoute, leurs connaissances passionnantes en sciences
+physiques, leur gentillesse et leur bienveillance à notre égard, chaque mercredi d’Olympiades
+de Physique a représenté à nos yeux un moment de découverte et d’émerveillement scientifique, au cours duquel nous prenons du plaisir a réaliser ces travaux, et à toujours aller
+plus loin, chercher des solutions et des réponses à des problèmes et des questions.
+Un grand merci également au personnel du laboratoire de physique-chimie de Carnot
+pour leur aide et la confiance qu’ils nous ont accordées.
+Merci au lycée Carnot pour ces précieuses heures, leur soutien et la mise a disposition
+du matériel nécessaire.
+Ce projet a été un vrai plaisir pour nous tous, nous avons pu apprendre et profiter de
+l’experience de nos professeurs et ce toujours dans la bonne humeur.
+
+17
+
+4
+
+Bibliographie
+
+Video araignée : https://dai.ly/x6ndio0
+Masse volumique de l’air : https://www.thermexcel.com/french/tables/massair.htm
+Valeur du coefficient de trainée: https://fr.wikipedia.org/wiki/Coefficient-de-traînée
+Charbel Habchi and Mohammad K. Jawed - Ballooning in spiders using multiple silk
+threads- Phys. Rev. E 105, 034401- Published 4 march 2022
+Sheldon, K.S al. "Revisiting the physics of spider balloning" Women in Mathematical
+Biology 8(august 2017: 163-178)
+Peter. W. Gorham - Ballooning spiders : the case of electrostatic flight- Dept. of
+Physics and Astronomy, Univ. of Hawaii, Manoa, HI 96822 in arXiv: 1309.4731v2
+[physics.bio-pH] 19 nov 2013
+
+18
+
+4. Annexe
+
+Figure 26: Interprétation de Charles Darwin sur le HMS Beagle par Maxence
+
+Figure 27: Maxence et Maxime qui soudent
+
+Protocole expérimental : Étude de l’effet du champ électrostatique sur la
+force exercée par un flux d’air sur un fil
+Étape 1 : Préparation du système
+1. Fixer un tube en PVC au niveau de la sortie de l’air du souffleur. Ce tube servira
+à maintenir le fil aligné dans le flux d’air.
+2. Suspendre le fil à l’intérieur du tube et connecter son extrémité à un support rigide
+ou une potence reposant sur une balance de précision.
+3. Avant d’appliquer le flux d’air :
+- Ajouter des poids ou ajuster le système pour que la balance affiche une valeur stable
+correspondant à l’équilibre initial du système.
+- À noter : Ici, l’équilibre initial est établi sans flux d’air.
+Étape 2 : Équilibre initial sans flux d’air
+1. En l’absence de vent, relever la valeur donnée par la balance.
+
+19
+
+2. Cette valeur représente l’état d’équilibre du système au repos, servant de référence
+pour les étapes ultérieures.
+Étape 3 : Mise en marche du souffleur
+1. Allumer le souffleur à une tension constante (par exemple, 14 volts) pour générer
+un flux d’air régulier.
+2. Observer l’effet du vent sur le fil. Le flux d’air exercera une force sur le fil, modifiant la lecture sur la balance.
+Étape 4 : Mesure de la force sans champ électrostatique
+1. Ajouter progressivement une masse sur le système pour rétablir l’équilibre initial
+de la balance.
+2. La masse ajoutée pour équilibrer le système correspond directement à la force exercée par l’air sur le fil.
+Étape 5 : Application du champ électrostatique
+1. Activer la machine de Van de Graaf pour générer un champ électrostatique autour
+du fil.
+2. Observer l’effet du champ électrostatique sur le fil en maintenant le souffleur en
+marche.
+3. Rétablir l’équilibre de la balance en ajoutant une masse appropriée. Noter cette
+nouvelle valeur.
+Étape 6 : Répétition et contrôle
+Désactiver la machine de Van de Graaf et répéter les mesures plusieurs fois, en alternant les conditions :
+- Avec le champ électrostatique actif.
+- Sans champ électrostatique.
+Étape 7 : Analyse des résultats et conclusion
+1. Comparer les valeurs de masse mesurées dans les deux conditions (avec et sans
+champ électrostatique).
+2. Déterminer si le champ électrostatique influence la force exercée par le flux d’air
+sur le fil.
+
+Document réalisé avec LATEX.
+20
+
+

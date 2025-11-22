@@ -1,0 +1,1076 @@
+Pointilleux pointillés ….
+
+ALBINO Victor (Tale)
+ARIOUA Tasnim (Tale)
+COPPIN—ROUSSEL Naël (1ère)
+IBERIT Raphaël (1ère)
+LANGIE Julie (Tale)
+TOURE Fatoumata (Tale)
+
+Avec l’aide de
+•
+•
+
+Amina TANDJAOUI, Maîtresse de conférences,
+Edouard DAVIN, Maître de conférences,
+
+Univ. Lille, CNRS, Centrale Lille, UMR 9013 - LaMcube - Laboratoire de Mécanique, Multiphysique,
+Multiéchelle, F-59000 Lille, France
+
+Table des matières
+Introduction................................................................................................................................................... 1
+I.
+
+Le frottement de la craie ........................................................................................................................ 1
+1)
+
+Les types de frottement...................................................................................................................... 1
+
+2)
+
+Dispositif expérimental ....................................................................................................................... 2
+
+3)
+
+Frottements statiques......................................................................................................................... 2
+
+4)
+
+Frottements dynamiques.................................................................................................................... 4
+
+5)
+
+Interprétation microscopique .............................................................................................................. 5
+
+II.
+
+Dispositifs de mesures .......................................................................................................................... 7
+1)
+
+Mesure de la vitesse de tracer ........................................................................................................... 7
+
+2)
+
+Mesure de la période des pointillés .................................................................................................... 8
+
+3)
+
+Mesure de l’espacement des pointillés............................................................................................... 9
+
+4)
+
+Mesure de l’angle de déflection de la craie ........................................................................................ 9
+
+III. Modélisation de la main de Lewins ........................................................................................................ 9
+1)
+
+Première modélisation : modèle stick and slip .................................................................................... 9
+
+2)
+
+Deuxième modèle : liaison rotule et rappel élastique ....................................................................... 10
+
+IV. Vérification experimentale de la modélisation ...................................................................................... 11
+1)
+
+Influence de l’angle d’attaque........................................................................................................... 11
+
+2)
+
+Influence de la masse de la craie ..................................................................................................... 11
+
+3)
+
+Influence de la longueur de la craie.................................................................................................. 11
+
+4)
+
+Influence de la vitesse de tracé ........................................................................................................ 14
+
+5)
+
+Influence de la pression exercée...................................................................................................... 16
+
+Conclusion ................................................................................................................................................. 16
+Liste des annexes....................................................................................................................................... 17
+Webographie .............................................................................................................................................. 17
+
+0
+
+Introduction
+Tracer des pointillés avec des craies sur un tableau noir... quelque chose de facile, d’évident. Pourtant, cela
+nécessite une certaine dextérité et expérience.
+Tout a commencé lors du visionnage d’une vidéo de Walter Lewins, professeur
+du MIT (Institut de technologie du Massachusetts), l’un des plus importants
+instituts de recherche américain et université très célèbre des Etats-Unis. Cet
+institut fondé en 1861 prône les valeurs de la science et de la technologie dont
+la devise est “Mens et Manus”, ce qui donne en francais “Esprit et main”.
+La vue de cette vidéo a directement attisé notre curiosité ainsi que notre envie
+d’en savoir plus. Comment un mouvement continu du bras permet-il le tracé
+précis de pointillés sur un tableau noir ? Quelle inclinaison, quelle vitesse et
+quel appui doit-on avoir sur la craie pour que le tracé soit optimal ?
+Nous savons que l’interaction de deux surfaces en contact qui glissent l’une sur l’autre et qui s’opposent au
+mouvement créée une force de frottement. C’est le cas ici, lorsque la craie glisse sur le tableau.
+
+I.
+
+Le frottement de la craie
+
+1) Les types de frottement
+Le frottement est la force qui s'oppose au mouvement des objets en contact. Le frottement empêche
+presque tous les objets de se déplacer indéfiniment.
+Il y a deux formes principales de frottements :
+•
+
+Le frottement dynamique qui s’oppose à un mouvement déjà établi.
+
+•
+
+Le frottement statique qui empêche un mouvement de démarrer.
+
+Le frottement statique est un synonyme d'adhérence. Dans ce cas, la force de frottement statique empêche
+le glissement (ou le mouvement entre les deux objets). Lorsqu'un objet se met en mouvement, ceci signifie
+que la force motrice exercée sur un objet est supérieure à la force de frottement statique. Lorsque l'objet se
+déplace, la force de frottement dynamique est égale à la force motrice nécessaire pour garder un objet à
+vitesse constante. Ainsi, un objet immobile sur lequel on exerce une force motrice offre au départ un
+frottement statique, mais dès que l'objet se met en mouvement, la force de frottement est dynamique –
+également appelé cinétique.
+
+Le graphique ci-dessus démontre ce qui se produit lorsqu'un objet immobile est mis en mouvement. Tout
+d'abord, la force de frottement est statique, car l'objet est immobile. Dès que la force de traction appliquée
+devient supérieure à la force de frottement statique, l'objet se met en mouvement. La force de frottement
+diminue rapidement (une phase qu'on appelle glissement adhérent) pour ensuite se stabiliser. La force de
+frottement, maintenant dynamique ou cinétique, est égale à la force de traction appliquée, ce qui permet de
+conserver l'état de mouvement de l'objet.
+1
+
+Le coefficient de frottement permet d'évaluer le degré de résistance d'une surface ou d'un milieu au
+mouvement d'un corps. Il mesure le ratio entre la force de frottement 𝑓⃗ qui s’oppose au mouvement (initié
+⃗⃗ : 𝜇 = 𝑓
+par une force de traction telle que 𝐹⃗ ) et la réaction normale du support 𝑁
+𝑁
+
+La force de frottement statique maximale étant supérieure à la force de frottement dynamique, on en déduit
+que 𝜇𝑆 > 𝜇𝐷
+2) Dispositif expérimental
+Afin de pouvoir mesurer le frottement statique, il nous fallait créer un support permettant à des craies de
+tenir debout. Pour cela, nous avons décidé de créer un modèle 3D de
+palet sur Tinkercard© que nous avons imprimé grâce à une imprimante
+3D. Celui-ci permet à la fois de tester si le nombre de craie à considérer,
+donc la surface de craie en contact, a un impact sur le frottement. Pour
+être sûr que la craie de diamètre 1 cm puisse s’insérer dans les cavités
+d’accueil, nous avons décidé de prendre comme diamètre de cavité
+1,04 cm pour tenir compte de l’incertitude de 0,2mm correspondant aux
+diamètres du fil servant à l’impression. Nous avons donc mis plusieurs
+trous de diamètre de 1,04 cm dans un palet carré (forme la plus simple
+à imprimer et à modéliser).
+Afin de pouvoir réaliser les mesures, il nous fallait des craies de hauteur
+identique. Nous avons donc conçu un taille-craie également sous Tinkercard© et
+imprimé en 3D. Il suffit d’insérer une craie et la poncer/frotter sur du papier
+jusqu’à ce qu’elle ne dépasse plus du taille-craie. La craie aura alors une taille de
+3,0 cm.
+
+Ainsi, les craies obtenues dépassaient toutes de 1,0 cm du palet support
+d’expérience.
+Sur 30 craies taillées dont on a mesuré la masse : on trouve qu’une craie
+de 3,0 cm de long a une masse de 𝑚𝑐𝑟𝑎𝑖𝑒 = 3,49 ± 0,02 𝑔
+3) Frottements statiques
+Afin de mesurer le coefficient maximal de frottement statique 𝜇𝑆 , nous avons utilisé sur une planche peinte
+avec de la peinture pour tableau noir, et notre palet rempli d’un nombre N de craies. A l’aide d’un fil à
+plomb, nous avons pu mesurer la valeur minimale de l’angle α, sur un rapporteur, à partir de laquelle le
+palet de craies se met en mouvement. A ce moment précis, la force de frottement statique n’est plus assez
+importante pour empêcher le palet de bouger. Une incertitude de 2 degrés est à prendre en compte à
+cause du balancement du fil à plomb et d’un effet de parallaxe.
+
+2
+
+𝑅⃗⃗ = −𝑃⃗⃗
+⃗⃗
+𝑁
+
+Schéma représentant le modèle de l’expérience
+
+Tout d’abord, durant nos premières tentatives d’expériences, le palet à craie ne glissait pas et finissait par
+basculer. Nous avons donc collé un poids de laboratoire sur le palet pour l’alourdir, mais il continuait
+toujours de basculer et dégringolait la planche, les craies minutieusement taillées se cassaient : ce
+dispositif n’était donc pas efficace. En effet, le centre de masse du poids était alors trop haut et exerçait un
+moment à l’origine du basculement.
+
+La force du poids a pour point d’application le centre de masse du dispositif et la réaction du support le
+⃗⃗ . Les points d’application n’étant
+centre de la zone en contact. Tant que le solide est immobile 𝑃⃗⃗ + 𝑅⃗⃗ = 0
+pas confondus, séparés d’une distance 𝑑, ils exercent un moment qui fait pivoter le système, le pivot étant
+entre les deux points d’application des forces citées.
+Ainsi, nous avons décidé de confectionner une armure en plomb, spécialement pour le palet à craie, avec
+un bourrelet pour réduire le bras de levier 𝑑 du système, afin de le maintenir sur la planche tout au long de
+l’expérience.
+
+La masse du palet en armure sans craies est de : 𝑚𝑃𝐴 = 340,6 𝑔
+On peut aussi alourdir le système d’une surmasse constitué d’un chapeau de 3 feuillets de plomb, sans
+qu’il y ait de basculement : 𝑚𝑐ℎ𝑎𝑝𝑒𝑎𝑢 = 190,1 𝑔
+3
+
+Les mesures effectuées sont répertoriées dans le tableau suivant.
+𝑓
+𝑅∙sin (𝛼)
+A la limite du glissement : 𝜇𝑆 = 𝑁 = 𝑅∙cos (𝛼) = 𝑡𝑎𝑛 ()
+Armure seule
+Nombre de craies
+27
+22
+17
+12
+7
+3
+
+ (°)
+33
+34
+32
+33
+34
+32
+
+𝜇𝑆
+0.64940
+0.67450
+0.62486
+0.64940
+0.67450
+0.62486
+
+Armure surchargée de m=190,1 g
+𝜇𝑆
+ (°)
+32
+0.62486
+33
+0.64940
+33
+0.64940
+32
+0.62486
+32
+0.62486
+33
+0.64940
+
+Il n’y a pas de tendance notable d’évolution du coefficient de frottement statique avec le nombre de craie
+ou le poids du système. Ainsi, nous constatons que, dans ces expériences, le coefficient de frottement
+statique ne semble dépendre ni de la masse du système, ni de la surface apparente de la zone de contact
+du système.
+En utilisant les résultats du tableau on en déduit : 𝜇𝑆 = 0.643 ± 0.006
+4) Frottements dynamiques
+Le frottement dynamique (aussi appelé frottement cinétique), se produit lorsqu'un corps glisse ou se
+déplace sur une surface. Il agit dans la direction opposée au mouvement de l'objet. Le frottement
+dynamique est lié, entre-autre, à la rugosité des surfaces en contact et nécessite une force continue pour
+maintenir le mouvement contre sa résistance.
+𝑓
+
+𝑇
+
+Ici :𝜇𝑆 = 𝑁 = 𝑃 avec T l’intensité de la traction et P le poids du système.
+
+Schéma représentant le modèle de l’expérience
+
+Nb
+4.000
+7.000
+10.00
+13.00
+16.00
+19.00
+22.00
+25.00
+27.00
+
+P (N)
+3,478
+3,581
+3,684
+3,786
+3,889
+3,992
+4,094
+4,197
+4,266
+
+Sans surpoids
+F (N)
+2.065
+2.120
+2.225
+2.265
+2.360
+2.315
+2.405
+2.505
+2.575
+
+𝜇𝐷
+0,5937
+0,5920
+0,6040
+0,5982
+0,6068
+0,5799
+0,5874
+0,5968
+0,6037
+
+P(N)
+3,478
+3,581
+3,684
+3,786
+3,889
+3,992
+4,094
+4,197
+4,266
+
+Avec surpoids
+F (N)
+3.255
+3.340
+3.380
+3.465
+3.510
+3.645
+3.680
+3.745
+3.790
+
+𝜇𝐷
+0,6092
+0,6133
+0,6092
+0,6131
+0,6100
+0,6224
+0,6175
+0,6178
+0,6182
+4
+
+Ainsi, nous remarquons grâce à ces mesures que le nombre de craies ne semble pas avoir d’impact sur le
+coefficient de frottement dynamique, mais que cependant, le poids a un impact sur celui-ci.
+Sans surpoids : 𝜇𝐷 = 0.594 ± 0.003
+Avec surpoids : 𝜇𝐷 = 0.615 ± 0.002
+Grâce à cette expérience, nous pouvons conclure que le coefficient de frottement dynamique dépend de
+l’intensité du poids, ce qui implique que la force de frottement dynamique dépend elle aussi de l’intensité
+du poids.
+5) Interprétation microscopique
+L’origine de la force de frottement est microscopique : elle provient des aspérités de surface d’un des corps
+qui entrent en contact avec les aspérités de l’autre corps, certaines aspérités "butent" les unes contre les
+autres. il y a un autre aspect lié aux forces d'adhésion (aux points de contact, mais indépendamment de
+l'orientation locale des surfaces). il y a un aspect encore plus fin, lié au cisaillement de la matière qui existe
+entre les aspérités ("3eme corps")
+
+Les forces de frottement résultent
+d’un grand nombre de
+phénomènes microscopiques
+(interactions entre molécules),
+complexes à décrire.
+
+La force de frottement globale correspond donc à la somme des petites forces de frottement de chacun de
+ses points de contact.
+Ainsi, la surface effective en contact est inférieure à la surface totale visible. La craie, qui nous paraît
+parfaitement lisse, ne l’est pas : celle-ci n’est en contact qu’en certains points avec le tableau noir. La
+surface effective de contact est beaucoup moins importante que la surface totale visible par l’œil humain.
+Afin de constater ces aspérités, nous avons donc observés à l’aide d’un MEB (= Microscope Electronique à
+Balayage) une craie cassée et une craie avec laquelle on vient d’écrire. Nous nous sommes rendus à
+l’école centrale de Lille et nous avons été accueillis sur la plateforme du MEB par Amina Tadjaoui,
+enseignante-chercheuse. Afin de pouvoir observer nos craies, nous avons d’abord dû déposer une fine
+couche d’or sur la craie afin de rendre la surface de la craie conductrice de courant électrique. Cette
+condition est nécessaire car le MEB utilise le phénomène physique de l’interaction électrons-matière afin
+de permettre l’obtention d’une image. Eclairée par un faisceau d’électrons, la matière conductrice renvoie
+des électrons secondaires qui sont collectés par un capteur. La variation de leur nombre permet de rendre
+compte de la topologie de surface.
+
+Le faisceau d’électrons secondaires n’est donc pas possible si la
+matière n’est pas conductrice, d’où le dépôt d’or.
+
+5
+
+Craies dorées
+
+Microscope à balayage électronique
+
+Image au MEB de la surface d’une craie cassée Image au MEB de sa surface après écriture
+
+L’intensité du signal électrique des électrons secondaires dépend de la topographie de l’échantillon au
+point considéré. Il est ainsi possible, en balayant le faisceau incident sur l’échantillon, d’obtenir une
+cartographie de la zone balayée.
+Sur la craie cassée, on constate une irrégularité de surface, mais aussi des points particuliers plus
+lumineux ou sombre : il y a donc des trous » (noir) et des petites « bosses (blanc »).
+Même si la surface de la craie nous paraît lisse après avoir écrit, on a pu constater que microscopiquement
+il n’en était rien. Sur l’image, on voit des zones claires et des zones foncées, plus élargies que pour la craie
+cassée, mais attestant d’une différence de niveau. Les zones claires sont les zones de contact direct avec
+le support. Les zones plus foncées n’ont pas du tout le même aspect que sur la craie cassée, elles
+semblent également plus uniformes et étirées. Cela s’explique par la tribologie, que nous a expliqué
+Edouard Davin, enseignant chercheur à Centrale Lille Institut. Le contact de la craie et du tableau n’est pas
+forcément direct. En effet, on parle souvent de contact à 3 corps : lorsque la craie laisse une trace sur le
+tableau, elle dépose une couche de matière qui, coincée entre la craie et le tableau, va modifier leur
+interaction. Ainsi, la force de frottement peut être modifiée par ce corps résiduel présent sur la surface
+6
+
+étudiée et qui va s’accumuler et frotter dans les zones plus creuses de la craie : d’où l’étirement des zones
+plus sombres au MEB.
+Toujours est-il que la surface effective de contact doit augmenter avec la surface totale (chose que nous
+n’avons pas observé expérimentalement) mais également avec l’écrasement de la craie du fait de la
+pression exercée. Le coefficient 𝜇 augmente bien avec le poids du palet, donc de la pression exercée et
+devrait augmenter avec la surface totale des craies, ces deux paramètres augmentant la surface effective
+de contact.
+
+II.
+
+Dispositifs de mesures
+
+1) Mesure de la vitesse de tracer
+Afin de réaliser des mesures il fallait que la craie se déplace par rapport au tableau. Pour cela, deux
+options s’offraient à nous : soit la craie se déplace, soit le tableau bouge. Nous avons décidé de choisir
+cette seconde option car elle était plus facile à construire, avec un plateau tournant, et une vitesse relative
+de la craie déduite à partir de la vitesse de rotation, aussi appelée vitesse angulaire 𝜔 (𝑟𝑎𝑑/𝑠).
+𝑣 =𝜔×𝑅
+Avec R la distance du tracé au centre de rotation. Le disque a un diamètre de 21,0 cm.
+Nous disposons d'un moteur NEMA 17 qui peut être alimenté jusqu'à 35V. Il est piloté par un Driver de
+moteur pas à pas TB6560 3A et une carte Arduino. Nous avons suivi le protocole disponible sur
+https://youtu.be/g-xnanD7vUs
+Nous constatons que lorsque nous exerçons une pression sur le
+plateau, sa vitesse de rotation semble diminuer, aussi la vitesse de
+consigne n’est pas la vitesse réelle. Il nous faut donc mesurer la
+vitesse de rotation de notre plateau tournant. Nous avons ajouté au
+dispositif un compteur de tour à l'aide d'une fourche optique relié à une
+seconde carte Arduino.
+Nous avons ensuite voulu contrôler si la mesure de la vitesse de
+rotation réalisée par le dispositif Arduino est fiable et si elle a une
+limite, en comparant avec des mesures faites à l’aide d’un tachymètre
+que nous avons emprunté.
+Une carte Arduino alimente un moteur faisant une rotation d’une roue
+encodeuse sur laquelle est collée latéralement une bande
+réfléchissante.
+La roue encodeuse est lue par une fourche optique. La fourche
+émet un rayon lumineux infrarouge d’une part qui est capté de
+l’autre part. Lorsque ce rayon n’est pas capté c’est qu’il y a un
+passage sur une matière.
+Pour chaque passage entre matière et vide un signal est émis et
+est enregistré par la carte Arduino dans une variable appelée
+«counter ». Le programme va compter le nombre de signaux
+reçus toutes les deux secondes. Sachant qu’il y a 20 trous sur ta
+roue encodeuse, on en déduit la vitesse sur 1 seconde :
+𝑣=
+
+𝑐𝑜𝑢𝑛𝑡𝑒𝑟/2
+𝑐𝑜𝑢𝑛𝑡𝑒𝑟
+= 0,5 × 20
+20
+
+D’où la vitesse de rotation en tour/minutes (1 minute=60 secondes) pour comparer à la mesure au
+𝑐𝑜𝑢𝑛𝑡𝑒𝑟
+tachymètre : 𝑣 = 0,5 × 20 × 60
+7
+
+Le tachymètre optique utilise le principe de réflexion de la lumière. La vitesse est mesurée en comptant la
+fréquence à laquelle le faisceau est réfléchi sur la bande réfléchissante, c’est-à-dire pour chaque tour de la
+roue encodeuse.
+Quelques mesures effectuées :
+Mesure arduino (tours/min)
+Mesure tachymètre (tours/min)
+
+9.000 27.00
+9.200 27.20
+
+45.00
+44.50
+
+61.50
+61.60
+
+85.50
+85.00
+
+145.0 189.0
+140.5 189.0
+
+280.0 341.0
+280.0 340.6
+
+Si l’on compare graphiquement la mesure arduino et la mesure tachymétrique, on tombe bien sur une
+relation de proportionnalité de coefficient directeur 1 : notre système de mesure est donc valide.
+V arduino (tours/min)
+
+V tachymètre (tours/min)
+
+2) Mesure de la période des pointillés
+Initialement, nous voulions mesurer la périodicité des pointillés en enregistrant le son émis à chaque choc.
+Il s’avère que le signal est bruité et les chocs sont difficilement repérables comme l’atteste l’enregistrement
+ci-dessous.
+
+Nous avons donc eu l’idée de scotcher à la craie une carte arduino Sense BLE qui envoie les mesures
+gyroscopiques par Bluetooth sur l’application phyphox du téléphone. Il suffit de suivre le tutoriel ci-dessous
+pour installer le dispositif : https://vulgarisation.fr/projet/arduino_nano/
+On constate que les mesures sont beaucoup plus exploitables et on note l’existence d’un rebond au
+moment où la craie retouche à nouveau le support, ce qui explique que le signal sonore est difficile à
+exploiter.
+
+8
+
+3) Mesure de l’espacement des pointillés
+Pour connaitre la distance parcourue par la craie à chaque saut, on va mesurer à la règle la distance
+moyenne 𝑑 entre deux points consécutifs : il s’agit donc de la longueur de la corde. La distance réellement
+parcourue correspond à la longueur de l’arc 𝑙.
+𝛼
+2
+
+𝑑 = 2𝑅 ∙ sin ( )
+𝑑
+
+d’où 𝛼 = 2 × 𝑎𝑟𝑐𝑠𝑖𝑛 (2𝑅)
+𝑑
+
+d’où 𝑙 = 𝑅 ∙ 𝛼 = 2𝑅 × 𝑎𝑟𝑐𝑠𝑖𝑛 (2𝑅)
+
+4) Mesure de l’angle de déflection de la craie
+On a filmé la craie et tenté de mesurer l’angle de déflexion maximal sur kinovea. Cependant, la mesure est
+très approximative, du fait que le caoutchouc permet une déflexion dans toutes les directions, que la
+captation est sensible à l’axe sous lequel la craie est perçue, et que le nombre d’images par seconde n’est
+pas suffisant.
+
+III.
+
+Modélisation de la main de Lewins
+
+1) Première modélisation : modèle stick and
+slip
+Sur Internet, la plupart des articles et vidéos
+explicatives du phénomène des pointillés (dont celle
+d’Experimentboy) invoquent le modèle du “stick&slip”.
+Selon ce modèle, le système est pendant un premier
+temps immobile (“stick”) puis va glisser lors d’une
+seconde phase (“slip”).
+Nous avons donc imaginé un premier montage où la
+craie est montée sur une bascule par une liaison pivot.
+Nous pensions que quand la craie passerait d’un
+frottement statique à dynamique, elle serait « éjectée »
+et la bascule la ramènerait au contact ; produisant ainsi
+des pointillés. Il suffirait alors de mesurer l’angle
+d’attaque de la craie… Mais la craie ne produisait que
+des lignes continues !
+
+Après réflexion, le modèle stick&slip n’est pas adéquat. Une façon de produire ce mouvement est de tirer le
+palet de craies à l’aide d’un ressort. En tirant vitesse constante, on obtient une oscillation entre friction
+statique et friction dynamique certes, cependant la trace laissée est continue sur le tableau.
+Ce modèle, que l’on retrouve sur internet n’est pas satisfaisant pour cette situation, car le mouvement de
+notre système se décompose en 3 phases (“stick”, “slip” et saut de la craie), et non pas en deux. Cela
+9
+
+explique pourquoi le trait obtenu par la craie est discontinu et non continu (avec le modèle “stick&slip”, rien
+n’indique que le système n’est pas toujours en contact avec la surface, et donc que le trait laissé par la
+craie est discontinu).
+Afin d’être plus complet, nous allons élaborer notre propre modèle plus fidèle à la réalité.
+2) Deuxième modèle : liaison rotule et rappel élastique
+Notre modélisation a été élaborée avec l’aide d’Edouard Davin, enseignant-chercheur à l’école centrale de
+Lille. Nous avons observé que, quand on tenait une craie dans la main et que l’on écartait la craie de sa
+position, celle-ci revenait à sa position. La main agit donc comme un ressort qui ramène la craie à sa
+position initiale après son déplacement. Il ne s’agit dont pas simplement d’une liaison pivot, comme dans le
+modèle précédent, mais d’un pivot avec un rappel élastique de flexion. Nous avons aussi remarqué que la
+main rebondit lors du déplacement, qu’elle est poussée par la craie lors de son basculement. Il ne faut
+donc pas fixer le système craie à la potence mais lui laisser un degré de liberté dans la direction normale
+au plan afin de permettre le repoussement. Le schéma de notre modélisation est le suivant :
+
+Schéma représentant le modèle adopté pour étudier les frottements de la craie
+
+Le ressort de flexion est situé à l’endroit où la craie est maintenue. La longueur de la craie à considérer
+n’est pas la longueur totale mais celle comptée à partir de là où elle est tenue. L’axe de la « tige-main » est
+libre de glisser dans un tube pour que le mouvement de repoussement puisse s’effectuer.
+𝑃⃗⃗ est la pression d’appui, exercée au niveau du maintien de la craie donc de la liaison pivot-élastique
+(ressort de flexion), est sera le poids de notre système dans l’expérience.
+𝛼 est l’angle avec lequel on tient la craie par rapport au support au repos.
+𝜃 est l’angle de déflexion de la craie dans la main, provoqué par le frottement statique sur le support lors du
+mouvement.
+On a réalisé un test rapide avec un ressort de pince à linge comme ressort de flexion. L’essai est
+concluant, on obtient bien des pointillés. Cependant l’angle d’attaque 𝛼 est difficilement mesurable car le
+ressort de flexion n’a pas un angle de 180° au repos. De plus il a tendance à tourner sur lui-même : il est
+difficile de l’attacher à la tige et à la craie.
+Nous avons trouvé comme solution de le remplacer par une section de caoutchouc de machine à laver.
+Cependant, cette solution présente un désavantage, la flexion est possible dans 2 directions.
+La modélisation mathématique a été effectuée par notre professeure en ANNEXE. Nous avons, en
+revanche, appris ce qu’est le moment d’une force. Voici une vidéo du dispositif et des mesures que l’on
+peut effectuer.
+
+10
+
+IV.
+
+Vérification experimentale de la modélisation
+
+1) Influence de l’angle d’attaque
+1
+
+Notre modélisation impose : tan (𝛼) ≤ 𝜇𝑆 (voir ANNEXE)
+On trouve alors, avec 𝜇𝑆 = 0.643,que 57° ≤ 𝛼 ≤ 90° pour obtenir des pointillés.
+Afin de constater l’influence de l’angle d’attaque, nous avons utilisé un plateau
+tournant, ayant une vitesse de rotation fixée. Sur celui-ci, une craie enfoncée d’1
+cm dans un tube creux en caoutchouc, était en contact avec le plateau. De l’autre
+côté du tube en caoutchouc, une tige en bois était enfoncée et maintenue en
+place par un tuyau, fixé sur un trépied, dans lequel elle est libre de glisser.
+Grâce à un rapporteur numérique, nous pouvons ajuster la valeur de cet angle et ainsi, réaliser différentes
+mesures en fonction de la mesure de l’angle.
+Vers 52° environ, le système n’est plus stable et alterne les deux comportements : parfois il trace des
+pointillés et parfois le trait est continu, comme sur la photo. Ainsi 52° est la valeur limite en deçà de laquelle
+il n’y a plus de pointillées, la craie trace en continu. En dessous de 52°, Nous observons toujours des
+pointillés. Du fait des vibrations et du mouvement de la tige dans le tube guide, l’incertitude sur la mesure
+d’angle est de 3°.
+𝑧𝑠𝑐𝑜𝑟𝑒 =
+
+|57 − 52|
+= 1,7 < 2
+3
+
+La mesure expérimentale confirme donc la prévision théorique.
+Si elle est légèrement inférieure c’est parce que, d’une part la surface du plateau tournant n’a pas
+exactement la même rugosité que la planche sur laquelle on a déterminé le coefficient statique 𝜇𝑆 . D’autre
+part, la craie appuie sur une petite surface, donc le poids du système écrase la craie sur une petite zone ce
+qui augmente la surface effective de contact donc 𝜇𝑆 .
+2) Influence de la masse de la craie
+La masse de la craie intervient dans la périodicité des rebonds :
+𝑚𝑐𝑟𝑎𝑖𝑒 ∙ 𝐿2
+𝑇=√
+3∙𝑘
+Donc si on alourdit la craie, alors la période, donc l’espacement entre les pointillés doit augmenter.
+Cependant, la relation précédente suppose une masse uniformément répartie dans un cylindre. Il nous est
+impossible de vérifier strictement cette relation mais seulement voir si l’ajout d’une masselotte sur la craie
+augmente sa période.
+On a fixé la vitesse de rotation à 120 tours/minutes et un angle d’attaque à 62° et on a scotché des petites
+masses à quelques millimètres du bord de la craie qui touche le support.
+Masse ajoutée (g)
+T (s)
+
+0
+0,07890
+
+20
+0,1607
+
+30
+0,1719
+
+40
+0,1728
+
+Qualitativement, plus la craie est lourde et plus la période du rebond est grande, donc plus les pointillés
+seront espacés.
+3) Influence de la longueur de la craie
+La longueur de la craie intervient à deux endroits du phénomène : sur la période d’oscillation libre et sur
+l’angle maximal de déflexion.
+11
+
+𝜃𝑚𝑎𝑥 =
+
+𝑃∙𝐿
+∙ (𝜇𝑆 ∙ sin(𝛼) − cos(𝛼))
+𝑘
+𝑚𝑐𝑟𝑎𝑖𝑒 ∙ 𝐿2
+𝑇=√
+3∙𝑘
+
+La craie étant cylindrique, on suppose que sa masse est proportionnelle à sa longueur : 𝑚𝑐𝑟𝑎𝑖𝑒 = 𝑚𝐿 ∙ 𝐿
+avec 𝑚𝐿 sa masse linéique. On doit alors vérifier la relation :
+𝑚𝐿 ∙ 𝐿3
+𝑇2 =
+3∙𝑘
+On a donc placé des craies de taille différente dans le tube caoutchouteux. Nous avons fixé la vitesse de
+rotation à 120 tour/minute, l’angle d’attaque à 58 ° et la pression exercée par la main en ajoutant une
+masse de 100g. La craie traçait à environ 3 cm du bord extérieur (donc sur un cercle de 10,5-3,0=7,5 cm
+120×2𝜋
+de rayon) ce qui correspond donc à une vitesse de tracé de 𝑣 = 7,5 × 10−2 ×
+≅ 0,95 𝑚/𝑠
+60
+
+Avant chaque essai nous avons aussi mesuré la pression exercée par le système en mesurant la masse du
+système sur une balance de cuisine. Nous avons constaté que la pression exercée est à peu près
+constante à chaque essai malgré un changement de taille, donc de masse de la craie : le système exerce
+une pression correspondante au poids d’une masse de 136 ± 2 𝑔. Ensuite grâce au capteur gyroscopique
+d’arduino sense nous avons pu mesurer la vitesse angulaire pour déterminer graphiquement la période des
+oscillations pour chaque longueur de craie.
+L(cm)
+m(g)
+T(s)
+
+3.3
+138
+0.03414
+
+4.3
+136
+0.03984
+
+5.1
+136
+0.04580
+
+5.9
+135
+0.05669
+
+7.0
+135
+0.07627
+
+8.1
+137
+0.09700
+
+T2 (s2)
+
+L3 (m3)
+On trouve 𝑇 2 = 15,9 × 𝐿3 avec L en m.
+Les points ne sont pas parfaitement alignés sur une relation de proportionnalité car la longueur à
+considérer est la longueur jusqu’à l’axe pivot situé quelque part dans le caoutchouc. Il y a donc une
+incertitude sur la longueur à considérer jusqu’au pivot qui ne correspond pas exactement à la longueur de
+la craie. La longueur à considérer devrait être 𝐿′ = 𝐿 + 𝑙 et alors la masse n’est pas linéique car il y a une
+partie de caoutchouc, ce qui ne permet pas d’obtenir un modèle simple. Cette incertitude se reporte donc
+sur la période mesurée qui doit être supérieure à celle correspondant à 𝐿 seul.
+
+On peut préférer alors une modélisation affine en raffinement :
+
+12
+
+T2 (s2)
+
+L3 (m3)
+On trouve 𝑇 2 = 14,8 × 𝐿3 + 408 × 10−6 avec L en m et T en s.
+
+𝑚
+
+On en déduit que le coefficient de proportionnalité est d’environ 3∙𝑘𝐿 = 15 𝑠 2 . 𝑚−3
+Puisque 3,0 cm de craie a une masse de 𝑚𝑐𝑟𝑎𝑖𝑒 = 3,49 ± 0,02 𝑔, on en déduit
+𝑚𝐿 =
+
+3,49 × 10−3
+= 1,16 × 10−1 𝑘𝑔/𝑚
+3,0 × 10−2
+
+Alors l’estimation du coefficient de couple de rappel élastique est :
+𝑘=
+
+𝑚𝐿
+1,16 × 10−1
+=
+= 2,6 × 10−3 𝑘𝑔. 𝑚2 . 𝑠 −2
+3 × 15
+3 × 15
+
+On a voulu mesurer l’influence de la longueur de la craie sur l’angle de déflection 𝜃𝑚𝑎𝑥 . Pour cela nous
+avons utilisé le logiciel Kineova qui permet de mesurer un angle sur des images vidéo. Les données
+trouvées ont une incertitude très élevée estimé à plus de 1° ce qui est énorme par rapport aux valeurs
+trouvés. Les vidéos analysées n’étaient pas filmées en slow motion et la position de la caméra variait entre
+chaque expérience, ce qui n’aide pas à mesurer correctement les angles.
+Ajustement de la direction de la craie pour −𝜽𝒎𝒂𝒙 Ajustement de la direction de la craie pour +𝜽𝒎𝒂𝒙
+
+L(cm)
+2𝜃𝑚𝑎𝑥 (°)
+
+3.3
+4.3
+Difficilement Difficilement
+mesurable
+mesurable
+
+5.1
+4.2
+
+5.9
+5.6
+
+7.0
+6.6
+
+8.1
+6.8
+
+13
+
+Cette expérience est donc très qualitative. Elle montre bien cependant une augmentation de l’angle
+maximal de déflexion 𝜃𝑚𝑎𝑥 avec la longueur de la craie 𝐿.
+4) Influence de la vitesse de tracé
+On sait que la longueur du saut de la craie est régie par l’équation :
+3
+3
+𝑚𝑐𝑟𝑎𝑖𝑒 ∙ 𝐿2 3
+𝑚𝑐𝑟𝑎𝑖𝑒 ∙ 𝐿2
+𝑙 = 𝑣 ∙ 𝑇 = 𝑣√
+= 𝑅 ∙ 𝜔√
+4
+4
+3∙𝑘
+4
+3∙𝑘
+Donc, pour une craie de longueur donnée (8,0 cm), à une distance R du centre de rotation, la longueur
+parcourue par la craie entre deux rebonds ne dépend que de la vitesse de rotation 𝜔.
+On a donc testé plusieurs vitesses de rotation. Comme la craie s’usait, il fallait la changer entre chaque
+mesure et par conséquent, elle n’était pas placée exactement au même endroit sur le plateau, ce qui ne
+𝑙
+
+permet pas de faire une comparaison directe. On va donc considérer le paramètre 𝑅 :
+𝑙 3
+𝑚𝑐𝑟𝑎𝑖𝑒 ∙ 𝐿2
+= 𝜔√
+𝑅 4
+3∙𝑘
+Il va falloir calculer à chaque fois la longueur parcourue grâce à la formule :
+𝑙 = 𝑅 ∙ 𝛼 = 2𝑅 × 𝑎𝑟𝑐𝑠𝑖𝑛 (
+
+𝑑
+)
+2𝑅
+
+Alors
+𝑙
+𝑑
+= 2 × 𝑎𝑟𝑐𝑠𝑖𝑛 ( )
+𝑅
+2𝑅
+Vitesse de
+rotation
+(tour/min)
+d (cm)
+R (cm)
+𝑙/𝑅
+
+80
+
+90
+
+115
+
+120
+
+130
+
+155
+
+2,0 ± 0,2
+7,6 ± 0,2
+15,12
+
+2,8 ± 0,2
+7,9 ± 0,2
+20,42
+
+3,5 ± 0,2
+8,1 ± 0,2
+24,95
+
+4 ± 0,2
+8,0 ± 0,2
+28,96
+
+4,0 ± 0,2
+7,7 ± 0,2
+30,11
+
+5,3 ± 0,2
+7,5 ± 0,2
+41,38
+
+L’expérience peut sembler simple, mais le changement de craie pour chaque expérience prend
+énormément de temps et nous n’avons pu tester que quelques valeurs de vitesses. La vitesse mesurée par
+la fourche optique n’est pas constante et varie de quelques de 5 tour/min.
+Sur les quelques mesures faites, on retrouve bien une tendance de relation de proportionnalité :
+l/R
+
+𝝎 (tours/min)
+14
+
+La modélisation indique
+Soit
+
+𝑙
+= 0,237 × 𝜔 avec 𝜔 en tours/min
+𝑅
+
+𝑙
+2𝜋×0,237
+=
+× 𝜔 avec 𝜔 en rad/s
+𝑅
+60
+
+Comme précédemment, les points ne sont pas parfaitement alignés sur une relation de proportionnalité car
+la longueur à considérer est la longueur jusqu’à l’axe pivot situé quelque part dans le caoutchouc. Il y a
+donc une incertitude sur la longueur, supérieure à la longueur de la craie, et par conséquent la période
+mesurée qui se reporte sur la distance parcourue. On peut préférer alors une modélisation affine :
+l/R
+
+𝝎 (tours/min)
+𝑙
+
+Dans ce cas 𝑅 =
+
+2𝜋×0,328
+× 𝜔 − 10,8 avec 𝜔 en rad/s
+60
+
+En ordre de grandeur, on estime en ordre de grandeur
+3 𝑚𝑐𝑟𝑎𝑖𝑒 ∙𝐿2
+2𝜋×0,3
+√
+≅ 60
+4
+3∙𝑘
+
+Avec un produit en croix, une craie de 8,0 cm a une masse de 𝑚𝑐𝑟𝑎𝑖𝑒 =
+
+3,49×8,0
+= 9,3 𝑔
+3,0
+
+On en déduit le coefficient de couple de rappel élastique :
+2
+
+𝑘=
+
+9,3 ×10−3 ∙(8,0 ×10−2 )
+𝑚𝑐𝑟𝑎𝑖𝑒 ∙𝐿2
+3×60 2
+(
+)
+=
+3
+4×0,237
+3
+
+3×60
+
+2
+
+(4×0,237×2𝜋) = 1 × 10−2 𝑘𝑔. 𝑚2 . 𝑠 −2
+
+Nous n’obtenons pas la même valeur que précédemment pour la simple raison que la longueur de
+caoutchouc n’est pas identique : ici elle a été beaucoup raccourcie car nous avions constaté que la craie
+avait tendance à aussi fléchir dans la direction perpendiculaire à la trajectoire quand le tube était plus long.
+A ce stade, on peut juste dire que plus le flexible en caoutchouc est court, plus le coefficient de couple de
+rappel élastique est grand. Il faudrait en fait refaire toutes nos mesures en fixant une bonne fois pour toute
+la longueur de caoutchouc pour comparer, mais on a manqué de temps et malheureusement il était
+initialement trop long.
+Un autre point, pour l’expression littérale, il était considéré que la craie touche le sol en 𝜃 = 0 suite à un
+mouvement d’oscillation libre. Or ce modèle ne prend pas en compte le poids du système et donc le
+mouvement vertical de la tige. A cause du mouvement de chute vertical du système entrainé par son poids,
+la craie retouchera le sol bien avant et donc la distance parcourue par la craie sera inférieure à la prévision,
+ce qui se traduit par une ordonnée à l’origine négative dans le modèle affine.
+
+15
+
+5) Influence de la pression exercée
+D’après notre modélisation théorique, la pression exercée par la main intervient seulement sur l’angle
+maximal de déflexion :
+𝑃∙𝐿
+𝜃𝑚𝑎𝑥 =
+∙ (𝜇𝑆 ∙ sin(𝛼) − cos(𝛼))
+𝑘
+Ici, 𝑃 représente le poids de l’ensemble main+craie. Pour obtenir la pression exercée 𝑝, il suffit de diviser
+cette force par la surface de contact 𝑠 : 𝑝 = 𝑃/𝑠
+On a donc pris une craie de longueur 8 cm que nous avons inséré dans le tube en caoutchouc. La vitesse
+de rotation du plateau tournant était fixée à 85,50 tours/minute. Nous avons ajouté deux masses, de
+chaque côté de la tige en bois, afin de faire varier la pression exercée par le système, car la pression
+augmente linéairement avec la masse.
+Avant chaque essai nous avons vérifié que la distance au bord restait similaire (4,4 cm±0,7cm) et que
+l’angle d’attaque était presque identique (75,20°±0,5°). La masse du système seul était de 48g.
+Nous avons constaté qu’au plus la pression exercée augmente, au plus l’angle maximal de déflexion 𝜃𝑚𝑎𝑥
+avait tendance à augmenter.
+Masse
+ajoutée (g)
+T(s)
+2 𝜃𝑚𝑎𝑥 (°)
+
+40g
+
+100g
+
+200g
+
+300g
+
+0,0621
+3,5
+
+0,0620
+4,6
+
+0,0615
+7,2
+
+0,0620
+7,4
+
+Avec ces dernières mesures, on se rend compte qu’effectivement la période des oscillations, c’est-à-dire
+des sauts de la craie sur le plateau, n’est pas affecté par la pression exercée sur la craie.
+Comme précédemment, les mesures d’angles sont entachées de grosses incertitudes liées au défaut de
+parallaxe lors de l’enregistrement et du nombre d’images par secondes insuffisant pour réaliser des
+mesures correctes. Cependant on constate encore une fois qualitativement que nos prévisions théoriques
+sont respectées, l’angle maximal donc l’amplitude des oscillations augmentent lorsque la pression exercée
+augmente. Cependant la période n’est pas affectée, donc l’espacement des pointillés reste constant, seule
+la marque d’impact est plus nette avec la pression car le dépôt de matière est plus important avec la
+pression.
+
+Conclusion
+Tracé des pointillés à la craie en effectuant un mouvement continu est possible. La main joue un rôle
+important : elle agit comme une force de rappel élastique de flexion. Lorsque celle-ci est plus grande que la
+force de frottement statique, la craie saute en repoussant la main et s’immobilise plus loin à cause du
+frottement statique, jusqu’à ce que la force de rappel élastique de flexion l’arrache à nouveau etc… Ce
+cycle se répète laissant des pointillés sur le tableau.
+Au début de nos recherches, la seule explication que nous avions trouvé sur Internet, pour ce phénomène,
+était le stick and slip, nous avons vu qu’en réalité, cela n’expliquait pas les sauts de la craie. Ainsi, durant
+plusieurs semaines, nous avons réalisé notre propre modélisation théorique et expérimentale afin
+d’essayer de comprendre ce phénomène. Nous sommes fiers d’être les premiers à proposer une
+modélisation théorique validé par nos expériences et qui rend compte des observations faites du
+phénomène.
+Ce modèle n’est cependant pas parfait car il ne prend pas en compte la longueur du tube en caoutchouc,
+mais sa prise en compte nécessiterait de revoir toutes les équations. Néanmoins, il se montre satisfaisant
+et certaines dépendances entre paramètres ont pu être vérifiés qualitativement ou quantitativement.
+
+16
+
+Afin de réaliser nos mesures, nous avons été confrontés à plusieurs problèmes : tout d’abord, phyphox se
+déconnectait souvent de l’Arduino Sense et l’application plantait plus de 7 fois sur 10 ! De plus, changer de
+craie ou tailler une craie peut prendre un certain temps. Il est difficile de maintenir tous les paramètres
+constants pour n’en faire varier qu’un seul lorsque les mesures s’étalent sur plusieurs séances à une
+semaine d’intervalle. Également, le temps nécessaire pour monter le dispositif expérimental et pour réaliser
+les manipulations est assez conséquent, pour peu de valeurs obtenues finalement.
+Nous n’avons pas eu le temps de nous intéresser à l’influence de l’aire apparente de contact de la craie
+avec le support sur la réalisation des pointillés. Néanmoins, avec plus de temps, notre dispositif permet une
+telle étude.
+Enfin, nous pouvons ouvrir un stage pour les enseignants pour la maîtrise du tableau noir ! Pour tracer des
+pointillés rapidement, il faut incliner la craie de plus de 57° par rapport à l’horizontale, et pour obtenir des
+pointillés resserrés il faut : avoir un geste lent (𝑣 petit), tenir une craie courte (𝐿 petit et 𝑚𝑐𝑟𝑎𝑖𝑒 petit) et
+fermement (𝑘 grand). Bien évidemment, pour obtenir des pointillés espacés, c’est tout l’inverse, mis à part
+l’inclinaison de la craie. En revanche, Il nous a été impossible de réaliser ces petits points avec un tableau
+blanc et des feutres car l’encre des feutres agit comme un fluide, il s’agit donc d’un frottement fluide pour
+lequel notre théorie n’est pas adapté.
+
+Liste des annexes
+Programme arduino du compte-tour
+Moment d’une force
+Equations de modélisation de la main de Lewins
+
+Webographie
+Lien vers les schémas :
+https://drive.google.com/file/d/1yyxQDa_1h785EC1QsVI-7RfsR9ZsPVyx/view?usp=sharing
+Site pour les réaliser/ouvrir le fichier :
+https://draw.io
+
+https://www.alloprof.qc.ca/fr/eleves/bv/physique/la-force-de-frottement-p1018
+https://perso.uclouvain.be/vincent.legat/documents/epl1201/epl1201-cours5-frottement.pdf
+https://vulgarisation.fr/projet/arduino_nano/
+http://villemin.gerard.free.fr/GeomLAV/Cercle/Arccorde.htm
+https://www.techno-science.net/definition/1732.html
+https://energie-nucleaire.net/physique/classique/dynamique/moment-force
+https://www.maxicours.com/se/cours/le-moment-d-une-force-par-rapport-a-un-axe-de-rotation/
+https://www.physagreg.fr/mecanique-21-theoreme-moment-cinetique.php
+https://youtube.com/shorts/xXr5Fa5FZbg?si=v4Y01UdWsjT82SMU
+
+17
+
+

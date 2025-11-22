@@ -1,0 +1,1283 @@
+​
+
+​
+
+​
+
+​
+
+Olympiades de physique 2024
+Mais pourquoi les Boeing ne font-ils pas de
+looping ?
+
+Figure 1- Photo prise lors du meeting aérien de Tallard le 12/05/2018 © Jérôme Fort
+
+Anaelle NESME et Lorenzo LUCCA
+
+Table des matières
+1. Introduction​
+1.1. Le sujet :​
+1.2. La problématique :​
+2. Généralités sur l’aérodynamique​
+2.1. La soufflerie :​
+2.1.1. Le divergent​
+2.1.2. Mesure de vitesse dans la chambre d’essai​
+2.2. Ecoulement :​
+2.2.1. Laminaire​
+2.2.2. Turbulent​
+2.2.3. Nombre de Reynolds​
+2.2.4. Visualisation de l’écoulement​
+2.3. L’aile :​
+2.3.1. La portance :​
+2.3.2. La traînée​
+2.4. Capteur de force :​
+2.4.1. Principe​
+2.4.2. Où coller les jauges ?​
+2.4.3. Amplificateur de pont de Wheatstone​
+2.4.4. Mise en place pour mesurer la traînée​
+2.4.5. Mise en place pour mesurer la portance​
+2.4.6. Courbe caractéristique​
+2.4.7. Programme Arduino​
+3. L’expérience​
+3.1. Résultats pour le profil asymétrique :​
+3.2. Résultats pour le profil symétrique :​
+3.3. Le phénomène de décrochage :​
+3.4. La finesse d’un avion c’est quoi ?​
+4. Conclusions​
+4.1. Ce que l’expérience nous a appris​
+4.2. Validation de nos résultats sur le terrain​
+5. Remerciements​
+6. Bibliographie-sitographie​
+
+2
+2
+3
+3
+3
+3
+4
+5
+5
+5
+6
+6
+7
+8
+9
+9
+9
+9
+10
+10
+10
+11
+11
+11
+12
+14
+15
+15
+16
+16
+18
+19
+19
+
+1. ​ Introduction
+Nous avons eu connaissance des olympiades de physique grâce à un tour des classes qui a été fait pour
+présenter le concours. Mais d'abord…qui est ce “nous”?
+Au départ, nous étions un petit groupe de 4. Mais à la rentrée de septembre 2024, nos chemins ont pris des
+voies différentes. Malgré tout, nous avons décidé de continuer ce projet à 2…et nous sommes fiers du résultat !
+Mais revenons-en à notre histoire.
+Étant dans des classes différentes, nous nous sommes retrouvés après cette présentation et le projet était clair :
+nous voulions participer !
+Nous nous lancions dans cette aventure avec une seule certitude : notre curiosité était attisée !
+
+1.1.​Le sujet :
+Parmi nous, 2 élèves du BIA : nous nous sommes ainsi très vite orientés vers le thème de l'aéronautique. Le
+thème était clair mais nous avons mis du temps à nous mettre d'accord sur le sujet… Un désaccord qui trouva
+vite sa fin lorsque notre professeur nous présenta le matériel à notre disposition : parmi celui-ci, une soufflerie,
+fabriquée l’an passé à l'aide de matériaux de récupération.
+À partir de l'instant de cette découverte, les idées et les questions fusaient au sein de notre petit groupe : nous
+étions lancés ! Il fallait maintenant réussir à se canaliser, mais sans jamais briser notre curiosité…
+Afin de commencer, nous avons besoin d'un point de départ clair. Nous avons envie de profiter de la soufflerie à
+notre disposition pour tenter de comprendre le plus vieux rêve de l'homme : voler !
+Un élément nous travaillait encore plus que les autres : comment passe-t-on du rêve au cauchemar ? Ou pour
+être plus clair, comment passe-t-on du vol…au décrochage ? Une vidéo avait également particulièrement retenue
+notre attention : celle du meeting aérien qui se tenait à l’aérodrome de Tallard chaque année. En explorant les
+différents documents que nous trouvions sur l’évènement, nous sommes tombés sur un type d’avion qui a retenu
+notre attention : l’avion de voltige. Celui-ci semblait remettre en cause tout ce que nous avions vu précédemment.
+Comment un avion comme celui-ci était-il capable de réaliser de telles prouesses artistiques dans les airs ?
+Comment pouvait-il voler sur le dos, réaliser des loopings ? Nous voulions comprendre comment ces avions
+semblaient capables de dépasser les lois physiques pour nous offrir un spectacle que nous n’avions jamais vu
+auparavant et qui remettait toutes nos représentations en cause (voir figure 1).Nous cherchions à comprendre si
+les modèles classiques que nous connaissions allaient pouvoir s’appliquer sur un avion de voltige. Quelles limites
+allaient-ils mettre en avant ?
+Nous avons donc utilisé notre soufflerie pour expérimenter une situation de vol. Si cet appareil, que Clément Ader
+nomma en 1890 “avion”, nous semblait intéressant à étudier, un élément retenait notre attention encore plus que
+les autres : l'aile. Que peut-il bien se passer au niveau de l'aile pour permettre à un aussi gros engin de voler ?
+Comment l'air réagit-il ? Est-ce la forme de
+l'aile, sa taille… Pour tenter de répondre à
+ces questions, nous utilisons des modèles
+d’aile que nous plaçons dans la soufflerie.
+Dans ce mémoire, nous allons vous
+présenter notre aventure des 8 derniers
+mois. Ce projet nous tient particulièrement à
+cœur car il s'inscrit dans une problématique
+actuelle où la sécurité aérienne semble être
+au cœur de tous les débats. Nous avons
+hâte de vous présenter notre démarche
+scientifique qui vous retranscrira nos 8 mois
+d’expérimentations et de recherche.
+figure 2-photo de la soufflerie
+
+2
+
+1.2.​La problématique :
+Les secrets du vol:
+Comment le théorème de Bernoulli ne permet-il pas aux avions de
+voltige de voler de la même façon que les avions de tourisme ?
+
+2. ​ Généralités sur l’aérodynamique
+
+2.1.​La soufflerie :
+Notre soufflerie est fabriquée à l'aide de matériaux de récupération. En effet, le ventilateur est celui d’une voiture,
+tandis que l'armature est constituée de planches de récupération. Pour ce qui est du tranquillisateur d’air, nous
+l'avons fabriqué à l'aide de nombreuses pailles que nous avons encadrées avec de petites planches en bois.
+
+figure 3- conception de la soufflerie
+
+Le ventilateur aspire l’air, pour éviter les tourbillons créés par les pales du ventilateur .Ainsi, l’air entre par la
+chambre d'essai et ressort après le divergent.
+Comme nous pouvons le voir sur la figure 3, notre soufflerie ne dispose pas d’un circuit de retour : il s’agit donc
+d’une soufflerie de type Eiffel.
+
+2.1.1.​
+
+Le divergent
+
+Sa fonction est de permettre au flux d’air de progressivement se disperser et de décélérer, grâce à une section
+d’écoulement agrandie. Néanmoins, la quantité d'air reste la même : c'est le principe de conservation du débit.
+Cette section s'agrandit de manière progressive afin d'éviter de créer des turbulences.
+D’après la conservation du débit, la vitesse se trouve multipliée par 5 dans la chambre d’essai :
+𝑆1 × 𝑉1 = 𝑆2 × 𝑉2
+⇒ 𝑉1 =
+
+𝑆2×𝑉2
+𝑆1
+
+3
+
+2.1.2.​
+
+Mesure de vitesse dans la chambre d’essai
+
+A.​ Anémomètre à hélice
+En parlant de chambre d'essai, celle-ci est située après le tranquilisateur d'air.
+C'est ici que nous disposons le corps à étudier, en l'occurrence une aile.
+Pour pouvoir voir l'intérieur de la chambre, nous avons installé une vitre le
+long de la paroi. C'est dans cette chambre que nous réalisons l'ensemble de
+nos mesures.
+Dans un premier temps, nous avons réalisé des mesures de vitesse à l’aide
+d’un anémomètre à hélice, visible en figure 4.
+Les mesures de vitesse varient en fonction de l’endroit où l’on dispose
+l’anémomètre : la vitesse a tendance à être plus faible lorsqu’on se rapproche
+des bords.
+Nous avons donc réalisé plusieurs mesures de vitesse, pour 6 et 12V, en
+disposant l’anémomètre dans différentes zones. Nous avons ensuite fait la
+moyenne des mesures.
+figure 4-mesure de la vitesse avec l’anémomètre
+
+Il est important de préciser que nous disposons d'un générateur réglable : nous pouvons ainsi transmettre à la
+soufflerie une tension de 6V ou bien de 12V.
+
+Moyenne pour 6V : 3.6 m.s -1
+Moyenne pour 12V : 6.6 m. s -1
+Nous supposons que les imprécisions de nos mesures proviennent peut-être de la taille de l’appareil que nous
+utilisons : proportionnellement à la taille de la chambre d’essai, la section d’écoulement de notre anémomètre est
+importante. Pour gagner en précision, nous avons installé un tube de Pitot puis deux.
+
+B.​ Anémomètre à tube de pitot combiné
+Le théorème de Bernoulli (établi en 1738 par Daniel Bernoulli) est un des principes fondamentaux de la
+dynamique des fluides.
+Mathématiquement le Théorème de Bernoulli Le long d’une ligne de courant s’exprime par la formule
+suivante :
+2
+1
+ρ𝑉
+2
+
++ ρ𝑔𝑧 + 𝑝 = 𝐶𝑜𝑛𝑠𝑡𝑎𝑛𝑡𝑒 ​ ​
+
+ρ : masse volumique de l’air en kg/m^3
+v : vitesse relative en m/s
+g : accélération de pesanteur en N/kg
+z : altitude en m
+p : pression du fluide N/m^2
+
+La pression statique s'applique à tout l'avion tout le temps, p est la pression statique.
+1
+
+2
+
+La pression dynamique est celle due à l'avancement de l'avion, 2 ρ𝑉
+
+est la pression dynamique.
+
+( ρgz est la pression de pesanteur. )
+On appelle pression totale « PT », la somme des pressions statique et dynamique.
+Si on néglige la pression de pesanteur, lorsque le fluide n'est pas en mouvement, alors la pression totale
+est égale à la pression statique. Quand le fluide est en mouvement, la pression dynamique augmente.
+
+La pression totale d’un fluide incompressible est constante donc lorsque la vitesse d’un
+fluide incompressible augmente, sa pression statique diminue.
+
+4
+
+Le tube de pitot combiné est constitué d’un tube percé de deux trous :
+A qui fait face à l’écoulement
+B sur le côté du tube
+
+figure 5-principe de l'anémomètre à tube de Pitot
+​
+https://arduino.blaisepascal.fr/capteur-de-pression-differentiel/
+
+D’après le théorème de Bernoulli :​ ​
+
+2
+1
+ρ𝑉𝑎
+2
+
++ ρ𝑔𝑧𝑎 + 𝑝𝑎 = 2 ρ𝑉𝑏
+
+De plus 𝑧𝑎 = 𝑧𝑏 et 𝑉𝑏 = 0
+
+​
+
+⇒ 𝑝𝑎 +
+
+d’où​ ​
+
+1
+
+2
+1
+ρ𝑉𝑎
+2
+2
+
+1
+
+⇔ 2 ρ𝑉𝑎
+2
+
+⇔ 𝑉𝑎
+
+=
+
+⇔ 𝑉𝑎 =
+
+2
+
++ ρ𝑔𝑧𝑏 + 𝑝𝑏
+
+= 𝑝𝑏
+
+= ( 𝑝𝑏 − 𝑝𝑎 )
+2.( 𝑝𝑏 − 𝑝𝑎 )
+ρ
+2.( 𝑝𝑏 − 𝑝𝑎 )
+ρ
+
+On utilise donc un Manomètre différentiel a deux tubes.
+La valeur numérique lue sur A0 est moyennée sur 10 mesure et convertie en vitesse par le programme
+Arduino selon la formule:
+float rho = 1.204; // densité de l’air
+…
+veloc = sqrt((10000.0*((A0_avg/1023.0)-0.5))/rho);
+Comparaison des résultats: nous trouvons des valeurs proches de celles obtenues avec l’anémomètre.
+
+2.2.​Ecoulement :
+Grâce à ses pâles, la soufflerie entraîne un déplacement d’air. Celui-ci peut s'écouler de deux manières
+différentes : laminaire et turbulent. Il est important d'étudier cet écoulement car il impacte grandement l'efficacité
+globale du vol. Un écoulement bien géré permettra d'optimiser la performance d'un avion et de contrôler au mieux
+son efficience énergétique.
+
+2.2.1.​
+
+Laminaire
+
+Un fluide suit un écoulement laminaire lorsque ses particules se déplacent en couches lisses et parallèles.
+Chaque couche garde sa trajectoire et une vitesse relativement constante. Par conséquent, le fluide présente
+une forte homogénéité, rendant les mesures faciles à effectuer et précises.
+Cet écoulement laminaire est permis par la viscosité du fluide. Plus la viscosité est importante, plus le fluide suit
+un écoulement laminaire.
+
+2.2.2.​
+
+Turbulent
+
+Un fluide est dit “turbulent” lorsque son écoulement est non linéaire. Ainsi, il est caractérisé par de grands
+tourbillons, causés par un mouvement irrégulier des particules qui composent le fluide. Sa trajectoire est donc
+aléatoire et on observe de nombreuses variations spatiales et temporelles.
+
+5
+
+Nous aimerions éviter un tel écoulement car son irrégularité et ses tourbillons peuvent affecter la précision de nos
+mesures. Dans un premier temps, nous allons donc essayer de déterminer la présence ou non de ces tourbillons.
+Si tel est le cas, nous chercherons des solutions pour y palier.
+
+2.2.3.​
+
+Nombre de Reynolds
+
+Pour tenter de comprendre l’écoulement de l'air dans notre soufflerie, nous avons décidé de calculer le nombre
+de Reynolds. Ce nombre, obtenu par le rapport entre les forces d'inertie et les forces visqueuses du fluide, va
+nous permettre de caractériser le régime d'écoulement de l'air lorsque notre soufflerie est en marche.
+Pour le calculer, nous appliquons la formule suivante :
+Avec : ​
+
+𝑅𝑒 =
+
+ρ×𝑉×𝐷
+µ
+
+Re : Nombre de Reynolds sans unité
+ρ : masse volumique du fluide en kg.m-3
+
+µ : viscosité dynamique du fluide en Pa.s ( la viscosité dynamique est reliée à la viscosité
+cinématique par la formule μ = ν ρ . )
+Une fois le nombre calculé, nous pourrons définir le type d'écoulement en situant notre nombre dans des
+intervalles de référence :
+
+Re≤2300
+
+2300≤Re≤3000
+
+Re≥3000
+
+écoulement laminaire
+
+écoulement intermédiaire
+
+écoulement turbulent
+
+Calcul du nombre de reynolds dans la chambre d'essai :
+Données :
+
+viscosité de l'air à 20°C = 18,5*10^-6 Pa×s
+masse volumique de l'air à 20°C = 1,204 kg /m³
+dimension caractéristique = 0,10 m (corde de l’aile )
+
+Le type d'écoulement qui nous intéresse est celui de la chambre d'essai. Nous utilisons donc les moyennes de
+vitesses que nous avons calculées dans la partie 2.1.2.
+●​
+●​
+
+vitesse du fluide V1 ≈ 3.6 m.s -1 pour 6V ​Re1≈ 23000
+vitesse du fluide V2 ≈ 6.6 m. s -1 pour 12V ​Re2 ≈ 43 000
+
+Dans les deux cas l’écoulement est turbulent.
+
+2.2.4.​ Visualisation de
+l’écoulement
+figure 6-visualisation de l’écoulement
+
+Pour confirmer la présence de tourbillons, nous
+utilisons une machine à fumée qui nous permet de
+visualiser l’écoulement de l’air dans la chambre
+d’essai.
+
+6
+
+2.2.5.​
+
+‘Tranquilisateur’ d’air
+
+Dans le but de rendre l’écoulement le plus laminaire possible, nous avons recours à un dispositif que nous
+nommerons ‘tranquilisateur’ d’air.
+Constitué d’un grand nombre de paille, il permet de diminuer la taille des tourbillons.
+
+figure 7-photo tranquilisateur d’air
+
+figure 8-photo écoulement fumée avec tranquilisateur
+
+2.3.​ L’aile :
+Nous avons d’abord créé un modèle 3D à l’aide du logiciel sketchup. Puis nous l’avons imprimé à l’aide de
+l’imprimante 3D du lycée. https://www.thingiverse.com/thing:6871159
+Nous nous sommes bien-sûr inspirés des modèles d’ailes classiques mais nous avons vraiment pris le temps de
+comprendre ce qui justifiait sa forme.
+Il nous a fallu plusieurs essais avant d’arriver à fixer l’aile correctement sur le capteur de force tout en faisant
+varier l’incidence. Dans un premier temps, nous avions voulu la fixer à l’aide d’un support qui reposait sur le sol
+de la soufflerie et qui maintenait l’aile par le dessous. Mais au moment de la fixer, nous avons constaté que ce
+maintien engendrait une nouvelle force qui venait s'appliquer sur l’aile, rendant ainsi fausses toutes nos mesures
+de portance.
+Nous avons décidé d’imprimer un nouveau support qui cette fois-ci viendrait se fixer sur le capteur de force
+verticale (cf 2.4.6.). Ce support, ainsi que l’aile, sont percés d’un trou dans lequel nous avons glissé une tige qui
+maintient l’aile. Cette tige sert d’axe et permet à l’aile de pivoter.
+Nous réglons l’angle d’incidence à l’aide de morceaux de fil de fer (cf figure 9 et 10).
+figure 9-aile fixée à un angle faible
+
+figure 10-aile fixée à un angle fort
+
+7
+
+D’après le théorème de Bernoulli, la pression est plus faible à l’extrados qu'à l'intrados. Cela est dû au fait que
+l’écoulement autour de l’aile n’est pas symétrique. Pour le vérifier, nous avons installé un second tube de Pitot
+au-dessus de notre aile (voir figure 11) et nous avons mesuré la vitesse au-dessus et en dessous de l’aile.
+Nous avons pu constater que la vitesse est plus importante
+au-dessus de l’aile : cette différence de vitesse est à l’origine
+d’une différence de pression.
+L’air accéléré au-dessus crée une zone de dépression tandis que
+le dessous de l’aile est une zone de surpression.
+Cette différence de pression crée la résultante aérodynamique.
+Elle s’applique en un point de la corde, le centre de poussée, et
+se décompose en deux forces : la portance et la traînée.
+Chacune d’entre elles joue un rôle essentiel
+pour maintenir un avion dans les airs et le faire avancer.
+
+figure 13-Mise en place de l’aile symétrique
+figure 11-Mesure des vitesses au dessus et en dessous de l’aile
+
+figure 12-valeurs des mesures de vitesse
+
+Nous avons imprimé un deuxième profil, semblable à ceux qui équipent les avions de
+voltige : un profil symétrique.
+Contrairement à l’aile dissymétrique, la même courbure est ainsi présente sur
+l’extrados et l’intrados ( voir figure 11 ).
+Mais alors un tel profil peut-il voler à incidence nulle ? Un premier élément de réponse
+nous est apporté par la mesure de vitesse en dessous et au-dessus de l’aile : pour un
+angle d’incidence de 0°, les vitesses sont pratiquement égales. A ce stade de
+l’expérience, nous ne pouvons rien affirmer mais nous pouvons supposer qu’il n’y a
+pas de différence de pression de part et d’autre de l’aile et que cette dernière ne pourra donc pas voler pour un
+angle de 0°. Pour le vérifier, nous nous sommes d’abord intéressés aux 2 forces qui constituent la résultante
+aérodynamique (figure 14) et qui permettent à l’avion de voler : la portance et la traînée.
+
+2.3.1.​
+
+La portance :
+La portance est une des composantes de la force qui s'applique
+sur un corps en mouvement dans un fluide. Elle s'exerce
+perpendiculairement à la direction du mouvement d'écoulement
+du fluide, de l’intrados vers l'extrados.
+
+portance: Fz = ½ ρ S V2 Cz
+
+figure 14-représentation de la résultante
+aérodynamique
+
+figure 15-déflexion du flux derrière
+un avion-photo de Paul Bowen
+
+8
+
+La portance est due à la projection d'une certaine masse d'air vers le bas (voir figure 14 ). Cette déviation du fluide
+est générée par l’intrados, mais aussi par l’extrados.
+
+2.3.2.​
+
+La traînée
+
+L’autre force à l’origine de la résultante est la traînée. C’est elle qui oriente la résultante aérodynamique à
+l’opposé de la trajectoire. D’un point de vue vectoriel, la traînée s’oppose à la poussée.
+
+traînée Fx = ½ ρ S V2 Cx
+Cette opposition traduit la résistance de l’air face au déplacement de l’avion. Ainsi, plus la traînée est importante,
+plus la consommation de carburant le sera aussi afin de compenser cette force contraire au déplacement voulu.
+Pour une consommation de carburant qui soit la plus faible possible, il faut donc chercher à réduire au maximum
+la force de traînée.
+Celle-ci dépend à la fois du profil de l’avion : il s’agit de la traînée dite “parasite”.
+La seconde est la traînée “induite”, elle dépend de l’angle d’incidence de l’avion.
+C’est cette dernière qui nous intéresse tout particulièrement et qui viendra définir le paramètre variable de notre
+expérience, à savoir l’angle d’incidence. Nous avons choisi d’étudier ce second type de traînée car c’est celui qui
+concerne le plus directement le pilote : durant le vol, il a la possibilité de faire varier l’angle d’incidence de l’avion
+afin de réduire la traînée et par conséquent, la consommation de carburant de son avion. La traînée induite nous
+paraissait donc particulièrement intéressante à étudier pour son caractère concret pour les pilotes.
+Néanmoins, nous n’avons pas oublié la traînée parasite : elle entre particulièrement dans nos considérations pour
+la création de l’aile, voir 2.3.
+
+2.4.​Capteur de force :
+Durant notre expérience, nous aurons besoin de pouvoir mesurer la portance et la traînée. Pour cela, nous
+utilisons des capteurs de force.
+C’est un dispositif qui permet de transformer une force en signal électrique. Il est généralement composé de
+jauges de déformation.
+
+2.4.1.​
+
+Principe
+
+Des jauges (deux ou quatre) sont collées sur un support (le corps d'épreuve) qui, lorsqu'il est soumis à une force,
+va se déformer.
+Les jauges de déformation vont s'allonger ou se raccourcir. Ainsi, la force dont on cherche à connaître la valeur
+déforme le corps d'épreuve qui provoque l'allongement ou le rétrécissement des jauges et donc la variation de la
+valeur de résistance. La variation de la valeur de la résistance est par conséquent liée à la variation de la valeur
+de la force appliquée.
+
+2.4.2.​
+
+Où coller les jauges ?
+
+On associe cette jauge d'extensométrie à un corps d’épreuve
+métallique usiné de façon à se déformer sous la pression
+(contrainte) d’une force que l’on souhaite mesurer.
+En collant les jauges aux bons emplacements, elles vont
+s’allonger (au dessus), tandis que les autres vont rétrécir (en
+dessous).
+
+figure 16- Simulation des déformations
+
+9
+
+2.4.3.​
+
+Amplificateur de pont de Wheatstone
+
+Bien que les jauges d’extensométrie nous soient très utiles pour réaliser des mesures précises, leurs valeurs de
+sortie étaient très faibles et donc difficilement quantifiables pour nous. Pour palier à ce problème, nous utilisons
+un amplificateur qui nous permet d’amplifier la tension de sortie du pont de Wheatstone. Grâce au montage
+présenté sur la figure 13, suivi d’un amplificateur, nous avons la possibilité de mesurer une force.
+
+figure 17- pont de Wheatstone
+
+2.4.4.​
+
+Mise en place pour mesurer la traînée
+
+Ici la direction est importante, en effet le capteur de traînée est placé de manière perpendiculaire au filet d’air. Il
+est donc positionné verticalement.
+Nous avons choisi la jauge avec la plus petite capacité : 780g. Notre aile n’ayant qu’une masse de 27.15g, il
+aurait été inutile de choisir une plus grosse capacité. Cette jauge nous permet d’avoir une très bonne précision.
+D’un point de vue dimensionnel, les 2 capteurs font la même taille : 4.5cm de longueur pour 0.6cm de largeur.
+Cette taille est parfaite pour notre chambre d’essai car les capteurs ne prennent pas trop de place, limitant ainsi
+les perturbations des filets d’air.
+
+2.4.5.​
+
+Mise en place pour mesurer la portance
+
+Au contraire du capteur de traînée, le capteur de portance est placé
+parallèlement au sol. Il est tourné pour mesurer une force verticale positive
+vers le haut.
+Comme nous pouvons le voir sur la figure 14, nous avons utilisé un
+morceau d'équerre en aluminium qui vient fixer le capteur de portance sur
+​
+le capteur de traînée.​
+
+figure 18-capteurs de portance et de traînée
+
+Pour que la fixation soit la plus rigide possible, une des vis de fixation vient maintenir le capteur de portance pour
+limiter une éventuelle flexion de l’aluminium.
+
+10
+
+2.4.6.​
+
+Courbe caractéristique
+
+A l’aide de petites masses, nous avons réalisé nos premières mesures de portance afin de réaliser la
+caractéristique de notre capteur de force verticale.
+figure 19- tableau de valeurs du capteur de force
+
+Masse(en g)
+
+Force (N)
+
+Valeur lue ( )
+
+0
+
+0
+
+142910
+
+50
+
+0.4905
+
+250793
+
+100
+
+0.981
+
+358175
+
+200
+
+1,962
+
+572199
+
+Grâce aux valeurs que nous avons trouvées, nous
+pouvons tracer la courbe d'étalonnage sur python.
+Comme nous pouvons le voir sur la figure 16, les points
+sont bien alignés : nos capteurs sont donc correctement
+étalonnés et nous pouvons donc utiliser le coefficient
+directeur de la droite avec sérénité.
+
+figure 20-courbe d’étalonnage capteur
+
+2.4.7.​
+
+Programme Arduino
+
+A partir de la courbe d’étalonnage du capteur de force (réutilisation du coefficient de proportionnalité), nous avons
+écrit un programme pour traduire la valeur numérique lue en intensité de la force (en Newton).
+Extrait du programme Arduino (le programme est disponible en intégralité au sein de nos annexes) :
+#include "HX711.h" //bibliothèque permettant d'utiliser l'amplificateur à pont de wheatstone
+…
+const int coef = 218740 ; // coefficient de proportionnalité déterminé sur la caractéristique du capteur
+…{
+​
+valeur_lue = scale.get_units(10);// lit la valeur numérique
+​
+force = ( valeur_lue - constante ) / coef ; // Calcul de la force grâce à la caractéristique du capteur
+…
+
+3. ​ L’expérience
+Grâce à cette mise en place, nous avons pu prendre les mesures nécessaires.
+Tout d’abord, nous avons prélevé la force initiale pour chaque angle d’incidence différent.
+Puis, nous avons prélevé la force avec la soufflerie: c'est-à -dire au moment où la soufflerie était en marche.
+Grâce à la soustraction de ces deux forces, nous avons obtenu la valeur de la force mesurée.
+Nous avons calculé ces valeurs pour 6 et 12 V avec le tranquillisateur d’air en place.
+Pour la traînée, nous avons ajouté la méthode tare() dans le script python.
+
+11
+
+3.1.​Résultats pour le profil asymétrique :
+A l’aide d’un programme python disponible dans nos annexes, nous avons modélisé nos résultats. Pour les
+généraliser, nous avons réitéré l’expérience 6 fois de suite (voir figure 17) . Grâce à nos 6 mesures, nous avons
+réalisé une courbe moyenne, enrichie d’incertitudes qui témoignent de la variété de nos résultats. (voir figure 20).
+Degrés
+
+0
+
+10
+
+20
+
+40
+
+55
+
+60
+
+moyenne
+
+0.0450
+
+0.3217
+
+0.4217
+
+0.6450
+
+0.5783
+
+0.5250
+
+écart type
+
+0.008
+
+0.04
+
+0.03
+
+0.03
+
+0.01
+
+0.01
+
+incertitudes
+
+0.003
+
+0.02
+
+0.01
+
+0.01
+
+0.004
+
+0.004
+
+figure 21-tableau d’incertitudes pour la portance et 6V fournis
+
+Pour le calcul de nos incertitudes, nous utilisons la formule suivante : 𝑈(𝑃) =
+
+σ
+𝑛
+
+Où 𝑃 la portance moyenne , σ l’écart type, et n le nombre de mesures (ici 6)
+Exemple : Pour un angle d’incidence de 10°,
+U(0.3217) =
+
+0.04
+6
+
+≈ 0.02
+
+Ainsi, pour un angle d’incidence de 10°, P=0.3217±
+0.02
+Nous avons réitéré la même formule pour chaque
+angle et modélisé notre courbe avec les incertitudes
+(cf figure 19).
+figure 22-représentation avec incertitudes de la portance pour
+6V fournis
+
+De la même manière que pour la portance, nous
+avons mesuré la traînée en fonction de l’angle
+d’incidence (cf figure 21) et modélisé nos résultats
+grâce à Python (cf figure 22).
+Degrés
+
+0
+
+10
+
+20
+
+40
+
+55
+
+60
+
+moyenne
+
+0.0467
+
+0.0933
+
+0.1883
+
+0.4783
+
+0.7117
+
+0.7783
+
+écart type
+
+0.005
+
+0.02
+
+0.008
+
+0.03
+
+0.02
+
+0.01
+
+incertitudes
+
+0.002
+
+0.008
+
+0.003
+
+0.01
+
+0.008
+
+0.004
+
+figure 23-tableau d’incertitudes pour la traînée et 6V fournis
+
+figure 24-représentation avec incertitudes de la portance pour 6V fournis
+
+12
+
+Nous avons réitéré la même expérience en transmettant cette fois-ci une tension de 12V afin de voir si la vitesse
+influe sur nos résultats.
+Degrés
+
+0
+
+10
+
+20
+
+40
+
+55
+
+60
+
+moyenne
+
+0.0633
+
+1.8250
+
+2.0317
+
+2.4467
+
+2.2067
+
+2.0083
+
+écart type
+
+0.02
+
+0.04
+
+0.06
+
+0.06
+
+0.07
+
+0.02
+
+incertitudes
+
+0.008
+
+0.02
+
+0.02
+
+0.02
+
+0.03
+
+0.008
+
+figure 25-tableau d’incertitudes pour la portance et 12V fournis
+
+figure 26-représentation avec incertitudes de la portance pour
+12V fournis
+
+Degrés
+
+0
+
+10
+
+20
+
+40
+
+55
+
+60
+
+moyenne
+
+0.1433
+
+0.6467
+
+0.7950
+
+1.7133
+
+2.4867
+
+2.6900
+
+écart type
+
+0.008
+
+0.04
+
+0.03
+
+0.06
+
+0.04
+
+0.03
+
+incertitudes
+
+0.003
+
+0.02
+
+0.01
+
+0.02
+
+0.02
+
+0.01
+
+figure 27-tableau d’incertitudes pour la traînée et 12V fournis
+
+figure 28-représentation avec incertitudes de la traînée pour
+12V fournis
+
+Que ce soit pour 6 ou 12V, nous pouvons constater
+que la portance augmente jusqu’à un maximum
+atteint pour un angle d’incidence de 40°. Par la
+suite, lorsque l’angle d’incidence continue
+d’augmenter, la valeur de portance connaît une
+chute brutale. En vol, cette chute brutale
+correspond au décrochage de l’avion.
+Bien que l’angle de décrochage soit le même pour les 2 vitesses de soufflerie, nous pouvons constater en
+comparant les figures 20 et 24 que les valeurs de portance sont bien supérieures lorsque la vitesse est la plus
+importante. Plus l’incidence est importante, plus « l’obstacle » est grand, donc la déviation du fluide aussi (avec
+
+13
+
+une certaine limite : le décrochage). L’incidence est un élément important dans la création d’une portance, mais
+elle n’est pas obligatoire ! Un profil asymétrique génère de la portance même à incidence nulle.
+Pour ce qui est de la traînée, les 2 courbes ont une nouvelle fois la même tendance : les valeurs de traînée
+augmentent avec l’angle d’incidence. Comme pour la portance, plus la vitesse est importante, plus la traînée l’est
+également.
+Afin de corréler nos résultats, nous avons choisi de tracer la polaire de l’aile pour les 2 vitesses. Celle-ci
+représente la portance en fonction de la traînée et permet de mettre en évidence les points de performance de
+l’aile. Une nouvelle fois, nous utilisons un programme python afin de modéliser nos courbes.
+
+figure 29-polaire eiffel pour 6V fournis
+
+figure 30-polaire eiffel pour 12V fournis
+
+3.2.​Résultats pour le profil symétrique :
+Degrés
+
+0
+
+10
+
+20
+
+40
+
+55
+
+60
+
+moyenne
+
+0.02
+
+0.36
+
+0.59
+
+0.83
+
+0.69
+
+0.6
+
+écart type
+
+0.006
+
+0.03
+
+0.01
+
+0.03
+
+0.02
+
+0.008
+
+incertitudes
+
+0.002
+
+0.01
+
+0.004
+
+0.01
+
+0.008
+
+0.003
+
+figure 31-tableau d’incertitudes pour la portance et 6V fournis
+
+figure 32-représentation avec incertitudes
+de la portance pour 6V fournis
+
+14
+
+Degrés
+
+0
+
+10
+
+20
+
+40
+
+55
+
+60
+
+moyenne
+
+0.12
+
+1.59
+
+2.38
+
+2.73
+
+2.44
+
+2.13
+
+écart type
+
+0.03
+
+0.06
+
+0.06
+
+0.02
+
+0.06
+
+0.02
+
+incertitudes
+
+0.01
+
+0.02
+
+0.02
+
+0.008
+
+0.02
+
+0.008
+
+figure 33-tableau d’incertitudes pour la portance et 12V fournis
+
+figure 34-représentation avec incertitudes de la portance pour 12V
+fournis
+
+De la même manière que pour l’aile dissymétrique,
+notre aile symétrique décroche à un angle d’incidence
+de 40°.Que ce soit pour 6V ou bien 12V, la portance à
+0° est pratiquement nulle.
+
+3.3.​Le phénomène de décrochage :
+Nous l’avons vu, à partir d’un angle d’incidence supérieur à 40°, nous observons le décrochage de nos ailes. Ce
+décrochage s’explique par le fait qu’à partir d’un angle d’incidence trop important, l’air n’adhère plus à la surface
+de l’aile qui ne porte plus (voir figure 35).
+Pour le vérifier, nous avons utilisé un générateur de fumée. Nous utilisons le générateur afin de mettre en
+évidence les filets d’air et leurs comportements pour des angles d’incidences croissants :
+
+Incidence faible
+
+Incidence moyenne
+
+Incidence forte
+
+figure 35-comparaison de l’adhérence de l’air en fonction de l’angle d’incidence
+
+3.4.​La finesse d’un avion c’est quoi ?
+A première vue, nous pourrions être tentés de choisir le point des courbes où la portance est maximum.
+Pour la courbe de 6V, il correspond au point correspondant à une incidence de 40°. Il en est de même pour la
+courbe de 12V. Il s’agit bien du point où la portance est la plus élevée.
+
+15
+
+Mais il s’agit également d’un point où la traînée est très importante.
+Or la mission du pilote de l’avion de tourisme est justement de trouver le point où la portance est suffisante pour
+soutenir l’avion et où la traînée reste la plus basse possible.
+Pour trouver ce point, nous devons d’abord trouver le point de finesse maximale en traçant la tangente à la
+courbe qui passe par l’origine.
+Définition de la finesse : la finesse est la distance que va franchir un avion en vol plané par rapport à son altitude,
+moteurs éteints, à partir d’une vitesse théorique de 0 km/heure.
+Note : ce cas de figure n’arrive jamais, les avions n’étant jamais à 0 km/heure dans le ciel ! En réalité, ils iraient
+donc beaucoup plus loin que la distance théorique que permet de calculer la finesse.
+calcul de la finesse :​
+
+𝑓 =
+
+𝐶𝑧
+𝐶𝑥
+
+𝑅𝑧
+
+𝑉𝑥
+
+𝐷
+
+= 𝑅𝑥 = 𝑉𝑧 = ∆𝑧
+
+Comme le montre les figures 30 et 31, nous avons tracé cette finesse sur nos polaire :
+
+figure 36-tracé de la finesse max sur les polaires de l’aile dissymétrique
+
+L’angle d’incidence qui permet d’obtenir la finesse maximale est donc de 10 ° .
+C’est aussi l’angle d’incidence qui permet d’obtenir l’autonomie maximale pour un avion équipé de turboréacteurs
+comme les avions de ligne.
+Le rapport portance-traînée augmente et la traînée induite diminue à mesure que la hauteur diminue.
+À noter que la traînée de frottement (due à la viscosité) reste constante.
+
+4. ​ Conclusions
+
+4.1.​Ce que l’expérience nous a appris
+L’aile à profil dissymétrique génère une portance même lorsque l’angle d’incidence est nul.
+Nous avons pu observer un phénomène très important de l’aéronautique : le phénomène de décrochage.
+Nous observons que le phénomène de décrochage se produit toujours au même angle d’incidence (40°) quelle
+que soit la vitesse.
+La portance de l’aile à profil symétrique dépend directement de l’angle d’incidence : pour un angle d’incidence
+nul, la valeur de la portance est très faible.
+On suppose donc que les pilotes de voltige doivent voler à des angles d’incidence plus importants.
+Dans ces conditions la portance est plus grande qu’avec le profil dissymétrique.
+Nos mesures nous ont aussi permis de déterminer l’angle qui assurait le meilleur rapport traînée/portance pour
+une aile dissymétrique : 10°.
+
+16
+
+Par exemple pour 12V et un angle d’incidence de 55° le profil dissymétrique oppose au mouvement une
+puissance : P = Rx * V
+P(55) = 2,5 * 6,6 = 17W Alors que pour un angle de 10°, cette puissance passe à P(10) = 0,65 * 6,6 = 4,3 W
+Malheureusement, en raison d’une panne, nous n’avons pas pu mesurer la traînée du profil symétrique pour
+comparer les puissances.
+Pour ce qui est de la portance, le théorème de Bernoulli nous semble
+satisfaisant pour expliquer le comportement de l’aile.
+Pour l’aile à profil symétrique, nous avons placé un tube de pitot sous
+l’intrados et un autre sur l’extrados pour vérifier que l’écoulement est
+bien dissymétrique. Nous avons pu constater des valeurs de vitesses
+pratiquement identiques pour un angle d’incidence de 0° : la portance
+générée est donc très faible. Néanmoins, pour ce qui est des vitesses
+pour un angle supérieur à 0°, celle côté extrados est plus importante
+que celle côté intrados (voir figure 37) : la différence de vitesse est à
+l’origine d’une différence de pression qui permet cette fois-ci à l’aile
+symétrique d’être portée.
+
+figure 37-mesure de vitesse pour un angle de 20° aile symétrique
+
+figure 38-mesure de vitesse pour l’aile dissymétrique à 0°
+
+figure 39-mesure de vitesse pour l’aile symétrique à 0°
+
+Pour comprendre la différence entre l’aile dissymétrique et symétrique à 0°, nous avons mesuré les vitesses du
+côté extrados et intrados. En comparant, nous nous rendons compte qu’il existe une différence de vitesse
+importante pour l’aile dissymétrique (voir figure 38) tandis que la différence est bien moins grande pour l’aile
+symétrique (voir figure 39). La différence pour l’aile dissymétrique est significative par rapport aux incertitudes de
+mesures. Nous pouvons nous interroger pour l'aile symétrique. En effet, nos résultats semblent montrer que les
+vitesses sont égales, ce qui devrait impliquer une absence de portance.
+
+17
+
+4.2.​Validation de nos résultats sur le terrain
+Pour mieux comprendre le phénomène réel de décrochage, nous avons interrogé Pierre Gilaber, pilote instructeur
+et président de l’aéroclub Val Durance.
+figure 38-Pierre Gilaber
+Pourriez-vous nous définir le décrochage et nous expliquer comment il se
+manifeste en vol ?
+“Le décrochage des filets d'airs de l'extrados est dû à une incidence trop forte.
+Donc à un certain degré d'incidence, autour de 15° d'incidence, les filets d'airs
+ne peuvent pas rester accrochés à l'extrados et donc ca perturbe le flux qui est
+laminaire dans le cadre d'une aile non décrochée et devient turbulent, voir
+tourbillonnaire, ce qui provoque le décrochage, soit une perte de portance d’à
+peu près des ⅔.”
+
+Que ressent-on dans le cockpit en cas de décrochage ?
+“Dans le cockpit, il y a des signes avant-coureurs, indépendamment des signes
+qui sont liés aux instruments et de l'approche de la vitesse de décrochage ainsi que l'alarme de décrochage.
+indépendamment de cela, les signes avant- coureurs sont donc du buffeting : c'est une vibration qui justement est
+provoquée par l'écoulement de l'air au niveau de l'extrados. L'écoulement tourbillonnaire fait qu’il y a des
+vibrations qui sont ressenties au niveau du cockpit.”
+Quelles sont les procédures à suivre pour récupérer le décrochage d'un avion ?
+“C’est toujours la même, quel que soit le contexte de décrochage, parce qu'il y a plusieurs types de décrochage,
+c'est toujours de retrouver l'incidence de vol puisqu'un avion décroche toujours à la même incidence. Donc
+retrouver l'incidence de vol, concrètement c'est manche avant pour diminuer l'assiette et ainsi retrouver
+l'incidence de vol.”
+Il y a donc une idée un peu contre-intuitive qui vise à pousser le manche plutôt que de le tirer ?
+“Oui après contre intuitif je ne sais pas dans quelles mesures. Effectivement c'est contre intuitif dans le sens où
+quand on est en décrochage et qu'on perd ⅔ de la portance et bien l'avion va descendre et donc pour partir de ça
+il faut effectivement appliquer du manche avant, de manière à retrouver la portance.”
+Cette interview nous a permis de concrétiser toute la théorie que nous avions expérimentée jusque là. De plus,
+elle nous a fait découvrir un point de vue beaucoup plus large : celui d’un véritable pilote, qui a su nous expliquer
+toutes les conséquences que pourrait avoir une mauvaise gestion de vol.
+Figure 39-aile de l’avion de test du décrochage
+
+Pour comprendre concrètement le phénomène du décrochage, Mr Gilaber
+nous a permis de réaliser un vol en avion durant lequel il a volontairement
+provoqué une situation de décrochage. L’avion dans lequel nous sommes
+montés était équipé d’ailes dissymétriques (voir figure 39).
+Pour visualiser le décollement de la couche limite, nous avons installé des
+morceaux de laine le long de l’extrados (voir figure 40). Pendant une
+situation de vol “normale” ( angle d’incidence proche de 0°), les filets de
+laine étaient parfaitement plaqués le long de l’aile ( voir figure 41). Lorsque
+le pilote a augmenté l’angle d’incidence, nous avons pu observer les filets
+de laine se décoller progressivement de l’extrados : d’abord du côté du
+bord de fuite, puis vers le bord d’attaque. Une fois l’angle d’incidence de
+15° atteint, nous avons pu entendre une alarme : nous venions d’atteindre
+l’angle de décrochage. Pour ce qui est des filets de laine, nous pouvons
+observer qu’ils ne sont plus du tout plaqués : l’air ne porte plus l’aile (voir
+figure 42). De par son caractère impressionnant et potentiellement
+dangereux, nous pouvons tout à fait concevoir que les passagers des
+avions de tourisme n’ont pas forcément envie de l’expérimenter.
+
+18
+
+Nous avions également envie d’approcher les ressentis des pilotes d’avion à voltige. Pour cela, nous avons
+également pu expérimenter le virage en vallée. Celui-ci est particulièrement impressionnant de par son angle très
+important : environ 60°. Cette expérience a pu nous donner une petite idée des g positifs et négatifs qu’ont à
+subir les pilotes de voltige.
+figure 40-mise en place des morceaux
+de laine sur l’extrados
+
+figure 41-vol proche de 0°
+
+figure 42-angle de décrochage
+
+Cet échange avec Pierre Gilaber vient marquer la fin de nos 8 mois d’expérimentations et nous sommes heureux
+de terminer ce mémoire sur une note aussi concrète que l’expérimentation du décrochage en conditions réelles.
+Si les olympiades de physique nous ont permis d’en apprendre beaucoup sur le domaine de l’aéronautique, elles
+ont aussi été très enrichissantes sur le plan personnel. En effet, au cours de ces 8 mois, nous avons appris à
+travailler d’une nouvelle manière : en réponse à un échec. Nous avons dû comprendre que la spécificité de
+l'expérimentation était que tout ne pouvait pas marcher comme prévu et qu’il fallait apprendre à s’adapter. Cela
+nous a appris à innover, à réfléchir différemment et à parfois comprendre que la solution à un problème n’était
+pas toujours celle qui nous paraissait être la plus compliquée. De plus, nous avons appris à travailler en équipe :
+à faire confiance à l’autre afin de pouvoir déléguer et à dialoguer afin de trouver les meilleures solutions. Nous
+sommes persuadés que cet apprentissage sera particulièrement important dans nos études futures.
+Certes, ce projet nous a demandé beaucoup de travail en dehors des cours et quelques sacrifices au dépend
+d’autres activités, mais nous sommes particulièrement heureux d’avoir su le mener jusqu’à son terme et sommes
+très fiers d’avoir réussi à le concrétiser à 2. Les olympiades nous ont appris une nouvelle manière de travailler et
+nous ont permis de développer un véritable esprit d’équipe qui saura perdurer au-delà de ce projet.
+
+5. ​ Remerciements
+Nous avons eu la chance d’être particulièrement bien entourés lors de ce projet, par des personnes bienveillantes et à
+l’écoute, et nous souhaitons les remercier pour leur implication.
+Nous tenons tout d’abord à remercier tout particulièrement Mr FORT pour son accompagnement tout au long du projet et
+dont l’aide nous a été infiniment précieuse. Nous lui sommes particulièrement reconnaissant pour la manière dont il nous a
+toujours soutenus et encouragés. Nous remercions également Mr Gilaber pour avoir pris le temps de répondre à nos
+questions et pour la bienveillance dont il a su faire preuve. Un grand merci aux équipes de laborantins de notre lycée qui ont
+toujours fait le maximum pour nous permettre de travailler au mieux. Nous remercions également nos camarades de classe
+pour leurs encouragements tout au long du projet.
+Enfin, nous vous remercions de vous être intéressés à notre projet et d’avoir pris le temps de nous lire. Nous espérons avoir
+réussi à vous retranscrire la curiosité et l’authenticité qui a été la nôtre le long de ces 8 derniers mois.
+Lorenzo LUCCA et Anaelle NESME du Lycée Aristide Briand.
+
+6. ​ Bibliographie-sitographie
+https://si.blaisepascal.fr/1t-mesure-dune-force/
+
+https://www.lavionnaire.fr/ https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment
+
+https://www.lelivrescolaire.fr/manuels/physique-chimie-terminale-2020 + Livre “Initiation à l'aéronautique-préparer le BIA-9ème édition”-Cépaduès ÉDITIONS
+
+19
+
+

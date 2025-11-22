@@ -1,0 +1,949 @@
+Tu tires ou tu pointes ?
+Une histoire qui fait des vagues
+
+Eymerick Jarousse, Evan Geay, Macéo Mie, Cyprien Chabasse,
+Clément Durupt, Clément Fauconnet
+
+Accompagnés par Jean-Brice Meyer et Tristan Clément
+
+1
+
+Résumé
+Marseille… capitale mondiale de la pétanque. Et si nous aussi, du côté du LP2I, nous jouions à la
+pétanque ? Mais au lieu de taper une boule simplement contre une autre, mettons une feuille
+d’aluminium entre les deux ! Ce qui se passe alors est surprenant : on observe une série de cercles
+concentriques autour d’un point d'impact, très nets. Alors, nous nous sommes posés bon nombre de
+questions et nous avons essayé d’y répondre en menant une véritable démarche d’investigation :
+Comment se forment ces cercles concentriques ? Leurs nombres et rayons ont-ils un lien avec la façon
+de les lancer ? Les boules de pétanque sont-elles les plus adaptées pour observer le phénomène ? Le
+papier d’aluminium est-il le seul où l’on peut observer ces cercles ? Enfin bref, beaucoup de questions
+(et sans doute d’autres en cours de route) et aussi quelques réponses… C’est toute cette démarche et
+ce questionnement qui sont présentés dans ce mémoire.
+
+Sommaire
+Introduction
+
+Page 3
+
+I – Que voit-on si on fait varier la vitesse des billes lors de l’impact ?
+1 ) Choix des matériaux
+2 ) Dispositif expérimental et premières observations en fonction de la vitesse :
+a – Dispositif expérimental
+b – Influence de la vitesse sur la figure obtenue
+
+Page 3
+Page 3
+Page 5
+Page 5
+Page 6
+
+II – Analyse énergétique
+1 ) Quelle est l’énergie communiquée au papier aluminium ?
+2 ) Que devient cette énergie ?
+
+Page 9
+Page 9
+Page 9
+
+III – Etude mécanique et ondulatoire
+1 ) Présentation de l’hypothèse
+2 ) Calcul de la force exercée par une bille sur le papier d’aluminium
+3 ) Estimation de la déformation engendrée par le choc
+4 ) Conclusion de l’étude mécanique
+5 ) Un choc pas si élastique que ça
+
+Page 12
+Page 12
+Page 13
+Page 16
+Page 17
+Page 19
+
+Conclusion
+
+Page 20
+
+Bibliographie – Webographie
+[1] La vidéo du phénomène : https://www.youtube.com/watch?v=I4cVADCfHQY
+[2] Dureté des boules de pétanque https://www.pourlascience.fr/sd/physique/jeux-de-boulescreuses-ou-pleines-2613.php
+[3] https://fr.wikipedia.org/wiki/Temp%C3%A9rature_de_fusion_d%27un_polym%C3%A8re
+
+2
+
+Introduction
+Tout est presque dit dans le titre. Mais au moment où nous avons découvert le phénomène, rien n'a
+été fait pour trouver une explication.
+Lorsqu’on tape deux boules de pétanque sur une feuille de papier d’aluminium, des vagues se dessinent
+autour du point d’impact [1]. C’est un peu comme si on jetait un caillou dans l’eau, mais ici, les vagues
+restent figées dans le temps. Cela ressemble à une onde, mais une onde qui ne se propage pas. Cette
+figure veut nous raconter quelque chose, sans pour autant nous la révéler.
+Alors comment se forment ces vagues ? Est-ce pour des raisons thermiques ? mécaniques ? Observet-on quelque chose de similaire avec d’autres matériaux que de l’aluminium ? C’est ce que nous allons
+tenter de découvrir en menant une démarche d’investigation.
+
+I – Que voit-on si on fait varier la vitesse des billes lors de
+l’impact ?
+1 ) Choix des matériaux
+Nous avons pu découvrir ce phénomène dans une vidéo sur
+internet [1]. Bien entendu, aucune explication n’était donnée
+(sinon, cela aurait enlevé tout l’intérêt de faire ce projet).
+Nous avons alors décidé de reproduire le phénomène à l’aide de
+boules de pétanque, que nous avons simplement cognées l’une
+contre l’autre en intercalant du papier d’aluminium entre les 2.
+Le résultat, le voici (figure 1) : quelques cercles concentriques.
+Figure 1 : Cercles obtenus après le choc des boules de pétanque
+On remarque cela dit que la zone de contact entre les deux boules est loin d’être ponctuelle. Il s’agit de
+la zone centrale, dans laquelle aucune vague n’apparaît. Cela nous a semblé étrange puisque les boules
+de pétanque étant sphériques, on s’attendait à avoir une surface de contact quasi ponctuelle. Mais en
+réalité, en regardant la boule de pétanque après l’impact, il s’avère que celle-ci s’est aplatie lors du
+choc.
+Dès lors, nous nous sommes dit qu’il serait intéressant que le contact soit plus ponctuel pour voir si on
+obtenait plus de vagues. Pour cela, nous avons recherché des boules de plus petit diamètre que les
+boules de pétanque, et avec des duretés plus grandes.
+Nos boules de pétanque avaient un diamètre de 7,3 cm, et des recherches nous ont appris que la dureté
+des boules de pétanque était de l’ordre de 35 HRC [2], ce qui correspond à 110 kg/mm².
+En cherchant sur internet, nous avons vu que les roulements à bille pouvaient avoir des duretés
+nettement plus grandes, entre 60 et 64 HRC, soit pratiquement deux fois plus grandes que celle des
+3
+
+boules de pétanque. Nous en avons alors acheté 4, qui sont des roulements à billes de 4 cm de
+diamètre, utilisés généralement pour des camions.
+Il s’agit de billes en acier au chrome 52100 dont voici les caractéristiques :
+Module d'élasticité
+190-210 GPa
+Coefficient de Poisson
+0,27-0,30
+Dureté Rockwell C
+62
+Densité
+7,81
+Coefficient de dilatation thermique à 23-280 ° C 11,9 µm / m ° C
+Conductivité thermique (acier typique)
+46,6 W / mK
+Une fois reçues, nous les avons cognées, et effectivement, suite à l’impact, aucune trace, même pas
+une rayure sur la surface de la boule.
+Et lorsque nous les cognons en intercalant une feuille de papier aluminium entre les deux, voici ce que
+nous obtenons : figure 2
+
+1mm
+Figure 2 : Observations au microscope des cercles obtenus après le choc des roulements à billes
+sur une feuille d’aluminium
+Alors plusieurs questions se posent : en particulier sur les vagues obtenues. Leur nombre ainsi que les
+rayons ou leurs amplitudes varient-ils en fonction de la vitesse à laquelle les boules se cognent ?
+Des premières expériences très qualitatives nous ont alors montré que plus l’on cogne les boules avec
+une grande vitesse, et plus il y a de vagues concentriques. Alors, pour étudier cela quantitativement, il
+a fallu construire un dispositif expérimental adapté, permettant de contrôler la vitesse au moment de
+l’impact.
+
+4
+
+2 ) Dispositif expérimental et premières observations en fonction de la vitesse :
+a – Dispositif expérimental
+1 - Premier dispositif :
+Notre premier dispositif était le suivant : il était composé de 2 rampes permettant de guider les billes
+jusqu’à leur contact. figures 3 et 4.
+Bille acier
+
+Feuille aluminium
+
+Bille acier
+
+Figure 3 : Schéma du dispositif expérimental
+
+Figure 4 : Schéma du dispositif expérimental
+Ce dispositif présentait néanmoins 2 problèmes :
+Les billes étaient lâchées à la main et il fallait alors de la réussite pour que le choc se passe exactement
+à l’endroit voulu, c’est-à-dire à l’endroit où était disposée la feuille d’aluminium.
+D’autre part, le choc entre les billes n’était pas frontal. Une fois que les billes se cognaient, elles avaient
+du mal à repartir en arrière. Or nous comptions faire des études énergétiques dans le but de connaître
+la quantité d’énergie que les billes perdaient lors du choc. Nous avons alors choisi de confectionner un
+autre dispositif expérimental :
+2 – Deuxième dispositif :
+Dans ce dispositif, figure 5, les boules sont maintenues par 2 électroaimants contrôlés par le même
+circuit électrique, ce qui permet de lâcher les billes en même temps. Nous pouvons faire varier la
+hauteur des électroaimants de façon à faire varier la vitesse des billes au moment de l’impact.
+
+5
+
+Figure 5 : Schéma du deuxième dispositif expérimental
+Comme la planche arrondie est un arc de cercle, nous avons dû faire en sorte que la longueur des fils
+maintenant les billes soit ajustable. Les deux éléments en gris en haut du dispositif permettent
+également d’ajuster le point de fixation des deux fils par rapport à la direction horizontale, de sorte que
+lors du choc, les fils soient dans des directions verticales (comme le montrent les lignes en pointillés sur
+le schéma). Enfin, le papier d’aluminium est maintenu grâce à deux morceaux de bois dans lesquels nous
+avons fait une incision pour y insérer la feuille.
+Des premiers lâchers que nous avons filmés ont pu montrer que le choc sur le papier d’aluminium se
+faisait le plus souvent à l’endroit prévu, mais pas toujours. Le problème vient en particulier de l’attache
+du fil au niveau des billes. Comme il n’a pas été possible de percer la bille (et oui.. c’est l’inconvénient
+d’avoir choisi de travailler avec une grande dureté), nous avons collé un élément métallique sur la bille,
+doté d’un pas de vis dans lequel nous avons vissé un crochet. C’est à ce crochet qu’est attaché le fil.
+Nous avons alors remarqué que parfois (figure 6), la bille arrivait de
+telle sorte que l’axe du crochet n’était pas selon la direction du fil, ce
+qui engendrait alors un retard d’une bille par rapport à l’autre. Nous
+avons alors dû, lors de nos mesures tenir compte de cela pour ne
+prendre en compte que les chocs qui se faisaient dans le plan médian.
+Nous réfléchissons en parallèle à modifier l’attache des fils pour ne plus
+être gênés par cela.
+
+Figure 6 : Illustration de
+l’attache des billes au dispositif
+
+Maintenant que nous avons un dispositif expérimental qui nous paraît satisfaisant (même s’il est
+perfectible), nous pouvons l’exploiter.
+
+b ) Influence de la vitesse sur la figure obtenue :
+Voyons en particulier ce que nous observons sur le papier d’aluminium lorsqu’on modifie la vitesse des
+billes lors de l’impact. La vitesse des billes lors de l’impact est connue en appliquant simplement la
+conservation de l’énergie mécanique, en supposant que les frottements fluides sont négligeables :
+
+𝐸𝑚 (𝑂) = 𝐸𝑚 (𝐴) ⟺ (𝐸𝑐 (𝑂) + 𝐸𝑝 (𝑂)) = (𝐸𝑐 (𝐴) + 𝐸𝑝 (𝐴))
+1
+⟺ ( 𝑚𝑣𝑂2 + 0) = (0 + 𝑚𝑔ℎ𝐴 ) ⟺ 𝑣𝑂 = √2𝑔ℎ𝐴
+2
+6
+
+Voici alors ce que nous obtenons pour différentes vitesses des billes au moment du choc : figure 7
+
+1,6 m/s
+
+1,8 m/s
+
+2,2 m/s
+m/s
+
+2,4 m/s
+
+2,6 m/s
+
+2,7m/s
+
+2,8 m/s
+
+3,0 m/s
+
+Figure 7 : Observation au microscope des cercles obtenus sur le papier d’aluminium pour différentes vitesses des billes au moment de
+l’impact
+
+Nombre de cercles obtenus pour différentes vitesses d’impact : figure 8
+18
+
+Nombre de cercles
+
+16
+14
+12
+10
+8
+6
+
+Vitesse (m/s)
+
+4
+1,50
+
+1,70
+
+1,90
+
+2,10
+
+2,30
+
+2,50
+
+2,70
+
+2,90
+
+3,10
+
+Figure 8 : Graphique représentant le nombre de cercles observés en fonction de la vitesse des billes au moment de l’impact
+Distance à laquelle se trouve le cercle le plus éloigné du point d’impact en fonction de la vitesse : figure 9
+2,40
+
+Distance par rapport au centre (mm)
+
+2,20
+2,00
+1,80
+1,60
+1,40
+1,20
+
+1,00
+
+Vitesse (m/s)
+
+0,80
+1,50
+
+2,00
+
+2,50
+
+3,00
+
+3,50
+
+Figure 9 Autre
+: Graphique
+la distance des
+à laquelle
+se trouve
+le en
+cercle
+le plusdeéloigné
+du point
+constatreprésentant
+: rayons et répartition
+différents
+cercles
+fonction
+la vitesse
+des billes lors de
+d’impactl’impact
+par rapport
+au centre
+du point d’impact en fonction de la vitesse des billes au moment de
+: figure
+10
+l’impact
+7
+
+2,50
+
+Distance par rapport au centre (mm)
+2,00
+1,50
+1,00
+0,50
+
+Vitesse (m/s)
+0,00
+1,50
+
+1,70
+
+1,90
+
+2,10
+
+2,30
+
+2,50
+
+2,70
+
+2,90
+
+3,10
+
+Figure 10 : Graphique représentant le rayon des cercles sur la feuille d’aluminium en fonction de la vitesse des billes lors de l’impact
+
+Ce graphique montre les rayons de tous les cercles en fonction de la vitesse des billes lors de l’impact.
+On retrouve donc le nombre de cercles sur une même colonne pour un vitesse donnée, ainsi que le
+rayon du cercle le plus éloigné du centre de l’impact. Il est alors intéressant de remarquer que souvent
+les cercles situés au milieu des figures obtenues sont plus resserrés que ceux situés loin de l’impact.
+C’est d’autant plus vrai lorsque la vitesse des billes est grande.
+
+Au vu de ces constatations, nous nous posons plusieurs questions :
+-
+
+-
+
+Nous avons alors voulu savoir, dans un premier temps, s’il y avait un rapport entre l’énergie
+communiquée au papier d’aluminium et la figure obtenue. Pour cela, il nous fallait mesurer
+l’énergie transmise au papier d’aluminium lors de l’impact.
+Nous aimerions calculer la force de pression subie par l’aluminium lors du choc pour évaluer la
+déformation engendrée.
+
+Mais pour tout cela, il nous fallait refaire des mesures plus précises et plus complètes, comme par
+exemple pour la mesure de la durée de l’impact.
+Les mesures demandaient une telle précision qu’à l’heure où nous écrivons le mémoire, il ne nous a
+été possible d’en réaliser que pour 4 hauteurs différentes concernant les lâchers de billes (figure 11).
+Les observations du papier d’aluminium ont été réalisées également avec un matériel plus précis (voir
+figure 12), ce qui ne sera pas sans conséquences, comme nous le verrons par la suite. Voici d’ailleurs
+quelques clichés obtenus :
+
+1,1 m/s
+
+1,6 m/s
+
+2,3 m/s
+
+Figures 11 et 12 : Nouveaux clichés observés avec le matériel plus précis (image de gauche) – Echelle : barre rouge 1 mm.
+
+II – Analyse énergétique
+
+8
+
+II – Analyse énergétique
+1 – Quelle est l’énergie communiquée au papier d’aluminium ?
+Pour le savoir, nous avons lâché les billes depuis une hauteur ℎ𝐴 avec le dispositif précédent, puis nous
+avons noté à quelle hauteur ℎ𝐵 elles remontaient après le choc, sans présence de papier d’aluminium
+dans un premier temps, puis avec papier d’aluminium dans un deuxième temps. On note ℎ𝐵′ la hauteur
+à laquelle les billes remontent après l’impact sur le papier d’aluminium.
+Sans papier d’aluminium, on peut dire que la variation d’énergie mécanique perdue lors du choc, si on
+néglige les forces de frottement, est égale à :
+𝐸𝑚 (𝐵) − 𝐸𝑚 (𝐴) = (𝐸𝑐 (𝐵) + 𝐸𝑝 (𝐵)) − (𝐸𝑐 (𝐴) + 𝐸𝑝 (𝐴)) = 𝐸𝑝 (𝐵) − 𝐸𝑝 (𝐴) = 𝑚𝑔(ℎ𝐵 − ℎ𝐴 )
+Avec papier d’aluminium, l’énergie mécanique perdue par les billes est :
+𝐸𝑚 (𝐵′) − 𝐸𝑚 (𝐴) = (𝐸𝑐 (𝐵′) + 𝐸𝑝 (𝐵′)) − (𝐸𝑐 (𝐴) + 𝐸𝑝 (𝐴)) = 𝐸𝑝 (𝐵′) − 𝐸𝑝 (𝐴) = 𝑚𝑔(ℎ𝐵′ − ℎ𝐴 )
+Or on peut considérer que cette énergie perdue contient l’énergie perdue par les billes sans présence
+de papier d’aluminium. Si bien que l’énergie réellement transférée au papier d’aluminium est, en tenant
+compte des 2 billes :
+𝐸𝐴𝑙 = 2𝑚𝑔(ℎ𝐵 − ℎ𝐵′ )
+Nous avons réalisé ces mesures pour différentes hauteurs de ℎ𝐴 . Les mesures ont été réalisées 10 fois
+pour chaque hauteur avec feuille aluminium et de même sans feuille aluminium. Voici alors ce que
+nous obtenons : figure 13
+Energie (J)
+
+Figure 13 : Energie gagnée par l’aluminium lors
+de l’impact, en fonction de la vitesse des billes
+lors de l’impact.
+Vitesse (m/s)
+
+2 - Que devient cette énergie ?
+Nous pouvons penser qu’une partie de cette énergie communiquée à l’aluminium permet la
+déformation, et une autre partie de cette énergie doit sans doute provoquer une élévation de
+température de l’aluminium. Autrement dit, l’énergie communiquée à l’aluminium, 𝐸𝐴𝑙 doit se répartir
+en deux termes : une énergie d’ordre mécanique 𝐸𝑚 et une énergie thermique Q :
+𝐸𝐴𝑙 = 𝐸𝑚 + 𝑄
+Pour évaluer l’énergie thermique gagnée par l’aluminium, nous avons utilisé une caméra thermique.
+En effet, sachant que, en appelant 𝑚𝐴𝑙 la masse d’aluminium qui gagne cette énergie thermique, 𝑐𝐴𝑙
+la chaleur massique de l’aluminium, 𝑇𝑓 𝑒𝑡 𝑇𝑖 respectivement les températures immédiatement après
+et avant le choc :
+𝑄 = 𝑚𝐴𝑙 × 𝑐𝐴𝑙 × (𝑇𝑓 − 𝑇𝑖 )
+9
+
+La mesure de la variation de température nous permettra de déterminer l’énergie thermique 𝑄.
+Cela dit, cela impose de connaître la masse d’aluminium qui gagne cette énergie thermique
+immédiatement après le choc. Pour cela, nous avons supposé que la zone concernée par ce gain
+d’énergie thermique était la zone aplatie du papier d’aluminium, représentant la surface S impactée
+par les billes (on voit très bien cette zone centrale figure 12). Ainsi, connaissant la masse volumique 𝜌𝐴𝑙
+de l’aluminium, et après avoir mesuré la masse d’une surface donnée d’aluminium, il a été possible
+d’en déduire son épaisseur 𝑒. Ainsi, nous pouvons écrire finalement :
+𝑄 = 𝜌𝐴𝑙 × 𝑆 × 𝑒 × 𝑐𝐴𝑙 × (𝑇𝑓 − 𝑇𝑖 )
+Problème : expérimentalement, nous ne mesurons aucune élévation de température de l’aluminium
+après le choc. Comment l’expliquer ?
+Pourtant il nous semble bien qu’en cognant deux objets l’un contre l’autre, cela provoque une élévation
+de température. C’est d’ailleurs ce que nous avons observé en faisant l’expérience sur du papier :
+En cognant les billes sur une feuille de papier, nous avons pu mesurer une élévation de la température
+immédiatement après l’impact, de l’ordre de 80°C, voire plus, car la caméra thermique a un certain
+temps de réponse et nous n’avons pas la température avant 1 dixième de seconde après le choc. Nous
+voyons d’ailleurs que le papier est brûlé localement au niveau de l’impact (figures 14 et 15)
+
+Figure 14 : Photographie d’une feuille
+de papier brûlée suite à plusieurs
+impacts
+
+Figure 15 : Photo issue d’une caméra
+thermique du papier après le choc des billes
+
+Alors pourquoi n’en est-il pas de même pour l’aluminium ? La question nous semble importante car
+nous voulons savoir ce que devient l’énergie communiquée à la feuille d’aluminium.
+Alors pour comprendre les différences observées entre la feuille d’aluminium et la feuille de papier,
+nous avons recherché les caractéristiques intéressantes de ces 2 matériaux :
+Aluminium
+Papier
+
+Conductivité thermique W/m.K
+
+Chaleur massique J/kg.K
+
+185
+0,05
+
+900
+1300
+
+Masse volumique kg/m3
+2700
+734,6
+
+Épaisseur mm
+0,02
+De 0,16 à 0,52
+
+La différence flagrante est donc la conductivité thermique, qui montre que l’énergie thermique gagnée
+dans la zone de l’impact se dissipe très vite dans la feuille d’aluminium, contrairement à ce qui se passe
+dans le papier. C’est donc sans doute pour cela que la température quelques dixièmes de secondes
+après le choc est si élevée dans le papier contrairement à l’aluminium.
+
+10
+
+On peut alors supposer que l’énergie thermique se répartissant rapidement sur la surface de la feuille
+de papier aluminium, la grande surface du papier aluminium en contact avec l’air fait rapidement
+perdre cette énergie thermique, ce qui serait responsable du fait que nous ne parvenons pas à mesurer
+l’élévation de température de l’aluminium.
+Et peut-être aussi que la plus faible capacité thermique de l’aluminium traduit une plus grande difficulté
+à faire gagner de l’énergie thermique à l’aluminium. D’autant plus que la masse concernée de
+l’aluminium est très faible.
+Finalement, la différence observée entre le papier et l’aluminium pourrait venir du fait que l’énergie
+transmise par les billes se transforme essentiellement en énergie thermique dans le cas du papier, et
+en énergie mécanique conduisant à la formation des vagues dans le cas de l’aluminium.
+Pour essayer de vérifier cette hypothèse, nous avons refait l’expérience cette fois-ci avec une feuille de
+plastique. Il s’agit de feuille transparente de 200 µm d’épaisseur, en PVC.
+La conductivité thermique du PVC est entre 0,16 et 0,20 W/m.K et la chaleur massique est environ 1000
+J/kg.K
+Et voici ce que nous observons avec la feuille de plastique : figure 16
+
+Figure 16 : Observations au microscope du point d’impact des billes sur une feuille de plastique
+Non seulement le plastique fond dans la zone de l’impact, mais il apparaît également des vagues de
+déformation du plastique.
+Dans la littérature scientifique, nous avons vu que le PVC commence à se ramollir autour de 80°C, et
+fond complètement aux alentours de 125°C [3].
+Cette expérience semble donc infirmer notre hypothèse précédente qui visait à dire que si la
+température de l’aluminium n’augmente pas, cela provient du fait que l’énergie transmise à l’aluminium
+lors du choc est intégralement transformée en énergie mécanique. En effet, on voit bien dans le cas du
+PVC que celui-ci chauffe et pourtant cela n’empêche pas la formation des ondulations autour du point
+d’impact.
+En fait, nous avons eu l’occasion de nous entretenir avec Florian Moreau, chercheur à l’institut Pprime
+de l’Université de Poitiers à ce sujet. Et il s’avère que si nous ne parvenons pas à mesurer une élévation
+de la température de l’aluminium, cela provient du fait qu’il est très réfléchissant. Son coefficient
+d’émissivité est très faible et la caméra thermique mesure davantage les ondes électromagnétiques
+réfléchies par l’aluminium que celles émises par l’aluminium.
+11
+
+Florent Moreau nous a alors proposé de peindre nos papiers d’aluminium avec une peinture noire de
+coefficient d’émissivité connue dans son laboratoire. C’est ce qui est en train d’être réalisé à l’heure où
+nous écrivons le mémoire. Nous serons alors sans doute en mesure de mesurer l’élévation de
+température après le choc.
+Remarques :
+1 – L’expérience semble aussi montrer que finalement, les vagues observées ne sont pas être liées à
+l’élévation de la température. Car les cercles dans le cas du PVC sont assez éloignés de la zone fondue
+de l’impact. Vue la faible conductivité thermique du PVC, la propagation de l’énergie thermique dans
+le PVC ne va pas jusque-là et cela a été confirmé par des observations avec la caméra thermique.
+Cela dit, est ce que la température aurait pu malgré tout être responsable du phénomène, en créant
+une dilatation qui aurait ensuite déformé le matériau en le poussant depuis la zone centrale vers
+l’extérieur ?
+Pour étudier cette hypothèse, nous avons cherché les coefficients de dilation thermique des matériaux
+avec lesquels nous avons travaillé :
+Coefficient de
+dilatation thermique
+(.10-6 K-1)
+
+PVC
+
+Papier
+
+Aluminium
+
+78
+
+35-55
+
+23
+
+On s’aperçoit que le coefficient de dilatation du PVC est bien plus fort que celui de l’aluminium. Or on
+observe beaucoup plus de vagues sur l’aluminium que sur le PVC. Cela indique donc que des effets de
+dilatation ne sont pas responsables de la formation des vagues sur l’aluminium.
+2 – Deuxième remarque: il y a une question de temporalité qui semble également indiquer que
+l’énergie thermique n’est pas à l’origine des vagues observées. En effet, selon la littérature scientifique,
+la propagation de l’énergie thermique dans le papier d’aluminium devrait être de l’ordre de quelques
+secondes. Or les vagues semblent apparaître plus rapidement. Le phénomène semble quasi immédiat.
+Donc s’il y a propagation de quelque chose, cela doit se faire plus rapidement.
+Alors explorons maintenant une autre piste et voyons si ce qui se propage n’est pas plutôt une onde
+mécanique ou une déformation mécanique sans que ce soit une onde.
+
+III – Etude mécanique et ondulatoire
+1 ) Présentation de l’hypothèse :
+Une autre hypothèse pourrait expliquer l’apparition de ces cercles : lors du choc par les billes, le papier
+d’aluminium subit localement une grande pression, qui pourrait alors le déformer. Il s’aplatirait alors à
+l’endroit du choc, et comme le volume de la matière resterait malgré tout constant, l’épaisseur de la
+feuille d’aluminium diminuerait lors de l’impact, ce qui augmenterait la surface. On pourrait modéliser
+cela de la façon suivante : à l’endroit de l’impact, on passerait d’un cylindre de caractéristiques
+géométriques e, h, à e’, h’, tel que le montre le schéma suivant : figure 17
+
+12
+
+h
+h’
+e
+
+e’
+
+Figure 17 : Illustration de l’évolution de la forme du point d’impact de la feuille d’aluminium avant et après le choc
+Cette augmentation de surface pousserait alors le papier aluminium sur le côté, et pourquoi pas,
+conduirait à son plissement sous forme de vagues concentriques. Et d’autre part, la compression
+temporaire peut être élastique. On pourrait alors avoir une oscillation de la géométrie de l’aluminium,
+qui pourrait être à l’origine d’ondes qui se propageraient depuis le point d’impact vers la périphérie.
+Alors voyons maintenant si ces deux hypothèses sont possibles, en évaluant la déformation subie par
+le papier d’aluminium lors du choc.
+
+2 ) Calcul de la force exercée par une bille sur le papier d’aluminium :
+Représentons les billes au moment du choc : figure 18
+
+Figure 18 : Schéma
+représentatif des billes au
+moment de l’impact
+
+D’après la deuxième loi de Newton appliquée à la bille A, la bille passe d’une vitesse ⃗⃗⃗
+𝑣𝑖 immédiatement
+avant le choc, à une vitesse ⃗⃗⃗⃗
+𝑣𝑓 immédiatement après le choc, durant la durée du choc ∆𝑡
+L’accélération de la bille lors du choc est donc
+𝑎=
+
+𝑣𝑓 − ⃗⃗⃗
+𝑣𝑖
+∆𝑣 ⃗⃗⃗⃗
+=
+∆𝑡
+∆𝑡
+
+Projeté sur l’axe (Ox),
+𝑎𝑥 =
+
+𝑣𝑓𝑥 − 𝑣𝑖𝑥 𝑣𝑓 + 𝑣𝑖
+=
+∆𝑡
+∆𝑡
+
+Comme par ailleurs,
+⃗
+⃗⃗⃗⃗⃗⃗⃗⃗⃗
+∑𝐹
+𝑖 𝑒𝑥𝑡 = 𝑂
+𝑖
+
+En appelant 𝑃⃗ la force de pesanteur appliquée à la bille, et 𝐹 la force exercée par le papier aluminium
+sur la bille,
+13
+
+⃗ = 𝑚𝑎
+𝑃⃗ + 𝐹 + 𝑇
+Comme
+𝑃𝑥 = 0
+𝑇 =0
+𝐹𝑥
+⃗ ( 𝑥
+𝑃⃗ (𝑃 = −𝑃) 𝑇
+𝑇 = 𝑇) 𝑒𝑡 𝐹 (𝐹 )
+𝑦
+
+𝑦
+
+𝑦
+
+On en déduit que
+𝐹𝑥 = 𝑚
+
+𝑣𝑓 + 𝑣𝑖
+∆𝑡
+
+Du fait de la présence des deux billes, on peut donc dire que la feuille d'aluminium subit une force
+𝑣 +𝑣𝑖
+
+égale à deux fois Fx : 𝐹 = 2𝑚 𝑓
+
+∆𝑡
+
+Les vitesses 𝑣𝑓 et 𝑣𝑖 peuvent être déterminées en mesurant la hauteur ℎ de laquelle s’élance la boule
+de départ, et en notant la hauteur ℎ′ à laquelle elle remonte. En effet, en appliquant la conservation
+de l’énergie cinétique dans un premier temps avant le choc :
+1
+𝐸𝐶 = 𝑚𝑣𝑖2 = 𝑚𝑔ℎ ⟺ 𝑣𝑖 = √2𝑔ℎ
+2
+Et de même après le choc :
+1
+2
+𝐸𝐶 = 𝑚𝑣𝑖𝑓
+= 𝑚𝑔ℎ′ ⟺ 𝑣𝑓 = √2𝑔ℎ′
+2
+Donc
+𝐹 = 2𝑚
+
+√2𝑔ℎ′ + √2𝑔ℎ
+∆𝑡
+
+Nous connaissons déjà les hauteurs h et h’, mais qu’en est-il de la durée du choc ?
+En filmant le choc avec une caméra à 1000 images par seconde, nous n’arrivons pas à avoir une seule
+image pile au moment de l’impact. Le choc dure donc un temps sûrement très inférieur à 1 ms.
+Pour mesurer cette durée, nous avons eu l’idée de faire un circuit électrique qui se ferme lorsque les
+billes se touchent. Le circuit est illustré sur le schéma suivant : figure 19
+
+Résistance
+
+Générateur
+
+Carte
+d’acquisition
+Figure 19 : Schéma du dispositif expérimental utilisé pour mesurer la durée de l’impact des billes
+
+14
+
+Nous avons alors réalisé la mesure de la durée du contact sans papier d’aluminium entre les
+boules, et avec papier d’aluminium entre les boules.
+Voici alors un exemple de mesure de la durée du choc : Avec papier d’aluminium entre les 2
+boules : figure 20
+
+Temps (µs)
+
+Figure 20 : Mesures obtenues sur lattis pro montrant la durée de l’impact des billes
+
+Et voici ici le graphique qui montre comment évolue la durée de contact en fonction de la
+hauteur des billes au départ avec papier aluminium entre les billes (figure 21)
+170
+
+Durée de l’impact (µs)
+160
+150
+
+140
+130
+120
+110
+100
+90
+
+Hauteur (cm)
+80
+0
+
+5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+Figure 21 : Evolution de la durée du choc en fonction de la hauteur à partir de laquelle les billes sont lâchées
+15
+
+On peut donc tracer la force subie par chaque bille en fonction de la vitesse des billes au point
+d’impact : figure 21 bis
+
+Force totale subie par l'aluminium (N)
+30000
+25000
+20000
+15000
+10000
+5000
+
+vitesse des billes (m/s)
+
+0
+0
+
+0,5
+
+1
+
+1,5
+
+2
+
+2,5
+
+Figure 21 bis : Evolution de la force subie par l’aluminium en fonction de vitesse des billes lors de l’impact
+
+3 – Estimation de la déformation engendrée par le choc
+En termes de pression, notée 𝑷𝒓 , quelle est la contrainte engendrée ?
+
+𝑃𝑟 =
+
+𝐹
+√ℎ + √ℎ′
+√2𝑔ℎ + √2𝑔ℎ′
+= 2𝑚
+= 2𝑚√2𝑔
+𝑆
+𝑆∆𝑡
+𝑆∆𝑡
+
+Les surfaces S de contact ont été évaluées à partir des clichés :
+On estime qu’il s’agit de la zone centrale sans ondulation.
+
+À partir de là, comment estimer la déformation engendrée par le
+coup donné sur le papier d’aluminium ?
+S est la surface de contact entre le papier d’aluminium et les billes. Nous l’avons évaluée en considérant
+qu’il s’agit de la zone dans laquelle n’apparaît aucun cercle.
+Si la déformation est temporaire et élastique, elle peut être modélisée par la loi d’Hooke.
+Dans ce cas-là, on aurait, en appelant 𝜀𝑙 la déformation relative de l’épaisseur de l’aluminium, que l’on
+peut nommer déformation longitudinale :
+𝜀𝑙 =
+
+𝑃𝑟
+𝐸
+
+Où E est le module d’Young de l’aluminium (E = 69 GPa).
+Et la déformation relative de la surface de l’aluminium, appelée déformation transversale :
+𝜀𝑡 = 𝜈𝜀𝑙
+Où 𝜈 est le coefficient de Poisson de l’aluminium (𝜈 = 0,34).
+Voici alors comment évoluent les déformations relatives de l’épaisseur et de la largeur de la feuille
+d’aluminium dans la zone du contact : figures 22 et 23
+
+16
+
+Déformation relative selon l’épaisseur
+
+Vitesse de billes (m/s)
+
+Figure 22 : Graphique représentant la variation d’épaisseur relative en fonction de la vitesse des billes
+
+Déformation relative selon la surface
+
+Vitesse de billes (m/s)
+
+Figure 23 : Graphique représentant la déformation relative de l’aluminium dans le plan de la feuille en fonction
+de la vitesse des billes
+
+4 - Conclusion sur l’étude mécanique :
+Finalement, on peut imaginer que ces déformations peuvent être à l’origine d’ondes au sein de la feuille
+d’aluminium conduisant aux cercles autour de la zone d’impact. Pourquoi penser cela ?
+Tout d’abord, les déformations relatives calculées dans la partie précédente (en supposant un choc
+élastique) ne sont pas négligeables. Il faut donc bien dans ce cas-là que cette déformation se répercute
+dans les matériaux.
+Et comme nous l’évoquions, cela peut se faire sous la forme d’onde transversale qui se propagent dans
+le matériau.
+En effet, la clarté des images obtenues permettent de se rendre compte d’une certaine régularité dans
+la position des vagues concentriques, comme le montre le cliché suivant : .
+
+17
+
+En notant les rayons des ondulations pour chacun
+des clichés obtenus pour 4 vitesses de billes
+différentes, voici ce que l’on obtient : Figure 24
+On s’aperçoit que la différence entre les rayons
+des cercles, qui correspondrait à une longueur
+d’onde, est peu différente pour différentes
+vitesses de billes au moment de l’impact.
+Autrement dit, puisque d’un cliché à l’autre, la
+longueur d’onde resterait sensiblement la même,
+la célérité des ondes devrait en être de même, ce
+qui est cohérent avec une description
+ondulatoire, puisque la célérité d’une onde dans
+le milieu de dépend que des caractéristiques du
+milieu de propagation (en supposant le milieu
+non dispersif).
+1600
+
+Rayon des cercles (µm)
+
+1400
+1200
+1000
+800
+600
+400
+200
+
+Vitesse des billes (m/s)
+
+0
+0
+
+0,5
+
+1
+
+1,5
+
+2
+
+2,5
+
+Figure 24 : Rayons des cercles en fonction de la vitesse des billes
+
+Cette onde transversale serait alors issue de la vibration de l’épaisseur et de la surface de l’aluminium
+lors de l’impact.
+Par contre, il est intéressant de voir que, malgré le fait que l’énergie donnée à l’aluminium augmente
+avec la vitesse des billes, cela ne change pas le nombre de périodes spatiales observées sur les clichés,
+ni leur répartition par rapport au centre. Alors peut-être qu’une plus grande énergie ne modifie pas
+cela, mais modifie l’amplitude des ondulations.
+Mais comment mesurer l’amplitude des ondulations pour vérifier cette
+hypothèse ?
+Ces derniers jours, nous avons eu l’occasion de réaliser des observations de nos
+clichés au SP2MI (Faculté des Sciences Physiques Mathématiques Mécaniques et
+Informatiques), avec Frédéric Pailloux, chercheur à l’université de Poitiers, avec un
+microscope ultra performant (figure 25) qui, par un jeu de focalisation, permet
+l’observation de nos clichés en 3 dimensions. Voici quelques images issues de nos
+observations : figures 26 et 27 a, b c.
+
+Figure 25 : Microscope du SP2MI
+
+18
+
+Figure 26 : Figure complète en 3D –
+
+Figure 27 -a
+
+Figure 27 -b
+
+A
+
+Figure 27 a) – profile de l’aluminium selon la direction tracée sur la figure 27 b) – Figure 27 c) : mesure de
+la côte de l’aluminium selon cette direction.
+côte (µm)
+
+Figure 27 c
+
+Distance par rapport au point A (µm)
+
+Ces premières observations montrent qu’il nous sera possible de mesurer l’amplitude des ondulations
+pour voir s’il y a un lien entre l’énergie transmise à l’aluminium et l’amplitude des ondulations.
+
+5 – Un choc pas si élastique que cela
+Cela dit, nous venons de faire une nouvelle observation : nous avons à nouveau cogné les deux billes
+sur le papier d’aluminium, puis nous avons coupé la feuille d’aluminium de sorte de pouvoir observer
+la zone percutée selon sa tranche, c’est-à-dire selon l’épaisseur du papier.
+19
+
+Et le résultat est très intéressant : on voit nettement que la zone
+percutée a une épaisseur plus faible que la zone autour du point
+d’impact (figure 28).
+Alors cela a au moins 2 conséquences :
+-
+
+-
+
+Tout d’abord, la déformation du papier d’aluminium lors de
+l’impact n’est pas élastique. Elle l’est probablement partiellement,
+mais elle est aussi en partie plastique puisque l’épaisseur du
+papier ne reprend pas sa valeur initiale.
+Comme la masse du papier d’aluminium ne varie pas et que
+l’épaisseur diminue sous l’impact, la surface de la feuille dans la
+zone de l’impact a forcément augmenté. Ce déplacement de
+Figure 28 : Observation latérale au
+matière a pu pousser la feuille d’aluminium depuis le point
+microscope de la feuille d’aluminium
+d’impact vers l’extérieur, provoquant ainsi un plissement de
+après l’impact
+l’aluminium en forme d’accordéon.
+Avec cette hypothèse, on pourrait penser que les cercles observés peuvent donc résulter d’un plissement
+de la feuille d’aluminium. Grâce aux observations réalisées au SP2MI, nous pouvons tenter de répondre à
+cette hypothèse. En effet, nous pouvons estimer l’augmentation de la surface de l’aluminium après l’impact
+à partir du profil des ondulations, et comparer cette augmentation à la diminution du volume de
+l’aluminium. Mais cette comparaison ne sera possible que si nous parvenons à mesurer beaucoup plus
+précisément que nous l’avons fait (figure 28) l’épaisseur de l’aluminium après l’impact. Nous avons déjà
+une idée pour réaliser cette mesure.
+
+Conclusion –
+Nos expériences nous ont permis d’améliorer notre compréhension du phénomène se produisant lors
+du choc de deux billes en métal sur une feuille d’aluminium. Notamment au niveau des cercles formés
+sur la feuille, leurs propriétés et leur origine. Ces cercles proviendraient d’ondes mécaniques
+transversales se propageant à travers la feuille d’aluminium. L’énergie thermique du choc n’aurait pas
+d'influence sur les cercles.
+Nous comptons par la suite changer le type de feuilles utilisées pour observer une propagation
+différentes des ondes car cette propagation dépend du matériau dans lequel les ondes se déplacent.
+Nous nous sommes procurés des feuilles composées de métaux différents de l’aluminium afin
+d’observer s'il y a des différences au niveau des cercles ou bien si le phénomène est toujours observable
+avec d’autres métaux. Par ailleurs, nous avons l'intention d’observer l’onde mécanique en question à
+l’aide d’une caméra à haute précision en collaboration avec l’université de Poitiers.
+Nous remercions Aurélie Elie et Florence Baudiffier qui nous ont aidés dans notre projet mais aussi
+Romain Bellanger ingénieur d’études à l’institut Pprime de Poitiers, Florian Moreau, chercheur à
+l’institut Pprime de Poitiers, et Frédéric Pailloux, chercheur au SP2MI de Poitiers, avec qui nous avons
+pu échanger à propos de notre projet.
+
+20
+
+
