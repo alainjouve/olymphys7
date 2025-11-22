@@ -68,7 +68,7 @@ class Equipesadmin
     private ?Uai $uaiId = null;
 
     #[ORM\ManyToOne]
-    private ?Centrescia $centre;
+    private ?Centrescia $centre=null;
 
 
     #[ORM\Column(length: 255, nullable: true)]

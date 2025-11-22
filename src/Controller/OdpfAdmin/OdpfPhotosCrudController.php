@@ -495,7 +495,12 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
 
         $idTypeSujet=null;
-        $ed=$this->requestStack->getSession()->get('edition')->getEd()-1;//L'édition qui précéde l'édition en cours
+        $ed=$this->requestStack->getSession()->get('edition')->getEd();
+        if(new \DateTime('now') < $this->requestStack->getSession()->get('edition')->getConcourscia()){
+            $ed=$this->requestStack->getSession()->get('edition')->getEd()-1;//L'édition qui précéde l'édition en cours
+
+         }
+
         $idEdPassee=$this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $ed])->getId();
         $idTypeSujet=$this->requestStack->getSession()->get('idTypesujet');
         $idEquipe=$this->requestStack->getSession()->get('idEquipe');

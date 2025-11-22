@@ -57,13 +57,17 @@ class OdpfEquipesPassees
     public function __toString()
     {
         $this->getLettre() != null ? $num = $this->getNumero() . '-' . $this->getLettre() : $num = $this->getNumero();
+        $lieu=$this->getVille();
         if ($this->editionspassees !== null) {
             $Ed = $this->editionspassees->getEdition();
+            if( $this->selectionnee) {
+                $lieu = 'CN';
+            }
         } else {
             $Ed = 'NA';
 
         }
-        return $Ed . '-' . $num . '-' . $this->getTitreProjet();
+        return $Ed . '-' . $num . '-' . $lieu.'-'.$this->getTitreProjet();
     }
 
     public function __construct()

@@ -744,6 +744,17 @@ class EquipesadminCrudController extends AbstractCrudController
             $maj_profsequipes = new Maj_profsequipes($this->doctrine);
             $maj_profsequipes->maj_profsequipes($entityInstance);
         }
+        else{//equipes technique
+            //pour les cia
+            if($entityInstance->getCentre()!=null) {
+                $entityInstance->setVille($entityInstance->getCentre()->getCentre());
+            }
+            else{//Concours national
+
+                $entityInstance->setSelectionnee(true);
+            }
+
+        }
         $rempliOdpfEquipesPassees = new OdpfRempliEquipesPassees($this->doctrine);
         $rempliOdpfEquipesPassees->OdpfRempliEquipePassee($entityInstance);
         parent::persistEntity($entityManager, $entityInstance);
