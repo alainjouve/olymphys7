@@ -58,6 +58,7 @@ class OdpfEquipesPassees
     {
         $this->getLettre() != null ? $num = $this->getNumero() . '-' . $this->getLettre() : $num = $this->getNumero();
         $lieu=$this->getVille();
+        $Ed='NA';
         if ($this->editionspassees !== null) {
             $Ed = $this->editionspassees->getEdition();
             if( $this->selectionnee) {

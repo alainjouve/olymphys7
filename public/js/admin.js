@@ -186,6 +186,7 @@ function choixEquipe(s)//Permet de sélectionner le type de sujet des photos de 
     //var select=document.getElementById('choixtypesujet');
     var idEquipe=s.value;
     var url = '/public/index.php/photos/choix_equipe_photo'
+    console.log(idEquipe);
     if(window.location.href.includes('localhost')){
         url='/photos/choix_equipe_photo'
     }
