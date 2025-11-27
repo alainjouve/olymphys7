@@ -4,10 +4,10 @@ $(document).ready(function () {
         $("#form1").submit();
     });
 
-    var inputPhoto=document.getElementById('photos_photoFiles')
-    var image=document.getElementById('photo_preview')
-    var affichephotos=document.getElementById('affichephotos')//affiche les photos que l'on choisit pour les déposer sur le site
-        if(inputPhoto!== null) {
+    var inputPhoto = document.getElementById('photos_photoFiles')
+    var image = document.getElementById('photo_preview')
+    var affichephotos = document.getElementById('affichephotos')
+    if (inputPhoto !== null) {
 
         inputPhoto.addEventListener('change', function (event) {
 
@@ -15,41 +15,41 @@ $(document).ready(function () {
             var files = event.target.files; // Récupère le fichier sélectionné
             const paragraph = document.createElement('p');
             paragraph.innerHTML = '';
-            affichephotos.innerHTML='';
-            var container=document.createElement('div');
+            affichephotos.innerHTML = '';
+            var container = document.createElement('div');
             container.className = 'row';
             affichephotos.appendChild(container);
-            for (var i=0; i < files.length; i++) {
+            for (var i = 0; i < files.length; i++) {
 
                 const file = files[i];
                 /*if (!file.type.startsWith('image/')) {
                     alert("Veuillez sélectionner uniquement des images");
                     continue;
                 }*/
-
-                var nameCheckbox=file.name.split('.')[0];
+                console.log(file);
+                var nameCheckbox = file.name.split('.')[0];
 
                 //image=document.getElementById('photo_preview' + i);
                 const image = document.createElement('img');
-                const checkbox=document.createElement("input");
+                const checkbox = document.createElement("input");
                 checkbox.type = 'checkbox';
-                checkbox.name = 'checkbox-'+ nameCheckbox;
+                checkbox.name = 'checkbox-' + nameCheckbox;
                 checkbox.label = 'Cocher pour téléverser';
                 checkbox.checked = !checkbox.checked;
                 image.width = 220;
                 image.setAttribute('name', file.name);
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
 
-                    var div0=document.createElement('div');
-                    div0.className='col';
-                    var div1 =document.createElement( "div");
+                    var div0 = document.createElement('div');
+                    div0.className = 'col';
+                    var div1 = document.createElement("div");
                     div1.setAttribute('class', 'card');
                     div1.style.width = '250px';
-                    var div2=document.createElement( "div");
+                    var div2 = document.createElement("div");
                     div2.setAttribute('class', 'card-header');
-                    div2.innerHTML='photo-'+file.name;
-                    var div3=document.createElement( "div");
+                    div2.innerHTML = 'photo-' + file.name;
+                    var div3 = document.createElement("div");
                     div3.setAttribute('class', 'card-body');
                     container.append(div0);
                     div0.appendChild(div1);
@@ -65,39 +65,7 @@ $(document).ready(function () {
             }
 
 
-
-
-
         })
-        }
-    const progressBar=document.getElementById('progressBar');//barre de progession du dépôt des photos
-    // Update progress
-    if(progressBar!==null) {
-        const xhr = new XMLHttpRequest();
-        xhr.upload.addEventListener("loadstart", (event) => {
-            progressBar.classList.add("visible");
-            progressBar.value = 0;
-            progressBar.max = event.total;
-        })
-        //xhr.open("POST", "upload.php", true);
-        xhr.addEventListener("progress", (e) => {
-                console.log(e)
-                const percent = (e.loaded / e.total) * 100;
-                console.log(percent);
-
-                progressBar.setAttribute(['width :'+percent]);
-                document.getElementById('status').innerText = `Uploaded ${Math.round(percent)}%`;
-
-        });
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                console.log('OK');
-                document.getElementById('status').innerText = 'Upload complete!';
-            } else {
-                document.getElementById('status').innerText = 'Error during upload.';
-            }
-        };
-
     }
 
 
@@ -162,11 +130,9 @@ $(window).on("unload", function () {//Pour que lors de la saisie de la répartit
 });
 $(window).on("load", function () {
     var tableau = document.getElementById("changejurescontainer")
-    if(tableau!==null) {
-        tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
-        tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
-        window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
-    }
+    tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
+    tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
+    window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
 
 });
 
@@ -195,6 +161,7 @@ function changeequipe(e, i, j) {
 
 
 }
+
 function changeequipecia(e, i, j) {
     var type = 'equipe';
     var data_value = e.value;
@@ -380,6 +347,3 @@ function allcheck(check) {
     }
 
 }
-
-
-
