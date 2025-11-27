@@ -11,6 +11,7 @@ use App\Entity\Elevesinter;
 use App\Entity\Equipesadmin;
 use App\Entity\Odpf\OdpfEditionsPassees;
 use App\Entity\Odpf\OdpfEquipesPassees;
+use App\Service\createAttestationsElevesCia;
 use DateTime;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
@@ -676,8 +677,8 @@ class ElevesinterCrudController extends AbstractCrudController
     }
 
     #[Route("/Admin/ElevesinteradminCrud/attestationsElevesTwig,{ideditionequipe}", name: "attestations_eleves_pdf")]
-    public function attestationsElevesPdf($ideditionequipe)//Ceete fonction crée les deux fichiers word et pdf en même temps
-        //Un essais de conversion d'un twig avec  $knpSnappyPdf mais problème du this->render qui va chercher dans les templates, répertoire protégé;
+    public function attestationsElevesPdf($ideditionequipe)//Cette fonction crée les deux fichiers word et pdf en même temps
+        //Un essai de conversion d'un twig avec  $knpSnappyPdf mais problème du this->render qui va chercher dans les templates, répertoire protégé;
     {
         $slugger = new AsciiSlugger();
         $idedition = explode('-', $ideditionequipe)[0];
@@ -709,6 +710,7 @@ class ElevesinterCrudController extends AbstractCrudController
                 ->setParameter('equipe', $equipe);
         }
         $liste_eleves = $queryBuilder->getQuery()->getResult();
+        $createAttestationCia=new CreateAttestationsElevesCia();
 
         $zipFile = new ZipArchive();
         $now = new DateTime('now');
@@ -717,15 +719,21 @@ class ElevesinterCrudController extends AbstractCrudController
             if ($liste_eleves != null) {
 
                 foreach ($liste_eleves as $eleve) {
+                    $filePath='odpf/attestations_eleves/'.$eleve->getEquipe()->getNumero();
+                    if(!file_exists($filePath)) {
+                        mkdir($filePath);
+                    }
+                    $fileNamepdf = $filePath . '/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($eleve->getequipe()->getCentre() . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.pdf';
+                    $createAttestationCia->createAttestationsElevesCia($eleve);
+                    $filenameword = $this->getParameter('app.path.tempdirectory') . '/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($centre . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.doc';
 
-                    $centre = '';
+                    /*$centre = '';
                     $lieu = '';
                     if ($eleve->getEquipe()->getCentre() != null) {
 
                         $centre = $eleve->getEquipe()->getCentre();
                         $lieu = $eleve->getEquipe()->getCentre()->getLieu();
                     }
-                    $filenameword = $this->getParameter('app.path.tempdirectory') . '/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($centre . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.doc';
                     $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($centre . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.pdf';
                     $filenameTemplate = '/templates/attestations/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($centre . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.html.twig';
 
@@ -883,7 +891,8 @@ class ElevesinterCrudController extends AbstractCrudController
                     $y = $pdf->getY();
                     $pdf->setXY(130, $y + 20);
                     $pdf->Cell(0, 8, iconv('UTF-8', 'windows-1252', 'Pascale Hervé'), '', 'C');
-                    $pdf->Output('F', $fileNamepdf);
+                    $pdf->Output('F', $fileNamepdf);*/
+
                     $zipFile->addFromString(basename($fileNamepdf), file_get_contents($fileNamepdf));
 
                     //Création du fichier word
@@ -971,6 +980,11 @@ class ElevesinterCrudController extends AbstractCrudController
                         $this->requestStack->getSession()->set('info','une erreur est survenue lors de la création des fichiers');
                     }
                     $objWriter->save($filenameword);
+                    if(!file_exists('odpf/attestations_eleves/'.$eleve->getEquipe()->getNumero())) {
+                        mkdir('odpf/attestations_eleves/'.$eleve->getEquipe()->getNumero());
+                    }
+                    copy($fileName,'odpf/attestations_eleves/'.$eleve->getEquipe()->getNumero().'/'.$fileName_);
+
                     $zipFile->addFromString(basename($filenameword), file_get_contents($filenameword));;
 
                 }

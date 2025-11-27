@@ -111,6 +111,13 @@
                         <a href="{{ path('inscrire_equipe', {'idequipe': equipe.id} ) }}" type="button"
                            class="btn btn-primary">Modifier </a>
                     {% endif %}
+                    {% if date()>app.session.get('edition').concourscia and equipe.selectionnee!=true %}<!-- Chaque professeur télécharge les attestations de participation de ses élèves sous form zip -->
+                        <a href="{{ path('telecharger_attestations_interacademiques',{'equipeId':equipe.id}) }}"
+                           type="button"
+                           class="btn btn-warning">Obtenir les attestations de participation des élèves </a>
+                    {% endif %}
+
+
                 </div>
                 {% if equipe.selectionnee==true %}
 
@@ -122,8 +129,8 @@
                     {% if is_granted('ROLE_PROF') %}
 
                         {% if  app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
-                        <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix:'liste_prof'}) }}">Retour
-                                à la liste des équipes</a></div>
+                            <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix:'liste_prof'}) }}">Retour
+                                    à la liste des équipes</a></div>
                         {% endif %}
                         {% if  app.user.roles|filter(v => v =='ROLE_JURY_CIA')!=[] %}
                             <div class="text-center"><a href="{{ path('cyberjuryCia_accueil') }}">Retour
@@ -139,47 +146,47 @@
 
     <hr>
 
-{% if equipe.inscrite==true %}
-    {# ############################# LISTE DES FICHIERS ################################################################ #}
+    {% if equipe.inscrite==true %}
+        {# ############################# LISTE DES FICHIERS ################################################################ #}
 
-    {% include 'adminfichiers/listefichiers.html.twig' %}
+        {% include 'adminfichiers/listefichiers.html.twig' %}
 
-    {# ############################# LISTE DES VIDEOS ################################################################## #}
+        {# ############################# LISTE DES VIDEOS ################################################################## #}
 
-    {% include 'adminfichiers/listevideos.html.twig' %}
+        {% include 'adminfichiers/listevideos.html.twig' %}
 
-    {# ############################# LISTE DES AUTORISATIONS PHOTOS ##################################################### #}
+        {# ############################# LISTE DES AUTORISATIONS PHOTOS ##################################################### #}
 
-    {% include 'adminfichiers/listeautorisations.html.twig' %}
-{% endif %}
+        {% include 'adminfichiers/listeautorisations.html.twig' %}
+    {% endif %}
     {# ############################# FIN DE LA PAGE ESPACE PROFESSEUR ################################################### #}
     <div class="well">
     {% if is_granted('ROLE_COMITE') or is_granted('ROLE_JURYCIA') or is_granted('ROLE_JURY') or is_granted('ROLE_ORGACIA') %}
 
-        {% if concours=='interacadémique' %}
-            {% if app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
-             <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix: centre.centre}) }}">Retour à
-                la liste des équipes</a>
-            {% endif %}
-            {% if app.user.roles|filter(v => v =='ROLE_JURYCIA')!=[] and "now"|date("m/d/Y") <= app.session.get('edition').concourscia|date("m/d/Y") %}
-            <div class="text-center"><a href="{{ path('cyberjuryCia_evaluer_une_equipe',{id: equipe.id}) }}">Retour vers
-                    l'évaluation
-                    de
-                    l'équipe</a>
+    {% if concours=='interacadémique' %}
+    {% if app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
+    <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix: centre.centre}) }}">Retour à
+            la liste des équipes</a>
+        {% endif %}
+        {% if app.user.roles|filter(v => v =='ROLE_JURYCIA')!=[] and "now"|date("m/d/Y") <= app.session.get('edition').concourscia|date("m/d/Y") %}
+        <div class="text-center"><a href="{{ path('cyberjuryCia_evaluer_une_equipe',{id: equipe.id}) }}">Retour vers
+                l'évaluation
+                de
+                l'équipe</a>
 
             {% endif %}</div>
         {% endif %}
         {% if concours=='national' %}
-                <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix:'liste_cn_comite'}) }}">Retour
-                        à la liste des équipes</a></div>
+            <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix:'liste_cn_comite'}) }}">Retour
+                    à la liste des équipes</a></div>
         {% endif %}
-    {% endif %}
-    {% if app.user.roles|filter(v => v =='ROLE_PROF') %}
+        {% endif %}
+        {% if app.user.roles|filter(v => v =='ROLE_PROF') %}
 
             <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix:'liste_prof'}) }}">Retour à la
                     liste des équipes</a></div>
 
-    {% endif %}
+        {% endif %}
     </div>
     {# #############################MODAL######################################MODAL#########################MODAL#########################MODAL#########################MODAL#########################MODAL#########################MODAL#########################MODAL#########################MODAL#########################MODAL######################### #}
 
@@ -214,7 +221,7 @@
     {% if app.session.get('info')!='' %}
         {{ include('modales/modale_info.html.twig') }}
     {% endif %}
-    {{  app.session.set('info', null) }}
+    {{ app.session.set('info', null) }}
     <div class="modal fade" id="modalfichier" tabindex="-1" role="dialog">{#  pour les fichiers  #}
         <div class="modal-dialog" role="document">
 
