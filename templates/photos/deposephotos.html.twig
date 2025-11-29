@@ -37,7 +37,7 @@
             <div class="alert alert-info"> {{ message }}</div>
         {% endfor %}
         {% for message in app.session.flashbag.get('alert') %}
-            <div class="alert alert-danger"> {{ message }}</div>
+            <div class="alert alert-danger"> {{ message|raw }}</div>
         {% endfor %}
         {% for message in app.session.flashbag.get('success') %}
             <div class="alert alert-info"> {{ message }}</div>
@@ -60,6 +60,20 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                {# if your application defines multiple Dashboards #}
+                {% if is_granted('ROLE_COMITE') %}
+                    {% set url = ea_url()
+                        .setDashboard('App\\Controller\\OdpfAdmin\\OdpfDashboardController')
+                        .setController('App\\Controller\\OdpfAdmin\\OdpfPhotosCrudController')
+                        .setAction('afficheTablePhotos') %}
+                    <a href="{{ url }}" type="button" class="btn btn-secondary">
+                        Voir les photos déposées
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 {% form_theme form 'bootstrap_4_layout.html.twig' %}
                 {{ form_start(form) }}
                 <div class="my-custom-class-for-errors">
@@ -70,14 +84,15 @@
                         {{ form_row(form.equipe,{'label': 'Choisissez l\'équipe'}) }}
                     </div>
                     <div class="form-group col-6">
-                        {{ form_row(form.photoFiles,{'label': 'Choisissez le(s) fichier(s) max 5 '}) }}
+                        {{ form_row(form.photoFiles,{'label': 'Choisissez le(s) fichier(s) max 5 simultanément de 13 M maxi'}) }}
                     </div>
                 </div>
                 <div>Photos choisies</div>
                 <div id="affichephotos">
                     <div class="row">
 
-                               <img src="{{ asset('odpf/odpf-images/no_image_avalaible.png') }}" id="photo_preview" width="220px">
+                        <img src="{{ asset('odpf/odpf-images/no_image_avalaible.png') }}" id="photo_preview"
+                             width="220px">
                     </div>
 
                 </div>

@@ -784,6 +784,7 @@ class FichiersController extends AbstractController
                 ->setParameters(['edition' => $edition, 'type' => 6])
                 ->getQuery()->getResult();
 
+
         }
         if (in_array('ROLE_JURYCIA', $roles)) {
 

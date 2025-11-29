@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use AllowDynamicProperties;
 use App\Entity\Centrescia;
 use App\Entity\Edition;
 use App\Entity\Equipesadmin;
@@ -12,6 +13,7 @@ use App\Entity\Photos;
 use App\Form\ConfirmType;
 use App\Form\PhotosType;
 use App\Form\TelechargementPhotosType;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Imagick;
 use ImagickException;
 
@@ -39,16 +41,18 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 use ZipArchive;
 
 
+#[AllowDynamicProperties]
 class PhotosController extends AbstractController
 {
     private RequestStack $requestStack;
     private \Doctrine\Persistence\ManagerRegistry $doctrine;
 
 
-    public function __construct(RequestStack $requestStack, \Doctrine\Persistence\ManagerRegistry $doctrine)
+    public function __construct(RequestStack $requestStack, \Doctrine\Persistence\ManagerRegistry $doctrine, AdminUrlGenerator $adminUrlGenerator)
     {
         $this->requestStack = $requestStack;
         $this->doctrine = $doctrine;
+        $this->adminUrlGenerator = $adminUrlGenerator;
     }
 
     #[IsGranted("ROLE_PROF")]
@@ -56,7 +60,7 @@ class PhotosController extends AbstractController
     public function deposephotos(Request $request, ValidatorInterface $validator, $concours)
     {
         $em = $this->doctrine->getManager();
-
+        $slugger = new AsciiSlugger();
         $repositoryEquipesadmin = $this->doctrine
             ->getManager()
             ->getRepository(Equipesadmin::class);
@@ -92,17 +96,15 @@ class PhotosController extends AbstractController
             $editionpassee = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $edition->getEd()]);
             $equipepassee = $this->doctrine->getRepository(OdpfEquipesPassees::class)->findOneBy(['editionspassees' => $editionpassee, 'numero' => $equipe->getNumero()]);
             $type = true;
+            $i = 0;
             if ($files) {
                 $nombre = count($files);
-
                 $fichiers_erreurs = [];
                 $i = 0;
                 foreach ($files as $file) {
-
-
-
+                    //dd($slugger->slug(explode('.', strtolower($file->getClientOriginalName()))[0])->toString());
                     //La checkbox m'apparaît pas dans la liste des paramètres transmis si elle est décochée
-                    if (isset($_REQUEST['checkbox-' . explode('.',$file->getClientOriginalName())[0]])) {
+                    if (isset($_REQUEST['checkbox#' . $slugger->slug(explode('.', strtolower($file->getClientOriginalName()))[0])->toString()])) {
                         $violations = $validator->validate(
                             $file,
                             [
@@ -112,6 +114,7 @@ class PhotosController extends AbstractController
                                 ])
                             ]
                         );
+
                         $typeImage = $file->guessExtension();//Les .HEIC donnent jpg
                         $originalFilename = $file->getClientOriginalName();
                         $parsedName = explode('.', $originalFilename);
@@ -154,7 +157,7 @@ class PhotosController extends AbstractController
                             $violation = '';
                             /** @var ConstraintViolation $violation */
                             if (isset($violations[0])) {
-                                $violation = 'fichier de taille supérieure à 7 M';
+                                $violation = 'fichier de taille supérieure à 13 M';
                             }
                             /*if ($ext != 'jpg') {
                                 $violation = $violation . ':  fichier non jpeg ';
@@ -185,14 +188,16 @@ class PhotosController extends AbstractController
                             $em->flush();
 
                         }
+                    } else {
+                        $fichiers_erreurs[$i] = '<br>le fichier ' . $file->getClientOriginalName();
                     }
+                    $i++;
                 }
-
                 if (count($fichiers_erreurs) == 0) {
                     if ($nombre == 1) {
-                        $message = 'Votre fichier a bien été déposé. Merci !';
+                        $message = 'Votre photo a bien été déposée. Merci !';
                     } else {
-                        $message = 'Vos fichiers ont bien été déposés. Merci !';
+                        $message = 'Vos photos ont bien été déposées. Merci !';
                     }
                     $request->getSession()
                         ->getFlashBag()
@@ -221,7 +226,7 @@ class PhotosController extends AbstractController
             if (!$files) {
                 $request->getSession()
                     ->getFlashBag()
-                    ->add('alert', 'Pas fichier sélectionné: aucun dépôt effectué !');
+                    ->add('alert', 'Pas de fichier sélectionné: aucun dépôt effectué !');
             }
             return $this->redirectToRoute('photos_deposephotos', array('concours' => $concours));
         }
@@ -491,47 +496,47 @@ class PhotosController extends AbstractController
         $repositoryPhotos = $this->doctrine
             ->getManager()
             ->getRepository(Photos::class);
-        $repositoryEquipe=$this->doctrine->getRepository(OdpfEquipesPassees::class);
+        $repositoryEquipe = $this->doctrine->getRepository(OdpfEquipesPassees::class);
 
         if (explode('-', $infos)[0] == 'equipe') {
             $idEquipe = explode('-', $infos)[1];
-            $equipe = $repositoryEquipe->findOneBy(['id'=>$idEquipe]);
+            $equipe = $repositoryEquipe->findOneBy(['id' => $idEquipe]);
             $edition = $equipe->getEditionspassees();
             $photosequipes = $this->getPhotosEquipes($edition);
-            $equipes=$this->getEquipes($edition);
-            $keys=array_keys($equipes);
+            $equipes = $this->getEquipes($edition);
+            $keys = array_keys($equipes);
 
 
-            if(isset(explode('-', $infos)[2])) {//on a cliqué sur une flèche équipe suivante ou précédente
-                $numprecsuiv= explode('-', $infos)[2];
+            if (isset(explode('-', $infos)[2])) {//on a cliqué sur une flèche équipe suivante ou précédente
+                $numprecsuiv = explode('-', $infos)[2];
                 $equipe = $repositoryEquipe->createQueryBuilder('e')
-                ->select('e')
-                ->where('e.editionspassees =:edition')
-                ->andWhere('e.numero =:numero')
+                    ->select('e')
+                    ->where('e.editionspassees =:edition')
+                    ->andWhere('e.numero =:numero')
                     ->setParameter('edition', $edition)
                     ->setParameter('numero', $numprecsuiv)
                     ->getQuery()
                     ->getOneOrNullResult();
             }
-            $numerosuiv=$equipe->getNumero()+1;
-            $numeroprec=$equipe->getNumero()-1;
-            foreach($keys as $key){//Pour encadrer l'équipe avec le numero précédent et le numero suivant
-                if($equipes[$key]==$equipe) {
-                    if($key<max($keys)) {
+            $numerosuiv = $equipe->getNumero() + 1;
+            $numeroprec = $equipe->getNumero() - 1;
+            foreach ($keys as $key) {//Pour encadrer l'équipe avec le numero précédent et le numero suivant
+                if ($equipes[$key] == $equipe) {
+                    if ($key < max($keys)) {
                         $numerosuiv = $equipes[$key + 1]->getNumero();
                     }
-                    if($key==max($keys)) $numerosuiv=1;
-                    if($key>min($keys)) {
+                    if ($key == max($keys)) $numerosuiv = 1;
+                    if ($key > min($keys)) {
                         $numeroprec = $equipes[$key - 1]->getNumero();
                     }
-                    if($key==min($keys)) $numeroprec=$equipes[max($keys)]->getNumero();
+                    if ($key == min($keys)) $numeroprec = $equipes[max($keys)]->getNumero();
                 }
             }
 
             $photos = $repositoryPhotos->findBy(['equipepassee' => $equipe]);
             $listeEquipes = [$equipe];
             $edition = $equipe->getEditionspassees();
-            return $this->render('photos/affiche_galerie_equipe.html.twig', ['photos' => $photos, 'liste_equipes' => $listeEquipes, 'edition' => $edition, 'photosequipes' => $photosequipes,'numero_prec'=>$numeroprec,'numero_suiv'=>$numerosuiv   ]);
+            return $this->render('photos/affiche_galerie_equipe.html.twig', ['photos' => $photos, 'liste_equipes' => $listeEquipes, 'edition' => $edition, 'photosequipes' => $photosequipes, 'numero_prec' => $numeroprec, 'numero_suiv' => $numerosuiv]);
 
         }
         if (explode('-', $infos)[0] == 'edition' or explode('-', $infos)[0] == 'editionEnCours') {
@@ -733,15 +738,16 @@ class PhotosController extends AbstractController
 
 
     }
-    public function getEquipes($edition) : array
+
+    public function getEquipes($edition): array
     {
-        $repositoryEquipe=$this->doctrine->getRepository(OdpfEquipesPassees::class);
-        $listequipes=$repositoryEquipe->findBy(['editionspassees'=>$edition],['numero'=>'ASC']);
+        $repositoryEquipe = $this->doctrine->getRepository(OdpfEquipesPassees::class);
+        $listequipes = $repositoryEquipe->findBy(['editionspassees' => $edition], ['numero' => 'ASC']);
         $repositoryPhotos = $this->doctrine
             ->getManager()
             ->getRepository(Photos::class);
-        $equipes=[];
-        $i=0;
+        $equipes = [];
+        $i = 0;
         foreach ($listequipes as $equipe) {
             $listPhotos = null;
             if ($equipe->isAutorisationsPhotos() == true) {//Elimine les équipes qui n'ont pas de photos(souvent celles qui ont abandonné

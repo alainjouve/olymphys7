@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.onload = function () {
 
     $("#form1").on('change', function () {
         $("#form1").submit();
@@ -26,14 +26,15 @@ $(document).ready(function () {
                     alert("Veuillez sélectionner uniquement des images");
                     continue;
                 }*/
-                console.log(file);
-                var nameCheckbox = file.name.split('.')[0];
+                var fileName = slugify(file.name.split('.')[0]);
+
+                //var nameCheckbox = file.name.split('.')[0];
 
                 //image=document.getElementById('photo_preview' + i);
                 const image = document.createElement('img');
                 const checkbox = document.createElement("input");
                 checkbox.type = 'checkbox';
-                checkbox.name = 'checkbox-' + nameCheckbox;
+                checkbox.name = 'checkbox#' + fileName;
                 checkbox.label = 'Cocher pour téléverser';
                 checkbox.checked = !checkbox.checked;
                 image.width = 220;
@@ -69,7 +70,7 @@ $(document).ready(function () {
     }
 
 
-});
+};
 
 
 function changejure(j) {//j est l'objet input qui a lancé la fonction, pour le formulaire de gestion des jures des cia
@@ -345,5 +346,13 @@ function allcheck(check) {
     for (var i in checkboxes) {
         checkboxes[i].checked = check;
     }
+}
 
+function slugify(str) {
+    return str
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/[\s_-]+/g, "-")
+        .replace(/^-+|-+$/g, "");
 }
