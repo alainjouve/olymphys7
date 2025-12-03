@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block body %}
-    <div class="table-responsive" >
+    <div class="table-responsive">
         <table class="table table-striped">
             {% for equipe in equipes %}
                 <tr>
@@ -33,7 +33,7 @@
                     <td style="width: 80%">
                         {% for conseil in conseils %}
                             {% if conseil.equipe == equipe %}
-                                {# Pour scinder les mots ou lignes trop longues afin qu'elles soient contenues dans la zone d'affichage de la page#}
+                                {# Pour scinder les mots ou lignes trop longues afin qu'elles soient contenues dans la zone d'affichage de la page #}
                                 <div class="text-break">
                                     {{ conseil.texte|raw }}
                                 </div>
@@ -51,12 +51,13 @@
                         {% if is_granted('ROLE_COMITE') or is_granted('ROLE_SUPER-ADMIN') %}
                             {% if conseilEquipe!= null %}
                                 {% if conseilEquipe.envoye!=true %}
-                                    <button class="fas fa-envelope"
-                                            href="#"
-                                            title="Envoyer à l'équipe" type="button" data-toggle="modal"
-                                            data-target="#modalenvoiconseils"
-                                            data-idequipe="{{ conseilEquipe.equipe.id }}"
-                                            style="color: green"></button>
+                                    <a class="fas fa-envelope"
+                                       href="#"
+                                       title="Envoyer à l'équipe" type="button"
+                                       data-toggle="modal"
+                                       data-target="#modalenvoiconseils"
+                                       data-idequipe="{{ conseilEquipe.equipe.id }}"
+                                       style="color: green"></a>
                                 {% else %}
                                     <button class="fas fa-check"
                                             href="#"

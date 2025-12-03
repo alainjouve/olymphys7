@@ -223,7 +223,8 @@ class SecretariatjuryCiaController extends AbstractController
             ->where('eq.edition =:edition')
             ->andWhere('eq.centre =:centre')
             ->andWhere('eq.inscrite =:inscrite')
-            ->setParameters(['edition' => $edition, 'centre' => $centrecia, 'inscrite' => true])
+            ->andWhere('eq.numero <:numero')
+            ->setParameters(['edition' => $edition, 'centre' => $centrecia, 'inscrite' => true, 'numero' => 100])
             ->addOrderBy('r.rang', 'ASC')
             ->getQuery()->getResult();
 
@@ -936,19 +937,19 @@ class SecretariatjuryCiaController extends AbstractController
             if ($noteequipe !== null) {
                 $nllEquipe = $form->get('equipe')->getData();//equipe B dans laquelle la note de l'équipe A doivent être transférées
                 $notenllequipe = new NotesCia();
-                $noteTemp=[];
-                $remplace=false;
-                if ($this->doctrine->getRepository(NotesCia::class)->findOneBy(['jure' => $jure, 'equipe' => $nllEquipe])!=null){
-                    $notenllequipe=$this->doctrine->getRepository(NotesCia::class)->findOneBy(['jure' => $jure,'equipe' => $nllEquipe]);
-                    $noteTemp['ecrit']=$notenllequipe->getEcrit();
-                    $noteTemp['Exper']=$notenllequipe->getExper();
-                    $noteTemp['Demarche']=$notenllequipe->getDemarche();
-                    $noteTemp['Oral']=$notenllequipe->getOral();
-                    $noteTemp['Repquestions']=$notenllequipe->getRepquestions();
-                    $noteTemp['Wgroupe']=$notenllequipe->getWgroupe();
-                    $noteTemp['Total']=$notenllequipe->getTotal();
-                    $noteTemp['Origin']=$notenllequipe->getOrigin();
-                    $remplace=true;
+                $noteTemp = [];
+                $remplace = false;
+                if ($this->doctrine->getRepository(NotesCia::class)->findOneBy(['jure' => $jure, 'equipe' => $nllEquipe]) != null) {
+                    $notenllequipe = $this->doctrine->getRepository(NotesCia::class)->findOneBy(['jure' => $jure, 'equipe' => $nllEquipe]);
+                    $noteTemp['ecrit'] = $notenllequipe->getEcrit();
+                    $noteTemp['Exper'] = $notenllequipe->getExper();
+                    $noteTemp['Demarche'] = $notenllequipe->getDemarche();
+                    $noteTemp['Oral'] = $notenllequipe->getOral();
+                    $noteTemp['Repquestions'] = $notenllequipe->getRepquestions();
+                    $noteTemp['Wgroupe'] = $notenllequipe->getWgroupe();
+                    $noteTemp['Total'] = $notenllequipe->getTotal();
+                    $noteTemp['Origin'] = $notenllequipe->getOrigin();
+                    $remplace = true;
                 }
 
                 //notes de l'équipe B dans laquelle la note de l'équipe A doivent être transférées
@@ -966,10 +967,9 @@ class SecretariatjuryCiaController extends AbstractController
                 $total = $notenllequipe->getPoints();
                 $notenllequipe->setTotal($total);
                 $this->doctrine->getManager()->persist($notenllequipe);//enregistrement de la notes de l'équipe B
-                if($remplace==false){//la nouvelle équipe n'avait pas de note
+                if ($remplace == false) {//la nouvelle équipe n'avait pas de note
                     $this->doctrine->getManager()->remove($noteequipe);//suppresion de la notes de l'équipe A
-                }
-                else{//on échange les notes en injectant la note de l'éqyupe B dans l'équipe A
+                } else {//on échange les notes en injectant la note de l'éqyupe B dans l'équipe A
                     $noteequipe->setEcrit($noteTemp['ecrit']);
                     $noteequipe->setExper($noteTemp['Exper']);
                     $noteequipe->setDemarche($noteTemp['Demarche']);
@@ -980,7 +980,7 @@ class SecretariatjuryCiaController extends AbstractController
                     $noteequipe->setTotal($noteTemp['Total']);
                     $this->doctrine->getManager()->persist($noteequipe);
                 }
-               $jure->addEquipe($nllEquipe);//affectation de l'équipe B au juré si ce n'était pas le cas au départ
+                $jure->addEquipe($nllEquipe);//affectation de l'équipe B au juré si ce n'était pas le cas au départ
                 $this->doctrine->getManager()->persist($notenllequipe);//hydratation de la base
                 //$jure->removeEquipe($equipe);//supression de l'équipe A dans la liste équipes du juré si la note de la nouvelle équipe n'existait pas
                 //$this->doctrine->getManager()->persist($jure);//enregistrement du juré
@@ -1015,7 +1015,7 @@ class SecretariatjuryCiaController extends AbstractController
             $prenom = $form->get('prenomJure')->getData();
             $email = $form->get('email')->getData();
             if ($this->doctrine->getRepository(User::class)->findOneBy(['email' => $email])) {//si oui, cela signifie qu'on utilise une adresse mail déjà existante : prévenir l'utilisateur
-                
+
                 $this->requestStack->getSession()->set('info', 'Cette adresse mail est déjà attribuée, impossible de changer');
                 return $this->redirectToRoute('secretariatjuryCia_gestionjures', ['centre' => $centre]);
             }
@@ -1167,10 +1167,10 @@ class SecretariatjuryCiaController extends AbstractController
 
     #[IsGranted('ROLE_COMITE')]
     #[Route("/tableau_recap_tout_centre", name: "tableau_recap_tout_centre")]
-    public function tableaurecap():Response//Permet l'affichage d'un tableau des points de toutes les équipes classées par centre
+    public function tableaurecap(): Response//Permet l'affichage d'un tableau des points de toutes les équipes classées par centre
     {
-        $nbMaxEquipes=0;
-        $repositoryEquipes=$this->doctrine->getRepository(Equipesadmin::class);
+        $nbMaxEquipes = 0;
+        $repositoryEquipes = $this->doctrine->getRepository(Equipesadmin::class);
         $centrescia = $this->doctrine->getRepository(Centrescia::class)->findBy(['actif' => true]);
         $equipes = $repositoryEquipes->createQueryBuilder('e')
             ->andWhere('e.inscrite =:value')
@@ -1178,18 +1178,18 @@ class SecretariatjuryCiaController extends AbstractController
             ->andWhere('e.numero <:numero')
             ->setParameters(['value' => true, 'edition' => $this->requestStack->getSession()->get('edition'), 'numero' => 100])
             ->getQuery()->getResult();
-        $repositoryRangs=$this->doctrine->getRepository(RangsCia::class);
-        $rangscia = $repositoryRangs->findBy([],['rang'=>'ASC']);//les rangs des équipes pour chaque centre
-        $satistiques=[];
-        $nbJures=null;
-        $nbJureNotes=null;
-        foreach($centrescia as $centre) {
+        $repositoryRangs = $this->doctrine->getRepository(RangsCia::class);
+        $rangscia = $repositoryRangs->findBy([], ['rang' => 'ASC']);//les rangs des équipes pour chaque centre
+        $satistiques = [];
+        $nbJures = null;
+        $nbJureNotes = null;
+        foreach ($centrescia as $centre) {
             $equipeslocales = $repositoryEquipes->findBy(['centre' => $centre, 'inscrite' => true, 'edition' => $this->requestStack->getSession()->get('edition')]);
             if (count($equipeslocales) > $nbMaxEquipes) $nbMaxEquipes = count($equipeslocales);//pour connaître le nombe maximum de ligne dans le tableau affiché
-            $satistiques[$centre->getId()]=$this->statistiques($centre);
-            foreach($equipeslocales as $equipe){
-                $jures[$equipe->getId()]=$repositoryEquipes->getJuresCia($equipe);
-                if($jures[$equipe->getId()]!=null) {
+            $satistiques[$centre->getId()] = $this->statistiques($centre);
+            foreach ($equipeslocales as $equipe) {
+                $jures[$equipe->getId()] = $repositoryEquipes->getJuresCia($equipe);
+                if ($jures[$equipe->getId()] != null) {
                     $nbJures[$equipe->getId()] = count($jures[$equipe->getId()]);
                     if ($jures[$equipe->getId()] != null) {
                         $nbJureNotes[$equipe->getId()] = 0;
@@ -1198,7 +1198,7 @@ class SecretariatjuryCiaController extends AbstractController
 
                             foreach ($notes as $note) {
                                 if ($note->getEquipe() == $equipe) {
-                                    $nbJureNotes[$equipe->getId()] = $nbJureNotes[$equipe->getId()]+ 1;
+                                    $nbJureNotes[$equipe->getId()] = $nbJureNotes[$equipe->getId()] + 1;
 
 
                                 }
@@ -1211,7 +1211,7 @@ class SecretariatjuryCiaController extends AbstractController
             }
         }
 
-        return $this->render('cyberjuryCia/tableau_recap.html.twig', ['centrescia'=>$centrescia,'rangscia'=>$rangscia,'equipes'=>$equipes,'nbMaxEquipes'=>$nbMaxEquipes,'satistiques'=>$satistiques,'nbJures'=>$nbJures,'nbJuresNotes'=>$nbJureNotes]);
+        return $this->render('cyberjuryCia/tableau_recap.html.twig', ['centrescia' => $centrescia, 'rangscia' => $rangscia, 'equipes' => $equipes, 'nbMaxEquipes' => $nbMaxEquipes, 'satistiques' => $satistiques, 'nbJures' => $nbJures, 'nbJuresNotes' => $nbJureNotes]);
 
 
     }
@@ -1223,34 +1223,31 @@ class SecretariatjuryCiaController extends AbstractController
         $rangscia = $this->doctrine->getRepository(RangsCia::class)->findAll();
         $somme = 0;
         $n = 0;
-        $moyenne=0;
-        $sigma=0;
+        $moyenne = 0;
+        $sigma = 0;
         foreach ($rangscia as $rangcia) {
             if ($centre == $rangcia->getEquipe()->getCentre()) {
                 $somme = $somme + $rangcia->getPoints();
                 $n += 1;
             }
         }
-        if ($n!=0) {
+        if ($n != 0) {
             $moyenne = intval($somme / $n);
-            $variancecarree=0;
-            foreach($rangscia as $rangcia){
+            $variancecarree = 0;
+            foreach ($rangscia as $rangcia) {
                 if ($centre == $rangcia->getEquipe()->getCentre()) {
-                    $variancecarree = $variancecarree+ ($moyenne-$rangcia->getPoints())*($moyenne-$rangcia->getPoints());
+                    $variancecarree = $variancecarree + ($moyenne - $rangcia->getPoints()) * ($moyenne - $rangcia->getPoints());
                 }
             }
-            $sigmacarre=$variancecarree/($n);
-            $sigma= intval(sqrt($sigmacarre));
+            $sigmacarre = $variancecarree / ($n);
+            $sigma = intval(sqrt($sigmacarre));
         }
 
 
-
-        return [$moyenne,$sigma];
+        return [$moyenne, $sigma];
 
 
     }
-
-
 
 
     #[IsGranted('ROLE_SUPERADMIN')]

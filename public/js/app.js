@@ -131,9 +131,11 @@ $(window).on("unload", function () {//Pour que lors de la saisie de la répartit
 });
 $(window).on("load", function () {
     var tableau = document.getElementById("changejurescontainer")
-    tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
-    tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
-    window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
+    if (tableau) {
+        tableau.scrollTop = parseInt(localStorage['scrollPositionY']);
+        tableau.scrollLeft = parseInt(localStorage['scrollPositionX']);
+        window.scrollTo(0, parseInt(localStorage['scrollWindowY']));
+    }
 
 });
 
@@ -206,7 +208,7 @@ $('#modalconfirmjurecn').on('show.bs.modal', function (event) {//envoi des conse
     modal.find('.modal-title').text('Attention!!!!')
     modal.find('.modal-body input').val(recipient)
 });
-$('#modalenvoiconseilscn').on('show.bs.modal', function (event) {//envoi des recommandations jury du cn
+$(document).on('show.bs.modal', '#modalenvoiconseilscn', function (event) {//envoi des recommandations jury du cn
     var button = $(event.relatedTarget) // Button that triggered the modal
     var recipient = button.data('id');
     console.log(recipient)
@@ -214,8 +216,9 @@ $('#modalenvoiconseilscn').on('show.bs.modal', function (event) {//envoi des rec
     modal.find('.modal-title').text('Attention')
     modal.find('.modal-body input').val(recipient)
 });
-$('#modalenvoiconseils').on('show.bs.modal', function (event) {
+$(document).on('show.bs.modal', '#modalenvoiconseils', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
+    console.log(button);
     var recipient = button.data('idequipe');
 
     var modal = $(this)

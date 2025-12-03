@@ -238,8 +238,8 @@ class JuryCiaController extends AbstractController
     #[Route("/evaluer_une_equipe_cia/{id}", name: "cyberjuryCia_evaluer_une_equipe", requirements: ["id_equipe" => "\d{1}|\d{2}"])]
     public function evaluer_une_equipe_cia(Request $request, $id): RedirectResponse|Response
     {
-
-        if (new DateTime('now') <= $this->requestStack->getSession()->get('edition')->getConcourscia()) {
+        //La condition sur la date n'a pas lieu d'être
+        //if (new DateTime('now') >= $this->requestStack->getSession()->get('edition')->getConcourscia()) {
             $user = $this->getUser();
             $jure = $this->doctrine->getRepository(JuresCia::class)->findOneBy(['iduser' => $user]);
             if ($jure->getCentrecia()->getVerouClassement() != true) {
@@ -366,10 +366,10 @@ class JuryCiaController extends AbstractController
                 $this->requestStack->getSession()->set('info', 'Le classement est à présent verouillé. Evaluation impossible');
                 return $this->redirectToRoute('secretariatjuryCia_classement', ['centre' => $jure->getCentrecia()->getCentre()]);
             }
-        } else {
+        /*} else {
             $this->requestStack->getSession()->set('info', 'L\'évaluation des équipes n\'est pas encore ouverte');
             return $this->redirectToRoute('core_home');
-        }
+        }*/
     }
 
     #[IsGranted('ROLE_JURYCIA')]

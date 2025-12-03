@@ -17,7 +17,7 @@ function showResult() {
 
     // appel via AJAX
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("result").innerHTML = "Résultat de la recherche : " + this.responseText;
         }
@@ -26,6 +26,7 @@ function showResult() {
     xmlhttp.open("GET", "php_cherche_texte.php?" + args, true);
     xmlhttp.send();
 }
+
 // Cette fonction est là pour essayer de pallier la lenteur de la première recherche sur EX2
 // Cette lenteur est probablement liée à la mise en cache sur le serveur des fichiers texte
 // dans lesquels s'effectue la recherche.
@@ -40,6 +41,7 @@ function preloadTexts() {
     xmlhttp.open("GET", "php_loadTexts.php", true);
     xmlhttp.send();
 }
+
 function toggleHelp() {
     if (!document.getElementById('chkHelp').checked) {
         document.getElementById('divAide').style.display = "none"
@@ -49,4 +51,4 @@ function toggleHelp() {
 }
 
 // lancement asynchrone de la lecture des textes
-preloadTexts()
+//preloadTexts()
