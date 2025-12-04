@@ -3,16 +3,24 @@
 namespace App\Service;
 
 use Fpdf\Fpdf;
+use Symfony\Bundle\MakerBundle\FileManager;
 use Symfony\Component\String\Slugger\AsciiSlugger;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Filesystem\Path;
+
 
 class createAttestationsElevesCia
 {
 
-    public function createAttestationsElevesCia($eleve){
+    public function createAttestationsElevesCia($eleve)
+    {
         $slugger = new AsciiSlugger();
-        $filePath='odpf/attestations_eleves/'.$eleve->getEquipe()->getNumero();
-        if(!file_exists($filePath)) {
-            mkdir($filePath);
+        $fileSytem=new Filesystem();
+        $filePath = 'odpf/attestations_eleves/' . $eleve->getEquipe()->getNumero();
+
+        if (!file_exists($filePath)) {
+           $fileSytem->mkdir($filePath);
         }
         $fileNamepdf = $filePath . '/' . $eleve->getEquipe()->getEdition()->getEd() . '_' . $slugger->slug($eleve->getequipe()->getCentre() . '_attestation_equipe_' . $eleve->getEquipe()->getNumero() . '_' . $eleve->getPrenom() . '_' . $eleve->getNom()) . '.pdf';
 
@@ -24,7 +32,7 @@ class createAttestationsElevesCia
         $pdf->SetRightMargin(20);
         $pdf->AddPage();
         $pdf->image('https://www.olymphys.fr/public/odpf/odpf-images/site-logo-398x106.png', 20, null, 60);
-        $str = iconv('UTF-8', 'windows-1252','Paris le '.$this->date_in_french($eleve->getEquipe()->getEdition()->getConcoursCia()->format('Y-m-d')));
+        $str = iconv('UTF-8', 'windows-1252', 'Paris le ' . $this->date_in_french($eleve->getEquipe()->getEdition()->getConcoursCia()->format('Y-m-d')));
         $wstr = $pdf->getStringWidth($str);
         $str_1 = 'Paris le 3';
         $str_2 = ' ';
@@ -48,7 +56,7 @@ class createAttestationsElevesCia
         $pdf->SetXY($x, $y);
         $pdf->Cell($w, 20, $str1 . "\n", 0, 0, 'C');
         $pdf->SetFont('helvetica', 'B', 18);
-        $w2 = $pdf->getStringWidth('Aux ' .$eleve->getEquipe()->getEdition()->getEd() . 'e Olympiades de Physique France');
+        $w2 = $pdf->getStringWidth('Aux ' . $eleve->getEquipe()->getEdition()->getEd() . 'e Olympiades de Physique France');
         $x = (210 - $w2) / 2;
         $str2 = 'Aux ' . $eleve->getEquipe()->getEdition()->getEd();
         $str21 = 'Olympiades de Physique France';
@@ -168,8 +176,8 @@ class createAttestationsElevesCia
         $pdf->Output('F', $fileNamepdf);
 
 
-
     }
+
     public function date_in_french($date)
     {
         $week_name = array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
@@ -184,7 +192,6 @@ class createAttestationsElevesCia
         $week_day = date("w", mktime(12, 0, 0, $month, $day, $year));
         return $date_fr = $day . ' ' . $month_name[$month] . ' ' . $year;
     }
-
 
 
 }

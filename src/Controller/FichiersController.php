@@ -1033,13 +1033,15 @@ class FichiersController extends AbstractController
             try {
                 $createAttestation->createAttestationsElevesCia($eleve);
             } catch (Exception $e) {
-
+                $message = 'Les attestations ne sont pas encore disponibles';
             }
 
         }
 
-        if (file_exists('odpf/attestations_eleves/' . $equipe->getNumero())) {
-            $files = scandir('odpf/attestations_eleves/' . $equipe->getNumero());
+        $path = 'odpf/attestations_eleves/';
+
+        if (file_exists($path . $equipe->getNumero())) {
+            $files = scandir($path . $equipe->getNumero());
 
             if ($files) {
                 $zipFile = new ZipArchive();
@@ -1047,7 +1049,7 @@ class FichiersController extends AbstractController
                 if ($zipFile->open($fileNamezip, ZipArchive::CREATE) === TRUE) {
                     foreach ($files as $file) {
                         if (!is_dir($file)) {
-                            $filePath = ('odpf/attestations_eleves/' . $equipe->getNumero());
+                            $filePath = ($path . $equipe->getNumero());
                             $zipFile->addFromString(basename($file), file_get_contents($filePath . '/' . $file));
                         }
 
@@ -1069,6 +1071,8 @@ class FichiersController extends AbstractController
             }
 
         }
+        $this->requestStack->getSession()->set('info', $message);
+        return $this->redirectToRoute('fichiers_afficher_liste_fichiers_prof', ['infos' => $equipe->getId() . '-interacadémique-liste_prof']);
 
     }
 
