@@ -153,6 +153,7 @@ class CoreController extends AbstractController
                 'Polynésie Française',
                 'Wallis et Futuna'
             );
+
             // test de protection : $tabEq['lycee'] n'existe que s'il existe des équipes
             if ($tabEq['listEquipes'] != []) {
                 // on balaye tous les lycées des équipes
@@ -174,6 +175,17 @@ class CoreController extends AbstractController
                 }
             }
 
+            // Calcul du nombre d'équipes sélectionnées à l'issue des CIA
+            $nbEquipesSelectionnees = 0;
+            if ($tabEq['listEquipes'] != []) {
+                // on balaye toutes les équipes
+                foreach ($tabEq['listEquipes'] as $equipe) {
+                    if ($equipe->getSelectionnee()) {
+                        $nbEquipesSelectionnees++;
+                    }
+                }
+            }
+
             $tab = $OdpfCreateArray->getArray($choix);
             $tab['listfaq'] = $listfaq;
 
@@ -182,6 +194,12 @@ class CoreController extends AbstractController
             $tab['texte'] = str_replace('#nbFrance', $nbFrance, $tab['texte']);
             $tab['texte'] = str_replace('#nbDOM', $nbDOM, $tab['texte']);
             $tab['texte'] = str_replace('#nbEtranger', $nbEtranger, $tab['texte']);
+
+            // ajout du nombre d'équipes sélectionnées
+            if ($nbEquipesSelectionnees > 0) {
+                $tab['texte'] .= "<p>Pour le concours national, " . $nbEquipesSelectionnees . " équipes ont été sélectionnées (épingles vertes).</p>";
+                $tab['texte'] .= "<p>Félicitations à elles !</p>";
+            }
         } else {
             $tab = $OdpfCreateArray->getArray($choix);
             $tab['listfaq'] = $listfaq;
