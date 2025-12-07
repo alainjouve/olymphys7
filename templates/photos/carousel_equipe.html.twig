@@ -8,12 +8,20 @@
 
     <div style="text-align: center; color:blue" class="color">
         <h4>Les photos de la {{ equipe.edition.ed }}<sup>e</sup> édition <br></h4>
+        {% if equipe.numero<100 %}
+            <h4>Equipe {{ equipe.numero }}
+                {% if equipe.lettre!=null %}
+                    ({{ equipe.lettre }})
+                    coucou
+                {% endif %}
+                - {{ equipe.titreProjet }}</h4><br>
+            <h5>{{ equipe.nomLycee }} de {{ equipe.lyceeLocalite }},académie de {{ equipe.lyceeAcademie }}</h5>
+        {% endif %}
+        {% if equipe.numero>=200 %}
+            <h4> Centre de {{ equipe.centre }} - {{ equipe.titreProjet }} </h4>
+        {% endif %}
 
-        <h4>Equipe {{ equipe.numero }}
-            {% if equipe.lettre!=null %}
-                ({{ equipe.lettre }}) -
-            {% endif %}
-            {{ equipe.titreProjet }}</h4>
+
     </div>
 {% endblock %}
 

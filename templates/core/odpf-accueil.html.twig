@@ -13,7 +13,7 @@
 {% block contenu %}
     {# va se placer dans le block contenu de base.html.twig #}
     <div id="barre_haut">
-       {#  trace une barre noire en haut de page : odpf.css l.35#}
+        {#  trace une barre noire en haut de page : odpf.css l.35 #}
     </div>
     <div id="wrapper">
         {# place une ligne gris foncé : odpf.css l.41 #}
@@ -25,11 +25,12 @@
             <div class="row justify-content-between">
                 {# place ensuite les images : logo et illustration : elles sont placées sur la ligne suivante #}
                 <div class="col-md-8 col-lg-5"><a href="{{ path('core_home') }}">
-                        <img  src="{{ asset('odpf/odpf-images/site-logo-398x106.png') }}" alt="Logo Olympiades"
-                              style="width:100%; height:auto"></a>
+                        <img src="{{ asset('odpf/odpf-images/site-logo-398x106.png') }}" alt="Logo Olympiades"
+                             style="width:100%; height:auto"></a>
                 </div>
                 <div class="col-md-8 col-lg-4 pr-0">
-                    <img src="{{ asset('odpf/odpf-images/home-rightcol-top2.png') }}" alt="image_en_tete" style="width:100%; height:auto">
+                    <img src="{{ asset('odpf/odpf-images/home-rightcol-top2.png') }}" alt="image_en_tete"
+                         style="width:100%; height:auto">
                 </div>
             </div>
             <div class="row">
@@ -60,8 +61,8 @@
                             <h3>Revivez les éditions passées</h3>
                             <ul>
                                 <li><a href="{{ path('core_pages',{choix:'editions'}) }}">Les éditions</a></li>
-                                 <li><a href="{{path('search')}}">Rechercher des mémoires</a></li>
-                                {#<li><a href="{{ path('core_pages' ,{choix:'les_videos'}) }}">Les vidéos</a></li>
+                                <li><a href="{{ path('search') }}">Rechercher des mémoires</a></li>
+                                {# <li><a href="{{ path('core_pages' ,{choix:'les_videos'}) }}">Les vidéos</a></li>
                                  <li><a data-toggle="modal" href="#modarecherche"> Rechercher des mémoires</a>
 
                                 </li> #}
@@ -83,7 +84,10 @@
                                         <li><a href="{{ path('core_pages', {choix:'le_calendrier'}) }}">Le
                                                 calendrier</a></li>
                                         <li><a href="{{ path('core_pages', {choix:'inscriptions'}) }}">Inscriptions
-                                                avant le {{ app.session.get('edition').dateclotureinscription|date('d') }} octobre {{ date(app.session.get('edition').dateclotureinscription)|date('H:00') }} </a></li>
+                                                avant
+                                                le {{ app.session.get('edition').dateclotureinscription|date('d') }}
+                                                octobre {{ date(app.session.get('edition').dateclotureinscription)|date('H:00') }} </a>
+                                        </li>
                                         <li><a href="{{ path('core_pages', {choix:'les_equipes'}) }}">Les équipes</a>
                                         </li>
                                         <li><a href="{{ path('core_pages', {choix:'la_carte_des_equipes'}) }}">Carte
@@ -93,11 +97,13 @@
                                         <li><a href="{{ path('core_pages', {choix:'le_concours_national'}) }}">Le
                                                 concours national</a></li>
                                     </ul>
-                                    {#  <a href="https://www.helloasso.com/associations/societe-francaise-de-physique/collectes/olympiades-de-physique-france"
-                                       type="button" class="btn btn-warning" target="_blank">
-                                        Participez à l'appel de financement participatif
-                                    </a>
-                                    #}
+                                    Participer au financement participatif en cliquant sur :
+                                    <iframe id="haWidget" allowtransparency="true"
+                                            src="https://www.helloasso.com/associations/societe-francaise-de-physique/collectes/olympiades-de-physique-france-33eme/widget-bouton"
+                                            style="width: 100%; height: 70px; border: none;"
+                                            onload="window.addEventListener( 'message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidget'); haWidgetElement.height = dataHeight + 'px'; } )"></iframe>
+                                    Ou en flashant : <img src="{{ asset('odpf/odpf-images/QR financement participatif.png')}}"
+                                                          width="80">
                                 </div>
                             </div>
                         </div><!-- bloc-concours-->
@@ -108,7 +114,8 @@
                                 {% for actu in affActus %}
                                     <li>
                                         <p class="actus-home-titre">
-                                        <a href="{{ path('core_actus', {tourn:'rien'}) }}">{{ actu.titre|raw }}</a></p>
+                                            <a href="{{ path('core_actus', {tourn:'rien'}) }}">{{ actu.titre|raw }}</a>
+                                        </p>
                                         <p class="actus-home-introtext">{{ actu.texte|raw }} ...</p>
                                         <p class="actus-home-lireplus">
                                             <a class="lireplus" href="{{ path('core_actus', {tourn:'rien'}) }}"

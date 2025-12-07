@@ -542,7 +542,7 @@ class PhotosController extends AbstractController
         if (explode('-', $infos)[0] == 'edition' or explode('-', $infos)[0] == 'editionEnCours') {
 
             $idEdition = explode('-', $infos)[1];
-
+            $edition = $this->doctrine->getRepository(Edition::class)->findOneBy(['id' => $idEdition]);
             if (explode('-', $infos)[0] == 'edition') {
 
 
@@ -554,13 +554,16 @@ class PhotosController extends AbstractController
 
                 $edition = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $editionEnCours->getEd()]);
             }
+
             $photos = $this->getPhotosEquipes($edition);
+            
             $listeEquipes = $this->doctrine->getRepository(OdpfEquipesPassees::class)
                 ->createQueryBuilder('e')
                 ->andWhere('e.editionspassees =:edition')
                 ->setParameter('edition', $edition)
                 ->addOrderBy('e.numero', 'ASC')
                 ->getQuery()->getResult();
+
             if (isset($photos)) {
                 return $this->render('photos/affiche_galerie_edition.html.twig', ['photos' => $photos, 'liste_equipes' => $listeEquipes, 'edition' => $edition]);
             } else {
@@ -583,6 +586,7 @@ class PhotosController extends AbstractController
             ->setParameter('edition', $edition)
             ->addOrderBy('e.numero', 'ASC')
             ->getQuery()->getResult();
+        $photos = [];
         foreach ($listeEquipes as $equipe) {
             $listPhotos = null;
             if ($equipe->isAutorisationsPhotos() == true) {
