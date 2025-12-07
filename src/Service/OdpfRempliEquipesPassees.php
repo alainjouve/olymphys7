@@ -45,7 +45,7 @@ class OdpfRempliEquipesPassees
         }
         $OdpfEquipepassee->setEditionspassees($editionPassee);
         $OdpfEquipepassee->setNumero($equipe->getNumero());
-        if ($equipe->getUaiId() != null) {
+        if ($equipe->getUaiId() != null) {//Ne concerne pas les équipes techniques
             $equipe->getLettre() !== null ? $OdpfEquipepassee->setLettre($equipe->getLettre()) : $OdpfEquipepassee->setLettre(null);
 
             $OdpfEquipepassee->setLycee($equipe->getUaiId()->getNom());
@@ -62,9 +62,10 @@ class OdpfRempliEquipesPassees
             }
             $OdpfEquipepassee->setEleves($nomsEleves);
         }
-        if ($OdpfEquipepassee->getNumero()) {
+        if ($OdpfEquipepassee->getNumero()) {//Concerne les équipes techniques
             $OdpfEquipepassee->setTitreProjet($equipe->getTitreProjet());
             $OdpfEquipepassee->setSelectionnee($equipe->getSelectionnee());
+            $OdpfEquipepassee->setCentrecia($equipe->getCentre());
             //$editionPassee->addOdpfEquipesPassee($OdpfEquipepassee);
             $em->persist($OdpfEquipepassee);
             $em->flush();
