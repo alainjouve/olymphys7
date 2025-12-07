@@ -543,7 +543,7 @@ class SecretariatjuryCiaController extends AbstractController
             return $this->render('cyberjuryCia/gestionjures.html.twig', array('listejures' => $listejures, 'listeEquipes' => $listeEquipes, 'centre' => $centrecia->getCentre(), 'horaires' => $horaires));
         }
 
-        if ($request->query->get('jureID') !== null) {//la fenêtre modale de confirmation de suppresion du juré a été validée, elle renvoie l'id du juré
+        if ($request->query->get('jureID') !== null) {//la fenêtre modale de confirmation de suppression du juré a été validée, elle renvoie l'id du juré
 
             $idJure = $request->query->get('jureID');
             $jure = $this->doctrine->getRepository(JuresCia::class)->find($idJure);
@@ -557,7 +557,12 @@ class SecretariatjuryCiaController extends AbstractController
                 $repo = $this->doctrine->getRepository(RangsCia::class);
                 $points = $repo->classement($jure->getCentreCia());
             }
-
+            if ($jure->getEquipes()) {
+                foreach ($jure->getEquipes() as $equipe) {
+                    $jure->removeEquipe($equipe);
+                    $this->doctrine->getManager()->persist($jure);
+                }
+            }
             $this->doctrine->getManager()->remove($jure);
             $this->doctrine->getManager()->flush();
             $idJure = null;//Dans le cas où le formulaire est envoyé dès le clic sur un des input

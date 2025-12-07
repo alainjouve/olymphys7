@@ -54,6 +54,9 @@ class OdpfEquipesPassees
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $prix = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $centrecia = null;
+
     public function __toString()
     {
         $this->getLettre() != null ? $num = $this->getNumero() . '-' . $this->getLettre() : $num = $this->getNumero();
@@ -234,6 +237,18 @@ class OdpfEquipesPassees
     public function setPrix(?string $prix): static
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getCentrecia(): ?string
+    {
+        return $this->centrecia;
+    }
+
+    public function setCentrecia(?string $centrecia): static
+    {
+        $this->centrecia = $centrecia;
 
         return $this;
     }

@@ -16,7 +16,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 // use App\Utils\StringUtils;
 
-#[ORM\Entity(repositoryClass:OdpfEditionsPasseesRepository::class)]
+#[ORM\Entity(repositoryClass: OdpfEditionsPasseesRepository::class)]
 class OdpfEditionsPassees
 {
 
@@ -25,47 +25,47 @@ class OdpfEditionsPassees
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column( type : Types::INTEGER, nullable:true)]
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
     private ?int $edition = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $annee = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $pseudo = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $lieu = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $ville = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $dateCia = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $dateCn = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $dateinscription = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $nomParrain = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreParrain = null;
 
-    #[ORM\OneToMany(targetEntity:OdpfEquipesPassees::class, mappedBy:"odpfEditionsPassees")]
+    #[ORM\OneToMany(targetEntity: OdpfEquipesPassees::class, mappedBy: "odpfEditionsPassees")]
     private Collection $odpfEquipesPassees;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $photoParrain = null;
 
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private $lienparrain; //c'est l'université ou la structure où travaille le parrain
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private $affiche;
 
     #[ORM\OneToOne(inversedBy: 'odpfEditionsPassees', cascade: ['persist', 'remove'])]
