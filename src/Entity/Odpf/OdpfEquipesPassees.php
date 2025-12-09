@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OdpfEquipesPasseesRepository::class)]
 #[ORM\Table(options: ["collate" => "utf8mb4_unicode_ci", "charset" => "utf8mb4"])]
-
 class OdpfEquipesPassees
 {
     #[ORM\Id]
@@ -15,34 +14,34 @@ class OdpfEquipesPassees
     #[ORM\Column]
     private ?int $id = 0;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?int $numero = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $lettre = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $lycee = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $ville = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $academie = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreProjet = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $profs = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $eleves = null;
 
-    #[ORM\Column( length:255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?bool $selectionnee = null;
 
-    #[ORM\ManyToOne(targetEntity:OdpfEditionsPassees::class, inversedBy:"odpfEquipesPassees")]
+    #[ORM\ManyToOne(targetEntity: OdpfEditionsPassees::class, inversedBy: "odpfEquipesPassees")]
     private ?OdpfEditionsPassees $editionspassees = null;
 
     #[ORM\Column(nullable: true)]
@@ -60,18 +59,21 @@ class OdpfEquipesPassees
     public function __toString()
     {
         $this->getLettre() != null ? $num = $this->getNumero() . '-' . $this->getLettre() : $num = $this->getNumero();
-        $lieu=$this->getVille();
-        $Ed='NA';
+        if ($this->getNumero() > 200) {
+            $num = $this->getCentreCia();
+        }
+        $lieu = $this->getVille();
+        $Ed = 'NA';
         if ($this->editionspassees !== null) {
             $Ed = $this->editionspassees->getEdition();
-            if( $this->selectionnee) {
+            if ($this->selectionnee) {
                 $lieu = 'CN';
             }
         } else {
             $Ed = 'NA';
 
         }
-        return $Ed . '-' . $num . '-' . $lieu.'-'.$this->getTitreProjet();
+        return $Ed . '-' . $num . '-' . $lieu . '-' . $this->getTitreProjet();
     }
 
     public function __construct()
