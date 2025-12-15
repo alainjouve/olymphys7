@@ -7,6 +7,8 @@ use App\Entity\Edition;
 use App\Entity\Equipesadmin;
 use App\Entity\Professeurs;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Query\Parameter;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
@@ -67,7 +69,7 @@ class ProfesseursCrudController extends AbstractCrudController
         }
         return $crud
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexProfesseur.html.twig', ])
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexProfesseur.html.twig',])
             ->setPageTitle(Crud::PAGE_DETAIL, 'Professeur')
             ->setSearchFields(['id', 'lettre', 'numero', 'titreProjet', 'nomLycee', 'denominationLycee', 'lyceeLocalite', 'lyceeAcademie', 'prenomProf1', 'nomProf1', 'prenomProf2', 'nomProf2', 'uai', 'contribfinance', 'origineprojet', 'recompense', 'partenaire', 'description'])
             ->setPaginatorPageSize(50);
@@ -102,12 +104,12 @@ class ProfesseursCrudController extends AbstractCrudController
         $tableauexcelsel = Action::new('profs_tableau_excel_sel', 'Créer un tableau excel des professeurs sélectionnés', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
-            ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId,'sel'=>true])
+            ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId, 'sel' => true])
             ->createAsGlobalAction();
         $tableauexcelnonsel = Action::new('profs_tableau_excel_non-sel', 'Créer un tableau excel des professeurs non sélectionnés', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
-            ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId,'sel'=>false])
+            ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId, 'sel' => false])
             ->createAsGlobalAction();
         $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs pour mailings info centrecia en octobre', 'fas fa-columns')
             // if the route needs parameters, you can define them:
@@ -120,7 +122,6 @@ class ProfesseursCrudController extends AbstractCrudController
             ->linkToRoute('profs_tableau_excel_mailing_tous')
             ->createAsGlobalAction();
         return $actions
-
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
             ->add(Crud::PAGE_INDEX, $tableauexcelsel)
@@ -132,9 +133,9 @@ class ProfesseursCrudController extends AbstractCrudController
             ->remove(Crud::PAGE_DETAIL, Action::EDIT)
             ->remove(Crud::PAGE_INDEX, Action::DELETE)
             ->remove(Crud::PAGE_DETAIL, Action::DELETE)
-            ->update('index', Action::DETAIL,function  (Action $action) {
-                return $action->setIcon('fa fa-eye')->setLabel(false);})
-            ;
+            ->update('index', Action::DETAIL, function (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);
+            });
 
     }
 
@@ -386,7 +387,7 @@ class ProfesseursCrudController extends AbstractCrudController
     }
 
     #[Route("/Professeurs/editer_tableau_excel_sel,{idEdition,sel}", name: "profs_tableau_excel_sel")]
-    public function editer_tableau_excel_sel($idEdition,$sel)
+    public function editer_tableau_excel_sel($idEdition, $sel)
     {
         $em = $this->doctrine->getManager();
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);
@@ -398,13 +399,19 @@ class ProfesseursCrudController extends AbstractCrudController
             ->leftJoin('p.equipes', 'eqs')
             ->andWhere('eqs.edition =:edition')
             ->andWhere('eqs.selectionnee =:sel')
-            ->setParameters(['edition'=>$edition,'sel'=>$sel])
+            ->andWhere('eqs.inscrite =:inscrite')
+            ->setParameters(new ArrayCollection([
+                new Parameter('edition', $edition),
+                new Parameter('sel', intval($sel)),
+                new Parameter('inscrite', 1)
+            ]))
             ->leftJoin('p.user', 'u')
-            ->orderBY('u.nom', 'ASC');
+            ->orderBy('u.nom', 'ASC');
         $listProfs = $queryBuilder->getQuery()->getResult();
+
         $lettres = [];
         if ($listProfs != null) {//Pour regrouper les équipes sur un même professeur dans le formaz A/B/C
-            $i=0;
+            $i = 0;
             foreach ($listProfs as $prof) {
                 $equipestring = '';
                 $equipesLettres = '';
@@ -417,16 +424,16 @@ class ProfesseursCrudController extends AbstractCrudController
 
                 if ($equipes != null) {
                     foreach ($equipes as $equipe) {
-                        if ($equipe->getSelectionnee() == true and $sel == false) {//Le professeur a une équipe sélectionnée, il ne doit pas figurer dans la liste des profs non sélectionnés
+                        if ($equipe->getSelectionnee() == true and $sel == '0') {//Le professeur a une équipe sélectionnée, il ne doit pas figurer dans la liste des profs non sélectionnés
                             array_splice($listProfs, $i, 1);//suppression de ce prof de la liste
                         } else {
                             if ($equipe->getIdProf1() == $prof->getUser()) {
                                 $encad = '(prof1)';
                             }
                             if ($equipe->getIdProf2() == $prof->getUser()) {
-                                $encad = '(encadrantf2)';
+                                $encad = '(encadrant2)';
                             }
-                            $equipestring = $equipestring . substr($equipe->getTitreProjet(), 0, 50) . $encad;//substr pour éviter une erreur de string supérieure à 255 dans la base
+                            $equipestring = $equipestring . substr($equipe->getTitreProjet(), 0, 20) . $encad;//substr pour éviter une erreur de string supérieure à 255 dans la base
                             $equipesLettres == '' ? $equipesLettres = $equipe->getLettre() : $equipesLettres = $equipesLettres . '/' . $equipe->getLettre();
                             if (next($equipes) != null) {
                                 $equipestring = $equipestring . "\n";
@@ -444,7 +451,7 @@ class ProfesseursCrudController extends AbstractCrudController
                 }
             }
         }
-
+        dd('Ok');
 
         $spreadsheet = new Spreadsheet();
         $spreadsheet->getProperties()
@@ -504,10 +511,12 @@ class ProfesseursCrudController extends AbstractCrudController
             $sheet->getStyle('A' . $ligne . ':M' . $ligne)->getAlignment()->setWrapText(true);
             $ligne += 1;
         }
+        $selectionne = ' ';
 
-
+        $sel == '1' ? $selectionne = 'sélectionnés' : $selectionne = 'non sélectionnés';
+        $filename = 'professeurs' . '_' . $selectionne;
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="professeurs.xls"');
+        header('Content-Disposition: attachment;filename=' . $filename . '.xls');
         header('Cache-Control: max-age=0');
 
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xls($spreadsheet);
@@ -564,8 +573,8 @@ class ProfesseursCrudController extends AbstractCrudController
 
                 }
 
-                }
             }
+        }
 
         $numEs = $edition->getEd();
 
@@ -608,14 +617,13 @@ class ProfesseursCrudController extends AbstractCrudController
                     ->setCellValue('B' . $ligne, $prof->getUser()->getPrenom())
                     ->setCellValue('C' . $ligne, $prof->getUser()->getEmail());
                 if ($equipe != null) {
-                    if($equipe->getCentre()!=null){
-                    $sheet->setCellValue('D' . $ligne, $equipe->getCentre()->getCentre())
-                        ->setCellValue('G' . $ligne, $equipe->getCentre()->getLieu())
-                        ->setCellValue('H' . $ligne, $equipe->getCentre()->getOrganisateur());;
+                    if ($equipe->getCentre() != null) {
+                        $sheet->setCellValue('D' . $ligne, $equipe->getCentre()->getCentre())
+                            ->setCellValue('G' . $ligne, $equipe->getCentre()->getLieu())
+                            ->setCellValue('H' . $ligne, $equipe->getCentre()->getOrganisateur());;
                     }
-                     $sheet->setCellValue('E' . $ligne, $equipe->getNumero())
-                        ->setCellValue('F' . $ligne, $equipe->getTitreProjet())
-                         ;
+                    $sheet->setCellValue('E' . $ligne, $equipe->getNumero())
+                        ->setCellValue('F' . $ligne, $equipe->getTitreProjet());
                 }
                 $ligne += 1;
             }
@@ -692,7 +700,6 @@ class ProfesseursCrudController extends AbstractCrudController
             }
 
         }
-
 
 
         header('Content-Type: application/vnd.ms-excel');
