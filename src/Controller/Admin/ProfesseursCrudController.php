@@ -444,15 +444,13 @@ class ProfesseursCrudController extends AbstractCrudController
                         $equipestring = count($equipes) . '-' . $equipestring;
                         $prof->setEquipesstring($equipestring);
                         $lettres[$prof->getId()] = $equipesLettres;
-                        $em->persist($prof);
-                        $em->flush();
+                        //$em->persist($prof);
+                        //$em->flush();
                     }
                     $i++;
                 }
             }
         }
-        dd('Ok');
-
         $spreadsheet = new Spreadsheet();
         $spreadsheet->getProperties()
             ->setCreator("Olymphys")
