@@ -409,8 +409,8 @@ class ProfesseursCrudController extends AbstractCrudController
             ->orderBy('u.nom', 'ASC');
         $listProfs = $queryBuilder->getQuery()->getResult();
 
-        $lettres = [];
-        if ($listProfs != null) {//Pour regrouper les équipes sur un même professeur dans le formaz A/B/C
+        $nbEquipes = [];
+        if ($listProfs != null) {//Pour regrouper les équipes sur un même professeur dans le format A/B/C
             $i = 0;
             foreach ($listProfs as $prof) {
                 $equipestring = '';
@@ -421,7 +421,7 @@ class ProfesseursCrudController extends AbstractCrudController
                     ->andWhere('e.idProf1 =:user OR e.idProf2 =:user')
                     ->setParameter('user', $prof->getUser())
                     ->getQuery()->getResult();
-
+                $nbEquipes[$prof->getId()] = count($equipes);
                 if ($equipes != null) {
                     foreach ($equipes as $equipe) {
                         if ($equipe->getSelectionnee() == true and $sel == '0') {//Le professeur a une équipe sélectionnée, il ne doit pas figurer dans la liste des profs non sélectionnés
@@ -433,19 +433,24 @@ class ProfesseursCrudController extends AbstractCrudController
                             if ($equipe->getIdProf2() == $prof->getUser()) {
                                 $encad = '(encadrant2)';
                             }
-                            $equipestring = $equipestring . substr($equipe->getTitreProjet(), 0, 20) . $encad;//substr pour éviter une erreur de string supérieure à 255 dans la base
-                            $equipesLettres == '' ? $equipesLettres = $equipe->getLettre() : $equipesLettres = $equipesLettres . '/' . $equipe->getLettre();
+                            $slugger = new AsciiSlugger();
+                            $nom_equipe = $slugger->slug($equipe->getTitreProjet());
+                            //$equipesLettres == '' ? $equipesLettres = $equipe->getLettre() : $equipesLettres = $equipesLettres . '/' . $equipe->getLettre();
+                            if (strlen($equipe->getTitreProjet() > 40)) {
+
+                                $nom_equipe = $equipe->getNumero() . ' : ' . $equipe->getLettre() . ':' . substr($nom_equipe, 0, 40);
+                            }
+                            $equipestring = $equipestring . $nom_equipe . $encad;
                             if (next($equipes) != null) {
                                 $equipestring = $equipestring . "\n";
-
                             }
 
                         }
-                        $equipestring = count($equipes) . '-' . $equipestring;
+
                         $prof->setEquipesstring($equipestring);
-                        $lettres[$prof->getId()] = $equipesLettres;
-                        //$em->persist($prof);
-                        //$em->flush();
+                        //$lettres[$prof->getId()] = $equipesLettres;
+                        $em->persist($prof);
+                        $em->flush();
                     }
                     $i++;
                 }
@@ -501,10 +506,10 @@ class ProfesseursCrudController extends AbstractCrudController
                 ->setCellValue('J' . $ligne, $prof->getUser()->getUaiId()->getCommune());
             $sheet->setCellValue('K' . $ligne, $prof->getUser()->getUaiId()->getAcademie());
 
-            $equipesstring = explode('-', $prof->getEquipesstring());
-            $sheet->getRowDimension($ligne)->setRowHeight(12.5 * intval($equipesstring[0]));
-            $sheet->getCell('L' . $ligne)->setValueExplicit($equipesstring[1], \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);//'abc \n cde'
-            $sheet->getCell('M' . $ligne)->setValue($lettres[$prof->getId()]);
+            $equipesstring = $prof->getEquipesstring();
+            $sheet->getRowDimension($ligne)->setRowHeight(14 * $nbEquipes[$prof->getId()]);
+            $sheet->getCell('L' . $ligne)->setValueExplicit($equipesstring, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);//'abc \n cde'
+            //$sheet->getCell('M' . $ligne)->setValue($lettres[$prof->getId()]);
 
             $sheet->getStyle('A' . $ligne . ':M' . $ligne)->getAlignment()->setWrapText(true);
             $ligne += 1;
