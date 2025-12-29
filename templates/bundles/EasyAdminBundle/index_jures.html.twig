@@ -109,6 +109,9 @@
                             </div>
                         </th>
                     {% endif %}
+                    <th>
+
+                    </th>
 
                     {% set ea_sort_asc = constant('EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Option\\SortOrder::ASC') %}
                     {% set ea_sort_desc = constant('EasyCorp\\Bundle\\EasyAdminBundle\\Config\\Option\\SortOrder::DESC') %}
@@ -204,9 +207,9 @@
                             {{ entity.instance.initialesJure }}
                         </td>
                         {% for lettre in lettres %}
-
+                            {% set test= false %}
                             <td>
-                                {% set test= false %}
+
                                 {% for equipes in entity.instance.attributions %}
                                     {% if equipes.equipe.equipeinter.lettre== lettre %}
                                         {% set test=true %}

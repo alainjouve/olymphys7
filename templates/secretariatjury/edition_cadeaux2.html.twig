@@ -18,13 +18,13 @@
                 <th>Titre projet</th>
                 <th>Cadeau</th>
             </tr>
-
+            {% set class="btn btn-secondary" %}
             {% for equipe in listEquipes %}
-                {% if equipe.classement =='3ème' %}
+                {% if equipe.couleur == 3 %}
                     {% set class = 'btn btn-primary' %}
-                {% elseif  equipe.classement =='2ème' %}
+                {% elseif  equipe.couleur == 2 %}
                     {% set class='btn btn-warning' %}
-                {% elseif  equipe.classement =='1er' %}
+                {% elseif  equipe.couleur == 1 %}
                     {% set class='btn btn-danger' %}
                 {% elseif equipe.classement==null %}
                     {% set class='btn btn-light' %}

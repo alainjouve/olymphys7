@@ -102,48 +102,47 @@ class SecretariatadminController extends AbstractController
                     //dd($value);
                     $uai->setUai($value);
                 }
-                    $value = $worksheet->getCell('Q' . $row)->getValue();
-                    $uai->setNature($value);
-                    // $value = $worksheet->getCell('J' . $row)->getValue();
-                    // $uai->setAcheminement($value);
-                    //$value = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
-                    //$uai->setSigle($value);
-                    $value = $worksheet->getCell('F' . $row)->getValue();
-                    $uai->setCommune($value);
-                    $value = $worksheet->getCell('J' . $row)->getValue();
-                    if($value==null) {
-                       $uai->setAcademie('Etranger');
-                    }
-                    else{
-                        $uai->setAcademie($value);
-                    }
-                    $value = $worksheet->getCell('R'. $row)->getValue();
-                    if($value==null)$value='France';
-                    $uai->setPays($value);
-                    $value = $worksheet->getCell('I' . $row)->getValue();
+                $value = $worksheet->getCell('Q' . $row)->getValue();
+                $uai->setNature($value);
+                // $value = $worksheet->getCell('J' . $row)->getValue();
+                // $uai->setAcheminement($value);
+                //$value = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+                //$uai->setSigle($value);
+                $value = $worksheet->getCell('F' . $row)->getValue();
+                $uai->setCommune($value);
+                $value = $worksheet->getCell('J' . $row)->getValue();
+                if ($value == null) {
+                    $uai->setAcademie('Etranger');
+                } else {
+                    $uai->setAcademie($value);
+                }
+                $value = $worksheet->getCell('R' . $row)->getValue();
+                if ($value == null) $value = 'France';
+                $uai->setPays($value);
+                $value = $worksheet->getCell('I' . $row)->getValue();
 
-                    $uai->setDepartement($value);
-                   /* $value = $worksheet->getCell('C' . $row)->getValue()  //Données qui n'ont plus court en 2024
-                    $uai->setDenominationPrincipale($value);
-                    $value = $worksheet->getCell('B' . $row)->getValue();
-                    $uai->setAppellationOfficielle($value);
+                $uai->setDepartement($value);
+                /* $value = $worksheet->getCell('C' . $row)->getValue()  //Données qui n'ont plus court en 2024
+                 $uai->setDenominationPrincipale($value);
+                 $value = $worksheet->getCell('B' . $row)->getValue();
+                 $uai->setAppellationOfficielle($value);
 
-                   */
-                    $value = $worksheet->getCell('B' . $row)->getValue();
+                */
+                $value = $worksheet->getCell('B' . $row)->getValue();
                 $uai->setNom(ucwords(strtolower($value)));//à changer les noms composés n'ont plus de majuscule au deuxième nom
-                    $value = $worksheet->getCell('C' . $row)->getValue();
-                    $uai->setAdresse($value);
-                    $value = $worksheet->getCell('D' . $row)->getValue();
-                    $uai->setBoitePostale($value);
-                    $value = $worksheet->getCell('E' . $row)->getValue();
-                    $uai->setCodePostal($value);
+                $value = $worksheet->getCell('C' . $row)->getValue();
+                $uai->setAdresse($value);
+                $value = $worksheet->getCell('D' . $row)->getValue();
+                $uai->setBoitePostale($value);
+                $value = $worksheet->getCell('E' . $row)->getValue();
+                $uai->setCodePostal($value);
 
-                    $value = $worksheet->getCell('L' . $row)->getValue();
-                    $uai->setCoordonneeX($value);
-                    $value = $worksheet->getCell('M' . $row)->getValue();
-                    $uai->setCoordonneeY($value);
-                    $this->em->persist($uai);
-                    $this->em->flush();
+                $value = $worksheet->getCell('L' . $row)->getValue();
+                $uai->setCoordonneeX($value);
+                $value = $worksheet->getCell('M' . $row)->getValue();
+                $uai->setCoordonneeY($value);
+                $this->em->persist($uai);
+                $this->em->flush();
 
             }
             return $this->redirectToRoute('core_home');
@@ -268,8 +267,9 @@ class SecretariatadminController extends AbstractController
                 ->orderBy('e.lettre', 'ASC')
                 ->getQuery()
                 ->getResult();
-            $em = $this->doctrine->getManager();
 
+            $em = $this->doctrine->getManager();
+            $i = 1;
             foreach ($listEquipesinter as $equipesel) {
 
                 if (!$repositoryEquipes->findOneBy(['equipeinter' => $equipesel])) {//Vérification de l'existence de cette équipe
@@ -280,6 +280,7 @@ class SecretariatadminController extends AbstractController
 
                 $equipe->setEquipeinter($equipesel);
                 $equipe->setOrdre(1);
+                $equipe->setRang($i);
                 $equipe->setCouleur(0);
                 $date = new DateTime('now');
                 $heure = '00:00';
@@ -291,7 +292,7 @@ class SecretariatadminController extends AbstractController
 
                 $em->persist($equipe);
                 $em->flush();
-
+                $i++;
             }
 
             return $this->redirectToRoute('core_home');

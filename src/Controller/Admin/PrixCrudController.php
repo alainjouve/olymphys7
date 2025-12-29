@@ -30,7 +30,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[AllowDynamicProperties] class PrixCrudController extends AbstractCrudController
+#[AllowDynamicProperties]
+class PrixCrudController extends AbstractCrudController
 {
     protected EntityManagerInterface $doctrine;
     protected RequestStack $requeststack;
@@ -49,7 +50,7 @@ use Symfony\Component\Routing\Attribute\Route;
     public function configureCrud(Crud $crud): Crud
     {
         return $crud->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',])
             ->setPageTitle(Crud::PAGE_EDIT, 'Modifier un prix')
             ->setSearchFields(['id', 'prix', 'niveau', 'voix', 'intervenant', 'remisPar'])
             ->setDefaultSort(['niveau' => 'ASC'])
@@ -75,7 +76,7 @@ use Symfony\Component\Routing\Attribute\Route;
         $prix = TextField::new('prix');;
         $niveau = TextField::new('niveau');
         $voix = TextField::new('voix');
-        $mloyal = TextField::new('mloyal', 'M Loyal');
+        //$mloyal = TextField::new('mloyal', 'M Loyal');
         $intervenant = TextField::new('intervenant');
         $remisPar = TextField::new('remisPar');
         $id = IntegerField::new('id', 'ID');
@@ -88,13 +89,13 @@ use Symfony\Component\Routing\Attribute\Route;
         $attribue = BooleanField::new('attribue');
 
         if (Crud::PAGE_INDEX === $pageName) {
-            return [$id, $prix, $niveau, $equipe, $voix, $intervenant, $mloyal, $remisPar, $attribue];
+            return [$id, $prix, $niveau, $equipe, $voix, $intervenant, $remisPar, $attribue];
         } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$id, $prix, $niveau, $equipe, $voix, $intervenant, $mloyal,];
+            return [$id, $prix, $niveau, $equipe, $voix, $intervenant,];
         } elseif (Crud::PAGE_NEW === $pageName) {
-            return [$prix, $niveau, $equipe, $voix, $intervenant, $mloyal, $remisPar];
+            return [$prix, $niveau, $equipe, $voix, $intervenant, $remisPar];
         } elseif (Crud::PAGE_EDIT === $pageName) {
-            return [$prix, $niveau, $equipe, $voix, $intervenant, $mloyal, $remisPar, $attribue];
+            return [$prix, $niveau, $equipe, $voix, $intervenant, $remisPar, $attribue];
         }
     }
 
@@ -135,11 +136,13 @@ use Symfony\Component\Routing\Attribute\Route;
             ->linkToRoute('prix_tableau_excel')
             ->createAsGlobalAction();
 
-        return $actions ->update('index', Action::DELETE,function  (Action $action) {
-            return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+        return $actions->update('index', Action::DELETE, function (Action $action) {
+            return $action->setIcon('fa fa-trash-alt')->setLabel(false);
+        }
         )
-            ->update('index', Action::EDIT,function  (Action $action) {
-                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            ->update('index', Action::EDIT, function (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);
+            }
             )
             ->add(Crud::PAGE_INDEX, $uploadPrix)
             ->add(Crud::PAGE_INDEX, $tableauExcel)

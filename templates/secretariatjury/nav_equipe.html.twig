@@ -1,24 +1,27 @@
 <div class="container">
     {% if compteur >1 %}
-        <a href="{{ path('secretariatjury_lescadeaux', {'compteur': compteur-1} ) }}" class="btn btn-outline-danger">
+        <a href="{{ path('secretariatjury_attrib_cadeaux', {'compteur': compteur-1} ) }}"
+           class="btn btn-outline-danger">
             <i class="fas fa-caret-left"></i> Equipe précédente
         </a>
     {% endif %}
     {% if compteur ==1 %}
 
-        <a href="{{ path('secretariatjury_lescadeaux', {'compteur': nbreEquipes-1} ) }}" class="btn btn-outline-danger">
+        <a href="{{ path('secretariatjury_attrib_cadeaux', {'compteur': nbreEquipes-1} ) }}"
+           class="btn btn-outline-danger">
             <i class="fas fa-caret-right"></i> Equipe précédente
         </a>
     {% endif %}
     {% if compteur <nbreEquipes-1 %}
 
-        <a href="{{ path('secretariatjury_lescadeaux', {'compteur': compteur+1} ) }}" class="btn btn-outline-danger">
+        <a href="{{ path('secretariatjury_attrib_cadeaux', {'compteur': compteur+1} ) }}"
+           class="btn btn-outline-danger">
             <i class="fas fa-caret-right"></i> Equipe suivante
         </a>
     {% endif %}
     {% if compteur ==nbreEquipes-1 %}
 
-        <a href="{{ path('secretariatjury_lescadeaux', {'compteur': 1} ) }}" class="btn btn-outline-danger">
+        <a href="{{ path('secretariatjury_attrib_cadeaux', {'compteur': 1} ) }}" class="btn btn-outline-danger">
             <i class="fas fa-caret-right"></i> Equipe suivante
         </a>
     {% endif %}

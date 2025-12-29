@@ -84,10 +84,8 @@ class EquipesRepository extends ServiceEntityRepository
     public function getEquipesCadeaux()
     {
         $query = $this->createQueryBuilder('e')
-            ->leftJoin('e.cadeau', 'c')
-            ->addSelect('c')
-            ->addOrderBy('e.couleur', 'ASC')
             ->leftJoin('e.equipeinter', 'eq')
+            ->orderBy('e.couleur', 'ASC')
             ->addOrderBy('eq.lettre', 'ASC')
             ->getQuery();
 
@@ -108,6 +106,7 @@ class EquipesRepository extends ServiceEntityRepository
             ->leftJoin('e.equipeinter', 'i')
             ->addSelect('i')
             ->orderBy('e.classement', 'ASC')
+            ->addOrderBy('i.lettre', 'ASC')
             ->getQuery();
 
         return $query->getResult();
@@ -128,7 +127,8 @@ class EquipesRepository extends ServiceEntityRepository
             ->addSelect('v')
             ->leftJoin('e.equipeinter', 'i')
             ->addSelect('i')
-            ->orderBy('e.classement', 'DESC', 'e.lettre', 'ASC')
+            ->orderBy('e.classement', 'DESC')
+            ->addOrderBy('i.lettre', 'ASC')
             ->getQuery();
 
         return $query->getResult();
@@ -163,9 +163,10 @@ class EquipesRepository extends ServiceEntityRepository
                 //->orderBy('e.total', 'DESC')
                 ->orderBy('e.couleur', 'ASC')
                 ->addOrderBy('e.total', 'DESC');//Classe les équipes selon les couleurs c'est à dire le classement provisoire
+
         }
 
-        if ($niveau == 0) {//Pour le classement général des équipes sans considéartion de prix
+        if ($niveau == 0) {//Pour le classement général des équipes sans considération de prix
             $queryBuilder
                 //->orderBy('e.total', 'DESC')
                 ->addOrderBy('e.total', 'DESC');//Classe les équipes selon le total des points décroissants
@@ -173,10 +174,14 @@ class EquipesRepository extends ServiceEntityRepository
         if ($niveau != 'c' and $niveau != 0) {//pour le classement pour une catégorie de prix
             $limit = $nbreprix;
             $queryBuilder
-                ->select('e')
+                //->select('e')
+                ->leftJoin('e.equipeinter', 'eq')
                 ->orderBy('e.total', 'DESC')
+                ->addOrderBy('eq.lettre', 'ASC')
                 ->setFirstResult($offset)
                 ->setMaxResults($limit);
+
+
         }
 
         // on récupère la query
@@ -187,6 +192,7 @@ class EquipesRepository extends ServiceEntityRepository
         $results = $query->getResult();
         //dd($results);
         // on retourne ces résultats
+
         return $results;
     }
 
