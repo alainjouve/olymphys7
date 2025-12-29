@@ -1601,24 +1601,26 @@ class SecretariatjuryController extends AbstractController
         $sheet->getStyle('A' . $ligne)->applyFromArray($styleText);
         $sheet->getStyle('A' . $ligne)->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
         $ligne = $ligne + 2;
-        foreach ($listEquipes as $equipe) {
-            $sheet->getRowDimension($ligne)->setRowHeight(50);
-            $lettre = $equipe->getEquipeinter()->getLettre();
-            $sheet->setCellValue('C' . $ligne, $lettre);
-            $sheet->setCellValue('A' . $ligne, $equipe->getClassement() . ' Prix');
-            $sheet->setCellValue('B' . $ligne, $equipe->getPrix()->getPrix());//Donne l'intitulé du prix
-            $sheet->getStyle('C' . $ligne)->applyFromArray($styleLettre)->applyFromArray($borderArray);
-            $sheet->getStyle('A' . $ligne . ':B' . $ligne)->applyFromArray($styleText);
-            $sheet->setCellValue('D' . $ligne, $equipe->getEquipeInter()->getTitreProjet());
-            $sheet->getStyle('D' . $ligne)->applyFromArray($styleText)->applyFromArray($borderArray);
-            $sheet->setCellValue('E' . $ligne, $equipe->getEquipeInter()->getLyceeNomAcademie());
-            $sheet->getStyle('E' . $ligne)->applyFromArray($styleText)->applyFromArray($borderArray);
-            $spreadsheet->getActiveSheet()->getStyle('A' . $ligne . ':E' . $ligne)
-                ->applyFromArray($borderArray);
-            $ligne++;
-            $ligne++;
-        }
 
+        foreach ($listEquipes as $equipe) {
+            if ($equipe->getClassement() != null and $equipe->getPrix() != null) {
+                $sheet->getRowDimension($ligne)->setRowHeight(50);
+                $lettre = $equipe->getEquipeinter()->getLettre();
+                $sheet->setCellValue('C' . $ligne, $lettre);
+                $sheet->setCellValue('A' . $ligne, $equipe->getClassement() . ' Prix');
+                $sheet->setCellValue('B' . $ligne, $equipe->getPrix()->getPrix());//Donne l'intitulé du prix
+                $sheet->getStyle('C' . $ligne)->applyFromArray($styleLettre)->applyFromArray($borderArray);
+                $sheet->getStyle('A' . $ligne . ':B' . $ligne)->applyFromArray($styleText);
+                $sheet->setCellValue('D' . $ligne, $equipe->getEquipeInter()->getTitreProjet());
+                $sheet->getStyle('D' . $ligne)->applyFromArray($styleText)->applyFromArray($borderArray);
+                $sheet->setCellValue('E' . $ligne, $equipe->getEquipeInter()->getLyceeNomAcademie());
+                $sheet->getStyle('E' . $ligne)->applyFromArray($styleText)->applyFromArray($borderArray);
+                $spreadsheet->getActiveSheet()->getStyle('A' . $ligne . ':E' . $ligne)
+                    ->applyFromArray($borderArray);
+                $ligne++;
+                $ligne++;
+            }
+        }
         $nblignes = $ligne;
         $spreadsheet->getActiveSheet()->getStyle('A3:D' . $nblignes)
             ->getAlignment()->setWrapText(true)->applyFromArray($vcenterArray)->applyFromArray($bordures);
@@ -1626,11 +1628,16 @@ class SecretariatjuryController extends AbstractController
         $spreadsheet->getActiveSheet()->getPageSetup()->setFitToHeight(0);
         $spreadsheet->getActiveSheet()->getPageSetup()->setHorizontalCentered(true);
         $spreadsheet->getActiveSheet()->getPageSetup()->setVerticalCentered(true);
-        $spreadsheet->getActiveSheet()->getHeaderFooter()->setOddFooter('&14Page &P sur &N');
+        if ($nblignes > 25) {
+            $spreadsheet->getActiveSheet()->getHeaderFooter()->setOddFooter('&14Page &P sur &N');
+        }
+
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="proclamation.xls"');
+        header('Content-Disposition: attachment;filename="ordre_proclamation.xls"');
         header('Cache-Control: max-age=0');
+
         $writer = new Xls($spreadsheet);
+        ob_end_clean();//erreur 500 sur le site(pas en local)si cette ligne n'est pas présente
         $writer->save('php://output');
 
 
