@@ -30,33 +30,38 @@ class ModifEquipeType extends AbstractType
 
     }
 
-    public function buildForm(FormBuilderInterface $builder, array $options) :void
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
 
         $uai = $options['uai'];
         $eleves = $options['eleves'];
         $nbEleves = count($eleves);
         $required = [true, true, false, false, false, false];
-        $disabled=[false, false, false, false, false, false];//Pour éviter l'ajout d'élève après la concours cia
+        $disabled = [false, false, false, false, false, false];//Pour éviter l'ajout d'élève après la concours cia
         $datelim = $this->requestStack->getSession()->get('edition')->getDatelimNat();
-        $datelimCia=$this->requestStack->getSession()->get('edition')->getConcoursCia();//Date du concours cia au delà de laquelle l'ajoût d'élèves n'est plus possible
-        $date=new \DateTime('now');
-        if ($date>$datelimCia){
-            for($i=$nbEleves;$i<6; $i++){
+        $datelimCia = $this->requestStack->getSession()->get('edition')->getConcoursCia();//Date du concours cia au delà de laquelle l'ajoût d'élèves n'est plus possible
+        $date = new \DateTime('now');
+        if ($date > $datelimCia) {
+            for ($i = $nbEleves; $i < 6; $i++) {
 
-                $disabled[$i]=true;
+                $disabled[$i] = true;
 
             }
 
 
         }
+        $tag = false;
+        $label='Titre du projet(max 80 cars)';
+        if ($date > new \DateTime($datelimCia->format('Y') . '-12-31')) {
+            $tag = true;
+            $label='Il n\'est plus possible de modifier le nom du projet';
+        }
 
-        new datetime('now') > $datelim ? $tag = true : $tag = false;
         $builder->add('titreProjet', TextType::class, [
-            'label' => 'Titre du projet(max 80 cars)',
+            'label' => $label,
             'mapped' => true,
             'disabled' => $tag,
-            'attr' => ['maxlength'=>"80"]
+            'attr' => ['maxlength' => "80"]
         ])
             ->add('idProf1', EntityType::class, [
                 'class' => User::class,
@@ -96,21 +101,21 @@ class ModifEquipeType extends AbstractType
                 'empty_data' => $eleves[$i - 1]->getPrenom(),
                 'data' => $eleves[$i - 1]->getPrenom(),
                 'required' => $required[$i - 1],
-                'disabled'=>$disabled[$i-1]
+                'disabled' => $disabled[$i - 1]
             ])
                 ->add('nomeleve' . $i, TextType::class, [
                     'mapped' => false,
                     'empty_data' => $eleves[$i - 1]->getNom(),
                     'data' => $eleves[$i - 1]->getNom(),
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1]
+                    'disabled' => $disabled[$i - 1]
                 ])
                 ->add('maileleve' . $i, EmailType::class, [
                     'mapped' => false,
                     'empty_data' => $eleves[$i - 1]->getCourriel(),
                     'data' => $eleves[$i - 1]->getCourriel(),
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1]
+                    'disabled' => $disabled[$i - 1]
                 ])
                 ->add('classeeleve' . $i, ChoiceType::class, [
                     'choices' => [' ' => null,
@@ -122,7 +127,7 @@ class ModifEquipeType extends AbstractType
                     'data' => $eleves[$i - 1]->getClasse(),
                     'placeholder' => $eleves[$i - 1]->getClasse(),
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1]
+                    'disabled' => $disabled[$i - 1]
 
                 ])
                 ->add('genreeleve' . $i, ChoiceType::class, [
@@ -130,7 +135,7 @@ class ModifEquipeType extends AbstractType
                     'data' => $eleves[$i - 1]->getGenre(),
                     'placeholder' => $eleves[$i - 1]->getGenre(),
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1],
+                    'disabled' => $disabled[$i - 1],
                     'choices' => [' ' => null,
                         'F' => 'F',
                         'M' => 'M']])
@@ -148,17 +153,17 @@ class ModifEquipeType extends AbstractType
             $builder->add('prenomeleve' . $i, TextType::class, [
                 'mapped' => false,
                 'required' => $required[$i - 1],
-                'disabled'=>$disabled[$i-1]
+                'disabled' => $disabled[$i - 1]
             ])
                 ->add('nomeleve' . $i, TextType::class, [
                     'mapped' => false,
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1]
+                    'disabled' => $disabled[$i - 1]
                 ])
                 ->add('maileleve' . $i, EmailType::class, [
                     'mapped' => false,
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1]
+                    'disabled' => $disabled[$i - 1]
                 ])
                 ->add('classeeleve' . $i, ChoiceType::class, [
                     'choices' => [' ' => null,
@@ -168,12 +173,12 @@ class ModifEquipeType extends AbstractType
                     ],
                     'mapped' => false,
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1]
+                    'disabled' => $disabled[$i - 1]
                 ])
                 ->add('genreeleve' . $i, ChoiceType::class, [
                     'mapped' => false,
                     'required' => $required[$i - 1],
-                    'disabled'=>$disabled[$i-1],
+                    'disabled' => $disabled[$i - 1],
                     'choices' => [' ' => null,
                         'F' => 'F',
                         'M' => 'M']])
@@ -229,7 +234,7 @@ class ModifEquipeType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver) : void
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(['data_class' => Equipesadmin::class, 'uai' => null, 'eleves' => null]);
 
