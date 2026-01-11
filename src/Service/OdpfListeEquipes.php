@@ -56,11 +56,11 @@ class OdpfListeEquipes
             ->setParameter('numero', 100)
             ->orderBy('e.numero', 'ASC');
 
-        if ($choix!='la_carte_des_equipes') {//Toutes les équipes comptent pour la page de la carte même celles qui se sont désistées
+        if ($choix != 'la_carte_des_equipes') {//Toutes les équipes comptent pour la page de la carte même celles qui se sont désistées
 
             $qb->andWhere('e.inscrite !=0');
         }
-        $listEquipes=$qb
+        $listEquipes = $qb
             ->getQuery()
             ->getResult();
         foreach ($listEquipes as $equipe) {

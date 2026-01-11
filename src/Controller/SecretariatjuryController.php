@@ -52,6 +52,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
@@ -2128,12 +2129,13 @@ class SecretariatjuryController extends AbstractController
 
     #[\Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted('ROLE_SECRETARIAT_JURY')]
     #[Route("/secretariatjury/charge_jures", name: "secretariatjury_charge_jures")]
-    public function charge_jures(Request $request): RedirectResponse|Response //Pour charger le tableau fourni par Pierre
+    public function charge_jures(Request $request, UserPasswordHasherInterface $passwordEncoder, Mailer $mailer): RedirectResponse|Response //Pour charger le tableau fourni par Pierre
     {
 
         $defaultData = ['message' => 'Charger le fichier Jures'];
         $form = $this->createFormBuilder($defaultData)
-            ->add('fichier', FileType::class)
+            ->add('fichier', FileType::class,
+                ['label' => 'Le fichier doit être de type .csv'])
             ->add('save', SubmitType::class)
             ->getForm();
 
@@ -2142,10 +2144,13 @@ class SecretariatjuryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $fichier = $data['fichier'];
-            $spreadsheet = IOFactory::load($fichier);
+            //$spreadsheet = IOFactory::load($fichier);
+
+            $reader = new \PhpOffice\PhpSpreadsheet\Reader\Csv();
+            $spreadsheet = $reader->load($fichier);
             $worksheet = $spreadsheet->getActiveSheet();
 
-            $highestRow = $spreadsheet->getActiveSheet()->getHighestRow();
+            $highestRow = $spreadsheet->getActiveSheet()->getHighestDataRow();
 
             $em = $this->doctrine->getManager();
             //$lettres = range('A','Z') ;
@@ -2162,8 +2167,8 @@ class SecretariatjuryController extends AbstractController
 
             for ($row = 2; $row <= $highestRow; ++$row) {
 
-                $nom = $worksheet->getCell([1, $row])->getValue();
-                $prenom = $worksheet->getCell([2, $row])->getValue();
+                $nom = $worksheet->getCell([2, $row])->getValue();
+                $prenom = $worksheet->getCell([1, $row])->getValue();
                 $email = $worksheet->getCell([3, $row])->getValue();
                 $initiales = $worksheet->getCell([4, $row])->getValue();
 
@@ -2172,7 +2177,31 @@ class SecretariatjuryController extends AbstractController
                 ->where('u.email =:email')
                     ->setParameter('email', $email)
                     ->getQuery()->getOneOrNullResult();
+                if ($user == null) {//L'user n'existe pas il faut d'abord le créer
 
+
+                    $user = new User();
+                    $slugger = new AsciiSlugger();
+                    $prenomNorm = ucfirst(strtolower($slugger->slug($prenom)));
+                    $username = $prenomNorm[0] . '_' . $slugger->slug($nom);//Création d'un username avec caratères ASCII
+                    $pwd = $prenomNorm;
+                    $i = 1;
+                    while ($repositoryUser->findBy(['username' => $username])) {//pour éviter des logins identiques on ajoute un numéro à la fin
+                        $username = $username . $i;
+                        $i = +1;
+                    }
+                    $user->setUsername($username);
+                    $user->setPassword($passwordEncoder->hashPassword($user, $pwd));
+                    $user->setEmail($email);
+                    $user->setPrenom($prenom);
+                    $user->setNom($nom);
+                    $user->setRoles(['ROLE_JURY']);
+                    $this->doctrine->getManager()->persist($user);
+                    $this->doctrine->getManager()->flush();
+                    $mailer->sendInscriptionJure($user, $pwd);
+
+                    $message = $message .'<br>'.$prenom.' '. $nom . ' ne correspond pas à un user existant et a été créé, les identifiants ont été envoyé';
+                }
                 //Si l'user existe
                 if ($user !== null) {//certains jurés sont parfois aussi organisateur des cia avec un autre compte.on ne sélectionne que le compte de role jury
                     if (in_array('ROLE_JURY', $user->getRoles())) {//il faut que l'user soit déclaré memebre du jury avant le chargement des attributions
@@ -2252,12 +2281,10 @@ class SecretariatjuryController extends AbstractController
                         $em->persist($jure);
                         $em->flush();
                     } else {//L'user existe mais n'a pas le role JURY
-                        $message = $message . $nom . ' n\'a pas le  ROLE_JURY  et n\'a pu être affecté au jury';
+                        $message = $message .'<br>'.$renom.' '.$nom . ' n\'a pas le  ROLE_JURY  et n\'a pu être affecté au jury';
                     }
                 }
-                if ($user == null) {//L'user n'existe pas il faut d'abord le créer
-                    $message = $message . $nom . ' ne correspond pas à un user existant et n\'a pu être enregistré';
-                }
+
             }
 
             $this->requestStack->getSession()->set('info', $message);

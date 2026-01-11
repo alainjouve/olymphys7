@@ -74,7 +74,7 @@ class Mailer
     /**
      * @throws TransportExceptionInterface
      */
-    public function sendConfirmFile(Equipesadmin $equipe, $type_fichier, $user,$fichier): Email
+    public function sendConfirmFile(Equipesadmin $equipe, $type_fichier, $user, $fichier): Email
     {
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
@@ -86,14 +86,14 @@ class Mailer
         if ($type_fichier == 'fiche securité(présentation)' or $type_fichier == 'fiche securité(exposition)') {
 
             $email->addCc('lahmidani.fouad@free.fr', 'pascale.rv@gmail.com', 'claire.chalnot@gmail.com')
-            ->attachFromPath('odpf/odpf-archives/'.$this->requestStack->getSession()->get('edition')->getEd().'/fichiers/fichessecur/'.$fichier->getFichier());
+                ->attachFromPath('odpf/odpf-archives/' . $this->requestStack->getSession()->get('edition')->getEd() . '/fichiers/fichessecur/' . $fichier->getFichier());
 
         }
         $equipe->getSelectionnee() != true ? $infoequipe = $equipe->getInfoequipe() : $infoequipe = $equipe->getInfoequipenat();
         $email->htmlTemplate('email/confirm_fichier.html.twig')
             ->subject('Depot du fichier ' . $type_fichier . ' de l\'équipe ' . $infoequipe)
             //->text('L\'equipe ' . $equipe->getInfoequipe() . ' a déposé un fichier : ' . $type_fichier)
-            ->context(['equipe' => $equipe, 'typeFichier' => $type_fichier, 'userNom' => $user->getPrenomNom(), 'user_email'=>$user->getEmail()]);
+            ->context(['equipe' => $equipe, 'typeFichier' => $type_fichier, 'userNom' => $user->getPrenomNom(), 'user_email' => $user->getEmail()]);
 
         $this->mailer->send($email);
 
@@ -154,12 +154,12 @@ class Mailer
                     if ($checkChange['inscrite'] == 'NON') {
                         $changetext = '<h1>Désinscription de l\'équipe !</h1><br>';
                         $checkChange['inscrite'] = $equipe->getIdProf1()->getPrenomNom() . '(<a href="' . $user->getEmail() . '">' . $user->getEmail() .
-                            '</a>) du lycée ' . $equipe->getNomLycee() . ' de ' . $equipe->getLyceeLocalite() . ' a désinscrit l\'équipe '.$equipe->getNumero().' denommée : ' . $equipe->getTitreProjet();
+                            '</a>) du lycée ' . $equipe->getNomLycee() . ' de ' . $equipe->getLyceeLocalite() . ' a désinscrit l\'équipe ' . $equipe->getNumero() . ' denommée : ' . $equipe->getTitreProjet();
                     }
                     if ($checkChange['inscrite'] == 'OUI') {
                         $changetext = '<h1>Réinscription de l\'équipe !</h1><br>';
                         $checkChange['inscrite'] = $equipe->getIdProf1()->getPrenomNom() . '(<a href="' . $user->getEmail() . '">' . $user->getEmail() .
-                            '</a>) du lycée ' . $equipe->getNomLycee() . ' de ' . $equipe->getLyceeLocalite() . ' a réinscrit l\'équipe '.$equipe->getNumero().' denommée : ' . $equipe->getTitreProjet();
+                            '</a>) du lycée ' . $equipe->getNomLycee() . ' de ' . $equipe->getLyceeLocalite() . ' a réinscrit l\'équipe ' . $equipe->getNumero() . ' denommée : ' . $equipe->getTitreProjet();
 
                     }
 
@@ -225,15 +225,21 @@ class Mailer
 
     }
 
-    public function sendInscriptionJure($jure, $pwd, $centre): TemplatedEmail
+    /**
+     * @throws TransportExceptionInterface
+     */
+    public function sendInscriptionJure($jure, $pwd): TemplatedEmail
     {
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
-            ->to($jure->getEmail())//Pour prévenir le juré de son inscription en tant que juré du centrecia,
+            ->to($jure->getEmail())//Pour prévenir le juré de son inscription en tant que juré,
             ->addCc('info@olymphys.fr')//prévient olymphys
-            ->htmlTemplate('email/confirme_jure_cia.html.twig')
-            ->subject('OdPF-Votre compte juré du concours national ')
-            ->context(['jureNom' => $jure->getPrenomJure() . ' ' . $jure->getNomJure()]);
+            ->htmlTemplate('email/confirme_user_jure.html.twig')
+            ->context(['jureNom' => $jure->getPrenom() . ' ' . $jure->getNom(),
+                'mailJure' => $jure->getEmail(),
+                'pwd' => $pwd])
+            ->subject('OdPF-Votre compte juré du concours national ');
+
 
         $this->mailer->send($email);
         return $email;
