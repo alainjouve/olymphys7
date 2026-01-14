@@ -501,7 +501,7 @@ class SecretariatjuryController extends AbstractController
 
                 $equipe->setCouleur($couleur);//On attribue la couleur selon la valeur choisie
 
-                $equipe->setRang($valsClassement[$couleur - 1]);
+                $equipe->setClassement($valsClassement[$couleur - 1]);
                 $em->persist($equipe);
                 $em->flush();
                 $classement = $repositoryEquipes->classement('c', 0, $nbre_equipes);//On reclasse les équipes selon leur couleur donc leur prix apparent
@@ -2200,7 +2200,7 @@ class SecretariatjuryController extends AbstractController
                     $this->doctrine->getManager()->flush();
                     $mailer->sendInscriptionJure($user, $pwd);
 
-                    $message = $message .'<br>'.$prenom.' '. $nom . ' ne correspond pas à un user existant et a été créé, les identifiants ont été envoyé';
+                    $message = $message . '<br>' . $prenom . ' ' . $nom . ' ne correspond pas à un user existant et a été créé, les identifiants ont été envoyé';
                 }
                 //Si l'user existe
                 if ($user !== null) {//certains jurés sont parfois aussi organisateur des cia avec un autre compte.on ne sélectionne que le compte de role jury
@@ -2281,7 +2281,7 @@ class SecretariatjuryController extends AbstractController
                         $em->persist($jure);
                         $em->flush();
                     } else {//L'user existe mais n'a pas le role JURY
-                        $message = $message .'<br>'.$renom.' '.$nom . ' n\'a pas le  ROLE_JURY  et n\'a pu être affecté au jury';
+                        $message = $message . '<br>' . $renom . ' ' . $nom . ' n\'a pas le  ROLE_JURY  et n\'a pu être affecté au jury';
                     }
                 }
 
