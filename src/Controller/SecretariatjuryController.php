@@ -162,7 +162,7 @@ class SecretariatjuryController extends AbstractController
         $repositoryNotes = $this->doctrine->getRepository(Notes::class);
 
         $repositoryJures = $this->doctrine->getRepository(Jures::class);
-        $listJures = $repositoryJures->findAll();
+        $listJures = $repositoryJures->findBy([],['nomJure' => 'ASC']);
 
         $repositoryEquipes = $this->doctrine->getRepository(Equipes::class);
         $listEquipes = $repositoryEquipes->findAll();

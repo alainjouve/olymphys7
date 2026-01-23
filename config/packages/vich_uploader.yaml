@@ -21,8 +21,8 @@ vich_uploader:
         service: vich_uploader.namer_directory_property
         options: { property: 'directoryName' }
       namer:
-        service : Vich\UploaderBundle\Naming\PropertyNamer
-        options : {property : 'personalNamer'}
+        service: Vich\UploaderBundle\Naming\PropertyNamer
+        options: { property: 'personalNamer' }
 
     odpfFichierspasses:
       uri_prefix: '%app.path.odpf_archives%'
@@ -77,6 +77,9 @@ vich_uploader:
       inject_on_load: true
       delete_on_update: true
       delete_on_remove: true
+      namer:
+        service: Vich\UploaderBundle\Naming\PropertyNamer
+        options: { property: 'personalNamer' }
 
     odpfLogos:
       uri_prefix: '%app.path.odpf_logos.localhost%'

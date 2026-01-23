@@ -126,6 +126,11 @@ class OdpfDocuments
         return $this->updatedAt->format('d-m-Y H:i:s');
 
     }
-
+    public function personalNamer() : string
+    {
+        $slugger= new AsciiSlugger();
+        $nom=$slugger->slug($this->titre)->toString();
+        return $nom;
+    }
 
 }
