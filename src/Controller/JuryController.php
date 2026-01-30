@@ -64,17 +64,17 @@ class JuryController extends AbstractController
     {
         $session = $this->requestStack->getSession();
         $edition = $session->get('edition');
-
+        $edition = $this->doctrine->getRepository(Edition::class)->find($edition->getId());
         $editionN1 = $session->get('editionN1');
         $date = new \DateTime('now');
         if ($date < $edition->getDateOuvertureSite() and $date > $editionN1->getConcoursCn()) {//Dans le cas où l'édition N+1 a été créée il que les jurés puisse accéder aux équipes de l'édition N
             $edition = $editionN1;
         }
-        if(($_SERVER['SERVER_NAME'] == '127.0.0.1' or $_SERVER['SERVER_NAME'] == 'localhost') and $date < $edition->getConcoursCn()) {//pour tester le site avant le concours avec les données de l'édition précédente
+        /*if (($_SERVER['SERVER_NAME'] == '127.0.0.1' or $_SERVER['SERVER_NAME'] == 'localhost') and $date < $edition->getConcoursCn()) {//pour tester le site avant le concours avec les données de l'édition précédente
 
             $edition = $editionN1;
 
-        }
+        }*/
 
         $repositoryJures = $this->doctrine
             ->getManager()
@@ -117,13 +117,23 @@ class JuryController extends AbstractController
                     $progression[$key] = (!is_null($note)) ? 1 : 0;
 
                     try {
-                        $memoires[$key] = $repositoryMemoires->createQueryBuilder('m')
+                        $memoires[$key] = $repositoryMemoires->findOneBy(
+                            [
+                                'equipe' => $equipe->getEquipeinter(),
+                                'typefichier' => 0,
+                                'edition' => $edition,]
+                        );
+
+
+                        /*$repositoryMemoires->createQueryBuilder('m')
+                            ->select('m.id')
                             ->where('m.edition =:edition')
                             ->setParameter('edition', $edition)
-                            ->andWhere('m.typefichier = 0')
+                            ->andWhere('m.typefichier = :value')
                             ->andWhere('m.equipe =:equipe')
+                            ->setParameter('value', 0)
                             ->setParameter('equipe', $equipe->getEquipeinter())
-                            ->getQuery()->getSingleResult();
+                            ->getQuery()->getSingleResult();*/
 
 
                     } catch (Exception $e) {
@@ -132,6 +142,8 @@ class JuryController extends AbstractController
                     }
                 }
             }
+
+
         }
 
         $content = $this->renderView('cyberjury/accueil.html.twig',
@@ -817,7 +829,6 @@ class JuryController extends AbstractController
         }
 
 
-
     }
 
     #[IsGranted('ROLE_JURY')]
@@ -889,6 +900,7 @@ class JuryController extends AbstractController
 
 
     }
+
     #[IsGranted('ROLE_COMITE')]
     #[Route("/createFileAdvice,{concours}", name: "cyberjury_create_file_advice")]
     public function createFileAdvice(Request $request, $concours): RedirectResponse|Response
@@ -924,7 +936,7 @@ class JuryController extends AbstractController
         $phpWord->setDefaultFontName('Verdana');
         $fontStyleName = 'rStyle';
         $phpWord->addFontStyle($fontStyleName, ['bold' => true, 'italic' => true, 'size' => 16, 'allCaps' => true, 'doubleStrikethrough' => true]);
-        $texteStyle='styletexte';
+        $texteStyle = 'styletexte';
         $phpWord->addFontStyle($texteStyle, ['size' => 12, 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::LEFT]);
 
         $paragraphStyleName = 'pStyle';
@@ -935,8 +947,8 @@ class JuryController extends AbstractController
         $concours == 'cia' ? $phase = 'interacadémique' : $phase = 'national';
         $titre = '<h1>Conseils du jury ' . $phase . ' de la ' . $edition->getEd() . '<sup>e</sup> édition des OdPF</h1>';
         Html::addHtml($section, $titre);
-        $i=0;
-        $textrun=[];
+        $i = 0;
+        $textrun = [];
         if ($conseils != null) {
             foreach ($conseils as $conseil) {
                 $equipe = $conseil->getEquipe();
@@ -973,10 +985,9 @@ class JuryController extends AbstractController
                 //$section->addLine($lineStyle);
                 $section->addText('------');
             }
-        }
-       ;
+        };
         try {
-            $objWriter = IOFactory::createWriter($phpWord,  'Word2007');
+            $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
         } catch (\PhpOffice\PhpWord\Exception\Exception $e) {
 
         }
@@ -996,7 +1007,7 @@ class JuryController extends AbstractController
         }
 
 
-        $objWriter->save('../public/temp/'. $fileName, 'Word2007');
+        $objWriter->save('../public/temp/' . $fileName, 'Word2007');
 
         $response = new Response(file_get_contents($this->getParameter('app.path.tempdirectory') . '/' . $fileName));//voir https://stackoverflow.com/questions/20268025/symfony2-create-and-download-zip-file
         $disposition = HeaderUtils::makeDisposition(
@@ -1009,8 +1020,6 @@ class JuryController extends AbstractController
         $response->headers->set('Content-Disposition', $disposition);
         //$filesystem->remove($this->getParameter('app.path.tempdirectory') . '/' . $fileName);
         return $response;
-
-
 
 
     }
