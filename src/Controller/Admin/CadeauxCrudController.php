@@ -117,7 +117,7 @@ class CadeauxCrudController extends AbstractCrudController
             ->join('e.equipeinter', 'eq')
             ->addOrderBy('eq.lettre', 'ASC')
             ->getQuery()->getResult();
-
+        $listeCadeaux=$this->doctrine->getRepository(Cadeaux::class)->findAll();
         $edition = $this->requestStack->getSession()->get('edition');
         if (date('now') < $this->requestStack->getSession()->get('dateouverturesite')) {
             $edition = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $edition->getEd() - 1]);
@@ -154,7 +154,7 @@ class CadeauxCrudController extends AbstractCrudController
 
 
         $ligne += 1;
-        foreach ($liste_cadeaux as $cadeau) {
+        foreach ($listeCadeaux as $cadeau) {
             $sheet->setCellValue('A' . $ligne, $cadeau->getContenu())
                 ->setCellValue('B' . $ligne, $cadeau->getFournisseur())
                 ->setCellValue('C' . $ligne, $cadeau->getMontant() . ' €')

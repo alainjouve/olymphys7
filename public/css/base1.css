@@ -33,13 +33,13 @@
     text-transform: uppercase;
 }
 
-.menu_haut a {
-    color: black;
+.menu_haut > a {
+    color: black !important;
 }
 
-.menu_haut a:hover {
-    background: #111a21;
-    color: #ffffff;
+.menu_haut > a:hover {
+    background: #111a21 !important;
+    color: #ffffff !important;
 }
 
 .menurouge {
@@ -50,13 +50,13 @@
     text-transform: uppercase;
 }
 
-.menurouge a {
-    color: white;
+.menurouge > a {
+    color: white !important;
 }
 
-.menurouge a:hover {
-    background: #ffffff;
-    color: #b1191d;
+.menurouge > a:hover {
+    background: #ffffff !important;
+    color: #b1191d !important;
 }
 
 .login {
@@ -116,6 +116,7 @@ th:first-child {
 
     border-collapse: collapse;
 }
+
 .tableFixHeadJury thead th {
     position: sticky !important;
     top: 0;
@@ -145,12 +146,14 @@ td {
 
 
 }
+
 #progressBar {
-    width:0;
+    width: 0;
     height: 20px;
     background-color: #eee;
     margin-top: 10px;
 }
+
 #status {
 
     height: 20px;

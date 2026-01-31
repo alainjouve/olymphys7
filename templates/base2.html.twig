@@ -42,56 +42,56 @@ Layout de départ des utils du site #}
 <div id="barre_haut">
 </div>
 <div id="wrapper">
-    <div class="container-fluid bg-white">
-
-
+    <div class="container-fluid bg-white" style="position: relative;">
         <div class="row justify-content-center">
-            <nav>
+            <nav class="navbar navbar-expand-md navbar-light bg-white p-0">
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo01"
+                        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-                <ul class="nav flex-column flex-md-row">
+                        <li class="nav-item dropdown menurouge">
+                            <a class="nav-link" href="{{ path('core_home') }}" role="button" aria-haspopup="true"
+                               aria-expanded="false">Accueil du site</a>
 
-                    <li class="nav-item dropdown menurouge">
-                        <a class="nav-link" href="{{ path('core_home') }}" role="button" aria-haspopup="true"
-                           aria-expanded="false">Accueil du site</a>
-
-                    </li>
-
-                    {% block navigation %}
-                    {% endblock %}
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <li class="nav-item dropdown menu_haut">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false"> {{ app.user.prenomNom }}</a>
-                            <div class="dropdown-menu ">
-
-                                <a class="dropdown-item login py-0" href="{{ path('profile_show') }}">Voir mon
-                                    profil</a>
-                            </div>
                         </li>
-                    {% endif %}
 
-                    <li class="nav-item dropdown menurouge">
+                        {% block navigation %}
+                        {% endblock %}
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            <a class="nav-link" href="{{ path('logout') }}" aria-haspopup="true"
-                               aria-expanded="false">Déconnexion</a>
+                            <li class="nav-item dropdown menu_haut">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false"> {{ app.user.prenomNom }}</a>
+                                <div class="dropdown-menu ">
 
-                        {% else %}
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">Connexion</a>
-                            <div class="dropdown-menu " aria-labelledby="dropdownMenu3">
-                                <a class="dropdown-item " href="{{ path('login') }}"
-                                   style="color:#b1191d; font-size: 12px">Connectez
-                                    vous si vous avez un compte</a>
-                            </div>
+                                    <a class="dropdown-item login py-0" href="{{ path('profile_show') }}">Voir mon
+                                        profil</a>
+                                </div>
+                            </li>
                         {% endif %}
-                    </li>
 
+                        <li class="nav-item dropdown menurouge">
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                <a class="nav-link" href="{{ path('logout') }}" aria-haspopup="true"
+                                   aria-expanded="false">Déconnexion</a>
 
-                </ul>
-
+                            {% else %}
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">Connexion</a>
+                                <div class="dropdown-menu " aria-labelledby="dropdownMenu3">
+                                    <a class="dropdown-item " href="{{ path('login') }}"
+                                       style="color:#b1191d; font-size: 12px">Connectez
+                                        vous si vous avez un compte</a>
+                                </div>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
-
         <div class="logo">
             <a href="{{ path('core_home') }}"><img src="{{ asset('odpf/odpf-images/Phicompletblanc.png') }}"
                                                    alt="logo des OdpF"

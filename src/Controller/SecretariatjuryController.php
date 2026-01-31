@@ -162,7 +162,7 @@ class SecretariatjuryController extends AbstractController
         $repositoryNotes = $this->doctrine->getRepository(Notes::class);
 
         $repositoryJures = $this->doctrine->getRepository(Jures::class);
-        $listJures = $repositoryJures->findBy([],['nomJure' => 'ASC']);
+        $listJures = $repositoryJures->findBy([], ['nomJure' => 'ASC']);
 
         $repositoryEquipes = $this->doctrine->getRepository(Equipes::class);
         $listEquipes = $repositoryEquipes->findAll();
@@ -1255,7 +1255,7 @@ class SecretariatjuryController extends AbstractController
         $em = $this->doctrine->getManager();
 
         $nbreEquipes = 0;
-        $mloyal = 'Caroline';
+        $mloyal = 'Julien';
         $voix = 'Nathalie';
         $tableau = $this->requestStack->getSession()->get('tableau');
         if ($tableau[0] == null) {
@@ -1353,14 +1353,18 @@ class SecretariatjuryController extends AbstractController
 
             $sheet->mergeCells('B' . $ligne . ':D' . $ligne);
             $remispar = $mloyal; //remplacer $remis par par $voix1 et $voix2
+            $sheet->setCellValue('A' . $ligne, $remispar);
 
+            if ($equipe->getPhrases()[0] != null) {
+                $sheet->setCellValue('B' . $ligne, $equipe->getPhrases()[0]->getPhrase() . ' ' . $equipe->getPhrases()[0]->getLiaison()->getLiaison() . ' ' . $equipe->getPhrases()[0]->getPrix());
+            }
             if ($equipe->getPhrases()[0] != null) {
                 $sheet->setCellValue('A' . $ligne, $remispar);
                 $sheet->setCellValue('B' . $ligne, $equipe->getPhrases()[0]->getPhrase() . ' ' . $equipe->getPhrases()[0]->getLiaison()->getLiaison() . ' ' . $equipe->getPhrases()[0]->getPrix());
-            } else {
+            } /*else {
                 $avertissementPhrase = $avertissementPhrase . 'L\'équipe ' . $equipe->getEquipeinter()->getLettre() . ' n\'a pas de phrase amusante <br>';
 
-            }
+            }*/
             $sheet->getStyle('B' . $ligne)->getAlignment()->applyFromArray($vcenterArray);
             $sheet->getStyle('A' . $ligne . ':D' . $ligne)
                 ->applyFromArray($styleText);

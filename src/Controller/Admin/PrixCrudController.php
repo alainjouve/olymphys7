@@ -153,6 +153,7 @@ class PrixCrudController extends AbstractCrudController
     public function prixtableauexcel()
     {
         $repositoryPrix = $this->doctrine->getRepository(Prix::class);
+        $listePrix = $repositoryPrix->findAll([], ['montant' => 'ASC']);
         $listEquipes = $this->doctrine->getRepository(Equipes::class)->createQueryBuilder('e')
             ->join('e.equipeinter', 'eq')
             ->addOrderBy('eq.lettre', 'ASC')
@@ -192,7 +193,7 @@ class PrixCrudController extends AbstractCrudController
             ->setCellValue('F' . $ligne, 'remis par');
 
         $ligne += 1;
-        foreach ($liste_prix as $prix) {
+        foreach ($listePrix as $prix) {
             $sheet->setCellValue('A' . $ligne, $prix->getNiveau())
                 ->setCellValue('B' . $ligne, $prix->getPrix())
                 ->setCellValue('C' . $ligne, $prix->getEquipe())

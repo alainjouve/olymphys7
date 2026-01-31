@@ -12,7 +12,8 @@
     <div class="container">
     <div class="row">
         <div class="col">
-            <table class="table">
+            <div class="table-responsive">
+                <table class="table">
                     <thead>
                     <tr>
 
@@ -47,209 +48,222 @@
                     </tr>
                     </thead>
                 </table>
+            </div>
         </div>
     </div>
     <div class="row">
         <diV class="col">
-            <div class="tableFixHead" id="changejurescontainer">
-                <table class="table table-bordered" id="changejures">
-                <thead>
-                <tr>
+            <div class="table-responsive">
+                <div class="tableFixHead" id="changejurescontainer">
+                    <table class="table table-bordered" id="changejures">
+                        <thead>
+                        <tr>
 
-                    <th scope="col" style="z-index: 3; width: 200px">Equipes</th>
-                    {% for equipe in listeEquipes %}
-                        <th title="{{ equipe.equipeinter.titreProjet }}" style="text-align: center">{{ equipe.equipeinter.lettre }}</th>
-                    {% endfor %}
+                            <th scope="col" style="z-index: 3; width: 200px">Equipes</th>
+                            {% for equipe in listeEquipes %}
+                                <th title="{{ equipe.equipeinter.titreProjet }}"
+                                    style="text-align: center">{{ equipe.equipeinter.lettre }}</th>
+                            {% endfor %}
 
-                    <th>
+                            <th>
 
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-
-
-
-                    <th scope="col">Horaires</th>
-
-                    <form id="formhoraires" method="post" action="{{ path('secretariatjury_attrib_horaires_salles') }}"
-                          name="formhoraires">
-                        {% for equipe in listeEquipes %}
-                            {% set heure=0 %}
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
 
 
+                            <th scope="col">Horaires</th>
 
-                            {% if equipe.heure!= null %}
-                                {% set heure = equipe.heure|date('H:i') %}
-                            {% endif %}
+                            <form id="formhoraires" method="post"
+                                  action="{{ path('secretariatjury_attrib_horaires_salles') }}"
+                                  name="formhoraires">
+                                {% for equipe in listeEquipes %}
+                                    {% set heure=0 %}
 
 
 
-                            <td>
-                                <label for="{{ 'heure'~equipe.id }}"></label>
-                                <input type="time" value="{{ heure }}" id="{{ 'heure'~equipe.id }}"
-                                       name="heure"
-                                       style="width: 60px; text-align: center"
-                                       onfocusout="modifheure({{ 'heure'~equipe.id }})">
-                                <a href="{{ path('secretariatjury_effacer_heure',{'idequipe':equipe.id}) }}" type="button"
-                                   class="fa fa-trash"></a>
-                            </td>
-                        {% endfor %}
-
-                    </form>
-                </tr>
-                <tr>
-
-                    <th scope="col">Salles</th>
-                    <form id="formsalles" method="post" action="{{ path('secretariatjury_attrib_horaires_salles') }}"
-                          name="formsalles">
-                        {% for equipe in listeEquipes %}
-                            {% set salle= null %}
-                            {% if equipe.salle!= null %}
-                                {% set salle= equipe.salle %}
-                            {% endif %}
-                            <td>
-
-                                <input type="text" value="{{ salle }}" id="{{ 'salle'~equipe.id }}" name="salle"
-                                       style="width: 60px; text-align: center"
-                                       onchange="modifsalle({{ 'salle'~equipe.id }})" title="{{ salle }}">
-                            </td>
-                        {% endfor %}
-                    </form>
-                </tr>
-                <tr>
-                    <form id="formordre" method="post" action="{{ path('secretariatjury_attrib_horaires_salles') }}"
-                          name="formordre">
-                    <th scope="col">Ordre</th>
-
-                        {% for equipe in listeEquipes %}
-                            {% set ordre= null %}
-                            {% if equipe.ordre!= null %}
-                                {% set ordre= equipe.ordre %}
-                            {% endif %}
-                            <td>
-
-                                <input type="text" value="{{ ordre }}" id="{{ 'ordre'~equipe.id }}" name="ordre"
-                                       style="width: 60px; text-align: center"
-                                       onchange="modifordre({{ 'ordre'~equipe.id }})" title="{{ ordre }}">
-                            </td>
-                        {% endfor %}
-                    </form>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="col">Prenom    Nom     Initiales</th>
-
-
-                    {% for equipe in listeEquipes %}
-                        <td></td>
-                    {% endfor %}
-
-                    <td>
-                        <div style="text-align: center">Supprimer</div>
-                    </td>
-                </tr>
-
-                {% for jure in listejures %}
-                    <tr>
-                        <form id="form-{{ jure.id }}" method="post" name="form1"
-                              action="{{ path('secretariatjury_gestionjures') }}">
-                    <th scope="col" style="background-color : #dbfdff;">
-
-
-
-
-                           <input type="hidden" name="idjure" id="{{ jure.id }}" value="{{ jure.id }}">
-                                <label for="prenom{{ jure.id }}"></label><input type="text" value="{{ jure.prenomJure }}"
-                                                                                id="prenom{{ jure.id }}"
-                                                                                name="prenom" style="width: 100px"
-                                                                                onchange="changejurecn({{ 'prenom'~jure.id }})">
-
-
-                                <label for="{{ 'nom'~jure.id }}"></label><input type="text" value="{{ jure.nomJure }}"
-                                                                                id="{{ 'nom'~jure.id }}" name="nom"
-                                                                                style="width:100px"
-                                                                                onchange="changejurecn({{ 'nom'~jure.id }})">
-
-
-                                <label for="{{ 'initiales'~jure.id }}"></label><input type="text"
-                                                                                      value="{{ jure.initialesJure }}"
-                                                                                      id="{{ 'initiales'~jure.id }}"
-                                                                                      name="initiales" style="width:50px"
-                                                                               onchange="changejurecn({{ 'initiales'~jure.id }})">
-
-
-                    </th>
-                        </form>
-
-
-                        {% set attributions=jure.attributions %}
-
-                        {% for equipe in listeEquipes %}
-                            {% set selected=['selected','','',''] %}
-
-                            {% for attribution in attributions %}
-                                {% if attribution.equipe!= null %}
-                                    {% if equipe  == attribution.equipe %}
-
-                                        {% set lecteur = attribution.estLecteur %}
-
-                                        {% if 0 == lecteur %}
-                                            {% set selected =['','selected','',''] %}
-                                        {% endif %}
-                                        {% if 1 == lecteur %}
-                                            {% set selected =['','','selected',''] %}
-                                        {% endif %}
-                                        {% if 2 == lecteur %}
-                                            {% set selected =['','','','selected'] %}
-                                        {% endif %}
+                                    {% if equipe.heure!= null %}
+                                        {% set heure = equipe.heure|date('H:i') %}
                                     {% endif %}
-                                {% endif %}
+
+
+
+                                    <td>
+                                        <label for="{{ 'heure'~equipe.id }}"></label>
+                                        <input type="time" value="{{ heure }}" id="{{ 'heure'~equipe.id }}"
+                                               name="heure"
+                                               style="width: 60px; text-align: center"
+                                               onfocusout="modifheure({{ 'heure'~equipe.id }})">
+                                        <a href="{{ path('secretariatjury_effacer_heure',{'idequipe':equipe.id}) }}"
+                                           type="button"
+                                           class="fa fa-trash"></a>
+                                    </td>
+                                {% endfor %}
+
+                            </form>
+                        </tr>
+                        <tr>
+
+                            <th scope="col">Salles</th>
+                            <form id="formsalles" method="post"
+                                  action="{{ path('secretariatjury_attrib_horaires_salles') }}"
+                                  name="formsalles">
+                                {% for equipe in listeEquipes %}
+                                    {% set salle= null %}
+                                    {% if equipe.salle!= null %}
+                                        {% set salle= equipe.salle %}
+                                    {% endif %}
+                                    <td>
+
+                                        <input type="text" value="{{ salle }}" id="{{ 'salle'~equipe.id }}" name="salle"
+                                               style="width: 60px; text-align: center"
+                                               onchange="modifsalle({{ 'salle'~equipe.id }})" title="{{ salle }}">
+                                    </td>
+                                {% endfor %}
+                            </form>
+                        </tr>
+                        <tr>
+                            <form id="formordre" method="post"
+                                  action="{{ path('secretariatjury_attrib_horaires_salles') }}"
+                                  name="formordre">
+                                <th scope="col">Ordre</th>
+
+                                {% for equipe in listeEquipes %}
+                                    {% set ordre= null %}
+                                    {% if equipe.ordre!= null %}
+                                        {% set ordre= equipe.ordre %}
+                                    {% endif %}
+                                    <td>
+
+                                        <input type="text" value="{{ ordre }}" id="{{ 'ordre'~equipe.id }}" name="ordre"
+                                               style="width: 60px; text-align: center"
+                                               onchange="modifordre({{ 'ordre'~equipe.id }})" title="{{ ordre }}">
+                                    </td>
+                                {% endfor %}
+                            </form>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="col">Prenom Nom Initiales</th>
+
+
+                            {% for equipe in listeEquipes %}
+                                <td></td>
                             {% endfor %}
 
                             <td>
-
-                                <form id="form-{{ jure.id }}" method="post" name="forme{{ equipe.id }}"
-                                      action="{{ path('secretariatjury_gestionjures') }}">
-                                    <label for="{{ 'equipe'~equipe.id }}"></label>
-                                    <select id="{{ 'equipe'~equipe.id }}" name="changeequipe{{ equipe.id~'-'~jure.id }}"
-                                            style="width: 50px"
-                                            onchange="changeequipe({{ 'equipe'~equipe.id }},{{ equipe.id }},{{ jure.id }} )">
-                                        <option {{ selected[0] }}></option>
-                                        <option {{ selected[1] }} >E</option>
-                                        <option {{ selected[2] }} >L</option>
-                                        <option {{ selected[3] }} >R</option>
-                                    </select>
-                                </form>
+                                <div style="text-align: center">Supprimer</div>
                             </td>
+                        </tr>
+
+                        {% for jure in listejures %}
+                            <tr>
+                                <form id="form-{{ jure.id }}" method="post" name="form1"
+                                      action="{{ path('secretariatjury_gestionjures') }}">
+                                    <th scope="col" style="background-color : #dbfdff;">
+
+
+                                        <input type="hidden" name="idjure" id="{{ jure.id }}" value="{{ jure.id }}">
+                                        <label for="prenom{{ jure.id }}"></label><input type="text"
+                                                                                        value="{{ jure.prenomJure }}"
+                                                                                        id="prenom{{ jure.id }}"
+                                                                                        name="prenom"
+                                                                                        style="width: 100px"
+                                                                                        onchange="changejurecn({{ 'prenom'~jure.id }})">
+
+
+                                        <label for="{{ 'nom'~jure.id }}"></label><input type="text"
+                                                                                        value="{{ jure.nomJure }}"
+                                                                                        id="{{ 'nom'~jure.id }}"
+                                                                                        name="nom"
+                                                                                        style="width:100px"
+                                                                                        onchange="changejurecn({{ 'nom'~jure.id }})">
+
+
+                                        <label for="{{ 'initiales'~jure.id }}"></label><input type="text"
+                                                                                              value="{{ jure.initialesJure }}"
+                                                                                              id="{{ 'initiales'~jure.id }}"
+                                                                                              name="initiales"
+                                                                                              style="width:50px"
+                                                                                              onchange="changejurecn({{ 'initiales'~jure.id }})">
+
+
+                                    </th>
+                                </form>
+
+
+                                {% set attributions=jure.attributions %}
+
+                                {% for equipe in listeEquipes %}
+                                    {% set selected=['selected','','',''] %}
+
+                                    {% for attribution in attributions %}
+                                        {% if attribution.equipe!= null %}
+                                            {% if equipe  == attribution.equipe %}
+
+                                                {% set lecteur = attribution.estLecteur %}
+
+                                                {% if 0 == lecteur %}
+                                                    {% set selected =['','selected','',''] %}
+                                                {% endif %}
+                                                {% if 1 == lecteur %}
+                                                    {% set selected =['','','selected',''] %}
+                                                {% endif %}
+                                                {% if 2 == lecteur %}
+                                                    {% set selected =['','','','selected'] %}
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    <td>
+
+                                        <form id="form-{{ jure.id }}" method="post" name="forme{{ equipe.id }}"
+                                              action="{{ path('secretariatjury_gestionjures') }}">
+                                            <label for="{{ 'equipe'~equipe.id }}"></label>
+                                            <select id="{{ 'equipe'~equipe.id }}"
+                                                    name="changeequipe{{ equipe.id~'-'~jure.id }}"
+                                                    style="width: 50px"
+                                                    onchange="changeequipe({{ 'equipe'~equipe.id }},{{ equipe.id }},{{ jure.id }} )">
+                                                <option {{ selected[0] }}></option>
+                                                <option {{ selected[1] }} >E</option>
+                                                <option {{ selected[2] }} >L</option>
+                                                <option {{ selected[3] }} >R</option>
+                                            </select>
+                                        </form>
+                                    </td>
+                                {% endfor %}
+
+                                <td>
+                                    <div style="text-align: center">
+                                        <button type="button" id="{{ jure.id }}" data-toggle="modal"
+                                                data-target="#modalconfirmjurecn"
+                                                data-idjure="{{ jure.id }}" title="Supprimer"><i
+                                                    class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+
+
+                            </tr>
                         {% endfor %}
 
-                        <td>
-                            <div style="text-align: center">
-                                <button type="button" id="{{ jure.id }}" data-toggle="modal" data-target="#modalconfirmjurecn"
-                                        data-idjure="{{ jure.id }}" title="Supprimer"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </td>
+                        </tbody>
+                    </table>
 
-
-                    </tr>
-                {% endfor %}
-
-                </tbody>
-            </table>
-
-    </div>
-    <!--<div class="text-center">
-        <button class="btn btn-primary" value="confirmer" name="confirmer" onclick="confirmer()">Confirmer</button>
-    </div> -->
-    {{ include('modales/modale_supr_jure_cn.html.twig') }}
-    {% if app.session.get('info')!='' %}
-        {{ include('modales/modale_info.html.twig') }}
-        {{ app.session.set('info','') }}
-    {% endif %}
+                </div>
+                <!--<div class="text-center">
+                    <button class="btn btn-primary" value="confirmer" name="confirmer" onclick="confirmer()">Confirmer</button>
+                </div> -->
+                {{ include('modales/modale_supr_jure_cn.html.twig') }}
+                {% if app.session.get('info')!='' %}
+                    {{ include('modales/modale_info.html.twig') }}
+                    {{ app.session.set('info','') }}
+                {% endif %}
+            </div>
         </div>
     </div>
-    </div>>
+    >
 
 {% endblock %}
