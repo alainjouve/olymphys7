@@ -116,7 +116,12 @@
                            type="button"
                            class="btn btn-warning">Obtenir les attestations de participation des élèves </a>
                     {% endif %}
-
+                    {% if date()>app.session.get('editionN1').concourscn and equipe.selectionnee==true %}<!-- Chaque professeur télécharge les attestations de participation de ses élèves sous form zip -->
+                        <a href="{{ path('telecharger_attestations_cn',{'equipeId':equipe.id}) }}"
+                           type="button"
+                           class="btn btn-warning">Obtenir les attestations de participation au concours national des
+                            élèves </a>
+                    {% endif %}
 
                 </div>
                 {% if equipe.selectionnee==true %}

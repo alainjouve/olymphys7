@@ -66,7 +66,7 @@ class OdpfFichiersPassesCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         $crud->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',]);
         return $crud;
     }
 
@@ -90,11 +90,13 @@ class OdpfFichiersPassesCrudController extends AbstractCrudController
             $actions->add(Crud::PAGE_INDEX, $setPublie);
         }
         $actions->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
-            ->update('index', Action::DELETE,function  (Action $action) {
-                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            ->update('index', Action::DELETE, function (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);
+            }
             )
-            ->update('index', Action::EDIT,function  (Action $action) {
-                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            ->update('index', Action::EDIT, function (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);
+            }
             );
         return $actions;
     }
@@ -402,12 +404,12 @@ class OdpfFichiersPassesCrudController extends AbstractCrudController
     public function setPublies(\Symfony\Component\HttpFoundation\Request $request, $typefichier): Response//rend public les fichiers des mémoires, annexes, résumés diaporamas des équipes sélectionnées
     {
         $qb = $this->doctrine->getRepository(OdpfEditionsPassees::class)->createQueryBuilder('f')
-            ->orderBy('f.edition','DESC');
+            ->orderBy('f.edition', 'DESC');
         $form = $this->createFormBuilder()
             ->add('edition', EntityType::class,
                 [
                     'class' => OdpfEditionsPassees::class,
-                    'query_builder'=>$qb,
+                    'query_builder' => $qb,
 
 
                 ])
@@ -416,22 +418,29 @@ class OdpfFichiersPassesCrudController extends AbstractCrudController
         $form->handleRequest($request);
         if ($form->isSubmitted() and $form->isValid()) {
             $edition = $form->get('edition')->getData();
-            $fichiersRepo = $this->doctrine->getRepository(OdpfFichierspasses::class);//Mémoires, annexes,
-
-            if ($typefichier == 0) $fichiers = $fichiersRepo->createQueryBuilder('f')
-                ->where('f.typefichier <:type')
+            $fichiersRepo = $this->doctrine->getRepository(OdpfFichierspasses::class);//Mémoires, annexes,présebtations
+            $fichiers = null;
+            if ($typefichier == 0) {
+                $fichiers = $fichiersRepo->findBy(['editionspassees' => $edition, 'typefichier' => $typefichier, 'national' => true]);
+                /*->createQueryBuilder('f')
+                ->where('f.typefichier <=:type')
                 ->andWhere('f.editionspassees =:edition')
                 ->andWhere('f.national =:value')
-                ->setParameters(['edition' => $edition, 'type' => 2, 'value' => 1])
-                ->getQuery()->getResult();
-            if ($typefichier != 0) $fichiers = $fichiersRepo->findBy(
-                ['editionspassees' => $edition, 'typefichier' => $typefichier, 'national' => true]);// résumes, diaporama national
+                ->setParameters(['edition' => $edition, 'type' => 1, 'value' => true])
+                ->getQuery()->getResult();*/
+            }
 
-            foreach ($fichiers as $fichier) {
-                $fichier->setPublie(true);
-                $this->doctrine->getManager()->persist($fichier);
-                $this->doctrine->getManager()->flush();
-                $this->fichierspublies($fichier);
+            if ($typefichier != 0) {
+                $fichiers = $fichiersRepo->findBy(
+                    ['editionspassees' => $edition, 'typefichier' => $typefichier, 'national' => true]);// résumes, diaporama national
+            }
+            if ($fichiers != null) {
+                foreach ($fichiers as $fichier) {
+                    $fichier->setPublie(true);
+                    $this->doctrine->getManager()->persist($fichier);
+                    $this->doctrine->getManager()->flush();
+                    $this->fichierspublies($fichier);
+                }
             }
             $route = $this->adminUrlGenerator
                 ->setController(OdpfFichiersPassesCrudController::class)

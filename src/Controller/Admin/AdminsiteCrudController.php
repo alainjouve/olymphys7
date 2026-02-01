@@ -254,7 +254,7 @@ class AdminsiteCrudController extends AbstractCrudController
                 ->setParameter('value', 4)
                 ->setParameter('national', true)
                 ->getQuery()->getResult();
-
+            
 
             if ($listeFichiers) {
                 foreach ($listeFichiers as $fichier) {
@@ -297,7 +297,7 @@ class AdminsiteCrudController extends AbstractCrudController
                     $odpfFichier->setUpdatedAt(new DateTime('now'));
                     $this->em->persist($odpfFichier);
                     $this->em->flush();
-                    if ($odpfFichier->getTypefichier() ==0 ) {
+                    if ($odpfFichier->getTypefichier() == 0) {
                         $this->indexation($odpfFichier);//on indexe les fichiers pour le moteur de recherche
                     }
                 }
@@ -367,16 +367,16 @@ class AdminsiteCrudController extends AbstractCrudController
     public function indexation($fichier): void
     {
 
-        $repertoire='search/textes/';
-        $pathFichier='odpf/odpf-archives/'.$fichier->getEditionspassees()->getEdition().'/fichiers/memoires/publie/'.$fichier->getNomfichier();
-        $nomFichier=explode('.pdf', $fichier->getNomfichier())[0];
+        $repertoire = 'search/textes/';
+        $pathFichier = 'odpf/odpf-archives/' . $fichier->getEditionspassees()->getEdition() . '/fichiers/memoires/publie/' . $fichier->getNomfichier();
+        $nomFichier = explode('.pdf', $fichier->getNomfichier())[0];
         $parser = new \Smalot\PdfParser\Parser();
-        $pdf=$parser->parseFile($pathFichier);
+        $pdf = $parser->parseFile($pathFichier);
 
         $metaData = $pdf->getDetails();
-        $texte=$pdf->getText();
+        $texte = $pdf->getText();
         $cleanedText = mb_convert_encoding($texte, 'UTF-8', 'ISO-8859-1');
-        $fichiertexte=fopen($repertoire.$nomFichier.'.txt', 'w');
+        $fichiertexte = fopen($repertoire . $nomFichier . '.txt', 'w');
         fwrite($fichiertexte, $cleanedText);
         fclose($fichiertexte);
 
