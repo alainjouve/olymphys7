@@ -1031,6 +1031,20 @@ class FichiersController extends AbstractController
         $createAttestation = new CreateAttestationsElevesCia();
         $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['id' => $equipeId]);
         $eleves = $this->doctrine->getRepository(Elevesinter::class)->findBy(['equipe' => $equipe]);
+        $path = 'odpf/attestations_eleves/';
+        if (file_exists($path . $equipe->getNumero())) {
+            $files = scandir($path . $equipe->getNumero() . '/');
+
+            if ($files) {
+                foreach ($files as $file) {
+                    if (!is_dir($path . $equipe->getNumero() . '/' . $file)) {
+                        unlink($path . $equipe->getNumero() . '/' . $file);
+                    }
+                }
+
+
+            }
+        }
         foreach ($eleves as $eleve) {
             try {
                 $createAttestation->createAttestationsElevesCia($eleve);
@@ -1039,8 +1053,6 @@ class FichiersController extends AbstractController
             }
 
         }
-
-        $path = 'odpf/attestations_eleves/';
 
         if (file_exists($path . $equipe->getLettre())) {
             $files = scandir($path . $equipe->getNumero());

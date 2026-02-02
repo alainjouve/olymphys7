@@ -43,7 +43,7 @@ class CoreController extends AbstractController
     {
 
         $user = $this->getUser();
-        $date = new DateTime();
+
         $repository = $doctrine->getRepository(Edition::class);
         $edition = $repository->findOneBy([], ['id' => 'desc']);
         $editionN1 = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $edition->getEd() - 1]);
@@ -51,16 +51,13 @@ class CoreController extends AbstractController
         $this->requestStack->getSession()->set('editionN1', $editionN1);
         if (null != $user) {
             $datecia = $edition->getConcourscia();
+            $dateconnect = new datetime('now');
             $concours = '';
-
-            if ($date > $datecia) {
+            if ($dateconnect > $datecia) {
 
                 $concours = 'national';
             } else {
                 $concours = 'interacadémique';
-            }
-            if ($date > $editionN1->getConcourscn() and $date < $edition->getDateOuvertureSite()) {
-                $concours = 'national';
             }
             $this->requestStack->getSession()->set('concours', $concours);
         }
