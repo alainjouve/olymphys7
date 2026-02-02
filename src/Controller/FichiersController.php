@@ -1086,7 +1086,20 @@ class FichiersController extends AbstractController
         $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['id' => $equipeId]);
         $equipeConcours = $this->doctrine->getRepository(Equipes::class)->findOneBy(['equipeinter' => $equipe]);
         $eleves = $this->doctrine->getRepository(Elevesinter::class)->findBy(['equipe' => $equipe]);
+        $path = 'odpf/attestations_eleves/';
+        if (file_exists($path . $equipe->getLettre())) {
+            $files = scandir($path . $equipe->getLettre() . '/');
 
+            if ($files) {
+                foreach ($files as $file) {
+                    if (!is_dir($path . $equipe->getLettre() . '/' . $file)) {
+                        unlink($path . $equipe->getLettre() . '/' . $file);
+                    }
+                }
+
+
+            }
+        }
         foreach ($eleves as $eleve) {
             $createAttestation = new CreateAttestationsElevesCn();
             try {
@@ -1097,7 +1110,6 @@ class FichiersController extends AbstractController
 
         }
 
-        $path = 'odpf/attestations_eleves/';
 
         if (file_exists($path . $equipe->getLettre())) {
             $files = scandir($path . $equipe->getLettre());

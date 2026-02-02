@@ -140,36 +140,36 @@ class EquipesadminRepository extends ServiceEntityRepository
         $em = $this->getEntityManager();
         $editionN = $this->requestStack->getSession()->get('edition');
         $editionN1 = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $editionN->getEd() - 1]);
-        $listeEquipes=null;
-
+        $listeEquipes = null;
+        $edition = null;
         if (new DateTime('now') > $editionN->getDateOuvertureSite()) {
             $edition = $editionN;
         } else {
             $edition = $editionN1;
 
         }
-
-        $concours == 'interacadémique' ? $selectionnee = false : $selectionnee = true;
+        $concours == 'interacadémique' ? $selectionnee = 0 : $selectionnee = 1;
 
         $qb = $em->getRepository(Equipesadmin::class)->createQueryBuilder('e')
             ->andWhere('e.edition =:edition')
-            ->setParameter('edition',$edition);
+            ->setParameter('edition', $edition);
         $date = new DateTime('now');
-        $dateouvertureSite = $this->requestStack->getSession()->get('edition')->getDateOuvertureSite();
+        $dateouvertureSite = $edition->getDateOuvertureSite();
         //Cration d'un nouvel objet datelim, l'ajout simple de 30 jours avec la fonction add modifie l'objet $dateconcourscia sans créer un nouvel objet
-       /* $d = $edition->getConcourscia()->format('d');
-        $m = $edition->getConcourscia()->format('m');
-        $Y = $edition->getConcourscia()->format('Y');*/
-        $d=30;
-        $dateciastr=$edition->getConcourscia()->format('Y-m-d');//Les organisateurs et profs  peuvent déposer les fichiers 20 jours après la date du concours CIA pour compléter leur dossier
+        /* $d = $edition->getConcourscia()->format('d');
+         $m = $edition->getConcourscia()->format('m');
+         $Y = $edition->getConcourscia()->format('Y');*/
+        $d = 30;
+        $dateciastr = $edition->getConcourscia()->format('Y-m-d');//Les organisateurs et profs  peuvent déposer les fichiers 20 jours après la date du concours CIA pour compléter leur dossier
         $datelim = new DateTime($dateciastr);//il faut créer une nouvelle date à partir de la date ia chaîne de caractère et ensuite ajoputer les 30 jours
-        $datelim=$datelim->modify('+'.$d.' day');//L'ajout direct des 30 jours à la date concourscia modifie la date concourscia dans la variable session !
+        $datelim = $datelim->modify('+' . $d . ' day');//L'ajout direct des 30 jours à la date concourscia modifie la date concourscia dans la variable session !
+
         if ($date > $dateouvertureSite and $date <= $datelim) {
             //$datelim pour permettre au prof  de déposer les autorisations après les CIA pour les équipes non sélectionné.
 
             if (in_array('ROLE_PROF', $user->getRoles()) and (!in_array('ROLE_JURY', $user->getRoles()))) {// à cause du juré qui est prof et juré selon les années
                 $qb->andWhere('e.idProf1 =:prof or e.idProf2 =:prof')
-                    ->setParameters(['edition' => $edition, 'prof' => $user]);
+                    ->setParameter('prof', $user);
 
             }
         }
@@ -178,7 +178,8 @@ class EquipesadminRepository extends ServiceEntityRepository
             if (in_array('ROLE_PROF', $user->getRoles()) and (!in_array('ROLE_JURY', $user->getRoles()))) {// à cause du juré qui est prof et juré selon les années
                 $qb->andWhere('e.idProf1 =:prof or e.idProf2 =:prof')
                     ->andWhere('e.selectionnee =:selectionnee')
-                    ->setParameters(['edition' => $edition, 'prof' => $user, 'selectionnee' => $selectionnee]);
+                    ->setParameter('prof', $user)
+                    ->setParameter('selectionnee', $selectionnee);
 
             }
         }
@@ -203,20 +204,20 @@ class EquipesadminRepository extends ServiceEntityRepository
         }
 
         $listeEquipes = $qb->getQuery()->getResult();
-
+        //dd($listeEquipes);
         return $listeEquipes;
     }
 
     public function getJuresCia($equipe)
     {
 
-        $juresCia= $this->doctrine->getRepository(JuresCia::class)->findAll();
-        $jures=null;
-        $i=0;
-        foreach ($juresCia as $jure){
-            $equipes=$jure->getEquipes();
-            foreach($equipes as $equipejure){
-                if($equipejure==$equipe) {
+        $juresCia = $this->doctrine->getRepository(JuresCia::class)->findAll();
+        $jures = null;
+        $i = 0;
+        foreach ($juresCia as $jure) {
+            $equipes = $jure->getEquipes();
+            foreach ($equipes as $equipejure) {
+                if ($equipejure == $equipe) {
                     $jures[$i] = $jure;
                     $i = $i + 1;
                 }
@@ -229,7 +230,6 @@ class EquipesadminRepository extends ServiceEntityRepository
 
 
     }
-
 
 
 }

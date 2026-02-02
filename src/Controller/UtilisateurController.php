@@ -111,6 +111,10 @@ class UtilisateurController extends AbstractController
             $uai_objet = $repositoryUai->findOneBy(['uai' => $this->getUser()->getUai()]);
             if ($this->isGranted('ROLE_PROF')) {
                 $edition = $session->get('edition');
+                if (new DateTime() > $session->get('editionN1')->getConcourscn() and new DateTime() < $session->get('edition')->getDateouverturesite()) {
+                    $edition = $session->get('editionN1');
+                }
+
                 $idEdition = $edition->getId();
                 $edition = $repositoryEdition->findOneBy(['id' => $idEdition]);
                 if ($idequipe == 'x') {
@@ -291,7 +295,7 @@ class UtilisateurController extends AbstractController
                     }
                     if ($modif == false) {
                         $mailer->sendConfirmeInscriptionEquipe($equipe, $user, $modif, $checkChange);
-                        $this->requestStack->getSession()->set('info','Votre équipe a bien été enregistrée, un mail de confirmation vous a été envoyé');
+                        $this->requestStack->getSession()->set('info', 'Votre équipe a bien été enregistrée, un mail de confirmation vous a été envoyé');
 
                         return $this->redirectToRoute('fichiers_afficher_liste_fichiers_prof', array('infos' => $equipe->getId() . '-' . $session->get('concours') . '-liste_equipe'));//redirection vers la page de l'équipe qui vient d'être inscrite
                     }
@@ -322,7 +326,8 @@ class UtilisateurController extends AbstractController
 
     #[IsGranted('ROLE_PROF')]
     public function verific_nb_equipes($user): bool
-    {   $test=false;
+    {
+        $test = false;
         $repo = $this->doctrine->getManager()->getRepository(Equipesadmin::class);
         $equipes = $repo->createQueryBuilder('e')
             ->where('e.edition =:edition')

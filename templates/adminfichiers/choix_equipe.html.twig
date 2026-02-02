@@ -74,36 +74,37 @@
 
             {% for equipe in liste_equipes %}
                 {% if equipe.uaiId!=null %} {# n'affiche pas les équipes techniques jury, ambiance, etc #}
-                {% if equipe.inscrite!=false %}
-                    <div class="row">
-                    <div class="col">
-                        <b>{{ equipe.numero }}</b> - {{ equipe.titreProjet }}
-                        {% if is_granted('ROLE_PROF' ) %}
-                            <h8><i> ({{ equipe.uaiId.nom }}, {{ equipe.uaiId.commune }})</i></h8>
-                        {% endif %}
-                        {% if equipe.inscrite== false %}
-                            <div class="inscritered"><i>(Equipe non inscrite)</i></div>
-                        {% endif %}
-                        <hr>
-                        {% set infos =  equipe.id ~ '-'~phase~'-'~choix %}
-                    </div>
+                    {% if equipe.inscrite!=false %}
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ equipe.numero }}</b> - {{ equipe.titreProjet }}
+                                {% if is_granted('ROLE_PROF' ) %}
+                                    <h8><i> ({{ equipe.uaiId.nom }}, {{ equipe.uaiId.commune }})</i></h8>
+                                {% endif %}
+                                {% if equipe.inscrite== false %}
+                                    <div class="inscritered"><i>(Equipe non inscrite)</i></div>
+                                {% endif %}
+                                <hr>
+                                {% set infos =  equipe.id ~ '-'~phase~'-'~choix %}
+                            </div>
 
-                    <div class="col">
-
-
-                        <a class="btn btn-primary"
-                           href="{{ path('fichiers_afficher_liste_fichiers_prof', {'infos': infos} ) }}">Choisir
-                            cette équipe</a>
+                            <div class="col">
 
 
-                    </div>
+                                <a class="btn btn-primary"
+                                   href="{{ path('fichiers_afficher_liste_fichiers_prof', {'infos': infos} ) }}">Choisir
+                                    cette équipe</a>
 
-                </div>
-                <hr> {% endif %}
+
+                            </div>
+
+                        </div>
+                        <hr> {% endif %}
                 {% endif %}
             {% endfor %}
 
         {% endif %}
+
         {% if   phase =='national' %}
             {% set concours='cn' %}
             {% if date()<app.session.get('edition').dateouverturesite and date()>app.session.get('editionN1').concourscn and liste_equipes!=null %}
@@ -113,13 +114,13 @@
                     </div>
                 </div>
             {% endif %}
-          {#   {% if is_granted('ROLE_JURY') %}
+            {#   {% if is_granted('ROLE_JURY') %}
                 <div class="row">
                     <a href="{{ path('invitations_cn') }}" type="button" class="btn btn-warning">Obtenir une invitation
                         pour le concours national</a>
                     <br>
                 </div>
-            {% endif %}#}
+            {% endif %} #}
             <hr>
             {% for equipe in liste_equipes %}
                 <div class="row">
@@ -156,29 +157,32 @@
     {% if app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
         <div class="table">
             <table>
-            <tr>
-                <td> {% if date()< app.session.get('edition').dateclotureinscription and date()>=app.session.get('edition').dateouverturesite %}
-                        <a type="button" class="btn btn-primary" href="{{ path('inscrire_equipe',{idequipe : 'x'}) }}"
-                           title="Inscrire une nouvelle équipe">Nouvelle équipe</a>
-                    {% endif %}
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    {% if liste_equipes!=null %}
-                        {% if  'now'|date('Y-m-d')<= app.session.get('edition').concourscn|date('Y-m-d') and 'now'|date('Y-m-d')>app.session.get('edition').dateouverturesite|date('Y-m-d') %}
-                            <a type="button" class="btn btn-warning"
-                               href="{{ path('photos_deposephotos', {concours:'inter'}) }}" role="button"
-                               aria-pressed="true" title="Déposer des photos du concours interacadémique" ><i class="fa fa-camera" aria-hidden="true"></i>
-                            </a>
-                            <a type="button" class="btn btn-info"
-                               href="{{ path('photos_gestion_photos',{infos:concours~'-'~app.session.get('edition').id~'-prof-1'}) }}"
-                               title="Modifier ou supprimer certaines photos"><i class="fa fa-bars" aria-hidden="true"></i>
-                            </a>
-
+                <tr>
+                    <td> {% if date()< app.session.get('edition').dateclotureinscription and date()>=app.session.get('edition').dateouverturesite %}
+                            <a type="button" class="btn btn-primary"
+                               href="{{ path('inscrire_equipe',{idequipe : 'x'}) }}"
+                               title="Inscrire une nouvelle équipe">Nouvelle équipe</a>
                         {% endif %}
-                        {#  {% if (('now'|date('Y-m-d')> app.session.get('edition').concourscia|date('Y-m-d')) and ('now'|date('Y-m-d')< app.session.get('edition').concourscn|date('Y-m-d'))) %}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        {% if liste_equipes!=null %}
+                            {% if  'now'|date('Y-m-d')<= app.session.get('edition').concourscn|date('Y-m-d') and 'now'|date('Y-m-d')>app.session.get('edition').dateouverturesite|date('Y-m-d') %}
+                                <a type="button" class="btn btn-warning"
+                                   href="{{ path('photos_deposephotos', {concours:'inter'}) }}" role="button"
+                                   aria-pressed="true" title="Déposer des photos du concours interacadémique"><i
+                                            class="fa fa-camera" aria-hidden="true"></i>
+                                </a>
+                                <a type="button" class="btn btn-info"
+                                   href="{{ path('photos_gestion_photos',{infos:concours~'-'~app.session.get('edition').id~'-prof-1'}) }}"
+                                   title="Modifier ou supprimer certaines photos"><i class="fa fa-bars"
+                                                                                     aria-hidden="true"></i>
+                                </a>
+
+                            {% endif %}
+                            {#  {% if (('now'|date('Y-m-d')> app.session.get('edition').concourscia|date('Y-m-d')) and ('now'|date('Y-m-d')< app.session.get('edition').concourscn|date('Y-m-d'))) %}
                             <a type="button" class="btn btn-warning"
                                href="{{ path('photos_deposephotos',{concours:'cn'}) }}" role="button"
                                aria-pressed="true"
@@ -204,12 +208,12 @@
                                 photos des épreuves nationales de la {{ app.session.get('editionN1').ed }}
                                 <sup>e</sup></a>
                         {% endif %}
-                        #}
+                            #}
 
 
-                    {% endif %}
-                </td>
-            </tr>
+                        {% endif %}
+                    </td>
+                </tr>
             </table>
         </div>
         {% if doc_equipes!=null %}
@@ -229,25 +233,27 @@
                     <tbody>
                     {% for fichier in doc_equipes %}
                         {% if (fichier.concours!='CN' and phase=='interacadémique') or (fichier.concours!='CIA' and phase=='national') %}
-                        <tr>
-                            <td>{% if fichier.type=='pdf' %} <img src="{{ asset('images/pdf_icon.png') }}" width="50px"
-                                                                  alt="pdf">
-                                {% elseif fichier.type=='zip' %} <img src="{{ asset('images/icon_zip.png') }}"
-                                                                      width="50px" alt="zip">
-                                {% elseif fichier.type=='doc' %} <img src="{{ asset('images/Doc-icon.svg') }}"
-                                                                      width="50px" alt="doc">
-                                {% elseif fichier.type=='excel' %} <img src="{{ asset('images/excel_icon.png') }}"
-                                                                      width="50px" alt="excel">
+                            <tr>
+                                <td>{% if fichier.type=='pdf' %} <img src="{{ asset('images/pdf_icon.png') }}"
+                                                                      width="50px"
+                                                                      alt="pdf">
+                                    {% elseif fichier.type=='zip' %} <img src="{{ asset('images/icon_zip.png') }}"
+                                                                          width="50px" alt="zip">
+                                    {% elseif fichier.type=='doc' %} <img src="{{ asset('images/Doc-icon.svg') }}"
+                                                                          width="50px" alt="doc">
+                                    {% elseif fichier.type=='excel' %} <img src="{{ asset('images/excel_icon.png') }}"
+                                                                            width="50px" alt="excel">
 
-                                {% endif %}
+                                    {% endif %}
 
-                            </td>
-                            <td>{{ fichier.titre }}</td>
-                            <td>{{ fichier.description }}</td>
-                            <td><a href="{{ asset('docequipes/'~fichier.fichier) }}">
-                                    <button type="button" title="Télécharger"><i class="fas fa-download"></i></button>
-                                </a></td>
-                        </tr>
+                                </td>
+                                <td>{{ fichier.titre }}</td>
+                                <td>{{ fichier.description }}</td>
+                                <td><a href="{{ asset('docequipes/'~fichier.fichier) }}">
+                                        <button type="button" title="Télécharger"><i class="fas fa-download"></i>
+                                        </button>
+                                    </a></td>
+                            </tr>
                         {% endif %}
                     {% endfor %}
                     </tbody>
