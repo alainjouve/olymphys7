@@ -105,8 +105,9 @@
         {% if app.user.roles|filter(v => v =='ROLE_PROF') %}
             <div class="row">
                 <div class="col">
-                    {% if date()<app.session.get('edition').dateouverturesite and date()>app.session.get('editionN1').concourscn %}
-
+                    {% if date()<app.session.get('edition').dateouverturesite|date_modify("-75 days") and date()>app.session.get('editionN1').concourscn %}
+                        <a href="{{ path('inscrire_equipe', {'idequipe': equipe.id} ) }}" type="button"
+                           class="btn btn-primary">Modifier </a>
                     {% else %}
                         <a href="{{ path('inscrire_equipe', {'idequipe': equipe.id} ) }}" type="button"
                            class="btn btn-primary">Modifier </a>

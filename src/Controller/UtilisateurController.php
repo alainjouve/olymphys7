@@ -299,7 +299,7 @@ class UtilisateurController extends AbstractController
                         try {
                             $mailer->sendConfirmeInscriptionEquipe($equipe, $this->getUser(), $modif, $checkChange);
                         } catch (TransportExceptionInterface $e) {
-                            dd($e);
+
                         }
 
 
