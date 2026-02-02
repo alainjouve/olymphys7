@@ -1,0 +1,1105 @@
+La quinone a de lâÃ©nergie Ã  revendre 
+ 
+Comment la configuration de notre accumulateur influence-t-
+elle ses caractÃ©ristiques physiques ? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Equipe T â LycÃ©e Jean Bodin Les Ponts de CÃ© 
+Alexis BODINEAU GUEHENNEUX 
+Lilouan CRON 
+Maxime MATHIEN 
+Swann PICHON 
+ 
+EncadrÃ©s par : Emmanuel Jardin et Marine Le Grand
+
+2 
+ 
+Sommaire 
+I. Introduction ................................................................................................................................................................... 3 
+A. Batteries actuelles sur le marchÃ© .......................................................................................................................... 3 
+1. Batteries Li-ion ...................................................................................................................................................... 3 
+2. Accumulateurs au plomb :................................................................................................................................... 4 
+3. Accumulateurs sodium-ion : ............................................................................................................................... 4 
+B. Les accumulateurs organiques : une alternative Ã©mergente ............................................................................ 4 
+1. Avantages des batteries organiques : ............................................................................................................... 4 
+2. InconvÃ©nients des batteries organiques ........................................................................................................... 4 
+II. Constitution de notre accumulateur Ã©lectrochimique ............................................................................................. 4 
+A. Les matÃ©riaux de notre accumulateur Ã©lectrochimique ..................................................................................... 4 
+B. Potentiel de nos Ã©lectrodes : .................................................................................................................................. 5 
+C. Le fonctionnement global de lâaccumulateur : ..................................................................................................... 6 
+D. Fabrication de notre Ã©lectrode de quinone .......................................................................................................... 7 
+E. Montage de notre accumulateur ............................................................................................................................ 8 
+F. VÃ©rification du fonctionnement de notre accumulateur ...................................................................................... 8 
+1. En dÃ©charge : ........................................................................................................................................................ 8 
+2. En charge : ............................................................................................................................................................ 9 
+III. Comment la concentration de lâÃ©lectrolyte et la distance entre les Ã©lectrodes influencent-elles la 
+rÃ©sistance interne de lâaccumulateur ? ............................................................................................................................. 9 
+IV. Comment la masse de DTBQ influence-t-elle la capacitÃ© et lâÃ©nergie de lâaccumulateur ? .......................... 12 
+A. Valeur thÃ©orique de la capacitÃ© de lâaccumulateur. .......................................................................................... 12 
+B. DÃ©termination expÃ©rimentale de la capacitÃ© de lâaccumulateur. .................................................................... 12 
+C. DÃ©termination expÃ©rimentale de lâÃ©nergie fournie par lâaccumulateur. ......................................................... 14 
+V. Les performances de lâaccumulateur varient-elles au fur et Ã  mesure de lâutilisation et en fonction de la 
+tempÃ©rature extÃ©rieure ? ................................................................................................................................................... 15 
+A. La capacitÃ© de lâaccumulateur diminue-t-elle au bout de quelques cycles de charge et de dÃ©charge ? . 15 
+B. La capacitÃ© de lâaccumulateur varie-t-elle en fonction de la tempÃ©rature ? ................................................. 17 
+VI. Vers la commercialisation dâune batterie Ã  la quinone ........................................................................................ 19 
+VI. Conclusion .................................................................................................................................................................. 19 
+VII. Remerciements .......................................................................................................................................................... 19 
+VIII. Bibliographie............................................................................................................................................................... 20
+
+3 
+ 
+Naissance de notre projet 
+Ce projet est nÃ© de notre participation Ã  lâatelier Â« Physique Â» du lycÃ©e encadrÃ© par deux professeurs : M. Jardin 
+et Mme Le Grand. Nous avons dÃ©marrÃ© cet atelier en septembre 2024, Ã  hauteur de 45 minutes un midi par 
+semaine. Lâobjectif Ã©tait de rÃ©aliser des manipulations autour de la physique. Nous avons souhaitÃ© travailler 
+autour des moteurs et des piles. Ainsi, sur les premiÃ¨res semaines, nous avons rÃ©alisÃ© des piles volta, Ã  la 
+patate, Ã  lâorange ainsi quâun accumulateur au plomb. Nous avons Ã©galement manipulÃ© une pile Ã  combustible. 
+Nous avons pu ainsi mettre en pratique les notions dâoxydo-rÃ©duction vues en premiÃ¨re spÃ© cette annÃ©e-lÃ . 
+Nous avons Ã©galement construit des moteurs homopolaires.  
+Suite Ã  ces travaux, nos professeurs nous ont proposÃ© de participer aux Olympiades de physique. Afin de trouver 
+un sujet de projet autour des thÃ¨mes qui nous intÃ©ressaient, ils ont contactÃ© M.Poizot, Ã  Nantes UniversitÃ© 
+travaillant sur les batteries Ã  lâInstitut des MatÃ©riaux de Nantes Jean Rouxel (UMR CNRS 6502). Câest ainsi que 
+notre collaboration avec M. Poizot et son collÃ¨gue M. Gaubicher (Directeur de recherche au CNRS) a commencÃ© 
+en fÃ©vrier 2024 et que notre projet est nÃ©.  
+Nous avons Ã©galement eu la chance de bÃ©nÃ©ficier du soutien matÃ©riel de lâentreprise Biologic, fabricant franÃ§ais 
+historique de potentiostats-galvanostats pour lâÃ©tude des batteries notamment, dont lâIMN est client. 
+ 
+Nous sommes parvenus Ã  la problÃ©matique suivante : 
+Comment la configuration de notre accumulateur influence-t-elle ses 
+caractÃ©ristiques physiques ? 
+I. Introduction  
+Le stockage de lâÃ©nergie est un dÃ©fi majeur du XXIe siÃ¨cle, avec une demande croissante pour des batteries 
+performantes, durables et Ã©cologiques. Cette nÃ©cessitÃ© sâexplique par la transition vers des sources dâÃ©nergie 
+renouvelables intermittentes, comme le solaire et lâÃ©olien, qui exigent des solutions efficaces pour stocker 
+lâÃ©lectricitÃ© produite et la restituer selon les besoins. Les batteries lithium-ion, bien que dominantes, posent des 
+problÃ¨mes environnementaux (extraction du lithium, recyclage complexe) et Ã©conomiques (coÃ»t, dÃ©pendance 
+gÃ©opolitique). De plus, leur fabrication implique souvent lâutilisation de mÃ©taux critiques tels que le cobalt ou le 
+nickel, dont lâexploitation soulÃ¨ve des enjeux Ã©thiques et Ã©cologiques. Notre projet va vous permettre de 
+dÃ©couvrir une alternative aux accumulateurs lithium-ion : un accumulateur zinc-quinone en milieu aqueux. 
+A. Batteries actuelles sur le marchÃ© 
+1. Batteries Li-ion 
+Les batteries lithium-ion sont aujourdâhui omniprÃ©sentes (smartphones, voitures Ã©lectriques, outils portatifs) 
+grÃ¢ce Ã  une densitÃ© Ã©nergÃ©tique Ã©levÃ©e (220 Wh/kg) idÃ©al pour les applications nÃ©cessitant une grande 
+autonomie dans un volume rÃ©duit. Cependant, face Ã  un tel dÃ©veloppement, elles soulÃ¨vent des problÃ¨mes 
+notamment sur le plan environnemental. 
+Le lithium mais aussi le cobalt et le nickel quâelles contiennent sont des Ã©lÃ©ments peu abondants dont lâextraction 
+est coÃ»teuse. Les matÃ©riaux dâÃ©lectrode sont donc difficiles Ã  recycler, ce qui aggrave la pollution et la gestion 
+des dÃ©chets. 
+Bien que performantes, les batteries Li-ion ne sont ni durables ni Ã©cologiques pour le moment.
+
+4 
+ 
+2. Accumulateurs au plomb : 
+Les accumulateurs au plomb (ou Â« plomb-acide Â») restent utilisÃ©s pour des applications bas coÃ»t car la chimie 
+utilisÃ©e est bien moins chÃ¨re que celle utilisÃ©e dans les batteries Li-ion, mais leurs limites techniques et 
+environnementales sont importantes. 
+Leur faible valeur de densitÃ© dâÃ©nergie de 30-40 Wh/kg implique des installations lourdes et encombrantes. De 
+plus, le plomb est un mÃ©tal lourd toxique, nÃ©cessitant une gestion stricte en fin de vie.  
+Principalement utilisÃ©es pour le dÃ©marrage des vÃ©hicules thermiques et les systÃ¨mes fixes ces accumulateurs 
+sont inadaptÃ©es aux besoins des technologies mobiles ou du stockage dâÃ©nergies renouvelables. 
+3. Accumulateurs sodium-ion : 
+Dans ces accumulateurs, lâion sodium (Na
++
+) remplace lâion lithium (Li
++
+). Le sodium est abondant partout sur la 
+planÃ¨te et peu coÃ»teux (prÃ©sent dans le sel marin, par exemple). Ce type de batterie prÃ©sente un impact 
+environnemental moindre.  
+Par contre, la densitÃ© dâÃ©nergie des batteries Na-ion est plus faible que les Li-ion car lâÃ©lÃ©ment sodium est plus 
+lourd (M(Li) = 6,041 g/mol contre M(Na) = 22,989 g/mol). Cette technologie est encore en phase de dÃ©ploiement 
+industriel et vise un usage pour le stockage stationnaire, les vÃ©hicules Ã©lectriques dâentrÃ©e de gamme. 
+ 
+ 
+B. Les accumulateurs organiques : une alternative Ã©mergente 
+1. Avantages des batteries organiques : 
+Les batteries organiques (utilisant des matÃ©riaux dâÃ©lectrode comme des quinones) reprÃ©sentent une piste 
+prometteuse pour remplacer les mÃ©taux rares. 
+ConstituÃ©s dâÃ©lÃ©ments naturellement abondant sur la planÃ¨te comme C, H, O, N voire S, les matÃ©riaux 
+dâÃ©lectrode organiques peuvent Ãªtre intÃ©ressants au plan Ã©conomique et peuvent facilement se dÃ©truire par 
+combustion en fin de vie. Un grand nombre de matÃ©riaux sont possible car la chimie organique est riche en 
+termes de structures ce qui permet aussi dâajuster les valeurs de potentiels. 
+Leur synthÃ¨se permet dâintÃ©grer les principes de la chimie douce et la chimie verte. Ces matÃ©riaux sont 
+compatibles avec des Ã©lectrolytes aqueux non toxiques tel que lâÃ©thanoate de zinc. 
+2. InconvÃ©nients des batteries organiques 
+MalgrÃ© leurs atouts, les batteries organiques font face Ã  des dÃ©fis techniques comme une plus faible densitÃ© 
+dâÃ©nergie que les batteries Li-ion : pour une capacitÃ© Ã©gale, les batteries organiques sont donc plus 
+volumineuses. 
+Pour lâinstant elles sont encore Ã  lâÃ©tude dans les laboratoires.  
+ 
+ 
+II. Constitution de notre accumulateur Ã©lectrochimique 
+A. Les matÃ©riaux de notre accumulateur Ã©lectrochimique 
+Un accumulateur Ã©lectrochimique, est un dispositif qui permet de stocker de lâÃ©nergie Ã©lectrique sous forme 
+chimique, pour la restituer ensuite sous forme dâÃ©nergie Ã©lectrique. Lorsquâon utilise un accumulateur, il se 
+dÃ©charge et produit du courant. Lorsquâon le recharge, on force le courant Ã  circuler dans le sens inverse, 
+restaurant les rÃ©actifs initiaux.  
+Un accumulateur est toujours constituÃ© de deux Ã©lectrodes (positive et nÃ©gative) plongÃ©es dans une solution 
+ionique appelÃ©e Ã©lectrolyte. Les Ã©lectrons circulent dans un circuit extÃ©rieur Ã  travers un fil reliant les deux 
+Ã©lectrodes, tandis que les ions se dÃ©placent dans lâÃ©lectrolyte pour Ã©quilibrer les charges.
+
+5 
+ 
+LâÃ©lectrode Ã  la quinone 
+Dans ce que nous appellerons parfois Â« lâÃ©lectrode Ã  la quinone Â» se trouve un composÃ© organique nommÃ© :  
+2,5-di-tert-butyl-1,4-benzoquinone, que nous simplifierons en le notant &#3627408439;&#3627408455;&#3627408437;&#3627408452;. 
+Il sâagit dâune benzoquinone (cycle benzÃ©nique comportant deux fonctions cÃ©tone en position 1 et 4), substituÃ©e 
+par deux groupes tert-butyle (âC(CHâ)â) en position 2 et 5. 
+Sa faible masse molaire (220,2 g.mol
+-1
+) rend la batterie lÃ©gÃ¨re, et sa faible solubilitÃ© en milieu aqueux                
+(629 ÂµmolÂ· Lâ»Â¹) empÃªche sa dissolution dans lâÃ©lectrolyte grÃ¢ce aux groupes hydrophobe ter-butyles.  
+Cette espÃ¨ce chimique est une espÃ¨ce oxydante. Elle peut Ãªtre rÃ©duite en DTBQ 
+2- 
+(s) en gagnant deux Ã©lectrons. 
+Le couple Ox/Red sâÃ©crit : &#3627408439;&#3627408455;&#3627408437;&#3627408452;(&#3627408480;)/&#3627408439;&#3627408455;&#3627408437;&#3627408452;
+2-
+(&#3627408480;). Ces deux espÃ¨ces sont solides Ã  tempÃ©rature ambiante. 
+ 
+ 
+LâÃ©lectrode de zinc 
+LâÃ©lectrode de zinc est constituÃ©e de zinc mÃ©tallique &#3627408461;&#3627408475;(&#3627408480;) plongÃ© dans une solution dâÃ©thanoate de zinc 
+(&#3627408461;&#3627408475;
+2+
+(&#3627408462;&#3627408478;)+&#3627408438;&#3627408443;
+3&#3627408438;&#3627408450;&#3627408450;&#3627408443;(&#3627408462;&#3627408478;)) Ã  1,0 molÂ· Lâ»Â¹.  
+Le zinc mÃ©tallique est une espÃ¨ce rÃ©ductrice. Il peut Ãªtre oxydÃ© en ions &#3627408461;&#3627408475;
+2+
+(&#3627408462;&#3627408478;) en perdant deux Ã©lectrons.  
+Le couple Ox/Red sâÃ©crit : &#3627408461;&#3627408475;
+2+
+(&#3627408462;&#3627408478;)/&#3627408461;&#3627408475;(&#3627408480;).  
+ 
+ 
+ 
+Les ions &#3627408461;&#3627408475;
+2+
+ (&#3627408462;&#3627408478;) formÃ©s viennent sâinsÃ©rer dans le matÃ©riau de &#3627408439;&#3627408455;&#3627408437;&#3627408452;
+2-
+(&#3627408480;) pour assurer lâÃ©lectroneutralitÃ© du 
+systÃ¨me et former &#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475;(&#3627408480;). 
+Le couple de la quinone considÃ©rÃ© dans la suite de notre travail est donc &#3627408439;&#3627408455;&#3627408437;&#3627408452;/&#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475;(&#3627408480;). 
+ 
+B. Potentiel de nos Ã©lectrodes : 
+GrÃ¢ce Ã  la relation de Nernst nous pouvons dÃ©terminer le potentiel de chacune de nos Ã©lectrodes. Nous 
+pourrons ainsi dÃ©terminer le sens des transformations chimiques se dÃ©roulant spontanÃ©ment Ã  chaque 
+Ã©lectrode. 
+Pour lâÃ©lectrode de DTBQ : 
+&#3627408440;
+&#3627408439;í µí±&#3627408437;í µí±=&#3627408440;Â°
+&#3627408439;í µí±&#3627408437;í µí±+
+0,059
+2
+&#3627408473;&#3627408476;&#3627408468;
+&#3627408462;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;)
+&#3627408462;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475;)
+ 
+&#3627408462;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;) et &#3627408462;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475;) sont les activitÃ©s des deux espÃ¨ces chimiques. Comme ces deux espÃ¨ces sont solides, 
+&#3627408462;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475;)=&#3627408462;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;)=1. 
+Nous obtenons donc : &#3627408440;
+&#3627408439;í µí±&#3627408437;í µí±=&#3627408440;Â°
+&#3627408439;í µí±&#3627408437;í µí±~0,44 &#3627408457;/&#3627408440;&#3627408454;&#3627408443;. Cette valeur nous a Ã©tÃ© fournie par lâIMN. 
+ 
+Figure II-2 : Formule 
+topologique de la forme 
+rÃ©duite &#3627408439;&#3627408455;&#3627408437;&#3627408452;
+2-
+. 
+Figure II-1 : Formule 
+topologique de la forme 
+oxydÃ©e &#3627408439;&#3627408455;&#3627408437;&#3627408452;.
+
+6 
+ 
+Pour lâÃ©lectrode de zinc : 
+&#3627408440;
+í µí±§í µí±&#3627408475;í µí±=&#3627408440;Â°
+í µí±§í µí±&#3627408475;í µí±+
+0,059
+2
+&#3627408473;&#3627408476;&#3627408468;
+&#3627408462;(&#3627408461;&#3627408475;
+2+
+)
+&#3627408462;(&#3627408461;&#3627408475;)
+        /ESH 
+&#3627408462;(&#3627408461;&#3627408475;)=1 car câest une espÃ¨ce solide. &#3627408462;(&#3627408461;&#3627408475;
+2+
+)=
+[&#3627408461;&#3627408475;
+2+
+]
+&#3627408438;Â°
+=
+1,0
+1,0
+=1. 
+Nous obtenons donc : &#3627408440;
+í µí±§í µí±&#3627408475;í µí±=&#3627408440;Â°
+í µí±§í µí±&#3627408475;í µí±=  - 0,76 &#3627408457;/&#3627408440;&#3627408454;&#3627408443; 
+ 
+Nous pouvons en conclure que lâÃ©lectrode de &#3627408439;&#3627408455;&#3627408437;&#3627408452; constituera la 
+cathode (pÃ´le positif) au cours de la dÃ©charge car ce couple a le 
+potentiel le plus Ã©levÃ©. A lâÃ©tat initial, notre matÃ©riau se trouve sous la 
+forme &#3627408439;&#3627408455;&#3627408437;Q. Il va se rÃ©duire spontanÃ©ment : notre matÃ©riau est donc Ã  
+lâÃ©tat chargÃ© lors de sa fabrication. 
+Dans ces conditions, on peut calculer la force Ã©lectromotrice (fem) : 
+&#3627408467;&#3627408466;&#3627408474;=&#3627408440;
++
+-&#3627408440;
+-
+=0,44-(-0,76)=1,2 &#3627408457; 
+C. Le fonctionnement global de lâaccumulateur : 
+ 
+Lors de la dÃ©charge :  
+Les Ã©lectrons circulent spontanÃ©ment du zinc &#3627408461;&#3627408475; (&#3627408480;) vers la quinone 
+&#3627408439;&#3627408455;&#3627408437;&#3627408452; (&#3627408480;) Ã  travers le circuit extÃ©rieur, produisant un courant 
+Ã©lectrique. 
+La quinone se rÃ©duit : 
+ &#3627408439;&#3627408455;&#3627408437;&#3627408452; (&#3627408480;)+ &#3627408461;&#3627408475;
+2+
+ +2&#3627408466;
+-
+â&#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475;(&#3627408480;)  
+Cette Ã©lectrode constitue lâÃ©lectrode positive de lâaccumulateur. 
+Le zinc sâoxyde : &#3627408461;&#3627408475; (&#3627408480;)â&#3627408461;&#3627408475;
+2+
+(&#3627408462;&#3627408478;) + 2&#3627408466;
+-
+.  
+Cette Ã©lectrode constitue lâÃ©lectrode nÃ©gative de lâaccumulateur. 
+Rappel : Les ions  &#3627408461;&#3627408475;
+2+
+ formÃ©s viennent sâinsÃ©rer dans le matÃ©riau et former &#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475; . 
+En rÃ©alitÃ©, les chercheurs ont montrÃ© que les ions &#3627408443;
++
+ participent aussi au mÃ©canisme en sâinsÃ©rant dans la 
+&#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475; en compÃ©tition avec &#3627408461;&#3627408475;
+2+
+. 
+ 
+Lors de la charge, câest lâinverse :  
+Un gÃ©nÃ©rateur fournit de lâÃ©nergie pour forcer la rÃ©action inverse. 
+Le zinc se reforme et la quinone retrouve sa forme oxydÃ©e. 
+Oxydation de la &#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475; : 
+ &#3627408439;&#3627408455;&#3627408437;&#3627408452;&#3627408461;&#3627408475;(&#3627408480;)â&#3627408439;&#3627408455;&#3627408437;&#3627408452; (&#3627408480;)+ &#3627408461;&#3627408475;
+2+
+ +2&#3627408466;
+-
+ 
+RÃ©duction des ions zinc : 
+ &#3627408461;&#3627408475;
+2+
+(&#3627408462;&#3627408478;)+2&#3627408466;
+-
+â&#3627408461;&#3627408475; (&#3627408480;) 
+ 
+Figure II-4 : DÃ©charge de lâaccumulateur 
+Figure II-5 : Charge de lâaccumulateur 
+ Solution 
+dâÃ©thanoate de 
+zinc 1,0 mol.L
+-1
+ 
+Electrode 
+de zinc 
+Electrode 
+de DTBQ 
+ Solution 
+dâÃ©thanoate de 
+zinc 1,0 mol.L
+-1
+ 
+Electrode 
+de zinc Electrode 
+de DTBQ 
+Figure II-3 : Echelle des potentiels
+
+7 
+ 
+D. Fabrication de notre Ã©lectrode de quinone  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure II-6 
+Figure II-7 
+Figure II-8 
+Figure II-9 
+Figure II-10 : Presse de lâIMN 	Figure II-11 : Electrodes fabriquÃ©es au lycÃ©e 
+Nous commenÃ§ons par peser 76 mg de DTBQ (elle 
+composera environ 70 % de la masse totale de 
+lâÃ©lectrode).Figure II-6 
+Nous ajoutons 25 mg de noir de carbone qui composera 25 % 
+de la masse totale de lâÃ©lectrode : il amÃ©liore la conductivitÃ© 
+Ã©lectronique. 
+Puis, nous ajoutons environ 6 mg de PTFE 
+(polytÃ©trafluoroÃ©thylÃ¨ne) en poudre qui constituera environ 
+5 % de la masse totale : il sert de liant entre les molÃ©cules de 
+quinone et le carbone.  
+Le mÃ©lange est malaxÃ© dans un mortier en cÃ©ramique Ã  lâaide 
+dâun pilon jusquâÃ  homogÃ©nÃ©isation du mÃ©lange. Figure II-7  
+Nous avons travaillÃ© sous la hotte Ã  cause des particules de 
+carbone. 
+GrÃ¢ce au PTFE on obtient un solide composite lisse avec une 
+apparence plastique. 
+Ce matÃ©riau composite est ensuite Ã©talÃ© avec un flacon en 
+verre (un peu comme une pÃ¢te Ã  tarte). On obtient une fine 
+couche lisse et homogÃ¨ne. Figure II-8 
+Ensuite, avec un poinÃ§on nous avons dÃ©coupÃ© un cercle de 
+ce matÃ©riau que nous avons enfermÃ© dans une bande de 
+grille inox.  
+Enfin, la derniÃ¨re Ã©tape consiste Ã  compresser sous 5 tonnes 
+cette cellule pour rendre optimal le contact Ã©lectrique entre la 
+grille inox et le matÃ©riau. Figure II-10 
+Cette Ã©tape a Ã©tÃ© rÃ©alisÃ© Ã  lâIMN car nous nâavions pas le 
+matÃ©riel au lycÃ©e. 
+Nous avons rÃ©alisÃ© des cellules de petites surfaces mais 
+Ã©galement une cellule de plus grande surface. Figure II-11
+
+8 
+ 
+E. Montage de notre accumulateur 
+Une fois notre Ã©lectrode de quinone rÃ©alisÃ©e, nous avons montÃ© notre accumulateur : une Ã©lectrode de quinone, 
+une Ã©lectrode de zinc, une solution dâÃ©thanoate de zinc Ã  1,0 mol.L
+-1
+ dont le pH est de 5,8. En fonction de 
+lâexpÃ©rience rÃ©alisÃ©e, nous avons utilisÃ© des Ã©lectrodes avec une surface de contact plus ou moins grande. 
+Lâaccumulateur a Ã©tÃ© montÃ© dans un petit flacon tricols (Figure II-12) ou dans un bÃ©cher (Figure II-13). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+F. VÃ©rification du fonctionnement de notre accumulateur 
+1. En dÃ©charge : 
+Initialement, la &#3627408439;&#3627408455;&#3627408437;&#3627408452; est Ã  lâÃ©tat de charge (forme oxydÃ©e).  
+Nous avons commencÃ© par mesurer sa force Ã©lectromotrice pour vÃ©rifier quâelle Ã©tait cohÃ©rente avec la valeur 
+thÃ©orique donnÃ©e par la relation de Nernst. 
+Nous avons mesurÃ© une tension Ã  vide de 1,13V. La valeur 
+thÃ©orique Ã©tant de 1,2 V, nos mesures sont lÃ©gÃ¨rement 
+infÃ©rieures Ã  la valeur attendue. Cela peut provenir de la 
+concentration de lâÃ©lectrolyte qui modifie lÃ©gÃ¨rement le 
+potentiel de lâÃ©lectrode de Zinc.  
+Remarque : La tension mesurÃ©e est positive quand la &#3627408439;&#3627408455;&#3627408437;&#3627408452; 
+est branchÃ©e sur la borne positive du VoltmÃ¨tre, ce qui 
+confirme que la &#3627408439;&#3627408455;&#3627408437;&#3627408452; constitue la borne positive car elle a 
+le potentiel le plus Ã©levÃ©. 
+ 
+ 
+ 
+Nous avons ensuite essayÃ© de lâutiliser pour alimenter une LED, allumer un Ã©cran de chronomÃ¨tre et faire jouer 
+une carte musicale.  
+Afin dâobtenir une tension supÃ©rieure Ã  la tension de seuil de la diode, nous avons utilisÃ© deux accumulateurs 
+en sÃ©rie. Ceci nous a Ã©galement permis dâobtenir un courant supÃ©rieur au courant nominal nÃ©cessaire Ã  la carte 
+musicale pour jouer convenablement.  
+ 
+Figure II-13 : Montage de notre accumulateur en bÃ©cher. 
+A gauche : Ã©lectrode de zinc, Ã  droite : Ã©lectrode de DTBQ  
+Figure II-12 : Montage de notre accumulateur en tricol. 
+A gauche : Ã©lectrode de zinc, Ã  droite : Ã©lectrode de DTBQ  
+ 
+Electrode de 
+zinc 
+ Solution 
+dâÃ©thanoate de 
+zinc 1,0 mol.L
+-1
+. 
+Electrode de 
+DTBQ 
+Figure II-14 : SchÃ©ma du montage 
+de la mesure de la fem
+
+9 
+ 
+ 
+Tension avec un 
+accumulateur 
+(V) 
+IntensitÃ© avec un 
+accumulateur 
+(mA) 
+Tension avec deux 
+accumulateurs en 
+sÃ©rie 
+(V) 
+IntensitÃ© avec deux 
+accumulateurs en 
+sÃ©rie 
+(mA) 
+LED 	1,29  	0 	1,75 	1,5 
+Carte musicale 1,19  	0,01 	2,06 	0,04 
+ 
+Une vidÃ©o montrant une carte 
+musicale alimentÃ©e par un 
+accumulateur. 
+ Une vidÃ©o montrant une carte 
+musicale alimentÃ©e par deux 
+accumulateurs en sÃ©rie. 
+Une vidÃ©o montrant une LED 
+alimentÃ©e par deux accumulateurs 
+en sÃ©rie. 
+ 
+2. En charge :  
+AprÃ¨s avoir dÃ©chargÃ© lâaccumulateur, nous lâavons reliÃ© Ã  un gÃ©nÃ©rateur afin de vÃ©rifier quâil Ã©tait possible de le 
+recharger. Nous avons appliquÃ© une tension dâenviron 1,9 V pendant quelques minutes. Nous avons pu ensuite 
+constater que lâaccumulateur pouvait de nouveau alimenter un dipÃ´le. AprÃ¨s quelques sÃ©ries de charges et de 
+dÃ©charges, nous nâavons pas constatÃ© de diminution de performance : nous avons ainsi pu vÃ©rifier que nous 
+avions bien un accumulateur et non une simple pile. 
+Ainsi, nous avons pu poursuivre notre travail de faÃ§on Ã  comprendre comment la constitution de lâaccumulateur 
+influence ses caractÃ©ristiques. 
+III. Comment la concentration de lâÃ©lectrolyte et la distance entre les 
+Ã©lectrodes influencent-elles la rÃ©sistance interne de lâaccumulateur ? 
+Avec cette sÃ©rie dâexpÃ©riences nous avons cherchÃ© Ã  montrer lâinfluence sur la rÃ©sistance interne &#3627408479; de 
+lâaccumulateur de deux grandeurs : la distance &#3627408465; entre les Ã©lectrodes et la concentration &#3627408438; de lâÃ©lectrolyte.   
+En effet, plus la rÃ©sistance interne de lâaccumulateur est grande, plus la chute de tension lors de lâutilisation sera 
+importante. Le but est de minimiser la rÃ©sistance interne de lâaccumulateur. 
+ 
+Protocole :  
+- Brancher 3 rhÃ©ostats (33 Î©, 100 Î©, 1000 Î©) en sÃ©rie avec lâaccumulateur (ici nous avons utilisÃ© notre 
+Ã©lectrode de grande surface). 
+- Relier la console dâacquisition Ã  lâordinateur. 
+- Brancher une des voies de la console aux bornes de 
+lâaccumulateur pour mesurer la tension. 
+- Brancher, sur une autre voie de la console, un module 
+Â« ampÃ¨remÃ¨tre Â» et le brancher en sÃ©rie dans le circuit. 
+- RÃ©gler le logiciel dâacquisition en mode Â« XY Â» : si lâintensitÃ© varie 
+de 0,2 mA, la tension est mesurÃ©e automatiquement. 
+- Lancer lâacquisition et faire varier de faÃ§on rÃ©guliÃ¨re lâintensitÃ© 
+dans le circuit Ã  lâaide des rhÃ©ostats. 
+- ModÃ©liser la courbe obtenue par une fonction affine et relever la 
+valeur de la rÃ©sistance interne &#3627408479; qui correspond Ã  lâopposÃ© du 
+coefficient directeur de la droite car &#3627408456;=&#3627408440;â&#3627408479;&#3627408444;. 
+Figure III-1 : SchÃ©ma du circuit 
+permettant de tracer la caractÃ©ristique 
+de lâaccumulateur. 
+Accumulateur
+
+10 
+ 
+Nous avons commencÃ© par faire varier la concentration &#3627408438; de lâÃ©lectrolyte pour une distance de 1,0 cm entre les 
+Ã©lectrodes. Nous avons obtenu une sÃ©rie de courbes telles que celles-ci (les courbes sont disponibles en 
+annexe 1). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A partir de ces courbes et des valeurs de rÃ©sistances internes, nous avons pu tracer le graphique ci-dessous : 
+ 
+Figure III-3 : Graphique reprÃ©sentant l'Ã©volution de la rÃ©sistance interne de l'accumulateur en fonction de la concentration 
+de l'Ã©lectrolyte 
+Nous pouvons remarquer que la rÃ©sistance interne diminue lorsque la concentration de lâÃ©lectrolyte sâapproche 
+de 1,0 mol.L
+-1
+ puis augmente lorsque cette concentration est supÃ©rieure Ã  1,0 mol.L
+-1
+. 
+Nous en avons dÃ©duit que la concentration de 1,0 mol.L
+-1
+ permettait de minimiser la rÃ©sistance interne de 
+lâaccumulateur. 
+U = -31,1I + 1,01
+0
+0,2
+0,4
+0,6
+0,8
+1
+1,2
+0 0,0050,010,0150,020,025
+Tension (V)
+IntensitÃ© (A)
+U = -17,6I + 1,00
+0
+0,2
+0,4
+0,6
+0,8
+1
+1,2
+0 0,0050,010,0150,020,0250,03
+Tension (v)
+IntensitÃ© (A)
+Figure III-2 : Tension en fonction de l'intensitÃ© pour C=0,10 mol.L
+-1
+ (gauche) et C=1,0 mol.L
+-1
+ (droite).
+
+11 
+ 
+Nous avons ensuite rÃ©alisÃ© une deuxiÃ¨me sÃ©rie de 
+mesures en faisant varier la distance entre les Ã©lectrodes 
+dans une cuve rectangulaire graduÃ©e pour une 
+concentration de 1,0 mol.L
+-1
+. Les courbes obtenues sont 
+disponibles en annexe 2. 
+  
+ 
+ 
+ 
+ 
+Nous avons pu tracer la courbe ci-dessous Ã  lâaide de nos 
+ 	mesures : 
+ 
+Figure III-5 : Graphique reprÃ©sentant la rÃ©sistance interne de l'accumulateur en fonction de la distance entre les Ã©lectrodes 
+Nous pouvons remarquer que la rÃ©sistance interne augmente proportionnellement Ã  la distance entre lâÃ©lectrode 
+de &#3627408439;&#3627408455;&#3627408437;&#3627408452; et lâÃ©lectrode de zinc. 
+Cette Ã©volution de rÃ©sistance interne concernant la concentration de lâÃ©lectrolyte peut sâexpliquer du fait que les 
+porteurs de charges sont plus nombreux dans une solution plus concentrÃ©e, ce qui facilite le transfert des 
+Ã©lectrons, mais lorsque la concentration est supÃ©rieur Ã  1,0 mol.L
+-1
+ la solvatation des ions est moins importante 
+ce qui dÃ©favorise la mobilitÃ© des ions. 
+Concernant la distance entre lâÃ©lectrode de &#3627408439;&#3627408455;&#3627408437;&#3627408452; et lâÃ©lectrode de zinc, lorsque que la distance est plus Ã©levÃ©e, 
+la rÃ©sistance interne augmente et la chute de tension est plus importante. Ceci est dÃ» au fait que les porteurs 
+de charge ont plus de distance Ã  parcourir pour effectuer le transfert des Ã©lectrons. 
+Il faut donc pour lâÃ©lectrolyte prendre une solution Ã  1,0 mol.L
+-1
+ et minimiser la distance entre lâÃ©lectrode de zinc 
+et lâÃ©lectrode de &#3627408439;&#3627408455;&#3627408437;&#3627408452;. Ainsi, on pourra diminuer au plus les pertes ohmiques lors de lâutilisation de la batterie. 
+La rÃ©sistance interne des batteries du commerce est comprise entre 5 &#3627408474;Î© et 50 &#3627408474;Î©, 1 Î© pour les piles.  
+LâÃ©cart entre les Ã©lectrodes Ã©tant grand par rapport Ã  lâÃ©cart dans une batterie classique (20 Âµm), les rÃ©sistances 
+internes mesurÃ©es ici sont beaucoup plus grandes que dans une batterie du commerce. 
+Figure III-4 : Photo du montage expÃ©rimental 
+Electrode 
+de zinc 
+Electrode 
+ de &#3627408439;&#3627408455;&#3627408437;&#3627408452;  
+Solution 
+dâÃ©thanoate 
+de zinc
+
+12 
+ 
+â¢ &#3627408475;(&#3627408466;
+â
+) est le nombre dâÃ©lectrons que peut 
+capter la &#3627408439;&#3627408455;&#3627408437;&#3627408452; 
+â¢ &#3627408466;=1,6.10
+â19
+ &#3627408438; qui correspond Ã  la 
+charge Ã©lÃ©mentaire 
+â¢ &#3627408449;
+&#3627408436;=6,02.10
+23
+ .&#3627408474;&#3627408476;&#3627408473;
+â1
+ qui correspond au 
+nombre dâÃ©lectron par mol  
+â¢ &#3627408474;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;) est la masse de &#3627408439;&#3627408455;&#3627408437;&#3627408452; dans 
+lâÃ©lectrode 
+â¢ &#3627408448;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;)=220,2 &#3627408468;.&#3627408474;&#3627408476;&#3627408473;
+â1
+ qui 
+correspond Ã  la masse molaire de la 
+quinone 
+ 
+IV. Comment la masse de DTBQ influence-t-elle la capacitÃ© et 
+lâÃ©nergie de lâaccumulateur ? 
+Pour cette partie, nous avons prÃ©parÃ© 3 Ã©lectrodes de &#3627408439;&#3627408455;&#3627408437;&#3627408452; de masses diffÃ©rentes en essayant dâavoir une 
+surface constante : 
+- Electrode 1 : &#3627408474;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;)=22,1 &#3627408474;&#3627408468; 
+- Electrode 2 : &#3627408474;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;)=49,0 &#3627408474;&#3627408468;  
+- Electrode 3 : &#3627408474;(&#3627408439;&#3627408455;&#3627408437;&#3627408452;)=73,8 &#3627408474;&#3627408468;  
+A. Valeur thÃ©orique de la capacitÃ© de lâaccumulateur. 
+La capacitÃ© de lâaccumulateur correspond Ã  la charge maximale qui peut Ãªtre fournie par lâaccumulateur pendant 
+son fonctionnement.  
+Elle se calcule par : &#3627408452;
+&#3627408474;&#3627408462;í µí±¥=&#3627408475;(&#3627408466;
+â
+)Ã&#3627408466;Ã&#3627408449;
+&#3627408436;  
+On peut en dÃ©duire que :  &#3627408452;
+&#3627408474;&#3627408462;í µí±¥=2Ã
+&#3627408474;(&#3627408439;í µí±&#3627408437;í µí±)
+í µí±(&#3627408439;í µí±&#3627408437;í µí±)
+Ã&#3627408466;Ã&#3627408449;
+&#3627408436;  
+car une mole de &#3627408439;&#3627408455;&#3627408437;&#3627408452; capte deux moles dâÃ©lectrons. 
+Voici nos rÃ©sultats : 
+ 
+ 
+ 
+ 
+ 
+Pour information :    Accumulateur au plomb fait au lycÃ©e : Q = 7 mA.h 
+              Smartphone  : Q = 5000 mA.h (lithium-ion)  
+  Voiture ZoÃ©  : Q = 130 000 mA.h (lithium-ion) 
+ 
+B. DÃ©termination expÃ©rimentale de la capacitÃ© de lâaccumulateur. 
+Protocole :   
+- RÃ©aliser un accumulateur avec chacune des Ã©lectrodes citÃ©es ci-
+dessus. Chaque accumulateur doit avoir une configuration 
+identique (mÃªme concentration pour lâÃ©lectrolyte, mÃªme distance 
+entre les Ã©lectrodes).  
+- Brancher une rÃ©sistance de 560 â¦ aux bornes de lâaccumulateur. 
+- Relier la console dâacquisition Ã  lâordinateur. 
+- Brancher une des voies de la console aux bornes de 
+lâaccumulateur pour mesurer la tension. 
+- Brancher sur une autre voie de la console un module 
+Â« ampÃ¨remÃ¨tre Â» et le brancher en sÃ©rie dans le circuit. 
+- Fermer le circuit en dÃ©marrant lâacquisition (4000 points, 10 h) des 
+valeurs de tension et dâintensitÃ© en fonction du temps.  
+Remarque : Nous avons choisi R=560 Î© de faÃ§on Ã  rÃ©aliser une dÃ©charge lente mais suffisamment rapide pour 
+avoir lieu sur le temps dâouverture du lycÃ©e. 
+ 
+  
+Electrode &#3627408452;
+&#3627408474;&#3627408462;í µí±¥(&#3627408438;) &#3627408452;
+&#3627408474;&#3627408462;í µí±¥(&#3627408474;&#3627408436;.â) &#3627408438;&#3627408462;&#3627408477;&#3627408462;&#3627408464;í µí±&#3627408481;Ã© &#3627408474;&#3627408462;&#3627408480;&#3627408480;í µí±&#3627408478;&#3627408482;&#3627408466; &#3627408474;&#3627408462;í µí±¥ 
+(&#3627408474;&#3627408436;.â.&#3627408468;
+â1
+) 
+1 19,3 &#3627408438; 5,36 	243 
+2 42,9 &#3627408438; 11,9 	243 
+3 64,6 &#3627408438; 17,9 	243 
+Figure IV-1 : SchÃ©ma du circuit 
+permettant de mesurer la tension et 
+lâintensitÃ© au cours de la dÃ©charge 
+de lâaccumulateur 
+Accumulateur 
++ 
+-
+
+13 
+ 
+Nous obtenons les courbes ci-dessous pour chacune de nos Ã©lectrodes.  
+Les courbes de la mesure de la tension en fonction du temps sont disponibles en annexe 3. 
+ 
+Figure IV-2 : DÃ©charge de 3 Ã©lectrodes de masse diffÃ©rente dans une rÃ©sistance de 560 Ohm. 
+Afin de dÃ©terminer la capacitÃ© des 3 accumulateurs, nous utilisons la fonction Â« calcul intÃ©gral Â» de notre logiciel. 
+En effet, on sait que : 
+ 
+ 	&#3627408452; =â«&#3627408444;(&#3627408481;)
+í µí±¡
+í µí±
+í µí±¡0
+&#3627408465;&#3627408481; 
+ 
+ 
+Dans lâidÃ©al, &#3627408481;
+í µí±=â, nous avons rÃ©alisÃ© la manipulation en fonction des contraintes horaires de lycÃ©e. 
+ 
+Nous avons obtenu les rÃ©sultats suivants : 
+&#3627408440;&#3627408473;&#3627408466;&#3627408464;&#3627408481;&#3627408479;&#3627408476;&#3627408465;&#3627408466; 
+&#3627408474; 
+(&#3627408468;) 
+&#3627408452; 
+(&#3627408438;) 
+&#3627408452; 
+(&#3627408474;&#3627408436;.â) 
+% &#3627408477;&#3627408462;&#3627408479; &#3627408479;&#3627408462;&#3627408477;&#3627408477;&#3627408476;&#3627408479;&#3627408481; Ã  
+&#3627408452;
+&#3627408474;&#3627408462;í µí±¥  
+&#3627408464;&#3627408462;&#3627408477;&#3627408462;&#3627408464;í µí±&#3627408481;Ã© &#3627408474;&#3627408462;&#3627408480;&#3627408480;í µí±&#3627408478;&#3627408482;&#3627408466; &#3627408466;í µí±¥&#3627408477; 
+(&#3627408474;&#3627408436;.â.&#3627408468;
+â1
+) 
+1 22,1.10
+â3
+ 20,1 5,58 104 	253 
+2 49,0.10
+â3
+ 31,7 8,81 75 	180 
+3 73,8.10
+â3
+ 43,8 12,2 68 	165 
+ 
+Nous remarquons que plus la masse de quinone est importante, plus la capacitÃ© mesurÃ©e est grande. On peut 
+envisager une relation de proportionnalitÃ© mÃªme sir la valeur pour la premiÃ¨re Ã©lectrode est un peu haute (voir 
+annexe 4). Nous nous attendions Ã  avoir des rÃ©sultats infÃ©rieurs Ã  la capacitÃ© maximale ce qui est le cas pour 
+les 2 Ã©lectrodes les plus massives.  Pour lâÃ©lectrode la plus lÃ©gÃ¨re nous avons des rÃ©sultats supÃ©rieurs Ã  ceux 
+attendus.  
+LâÃ©cart de nos valeurs est dÃ» aux incertitudes expÃ©rimentales. Nous pouvons supposer que les Ã©lectrodes 
+nâÃ©taient peut-Ãªtre pas entiÃ¨rement dÃ©chargÃ©es (ou initialement chargÃ©es) mais aussi que la masse de quinone 
+nâest pas exactement celle calculÃ©e. Ceci sâexplique par le fait que les masses pesÃ©es Ã©taient petites et quâune 
+partie de la matiÃ¨re est restÃ©e collÃ©e sur le fond du mortier. On a Ã©galement supposÃ© que la quinone Ã©tait rÃ©partie 
+â¢ &#3627408444;(t) est le courant en ampÃ¨res (A), 
+â¢ &#3627408481;
+0 et &#3627408481;
+í µí± sont les instants de dÃ©but et de fin de la dÃ©charge, 
+â¢ &#3627408452; est la charge totale en coulombs (C).
+
+14 
+ 
+de faÃ§on homogÃ¨ne dans le matÃ©riau fabriquÃ©. Ainsi le % de quinone nâest peut-Ãªtre pas celui prÃ©vu. On peut 
+Ã©galement penser que les Ã©lectrodes les plus massives Ã©tant plus Ã©paisses, les ions Zn
+2+
+ ont plus de difficultÃ© 
+Ã  sâinsÃ©rer au cÅur du matÃ©riau. 
+ 
+La capacitÃ© massique obtenue devrait Ãªtre constante ce qui est Ã  peu prÃ¨s le cas pour les Ã©lectrodes 2 et 3 pour 
+lesquelles nos valeurs sont en accord avec les donnÃ©es fournies par lâIMN (entre 220 et 110 mA.h.g
+-1
+).  
+C. DÃ©termination expÃ©rimentale de lâÃ©nergie fournie par 
+lâaccumulateur. 
+A lâaide des courbes obtenues lors lâexpÃ©rience dÃ©crite dans la partie prÃ©cÃ©dente, nous avons pu calculer la 
+puissance &#3627408451; de lâaccumulateur Ã  chaque instant &#3627408481; de la dÃ©charge. 
+En effet, on sait que : 
+ 
+ 	&#3627408451;=&#3627408456;Ã&#3627408444; 
+ 
+ 
+Ensuite, afin de dÃ©terminer lâÃ©nergie libÃ©rÃ©e par les accumulateurs, nous utilisons la fonction Â« calcul intÃ©gral Â» 
+de notre logiciel. En effet, on sait que : 
+ 	&#3627408440; =â«&#3627408451;(&#3627408481;)
+í µí±¡
+í µí±
+í µí±¡0
+&#3627408465;&#3627408481; 
+ 
+Nous avons obtenu les courbes ci-dessous :  
+ 
+Figure IV-3 : Puissance dissipÃ©e et Ã©nergie lors de la dÃ©charge des 3 Ã©lectrodes. 
+Ainsi, nous pouvons en dÃ©duire que : 
+ 
+ 
+ 
+ 
+ 
+ 
+On observe que plus la masse de lâÃ©lectrode est grande, plus lâÃ©nergie dÃ©livrÃ©e est grande. On peut mÃªme dire 
+quâil y a une relation de proportionnalitÃ© entre ces deux grandeurs (voir annexe 4). La densitÃ© dâÃ©nergie massique 
+Electrode &#3627408440;(&#3627408445;) &#3627408440; (&#3627408458;.â) &#3627408465;&#3627408466;&#3627408475;&#3627408480;í µí±&#3627408481;Ã© &#3627408465;
+â²
+Ã©&#3627408475;&#3627408466;&#3627408479;&#3627408468;í µí±&#3627408466; &#3627408474;&#3627408462;&#3627408480;&#3627408480;í µí±&#3627408478;&#3627408482;&#3627408466; 
+(&#3627408458;â.&#3627408472;&#3627408468;
+â1
+) 
+1 10,6 &#3627408445; 2,94.10
+â3
+ 	133 
+2 22,1 &#3627408445; 6,14.10
+â3
+ 	125 
+3 32,4 &#3627408445; 9,00.10
+â3
+ 	122 
+â¢ &#3627408451; est la puissance en Watt (W). 
+â¢ &#3627408456; est la tension en Volt (V). 
+â¢ &#3627408444; est lâintensitÃ© en AmpÃ¨re (A).  
+ 
+â¢ &#3627408451;(t) est la puissance en Watt (W), 
+â¢ &#3627408481;
+0 et &#3627408481;
+í µí± sont les instants de dÃ©but et de fin de la dÃ©charge, 
+â¢ &#3627408440; est lâÃ©nergie totale en Joules (J).
+
+15 
+ 
+obtenue devrait Ãªtre constante ce qui est Ã  peu prÃ¨s le cas pour les Ã©lectrodes 2 et 3. Les valeurs mesurÃ©es 
+sont supÃ©rieures Ã  celle fournie par lâIMN (75 Wh.kg
+-1
+).  
+ 
+Pour comparaison, pour une batterie lithium-ion la densitÃ© dâÃ©nergie massique est autour de 150-250 Wh.kg
+-1
+. 
+ 
+GrÃ¢ce Ã  cette sÃ©rie dâexpÃ©riences nous avons donc montrÃ© que la masse de quinone prÃ©sente dans lâÃ©lectrode 
+influence ses caractÃ©ristiques. Nous avons Ã©galement pu constater que la surface (et donc lâÃ©paisseur) du 
+matÃ©riau avait aussi sÃ»rement une influence. 
+V. Les performances de lâaccumulateur varient-elles au fur et Ã  
+mesure de lâutilisation et en fonction de la tempÃ©rature extÃ©rieure ? 
+ 
+A. La capacitÃ© de lâaccumulateur diminue-t-elle au bout de quelques 
+cycles de charge et de dÃ©charge ? 
+Afin de rÃ©aliser cette Ã©tude nous avons soumis notre accumulateur Ã  la technique de voltamÃ©trie cyclique. Ceci 
+a pu Ãªtre possible grÃ¢ce au soutien matÃ©riel de lâentreprise Biologic qui nous a prÃªtÃ© le temps de notre projet un 
+potentiostat (modÃ¨le SP 150) pilotÃ© informatiquement. Nos professeurs ont pu Ãªtre formÃ©s Ã  lâutilisation de ce 
+matÃ©riel par M. Poizot lors dâune journÃ©e de prÃ©paration Ã  lâIMN.  
+Le potentiostat permet de rÃ©aliser de faÃ§on automatique un grand nombre de cycles de charge et de dÃ©charge. 
+Le principe de la voltamÃ©trie est expliquÃ© en annexe 5.  
+Pour Ã©tudier spÃ©cifiquement le comportement Ã©lectrochimique de notre Ã©lectrode de quinone, nous avons utilisÃ© 
+un montage Ã  3 Ã©lectrodes qui permet dâutiliser une Ã©lectrode de rÃ©fÃ©rence (couple &#3627408461;&#3627408475;
+2+
+/&#3627408461;&#3627408475;) et donc dâÃ©tudier 
+les propriÃ©tÃ©s en charge et en dÃ©charge propre Ã  cette Ã©lectrode. Nous avons ainsi reliÃ© notre accumulateur au 
+potentiostat comme suit : Figure V-1 
+- LâÃ©lectrode de quinone constitue lâÃ©lectrode de travail sur laquelle a lieu la transformation Ã©tudiÃ©e. 
+- LâÃ©lectrode de zinc constitue la contre-Ã©lectrode dont le rÃ´le est de permettre le passage du courant. 
+- Une autre Ã©lectrode de zinc a le rÃ´le dâÃ©lectrode de rÃ©fÃ©rence des potentiels. 
+LâÃ©lectrolyte est toujours la solution aqueuse dâÃ©thanoate de zinc Ã  1,0 mol.L
+-1
+. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Potentiostat  Ordinateur et 
+logiciel EC-lab 
+Accumulateur 
+et Ã©lectrode 
+de rÃ©fÃ©rence 
+Electrode de travail 
+(E.T.) 
+Contre Ã©lectrode 
+(C.E.) 
+Electrode de rÃ©fÃ©rence 
+(E.ref.) 
+Figure V-2 : Montage ayant permis de tracer les courbes de voltamÃ©trie cyclique.
+
+16 
+ 
+Le potentiostat est commandÃ© grÃ¢ce au logiciel Â« EC-lab Â» qui nous a Ã©tÃ© installÃ© par lâIMN. Tous les prÃ©rÃ©glages 
+nous avaient Ã©tÃ© fournis par M. Gaubicher et M. Poizot. Câest un logiciel qui permet de rÃ©aliser des tracÃ©s avec 
+un grand choix de paramÃ©trages et de reprÃ©sentations graphiques. Voici une des courbes que nous avons 
+obtenues. Nous avons effectuÃ© 13 cycles. Chaque cycle a durÃ© environ 30 minutes. 
+ 
+ 
+Remarque : Cette courbe prÃ©sente une symÃ©trie entre la pÃ©riode de charge (oxydation) et de dÃ©charge 
+(rÃ©duction) de lâÃ©lectrode de &#3627408439;&#3627408455;&#3627408437;&#3627408452;. Cela nous a permis de confirmer que le systÃ¨me est rÃ©versible : il peut se 
+charger et se dÃ©charger et donc servir dâaccumulateur. 
+Un grand nombre grandeurs sont automatiquement calculÃ©es Ã  partir des mesures expÃ©rimentales, nous avons 
+donc pu obtenir facilement les valeurs des capacitÃ©s de charge et de dÃ©charge pour chacun des 13 cycles.  
+Nous avons obtenu les courbes ci-dessous : 
+Figure V-4 : Evolution de la 
+capacitÃ© de charge en 
+fonction du numÃ©ro de cycle. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure V-5 : Evolution de la 
+capacitÃ© de dÃ©charge en 
+fonction du numÃ©ro de cycle. 
+ 
+ 
+ 
+ 
+Figure V-3 : Courbe de voltamÃ©trie cyclique 
+Potentiel de lâÃ©lectrode de travail (V)/Eref 
+IntensitÃ©(mA)
+ 	í µí±«í µí±»í µí±©í µí±¸í µí²í µí²(í µí²)âí µí±«í µí±»í µí±©í µí±¸ (í µí²)+ í µí²í µí²
+2+
+ +í µí¿í µí²
+-
+ 
+í µí±«í µí±»í µí±©í µí±¸ (í µí²)+ í µí²í µí²
+í µí¿+
+ +í µí¿í µí²
+-
+âí µí±«í µí±»í µí±©í µí±¸í µí²í µí²(í µí²)
+
+17 
+ 
+Nous observons ainsi que les capacitÃ©s de charge (Qcharge) et dÃ©charge (QdÃ©charge) restent quasiment stables tout 
+le long des 13 cycles. Nous mesurons environ 0,18 mA.h pour la capacitÃ© lors de la charge et environ 0,19 mA.h 
+pour la capacitÃ© lors de la dÃ©charge. 
+On peut dÃ©finir lâefficacitÃ© de lâaccumulateur de la maniÃ¨re suivante : &#3627408440;&#3627408467;&#3627408467;í µí±&#3627408464;&#3627408462;&#3627408464;í µí±&#3627408481;Ã©=
+&#3627408452;&#3627408465;Ã©&#3627408464;â&#3627408462;&#3627408479;&#3627408468;&#3627408466;
+&#3627408452; &#3627408464;â&#3627408462;&#3627408479;&#3627408468;&#3627408466;
+Ã100=106 %. 
+AprÃ¨s application de la formule de lâefficacitÃ©, on obtient une efficacitÃ© supÃ©rieure Ã  100%, ce qui est 
+normalement impossible. MalgrÃ© cela, on peut quand mÃªme remarquer que le rendement aller-retour est trÃ¨s 
+bon. 
+Il serait mÃªme supÃ©rieur Ã  celle des batteries plomb-acide, qui ont un rendement aller-retour de 75% environ. 
+Une batterie lithium-ion optimisÃ©e peut avoir un rendement aller-retour de 99,98 %. 
+Actuellement on constate que ce type de batterie conserve encore 80% de sa capacitÃ© aprÃ¨s 3000 cycles. 
+ 
+B. La capacitÃ© de lâaccumulateur varie-t-elle en fonction de la 
+tempÃ©rature ?  
+Nous avons cherchÃ© Ã  savoir si des variations de tempÃ©rature impactent les 
+performances de lâaccumulateur. Nous avons commencÃ© par soumettre 
+lâaccumulateur Ã  un environnement plus chaud. 
+Protocole : 
+- RÃ©aliser le montage Ã  3 Ã©lectrodes tel que dÃ©crit dans la partie V.A. 
+- Connecter le montage au potentiostat et Ã  lâordinateur. 
+- Placer Ã©galement une sonde thermomÃ©trique dans lâÃ©lectrolyte. La sonde est 
+reliÃ©e Ã  une centrale dâacquisition. 
+- DÃ©marrer le potentiostat afin dâeffectuer un cycle complet de charge et dÃ©charge 
+Ã  tempÃ©rature ambiante. 
+- Plonger lâaccumulateur dans un bain-marie thermostatÃ© Ã  45Â°C. 
+- RÃ©aliser 4 cycles complets puis sortir lâaccumulateur du bain-marie.  
+- Poursuivre les mesures pendant 4 cycles. 
+ 
+ 
+Figure V-7 : Influence de l'augmentation de tempÃ©rature sur la capacitÃ© en charge et dÃ©charge 
+Figure V-6 : Augmentation de la 
+tempÃ©rature de la cellule grÃ¢ce Ã  un 
+bain thermostatÃ©
+
+18 
+ 
+ 
+ Nous avons ensuite soumis lâaccumulateur Ã  un environnement plus froid. Nous 
+avions pris soin auparavant de mesurer la tempÃ©rature Ã  partir de laquelle 
+lâÃ©lectrolyte se solidifiait : -5Â°C. 
+Protocole : 
+- RÃ©aliser le montage Ã  3 Ã©lectrodes tel que dÃ©crit dans la partie V.A. 
+- Connecter le montage au potentiostat et Ã  lâordinateur. 
+- Placer Ã©galement une sonde thermomÃ©trique dans lâÃ©lectrolyte. La sonde est 
+reliÃ©e Ã  une centrale dâacquisition. 
+- DÃ©marrer le potentiostat afin dâeffectuer un cycle de charge et dÃ©charge Ã  
+tempÃ©rature ambiante. 
+- Plonger lâaccumulateur dans un mÃ©lange rÃ©frigÃ©rant. 
+- RÃ©aliser 2 cycles complets puis sortir lâaccumulateur du mÃ©lange rÃ©frigÃ©rant. 
+- Poursuivre les mesures pendant 8 cycles pendant le rÃ©chauffement du milieu.  
+ 
+Figure V-9 : Influence du refroidissement sur la capacitÃ© en charge et dÃ©charge 
+ 
+On observe que lorsque la tempÃ©rature augmente, Qcharge et QdÃ©charge augmentent eux aussi. On observe une 
+augmentation de 10 % environ de sa capacitÃ©. 
+ Puis lorsque la tempÃ©rature diminue, Qcharge et QdÃ©charge font de mÃªme. On observe une diminution de 15 % 
+environ de sa capacitÃ©. 
+La tempÃ©rature a donc une influence sur les capacitÃ©s de charge et de dÃ©charge. Ainsi, ces accumulateurs Ã  la 
+quinone subiront une perte de capacitÃ© lors dâune utilisation dans un environnement froid, similairement aux 
+accumulateurs au plomb, par exemple. Câest aussi vrai pour les autres batteries comme les meilleurs batteries 
+Li-ion commerciales. Ainsi, lâhiver un vÃ©hicule Ã©lectrique prÃ©sentera une autonomie diminuÃ©e par rapport Ã  lâÃ©tÃ©. 
+Figure V-8 : Diminution de la 
+tempÃ©rature de la cellule grÃ¢ce Ã  un 
+mÃ©lange rÃ©frigÃ©rant (glace + sel)
+
+19 
+ 
+VI. Vers la commercialisation dâune batterie Ã  la quinone 
+Une fois que les premiers tests ont Ã©tÃ© concluants pour cet accumulateur, lâIMN passe Ã  
+lâÃ©tape suivante : constituer des batteries. Il faut rÃ©aliser des Â« sandwichs Â» dâaccumulateurs. 
+Ceux-ci sont prÃ©parÃ©s dans des sacs hermÃ©tiques type Â« paquets de cafÃ© Â» tel que celui 
+photographiÃ© ci-contre (Figure VI-1). Pour la rÃ©alisation de ces batteries, le tÃ©flon nâest pas 
+utilisÃ©, il est remplacÃ© par dâautres matÃ©riaux polymÃ¨res. La quinone utilisÃ©e est pour le 
+moment issue de la pÃ©trochimie. LâÃ©lectrolyte a une concentration de 1,0 mol.L
+-1
+ et la distance 
+entre les Ã©lectrodes est autour de 20 Âµm. 
+Les batteries ainsi prÃ©parÃ©es sont soumises Ã  un trÃ¨s grand nombre de cycles de charges et 
+de dÃ©charges grÃ¢ce Ã  des potentiostats pour vÃ©rifier leur durabilitÃ© au fonctionnement. 
+Du fait de leur faible capacitÃ© massique, elles sont envisagÃ©es pour des batteries stationnaires. 
+Notamment pour stocker le surplus de production Ã©lectrique obtenu grÃ¢ce aux Ã©oliennes et aux panneaux 
+photovoltaÃ¯ques. Notre cellule Ã©lectrochimique, oÃ¹ la masse et la compacitÃ© sont moins critiques, permettrait de 
+mettre en place ces grandes batteries, qui seraient bien moins couteuses et aussi bien moins polluantes sur le 
+point de vue Ã©cologique, car lâextraction de Lithium pour nos batteries dÃ©truit de nombreux sites naturels. 
+VI. Conclusion  
+Pour conclure, nous avons rÃ©ussi Ã  fabriquer au lycÃ©e un accumulateur Ã  la quinone. Nous avons pu mesurer 
+lâinfluence de divers paramÃ¨tres (masse de quinone, concentration de lâÃ©lectrolyte, distance entre les Ã©lectrodes, 
+tempÃ©rature) sur ses performances et comprendre lâimportance de ces paramÃ¨tres lors de la conception dâune 
+batterie. Nos rÃ©sultats Ã©taient globalement en accord avec les valeurs fournies par lâInstitut des matÃ©riaux de 
+Nantes.  
+Nous avons Ã©galement pu constater quâil Ã©tait possible de le charger et de le dÃ©charger un grand nombre de 
+fois en gardant la mÃªme capacitÃ©. Notre projet explore donc une alternative aux batteries actuellement sur le 
+marchÃ© : un accumulateur zinc-quinone en milieu aqueux, utilisant des matÃ©riaux abondants et recyclables. 
+Ce systÃ¨me prÃ©sente un risque moindre dâinflammabilitÃ©, une empreinte carbone rÃ©duite, rendant cette 
+technologie prometteuse pour un stockage dâÃ©nergie plus sÃ»r, Ã©conomique et respectueux de lâenvironnement. 
+Cette aventure a Ã©tÃ©, pour nous, une source dâapprentissage, de curiositÃ© et de passion pour la physique.  
+Alors Â« Quinone me suive ! Â»  
+VII. Remerciements 
+Merci Ã  M.Poizot et M.Gaubicher pour avoir grandement contribuÃ© Ã  la crÃ©ation de 
+ce projet sur la DTBQ, projet dÃ©passant largement les concepts scientifiques abordÃ©s 
+au lycÃ©e, M.Poizot et M.Gaubicher nous ont permis de contribuer Ã  la prochaine innovation de la recherche 
+FranÃ§aise intÃ©grÃ© dans leur projet de recherche SONIC. Nous sommes ainsi reconnaissants de la chance offerte 
+par lâIMN de nous introduire dans un tel projet, nous permettent par la mÃªme occasion de dÃ©couvrir le monde 
+scientifique Ã  travers notre coopÃ©ration avec lâIMN pour crÃ©er notre propre cellule DTBQ. 
+Merci Ã  notre partenaire BioLogic pour nous avoir fourni du matÃ©riel scientifique avec un 
+potientiostat dernier cri capable dâeffectuer nos mesures avec une grande prÃ©cision, 
+permettant mÃªme de faire des mesures cycliques. Ainsi, nous remercions BioLogic pour nous avoir prÃªtÃ© ce 
+matÃ©riel de grande valeur indispensable Ã  nos expÃ©riences. 
+Nous souhaitons aussi exprimer notre gratitude Ã  lâensemble des organisateurs des 
+Olympiades de Physique pour leur investissement et lâopportunitÃ© offerte de 
+vivre une expÃ©rience scientifique unique. 
+Nous remercions Ã©galement nos professeurs, M. Jardin et Mme Le Grand, pour leur 
+accompagnement, leurs conseils et leur soutien tout au long de la prÃ©paration de ce projet.  
+Figure VI-1
+
+20 
+ 
+VIII. Bibliographie 
+[1] Chatroux, Daniel. Accumulateurs Lithium-ion et vÃ©hicules Ã©lectriques. SGE 2020 - Symposium de 
+GÃ©nie Electrique [en ligne], Juillet 2021 [consultÃ© en avril 2025] , Nantes, France. cea-03344278.  
+Disponible sur https://cea.hal.science/cea-03344278/document 
+ 
+[2 Delobelle, AurÃ©lien. Les courbes intensitÃ©-potentiel, MP*La MartiniÃ¨re Monplaisir [en ligne], Novembre 2025, 
+[consultÃ© le 21 novembre 2025], 
+Disponible sur http://mpstar.lamartin.free.fr/fichiers/matieres-789-1421262770.pdf 
+ 
+[3] LemaÃ®tre, FrÃ©dÃ©ric. PremiÃ¨res approches de lâÃ©lectrochimie et de lâoxydo-rÃ©duction : de la loi de Nernst aux 
+courbes intensitÃ©-potentiel, ENS chimie [en ligne].2024 [consultÃ© en avril 2025].  
+Disponible surhttps://www.chimie.ens.fr/wpcontent/uploads/2024/04/cours_VF_electrochimie_compression.pdf 
+ 
+[4] Poizot, Philippe. MatÃ©riaux dâÃ©lectrode organiques : vers un stockage Ã©lectrochimique dÃ©carbonÃ© ?.CollÃ¨ge 
+de France [vidÃ©o en ligne].13 mars 2023.[consultÃ© en novembre 2025].  
+Disponible sur   https://www.college-de-france.fr/fr/agenda/seminaire/composes-insertion-tridimensionnels-3-
+pour-batteries-relations-structure-electrochimie-et-mise-en/materiaux-electrode-organiques-vers-un-stockage-
+electrochimique-decarbone 
+ 
+[5] Singh, A., Grenz, D., Pellegrin, Y., Odobel, F., Poizot, P., & Gaubicher, J. Challenging metal-ion rocking-chair 
+and zinc-ion mechanisms in mild acidic to neutral aqueous electrolytes. Electrochemistry Communications, 154, 
+107559.[en ligne]. septembre 2023 [consultÃ© en juin 2025]  
+Disponible sur https://doi.org/10.1016/j.elecom.2023.107559 
+ 
+[6] Taylor, James. Comprendre la voltampÃ©romÃ©trie linÃ©aire et la voltampÃ©romÃ©trie cyclique, MÃ©trohm [en ligne], 
+12 mai 2025, [consultÃ© en juin 2025],  
+Disponible sur https://www.metrohm.com/fr_fr/decouvrir/blog/2025/lsv-and-cv-explained.html 
+ 
+[7] VÃ©rot, Martin, voltamÃ©trie/voltampÃ©romÃ©trie cyclique : expÃ©rience et thÃ©orie. [vidÃ©o en ligne] Youtube, 3 
+septembre 2022  [ConsultÃ© 25 avril 2025],  
+Disponible sur https://www.youtube.com/watch?v=X2M6a71Y6Pw&feature=youtu.be 
+ 
+[8] Lithium. (2025). In WikipÃ©dia.  
+https://fr.wikipedia.org/w/index.php?title=Lithium&oldid=229437004  
+ 
+[9] Abondance des Ã©lÃ©ments chimiques.  (2024). In WikipÃ©dia.  
+https://fr.wikipedia.org/w/index.php?title=Abondance_des_%C3%A9l%C3%A9ments_chimiques&oldid=21977
+1690 
+ 
+[10] Quinone. (2025). In Wikipedia.  
+https://en.wikipedia.org/w/index.php?title=Quinone&oldid=1318136798 
+ 
+[11] TÃ©flon. (2025). In WikipÃ©dia.  
+https://fr.wikipedia.org/w/index.php?title=T%C3%A9flon&oldid=228135787

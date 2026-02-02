@@ -1,0 +1,654 @@
+1 
+ 
+ OLYMPIADES 2026 
+ 
+MIROIR DE CHOCOLAT 
+ 
+ 
+ 
+ProblÃ©matique : Comment rÃ©ussir un glaÃ§age miroir au chocolat ?  
+ 
+ 
+Bellange Anaelle 
+Morel EloÃ¯se 
+Pollet Fanny
+
+2 
+ 
+Comment rÃ©ussir un glaÃ§age miroir au chocolat ?  
+ 
+ 
+Introduction : Nous et le glaÃ§age au chocolat  
+Nous nous connaissons depuis de nombreuses annÃ©es. Dans notre 
+groupe, EloÃ¯se est passionnÃ©e par la pÃ¢tisserie et les deux autres 
+adorent admirer ses crÃ©ations et les dÃ©guster bien sÃ»r.  Lâentremet 
+quâa dÃ©jÃ  rÃ©alisÃ© EloÃ¯se est recouvert dâun glaÃ§age dâune brillance 
+assez impressionnante Ã  tel point que nous nous sommes 
+demandÃ© comment le glaÃ§age miroir dâEloÃ¯se est-il si beau ?  
+Question :  Comment rÃ©ussir un glaÃ§age miroir Ã  chaque rÃ©alisation ?  
+ 
+I- Mise en Ã©vidence des paramÃ¨tres   
+1-Recette 
+IngrÃ©dients 
+â chocolat au lait :150g 
+â sucre :150g  
+â sirop de glucose : 150g  
+â gÃ©latine :9g 
+â crÃ¨me liquide 100g 
+â eau 80g 
+ 
+Mode opÃ©ratoire : 
+Dans un bol dâeau froide, rÃ©hydrater la gÃ©latine pendant 10 - 
+15 minutes. Dans une casserole, porter lâeau, le sucre et le 
+glucose Ã  Ã©bullition jusquâÃ  atteindre 105Â°C. Verser ce sirop 
+sur le chocolat cassÃ© en morceaux. Ajouter la gÃ©latine 
+essorÃ©e, puis mixer lâensemble au mixeur plongeant en veillant 
+Ã  ne pas incorporer de bulles dâair. Laisser refroidir Ã  
+tempÃ©rature ambiante et lâutiliser lorsque la tempÃ©rature se 
+situe entre 30 et 35Â°C.  
+ 
+2-RÃ´le de chaque ingrÃ©dient   
+Dans un premier temps nous nous sommes intÃ©ressÃ©s aux diffÃ©rents ingrÃ©dients et avons cherchÃ©   
+leurs rÃ´les : 
+â sucre : goÃ»t saveur texture 
+â sirop de glucose : Ã©vite la recristallisation du sucre pour conserver lâaspect lisse et brillant, 
+viscositÃ© de lâensemble 
+â crÃ¨me liquide : goÃ»t, onctuositÃ©, assure le lien entre les graisses 
+â gÃ©latine : tenue, Ã©lasticitÃ© et brillance
+
+3 
+ 
+â chocolat : goÃ»t, couleur, tenue texture et brillance 
+2-Structure chimique des ingrÃ©dients 
+chocolat au lait : eau, graisse ( beurre de cacao, graisse de la cosse ) , cendres, azote total,   
+thÃ©obromine, cafÃ©ine, amidon, cellulose brute   
+sucre (saccharose) : formule C12H22O11  
+sirop de glucose : C6H14O7   
+gÃ©latine : glycine ( 25-27%) , proline ( 13-15%) et dâhydroxyproline ( 10-12%)  
+crÃ¨me liquide : matiÃ¨re grasse composÃ©e aux â dâacides gras saturÃ©s et â dâacides gras      
+insaturÃ©s, reliÃ©s pour former les triglycÃ©rides.   
+3-ParamÃ¨tres physiques du glaÃ§age 
+Il existe 3 propriÃ©tÃ©s permettant de caractÃ©riser un fluide qui font partie de la rhÃ©ologie, qui est 
+lâÃ©tude de la dÃ©formation et de lâÃ©coulement dâun fluide.  
+â La viscositÃ©  
+â LâÃ©lasticitÃ©              
+â La brillance 
+ 
+II-ViscositÃ© du mÃ©lange   
+1-DÃ©finition 
+La viscositÃ© dâun fluide est un coefficient qui caractÃ©rise sa capacitÃ© Ã  sâopposer Ã  son 
+Ã©coulement. Câest une grandeur exprimÃ©e en Poiseuille (Pl). Elle peut se mesurer par diffÃ©rentes 
+techniques mais aussi avec des appareils appelÃ©s, viscosimÃ¨tre. 
+ 
+2- Principe de la mÃ©thode choisie pour mesurer la viscositÃ©  
+En cherchant les mÃ©thodes possibles pour dÃ©terminer la viscositÃ© dâun liquide, nous avons trouvÃ© 
+quâil existait des appareils spÃ©cifiques appelÃ©s viscosimÃ¨tre. Malheureusement, le lycÃ©e nâen 
+possÃ¨de pas. Nous avons alors cherchÃ© une mÃ©thode de mesure qui ne nÃ©cessite pas de 
+mesures particuliÃ¨res et câest ainsi que nous avons dÃ©couvert les viscosimÃ¨tres Ã  chute de billes.  
+En effet, le mouvement dâune bille dans un fluide est directement liÃ© Ã  sa viscositÃ©. Il existe donc 
+une possibilitÃ© de parvenir Ã  faire des mesures de viscositÃ©.  
+3- Choix du montage   
+La mesure repose principalement sur une mesure de vitesse de la bille qui chute dans le fluide. La 
+mÃ©thode la plus simple au lycÃ©e est de filmer le mouvement de la bille et de dÃ©terminer la vitesse 
+de celle-ci en exploitant la vidÃ©o.
+
+4 
+ 
+Le problÃ¨me rencontrÃ© rÃ©side principalement dans le caractÃ¨re opaque de notre glaÃ§age. Il est 
+impossible de voir la bille et donc dâaccÃ©der Ã  sa vitesse.   
+GrÃ¢ce Ã  la technicienne du laboratoire, nous avons eu lâidÃ©e de repÃ©rer le passage dâune bille 
+aimantÃ©e non pas avec une camÃ©ra mais avec un teslamÃ¨tre qui est un appareil qui mesure 
+lâintensitÃ© des champs magnÃ©tiques. En effet, quand elle passe au voisinage de la sonde du 
+teslamÃ¨tre, celui-ci dÃ©tecte son champ magnÃ©tique : il va nous permettre de visualiser le passage 
+de la bille.  
+On a donc trouvÃ© une solution : on place le glaÃ§age 
+au chocolat dans une Ã©prouvette graduÃ©e. On y fait 
+tomber une bille aimantÃ©e. En plaÃ§ant deux sondes 
+de teslamÃ¨tres sur deux positions diffÃ©rentes, nous 
+allons pouvoir repÃ©rer le passage de la bille et la 
+chronomÃ©trer entre ces deux positions grÃ¢ce Ã  une 
+console EXAO.  
+  
+ 
+ 
+ 
+ 4-Essais de mesure   
+En faisant lâexpÃ©rience, des 
+problÃ¨mes ont Ã©tÃ© mis en 
+Ã©vidence. En effet, de temps en 
+temps, le signal du second 
+teslamÃ¨tre nâavait pas la mÃªme 
+forme que celui du premier avec 
+notamment une Â« inversion Â» de 
+cette forme.  
+  
+ 
+ 
+En observant correctement la chute de lâaimant, nous nous sommes rendues 
+compte quâen faisant tomber labille au bord de lâÃ©prouvette, cela provoquait 
+une rotation de la bille et donc une modification du champ reÃ§u entre les 
+deux teslamÃ¨tres.
+
+5 
+ 
+Pour rÃ©gler ce problÃ¨me, nous avons investi dans un dispositif permettant de lÃ¢cher la bille du 
+centre de lâÃ©prouvette.  LâÃ©prouvette est fermÃ©e par un couvercle qui maintient lâaimant avant sa 
+chute. Nous la remplissons de chocolat Ã  ras bord afin que la bille soit immergÃ©e dÃ¨s le dÃ©but de 
+la chute.  Nous voyons dans lâexemple ci-dessous que les deux signaux possÃ¨dent la mÃªme 
+forme dans ces conditions.  
+ 
+Sur le graphique, nous avons 2 pics, ils correspondent au passage de la bille devant les 2 sondes. 
+En mesurant le dÃ©calage temporel Ît entre les deux signaux et en connaissant la distance entre 
+les deux sondes, nous avons eu accÃ¨s Ã  la vitesse de la bille dans le liquide.  
+Avant Ã§a, nous avons dÃ» faire de nombreux essais pour trouver la bonne position pour nos sondes 
+de teslamÃ¨tre qui ne pouvaient ni Ãªtre trop hautes pour sâassurer du mouvement de translation 
+rectiligne uniforme de la bille ni trop bas pour Ã©viter que la bille continue de perturber la sonde du 
+dernier teslamÃ¨tre aprÃ¨s sa chute. 
+5-ThÃ¨orie  
+RÃ©gime transitoire et rÃ©gime permanent : 
+Quand un objet tombe dans un liquide visqueux, sa vitesse augmente dans un premier temps puis 
+finit par atteindre une valeur maximale constante : 
+son mouvement est donc une translation rectiligne 
+uniforme.  
+En effet les forces de frottement visqueux sont 
+proportionnelles Ã  la vitesse de la bille : plus sa 
+vitesse augmente plus ces forces sont importantes et 
+sâopposent au mouvement (rÃ©gime transitoire). 
+Quand elles atteignent la valeur du poids, les deux
+
+6 
+ 
+forces se compensent et le mouvement devient uniforme (rÃ©gime 
+permanent). Câest dans cette derniÃ¨re partie que nous allons rÃ©aliser 
+nos mesures de vitesse. 
+La mesure de la durÃ©e nÃ©cessaire pour passer du repÃ¨re 1 au repÃ¨re 2 
+permet de dÃ©terminer la vitesse de la bille  í µí±£=
+â
+âí µí±¡
+ 
+ 
+ 
+Expression de la viscositÃ© : 
+RÃ©fÃ©rentiel terrestre 
+SystÃ¨me : Bille aimantÃ©e 
+Bilan des actions mÃ©caniques : poids í µí±â , poussÃ©e dâArchimÃ¨de í µí°¹
+í µí°´
+ââââ et la force de 
+frottement visqueux   &#3627408467;  
+ 
+En rÃ©gime permanent la bille est en translation rectiligne uniforme. DâaprÃ¨s le 
+principe dâinertie toutes les forces se compensent et on peut Ã©crire :  
+í µí±â +í µí°¹
+í µí°´
+ââââ +&#3627408467; =0â . Cette relation signifie que le poids de la bille est exactement 
+compensÃ© par les deux autres forces.On peut alors Ã©crire í µí±=í µí°¹
+í µí°´+&#3627408467;  
+Sachant que  í µí±=í µí±Ã&#3627408468; que í µí°¹
+í µí°´=&#3627409164;
+&#3627408464;âí µí±&#3627408464;í µí±&#3627408473;í µí±í µí±¡Ãí µí±
+&#3627408465;Ã&#3627408468; et que &#3627408467;=6&#3627409163;í µí¼í µí±í µí±£  
+Avec m : masse de la bille en kg, g intensitÃ© du champ de pesanteur g=9,8m/sÂ² , Vd le volume de 
+fluide dÃ©placÃ© ici la bille en m
+3
+ , R le rayon de la bille en m , v la vitesse de la bille en m/s et 
+&#3627409164;
+&#3627408464;âí µí±&#3627408464;í µí±&#3627408473;í µí±í µí±¡la masse volumique du glaÃ§age en kg/m
+3
+ 
+On trouve donc : í µí±Ã&#3627408468;=&#3627409164;
+&#3627408464;âí µí±&#3627408464;í µí±&#3627408473;í µí±í µí±¡Ãí µí±
+&#3627408465;Ã&#3627408468;+6&#3627409163;í µí¼í µí±í µí±£ 
+En isolant la viscositÃ©, on trouve :  í µí¼=
+&#3627408474;Ãí µí±â&#3627409164;
+&#3627408464;âí µí±&#3627408464;í µí±í µí±í µí±í µí±¡Ãí µí±
+&#3627408465;Ãí µí±
+6&#3627409163;í µí±í µí±£
+ 
+Pour dÃ©terminer notre viscositÃ©, nous devons mesurer Ïchocolat  ainsi que la hauteur h entre le deux 
+repÃ¨res et la durÃ©e  Ît pour passer du repÃ¨re 1 au repÃ¨re 2  
+ 
+5- Mesures  
+-RÃ©gime transitoire et rÃ©gime permanent  
+Dans un premier temps, nous avons Ã©tudiÃ© la chute de notre bille dans le glycÃ©rol. Pour cela, nous 
+avons filmÃ© car le glycÃ©rol est transparent, et nous avons montrÃ© quâaprÃ¨s 5 cm de chute le 
+rÃ©gime permanent Ã©tait atteint. Sachant que le glycÃ©rol possÃ¨de une viscositÃ© plus faible que 
+notre glaÃ§age, nous pouvons considÃ©rer quâau-delÃ  de 5cm de chute le rÃ©gime permanent serait
+
+7 
+ 
+atteint par lâaimant dans sa chute dans le glaÃ§age. Nous avons donc placÃ© la sonde du premier 
+teslamÃ¨tre Ã  20 cm du haut de lâÃ©prouvette et la seconde 13,3 cm plus bas pour Ã©viter que le 
+rebond de lâaimant dans le fond de lâÃ©prouvette ne perturbe le signal. 
+ 
+-Mesure de la viscositÃ© en fonction de la tempÃ©rature 
+Nous souhaitons connaÃ®tre lâÃ©volution de la viscositÃ© de notre mÃ©lange en fonction de la 
+tempÃ©rature. Pour cela, nous avons dÃ©cidÃ© de chauffer le glaÃ§age Ã  diffÃ©rentes tempÃ©ratures et 
+de mesurer pour chaque valeur, la viscositÃ©. 
+Nous avons rempli le tube de glaÃ§age Ã  la tempÃ©rature Ã©tudiÃ©e, fait tomber la bille dans le 
+mÃ©lange pour mesurer la durÃ©e Ît Ã  lâaide des teslamÃ¨tres et de lâinterface. Nous avons fait les 
+mesures 10 fois de maniÃ¨re Ã  lisser les Ã©ventuelles erreurs de manipulation en travaillant avec la 
+moyenne. Nous avons Ã©galement fait une mesure de masse volumique Ã  chaque tempÃ©rature 
+pour calculer la vitesse de chute de la bille puis la viscositÃ© du glaÃ§age. 
+Voici notre tableau de mesures : 
+  80Â°C 70Â°C 65Â°C 55Â°C 44Â°C 41Â°C 35Â°C 30Â°C 25Â°C 
+t(s) 0,1979 0,2625 0,2689 0,3438 0,6839 0,8728 1,5102 3,612 6,862 
+t(s) 0,2024 0,2569 0,2606 0,3272 0,7098 0,8802 1,5023 3,512 6,787 
+t(s) 0,2246 0,2366 0,2634 0,3355 0,7024 0,8839 1,5012 3,451 6,611 
+t(s) 0,219 0,2441 0,2689 0,3272 0,7061 0,9061 1,5024 3,395 6,133 
+t(s) 0,2301 0,27 0,2579 0,3438 0,7579 0,9112 1,491 3,376 5,706 
+t(s) 0,2107 0,2735 0,2717 0,3355 0,7283 0,9156 1,482 3,312 5,279 
+t(s) 0,2218 0,2614 0,28 0,3494 0,7283 0,905 1,478 3,284 5,53 
+t(s) 0,1969 0,2718 0,2689 0,3521 0,7098 0,9302 1,472 3,213 5,329 
+t(s) 0,2246 0,2718 0,2579 0,3771 0,7283 0,9609 1,465 3,194 5,254 
+t(s) 0,2495 0,2562 0,2689 0,3549 0,7505 0,8654 1,463 3,192 5,304 
+           
+Masse 
+volumique 
+Kg/m3 
+1083 1092 1121 1150 1185 1245 1245 1245 1268 
+Distance 
+m 0,133 0,133 0,133 0,133 0,133 0,133 0,133 0,133 0,133 
+Vitesse 
+m/s 0,61 0,51 0,50 0,39 0,18 0,15 0,09 0,04 0,02 
+moyenne 
+t (s) 
+0,2177
+5 0,26048 0,26671 0,34465 0,72053 0,90313 1,48671 3,3541 5,8795 
+Î¸ (Â°C) 80 70 65 55 44 41 35 30 25 
+ViscositÃ© 
+(Pl) 3,9 4,7 4,7 6,1 12,7 15,8 26,0 58,6 102
+
+8 
+ 
+Nous avons ensuite tracÃ© lâÃ©volution de la viscositÃ© en fonction de la tempÃ©rature. 
+ 
+On remarque que la viscositÃ© dÃ©croÃ®t avec la tempÃ©rature. Ainsi plus la tempÃ©rature augmente, 
+plus lâÃ©coulement est facile. Dâautre part, plus la tempÃ©rature est faible, plus il est visqueux et plus 
+lâÃ©coulement est difficile. 
+Conclusion : Si EloÃ¯se rÃ©alise toujours son glaÃ§age Ã  une tempÃ©rature de 32 Â°C, câest 
+certainement que dans ces conditions la tempÃ©rature est adaptÃ©e et permet dâavoir un Ã©coulement 
+optimal pour recouvrir les pÃ¢tisseries de faÃ§on homogÃ¨ne et rÃ©guliÃ¨re. De plus cette opÃ©ration se 
+fait sur des entremets congelÃ©s ce qui fait que le glaÃ§age se fixe ensuite plus facilement car sa 
+viscositÃ© augmente fortement et son Ã©coulement est fortement limitÃ©. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+0
+20
+40
+60
+80
+100
+120
+0 10 20 30 40 50 60 70 80 90
+Viscositie(Pl)
+TempÃ©rture en Â°C
+Evolution de la viscositÃ© en fonction de 
+la tempÃ©rature
+
+9 
+ 
+6- Des mesures qui montrent un comportement particulier du glaÃ§age au chocolat 
+  80Â°C 70Â°C 65Â°C 55Â°C 44Â°C 41Â°C 35Â°C 30Â°C 25Â°C 
+t(s) 0,1979 0,2625 0,2689 0,3438 0,6839 0,8728 1,5102 3,612 6,862 
+t(s) 0,2024 0,2569 0,2606 0,3272 0,7098 0,8802 1,5023 3,512 6,787 
+t(s) 0,2246 0,2366 0,2634 0,3355 0,7024 0,8839 1,5012 3,451 6,611 
+t(s) 0,219 0,2441 0,2689 0,3272 0,7061 0,9061 1,5024 3,395 6,133 
+t(s) 0,2301 0,27 0,2579 0,3438 0,7579 0,9112 1,491 3,376 5,706 
+t(s) 0,2107 0,2735 0,2717 0,3355 0,7283 0,9156 1,482 3,312 5,279 
+t(s) 0,2218 0,2614 0,28 0,3494 0,7283 0,905 1,478 3,284 5,53 
+t(s) 0,1969 0,2718 0,2689 0,3521 0,7098 0,9302 1,472 3,213 5,329 
+t(s) 0,2246 0,2718 0,2579 0,3771 0,7283 0,9609 1,465 3,194 5,254 
+t(s) 0,2495 0,2562 0,2689 0,3549 0,7505 0,8654 1,463 3,192 5,304 
+Masse 
+volumiqu
+e 
+kg/m3 
+1083 1092 1121 1150 1185 1245 1245 1245 1268 
+Distance 
+m 0,133 0,133 0,133 0,133 0,133 0,133 0,133 0,133 0,133 
+Vitesse 
+m/s 0,61 0,51 0,50 0,39 0,18 0,15 0,09 0,04 0,02 
+Moyenne 
+t(s) 
+0,2177
+5 0,26048 0,26671 0,34465 0,72053 0,90313 1,48671 3,3541 5,8795 
+Î¸(Â°C) 80 70 65 55 44 41 35 30 25 
+ViscositÃ© 
+(Pl) 3,9 4,7 4,7 6,1 12,7 15,8 26,0 58,6 102 
+ 
+En observant les mesures rÃ©alisÃ©es, on sâest rendu compte que pour des valeurs de tempÃ©ratures 
+infÃ©rieures Ã  35Â°C, une particularitÃ© apparaissait. En effet, dans ces conditions, plus on rÃ©pÃ¨te la 
+mesure, plus la valeur diminue (partie grisÃ©e du tableau). Quand la tempÃ©rature est supÃ©rieure Ã  
+35Â°C les mesures de durÃ©es rÃ©alisÃ©es oscillent autour dâune valeur moyenne. Quand nous 
+rÃ©pÃ©tons successivement nos mesures, nous agitons le glaÃ§age. Dans ces conditions la durÃ©e 
+mesurÃ©e diminue, ce qui veut dire que la viscositÃ© du mÃ©lange diminue. Cette propriÃ©tÃ© 
+surprenante du glaÃ§age montre quâil sâagit dâun fluide non newtonien correspondant Ã  un mÃ©lange 
+thixotrope ou rhÃ¨ofluidifiant sous les 35Â°C.  Cela permet dâexpliquer que lorsquâon verse le 
+glaÃ§age chaud sur un entremet gelÃ©, il parvient Ã  sâÃ©couler malgrÃ© la chute de tempÃ©rature et 
+lâaugmentation importante de viscositÃ©. En effet lâagitation liÃ©e Ã  lâÃ©coulement sur lâentremet vient 
+baisser la viscositÃ© et lui permettre de recouvrir la pÃ¢tisserie.  
+ 
+Ce phÃ©nomÃ¨ne particulier nous a conduit Ã  chercher de lâaide. Câest ce qui nous a permis de 
+rencontrer Mme Manon Cazalets qui est cheffe de production de la cheffe pÃ¢tissiÃ¨re Nina MÃ©tayer 
+(Ã©lue meilleure pÃ¢tissiÃ¨re du monde). Elle nous a reÃ§us dans les laboratoires de DÃ©licatisserie par
+
+10 
+ 
+Nina MÃ©tayer Ã  Issy-les-Moulineaux. AprÃ¨s une visite du laboratoire, elle a acceptÃ© de rÃ©pondre Ã  
+nos questions sur le glaÃ§age miroir au chocolat. Elle nous a ainsi donnÃ© le rÃ´le de chaque 
+ingrÃ©dient, et nous a expliquÃ© la dÃ©marche des pÃ¢tissiers. Nous avons Ã©galement abordÃ© avec 
+elle les questions concernant le caractÃ¨re thixotrope ou rhÃ©ofluidifiant et elle nous a bien confirmÃ© 
+que les tempÃ©ratures utilisÃ©es dans la rÃ©alisation avaient une rÃ©elle importance sur lâobtention 
+dâun glaÃ§age. 
+ 
+ 
+III-Ãtude Ã  basse tempÃ©rature : Notre glaÃ§age pourrait Ãªtre rhÃ©ofluidifiant 
+1- Mise en Ã©vidence 
+Dire quâun fluide est rhÃ©ofluidifiant ou thixotrope signifie que sa viscositÃ© diminue quand il est mis 
+en mouvement. La diffÃ©rence rÃ©side dans le fait que le thixotrope retrouve sa viscositÃ© initiale 
+aprÃ¨s un temps de repos alors que le rhÃ©ofluidifiant la reprend instantanÃ©ment 
+ExpÃ©rience 1 : Nous avons placÃ© la mÃªme quantitÃ© de glaÃ§age dans deux entonnoirs. Le premier 
+nâest pas agitÃ© alors que le second a Ã©tÃ© fortement agitÃ©. On regarde les deux sâÃ©couler.
+
+11 
+ 
+          
+Le second sâÃ©coule plus rapidement : la viscositÃ© a diminuÃ© avec lâagitation. 
+ExpÃ©rience 2 : Dans un bÃ©cher on introduit le glaÃ§age Ã  20 Â°C, on attend 30 minutes, on agite, on 
+observe. On attend encore 30 minutes et on observe Ã  nouveau 
+             
+AprÃ¨s agitation, la viscositÃ© diminue, mais aprÃ¨s un temps de repos, le mÃ©lange retrouve sa 
+viscositÃ© 
+Conclusion : Le glaÃ§age au chocolat est un mÃ©lange thixotrope Ã  basse tempÃ©rature.  
+2- Mesures 
+Mr Glaziou professeur rÃ©fÃ©rent du BTS CIRA du lycÃ©e Blaise Pascal de Longuenesse nous a 
+permis de travailler avec le matÃ©riel de sa section, câest ainsi que nous avons eu accÃ¨s Ã  un 
+viscosimÃ¨tre tournant pour faire nos mesures. Cet appareil nous a permis dâÃ©tudier Ã  la fois lâeffet 
+de la tempÃ©rature sur la viscositÃ©, mais aussi lâeffet dâune contrainte sur la viscositÃ© en agissant 
+sur la vitesse de rotation du viscosimÃ¨tre. 
+Nous avons ainsi fait des mesures Ã  diffÃ©rentes tempÃ©ratures de viscositÃ© en fonction de la 
+vitesse du disque du viscosimÃ¨tre.
+
+12 
+ 
+                     
+ 
+Voici nos rÃ©sultats pour une recette Ã  base de 9g gÃ©latine. 
+ 
+La viscositÃ© diminue avec la vitesse de rotation, le glaÃ§age reprend ses propriÃ©tÃ©s aprÃ¨s le repos. 
+Conclusion : 
+Le glaÃ§age au chocolat possÃ¨de une viscositÃ© qui dÃ©pend des actions qui lui sont imposÃ©es et 
+reprend sa viscositÃ© aprÃ¨s un retour au repos : Câest un fluide thixotrope 
+Bilan : Quand on rÃ©alise un glaÃ§age au chocolat, on choisit de lâappliquer sur un entremet congelÃ© 
+(-19Â°C) quand sa tempÃ©rature est entre 30 et 35Â°C. A ce stade la viscositÃ© est importante mais lui 
+permet encore de sâÃ©couler avec une vitesse relativement raisonnable. Au contact de lâentremet 
+congelÃ© la viscositÃ© augmente ce qui va lui permettre de se stabiliser. Câest enfin ses propriÃ©tÃ©s 
+de fluide thixotrope qui lui permettent de continuer de sâÃ©couler sans faire de Â« bourrelet Â». En 
+effet, sous lâaction des contraintes liÃ©es Ã  lâÃ©coulement la viscositÃ© diminue suffisamment et 
+permet au mÃ©lange de continuer Ã  sâÃ©couler rÃ©guliÃ¨rement et de se figer au fur et Ã  mesure. 
+Nous nous sommes interrogÃ©es sur lâimpact de la quantitÃ© de gÃ©latine dans le mÃ©lange. Nous 
+avons prÃ©parÃ© diffÃ©rents glaÃ§ages avec des proportions diffÃ©rentes de gÃ©latine et avons fait 
+diffÃ©rentes mesures
+
+13 
+ 
+3- Effet de la gÃ©latine 
+La gÃ©latine est une protÃ©ine dâorigine animale issue du collagÃ¨ne, principalement dans la peau, 
+les os ou le cartilage. Elle est composÃ©e de longues chaÃ®nes dâacides aminÃ©s qui peuvent se 
+dÃ©rouler et se rÃ©associer en prÃ©sence dâeau Ã  une certaine tempÃ©rature. 
+Avant utilisation, la gÃ©latine doit Ãªtre rÃ©hydratÃ©e dans lâeau froide pour que les chaÃ®nes protÃ©iques 
+se dÃ©ploient. Lorsquâon chauffe la gÃ©latine hydratÃ©e, les chaÃ®nes se dispersent dans le liquide ce 
+qui donne une solution homogÃ¨ne.En refroidissant, les chaÃ®nes protÃ©iques s'associent, ce qui 
+emprisonne l'eau et forment un rÃ©seau. 
+Dans le glaÃ§age : La gÃ©latine sâassocie Ã  lâeau, au sucre et au sirop de glucose pour stabiliser 
+lâÃ©mulsion. Elle Ã©paissit le mÃ©lange en refroidissant. Ce rÃ©seau protÃ©ique retient les molÃ©cules 
+dâeau et de graisse de maniÃ¨re homogÃ¨ne ce qui donne une surface lisse et stable. 
+AprÃ¨s avoir rÃ©alisÃ© de nouveaux glaÃ§ages qui diffÃ¨rent uniquement par leur quantitÃ© de gÃ©latine, 
+nous avons mesurÃ© lâÃ©volution de la viscositÃ© en fonction de la quantitÃ© de gÃ©latine, pour 
+diffÃ©rentes valeurs dâagitation et pour diffÃ©rentes tempÃ©ratures. 
+28Â°C ViscositÃ© mPl 
+Vitesse 
+Tr/min 
+0g 
+ GÃ©latine 
+5g 
+ GÃ©latine 
+9g  
+GÃ©latine 
+14g 
+GÃ©latine 
+18g 
+GÃ©latine 
+50 4480 7680 8920 10300 36600 
+100 3520 5880 7180 8230 22240 
+200 2730 4380 5750 6322 12320 
+300 2395 3615 4982 5420 8678 
+600 1492 2751 4109 4523 5877 
+ 
+0
+500
+1000
+1500
+2000
+2500
+0g GÃ©latine5g GÃ©latine9g GÃ©latine14g GÃ©latine18g GÃ©latine
+ViscositÃ© en mPl
+Masse de GÃ©latine dans la recette en g
+ViscositÃ© en fonction des vitesses de rotation pour 
+diffÃ©rentes masses de gÃ©latine Ã  28Â°C
+50 tr/min100 tr/min200 tr/min300tr/min600tr/min
+
+14 
+ 
+La gÃ©latine augmente la viscositÃ© du mÃ©lange. 
+35Â°C ViscositÃ© mPl 
+Vitesse 
+Tr/min 
+0g 
+GÃ©latine 
+5g 
+GÃ©latine 
+9g 
+GÃ©latine 
+14g 
+GÃ©latine 
+18g 
+GÃ©latine 
+50 1160 1720 3400 4040 4360 
+100 980 1440 2140 3140 2660 
+200 990 1270 1867 2350 2060 
+300 970 1190 1750 1970 2110 
+600 890 1070 1498 1670 1600 
+ 
+ 
+La gÃ©latine augmente la viscositÃ© du mÃ©lange. 
+ 
+65Â°C ViscositÃ© mPl 
+Vitesse 
+Tr/min 
+0g 
+GÃ©latine 
+5g 
+GÃ©latine 
+9g 
+GÃ©latine 
+14g 
+GÃ©latine 
+18g 
+GÃ©latine 
+50 560 1562 1840 2000 2180 
+100 440 1386 1720 1620 1800 
+200 370 1240 1440 870 1110 
+300 354 940 1154 694 854 
+600 350 643 912 543 579 
+0
+500
+1000
+1500
+2000
+2500
+0g GÃ©latine 5g GÃ©latine 9g GÃ©latine14g GÃ©latine18g GÃ©latine
+ViscositÃ© en mPl
+Masse de GÃ©latine dans la recette en g
+ViscositÃ© en fonction des vitesses de rotation pour diffÃ©rentes 
+masses de gÃ©latine Ã  35Â°C
+50 tr/min100 tr/min200 tr/min300tr/min600tr/min
+
+15 
+ 
+ 
+Pour des tempÃ©ratures plus Ã©levÃ©es, on remarque que le caractÃ¨re thixotrope reste prÃ©sent, mais 
+lâeffet de la proportion de gÃ©latine est moins visible. 
+Globalement, on remarque Ã©galement que le caractÃ¨re thixotrope augmente avec la proportion de 
+gÃ©latine 
+4- Conclusion   
+Le glaÃ§age miroir au chocolat que nous rÃ©alisons est un mÃ©lange liquide caractÃ©risÃ© par 
+une viscositÃ© qui dÃ©pend Ã  la fois de la tempÃ©rature et des contraintes quâon lui impose. En 
+effet, pour une tempÃ©rature donnÃ©e sa viscositÃ© diminue avec lâagitation. Celle-ci reprend 
+sa valeur initiale aprÃ¨s un temps de repos : on peut donc affirmer quâil est un fluide 
+thixotrope. 
+Cette propriÃ©tÃ© semble exister mÃªme pour des tempÃ©ratures plus importantes. La gÃ©latine 
+influence la viscositÃ© totale du mÃ©lange. En effet, plus sa proportion augmente, plus la 
+viscositÃ© augmente. Cet effet est moins marquÃ© pour des tempÃ©ratures Ã©levÃ©es. Pour des 
+tempÃ©ratures de lâordre de la tempÃ©rature de rÃ©alisation du glaÃ§age et pour la quantitÃ© de 
+gÃ©latine utilisÃ©e dans la recette, la viscositÃ© est relativement importante et diminue 
+significativement avec lâagitation. 
+ 
+ 
+ 
+ 
+0
+500
+1000
+1500
+2000
+2500
+0g GÃ©latine 5g GÃ©latine 9g GÃ©latine14g GÃ©latine18g GÃ©latine
+ViscositÃ© en mPl
+Masse de GÃ©latine dans la recette en g
+ViscositÃ© en fonction des vitesses de rotation pour diffÃ©rentes 
+masses de gÃ©latine Ã  65Â°C
+50 tr/min100 tr/min200 tr/min300tr/min600tr/min
+
+16 
+ 
+IV-Choix dâun critÃ¨re et mesure de la propriÃ©tÃ© Â« miroir du glaÃ§age Â» 
+1- PropriÃ©tÃ© Â« miroir Â» du glaÃ§age 
+Un glaÃ§age miroir au chocolat est rÃ©ussi comme son nom lâindique quand on parvient Ã  se voir Ã  
+lâintÃ©rieur, câest-Ã -dire quand sa surface se rapproche de celle dâun miroir parfait. 
+ 
+2- Structure microscopique   
+Notre mÃ©lange est une Ã©mulsion contenant des Ã©lÃ©ments en phase aqueuse et des corps gras. 
+Lâensemble des constituants permet de maintenir cette Ã©mulsion stable.  
+A lâÃ©chelle microscopique les corps gras du beurre de cacao peuvent cristalliser sous diffÃ©rentes 
+formes nommÃ©es de I Ã  V. Quand câest la forme V qui cristallise, la structure est trÃ¨s ordonnÃ©e ce 
+qui donne une brillance trÃ¨s importante, une rÃ©sistance Ã©levÃ©e et une meilleure conservation. 
+ 
+2-Evaluation expÃ©rimentale du caractÃ¨re miroir   
+ Pour mesurer la brillance de notre glaÃ§age, il fallait trouver un glossmÃ¨tre. Câest-Ã -dire un 
+appareil capable de mesurer la lumiÃ¨re rÃ©flÃ©chie sur une surface. Il est par exemple utilisÃ© en 
+carrosserie. Il donne un rapport entre lâintensitÃ© lumineuse rÃ©flÃ©chie par la surface Ã©tudiÃ©e et 
+lâintensitÃ© rÃ©flÃ©chie par une surface de rÃ©fÃ©rence. 
+Cet appareil nâest pas prÃ©sent au lycÃ©e. Nous nous sommes donc inspirÃ©es du principe du 
+glossmÃ¨tre pour fabriquer un systÃ¨me qui pourra nous permettre de mesurer la brillance de nos 
+diffÃ©rents glaÃ§ages. Pour cela nous avons rÃ©alisÃ© le montage suivant :
+
+17 
+ 
+La photodiode produit un courant proportionnel Ã  lâintensitÃ© lumineuse quâelle reÃ§oit. 
+Nous avons dÃ©fini un miroir comme surface de rÃ©fÃ©rence et nous mesurons pour tous nos 
+mÃ©langes, le rapport entre lâintensitÃ© rÃ©cupÃ©rÃ©e par rÃ©flexion sur la 
+surface et celle rÃ©flÃ©chie par le miroir.  
+ 
+ 
+Nous avons commencÃ© par mesurer la brillance dâun glaÃ§age Ã  9g de 
+GÃ©latine rÃ©alisÃ© sur un cristallisoir gelÃ© avec une tempÃ©rature de coulage 
+de 70Â°C pour le premier et 34Â°C pour le second. 
+ 
+Voici nos mesures : 
+I0(miroir)=30 Î¼A 
+GlaÃ§age 9 g GÃ©latine 34Â°C 	70Â°C 
+IntensitÃ© I (Î¼A) 	4.5 	1.5 
+Rapport I/I0 	0.15 	0.05 
+ 
+A lâÅil nu, on peut observer que celui rÃ©alisÃ© Ã  70Â°C semble plus terne avec une surface qui 
+blanchit lÃ©gÃ¨rement. Ce rÃ©sultat est confirmÃ© dans les mesures : la brillance est plus importante 
+pour celui coulÃ© Ã  34Â°C. Nous garderons cette tempÃ©rature de glaÃ§age par la suite. 
+ 
+Nous avons poursuivi nos mesures avec les diffÃ©rents glaÃ§ages rÃ©alisÃ©s Ã  34Â°C avec diffÃ©rentes 
+proportions de gÃ©latine.
+
+18 
+ 
+Voici nos rÃ©sultats 
+Surfaces Miroir 
+GlaÃ§age 0g 
+GÃ©latine 
+tempÃ©rÃ©e 
+GlaÃ§age 0g 
+GÃ©latine non 
+tempÃ©rÃ©e 
+GlaÃ§age 
+5g 
+GÃ©latine 
+GlaÃ§age  
+9 g 
+GÃ©latine 
+GlaÃ§age 
+14g 
+GÃ©latine 
+GlaÃ§age 
+18 g 
+GÃ©latine 
+IntensitÃ© 
+mesurÃ©e I 
+35 3,3 3,5 2,3 4,8 2,1 2,3 
+  	34 3,3 3,5 2,3 4,8 2,1 2,3 
+  	35 3,2 3,4 2,6 4,7 2,2 2,1 
+  	35 3,3 3,5 2,5 4,6 2,1 2,2 
+  	36 3,4 3,6 2,3 4,8 2,1 2,2 
+  	37 3,2 3,4 2,3 4,8 2,1 2,2 
+  	35 3,3 3,4 2,3 4,6 2,2 2,1 
+  	34 3,3 3,4 2,2 4,8 2,3 2,3 
+  	35 3,3 3,5 2,3 4,8 2,1 2,4 
+  	35 3,4 3,5 2,4 4,5 2,1 2,4 
+Moyenne 35,1 3,3 3,5 2,4 4,7 2,1 2,3 
+I/I(miroir) 1,00 0,09 0,10 0,07 0,13 0,06 0,06 
+En regardant le tableau de mesure, on remarque que le mÃ©lange Ã  9g de gÃ©latine donne une 
+meilleure brillance. 
+Nous avons tempÃ©rÃ© (cristallisation entre 28Â°C et 35Â°C ) le chocolat  pour obtenir des cristaux de 
+type V du beurre de cacao. Rien n'apparaÃ®t de particulier dans nos rÃ©sultats. En fait, avec la crÃ¨me 
+fraÃ®che et le sirop de glucose de notre glaÃ§age, tous nos Ã©lÃ©ments sont donc maintenus dans une 
+Ã©mulsion qui ne laisse pas la lumiÃ¨re se rÃ©flÃ©chir sur les cristaux directement. Lâeffet est visible sur 
+du chocolat pur sans autre Ã©lÃ©ment. 
+Bilan : Pour rÃ©ussir au mieux le cÃ´tÃ© Â« miroir Â» du glaÃ§age, il faut le couler Ã  34Â°C avec une 
+quantitÃ© de gÃ©latine de 9g. 
+ 
+CONCLUSION : 
+Quand on rÃ©alise un glaÃ§age au chocolat sur un entremet congelÃ© (-15Â°C), il faut que sa 
+tempÃ©rature soit comprise entre 30 et 35Â°C pour que celui-ci ne sâÃ©coule pas trop vite Ã  cause 
+dâune viscositÃ© insuffisante. La hausse de viscositÃ© au contact de lâentremet congelÃ© permet de 
+figer le glaÃ§age. Ses propriÃ©tÃ©s de fluide thixotrope lui permettent de continuer de sâÃ©couler sans 
+faire de Â« bourrelet Â». En effet, sous lâaction des contraintes liÃ©es Ã  lâÃ©coulement la viscositÃ© 
+diminue suffisamment et permet au mÃ©lange de continuer Ã  sâÃ©couler rÃ©guliÃ¨rement et de se figer 
+au fur et Ã  mesure. Dâun autre cÃ´tÃ©, la gÃ©latine permet de stabiliser lâensemble en emprisonnant 
+les corps gras et les phases aqueuses dans ses longues chaÃ®nes de carbone. La gÃ©latine permet 
+Ã©galement dâapporter une surface bien lisse et favorise la brillance.
+
+19 
+ 
+Nous ne pensions pas que tant de phÃ©nomÃ¨nes physiques pouvaient apparaÃ®tre dans un simple 
+glaÃ§age au chocolat. Notre rencontre avec Mme Cazalets, nous a Ã©galement permis de nous 
+rendre compte que les pÃ¢tissiers travaillent un peu comme nous par essais successifs pour 
+rÃ©ussir Ã  trouver les conditions les plus efficaces pour leurs productions.

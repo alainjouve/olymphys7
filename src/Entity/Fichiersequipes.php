@@ -69,6 +69,7 @@ class Fichiersequipes //extends BaseMedia
 
         return $this->fichier;
     }
+
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -127,7 +128,7 @@ class Fichiersequipes //extends BaseMedia
 
         $edition = $this->getEdition()->getEd();
         $equipe = $this->getEquipe();
-
+        $libel_equipe = 'xx';
         if ($equipe) {
             $lettre = $equipe->getLettre();
             $libel_equipe = $lettre;
@@ -279,6 +280,7 @@ class Fichiersequipes //extends BaseMedia
 
         return $this;
     }
+
     public function directoryName(): string
     {
         $path = $this->edition->getEd() . '/fichiers';

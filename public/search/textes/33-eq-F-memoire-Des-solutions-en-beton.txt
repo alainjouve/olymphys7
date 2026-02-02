@@ -1,0 +1,1185 @@
+Introduction
+Le bÃ©ton armÃ© est un matÃ©riau composite trÃ¨s largement
+utilisÃ© dans de nombreuses infrastructures, telles que les
+ponts ou les Ã©coles. Son utilisation sâest particuliÃ¨rement
+rÃ©pandue au cours du XXÃ¨me siÃ¨cle, en raison de sa rÃ©sis-
+tance et de sa facilitÃ© dâutilisation. Parmi les architectes
+de cette Ã©poque, on peut citer Le Corbusier qui a Ã©tÃ© lâau-
+teur de monuments emblÃ©matiques classÃ©s au patrimoine
+mondial de lâUNESCO, notamment La CitÃ© Radieuse de
+Marseille, que nous avons eu la chance de visiter.
+Lors de cette visite du colosse de bÃ©ton (aka. la maison du fada) issu du mouvement
+brutaliste, nous avons bien sÃ»r Ã©tÃ© fascinÃ©s par la vision futuriste de lâarchitecte. Cependant,
+en tant que scientiques avertis, nous avons également été interpellés par la présence de
+ssures, parfois importantes et visibles en plusieurs endroits de la structure, notamment
+sur ses pylÃ´nes. AprÃ¨s quelques recherches, nous avons compris que le bÃ©ton armÃ© est sujet
+Ã  un phÃ©nomÃ¨ne de dÃ©gradation appelÃ© carbonatation, qui menace Ã  long terme lâintÃ©gritÃ©
+de lâouvrage. 
+Figure 2âFissures
+visibles sur la structure
+Â« Mais attends, notre Ã©cole est en bÃ©ton armÃ© aussi ! Â»
+â Ugo
+Â« Oui, et si elle se dÃ©grade, on risque de ne plus avoir de
+lycÃ©e ! 
+Â» â Juliette
+Â« Il faut absolument quâon trouve des solutions pour prÃ©-
+server les infrastructures en bÃ©ton armÃ©... Â» â Arthur
+Â« Ok, mais par oÃ¹ commencer ? Â» â DaphnÃ©
+Â« Laissez-moi faire, je vais Ã©tablir un plan dâattaque ! Â»
+â Martin
+ProblÃ©matique
+Nous sommes des Ã©lÃ¨ves de Vauban, LycÃ©e FranÃ§ais de Luxembourg et notre Ã©cole a Ã©tÃ©
+construite en bÃ©ton armÃ©. Sa construction date de 2020 et ne prÃ©sente pas encore de
+ssures comme celles de la Cité Radieuse de Marseille qui date de 1952. Cependant, nous
+savons que le bÃ©ton armÃ© se dÃ©grade avec le temps et nous voulons que notre Ã©cole dure le
+plus longtemps possible.
+Nous allons donc tenter de rÃ©pondre Ã  cette problÃ©matique :
+Comment prÃ©server une infrastructure en bÃ©ton armÃ© ?
+Dans ce mÃ©moire, notre Ã©quipe va vous prÃ©senter (en toute humilitÃ©) comment sauver
+Vauban !
+1 
+Figure 1âLa Maison du Fada
+
+1 Le bÃ©ton armÃ© : composition et propriÃ©tÃ©s
+1.1 Introduction
+Un bÃ©ton est dit armÃ© lorsquâil est renforcÃ© par des barres dâacier. Cependant, un
+problÃ¨me majeur se pose : lâacier est sensible Ã  la corrosion. On pourrait alors se demander :
+pourquoi ne pas simplement supprimer ces barres dâacier ?
+Câest prÃ©cisÃ©ment Ã  cette question que nous allons tenter de rÃ©pondre. Ã travers
+diérentes expériences, nous mettrons en évidence l'ecacité et les avantages du béton
+armÃ© par rapport Ã  un bÃ©ton non armÃ©.
+1.2 MÃ©thodologie
+L'objectif est d'étudier les propriétés mécaniques en fonction du type d'eort appliqué.
+Il existe diérents types d'eort : la
+traction; lacompression; laexion(combinaison de
+traction et de compression) ; les eorts tranchants (cisaillement) ; latorsion; et enn le
+ambement(gure 3).
+De nombreuses mÃ©thodes pour tester ces propriÃ©tÃ©s mÃ©caniques existent, voir lâAnnexe 1.
+Cependant, nous allons nous intéresser aux eorts majeurs subis par les structures en
+bÃ©ton armÃ©, Ã  savoir la traction et la compression.
+â
+â
+F	â
+F
+Traction
+â
+â
+F	â
+F
+Compression
+â
+F
+Flexion simple
+â
+â
+F	â
+F
+Traction
+â
+â
+F	â
+F
+Compression
+â
+F
+Flexion simple
+â
+â
+F	â
+F
+Traction
+â
+â
+F	â
+F
+Compression
+â
+F
+Flexion simple
+compression
+traction
+â
+F
+â
+â
+F
+Cisaillement
+â
+Fâ
+â
+F
+Torsion
+â
+â
+F	â
+F
+Flambement
+â
+F
+â
+â
+F
+Cisaillement
+â
+Fâ
+â
+F
+Torsion
+â
+â
+F	â
+F
+Flambement
+â
+F
+â
+â
+F
+Cisaillement
+â
+Fâ
+â
+F
+Torsion
+â
+â
+F	â
+F
+Flambement
+Figure 3âLes diérents eorts
+1.2.1 ParamÃ¨tres de conception et conditions expÃ©rimentales
+Pour cela, nous devons concevoir et réaliser diérents prototypes de blocs de béton,
+certains armés et d'autres non armés, an de comparer leurs comportements. Le choix du
+type de bÃ©ton et des conditions de fabrication dÃ©pend de plusieurs paramÃ¨tres :
+â Les dimensions des blocs ;
+â La forme (cylindrique, cubique, parallÃ©lÃ©pipÃ©dique...) ;
+â Les proportions des matÃ©riaux (ciment, granulats, eau, acier) ;
+â Le temps de sÃ©chage.
+Tests de contrÃ´le : les Ã©prouvettes
+Pour les essais en laboratoire, les dimensions des échantillons sont normalisées an de
+permettre la comparaison des rÃ©sultats. On parle alors dâÃ©prouvettes: Ã©chantillons
+de forme standardisÃ©e (cylindrique ou prismatique) destinÃ©s aux tests de contrÃ´le
+(compression, traction, exion, etc.).
+2
+
+1.2.2 Notre bloc de bÃ©ton
+Nous allons tenter de reproduire, Ã  Ã©chelle rÃ©duite, le comportement dâun Ã©lÃ©ment
+porteur en bÃ©ton armÃ©. Un Ã©lÃ©ment porteur en bÃ©ton armÃ©, tel quâune poutre, comporte
+gÃ©nÃ©ralement :
+â
+des armatures longitudinales, placÃ©es dans les zones tendues, câest-Ã -dire en-dessous
+de la bre neutre (partie inférieure) pour résister aux eorts de traction ;
+â des Ã©pingles transversales maintenant ces armatures en place.
+Dans un Ã©lÃ©ment standard, la distance minimale entre les tiges dâacier et le bord du
+bÃ©ton est dâau minimum 2 cm pour protÃ©ger les armatures et pour bien adhÃ©rer. Dâailleurs,
+les barres dâacier utilisÃ©es dans le bÃ©ton armÃ© ont une surface nervurÃ©e pour amÃ©liorer
+lâadhÃ©rence entre lâacier et le bÃ©ton.
+Par souci de praticitÃ© pour les tests de traction,
+nous allons opter pour :
+â Des blocs de forme parallÃ©lÃ©pipÃ©dique ;
+â Des dimensions de56cmÃ6cmÃ4cm ;
+â
+Un bÃ©ton de classe C25/30 (rÃ©sistance ca-
+ractÃ©ristique Ã  la compression de25	MPa
+pour des cylindres et30	MPapour des
+cubes) ; rapport eau/bÃ©ton de 12,5% ;
+â Un temps de sÃ©chage normal de 28 jours.
+â
+Des armatures longitudinales de diamÃ¨tre
+6mm placÃ©es dans la partie infÃ©rieure ;
+Les dimensions retenues ici visent Ã  rester dans un format pratique compte tenu de
+nos moyens tout en se rapprochant des conditions rÃ©elles.
+Nous avons dÃ©cidÃ© de fabriquer 2 blocs sans barres dâacier et 2 avec barres dâacier (voir
+le tableauAnnexe 2). Pour voir la fabrication de ces blocs, rÃ©fÃ©rez-vous Ã  lâAnnexe 3.
+1.3 Test de compression
+1.3.1 ExpÃ©rience
+Bien sÃ»r, ayant choisi un bÃ©ton de classe C25/30, nous savons que celui-ci devrait
+prÃ©senter une rÃ©sistance Ã  la compression comprise entre 25 et 30 MPa. Il sâagit ici de
+vérier expérimentalement ces valeurs après la fabrication de notre béton, à l'image des
+essais rÃ©alisÃ©s par les entreprises de construction Ã  lâaide dâÃ©prouvettes normalisÃ©es.
+Pour Ã©valuer cette rÃ©sistance, nous avons
+rÃ©utilisÃ© les blocs de bÃ©ton simple et
+avons dÃ©terminÃ© leur module dâYoungE
+Ã  partir dâun test de compression rÃ©alisÃ©
+Ã  lâaide dâune presse mÃ©canique.
+Le principe de la manipulation est
+simple : lâÃ©chantillon de bÃ©ton est placÃ©
+entre les mors de la presse, puis la ma-
+nivelle est actionnée an d'exercer une
+force croissante sur le matériau (gure 5).
+3
+h= 4 cm
+â= 6 cm
+L= 56 cm
+Fibre neutre
+2 cm
+1 cm
+Partie
+supÃ©rieure
+Partie
+infÃ©rieure
+Figure 4âBloc de béton armé pour test de exion â
+Faxiale
+Mors xe Mors mobile 
+Vis M20 trapÃ©zoÃ¯dale
+â
+Fâ¥
+Manivelle 
+Figure 5âMontage expÃ©rimental pour la
+dÃ©termination du module dâYoung.
+
+Le module dâYoung
+Lemodule dâÃ©lasticitÃ©, oumodule dâYoung	E, caractÃ©rise la rigiditÃ© du matÃ©riau.
+Il relie la contrainteÏÃ  la dÃ©formation relativeÎµselon la relation :E=
+Ï
+Îµ
+oÃ¹ :Ï=
+F
+A
+etÎµ=
+d
+l0
+avec :
+âE: module dâYoung (Pa)
+âÏ: contrainte appliquÃ©e (Pa)
+âÎµ: dÃ©formation sans unitÃ©
+âF: force exercÃ©e (N)
+âA=
+3,85Ã10
+â2
+Ã2,10Ã10
+â2
+2
+= 4,04Ã10
+â4
+m
+2
+: surface de contact
+âl
+0: hauteur initiale du bÃ©ton (m)
+âd=l
+0âl: variation de hauteur
+aprÃ¨s compression (m)
+On en dÃ©duit la relation gÃ©nÃ©rale :
+E=
+F l
+0
+A d
+La compression est rÃ©alisÃ©e Ã  lâaide dâun Ã©tau manuel Ã  vis (typeSTANLEY 183067)
+muni dâune manivelle. En appliquant une force perpendiculaire
+FÃ  lâextrÃ©mitÃ© de la
+manivelle de longueurr, le coupleÏexercÃ© est :
+Ï=FÃr. La rotation de la manivelle
+applique ce couple sur la vis, qui se transforme en une force axialeFaxialesur lâÃ©chantillon.
+Ainsi, lâÃ©nergie transfÃ©rÃ©e Ã  lâÃ©chantillon reste la mÃªme, mais la force est augmentÃ©e grÃ¢ce
+au bras de levier de la manivelle, au prix d'un déplacement axial plus petit (voir gure 5).
+En sachant cela, on peut dÃ©terminer la force axiale exercÃ©e sur le bloc grÃ¢ce aux travaux
+des forces (voirAnnexe 4) :Faxiale=F r
+2Ï
+p
+. Ainsi, la formule du module dâYoung est :
+E=
+F
+axialel0
+A d
+=
+F r
+2Ï
+p
+l0
+A d
+avecp= 0,005m, etr= 0,16m 
+Figure 6âMesure de la hauteur ini-
+tiale.
+Avant chaque essai, la hauteur initiale du
+bloc est mesurÃ©e Ã  lâaide dâun pied Ã  coulisse
+(Ïgure 6). Nous relevons une hauteur initiale
+del0= 58,80mm. Ensuite, une force
+perpendiculaire Ã  lâextrÃ©mitÃ© de la manivelle
+est appliquÃ©e Ã  lâaide de masses suspendues
+(F=mÃg). Lorsque la manivelle ne peut
+plus tourner, nous mesurons la variation de
+hauteur de lâÃ©chantillon, ce qui permet de
+calculer le module dâYoung.
+4
+Table 1âDonnées récoltées pour diérentes masses
+Masse (kg)d(mm)Faxiale(kN)Ï(MPa)Ïµ(â°)E(GPa)
+5 0,05 9,9 6,1 0,9 7,2
+10 0,10 19,7 12,2 1,7 7,2
+15 0,15 29,6 18,3 2,6 7,2
+20 0,20 39,4 24,4 3,4 7,2
+25 0,30 49,3 30,5 5,1 6,0
+30 0,40 59,1 36,6 6,8 5,4
+35 point de rupture 
+Figure 7âRupture en
+compression du bloc.
+
+1.3.2 RÃ©sultats
+La courbe en bleu correspond au modÃ¨le parabola-rectangle
+avec les valeurs de lâEurocode 2 (EN 1992-1-1), qui dÃ©-
+crit le comportement en compression du bÃ©ton. Lâallure des
+points expÃ©rimentaux correspond bien Ã  celle de la courbe
+normative. Les Ã©carts observÃ©s sont probablement liÃ©s aux
+conditions dâessai non conformes (gÃ©omÃ©trie de nos blocs,
+appui partiel des mors) ainsi quâÃ  lâincertitude de mesure de
+notre pied Ã  coulisse (Â±0,05 mm). Par ailleurs, les valeurs
+normatives du C25/30 sont volontairement plus faibles, car
+le bÃ©ton peut encore rÃ©sister au-delÃ  de 25 MPa, mÃªme si
+des ssures importantes apparaissent généralement autour
+de cette valeur, comme l'ont conrmé nos observations.
+1.4 Test de exion
+1.4.1 ExpÃ©rience
+Mesurer la traction est compliqué, c'est pour cela que nous avons décidé d'eectuer
+un test de exion, combinant des eorts de compression et traction. Le test de exion est
+pertinent parce quâil inclut la compression, et que la compression a dÃ©jÃ  Ã©tÃ© testÃ©e comme
+satisfaisante grÃ¢ce Ã  la prÃ©cÃ©dente expÃ©rience.
+Le montage de lâexpÃ©rience est le suivant :
+on dispose des blocs de bÃ©ton sur deux
+points dâappui, avec un espace libre de 30
+cm dans le vide. Une corde est attachÃ©e
+au centre du bloc Ã  lâaide dâun double
+nÅud en huit, et des masses sont suspen-
+dues Ã  lâautre extrÃ©mitÃ© de la corde Ã 
+lâaide dâun autre double nÅud en huit.
+Ã noter que le nivelage des deux points
+dâappui est millimÃ©trÃ© Ã  lâaide de feuilles
+intermédiaires (gure 9).
+40 cm
+Poids
+de sport
+Corde
+dâescalade
+Supports 
+Figure 8âMontage du test de exion
+Les manipulations à eectuer sont les suivantes :
+âMarquer le bloc de bÃ©ton sur la longueur
+en traÃ§ant un trait Ã  8 cm de chaque ex-
+trÃ©mitÃ© ; repÃ©rer le milieu du bloc le long
+de sa longueur.
+â
+Faire un double nÅud en huit autour du
+repÃ¨re du milieu.
+â
+Attacher de lâautre cÃ´tÃ© de la corde les
+masses Ã  lâaide dâun autre double nÅud
+en huit.
+â
+Soulever dÃ©licatement le bloc avec les
+masses attachÃ©es.
+â
+Poser le bloc sur ses deux points dâappui,
+en veillant Ã  ce que les traits soient correc-
+tement alignÃ©s avec le support et le vide.
+â
+LÃ¢cher doucement les masses pour appli-
+quer la force sur le bloc.
+â
+Attendre 30 secondes pour observer lâeet.
+âRÃ©pÃ©ter lâexpÃ©rience avec dâautres masses. 
+Figure 9âNivelage millimÃ©trÃ©
+5
+
+1.4.2 RÃ©sultats
+Ce tableau rÃ©sume les constats faits pour chaque masse :
+Masse (kg) 5152040 60 80100120140
+Bloc sans barresRien Ã  signalerRupture nette
+Bloc avec barres	Rien Ã  signaler
+Table 2âConstats observés lors des tests de exion pour diérentes masses
+Le bloc sans barres sâest rompu nettement sous lâeet dâune masse de 60 kg (gure 10).
+En revanche, le bloc avec barres nâa prÃ©sentÃ© aucune dÃ©formation visible jusquâÃ  140 kg,
+limite de sécurité que nous n'avons pas souhaité dépasser (gure 11).   
+Figure 10âRupture nette du bloc
+sans barres avec 60 kg  
+Figure 11âBloc avec barres et masses
+respectives de 100 kg et 140 kg
+Nous supposons que la rupture du bloc de bÃ©ton sans barres rÃ©sulte en rÃ©alitÃ© dâun
+eort de cisaillement, comme en témoigne la netteté de la coupure et la rapidité de la
+rupture dÃ¨s la pose des masses. En reproduisant cette expérience avec une sangle, an
+dâaugmenter la surface de contact, il serait possible dâobtenir des mesures plus prÃ©cises de
+la rÃ©sistance en traction.
+Il reste nÃ©anmoins Ã©vident que le bÃ©ton seul prÃ©sente une excellente rÃ©sistance Ã  la
+compression, mais Ã©choue lors des tests de traction et de cisaillement. Le bÃ©ton armÃ© lui,
+combine les propriÃ©tÃ©s de rÃ©sistance Ã  la compression du bÃ©ton seul et de rÃ©sistance Ã  la
+traction et du cisaillement de lâacier.
+1.5 Conclusion
+Lâajout de barres dâacier dans un Ã©lÃ©ment porteur est nÃ©cessaire pour assurer lâintÃ©gritÃ©
+de la structure. Mise Ã  part une meilleure rÃ©sistance Ã  la traction, les armatures en acier
+comportent dâautres avantages, tels que :
+â augmenter la rÃ©sistance au cisaillement du bÃ©ton
+â antissuration
+ augmenter la ductilité, et donc éviter l'eondrement brutal
+Le bÃ©ton armÃ©, grÃ¢ce Ã  ses nombreuses qualitÃ©s, conserve sans aucun doute un avenir
+prometteur. Cependant, pour le rendre plus durable, il est nÃ©cessaire de poursuivre les
+eorts d'innovation et d'amélioration, tant dans les techniques d'extraction et de fabrication
+que dans la mise en Åuvre, la durabilitÃ© et le recyclage des matÃ©riaux. Dans la partie
+suivante, nous nous intÃ©resserons aux moyens de renforcer la durabilitÃ© du bÃ©ton dans le
+temps et Ã  sa rÃ©sistance face aux intempÃ©ries.
+6
+
+2 Entretien : méthode de prévention des ssures
+2.1 Introduction
+Dans cette partie, nous nous intÃ©ressons aux mÃ©canismes de dÃ©gradation du bÃ©ton ainsi
+qu'à une solution moderne permettant d'en limiter les eets : la protection cathodique.
+Nous prÃ©senterons dâabord le phÃ©nomÃ¨ne chimique majeur responsable de la dÃ©tÃ©rioration
+des infrastructures en béton. Enn, nous détaillerons les expériences menées selon des
+niveaux croissants de réalisme physique et chimique an de répondre à ce problème.
+2.2 Facteurs de dÃ©gradation du bÃ©ton
+Le bÃ©ton est soumis Ã  divers phÃ©nomÃ¨nes qui altÃ¨rent progressivement ses propriÃ©tÃ©s
+mÃ©caniques. Parmi eux, la carbonatation constitue un processus naturel de vieillissement liÃ©
+aux conditions environnementales, entraînant une diminution du pH et un aaiblissement
+progressif du matériau au l du temps.
+La carbonatation
+Le dioxyde de carbone (CO2) prÃ©sent dans lâatmosphÃ¨re pÃ©nÃ¨tre dans le bÃ©ton par
+ses pores, puis se dissout dans lâeau quâils contiennent. Lors de ce processus, le
+CO2dissout lâhydroxyde de calcium (ou portlandite) prÃ©sent dans le bÃ©ton. Cette
+dissolution peut sâÃ©crire :Ca(OH)	2(s)ââCa
+2+
+(aq) + 2 HO
+â
+(aq)
+Le dioxyde de carbone rÃ©agit ensuite avec les ions ainsi formÃ©s pour produire du
+carbonate de calcium et de lâeau. Les autres espÃ¨ces chimiques du bÃ©ton ne participent
+pas Ã  la rÃ©action et ne sont donc pas reprÃ©sentÃ©es :
+Ca
+2+
+(aq) + 2 HO
+â
+(aq) + CO2(aq)ââCaCO	3(s) + H2O (l)
+Lâhydroxyde de calciumCa(OH)2est Ã  lâorigine du caractÃ¨re fortement basique du
+bÃ©ton, car sa dissolution libÃ¨re des ions hydroxydesOH
+â
+. AprÃ¨s la carbonatation,
+ces ions hydroxydes disparaissent progressivement. Lorsque tout lâhydroxyde de
+calcium est consommÃ©, le bÃ©ton perd sa basicitÃ© et devient acide.
+Cette acidication a une conséquence majeure : la couche protectrice qui passivait
+les armatures en acier devient instable et nit par se détruire. L'humidité peut alors
+atteindre lâacier, qui commence Ã  se corroder. La corrosion produit des oxydes dont le
+volume est supérieur à celui du métal initial ; ce gonement exerce des contraintes sur le
+béton, pouvant entraîner sa dégradation, l'apparition de ssures ou même des ruptures. Il
+est important de noter que d'autres facteurs amplient cette dégradation :
+â
+Gel/dÃ©gel: les cycles thermiques provoquent lâexpansion de lâeau contenue dans
+les pores, entraînant ssuration et fragilisation.
+â
+Milieux agressifs: en zones cÃ´tiÃ¨res, lâexposition Ã  lâeau salÃ©e accroÃ®t la pÃ©nÃ©tration
+dâions chlorures, accÃ©lÃ©rant la corrosion.
+La rÃ©glementation
+En France, les normes bÃ©ton (NF EN 206+A2/CN) prennent en compte des durÃ©es
+dâutilisation projetÃ©es typiques de 50 Ã  100 ans, selon les conditions dâexposition.
+Lâentretien vise Ã  garantir, voire Ã  prolonger, la durabilitÃ© du bÃ©ton au-delÃ  de cette
+pÃ©riode. Notre Ã©tude porte sur une mÃ©thode non destructive : la protection cathodique.
+7
+
+2.3 La protection cathodique
+La protection cathodique est une technique permettant dâempÃªcher la corrosion des
+armatures mÃ©talliques en maintenant lâacier dans un Ã©tat rÃ©duit grÃ¢ce Ã  lâapplication dâun
+faible courant continu. Cette mÃ©thode, couramment utilisÃ©e sur les ouvrages portuaires,
+les pipelines ou les structures maritimes, prÃ©sente lâavantage dâÃªtre non destructive et
+applicable localement sur les zones les plus vulnÃ©rables.
+Le principe repose sur la modication des potentiels électrochimiques pour inverser
+les rÃ©actions de corrosion. Lorsque la couche de passivation de lâacier est endommagÃ©e,
+par exemple par des ions chlorures, le potentiel de la zone aectée devient plus négatif.
+Cette diérence de potentiel entre zones passivées et corrodées permet la circulation d'un
+faible courant dans le bÃ©ton, qui est conducteur, de maniÃ¨re analogue Ã  une batterie. Le
+processus commence Ã  lâanode, oÃ¹ lâoxygÃ¨ne attaque le fer, entraÃ®nant la corrosion. 
+Figure 12âÃchanges entre les milieux 
+Figure 13âSchÃ©ma du circuit des
+Ã©lectrons dans le bÃ©ton
+Dans ce systÃ¨me, une anode stable Ã  base de fer est disposÃ©e sous forme de treillis
+sur la surface du bÃ©ton et recouverte dâune pÃ¢te Ã©lectrolytique pour assurer le contact
+Ã©lectrique entre la grille et le bÃ©ton. Lâarmature en acier joue le rÃ´le de cathode, reliÃ©e au
+pôle négatif. La diérence de potentiel appliquée entre le treillis et l'armature permet la
+rÃ©duction de lâeau Ã  la cathode selon lâÃ©quation :
+H
+2O (l) + e
+â
+ââ
+1
+2
+H
+2(g) + HO
+â
+(aq)
+Cette rÃ©action rÃ©gÃ©nÃ¨re les ions hydroxyde et neutralise la carbonatation du bÃ©ton sans
+nÃ©cessiter de dÃ©molition. Pour assurer une protection uniforme, lâarmature doit former
+un rÃ©seau Ã©lectrique interconnectÃ©, ce qui est gÃ©nÃ©ralement assurÃ© par les dispositions
+standards des armatures.
+2.4 MÃ©thodologie
+Maintenant que le mécanisme de dégradation et la solution sont identiés, il convient de
+déterminer la démarche expérimentale pour évaluer l'ecacité de la protection cathodique.
+Pour cela, il est nécessaire de disposer de blocs de béton représentatifs articiellement
+vieillis. Notre approche comporte trois Ã©tapes prÃ©liminaires :
+(1)la fabrication dâÃ©prouvettes(2)leur vieillissement accÃ©lÃ©rÃ©(3)la mesure de celui-ci
+Nous avons ensuite dÃ©clinÃ© ces trois Ã©tapes selon trois niveaux progressifs de rÃ©alisme :
+1.
+Niveau 1 : preuve de concept simpliéeavec blocs de mortier, acidication
+rapide par acides forts et mise en Ã©vidence qualitative de la variation de pH ;
+2.
+Niveau 2 : modÃ¨le intermÃ©diaireavec blocs de béton représentatifs, acidication
+maÃ®trisÃ©e par acides forts et mesure quantitative du pH Ã  lâaide dâun pH-mÃ¨tre ;
+3.
+Niveau 3 : modÃ¨le physico-chimique rÃ©alisteavec blocs de bÃ©ton de quantitÃ©s
+connues, vieillissement accéléré par acidication faible (carbonatation) et estimation
+non-invasive du vieillissement Ã  partir dâune propriÃ©tÃ© physique mesurable.
+8
+
+2.5 Niveau 1 : validation du concept
+2.5.1 MÃ©thodologie
+DÃ©termination des propriÃ©tÃ©s des blocs de bÃ©tonCette expÃ©rience a Ã©tÃ© menÃ©e au
+dÃ©but de nos travaux. Les blocs utilisÃ©s sont du mortier, dosÃ© Ã  450 g pour 100 mL. Ces
+quantitÃ©s ont Ã©tÃ© dÃ©terminÃ©es Ã  lâissue dâun Ã©chantillonnage (voirAnnexe 5).
+Méthode de vieillissement articielNaÃ¯vement, pour rendre le pH acide, nous
+avons simplement dÃ©cidÃ© de tremper les blocs de bÃ©ton dans une solution acide : lâacide
+chlorhydrique. Lâacide utilisÃ© est peu judicieux car la prÃ©sence dâions Cl
+â
+crÃ©e un milieu
+particuliÃ¨rement corrosif mais permet une accÃ©lÃ©ration du vieillissement. Elle rÃ©agit avec
+le bÃ©ton selon la rÃ©action chimique suivante :Ca(OH)
+2
++ 2HClââCaCl	2+ 2H2O
+Lâacide chlorhydrique neutralise instantanÃ©ment lâhydroxyde de calcium, ce qui provoque
+une chute immÃ©diate du pH. Cependant, elle dÃ©truit Ã©galement la structure du bÃ©ton et
+son utilisation reste peu reprÃ©sentative du vieillissement naturel.
+Mesure du vieillissementNous disposons dâindicateurs pH, tel que la phÃ©nolphtalÃ©ine.
+La phÃ©nolphtalÃ©ine
+La phÃ©nolphtalÃ©ine est un indicateur colorÃ© utilisÃ© pour mettre en Ã©vidence la
+basicitÃ© dâun milieu. Sonp	Ka= 9,4: lorsque le pH est au-dessus de cette valeur, la
+phÃ©nolphtalÃ©ine devient rose, tandis quâen dessous, elle reste incolore.
+Lors du vieillissement naturel du bÃ©ton, le pH passe de 13 Ã  environ 9 [6], ce qui permet
+de suivre visuellement son Ã©volution grÃ¢ce Ã  la phÃ©nolphtalÃ©ine.
+Le papier pH est Ã©galement une bonne alternative, mais nÃ©cessite une dissolution.
+2.5.2 ExpÃ©rience
+Étude rapide pour connaitre le temps nécessaire à l'acidication du béton         
+Figure 14âÃvolution des valeurs RVB de la
+phÃ©nolphtalÃ©ine en fonction du temps en secondes
+Plus les valeurs RVB sont Ã©levÃ©es,
+plus la couleur apparaÃ®t claire. Cela
+peut Ãªtre observÃ© lors du proces-
+sus de vieillissement du bÃ©ton, qui
+nÃ©cessite environ 10 minutes pour
+commencer à s'acidier à la surface,
+comme le montre la gure 14. Après
+30 minutes, lâindicateur phÃ©nolphta-
+lÃ©ine devient complÃ¨tement transpa-
+rent, signalant que la surface a Ã©tÃ©
+susamment acidiée.
+RÃ©alisation de lâexpÃ©rienceLâobjectif de cette premiÃ¨re expÃ©rience est de dÃ©montrer
+qualitativement l'ecacité du principe de la protection cathodique. L'expérience se déroule
+comme cela : le bloc de béton est acidié à l'acide chlorhydrique (gure 15). Après
+l'acidication du béton, une tentative est réalisée pour restaurer son état basique par
+électrolyse (gure 16). Au début, la phénolphtaléine doit rester incolore, car le milieu est
+acide. Si lâÃ©lectrolyse fonctionne comme prÃ©vu et que le pH revient Ã  une valeur supÃ©rieure
+aupKa, la phÃ©nolphtalÃ©ine se colorera en rose. Lâensemble du processus est enregistrÃ© en
+vidéo an d'observer précisément l'évolution de la coloration.
+9
+
+Figure 15âVieillissement Ã 
+lâacide chlorhydrique dans un
+cristallisoir GÃ©nÃ©rateur
+Pinces
+crocodiles
+Grille (anode) recouverte 
+par une pÃ¢te Ã©lectrolytique
+Barres d'acier (cathode)
+Bloc de mortier 
+Figure 16âMontage de la protection cathodique 
+Figure 17âExpansion de la zone rÃ©alcalinisÃ©e le long de lâaxe inter-Ã©lectrodes
+Nous pouvons observer que les Ã©lectrons privilÃ©gient le chemin le plus court vers la
+cathode, même si nous notons vers la n un cercle réalcalinisé autour de la deuxième sortie
+de la barre dâacier (en haut).
+2.5.3 RÃ©sultats
+Dans le processus de restauration Ã©lec-
+trochimique, le temps nÃ©cessaire Ã  la rÃ©-
+action dâÃ©lectrolyse pour se propager de
+l'armature au treillis est illustré à la -
+gure 18. Il faut environ 7 minutes, Ã  une
+intensitÃ© de 0,4 A et une tension de 15 V,
+pour que la rÃ©action restaure une couche
+de bÃ©ton de 0,9 cm entre lâarmature et
+le treillis. Prolonger la durÃ©e de lâÃ©lectro-
+lyse serait probablement bénéque pour
+une rÃ©gÃ©nÃ©ration plus complÃ¨te du bÃ©ton,
+car une pÃ©riode de rÃ©action plus longue
+garantirait un processus de restauration
+plus approfondi, amÃ©liorant ainsi la du-
+rabilitÃ© du matÃ©riau.3 mm
+1,0
+765 4  
+3 2 
+1 0 (min)
+0,4 
+0,6
+Barre d'acier
+PhÃ©nolphtalÃ©ine
+Pince crocodile 
+nÃ©gative
+BÃ©ton 
+1,2
+1,6
+1,2
+0,3
+2,7 (mm) 
+Figure 18âRéalcalinisation du béton au l
+du temps : dispositif expÃ©rimental et rÃ©sultats
+de lâanalyse montrant lâexpansion de la zone
+rÃ©alcalinisÃ©e le long de lâaxe inter-Ã©lectrodes 
+Figure 19âÃvolution du volume regÃ©nÃ©rÃ©
+(cm
+3
+) en fonction de la durÃ©e (min)
+par rapport Ã  lâÃ©lectrode
+Le graphique montre lâÃ©volution du volume
+régénéré au l du temps, les deux derniers
+points étant exclus en raison des dicultés
+liées à la diusion des ions. La modélisation
+semble Ãªtre correctement dÃ©crite par un mo-
+dÃ¨le linÃ©aire. Ainsi, plus la zone Ã  rÃ©gÃ©nÃ©-
+rer est Ã©loignÃ©e de lâÃ©lectrode, plus le volume
+concernÃ© augmente et plus le temps nÃ©cessaire
+Ã  la rÃ©gÃ©nÃ©ration est long, rÃ©vÃ©lant un premier
+inconvÃ©nient.
+10
+
+2.6 Niveau 2 : modÃ¨le intermÃ©diaire
+2.6.1 MÃ©thodologie
+DÃ©termination des propriÃ©tÃ©s des blocs
+de bÃ©tonNous avons cette fois-ci crÃ©Ã©
+des blocs de bÃ©ton, en optimisant leurs di-
+mensions pour concilier rÃ©alisme et faisabi-
+litÃ©. LâÃ©paisseur des dalles varie gÃ©nÃ©ralement
+entre 7 et 25 cm ; nous avons choisi 6 cm entre
+la face supÃ©rieure et les armatures, ce qui Ã©co-
+nomise du matÃ©riau tout en restant proche
+des conditions rÃ©elles et permet de mesurer
+l'ecacité du traitement sur toute la section.
+Le rÃ©sumÃ© des blocs utilisÃ©s est prÃ©sentÃ© en
+Annexe 2.
+h= 8 cm
+L= 14 cm
+â= 6 cm
+(a)SchÃ©ma avec les
+dimensions 
+(b)AprÃ¨s bÃ©tonnage
+(lâempire contre
+attaque)
+Figure 20âNos propres blocs de bÃ©ton
+Méthode de vieillissement articielPour ne pas reproduire la mÃ©thode de vieillis-
+sement du premier niveau, nous avons envisagé d'autres alternatives pour acidier le
+bÃ©ton sans lâattaquer avec les chlorures. Plusieurs acides forts ont Ã©tÃ© envisagÃ©s, comme
+lâacide sulfurique (mais qui attaque de maniÃ¨re similaire aux chlorures) ou lâacide acÃ©tique
+(contenu dans le vinaigre), nous nous sommes nalement orientés vers l'acide nitrique, qui
+est documenté dans la littérature scientique pour ce type d'expérience. L'acide nitrique
+rÃ©agit selon la rÃ©action chimique suivante :Ca(OH)
+2
++ 2HNO3ââCa(NO
+3
+)2+ 2H2O
+L'acide nitrique réagit moins violemment que HCl, mais acidie bien le béton.
+Mesure du vieillissementPour quantier lâavancement de la carbonatation, nous
+perçons des trous à diérentes profondeurs et longueurs de la source de courant. La poudre
+de béton ainsi extraite est dissoute dans un volume déni d'eau distillée, puis analysée à
+lâaide dâun pH-mÃ¨tre.
+2.6.2 ExpÃ©rience
+L'acidication des blocs a été réalisée en immergeant les blocs dans une solution d'acide
+nitrique à 1 mol/L pendant deux périodes de 5 heures sous une hotte de laboratoire (gure
+21). En mesurant le pH avant et après acidication, nous avons pu vérier l'ecacité de
+cette mÃ©thode : le pH du bÃ©ton est passÃ© de 10,75 Ã  environ 8,5, soit une variation de
+l'ordre de 2 unités (gure 22).  
+Figure 21âVieillissement Ã  lâacide
+nitrique sous hotte de laboratoire 
+(a)Mesure du pH avant
+acidication 
+(b)Mesure du pH aprÃ¨s
+acidication
+Figure 22âMesure du pH
+Ã  lâaide dâun pH-mÃ¨tre
+11
+
+Après avoir acidié les blocs, nous avons mis en place le dispositif de protection
+cathodique. La pÃ¢te Ã©lectrolytique a Ã©tÃ© appliquÃ©e Ã  lâaide dâun support imprimÃ© en PLA
+vert (gure 23). La recette de la pâte électrolytique est détaillée enAnnexe 7. 
+Figure 23âDispositif de
+protection cathodique Zone acidifiÃ©e
+Barre d'acier (cathode)}
+PÃ¢te Ã©lectrolytique
+Grille (anode) 
+Figure 24âComposition du dispositif de
+protection cathodique
+2.6.3 RÃ©sultats
+Au bout de 2 heures et 5 minutes, avec une
+intensitÃ© de 0,09 A et une tension mainte-
+nue autour de 12,2 V, les 6 cm sÃ©parant les
+Ã©lectrodes ont Ã©tÃ© complÃ¨tement rÃ©alcalinisÃ©s,
+comme en tÃ©moigne la coloration rose de la
+phénolphtaléine. Cette coloration reste di-
+cile Ã  distinguer par endroits, bien que lâon
+observe de petites taches roses. Ceci est dÃ» Ã 
+la surface du bÃ©ton, qui nâest pas parfaitement
+lisse entre la barre et la grille : de petits mon-
+ticules de matiÃ¨re masquent partiellement la
+teinte rose. 
+Figure 25âExpansion de la zone
+rÃ©alcalinisÃ©e aprÃ¨s 2 heures de protection
+cathodique
+2.7 Niveau 3 : modÃ¨le physico-chimique rÃ©aliste
+Dans cette sous-partie, nous avons dÃ©veloppÃ© deux axes majeurs dâamÃ©lioration pour
+nos expÃ©riences : la mÃ©thode de vieillissement et la mesure de ce vieillissement.
+2.7.1 La cuve Ã  CO
+2
+Comme vu prÃ©cÃ©demment, le vieillissement naturel du bÃ©ton est dÃ» Ã  sa carbonatation
+progressive sous l'eÏet du dioxyde de carbone (CO2) présent dans l'air ambiant. An
+d'accélérer ce phénomène, nous avons choisi d'augmenter articiellement la concentration
+enCO2autour des blocs de bÃ©ton. La rÃ©action chimique mise en jeu est la suivante :
+Ca(OH)
+2
++CO2ââCaCO 3+H2O,qui correspond Ã  la carbonatation naturelle du bÃ©ton.
+Pour introduire le CO
+2dans la cuve, nous avons utilisÃ© une machine
+SodaStream, couramment employÃ©e pour la carbonatation de lâeau
+potable. Ã lâaide dâun tuyau, nous avons reliÃ© la sortie de la machine
+Ã  lâintÃ©rieur de la cuve pour tester son fonctionnement. 
+Figure 26âMontage de dÃ©monstration 
+Figure 27âLe CO	2
+passe dans le tuyau :)
+12
+
+On considÃ¨re la rÃ©partition des pressions dans la cuve, contenant de lâair dans la
+partie supÃ©rieure et du CO2dans la partie infÃ©rieure. La pression dans la cuve suit la loi
+hydrostatique des uides. La variation de pressionâP=Ïgâzest nÃ©gligeable sur une
+hauteur de lâordre de 30 Ã  40 cm. On peut donc considÃ©rer que la pression du CO2et celle
+de lâair sont toutes deux Ã©gales Ã  la pression atmosphÃ©rique.
+On peut aÏrmer que toute diminution apparente du volume de CO2dans la cuve peut
+être due à trois eets :
+â
+une perte lors des manipulations : leCO2est introduit lentement et le plus bas
+possible dans la cuve aÏn de chasser le diazote (N2) et le dioxygÃ¨ne (O2).
+â
+une fuite (au niveau des parois) : la cuve est rendue Ã©tanche Ã  lâaide de joints en
+silicone et entièrement emballée avec du lm alimentaire transparent.
+â
+une sÃ©dimentation du CO2par gravitÃ© : aprÃ¨s remplissage, un temps dâattente de
+plusieurs minutes est supposé susant pour permettre auCO2, plus dense que lâair,
+de se concentrer au fond de la cuve (voirAnnexe 6).
+Nous avons donc achetÃ© un aquarium de dimensions30	Ã20Ã20et dÃ©coupÃ© un couvercle
+en plexiglas Ã  lâaide dâune dÃ©coupe laser. Les blocs ont Ã©tÃ© disposÃ©s dans la boÃ®te, sÃ©parÃ©s
+par de petits supports aÏn de permettre la circulation de l'air sur chaque face. De plus,
+lâhygromÃ©trie a Ã©tÃ© lÃ©gÃ¨rement augmentÃ©e par le mouillage des blocs, la carbonatation
+faisant intervenir un air humide. Nous avons ensuite assurÃ© lâÃ©tanchÃ©itÃ© de lâensemble.
+EnÏn, du CO2a Ã©tÃ© ajoutÃ© Ã  lâaide dâune machine SodaStream, de maniÃ¨re Ã  maintenir
+une concentration dâau moins 14%, soit environ 350 fois la concentration atmosphÃ©rique. 
+(a)Jointure en silicone 
+(b)Emballage de la
+cuve avec du Ïlm
+alimentaire
+Figure 28âÃtanchÃ©itÃ© de la cuve Ã  CO	2
+Le contrÃ´le du niveau deCO2sâest rÃ©vÃ©lÃ© dÃ©li-
+cat. Plusieurs mÃ©thodes ont Ã©tÃ© envisagÃ©es :
+â
+la mÃ©thode des bougies, dont leurs
+ammes s'éteignent d'après la littérature
+pour un taux de CO2dâenviron 14 % ;
+â
+un capteur deCO2, saturant Ã  5000 ppm
+(particules par million), prÃ©alablement
+Ã©talonnÃ© Ã  lâair ambiant (environ
+400 ppm soit 0,04% dans les couloirs
+de lâÃ©cole aÃ©rÃ©s). 
+Figure 29âLes bougies sâÃ©teignent au fur et Ã  mesure que le CO 2est ajoutÃ© dans la cuve
+Le capteur est placÃ© au sommet de la cuve et main-
+tenu en saturation tout au long de la carbonatation,
+garantissant un fort taux deCO2au niveau des blocs. 
+Figure 30âLe montage nal de la cuve à CO	2 
+Figure 31âLe capteur de CO	2
+placÃ© au sommet de la cuve
+13
+
+2.7.2 Mesure du vieillissement
+Estimation de lâÃ©quivalence temporelleEn supposant que la vitesse de carbonatation
+est proportionnelle Ã  la concentration en
+CO2, une concentration environ 350 fois supÃ©rieure
+Ã  celle de lâair ambiant permet dâestimer que 15 jours dâexposition correspondent Ã  environ
+14 annÃ©es de vieillissement naturel. Cette hypothÃ¨se permet dâestimer un ordre de grandeur
+de la durÃ©e Ã©quivalente de la carbonatation du bÃ©ton.
+Mesure de la rÃ©sistivitÃ©An de compléter l'analyse sans dégrader les blocs, nous
+mesurons Ã©galement la rÃ©sistivitÃ© du bÃ©ton. La carbonatation consomme des ions pour
+former des composés neutres, ce qui doit modier la conductivité électrique du matériau.
+La rÃ©sistance et la rÃ©sistivitÃ©
+La rÃ©sistance mesurÃ©eRvérie :R=Ï
+L
+S
+dâoÃ¹ la rÃ©sistivitÃ©Ï=R
+S
+L
+avecLla longueur du bloc etSsa section.
+La grandeur R dÃ©pend de la gÃ©omÃ©trie des dimensions de lâobjet mesurÃ© maisÏne
+dÃ©pend que du matÃ©riau. Il nous faut donc mesurer la rÃ©sistance R car nous cherchons
+la rÃ©sistivitÃ©Ïdu bÃ©ton. Les mesures sont rÃ©alisÃ©es sur les trois paires de faces opposÃ©es,
+avant et après carbonatation, et répétées an d'améliorer la précision. Cette méthode
+permet de vérier la cohérence entre les mesures de pH et de résistivité.
+La mÃ©thode pour mesurer le pH de notre bÃ©ton Ã©tant invasive, la mesure de la rÃ©sistivitÃ©
+constituerait une alternative ecace sans le détériorer.
+2.8 Tests chez Eqiom
+Nous nous sommes demandés si l'ajout de charges conductrices pouvait inuencer la
+conductivité du béton, et par conséquent l'ecacité de la protection cathodique. Pour
+rÃ©pondre Ã  cette question, nous avons envisagÃ© de rÃ©aliser des tests chez notre partenaire
+Eqiom sur un type précis de béton avec diérents ajouts : solution ionique de nitrate de
+calcium, du graphite, et des bres d'acier. En raison des jours de congés et des conditions
+mÃ©tÃ©orologiques, notre rendez-vous chez Eqiom a Ã©tÃ© reportÃ© 
+. Nous espÃ©rons nÃ©anmoins
+pouvoir vous prÃ©senter nos expÃ©riences et nos rÃ©sultats le 30 janvier .
+2.9 Application pratique Ã  notre Ã©cole
+Par curiosité, nous avons souhaité estimer le coût énergétique et nancier d'une
+restauration complÃ¨te du bÃ©ton selon cette mÃ©thode pour notre Ã©cole (voirAnnexe 9).
+Avec une densitÃ© de courant de 6,25 A/m2, il nous faudrait une intensitÃ© de9	,4Ã10
+4
+A.
+En considÃ©rant une tension de 40 V et une durÃ©e de rÃ©gÃ©nÃ©ration de 7 jours (168 h), la
+puissance nÃ©cessaire serait deP=UÃI = 40Ã9,4Ã10
+4
+â3,76Ã10
+6
+W= 3,76MW,
+soit une Ã©nergie totale deE=PÃtâ 3,76MWÃ 168hâ631,7MWh. Ã un coÃ»t moyen
+de lâÃ©lectricitÃ© de 0,15â¬/kWh, cela reprÃ©senterait un coÃ»t approximatif de 94 755â¬. Cette
+mÃ©thode reste trÃ¨s Ã©nergivore et coÃ»teuse sur une durÃ©e prolongÃ©e.
+2.10 Conclusion
+La protection cathodique apparaÃ®t comme une solution non destructive, particuliÃ¨rement
+ecace pour cibler les zones les plus vulnérables du béton. Elle constitue une piste sérieuse
+pour prolonger la durÃ©e de vie des infrastructures tout en limitant les coÃ»ts dâentretien.
+14
+
+3 Surveillance : détection précoce des ssures
+3.1 Introduction
+Bien que la méthode présentée précédemment soit théoriquement ecace, elle ne peut
+garantir à 100% la protection de lâinfrastructure contre lâoxydation et la dégradation au l
+du temps. La surveillance vise donc à évaluer en continu lâétat du béton, an que toute
+ssure naissante puisse être détectée rapidement et que des mesures correctives soient
+prises Ã  temps pour assurer la sÃ©curitÃ© de lâouvrage et de ses usagers.
+Le principal dé de cette démarche réside dans le fait que les premiers signes de
+dégradation se manifestent par des microssures souvent invisibles à lâ÷il nu. Notre
+Ã©tude sâest donc intÃ©ressÃ©e Ã  une approche innovante permettant de pallier cette limite :
+lâutilisation de cristaux liquides pour la détection précoce des ssures dans le béton.
+3.2 Les cristaux liquides
+La matiÃ¨re peut Ãªtre classÃ©e en trois grands Ã©tats selon lâagencement de ses molÃ©cules :
+solide, liquide et gazeux. Cet agencement dÃ©pend principalement des conditions physiques
+auxquelles la matiÃ¨re est soumise, notamment la tempÃ©rature et la pression.
+Les cristaux liquides constituent un Ã©tat particu-
+lier de la matiÃ¨re, situÃ© Ã  la frontiÃ¨re entre le solide
+et le liquide. Depuis les travaux du physicien al-
+lemand Otto Lehmann sur lâester de cholestÃ©rol
+fondu, il est Ã©tabli que lâÃ©tat des cristaux liquides
+se situe Ã  mi-chemin entre celui dâun solide cris-
+tallin (gure 32a), où les molécules sont parfai-
+tement ordonnÃ©es, et celui dâun liquide isotrope
+(gure 32b), câest-à-dire un milieu dont les pro-
+priÃ©tÃ©s sont identiques dans toutes les directions. 
+(a)
+Ãtat solide 
+(b)
+Ãtat isotrope
+Figure 32âLes Ã©tats
+extrÃªmes dâun cristal 
+Figure 33âCristal
+liquide nÃ©matique 
+Figure 34âCristal liquide
+smectique C et smectique A
+Cet Ã©tat intermÃ©diaire, appelÃ© mÃ©sophase, combine donc
+lâordre partiel dâun cristal avec la mobilitÃ© dâun liquide.
+Lehmann observa que ce liquide prÃ©sentait une birÃ©frin-
+gence, câest-Ã -dire quâil possÃ©dait deux indices de rÃ©fraction
+distincts selon la direction de la lumiÃ¨re, tout comme un
+cristal solide. Ã lâintÃ©rieur mÃªme de cet Ã©tat mÃ©sophase, les
+cristaux liquides se distinguent en deux catÃ©gories : les nÃ©-
+matiques et les smectiques. Les molÃ©cules Ã  lâintÃ©rieur dâun
+cristal liquide nÃ©matique sont libres de leur mouvement
+Ã  la maniÃ¨re dâun liquide et sâorientent tous en moyenne
+vers un même axe n (gure 33). Cette orientation est un 
+ordre Ã  longue distance Â». Pour les cristaux liquides smec-
+tiques, les molÃ©cules sont organisÃ©es en couches oÃ¹ elles
+sont toutes orientÃ©es dans le mÃªme sens, soit tout droit soit
+en diagonale (gure 34).
+Cette organisation moléculaire rend les cristaux liquides nématiques plus uides que les
+smectiques. Dans cette partie, nous nous intÃ©ressons Ã  une sous-catÃ©gorie des nÃ©matiques :
+les cholestÃ©riques, câest-Ã -dire des nÃ©matiques auxquels on a ajoutÃ© un additif chiral.
+La chiralitÃ©
+Un systÃ¨me est dit chiral (du greckheir, signiantmain) sâil ne peut Ãªtre superposÃ©
+Ã  son image miroir par aucune combinaison de rotations ou de translations.
+15
+
+Cet additif induit une structure hÃ©licoÃ¯dale dans lâorganisation des molÃ©cules. Celles-ci
+sâordonnent alors en couches successives, ce qui leur confÃ¨re une propriÃ©tÃ© caractÃ©ristique
+des cristaux liquides smectiques, connus pour leur plus grande viscositÃ©. La structure
+molÃ©culaire reste cependant de nature nÃ©matique : les molÃ©cules demeurent orientÃ©es
+suivant un axe privilÃ©giÃ©, appelÃ© directeur et notÃ©n. La chiralitÃ© provoque une rotation
+progressive du directeurnautour dâun axe perpendiculaire, notÃ©m, formant une hÃ©lice de
+pasp(voir gure 35). Le pas hélicoïdalpcorrespond Ã  la distance le long de lâaxemsur
+laquelle le directeurneectue une rotation complète de2Ï. 
+Figure 35âSchÃ©ma expliquant la chiralitÃ© Ã  lâÃ©chelle molÃ©culaire
+du cristal liquide cholestÃ©rique
+3.3 Changement de couleur par dÃ©formation mÃ©canique
+Dans un cristal liquide cholestérique, la couleur observée résulte d'une réexion sélective
+de la lumière par les couches de sa structure hélicoïdale (gure 36). Ainsi, le trajet de
+la lumiÃ¨re peut Ãªtre dÃ©crit en fonction du pas de lâhÃ©licepet de lâangle dâincidenceÎ¸du
+rayon. En eet, les ondes rééchies par deux couches successives du cristal se superposent
+et engendrent une interférence constructive (gure 37), ce qui amplie une longueur
+dâonde particuliÃ¨re par rapport aux autres. Pour que cette interfÃ©rence soit constructive,
+la diérence de marche (surlignée en rouge sur la gure 36) doit être un multiple entier de
+la longueur dâonde. 
+Figure 36âSchÃ©ma du phÃ©nomÃ¨ne
+de diÏraction dans un cristal 
+Figure 37âSchÃ©ma des phÃ©nomÃ¨nes
+dâinterfÃ©rences constructives et destructives
+Loi de Bragg
+La loi de Bragg exprime la diérence de marche :k Î»= 2n psin(Î¸)avec
+âk
+: entier naturel correspondant Ã  lâordre dâinterfÃ©rence dans le plan cristallin
+ân: indice de rÃ©fraction du cristal
+Sachant cela, nous souhaitons appliquer une couche de cristal liquide sur un support
+dÃ©formable. Le cristal liquide Ã©tant incompressible, si le support est Ã©tirÃ©, le pas de lâhÃ©lice
+va diminuer. La gure 39 montre le phénomène d'élongation du support et ce que cela
+entraÃ®nerait au niveau de la structure hÃ©licoÃ¯dale. En pratique, cela devrait donner un
+résultat comme sur la gure 38.
+16
+
+(a)Tension
+faible : couleur
+rouge 
+(b)Tension
+forte : couleur
+verte
+Figure 38âDÃ©formation dâun
+support Ã  cristaux liquides}
+p : pas de
+l'hÃ©lice
+Loi de Bragg :
+kÂ·Î» = 2Â·nÂ·pÂ·sin(Î¸)
+Î¸
+p 
+Figure 39âSchÃ©ma de lâÃ©longation du support et de
+ses consÃ©quences au niveau molÃ©culaire
+3.4 MÃ©thodologie
+3.4.1 La dÃ©marche
+Nous cherchons dans notre Ã©tude Ã  dÃ©terminer le pas de lâhÃ©lice
+de notre cristal liquide en fonction de la couleur que nous
+observons. Pour cela, nous avons fait varier la couleur de notre
+cristal liquide en le dÃ©formant mÃ©caniquement et avons pris des
+photos de nos observations. Par Â« notre Â» cristal liquide, nous
+faisons rÃ©fÃ©rence Ã  la peinture Ã  cristaux liquides cholestÃ©riques
+achetée auprès de l'entreprise SFXC (gure 40). Une fois les
+photos prises, nous devions les exploiter pour trouver le pas de
+notre hÃ©lice. Il sâagit de la partie compliquÃ©e de cette analyse. 
+Figure 40âPeinture Ã 
+cristaux liquides cholestÃ©-
+riques de SFCX
+3.4.2 Dâune image au pas de lâhÃ©lice
+Pour passer dâune image au pas de lâhÃ©lice, de nombreuses Ã©tapes sont nÃ©cessaires.
+An de rendre l'explication plus claire, nous allons procéder à rebours, du pas de l'hélice
+jusquâÃ  lâimage. Supposons que nous devions analyser une couleur, que nous appellerons
+A. Pour dÃ©terminer le pas de lâhÃ©lice, nous avons besoin de la longueur dâonde associÃ©e Ã 
+la couleur A.
+Celle-ci peut Ãªtre exprimÃ©e par la loi de Bragg que nous avons rÃ©arrangÃ©e :
+p=
+kÎ»
+2nsinÎ¸
+Pour dÃ©terminer la longueur dâonde de la couleur A,
+nous utilisons le diagramme de chromaticité déni par
+la CIE en 1931 (Ïgure 41). La courbe de ce diagramme
+reprÃ©sente les longueurs dâonde du spectre visible dans
+le plan( x, y). Il est donc nÃ©cessaire de connaÃ®tre les
+coordonnÃ©es correspondant Ã  la longueur dâonde recher-
+chÃ©e. Cependant, les coordonnÃ©es(
+x, y)du diagramme
+de chromaticitÃ© ne constituent quâune reprÃ©sentation
+bidimensionnelle de lâespace colorimÃ©triqueXY Z, Ã©ga-
+lement déni par la CIE. Les coordonnées(	x, y)sâex-
+priment par :
+x=
+X
+X+Y+Z
+, y=
+Y
+X+Y+Z
+Il est donc nÃ©cessaire de disposer des valeursX,Yet
+ZassociÃ©es Ã  la couleur A. 
+Figure 41âDiagramme de
+chromaticitÃ© CIE 1931
+Jusqu'à présent, la couleur A issue de la photographie n'était dénie que par son code
+informatique RVB. Heureusement, il existe un lien direct entre le code RVB et les valeurs
+XY Z. Nous devons calculer un produit matriciel. Le code RVB peut Ãªtre exprimÃ© sous
+forme dâune matrice3Ã1, tout comme les valeurs de lâespace associÃ©XY Z.
+17
+
+Leur relation sâexprime par :
+ï£®
+ï£¯
+ï£°
+X
+Y
+Z
+ï£¹
+ï£º
+ï£»=
+ï£®
+ï£¯
+ï£°
+0.49 0.31 0.20
+0.17697 0.8134 0.01063
+0 0 .01 0.99
+ï£¹
+ï£º
+ï£»
+|	{z }
+M: matrice CIE RVB
+ï£®
+ï£¯
+ï£°
+R
+V
+B
+ï£¹
+ï£º
+ï£»
+Toutefois, un problÃ¨me subsiste : les couleurs des cristaux liquides sont monochroma-
+tiques, tandis que celles dâune image numÃ©rique sont polychromatiques, câest-Ã -dire issues
+de la combinaison de trois composantes (rouge, vert et bleu) dénissant chaque pixel. Ainsi,
+il arrive que certaines coordonnÃ©es mesurÃ©es dans le plan chromatique ne se situent pas sur
+la courbe de chromaticitÃ© elle-mÃªme. Elles peuvent se trouver Ã  lâintÃ©rieur du diagramme
+(mÃ©langes de couleurs rÃ©elles). Ce dÃ©calage provient de la nature polychromatique des
+images. Pour corriger ce problÃ¨me, nous avons implÃ©mentÃ© lâalgorithme de recherche du
+plus proche voisin (Nearest Neighbour Search, NNS), qui permet dâestimer la longueur
+dâonde correspondante avec une prÃ©cision de lâordre de 10 nm.
+Nearest Neighbour Search (NNS)
+Le Nearest Neighbour Search en programmation est un algorithme de recherche. Il
+permet pour un pointpdans un espace d-dimensionnel de trouver quel pointqdans
+un ensembleEest le plus proche de celui-ci en calculant une distance euclidienne.
+Sa formule est exprimÃ©e par :q= arg min
+xâE
+â¥xâpâ¥avecxla variable qui prend la
+valeur de tous les Ã©lÃ©ments deE
+En rÃ©sumÃ©, nous avons dÃ©veloppÃ© un code en Python capable dâexploiter des images
+de cristaux liquides an de déterminer le pas de leur hélice, selon la méthode présentée
+prÃ©cÃ©demment. Le code complet est disponible enAnnexe 9.
+3.5 ExpÃ©riences
+Nous avons premiÃ¨rement essayÃ© dâappliquer notre
+cristal liquide sur un support dÃ©formable de sorte
+Ã  ce quâune fois sÃ©chÃ©e, nous puissions Ã©tirer la
+ceinture et observer un changement de couleur.
+Notre montage ressemblait à la gure 42a. Mal-
+heureusement, aprÃ¨s avoir Ã©tirÃ© notre ceinture Ã 
+cristaux liquides, nous nâavons pas une seule fois
+observé un changement de couleur (gure 42). 
+(a)Tension faible (b)Tension forte
+Figure 42âDÃ©formation de notre
+ceinture : aucune couleur observÃ©e
+AÏn de comprendre pourquoi cette approche ne fonctionnait pas, nous avons fait appel
+Ã  notre partenaire : lâUniversitÃ© du Luxembourg, avec le Professeur Jan Lagerwall et le
+doctorant Yosuke Pestana Nakamura. GrÃ¢ce Ã  leurs explications, nous avons compris
+pourquoi il nous Ã©tait impossible de fabriquer nous-mÃªmes une ceinture Ã  cristaux liquides.
+En eet, plusieurs dicultés empêchent l'observation d'un changement de couleur (voir
+Annexe 10), la principale Ã©tant que les molÃ©cules de cristal liquide ne sont pas polymÃ©risÃ©es.
+PolymÃ©risation
+La polymÃ©risation est le processus par lequel des monomÃ¨res sâassemblent pour
+former un polymÃ¨re. Dans notre cas, elle permet aux cristaux liquides dâacquÃ©rir
+des propriÃ©tÃ©s Ã©lastiques exploitables.
+18
+
+Cette polymérisation n'est pas eec-
+tuable dans notre lycÃ©e, câest pour-
+quoi nous sommes allÃ©s crÃ©er une
+ceinture Ã  cristaux liquides Ã  lâuni-
+versitÃ©, au sein de leur laboratoire
+(voirAnnexe 11). 
+Figure 43âCeinture Ã  cristaux liquides
+fabriquÃ©e Ã  lâUniversitÃ© du Luxembourg
+Enn, nous avons mené notre analyse quantitative du changement de couleur de la
+ceinture Ã  cristaux liquides en fonction de sa dÃ©formation mesurÃ©e par lâÃ©longation. Il
+fallait suivre quelques Ã©tapes. Pour faire changer la couleur de la ceinture, le pas de lâhÃ©lice
+des cristaux liquides doit varier. Nous avons donc étiré la ceinture pour modier le pas de
+lâhÃ©lice.
+Formule de lâÃ©longation
+La formule de lâÃ©longation (en %) de la ceinture est la suivante :
+Ãlongation=
+LâL
+0
+L0
+Ã100
+avec
+âL: longueur de la ceinture (en cm)
+âL
+0: longueur originale de la ceinture (en cm)
+Ensuite, Ã  chaque Ã©tape de lâÃ©longation, nous avons pris une photo de la ceinture et
+lâavons entrÃ©e dans notre code Python pour quâil nous donne le pas de lâhÃ©lice. Pour ne
+pas avoir de valeurs imprÃ©cises en Ã©tirant Ã  la main la ceinture, nous avons crÃ©Ã© une petite
+machine qui le fait plus prÃ©cisÃ©ment (cf.Annexe 12).
+Il sut donc de placer les deux extrémités de notre ceinture sur les supports dédiés
+et de mettre en marche le rail qui va tirer la ceinture. Nous pouvons bloquer lâÃ©tirement
+en plaÃ§ant des barres de mÃ©tal dans la structure. Cela garantit des prises de vue prÃ©cises,
+sans dÃ©formation liÃ©e Ã  la manipulation humaine.
+3.6 RÃ©sultats
+Les donnÃ©es de notre analyse quantitative par dÃ©formation mÃ©canique sont enAnnexe 13.
+Finalement, nos valeurs issues de notre code Ã©taient trop incertaines pour Ãªtre pertinentes
+dans la conception de ce tableau en annexe. Nous avons donc utilisÃ© le site
+405nm.com. La
+gure 44 représente la couleur émise par les cristaux liquides en fonction de leur élongation.
+30 40 50 60 70 80 90
+550
+600
+650
+Ãlongation (%)
+Longueur dâonde (nm)
+Figure 44âLongueur dâonde
+en fonction de lâÃ©longation.
+Un changement de couleur marquÃ©,
+du rouge au vert, est observÃ© aux
+alentours de 80% dâÃ©longation. Lors
+de la formation d'une Ïssure, l'al-
+longement local Ã©tire les molÃ©cules
+de cristal liquide, provoquant leur
+rÃ©organisation et un changement de
+couleur net, dans notre cas Ã  partir
+de 80%. Les cristaux liquides appa-
+raissent ainsi comme une solution
+pertinente pour visualiser et prÃ©ve-
+nir les ssures dans le béton.
+19
+
+3.7 Application
+Bien que la peinture Ã  cristaux liquides soit encore en dÃ©veloppement, elle pourrait
+théoriquement être appliquée sur de larges surfaces an de détecter l'apparition de s-
+sures. Cette méthode viendrait compléter les jauges de contrainte classiques (gure 45),
+notamment pour la surveillance dâinfrastructures diciles dâaccÃ¨s comme les ponts ou les
+barrages, il surait alors d'observer l'évolution à l'aide de jumelles.
+Nous avons également développé un dispositif simple et reproductible (gure 46)
+permettant de dÃ©tecter automatiquement un changement de couleur. Un smartphone
+transmet un ux vidÃ©o Ã  un ordinateur grÃ¢ce Ã  DroidCam, où un programme Python
+analyse en temps rÃ©el lâÃ©volution chromatique du cristal liquide et signale lâapparition
+dâune ssure.   
+Figure 45âJauges de contrainte posÃ©es sur un plafond 
+Figure 46âDispositif de
+détection de ssures
+3.8 Conclusion
+Cette Ã©tude montre que les cristaux liquides constituent une piste prometteuse pour la
+dÃ©tection des microssures dans le bÃ©ton. Un changement de couleur net apparaît pour une
+déformation locale d'environ 80%, correspondant au début de la micro-ssuration du béton.
+Cependant, des contraintes environnementales (tempÃ©rature, humiditÃ©, vieillissement)
+pourraient dÃ©grader cette peinture, encore limitÃ©e Ã  lâÃ©chelle expÃ©rimentale. Sa mise en
+Åuvre pratique reste donc Ã  dÃ©montrer.
+Conclusion
+En conclusion, bien que le bÃ©ton soit un matÃ©riau trÃ¨s utilisÃ© pour les grandes in-
+frastructures, il reste vulnÃ©rable Ã  la carbonatation. Ce phÃ©nomÃ¨ne dÃ©grade la couche
+passive, oxyde les armatures et provoque un gonement pouvant compromettre l'intégrité
+structurelle.
+La protection cathodique peut réalcaliniser le béton et ralentir la formation de ssures,
+mais elle demeure coÃ»teuse Ã  grande Ã©chelle. De plus, elle ne couvre pas tous les mÃ©ca-
+nismes de dÃ©gradation : gel/dÃ©gel, surcharges, rÃ©action alcali-granulat, fatigue ou rÃ©actions
+chimiques internes peuvent aussi dÃ©grader lâinfrastructure.
+Notre Ã©tude a donc intÃ©grÃ© un volet de surveillance avec un systÃ¨me de dÃ©tection
+automatique basÃ© sur le changement de couleur de cristaux liquides. Cette mÃ©thode fournit
+une indication visuelle rapide de la présence et de la sévérité des ssures, mais reste
+dÃ©pendante des conditions mÃ©tÃ©orologiques.
+Notre projet ouvre plusieurs pistes : étendre la détection aux ssures internes grâce à
+des techniques non destructives (ultrasons, radiographie, imagerie thermique) et dÃ©velopper
+des solutions plus durables et Ã©conomes en Ã©nergie. Ã long terme, la combinaison de nos Â«
+solutions en bÃ©ton Â» pourrait aboutir Ã  un systÃ¨me de protection et de surveillance des
+ouvrages en béton plus complet et plus able.
+20

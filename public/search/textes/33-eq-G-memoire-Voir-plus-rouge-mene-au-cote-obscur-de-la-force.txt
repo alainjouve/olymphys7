@@ -1,0 +1,1029 @@
+Olympiades Nationales de Physique 2025-2026
+Voir(plus)rougeâ¦mÃ¨neaucÃ´tÃ©obscurde
+laforce!
+DÃ©tecter lâaccÃ©lÃ©ration de lâexpansion cosmique avec les chandelles et rÃ¨gles
+standards
+Evelyn Chung,Julien Luro,Chaeeun Seo,Arthur Toiron,Ãmile Vuillet
+LycÃ©e FranÃ§ais de SÃ©oul
+CorÃ©e du Sud
+Projet rÃ©alisÃ© sous la supervision de
+Prof. Benjamin LâHuillier
+Professeur de Physique et Astrophysique, UniversitÃ© de Sejong
+Melle ClÃ©a Millard
+Doctorante, UniversitÃ© de Sejong
+M. Romain Desplanche, Mme Jeehae Chun
+Professeurs de Physique-Chimie, LycÃ©e FranÃ§ais de SÃ©oul
+Novembre 2025
+
+TabledesmatiÃ¨res
+Introduction	2
+1 Du Big Bang Ã  lâÃ©nergie sombre	3
+1.1 Voir (plus) rouge. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3
+1.1.1 Lâeffet Doppler. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3
+1.1.2 Le redshift cosmologique. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4
+1.1.3 Expression de la âvitesseâ. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4
+1.2 La constante de Hubble-LemaÃ®tre. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .5
+1.3 Le cÃ´tÃ© obscur. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .6
+1.3.1 Facteur dâÃ©chelle. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .6
+1.3.2 Le modÃ¨le ÎCDM. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .6
+1.3.2.1 ParamÃ¨tres du modÃ¨le ÎCDM. . . . . . . . . . . . . . . . . . . . . . . . . . . .6
+1.3.2.2 RelativitÃ© gÃ©nÃ©rale et courbure. . . . . . . . . . . . . . . . . . . . . . . . . . . .7
+1.3.2.3 LâÃ©quation de Friedmann. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7
+2 Approche ExpÃ©rimentale	8
+2.1 Comment mesurer la vitesse dâune galaxie lointaine ?. . . . . . . . . . . . . . . . . . . . . . . . .8
+2.1.1 Protocole expÃ©rimental. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .8
+2.1.2 Analyse des rÃ©sultats. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .9
+2.1.3 Conclusion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .10
+2.2 Comment mesurer la distance nous sÃ©parant dâune galaxie lointaine ?. . . . . . . . . . . . . . . .11
+2.2.1 ModÃ©lisation acoustique. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .11
+2.2.1.1 Protocole expÃ©rimental. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .11
+2.2.1.2 Analyse des rÃ©sultats. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .12
+2.2.1.3 Conclusion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .13
+2.2.2 ModÃ©lisation lumineuse. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .13
+2.2.2.1 Protocole expÃ©rimental. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .13
+2.2.2.2 Analyse des rÃ©sultats. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .14
+2.2.2.3 Conclusion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .14
+3 Analyse Statistique	15
+3.1 DÃ©marche. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
+3.2 DonnÃ©es. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
+3.2.1 SupernovÃ¦ de type Ia. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
+3.2.2 Ondes acoustiques baryoniques (BAO). . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
+3.2.2.1 DÃ©finition. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
+3.2.2.2 Principe de mesure. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .16
+3.3 MÃ©thode dâanalyse des donnÃ©es. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .16
+3.4 RÃ©sultats. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .17
+Conclusion	19
+1
+
+Introduction
+La cosmologie est la science qui Ã©tudie lâUnivers dans son ensemble : son origine, sa nature, sa structure et
+son Ã©volution.
+Notre vision moderne de lâUnivers a basculÃ© en 1915, lorsque Albert Einstein publie sa cÃ©lÃ¨bre thÃ©orie de
+la relativitÃ© gÃ©nÃ©rale, qui donne un cadre physique cohÃ©rent Ã  lâUnivers et Ã  son Ã©volution. En 1927, Georges
+LemaÃ®tre, puis Edwin Hubble, montrent que les galaxies sâÃ©loignent les unes des autres. Cette dÃ©couverte a posÃ©
+les bases de la thÃ©orie du Big Bang : nous vivons dans un Univers en expansion.
+Intuitivement, on pourrait penser que cette expansion devrait ralentir au fil du temps. En effet, la gravitation,
+force attractive universelle exercÃ©e par toute la matiÃ¨re contenue dans le cosmos, devrait agir comme un frein
+et attirer les galaxies les unes vers les autres. Pour vÃ©rifier cette hypothÃ¨se, il faut observer lâÃ©volution de cette
+vitesse dâexpansion Ã  travers les Ã¢ges. Or, en astronomie, regarder loin, câest regarder dans le passÃ©. Pour remonter
+le fil de lâhistoire cosmique, il est donc nÃ©cessaire dâobserver des objets de plus en plus lointains.
+Câest prÃ©cisÃ©ment ce qui a Ã©tÃ© tentÃ© Ã  la fin du XX
+e
+siÃ¨cle. En 1998, grÃ¢ce Ã  lâobservation de supernovÃ¦
+de type Ia â des explosions dâÃ©toiles extrÃªmement lumineuses visibles Ã  trÃ¨s grande distance â deux Ã©quipes
+dâastronomes ont repoussÃ© les limites de nos mesures. Leurs rÃ©sultats ont menÃ© Ã  unchangement de paradigme,
+et leur ont valu le prix Nobel de physique en 2011 : contrairement Ã  toute attente, lâexpansion de lâUnivers ne
+ralentit pas, ellesâaccÃ©lÃ¨re.
+Cette accÃ©lÃ©ration implique lâexistence dâune force ou dâune Ã©nergie inconnue qui sâoppose Ã  la gravitÃ© et
+Â« pousse Â» lâespace Ã  sâÃ©tirer de plus en plus vite. Les physiciens ont nommÃ© cette composante mystÃ©rieuse :
+lâÃ©nergie sombre.
+Pour Ã©tudier cette Ã©nergie invisible et comprendre la gÃ©omÃ©trie de lâUnivers, les cosmologistes sâappuient sur
+des mesures de Â« redshift Â» et des outils prÃ©cis : des Â« chandelles standardsÂ» (comme les supernovÃ¦ de type Ia, dont
+la luminositÃ© est connue) et des Â« rÃ¨gles standardsÂ» (comme les oscillations acoustiques baryoniques ou BAO).
+Ces rÃ©fÃ©rences permettent de mesurer les distances astronomiques, de les relier au Â« redshift Â», et de comprendre
+lâhistoire de lâexpansion avec une grande prÃ©cision, grÃ¢ce Ã  des instruments modernes comme lâinstrument DESI.
+Dans le cadre de ce projet, nous avons cherchÃ© Ã  comprendre comment ces observations permettent de sonder
+lâinvisible. Notre dÃ©marche nous a donc conduits Ã  la problÃ©matique suivante :
+Comment mener une dÃ©marche expÃ©rimentale et exploiter les observations astro- nomiques pour dÃ©terminer la proportion dâÃ©nergie sombre prÃ©sente dans lâUni- vers?
+Pour rÃ©pondre Ã  cette question, nous commencerons par poser le cadre historique et thÃ©orique de notre Uni-
+vers, du Big Bang Ã  la dÃ©couverte de lâaccÃ©lÃ©ration cosmique. Nous prÃ©senterons ensuite une approche expÃ©ri-	mentale rÃ©alisÃ©e au lycÃ©e, visant Ã  illustrer les principes de mesure de distance. Enfin, nous mÃ¨nerons une analyse
+statistique sur des donnÃ©es rÃ©elles issues de tÃ©lescopes professionnels pour estimer nous-mÃªmes la composition
+de notre Univers, notamment la part dâÃ©nergie sombre.
+Illustratation page de garde : NASA/WMAP Science Team
+2
+
+Chapitre 1
+DuBigBangÃ lâÃ©nergiesombre
+Aujourdâhui, la thÃ©orie la plus soutenue pour expliquer lâorigine et lâÃ©volution de lâUnivers reste le Big Bang.
+Elle postule que lâUnivers est nÃ© dâun Ã©tat extrÃªmement chaud et dense, une Â« singularitÃ© Â», il y a environ 13,8
+milliards dâannÃ©es, qui a ensuite commencÃ© Ã  sâÃ©tendre et Ã  se refroidir pour former la matiÃ¨re et lâespace-temps
+que nous connaissons aujourdâhui.
+En 1905, Einstein publie quatre articles fondamentaux parmi lesquels deux posent les bases de la physique
+quantique et de la relativitÃ© restreinte. Dix ans plus tard, en 1915, il Ã©tend cette derniÃ¨re et formule la thÃ©orie de
+la relativitÃ© gÃ©nÃ©rale [1], offrant une nouvelle description de la gravitation et dâun espace-temps potentiellement
+courbÃ©. Croyant Ã  un univers (et un espace-temps) statique, en 1917, il introduit dans son Ã©quation une constante	cosmologique, notÃ©eÎ, afin de Â« forcerÂ» un modÃ¨le statique de lâUnivers.
+En 1922, Alexandre Friedmann de Leningrad publie le premier une thÃ©orie de lâexpansion de lâUnivers [
+2].
+En 1927, indÃ©pendamment des travaux de Friedmann, lâabbÃ© belge Georges LemaÃ®tre rÃ©dige un article Ã©tablissant	que lâUnivers est en expansion [
+3]. LemaÃ®tre est le premier Ã  Ã©tablir le rapport constant entre distance et vitesse
+dâÃ©loignement, quâil Ã©voque dans son article de 1927. Cependant, la traduction anglaise de cet article omet les	paragraphes relatifs Ã  la constance du rapport vitesse sur distance. La communautÃ© scientifique retiendra donc	lâestimation plus prÃ©cise publiÃ©e par Edwin Hubble en 1929 [
+4]. Suite Ã  ces dÃ©couvertes, des mÃ©triques dâun
+espace-temps en expansion (donc non statique) sont confirmÃ©es. Einstein rejette alors sa constante cosmologique	Îet la considÃ¨re Ã  lâÃ©poque comme Ã©tant sa plus grande Â« gaffe Â».
+1.1 Voir (plus) rouge
+1.1.1 Lâeffet Doppler
+Lâeffet Doppler, du nom du physicien autrichien Christian Doppler qui lâa dÃ©crit en 1842, est illustrÃ© en Figure
+1.1a. Il sâagit dâun phÃ©nomÃ¨ne physique observÃ© lorsquâune source dâonde sonore se dÃ©place par rapport Ã  un
+observateur. Il se manifeste par une variation de la frÃ©quence perÃ§ue par lâobservateur, en fonction de la vitesse	relative entre la source et lâobservateur. Lorsque la source se rapproche de lâobservateur, la frÃ©quence perÃ§ue	augmente ce qui se traduit par un son plus aigu. Ã lâinverse, lorsque la source sâÃ©loigne, la frÃ©quence perÃ§ue	diminue, entraÃ®nant un son plus grave pour les ondes sonores.
+(a) Illustration de lâeffet Doppler avec une ambulance en
+mouvement [5].	(b) Effet Doppler-Fizeau sur le spectre dâune galaxie. [6]
+Fig. 1.1 : Illustration de lâeffet Doppler (Ã  gauche) et Doppler-Fizeau (Ã  droite).
+3
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+Lâeffet Doppler-Fizeau, phÃ©nomÃ¨ne formulÃ© par le physicien franÃ§ais Hippolyte Fizeau en 1848, est une exten-
+sion de lâeffet Doppler, qui sâapplique aux ondes Ã©lectromagnÃ©tiques. La frÃ©quence de lâonde Ã©lectromagnÃ©tique
+perÃ§ue par un observateur varie en fonction du mouvement relatif entre la source et lâobservateur. Cependant,
+contrairement aux ondes sonores, qui nÃ©cessitent un mÃ©dium matÃ©riel pour se propager, la lumiÃ¨re se dÃ©place
+dans le vide Ã  une vitesse constante, et le dÃ©calage de frÃ©quence est perÃ§u diffÃ©remment.
+Lorsque la source lumineuse se rapproche de lâobservateur, la frÃ©quence de lâonde Ã©lectromagnÃ©tique aug-
+mente et la longueur dâonde devient plus courte, ce qui conduit Ã  un dÃ©calage vers le bleu. Inversement, lorsque
+la source sâÃ©loigne, la frÃ©quence de lâonde Ã©lectromagnÃ©tique diminue et la longueur dâonde devient plus longue,
+crÃ©ant un dÃ©calage vers le rouge (le redshift). Ce phÃ©nomÃ¨ne est utilisÃ© en astronomie pour dÃ©terminer la vitesse
+radiale des astres proches, en mesurant le dÃ©calage en longueur dâonde de raies dâabsorption dans le spectre de
+la lumiÃ¨re Ã©mise par ces objets.
+Lorsque lâon Ã©tudie le spectre dâune galaxie, on observe que les raies spectrales apparaissent dÃ©calÃ©es par
+rapport Ã  leur position habituelle. Bien que les espacements entre les raies soient conservÃ©s, lâensemble du spectre
+semble avoir Ã©tÃ© dÃ©placÃ©, comme lâillustre la Figure
+1.1b.
+1.1.2 Le redshift cosmologique
+Fig. 1.2 : DiffÃ©rence entre le redshift et lâeffet Doppler [7]
+Lorsque lâon Ã©tudie le spectre des galaxies Ã©loi-
+gnÃ©es, on observe que les raies spectrales sont tou-	jours dÃ©calÃ©es vers les basses frÃ©quences, câest-Ã -dire
+vers le rouge, proportionnellement Ã  leur Ã©loigne-
+ment. Cela signifierait que toutes les galaxies Ã©loi-
+gnÃ©es sâÃ©loignent de la notre, quelle que soit la direc-
+tion de lâobservation.
+Par ailleurs, si lâon interprÃ¨te ces rÃ©sultats avec les
+formules de lâeffet Doppler, les vitesses dâÃ©loignement
+calculÃ©es peuvent Ãªtre supÃ©rieures Ã  celle de la lumiÃ¨re
+dans le vide, ce qui est impossible. Cela conduit donc
+Ã  dÃ©finir le redshift cosmologique.
+Lorsque lâunivers sâÃ©tend, lâespace entre les ga-
+laxies et par consÃ©quent, les ondes Ã©lectromagnÃ©tiques
+dans cet espace Â« sâÃ©tirentÂ». La Figure
+1.2illustre la
+diffÃ©rence entre lâeffet Doppler (partie supÃ©rieure) et	le redshift cosmologique (partie infÃ©rieure).
+Il est possible de quantifier le redshift par un paramÃ¨tre mathÃ©matique notÃ©z. Pour quantifier ce phÃ©nomÃ¨ne,
+les physiciens utilisent le rapport entre le dÃ©calage des longueurs dâonde et la longueur dâonde lors de lâÃ©mission.	Le redshift est dÃ©fini par
+z=
+Î»(t0)âÎ»(te)
+Î»(te)
+=
+Î»(t0)
+Î»(te)
+â1,	(1.1)
+avecÎ»(t0)la longueur dâonde, mesurÃ©e lors dâune observation Ã t=t0aujourdâhui, etÎ»(te), la longueur dâonde
+lors de lâÃ©mission du rayonnement.
+Il est important de comprendre que le redshift mesurÃ© est une combinaison de lâeffet Doppler (dÃ» Ã  la vitesse de
+dÃ©placement relative dans lâespace-temps) et de lâexpansion de lâUnivers. La vitesse de dÃ©placement dans lâespace-	temps des objets astronomiques ne dÃ©passe donc jamais la vitesse de propagation de la lumiÃ¨re dans le vide, mais
+leur vitesse de rÃ©cession apparente peut Ãªtre supÃ©rieure Ã  cette valeur (puisquâelle mesure lâaugmentation de la
+distance due Ã  lâexpansion de lâUnivers, et non la vitesse de dÃ©placement de lâobjet).
+1.1.3 Expression de la âvitesseâ
+On part de la dÃ©finition du redshift :
+z=
+Î»(t0)âÎ»(te)
+Î»(te)
+=â1 +z=
+Î»(t0)
+Î»(te)
+.	(1.2)
+En mÃ©canique classique,Î»=c/f. Ã lâÃ©missionÎ»(te) =c/fe, Ã  lâobservationÎ»(t0) =c/f0. Pour une source qui
+sâÃ©loigne Ã  la vitessevâªc, on a
+f0=fe
+c
+c+v
+.	(1.3)
+4
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+DâoÃ¹
+Î»(t0)
+Î»(te)
+=
+c/f0
+c/fe
+=
+fe
+f0
+=
+c+v
+c
+= 1 +
+v
+c
+.	(1.4)
+On en dÃ©duit
+1 +z= 1 +
+v
+c
+=âz=
+v
+c
+=âv=c z.	(1.5)
+Nous illustrons ici le fait que mesurer le redshift dâune source lumineuse (Ã©toile, galaxie...) permet dâen estimer
+la vitesse radiale par rapport Ã  la Terre, pour la part Doppler du redshift. Pour les galaxies trÃ¨s Ã©loignÃ©es, le redshift
+cosmologique devient prÃ©pondÃ©rant.
+1.2 La constante de Hubble-LemaÃ®tre
+Comme expliquÃ© dans le paragraphe prÃ©cÃ©dent, la base du travail expÃ©rimental de LemaÃ®tre et Hubble est la
+dÃ©termination de la vitesse radiale dâÃ©loignement de galaxies proches par la mesure de redshift (ou blueshift pour
+certaines). Quant aux distances, la mÃ©thode utilisÃ©e se base sur une relation magnitude-distance avec un type de
+chandelles standard : les Ã©toiles cÃ©phÃ©Ã¯des. Cependant, cette mÃ©thode reste limitÃ©e aux galaxies proches.
+(a) DonnÃ©es de Hubble	(b) DonnÃ©es de Hubble et de Humason
+Fig. 1.3 : Comparaison des donnÃ©es de Hubble sans et avec Humason
+Les mesures effectuÃ©es permettent de comprendre deux choses. PremiÃ¨rement, les distances mesurÃ©es pour
+certaines nÃ©buleuses les placent bien au-delÃ  des limites de la Voie LactÃ©e (diamÃ¨tre dâenviron100 000alâ
+30kpc)
+1
+. Câest donc la preuve dÃ©finitive de lâexistence dâautres galaxies au delÃ  de la nÃ´tre. DeuxiÃ¨mement, Ã 
+part les galaxies les plus proches, les Â« vitesses Â» dâÃ©loignement mesurÃ©es sont toutes positives et semblent pro-	portionnelles Ã  la distance. Câest ainsi la premiÃ¨re preuve de lâexpansion de lâUnivers.
+La constante de Hubble-LemaÃ®tre reprÃ©sente le taux dâexpansion actuel de lâUnivers. Elle relie la vitesse Ã 
+laquelle une galaxie sâÃ©loigne de nous Ã  sa distance, selon la loi de Hubble. Hubble fait une premiÃ¨re estimation	de la constante dans sa publication de 1929, avant dâen proposer une plus prÃ©cise Ã  lâaide des mesures de Milton	L. Humason. Sa valeur actuelle est estimÃ©e Ã H0â70km s
+â1
+Mpc
+â1
+.
+Il est important de noter que laconstantede Hubble nâest pas constante dans le temps : sa valeur Ã©volue au
+cours de lâhistoire de lâUnivers. En revanche, Ã  un instant donnÃ©, elle est identique dans toutes les directions	de lâespace. On parle alors du paramÃ¨tre de Hubble, notÃ©H(z).H0est donc la valeur du paramÃ¨tre de Hubble
+aujourdâhui :H0=H(z= 0). La dimension de ce taux dâexpansion est lâinverse dâun temps, ce qui permet
+dâestimer lâÃ¢ge de lâUnivers (voir Appendix I.1).
+La relation redshift-distance dÃ©pend de la cosmologie, câest-Ã -dire des paramÃ¨tres cosmologiques. Ainsi, avec
+la valeur deH0et les paramÃ¨tres cosmologiques standards, on peut relier un dÃ©calage spectral (z) Ã  une distance :
+z= 0,01âd= 1,43Ã10
+8
+al.
+(1.6)
+Nous constatons dans la Figure1.3que les distances mesurÃ©es sont toutes infÃ©rieures Ã  la distance associÃ©e Ã 
+z= 0,01. Les points correspondant aux galaxies les plus proches sont Ã©loignÃ©s par rapport Ã  la droite de rÃ©gres-
+sion (Figure1.3a). Cependant, quand la distance augmente, les points sont mieux corrÃ©lÃ©s Ã  droite (Figure1.3b).
+1
+Les astronomes utilisent le parsec (pc) plutÃ´t que lâannÃ©e-lumiÃ¨re (al) :1pcâ3al
+5
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+Cela est dÃ» au mouvement relatif des galaxies proches (effet Doppler), et la part de plus en plus importante du
+redshift cosmologique sur les galaxies Ã©loignÃ©es. Finalement, pour des galaxies encore plus lointaines que celles
+mesurÃ©es par Hubble, la relation vitesse-distance nâest plus linÃ©aire. Plusieurs hypothÃ¨ses expliquent ce change-
+ment et le rÃ©sultat dÃ©pend du modÃ¨le cosmologique choisi.
+1.3 Le cÃ´tÃ© obscur
+Lâexpansion de lâUnivers aurait dÃ» ralentir avec le temps Ã  cause de la gravitÃ©, qui attire toute la matiÃ¨re de
+lâunivers entre elle. Cherchant Ã  tester cette hypothÃ¨se dans les annÃ©es 1990, Saul Perlmutter, Adam Riess et Brian
+Schmidt observent des supernovÃ¦ de type Ia, une autre catÃ©gorie de chandelles standard (3.2.1) plus lumineuses
+que les cÃ©phÃ©Ã¯des. Ils dÃ©couvrent alors un phÃ©nomÃ¨ne surprenant : au lieu de ralentir, lâexpansion de lâUnivers
+sâaccÃ©lÃ¨re depuis plusieurs milliards dâannÃ©es [8,9]. Il fallait donc trouver une source dâÃ©nergie qui justifie cette
+accÃ©lÃ©ration : lâÃ©nergie sombre. Câest donc le retour de la constante cosmologique Î dâEinstein. Cette fois, au lieu	de forcer lâUnivers Ã  rester statique, elle permet lâaccÃ©lÃ©ration de son expansion.
+1.3.1 Facteur dâÃ©chelle
+En cosmologie, le facteur dâÃ©chellea(t)mesure la faÃ§on dont la distance entre deux corps astrophysiques varie
+avec le temps du fait de lâexpansion de lâUnivers. Câest un rapport de longueurs qui dÃ©pend de deux instants :	maintenant et un instant dans le passÃ©. Par convention, aujourdâhui,t=t0eta(t0) =a0= 1. Sia(t)<1, on
+parle dâun univers plus jeune et plus petit.
+On peut Ã©galement relier le facteur dâÃ©chelle au redshiftz. En effet, lâexpansion de lâUnivers impacte aussi la
+longueur dâonde de la lumiÃ¨re, qui est une distance comme une autre. Si une onde lumineuse est Ã©mise avec la	longueur dâondeÎ»(te)Ã  un instantte, sa longueur dâondeÎ»(t)Ã  un instanttsera Ã©gale Ã 
+Î»(t) =Î»(te)
+a(t)
+a(te)
+.	(1.7)
+En pratique, on ne peut observer la longueur dâonde quâÃ t=t0.
+Î»(t0)
+Î»(te)
+=
+1
+a(te)
+.	(1.8)
+En reprenant (1.1), on peut combiner les deux Ã©quations pour associer le redshift et le facteur dâÃ©chelle :
+z=
+1
+a(te)
+â1	(1.9)
+âz+ 1 =
+1
+a(te)
+(1.10)
+âa(te) =
+1
+1 +z
+(1.11)
+Ainsi, connaÃ®tre le redshift dâune galaxie lointaine nous indique la taille relative de lâUnivers au moment oÃ¹
+la lumiÃ¨re de la galaxie a Ã©tÃ© Ã©mise.
+1.3.2 Le modÃ¨le ÎCDM
+Plusieurs modÃ¨les cosmologiques permettent de reprÃ©senter lâUnivers. Aujourdâhui, le modÃ¨le ÎCDM est
+considÃ©rÃ© comme le modÃ¨le standard de la cosmologie. Il dÃ©crit un univers avec de lâÃ©nergie sombre sous la	forme dâune constante cosmologique Î.
+1.3.2.1 ParamÃ¨tres du modÃ¨le ÎCDM
+Le modÃ¨le ÎCDM est dÃ©fini par trois paramÃ¨tres principaux, qui dÃ©crivent la composition de lâUnivers :
+â¢La matiÃ¨rebaryonique(atomes) et matiÃ¨re sombre (composante hypothÃ©tique), notÃ©eâ¦m
+â¢LâÃ©nergie sombre, responsable de lâaccÃ©lÃ©ration de lâexpansion, notÃ©eâ¦Î
+â¢La courbure de lâunivers, notÃ©eâ¦k
+6
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+1.3.2.2 RelativitÃ© gÃ©nÃ©rale et courbure
+LâidÃ©e que lâUnivers a une forme est apparue avec la thÃ©orie de la relativitÃ© gÃ©nÃ©rale de 1915. Cette forme est
+dÃ©finie par le paramÃ¨tre cosmologiqueâ¦k.
+Parmi toutes les formes envisageables, la relativitÃ© gÃ©nÃ©rale ne permet Ã  lâunivers de prendre que lâune des
+trois formes suivantes (voir Figure1.4) :
+â¢Une courbure spatiale positive caractÃ©rise un univers courbÃ© et fermÃ©, comme une sphÃ¨re (â¦k<0)
+â¢Une courbure spatiale nÃ©gative caractÃ©rise un univers hyperbolique, courbÃ© et ouvert (â¦k>0)
+â¢Une courbure spatiale nulle dÃ©crit un univers plat (â¦k= 0)
+1.3.2.3 LâÃ©quation de Friedmann
+Fig. 1.4 : Forme et Ã©volution de lâunivers en
+fonction de sa courbure (dans cette figure
+â¦ = 1ââ¦k)
+LâÃ©quation de Friedmann dÃ©crit comment lâexpansion de
+lâunivers Ã©volue. Elle provient de la relativitÃ© gÃ©nÃ©rale. Elle relie	directement le taux dâexpansion de lâUnivers Ã  sa densitÃ© dâÃ©ner-
+gie et sa courbure. Elle peut sâÃ©crire pour un instant quelconque
+tcorrespondant Ã  un facteur dâÃ©chellea
+(
+Ëa
+a
+)
+2
+=H
+2
+(a) =
+8ÏG
+3
+Ï(a)âkc
+2
+a
+â2
++
+Îc
+2
+3
+, (1.12)
+oÃ¹Ëa=
+da
+dt
+est la dÃ©rivÃ©e du facteur dâÃ©chelle par rapport au temps,
+Gest laconstante de gravitation universelleen N kg
+â2
+m
+2
+,Ïest la
+densitÃ©(masse volumique) de matiÃ¨re dans lâUnivers en kg m
+â3
+,
+kest leparamÃ¨tre de courbureen m
+â2
+,cest lavitesse de propa-
+gation de la lumiÃ¨re dans le videen m s
+â1
+etÎest laconstante
+cosmologiqueen m
+â2
+.
+On dÃ©finit les paramÃ¨tres cosmologiques sans dimension
+â¦m=
+8ÏG
+3H
+2
+0
+Ï,â¦k=â
+kc
+2
+H
+2
+0
+,â¦Î=
+Îc
+2
+3H
+2
+0
+. (1.13)
+On peut ainsi rÃ©Ã©crire lâÃ©quation de Friedmann (1.12) (voir
+Annexe, Section I.2 et I.3) :
+H
+2
+(a) =H
+2
+0
+(
+â¦ma
+â3
++ â¦ka
+â2
++ â¦Î
+)
+(1.14)
+Fig. 1.5 : Relation entre la distance et le redshift multipliÃ©	par la vitesse de la lumiÃ¨rec.
+Ãt=t0, soita= 1, on a
+1 = â¦m+ â¦k+ â¦Î. (1.15)
+Ainsi, ces paramÃ¨tres peuvent Ãªtre interprÃ©tÃ©s
+comme la fraction de densitÃ© dâÃ©nergie sous forme de	matiÃ¨re, courbure, et Ã©nergie sombre respectivement.
+Or, on a montrÃ© dans
+1.3.1quâon peut trou-
+ver le facteur dâÃ©chelle lors de lâÃ©mission dâun	rayon en mesurant son redshift Ã  lâinstant prÃ©sent	(
+1.11). Pour un choix des paramÃ¨tres cosmologiques
+(H0,,â¦m,â¦k,â¦Î), on peut donc trouver la valeur du
+paramÃ¨tre de Hubble lorsque le rayon a Ã©tÃ© Ã©mis (1.14).
+Finalement, cette valeur est reliÃ©e Ã  la distance entre	lâobservateur et lâobjet Ã©metteur Ã  lâinstant de lâÃ©mis-	sion (d(a)).
+Ainsi, grÃ¢ce Ã  cette suite de relations, pour
+un choix des paramÃ¨tres cosmologiques (H0,,â¦m,â¦k,â¦Î),
+on peut relier le redshift Ã  la distance. La Figure
+1.5illustre cette relation redshift-distance pour diffÃ©-
+rentes cosmologies.
+7
+
+Chapitre 2
+ApprocheExpÃ©rimentale
+Dans le chapitre 1, nous avons montrÃ© que, si lâon connaÃ®t la constante de Hubble et que lâon choisit des
+paramÃ¨tres cosmologiques, il est possible de tracer une courbe thÃ©orique reprÃ©sentant le redshift en fonction de la
+distance. Si lâon dispose de mesures rÃ©elles de redshift et de distance, on peut alors tester un modÃ¨le cosmologique
+en faisant varier ses paramÃ¨tres et en optimisant leur valeur.
+Dans ce chapitre 2, nous souhaitons illustrer concrÃ¨tement la dÃ©marche expÃ©rimentale qui a permis de dÃ©-
+terminer la vitesse dâÃ©loignement et la distance nous sÃ©parant dâastres lointains. Bien Ã©videmment, il nâest pas
+possible dâanalyser directement des sources lumineuses extragalactiques avec du matÃ©riel de lycÃ©e. Nous avons
+donc choisi dâÃ©tudier des phÃ©nomÃ¨nes analogues accessibles en classe : dâune part lâeffet Doppler appliquÃ© aux
+ondes sonores, et dâautre part la loi de dÃ©croissance de lâintensitÃ© avec la distance, dâabord pour le son, puis pour
+la lumiÃ¨re. Ces expÃ©riences constituent une transposition Ã  petite Ã©chelle des mÃ©thodes utilisÃ©es en astrophy-
+sique pour mesurer des vitesses radiales et des distances, et prÃ©parent la transition vers lâanalyse cosmologique
+du chapitre 3.
+2.1 Comment mesurer la vitesse dâune galaxie lointaine?
+Si lâon ne prend en compte que le redshift du Ã  lâeffet Doppler, on peut estimer la vitesse radiale dâun astre
+lointain par rapport Ã  la Terre. Au lycÃ©e, nous ne disposions pas du matÃ©riel nÃ©cessaire pour faire une analyse	spectrale assez prÃ©cise. Nous avons donc dÃ©cidÃ© dâillustrer le mÃªme principe en utilisant une onde sonore pour	dÃ©terminer la vitesse de course dâune de nos camarades. Sarah est donc devenue le temps dâune expÃ©rience une	galaxie proche de la Voie LactÃ©e.
+2.1.1 Protocole expÃ©rimental
+(a) SchÃ©ma de lâexpÃ©rience	(b) v (Regressi) et v (Audacity) en m s
+â1
+Fig. 2.1 : ModÃ©lisation de lâexpÃ©rience
+Comme on peut le voir sur la photographie de la Figure2.1b, la course est effectuÃ©e de la droite vers la gauche
+en suivant une ligne du gymnase. Au dÃ©but de lâexpÃ©rience, Sarah est Ã  lâarrÃªt. Mme Chun se positionne exac-	tement sur la ligne de course avec lâÃ©talon, une grande rÃ¨gle jaune, puis elle recule au fond du gymnase. Sarah	porte une enceinte Bluetooth connectÃ©e Ã  un tÃ©lÃ©phone portable qui Ã©met un son Ã  une frÃ©quence de 1000 Hz	(synthÃ©tiseur de lâapplication fizzik). Cette enceinte reprÃ©sente donc une Â« chandelle standardÂ» : Ã©toile cÃ©phÃ©Ã¯de	ou supernova de type Ia contenue dans la galaxie Sarah. Deux tÃ©lÃ©phones portables sont utilisÃ©s pour une ac-	quisition audio et vidÃ©o (voir schÃ©ma de la Figure
+2.1a). Un dÃ©compte permet un dÃ©clenchement simultanÃ© des
+8
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+deux acquisitions. Sarah commence alors sa course en essayant dâaccÃ©lÃ©rer continuellement. Elle garde le bras
+gauche tendu et immobile pour ne pas surimposer un mouvement Ã  la course vers lâavant. Lâenceinte Bluetooth
+est dirigÃ©e vers lâarriÃ¨re. Le tÃ©lÃ©phone portable utilisÃ© pour lâacquisition audio reprÃ©sente ici la Voie LactÃ©e.
+MÃ©thode 1 â Analyse vidÃ©o (Regressi)
+Lâanalyse vidÃ©o est effectuÃ©e dans le but dâobtenir une mesure de vitesse que lâon puisse comparer avec celle
+mesurÃ©e par effet Doppler. Afin de garantir la prÃ©cision des mesures lors du pointage vidÃ©o, nous avons veillÃ© Ã 
+ce que le plan du capteur du smartphone soit strictement parallÃ¨le au plan de la trajectoire de la course. Cette
+prÃ©caution permet dâÃ©viter les effets de perspective qui rendraient lâÃ©chelle de conversion (pixels vers mÃ¨tres)
+variable selon la position de lâobjet dans lâimage. AprÃ¨s avoir renseignÃ© lâÃ©talon (rÃ¨gle jaune dans le plan de la
+course) sur la premiÃ¨re image dans le logiciel Regressi, lâenceinte Bluetooth est pointÃ©e sur chaque image pour
+obtenir ses positions (x, y) en fonction du temps t. On peut ensuite calculer des taux de variation dans un tableur
+pour estimervxetvyselon les formules :
+vx,i=
+xi+1âxiâ1
+ti+1âtiâ1
+etvy,i=
+yi+1âyiâ1
+ti+1âtiâ1
+(2.1)
+et la vitessev(norme du vecteur vitesse) selon :
+vi=
+â
+v
+2
+x,i
++v
+2
+y,i
+(2.2)
+Remarque : Regressi peut aussi calculer automatiquement ces grandeurs dans son menu Â« traiter Â» et Â« vec-
+teurs Â». Dans tous les cas, nous constatons que la composantevyest proche de zÃ©ro et nÃ©gligeable par rapport Ã vx.
+MÃ©thode 2 â Analyse audio (Audacity)
+Lâanalyse audio doit nous permettre de dÃ©tecter le dÃ©calage Doppler. Lâenregistrement est ouvert dans le logiciel	Audacity. Comme il est long et fastidieux de dÃ©terminer le motif pour des plages successives, nous utilisons
+lâoutil Analyser > Tracer le spectre pour visualiser la frÃ©quence fondamentale dâune plage donnÃ©e du signal. Soit
+f0= 1002Hz la frÃ©quence Ã©mise au dÃ©but de lâenregistrement lorsque Sarah est Ã  lâarrÃªt. La frÃ©quence mesurÃ©e
+fmespour chaque plage sÃ©lectionnÃ©e permet de calculer la vitessevde lâenceinte Bluetooth selon la relation :
+v=cÂ·
+fmesâf0
+f0
+(2.3)
+avecc= 343m s
+â1
+la cÃ©lÃ©ritÃ© du son dans lâair Ã 20
+â¦
+C.
+2.1.2 Analyse des rÃ©sultats
+Fig. 2.2 : Vitesses dâÃ©loignement mesurÃ©es lors des courses
+En observant la Figure2.2, on constate un Ã©cart relatif important entre les valeurs de vitesse mesurÃ©es par
+effet Doppler et par pointage vidÃ©o. LâÃ©cart relatif minimum peut sâobserver au dÃ©but de la course nÂ°1 (22%), et	maximum Ã  la fin de la course nÂ°1 (74%). Il y a donc une incohÃ©rence des mesures effectuÃ©es entre elles.
+9
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+Les courbes bleues issues de lâanalyse vidÃ©o (Regressi) montrent une augmentation progressive de la vitesse :
+on part dâenviron1m s
+â1
+et on atteint un peu plus de5m s
+â1
+dans les deux cas. Ces rÃ©sultats sont trÃ¨s cohÃ©-
+rents avec un mouvement de course oÃ¹ Sarah accÃ©lÃ¨re progressivement sans vitesse initiale. Câest pour cela que
+nous avons choisi ces vitesses comme les valeurs de Â« rÃ©fÃ©renceÂ». Il existe cependant une erreur alÃ©atoire sur le
+pointage vidÃ©o.
+En revanche, les courbes rouges issues de lâanalyse audio (Audacity) prÃ©sentent une Ã©volution diffÃ©rente : la
+vitesse augmente jusquâÃ  environ2m s
+â1
+. Dans la course nÂ°1, la vitesse dÃ©croÃ®t mÃªme en fin de course : elle ne
+correspond pas au mouvement rÃ©el et traduit directement lâinstabilitÃ© de la frÃ©quence mesurÃ©e. Dans la course
+nÂ°2, la courbe reste cependant croissante jusquâau bout. Ce comportement diffÃ©rent des courbes rouges entre
+deux courses successives indique quâil existe une erreur alÃ©atoire. Cette erreur peut Ãªtre due Ã  un mouvement
+involontaire du bras de Sarah vers lâarriÃ¨re en fin de course nÂ°1. De lÃ©gÃ¨res variations en cours dâexpÃ©rience
+peuvent Ãªtre dues Ã  des mouvements alÃ©atoires de lâenceinte Bluetooth.
+Les vitesses mesurÃ©es par Audacity sont systÃ©matiquement plus faibles que celles mesurÃ©es par Regressi.
+Cette erreur relative grandit au cours de la course. Nous cherchons donc Ã  identifier les erreurs systÃ©matiques.
+De maniÃ¨re gÃ©nÃ©rale, on peut lister quelques sources dâerreur permettant dâexpliquer la faible fiabilitÃ© des mesures
+Doppler :
+â¢vitesse trop faible, provoquant un dÃ©calage de frÃ©quence trop petit pour Ãªtre mesurÃ© avec prÃ©cision.
+â¢qualitÃ© limitÃ©e du matÃ©riel audio (microphone de smartphone).
+Nous avons par ailleurs considÃ©rÃ© les sources dâerreur suivantes comme non significatives :
+â¢bruits des pas pendant la course interfÃ©rant avec le signal. La deuxiÃ¨me course sâest faite sans chaussure.	Les rÃ©sultats sont meilleurs, mais pas de maniÃ¨re significative.
+â¢Ã©chantillonnage insuffisant, dâoÃ¹ une frÃ©quence mal rÃ©solue. Cependant, nous avons Ã©chantillonÃ© toutes
+les 0,2 s. Cette durÃ©e contient environ 200 pÃ©riodes pour un son de 1000 Hz.
+Enfin, nous avons rÃ©ussi Ã  identifierdeux sources dâerreur significatives :
+â¢angle du microphone face Ã  la source sonore.Le micro nâÃ©tait pas bien alignÃ© avec lâenceinte Bluetooth. Il
+Ã©tait positionnÃ© plus bas dans les deux cas. Cet angle induit une erreur sur la frÃ©quence reÃ§ue, augmentant
+sa valeur et diminuant ainsi la vitesse mesurÃ©e. Cependant, plus Sarah sâÃ©loigne, et plus lâangle dÃ©croÃ®t.
+Lâerreur relative devrait donc diminuer au cours de la course, ce qui nâest pas le cas.
+â¢rÃ©flexion du son sur les murs du gymnase.Bien que lâenceinte Bluetooth ait Ã©tÃ© pointÃ©e vers le smartphone,
+lâÃ©cho sur les murs est captÃ© en mÃªme temps que le signal direct. Du fait de lâeffet Doppler, le mur en	face de Sarah reÃ§oit un signal avec une frÃ©quence perÃ§ue plus Ã©levÃ©e, puisque Sarah sâapproche de ce	dernier. Au cours de la course, la part de cet Ã©cho devient de plus en plus importante dans le signal captÃ©,	et vient littÃ©ralement interfÃ©rer et contrecarrer le dÃ©calage Doppler nÃ©gatif que nous souhaitions utiliser
+pour dÃ©terminer la vitesse dâÃ©loignement.
+2.1.3 Conclusion
+Ces expÃ©riences montrent que lâanalyse vidÃ©o semble plus fiable pour mesurer une vitesse dans un contexte
+scolaire : elle fournit des valeurs cohÃ©rentes. Lâanalyse audio utilisant lâeffet Doppler nÃ©cessite un matÃ©riel plus
+sensible pour Ãªtre prÃ©cise, ainsi quâune amÃ©lioration du protocole :
+â¢aligner le micro et lâenceinte Bluetooth.
+â¢Ã©liminer le facteur humain en fixant lâÃ©metteur et le rÃ©cepteur sur un objet mobile.
+â¢manipuler en extÃ©rieur loin de tout obstacle pour Ã©viter les rÃ©flexions du signal.
+â¢travailler sur des distances courtes pour Ã©viter les signaux parasites.
+En astrophysique, il faut pouvoir capter la lumiÃ¨re Ã  lâaide de tÃ©lescopes et de spectrographes extrÃªmement
+prÃ©cis. Afin de limiter les lumiÃ¨res parasites et les perturbations atmosphÃ©riques, on construit des tÃ©lescopes en	haut des montagnes, dans le dÃ©sert, loin des villes, ou bien carrÃ©ment dans lâespace en orbite (le fameux tÃ©lescope	Hubble, et bien sÃ»r James Webb plus rÃ©cemment)! Heureusement, il nây a pas de mur au fond de lâUnivers qui
+rÃ©flÃ©chit la lumiÃ¨re et perturbe les signaux reÃ§us. La mesure du redshift cosmologique se fait avec un trÃ¨s bon
+niveau de prÃ©cision, bien supÃ©rieur Ã  ce que nous avons pu pratiquer avec le son au lycÃ©e.
+Notre dÃ©marche nous a permis de comprendre le principe de la mesure ainsi que les impacts importants des
+erreurs systÃ©matiques sur les rÃ©sultats. Hubble avait lui aussi commis une erreur sur la valeur deH0en 1929
+(H0â500km s
+â1
+Mpc
+â1
+). Câest un Ã©cart relatif de 614% par rapport Ã  la valeur actuelle, mais son travail a
+ouvert la porte vers la cosmologie moderne.
+Enfin, pour tester un modÃ¨le cosmologique, il ne suffit pas de mesurer le redshift prÃ©cisÃ©ment. Il faut aussi
+pouvoir dÃ©terminer la distance nous sÃ©parant dâune galaxie lointaine.
+10
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+2.2 Comment mesurer la distance nous sÃ©parant dâune galaxie lointaine?
+Souhaitant continuer Ã  manipuler des ondes sonores, nous avons dâabord illustrer comment lâattÃ©nuation
+gÃ©omÃ©trique du niveau sonore permet de dÃ©terminer la distance qui nous sÃ©pare dâune source sonore. Ces ex-
+pÃ©riences ne sâappliquent pas donc directement aux astres, puisque le son ne se propage pas dans le vide, mais
+illustrent une propriÃ©tÃ© que nous pourrons utiliser avec les ondes Ã©lectromagnÃ©tiques (la lumiÃ¨re Ã©mise par des
+astres). En effet, comme pour lâintensitÃ© sonore en W m
+â2
+, lâintensitÃ© lumineuse (ou Ã©clairement) en W m
+â2
+obÃ©it
+Ã  une loi de dÃ©croissance en 1/rÂ². Le niveau sonore obÃ©Ã¯t quant Ã  lui Ã  une loi de dÃ©croissance logarithmique, tout
+comme la luminositÃ© apparente (ou la magnitude) dâun astre. Cette analogie entre ondes sonores et ondes Ã©lec-
+tromagnÃ©tiques nous permet de comprendre, avec du matÃ©riel scolaire, les principes utilisÃ©s en astrophysique
+pour mesurer les distances.
+2.2.1 ModÃ©lisation acoustique
+Fig. 2.3 : SchÃ©ma modÃ©lisant la propagation	isotrope du son dans un milieu homogÃ¨ne
+Soit une source sonore dâune puissancePsonorecomme modÃ©-
+lisÃ©e sur la Figure2.3. Le son se propage dans toutes les directions
+de maniÃ¨re concentrique. DâaprÃ¨s la dÃ©finition du niveau sonore
+L(en dÃ©cibels, dB), on a la relation suivante, oÃ¹Iest lâintensitÃ©
+sonore etI0lâintensitÃ© de rÃ©fÃ©rence (10
+â12
+WÂ·m
+â2
+) :
+L= 10log
+(
+I
+I0
+)
+.	(2.4)
+LâintensitÃ© sonoreIdiminuant avec le carrÃ© de la distance
+(Iâ1/d
+2
+), on peut comparer le niveau sonoreLmesurÃ© Ã  une
+distancedavec un niveau de rÃ©fÃ©renceLrefmesurÃ© Ã  une distance
+dref. La diffÃ©rence de niveau sâÃ©crit :
+LâLref= 10log
+(
+I
+Iref
+)
+= 10log
+(
+(
+dref
+d
+)
+2
+)
+. (2.5)
+AprÃ¨s quelques lignes de calcul littÃ©ral, on peut exprimer la
+distancedainsi :
+d=drefÂ·10
+(
+L
+ref
+âL
+20
+)
+. (2.6)
+En ayant accÃ¨s Ã  un point de rÃ©fÃ©rence, et en mesurant le niveau sonore (ou la magnitude lumineuse dâun
+astre), on peut donc dÃ©terminer la distance nous sÃ©parant de la source de lâonde. Le rÃ´le de cette rÃ©fÃ©rence essen-
+tielle est jouÃ©e par les chandelles standard en astronomie.
+2.2.1.1 Protocole expÃ©rimental
+Comme indiquÃ© dans le Tableau2.1, nous avons rÃ©alisÃ© plusieurs sÃ©ries de mesures avec diffÃ©rents appareils
+pour comparer les rÃ©sultats obtenus.
+SÃ©rie Source sonore	RÃ©cepteur Lieu Distances mesurÃ©es
+1 iPad SynthÃ©tiseur (30%,f= 1kHz) Smart Sensor Salle de classe1 m â 3 m
+2 iPad SynthÃ©tiseur (30%,f= 1kHz) Smart Sensor Salle de classe 1.5 cm â 25.5 cm
+3 Xiaomi (100%,f= 1kHz) iPhone 14 (appli fizziq) Cantine 0.1 m â 2.5 m
+4 Samsung (100%,f= 1kHz) Xiaomi (appli fizziq)Cantine 0.1 m â 4 m
+Tab. 2.1 : Configurations des quatre sÃ©ries de mesures acoustiques et distances associÃ©es.
+Le son est gÃ©nÃ©rÃ© grÃ¢ce au synthÃ©tiseur de lâapplication fizzik. Les distances entre la source et le capteur ont
+Ã©tÃ© mesurÃ©es Ã  lâaide dâun mÃ¨tre, Ã  lâintÃ©rieur. La source et le capteur sont alignÃ©s et se font face. Pour chaque	distance considÃ©rÃ©e, le niveau sonore est mesurÃ©. La cantine a des panneaux absorbants accrochÃ©s au mur qui	limitent les rÃ©flexions sonores.
+11
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+2.2.1.2 Analyse des rÃ©sultats
+Pour confirmer que lâintensitÃ© sonore suit bien une loi en1/d
+2
+, nous pouvons transformer la relation entre
+le niveau sonore et la distance en une Ã©quation linÃ©aire de la formey=aÂ·x.
+En partant de lâexpression de la diffÃ©rence de niveau sonore :
+LâLref= 10log
+(
+(
+dref
+d
+)
+2
+)
+On peut diviser par 10 et utiliser la propriÃ©tÃ© des logarithmes log(a
+n
+) =nlog(a)pour extraire lâexposant de
+la distance :
+LâLref
+10
+= 2Â·log
+(
+dref
+d
+)
+En traÃ§ant le terme
+LâLref
+10
+en fonction de log
+(
+dref
+d
+)
+, on obtient une droite dont le coefficient directeur (la
+pente) correspond physiquement Ã  lâexposant de la distance. Si le modÃ¨le de propagation sphÃ©rique est correct,
+la pente obtenue expÃ©rimentalement doit Ãªtre Ã©gale Ã 2, validant ainsi la dÃ©croissance de lâintensitÃ© avec le carrÃ©
+de la distance.
+La sÃ©rie 1 (Figure2.4a) est celle qui prÃ©sente la meilleure concordance avec le modÃ¨le thÃ©orique, avec le
+coefficient de corrÃ©lation le plus Ã©levÃ© (RÂ² = 0,983), et la pente (n = 1,47) la plus proche de 2.
+La sÃ©rie 2 (Figure2.4b), avec seulement 3 points, prÃ©sente le coefficient de corrÃ©lation le plus faible (RÂ² â 0,917)
+et une pente (n = 1,47) Ã©gale Ã  celle trouvÃ©e dans la sÃ©rie 1.
+Les sÃ©ries 3 (Figure2.4c) et 4 (Figure2.4d) prÃ©sentent un accord intermÃ©diaire avec des coefficients de corrÃ©-
+lation de 0,947 et 0,979, et des pentes lÃ©gÃ¨rement infÃ©rieures de 1,36 et 1,43.
+(a) SÃ©rie 1	(b) SÃ©rie 2
+(c) SÃ©rie 3	(d) SÃ©rie 4
+Fig. 2.4 : Mesures de niveau sonore et Ã©loignement de la source - AttÃ©nuation gÃ©omÃ©trique
+Sources possibles dâerreurs :
+â¢la prÃ©sence dâun bruit extÃ©rieur variable au cours des mesures,
+â¢la rÃ©flexion du son sur les murs, le sol et les objets environnants,
+â¢la directivitÃ© imparfaite des haut-parleurs utilisÃ©s comme source sonore,
+12
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+â¢la sensibilitÃ© et la calibration des microphones employÃ©s,
+â¢une incertitude sur le positionnement exact du capteur lors des mesures de distance.
+Les sÃ©ries 3 et 4 ont Ã©tÃ© rÃ©alisÃ©es dans la cantine, un espace Ã©quipÃ© de panneaux acoustiques absorbants censÃ©s
+limiter les rÃ©flexions. Toutefois, les rÃ©sultats obtenus montrent que les Ã©carts par rapport au modÃ¨le thÃ©orique ne
+sont pas significativement rÃ©duits par rapport aux sÃ©ries 1 et 2, ce qui tend Ã  relativiser lâinfluence de la rÃ©flexion
+sur les murs dans notre dispositif. La rÃ©flexion sur la table reste un problÃ¨me qui pourrait Ãªtre rÃ©solu en surÃ©levant
+la source et le capteur.
+La sÃ©rie la plus fidÃ¨le au modÃ¨le thÃ©orique (sÃ©rie 1) correspond Ã  une distance de rÃ©fÃ©rence plus Ã©levÃ©e. Bien
+que lâincertitude absolue sur la mesure de distance soit comparable pour toutes les sÃ©ries, lâincertitude relative
+(âd/d) diminue lorsque la distance de rÃ©fÃ©rence augmente. Le choix dâune distance initiale plus grande semble
+donc amÃ©liorer la prÃ©cision globale des rÃ©sultats expÃ©rimentaux. Plus on sâÃ©loigne, plus la source devient âponc-
+tuelleâ.
+2.2.1.3 Conclusion
+MÃªme dans le meilleur des cas (sÃ©rie 1), il existe un Ã©cart relatif de 26,5% sur la pente pour un modÃ¨le de
+propagation sphÃ©rique en 1/rÂ². Au delÃ  des erreurs alÃ©atoires, il existe une erreur systÃ©matique observÃ©e sur	toutes les sÃ©ries, avec des pentes mesurÃ©es autour de 1,4 au lieu de 2. Les rÃ©flexions sonores sur les surfaces
+environnantes ainsi que les âpetitesâ distances utilisÃ©es nous semblent Ãªtre les principales causes de cette non-
+concordance avec un modÃ¨le de propagation sphÃ©rique en 1/rÂ². Cependant, nous avons tout de mÃªme dÃ©montrÃ©
+une relation entre distance et niveau sonore, valable dans nos conditions expÃ©rimentales.
+2.2.2 ModÃ©lisation lumineuse
+Du fait des erreurs expÃ©rimentales observÃ©es lors de notre modÃ©lisation acoustique, nous avons dÃ©cidÃ© de
+rÃ©aliser une derniÃ¨re sÃ©rie dâexpÃ©riences portant cette fois sur la propagation de la lumiÃ¨re. Lâobjectif Ã©tait de
+rendre lâenvironnement moins sensible aux perturbations telles que bruit de fond et rÃ©flexions. Il semblait plus
+facile dâobtenir le noir dans une salle plutÃ´t que le silence total. Par ailleurs, du fait de lâintervalle de longueurs
+dâonde de la lumiÃ¨re visible trÃ¨s infÃ©rieur aux longueurs des objets environnants, la diffraction du signal et les
+phÃ©nomÃ¨nes dâÃ©cho sont limitÃ©s. Le test du capteur (photorÃ©sistance) montre une insensibilitÃ© aux perturbations
+dues Ã  la diffusion par les sources secondaires dans la salle.
+Nous souhaitons vÃ©rifier expÃ©rimentalement la loi de dÃ©croissance en1/r
+2
+de lâintensitÃ© lumineuse en W m
+â2
+(ou Ã©clairement en lux). Cette Ã©tape marque la transition vers lâÃ©tude cosmologique proprement dite, oÃ¹ la lu-
+minositÃ© apparente des astres joue un rÃ´le fondamental dans lâestimation des distances. Au laboratoire, notre
+chandelle standard est donc modÃ©lisÃ©e par une lampe de bureau.
+Le but de cette expÃ©rience Ã©tait dâÃ©tudier comment varie lâÃ©clairement (en lux) mesurÃ© par un capteur lorsque
+lâon sâÃ©loigne dâune source lumineuse. La thÃ©orie prÃ©dit que lâÃ©clairement dâune source ponctuelle diminue avec
+le carrÃ© de la distance. Si lâon noteE0lâÃ©clairement mesurÃ© Ã  une distance de rÃ©fÃ©rencer0, lâÃ©clairementE(r)Ã 
+une distancerest donnÃ© par :
+E(r) =E0
+(
+r0
+r
+)
+2
+.	(2.7)
+Si nous souhaitons exprimer la distanceren fonction de lâÃ©clairement mesurÃ©, il faut isoler le terme de
+distance dans lâÃ©quation (2.7). AprÃ¨s quelques Ã©tapes de calcul littÃ©ral, nous pouvons obtenir :
+r=r0
+â
+E0
+E(r)
+.	(2.8)
+2.2.2.1 Protocole expÃ©rimental
+â¢Source lumineuse : lampe Ã  lumiÃ¨re blanche
+â¢RÃ©cepteurs : deux luxmÃ¨tres Jeulin (A et B)
+â¢Outils : mÃ¨tre ruban
+13
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+Les mesures ont Ã©tÃ© rÃ©alisÃ©es Ã  lâintÃ©rieur, dans une salle lÃ©gÃ¨rement Ã©clairÃ©e. Les distances entre la source et le
+rÃ©cepteur ont Ã©tÃ© mesurÃ©es Ã  lâaide dâun mÃ¨tre. Nous calculons pour chaque distance r lâÃ©clairement thÃ©orique
+Ã  partir dâune mesure de la rÃ©fÃ©renceE0Ã  la distancer0selon lâÃ©quation
+2.7. Lâutilisation de deux luxmÃ¨tres en
+simultanÃ© permet de rÃ©duire les erreurs alÃ©atoires et dâobtenir une valeur moyenne plus fiable.
+1.Nous avons placÃ© la lampe de bureau sur une table.
+2.Les deux luxmÃ¨tres ont Ã©tÃ© positionnÃ©s exactement au mÃªme endroit pour chaque distance.
+3.Nous avons mesurÃ© lâÃ©clairement Ã  diffÃ©rentes distances comprises entre 0,25 m et 0,45 m.
+2.2.2.2 Analyse des rÃ©sultats
+Fig. 2.5 : Niveau lumineux thÃ©oriqueEthÃ©oriqueet expÃ©rimentalEexpÃ©rimentalen fonction de la distance
+Les mesures dâÃ©clairement prÃ©sentÃ©es sur la Figure2.5sont traitÃ©es de maniÃ¨re similaire Ã  ce qui a Ã©tÃ© fait
+pour la modÃ©lisation acoustique. La reprÃ©sentation Ã  lâaide de logarithmes met en Ã©vidence une relation quasi	linÃ©aire, avec une bonne corrÃ©lation (RÂ² â 0,998). La pente mesurÃ©e est Ã©gale Ã  n = -1,78, Ã  comparer Ã  -2 pour une	propagation parfaitement sphÃ©rique. LâÃ©cart relatif est de 11%, ce qui est acceptable compte tenu du matÃ©riel et	des conditions de mesure. Sources possibles dâerreurs :
+â¢la prÃ©sence de lumiÃ¨re parasite dans la salle,
+â¢les rÃ©flexions de la lumiÃ¨re sur les murs, la table et les objets environnants,
+â¢la lumiÃ¨re Ã©mise par lâÃ©cran de lâordinateur utilisÃ© pour relever les donnÃ©es,
+â¢le caractÃ¨re non ponctuel de la source lumineuse, liÃ© Ã  la gÃ©omÃ©trie rÃ©elle de la lampe.
+MalgrÃ© ces Ã©carts, les rÃ©sultats confirment que lâÃ©clairement dÃ©croÃ®t bien proportionnellement au carrÃ© de la	distance Ã  la source lumineuse.
+2.2.2.3 Conclusion
+Cette derniÃ¨re expÃ©rience confirme que lâÃ©clairement lumineux diminue globalement en1/r
+2
+dans un milieu
+homogÃ¨ne. Ces rÃ©sultats permettent donc de confirmer une loi qui relie la distance nous sÃ©parant dâune galaxie	Ã©loignÃ©e Ã  lâÃ©clairement reÃ§u par une chandelle standard faisant partie de cette galaxie. Dans le chapitre 3, nous	dÃ©taillerons comment la magnitude (lâÃ©quivalent du niveau sonore pour la lumiÃ¨re) est utilisÃ©e plutÃ´t que lâÃ©clai-	rement pour les supernovae de type Ia. Par ailleurs, des erreurs systÃ©matiques telles que celles que nous avons
+rencontrÃ© Ã  notre Ã©chelle au lycÃ©e peuvent aussi Ãªtre prÃ©sentes lors de lâobservation de la lumiÃ¨re des astres avec
+des tÃ©lescopes. En plus des chandelles standard, les cosmologistes utilisent aussi des rÃ¨gles standard afin dâeffec-
+tuer des mesures de distance, ce qui permet une minimisation statistique des erreurs. Comme mentionnÃ© Ã  la fin
+de la partie 2.1, les mesures de redshift seront quant Ã  elles plus prÃ©cises que celles des distances lointaines. Com-
+ment les mesures faites Ã  lâaide des tÃ©lescopes DESI-DR2 vont-elles permettre dâestimer la proportion dâÃ©nergie
+sombre dans lâUnivers?
+14
+
+Chapitre 3
+AnalyseStatistique
+3.1 DÃ©marche
+Pour un choix des paramÃ¨tres cosmologiques (H0,â¦m,â¦k,â¦Î) dans un modÃ¨le thÃ©orique (1), on peut relier
+le redshift Ã  la distance. Nous cherchons Ã  comparer la relation redshift-distance de notre modÃ¨le thÃ©orique
+avec celle obtenue Ã  partir de donnÃ©es observÃ©es. En minimisant la diffÃ©rence entre ces deux relations, on peut
+estimer les valeurs des paramÃ¨tres cosmologiques de notre Univers. En cosmologie, il y a plusieurs dÃ©finitions de
+distances. Dans la partie
+3.2, on va dÃ©finir ces distances.
+3.2 DonnÃ©es
+3.2.1 SupernovÃ¦ de type Ia
+Une supernova de type Ia se forme dans un systÃ¨me binaire contenant une naine blanche et une Ã©toile com-
+pagne, souvent une gÃ©ante rouge. Au cours du temps, la naine blanche commence Ã  accrÃ©ter de la matiÃ¨re pro-	venant de la gÃ©ante rouge grÃ¢ce Ã  lâinfluence de la gravitÃ© et cette accrÃ©tion fait augmenter progressivement la	masse de la naine blanche. Lorsque celle-ci atteint la masse de Chandrasekhar (environ 1,4 masses solaires, soit	environ2,863Ã10
+30
+kg), la pression et la tempÃ©rature en son centre deviennent si Ã©levÃ©es que la fusion du car-
+bone et de lâoxygÃ¨ne sâamorce de faÃ§on explosive. Cette rÃ©action libÃ¨re une Ã©norme quantitÃ© dâÃ©nergie et dÃ©truit
+entiÃ¨rement la naine blanche. Lâexplosion ainsi produite est appelÃ©eSupernova de type Ia. Il est possible dâutiliser
+ce phÃ©nomÃ¨ne lumineux dans lâÃ©tude de lâexpansion de lâUnivers. En effet, au moment oÃ¹ elles se produisent,
+elles ont toutes la mÃªme luminositÃ©. Cela en fait des chandelles standards. Il existe une grandeurmappellÃ©e
+magnitude apparente reliÃ© Ã  la luminositÃ© obeservÃ©e (L) dâune Ã©toile tel que :
+m=â2,5log
+L
+Lâ
++ 4,83	(3.1)
+avecLâ, la luminositÃ© de notre Soleil.
+Or, il y a une relation entre la distanced(en parsecs) et la diffÃ©rence entre la magnitude apparentemet
+absolueM, appellÃ©e le module de distance (Âµ) :
+Âµ=mâM=â5 + 5log
+10
+(d)	(3.2)
+Dans le cas des SupernovÃ¦ de type Ia, on suppose la valeur connueM=â19,3. Câest grÃ¢ce Ã  la connaissance
+de cette valeur quâon peut utiliser les supernovÃ¦ pour calculer les distances dans lâUnivers.	Nous utilisons ici la compilation Pantheon+ [
+10].
+PrÃ©paration des donnÃ©es :
+Pour prÃ©parer les donnÃ©es du relevÃ© PanthÃ©on+, nous avons chargÃ©es et filtrÃ©es les donnÃ©es. Nous nous intÃ©-	ressons aux supernovÃ¦ ditescosmologiques(z >0.01), et retirons donc de lâÃ©chantillon les supernovÃ¦ avec
+zâ¤0.01, utilisÃ©es pour lâÃ©talonnage deM. Les colonnes pertinentes extraites sont le redshift (zHD), le module
+de distance observÃ© (Âµ) et son incertitude (ÏÂµ).
+3.2.2 Ondes acoustiques baryoniques (BAO)
+3.2.2.1 DÃ©finition
+Au moment de lâÃ©mission du fond diffus cosmologique (CMB), des anisotropies de densitÃ© sont observÃ©es,
+issues des oscillations acoustiques des baryons (BAO) dans le plasma primordial. Ces oscillations ont laissÃ© une
+15
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+empreinte sous la forme dâune distance caractÃ©ristique surreprÃ©sentÃ©e, notÃ©erd. Avec lâexpansion de lâUnivers,
+cette distance a Ã©tÃ© dilatÃ©e. Les zones lÃ©gÃ¨rement plus denses ont attirÃ© la matiÃ¨re environnante, conduisant Ã 
+la formation progressive des structures galactiques par accrÃ©tion. Aujourdâhui, cette distance caractÃ©ristique est
+encore observable dans la distribution des galaxies, permettant dâen faire une mesure de rÃ©fÃ©rence pour dÃ©termi-
+ner le taux dâexpansion de lâUnivers Ã  diffÃ©rentes Ã©poques.
+3.2.2.2 Principe de mesure
+Le rayon acoustiquerd, invariant, sert dâÃ©talon de distance. Mesurer la taille des BAO signifie observer une
+distance radialeDM/rdet une distance transversaleDH/rd. En les comparant Ã  la valeur Ã©talonrd, on peut
+Ã©valuer lâÃ©volution des distances dans lâUnivers. Une troisiÃ¨me distance est observable, calculÃ©e a partir des deux	prÃ©cÃ©dentes, câest la distance volumique dÃ©finit par la formule :
+DV(z) =
+[
+D
+2
+M(z)Â·
+cz
+H(z)
+]
+1/3
+(3.3)
+PrÃ©paration des donnÃ©es :
+pour preparer les donnÃ©es BAO (Baryon Acoustic Oscillations) nous les avons importÃ©es depuis un fichier CSV	issu du projet DESI DR2 [
+11]. Ce fichier CSV fournit trois types de distances (DM/rd,DH/rd,DV/rd), mesurÃ©es
+a diffÃ©rents redshift. Chacune de ses mesures sont accompagnÃ©es de leurs incertitudes expÃ©rimentales.
+3.3 MÃ©thode dâanalyse des donnÃ©es
+Lâanalyse des donnÃ©es de supernovÃ¦ suit plusieurs Ã©tapes :
+1.PrÃ©paration des donnÃ©es :	On rÃ©cupÃ¨re les donnÃ©es modernes observÃ©es par les projets PanthÃ©on+ et DESI-DR2.
+2.Visualisation prÃ©liminaire :
+La figure3.1prÃ©sente le diagramme de Hubble observationnel : le module de distanceÂµen fonction du
+redshiftzpour les supernovÃ¦. Dans le cas des BAO (voir DÃ©finition3.2.2.1), les trois distances caractÃ©-
+ristiquesDM/rd,DH/rd, etDV/rdsont reprÃ©sentÃ©es avec leurs barres dâerreur en fonction du redshift.
+La superposition du modÃ¨le thÃ©oriqueÎCDM avec des paramÃ¨tres initiaux permet dâÃ©valuer visuellement
+lâaccord gÃ©nÃ©ral.
+3.Analyse des rÃ©sidus :
+On dÃ©finit les rÃ©sidus (dobs,iâdth,i), oudobsest lâobservable mesurÃ©e etdthla prÃ©diction thÃ©orique du
+modÃ¨le cosmologique. Chez les supernovÃ¦, lâobservable est le module de distanceÂµet pour les BAO, les
+observables sont les distances observÃ©es (DM/rd,DV/rd,DH/rd). Une distribution alÃ©atoire autour de zÃ©ro
+indique un bon ajustement.
+4.Fonction chi carrÃ© :	Le test duÏ
+2
+est une mÃ©thode statistique permettant de quantifier lâaccord entre un modÃ¨le thÃ©orique et
+des donnÃ©es observationnelles. Pour un ensemble deNmesures, leÏ
+2
+est dÃ©fini comme la somme pondÃ©rÃ©e
+des Ã©carts quadratiques entre observations et prÃ©dictions thÃ©oriques. Plus leÏ
+2
+est petit, plus lâajustement
+entre le modÃ¨le et les donnÃ©es est bon. Pour les paramÃ¨tres cosmologiques, leÏ
+2
+total sâÃ©crit :
+Ï
+2
+(H0,â¦m,â¦Î) =
+N
+â
+i=1
+[dobs,iâdth,i(H0,â¦m,â¦Î)]
+2
+Ï
+2
+i
+,	(3.4)
+oÃ¹ :
+â¢dobs,i: observable mesurÃ©e (module de distanceÂµ)
+â¢dth,i: prÃ©diction thÃ©orique du modÃ¨le cosmologique
+â¢Ïi: incertitude sur la mesurei
+â¢H0: la constante dâHubble mesurÃ©e Ã z= 0
+â¢â¦m,â¦Î: paramÃ¨tres de densitÃ© de matiÃ¨re et dâÃ©nergie sombre
+16
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+Fig. 3.1 : Relation distance-redshift pour plusieurs modÃ¨les dÃ©crits par (â¦m,â¦Î,â¦k) etH0= 70km s
+â1
+Mpc
+â1
+.
+Les barres dâerreurs de BAOs sont quasi-invisibles. En noir : la courbe des donnÃ©es observÃ©es
+Il est possible de combiner des donnÃ©es indÃ©pendante en additionnant lesÏ
+2
+pour trouver leÏ
+2
+total. La
+combinaison des deux sondes amÃ©liore significativement les contraintes cosmologiques. LeÏ
+2
+total est :
+Ï
+2
+total=Ï
+2
+SN+Ï
+2
+BAO	(3.5)
+Les paramÃ¨tres optimaux sont obtenus par minimisation duÏ
+2
+:
+(H
+best
+0,â¦
+best	m,â¦
+best	Î) =arg min
+H0,â¦m,â¦Î
+Ï
+2
+(H0,â¦m,â¦Î)	(3.6)
+La fonction arg minÏ
+2
+(H0,â¦m,â¦Î)permet de trouver le triplet de paramÃ¨tre cosmologique qui corres-
+pond Ã  la valeur minimale duÏ
+2
+.
+5.Minimisation numÃ©rique :
+Lâalgorithme dâoptimisationscipy.optimize.minimize correspond a cette fonction arg min. On
+lâa utilisÃ© avec une estimation initiale(H0= 70,â¦m= 0.3,â¦Î= 0.7). La mÃ©thode explore lâespace des
+paramÃ¨tres sous contraintes (0< H0<100,0<â¦m<1,0<â¦Î<1) pour identifier le minimum global
+duÏ
+2
+.
+3.4 RÃ©sultats
+La minimisation duÏ
+2
+sur les donnÃ©es PanthÃ©on+, DESI-DR2 et la somme des deux a conduit aux paramÃ¨tres
+optimaux recensÃ© dans la table3.1:
+Ces valeurs sont cohÃ©rentes avec un univers en expansion accÃ©lÃ©rÃ©e dominÃ© par lâÃ©nergie sombre. Le para-
+mÃ¨tre de courbure dÃ©duitâ¦k= 1ââ¦mââ¦Îâ0.166suggÃ¨re une lÃ©gÃ¨re dÃ©viation de la platitude, bien que
+compatible avec les incertitudes observationnelles.
+Le diagramme de Hubble rÃ©sultant montre un excellent accord entre observations et modÃ¨le optimisÃ©, avec des
+rÃ©sidus distribuÃ©s alÃ©atoirement autour de zÃ©ro, confirmant la validitÃ© du modÃ¨leÎCDM pour dÃ©crire lâexpansion
+cosmique jusquâÃ zâ¼2.3.
+Cette approche multi-sondes permet de :
+17
+
+Olympiades Nationales de Physique 2025â2026	LycÃ©e FranÃ§ais de SÃ©oul
+â¢RÃ©duire les dÃ©gÃ©nÃ©rescences entre paramÃ¨tres
+â¢Obtenir des contours de confiance plus restreints
+â¢Confirmer la cohÃ©rence du modÃ¨leÎCDM
+Lâanalyse combinÃ©e converge typiquement versâ¦mâ0.30etâ¦Îâ0.70, avec unÏ
+2
+rÃ©duit
+â¼1, supportant un
+univers plat en expansion accÃ©lÃ©rÃ©e dominÃ© par lâÃ©nergie sombre.
+Tab. 3.1 : RÃ©sultats de la minimisation duÏ
+2
+pour les trois configurations : Supernovae, BAO, et Supernovae+BAO.
+Ï
+2
+min
+â¦m H0â¦ÎÏ
+2
+rÃ©duit
+SN 680.81 0.30 72.89 0.59 0.61
+BAO 16.59 0.30 68.93 0.70 0.43
+SN+BAO 851.55 0.24 73.36 0.75 0.53
+Pour quantifier la qualite de la regression, on definit leÏ
+2	rÃ©duit
+:
+Ï
+2
+rÃ©duit=
+Ï
+2
+min
+nâp
+,	(3.7)
+oÃ¹nest le nombre de donnÃ©es, etple nombre de paramÃ¨tres du modÃ¨le. Pour le modÃ¨leÎCDM,p= 3.
+La table3.1montre lesÏ
+2
+min
+et les paramÃ¨tres cosmologique optimaux pour les supernovÃ¦, BAO et la somme
+des deux. On peut observer que notre univers contient plus de 3/4 dâÃ©nergie noir ce qui illustre bien que notre
+univers est en expansion. On a moins de 1% de courbure, en accord avec un univers plat. on sâattend a ce que le
+degrÃ© de libertÃ© duÏ
+2
+qui correspond auÏ
+2
+rÃ©duit
+soit de lâordre de 1. Ce nâest pas le cas ici. Pour les supernovÃ¦,
+cette sous-estimation est due au fait que nous nâavons pris en compte que les erreurs statistiques (Ï
+2
+m) et nÃ©gligÃ©
+les erreurs systÃ©matiques. De plus on suppose lerdcomme une valeur connue et invariable alors quâelle devrait
+varier. Pour les BAO cela peut Ãªtre du au faible nombre de donÃ©es.
+18
+
+Conclusion
+AprÃ¨s avoir posÃ© les bases historiques et thÃ©oriques de notre travail dans le chapitre 1, et considÃ©rÃ© les
+contraintes expÃ©rimentales des lois et mesures nÃ©cessaires dans le chapitre 2, nous avons rÃ©cupÃ©rÃ© les donnÃ©es
+des tÃ©lescopes DESI-DR2 afin dâestimer la proportion dâÃ©nergie sombre composant lâUnivers dans le chapitre 3.
+Pour ce faire, nous avons crÃ©Ã© des univers thÃ©oriques avec Python grÃ¢ce a la bibliothÃ¨queastropy. Ã partir de
+ces univers, nous avons tracÃ© des graphiques mettant en relation le redshiftzet la distance que nous comparons
+aux donnÃ©es observÃ©es dans les projets PanthÃ©on+ et DESI DR2. Enfin, Ã  travers un processus de minimisation
+duÏ
+2
+, indicateur de la compatibilitÃ© du modÃ¨le thÃ©orique avec les donnÃ©es, nous avons estimÃ© les paramÃ¨tres
+cosmologiques de notre Univers dans le cadre du modÃ¨leÎCDM.
+Cependant, il ne faut pas oublier les limites de notre dÃ©marche, consÃ©quences de la simplification de la dÃ©-
+marche habituelle, afin que nous puissions aborder le problÃ¨me dÃ¨s le lycÃ©e :
+â¢Nous avons supposÃ© les valeurs deMet derdconnues. En rÃ©alitÃ© leur estimation est plus complexe.
+â¢Nous nâavons raisonnÃ© que sur la base des erreurs statistiques et nous avons nÃ©gliÃ© les erreurs systÃ©ma-	tiques.
+â¢Nous nâavons pas estimÃ© lâincertitude sur les rÃ©sultats avec la mÃ©thode de Monte-Carlo par chaÃ®nes de
+Markov.
+Finalement, bien que notre dÃ©marche prÃ©sente certaines limites, elle nous donne une estimation assez juste
+de la proportion dâÃ©nergie sombre dans lâUnivers. Ã titre de comparaison, les mesures de S. Perlmutter [9] abou-
+tissent Ã  :
+â¦m= 0.28etâ¦Î= 0.73
+tandis que nos rÃ©sultats, aprÃ¨s combinaison des SNIa et des BAO, indiquent :
+â¦m= 0.24etâ¦Î= 0.75.
+En Mars 2025, la publication des donnÃ©es des 3 premiÃ¨res annÃ©es dâobservations du Dark Energy Spectro-
+scopic Instrument (DESI) et leur analyse ont pour la premiÃ¨re fois rÃ©vÃ©ler une prÃ©fÃ©rence significative pour une
+Ã©nergie sombre ditedynamique, dont la densitÃ© Ã©voluerait avec le redshift au lieu de rester constante, comme le
+prÃ©voyait jusquâici le modÃ¨leÎCDM, ce qui impliquerait une remise en cause du modÃ¨le standard. [11]
+Note : La bibliographie se trouve en premiÃ¨re page des annexes.
+19

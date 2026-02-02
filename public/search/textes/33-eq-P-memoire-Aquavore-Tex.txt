@@ -1,0 +1,1637 @@
+Aquavore-tex 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+NGUYEN Yonathan 
+FAUVET Nathan 
+LOPEZ TimÃ©o 
+ 
+Olympiades de Physique 2025-2026 
+LycÃ©e Edouard Branly 
+Lyon 69005 
+Avec lâaide de 
+M.BRUGERE 
+Mme.CAMBOURIEUX  
+ 
+ 
+ 
+Comment vider une bouteille le plus 
+efficacement possible ? 
+ 
+ 
+ 
+ 
+1
+
+Sommaireâââââââââââââ
+ 
+I-â Introduction (p.3-5) 
+1.âProblÃ©matique 
+2.âDÃ©finitions 
+3.âProtocoles 
+a.âProtocole âbarreau aimantÃ©â 
+b.âProtocole âperceuseâ  
+ 
+II-â Le modÃ¨le de Toricelli, un modÃ¨le applicable Ã  notre expÃ©rience ? (p.5-12) 
+A.âModÃ¨le de Torricelli 
+B.âÃcoulement dâun liquide dans une bouteille non percÃ©e avec vortex 
+1.âRÃ©alisation de lâexpÃ©rience 
+2.âRÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes 
+b.âMesures 
+3.âInterprÃ©tation des rÃ©sultats 
+a.âComparaison modÃ¨le/expÃ©rience 
+b.âCalcul de lâaire du vortex 
+C.âÃcoulement dâun liquide dans une bouteille percÃ©e sans vortex 
+1.âRÃ©alisation de lâexpÃ©rience 
+2.âRÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes 
+b.âMesures 
+3.âInterprÃ©tation des rÃ©sultats 
+ 
+III-âInfluence de la durÃ©e initiale de rotation sur la durÃ©e de vidange (p.12-13) 
+1.âRÃ©alisation de lâexpÃ©rience 
+2.âRÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes 
+b.âMesures 
+3.âInterprÃ©tation des rÃ©sultats 
+ 
+IV-âInfluence de la vitesse de rotation sur la durÃ©e de vidange (p.13-16) 
+1.âRÃ©alisation de lâexpÃ©rience  
+2.âRÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes 
+b.âMesures 
+3.âInterprÃ©tation des rÃ©sultats 
+ 
+V-â Influence de la viscositÃ© du liquide sur la durÃ©e de vidange (p.16-19)â 
+A.âViscositÃ© et expÃ©riences prÃ©liminaires 
+1.âRÃ©alisation de lâexpÃ©rience 
+2.âRÃ©sultats de lâexpÃ©rience 
+B.âVitesse de vidange 
+1.âRÃ©alisation de lâexpÃ©rience 
+2.âRÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes 
+b.âMesures 
+3.âInterprÃ©tation des rÃ©sultats 
+ 
+VI-âConclusion (p.20) 
+1.âBibliographie 
+2.âRemerciementsâ
+ 
+ 
+2
+
+I.âIntroduction 
+ 
+1.â ProblÃ©matique 
+â Lâeau constitue lâessence de la vie. Elle se trouve au centre de notre quotidien, et, 
+omniprÃ©sente, elle peut prendre de nombreux Ã©tats. Sous forme liquide, elle peut Ãªtre 
+emprisonnÃ©e dans des rÃ©cipients comme des bouteilles qui nous permettent de la dÃ©placer Ã  
+notre grÃ©. Lâopercule est le seul moyen pour lâeau de sâÃ©chapper une fois la bouteille retournÃ©e. 
+Lâeau liquide se dÃ©verse alors grÃ¢ce Ã  lâinfiltration de lâair sous forme de âglouglousâ. Mais 
+existe-t-il une mÃ©thode (permettant de vider le liquide contenu dans une bouteille) plus rapide et 
+donc plus efficace ? La nature du liquide a-t-elle une importance ? 
+ 
+â La rÃ©ponse peut sâobserver directement dans la nature grÃ¢ce aux ouragans, tornades etc. 
+Ces phÃ©nomÃ¨nes sont appelÃ©s vortex : ils peuvent, Ã  travers un mouvement de rotation centrale, 
+permettre lâaccÃ©lÃ©ration de lâÃ©coulement des fluides. Mais dans une bouteille, comment Ã©volue la 
+hauteur du fluide au cours du temps lorsquâun vortex se forme ? Existe-t-il une vitesse de rotation 
+initiale optimale ? Comment la vitesse de rotation affecte-t-elle la durÃ©e de vidange dâun liquide ? 
+Comment la durÃ©e de vidange Ã©volue-t-elle pour un liquide de plus en plus visqueux ? Nous allons 
+rÃ©pondre Ã  toutes ces interrogations en menant diffÃ©rentes expÃ©riences qualitatives et 
+quantitatives. 
+ 
+2.âDÃ©finitions 
+â Avant toute chose, il est nÃ©cessaire de prÃ©senter le modÃ¨le (et le vocabulaire associÃ©) que 
+nous utiliserons au fil des expÃ©riences. 
+Chaque liquide testÃ© est considÃ©rÃ© comme un fluide incompressible et indilatable :  
+-âUn fluide est dit âincompressibleâ lorsque son volume ne varie pas en fonction de la 
+pression. 
+-âUn fluide est dit âindilatableâ lorsque son volume ne varie pas en fonction de la tempÃ©rature. 
+ 
+La viscositÃ© mesure la rÃ©sistance interne dâun fluide Ã  lâÃ©coulement. Câest la consÃ©quence du 
+frottement molÃ©culaire entre les couches du fluide qui oppose le mouvement et dissipe de 
+lâÃ©nergie cinÃ©tique. 
+On distingue la viscositÃ© dynamique de la viscositÃ© cinÃ©matique :  
+-âLa viscositÃ© dynamique correspond Ã  la rÃ©sistance Ã  lâÃ©coulement dâun fluide           
+incompressible. 
+-âLa viscositÃ© cinÃ©matique correspond Ã  la capacitÃ© dâun fluide Ã  se rÃ©pandre 
+Elles sont reliÃ©es par la relation :  
+ 
+Î½=
+Âµ
+Ï
+AvecÂ :  la viscositÃ© cinÃ©matique en 
+Î½	&#3627408474;
+2
+.&#3627408480;
+â1
+â la viscositÃ© dynamique en 
+Âµ	&#3627408472;&#3627408468;.&#3627408474;
+â1
+.&#3627408480;
+â1
+â la masse volumique en       
+Ï	&#3627408472;&#3627408468;.&#3627408474;
+â3
+3
+
+Allure du champ de vitesse pour un 
+vortex de Rankine 
+On modÃ©lise un fluide par un ensemble de particules 
+mÃ©soscopiques, dont on suit au cours du temps, la 
+vitesse. Ã un instant t, on obtient alors un champ de 
+vitesse dans lâespace qui reprÃ©sente l'ensemble des 
+vecteurs vitesse de toutes les particules du fluide Ã©tudiÃ©.  
+ 
+La vorticitÃ© est une grandeur utilisÃ©e en mÃ©canique des 
+fluides pour dÃ©crire la tendance locale dâun fluide Ã  
+tourner sur lui-mÃªme. 
+ 
+Pour un fluide visqueux incompressible, le modÃ¨le de 
+Rankine du vortex donne un champ de vitesse dont 
+lâallure est donnÃ©e ci-contre. 
+ 
+Afin de calculer la vitesse de rotation, nous allons employer la relation suivante :  
+ 
+Ï=
+âÎ¸
+â&#3627408481;
+AvecÂ :  la vitesse angulaire en 
+Ï	&#3627408479;&#3627408462;&#3627408465;.&#3627408480;
+â1
+â le changement dâangle de rotation en  âÎ¸	&#3627408479;&#3627408462;&#3627408465;
+â la variation temporelle en  â&#3627408481; &#3627408480;
+ 
+3.â Protocoles  
+Durant nos expÃ©rimentations, nous avons utilisÃ© deux protocoles afin de pouvoir crÃ©er un vortex : 
+le choix du protocole dÃ©pend de la nature du liquide et de la bouteille. 
+ 
+a.âProtocole âbarreau aimantÃ©â :  
+ 
+Liste du matÃ©riel :  
+-âUn agitateur magnÃ©tique renversÃ© (sans capot) et suspendu par deux pinces reliÃ©es Ã  deux 
+potences. 
+-âUne bouteille de 1L dâeau Ã  20Â°C en verre dont les dimensions sont les suivantes: 22 cm 
+de hauteur, 9,96 cm de diamÃ¨tre et 2,17 cm pour le diamÃ¨tre du trou de la bouteille 
+-âUn barreau aimantÃ©, une feuille de Parafilm, plusieurs potences avec pinces et un anneau 
+de liÃ¨ge. 
+-âUn bac de rÃ©cupÃ©ration sur un support Ã©lÃ©vateur sous la bouteille pour rÃ©cupÃ©rer lâeau 
+-âLe logiciel Regressi afin de pouvoir rÃ©aliser lâexploitation de la vidÃ©o 
+-âUne rÃ¨gle de 1 mÃ¨tre dans le plan pour lâÃ©talonnage + un chronomÃ¨tre 
+-âUn tÃ©lÃ©phone sur une potence qui fait office de camÃ©ra  
+-âUn niveau afin de sâassurer de la verticalitÃ© du smartphone entre autres. 
+Nous colorons lâeau par du bleu de mÃ©thylÃ¨ne afin de faciliter le pointage de la hauteur dâeau.  
+4
+
+On place le barreau aimantÃ© dans la bouteille que 
+nous remplissons dâeau Ã  20Â°C. Puis nous la scellons avec 
+du Parafilm et nous l'installons sur lâanneau de liÃ¨ge au 
+plus proche de lâagitateur magnÃ©tique, il faut veiller Ã  ce 
+quâelle soit droite et nâentre pas en contact avec lâagitateur 
+(pour Ã©viter les frottements). Lâagitateur tourne Ã  une 
+vitesse constante de 300 tours/min, pendant une durÃ©e 
+mesurÃ©e. 
+ 
+Ensuite, une personne retire le Parafilm et une autre 
+lance lâenregistrement en simultanÃ©. Enfin, nous effectuons 
+le pointage de la vidÃ©o sur Regressi. 
+b.âProtocole âperceuseâ : 
+ 	Nous utilisons le mÃªme matÃ©riel que le prÃ©cÃ©dent protocole, sauf 
+pour le systÃ¨me de mise en rotation et la bouteille. 
+ 
+Liste du ânouveauâ matÃ©riel :  
+-âUne perceuse metabo BS18 en mode dÃ©vissage (pour 
+retirer le bouchon de bouteille plus facilement) tenue par 
+une pince reliÃ©e Ã  une potence 
+-âUne bouteille en plastique de dimensions suivantes : 28,0 
+cm de hauteur, 7,5 cm de diamÃ¨tre et 2,4 cm pour le 
+diamÃ¨tre du trou de la bouteille. Cette bouteille de la 
+marque BONNEVAL dâ1 L est accrochÃ©e Ã  la tÃªte de la 
+perceuse (par une scie cloche sans axe) et posÃ©e sur un 
+support en liÃ¨ge au-dessus dâun bac. 
+ 
+Nous remplissons la bouteille, accrochÃ©e Ã  la perceuse, avec le liquide Ã©tudiÃ© et on la place 
+sur le dispositif : il faut veiller Ã  ce quâelle soit droite. Ensuite, nous commenÃ§ons Ã  filmer et nous 
+activons la perceuse Ã  vitesse constante pendant une durÃ©e mesurÃ©e avant de dÃ©visser le 
+bouchon.  
+II.â Le modÃ¨le de Torricelli, un modÃ¨le applicable Ã  notre expÃ©rience ? 
+ 
+Lorsque nous retournons une bouteille pleine dâeau, elle se vide avec glouglous, en 14.03 
+s. AprÃ¨s crÃ©ation dâun vortex au sein du liquide, cette durÃ©e de vidange passe Ã  environ 7.167 s. 
+Avec cette premiÃ¨re expÃ©rience qualitative rapide, on constate que le liquide sâÃ©chappe de la 
+bouteille en quasiment deux fois moins de temps !  Pour dÃ©buter, nous allons Ã©tudier lâÃ©volution de la hauteur du liquide au cours du temps au 
+sein dâune bouteille retournÃ©e lorsquâun vortex est prÃ©sent. Il est malheureusement impossible de 
+comparer cette Ã©volution Ã  celle du mÃªme liquide sans vortex : en effet, la prÃ©sence des 
+âglouglousâ empÃªche un suivi rigoureux de la hauteur au cours du temps. Dans un premier temps, 
+nous avons tentÃ© de savoir si le modÃ¨le de Torricelli peut sâappliquer Ã  lâÃ©coulement avec vortex. 5
+
+A. ModÃ¨le de Torricelli  
+Le modÃ¨le de Torricelli permet dâobtenir lâexpression thÃ©orique de la hauteur dâun fluide en 
+fonction du temps, lorsque ce fluide sâÃ©coule dâun contenant. 
+Les hypothÃ¨ses de ce modÃ¨le sont les suivantesÂ : 
+ââle fluide est considÃ©rÃ© comme incompressible (eau) et lâÃ©coulement est quasi-stationnaire. 
+ââ il y a absence de frottements entre les diffÃ©rentes particules du fluide. 
+ââaucun vortex nâest prÃ©sent. 
+Ã©quation (1) 
+&#3627408451;
+&#3627408436;
++
+1
+2
+ Ï &#3627408464;
+&#3627408436;
+ 
+2
++ Ï &#3627408468; &#3627408487;
+&#3627408436;
+ 
+=&#3627408451;
+&#3627408437;
++
+1
+2
+ Ï &#3627408464;
+&#3627408437;
+ 
+2
++ Ï &#3627408468; &#3627408487;
+&#3627408437;
+ 
+      
+ Dans la relation prÃ©cÃ©dente, on peut Ã©crireÂ :  
+-â	car les points A et B sont sur des surfaces libres (en contact avec la &#3627408451;
+&#3627408436;
+=&#3627408451;
+&#3627408462;&#3627408481;&#3627408474;
+=&#3627408451;
+&#3627408437;
+pression extÃ©rieure) 
+-â= 0 m/s : on considÃ¨re que << . Le rÃ©gime est donc quasi stationnaire: la vitesse &#3627408464;
+&#3627408436;
+&#3627408462;&#3627408436;
+dâÃ©coulement est nÃ©gligeable 
+-âNous notonsÂ : .  &#3627408464;
+&#3627408436;
+=&#3627408483; 
+Il vientÂ par simplification dans lâÃ©quation (1)Â :  
+ 
+Ï &#3627408468; &#3627408487;
+&#3627408436;
+ 
+= 
+1
+2
+ Ï &#3627408483;
+ 
+2
++ Ï &#3627408468; &#3627408487;
+&#3627408437;
+ 
+  â Ï &#3627408468; &#3627408487;
+&#3627408436;
+ 
+â Ï &#3627408468; &#3627408487;
+&#3627408437;
+ 
+= 
+1
+2
+ Ï &#3627408483;
+ 
+2
+  
+ 
+â Ï &#3627408468; (&#3627408487;
+&#3627408436;
+â
+ 
+&#3627408487;
+&#3627408437;
+)=
+1
+2
+ Ï &#3627408483;
+ 
+2
+      
+Notons Â : ââ 
+â=&#3627408487;
+&#3627408436;
+â
+ 
+&#3627408487;
+&#3627408437;
+Ï &#3627408468; â
+ 
+=
+1
+2
+ Ï &#3627408483;
+ 
+2
+â &#3627408483;
+ 
+2
+ =
+2 Ï &#3627408468; â
+ 
+Ï
+ 
+SoitÂ :  
+ Ã©quation (2) 
+&#3627408483;=2 &#3627408468; â
+ 
+ 
+ 
+Au cours de lâÃ©coulement dâun fluide incompressible en rÃ©gime permanent, le dÃ©bit volumique est 
+constantÂ soit &#3627408452;=&#3627408462;Ã&#3627408483; 
+Le dÃ©bit volumique instantanÃ© vaut  
+ &#3627408452;=â
+&#3627408465;&#3627408436;â()
+&#3627408465;&#3627408481;
+Le signe â correspond Ã  une variation du volume  nÃ©gativeÂ : le volume diminue. &#3627408436;â
+En Ã©galant les deux formules de Q, on obtientÂ : 
+ 
+&#3627408465;&#3627408436;â()
+&#3627408465;&#3627408481;
+=â&#3627408462;Ã&#3627408483;
+Reportons lâexpression de  trouvÃ©e dans lâÃ©quation (2)Â :  &#3627408483;
+6 
+Le rÃ©servoir est vertical avec une surface libre (Ã  
+pression atmosphÃ©rique) horizontale, dont lâaire de 
+la section du rÃ©servoir est notÃ©e  (constante). &#3627408436;
+Lâorifice de petite section a pour aire  (constante) et &#3627408462;
+est aussi une surface libre. 
+ 
+Lâapplication de la loi de Bernoulli entre la surface 
+libre (haute) et lâorifice donneÂ (entre les points  et &#3627408436;
+B) :
+
+&#3627408465;&#3627408436;â()
+&#3627408465;&#3627408481;
+=â&#3627408462;Ã2 &#3627408468; â
+ 
+ 
+ 
+â&#3627408436;
+&#3627408465;â()
+&#3627408465;&#3627408481;
+=â&#3627408462;Ã2 &#3627408468; â
+ 
+ 
+ 
+â
+&#3627408465;â()
+&#3627408465;&#3627408481;
+=â
+&#3627408462;
+&#3627408436;
+Ã2 &#3627408468; â
+ 
+ 
+ 
+â
+&#3627408465;â()
+â
+ 
+ 
+=â
+&#3627408462;
+&#3627408436;
+Ã2 &#3627408468; &#3627408465;&#3627408481;
+Nous obtenons une Ã©quation diffÃ©rentielle pour h. On intÃ¨gre de : &#3627408481;=0 Ã  &#3627408481;
+ 
+â0
+â
+â«
+&#3627408465;â()
+â
+ 
+ 
+=
+0
+&#3627408481;
+â«â
+&#3627408462;
+&#3627408436;
+Ã2 &#3627408468; &#3627408465;&#3627408481;
+Cela donneÂ : 
+   
+2â
+ 
+ ââ
+0
+ 
+ ( )=â
+&#3627408462;
+&#3627408436;
+Ã2 &#3627408468; &#3627408481;ââ
+ 
+ =â
+0
+ 
+ â
+&#3627408462;
+2&#3627408436;
+Ã2 &#3627408468; &#3627408481;
+FinalementÂ :  
+Ã©quation (3) 
+â=â
+0
+ 
+ â
+&#3627408462;
+2&#3627408436;
+Ã2 &#3627408468; Ã&#3627408481;(	)
+2
+ 
+Le modÃ¨le de Torricelli nous permet donc dâobtenir une expression thÃ©orique de la hauteur dâun 
+liquide en fonction du temps.  
+Ã prÃ©sent, nous allons suivre expÃ©rimentalement la hauteur dâun liquide dans une bouteille 
+retournÃ©e dans laquelle un vortex sâest formÃ© et tenter dâappliquer le modÃ¨le de Torricelli. Dans le 
+cas de notre Ã©tude, le vortex permet dâavoir Ã  chaque instant au sein de la bouteille, de lâair Ã  
+pression atmosphÃ©rique (ce qui permet de valider lâhypothÃ¨se de la surface libre pour lâaire A). 
+Cependant la prÃ©sence dâun vortex nâest pas prÃ©vu dans ce modÃ¨le simple. 
+ 
+â B. Ãcoulement dâun liquide dans une bouteille non percÃ©e avec vortex 
+1.âRÃ©alisation de lâexpÃ©rience 
+Nous utilisons le protocole âbarreau aimantÃ©â afin de suivre la hauteur de lâeau au cours du temps 
+dans une bouteille non percÃ©e avec vortex. Nous utilisons une vitesse de rotation initiale de 300 
+tr/min pendant 10s. Une fois rÃ©alisÃ©e nous obtenons une courbe de la hauteur en fonction du 
+temps que nous allons comparer au modÃ¨le de Torricelli.  
+2. RÃ©sultats de lâexpÃ©rience  
+a.âIncertitudes  
+Lâincertitude de la durÃ©e de vidange (liÃ©e au pointage) est dÃ©terminÃ©e grÃ¢ce Ã  Regressi. Pour 
+notre vidÃ©o de frÃ©quence 60 images par seconde, nous sommes Ã  deux images prÃ¨s. 
+ 
+&#3627408482;&#3627408481;()=
+2
+60
+=0,033 &#3627408480;
+ 
+b.âMesures 
+AprÃ¨s pointage de la vidÃ©o, nous obtenons le graphique, reprÃ©sentant la hauteur du liquide en 
+fonction du temps, que nous modÃ©lisons grÃ¢ce Ã  la formule thÃ©orique obtenue grÃ¢ce au modÃ¨le 
+de Torricelli : 
+ Ã©quation (4) &#3627408486;=(&#3627408472;â&#3627408463;Ã&#3627408481;)Â²
+ 
+ 
+ 
+7
+
+Nous obtenons : 
+ 
+MalgrÃ© la prÃ©sence dâun vortex, la formule du modÃ¨le de Torricelli semble pouvoir sâappliquer ici. 
+La modÃ©lisation obtenue par Regressi donne : 
+ 
+&#3627408463; =(71,13 Â± 0,19)Ã10
+â3
+ &#3627408474;
+1/2
+ 
+ 
+&#3627408472;=325,23Â±0,25.10
+â3
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+Les incertitudes Ã©largies sont reprÃ©sentÃ©es sur cette courbe mais sont peu visibles.  
+ 
+3. InterprÃ©tation des rÃ©sultats 
+a.âComparaison modÃ¨le/expÃ©rience 
+ 
+InterprÃ©tation du coefficient k: 
+Nous allons mettre en parallÃ¨le les deux Ã©quations (3) et (4) : 
+   Ã©quation (3)  
+&#3627408486;=â
+0
+â
+&#3627408462;
+2&#3627408436;
+2&#3627408468; Ã&#3627408481;(	)
+2
+   Ã©quation (4) &#3627408486;=(&#3627408472;â&#3627408463;Ã&#3627408481;)Â²
+Par identification des Ã©quations (3) et (4), on obtient tout dâabord :    
+â
+0
+=&#3627408472; â â
+0
+= &#3627408472;Â²
+Ainsi,  
+â
+0
+ =(325,23 Ã10
+â3 
+)
+2
+=1,0577.10
+â1
+&#3627408474;
+Cette valeur de  correspond bien Ã  la hauteur initiale (Ã  lâinstant t=0) de lâeau. â
+0
+ 
+InterprÃ©tation du coefficient b: 
+Par identification des Ã©quations (3) et (4), on obtient enfin : 
+ 
+&#3627408463;=
+&#3627408462;
+2&#3627408436;
+2&#3627408468;
+Nous souhaitons vÃ©rifier si la valeur de (dÃ©terminÃ©e par la modÃ©lisation) est compatible avec la &#3627408463; 
+valeur de ( que nous allons appeler â ). 
+&#3627408462;
+2&#3627408436;
+2&#3627408468; &#3627408463;
+ 
+On calcule a et A avec leurs incertitudes :  
+On mesure le diamÃ¨tre de lâouverture d = 2.17 cm 
+ 
+&#3627408462; = Ï&#3627408479;
+2
+ = Ï
+&#3627408465;
+2
+()
+2
+ = Ï
+2,17Ã10
+â2
+2
+( )
+2
+ = 3.70Ã10
+â4
+ &#3627408474;
+2
+8
+
+Lâappareil de mesure utilisÃ© est graduÃ© Ã  0.10 mm donc  &#3627408482;&#3627408465;()=0,05 &#3627408474;&#3627408474;=0,005 &#3627408464;&#3627408474;
+  
+&#3627408482;(&#3627408462;) = &#3627408462;||Ã2Ã
+&#3627408482;(&#3627408465;)
+&#3627408465;
+ = 3.70Ã10
+â4
+Ã2Ã
+0.005
+2.17
+â &#3627408482;&#3627408462;()=0,017.10
+â4
+&#3627408474;
+2
+  
+On mesure le diamÃ¨tre de la bouteille D = 9.96 &#3627408464;&#3627408474; 
+ 
+&#3627408436; =Ï&#3627408479;
+2
+ = Ï
+&#3627408439;
+2
+()
+2
+ =  Ï
+9.96Ã10
+â2
+2
+( )
+2
+ =7.80Ã10
+â3
+&#3627408474;
+2
+Lâappareil de mesure utilisÃ© est graduÃ© Ã  1.0 mm prÃ¨s donc   &#3627408482;&#3627408439;()=0,5 &#3627408474;&#3627408474;=0,05 &#3627408464;&#3627408474;
+ 
+&#3627408482;(&#3627408436;) = &#3627408436;||Ã2Ã
+&#3627408482;(&#3627408439;)
+&#3627408439;
+ = 7.80Ã10
+â3
+Ã2Ã
+0.05
+9.96
+ 
+â&#3627408482;(&#3627408436;)= 7.83Ã10
+â5
+ &#3627408474;
+2
+ 
+Nous sommes alors en mesure de calculer la valeur de bâ, et son incertitude : 
+â
+ &#3627408463;â=
+&#3627408462;
+2&#3627408436;
+2&#3627408468; =
+ 3.70Ã10
+â4
+2Ã7.80Ã10
+â32Ã9.81 = 1.05Ã10
+â1
+ &#3627408474;
+1
+2
+= 10.5Ã10
+â2
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+ 
+ 
+&#3627408482;(&#3627408463;') = &#3627408463;'||Ã
+&#3627408482;(&#3627408462;)
+&#3627408462;
++2
+&#3627408482;(&#3627408436;)
+&#3627408436;
+ = 1.05Ã10
+â1
+ Ã
+0.017Ã10
+â4
+ 
+3.70Ã10
+â4+2
+7.83Ã10
+â5
+7.80Ã10
+â3 
+ 
+ 
+â &#3627408482;&#3627408463;â()=1,65Ã10
+â2
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+ 
+Ainsi =  
+&#3627408463;'  10.5Â±3.3( )Ã10
+â2
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+Or   
+&#3627408463; =71,13 Â± 0,19( )Ã10
+â3
+  &#3627408474;
+1/2
+.&#3627408480;
+â1
+=(7,113Â±0,019)Ã10
+â2
+  &#3627408474;
+1/2
+.&#3627408480;
+â1
+ 
+Nous calculons lâÃ©cart normalisÃ© pour savoir si les deux valeurs de b et bâ sont compatibles (avec 
+les incertitudes-type non Ã©largies) :  
+ 
+&#3627408440;&#3627408475;=
+ 10,5â7,113
+1,65
+2
++0.0095
+2
+ 
+=2,05
+On remarque que les deux valeurs ne sont pas compatibles: le coefficient b obtenu via la courbe 
+est plus petit que celui que prÃ©voit le modÃ¨le de Torricelli. Une premiÃ¨re explication Ã  cette 
+incompatibilitÃ© peut Ãªtre que la surface libre A nâest pas un disque, lorsquâil y a un vortex. 
+ 
+b.âCalcul de lâaire du vortex 
+Afin de se rapprocher davantage de lâexpÃ©rience avec vortex, nous allons dÃ©terminer la valeur de 
+lâaire de la surface libre lorsquâil y a un vortex, notÃ©e :  &#3627408436;
+í µí±&#3627408476;&#3627408479;&#3627408481;&#3627408466;&#3627408485;
+ de la forme 
+&#3627408486;=â
+0
+â
+&#3627408462;
+2&#3627408436;
+2&#3627408468; Ã&#3627408481;(	)
+2
+&#3627408486;=(&#3627408472;â&#3627408463;Ã&#3627408481;)Â²
+Donc 
+&#3627408463; = 
+&#3627408462;
+2&#3627408436;
+í µí±&#3627408476;&#3627408479;&#3627408481;&#3627408466;&#3627408485;
+2&#3627408468;
+Cela conduit donc Ã  la relation suivante: 
+ 
+ 
+&#3627408436;
+í µí±&#3627408476;&#3627408479;&#3627408481;&#3627408466;&#3627408485;
+=
+&#3627408462;
+2&#3627408463;
+Ã2&#3627408468;
+ 
+Avec:    /    /  
+&#3627408468; = 9.81 &#3627408474;.&#3627408480;
+â2
+&#3627408463; = 71.13Ã10
+â3
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+&#3627408462; = 3.70Ã10
+â4
+&#3627408474;Â²
+ 
+ 
+9
+
+Finalement, on obtient: 
+ 
+&#3627408436;
+í µí±&#3627408476;&#3627408479;&#3627408481;&#3627408466;&#3627408485;
+=1.152Ã10
+â2
+&#3627408474;Â²
+Nous allons comparer cette aire Ã  lâaire de la grande section de la bouteille: &#3627408436;
+í µí±&#3627408476;&#3627408479;&#3627408481;&#3627408466;&#3627408485;
+ 
+&#3627408436;
+&#3627408480;&#3627408466;&#3627408464;&#3627408481;í µí±&#3627408476;&#3627408475;
+=Ï (
+&#3627408439;
+2
+)
+2
+= Ï (
+9.963Ã10
+â2
+2
+)
+2
+=7.796Ã10
+â3
+&#3627408474;Â²
+ 
+ 
+Le rapport des deux aires donne : 
+ 
+&#3627408436;
+í µí±&#3627408476;&#3627408479;&#3627408481;&#3627408466;&#3627408485;
+&#3627408436;
+&#3627408480;&#3627408466;&#3627408464;&#3627408481;í µí±&#3627408476;&#3627408475;
+ =
+ 1.152Ã10
+â2
+7.796Ã10
+â3 = 1.478
+ 
+Lâaire de la surface libre avec vortex est donc environ 1,5 
+fois plus grande que celle sans vortex. 
+Ce rÃ©sultat semble logique car lâaire du cÃ´ne est 
+supÃ©rieure Ã  celle du disque (voir schÃ©ma ci-contre) 
+ 
+C. Ãcoulement dâun liquide dans une bouteille percÃ©e sans vortex 
+La prÃ©sence de âglouglousâ empÃªchant (toujours!) un suivi de la hauteur du liquide, nous allons 
+maintenant comparer lâÃ©volution de la hauteur de lâeau dans une bouteille retournÃ©e et percÃ©e sur 
+son culot (ce qui Ã©vite la prÃ©sence de glouglous) avec l'Ã©volution de la hauteur de lâeau dans une 
+bouteille non percÃ©e, soumis Ã  un vortex.â
+â 
+1.âRÃ©alisation de lâexpÃ©rience  
+Nous utilisons ici le protocole âperceuseâ pour cette expÃ©rience: nous prenons une bouteille en 
+plastique plus facile Ã  percer que la bouteille en verre. Nous avons Ã  notre disposition deux 
+bouteilles identiques: une percÃ©e et une non percÃ©e sur son culot. 
+Pour la formation du vortex dans la bouteille non percÃ©e, nous utilisons une vitesse de rotation 
+initiale correspondant Ã  la vitesse du 3Ã¨me cran (mode 1)  et une durÃ©e initiale de mise en rotation 
+de 10 s. 
+Pour la bouteille percÃ©e, nous nâavons pas besoin de la faire tourner : nous filmons simplement 
+son Ã©coulement. 
+ 
+   2. RÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes 
+Les incertitudes pour cette expÃ©rience correspondent au pointage sur Regressi qui dÃ©pend du 
+nombre dâimages par seconde. Les vidÃ©os ont Ã©tÃ© tournÃ©es Ã  60 images par seconde donc :  
+ 
+&#3627408482;&#3627408481;()=
+2
+60
+=0,033 &#3627408480;
+b.â Mesures 
+Suite au pointage Regressi, on obtient le graphique de la hauteur de lâeau en fonction du temps 
+pour chaque bouteille . Nous modÃ©lisons chaque courbe Ã  lâaide de la formule issue du modÃ¨le de 
+Torricelli . &#3627408486;=(&#3627408472;â&#3627408463;Ã&#3627408481;)Â²
+10
+
+Graphique de la hauteur de lâeau en fonction du temps  
+ 
+Croix rouges: suivi de la hauteur de lâeau dans une bouteille avec vortex (non percÃ©e)â
+CarrÃ©s bleus: suivi de la hauteur de lâeau dans une bouteille sans vortex, percÃ©e 
+ 
+La modÃ©lisation nous permet dâobtenir les coefficients suivants:  
+ 
+3. InterprÃ©tation des rÃ©sultats â
+Les deux courbes expÃ©rimentales semblent toujours suivre le modÃ¨le de Torricelli. Le modÃ¨le de 
+Torricelli semble sâappliquer ici. On constate que le coefficient b de la bouteille percÃ©e est 
+quasiment deux fois supÃ©rieur Ã  celui de la bouteille avec vortex : la bouteille trouÃ©e se vide plus 
+rapidement que la bouteille avec vortex. Comme prÃ©cÃ©demment, nous cherchons maintenant Ã  
+comparer le coefficient b (obtenu par modÃ©lisation de la courbe) Ã  bâ (obtenu par la formule de 
+Torricelli) :  
+&#3627408462; =Ï&#3627408479;
+2
+ = Ï
+&#3627408465;
+2
+()
+2
+ =Ï
+2.4Ã10
+â2
+2
+( )
+2
+ = 4.5Ã10
+â4
+&#3627408474;
+2
+Lâappareil de mesure utilisÃ© est graduÃ© Ã  0.10 mm donc  &#3627408482;&#3627408465;()=0,05 &#3627408474;&#3627408474;=0,005 &#3627408464;&#3627408474;
+ 
+&#3627408482;(&#3627408462;) = &#3627408462;||Ã2Ã
+&#3627408482;(&#3627408465;)
+&#3627408465;
+ = 4.5Ã10
+â4
+Ã2Ã
+0.005
+2.4
+ =0.019Ã10
+â4
+&#3627408474;
+2
+On mesure le diamÃ¨tre de la bouteille D = 7.5 &#3627408464;&#3627408474; 
+ 
+&#3627408436; =Ï&#3627408479;
+2
+ = Ï
+&#3627408439;
+2
+()
+2
+ =  Ï
+7.5Ã10
+â2
+2
+( )
+2
+ =4.4Ã10
+â3
+&#3627408474;
+2
+Lâappareil de mesure utilisÃ© est graduÃ© Ã  1.0 mm prÃ¨s donc   &#3627408482;&#3627408439;()=0,5 &#3627408474;&#3627408474;=0,05 &#3627408464;&#3627408474;
+ 
+&#3627408482;(&#3627408436;) = &#3627408436;||Ã2Ã
+&#3627408482;(&#3627408439;)
+&#3627408439;
+ = 4.4Ã10
+â3
+Ã2Ã
+0.05
+7.5
+= 0.059Ã10
+â4
+&#3627408474;
+2
+Nous sommes alors en mesure de calculer la valeur de bâ, et son incertitude : 
+â
+ &#3627408463;â=
+&#3627408462;
+2&#3627408436;
+2&#3627408468; =
+ 4.5Ã10
+â4
+2Ã4.4Ã10
+â32Ã9.81 = 2.2Ã10
+â1
+ &#3627408474;
+1
+2
+= 22Ã10
+â2
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+11
+
+&#3627408482;(&#3627408463;') = &#3627408463;'||Ã
+&#3627408482;(&#3627408462;)
+&#3627408462;
++2
+&#3627408482;(&#3627408436;)
+&#3627408436;
+ = 2.2Ã10
+â1
+ Ã
+0.019Ã10
+â4
+ 
+4.5Ã10
+â4+2
+0.059Ã10
+â4
+4.4Ã10
+â3
+ 
+â&#3627408482;(&#3627408463;') = 1.8Ã10
+â2
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+ainsi  
+&#3627408463;' =(22Â±1.8)Ã10
+â2
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+or  
+&#3627408463; = (290.4Â±3.0)Ã10
+â3 
+ &#3627408474;
+1/2
+.&#3627408480;
+â1
+ =(29.04Â±0.30)Ã10
+â2
+  &#3627408474;
+1/2
+.&#3627408480;
+â1
+ 
+Nous calculons lâÃ©cart normalisÃ© pour savoir si les deux valeurs de b et bâ sont compatibles (avec 
+les incertitudes-type non Ã©largies) :  
+ 
+&#3627408440;&#3627408475;=
+ 29.04â22
+1,8
+2
++0.15
+2
+ 
+=3.9
+Nous remarquons que l'Ã©volution du fluide au cours du temps dans la bouteille percÃ©e sans vortex 
+ne suit pas rigoureusement le modÃ¨le de Torricelli. Lâallure de la courbe est bien celle attendue 
+mais le coefficient b est diffÃ©rent de celui donnÃ© par le modÃ¨le. Notre Ã©coulement semble ne pas 
+respecter l'hypothÃ¨se de lâÃ©coulement stationnaire (du modÃ¨le de Torricelli) ce qui peut conduire Ã  
+cet Ã©cart normalisÃ© plus grand que 2. 
+Mais toutefois mÃªme si une bouteille percÃ©e est plus efficace quâun vortex, ce nâest pas vraiment 
+lâobjet de notre Ã©tude car nous souhaitons pouvoir rÃ©utiliser la bouteille. La meilleure mÃ©thode 
+sans altÃ©rer la bouteille reste toujours le vortex. 
+ 
+III.âInfluence de la durÃ©e initiale de rotation sur la durÃ©e de vidange 
+Nous souhaitons connaÃ®tre lâimpact de la durÃ©e de rotation initiale sur celle de vidange pour 
+de lâeau Ã  20Â°C et savoir sâil existe une durÃ©e minimale de rotation Ã  respecter pour de futures 
+expÃ©riences. Nous allons alors comparer les durÃ©es dâÃ©coulement pour diffÃ©rentes durÃ©es de 
+rotation initiales.  
+1.âRÃ©alisation de lâexpÃ©rience 
+Nous allons nous servir du protocole âbarreau aimantÃ©â, qui permet un contrÃ´le simple de la 
+vitesse de rotation initiale. 
+Nous rÃ©alisons des vidÃ©os de lâÃ©coulement de lâeau pour diffÃ©rentes durÃ©es initiales de rotation, 
+avec une vitesse de rotation constante. Une fois lâenregistrement terminÃ©, il faut rÃ©aliser le 
+pointage vidÃ©o sur Regressi et traiter les rÃ©sultats 
+On mesure la durÃ©e de vidange sur 5 cm avec la mÃªme origine pour chaque vidÃ©o. 
+ 
+2.âRÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes 
+On nÃ©glige ici les incertitudes du volume dâeau et de la vitesse de rotation. On Ã©value les 
+incertitudes pour chaque durÃ©e :  
+-âPour la mesure de la durÃ©e initiale de rotation, on estime lâincertitude du chronomÃ¨tre Ã  1s 
+environ donc :  
+&#3627408482;â&#3627408481;
+í µí±&#3627408475;í µí±&#3627408481;í µí±&#3627408462;&#3627408473;&#3627408466; &#3627408465;&#3627408466; &#3627408479;&#3627408476;&#3627408481;&#3627408462;&#3627408481;í µí±&#3627408476;&#3627408475;
+( )=
+1
+3
+=0,58 &#3627408480;
+-âPour la durÃ©e de vidange, l'incertitude provient du pointage et de la qualitÃ© de la vidÃ©o. On 
+lâestime, pour une vidÃ©o de 60 images par seconde, Ã  2 images prÃ¨s soit :  
+ 
+&#3627408482;â&#3627408481;
+&#3627408483;í µí±&#3627408465;&#3627408462;&#3627408475;&#3627408468;&#3627408466;
+( )=
+2
+60
+=0,033 &#3627408480;
+ 
+ 
+ 
+12
+
+b.âMesuresâ 
+Nous avons effectuÃ© lâexpÃ©rience pour les durÃ©es initiales de rotation de 5, 10, 15, 20, 30, 40, 60 
+et 80s . Les donnÃ©es ont Ã©tÃ© saisies dans le logiciel Regressi. Voici les rÃ©sultats de nos mesures 
+avec incertitudes-types, obtenus aprÃ¨s pointage vidÃ©o :  
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+Ã partir de ces donnÃ©es, nous rÃ©alisons le graphique de la durÃ©e de vidange en fonction de la 
+durÃ©e initiale de rotation sur Regressi. Le logiciel calcule automatiquement les incertitudes Ã  95%. 
+ Graphique de la durÃ©e de vidange en fonction de la durÃ©e initiale de rotationâ
+ 
+3.âInterprÃ©tation des rÃ©sultats 
+Vu la dispersion des valeurs, on en dÃ©duit quâau-delÃ  de 10 s de rotation initiale de la bouteille, la 
+durÃ©e de vidange ne semble pas dÃ©pendre de la durÃ©e initiale de rotation. On estime que la durÃ©e 
+de vidange, Ã  partir de 10 s de rotation initiale, est constante pour lâeau. Dans les expÃ©riences 
+suivantes, nous choisirons une durÃ©e de rotation initiale de 10 s.  
+IV.âInfluence de la vitesse de rotation initiale sur la durÃ©e de vidangeâ
+â Nous cherchons maintenant Ã  savoir si la vitesse de rotation initiale du liquide 
+affecte sa durÃ©e dâÃ©coulement. Pour ce faire, nous allons dÃ©terminer la durÃ©e de vidange 
+pour diffÃ©rentes vitesses de rotation initiale.   
+1.âRÃ©alisation de lâexpÃ©rience 
+Nous utilisons le protocole âperceuseâ avec la bouteille en plastique non percÃ©e car lâautre 
+protocole ne permettait pas de dâobtenir des vitesses de rotation trÃ¨s Ã©levÃ©es (le barreau aimantÃ© 
+se dÃ©tachait de lâagitateur magnÃ©tique lorsquâil tournait trop vite câest-Ã -dire au-delÃ  de 500 
+tours/min). On colle une pastille sur le haut de la bouteille afin de rÃ©aliser le pointage de la vitesse 
+de rotation sur Regressi.  
+La perceuse possÃ¨de 2 modes et 3 crans : nous avons accÃ¨s Ã  seulement 6 vitesses de 
+rotation diffÃ©rentes. On choisit de rÃ©aliser 3 mesures par vitesse initiale (avec une durÃ©e de 
+rotation initiale de 10 s) et dâeffectuer leur moyenne. Enfin, on pointe les vidÃ©os sur Regressi 
+13
+
+(toujours au mÃªme endroit) pour obtenir la durÃ©e de vidange sur 10 cm ainsi que la durÃ©e de 
+vidange pour chaque vidÃ©o. 
+ 
+2.âRÃ©alisation de lâexpÃ©rience 
+a.âMesures  
+Afin de dÃ©terminer la vitesse de rotation pour chaque 
+vidÃ©o, nous devons pointer pour obtenir la durÃ©e de 
+plusieurs tours consÃ©cutifs afin dâobtenir une moyenne 
+de la durÃ©e dâun tour. Par exemple, pour la premiÃ¨re 
+vidÃ©o de la vitesse 1, nous obtenons le graphe 
+ci-contre, reprÃ©sentant la durÃ©e de chaque tour au 
+cours du mouvement de rotation. 
+ 
+On obtient en moyenne 	(tracÃ© en bleu ci-dessus) 
+â&#3627408481;
+&#3627408481;&#3627408476;&#3627408482;&#3627408479;
+=281.7Ã10
+â3
+&#3627408480; 
+Nous en dÃ©duisons la vitesse de rotation moyenne :  
+ 3.550 tour/s 
+Ï = 
+ ÎÎ¸
+ â&#3627408481;
+&#3627408481;&#3627408476;&#3627408482;&#3627408479;
+=
+1
+281.7 Ã10
+â3=
+Pour la durÃ©e de vidange, nous obtenons sur 10 cm :  
+ â&#3627408481;
+&#3627408483;í µí±&#3627408465;&#3627408462;&#3627408475;&#3627408468;&#3627408466;
+=2.186 &#3627408480;
+On reproduit lâopÃ©ration pour chaque vidÃ©o, les rÃ©sultats sont renseignÃ©s dans le tableau 
+ci-dessous :  
+On filme 3 vidÃ©os par âvitesseâ ou âcranâ de la perceuse et on calcule la moyenne des vitesses de 
+rotation et des durÃ©es de vidange. 
+ 
+  
+ â
+ 
+Nous ne sommes pas parvenus Ã  obtenir des mesures avec la derniÃ¨re vitesse de la perceuse car 
+elle tournait bien trop vite. 
+ 
+b.âIncertitudes  
+Lâincertitude du pointage peut Ãªtre rÃ©glÃ©e sur Regressi, pour une vidÃ©o de 60 images par seconde 
+Ã  deux images prÃ¨s, on lâestime Ã  :  
+ 
+&#3627408482;â&#3627408481;()=&#3627408482;â&#3627408481;
+&#3627408481;&#3627408476;&#3627408482;&#3627408479;
+( )=&#3627408482;(â&#3627408481;
+&#3627408483;í µí±&#3627408465;&#3627408462;&#3627408475;&#3627408468;&#3627408466;
+)=
+2
+60
+=0,033 &#3627408480;
+Cette incertitude est commune Ã  chaque vidÃ©o pour la durÃ©e dâun tour et la durÃ©e de vidange (Ã  
+lâexception de la vitesse 5 avec des vitesses de rotation trop Ã©levÃ©es quâon a filmÃ© Ã  120 fps soit 
+une incertitude deux fois plus faible) 
+14
+
+Nous pouvons alors calculer lâincertitude de la vitesse de rotation, on considÃ¨re que lâincertitude 
+de lâangle de rÃ©volution dâun tour  est nÃ©gligeable :  ÎÎ¸
+ 
+&#3627408482;Ï()=ÏÃ 
+&#3627408482;âÎ¸()
+âÎ¸
+( )
+2
++
+&#3627408482;â&#3627408481;()
+â&#3627408481;
+&#3627408481;&#3627408476;&#3627408482;&#3627408479;
+( )
+2
+â&#3627408482;Ï()=ÏÃ 
+&#3627408482;â&#3627408481;()
+â&#3627408481;
+&#3627408481;&#3627408476;&#3627408482;&#3627408479;
+( )
+2
+  
+â&#3627408482;Ï()= ÏÃ 
+&#3627408482;â&#3627408481;()
+â&#3627408481;
+&#3627408481;&#3627408476;&#3627408482;&#3627408479;
+  
+â&#3627408482;Ï()=3.550Ã 
+ 0.033
+ 281.7 Ã10
+â3=0,42 &#3627408481;&#3627408476;&#3627408482;&#3627408479;/&#3627408480;
+ 
+On calcule les incertitudes pour chaque vidÃ©o, on obtient Ã  lâaide dâexcel :  
+ 
+ 
+On trace enfin la durÃ©e de vidange en fonction de la vitesse de rotation sur Regressi en tenant 
+compte des incertitudes. AprÃ¨s modÃ©lisation, nous obtenons les rÃ©sultats suivants :  
+ 
+Graphique de la durÃ©e de vidange en fonction de la vitesse initiale de rotationâ
+  
+Les incertitudes des deux derniÃ¨res valeurs sont si importantes car la vitesse de rotation est bien 
+plus Ã©levÃ©e que les autres. On constate que lâensemble des points suit une courbe de la forme :  
+ 
+â&#3627408481;=&#3627408462;Ã1â&#3627408466;
+â
+&#3627408483;
+&#3627408479;&#3627408476;&#3627408481;
+&#3627408463;
+ ( )+&#3627408464;
+ 
+Avec a,b et c coefficients rÃ©els,  la durÃ©e de vidange en s et  la vitesse de rotation en tour/s â&#3627408481; &#3627408483;
+&#3627408479;&#3627408476;&#3627408481;
+La modÃ©lisation nous donne:  
+a = 5.0 Â± 2.6 s ;    b = 2,14 Â± 0.70 tour/s ;   c = -1.6Â±2.6 s 
+ 
+15
+
+3.âInterprÃ©tations des rÃ©sultats 
+On observe que plus la vitesse de rotation est Ã©levÃ©e, plus le liquide prend du temps Ã  
+sâÃ©couler. Ce qui est cohÃ©rent car plus la vitesse de rotation augmente, plus lâeau gagne en 
+Ã©nergie cinÃ©tique de rotation et reste comme âcollÃ©e aux paroisâ par la force centrifuge.     
+Cependant, cela ne signifie pas que pour vider une bouteille le plus rapidement possible il faut 
+avoir une vitesse de rotation nulle car ce modÃ¨le ne sâapplique que pour les liquides dans lesquels 
+un vortex sâest dÃ©jÃ  formÃ© (en effet une durÃ©e de c = -1.6 s est absurde !). Il faut alors atteindre 
+une vitesse de rotation suffisante pour former un vortex mais pas trop Ã©levÃ©e pour minimiser 
+lâaction de la force centrifuge afin dâobtenir la durÃ©e de vidange la plus faible possible. On peut 
+sâinterroger sur lâexistence dâune vitesse de rotation optimale pour laquelle la durÃ©e de vidange est 
+minimale. Toutefois nous ne sommes pas en mesure de la dÃ©terminer de maniÃ¨re certaine car 
+notre matÃ©riel (perceuse) nous limite dans le nombre de vitesses mesurables et ne nous permet 
+pas dâaccÃ©der Ã  de plus faibles vitesses de rotation.â
+De plus, on remarque que la durÃ©e de vidange tend vers environ 3.4 s ce qui peut impliquer une 
+limite Ã  lâaction de la force centrifuge sur la durÃ©e dâÃ©coulement. 
+ 
+V.âInfluence de la viscositÃ© du liquide sur la durÃ©e de vidange sous lâaction dâun vortex 
+â
+Nous souhaitons dÃ©terminer lâeffet de la viscositÃ© sur la durÃ©e d'Ã©coulement dâun liquide 
+comportant un vortex. Pour cela, nous allons comparer les diffÃ©rentes durÃ©es de vidange pour des 
+liquides de plus en plus visqueux.  Nous Ã©tudions 4 solutions de glycÃ©rol de concentrations allant de 10% Ã  40%, de lâeau et 2 
+solutions dâacÃ©tone de concentrations Ã  20% et 40%. 
+ 
+A.âViscositÃ© et expÃ©riences prÃ©liminaires 
+Afin de dÃ©terminer la viscositÃ© de chaque solution, nous allons devoir mesurer la vitesse limite 
+dâune bille lÃ¢chÃ©e sans vitesse initiale (principe du viscosimÃ¨tre Ã  bille) et les masses volumiques 
+de la solution et de la bille.  
+ 
+1.âRÃ©alisation de lâexpÃ©rience  
+ 
+Pour la vitesse limite, nous avons besoin :  
+-âDe solutions plus ou moins visqueuses (glycÃ©rol, eau, acÃ©tone) 
+-âDâune Ã©prouvette graduÃ©e de 1 L 
+-âDâune bille 
+-âDâune potence, dâune pince et dâun niveau pour placer le tÃ©lÃ©phone avec lequel filmer le 
+plus droit possible 
+Il faut ajouter une balance et un pied Ã  coulisse pour les calculs de masses volumique.  
+ 
+Afin de mesurer la vitesse limite, nous devons dâabord remplir lâÃ©prouvette dâune solution 
+visqueuse (glycÃ©rol ,eau ou acÃ©tone), puis nous filmons le lÃ¢cher dâune bille dans lâÃ©prouvette 
+grÃ¢ce au tÃ©lÃ©phone et enfin nous pointons la vidÃ©o sur Regressi. 
+Pour dÃ©terminer la masse volumique de la bille on pÃ¨se la bille et on calcule son volume 
+grÃ¢ce Ã  son rayon que lâon mesure avec le pied Ã  coulisse. Pour la masse volumique des 
+solutions, on mesure leur masse sur la balance (en retirant la masse de lâÃ©prouvette) et on lit le 
+volume indiquÃ© sur lâÃ©prouvette.  
+16
+
+2.âRÃ©sultats de l'expÃ©rience 
+Mesures et calculs: 
+Suite au pointage vidÃ©o sur Regressi, on obtient les vitesse limites :  
+ 
+ 
+ 
+On mesure la masse de la bille m : ainsi que son rayon : &#3627408474;=4,10 &#3627408468; &#3627408479;=0,5000 &#3627408464;&#3627408474;
+Le volume de la bille vaut alors :   
+í µí±
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+=
+4Ï&#3627408479;
+3
+3
+= 
+4ÏÃ(0.5000.10
+â2
+)
+3
+3
+=5,236Ã10
+â7
+&#3627408474;
+3
+On calcule alors sa masse volumique :    
+Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+=
+&#3627408474;
+í µí±&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+= 
+4.10Ã10
+â3
+5.236Ã10
+â7=7,83Ã10
+3
+&#3627408472;&#3627408468;.&#3627408474;
+â3
+Pour la solution Ã  10% de glycÃ©rol on mesure :  et  í µí±
+&#3627408468;10%
+=1000,0 &#3627408474;í µí°¿ &#3627408474;
+&#3627408468;10%
+=102,4 &#3627408468;
+On en dÃ©duit sa masse volumique :  
+Ï
+&#3627408468;10%
+=
+&#3627408474;
+&#3627408468;10%
+í µí±
+&#3627408468;10%
+= 
+102.4Ã10
+â3
+1000,0Ã10
+â6=102,4&#3627408472;&#3627408468;.&#3627408474;
+â3
+ 
+Dans cette expÃ©rience, la viscositÃ© est donnÃ©e pour une bille de rayon r par la relation :  
+ 
+Î· = 
+2
+9
+Ã
+&#3627408479;Â²(Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+âÏ
+&#3627408467;&#3627408473;&#3627408482;í µí±&#3627408465;&#3627408466;
+)Ã&#3627408468;
+&#3627408473;í µí±&#3627408474;(&#3627408483;)
+AvecÂ : la viscositÃ© (dynamique) en Pa.s Î· 
+ le rayon de la bille en m &#3627408479;
+ la masse volumique en 
+Ï	&#3627408472;&#3627408468;.&#3627408474;
+â3
+ lâintensitÃ© de pesanteur en 
+&#3627408468; í µí±.&#3627408472;&#3627408468;
+â1
+ la vitesse limite atteinte par la bille dans le fluide en 
+&#3627408473;í µí±&#3627408474;(&#3627408483;)	&#3627408474;.&#3627408480;
+â1
+ 
+Nous sommes alors en mesure de calculer la viscositÃ© de la solution de glycÃ©rol Ã  10% :  
+ 
+Î·
+&#3627408468;10 %
+=
+2
+9
+Ã 
+&#3627408479;
+2
+ Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+âÏ
+&#3627408468;10%( )
+Ã&#3627408468;
+&#3627408483;
+&#3627408468;10%
+( ) 
+=
+2
+9
+Ã 
+0.5000Ã10
+â2
+( )
+2
+ 7.83Ã10
+3
+â102.4
+(	)
+Ã9.81
+1.256
+ 
+Î·
+&#3627408468;10 %
+=3.35Ã10
+â1
+&#3627408451;&#3627408462;.&#3627408480; 
+On effectue les mÃªmes calculs pour les autres solutions Ã  lâaide dâun tableau Excel :  
+ 
+ 
+DÃ©termination des valeurs des incertitudes: 
+Pour Ã©valuer les incertitudes sur la viscositÃ©, nous devons estimer les incertitudes des masses 
+volumiques de la bille et des solutions. 
+La balance est Ã  0.1 g donc   
+&#3627408482;&#3627408474;()= 
+0.10
+3
+=0,058 &#3627408468;
+On mesure le diamÃ¨tre de la bille avec un appareil de mesure Ã  0.01 cm donc :  &#3627408482;&#3627408465;()=0,0050 &#3627408464;&#3627408474;
+On a ainsiÂ : =  . 
+&#3627408482;&#3627408479;()=
+&#3627408482;(&#3627408465;)
+2
+0.0050
+2
+=0,0025 &#3627408464;&#3627408474;
+Connaissant lâincertitude du rayon nous pouvons calculer celle du volume de la billeÂ :  
+ 
+&#3627408482;(í µí±
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+) = 3
+&#3627408482;&#3627408479;()
+&#3627408479;
+Ãí µí±
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+ =3
+0.0025
+0.5000
+Ã 5.236Ã10
+â7
+ 
+&#3627408482;(í µí±
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+)= 7.9 Ã10
+â9
+ &#3627408474;Â³
+ 
+17
+
+Nous sommes alors en mesure de calculer lâincertitude de la masse volumique de la bille :  
+ 
+&#3627408482;(Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+) =Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+Ã
+&#3627408482;(&#3627408474;)
+&#3627408474;
+( )
+2
++
+&#3627408482;(í µí±
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+)
+í µí±
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+( )
+2
+ 
+ 
+â&#3627408482;Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+()=7.83 Ã10
+3
+Ã
+0.058
+4.10
+( )
+2
++
+7.9 Ã10
+â9
+ 
+5.236Ã10
+â7( )
+2
+ =1,2Ã10
+2
+&#3627408472;&#3627408468;.&#3627408474;
+â3
+ 
+Les incertitudes pour la masse et le volume des solutions sont donnÃ©es par le matÃ©rielÂ : 
+-â (on utilise la mÃªme balance) &#3627408482;&#3627408474;()=0,058 &#3627408468;
+-âLâÃ©prouvette graduÃ©e est Ã  0.10 mL donc  
+&#3627408482;í µí±()=
+0,10
+3
+=0,058 &#3627408474;í µí°¿
+Donc lâincertitude de la masse volumique de la solution de glycÃ©rol Ã  10% vaut : 
+ 
+&#3627408482;(Ï
+&#3627408468;10%
+) = Ï
+&#3627408468;10%
+ Ã
+&#3627408482;(&#3627408474;)
+&#3627408474;
+&#3627408468;10%
+( )
+2
++
+&#3627408482;(í µí±)
+í µí±
+&#3627408468;10%
+( )
+2
+  
+    
+&#3627408482;(Ï
+&#3627408468;10%
+)= 102.4Ã
+0.058
+102.4
+( )
+2
++
+0.058
+1000.0
+( )
+2
+ =0,058 &#3627408472;&#3627408468;.&#3627408474;
+â3
+ 
+Regressi nous donne directement les incertitudes associÃ©es au pointage des vitesses limites Ã  
+95%:  
+ 
+ 
+DÃ©sormais nous sommes capables de dÃ©terminer lâincertitude de la viscositÃ© de la solution de 
+glycÃ©rol Ã  10% :  
+ 
+&#3627408482;(Î·
+&#3627408468;10%
+) = Î·
+&#3627408468;10%
+Ã 2
+&#3627408482;(&#3627408479;)
+&#3627408479;
+( )
+2
++
+&#3627408482;(&#3627408473;í µí±&#3627408474;&#3627408483;
+&#3627408468;10%
+)
+&#3627408473;í µí±&#3627408474;(&#3627408483;
+&#3627408468;10%
+)
+( )
+2
++
+&#3627408482;(Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+)â&#3627408482;(Ï
+&#3627408468;10%
+)
+Ï
+&#3627408463;í µí±&#3627408473;&#3627408473;&#3627408466;
+âÏ
+&#3627408468;10%
+( )
+2
+ 
+ 
+â&#3627408482;Î·
+&#3627408468;10%
+( )=3.35Ã10
+â1
+ Ã2Ã
+0.0025
+0.5000
+( )
+2
++
+0.015
+1.256
+( )
+2
++
+1.2 Ã10
+2
+â0,058
+7.83Ã10
+3
+â102.4
+( )
+2
+ 
+  â&#3627408482;Î·
+&#3627408468;10%
+( )=0,0074 &#3627408451;&#3627408462;.&#3627408480;
+ 
+On reproduit lâopÃ©ration pour les autres solutions grÃ¢ce Ã  un programme excel : 
+ 
+ 
+B.âVitesse de vidange 
+1.âRÃ©alisation de l'expÃ©rience 
+Nous utilisons le protocole âperceuseâ pour mesurer la durÃ©e de vidange des diffÃ©rents liquides 
+visqueux Ã  lâaide dâun pointage vidÃ©o sur le logiciel Regressi. Nous avons optÃ© pour ce dernier 
+plutÃ´t que celui avec lâagitateur magnÃ©tique car il ne nous permettait pas dâatteindre une vitesse 
+de rotation suffisante pour former un vortex dans les solutions de glycÃ©rol.  
+Nous dÃ©butons nos mesures avec la solution la moins concentrÃ©e. AprÃ¨s Ã§a, on pointe la vidÃ©o 
+obtenue sur Regressi afin de dÃ©terminer la durÃ©e de vidange sur 10 cm de chaque solution de 
+18
+
+glycÃ©rol. La durÃ©e de rotation initiale est toujours de 10s et la vitesse de rotation initiale est celle 
+du 3Ã¨me cran (mode 1). On rÃ©alise 3 mesures par solution soit 21 mesures en tout. 
+ 
+ 2. RÃ©sultats de lâexpÃ©rience 
+a.âIncertitudes  
+Lâincertitude de la durÃ©e de vidange correspond Ã  lâincertitude du pointage que Regressi calcule 
+automatiquement.  
+La vidÃ©o a Ã©tÃ© filmÃ©e Ã  240 images/s : on estime Ãªtre Ã  2 images prÃ¨s. Donc : 
+ 
+&#3627408482;â&#3627408481;
+&#3627408483;í µí±&#3627408465;&#3627408462;&#3627408475;&#3627408468;&#3627408466;
+( )=
+2
+240
+=0,0083 &#3627408480;
+b.âMesures  
+Nous pointons la durÃ©e de vidange pour chaque vidÃ©o (3 vidÃ©os par solution) grÃ¢ce Ã  Regressi. 
+Puis nous calculons la moyenne des mesures pour chaque solution. Nos rÃ©sultats sont renseignÃ©s 
+ci-dessous :  
+  
+A lâaide des valeurs de viscositÃ© calculÃ©es prÃ©cÃ©demment, on trace la durÃ©e de vidange moyenne 
+en fonction de la viscositÃ© sur Regressi en prenant en compte toutes les incertitudes :  
+ 
+Graphique de la durÃ©e de vidange en fonction de la viscositÃ© du liquide 
+ 
+Nous modÃ©lisons Ã  lâaide dâune fonction affine &#3627408481;=&#3627408462;ÃÎ·+&#3627408463;
+On obtient, par modÃ©lisation :  
+ 
+et  &#3627408462;=12,02 Â±0,68 &#3627408474;.&#3627408480;Â².&#3627408472;&#3627408468;â»Â¹ &#3627408463;=â1,68 Â±0,23 &#3627408480;
+ 
+3. InterprÃ©tation des rÃ©sultats 
+On en dÃ©duit que la durÃ©e de vidange dâun liquide est proportionnelle Ã  sa viscositÃ©. Plus un 
+liquide est visqueux, plus il prendra du temps Ã  s'Ã©couler. On remarque que le coefficient b est 
+proche de 0 : la courbe est quasiment linÃ©aire (potentielle proportionnalitÃ©). 
+19
+
+VI-âConclusion 
+ 
+â Ainsi, nous avons dissÃ©quÃ© le phÃ©nomÃ¨ne de vortex de fond en comble. Un vortex accÃ©lÃ¨re 
+lâÃ©coulement dâun fluide plus que la mÃ©thode âglouglousâ mais moins quâune bouteille percÃ©e. La 
+durÃ©e de vidange semble constante Ã  partir de 10 s de durÃ©e initiale de rotation. Il existe une 
+vitesse de rotation optimale pour laquelle la durÃ©e d'Ã©coulement du fluide est minimale. Plus un 
+liquide est visqueux, moins il sâÃ©coule rapidement. Pour conclure, pour vider une bouteille le plus 
+efficacement possible, il faudrait former un vortex avec une durÃ©e initiale de rotation de 10s avec 
+la vitesse de rotation optimale tout en sâassurant que le liquide au sein de la bouteille soit le moins 
+visqueux possible. 
+ 
+Bibliographie : 
+ 
+-âOuvrage sur la mÃ©canique des fluides, point dâappui pour le modÃ¨le de Torricelli : â
+Toute la Thermodynamique la MÃ©canique des fluides et les ondes mÃ©caniques - Lyderic 
+Bocquet / Jean-Pierre Faroux / Jacques Renault (Ã©dition DUNOD) 
+-âArticle wikipÃ©dia sur la mÃ©canique des fluides :  
+https://fr.wikipedia.org/wiki/M%C3%A9canique_des_fluides 
+-âArticle wikipÃ©dia sur le phÃ©nomÃ¨ne du vortex : 
+https://fr.wikipedia.org/wiki/Tourbillon_(physique) 
+-âArticle wikipÃ©dia sur la viscositÃ©Â : 
+https://fr.wikipedia.org/wiki/ViscositÃ©#:~:text=La%20viscositÃ©%20(du%20latin%20viscum,flui
+de%20et%20dissipe%20son%20Ã©nergie.  
+-âArticle wikipÃ©dia sur le vortex de Rankine : https://fr.wikipedia.org/wiki/Vortex_de_Rankine 
+-âProgramme de terminale sur la mÃ©canique des fluides : https://cambourieux.myds.me 
+-âRevue scientifique dâinspiration : 
+https://www.pourlascience.fr/sd/physique/les-lecons-de-la-physique-pour-vider-rapidement-
+une-bouteille-26622.php 
+-âVidÃ©o dâinspiration : https://www.youtube.com/watch?v=FAEzz2GnzeY 
+ 
+Remerciements : â
+ 
+Nous tenons Ã  remercier les 3 agents techniques de laboratoire Vincent Moy, Corentin 
+Lamothe et Camille Perrin sans qui ce projet nâaurait pas Ã©tÃ© possible.  
+ 
+Nous remercions Ã©galement nos chers professeurs Arnaud BrugÃ¨re et Marie-Claire 
+Cambourieux pour nous avoir accompagnÃ©s durant le projet.  
+ 
+Nous nâoublions pas non plus les autres Ã©quipes des OlympiadesÂ : celles des geckos et du 
+robot flotteur qui nous ont toujours soutenus. 
+20

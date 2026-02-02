@@ -1,0 +1,1234 @@
+33
+Ã¨me
+ Ã©dition 
+ 
+ Un anneau pour les faire tourbillonner tous 
+Image tirÃ©e du long mÃ©trage Alice au pays des merveilles, Walt Disney (1951) 
+ 
+Su Illis 
+Poey LÃ©onie 
+Bavouzet Elise  
+Livache Elisa 
+ 
+encadrÃ©es par M. Bavouzet, professeur de physique-chimie 
+ 
+LycÃ©e polyvalent Louis Davier - 89300 JOIGNY 
+1
+
+Sommaire 
+ 
+Introduction et choix du sujet........................................................................................................................2 
+PrÃ©sentation des anneaux tourbillonnaires.................................................................................................3 
+PrÃ©sentation du dispositif expÃ©rimental.......................................................................................................4 
+Evolution du dispositif.................................................................................................................................4 
+Construction de notre propre dispositif.......................................................................................................5 
+PrÃ©sentation de la mÃ©thode de pointage......................................................................................................8 
+RÃ©sultats expÃ©rimentaux................................................................................................................................9 
+PrÃ©sentation du modÃ¨le thÃ©orique..............................................................................................................11 
+Etude de la masse de la goutte....................................................................................................................13 
+Etude de la chute de la goutte dans l'air avec la camÃ©ra rapide..............................................................14 
+Exploitations des courbes...........................................................................................................................16 
+Conclusion et perspectives.........................................................................................................................19 
+Remerciements.............................................................................................................................................20 
+Bibliographie.................................................................................................................................................20 
+ 
+Introduction et choix du sujet  
+ 
+Notre groupe est composÃ© dâIllis Su, Elisa Livache, LÃ©onie Poey et Elise Bavouzet. Nous Ã©tions en seconde lorsque 
+les professeurs de physique-chimie de notre lycÃ©e nous ont proposÃ© de participer aux Olympiades de Physique. Ils 
+nous ont prÃ©sentÃ© le projet et nous avons voulu tenter l'expÃ©rience. 
+ 
+Initialement, nous nâavions pas en tÃªte de sujet prÃ©cis, nous avions simplement lâintention de travailler sur la 
+mÃ©canique des fluides. Nous avions remarquÃ© un phÃ©nomÃ¨ne particulier lorsque lâon mÃ©langeait du sirop de grenadine 
+et de lâeau. Si on oublie de mettre le sirop avant lâeau dans le verre et que lâon ajoute le sirop aprÃ¨s l'eau, on observe 
+des tourbillons formÃ©s par la chute du sirop dans lâeau.  
+Pour faire nos premiÃ¨res expÃ©riences, celles qui prÃ©ciseraient nos idÃ©es de sujet, nous avions alors demandÃ© aux 
+professeurs de physique-chimie et aux techniciens du laboratoire du lycÃ©e un bÃ©cher, de lâeau, une pipette pasteur, 
+des colorants alimentaires ayant une base aqueuse et du sucre. Lors de notre premiÃ¨re sÃ©ance, nous avons effectuÃ© 
+diverses solutions colorÃ©es en rouge de diffÃ©rentes concentrations en sucre. Nous voulions observer la chute de 
+gouttes colorÃ©es en rouge (couleur se dÃ©marquant le mieux parmi les colorants Ã  notre disposition) selon leurs 
+concentrations en sucre dans lâeau, les premiÃ¨res gouttes que nous faisions tomber nâÃ©tant pas sucrÃ©es. LÃ©onie a fait 
+tomber de multiples gouttes avec une pipette pasteur et observait leur chute dans lâeau, quand lâune dâelle a retenu 
+notre attention.  
+ 
+La goutte en question avait pris la forme dâun anneau qui sâÃ©largissait au cours de sa chute dans lâeau. Nous avons 
+trouvÃ© cela vÃ©ritablement Ã©tonnant et avons tout de suite Ã©tÃ© intÃ©ressÃ©es par ce phÃ©nomÃ¨ne. Heureusement, nous 
+avons Ã©tÃ© en mesure de le reproduire assez facilement. Une question sâest alors imposÃ©e Ã  nous : âComment obtenir 
+un bel anneau tourbillonnaire?"  
+Au fil de nos expÃ©riences une problÃ©matique plus prÃ©cise se formera : "Comment varie la vitesse de chute de 
+lâanneau tourbillonnaire dans lâeau quand on fait varier la hauteur de chute de la goutte qui le gÃ©nÃ¨re ?â 
+ 
+2
+
+Nous prÃ©senterons tout dâabord le phÃ©nomÃ¨ne des anneaux tourbillonnaires. Nous dÃ©taillerons par la suite la 
+construction de notre dispositif expÃ©rimental permettant dâobtenir et de filmer la chute des anneaux tourbillonnaires. 
+Puis nous expliquerons comment nous avons exploitÃ© les vidÃ©os et prÃ©senterons les rÃ©sultats des expÃ©riences. Enfin 
+nous proposerons un modÃ¨le thÃ©orique pour dÃ©crire la chute des anneaux tourbillonnaires. Dans un dernier temps 
+nous analyserons les paramÃ¨tres physiques donnÃ©s par ce modÃ¨le. Nous conclurons finalement en portant un regard 
+critique sur notre modÃ¨le. 
+PrÃ©sentation des anneaux tourbillonnaires 
+ 
+Nous avons appris que lâanneau formÃ© dans lâeau Ã©tait appelÃ© âanneau tourbillonnaireâ. Câest un phÃ©nomÃ¨ne 
+rÃ©guliÃ¨rement observable dans lâÃ©tude des fluides mais aussi dans la nature et la vie de tous les jours. Les cracheurs 
+de feu utilisent notamment cette technique. On peut Ã©galement retrouver cette forme dans le dÃ©placement des 
+mÃ©duses, et parfois lors des Ã©ruptions volcaniques dans la fumÃ©e qui sâÃ©chappe des volcans (voir FigureÂ 1). 
+ 
+ 
+FigureÂ 1. Anneau tourbillonnaire formÃ© par la fumÃ©e de l'Etna (www.etna3340.com)  
+ 
+Dans un anneau tourbillonnaire, les particules du fluide se dÃ©placent circulairement autour dâun cercle imaginaire. 
+Comme dans la grande majoritÃ© des vortex, la vitesse de dÃ©placement des particules est plus ou moins constante mis 
+Ã  part vers le cÅur de lâanneau. Ainsi, la vitesse angulaire augmente en direction du cÅur de lâanneau, par 
+consÃ©quent, la plupart du tourbillon est concentrÃ©e en ce lieu.  
+ 
+FigureÂ 2. SchÃ©ma dâun anneau tourbillonnaire (WikipÃ©dia) 
+ 
+Contrairement Ã  une vague dans la mer, lâanneau tourbillonnaire nâest pas une perturbation locale mais bien de la 
+matiÃ¨re qui se dÃ©place sur une longue distance. De la mÃªme maniÃ¨re quâune roue de voiture tend Ã  limiter les 
+frottements avec la route, lâanneau tourbillonnaire tend Ã  limiter les frottements avec son environnement, lui permettant 
+alors de se dÃ©placer en maintenant sa forme (la taille pouvant varier) sur une longue distance en perdant relativement 
+peu de sa masse. Ainsi lâanneau tourbillonnaire peut supporter sa masse en conservant sa forme plus longtemps quâun 
+simple jet, cela explique donc pourquoi un anneau de fumÃ©e se disperse bien aprÃ¨s les quelques Ã©manations de 
+fumÃ©e qui l'accompagnent. 
+ 
+La formation dâun anneau liquide dans un milieu liquide se fait de la maniÃ¨re suivante. On envoie un liquide A dans un 
+bassin contenant un liquide B a priori immobile. La surface du liquide B ralentit la couche supÃ©rieure du liquide A. Afin 
+ 
+3
+
+de satisfaire diverses lois de mÃ©canique des fluides, ladite couche s'arrondit et sâenroule sur elle-mÃªme. Cela mÃ¨ne Ã  
+la formation dâun anneau tourbillonnaire. (voir FigureÂ 3.) 
+ 
+ FigureÂ 3. SchÃ©ma de la formation dâun anneau tourbillonnaire (Vortex-ring-induced elliptical drop deformation process 
+in ambient liquid under an impact: the effects of the drop shape and other parameters, Bin Liao et Shanqun Chen) 
+PrÃ©sentation du dispositif expÃ©rimental 
+Evolution du dispositif 
+ 
+Au cours de nos avancÃ©es, nous sommes passÃ©es par de multiples dispositifs expÃ©rimentaux. 
+ 
+Au tout dÃ©but, nous nous contentions de faire tomber des gouttes 
+manuellement en tenant une pipette pasteur en plastique 
+verticalement au-dessus dâun bÃ©cher. 
+Cependant, ce dispositif nâÃ©tait quâun test. En effet, il ne 
+permettait pas de faire des expÃ©riences reproductibles : faire 
+tomber les gouttes manuellement produisait trop de 
+tremblements. De plus, le bÃ©cher empÃªchait lâanneau dâÃ©voluer 
+correctement : il touchait le fond et sâÃ©largissait alors. Ce rÃ©cipient 
+ne permettait pas de filmer : les parois n'Ã©tant pas planes, cela 
+dÃ©formait lâanneau. 
+ 
+Nous avons ensuite mis en place un systÃ¨me composÃ© de 
+potences et de pinces afin de maintenir la pipette pasteur 
+verticalement au-dessus de la surface de lâeau sans que nous 
+nâayons Ã  la tenir nous mÃªme, ceci dans le but dâÃ©viter les 
+mouvements parasites. Nous avions aussi la possibilitÃ© de rÃ©gler 
+la hauteur Ã  laquelle se trouvait le bas de la pipette. Nous avons 
+Ã©galement mis une rÃ¨gle dans le mÃªme plan que la pipette afin 
+que nous puissions avoir une Ã©chelle lors de nos vidÃ©os. De plus, une feuille blanche et vierge est placÃ©e derriÃ¨re le 
+rÃ©cipient, permettant ainsi dâobserver lâanneau formÃ© beaucoup plus facilement, celle-ci sera prÃ©sente dans tous nos 
+dispositifs. La cuve utilisÃ©e Ã©tait alors un cube de cÃ´tÃ© intÃ©rieur 10 centimÃ¨tres aux parois planes et transparentes (voir 
+FigureÂ 4.) 
+ 
+En revanche, ce dispositif nâÃ©tait pas le plus rapide Ã  mettre en place, il nâÃ©tait pas toujours 
+positionnÃ© de la mÃªme maniÃ¨re et la cuve semblait trop petite. Les gouttes semblaient Ãªtre 
+freinÃ©es par le fond du bocal. Nous avons alors changÃ© de cuve : nous lâavons remplacÃ©e 
+par un aquarium de dimensions 18 x 34,5 x 22 cm. Mais cette fois-ci, longtemps aprÃ¨s le 
+remplissage de la cuve, il subsistait des courants dans lâeau, ce qui perturbait la chute des 
+anneaux, en effet, ils ne tombaient pas verticalement. 
+ 
+Par la suite, une tentative a Ã©tÃ© effectuÃ©e pour faire tomber les gouttes dans une 
+Ã©prouvette graduÃ©e de hauteur 30 cm et de diamÃ¨tre 4 cm (voir FigureÂ 5.), et dans ce cas 
+prÃ©cis, la colonne Ã©tait trop fine et les anneaux ne pouvaient sâÃ©tendre convenablement. De 
+plus, la face de lâÃ©prouvette nâÃ©tait pas plane, ce qui avait un impact sur les vidÃ©os prises 
+des gouttes, en effet cela dÃ©formait les anneaux Ã  la camÃ©ra. 
+ 
+ 
+4 
+ 
+ FigureÂ 4. Dispositif nÂ°1 
+ 
+FigureÂ 5. Dispositif nÂ°2
+
+Entre-temps, nous avions Ã©crit une premiÃ¨re fois Ã  des 
+chercheurs de l'IMFT (Institut de MÃ©canique des Fluides) de 
+Toulouse, en leur prÃ©sentant nos premiÃ¨res mesures et notre 
+dispositif. Ces derniers nous avaient conseillÃ© de faire tomber 
+les gouttes en utilisant une seringue et en la maintenant 
+horizontalement. Un essai a Ã©tÃ© entrepris pour expÃ©rimenter 
+diffÃ©rentes seringues et diffÃ©rents embouts. Malheureusement, 
+nous n'avons pas trouvÃ© dans le commerce des embouts non 
+biseautÃ©s. En effet, le biseau de la seringue âguidaitâ la goutte 
+dans sa chute le long de la fente, influenÃ§ant la trajectoire de la 
+goutte dans lâair et, par la suite, dans lâeau. Nous avons alors 
+pris la dÃ©cision de toujours orienter le biseau de la mÃªme 
+maniÃ¨re, la seringue horizontale et la partie longue du biseau en haut. 
+ 
+Afin de pouvoir pousser progressivement le piston de la seringue, le technicien du 
+laboratoire du lycÃ©e a cherchÃ© et trouvÃ© un outil au premier abord parfait. Il fallait 
+insÃ©rer la seringue dans les endroits prÃ©vus pour cela, devant une sorte de vis Ã  
+cran, permettant en tournant la manivelle de faire avancer le piston par pas de 37,5 m. (voir FigureÂ 6.) Âµ
+En reprenant la cuve de 1 L, nous avons choisi de placer lâoutil sur des planches de 
+bois de mÃªme dimension, empilÃ©es les unes sur les autres, afin de rÃ©gler la hauteur 
+de la chute de la goutte en ajoutant ou enlevant les planches sous lâoutil. Ainsi, en 
+ayant un emplacement stable pour lâoutil nous avons quelques peu limitÃ© les tremblements (voir FigureÂ 7). Malheureusement, les planches ayant une Ã©paisseur 
+de 1,8 cm, enlever ou ajouter des planches nous rendait moins prÃ©cis dans la 
+recherche dâune hauteur optimale. En effet, nous ne pouvions quâobtenir des 
+hauteurs multiples de 1,8 cm ; il nous fallait alors trouver un moyen de faire varier plus finement la hauteur de chute 
+des gouttes.  
+Construction de notre propre dispositif 
+ 
+Nous avons rÃ©alisÃ© que le matÃ©riel dont nous avions besoin 
+nâÃ©tait pas dans les magasins, et que, par consÃ©quent, nous 
+allions devoir le construire. Nous avons rÃ©flÃ©chi Ã  un 
+dispositif, stable, permettant dâÃ©viter toutes vibrations, facile 
+Ã  installer, pratique dâutilisation et dans lequel le mouvement 
+des anneaux tourbillonnaires ne seraient pas perturbÃ©s par 
+les bords. Nous avons donc dÃ©cidÃ© de changer entiÃ¨rement 
+de dispositif pour faire tomber les gouttes. En effet, lâoutil 
+que nous utilisions jusquâalors tournait par crans, faisant 
+trembler la goutte au bout de la seringue. Nous avons choisi 
+de fixer la seringue ainsi que deux Ã©crous sur un support et 
+de faire passer une vis dans ces deux Ã©crous : cette vis, en tournant dâune maniÃ¨re rÃ©guliÃ¨re et maÃ®trisÃ©e, appuierait 
+sur le piston de la seringue et le dÃ©placerait progressivement. (voir FigureÂ 8.) 
+ 
+Nous dÃ©sirions pouvoir rÃ©gler la hauteur de chute des gouttes sans difficultÃ©. Nous avons eu lâidÃ©e de fixer le support 
+de la seringue sur un plateau de bois posÃ© sur des Ã©crous que lâon pourrait faire coulisser verticalement sur des tiges 
+filetÃ©es de 50 cm. Ces tiges filetÃ©es seraient elles-mÃªmes vissÃ©es sur une planche qui servirait Ã©galement de support Ã  
+lâaquarium. Le plateau de bois serait fendu dans le plan de lâaiguille pour pouvoir y insÃ©rer un rÃ©glet. Un petit niveau Ã  
+bulle serait posÃ© sur la planche, nous permettant ainsi de vÃ©rifier si ladite planche est horizontale. 
+ 
+ 
+ 
+5 
+ 
+FigureÂ 6. Lâoutil trouvÃ© au laboratoire 
+ 
+ FigureÂ 7. Dispositif nÂ°3 
+ 
+FigureÂ 8. Le support de la seringue et le mÃ©canisme 
+de rÃ©glage de la hauteur du plateau
+
+De plus, nous voulions que la cuve soit assez profonde pour ne pas 
+gÃªner lâÃ©volution de la goutte dans lâeau tout en limitant les 
+dÃ©placements dâeau dans le bocal. Nous avons donc construit une 
+cuve de 10 x 10 x 30 cm, assez haute mais Ã©galement assez fine pour rÃ©pondre aux attentes prÃ©cÃ©dentes. (voir FigureÂ 11) 
+ 
+Pour cela, nous avons sciÃ© cinq morceaux de plexiglas (quatre de 
+10 x 30 cm et un carrÃ© de 10 cm) afin dâassembler la cuve. Puis 
+nous avons fait les joints en silicone afin de rendre la cuve Ã©tanche. 
+Nous avons aussi crÃ©Ã© une armature en aluminium pour solidifier et soutenir la cuve et ainsi Ã©viter quâelle ne se dÃ©forme (voir FigureÂ 9.). 
+Pour assembler les baguettes dâangle dâaluminium qui permettent 
+de former lâarmature, nous avons tout dâabord essayÃ© de les souder 
+Ã  lâÃ©tain, ce qui nâa malheureusement pas fonctionnÃ©. Nous nous 
+sommes donc rÃ©orientÃ©es vers de la colle Ã  mÃ©taux (qui a, elle, trÃ¨s bien 
+fonctionnÃ©). 
+Nous avons finalement coupÃ© des tiges filetÃ©es de 1 mÃ¨tre en deux pour 
+obtenir quatres tiges filetÃ©es de 50 centimÃ¨tres. 
+Nous avons de suite testÃ© le dispositif et effectuÃ© des modifications  
+ââLa vis tournait par Ã -coups, ce qui faisait vibrer lâaiguille et donnait 
+parfois une vitesse latÃ©rale Ã  la goutte lorsquâelle se dÃ©tachait. 
+Nous avons donc dÃ©cidÃ© de huiler la vis. 
+ââLorsque nous tournions la vis, la structure entiÃ¨re vibrait, et crÃ©ait 
+des mouvements dans lâeau de lâaquarium, ce que nous voulions 
+Ã©viter. Nous avons donc dÃ©coupÃ© le support infÃ©rieur afin que la 
+cuve ne soit pas en contact avec le support maintenant la 
+seringue. 
+ââDe plus, l'un des techniciens de laboratoire nous a conseillÃ© de 
+relier nos tiges filetÃ©es entre elles grÃ¢ce Ã  des noix et des barres 
+pour rigidifier lâensemble. (voir FigureÂ 10.) 
+ 
+ 
+Ce dispositif (voir FigureÂ 11) est celui que nous avons prÃ©sentÃ© lors des 
+Ã©preuves inter-acadÃ©miques lors de notre premier oral et dans notre 
+mÃ©moire prÃ©cÃ©dent. NÃ©anmoins, lâun des membres du jury nous a proposÃ© 
+dâintÃ©grer un moteur pas Ã  pas afin de faire tourner la vis sans engendrer 
+de tremblements. Nous avons donc commandÃ© un moteur pas Ã  pas Nema 
+14 (14HM11-O4O4S) Ã  400 pas par tour et un driver DRV8434S. Notre plus 
+gros problÃ¨me a Ã©tÃ© de trouver comment fixer le moteur Ã  notre dispositif et 
+comment transformer le mouvement rotatif de ce dernier en mouvement 
+latÃ©ral pour pousser le piston de la seringue. Nous avons dÃ©cidÃ© de fixer le 
+moteur sur une planche que lâon accrocherait par la suite Ã  la verticale sur 
+le plateau de bois soutenant la seringue. M. Chesnot et M. Pivard ont percÃ© 
+une vis afin de pouvoir lâemboiter sur lâaxe du moteur pas Ã  pas. Au bout de 
+cette vis, nous avons fixÃ© un bloc de mÃ©tal percÃ© dans lequel la vis 
+tournerait. Lorsque le moteur tourne, il entraine la vis, le bloc de mÃ©tal ne 
+pouvant tourner car il est en contact avec le plateau soutenant la seringue 
+est alors contraint dâavancer (ou de reculer selon le sens de rotation du 
+moteur) (voir FigureÂ 14). 
+ 
+ 
+ 
+6 
+ 
+FigureÂ 9. Nous, sciant et polissant de 
+lâaluminium pour crÃ©er lâarmature 
+ 
+FigureÂ 10. Noix et barres pour Ã©viter les 
+vibrations 
+ 
+FigureÂ 11. Dispositif complet
+
+Nous avions besoin de trois commandes diffÃ©rentes pour piloter notre moteur pas Ã  pas. 
+ââIl fallait que le bloc puisse avancer rapidement. (pour sâapprocher du piston de la seringue lors de son 
+installation ou simplement pour vider la seringue) 
+ââNous dÃ©sirions Ã©galement pouvoir reculer rapidement (pour retirer la seringue) 
+ââEt enfin il fallait avoir un bouton qui fasse tomber une unique goutte. 
+ 
+Pour cela nous avons branchÃ© le driver de moteur pas Ã  pas Ã  une carte Arduino en intÃ©grant trois boutons poussoirs, 
+chacun correspondant Ã  lâune des commandes prÃ©cÃ©dentes. Nous avons ensuite programmÃ© sur Arduino notre moteur 
+(programme en annexe). Nous avons testÃ© et ajustÃ© notre programme (vitesse de rotation et nombre de pas 
+nÃ©cessaires pour faire tomber prÃ©cisÃ©ment une goutte). Nous savons, Ã  partir de la masse d'une goutte, de la section 
+intÃ©rieure de la seringue et du pas de vis quâil faut tourner de 70 degrÃ©s la vis pour faire tomber une goutte. Sachant 
+quâun pas est Ã©quivalent Ã  tourner de 0,9 degrÃ©s, nous avons dÃ©cidÃ© de faire tourner le moteur de 78 pas. AprÃ¨s 
+plusieurs tests, nous avons ajustÃ© cette valeur Ã  79 pas. Lorsque nous avons estimÃ© que notre dispositif fonctionnait, 
+nous avons tout soudÃ©. Nous avons ensuite mis tout cela dans un boÃ®tier (dÃ©coupÃ© pour laisser passer les fils du 
+moteur et l'alimentation de lâArduino ainsi que pour fixer les boutons poussoirs) et nous y avons soudÃ© des fiches pour 
+pouvoir alimenter le moteur en 10 V (voir FigureÂ 12). Afin dâÃ©viter les courts circuits, la partie avec les soudures du 
+driver moteur est tapissÃ©e de mousse. Le boÃ®tier a ensuite Ã©tÃ© refermÃ©. (voir FigureÂ 13) 
+ 
+  
+FigureÂ 12 BoÃ®te non fermÃ©e 
+(Arduino et driver moteur visibles) 
+FigureÂ 13 BoÃ®te fermÃ©e 
+ 
+Nous avons fixÃ© le tout ensemble et obtenu le dispositif prÃ©sentÃ© page suivante. Nous nâavons nÃ©anmoins pas eu le 
+temps de tester son efficacitÃ© en prenant dâautres vidÃ©os, lâexploitation des vidÃ©os Ã©tant trÃ¨s chronophage. Toutefois 
+lors du rÃ©glage du programme nous avons remarquÃ© que, avant de se dÃ©tacher de la seringue,  la goutte tremblait bien 
+moins que lorsque nous tournions la vis manuellement.  
+ 
+7
+
+FigureÂ 14 Le dispositif final que nous avons conÃ§u et fabriquÃ© 
+ 
+ 
+1. RÃ©glet 
+2. Support en bois de la seringue 
+3. Seringue 
+4. Tiges filetÃ©es 
+5. Structure infÃ©rieure dÃ©coupÃ©e 
+6. Noix pour rigidifier 
+7. Tige en mÃ©tal pour rigidifier 
+8. Moteur pas Ã  pas 
+9. Bloc pour pousser le piston de la seringue  
+10. BoÃ®tier contenant la carte arduino et le driver moteur 
+11. Feuille blanche 
+12. Bouton rouge : avancer 
+13. Bouton blanc : reculer 
+14. Bouton jaune : faire tomber une goutte 
+ 
+8
+
+PrÃ©sentation de la mÃ©thode de pointage 
+ 
+Nous avons, lors de toutes nos expÃ©riences avec nos diffÃ©rents dispositifs, filmÃ© les gouttes qui tombent dans lâeau 
+ainsi que leur Ã©volution Ã  lâaide dâune tablette appartenant au lycÃ©e. Lors du positionnement de la camÃ©ra, nous 
+prÃªtions attention Ã  bien la positionner en face de la surface de lâeau. 
+ 
+Nous avons uniquement gardÃ© les vidÃ©os des gouttes qui formaient des anneaux tourbillonnaires. Ces vidÃ©os nous ont 
+permis, Ã  lâaide du logiciel Tracker (voir FigureÂ 15.), dâeffectuer une chronophotographie de lâanneau. 
+ 
+  
+FigureÂ 15. Capture dâÃ©cran du logiciel Tracker 
+ 
+ââPour cela nous avons importÃ© les vidÃ©os prises lors des expÃ©riences dans le logiciel puis nous avons Ã©tabli 
+une Ã©chelle grÃ¢ce au rÃ©glet introduit dans le mÃªme plan que la goutte. Nous avons fait attention Ã  prendre la 
+mÃªme longueur (7 cm) pour Ã©talonner toutes nos vidÃ©os et Ã  prendre cette distance dans lâeau (car on suit le 
+mouvement de lâanneau dans lâeau). Nous avons remarquÃ© que faire l'Ã©talonnage avec la mÃªme longueur et 
+au mÃªme endroit Ã©tait important, cela Ã  cause de lâeffet de parallaxe. 
+ 
+ââNous avions dÃ©cidÃ© que lâinstant initial
+ serait celui oÃ¹ la goutte touche la surface de lâeau. Pour cela, sur le 
+logiciel Tracker il est possible de mettre le temps Ã  0 sur une image. Un choix sâoffrait Ã  nous, il fallait dÃ©cider 
+quelle image mettre Ã  t
+0, en effet on ne pouvait pas toujours avoir le moment exact oÃ¹ la goutte rencontrait la 
+surface. Nous avons choisi de mettre la premiÃ¨re image oÃ¹ lâon voyait la goutte dans lâeau Ã  t
+0 ; la vitesse de 
+chute de la goutte dans lâair Ã©tant nettement supÃ©rieure Ã  celle de la goutte dans lâeau, lâerreur sâen trouve 
+minimisÃ©e. 
+ 
+ââUn dernier paramÃ¨tre Ã  rÃ©gler Ã©tait celui des axes. Sur Tracker, des axes sont gÃ©nÃ©rÃ©s automatiquement afin 
+que le logiciel puisse renseigner la position des objets dans le temps. Ainsi, nous avons voulu que la surface 
+de lâeau coÃ¯ncide avec lâaxe des abscisses. 
+ 
+ââNous avons par la suite, image par image repÃ©rÃ© la position dâun point (toujours le mÃªme, le plus souvent le 
+bord gauche) de lâanneau pendant au moins 2 minutes. Nous avions environ 70 points en moyenne par 
+pointage. 
+ 
+9
+
+ââLe logiciel, Ã  l'aide des indications fournies plus tÃ´t, dÃ©terminait la position z(t) de la goutte en fonction du 
+temps sur chaque image. Ce qui nous a permis de rÃ©cupÃ©rer ces donnÃ©es et de les placer dans un tableur 
+pour les Ã©tudier ensuite. 
+ 
+RÃ©sultats expÃ©rimentaux 
+ 
+Lors de l'exploitation de nos pointages, nous avons remarquÃ© graphiquement, et parfois simplement en observant les 
+vidÃ©os, que certains anneaux tombaient plus vite que d'autres. En recherchant les diffÃ©rents facteurs pouvant 
+influencer la vitesse de chute des anneaux, la hauteur de chute de la goutte nous est apparue comme un facteur 
+primordial. Afin de vÃ©rifier cette hypothÃ¨se, nous avons dÃ©cidÃ© de filmer la chute de plusieurs sÃ©ries dâanneaux dans 
+lâeau. Une sÃ©rie est composÃ©e de quatres (parfois 3 ou 5) anneaux tombant d'une hauteur identique. Chaque sÃ©rie 
+tombait dâune hauteur diffÃ©rente, ces derniÃ¨res allant de 1,6 cm Ã  4,5 cm. 
+ 
+Nous avons exploitÃ© ces vidÃ©os sur Tracker comme expliquÃ© prÃ©cÃ©demment, puis nous avons rentrÃ© nos donnÃ©es 
+dans un tableur. Pour chaque sÃ©rie, nous avons calculÃ© la moyenne des courbes z(t). Nous avons Ã©galement ajoutÃ© 
+des incertitudes-types sur les courbes, ces incertitudes-types ont Ã©tÃ© calculÃ©es de la maniÃ¨re suivante : pour chaque 
+sÃ©rie de vidÃ©os, nous avons calculÃ©, grÃ¢ce au tableur, lâÃ©cart-type des courbes z(t) puis nous lâavons divisÃ© par la racine carrÃ©e du nombre de vidÃ©os. (exemple voir FigureÂ 16.) 
+ 
+FigureÂ 16. Graphique du dÃ©placement vertical de lâanneau tourbillonnaire dans lâeau en fonction du temps pour une 
+hauteur de chute de 1,9 cm pour 4 vidÃ©os diffÃ©rentes. La courbe rouge est la moyenne des 4 vidÃ©os prÃ©cÃ©dentes, les 
+barres dâerreurs  sont les incertitudes-type sur la moyenne. &#3627408486;
+ 
+10
+
+FigureÂ 17. Graphique de lâÃ©volution de la hauteur de lâanneau tourbillonnaire en fonction du temps pour diffÃ©rentes 
+hauteurs de chuteââ. 
+ 
+ 
+En procÃ©dant ainsi pour toutes les sÃ©ries de vidÃ©os, nous obtenons le graphique de la FigureÂ 17. Nous remarquons 
+que la hauteur de chute de la goutte influence bien la vitesse des anneaux dans lâeau. Toutefois, nous avons Ã©tÃ© 
+surprises de constater que ce nâÃ©tait pas parce que la goutte tombait de trÃ¨s haut que lâanneau allait se dÃ©placer trÃ¨s 
+vite dans lâeau. En effet, nous pensions que les gouttes lÃ¢chÃ©es d'une hauteur plus importante iraient plus vite dans 
+l'eau puisque la vitesse instantanÃ©e de la goutte au moment oÃ¹ elle touche la surface de lâeau dÃ©pend directement de 
+la hauteur de chute de la goutte. Ce n'est pas ce quâon peut observer sur le graphique. La vitesse de chute des 
+anneaux tourbillonnaires partant dâune hauteur de 4,5 cm est nettement moins grande que celle des anneaux tombant 
+de 1,9 cm. On peut Ã©galement remarquer que certaines des courbes prÃ©cÃ©dentes coÃ¯ncident, alors que les hauteurs, 
+elles, Ã©taient complÃ¨tement diffÃ©rentes, comme par exemple la courbe de 1,6 cm et celle de 3,5 cm qui ont des valeurs 
+trÃ¨s proches dans le graphique alors que la courbe pour 1,9 cm de hauteur a des valeurs beaucoup plus basses que 
+pour les courbes prÃ©cÃ©dentes. Ce nâest pas le cas uniquement pour ces trois courbes lÃ . 
+ 
+Remarque : Il y a deux sÃ©ries avec des gouttes tombant dâune hauteur de 2,1 cm, ces deux sÃ©ries ont Ã©tÃ© prises deux 
+jours diffÃ©rents. On note que ces deux sÃ©ries ont donnÃ© des mesures compatibles : nous avons donc atteint un niveau 
+de reproductibilitÃ© satisfaisant grÃ¢ce Ã  notre dispositif. 
+ 
+11
+
+FigureÂ 18. Graphique de la position z de lâanneau Ã  lâinstant s pour diffÃ©rentes hauteurs de chute &#3627408481;=1
+ 
+Les diffÃ©rences entre ces diffÃ©rentes courbes sont significatives car comme on peut le voir, les courbes Ã©voquÃ©es 
+auparavant ne sont pas compatibles les unes aux autres et ne coÃ¯ncident pas Ã©tant donnÃ©es les incertitudes-types que 
+lâon a. En effet, les diffÃ©rences de vitesse de chute de lâanneau tourbillonnaire sont supÃ©rieures aux incertitudes-types 
+obtenues.  
+Si la hauteur de chute de la goutte influence la vitesse de lâanneau, elle ne le fait pas de maniÃ¨re monotone, il y aurait 
+donc une hauteur âoptimaleâ pour laquelle les anneaux tomberaient plus vite, dans notre cas câest pour une hauteur de 
+chute de 1,9 cm avec l'anneau qui se trouve Ã  environ 1,7 cm sous la surface de lâeau Ã  lâinstant t = 1s (voir FigureÂ 18). 
+Il nous faut dÃ©sormais comprendre ce phÃ©nomÃ¨ne en Ã©tudiant les autres facteurs pouvant avoir une influence sur la 
+vitesse de chute de lâanneau. 
+ 
+PrÃ©sentation du modÃ¨le thÃ©orique 
+ 
+AprÃ¨s le constat fait prÃ©cÃ©demment, nous avons essayÃ© dâÃ©tablir un modÃ¨le thÃ©orique nous permettant de modÃ©liser 
+les courbes obtenues sur la FigureÂ 17 afin de mieux comprendre la situation. 
+Si on applique la 2Ã¨me loi de Newton Ã  lâanneau tourbillonnaire, on obtient que ,  
+&#3627408474; Ã&#3627408462; 
+â
+=Î£&#3627408441;
+â
+avec  la masse de lâanneau et  le vecteur accÃ©lÃ©ration, et  la rÃ©sultante des forces sâappliquant au 
+&#3627408474; &#3627408462; 
+â
+&#3627408462;
+â
+=
+&#3627408465;&#3627408483;
+â
+&#3627408465;&#3627408481;
+Î£&#3627408441;
+â
+ 
+systÃ¨me. 
+Dans notre cas, les forces s'appliquant Ã  la anneau qui tombe sont : (voir FigureÂ 19) 
+ââle poids,  
+&#3627408451;
+â
+ââla poussÃ©e dâarchimÃ¨de,  
+Ï
+&#3627408462;
+â
+ââles frottements,   
+&#3627408467;
+â
+ 
+ 
+12
+
+Or on sait que , avec  un vecteur unitaire vertical et dirigÃ© vers 
+&#3627408451;
+â
+=â&#3627408474; &#3627408468;í µí±
+â
+í µí±
+â
+le haut, 
+Notons que la masse volumique de lâeau et de lâanneau tourbillonnaire sont 
+les mÃªmes, puisquâil Ã©volue dans lâeau. 
+ avec  
+  donc  
+Ï 
+â
+&#3627408462;
+=Ï
+&#3627408466;&#3627408462;&#3627408482;
+í µí±
+&#3627408462;&#3627408475;&#3627408475;&#3627408466;&#3627408462;&#3627408482;
+&#3627408468; í µí±
+â
+ Ï
+&#3627408466;&#3627408462;&#3627408482;
+í µí±
+&#3627408462;&#3627408475;&#3627408475;&#3627408466;&#3627408462;&#3627408482;
+=&#3627408474;Ï 
+â
+&#3627408462;
+= &#3627408474;&#3627408468; í µí±
+â
+Et on suppose que la force de frottement est proportionnelle au carrÃ© de la 
+vitesse donc :  
+&#3627408467; 
+â
+ = Î±&#3627408483;
+2
+ í µí±
+â
+ 
+On aura donc : 
+&#3627408474; &#3627408462;
+â
+ = Î£&#3627408441;
+â
+                          
+&#3627408474; &#3627408462;
+â
+ = &#3627408451;
+â
+ + Ï
+&#3627408462;
+â
++ &#3627408467;
+â
+                          
+&#3627408474; &#3627408462; 
+â
+ = â&#3627408474;&#3627408468; í µí±
+â
+ + &#3627408474;&#3627408468; í µí±
+â
+ + Î±&#3627408483;
+2
+ í µí±
+â
+                          
+&#3627408474; &#3627408462;
+â
+ = 0
+â
+ + Î±&#3627408483;
+2
+ í µí±
+â
+                          
+&#3627408474; 
+&#3627408465;&#3627408483;
+â
+&#3627408465;&#3627408481;
+ = Î±&#3627408483;
+2
+ í µí±
+â
+                          
+Or  donc :   
+&#3627408483;
+â
+ = &#3627408483; í µí±
+â
+&#3627408474; 
+&#3627408465;&#3627408483;
+&#3627408465;&#3627408481;
+ í µí±
+â
+ = Î±&#3627408483;
+2
+ í µí±
+â
+ce qui nous donne, 
+ 
+qui est une Ã©quation diffÃ©rentielle. 
+&#3627408474; 
+&#3627408465;&#3627408483;
+&#3627408465;&#3627408481; 
+=Î±&#3627408483;
+2
+ 
+On a ensuite rÃ©solu cette Ã©quation diffÃ©rentielle Ã  lâaide dâun logiciel en ligne 
+(https://www.dcode.fr/solveur-equation-differentielle) et nous avons obtenu : 
+ 
+  avec c une constante que lâon dÃ©termine Ã  partir des conditions initiales  
+&#3627408483;(&#3627408481;) = â 
+&#3627408474;
+Î±&#3627408481; + &#3627408464;
+ 
+0  avec v
+0 la vitesse initiale de lâanneau  &#3627408483;(&#3627408481;=0) = â&#3627408483;
+ 
+Et  donc 
+&#3627408483;(&#3627408481;=0) = â
+&#3627408474;
+Î±Ã0+&#3627408464;
+&#3627408483;(&#3627408481;=0)=â
+&#3627408474;
+&#3627408464;
+On a alors  , câest Ã  dire ce qui donne , 
+â&#3627408483;
+0
+ = â
+&#3627408474;
+&#3627408464;
+ â &#3627408464;= 
+&#3627408474;
+&#3627408483;
+0
+&#3627408483;(&#3627408481;) = 
+â&#3627408474;
+Î±&#3627408481; + 
+&#3627408474;
+&#3627408483;
+0
+&#3627408483;(&#3627408481;) = 
+â&#3627408483;
+&#3627408450;
+Î±&#3627408483;
+0
+&#3627408481; 
+&#3627408474;
++1
+on obtient alors 	. 
+&#3627408483;(&#3627408481;) = 
+â&#3627408483;
+0
+1+
+Î±&#3627408483;
+0
+&#3627408474;
+&#3627408481;
+ 
+Or, nous savons que la vitesse est la dÃ©rivÃ©e de la position donc 
+&#3627408483;=
+&#3627408465;&#3627408487;
+&#3627408465;&#3627408481;
+Nous avons ensuite utilisÃ© le mÃªme site (https://www.dcode.fr/primitive-integrale) 
+qu'auparavant pour trouver les primitives de la vitesse : 
+   avec câ une constante que lâon dÃ©termine Ã  partir des conditions initiales 
+&#3627408487;(&#3627408481;)= 
+â&#3627408483;
+&#3627408476;
+ln(1+
+Î±&#3627408483;
+&#3627408450;
+&#3627408474;
+&#3627408481;) 
+Î±&#3627408483;
+0
+&#3627408474;
+ +&#3627408464;'
+ 
+&#3627408487;(&#3627408481;)= 
+â&#3627408474;
+Î±
+ ln( 1+
+Î±&#3627408483;
+0
+&#3627408474;
+&#3627408481;) +&#3627408464;' 
+ 
+Or avec  lâaltitude initiale de lâanneau  &#3627408487;(&#3627408481;=0)=&#3627408487;
+0
+&#3627408487;
+0
+ 
+&#3627408487;(&#3627408481;=0)= 
+â&#3627408474;
+Î±
+ ln( 1+
+Î±&#3627408483;
+0
+&#3627408474;
+ Ã 0 )+&#3627408464;'= &#3627408487;
+0
+ 
+Donc  
+&#3627408487;(&#3627408481;=0)=&#3627408464;'=&#3627408487;
+0
+On aura donc au final  
+&#3627408487;(&#3627408481;) = 
+â&#3627408474;
+Î±
+ ln(1+ 
+Î±&#3627408483;
+0
+&#3627408474;
+&#3627408481;) + &#3627408487;
+0
+Nous vÃ©rifierons si ce modÃ¨le est en accord avec nos donnÃ©es expÃ©rimentale plus tard, nous avons dans un premier 
+temps besoin de connaÃ®tre la masse  dâune goutte et sa vitesse initiale  aprÃ¨s son entrÃ©e dans lâeau. &#3627408474; &#3627408483;
+0
+ 
+13 
+ 
+FigureÂ 19. SchÃ©ma des forces qui 
+sâappliquent sur lâanneau 
+tourbillonnaire
+
+Etude de la masse de la goutte  
+ 
+Afin d'exploiter le modÃ¨le prÃ©cÃ©dent, nous dÃ©sirions connaÃ®tre la masse  de la goutte. &#3627408474;
+Pour cela, nous avons pesÃ© une cuve vide, puis nous avons fait tomber des gouttes avec la seringue utilisÃ©e pour 
+lâexpÃ©rience, tout en continuant de peser la cuve et de noter la pesÃ©e toutes les dix gouttes. En tout, nous avons 
+effectuÃ© quatre sÃ©ries de mesures de 100 gouttes chacune. Pour trouver la masse dâune goutte, nous avons additionnÃ© 
+les masses des gouttes de chaque sÃ©rie puis divisÃ© par 100 (soit le nombre de gouttes tombÃ©es au total).  
+Puis, nous avons tracÃ© un graphique reprÃ©sentant la masse affichÃ©e sur la balance en fonction du nombre de gouttes 
+tombÃ©es. Cela permet aux coefficients directeurs des droites de donner la masse dâune goutte. 
+ 
+FigureÂ 20. Graphique reprÃ©sentant la masse affichÃ©e sur la balance (en g) en fonction du nombre de gouttes tombÃ©es 
+ 
+ 
+Nous avons obtenu les masses suivantes : 
+ââ0,01990 g pour la premiÃ¨re sÃ©rie de mesures, 
+ââ0,02042 g pour la deuxiÃ¨me sÃ©rie de mesures, 
+ââ0,01771 g pour la troisiÃ¨me sÃ©rie de mesures, 
+ââ0,01874 g pour la derniÃ¨re sÃ©rie de mesures. 
+ 
+On peut remarquer que les masses sont assez diffÃ©rentes dâune sÃ©rie Ã  lâautre, ce qui peut notamment Ãªtre dÃ» Ã  une 
+variation de tempÃ©rature, ce que nous nâavons pas pris en compte lors de nos expÃ©riences. 
+Par la suite, nous avons calculÃ© la moyenne de ces masses, soit 0,01919 g, ainsi que lâÃ©cart type : 0,001049725 g. 
+Avec ces valeurs, nous pouvons calculer lâincertitude-type sur la masse dâune goutte. Il faut diviser l'Ã©cart-type par le 
+nombre de mesures (appelons-le M). 
+donc  = 0,005248625 g 
+&#3627408482;(&#3627408474;)=
+Ï
+í µí±
+= 
+0,001049725
+4
+Lâincertitude-type est donc dâenviron g. La masse dâune goutte est donc de 	.  0,0053	0,0192 &#3627408468;Â±0,0053 &#3627408468;
+ 
+14
+
+Etude de la chute de la goutte dans l'air avec la camÃ©ra 
+rapide 
+ 
+Pour vÃ©rifier le modÃ¨le, nous voulions connaÃ®tre la vitesse instantanÃ©e de la goutte juste avant quâelle ne touche la 
+surface de lâeau. Notre principale problÃ©matique ici Ã©tait la question des frottements : lors de la chute de la goutte dans 
+l'air, les frottements sont-ils nÃ©gligeables ? En effet, il Ã©tait difficile de trouver la vitesse instantanÃ©e de la goutte avant 
+quâelle ne touche la surface de lâeau en exploitant une vidÃ©o, la camÃ©ra de la tablette nâÃ©tait pas assez prÃ©cise, elle ne 
+permettait pas de prendre assez dâimages par seconde, nous ne pouvions pas avoir la photo prÃ©cise oÃ¹ la goutte 
+rencontrait la surface. Si les frottements de lâair sur la goutte sont nÃ©gligeables, nous pourrons alors dÃ©terminer la 
+vitesse de la goutte par le calcul. 
+ 
+Nous avons utilisÃ© la camÃ©ra rapide du lycÃ©e pour mesurer la vitesse de chute des gouttes dans lâair afin de vÃ©rifier le 
+modÃ¨le suivant. 
+ 
+En appliquant la deuxiÃ¨me loi de Newton Ã  la goutte dans lâair on obtient : 
+  avec  lâaccÃ©lÃ©ration et  la masse de la goutte. 
+Î£&#3627408441; 
+â
+= &#3627408474;&#3627408462;
+â
+&#3627408462;
+â
+&#3627408474;
+Or, dans lâair, si on nÃ©glige les frottements on peut Ã©crire . 
+Î£&#3627408441; 
+â
+=&#3627408451;
+â
+Or on sait Ã©galement que , on peut donc Ã©crire, . 
+&#3627408451;
+â
+=&#3627408474;&#3627408468;
+â
+&#3627408474;&#3627408468;
+â
+=&#3627408474;&#3627408462;
+â
+On peut diviser par la masse les deux membres de lâÃ©quation et intÃ©grer un vecteur unitaire  vertical et orientÃ© vers le 
+í µí±
+â
+haut, on obtient alors : 
+ 
+&#3627408462;í µí±
+â
+=â&#3627408468;í µí±
+â
+ &#3627408462;=â&#3627408468;
+ 
+&#3627408465;&#3627408483;
+&#3627408465;&#3627408481;
+=â&#3627408468;
+ oÃ¹  est Ã  dÃ©terminer Ã  partir des conditions initiales &#3627408483;=â&#3627408468;&#3627408481;+&#3627408464;&#3627408464;
+On note  la vitesse initiale de la goutte, &#3627408483;
+0
+donc  &#3627408483;(&#3627408481;=0)=â&#3627408468;Ã0+&#3627408464;=&#3627408483;
+0
+ &#3627408464;=&#3627408483;
+0
+Donc ou encore 
+&#3627408483;=â&#3627408468;&#3627408481;+&#3627408483;
+0
+&#3627408465;&#3627408487;
+&#3627408465;&#3627408481;
+=â&#3627408468;&#3627408481;+&#3627408483;
+0
+Donc  oÃ¹  est Ã  dÃ©terminer Ã  partir des conditions initiales 
+&#3627408487;=â
+1
+2
+&#3627408468;&#3627408481;
+2
++ &#3627408483;
+0
+&#3627408481;+&#3627408464;
+1
+&#3627408464;
+1
+On note  la position initiale de la goutte, &#3627408487;
+0
+donc 
+ &#3627408487;(&#3627408481;=0)=â
+1
+2
+&#3627408468;Ã0
+2
++&#3627408483;
+0
+Ã0+&#3627408464;
+1
+=&#3627408487;
+0
+ &#3627408464;
+1
+=&#3627408487;
+0
+Finalement, on a  
+ &#3627408487;=â
+1
+2
+&#3627408468;&#3627408481;
+2
++&#3627408483;
+0
+&#3627408481;+&#3627408487;
+0
+ 
+ 
+Nous allons essayer de vÃ©rifier si ce modÃ¨le sâapplique lors de la chute de la goutte dâeau dans lâair en le confrontant 
+aux mesures expÃ©rimentales rÃ©alisÃ©es. 
+ 
+Dans la partie prÃ©cÃ©dente, notre hauteur de chute la plus grande Ã©tant 4,5 centimÃ¨tres, nous avons ici choisi de faire 
+tomber une goutte dâune hauteur de 6 centimÃ¨tres environ. Nous avons ajustÃ© les paramÃ¨tres, c'est-Ã -dire que nous 
+avons choisi 91 images par seconde et rÃ©glÃ© le temps d'exposition de la camÃ©ra. Lâenjeu Ã©tait dâavoir assez dâimages 
+par secondes avec un temps d'exposition suffisamment long pour avoir des images pas trop sombres. Nous avons 
+ensuite effectuÃ© deux films que nous avons exploitÃ©s grÃ¢ce au logiciel Tracker, en effectuant un pointage de nos 
+vidÃ©os. Nous avons rÃ©cupÃ©rÃ© ces valeurs et les avons intÃ©grÃ©es dans Latis Pro et avons par la suite modÃ©lisÃ© la 
+courbe. La courbe que nous obtenions Ã©tait une parabole concave. 
+ 
+On voit sur la FigureÂ 21 ci-dessous, en rouge les points obtenus lors du pointage et en bleu la courbe obtenue lors de 
+la modÃ©lisation. 
+ 
+ 
+15
+
+FigureÂ 21. ModÃ©lisation des donnÃ©es expÃ©rimentales de la position de la goutte lors de sa chute dans lâair obtenues 
+sur Latis Pro 
+ 
+Les Ã©quations des reprÃ©sentations graphiques des fonctions bleues que nous avons obtenues sont les suivantes : 
+ââ (voir FigureÂ 21. graphique de gauche) 
+&#3627408440;
+1
+:&#3627408487;=â4,919&#3627408481;
+2
+â25,577Ã10
+â3
+&#3627408481;+73,843Ã10
+â6
+ââ (voir FigureÂ 21. graphique de droite) 
+&#3627408440;
+2
+:&#3627408487;=â5,084&#3627408481;
+2
+â45,441Ã10
+â3
+&#3627408481;+14,234Ã10
+â6
+ 
+VÃ©rifions si nos mesures expÃ©rimentales vÃ©rifient le modÃ¨le Ã©tabli prÃ©cÃ©demment. 
+ 
+ââSur lâÃ©quation  le coefficient des  est  
+&#3627408440;
+1
+&#3627408481;
+2
+ â4,919
+Or d'aprÃ¨s le modÃ¨le, le coefficient des est ce qui est Ã©gal Ã   
+&#3627408481;
+2
+ â
+1
+2
+&#3627408468;â
+1
+2
+Ã9,81=â4,901
+ 
+On a donc ce qui est Ã  peu prÃ¨s Ã©gal Ã  . â4,901	â4,919
+ 
+ââPour l'Ã©quation le coefficient des est Ã©gal Ã  Or est Ã  peu prÃ¨s Ã©gal Ã  
+&#3627408440;
+2
+&#3627408481;
+2
+ â5,084.â5,084 â4,901
+ 
+On trouve donc des rÃ©sultats qui permettent de valider le modÃ¨le exposÃ© prÃ©cÃ©demment, on peut alors affirmer que 
+lors de sa chute la goutte nâest pas soumise aux frottements de lâair. 
+ 
+DÃ©sormais, pour connaÃ®tre la vitesse instantanÃ©e  de la goutte avant quâelle ne touche la surface, nous nâaurons plus &#3627408483;
+&#3627408437;
+besoin de la mesurer, la calculer de la maniÃ¨re suivante suffira. 
+ 
+ââAu point , celui oÃ¹ la goutte quitte la seringue, on peut exprimer l'Ã©nergie mÃ©canique de la maniÃ¨re suivante : &#3627408436;
+ 	, Or, ici,  
+&#3627408440;
+&#3627408474;
+(&#3627408436;)=
+1
+2
+&#3627408474;&#3627408483;
+&#3627408436;
+2
++&#3627408474;&#3627408468;&#3627408487;
+&#3627408436;
+&#3627408483;
+&#3627408436;
+=0
+On a donc, car ici &#3627408440;
+&#3627408474;
+(&#3627408436;)=&#3627408474;&#3627408468;â&#3627408487;
+&#3627408436;
+=â
+ââAu point , celui oÃ¹ la goutte touche la surface de lâeau, on peut exprimer l'Ã©nergie mÃ©canique de la maniÃ¨re &#3627408437;
+suivante : 
+ 	, Or, ici, car 
+&#3627408440;
+&#3627408474;
+(&#3627408437;)=
+1
+2
+&#3627408474;&#3627408483;
+&#3627408437;
+2
++&#3627408474;&#3627408468;&#3627408487;
+&#3627408437;
+&#3627408474;&#3627408468;&#3627408487;
+&#3627408437;
+=0&#3627408487;
+&#3627408437;
+=0
+On a donc,   
+&#3627408440;
+&#3627408474;
+(&#3627408437;)=
+1
+2
+&#3627408474;&#3627408483;
+&#3627408437;
+2
+Or, lorsquâil nây a pas de frottements, l'Ã©nergie mÃ©canique se conserve, on peut donc Ã©crire &#3627408440;
+&#3627408474;
+ ce qui est Ã©quivalent Ã  
+&#3627408474;&#3627408468;â=
+1
+2
+&#3627408474;&#3627408483;
+&#3627408437;
+2
+&#3627408468;â=
+1
+2
+&#3627408483;
+&#3627408437;
+2
+Finalement, on peut Ã©crire, 
+&#3627408483;
+&#3627408437;
+=2&#3627408468;â
+Exploitations des courbes 
+GrÃ¢ce Ã  l'Ã©quation trouvÃ©e auparavant :  , on va modÃ©liser les diffÃ©rentes courbes du 
+&#3627408487;(&#3627408481;) = 
+â&#3627408474;
+Î±
+ ln(1+ 
+Î±&#3627408483;
+0
+&#3627408474;
+&#3627408481;)+&#3627408487;
+0
+graphique (voir FigureÂ 17.) du dÃ©placement vertical des anneaux Ã  lâaide du logiciel Latis pro. 
+ 
+16
+
+FigureÂ 22. Capture dâÃ©cran de Latis Pro lors de la modÃ©lisation 
+ 
+Nous avons choisi dans les modÃ¨les le âmodÃ¨le utilisateurâ qui va nous permettre dâentrer une fonction pour modÃ©liser 
+la courbe. Dans notre cas nous allons rentrer la fonction z(t) trouvÃ©e auparavant avec quelques modifications : 
+ avec a, b, c et des variables valant respectivement , et . AprÃ¨s avoir entrÃ© la 
+&#3627408487;(&#3627408481;) = &#3627408462;+ &#3627408463;ln(1+&#3627408464;Â·&#3627408481;) &#3627408487;
+0
+ 
+â&#3627408474;
+Î±
+  
+Î±&#3627408483;
+0
+&#3627408474;
+formule il faut calculer le modÃ¨le puis noter dans un tableur les valeurs des coefficients des trois variables. On a fait 
+cela pour chaque courbe de chaque hauteur puis on a calculÃ© la moyenne des paramÃ¨tres ainsi obtenus et les 
+incertitudes-types. On remarque Ã©galement que le modÃ¨le est en trÃ¨s bon accord avec les donnÃ©es expÃ©rimentales 
+comme on peut le voir sur la FigureÂ 22.  
+ 
+AprÃ¨s avoir calculÃ© les moyennes des valeurs respectives de a, b et c, nous avons obtenu comme rÃ©sultats : 
+ 
+hauteur de chute de la 
+goutte 
+a (en m) b (en m) c (en s
+-1
+) 
+1,6 cm 0,00623 -0,0145 19,89 
+1,7 cm 0,00467 -0,0210 11,90 
+1,8 cm 0,00430 -0,0195 11,57 
+1,9 cm 0,00431 -0,0243 14,92 
+2,1 cm 0,00535 -0,0229 12,29 
+2,1 cm 0,00485 -0,0235 12,12 
+2,3 cm 0,00115 -0,0181 11,11 
+3,5 cm 0,00605 -0,0189 11,43 
+4,5 cm 0,00255 -0,0147 13,68 
+ 
+On va ensuite Ã  lâaide de ces coefficients calculer  ; on a , si on multiplie le tout par b on obtient : 
+&#3627408483;
+0
+&#3627408464; = 
+Î±&#3627408483;
+0
+&#3627408474;
+, ce qui est Ã©gal Ã  	. Finalement,  . 
+&#3627408464; Ã &#3627408463; = 
+Î±&#3627408483;
+0
+&#3627408474;
+ Ã 
+â &#3627408474;
+Î±
+&#3627408464; Ã &#3627408463; = â &#3627408483;
+0 
+&#3627408483;
+0
+= â&#3627408464; Ã &#3627408463;
+Pour faire ce calcul, on prend chaque valeur de b et c (et non pas la moyenne) et on obtient plusieurs valeurs de . &#3627408483;
+0
+On fait ensuite la moyenne de ces rÃ©sultats pour chaque hauteur puis on calcule lâincertitude-type sur  en divisant &#3627408483;
+0
+lâÃ©cart type de nos mesures par la racine du nombre de mesures. 
+Puis on va calculer  Ã  lâaide de la masse de lâanneau trouvÃ©e auparavant et du coefficient b :  
+Î±	Î± = 
+â &#3627408474; 
+&#3627408463; 
+De la mÃªme maniÃ¨re, on calcule la moyenne et l'incertitude-type sur .Î±
+ 
+17
+
+On obtient alors : 
+ 
+Hauteur de chute de la goutte   (en g.m
+-1
+) Î± (en m.s
+-1
+) &#3627408483;
+&#3627408476; (en m.s
+-1
+) &#3627408483;
+&#3627408437;
+1,6 cm 1,326 Â± 0,036 0,288 Â± 0,011 0,56 
+1,7 cm 0,912 Â± 0,007 0,251 Â± 0,013 0,58 
+1,8 cm 0,979 Â± 0,041 0,239 Â± 0,019 0,59 
+1,9 cm 0,791 Â± 0,016 0,364 Â± 0,035 0,61 
+2,1 cm 0,852 Â± 0,060 0,275 Â± 0,011 0,64 
+2,1 cm 0,817 Â± 0,016 0,285 Â± 0,018 0,64 
+2,3 cm 1,063 Â± 0,025 0,201 Â± 0,005 0,67 
+3,5 cm 1,026 Â± 0,045 0,217 Â± 0,055 0,83  
+4,5 cm 1,322 Â± 0,090 0,203 Â± 0,060 0,94 
+Pour rappel,  est la vitesse de la goutte avant lâimpact avec l'eau, calculÃ©e avec . 
+&#3627408483;
+&#3627408437;
+&#3627408483;
+&#3627408437;
+=2&#3627408468;â
+ 
+ 
+ 
+FigureÂ 23. Graphique de la vitesse initiale  (en m.s
+-1
+) &#3627408483;
+0
+de lâanneau en fonction de la hauteur de chute de la 
+goutte (en cm) 
+FigureÂ 24. Graphique du coefficient de frottement  (en Î±
+g.m
+-1
+) en fonction de la hauteur  de chute de la goutte â
+(en cm) 
+ 
+ 
+FigureÂ 25. Graphique de la vitesse initiale  de lâanneau &#3627408483;
+0
+(en m.s
+-1
+) en fonction de la vitesse instantanÃ©e  de la &#3627408483;
+&#3627408437;
+goutte juste avant son impact avec la surface de lâeau 
+(en m.s
+-1
+) 
+FigureÂ 26. Graphique de la vitesse initiale (en m.s
+-1
+) &#3627408483;
+0
+ 
+de lâanneau en fonction du coefficient de frottement  (en Î±
+g.m
+-1
+) 
+ 
+18
+
+Nous remarquons que tous les graphiques sont similaires, on retrouve souvent un regroupement de points qui se 
+trouve Ã  la mÃªme hauteur, entre 1,5 et 2 cm (voir sur les FigureÂ 23 et FigureÂ 24), et Ã  la mÃªme vitesse initiale , entre &#3627408483;
+0
+0,25 et 0,375 m.s
+-1
+ (voir FigureÂ 23 et FigureÂ 25). De plus, deux points semblent toujours Ãªtre Ã  part, on peut aussi 
+observer ce phÃ©nomÃ¨ne dans la FigureÂ 18. On remarque Ã©galement dans le deuxiÃ¨me tableau que plus le coefficient 
+de frottements est Ã©levÃ©, plus la vitesse initiale  est basse, ce qui montre bel et bien quâils sont liÃ©s. Il semble aussi Î± 	&#3627408483;
+0
+y avoir un maximum pour  et un minimum pour  pour une mÃªme hauteur de chute de 1,9 cm (voir FigureÂ 23 et &#3627408483;
+0
+Î±
+FigureÂ 24). 
+On peut aussi observer que  semble dÃ©pendre de la hauteur de chute (voir FigureÂ 24), or on sait que ce paramÃ¨tre Î±
+dÃ©pend de la forme de lâanneau. Cela peut Ãªtre dÃ» Ã  la rotation de lâanneau ou Ã  la dÃ©formation de la goutte dans lâair. 
+Nous avons en effet, suite Ã  lâune de nos lectures (Formation of vortex rings from falling drops, Chapman and 
+Critchlow, 1967), appris que la goutte change de forme dans lâair. La hauteur de chute de la goutte ferait alors varier la 
+forme de la goutte au moment de son impact avec la surface de lâeau, cela pourrait influencer le coefficient de frottement .  Î±
+ 
+Les graphiques ne permettent malheureusement pas dâÃ©mettre dâhypothÃ¨ses sur le comportement de lâanneau, le lien 
+entre  et , le lien entre  et  ou encore de lien entre et . Il nous est pour le moment difficile de les interprÃ©ter, &#3627408483;
+0
+â &#3627408483;
+&#3627408437;
+&#3627408483;
+0
+Î± â
+aucun schÃ©ma particulier ne se dÃ©gage des graphiques. Il faudrait rÃ©itÃ©rer les expÃ©riences et faire des mesures 
+supplÃ©mentaires afin de pouvoir avoir plus de points dans nos graphiques et avoir une idÃ©e plus prÃ©cise des liens entre 
+hauteur de chute et les autres variables.  
+ 
+Remarque : Lors de lâÃ©tablissement de notre modÃ¨le, nous avions Ã©mis lâhypothÃ¨se que lâeau dans le bocal pouvait se 
+dÃ©placer. Nous avions alors ajoutÃ© une variable  reprÃ©sentant le dÃ©placement vertical vers le bas de lâeau dans &#3627408483;
+&#3627408440;
+lâaquarium. Nous avions de la mÃªme maniÃ¨re que pour le modÃ¨le prÃ©sentÃ© plus haut modÃ©lisÃ© la courbe coÃ¯ncidant 
+avec les mesures expÃ©rimentales. Nous obtenions cette fois un modÃ¨le encore plus proche des points expÃ©rimentaux, 
+toutefois, la valeur que lâon obtenait pour  Ã©tait positive et donc de mÃªme sens que le vecteur unitaire  câest-Ã -dire 
+&#3627408483;
+&#3627408440;
+í µí±
+â
+dirigÃ©e vers le haut. Le mouvement de lâeau nâÃ©tait pas ce que nous avions Ã  l'esprit lors de lâajout de la variable. 
+Nâayant pas dâidÃ©e sur ce que pouvait reprÃ©senter physiquement ce paramÃ¨tre, nous lâavons finalement supprimÃ©. 
+Conclusion et perspectives  
+ 
+Finalement, aprÃ¨s avoir mis au point un dispositif expÃ©rimental adaptÃ© Ã  notre Ã©tude et rÃ©alisÃ© toutes nos expÃ©riences 
+sur les anneaux tourbillonnaires, nous avons pu Ã©tudier correctement la possible relation entre la hauteur de la chute 
+dâune goutte et la vitesse de son anneau. Nous avons effectivement pu remarquer que la hauteur influenÃ§ait la vitesse 
+de lâanneau, et que ce nâest pas parce que la goutte tombait de plus haut quâelle irait plus vite dans lâeau, puisque les 
+gouttes tombÃ©es Ã  1,9 cm de la surface de lâeau formaient les anneaux les plus rapides bien quâil y avait des hauteurs 
+de chute supÃ©rieures Ã  1,9 cm. De plus, nous avons cherchÃ© la masse de la goutte et sa vitesse initiale , des &#3627408483;
+&#3627408437;
+facteurs essentiels Ã  la vÃ©rification du modÃ¨le. Cela nous a permis de dÃ©terminer que la masse dâune goutte est de 
+ et que lors de sa chute, la goutte nâÃ©tait pas soumise aux frottements de lâair. Cependant, il est 0,0192 &#3627408468;Â±0,0053 &#3627408468;
+difficile de faire un lien entre la vitesse initiale  de lâanneau dans lâeau et la hauteur de la chute de la goutte  Ã  partir &#3627408483;
+0
+â
+de nos mesures. Nous pourrions nÃ©anmoins ajouter des mesures pour des hauteurs de chute entre 2,5 et 3,5 cm afin 
+de voir sâil y aurait d'autres hauteurs de chute qui donneraient lieu Ã  d'importantes vitesses dâanneaux tourbillonnaires. 
+ 
+Notre problÃ©matique Ã©tait "Comment varie la vitesse de chute de lâanneau tourbillonnaire dans lâeau quand on fait 
+varier la hauteur de chute de la goutte qui le gÃ©nÃ¨re ?â. Nous pouvons dÃ©sormais y rÃ©pondre en partie, il y a une 
+hauteur de chute pour laquelle lâanneau tourbillonnaire a une vitesse de chute plus importante : 1,9 cm. Cette hauteur 
+nâest pas forcÃ©ment unique, il pourrait y avoir plusieurs maximums.  
+Suite aux conseils des membres du jury nous avons automatisÃ© notre systÃ¨me dans lâoptique dâobtenir des rÃ©sultats 
+plus prÃ©cis. Il nous faudrait maintenant refaire des vidÃ©os, les pointages ainsi que le tracÃ© des courbes et leur 
+ 
+19
+
+modÃ©lisation pour chacune dâentre elles, pour ensuite comparer les rÃ©sultats notamment les incertitudes-types et voir 
+si celles-ci sont effectivement plus petites. 
+ 
+Lors de nos essais, nous avons Ã©galement essayÃ© de crÃ©er des gouttes de consistance et donc de masse volumique 
+diffÃ©rentes. Notamment en rÃ©alisant un mÃ©lange de glycÃ©rine et dâeau pour remplacer lâeau des gouttes. Avec ce 
+changement, les anneaux Ã©voluent diffÃ©remment et se mÃ©langent plus rapidement. Les gouttes forment un anneau 
+moins net, mais surtout, les bords de lâanneau se divisent en dâautres anneaux tourbillonnaires et ainsi de suite. Bien 
+que cela soit trÃ¨s intÃ©ressant (et joli !), cela semblait difficile Ã  exploiter. Nous avons pu observer le mÃªme phÃ©nomÃ¨ne 
+avec de lâeau sucrÃ©e. 
+ 
+Les chercheurs que nous avions contactÃ©s nous avaient conseillÃ©s dâessayer de faire tomber des gouttes dâhuile dans 
+de lâeau. Lâhuile ayant une densitÃ© infÃ©rieure Ã  1 (celle de lâeau, le liquide dans lequel lâanneau Ã©voluerait), lâanneau 
+allait ârebondirâ et se comporter comme un yoyo. Ils nous avaient Ã©galement proposÃ© de travailler en faisant tomber 
+des fluides non-newtoniens dans de lâeau. NÃ©anmoins, nous nâavons pas eu le temps de tester avec ces fluides, de 
+plus, nous nâavions pas de colorants ni de pigments solubles dans lâhuile. Cela pourrait Ãªtre une prochaine piste de 
+recherche. 
+Remerciements 
+ 
+Nous remercions le lycÃ©e polyvalent Louis Davier pour nous avoir fourni un environnement propice Ã  nos recherches, 
+ainsi qu'au personnel du laboratoire de physique-chimie du lycÃ©e, Olivier Camus et FranÃ§oise Mellier, pour nous avoir 
+fourni tout le matÃ©riel nÃ©cessaire et dâavoir Ã©tÃ© lÃ  pour nous aider sur ce projet en nous permettant d'amÃ©liorer notre 
+dispositif lorsqu'on en avait besoin malgrÃ© nos arrivÃ©es parfois impromptues au laboratoire du lycÃ©e. Nous remercions 
+Ã©galement M. Chesnot et M. Pivard qui ont percÃ© la vis dans l'axe. Enfin nous sommes reconnaissantes envers M. 
+Roux, M. Tamburini, et encore une fois M. Camus et M. Bavouzet pour nous avoir aidÃ©es Ã  prÃ©parer notre oral. 
+ 
+Nous remercions Pierre Brancher et Julie Albagnac, chercheurs Ã  l'IMFT (Institut de MÃ©canique des Fluides) Ã  
+Toulouse, pour avoir acceptÃ© de rÃ©pondre Ã  nos questions et pour nous avoir trÃ¨s gentiment consacrÃ© de leur temps. 
+ 
+Nous remercions Ã©galement les membres du jury des Ã©preuves inter-acadÃ©miques pour leurs conseils avisÃ©s et leur 
+regard critique sans lesquels nous nâaurions pas pÃ» amÃ©liorer notre dispositif. 
+ 
+Pour finir, nous remercions Monsieur Bavouzet, enseignant de Physique-Chimie pour nous avoir suivies et guidÃ©es sur 
+ce projet depuis la seconde, ainsi que pour toute lâaide et les explications apportÃ©es, notamment sur la construction du 
+dispositif et le calcul du modÃ¨le. 
+ 
+Nous avons toutes beaucoup apprÃ©ciÃ© participer Ã  ce projet malgrÃ© le temps que celui-ci nous a pris hors cours. 
+Certaines parties Ã©taient plus intÃ©ressantes Ã  rÃ©aliser que dâautres : le pointage vidÃ©o a par exemple Ã©tÃ© 
+particuliÃ¨rement long et redondant mais le reste Ã©tait trÃ¨s intÃ©ressant. Ce projet nous a permis dâavoir une expÃ©rience 
+dâun travail en Ã©quipe sur le long terme oÃ¹ lâon a pu se rendre compte que chacune dâentre nous avait ses propres 
+capacitÃ©s et connaissances Ã  apporter Ã  lâÃ©quipe, aussi variÃ©es soient-elles. Cette expÃ©rience nous a aussi apportÃ© 
+une connaissance plus approfondie de certains logiciels que lâon utilise en cours de physique, et notamment durant les 
+travaux pratiques, comme Tracker ou bien Latis pro.  
+Bibliographie 
+ 
+https://www.dcode.fr/solveur-equation-differentielle 
+https://www.dcode.fr/primitive-integrale 
+https://www.etna3340.com/ 
+https://en.wikipedia.org/wiki/Vortex_ring 
+https://www.pololu.com/product/3768 
+Formation of vortex rings from falling drops, Chapman 
+and Critchlow, 1967 
+Kinematics of vortex rings generated by a drop upon 
+impact on a liquid pool, Saha, Wei, Tang, Law, 2019 
+ 
+20

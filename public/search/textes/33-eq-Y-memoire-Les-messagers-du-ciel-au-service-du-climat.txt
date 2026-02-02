@@ -1,0 +1,922 @@
+EYMARD Simon 
+SALADIN Nathan    
+WACH RaphaÃ«l 
+ 
+ 
+ 
+ 
+ 
+ 
+    Â« Les messagers du ciel au service du climat Â» 
+ 
+ 
+ 
+ 
+ 
+OLYMPIADES DE PHYSIQUE
+
+1 
+ 
+Table des matiÃ¨res 
+INTRODUCTION : ....................................................................................................................... 2 
+1 - OBSERVATION ET FORMATION DES FLOCONS DE NEIGE ................................................ 3 
+1.1 - Historique des Ã©tudes sur les flocons................................................................................ 3 
+1.2 - Formation dâun flocon : de la vapeur dâeau Ã  la symÃ©trie hexagonale ................................ 4 
+1.3 - ModÃ©lisation mathÃ©matique de la croissance dâun flocon de neige .................................... 7 
+1.4 - Structure et classification des flocons ............................................................................... 9 
+2 - LES FLOCONS COMME INDICATEURS DU CLIMAT â¨ ......................................................... 11 
+2.1 - Etude de la diminution de lâalbÃ©do .................................................................................. 11 
+2.1.A - Diminution de lâalbÃ©do de la neige ............................................................................ 11 
+2.1.B - Variation de la tempÃ©rature dÃ» Ã  lâalbÃ©do ................................................................. 13 
+2.2 - Etude de la durÃ©e de fonte dâun flocon ............................................................................ 16 
+2.3 - Etude de la forme des flocons ........................................................................................ 17 
+CONCLUSION : ........................................................................................................................ 18 
+REMERCIEMENTS : ................................................................................................................. 19 
+BIBLIOGRAPHIE : ..................................................................................................................... 19
+
+2 
+ 
+INTRODUCTION :   
+LâannÃ©e derniÃ¨re, les professeurs du lycÃ©e nous ont informÃ©s de la possibilitÃ© de participer aux 
+Olympiades Nationales de Physique. Nous avons aussitÃ´t voulu relever le dÃ©fi ! Nous nous sommes alors 
+lancÃ©s dans lâaventure, animÃ©s par la volontÃ© de mener un projet ensemble, de nous dÃ©passer et de sortir 
+du cadre purement scolaire pour oser aller plus loin. Cette annÃ©e, nous poursuivons lâaventure Ã  trois, lâun 
+de nos camarades ayant dÃ» quitter lâÃ©quipe aprÃ¨s avoir dÃ©mÃ©nagÃ© Ã  Hong Kong. Notre Ã©quipe est aujourdâhui 
+composÃ©e de :   
+ï· Simon Eymard  
+ï· Nathan Saladin  
+ï· RaphaÃ«l Wach  
+ 
+Une fois notre Ã©quipe construite, lâidÃ©e de travailler sur un sujet en lien avec les flocons de neige nous 
+est venue. FascinÃ©s par la complexitÃ© de leur structure et parallÃ¨lement sensibles aux enjeux du 
+rÃ©chauffement climatique, nous avons souhaitÃ© relier ces deux thÃ©matiques. AprÃ¨s avoir rÃ©flÃ©chi Ã  diffÃ©rentes 
+pistes autour de ce sujet, nous avons dÃ©cidÃ© naturellement dâÃ©tudier si lâobservation des flocons peut 
+permettre de mesurer lâampleur du rÃ©chauffement climatique.  
+ Pour situer notre dÃ©marche, rappelons que, depuis plus dâun siÃ¨cle, la tempÃ©rature moyenne globale 
+de la Terre ne cesse dâaugmenter, principalement en raison des Ã©missions anthropiques de gaz Ã  effet de 
+serre. Cette augmentation affecte lâensemble des Ã©cosystÃ¨mes terrestres et marins, modifiant notamment le 
+cycle de lâeau, les prÃ©cipitations et les phÃ©nomÃ¨nes mÃ©tÃ©orologiques extrÃªmes.   
+La neige est particuliÃ¨rement sensible Ã  ces variations. En effet, sa formation, sa structure et sa durÃ©e 
+de vie, depuis sa crÃ©ation dans les nuages jusquâÃ  son dÃ©pÃ´t au sol sont directement liÃ©es aux conditions 
+atmosphÃ©riques locales. Dans quelle mesure lâÃ©tude des flocons de neige permet-elle de mesurer 
+lâampleur du rÃ©chauffement climatique ?  
+Afin de prÃ©ciser notre sujet, nous avons dâabord explorÃ© diffÃ©rentes pistes : lâÃ©tude de la tempÃ©rature et 
+de lâhumiditÃ© lors de la formation des flocons, lâobservation de leur structure Ã  diffÃ©rentes altitudes, ou encore 
+lâanalyse de la frÃ©quence et de la nature des prÃ©cipitations neigeuses selon les annÃ©es. Ne sachant pas si 
+la neige joue rÃ©ellement un rÃ´le ou subit simplement les effets du rÃ©chauffement climatique, nous avons 
+choisi dâaborder la question sans idÃ©e prÃ©conÃ§ue. Notre objectif est de relier les observations expÃ©rimentales 
+Ã  des paramÃ¨tres climatiques mesurables, afin dâÃ©valuer la pertinence des flocons comme indicateurs du 
+changement climatique.
+
+3 
+ 
+  1 - OBSERVATION ET FORMATION DES FLOCONS DE NEIGE 
+Le lien entre le climat et la neige Ã©tant encore un peu flou, nous avons voulu dâabord sâintÃ©resser 
+uniquement aux flocons et Ã  leur formation. Cela nous permettrait peut-Ãªtre de trouver des pistes dâÃ©tude 
+pour rÃ©pondre Ã  notre problÃ©matique. 
+1.1 - Historique des Ã©tudes sur les flocons  
+Depuis des siÃ¨cles, les flocons de neige fascinent par leur beautÃ© et leur 
+complexitÃ©. Toutefois leur Ã©tude commence vÃ©ritablement au XVIIe siÃ¨cle avec le 
+cÃ©lÃ¨bre astronome Johannes Kepler. En 1611, dans son traitÃ© intitulÃ© Strena seu 
+De Nive Sexangula (Â« L'Ã©trenne ou neige sexangulaire Â»), il se demande pourquoi 
+les flocons adoptent toujours une forme hexagonale. Bien quâil nâait pas les moyens 
+dâen observer les dÃ©tails, Kepler propose que cette rÃ©gularitÃ© puisse sâexpliquer 
+par un empilement de petites unitÃ©s de matiÃ¨re. Il sâagit du premier texte 
+scientifique consacrÃ© aux flocons de neige, et il marque le dÃ©but dâune rÃ©flexion sur 
+la symÃ©trie et la structure cristalline.  
+Au fil du XVIIe siÃ¨cle, avec lâessor de la microscopie, des savants comme 
+Robert Hooke en Angleterre commencent Ã  observer la forme des flocons avec 
+plus de prÃ©cision. Dans son ouvrage Micrographia, Hooke dessine des flocons en 
+rÃ©vÃ©lant leur richesse de formes et leur symÃ©trie. RenÃ© Descartes, sâintÃ©resse lui 
+aussi Ã  ces structures dans ses Ã©tudes sur les phÃ©nomÃ¨nes mÃ©tÃ©orologiques. Ces 
+premiÃ¨res observations rÃ©vÃ¨lent pour la premiÃ¨re fois la diversitÃ© morphologique des flocons, tout en 
+soulignant leur structure systÃ©matiquement hexagonale.  
+Plus tard, vers la fin du XIXe siÃ¨cle, un tournant majeur survient avec 
+lâarrivÃ©e de la photographie. Aux Ãtats-Unis, Wilson Bentley, surnommÃ© 
+âSnowflake Bentleyâ, parvient Ã  photographier plus de 5 000 flocons de 
+neige. Il est le premier Ã  documenter rigoureusement leur unicitÃ© : aucun 
+flocon nâest identique, bien quâils partagent tous une structure hexagonale. 
+Son travail, Ã  la fois scientifique et artistique, permet dâattirer lâattention du 
+public et des chercheurs, en montrant leurs complexitÃ©s mathÃ©matiques 
+exceptionnelle.  
+Puis au XXe siÃ¨cle, les progrÃ¨s de la physique, de la cristallographie et 
+de la mÃ©tÃ©orologie permettent dâexpliquer 
+en profondeur la formation des flocons. Le 
+scientifique japonais Takeshi Nakaya 
+rÃ©alise les premiÃ¨res classifications des 
+formes de flocons en laboratoire. Il dÃ©montre 
+que leur apparence dÃ©pend de nombreuses conditions, comme de la 
+tempÃ©rature et de lâhumiditÃ© au moment de leur croissance, et Ã©tablie un 
+diagramme encore utilisÃ©s aujourdâhui (page 12). A ses yeux, chaque flocon 
+nous arrive avec son histoire :  il dÃ©crivait dâailleurs les flocons comme Â« 
+des lettres envoyÃ©es du ciel Â». 
+A lâheure actuelle, plusieurs physiciens Ã©tudient les flocons de neige tel 
+que lâamÃ©ricain Kenneth G. Libbrecht. Ses travaux portent sur la croissance 
+des cristaux (en particulier des cristaux de glaces), de la vapeur au flocon. 
+Son but est notamment de reproduire deux flocons identiques. 
+Figure 1-Johannes Kepler 
+Figure 3- Takeshi Nakaya 
+Figure 2 - Photographie de Bentley
+
+4 
+ 
+1.2 - Formation dâun flocon : de la vapeur dâeau Ã  la symÃ©trie hexagonale  
+Pour quâun flocon de neige voie le jour, il faut que des conditions bien particuliÃ¨res se rÃ©unissent : une 
+forte humiditÃ© dans lâair et des tempÃ©ratures nÃ©gatives. Ces situations se produisent gÃ©nÃ©ralement dans les 
+nuages dâair froid, Ã  haute altitude.  
+LÃ -haut, les molÃ©cules dâeau, encore Ã  lâÃ©tat gazeux, se fixent autour dâune particule de poussiÃ¨re ou 
+dâimpuretÃ© en suspension. Câest le point de dÃ©part : un minuscule noyau de glace se forme. Ce phÃ©nomÃ¨ne 
+sâappelle la nuclÃ©ation ! Nous avons voulu reproduire, Ã  notre Ã©chelle, ce processus fascinant ! 
+Pour bien comprendre comment naÃ®t un flocon de neige, nous avons cherchÃ© Ã  observer le rÃ´le des 
+impuretÃ©s dans la formation de la neige. Pour cela, nous avons utilisÃ© deux bouteilles en plastique 
+transparentes, du sel, et de lâeau distillÃ©e. 
+Dans la premiÃ¨re bouteille, nous avons versÃ© uniquement de lâeau, avant de bien refermer le bouchon. 
+Dans la deuxiÃ¨me bouteille, nous avons ajoutÃ© une petite quantitÃ© de sel avant de la remplir de la mÃªme 
+faÃ§on, de tel sorte que le sel se soit dissout. Les bouteilles ont ensuite Ã©tÃ© placÃ©es au congÃ©lateur pendant 
+environ deux heures. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+En sortant la premiÃ¨re bouteille, lâeau semblait parfaitement liquide bien quâelle ait Ã©tÃ© exposÃ©e Ã  une 
+tempÃ©rature infÃ©rieure Ã  0 Â°C ! Mais, au moment oÃ¹ nous lâavons secouÃ©e, la transformation a Ã©tÃ© 
+spectaculaire : lâeau sâest instantanÃ©ment changÃ©e en glace ! 
+Ce phÃ©nomÃ¨ne sâappelle la surfusion : une eau trÃ¨s pure peut rester liquide en dessous de 0 Â°C, tant 
+quâaucune impuretÃ© ne vient dÃ©clencher la cristallisation. Cependant, le moindre choc ou contact agit alors 
+comme un âdÃ©clencheurâ, forÃ§ant les molÃ©cules dâeau Ã  sâorganiser en cristal de glace. 
+Toutefois, dans la seconde bouteille, celle contenant du sel, le rÃ©sultat a Ã©tÃ© bien diffÃ©rent. DÃ¨s sa sortie 
+du congÃ©lateur, lâeau Ã©tait dÃ©jÃ  gelÃ©e, sans que nous ayons eu besoin de la secouer. Le sel, en jouant le rÃ´le 
+dâimpuretÃ©, a fourni aux molÃ©cules dâeau un support de nuclÃ©ation, c'est-Ã -dire un point dâaccroche pour que 
+la glace commence Ã  se former. 
+Cette simple comparaison illustre parfaitement ce qui se passe dans les nuages : la glace ne se forme 
+pas âtoute seuleâ, mais autour dâune particule, telle une poussiÃ¨re, un grain de sable, un grain de pollenâ¦ 
+Câest le mÃªme mÃ©canisme de nuclÃ©ation qui donne naissance Ã  un flocon de neige ! 
+Figure 4- La bouteille de gauche contient du sel alors que celle de droite uniquement de l'eau
+
+5 
+ 
+ Une fois ce cÅur de glace formÃ©, il va rencontrer dâautres 
+molÃ©cules dâeau en suspension dans lâatmosphÃ¨re qui vont se fixer. 
+Ainsi le flocon de neige croÃ®t jusquâÃ  atteindre une taille millimÃ©trique. 
+Et si les flocons de neige possÃ¨dent toujours six branches, câest que 
+lâeau sous forme solide sâarrange selon une structure cristalline 
+hexagonale comme on peut le voir sur le schÃ©ma ci-contre.  
+En effet, les atomes dâoxygÃ¨ne effectuent des liaisons hydrogÃ¨nes 
+avec les atomes hydrogÃ¨nes Ã  proximitÃ©, ce qui confÃ¨re au flocon cette 
+forme particuliÃ¨re.   
+La premiÃ¨re gouttelette dâeau va donc cristalliser sous la forme 
+dâun hexagone dont les six sommets servent de point de dÃ©part Ã  la 
+croissance des branches : les flocons possÃ¨dent ainsi une symÃ©trie 
+dâordre six.  
+De plus la croissance de ces branches dÃ©pend de lâhumiditÃ© et de la tempÃ©rature des couches traversÃ©es 
+de lâatmosphÃ¨re. Cela explique pourquoi chaque flocon de neige est unique : sa gÃ©omÃ©trie dÃ©pend des 
+conditions de son environnement ! 
+Dans son livre La petite histoire des flocons de neige, Ãtienne Ghys note que deux processus inverses, 
+voire contradictoires, semblent concourir Ã  la formation du flocon :  
+1. Le facettage : plus une molÃ©cule dâeau est entourÃ©e de molÃ©cules gelÃ©es, plus elle va geler rapidement, 
+puisque son environnement est plus froid. Cela tend Ã  lisser les cÃ´tÃ©s du flocon, notamment au dÃ©but de 
+sa formation.  
+ 
+2. La formation de dendrite (branche du flocon) : plus une molÃ©cule gelÃ©e est entourÃ©e de vapeur dâeau 
+(elle est donc situÃ©e sur un sommet ou au bout dâune dendrite), plus il y a de chance quâune des 
+molÃ©cules aux alentours gÃ¨le rapidement ! Cela tend Ã  faire grossir les branches du flocon.  
+Pour bien se rendre compte de la croissance dâun flocon, nous avons essayÃ© dâen crÃ©er un dans un 
+laboratoire.  
+Pour rÃ©aliser cette expÃ©rience, il a fallu se munir d'un seau, d'une bouteille, d'une Ã©ponge, d'un fil de 
+pÃªche, d'un trombone et de glace carbonique.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 6 â Dispositif et schÃ©ma de l'expÃ©rience
+ 
+Figure 5 - SchÃ©ma molÃ©culaire d'un cristal de neige
+
+6 
+ 
+La premiÃ¨re chose Ã  faire est de couper la bouteille Ã  3 cm du bas. Ensuite, on place une Ã©ponge humide au 
+fond de la bouteille. Puis, on fait un trou pour faire passer un fil en nylon Ã  travers le bas de la bouteille et Ã  
+travers l'Ã©ponge. On attache un trombone du cÃ´tÃ© de l'extrÃ©mitÃ© de la ficelle situÃ©e vers l'intÃ©rieur de la 
+bouteille pour faire office de poids et on glisse le bas de la bouteille dans le haut de la bouteille.  
+Nous avons mis notre dispositif dans un sceau rempli 
+de glace carbonique, le haut de la bouteille vers le bas. 
+L'idÃ©e est donc que le fond de la bouteille soit trÃ¨s froid 
+et que le haut de la bouteille soit plus chaud, car il est 
+exposÃ© Ã  la piÃ¨ce. Ainsi, on crÃ©e une diffÃ©rence de 
+tempÃ©rature semblable Ã  celle dans les nuages.  
+Un flocon se forme en effet dans les nimbostratus 
+situÃ©s Ã  une altitude comprise entre 2 km et 8 km. 
+Ainsi, comme le montre le graphique de la figure 7, 
+dans un nimbostratus, plus lâaltitude augmente, plus la 
+tempÃ©rature diminue. Il y a donc bien une diffÃ©rence 
+de tempÃ©rature au sein du nuage, mÃªme si lâÃ©volution 
+de la tempÃ©rature est dans le sens contraire : le flocon 
+se forme donc Â« Ã  lâenvers Â» dans la bouteille. 
+Lors de lâexpÃ©rience, l'eau contenue dans 
+l'Ã©ponge se diffuse dans la bouteille sous forme de 
+gouttelettes : l'Ã©ponge sert de vaporisateur. Les 
+molÃ©cules d'eau vont ensuite cristalliser autour du fil 
+de nylon (processus de nuclÃ©ation).  
+ 
+Nous avons alors obtenu les flocons suivants : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+En observant la neige obtenue dans le bouchon de la bouteille au microscope, nous avons pu voir de 
+nombreux cristaux de formes diverses et variÃ©es. Nous avons pu observer notamment les branches des 
+flocons, ainsi que quelques motifs hexagonaux. 
+ 
+ 
+Figure 7 - TempÃ©rature en fonction de l'altitude 
+Figure 8- Flocons obtenus
+
+7 
+ 
+1.3 - ModÃ©lisation mathÃ©matique de la croissance dâun flocon de neige  
+ 
+Afin de mieux comprendre les diffÃ©rents mÃ©canismes de la 
+formation dâun flocon, nous avons voulu faire une modÃ©lisation 
+mathÃ©matique reprÃ©sentant sa croissance. 
+Pour se faire, nous nous sommes placÃ©s dans un plan en 2 
+dimensions. Nous avons divisÃ© le plan en hexagones, qui constituent 
+chacun une Â« proportion dâair Â».   
+Chaque cellule hexagonale est associÃ©e Ã  un nombre rÃ©el Î², qui 
+reprÃ©sente la quantitÃ© dâeau prÃ©sente Ã  cet endroit prÃ©cis de la grille.   
+On part du principe que toutes les cases ont la mÃªme valeur initiale 
+Î² Ã  lâexception dâune seule cellule, le cÅur du cristal (formÃ© par le 
+processus de nuclÃ©ation) dont la valeur sera Ã  1.  
+Il faut savoir que la quantitÃ© dâeau par cellule nâest pas fixe, et 
+quâelle se transmet de cellules en cellules.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lorsque la quantitÃ© dâeau augmente dans une cellule, la pression augmente. Ainsi, comme le montre le 
+graphique ci-dessus, lorsque la pression est suffisamment haute, lâeau passe de lâÃ©tat gazeux Ã  lâÃ©tat solide: 
+câest la condensation.  
+Dans notre cas, par convention, toutes les cellules dont la valeur est â¥ 1 (quantitÃ© suffisamment Ã©levÃ©e) 
+et qui sont Ã  proximitÃ© dâune cellule dÃ©jÃ  gelÃ©e sont immÃ©diatement considÃ©rÃ©es comme gelÃ©es.  
+On divise chaque cellule en 3 catÃ©gories :  
+ï· Les cellules gelÃ©es : leur Î² ne varie pas, elles ne sont pas impactÃ©es par chaque itÃ©ration (Ã©tape). 
+ï· Les cellules rÃ©ceptrices : ce sont des cellules adjacentes Ã  des cellules gelÃ©es. Elles ont la particularitÃ© 
+de capturer de maniÃ¨re permanente lâeau qui y entre : leur valeur ne peut quâaugmenter au fil du temps.  
+ï· Les cellules non-rÃ©ceptrices : Ce sont les cellules Ã©loignÃ©es des cellules gelÃ©es. Elles capturent de lâeau 
+des cellules voisines, mais leur en transmettent Ã©galement.  
+Figure 10- Graphique du point triple de l'eau 
+Figure 9 - Grille hexagonale
+
+8 
+ 
+1.2 
+0.2 
+0.2 
+0.1 
+Figure 12 - Exemple d'itÃ©ration 
+1 
+2 
+ 
+ 
+ 
+ 
+â¨ 
+ 
+ 
+ 
+ 
+Au cours de cette simulation, comment le flocon se dÃ©veloppe-t-il ?  A chaque itÃ©ration (soit Ã  chaque 
+nouvelle Ã©tape), la valeur des cellules change. Chaque cellule gagne 1/12 de lâeau des cellules non-
+rÃ©ceptrices situÃ©es aux alentours, puisque chaque cellule non-rÃ©ceptrice cÃ¨de 1/2 de sa quantitÃ© dâeau aux 
+6 cellules adjacentes : on appelle cette eau gagnÃ©e lâeau transfÃ©rÃ©e. De plus, les 2 types de cellules ont des 
+rÃ¨gles diffÃ©rentes :   
+ï· Les cellules rÃ©ceptrices : On ajoute Ã  leur valeur une constante arbitraire, une quantitÃ© dâeau Â« gratuite Â» 
+supplÃ©mentaire notÃ©e Î³. Il sâagit dâun apport en eau venant de lâextÃ©rieur. Comme notre reprÃ©sentation 
+est en 2 dimensions, ce paramÃ¨tre permet de prendre en compte les interactions provenant dâune 3Ã¨me 
+dimension. Ainsi, le calcul final est :  
+(avec Ïvoisines la quantitÃ© dâeau des cellules voisines non-
+rÃ©ceptrices) 
+ï·  Les cellules non-rÃ©ceptrices : Puisque chaque cellule non-rÃ©ceptrice cÃ¨de la moitiÃ© de sa quantitÃ© dâeau, 
+on nâajoute pas lâeau transfÃ©rÃ©e au Î² de la cellule, mais Ã  Î²/2. Ainsi le calcul du nouveau Î² est :   
+ 
+ 
+Par exemple, dans ce cas-lÃ , voici ce qui se passe au bout d'une itÃ©ration (cela reprÃ©sente une portion finie 
+de lâespace, non-conforme Ã  la rÃ©alitÃ© puisque lâon ne prend pas en compte les cellules Ã  proximitÃ©) :   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 11 -Forme initiale de notre ï¬ocon (Ã©tape 0)
+
+9 
+ 
+DÃ©taillons 2 calculs : 
+1) La cellule est non-rÃ©ceptrice, car elle nâest pas situÃ©e Ã  cÃ´tÃ© dâune cellule gelÃ©e. Ainsi, on a :  
+ 
+ 
+ 
+ 
+ 
+2) La cellule est rÃ©ceptrice, donc :  
+ 
+ 
+ 
+Maintenant, nous pouvons passer Ã  la modÃ©lisation de notre flocon. On pose Ï = 0,20 et Ïinitial=0,500 
+(valeur choisie). A lâaide du site simontlg.io, nous pouvons modÃ©liser Ã©tape par Ã©tape notre flocon. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cette modÃ©lisation respecte bien les principales caractÃ©ristiques de la formation dâun flocon (symÃ©trie 
+dâordre 6, facettage, formation de dendritesâ¦). Ainsi, elle nous permet de bien visualiser la formation dâun 
+flocon de neige dans les nuages. 
+ 
+1.4 - Structure et classification des flocons  
+La classification traditionnelle repose sur les observations de Nakaya, physicien japonais du XXe siÃ¨cle, 
+qui distingue plusieurs familles de formes selon la tempÃ©rature et lâhumiditÃ© relative :  
+ï· Entre -2 Â°C et -4 Â°C : plaques hexagonales simples  
+ï· Entre -5 Â°C et -8 Â°C : dendrites ramifiÃ©es (flocons Ã©toilÃ©s)  
+ï· Autour de -15 Â°C : colonnes et aiguilles  
+ï· Ã tempÃ©ratures plus basses : formes mixtes ou plus complexes  
+Figure 13- ModÃ©lisation de notre ï¬ocon
+
+10 
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ainsi, il y a bien un lien entre les flocons et le rÃ©chauffement climatique, car la tempÃ©rature et le taux 
+dâhumiditÃ© sont des facteurs Ã©voluant Ã©normÃ©ment dans ce contexte de crise et dont lâÃ©tude est primordiale. 
+Le physicien Kenneth Librecht a quant Ã  lui essayÃ© dâexpliquer pourquoi les flocons formÃ©s sont des 
+flocons plats, puis lorsquâon baisse la tempÃ©rature des colonnes, puis de nouveaux des plats, puis de 
+nouveau des colonnes.  
+En effet, grÃ¢ce au graphique de la figure 14, il a montrÃ© lâÃ©volution de la barriÃ¨re de nuclÃ©ation, câest-
+Ã -dire la capacitÃ© de chaque face Ã  repousser les molÃ©cules dâeau, en fonction de la diffÃ©rence entre le point 
+de fusion de lâeau í µí±
+à (0Â°í µí°¶) et la tempÃ©rature actuelle í µí± (Plus cette diffÃ©rence est grande, plus il fait froid). 
+Pour mieux comprendre, il faut se dire que le cÅur dâun flocon est un prisme hexagonal trÃ¨s fin : il est donc 
+composÃ© de 6 faces rectangulaire (Prism Facet) et de 2 bases hexagonales (Basal Facet). Lorsque la barriÃ¨re 
+de nuclÃ©ation des faces rectangulaires (respectivement hexagonales) est supÃ©rieure Ã  celle des faces 
+hexagonales (respectivement rectangulaires), le flocon va Ãªtre en colonne (respectivement plat).  
+Il faut toutefois noter que ce graphique nâest valable quâÃ  petite Ã©chelle. A grande Ã©chelle, la barriÃ¨re 
+de nuclÃ©ation dâune face hexagonale est supÃ©rieure Ã  des tempÃ©ratures infÃ©rieures Ã  10Â°C, puis infÃ©rieure 
+pour des tempÃ©ratures supÃ©rieures Ã  10Â°C. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 15 - CapacitÃ© de chaque face d'un ï¬ocon Ã  grandir en fonction de la tempÃ©rature 
+Figure 14- Diagramme de Nakaya
+
+11 
+ 
+Ainsi, la forme dâun flocon dÃ©pend vraiment des conditions atmosphÃ©riques dans le nuage. En les 
+Ã©tudiant plus prÃ©cisÃ©ment, nous pourrions peut-Ãªtre rÃ©ussir Ã  montrer que les conditions atmosphÃ©riques 
+Ã©voluent au cours des annÃ©es Ã  cause du rÃ©chauffement climatique.  
+2 - LES FLOCONS COMME INDICATEURS DU CLIMAT â¨ 
+AprÃ¨s avoir bien compris la formation des flocons et leurs caractÃ©ristiques, nous avons rÃ©flÃ©chi aux 
+maniÃ¨res de lier les flocons et le climat (tempÃ©rature, taux dâhumiditÃ©). AprÃ¨s de nombreuses tentatives, 
+nous avons distinguÃ© 3 possibilitÃ©s. 
+2.1 - Etude de la diminution de lâalbÃ©do  
+2.1.A - Diminution de lâalbÃ©do de la neige 
+Nous avons voulu savoir si lâaugmentation de particules fines prÃ©sentes dans lâair et donc prÃ©sentes 
+dans la neige avait un impact sur lâalbÃ©do de la neige.  
+Afin de savoir si lâaugmentation de particules fines prÃ©sentes dans la neige a un impact sur lâalbÃ©do de 
+la neige, nous avons menÃ© une expÃ©rience visant Ã  illustrer lâeffet des impuretÃ©s sur les propriÃ©tÃ©s optiques 
+des flocons. L'albÃ©do est la part de lumiÃ¨re rÃ©flÃ©chie par une surface, c'est-Ã -dire le rapport du flux d'Ã©nergie 
+lumineuse rÃ©flÃ©chie au flux d'Ã©nergie incident. Pour cela, nous avons utilisÃ© de la neige formÃ©e naturellement 
+sur les parois de notre congÃ©lateur, que nous avons ensuite rÃ©coltÃ©e puis rÃ©partie dans quatre bacs distincts. 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Chaque bac a Ã©tÃ© prÃ©parÃ© avec une quantitÃ© diffÃ©rente de suie. Le pourcentage massique de suie 
+contenu dans les bacs A, B, C et D est respectivement 0%, 10%, 25% et 50%. Ainsi, le bac A contient 
+uniquement de la neige pure, le bac B correspond Ã  une neige lÃ©gÃ¨rement polluÃ©e, le bac C prÃ©sente une 
+contamination modÃ©rÃ©e et le bac D reprÃ©sente une neige fortement chargÃ©e en pollution. 
+ Nous avons choisi dâutiliser de la suie car elle reproduit de maniÃ¨re pertinente les particules fines 
+prÃ©sentes dans lâatmosphÃ¨re (Particules Ã  fort pouvoir absorbant) susceptibles de se dÃ©poser 
+progressivement Ã  la surface de la neige. Ce dÃ©pÃ´t assombrit les grains, diminue leur pouvoir rÃ©flÃ©chissant 
+et modifie leur comportement vis-Ã -vis du rayonnement solaire. Dans ce protocole, la suie permet donc 
+dâimiter les particules prÃ©sentes dans lâair et qui se retrouvent dans la neige. Afin de garantir des conditions 
+expÃ©rimentales homogÃ¨nes, chaque mÃ©lange a Ã©tÃ© soigneusement remuÃ© de faÃ§on Ã  rÃ©partir la suie de 
+maniÃ¨re uniforme, reproduisant au mieux la dispersion rÃ©elle de ces particules dans lâenvironnement. 
+ Pour mesurer lâalbÃ©do relatif de chaque Ã©chantillon, une feuille blanche neuve a Ã©tÃ© placÃ©e Ã  proximitÃ© 
+des bacs afin de servir dâalbÃ©do de rÃ©fÃ©rence. Les images obtenues ont ensuite Ã©tÃ© analysÃ©es Ã  lâaide du 
+logiciel Mesurim 2, un outil permettant de trouver lâalbÃ©do dâune surface en sâaidant dâune espÃ¨ce de 
+rÃ©fÃ©rence (ici la feuille de papier). Les mesures ont Ã©tÃ© rÃ©pÃ©tÃ©es plusieurs fois puis nous avons trouvÃ© la 
+valeur moyenne afin de garantir une plus grande fiabilitÃ© des valeurs. 
+Figure 162 - DÃ©termination de l'albÃ©do pour les bacs A (Ã  gauche) et C (Ã  droite) Ã  lâaide du logiciel Mesurim 2
+
+12 
+ 
+ Les rÃ©sultats obtenus sont prÃ©sentÃ©s dans le graphique ci-contre montrant lâÃ©volution de lâalbÃ©do en 
+fonction de la concentration en suie.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+On remarque que les points dÃ©crivent une courbe de tendance modÃ©lisÃ©e par une fonction exponentielle 
+de type y = ae
+b x P
+. Comme RÂ²=0,97, on peut dire que nos rÃ©sultats sont plutÃ´t prÃ©cis. Il y a bien un lien entre 
+lâalbÃ©do et la quantitÃ© de pollution prÃ©sente dans la neige. 
+Les rÃ©sultats obtenus montrent donc que lâalbÃ©do de la neige diminue de maniÃ¨re exponentielle lorsque 
+la concentration en suie augmente. Cette baisse est rapide pour de faibles contaminations et tend Ã  se 
+stabiliser lorsque la neige devient fortement chargÃ©e en particules. La prÃ©sence de suie assombrit les grains 
+de neige, rÃ©duit leur capacitÃ© Ã  rÃ©flÃ©chir la lumiÃ¨re et augmente lâabsorption dâÃ©nergie solaire.  
+Nous avons ensuite voulu prendre un cas particulier, le Canada : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Le graphique de la figure 18 montre lâÃ©volution de la quantitÃ© de Â« black carbon Â» (carbone suie, 
+particule Ã  fort pouvoir absorbant) contenue dans la neige au Canada. Cette Ã©tude a Ã©tÃ© rÃ©alisÃ©e par des 
+chercheurs chinois en 2022. On remarque quâentre 1850 et 2015 il y a eu une forte augmentation du 
+pourcentage massique de black carbone dans la neige, qui se caractÃ©rise donc par une diminution de lâalbÃ©do 
+(par manque de donnÃ©es prÃ©cises, il nous est impossible de faire les calculs). Nous allons voir quâune 
+augmentation brusque de lâalbÃ©do peut avoir des consÃ©quences sur le climat. 
+A = 0,5561e
+-0,077 x P
+RÂ² = 0,9712
+0
+0,1
+0,2
+0,3
+0,4
+0,5
+0,6
+0,7
+0,8
+0 10 20 30 40 50 60
+AlbÃ©do de la neige (sans unitÃ©)
+Pourcentage massique de suie (en %)
+AlbÃ©do de la neige en fonction du 
+pourcentage massique de suie
+Figure 18 - Pourcentage de black carbon dans la neige au Canada entre 1850 et 2015 
+Figure 17 â Graphique reprÃ©sentant lâÃ©volution de lâalbÃ©do de la neige en fonction de la concentration de suie
+
+13 
+ 
+2.1.B - Variation de la tempÃ©rature dÃ» Ã  lâalbÃ©do 
+Aujourdâhui, on remarque quâil neige de moins en moins. Or, la neige, en particulier lorsquâelle est 
+fraÃ®che, possÃ¨de un albÃ©do Ã©levÃ©, câest-Ã -dire quâelle rÃ©flÃ©chit une grande partie du rayonnement solaire 
+incident, limitant ainsi le rÃ©chauffement local.  
+La diminution de la frÃ©quence des chutes de neige entraÃ®ne donc une rÃ©duction de lâalbÃ©do moyen de 
+la Terre, ce qui amplifie lâabsorption de lâÃ©nergie solaire et contribue au rÃ©chauffement climatique. Ainsi, moins 
+il y a de neige, plus lâalbÃ©do diminue et plus il fait chaud. On a donc pu tracer la boucle de rÃ©troaction positive 
+suivante :  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+* 
+ 
+Ce phÃ©nomÃ¨ne est amplifiÃ© par lâaugmentation de la pollution prÃ©sente dans lâair qui se retrouve dans 
+la neige comme nous lâavons montrÃ© prÃ©cÃ©demment. En effet, plus il y a de particules fines dans lâair, plus 
+lâalbÃ©do de la neige, et donc de la terre, diminue. 
+Pour se rendre compte de lâimportance de cet albÃ©do, nous avons choisi de prendre lâexemple du 
+Canada, car nous avons trouvÃ©, sur le site officiel du Canada, les variations annuelles de l'Ã©tendue de la 
+couverture de neige au printemps (avril, mai et juin) au Canada entre 1972 et 2023.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  Figure 19 - Etendue de la couverture neigeuse en printemps entre 1972 et 2023 au Canada
+
+14 
+ 
+Au mois de juin, la surface recouverte de neige a baissÃ© dâenviron 30% : en 1972, environ 2 millions 
+de kmÂ² Ã©tait recouvert de neige, tandis quâen 2023, seulement 1,4 million dekmÂ² de la surface totale du 
+Canada Ã©tait recouverte.  
+Tout dâabord, calculons lâalbedo du Canada lorsquâil nâest pas recouvert de neige. Le Canada est 
+recouvert Ã  38% de forÃªt, Ã  30 % de glace, Ã  10 % dâeau (lac et riviÃ¨re), Ã  7% de terre agricole, Ã  15% de 
+roche et dâespace montagneux  
+Ainsi :   
+  
+ 
+ 
+En juin 1972, le pourcentage de la surface du Canada recouverte de neige Ã©tait Ã©gal Ã  :   
+ 
+ 
+Ainsi, on a, en supposant que la neige est Ã©quitablement rÃ©partie sur lâensemble du territoire :   
+ 
+(on nÃ©glige ici les black carbon prÃ©sents dans la neige) 
+De mÃªme, en juin 2023, on a :                         et  
+De plus, on considÃ¨re que la tempÃ©rature de la Terre est relativement constante. Ainsi, il y a un 
+Ã©quilibre radiatif : flux entrants = flux sortant. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ainsi, on a, comme le montre le schÃ©ma de la figure 20 : 
+De plus, dâaprÃ¨s la loi de Stefan-Boltzmann, pour un corps noir,                               avec 
+ 
+En assimilant la terre Ã  un corps noir, on obtient :   
+ 
+ 
+Î± : partie des ï¬ux absorbÃ© 
+par lâatmosphÃ¨re 
+Figure 20- Flux de lumiÃ¨re dans l'atmosphÃ¨re terrestre
+
+15 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ainsi, on peut calculer la diffÃ©rence de tempÃ©rature entre juin 1972 et juin 2023 au Canada :  
+âí µí± =L
+í µí¼
+Ì(1 â í µí°´
+Ü)
+í µí¼@1 â
+í µí»¼
+Ü
+2
+A
+M
+5
+8
+âL
+í µí¼
+Ìk1 â í µí°´
+Ùo
+í µí¼@1 â
+í µí»¼
+Ù
+2
+A
+M
+5
+8
+ 
+Ici, on sâintÃ©resse uniquement Ã  la diffÃ©rence de tempÃ©rature liÃ© Ã  lâalbÃ©do, donc : 
+Î±i = Î±f = 0,77    (valeur actuelle) 
+âí µí± =L
+342 Ã(1 â 0,36)
+5,67 Ã 10
+?<
+@1 â
+0,77
+2
+A
+M
+5
+8
+âL
+342 Ã(1 â 0,33)
+5,67 Ã 10
+?<
+@1 â
+0,77
+2
+A
+M
+5
+8
+ 
+ 
+Or, il sâagit dâune diffÃ©rence de tempÃ©rature, donc   
+Il y a donc eu dâaprÃ¨s nos calculs une augmentation de 2,9Â°C entre le mois de juin 1972 et le mois 
+de juin 2023 au Canada.  
+Nous avons refait les mÃªmes calculs pour le mois de mai et nous obtenons une diffÃ©rence de - 3,9Â°C, 
+ce qui fait une hausse moyenne de 3,4Â°C. 
+Nous avons voulu comparer nos rÃ©sultats Ã  la rÃ©elle augmentation de tempÃ©rature au Canada, pour 
+voir si les variations de lâÃ©tendue de la couverture de neige permettent de mesurer lâampleur du 
+rÃ©chauffement climatique. Nous avons trouvÃ© ce graphique, encore une fois sur le site officiel du Canada, 
+qui reprÃ©sente la tempÃ©rature moyenne du Canada en fonction de lâannÃ©e au printemps.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 21 - Evolution de la tempÃ©rature au printemps au Canada entre 1948 et 2024
+
+16 
+ 
+ 
+On remarque quâil y a eu une augmentation dâenviron 1,5Â°C entre 1972 et 2023. 
+Nos calculs montrent une hausse dâenviron 3,4 Â°C au Canada entre 1972 et 2023 due Ã  la diminution 
+de la neige, un rÃ©sultat pas trop Ã©loignÃ© de lâaugmentation rÃ©elle dâenviron 1,5 Â°C (mÃªme ordre de grandeur). 
+Cependant, ces estimations restent limitÃ©es : elles reposent sur de nombreuses simplification (rÃ©partition 
+uniforme de la neige, tempÃ©rature homogÃ¨ne sur tout le territoire, Ã©quilibre radiatif parfaitâ¦) et sur des 
+donnÃ©es peu prÃ©cises. De plus, se focaliser uniquement sur le Canada ne tient pas compte de la circulation 
+de lâair et des Ã©changes thermiques entres les diffÃ©rents espaces frontaliers. Enfin, le rÃ©chauffement observÃ© 
+ne dÃ©pend pas seulement de lâalbÃ©do, mais aussi de lâaugmentation des gaz Ã  effet de serre. MalgrÃ© ces 
+limites, nos calculs montrent bien la possibilitÃ© de lier tempÃ©rature et quantitÃ© de neige, mÃªme sâil faudra 
+attendre dâavoir plus dâinformations avant de faire une Ã©tude concrÃ¨te. 
+ 
+2.2 - Etude de la durÃ©e de fonte dâun flocon 
+Notre but dans cette partie est de trouver un lien entre le temps de fonte dâun flocon et la tempÃ©rature 
+moyenne Ã  laquelle le flocon est exposÃ©e. Pour cela, nous avons rÃ©alisÃ© une expÃ©rience dont le but est de 
+tracer un graphique reprÃ©sentant le temps de fonte en fonction de la tempÃ©rature. Pour ce faire, nous avons 
+mis des glaÃ§ons de mÃªme masse, de mÃªme volume et provenant du mÃªme congÃ©lateur (mÃªme tempÃ©rature) 
+dans diffÃ©rents rÃ©cipients contenant le mÃªme volume dâeau plus ou moins chaude, dont on a mesurÃ© la 
+tempÃ©rature avec un thermomÃ¨tre. Ensuite, Ã  lâaide dâun chronomÃ¨tre, nous avons mesurÃ© la durÃ©e de fonte 
+de chaque glaÃ§on. 
+Nous avons ensuite tracÃ© le graphique suivant. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ainsi, la relation entre la tempÃ©rature moyenne de lâenvironnement du flocon (fluide) T et la durÃ©e de 
+fonte d peut sâÃ©crire sous la forme y = ae
+bx
+ avec a et b rÃ©el. On a donc d = ae
+b x T
+ avec T la tempÃ©rature en 
+degrÃ© et d la durÃ©e de fonte en secondes. De plus RÂ² > 0,98 , donc nos rÃ©sultats sont assez prÃ©cis. 
+Il existe donc bel et bien une relation entre la durÃ©e de fonte dâun flocon et la tempÃ©rature. Mais nous 
+nous sommes heurtÃ©s Ã  plusieurs problÃ¨mes : 
+1. Lorsquâil neige, la tempÃ©rature est nÃ©gative. Or il est logiquement impossible que le flocon fonde Ã  une 
+tempÃ©rature nÃ©gative. Ainsi, nous ne pouvons pas mesurer la durÃ©e de fonte. 
+2. Pour pouvoir tracer la courbe, il faut que tous les flocons aient la mÃªme masse et le mÃªme volume (ce 
+qui est imaginable), et quâils aient Ã©tÃ© dans les mÃªmes conditions, ce qui est impossible. 
+d = 1667,5e
+-0,059T
+RÂ² = 0,9827
+0
+100
+200
+300
+400
+500
+600
+700
+800
+0 5 10152025303540
+DurÃ©e de fonte (en s)
+TempÃ©rature de l'eau (en Â°C)
+DurÃ©e de fonte d en fonction de la tempÃ©rature de l'eau T
+
+17 
+ 
+3. Pour tracer le graphique, il est nÃ©cessaire de connaÃ®tre la tempÃ©rature extÃ©rieure. Or si lâon a un moyen 
+de connaitre la tempÃ©rature extÃ©rieure, Ã©tudier les flocons devient inutile. 
+Nous avons donc tentÃ© de trouver une autre solution. Nous nous sommes alors dit que lâon pourrait placer 
+le flocon tout juste tombÃ© dans un espace Ã  tempÃ©rature constante et connu supÃ©rieure Ã  0Â°C. Ainsi, on est 
+sÃ»r que le flocon va fondre et on connaÃ®t la tempÃ©rature de lâenvironnement du flocon lorsquâil fond. Il suffira 
+de vÃ©rifier que les flocons ont bien la mÃªme masse et le mÃªme volume (si cela nâest pas possible, on pourrait 
+prendre un petit tas de neige dont la masse et le volume sont plus facilement vÃ©rifiables). 
+Notre hypothÃ¨se est que le flocon fond plus vite sâil a Ã©voluÃ© (crÃ©ation dans le nuage et chute) dans 
+un environnement moins froid. 
+Pour vÃ©rifier notre hypothÃ¨se, nous avons mis des glaÃ§ons de mÃªme masse, de mÃªme volume et 
+provenant de congÃ©lateurs Ã  diffÃ©rentes tempÃ©ratures dans diffÃ©rents rÃ©cipients contenant le mÃªme volume 
+dâeau Ã  la mÃªme tempÃ©rature, puis, Ã  lâaide dâun chronomÃ¨tre, nous avons mesurÃ© le temps de fonte de 
+chaque glaÃ§on. AprÃ¨s plusieurs tentatives, nous avons alors tracÃ© le graphique ci-dessous. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+On remarque quâÃ  partir dâune certaine tempÃ©rature (environ 20Â°C dans notre cas), les cristaux de glace 
+fondent de plus en plus vite. En revanche, en dessous de cette tempÃ©rature, la durÃ©e de fonte est 
+relativement constante. On en conclue que les tempÃ©ratures traversÃ©es par le flocon pendant sa chute 
+impactent sa durÃ©e de fonte au sol. Ainsi, cela pourrait nous permettre dâÃ©tudier la tempÃ©rature moyenne 
+dans lâatmosphÃ¨re uniquement en Ã©tudiant le flocon au sol. 
+On constate donc que la tempÃ©rature atmosphÃ©rique est un facteur aggravant de la boucle de 
+rÃ©troaction positive (page 13), puisque plus il fait chaud dans lâatmosphÃ¨re, plus le flocon fondra vite et moins 
+il y aura de neige. Ainsi, dans la boucle de rÃ©troaction positive, on parle Ã  la fois de la tempÃ©rature au sol et 
+Ã  la fois de la tempÃ©rature des diffÃ©rentes couches de lâatmosphÃ¨re en-dessous du nuage. 
+2.3 - Etude de la forme des flocons  
+Il nous est ensuite venu lâidÃ©e dâexaminer la structure des flocons tombÃ©s au sol. En effet, selon le 
+diagramme de Nakaya (page 12), la forme des cristaux de neige dÃ©pend Ã  la fois de la tempÃ©rature et du 
+taux de sursaturation de lâair, autrement dit du taux dâhumiditÃ©. Lâobservation directe de certains flocons au 
+sol permettrait donc de dÃ©duire les conditions atmosphÃ©riques dans lesquelles ils se sont formÃ©s, notamment 
+la tempÃ©rature et lâhumiditÃ©. 
+DâaprÃ¨s le calcul prÃ©cÃ©dent, si lâon disposait dâun nombre suffisant de donnÃ©es, il serait possible de 
+dÃ©terminer la tempÃ©rature Ã  laquelle un flocon sâest formÃ©, puis dâen dÃ©duire le taux dâhumiditÃ© 
+correspondant. Par exemple, une forte prÃ©sence de flocons de type dendritique, issus dâun nuage Ã©voluant 
+600
+650
+700
+750
+800
+850
+900
+950
+101214161820222426
+DurÃ©e de fonte (en secondes)
+Tm  -T
+congÃ©lateur
+(Â°C) 
+DurÃ©e de fonte en fonction de la diffÃ©rence 
+entre le point de fusion de lâeau í µí±í µí±(0Â°í µí°¶)  et la 
+la tempÃ©rature du congÃ©lateur
+
+18 
+ 
+dans une atmosphÃ¨re comprise entre -10 Â°C et -20 Â°C, indiquerait un taux dâhumiditÃ© particuliÃ¨rement Ã©levÃ© 
+Ã  cet endroit. 
+En calculant le taux dâhumiditÃ© de lâatmosphÃ¨re, on aurait accÃ¨s Ã  
+un indice intÃ©ressant sur le rÃ©chauffement climatique. En effet, une 
+augmentation de tempÃ©rature de 1 Â°C est associÃ©e une augmentation 
+de lâhumiditÃ© dâenviron 7 % conformÃ©ment Ã  la loi de Clausius-
+Clapeyron qui rÃ©gule la quantitÃ© dâeau dans lâatmosphÃ¨re en fonction 
+de la tempÃ©rature. En effet, plus lâair est chaud, plus il peut contenir de 
+vapeur dâeau. Ainsi, une humiditÃ© accrue dans lâatmosphÃ¨re 
+tÃ©moigne dâun rÃ©chauffement global de la planÃ¨te.  
+Par consÃ©quent, la simple observation de flocons tombÃ©s au sol pourrait, Ã  terme, permettre de 
+reconstituer les conditions atmosphÃ©riques de leur formation et dâen tirer des conclusions prÃ©cieuses sur 
+lâÃ©volution du climat et les effets du rÃ©chauffement planÃ©taire. 
+CONCLUSION : 
+Au cours de cette Ã©tude, nous avons dÃ©couvert que les flocons de neige, bien au-delÃ  de leur beautÃ© 
+et de leur symÃ©trie, sont de vÃ©ritables tÃ©moins du climat. Leur formation dÃ©pend directement de la 
+tempÃ©rature, de lâhumiditÃ© et des impuretÃ©s prÃ©sentes dans lâair, des paramÃ¨tres eux-mÃªmes fortement 
+influencÃ©s par le rÃ©chauffement climatique. Nous avons expÃ©rimentÃ© diffÃ©rents aspects de ce phÃ©nomÃ¨ne : 
+la nuclÃ©ation, la croissance du cristal, sa structure hexagonale et la modÃ©lisation mathÃ©matique de sa 
+formation. Nous avons ensuite cherchÃ© Ã  relier ces observations Ã  des indicateurs climatiques, comme 
+lâalbÃ©do, la durÃ©e de fonte ou encore la forme des flocons selon les conditions atmosphÃ©riques. 
+Cependant, notre travail a aussi rÃ©vÃ©lÃ© plusieurs limites. Dâune part, le manque de donnÃ©es prÃ©cises 
+rend difficile toute gÃ©nÃ©ralisation : nos rÃ©sultats reposent sur des Ã©chantillons restreints et sur des hypothÃ¨ses 
+simplificatrices (rÃ©partition uniforme de la neige, conditions constantes, mesures locales). Dâautre part, la 
+complexitÃ© des phÃ©nomÃ¨nes mÃ©tÃ©orologiques empÃªche dâisoler parfaitement lâinfluence des flocons sur le 
+climat. MalgrÃ© tout, ces expÃ©riences montrent quâil est possible de lier certaines grandeurs physiques, comme 
+la durÃ©e de fonte et la tempÃ©rature ou encore lâalbÃ©do et la quantitÃ© de black carbon et quâil serait possible 
+dâaller beaucoup plus loin. On peut donc bel et bien Ã©tudier le rÃ©chauffement climatique Ã  lâaide des flocons 
+de neige. 
+Ainsi, notre Ã©tude permet de rÃ©pondre partiellement Ã  la question posÃ©e : dans quelle mesure 
+lâobservation des flocons de neige permet-elle de mesurer lâampleur du rÃ©chauffement climatique ? 
+Nos expÃ©riences montrent quâil existe bel et bien un lien entre la morphologie des flocons, la tempÃ©rature et 
+lâhumiditÃ© de lâair. Leur forme et leur frÃ©quence reflÃ¨tent les variations climatiques locales, et la diminution de 
+la couverture neigeuse sâaccompagne dâune hausse mesurable des tempÃ©ratures par effet sur lâalbÃ©do. 
+Toutefois, pour confirmer ce lien de maniÃ¨re rigoureuse, il serait nÃ©cessaire de disposer de sÃ©ries 
+dâobservations longues et prÃ©cises, couvrant plusieurs annÃ©es et plusieurs zones gÃ©ographiques. En somme, 
+les flocons constituent de bons indicateurs du climat, mais leur exploitation reste encore Ã  dÃ©velopper. 
+Aujourdâhui, de nouvelles recherches sâintÃ©ressent Ã  la maniÃ¨re dont les flocons tombent, tournent ou 
+sâagglomÃ¨rent en fonction du vent, de la densitÃ© de lâair et de lâhumiditÃ©. Ces Ã©tudes, en lien direct avec la 
+mÃ©tÃ©orologie, permettent de mieux comprendre les prÃ©cipitations et leur rÃ´le dans le climat global. 
+Dans cette optique, des projets participatifs comme Zooniverse â Snowflake ID mobilisent des milliers 
+de citoyens pour classer et identifier des flocons Ã  partir de photographies. Ces donnÃ©es collectives aident 
+les chercheurs Ã  relier la forme des flocons aux conditions atmosphÃ©riques au moment de leur chute. Ã 
+terme, ce type dâinitiative pourrait transformer chaque observation de flocon en une prÃ©cieuse information 
+climatique, contribuant ainsi Ã  une meilleure comprÃ©hension du rÃ©chauffement de notre planÃ¨te ! 
+Figure 22 - Loi de Clausius-Clapeyron
+
+19 
+ 
+REMERCIEMENTS :   
+Nous souhaitons remercier toutes les personnes qui nous ont encouragÃ©s, accompagnÃ©s et permis de 
+mener ce projet Ã  bien.  
+En premier lieu Ã  M. STANEK et Ã  Mme BORREL, professeurs de physique Ã  lâInstitut Notre Dame de 
+Saint-Germain-en-Laye, pour leur encadrement attentif, leur patience, leur exigence bienveillante et la 
+confiance quâils nous ont accordÃ©e. Leurs conseils et leur optimisme nous ont rÃ©ellement tirÃ©s vers le haut, 
+dans la bonne humeur, tout au long de cette aventure.  
+Notre gratitude va Ã©galement Ã  lâÃ©quipe pÃ©dagogique du lycÃ©e Institut Notre-Dame, dirigÃ©e par Mme DE 
+GIOVANNI, pour sa confiance et son soutien constant.  
+Nous remercions tout particuliÃ¨rement Mme KAWALEC, laborantine du lycÃ©e, pour sa disponibilitÃ© et 
+son aide prÃ©cieuse au laboratoire : elle nous a accompagnÃ©s dans les manipulations et a mis Ã  notre 
+disposition, sans hÃ©sitation, le matÃ©riel nÃ©cessaire.  
+Enfin, un immense merci pour les organisateurs de la 33áµ Ã©dition des Olympiades de Physique pour 
+lâopportunitÃ© de dÃ©couvrir, rencontrer et expÃ©rimenter dans un cadre exigeant.  
+Aussi, un grand merci Ã  nos familles et amis : leurs encouragements ont donnÃ© Ã  ce projet son Ã©lan. 
+Une pensÃ©e chaleureuse pour notre quatriÃ¨me membre, qui nâa pas pu poursuivre lâaventure jusquâau bout, 
+mais dont lâaide a beaucoup comptÃ©.    
+ BIBLIOGRAPHIE :  
+ï· GHYS, Ãtienne, 2021. La petite histoire des flocons de neige. Odile Jacob. 
+ï· Gouvernement du Canada, 2024. Etendue de la couverture de neige. Disponible sur canada.ca 
+ï· TALAGA Simon, 2021. Flocons de neige algorithmiques. Disponible sur simontlg.io  
+ï· Zooniverse. Snowflake ID. Disponible sur zooniverse.org 
+ï· Wikipedia, 2022. Albedo. Disponible sur wikipedia.org 
+ï· KENNETH G. Libbrecht, 1999. SnowCryslals.com . Disponible sur SnowCrystals.com 
+ï· SciFri, 2015. Growing Snowflakes In A Bottle. Disponible sur youtube.com 
+ï· Veritasium, 2022.  The Snowflake Myth.  Disponible sur youtube.colm 
+ï· Yang Chen, Xuejing Li, Yuxuan Xing, Shirui Yan, Dongyou Wu, Tenglong Shi, Jiecan Cui, Xueying 
+Zhang and Xiaoying Niu, 2022, Historical Changes of Black Carbon in Snow and Its Radiative Forcing 
+in CMIP6 Models. Disponible surmdpi.com 
+ï· Logiciel Mesurim 2

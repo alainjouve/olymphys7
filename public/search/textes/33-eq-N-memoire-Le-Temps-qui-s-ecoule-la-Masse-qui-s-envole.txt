@@ -1,0 +1,767 @@
+Le Temps qui sâÃ©coule, 
+la Masse qui sâenvole 
+ 
+ 
+ou 
+ 
+Comment le poids dâun sablier 
+varie durant son Ã©coulement 
+ 
+ 
+ 
+Saint Germain en Laye, finalitÃ©s nationales 
+ 
+ 
+DUTANG HÃLOÃSE 
+CATHERINE-BONNICI CÃLESTE 
+ANDRÃ QUENTIN 
+LAIROT JOHAN 
+ 
+encadrÃ©s par Jean-Baptiste BUTET 
+ 
+ 
+LycÃ©e Lalande 
+Bourg en Bresse 
+2025-2026
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+Introduction......................................................................................................................................3 
+1. ModÃ©lisation dâun sablier, essais et tÃ¢tonnements..................................................................3 
+1. Peut-on voir facilement la variation de masse du sablier lors de lâÃ©coulement ?.....................3 
+2. RÃ©alisation dâun montage pour Ã©tudier lâÃ©coulement dâun sablier............................................4 
+3. RÃ©alisation dâun systÃ¨me dâouverture qui minimise les vibrations...........................................5 
+4. Capteur utilisÃ© : la cellule de charge par compression.............................................................6 
+5. Les premiÃ¨res mesures avec une balance connectÃ©e.............................................................7 
+2. Analyse des mesures effectuÃ©es................................................................................................8 
+1. DÃ©veloppements logiciels : acquisition et visualisation....................................................8 
+1. Pourquoi la masse diminue-t-elle au dÃ©but ?...........................................................................9 
+1. Nos observations de cette diminution................................................................................9 
+2. Etude du dÃ©bit....................................................................................................................9 
+3. Quel est l'impact du diamÃ¨tre du trou sur le dÃ©bit ?.........................................................10 
+4. Valeur et Forme de la diminution de masse.....................................................................12 
+Quelle devrait Ãªtre la forme de cette diminution de masse ?.........................................12 
+JusquâÃ  quelle valeur doit-on descendre ?.....................................................................12 
+2. Le rÃ©gime permanent.............................................................................................................14 
+1. Les mesures.....................................................................................................................14 
+2. PremiÃ¨re hypothÃ¨se (annÃ©e 2024 - dÃ©cembre 2025) :.....................................................15 
+3. DeuxiÃ¨me hypothÃ¨se :......................................................................................................16 
+3. La fin du sablier......................................................................................................................17 
+3. Comment faire un systÃ¨me informatique qui dÃ©tecte une si faible variation ?.............................19 
+Conclusion......................................................................................................................................19 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Source : https://www.bedetheque.com/parabd-59-BD-Asterix__54.html 
+                 2 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+Introduction 
+Le sablier, comme la clepsydre, fait partie des premiers moyens pour mesurer une durÃ©e. Si ces 
+moyens de mesurer le temps peuvent Ãªtre assez prÃ©cis, ils nÃ©cessitent que lâopÃ©rateur ait les yeux 
+toujours dessus pour en Ã©valuer la fin prÃ©cisÃ©ment. 
+ 
+â Nous avons entendu parler de la variation de masse dâun sablier au cours de son 
+Ã©coulement et nous avons voulu en savoir plus. 
+Concernant le masse affichÃ©e par une balance, nous nous sommes posÃ©s les questions 
+suivantes :  
+-ââPourquoi change-t-elleâ, 
+-ââComment varie-t-elle ?â, 
+-ââComment modÃ©liser les variations?â 
+-ââPeut-on dÃ©tecter la fin dâun sablier du commerce avec une balance ?â. 
+Pour cela, nous avons dÃ» crÃ©er notre propre sablier. Nous allons vous prÃ©senter ici la derniÃ¨re 
+version, avec laquelle nous avons refait nos mesures entre la sÃ©lection rÃ©gionale et maintenant. Il 
+y a eu en tout 3 montages diffÃ©rents, Ã©talÃ©s sur lâannÃ©e et demi de recherches. (Annexe 1) 
+1.âModÃ©lisation dâun sablier, essais et tÃ¢tonnements 
+1.âPeut-on voir facilement la variation de masse du sablier lors de 
+lâÃ©coulement ? 
+Balance : Pour mettre en Ã©vidence un Ã©ventuel changement de masse, nous avons utilisÃ© une 
+balance de ROBERVAL et obtenu une dÃ©viation visible. 
+ 
+ 
+Nous avons Ã©tudiÃ© le âpointeurâ (une pointe de patafix au bout de la pointe de la roberval) avec le 
+logiciel pymecavideo et tracÃ© lâabscisse du point en fonction du temps :  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1 : Capture dâÃ©cran de la vidÃ©o de lâexpÃ©rience avec la balance de ROBERVAL. 
+lien vers la vidÃ©o complÃ¨te : 
+ https://tube-sciences-technologies.apps.education.fr/w/kmZtMCEkjbg2K3XDegdg9C 
+                 3 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+ 
+Figure 2 : rÃ©sultat du pointage automatique de la pastille de patafix, par le logiciel pymecavideo. (x 
+= f(t)) 
+ 
+On remarque bien le dÃ©calage Ã  gauche donc lâallÃ¨gement du sablier au dÃ©but de lâÃ©coulement. 
+Mais aprÃ¨s, il est assez difficile dâanalyser dâautres variations Ã  cause de lâoscillation importante de 
+la balance. 
+ 
+Nous avons trouvÃ© cela trÃ¨s surprenant, contre-intuitif : La masse du sablier varie ! Nous avons 
+donc dÃ©cidÃ© dâÃ©tudier ce phÃ©nomÃ¨ne. 
+ 
+2.âRÃ©alisation dâun montage pour Ã©tudier lâÃ©coulement dâun 
+sablier 
+La rÃ©alisation dâun montage qui permettait dâavoir des mesures reproductibles de la force pesante 
+a Ã©tÃ© complexe :  
+Il a fallu trouver une balance pouvant Ãªtre connectÃ©e Ã  un ordinateur. Nous avons tout dâabord 
+utilisÃ© une balance du lycÃ©e. Mais la frÃ©quence dâÃ©chantillonnage Ã©tait un peu trop faible, -5 
+mesures par secondes- et surtout, elles nâÃ©taient pas en temps rÃ©el : il y avait une sorte de 
+âtamponâ informatique qui donnait des rÃ©sultats non horodatÃ©s qui continuaient alors que 
+l'acquisition Ã©tait finie.  
+ 
+Nous avons donc dÃ» chercher et dÃ©velopper notre propre systÃ¨me de mesure. Ceci a pris du 
+temps -quelques mois-.  
+ 
+Notre montage manquait de rigiditÃ© et il y avait de forts phÃ©nomÃ¨nes de rebond. Nous avons 
+essayÃ© plusieurs systÃ¨mes dâamortissement pour les empáº¿cher. Nous avons essayÃ© des ressorts, 
+un systÃ¨me de poids/poulies mis Ã  120Â° qui permettait dâempÃªcher une trop forte oscillation. 
+Et malheureusement, ce montage entraÃ®nait aussi une dÃ©rive importante, sans doute liÃ©e Ã  un bras 
+de levier non maÃ®trisÃ©. Ceci nous a pris 6 mois et beaucoup de dÃ©veloppement mais nous nâen 
+parlerons pas ici :  
+ 
+Depuis la nouvelle version, nous avons rÃ©solu un grand nombre de ces problÃ¨mes et ils ne sont 
+plus dâactualitÃ©. 
+ 
+Nous avons voulu recrÃ©er un sablier dont nous pouvions varier les paramÃ¨tres suivants:  
+                 4 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+ââla masse de sable introduite 
+ââla hauteur de chute du sable 
+ââle dÃ©bit de sable (via des trous de diamÃ¨tres diffÃ©rents) 
+ 
+Pour cela, aprÃ¨s des mois de tÃ¢tonnements et quelques centaines de grammes dâimpressions 3D, 
+nous sommes arrivÃ©s Ã  une structure avec 3 tiges qui permettent de faire varier la hauteur de 
+maniÃ¨re assez simple, en dÃ©vissant puis dÃ©calant les supports.  
+3.âRÃ©alisation dâun systÃ¨me dâouverture qui minimise les 
+vibrations 
+Il nous fallait un systÃ¨me permettant un dÃ©clenchement commandÃ© par lâopÃ©rateur mais sans 
+action directe sur le sablier. 
+Pour cela, nous avons utilisÃ© un servomoteur contrÃ´lÃ© par microbit, que nous avons grÃ¢ce au 
+projet âYes We Codeâ, puis programmÃ© des cartes micro-contrÃ´leurs MicroBit pour quâelles 
+communiquent par radio. (code en Annexe 2)  
+ 
+Figure 3 : le montage de sablier utilisÃ© 
+ 
+ 
+Pour tenter de voir si notre montage introduit des vibrations, nous avons fait des essais Ã  vide. 
+ 
+Figure 4 : essais dâouverture Ã  vide du moteur 
+On remarque que le systÃ¨me nâinduit pas beaucoup de vibrations : lâouverture nâest pas 
+facilement dÃ©tectable. Cependant, ces essais ont Ã©tÃ© faits Ã  vide. Quand du sable appuie 
+                 5 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+dessus, il peut y avoir des Ã©jectats et lâouverture ne se fait pas de maniÃ¨re instantanÃ©e, ce qui 
+influe sur le dÃ©bit au tout dÃ©but. 
+4.âCapteur utilisÃ© : la cellule de charge par compression 
+Nous utilisons un capteur de force par dÃ©formation qui possÃ¨de une jauge de contrainte permettant 
+de la mesurer. La tension est encodÃ©e par un convertisseur analogique-numÃ©rique (ADC) 24 bit qui 
+possÃ¨de un amplificateur en entrÃ©e. 
+ 
+Nous avions utilisÃ© en premier lieu un HX711 (3â¬). Mais la mesure Ã©tait particuliÃ¨rement bruitÃ©e, 
+malgrÃ© des bonnes pratiques de cÃ¢blage (cÃ¢bles torsadÃ©s, mise Ã  la masse et blindage). 
+ 
+Nous nous sommes tournÃ©s ver un ADC NAU7802 qui a les mÃªmes caractÃ©ristiques mais une qualitÃ© 
+Ã©lectronique supÃ©rieur (et un prix en consÃ©quence aussi -10â¬ piÃ¨ce- ) 
+ 
+Cet appareillage de mesure peut mesurer de lâordre de 0,1g pour 1 kg de charge. 
+ 
+Figure 5 : capteur utilisÃ© 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                 6 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+5.âLes premiÃ¨res mesures avec une balance connectÃ©e 
+A lâaide dâune balance connectÃ©e (Kern PCB 2001), nous avons fait notre premiÃ¨re mesure :  
+      ââââââ 
+Figure 6 :  variation de la masse mesurÃ©e par la 
+balance au cours du temps. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Nous vÃ©rifions ce que nous avons vu avec la balance de Roberval. : la masse mesurÃ©e change. 
+ 
+PrÃ©cision sur les termes utilisÃ©s. 
+A lâÃ©quilibre mÃ©canique comme rien ne bouge, une balance affiche une masse en gramme. 
+Cependant, une balance Ã©lectronique mesure en rÃ©alitÃ© la force sâappliquant sur le capteur. 
+A lâÃ©quilibre, il sâagit du poids de lâobjet et il suffit dâÃ©talonner la balance pour quâelle affiche la 
+masse ; le poids et la masse de lâobjet Ã©tant proportionnels. 
+Cependant, en dynamique, câest toujours la force s'exerÃ§ant sur le capteur qui est mesurÃ©e. Mais 
+cela nâest plus proportionnel Ã  la masse de lâobjet. Il peut y avoir des chocs ou des masses 
+accÃ©lÃ©rÃ©es qui contribuent Ã  la dÃ©formation du capteur et changent ainsi lâaffichage. 
+ 
+Au cours de nos mesures, nous avons remarquÃ© une variation de la masse affichÃ©e. Il faut 
+bien entendu considÃ©rer que câest une variation de la force de lâobjet sur la balance et non 
+une variation de la masse du sablier.  
+ 
+Cependant, nous utiliserons par la suite des notations et unitÃ©s de masse. 
+ 
+Avec lâappareillage actuel, nous obtenons ce genre de mesures : m(g) =  f(t(s)) 
+Figure 7 : un exemple typique de mesures avec le nouveau montage 
+ 
+ 
+                 7 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+2.âAnalyse des mesures effectuÃ©es 
+1.âDÃ©veloppements logiciels : acquisition et visualisation 
+Les variations sont trÃ¨s rapides donc il est assez difficile, en temps rÃ©el, de comprendre ce quâil se 
+passe, Ã  quel moment est liÃ© telle ou telle variation.  
+A lâaide dâun Ã©lÃ¨ve de terminale ayant pour spÃ©cialitÃ© âNumÃ©rique et Science de lâinformationâ 
+-Corentin- nous avons dÃ©veloppÃ© un logiciel en deux parties :  
+-âune partie acquisition, horodate la mesure de la balance et prend simultanÃ©ment une 
+photo Ã  l'aide dâune webcam. NB : il y a eu 3 versions de ce code. La derniÃ¨re version a Ã©tÃ© 
+amÃ©liorÃ©e Ã  lâaide de Claude IA. (ANNEXE 3) 
+-âune partie visualisation, permet de relier les mesures de la balance -enregistrÃ©es dans un 
+fichier- et les photos provenant de la webcam.( Code de Corentin. ANNEXE 4.) 
+ 
+GrÃ¢ce Ã  cet ensemble de logiciels, nous avons pu dÃ©cortiquer les Ã©vÃ¨nements et voir ce quâil se 
+passait en temps rÃ©el. 
+ 
+Figure 8: copie dâÃ©cran du logiciel de visualisation                     Figure 9: dÃ©coupage en sÃ©quence 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Nous avons pu sÃ©parer le phÃ©nomÃ¨ne en 5 parties :  
+1)âLa masse reste constante avant le dÃ©clenchement de lâouverture 
+2)âLa masse diminue au moment de l'ouverture jusquâÃ  ce que le sable touche le fond  
+du verre 
+3)âLa moyenne de la masse reste constante durant lâÃ©coulement du sable que nous 
+appellerons le rÃ©gime permanent 
+4)âla masse augmente lorsqu'il nây a plus de  
+sable dans le rÃ©cipient supÃ©rieur 
+5)âla masse redevient Ã©gale Ã  celle du dÃ©but lorsque le sablier s'immobilise 
+ 
+ 
+ 
+ 
+                 8 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+1.âPourquoi la masse diminue-t-elle au dÃ©but ?  
+Cela nous a beaucoup surpris. Nous ne nous attendions pas Ã  des variations si nettes.  
+ 
+Que se passe-t-il quand le sable commence Ã  tomber ?  
+GrÃ¢ce au logiciel de visualisation image par image, on peut lier la diminution de la masse au dÃ©but 
+de la chute du sable :  
+Le sable qui tombe se retrouve alors en chute libre. Il nâintervient plus dans le poids du sablier : la 
+force pesante mesurÃ©e (et donc la masse mesurÃ©e) diminue. 
+ 
+Plusieurs questions se posent : Peut-on modÃ©liser cette diminution de masse ? A quelle diminution 
+maximale de masse peut-on sâattendre ? De quoi cela dÃ©pend-il ?  
+ 
+1.âNos observations de cette diminution 
+ 
+Figure 10 : zoom sur certaines diminutions 
+ 
+Observations : Les profils descendants ne sont pas symÃ©triques. Pour une grande ouverture 
+(10,1mm), il y a deux pics. Pour de plus petites ouvertures, il nây a quâun pic.  
+ 
+Pour modÃ©liser cette diminution, nous devons tout dâabord voir si le sable sâÃ©coule Ã  dÃ©bit constant 
+ou pas. Ceci nâest pas Ã©vident, car une clepsydre, par exemple, Ã  son dÃ©bit qui dÃ©pend de la 
+hauteur dâeau restante dedans. 
+Nous avons donc modifiÃ© lÃ©gÃ¨rement le montage et au lieu de tout peser, nous nâavons pesÃ© que 
+le rÃ©cipient du sable. 
+2.âEtude du dÃ©bit 
+Nous avons pris les mesures pour 3 diamÃ¨tres de trou diffÃ©rents. (code en ANNEXE 5) 
+Figures 11 : mesure du dÃ©bit selon les diamÃ¨tres 
+â 
+ 
+                 9 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+ 
+ 
+On remarque que les rÃ©sultats sont conformes Ã  lâintuition : plus le trou est petit, moins le dÃ©bit est 
+Ã©levÃ©. 
+Dans les 5 cas, on remarque que le dÃ©bit est constant au cours de la descente du sable, car la 
+masse mesurÃ©e dans le rÃ©cipient augmente de maniÃ¨re linÃ©aire. 
+ 
+3.âQuel est l'impact du diamÃ¨tre du trou sur le dÃ©bit ?â â â â   
+ 
+En faisant nos recherches, il se trouve quâil existe une loi, la loi de BEVERLOO qui est une loi 
+empirique. Elle fonctionne notamment pour des billes en verre. Pour le sable câest un peu diffÃ©rent. 
+car il y a beaucoup plus de frottements. La loi de Beverloo est une loi de degrÃ© 2,5 (loi de 
+Beverloo -ANNEXE 6-).  
+Nous avons voulu savoir si nos mesures se rapprochaient de cette loi et dÃ©terminer quelle 
+puissance modÃ©lise notre Ã©coulement.  
+ 
+ Figure 12 : dÃ©bit en fonction du diamÃ¨tre. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Tableau de mesure 1 : DiamÃ¨tre,  DÃ©bit mesurÃ© â â â â â â 
+diamÃ¨tre (en mm) 
+dÃ©bit massiqueâ
+Qm  (g/s) 
+10,1 25,136 Â± 0.006 
+7,5 9,90 Â± 0,002 
+6,5 6,3565 Â± 0,0007 
+5,5 3,7605 Â± 0,0005 
+4,5 2,1110 Â± 0,0007 
+0 	0 
+                 10 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+ 
+NB : les erreurs ont Ã©tÃ© calculÃ©es par la fonction linregress de scipy.stats 
+Pour tenter de retrouver la loi de Beverloo, nous avons utilisÃ© une modÃ©lisation de ce type :      
+Qm = AxD
+P  
+avec Qm le dÃ©bit massique, D le diamÃ¨tre, A une constante, P une puissance 
+ 
+En passant au logarithme de 10 on obtient : log(Qm) = log(A) + P x log(D). 
+ 
+Donc nous traÃ§ons log(A) en fonction de log(D)  :  
+  
+Figure 13 : log(Qm) en fonction de log( D). 
+ 
+On trouve que la modÃ©lisation par une droite 
+est plutÃ´t bonne (R trÃ¨s proche de 1). Donc le 
+modÃ¨le avec une loi de puissance est bon. 
+On trouve une puissance en diamÃ¨tre proche 
+de 3. 
+ 
+Cela ne ressemble pas Ã  la loi de Beverloo 
+mais celle-ci nÃ©cessite des approximations 
+(sphÃ¨re de verre) que nous nâavons pas avec 
+du sable de plage.   
+Nous avons trouvÃ© que pour notre matÃ©riel et le sable utilisÃ©, la loi donnant le dÃ©bit en fonction du 
+diamÃ¨tre est :  
+ 
+ Qm = 2,055.10â»Â² x D
+3,06 
+ 
+Le dÃ©bit Ã©tant constant, connaissant le dÃ©bit et la masse de sable introduite on peut  calculer le 
+temps mis par le sablier pour se vider.  
+ 
+Exemple pour 450g de sable :  
+avec un diamÃ¨tre de 10,1 mm : le dÃ©bit est de 25,1 g/s donc le sablier durera environ 450/25,1 = 
+18 secondes. 
+avec un diamÃ¨tre de 4,5 mm : le dÃ©bit est de 2,11 g/s donc le sablier sâÃ©coulera en environ 213s 
+soit 3 min 33s. 
+ 
+Nous avons vu que la hauteur de sable n'influence pas le dÃ©bit. Câest pourquoi nous ne faisons 
+pas trop attention Ã  comment nous mettons le sable dans le cylindre : au cours de lâÃ©coulement, le 
+niveau de sable va sâÃ©quilibrer et le dÃ©bit ne dÃ©pendant pas du niveau de sableâ¦  
+ 
+4.âValeur et Forme de la diminution de masse 
+Nous pouvons donc maintenant considÃ©rer que le sable tombe Ã  dÃ©bit constant. Avec cette 
+hypothÃ¨se, comment peut-on modÃ©liser la diminution de masse ? 
+                 11 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+ 
+Quelle devrait Ãªtre la forme de cette diminution de masse ? 
+Le dÃ©bit massique Qmâ (en g/s) est constant. La masse de sable qui tombe est donc 
+m(t)=Qm.Ît  avec Ît la durÃ©e de la chute.  
+ 
+On sâattend donc Ã  une diminution de la forme M(t)  = M
+0-Qm.Ît c'est-Ã -dire une fonction affine 
+dÃ©croissante dont la pente est lâopposÃ© du dÃ©bit.  
+ 
+A la fin, quand le cylindre touche le rÃ©cipient, il sâagit dâun retour Ã  lâÃ©quilibre, donc thÃ©oriquement 
+instantanÃ©. 
+ 
+JusquâÃ  quelle valeur doit-on descendre ? 
+Si on considÃ¨re que le sable est en chute libre on sait que   
+Connaissant le dÃ©bit, on peut alors calculer la masse finale. 
+ 
+Par exemple, avec 17,3 cm de hauteur et 7,5 mm de diamÃ¨tre, cela donne les paramÃ¨tres 
+suivants:  Qm = 9,9 g/s et on calcule la durÃ©e de chute avec la formule                      = 0,19s. 
+Ceci correspond Ã  une diminution maximale de Qm.Ît
+max = 9,9x0,19 = 1,9g. 
+Cela donnerait le profil suivant apposÃ© sur la mesure :  
+ 
+ Figure 14 : en rouge la diminution de masse mesurÃ©e. 
+En bleu, la diminution thÃ©orique 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+Avec le mÃªme diamÃ¨tre et une autre hauteur 33,0 cm ce qui donne une durÃ©e de 0,257 s : 
+ 
+ 
+ 
+ 
+                 12 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+Enfin, un autre diamÃ¨tre, 10,1 mm et une autre hauteur : 27,8 cm ce qui correspond Ã  une durÃ©e 
+de 0,24s et un dÃ©bit de 25,1 g/s câest Ã  dire un maximum de 6g. 
+ 
+ 
+Observations : on remarque que les profils de descente ont une largeur et une profondeur du 
+mÃªme ordre de grandeur. Nous pouvons dire que le modÃ¨le est assez proche de la rÃ©alitÃ©. 
+Il faudrait augmenter le taux dâÃ©chantillonnage pour voir des effets encore plus fins. Par exemple 
+pour de forts dÃ©bits on remarque 2 pics. Ce que notre modÃ¨le nâexplique pas. Est-ce dÃ» Ã  notre 
+mÃ©canisme dâouverture ? ou est-ce dÃ» Ã  une accÃ©lÃ©ration globale du sable lors de lâouverture ? 
+Les deux possibilitÃ©s sont possibles ce qui montre les limites expÃ©rimentales et de simplification de 
+notre modÃ¨le. 
+Remarque : on observe une augmentation inattendue de la masse Ã  la fin du retour Ã  0 brusque 
+Ã©tabli par le modÃ¨le. Elle est due Ã  un effet de rebond du systÃ¨me entraÃ®nÃ© par lâinertie de la chute 
+de sable. 
+ 
+ 
+ 
+La diffÃ©rence  entre la thÃ©orie et nos mesures peut sâanalyser ainsi:  
+-> notre systÃ¨me de dÃ©clenchement nâest pas parfait (ouverture non instantanÃ©e) et induit des 
+hÃ©tÃ©rogÃ©nÃ©itÃ©s (des chocs). Cependant, on peut noter une certaine asymÃ©trie que lâon attend. Les 
+ordres de grandeurs sont conservÃ©s : notre modÃ¨le fonctionne bien. 
+ 
+Une fois le sable de la colonne tombÃ© de toute la hauteur, il touche le fond et on rentre dans ce 
+quâon a appelÃ© âle rÃ©gime permanentâ qui fonctionne tant quâil y a du sable dans le rÃ©cipient. 
+ 
+                 13 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+2.âLe rÃ©gime permanent 
+1.âLes mesures 
+Voici un exemple typique de mesure obtenue lors de nos premiers essais.                                          
+Figure 15 : Exemple de mesures 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+La premiÃ¨re partie correspond Ã  un reste des mesures prÃ©cÃ©dentes. La seconde au dÃ©but de 
+lâexpÃ©rience. On remarque aisÃ©ment la diminution de masse durant la troisiÃ¨me partie ainsi que 
+lâaugmentation finale lors de la quatriÃ¨me partie. On constate un retour Ã  0 une fois que le sablier 
+est terminÃ©, correspondant Ã  la sixiÃ¨me partie. Cependant, au cours de la quatriÃ¨me partie, que nous appellerons le ârÃ©gime permanentâ, il est 
+assez difficile de dÃ©celer une augmentation particuliÃ¨re. 
+ 
+De plus, nous avons eu des dÃ©rives liÃ©es Ã  un dÃ©sÃ©quilibre de notre sablier causant des profils de 
+ce type :  
+ 
+      Figure 16 : visualisation de la dÃ©rive 
+ 
+Il y a une variation de la masse affichÃ©e entre le 
+dÃ©but et la fin. Le dÃ©bit Ã©tant constant, nous 
+considÃ©rons que la dÃ©rive est proportionnelle au 
+poids dans la partie basse du sablier et donc nous 
+pouvons tenter de sâen affranchir en la modÃ©lisant par 
+une fonction affine. 
+ 
+ 
+ 
+ 
+ 
+Pour cela, nous avons codÃ© un programme qui, une fois les points limites (en rouge) placÃ©s Ã  la 
+main, calcule la droite de dÃ©rive et lâenlÃ¨ve.   
+Figure 17 : correction de la dÃ©rive (en orange) 
+ 
+ 
+ 
+ 
+ 
+ 
+                 14 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+Tableau de mesures 2 : T1, T2, T3 et T4 sont les points placÃ©s manuellement. Le dÃ©calage vertical 
+est la diffÃ©rence entre la moyenne des mesures sur le rÃ©gime permanent et la ligne de base. 
+âââââ 
+ 
+ 
+Quelques remarques : notre montage initial manquait de rigiditÃ©. MalgrÃ© nos efforts pour 
+diminuer, ou du moins amortir, les vibrations, nous avions encore beaucoup d'oscillations. De plus, 
+le fait dâavoir une dÃ©rive rajoute encore du bruit malgrÃ© notre traitement. 
+Nous avons donc dÃ©cidÃ© de tout reprendre entre la sÃ©lection rÃ©gionale et la finale Ã  Paris 
+avec un montage nous permettant de rÃ©soudre ces problÃ¨mes de dÃ©rives, inexistants 
+dorÃ©navant. 
+Nous avons tout de mÃªme inclus dans ce dossier cette dÃ©rive car elle nous a demandÃ©  beaucoup 
+de travail de traitement pour vÃ©rifier nos hypothÃ¨ses Ã  propos du rÃ©gime permanent. 
+ 
+2.âPremiÃ¨re hypothÃ¨se (annÃ©e 2024 - dÃ©cembre 2025) :  
+Le sable tombe et de lâÃ©nergie se rajoute : il nây a quâune seule force 
+dâimpact. 
+Nous pensions que nous devions avoir une augmentation de la masse liÃ©e au fait que le sable 
+tombe dâune certaine hauteur avant de percuter le rÃ©cipient infÃ©rieur. Nous avons donc fait varier la 
+hauteur et rÃ©alisÃ© des moyennes de la variation de poids lors du rÃ©gime permanent (voir Tableau 
+de mesures 2 ci-dessus). Nous nous attendions Ã  une augmentation mesurable de la masse, 
+augmentation qui dÃ©pendait de la hauteur de chute. 
+ 
+Peut-on mesurer la variation de masse supposÃ©e ? 
+Pour tenter de trouver un ordre de grandeur nous avons fait une analyse dimensionnelle.  
+Le dÃ©bit massique Qm(en kg/s), la hauteur h (m), lâintensitÃ© de pesanteur g (m/sÂ²) de chute doivent 
+rentrer dans lâÃ©quation. 
+On Ã©limine la surface qui est intuitivement prise en compte dans le dÃ©bit.  
+ 
+[Qm] = M.Tâ»Â¹   doit forcÃ©ment Ãªtre Ã  la puissance 1 pour avoir lâunitÃ© de masse 
+[g] = L.Tâ»Â² doit Ãªtre au dÃ©nominateur et en racine pour enlever lâunitÃ© de temps. 
+[h] = L  doit Ãªtre au numÃ©rateur en racine aussi pour enlever lâunitÃ© de longueur liÃ©e Ã  g. 
+ 
+ 
+                 15 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+On obtient donc, avec un trou de 10,1 mm et 27,8 cm de chute, une variation de masse de lâordre 
+de :  
+ 
+ 
+On devrait facilement vÃ©rifier cette augmentation de masse. Ce nâest cependant pas le cas. 
+DâaprÃ¨s le Tableau de mesures 2, les diffÃ©rences mesurÃ©es sont insignifiantes, de lâordre du 
+100e de gramme, et peuvent Ãªtre imputÃ©es Ã  lâimprÃ©cision du matÃ©riel utilisÃ©. Nous avons 
+donc dÃ©cidÃ© de complÃ©ter notre hypothÃ¨se. 
+3.âDeuxiÃ¨me hypothÃ¨se :  
+Il y a non seulement une force dâimpact mais aussi la chute du sable Ã  
+prendre en compte. 
+ 
+Par des calculs de systÃ¨me ouverts, grÃ¢ce Ã  lâaide M. RABAN -professeur en PC-, nous avons 
+montrÃ© (ANNEXE 7) que la force dâimpact Ã©tait Ã©gale Ã ââ   Cela correspond Ã  lâanalyse 
+dimensionnelle ci-dessus multipliÃ©e par  pour obtenir une force et non plus une variation de í µí±
+masse. 
+ 
+Cependant, Ã  cette force, il faut soustraire le poids du sable en chute libre. 
+ 
+Que vaut la masse de la colonne en train de tomber ?  
+La masse de sable contenue dans la colonne est Ã©gale au dÃ©bit multipliÃ© par le temps de vol du 
+sable. Si on se place dans le cadre dâune chute libre, on obtient alors que le poids de la colonne 
+est Ã©gal Ã  :  
+  
+ 
+La magie est alors lÃ  : la force dâimpact compense exactement le poids de la colonne. Câest 
+effectivement ce que lâon remarque : il nây a ni augmentation ni diminution du poids du sablier au 
+cours du rÃ©gime permanent. 
+ 
+Cette partie nous a clairement donnÃ© du fil Ã  retordre. Mais nous sommes contents dây Ãªtre 
+parvenus. 
+ 
+Nous pouvons rajouter une lÃ©gÃ¨re correction Ã  notre hypothÃ¨se : au fur et Ã  mesure de 
+lâÃ©coulement, le centre de masse du sablier descend. Donc, tout se passe comme si le sablier 
+recevait une force vers le bas. Par action/rÃ©action, la force du sablier sur la balance devrait donc 
+Ãªtre nÃ©gative. Est-ce cela que lâon observe sur nos mesuresâ¦ il faudrait encore creuser.  
+En outre, durant lâentretien avec le professeur NICOT -professeur Ã  lâuniversitÃ© 
+Savoie-Mont-Blanc-, celui-ci nous a expliquÃ© quâen plus des bruits de mesures liÃ©s Ã  notre 
+matÃ©riel, il y avait un bruit liÃ© au caractÃ¨re granulaire de la chute du sable : nous nâaurions pas eu, 
+quoique nous mettions en oeuvre, une belle droite lisse. Pour cela, il aurait fallu mettre en Åuvre 
+plusieurs expÃ©riences et en faire une moyenne. Nous avons malheureusement manquÃ© de temps 
+                 16 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+pour le faire car nous nous sommes confrontÃ©s Ã  de nombreux dÃ©fis plus complexes les uns que 
+les autres. 
+3.âLa fin du sablier 
+Par un raisonnement symÃ©trique celui du dÃ©but, la colonne de sable pÃ¨se sur le capteur, par sa 
+force dâimpact qui est toujours la mÃªme. Or il y a de moins en moins de sable en train de tomber et 
+donc de plus en plus de sable âqui pÃ¨seâ. 
+ 
+Au niveau modÃ©lisation, on doit donc avoir : M(t)  = M
+0+Qm.Ît tant quâil y a du sable en train de 
+tomber puis un retour Ã  lâÃ©quilibre immÃ©diat. 
+ 
+ 
+ 
+Pour un diamÃ¨tre de 4,5mm et une hauteur de 27,8cm, on a 0,24s de diminution, un dÃ©bit de 2,11 
+g/s soit une masse de 0,5g la modÃ©lisation donne : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 18 : Augmentation finale :  ModÃ¨le en bleu, mesures en vert 
+ 
+ 
+ 
+ 
+ 
+  
+                 17 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+Pour 10,1mm de diamÃ¨tre, et une hauteur de 27,8mm, soit un dÃ©bit de 25,14 g/s et une durÃ©e de 
+chute de 0,24s soit une masse maximale de 6,0g :  
+ 
+ 
+Figure 19:  Augmentation finale :  ModÃ¨le en bleu, mesures en vert 
+ 
+Observations : Le modÃ¨le ne colle pas aux mesures. 
+Analyse : notre modÃ¨le a pour hypothÃ¨se que le dÃ©bit reste constant. Or, quand on observe ce 
+quâil se passe Ã  la fin, lorsque les tous derniers grains de sable tombent, on remarque une trÃ¨s 
+nette diminution du dÃ©bit. Cela augmente donc le temps de de cette augmentation et par 
+consÃ©quent la masse maximale atteinte qui est plus petite que celle calculÃ©e et observÃ©e pour le 
+premier pic au dÃ©but de lâÃ©coulement. 
+ 
+MalgrÃ© cela, on observe tout de mÃªme une augmentation : quand Ã  la fin le sable tombe, la masse 
+sâenvole !! Câest le signal que le sablier a fini de sâÃ©couler. 
+ 
+Câest ce pic final que nous devons dÃ©tecter et qui nous donnera la fin du sablier. 
+Ceci est assez facile avec notre sablier Ã  fort dÃ©bit. Mais la tÃ¢che devient plus ardue lorsquâon 
+diminue ce dernier. Exemple ici : On repÃ¨re âÃ  l'Åilâ, le pic final vers 102s.  
+ 
+Figure 20 :  mesures pour un petit dÃ©bit 
+ 
+ 
+ 
+ 
+ 
+ 
+ce qui donne, en zoomant, sur la partie qui nous intÃ©resse :  
+ 
+Figure 21 :  zoom sur la partie finale 
+                 18 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+3.âComment faire un systÃ¨me informatique qui 
+dÃ©tecte une si faible variation ? 
+Ici, on remarque quâil y a une dizaine de points qui composent le pic. La moyenne sur ces 10 
+points devrait Ãªtre diffÃ©rente de 0 alors que sur le rÃ©gime permanent, la moyenne doit Ãªtre Ã  zÃ©ro.  
+ 
+LâidÃ©e :  
+faire une moyenne sur une dizaine de points. et rechercher si la  moyenne dÃ©passe un certain 
+seuil. 
+Si on se trouve dans les parties 1, 2 ou 3,  la moyenne est soit nulle, soit nÃ©gative. Elle  ne 
+deviendra positive quâÃ  lâÃ©tape 4, c'est-Ã -dire lorsque la âmasse sâenvoleâ. 
+ 
+Figure 22 : algorithme de dÃ©tection 
+ 
+ 
+Le code est disponible en ANNEXE 8. 
+ 
+Conclusion 
+AprÃ¨s un an et demi de mesures et trois montages diffÃ©rents, nous sommes parvenus Ã  
+remplir nos objectifs : nous savons pourquoi et comment la masse affichÃ©e par une balance du 
+sablier change et nous sommes parvenus Ã  modÃ©liser ces variations. De plus, nous avons rÃ©ussi Ã  
+dÃ©terminer la fin de notre sablier Ã  lâaide dâun algorithme ne prenant en compte que les variations 
+du poids du systÃ¨me. Cependant, il faut que ce sablier respecte certaines caractÃ©ristiques. Il doit 
+notamment avoir un dÃ©bit assez fort, ce qui nâest pas le cas des sabliers du commerce. 
+ 
+Nous avons aussi rÃ©ussi Ã  comprendre une partie de ce phÃ©nomÃ¨ne trÃ¨s complexe car il 
+touche Ã  la physique des matÃ©riaux granulaires. Et dans cette physique, les forces de frottements 
+solides interviennent fortement. Ceci implique un certain nombre de phÃ©nomÃ¨nes surprenant 
+comme un dÃ©bit constant, quelque soit la hauteur de sable prÃ©sente dans la partie supÃ©rieure du 
+sablier.  
+ 
+Ce projet nous a permis dâapprofondir nos connaissances en mÃ©canique et appris Ã  
+travailler en groupe sur une longue pÃ©riode et Ã  se fixer des Ã©chÃ©ances. De plus, nous avons eu 
+lâoccasion dâavoir un aperÃ§u de la difficultÃ© de la recherche. 
+ 
+                 19 / 20
+
+LycÃ©e lalandeâ                       Le temps qui sâÃ©coule, la masse qui sâenvoleâ                      2025-2026 
+ 
+ 
+Remerciements 
+Un grand remerciement aux techniciens et agents de laboratoire ainsi quâaux agents de 
+maintenance du lycÃ©e qui ont toujours Ã©tÃ© lÃ  lors de nos sollicitations (pour du petit matÃ©riel, pour 
+des Ã©changes sur la maniÃ¨re de construire notre prototype etc.) 
+Un grand merci Ã  M. Valentin RABAN, professeur en CPGE qui nous a montrÃ© une Ã©tude 
+mÃ©canique nous permettant de comprendre plus finement ce quâil se passait.  
+Un grand merci Ã  FranÃ§ois NICOT, Professeur Ã  lâuniversitÃ© Savoie Mont-Blanc qui nous a donnÃ© 
+de son temps, via des courriels mais aussi en visioconfÃ©rence pour rÃ©pondre Ã  nos questions.  
+Un grand merci aussi Ã  lâadministration du LycÃ©e Lalande qui a su nous faciliter toutes les 
+dÃ©marches. 
+Un grand merci Ã  M. BUTET, notre professeur encadrant qui nous a beaucoup guidÃ© durant cette 
+annÃ©e de travail. 
+Et nâoublions pas de remercier, nos grands amis, la Patafix, les colsons et la colle Ã  chaud !  
+ 
+                 20 / 20

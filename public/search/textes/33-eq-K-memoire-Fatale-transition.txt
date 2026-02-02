@@ -1,0 +1,854 @@
+2026 
+ 
+ 
+Fatale transition 
+ 
+ 
+ 
+ 
+ 
+LYCÃE JEAN BART 
+DUNKERQUE 
+ 
+ 
+ 
+ 
+ 
+Martin COURBOT         Anton DZIEDZICZAK 
+Arno MATHIO        Arnaud RIOUAL
+
+2 
+ 
+Fatale transition 
+ 
+ 
+RÃ©sumÃ© 
+ 
+ 
+La chaleur fatale est lâÃ©nergie thermique libÃ©rÃ©e lors dâun processus industriel de fabrication ou de 
+transformation. Cette Ã©nergie, a priori perdue car le plus souvent libÃ©rÃ©e dans lâatmosphÃ¨re, peut 
+cependant Ãªtre stockÃ©e, puis rÃ©cupÃ©rÃ©e pour Ãªtre valorisÃ©e. Dans ce projet on Ã©tudie les 
+caractÃ©ristiques des matÃ©riaux Ã  changement de phase permettant de stocker et de restituer 
+efficacement de lâÃ©nergie thermique. La fusion dâun matÃ©riau solide nÃ©cessite beaucoup plus 
+dâÃ©nergie que pour simplement augmenter sa tempÃ©rature, il est donc intÃ©ressant de fabriquer des 
+batteries thermiques en utilisant ce changement de phase. Nous avons rÃ©alisÃ© des expÃ©riences de 
+calorimÃ©trie pour mesurer les caractÃ©ristiques thermiques de la cire de bougie. Nous avons montrÃ© 
+que la durÃ©e du processus de fusion dans nos batteries cylindriques dÃ©pend de la taille de la batterie 
+utilisÃ©e. Enfin, nous avons conÃ§u un dispositif expÃ©rimental permettant de reproduire Ã  petite Ã©chelle 
+le stockage et la restitution dâÃ©nergie dans des batteries thermiques insÃ©rÃ©es dans une circulation 
+dâeau. Nous avons pour cela fabriquÃ© nos batteries avec un matÃ©riau Ã  changement de phase 
+commercial, le RT35, et comparÃ© nos rÃ©sultats avec des batteries sans changement de phase. Les 
+expÃ©riences montrent que câest bien la transition de phase qui permet dâaccumuler lâessentiel de 
+lâÃ©nergie thermique.
+
+3 
+Introduction 
+ 
+Les systÃ¨mes de chauffage, domestiques ou industriels, ont gÃ©nÃ©ralement besoin de beaucoup dâ±Ã©nergie. On 
+peut obtenir de lâ±Ã©nergie thermique (on parle aussi de Â« chaleur Â») directement par la combustion dâ±Ã©nergie 
+fossile (charbon, gaz) ou dâ±Ã©nergie renouvelable (bois, biomasse), ou encore par conversion dâ±Ã©nergie 
+Ã©lectrique (souvent dâ±origine nuclÃ©aire) en Ã©nergie thermique, câ±est alors le principe du chauffage Ã©lectrique. 
+Il existe cependant peu de dispositifs permettant de stocker de lâ±Ã©nergie thermique et de la restituer plus tard 
+dans le temps, comme on sait le faire avec des batteries Ã©lectriques. 
+On se propose dans ce projet dâ±Ã©tudier la possibilitÃ© dâ±emmagasiner de lâ±Ã©nergie thermique dans des matÃ©riaux 
+Ã  changement de phase, câ±est-Ã -dire en utilisant une transition entre lâ±Ã©tat solide et lâ±Ã©tat liquide. Quel est 
+lâ±intÃ©rÃªt dâ±un tel changement dâ±Ã©tat ? Quelles sont les applications pratiques de ces matÃ©riaux ? 
+ 
+ 
+La sociÃ©tÃ© Armstrong propose des plafonds Ã  changement de phase pour Ã©conomiser lâÃ©nergie 
+(https://www.armstrongceilings.com) 
+ 
+Sommaire 
+ 
+PremiÃ¨re partie : conception et caractÃ©risation de batteries thermiques 
+Mesures dâ±Ã©nergies thermiques avec un calorimÃ¨tre 
+TempÃ©rature de fusion du matÃ©riau Ã  changement de phase 
+Mesure de lâ±Ã©nergie stockÃ©e dans une batterie thermique 
+Applications des matÃ©riaux Ã  changement de phase 
+ 
+DeuxiÃ¨me partie : batteries thermiques en charge 
+DurÃ©e dâ±une charge complÃ¨te 
+Fusion en direct 
+Agencement des batteries thermiques 
+ 
+TroisiÃ¨me partie : rÃ©cupÃ©ration de chaleur fatale 
+Quâ±est-ce que la chaleur fatale ? 
+Vers un stockage de la chaleur fatale 
+Charge et dÃ©charge des batteries thermiques
+
+4 
+PremiÃ¨re partie 
+Conception et caractÃ©risation de batteries thermiques 
+ 
+Avant dâ±aborder le fonctionnement dâ±une batterie thermique Ã  changement de phase, il faut dâ±abord 
+comprendre comment on peut mesurer la quantitÃ© dâ±Ã©nergie que lâ±on peut stocker ou Ã©changer sous forme 
+thermique. Par exemple, lâ±Ã©nergie thermique reÃ§ue par un matÃ©riau peut modifier sa tempÃ©rature, liÃ©e Ã  
+lâ±agitation thermique au niveau microscopique. Lâ±Ã©tude des variations de tempÃ©rature dâ±un matÃ©riau pourra 
+donc nous renseigner sur les Ã©changes dâ±Ã©nergie thermique. ExpÃ©rimentalement on utilise un calorimÃ¨tre qui 
+permet dâ±empÃªcher les Ã©changes thermiques avec lâ±extÃ©rieur et de nâ±Ã©tudier que les Ã©changes thermiques 
+internes. 
+ 
+Mesures dâÃ©nergies thermiques avec un calorimÃ¨tre  
+Un calorimÃ¨tre est un rÃ©cipient dont les parois sont isolÃ©es, ce qui empÃªche tout transfert thermique vers 
+lâ±extÃ©rieur. Le couvercle permet le passage dâ±un thermomÃ¨tre pour mesurer la tempÃ©rature et dâ±un agitateur 
+en plastique pour homogÃ©nÃ©iser le milieu. 
+ 
+     
+ 
+On se propose dans un premier temps de mÃ©langer dans le calorimÃ¨tre deux quantitÃ©s dâ±eau Ã  des tempÃ©ratures 
+diffÃ©rentes. On attend ensuite lâ±Ã©quilibre thermique et on mesure la tempÃ©rature finale. 
+ 
+ 
+Protocole nÂ°1 
+ 
+ 
+Ãtat initial 	Ãtat final 
+eau 
+masse m1 
+tempÃ©rature T1 
+eau 
+masse m2 
+tempÃ©rature T2 
+eau 
+masse m1 + m2 
+tempÃ©rature Tf
+
+5 
+Il y a un certain nombre de prÃ©cautions Ã  prendre pour limiter les sources dâ±erreur : 
+â¢ Limiter les pertes thermiques vers lâ±air (fermer rapidement le calorimÃ¨tre aprÃ¨s mÃ©lange). 
+â¢ HomogÃ©nÃ©iser les tempÃ©ratures avant mÃ©lange et aprÃ¨s mÃ©lange. 
+â¢ Mesurer avec prÃ©cision les masses : on pÃ¨se dâ±abord le calorimÃ¨tre vide, puis avec les quantitÃ©s dâ±eau 
+rajoutÃ©es et on dÃ©duit les masses introduites par diffÃ©rence 
+â¢ Attendre que lâ±Ã©quilibre thermique soit atteint, mais pas trop longtemps pour ne pas faire intervenir 
+les pertes thermiques. 
+Les incertitudes sont de lâ±ordre de 0,1 g sur les masses et de lâ±ordre de 0,1 Â°C sur les tempÃ©ratures (voir 
+ANNEXE). Voici les rÃ©sultats obtenus : 
+ 
+m1 T1 m2 T2 Tf 
+244,9 g 21,0 Â°C 117,6 g 85,0 Â°C 38,8 Â°C 
+ 
+Sans surprise, un mÃ©lange dâ±eau chaude et dâ±eau froide donneâ¦ de lâ±eau tiÃ¨de, mais les rÃ©sultats obtenus 
+permettent-ils de vÃ©rifier la conservation totale de lâ±Ã©nergie ? 
+La tempÃ©rature mesure lâ±Ã©nergie dâ±agitation thermique de lâ±eau. Ainsi, lorsque lâ±eau de masse m1 voit sa 
+tempÃ©rature passer de T1 Ã  la tempÃ©rature finale Tf, son Ã©nergie (appelÃ©e Ã©nergie interne) varie de ()
+1 eau f 1
+m c T Tâ 
+ oÃ¹ ceau est la capacitÃ© thermique massique de lâ±eau. On prend gÃ©nÃ©ralement 
+ceau = 4,18 kJ/kg/K, câ±est-Ã -dire quâ±il faut apporter 4,18 kJ pour augmenter la tempÃ©rature de 1 kg dâ±eau de 
+1 Â°C. De mÃªme lâ±Ã©nergie interne de lâ±eau de masse m2 varie de ()
+2 eau f 2
+m c T Tâ . Puisque le calorimÃ¨tre 
+empÃªche les pertes thermiques vers lâ±extÃ©rieur, lâ±Ã©nergie interne perdue par lâ±eau chaude qui se refroidit doit 
+Ãªtre intÃ©gralement transmise Ã  lâ±eau froide qui se rÃ©chauffe. On obtient ainsi la relation suivante : ( ) ( ) 0
+1 eau f 1 2 eau f 2
+m c T T m c T Tâ + â = 
+ 
+ce qui permet de dÃ©terminer la tempÃ©rature finale thÃ©orique attendue : ,
+1 1 2 2
+f th
+12
+m T m T
+T
+mm
++
+=
++ 
+ 
+La tempÃ©rature finale attendue est la moyenne des tempÃ©ratures pondÃ©rÃ©e par les masses m1 et m2. Dans notre 
+expÃ©rience, on aurait dÃ» obtenir une tempÃ©rature finale Tf,th = 41,8 Â°C au lieu de 38,8 Â°C mesurÃ©. 
+ 
+On remarque que la tempÃ©rature obtenue par lâ±expÃ©rience est plus faible que la tempÃ©rature attendue 
+thÃ©oriquement (avec un Ã©cart bien supÃ©rieur aux incertitudes de mesure sur la tempÃ©rature, de lâ±ordre de 
+0,1 Â°C), comme si toute lâ±Ã©nergie perdue par lâ±eau chaude nâ±Ã©tait pas totalement rÃ©cupÃ©rÃ©e par lâ±eau froide. 
+En fait, dans cette expÃ©rience, comme dans toutes nos expÃ©riences de calorimÃ©trie, le vase du calorimÃ¨tre lui-
+mÃªme voit sa tempÃ©rature passer de T1 Ã  Tf, donc son Ã©nergie interne varie Ã©galement, absorbant de lâ±Ã©nergie 
+qui ne sera pas transfÃ©rÃ©e Ã  lâ±eau. En appelant Ccal la capacitÃ© thermique, on peut reprendre le bilan thermique 
+prÃ©cÃ©dent : ( )( ) ( ) 0
+1 eau cal f 1 2 eau f 2
+m c C T T m c T T+ â + â = 
+ 
+et dÃ©terminer la valeur de Ccal Ã  partir de la valeur expÃ©rimentale de la tempÃ©rature finale Tf : ( ) ( )
+()
+1 eau f 1 2 eau f 2
+cal
+1f
+m c T T m c T T
+C
+TT
+â + â
+=
+â 
+ 
+On obtient en moyenne sur nos expÃ©riences : Ccal = 252 J.K
+-1
+. On peut poser cal cal eau
+C m c= oÃ¹ mcal est la masse 
+Ã©quivalente en eau du calorimÃ¨tre, câ±est-Ã -dire que le calorimÃ¨tre se comporte thermiquement comme une 
+masse mcal dâ±eau. On trouve mcal = 60,3 g, que lâ±on utilisera dans la suite. 
+ 
+Pour vÃ©rifier, nous avons pesÃ© le vase en verre du calorimÃ¨tre : mverre = 302,5 g. La capacitÃ© thermique 
+massique du verre vaut cverre = 720 J.K
+-1
+.kg
+-1
+, si bien que la capacitÃ© thermique du vase vaut vase verre verre
+C c m=  
+câ±est-Ã -dire Cvase = 218 J.K
+-1
+. La capacitÃ© thermique obtenue pour notre calorimÃ¨tre est bien du mÃªme ordre 
+de grandeur (avec un Ã©cart relatif de lâ±ordre de 15 %).
+
+6 
+TempÃ©rature de fusion du matÃ©riau Ã  changement de phase 
+Nous avons appris que les matÃ©riaux utilisÃ©s en pratique pour stocker de lâ±Ã©nergie thermique sont le plus 
+souvent sous forme solide avec possibilitÃ© de devenir liquide Ã  des tempÃ©ratures facilement accessibles. On 
+trouve notamment des paraffines, des acides gras ou des matÃ©riaux inorganiques comme des hydrates de sel. 
+ 
+Nous avons choisi dâ±utiliser de la cire de bougie chauffe-plat que lâ±on peut trouver facilement en supermarchÃ©. 
+Chaque bougie contient environ 10 g de cire que lâ±on va chercher Ã  caractÃ©riser. Dâ±aprÃ¨s nos recherches, la 
+cire de bougie est essentiellement composÃ©e de paraffine et dâ±un mÃ©lange dâ±acides gras comme la stÃ©arine, 
+dâ±huile et de parfum. 
+En associant deux bougies chauffe-plat ensemble avec du ruban adhÃ©sif on obtient un rÃ©cipient fermÃ© 
+contenant la cire, ce qui pourra constituer notre batterie thermique : 
+ 
+ 
+ 
+On a constatÃ© en pratique que ces rÃ©cipients faits maison ne sont pas Ã©tanches lorsque la cire fond : en 
+plongeant le rÃ©cipient dans lâ±eau chaude, on a retrouvÃ© de la cire fondue partoutâ¦ On a donc prÃ©fÃ©rÃ© mettre 
+la cire de bougie dans des petits flacons en verre fermÃ©s par un bouchon en plastique pour amÃ©liorer 
+lâ±Ã©tanchÃ©itÃ© : 
+ 
+ 
+Pour pouvoir Ã©tudier des Ã©chantillons de cire seule, nous avons aussi prÃ©parÃ© des Â« glaÃ§ons de cire Â» en versant 
+de la cire liquide dans un bac Ã  glaÃ§ons. On obtient ainsi des petits blocs de cire dâ±environ 12 g chacun : 
+ 
+ 
+ 
+La premiÃ¨re Ã©tape consiste Ã  mesurer la tempÃ©rature de fusion de la cire de bougie. En plaÃ§ant un flacon de 
+cire dans de lâ±eau chaude au bain Marie, on a remarquÃ© que la cire fond entre 50 Â°C et 60 Â°C. Pour Ãªtre plus 
+prÃ©cis nous avons utilisÃ© un appareil qui sâ±appelle un banc Kofler.
+
+7 
+  
+ 
+Il sâ±agit dâ±une plaque mÃ©tallique dont la tempÃ©rature augmente dâ±un point Ã  lâ±autre, de 45 Â°C Ã  droite jusque 
+environ 260 Â°C Ã  gauche. Quand on utilise le banc Kofler, il faut lâ±allumer au moins 30 minutes avant pour 
+que la tempÃ©rature se stabilise. Pour Ã©talonner le banc, on utilise dans un premier temps un matÃ©riau dont la 
+tempÃ©rature de fusion est connue (flacon sur la photo de droite) et proche de la zone de tempÃ©rature Ã©tudiÃ©e. 
+Le matÃ©riau choisi avait une tempÃ©rature de fusion de 50 Â°C. 
+On place enfin un Ã©chantillon de notre cire de bougie, sous forme de copeaux, Ã  droite du banc, lÃ  oÃ¹ la 
+tempÃ©rature est la plus basse (environ 45 Â°C). Ã lâ±aide dâ±un curseur mÃ©tallique, on dÃ©place petit Ã  petit 
+lâ±Ã©chantillon vers la gauche, vers les zones plus chaudes, jusquâ±Ã  ce que lâ±on observe la fusion de notre 
+matÃ©riau. La position du curseur fournit alors la tempÃ©rature Ã  cet endroit Ã  partir dâ±une rÃ¨gle graduÃ©e. 
+ 
+ 
+ 
+On a mesurÃ© une tempÃ©rature de fusion de notre cire de bougie de 56 Â°C (Ã  2 Â°C prÃ¨s dâ±aprÃ¨s les graduations). 
+ 
+Mesure de lâÃ©nergie stockÃ©e dans une batterie thermique 
+Il reste Ã  mesurer lâ±Ã©nergie thermique que lâ±on va pouvoir stocker dans nos batteries thermiques, câ±est-Ã -dire 
+dans la cire de bougie. 
+On rÃ©alise pour cela une nouvelle expÃ©rience de calorimÃ©trie (protocole nÂ°2), rÃ©sumÃ©e sur le schÃ©ma ci-aprÃ¨s. 
+On introduit dans le calorimÃ¨tre, contenant une masse m1 dâ±eau Ã  la tempÃ©rature T1, un bloc de cire solide, de 
+masse mcire, que lâ±on a placÃ© au congÃ©lateur de tempÃ©rature T2. On attend lâ±Ã©quilibre et on mesure la 
+tempÃ©rature finale Tf. On a choisi les tempÃ©ratures T1 et T2 pour que la cire ne fonde pas au cours de 
+lâ±expÃ©rience et reste bien solide.
+
+8 
+ 
+Protocole nÂ°2 
+On a obtenu les rÃ©sultats suivants : 
+ 
+m1 T1 mcire T2 Tf 
+101,0 g 20,6 Â°C 24,0 g -22 Â°C 17,8 Â°C 
+ 
+En tenant compte de lâ±influence du calorimÃ¨tre, la conservation de lâ±Ã©nergie sâ±Ã©crit maintenant : ( ) ( ) ( ) 0
+1 cal eau f 1 cire cire f 2
+m m c T T m c T T+ â + â = 
+ 
+en notant ccire la capacitÃ© thermique massique de la cire, que lâ±on peut ainsi exprimer : 1f1 cal
+cire eau
+cire f 2
+TTmm
+cc
+m T T
+â+
+=
+â 
+ 
+NumÃ©riquement on obtient : ccire = 2,0 kJ.K
+-1
+.kg
+-1
+ avec une incertitude de 0,1 kJ.K
+-1
+.kg
+-1
+ (voir ANNEXE pour 
+la dÃ©termination de lâ±incertitude). Cela signifie quâ±une masse m de cire dont on augmente la tempÃ©rature de 
+ÎT peut stocker lâ±Ã©nergie thermique cire
+mc Tï  et que cette Ã©nergie peut Ãªtre rÃ©cupÃ©rÃ©e lorsque la cire se 
+refroidit. Câ±est bien le principe dâ±une batterie qui emmagasinerait de lâ±Ã©nergie thermique. 
+ 
+En choisissant la tempÃ©rature T1 de lâ±eau dans le calorimÃ¨tre supÃ©rieure Ã  56 Â°C, on peut aussi faire fondre la 
+cire de bougie. On prend en fait T1 = 82 Â°C de sorte que la tempÃ©rature finale reste Ã©galement supÃ©rieure Ã  
+56 Â°C et que tout le bloc de cire se retrouve fondu Ã  la fin de lâ±expÃ©rience (protocole nÂ°3). 
+ 
+Protocole nÂ°3 
+ 
+ 
+Ãtat initial 	Ãtat final 
+eau 
+masse m1 
+tempÃ©rature T1 
+eau 
+masse m1 
+tempÃ©rature Tf 
+bloc de cire 
+masse mcire 
+tempÃ©rature T2 
+bloc de cire 
+masse mcire 
+tempÃ©rature Tf 
+Ãtat initial 	Ãtat final 
+eau 
+masse m1 
+tempÃ©rature T1 
+eau 
+masse m1 
+tempÃ©rature Tf 
+bloc de cire 
+masse mcire 
+tempÃ©rature T2 
+cire fondue 
+masse mcire 
+tempÃ©rature Tf
+
+9 
+Voici les rÃ©sultats obtenus : 
+m1 T1 mcire T2 Tf 
+113,0 g 82,0 Â°C 23,0 g 21,0 Â°C 73,5 Â°C 
+ 
+Lâ±expÃ©rience avec ce protocole nÂ°3 est assez longue Ã  rÃ©aliser car Ã  la fin on se retrouve avec de la cire fondue 
+dans le calorimÃ¨tre, quâ±il faut alors nettoyer complÃ¨tement ! 
+ 
+Il faut Ã  prÃ©sent tenir compte de lâ±Ã©nergie nÃ©cessaire pour faire fondre la cire. Lâ±Ã©nergie thermique contenue 
+initialement dans lâ±eau chaude du calorimÃ¨tre va en effet servir Ã  rÃ©chauffer le calorimÃ¨tre jusque la 
+tempÃ©rature Tf, rÃ©chauffer le bloc de cire solide jusquâ±Ã  sa tempÃ©rature de fusion, faire fondre tout le bloc de 
+cire et enfin chauffer la cire fondue jusque la tempÃ©rature Tf. 
+En notant lcire la chaleur latente massique de fusion de la cire (aussi appelÃ©e enthalpie massique de fusion), on 
+peut rÃ©Ã©crire la conservation de lâ±Ã©nergie : ( ) ( ) ( ) 0
+1 cal eau f 1 cire cire f 2 cire cire
+m m c T T m c T T m l+ â + â + = 
+ 
+(en supposant pour simplifier que la cire solide et la cire liquide ont la mÃªme capacitÃ© thermique massique). 
+On obtient ainsi : ( ) ( ) ( )
+1 cal eau 1 f cire cire 2 f
+cire
+cire
+m m c T T m c T T
+l
+m
++ â + â
+= 
+ 
+Quand on fait lâ±application numÃ©rique on trouve : lcire = 163 kJ.kg
+-1
+ avec une incertitude de 33 kJ.kg
+-1
+. 
+Lâ±incertitude est essentiellement due Ã  la dÃ©termination de la tempÃ©rature finale (voir ANNEXE). 
+Cela signifie par exemple que pour faire fondre 100 g de cire, il faut apporter 16 kJ alors que pour chauffer 
+100 g de cire de 10 Â°C, il faut apporter seulement 2 kJâ¦ le changement dâ±Ã©tat permet dâ±absorber une quantitÃ© 
+Ã©norme dâ±Ã©nergie, que lâ±on pourra rÃ©cupÃ©rer lors de la solidification de la cire. Les matÃ©riaux Ã  changement 
+de phase ont un rÃ©el intÃ©rÃªt par rapport Ã  des matÃ©riaux qui resteraient solides (ou liquides). 
+ 
+Par comparaison, on peut trouver sur internet la capacitÃ© thermique massique et la chaleur latente massique 
+de fusion de la paraffine pure : cparaffine = 2,1 kJ.kg
+-1
+.K
+-1
+ et lparaffine = 150 Ã  220 kJ.kg
+-1
+. 
+Les capacitÃ©s thermiques sont quasiment identiques, avec un Ã©cart infÃ©rieur Ã  5 %. Lâ±Ã©cart observÃ© sur la 
+chaleur latente massique est peut-Ãªtre aussi dÃ» au fait que la cire de bougie est en rÃ©alitÃ© un mÃ©lange de 
+plusieurs matÃ©riaux avec des propriÃ©tÃ©s thermiques diffÃ©rentes (paraffine, stÃ©arine, huile, cires naturellesâ¦). 
+ 
+Applications des matÃ©riaux Ã  changement de phase 
+Les matÃ©riaux Ã  changement de phase (MCP) sont un sujet de recherches intenses depuis plusieurs annÃ©es. 
+Dans le cadre de notre projet, nous avons rencontrÃ© Monsieur Fabien SalaÃ¼n, chercheur au laboratoire 
+GEMTEX de lâ±Ãcole Nationale SupÃ©rieure des Arts et Industries Textiles (ENSAIT) de Roubaix. Nous avons 
+dÃ©couvert au cours de la visite des laboratoires que lâ±objectif des chercheurs est de rÃ©aliser des textiles 
+Â« intelligents Â», par exemple capables de libÃ©rer des mÃ©dicaments, de mesurer des contraintes ou de faire 
+passer un courant Ã©lectrique avec des fibres textiles conductrices. 
+ 
+source : https://www.lavoixdunord.fr
+
+10 
+Nous avons ainsi appris que lâ±on pouvait insÃ©rer des matÃ©riaux Ã  changement de phase dans des fibres textiles 
+en les encapsulant dans des petites billes de polymÃ¨re : 
+ 
+ 
+Pour que lâ±effet soit notable il faut insÃ©rer une masse importante de matÃ©riau Ã  changement de phase. Par 
+exemple on peut trouver ces matÃ©riaux dans des applications comme les gilets Ã  changement de phase 
+(contenant des poches de matÃ©riau qui fond Ã  une tempÃ©rature de lâ±ordre de 23 Â°C pour garder lâ±utilisateur au 
+frais) ou dans des matelas Ã  changement de phase (qui rÃ©gulent la tempÃ©rature du corps en absorbant lâ±Ã©nergie 
+thermique en dÃ©but de nuit et en la restituant au cours de la nuit). On trouve aussi les matÃ©riaux Ã  changement 
+de phase dans le domaine de la construction des bÃ¢timents, comme les dalles Ã  changement de phase Ã  placer 
+dans les murs ou les plafonds pour rÃ©guler passivement la tempÃ©rature de la piÃ¨ce. 
+ 
+ 
+DeuxiÃ¨me partie 
+Batteries thermiques en charge 
+ 
+Dans la partie prÃ©cÃ©dente, nous nous sommes intÃ©ressÃ©s Ã  lâ±Ã©nergie thermique que lâ±on peut stocker dans une 
+batterie thermique, en augmentant sa tempÃ©rature et en faisant fondre la cire quâ±elle contient. 
+Pour mettre en charge une batterie thermique, il suffit de la mettre en contact avec une source chaude pour 
+forcer la cire Ã  chauffer et Ã  fondre. Pour rÃ©cupÃ©rer lâ±Ã©nergie thermique stockÃ©e, il faut forcer le transfert 
+thermique vers lâ±extÃ©rieur et mettre la batterie thermique en contact avec un milieu de tempÃ©rature infÃ©rieure 
+Ã  la tempÃ©rature de fusion/solidification. 
+Suffit-il dâ±augmenter la taille des batteries thermiques pour stocker plus dâ±Ã©nergie ? 
+ 
+DurÃ©e dâune charge complÃ¨te 
+On cherche tout dâ±abord Ã  estimer le temps quâ±il faut pour charger complÃ¨tement une batterie thermique, câ±est-
+Ã -dire pour faire fondre toute la cire contenue dans un flacon. 
+Source
+ 
+: ENSAIT
+ 
+Gilet Ã  changement de phase 
+(Technifresh) 
+Matelas Ã  changement de phase 
+(Bawitex) 
+Dalles de plafond Ã  
+changement de phase 
+(Armstrong)
+
+11 
+On place des flacons de cire dans un bain Marie Ã  une tempÃ©rature de 60 Â°C. Les flacons Ã©tant transparents, 
+on peut faire des observations directes de lâ±Ã©tat de la cire Ã  lâ±intÃ©rieur : la cire solide est blanche et opaque, 
+tandis que la cire liquide est parfaitement transparente. 
+ 
+      
+La cire fondue est transparente 
+ 
+Chaque flacon mesure 5 cm de haut pour 24 mm de diamÃ¨tre et contient 14 g de cire de bougie. 
+Ã partir du moment oÃ¹ on place les flacons (initialement Ã  tempÃ©rature ambiante) dans le bain Marie, on a 
+constatÃ© que la fusion commence aprÃ¨s 10 minutes et quâ±il faut environ 25 minutes supplÃ©mentaires pour que 
+toute la cire soit fondue. La charge complÃ¨te Ã  60 Â°C prend donc environ 35 minutes, mais quels sont les 
+phÃ©nomÃ¨nes physiques qui se cachent derriÃ¨re ce processus ? 
+ 
+La charge de notre batterie thermique sâ±effectue en plusieurs Ã©tapes dont la durÃ©e est imposÃ©e par les 
+phÃ©nomÃ¨nes physiques. 
+â¢ Ãtape nÂ°1 
+La cire doit tout dâ±abord se rÃ©chauffer Ã  partir de la tempÃ©rature ambiante pour atteindre sa tempÃ©rature de 
+fusion. Comme on lâ±a vu prÃ©cÃ©demment lâ±Ã©nergie nÃ©cessaire vaut cire
+mc Tï . La durÃ©e de cette Ã©tape va 
+dÃ©pendre de la puissance thermique apportÃ©e par le milieu, qui dÃ©pend en principe de la diffÃ©rence de 
+tempÃ©rature entre lâ±eau chaude et la cire. Si on considÃ¨re pour simplifier que le flacon reÃ§oit une puissance 
+thermique constante Î¦th, on peut estimer la durÃ©e Ît1 de cette Ã©tape en identifiant lâ±Ã©nergie thermique reÃ§ue 
+sous la forme th 1 cire
+t mc Tï ï = ï 	, câ±est-Ã -dire : cire
+1
+th
+mc T
+t
+ï
+ï=
+ï . 
+ 
+En rÃ©alitÃ©, lâ±Ã©nergie thermique doit pÃ©nÃ©trer petit Ã  petit dans la cire pour la rÃ©chauffer selon un phÃ©nomÃ¨ne 
+de conduction thermique, comme quand le manche dâ±une cuillÃ¨re plongÃ©e dans une casserole dâ±eau se 
+rÃ©chauffe petit Ã  petit mÃªme sâ±il nâ±est pas entiÃ¨rement immergÃ©. Cela complique le processus rÃ©el de 
+rÃ©chauffement. 
+ 
+â¢ Ãtape nÂ°2 
+Une fois que la cire est rÃ©chauffÃ©e, elle commence Ã  fondre. En prenant la mÃªme puissance thermique reÃ§ue 
+pour faire fondre la cire pendant la durÃ©e Ît2, on obtient Ã  prÃ©sent th 2 cire
+t mlï ï = , soit : cire
+2
+th
+ml
+tï=
+ï . 
+ 
+On peut comparer les durÃ©es de ces deux Ã©tapes en faisant le rapport : cire th cire2
+1 th cire cire
+ml lt
+t mc T c T
+ïï
+= ï´ =
+ï ï ï ï 	. 
+NumÃ©riquement, avec les valeurs de la premiÃ¨re partie on a lcire = 163 kJ.kg
+-1
+ et ccire ÎT = 72,4 kJ.kg
+-1
+ (en 
+prenant ÎT = 35 Â°C), on obtient 2,2
+21
+ttï ï» ï . Dans ce modÃ¨le simple, la durÃ©e de la charge est essentiellement 
+due Ã  lâ±Ã©tape de fusion de la cire. 
+Par ailleurs, en prenant Ît2 = 25 minutes, on obtient une estimation de la puissance thermique apportÃ©e par 
+lâ±eau chaude pendant la phase de fusion : 1,5 W
+cire
+th
+2
+ml
+t
+ï=
+ï
+ï»
+
+12 
+Fusion en direct 
+En filmant nos flacons de cire, on peut suivre en direct lâ±Ã©volution de la fusion. 
+ 
+   
+   
+Flacon de cire en fusion Ã  des instants diffÃ©rents 
+ 
+On peut alors analyser la vidÃ©o et mesurer le diamÃ¨tre de la colonne de cire dans le flacon au cours du temps. 
+On utilise le diamÃ¨tre du flacon (24 mm) comme Ã©chelle sur lâ±image et on en dÃ©duit le diamÃ¨tre de la cire par 
+une rÃ¨gle de proportionnalitÃ©. On obtient les rÃ©sultats suivants pour des vidÃ©os dans des conditions similaires : 
+ 
+ 
+ 
+Les mesures changent un peu dâ±une vidÃ©o Ã  lâ±autre car la fusion de la cire nâ±est pas vraiment homogÃ¨ne en 
+pratique, mais on remarque tout de mÃªme que le rayon du cylindre de cire diminue de plus en plus vite et que 
+la fusion complÃ¨te est obtenue aprÃ¨s 25 minutes environ (soit 1 500 s). 
+ 
+Pour modÃ©liser ce phÃ©nomÃ¨ne, on considÃ¨re que la cire est initialement Ã  sa tempÃ©rature de fusion, sous forme 
+solide dâ±un cylindre de hauteur h et de rayon R. Le bain Marie apporte de lâ±Ã©nergie thermique avec la puissance 
+thermique Î¦th et fait fondre la cire. A lâ±instant t, le cylindre a un rayon r(t). 
+ 
+Lâ±Ã©nergie thermique apportÃ©e pendant la durÃ©e t a servi Ã  faire fondre la cire contenue entre les cylindres de 
+rayons R et r(t). La masse de cire qui a fondu vaut alors ( )
+22
+R h r hï² ï° ï°ï´â (avec Ï = 800 kg.m
+-3
+ sa masse 
+volumique) et on peut Ã©crire la conservation de lâ±Ã©nergie sous la forme : ( )
+22
+fusion th
+R h r h l tï² ï° ï°ï´ â = ï 	.
+
+13 
+ 
+On obtient ainsi une expression du rayon du cylindre de cire au cours du temps : 2
+()
+th
+fusion
+r t R t
+hlï²ï°
+ï
+=â 
+ 
+On trace alors la courbe de r(t) en fonction du temps et on la superpose aux mesures prÃ©cÃ©dentes en tenant 
+compte dâ±une incertitude de lâ±ordre de 1 mm sur le diamÃ¨tre.  
+ 
+  
+ 
+Le modÃ¨le simple proposÃ© reproduit bien la forme de la courbe expÃ©rimentale Ã  condition dâ±ajuster la valeur 
+de Î¦th pour que le modÃ¨le suive au mieux les points expÃ©rimentaux. On obtient Î¦th = 1,35 Â± 0,05 W (les 
+courbes en pointillÃ©s correspondent Ã  Î¦th = 1,30 W et Î¦th = 1,40 W). 
+On peut alors obtenir la durÃ©e de lâ±Ã©tape de fusion dans ce modÃ¨le 3
+1,7.10 s 29 min
+fusion
+2
+th
+ml
+tï = = =
+ï 	, ce qui 
+correspond bien aux observations. 
+ 
+Agencement des batteries thermiques 
+Lors de lâ±utilisation des matÃ©riaux Ã  changement de phase, on souhaite stocker le plus dâ±Ã©nergie possible, mais 
+il faut aussi minimiser la durÃ©e de la charge et de la dÃ©charge des batteries thermiques pour rÃ©aliser des 
+Ã©changes thermiques efficaces. 
+Faut-il utiliser une seule grosse batterie thermique ou faudrait-il la scinder en plusieurs batteries plus petites ? 
+On a vu que la durÃ©e de charge dâ±une batterie cylindrique de hauteur H, de rayon R et de masse m est 
+essentiellement due Ã  la durÃ©e de lâ±Ã©tape de fusion fusion
+th
+ml
+tï=
+ï . 
+R 
+h 
+cylindre 
+de rayon r(t) 
+h 
+situation initiale 
+t = 0 
+Ã  lâinstant t
+
+14 
+La masse m de la batterie est proportionnelle Ã  son volume, donc Ã  R
+2
+ (le volume du cylindre vaut 2
+RHï° ). 
+Dâ±autre part, la puissance thermique reÃ§ue par la batterie cylindrique est proportionnelle Ã  sa surface de contact 
+avec le milieu extÃ©rieur (plus la surface latÃ©rale est grande, plus la puissance thermique est importante), elle-
+mÃªme proportionnelle Ã  R (la surface latÃ©rale du cylindre vaut 2RHï° ). 
+Finalement la durÃ©e de charge Ît dâ±une batterie cylindrique est proportionnelle Ã  son rayon R. 
+ 
+On considÃ¨re Ã  prÃ©sent le cas de 16 petites batteries cylindriques contenant la mÃªme quantitÃ© de cire. Par 
+conservation du volume, chaque batterie Ã  maintenant un rayon 4
+R
+r= . Puisque la durÃ©e de charge des 16 
+batteries est imposÃ©e par la charge dâ±une seule petite batterie, on en conclut que cette durÃ©e est finalement 
+divisÃ©e par 4 par rapport Ã  celle dâ±une grosse batterie. 
+ 
+Une batterie thermique aura donc intÃ©rÃªt Ã  contenir une grande quantitÃ© de matÃ©riau Ã  changement de phase 
+pour stocker beaucoup dâ±Ã©nergie, rÃ©partie en plusieurs batteries plus petites pour minimiser la durÃ©e de la 
+fusion. 
+ 
+TroisiÃ¨me partie 
+RÃ©cupÃ©ration de chaleur fatale 
+ 
+Les matÃ©riaux Ã  changement de phase ont la possibilitÃ© dâ±emmagasiner de lâ±Ã©nergie thermique. On peut 
+envisager dâ±utiliser ces matÃ©riaux Ã  lâ±Ã©chelle industrielle dans le cadre de la rÃ©cupÃ©ration de la chaleur fatale. 
+ 
+Quâest-ce que la chaleur fatale ? 
+De nombreux procÃ©dÃ©s industriels font intervenir des Ã©changes dâ±Ã©nergie thermique dans leur processus de 
+fonctionnement (sidÃ©rurgie, centrale de production Ã©lectrique, datacenterâ¦). Cependant cette Ã©nergie 
+thermique nâ±est pas toujours la finalitÃ© de ces procÃ©dÃ©s industriels, ce qui conduit souvent Ã  la dissipation et 
+donc Ã  la perte de grandes quantitÃ©s de chaleur : il sâ±agit de la Â« chaleur fatale Â». La rÃ©cupÃ©ration de cette 
+chaleur fatale constitue ainsi un enjeu majeur pour le secteur industriel aujourdâ±hui engagÃ© dans la lutte contre 
+le changement climatique. 
+ 
+Par exemple, avec ses 51 km de long, le rÃ©seau de Dunkerque est le plus grand rÃ©seau en France de 
+rÃ©cupÃ©ration de chaleur industrielle fatale. Lâ±Ã©nergie thermique provient essentiellement du site sidÃ©rurgique 
+dâ±Arcelor-Mittal qui fournit ainsi plus de 120 GWh dâ±Ã©nergie annuelle Ã  un circuit urbain de chauffage et 
+dâ±eau chaude sanitaire alimentant notamment des logements individuels et collectifs, la piscine et mÃªme le 
+centre hospitalier. Cette solution est Ã  la fois Ã©conomique et Ã©cologique puisque ce systÃ¨me de rÃ©cupÃ©ration 
+permet dâ±Ã©viter la production dâ±Ã©nergie nÃ©cessaire pour ce rÃ©seau et dâ±empÃªcher le gaspillage dâ±Ã©nergie dans 
+lâ±atmosphÃ¨re. 
+ 
+ 
+Source : CommunautÃ© Urbaine de Dunkerque
+
+15 
+Avec le dÃ©veloppement du port industriel de Dunkerque, des solutions complÃ©mentaires sont Ã  lâ±Ã©tude, comme 
+la Â« future autoroute de la chaleur Â», qui sera un grand rÃ©seau de distribution dâ±Ã©nergie thermique pour les 
+industriels issue de la chaleur fatale. 
+ 
+Vers un stockage de la chaleur fatale 
+Les Ã©changeurs thermiques permettent une utilisation directe de la chaleur fatale rÃ©cupÃ©rÃ©e. Il faudrait 
+cependant pouvoir stocker et redistribuer lâ±Ã©nergie thermique quand on en a le plus besoin. 
+La sociÃ©tÃ© GRIMS propose par exemple un systÃ¨me de stockage Ã  base de matÃ©riaux Ã  changement de phase : 
+le matÃ©riau devient liquide au contact du fluide caloporteur transportant la chaleur fatale, puis redevient solide 
+dans la phase de restitution, pour alimenter un circuit de chauffage ou dâ±eau chaude sanitaire. 
+ 
+ 
+Le systÃ¨me de stockage de chaleur fatale Grimsbox proposÃ© par GRIMS 
+(Source : https://grimsenergies.com/) 
+ 
+On se propose de montrer le principe de fonctionnement dâ±un systÃ¨me de stockage/rÃ©cupÃ©ration de chaleur 
+fatale Ã  base de matÃ©riau Ã  changement de phase Ã  lâ±aide dâ±un dispositif expÃ©rimental Ã  Ã©chelle rÃ©duite. Sur le 
+mÃªme principe que celui de la Grimsbox, il sâ±agit dâ±utiliser un ensemble de batteries thermiques combinÃ© Ã  
+une circulation dâ±eau permettant les Ã©changes dâ±Ã©nergie. 
+ 
+Phase de rÃ©cupÃ©ration de chaleur 
+Phase de stockage de chaleur 
+Batteries thermiques en 
+phase de fusion Eau chaude 
+transportant la chaleur fatale 
+Eau chaude 
+Eau froide 
+Eau froide 
+Batteries thermiques en 
+phase de solidification
+
+16 
+On place nos batteries thermiques dans une boÃ®te en plastique hermÃ©tique dans laquelle on a crÃ©Ã© une arrivÃ©e 
+et une sortie dâ±eau. Lors de la phase de stockage, on fait circuler de lâ±eau chaude (Ã  une tempÃ©rature supÃ©rieure 
+Ã  la tempÃ©rature de fusion du matÃ©riau) qui fera fondre le matÃ©riau dans les batteries thermiques (phase de 
+charge). Pendant la charge, lâ±eau en circulation doit ressortir plus froide quâ±Ã  lâ±entrÃ©e. Lors de la phase de 
+restitution, on fait circuler de lâ±eau froide qui devrait se rÃ©chauffer au contact des batteries thermiques. 
+La cire de bougie utilisÃ©e jusquâ±Ã  prÃ©sent a une tempÃ©rature de fusion de 56 Â°C, ce qui nÃ©cessite une circulation 
+dâ±eau de tempÃ©rature supÃ©rieure pour pouvoir rÃ©aliser la fusion. Lors de notre visite du laboratoire GEMTEX, 
+nous avons pu obtenir des Ã©chantillons de diffÃ©rents matÃ©riaux Ã  changement de phase ayant des tempÃ©ratures 
+de fusion variÃ©es, rÃ©parties entre 18 Â°C et 59 Â°C : 
+ 
+ 
+Exemples de matÃ©riaux Ã  changement de phase et tempÃ©rature de fusion 
+ 
+Nous avons ainsi choisi dâ±utiliser le RT35 (de la marque Rubitherm), avec une tempÃ©rature de fusion de 35 Â°C, 
+pour remplir les flacons de notre batterie thermique. Les caractÃ©ristiques du RT35 sont les suivantes : 
+CapacitÃ© thermique massique : cRT35 = 2,0 kJ.K
+-1
+.kg
+-1
+ 
+Chaleur latente massique : lRT35 = 130 kJ.kg
+-1 
+ 
+Chaque flacon contient 12 g de RT35. La batterie thermique est constituÃ©e de N = 16 flacons identiques. 
+ 
+Batterie thermique contenant le matÃ©riau RT35 
+ 
+  
+A : RT35 (35 Â°C) 
+ 
+B : parafol 16-97 (18 Â°C) 
+ 
+C : acide myristique (59 Â°C) 
+ 
+D : acide laurique (45 Â°C) 
+ 
+E : cire de bougie (56 Â°C) 
+ 
+F : parafol 20 Z (30 Â°C) 
+batteries thermiques entrÃ©e dâeau 
+sortie dâeau 
+mesure de la 
+tempÃ©rature 
+de sortie
+
+17 
+Afin de comparer les rÃ©sultats, nous avons fabriquÃ© une deuxiÃ¨me batterie avec 16 flacons contenant 
+uniquement de lâ±eau. Nous avons choisi la quantitÃ© dâ±eau dans chaque flacon pour que la capacitÃ© thermique 
+dâ±un flacon dâ±eau soit identique Ã  la capacitÃ© thermique dâ±un flacon de RT35, câ±est-Ã -dire : eau eau RT35 RT35
+m c m c= 
+. On a ainsi mis meau = 5,7 g dâ±eau dans chaque flacon. 
+ 
+  
+Flacons avec de lâeau et avec le RT35 ; les deux batteries ont la mÃªme capacitÃ© thermique 
+ 
+Charge et dÃ©charge des batteries thermiques 
+Les batteries sont prÃªtes Ã  Ãªtre utilisÃ©es dans notre montage : 
+ 
+ 
+Une pompe dâ±aquarium permet dâ±assurer la circulation dâ±eau (chaude ou froide) Ã  travers les deux batteries 
+avec des dÃ©bits massiques identiques. On a mesurÃ© le passage de 300 mL dâ±eau en 60 s pour chaque batterie, 
+soit un dÃ©bit massique Dm = 5,0 g/s (ou encore 5,0.10
+-3
+ kg.s
+-1
+). 
+Un systÃ¨me de chauffage permet de maintenir la tempÃ©rature de lâ±eau dans les rÃ©servoirs. 
+  
+batteries 
+Ã  eau              Ã  RT35 
+pompe 
+rÃ©servoir dâeau froide ou chaude 
+circulation dâeau 
+TempÃ©rature 
+Te 
+DÃ©bit massique 
+Dm 
+Ts,eau(t)  Ts,RT35(t) 
+EntrÃ©e 
+Sortie
+
+18 
+Lors de la phase de charge des batteries, on fait circuler de lâ±eau de tempÃ©rature dâ±entrÃ©e Te = 37,5 Â°C. On 
+observe alors la fusion progressive du RT35 dans les flacons (de tempÃ©rature de fusion 35 Â°C). Ã la fin de la 
+phase de charge, la tempÃ©rature de sortie vaut 37,5 Â°C (Ã©gale Ã  la tempÃ©rature dâ±entrÃ©e) et les deux batteries 
+sont chargÃ©es au maximum. 
+ 
+   
+Batterie initiale de RT35 (Ã  gauche), en cours de chargement (au centre), complÃ¨tement chargÃ©e (Ã  droite) 
+ 
+Pour passer en phase de dÃ©charge, on change de rÃ©servoir pour faire maintenant circuler de lâ±eau Ã  la 
+tempÃ©rature ambiante Te = 19,5 Â°C. On obtient le graphe suivant de la tempÃ©rature de sortie en fonction du 
+temps lors de la phase de dÃ©charge : 
+ 
+ 
+TempÃ©rature de sortie pendant la dÃ©charge (la tempÃ©rature dâentrÃ©e vaut Te = 19,5 Â°C) 
+ 
+Notons quâ±il faut environ 60 s pour que lâ±eau chaude initialement prÃ©sente dans les rÃ©servoirs soit Ã©vacuÃ©e et 
+remplacÃ©e par lâ±eau entrante. La tempÃ©rature en sortie des deux batteries diminue alors lentement pour 
+atteindre finalement 19,5 Â°C, Ã©gale Ã  la tempÃ©rature Ã  lâ±entrÃ©e. On constate que la tempÃ©rature en sortie de la 
+batterie Ã  RT35 reste toujours supÃ©rieure Ã  celle de la batterie dâ±eau. Les flacons de RT35 libÃ¨rent en effet 
+plus dâ±Ã©nergie que les flacons dâ±eau suite Ã  la resolidification du RT35. La batterie Ã  eau est dÃ©chargÃ©e en 
+moins de 400 s, alors quâ±il faut plus de 3 500 s pour dÃ©charger complÃ¨tement la batterie Ã  RT35 et atteindre 
+19,5 Â°C en sortie. 
+ 
+Lâ±eau circule dans chaque batterie avec un dÃ©bit massique Dm. On se place dans la situation oÃ¹ les batteries 
+thermiques sont chargÃ©es et on cherche Ã  mesurer lâ±Ã©nergie thermique stockÃ©e que lâ±on a rÃ©cupÃ©rÃ©e avec notre 
+systÃ¨me. On montre que la puissance thermique reÃ§ue par lâ±eau en circulation sâ±Ã©crit ( )
+th m eau s e
+P D c T T=â  et 
+on peut ainsi tracer lâ±Ã©volution de cette puissance thermique au cours du temps :
+
+19 
+ 
+ 
+La puissance est par dÃ©finition la quantitÃ© dâ±Ã©nergie Ã©changÃ©e pendant chaque intervalle de temps th
+E
+P
+t
+ï
+=
+ï , 
+ainsi lâ±Ã©nergie thermique reÃ§ue pendant Ît vaut th
+E P tï = ï . Cela correspond sur le graphe prÃ©cÃ©dent Ã  lâ±aire 
+de chaque rectangle de hauteur Pth et de largeur Ît = 60 s. Lâ±Ã©nergie thermique totale rÃ©cupÃ©rÃ©e pendant 
+lâ±expÃ©rience peut donc facilement Ãªtre Ã©valuÃ©e en calculant lâ±aire de tous les rectangles sous chaque courbe. 
+On fait le calcul avec python et on obtient : Eeau,recup = 3,3 kJ et ERT35,recup = 31 kJ. 
+ 
+Ã titre de comparaison, on peut calculer lâ±Ã©nergie thermique contenue thÃ©oriquement dans chacune des 
+batteries lorsquâ±on les charge complÃ¨tement en passant leur tempÃ©rature de 20 Â°C Ã  37,5 Â°C. 
+Pour la batterie dâ±eau, lâ±Ã©nergie est directement stockÃ©e dans lâ±eau des N flacons grÃ¢ce Ã  sa capacitÃ© 
+thermique : eau eau eau
+E Nm c T=ï  oÃ¹ ÎT = 37,5 â¬ 20 = 17,5 Â°C, câ±est-Ã -dire : Eeau = 6,7 kJ. 
+On a rÃ©cupÃ©rÃ© presque la moitiÃ© de cette Ã©nergie (3,3 kJ), mais cette mesure est trÃ¨s sensible au fait que la 
+tempÃ©rature de lâ±eau diminue trÃ¨s rapidement pendant la dÃ©charge trÃ¨s brÃ¨ve. 
+ 
+Pour la batterie de RT35, il faut en plus comptabiliser lâ±Ã©nergie stockÃ©e dans la fusion du matÃ©riau : 31,6 kJ
+RT35 RT35 RT35 RT35 RT35 eau RT35 RT35
+E Nm c T Nm l E Nm l= ï + = + = 
+. Cette valeur est cohÃ©rente avec la mesure 
+faite pendant la dÃ©charge de plus de 3 500 s (31 kJ rÃ©cupÃ©rÃ©). 
+ 
+Lâ±Ã©nergie rÃ©cupÃ©rÃ©e est bien du mÃªme ordre de grandeur que lâ±Ã©nergie thÃ©oriquement stockÃ©e. Dans notre 
+calcul, on nâ±a pas tenu compte de la capacitÃ© thermique des flacons de verre (identique pour les deux batteries). 
+On ne tient pas non plus compte des pertes thermiques, identiques pour les deux batteries et a priori faibles 
+puisque la tempÃ©rature de lâ±eau en circulation reste proche de la tempÃ©rature extÃ©rieure tout au long de la 
+dÃ©charge. 
+ 
+Finalement, on constate que la batterie Ã  RT35 peut restituer presque 5 fois plus dâ±Ã©nergie que la batterie Ã  
+eau grÃ¢ce au changement de phase.
+
+20 
+Conclusion 
+ 
+Un matÃ©riau Ã  changement de phase peut stocker de lâ±Ã©nergie thermique, grÃ¢ce Ã  lâ±augmentation de sa 
+tempÃ©rature dâ±une part, et grÃ¢ce Ã  la fusion dâ±autre part. Cette Ã©nergie peut Ãªtre restituÃ©e lors du 
+refroidissement, ce qui offre de multiples possibilitÃ©s dâ±applications. Les matÃ©riaux Ã  changement de phase 
+sont nombreux et possÃ¨dent des caractÃ©ristiques variÃ©es, notamment leur tempÃ©rature de fusion, ce qui permet 
+de les adapter aux situations rencontrÃ©es. 
+Nous avons montrÃ© quâ±il est possible de fabriquer des batteries thermiques susceptibles de stocker 
+temporairement la chaleur fatale rejetÃ©e par des usines pour ensuite pouvoir Ãªtre rÃ©cupÃ©rÃ©e. Les batteries 
+doivent Ãªtre constituÃ©es de matÃ©riau Ã  changement de phase repartis en petits conditionnements pour 
+minimiser la durÃ©e de leur charge ou de leur dÃ©charge. Les batteries thermiques sont ainsi une solution possible 
+pour revaloriser de lâ±Ã©nergie plus efficacement. 
+ 
+ 
+Bibliographie et rÃ©fÃ©rences 
+ 
+ 
+Article wikipÃ©dia sur le changement de phase : 
+https://fr.wikipedia.org/wiki/Mat%C3%A9riau_%C3%A0_changement_de_phase_(thermique) 
+ 
+PrÃ©sentation gÃ©nÃ©rale des matÃ©riaux Ã  changement de phase : 
+AdÃ¨le Soupart-Caron, Stockage de chaleur dans les matÃ©riaux Ã  changement de phase, ThÃ¨se de Doctorat, 
+GÃ©nie des procÃ©dÃ©s, UniversitÃ© Grenoble Alpes, 2015. 
+ 
+Application des matÃ©riaux Ã  changement de phase : 
+Pierre Viallier, Utilisation des matÃ©riaux Ã  changement de phase en textile, lâ±actualitÃ© chimique - fÃ©vrier-
+mars 2012 - nÂ° 360-361 
+ 
+Fiche technique du RT35 : 
+https://www.rubitherm.eu/media/products/datasheets/Techdata_-RT35_EN_18042024.PDF 
+ 
+ 
+ 
+Remerciements 
+ 
+Un grand merci Ã  Monsieur Fabien SalaÃ¼n du laboratoire GEMTEX qui nous a permis de dÃ©couvrir les 
+diffÃ©rentes applications textiles dans son laboratoire de lâ±ENSAIT Ã  Roubaix et qui nous a fourni les 
+Ã©chantillons de matÃ©riaux Ã  changement de phase avec lesquels nous avons travaillÃ©. Merci Ã  nos professeurs 
+encadrants Monsieur et Madame DÃ©pret.

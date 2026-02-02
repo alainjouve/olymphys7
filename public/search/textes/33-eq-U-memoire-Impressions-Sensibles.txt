@@ -1,0 +1,831 @@
+ODPF 2026   Impressions sensiblesÂ®                Page 0 sur 17   
+AnnÃ©e 2025-2026  LycÃ©e Jacques de  
+ Vaucanson- TOURS 
+ 
+ 
+ 
+Impressions SensiblesÂ® 
+ 
+ou 
+ 
+Comment prendre une photo de la Lune de qualitÃ© de nos jours ?  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lucy BEAUPERE, Alicia FENON, EstÃ©ban LIMA, MaÃ«lys PICARD et Louis WIERZBICKI 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+           
+Sommaire 
+Pellicule dopÃ©e avec mÃªme temps dâexposition
+ 
+Pellicule  non dopÃ©e
+
+Impressions SensiblesÂ®             Page 1 sur 16 
+ 
+ 
+Sommaire 	1 
+Introduction 
+ 
+2 
+A- REACTIONS CHIMIQUES A LA SURFACE DE LA PELLICULE  
+ 
+2 
+1) La chimie de base dâune pellicule  	2 
+2) La chimie du Â« dopage Â» dâune pellicule  	4 
+  
+B- METHODES EXPERIMENTALES ET MISE AU POINT 
+ 
+6 
+1) Comment mettre en Åuvre le dopage ?  
+2) Quelle pellicule utiliser ?  
+3) Comment contrÃ´ler lâexposition ?  
+6 
+7 
+8 
+4) Comment comparer les nÃ©gatifs obtenus ?  	11 
+  
+C- RESULTATS ET ANALYSES 
+ 
+12 
+1) Premiers rÃ©sultats prometteurs 
+2) RÃ©sultats sur des pellicules en modifiant la durÃ©e dâexposition 
+3) RÃ©sultats sur des pellicules en modifiant lâÃ©clairement  
+ 
+12 
+12 
+14 
+ 
+Conclusion et perspectives 
+Remerciements  
+15 
+15 
+Sources 	16
+
+Impressions SensiblesÂ®             Page 2 sur 16 
+INTRODUCTION 
+ 
+Le procÃ©dÃ© de photographie argentique a Ã©tÃ© dÃ©couvert en 1839, mais parfaitement compris dâun 
+point de vue chimique quâen 1977. Bien que dÃ©sormais trÃ¨s peu utilisÃ©es, les pellicules de photos 
+argentiques Ã©taient, jusquâÃ  lâavÃ¨nement du numÃ©rique dÃ©but 2000,  le seul moyen grand public de 
+capturer certains souvenirs et certains moments importants de la vie de quelquâun avec une image.  
+ 
+A la fin des annÃ©es 90, une Ã©quipe de chercheurs de Paris Saclay a dÃ©couvert le Â« graal Â» pour les 
+professionnels et amateurs de la photographie argentique : Un moyen de dÃ©cupler la sensibilitÃ© des 
+pellicules permettant entre autres de diviser par 10 les temps dâexposition et amÃ©liorer nettement 
+la qualitÃ© des images. Nous allons donc rÃ©pondre Ã  la problÃ©matique suivante : Â« Comment 
+amÃ©liorer la sensibilitÃ© dâune pellicule photographique argentique ? Â» et ainsi prendre des photos 
+de qualitÃ© dâobjets en mouvement.  
+ 
+Dans un premier temps, il nous a fallu comprendre le principe chimique de fonctionnement de la 
+photographie argentique qui pour nous Ã©tait une totale dÃ©couverte, mais aussi celui du Â« dopage Â» 
+des pellicules proposÃ© par lâÃ©quipe de chercheur de lâinstitut de Chimie de Paris-Saclay.  
+Le traitement effectuÃ©, il nous a fallu mettre en Åuvre un moyen de contrÃ´ler lâÃ©clairement des 
+films dans lâobjectif de montrer que la sensibilitÃ© avait Ã©tÃ© accrue ou non. Enfin, nous avons dÃ» 
+mesurer le rendement de cette opÃ©ration pour pouvoir la valider.   
+ 
+A- REACTIONS CHIMIQUES A LA SURFACE DE LA PELLICULE  
+1) Les rÃ©actions chimiques dâune pellicule Â« normale Â» 
+a) Comment Ã§a marche ? 
+Le film photographique argentique est constituÃ© dâune myriade de 
+cristaux de bromure dâargent AgBr (s) (formÃ©s dâions argent Ag
++
+ et 
+les ions bromure Br
+-
+) de taille microscopique et entourÃ©s de 
+gÃ©latine qui les maintient sur un support. 
+ 
+Chaque cristal de la mosaÃ¯que constitue une identitÃ© indÃ©pendante 
+Ã©galement appelÃ©e pixel. Pour pouvoir crÃ©er la photo et les 
+variations de noir et de blanc, ce sont les ions argent qui agissent. 
+Lorsque la pellicule est exposÃ©e, mÃªme trÃ¨s briÃ¨vement, Ã  une 
+lumiÃ¨re quelconque, les cristaux absorbent des photons. Ces 
+photons sont lâÃ©lÃ©ment clef dans la rÃ©action chimique. Lâimpact de ceux- sur les cristaux de bromure 
+dâargent provoque la rÃ©duction de quelques ions argent Ag
++
+ en atomes dâargent mÃ©tallique Ag. Les 
+trous diffusent vers la surface du cristal oÃ¹ ils sont capturÃ©s par la gÃ©latine qui est alors oxydÃ©e.  
+ 
+ Effet photoÃ©lectrique sur les cristaux de bromure dâargent
+
+Impressions SensiblesÂ®             Page 3 sur 16 
+AgBr(s) + h! â e
+-
+  +  h
++
+     
+ 
+Cet Ã©lectron peut alors rÃ©duire un ion argent Ag
++
+ pour former un atome dâargent mÃ©tallique Ag :  
+ 
+Ag
++
+ +  e
+-
+ â  Ag  
+Chaque photon a donnÃ© un atome dâargent Ag et le rendement thÃ©orique est de 1.  
+ 
+A ce stade, lâimage obtenue nâest toujours pas visible car trop peu dâions argent ont Ã©tÃ© rÃ©duits. On 
+parle dâimage latente. Il faut alors amplifier considÃ©rablement le nombre dâions argent rÃ©duits. On 
+introduit un rÃ©vÃ©lateur pour dÃ©livrer des Ã©lectrons tout en discernant les parties qui ont reÃ§u assez 
+de photons pour former un agrÃ©gat surcritique dâatome dâargent,   de celles qui en ont reÃ§u trop 
+peu. Il y a donc deux possibilitÃ©s pour les cristaux de bromure dâargent qui entrent en contact avec 
+le rÃ©vÃ©lateur :  
+- soit les cristaux de bromure dâargent comportant un agrÃ©gat oÃ¹ le nombre dâatomes est 
+infÃ©rieur Ã  un certain nombre critique appelÃ© nc sont insensibles Ã  lâaction du rÃ©vÃ©lateur.  
+- soit les cristaux comportent un agrÃ©gat dâatomes assez important et surcritique, et le 
+rÃ©vÃ©lateur fait alors son effet. Le rÃ©vÃ©lateur a donc pour rÃ´le de sÃ©parer les cristaux ayant 
+reÃ§u beaucoup de lumiÃ¨re de celles qui en ont reÃ§u peu. Il a Ã©galement pour but dâamplifier 
+les parties ayant reÃ§u le plus de photons en transformant la totalitÃ© du cristal en argent 
+mÃ©tallique. On a ici un facteur dâamplification de lâordre du milliard. 
+Un dernier traitement, le fixage, vise Ã  Ã©liminer les cristaux non dÃ©veloppÃ©s de AgBr par dissolution 
+par complexation, puis rinÃ§age des films.   
+ 
+On obtient alors une image inversÃ©e de la rÃ©alitÃ© appelÃ©e nÃ©gatif, Ã  savoir que les zones sombres 
+correspondent aux parties fortement Ã©clairÃ©es et inversement pour les zones claires.  Ensuite, il faut 
+transformer cette image en une photographie visible qui plus tard donnera la photo (ou le positif) 
+sur laquelle les parties claires correspondront aux zones ayant reÃ§u beaucoup de photons ou 
+lumiÃ¨re. 
+b) Les pertes dâÃ©lectrons ou rÃ©actions parasites  
+Le problÃ¨me avec les photos argentiques, est que le rendement est bien infÃ©rieur Ã  un atome par 
+photon absorbÃ©.  Ce nâest donc pas parce quâun photon percute la pellicule quâun atome dâargent 
+est directement formÃ©. Non, câest bien plus complexe que cela.  
+Le cas favorable est lorsque la lacune Ã©lectronique nâinterfÃ¨re pas avec la rÃ©action entre les 
+Ã©lectrons et les ions argent. Ce cas se produit lorsque le trou se dirige vers la surface oÃ¹ il est captÃ© 
+par la gÃ©latine liant les cristaux entre eux. Parce que oui, cette gÃ©latine nâa pas seulement le rÃ´le de 
+ciment entre les cristaux, mais elle possÃ¨de Ã©galement des fonctions chimiques sur lesquelles le trou 
+peut Ãªtre irrÃ©versiblement piÃ©gÃ©.   
+h
++
+ + gÃ©latine â gÃ©latine
++
+ 
+ 
+Cependant, des rÃ©actions parasites diminuent lâeffet de lâaction des photons sur la pellicule. Etant 
+donnÃ© que les impacts des photons sur les cristaux de bromure dâargent forment des entitÃ©s 
+instables, de charges opposÃ©es, ils veulent trÃ¨s vite redevenir stables et câest pourquoi de 
+nombreuses rÃ©actions parasites ont lieu et cela trÃ¨s rapidement. Il y a deux possibilitÃ©s de rÃ©actions 
+parasites : 
+ 
+- La premiÃ¨re est quâune partie des lacunes dâÃ©lectrons, des trous h
++
+ se recombinent 
+directement avec les Ã©lectrons pour retrouver la stabilitÃ© de AgBr . Il se produit la rÃ©action 
+inverse de celle crÃ©Ã©e par l'excitation  par le photon. Les ions, lâÃ©lectron et le trou reforment 
+du bromure dâargent ainsi quâun photon. 
+e
+-
+  +  h
++
+ â  AgBr(s) + h!
+
+Impressions SensiblesÂ®             Page 4 sur 16 
+- La deuxiÃ¨me est assez similaire. Le trou oxyde donc dÃ©truit un atome dâargent qui sâest 
+prÃ©alablement formÃ© :   
+ 
+ Ag + h
++
+ â Ag
++
+ et Ag
++
+ + Br 
+- 
+â AgBr 
+ 
+Ainsi pour les meilleures Ã©mulsions mises au point, il faut quâun minimum de 10 Ã  30 photons soient 
+absorbÃ©s par cristal  pour pouvoir former le nombre critique dâatomes dâargent nÃ©cessaire pour que 
+lâaction du rÃ©vÃ©lateur se manifeste. Le rendement est au mieux de 0,2 atome par photon. Une des 
+solutions partielle Ã  ce problÃ¨me serait de laisser prolonger lâexposition. Malheureusement, cela ne 
+marche pas pour faire des photographies dâobjets qui bougent mÃªme trÃ¨s lentement. Cela ne 
+marcherait pas si lâon souhaitait par exemple prendre en photo la lune, Ã©tant donnÃ© quâelle bouge. 
+On obtiendrait une photo dont une partie serait floue. La question quâon peut donc se poser est : 
+Comment empÃªcher ces rÃ©actions de recombinaison parasites ?  
+ 
+Si R est la fraction de recombinaisons parasite, le rendement expÃ©rimental est  heff =h0 (1 â R).  
+ 
+2) La chimie du dopage dâune pellicule  
+ 
+Une Ã©quipe de chercheurs de lâUniversitÃ© de Paris-Sud (Orsay) a compris Ã  la fin des annÃ©es 90, quâil 
+fallait rÃ©duire au maximum les rÃ©actions parasites principalement dues Ã  lâoxydation par le trou. Ils 
+ont donc cherchÃ© un rÃ©ducteur suffisamment puissant pour rÃ©duire les trous mais pas assez pour 
+rÃ©duire les ions argent sans exposition Ã  la lumiÃ¨re.  Dâautre part, le 
+produit de la rÃ©action supprimant le trou ne devait pas avoir lui-
+mÃªme des propriÃ©tÃ©s oxydantes. Par exemple lâion Fe
+2+
+ pourrait 
+dÃ©truire le trou, mais il est oxydÃ© en ion Fe
+3+ 
+qui peut agir lui-mÃªme 
+comme le trou ! Notons que ce âdopantâ, devait en outre, afin de 
+protÃ©ger au plus prÃ¨s lâÃ©lectron ou lâatome dâargent,  pouvoir Ãªtre 
+introduit Ã  lâintÃ©rieur du cristal, câest Ã  dire au moment de sa 
+prÃ©cipitation sans altÃ©rer les propriÃ©tÃ©s photosensibles de AgBr(s).  
+ 
+Pour cela, le dopant idÃ©al choisi par les chercheurs doit capter 
+irrÃ©versiblement les trous, notamment sous la surface, lÃ  oÃ¹ ont lieu 
+les recombinaisons. Le seul dopant qui rÃ©pond au mieux Ã  tous ces 
+critÃ¨res, comme lâont montrÃ© les chercheurs,  et que nous avons 
+choisi dâutiliser, est lâion formiate ou mÃ©thanoate  HCO2
+-
+  qui possÃ¨de 
+un double potentiel  redox adaptÃ© :  
+ 
+- Dâune part, comme voulu, il ne rÃ©duit pas les ions argent mais il 
+capte les trous de maniÃ¨re irrÃ©versible en les rÃ©duisant :  
+        
+h
++
+ + HCO2
+-
+ â H
++
+ + CO2Â°  
+ 
+ 
+Le trou est ainsi neutralisÃ© et lâÃ©lectron est totalement âlibreâ pour rÃ©duire un ion argent  :  
+ 
+Ag
++
+ +  e
+-
+ â  Ag  
+- Dâautre part le radical CO2
+-
+ est un excellent rÃ©ducteur et permet Ã  son tour de rÃ©duire un autre 
+ion argent :  
+ 
+ CO2
+-
+ + Ag
++
+  â CO2 + Ag 
+ 
+Classement des couples mis 
+en jeu en fonction de leur 
+potentiel standard
+
+Impressions SensiblesÂ®             Page 5 sur 16 
+Ainsi avec un seul photon, deux ions argent peuvent Ãªtre rÃ©duits (rendement de 2 atomes/photon) 
+alors que sans ce dopant, seulement 2 sur 10 lâÃ©taient, soit un rendement de 0,2 atomes/photon. 
+Le rendement est alors multipliÃ© par 10 !  
+ 
+Nous avons voulu vÃ©rifier cette affirmation par une premiÃ¨re expÃ©rience dont nous entendons 
+parler depuis le collÃ¨ge : le noircissement du prÃ©cipitÃ© blanc de chlorure dâargent Ã  la lumiÃ¨re qui 
+dÃ©pendait beaucoup de la luminositÃ© du jour et qui est Ã  la base du procÃ©dÃ© de photo argentique.  
+Et pour cause maintenant que nous avons connaissance du faible rendement de lâeffet 
+photoÃ©lectrique ! Bon ici, ce ne sera pas du chlorure dâargent mais du bromure dâargent !  
+ 
+ExpÃ©rience qualitative : Dans un premier tube Ã  essai (Ã  gauche) nous avons introduit quelques mL 
+dâune solution contenant 0,1 mol.L
+-1
+ de bromure sans mÃ©thanoate, et dans  lâautre, une solution 
+contenant 0,1 mol.L
+-1
+ de bromure de potassium et 0,1 mol.L
+-1
+ de mÃ©thanoate de sodium. A lâinstant 
+t=0, nous avons ajoutÃ© 4 gouttes dâune solution de nitrate dâargent Ã  0,1 mol.L
+-1
+ dans chaque tube. 
+ 
+  
+ 
+t = 0s   t= 10s   t=20s   t= 50s 
+Ce premier essai parle de lui-mÃªme ! RÃ©sultat qualitatif plutÃ´t convaincant sur une augmentation 
+du rendement quantique grÃ¢ce au ions formiate !   
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Ãvolution du 
+prÃ©cipitÃ© de 
+bromure 
+dâargent en 
+prÃ©sence ou 
+non dâions 
+mÃ©thanoate
+
+Impressions SensiblesÂ®             Page 6 sur 16 
+B- METHODES EXPERIMENTALES ET MISES AU POINT 
+ 
+1) Comment mettre en Åuvre le dopage ?  
+ 
+Nous ne disposions pas des appareils nÃ©cessaires pour prÃ©parer une Ã©mulsion photo avec la gÃ©latine 
+pour doper Ã  lâintÃ©rieur des cristaux et avons donc choisi plus simplement de les doper Ã  la surface. 
+ 
+Sur les conseils de Jacqueline BELLONI, nous avons simplement trempÃ© une pellicule 
+orthochromatique commerciale (insensible aux radiations rouges pour pouvoir manipuler sous 
+lampe rouge) dans un bain de formiate de sodium Ã  0,1 mol.L
+-1
+ pendant 30 min. En effet, elle nous 
+a indiquÃ© quâÃ  dÃ©faut de pouvoir introduire le dopant dans le cristaux,  nous pouvions les doper en 
+surface. Par trempage dâune pellicule, le formiate diffuserait Ã  travers la gÃ©latine jusquâÃ  la surface 
+des cristaux, oÃ¹ il capterait les trous Ã  la place de la gÃ©latine, et de plus son radical rÃ©duirait un 
+second ion dâargent en atome. La consÃ©quence serait que le rendement serait non pas multipliÃ© par 
+10, mais par 2.  
+Certes le premier essai nâa pas Ã©tÃ© le bon, car nous avons 
+surexposÃ© nos pellicules et, aprÃ¨s dÃ©veloppement, les dopÃ©es 
+et les non dopÃ©es  Ã©taient complÃ¨tement noires.  Mais le 
+deuxiÃ¨me nous a encouragÃ© Ã  poursuivre : nous attribuons 
+cela Ã  la chance du dÃ©butant. En effet, nous avons dÃ©coupÃ© 
+seulement 20 cm de film pour rÃ©aliser 4 Ã  5 expositions 
+diffÃ©rentes en durÃ©e (et Ã©clairement constant) et mis Ã  
+tremper dans un grand bÃ©cher. Le rÃ©sultat, aprÃ¨s 
+dÃ©veloppement, nous a Ã©poustouflÃ©s (CâÃ©tait gÃ©nial !) : les 
+clichÃ©s Ã©taient encore un peu surexposÃ©s, mais des 
+diffÃ©rences devenaient dÃ©jÃ  perceptibles Ã  l'Åil nu. Elles ont 
+Ã©tÃ© et confirmÃ©es lors des mesures quantitatives 
+dâabsorbance (tableau p.11) au spectrophotomÃ¨tre avec un 
+rendement multipliÃ© par 2 comme attendu !  
+ 
+Les problÃ¨mes nâont pas tardÃ© Ã  survenir ! Quand nous avons 
+voulu reproduire ce dopage, mais sur des longueurs de films 
+plus importantes et en rembobinant la pellicule dans son 
+boitier, tous les films dopÃ©s prÃ©sentaient des traces comme 
+sur le film de gauche sur la photo ci-contre. Nous les avons 
+dâabord attribuÃ©es aux balais du boitier qui avaient pris un peu de 
+solution. Puis Ã  force de discussion avec les membres du club de 
+photo de Montlouis, nous avons fini par rÃ©aliser que la pellicule Ã©tait 
+fragilisÃ©e quand elle Ã©tait humide. Or nous ne prenions pas 
+suffisamment de prÃ©cautions en lâintroduisant dans le bain, souvent 
+enroulÃ©e sur elle-mÃªme et probablement encore moins en la 
+retirant, ou en voulant accÃ©lÃ©rer son sÃ©chage en la disposant sur un 
+papier essuie-toutâ¦ des manipulations qui ont fait bondir les 
+spÃ©cialistes.  
+Nous avons alors utilisÃ© des grands bacs encastrables pour disposer 
+les films, face gÃ©latineuse vers le haut pour ne pas toucher le fond, 
+sÃ©chage naturel pendant 24h. Mais un nouveau problÃ¨me est 
+apparu : le film Ã©tait entiÃ¨rement noir aprÃ¨s 
+dÃ©veloppementâ¦comme on peut le voir sur le film de droite sur la 
+photo ci-dessus.   
+Films dopÃ©s ou non avec temps dâexposition 
+variable et intensitÃ© lumineuse fixÃ©e aprÃ¨s 
+dÃ©veloppement 
+Mauvaises conditions du dopage :  
+Film prÃ©sentant des traces  
+Film prÃ©sentant une 
+surexposition
+
+Impressions SensiblesÂ®             Page 7 sur 16 
+AprÃ¨s rÃ©flexion, on a conclu que le bac nâÃ©tait pas Ã©tanche Ã  la lumiÃ¨re. 
+Finalement, nous avons dÃ©cidÃ© dâutiliser les cuves utilisÃ©es pour 
+dÃ©veloppement, dans lesquelles le film est dÃ©roulÃ© sur une bobine pour 
+Ã©viter tout contact et parfaitement conÃ§ues pour Ãªtre Ã©tanches Ã  la 
+lumiÃ¨re. Bien sÃ»r, cela a nÃ©cessitÃ© un peu de technique en coupant le film, 
+puis en le recollant pour le rembobiner, mais les membres du club de 
+Montlouis ont Ã©tÃ© une fois de plus de bon conseil !  
+ 
+ 
+ 
+Comme nous lâavons dit prÃ©cÃ©demment, trÃ¨s rapidement nous sommes arrivÃ©s Ã  un rÃ©sultat qui a 
+lâÅil nu Ã©tait des plus prometteurs et qui a convaincu nos encadrants de nous laisser poursuivre. 
+Mais Ã  partir de ce moment, il nous fallait nous pencher sur la prÃ©cision de nos paramÃ¨tres 
+expÃ©rimentaux pour faire varier l'Ã©clairement de la pellicule ! Nous rapprenons dans un premier 
+temps le cheminement de nos rÃ©flexions et essais sur cette exposition des films. 
+ 
+2) Quelle pellicule utiliser ?  
+ 
+Nous avons tout dâabord Ã©tÃ© confrontÃ©s Ã  une premier problÃ¨me : Comment manipuler la pellicule 
+dans le noir ? Nous avions tous vu des films oÃ¹ un personnage dÃ©veloppe une pellicule avec une 
+sorte de lumiÃ¨re rouge, mais nous nâen savions pas plus. AprÃ¨s consultation du dernier club photo 
+dâIndre-et-Loire, lâun de ses membres nous a conseillÃ© de prendre une pellicule orthochromatique 
+sensible uniquement  Ã  la lumiÃ¨re bleue et verte, et donc totalement insensible aux âradiations 
+rougesâ. Par consÃ©quent, nous nous sommes procurÃ© un Ã©clairage inactinique.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Les seules pellicules orthochromatiques que lâon a trouvÃ©es encore dans le commerce, avaient une 
+sensibilitÃ© de 80 ASA. Mais que signifiait cette unitÃ© dont nous n'avions jamais entendu parler ?  
+âEn photographie, ou en vidÃ©o, la sensibilitÃ© ISO (Organisation Internationale de Standardisation) 
+ou ASA (American Standard Association), est la mesure de la sensibilitÃ© Ã  la lumiÃ¨re des pellicules et 
+des capteurs numÃ©riques. Elle est liÃ©e surtout Ã  la taille des cristaux. Elle est une donnÃ©e essentielle 
+pour la dÃ©termination d'une exposition correcte.â  
+ 
+TrÃ¨s peu clair pour nous, et pas si simple pour nos 
+encadrants qui ne sont pas des spÃ©cialistes de la photo 
+argentique. Lors de nos recherches, nous sommes 
+tombÃ©s sur ce fameux triangle dâexposition. En effet, en 
+photographie, il faut allier trois paramÃ¨tres : Vitesse 
+dâouverture de lâobturateur, taille dâouverture et 
+sensibilitÃ© du film. Nous concernant, seuls deux 
+paramÃ¨tres subsistaient puisque nous Ã©clairons 
+totalement nos films sans diaphragme (ouverture f=1 
+aux dires des amateurs).  
+ 
+Cuve pour dÃ©veloppement 
+mais ayant servies aussi au 
+dopage 
+ 
+Spectre dâune lampe inactinique 
+Plage de sensibilitÃ© dâune Ã©mulsion 
+photographique orthochromatique 
+Le triangle dâexposition
+
+Impressions SensiblesÂ®             Page 8 sur 16 
+En toute honnÃªtetÃ©, nos premiers essais ont Ã©tÃ© faits Ã  lâaveugle. Nous Ã©tions conscients que 
+lâobturateur dâun appareil sâouvrait trÃ¨s rapidement, mais rien de plus. Nous avons utilisÃ© une 
+luminositÃ© nous semblant faible, sur des temps nous semblant assez courts, contrÃ´lÃ©s au moyen 
+dâun agrandisseur photo. 
+ 
+3) Comment contrÃ´ler lâexposition ?  
+Pour le contrÃ´le de lâexposition, nous avions plusieurs contraintes :  
+ 
+- Avoir un Ã©clairement uniforme pour pouvoir 
+exposer cÃ´te Ã  cÃ´te une pellicule dopÃ©e et lâautre 
+non. Lors dâun Ã©change avec des enseignants du 
+BTS optique du lycÃ©e,  ceux-ci nous ont suggÃ©rÃ© 
+dâutiliser les dispositifs existants dans certains 
+vidÃ©oprojecteurs, Ã  savoir des nappes de micro-
+lentilles.  
+ 
+Mais Ã  la suite, il fallait un dispositif qui ne diffuse pas de la lumiÃ¨re dans toute la piÃ¨ce. Nous 
+nous sommes finalement tournÃ©s vers un ancien agrandisseur photographique utilisÃ© au temps 
+des clubs photo dans les lycÃ©es. En effet, aux dires de nos partenaires nostalgiques de 
+lâargentique, ce dispositif se devait dâavoir un Ã©clairement  plutÃ´t uniforme pour Ã©clairer 
+convenablement le nÃ©gatif.  
+En effet, si la lumiÃ¨re passait directement de la lampe Ã  travers le nÃ©gatif, elle serait plus forte 
+au centre que sur les bords ; lâÃ©preuve serait donc trop sombre dans sa partie centrale. Pour 
+Ã©viter cet inconvÃ©nient, quelques modÃ¨les dits Â« Ã  Ã©clairage diffusÂ», comportent une lame de 
+verre dÃ©poli, intercalÃ©e entre la lampe et le nÃ©gatif, qui rÃ©partit la lumiÃ¨re et diffuse les rayons 
+dans plusieurs directions. Dâautres modÃ¨les dits Â« Ã  Ã©clairage dirigÃ© Â», comportent entre la 
+lampe et le nÃ©gatif deux lentilles de forme plan-convexe. Ces lentilles concentrent la lumiÃ¨re de 
+la lampe de maniÃ¨re Ã  la faire passer Ã  travers le nÃ©gatif sans diffusion. Nous disposons dans 
+notre Ã©tablissement dâun agrandisseur Ã  lumiÃ¨re dirigÃ©e.   
+ 
+ 
+ 
+Nos premiÃ¨res mesures du dâÃ©clairement lumineux avec lâagrandisseur Ã  notre disposition, nous ont 
+montrÃ© quâil Ã©tait loin dâÃªtre uniforme, avec une variation entre le centre de lâimage dâune fente 
+rectangulaire et ses bords. Nous avons donc dÃ©cidÃ© dâagrandir lâimage rectangulaire afin que la 
+surface des pellicules soit faible par rapport Ã  celle-ci et ainsi avoir un Ã©clairement qui varie de 5 Ã  
+10% autour de sa valeur moyenne.   
+Principe simplifiÃ© dâune dalle de micro-lentilles 
+Les deux types dâagrandisseurs    b) Celui Ã  notre disposition
+
+Impressions SensiblesÂ®             Page 9 sur 16 
+Ouverture de l'objectif Ãclairement en lux 
+Position 1 (fâ/16) 	2,4Â±0,1 
+Position 2 (fâ/11) 	4,6Â±0,3 
+Position 3 (fâ/8) 	10,5Â±0,4 
+Position 4 (fâ/5,6) 	20,4Â±0,4 
+Position 5 (fâ/4) 	39,0Â±2,1 
+Position 6 (fâ/2,8) 	60,4Â±6,0 
+ 
+Pour le contrÃ´le de la durÃ©e dâexposition :  
+ 
+Tout agrandisseur dispose dâun minuteur pour contrÃ´ler la lampe. Mais quelle durÃ©e dâexposition 
+pour notre film et quel flux lumineux choisir ? Nous devons avouer que nous avons commencÃ© par 
+tÃ¢tonnement. ConsidÃ©rant que lâintensitÃ© lumineuse de lâagrandisseur Ã©tait plutÃ´t faible (de 60 lux 
+contre 300 en extÃ©rieur alors que le temps Ã©tait plutÃ´t gris Ã  Tours pour changerâ¦), nous avons 
+choisi des temps d'exposition allant de 1 Ã  4s.  Ce premier essai a Ã©tÃ© un Ã©chec cuisant : les films 
+Ã©taient tous noirs, suite Ã  une âsurexpositionâ.  
+Lors du deuxiÃ¨me essai, nous avons diminuÃ© fortement lâintensitÃ© lumineuse de la lampe Ã  2 Ã  3 lux 
+au moyen de diaphragmes figurant sur le dispositif, et rÃ©duit les temps de pose Ã  0,2/0,5 / 1s et 1,7s. 
+PremiÃ¨re lueur dâespoir !   
+ 
+Cependant, nous nâÃ©tions pas satisfaits de ce raisonnement par tÃ¢tonnement, et pas convaincus par 
+la mesure de lâexposition, interpellÃ©s par les scientifiques et amateurs avec lesquels nous avons 
+discutÃ©. En effet, toute lampe Ã  un âtemps dâallumage ou Ã©clairageâ avant dâÃ©clairer Ã  son maximum. 
+Dâautres part, les amateurs nous ont fait remarquer que les chronomÃ¨tres dâagrandisseur, 
+descendent rarement en dessous dâun dixiÃ¨me de seconde, car conÃ§us pour impressionner un 
+papier photo et non une pellicule, et ne sont peut Ãªtre pas des plus prÃ©cis.  
+AprÃ¨s Ã©change avec des professeurs de sciences de lâingÃ©nieur, des camarades et les membres du 
+photoclub, il sâest avÃ©rÃ© que le plus simple serait dâutiliser le boÃ®tier dâun appareil photographique 
+argentique. En effet, cela prÃ©sente plusieurs avantages :  
+- Maintenir la lumiÃ¨re de lâagrandisseur allumÃ© donc ne pas avoir de 
+problÃ¨me dâallumage ;  
+- avoir des temps dâexposition prÃ©cis et plus faibles qui descendent 
+nettement au-dessous de la seconde (de 1/2 Ã  1/2000Ã¨ de s).  
+- Ãconomiser le film photo car le mÃ©canisme est parfaitement rÃ©glÃ© 
+pour enchaÃ®ner les prises de vue les unes Ã  la suite des autres.  
+ 
+ 
+Nous avons Ã©tÃ© interloquÃ©s par ces valeurs aussi faibles de durÃ©e dâexposition et avons cherchÃ© Ã  
+vÃ©rifier si elles Ã©taient aussi prÃ©cises que cela.  
+ 
+ExpÃ©rience : nous avons utilisÃ© une camÃ©ra du laboratoire en faible rÃ©solution (320X240 pixels) 
+permettant ainsi de prendre 120 images par seconde. Nous avons filmÃ© lâouverture du boÃ®tier de 
+lâappareil photo et analysÃ© le film obtenu.  
+DiffÃ©rents temps 
+dâobturation du boitiers
+
+Impressions SensiblesÂ®             Page 10 sur 16 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RÃ©sultats :  
+120 images par seconde soit une images tous les " = 1/120 s. Ainsi, sur un temps dâobturation Dt, on 
+doit avoir Dt/" images.  
+ 
+DurÃ©e dâobturation 
+affichÃ©e  Dt en s 
+1/4 1/8 1/15 1/30 
+Nombre dâimages 
+thÃ©orique  
+30 15 8 4 
+Nombre dâimages 
+expÃ©rimental 
+28Â± 2 15Â± 2 8Â± 2 4Â± 2 
+Temps dâobturation 
+mesurÃ©  Dtexp en s 
+0,25Â±0,02 0,13Â±0,02 0,07Â±0,02 0,03Â±0,02 
+ 
+La camÃ©ra utilisÃ©e est donc limitÃ©e conduisant Ã  une 
+incertitude de mesure trop Ã©levÃ©e. Pour les temps plus courts, 
+nous avons utilisÃ© le mode âslow motionâ d'un appareil 
+numÃ©rique permettant dâatteindre  1000 images par seconde, 
+mais nous nâavons pas encore eu le temps dâexploiter les films 
+nÃ©cessitant un logiciel de traitement dont nous ne disposions 
+pas.  
+ 
+Donc voici le dispositif final : le boÃ®tier de lâappareil est disposÃ© 
+sur une cale fixÃ©e au support pour pouvoir rÃ©armer la pellicule 
+sans dÃ©placer lâappareil, et faire en sorte que la luminositÃ©  soit 
+la mÃªme tout au long de l'expÃ©rience.  
+ 
+ 
+ 
+ 
+ 
+Mesure des temps dâobturation 	Enregistrement de lâobturation 
+Dispositif final pour contrÃ´ler luminositÃ© et durÃ©e dâexposition
+
+Impressions SensiblesÂ®             Page 11 sur 16 
+4) Comment comparer les nÃ©gatifs obtenus ?  
+ 
+Pour Ã©valuer nos rÃ©sultats, il nous a semblÃ© naturel 
+dâutiliser le spectrophotomÃ¨tre que nous utilisons en 
+cours depuis la seconde. Un spectrophotomÃ¨tre mesure 
+lâabsorbance dÃ©finie comme suit  
+ 
+#=%&'()&/))  
+ 
+avec Io, lâintensitÃ© du faisceau monochromatique 
+incident et I, lâintensitÃ© du faisceau transmis.  
+ 
+Ainsi en supposant que le dopage externe des cristaux double le rendement quantique, et que cela 
+se traduise par un doublement de la concentration des cristaux dÃ©veloppÃ©s par le nÃ©gatif,  Iâ = I/2, 
+avec Iâ lâintensitÃ© de la lumiÃ¨re transmise par le nÃ©gatif prÃ©alablement dopÃ© en conditions non 
+saturÃ©e ,  
+#â²=%&'()&/)â²)=%&'()&/)/2) = #=%&'(2)&/))=%&'()&/))+ 0,3 
+Donc si le rendement quantique double alors lâabsorbance devrait augmenter de 0,3 pour une 
+mÃªme exposition des deux films.  
+  
+Principe de fonctionnement dâun spectrophotomÃ¨tre
+
+Impressions SensiblesÂ®             Page 12 sur 16 
+C- RESULTATS ET ANALYSES  
+1) PremiÃ¨res expÃ©riences concluantes 
+ 
+Câest donc ce que nous avons cherchÃ© Ã  prouver lors de nos premiÃ¨res 
+expÃ©riences.  
+Pour le choix de la longueur dâonde de travail, nous nâavions aucune idÃ©e du 
+spectre d'absorption du âgrisâ dâun nÃ©gatifâ¦ Donc nous lâavons enregistrÃ©. 
+On a pu constater que lâabsorbance Ã©tait sensiblement la mÃªme dans tout le 
+domaine visible donc nous avons dÃ©cidÃ© de travailler Ã  500 nm. Et bien 
+entendu, nous avons rÃ©alisÃ© le blanc avec un nÃ©gatif dÃ©veloppÃ© qui nâavait 
+pas Ã©tÃ© exposÃ©.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Voici nos premiers rÃ©sultats pour un temps dâexposition de 0,2 s et un Ã©clairement de 2,4 lux, une 
+des deux expositions qui ne saturait pas Ã  l'Åil nu.  
+ 	Absorbance Ã  800 nm 
+Film non âdopÃ©â 	2,052 
+Film âdopÃ©â 	2,390 
+Premiers constats :  
+- Les absorbances mesurÃ©es sont trÃ¨s peu prÃ©cises car dÃ©passent 2 ;  
+- Cependant, la mesure sur le film dopÃ© confirme ce qui Ã©tait visible Ã  l'Åil nu.  
+PremiÃ¨res conclusions : la sensibilitÃ© du film dopÃ© aurait bien augmentÃ©, et mÃªme Ã©tait multipliÃ©e 
+par 10
+(2,390-2,052)
+ = 2,2 Ã  en croire ces rÃ©sultats.  
+Ce rÃ©sultat nous a donnÃ© lâenvie et  permis de poursuivre, mais nous avons tout de mÃªme relativisÃ© 
+avec ces constatations 
+- Mesures dâabsorbance imprÃ©cises car trop Ã©levÃ©es, donc nÃ©cessitÃ© de diminuer lâexposition des 
+nÃ©gatifs ;  
+- Nous avions disposÃ© les pellicules cÃ´te Ã  cÃ´te : ont-elles reÃ§u la mÃªme intensitÃ© lumineuse? Lors 
+de nos mesures avec un luxmÃ¨tre, on a constatÃ© que lâintensitÃ© lumineuse Ã©tait uniforme Ã  5% 
+Ã  10% prÃ¨s. Cela nâexplique certes pas un doublement de lâabsorbance donc du rendement 
+quantique, mais nous avons voulu corriger cela en disposant les nÃ©gatifs successivement au 
+mÃªme endroit lors de lâexpÃ©rience.  
+- Notre piÃ¨ce Ã©tait-elle rÃ©ellement Ã©tanche Ã  la lumiÃ¨re, un âvoileâ ne sâest-il pas formÃ© lors du 
+bain pour la pellicule dopÃ©e. 
+ 
+Morceaux de film aprÃ¨s 
+dÃ©veloppement 
+Un modÃ¨le de spectrophotomÃ¨tre Ã  notre disposition 
+Spectre  dâabsorption dâun film aprÃ¨s dÃ©veloppement
+
+Impressions SensiblesÂ®             Page 13 sur 16 
+NÃ©gatifs non dopÃ©s et dopÃ©s  avec 
+durÃ©e dâexposition variable aprÃ¨s 
+dÃ©veloppement  
+2) RÃ©sultats sur des pellicules en modifiant la durÃ©e dâexposition 
+ 
+ExpÃ©rience : Nous avons dÃ©cidÃ© dans un premier temps de travailler Ã  Ã©clairement constant E 
+constant et temps de pose variable Dt pour faire varier lâexposition E x Dt . Nous avons pris comme 
+temps de pose maximal, 1/4s sachant quâavec 0,2 s, on avait obtenu une absorbance dÃ©passant 
+lÃ©gÃ¨rement 2. Ce nâÃ©tait pas nÃ©cessairement judicieux aprÃ¨s Ã©change avec Mme Belloni, il valait 
+mieux Ã©viter de surexposer la pellicule.  
+ 
+RÃ©sultats pour un Ã©clairement âconstantâ de E = 2,4Â±0,1 lux aprÃ¨s quelques erreurs de 
+manipulations exposÃ©es prÃ©cÃ©demment :  
+ 
+Temps 
+dâexposition 
+Dt (en s) 
+Absorbance A 
+film non dopÃ© 
+Absorbance Aâ 
+film dopÃ© 
+3A = Aâ- A 
+1/4 1,98 2,20 0,22 
+1/8 1,72 1,95 0,23 
+1/15 1,45 1,78 0,33 
+1/30 1,11 1,43 0,32 
+1/60 0,78 1,09 0,31 
+1/125 0,55 0,95 0,40 
+1/250 0,27 0,63 0,36 
+1/500 0,15 0,32 0,17 
+ 
+ 
+ 
+Log(Exposition relative)
+
+Impressions SensiblesÂ®             Page 14 sur 16 
+ 
+Analyse : Ces premiers rÃ©sultats exploitables sont assez convaincants dans le sens oÃ¹ 
+lâabsorbance du film âdopÃ©â prÃ©sente bien une augmentation par rapport Ã  celle du film ânon 
+dopÃ©â dans les mÃªmes conditions, avec une moyenne de 0,32, soit une multiplication du 
+rendement par 2,1. Il nous faut vÃ©rifier encore la rÃ©pÃ©tabilitÃ© de ces mesures et Ã©valuer les 
+incertitudes de mesures, travail en cours avec des premiÃ¨res estimations des incertitudes sur 
+lâintensitÃ© lumineuse et les temps de pose.  
+Remarque : On a pu constater pour un film donnÃ©, que pour doublement du temps dâexposition, 
+on a bien pour des Ã©clairements âfaiblesâ, une augmentation voisine de 0,3 pour lâabsorbance.   
+Cependant, on constate que pour les plus faibles ou plus grands temps dâexposition, cette 
+augmentation se âtasseâ. Nos derniers Ã©changes avec Mme Belloni, nous ont permis de faire 
+des hypothÃ¨ses quâil nous faudra vÃ©rifier : Pour un  Ã©clairement faible, cela est probablement 
+dÃ» au fait que le nombre d'atomes  d'argent critique de 3 Ã  4 dans un cristal n'est pas atteint 
+pour qu'il soit dÃ©veloppable. Pour des Ã©clairements Ã©levÃ©s, plus la pose est longue, moins de 
+cristaux demeurent dans l'agrÃ©gat dÃ©veloppable. Or, la probabilitÃ© de former un cristal 
+dÃ©veloppable supplÃ©mentaire est proportionnelle Ã  la concentration de seuls ceux qui ne 
+l'Ã©taient  pas encore â¦ Ainsi si lâÃ©clairement est trop important, le nombre de cristaux 
+dÃ©veloppable nâest plus proportionnel au temps de pose. Il nous faudra donc travailler avec 
+plus dâÃ©clairements plus faibles.  
+ 
+ 
+3) RÃ©sultats sur des pellicules en modifiant lâÃ©clairement  
+ 
+ExpÃ©rience : Pour un temps de pose constant de Dt = 1/125Ã¨me de seconde avec des 
+Ã©clairements variables.   
+ 
+RÃ©sultats :   
+ 
+Ãclairement E 
+(Lux) 
+Absorbance A du 
+film non dopÃ©  
+Absorbance Aâ du 
+film dopÃ©  
+3A = Aâ- A 
+2,4 	0,57 	1,00 	0,43 
+4,6 	1,00 	1,30 	0,30 
+10,5 1,21 	1,52 	0,41 
+20,4 1,45 	1,77 	0,32 
+39,0 1,67 	1,91 	0,24 
+60,4 1,81 	2,01 	0,20 
+ 
+Analyse : Certes les rÃ©sultats sont assez convaincants Ã©galement, mais avec la mÃªme remarque 
+sur lâÃ©volution en fonction de lâexposition. Les intensitÃ©s lumineuses varient trop rapidement 
+avec lâobjectif de lâagrandisseur. Nous aurions simplement pu rapprocher la source  pour 
+contrÃ´ler la luminositÃ© et travailler avec des luminositÃ©s plus faibles et fplus de valeurs 
+intermÃ©diaires.
+
+Impressions SensiblesÂ®             Page 15 sur 16 
+CONCLUSION 
+ 
+Pour conclure suite Ã  cette premiÃ¨re Ã©tape, nous Ã©tions loin de penser en commenÃ§ant ce projet, 
+qui expÃ©rimentalement nous obtiendrions des rÃ©sultats aussi probants Ã  notre Ã©chelle ! Les ions 
+formiates ont bien permis dâoptimiser le rendement dâune pellicule photo en ayant simplement 
+dÃ©posÃ© ce dopant en surface des cristaux par simple trempage. A la place de la gÃ©latine, ils ont Ã  
+priori piÃ©gÃ© les 20% des trous qui diffusaient vers cette surface et comme nous lâavait indiquÃ© Mme 
+Belloni, ce qui a permis aux ions radicalaires CO2
+-
+ de rÃ©duire un second ion argent dans la foulÃ©e ! 
+Le rendement a ainsi Ã©tÃ© doublÃ© !  
+Ces premiÃ¨res expÃ©rimentations ont Ã©tÃ© passionnantes, pleines de rebondissements avec de rÃ©elles 
+dÃ©ceptions lors de nos Ã©checs, mais nous avons pu comprendre Ã  quel point le travail de recherche 
+expÃ©rimentale nÃ©cessite patience et persÃ©vÃ©rance mais aussi rigueur et application et quâil procure 
+des satisfactions incomparables.  
+ 
+Nous avons de nombreuses perspectives.  
+- Nous aimerions nous intÃ©resser Ã  lâinfluence du bain du dopant. Est-ce que la concentration 
+du dopant ou mÃªme la durÃ©e du bain ont une influence sur le rendement ?  
+- Aux dires de Mme Belloni, tous les alcools primaires et secondaires car oxydables, pourraient 
+jouer le mÃªme rÃ´le que lâion formiate. Câest une expÃ©rience quâelle nâa pas testÃ© avec ses 
+Ã©quipes car un alcool nâoffrait quâun dopage en surface car serait expulsÃ© par la gÃ©latine lors 
+de sa solidification. Il conduirait donc seulement Ã  un doublement du rendement. 
+Lâispopropanol, par exemple, ferait intervenir les couples (CH3)2Â°COH / (CH3)2CHOH et 
+(CH3)2CO/(CH3)2Â°COH, avec le mÃªme mÃ©canisme de dopage car prÃ©sentant des potentiels 
+cohÃ©rents avec les besoin exposÃ©s prÃ©cÃ©demment.  
+- Nous entrevoyons Ã©galement de modÃ©liser des courbes obtenues grÃ¢ce Ã  un programme 
+python qui reprend une Ã©tude thÃ©orique de la cinÃ©tique de la rÃ©action. 
+ 
+Enfin un questionnement : cette technique de dopage pourrait-elle Ãªtre appliquÃ©e au panneaux 
+solaires dont le rendement nâexcÃ¨de pas 20% ? Une solution Ã  ajouter aux panneaux quâil faudrait 
+renouveler car le dopant serait consommÃ© ?  
+ 
+REMERCIEMENTS  
+Nous tenons Ã  remercier toutes les personnes suivantes qui nous ont permis dâaboutir dans cette 
+premiÃ¨re Ã©tape de notre projet :  
+- Mme Jacqueline Belloni, chercheuse Ã©mÃ©rite de lâUniversitÃ© de Paris Saclay (anciennement 
+Paris Sud) qui nous a partagÃ© ses travaux et consacrÃ© un temps prÃ©cieux ;  
+- M. Gilbert Rohan du Photo Club de Montlouis sur Loire pour nous avoir permis de dÃ©velopper 
+Ã  ses cÃ´tÃ©s nos pellicules mais aussi qui nous a beaucoup guidÃ© pour amÃ©liorer nos mesures et 
+expÃ©rimentations ;  
+- Jules Tarquinio-Guiffault, ancien Ã©lÃ¨ve du lycÃ©e Vaucanson qui nous a mis sur la piste de ce sujet 
+passionnant lors de sa venue au forum des anciens Ã©lÃ¨ves ;  
+- Tous les personnels de notre lycÃ©e qui nous ont Ã©tÃ© dâune aide prÃ©cieuse, tant pour les 
+commandes de pellicules ou produits, que la prÃ©paration de solutions ou la mise Ã  disposition 
+de matÃ©riel ;  
+- Les professeurs du BTS SystÃ¨mes photoniques du lycÃ©e, M.Taste et M.Belzanne pour leurs 
+conseils sur les systÃ¨mes optiques et spectrophotomÃ¨tres utilisÃ©s ;  
+- Enfin Ã  M.Thibault, notre enseignant encadrant pour sa patience en rÃ©pondant Ã  toutes nos 
+questions et toutes nos demandes.
+
+Impressions SensiblesÂ®             Page 16 sur 16 
+SOURCES 
+ 
+Articles :  
+ 
+- PleinSud spÃ©cial recherche 2002 de lâUniversitÃ© Paris Sud de J. BELLONI, M TREGUER et H. 
+MERITA du laboratoire de Chimie Physique, UMR CNRS-UPS - FacultÃ© des Sciences dâOrsay 
+ 
+- âPhotography, a sensitive approachâ par de J. BELLONI, M TREGUER et H. MERITA  
+ 
+- âLe dÃ©veloppement, une affaire de potentielâ, La Recherche nÂ°217  volume 21, Janvier 1999 
+ 
+- âLa chimie photographiqueâ de J.Pouradier (sociÃ©tÃ© Koda), LâactatualitÃ© chimique, mars 
+1977.  
+ 
+Sites internet :  
+ 
+- https://www.la-photo-argentique.com/la-chimie-du-developpement-argentique-
+comment-ca-marche/  
+- http://public.weconext.eu/academie-sciences/2015-12-
+15/video_id_002/index.html#diapo001

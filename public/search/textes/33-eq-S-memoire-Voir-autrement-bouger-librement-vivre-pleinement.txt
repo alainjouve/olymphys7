@@ -1,0 +1,515 @@
+Introduction 
+ 
+Nos objectifs : 
+DâaprÃ¨s lâorganisation mondiale de la santÃ©, la dÃ©ficience visuelle a de graves rÃ©percussions 
+sur la qualitÃ© de vie des populations adultes. Les adultes ayant une dÃ©ficience visuelle peuvent 
+avoir des taux plus Ã©levÃ©s de dÃ©pression, dâanxiÃ©tÃ©, et de suicide. Ce handicap peut contribuer 
+Ã  lâisolement social, et Ã  lâabsence de soutien. 
+ 
+Dâun point de vue sÃ©curitaire en France, il y a 100 000 Ã  150 000 feux de signalisation, mais 
+seulement 35% (soit 45 000) sont Ã©quipÃ©s de dispositifs sonores pour aider les personnes 
+malvoyantes ou aveugles. Ces dispositifs permettent une traversÃ©e plus sÃ»re en Ã©mettant un 
+signal sonore lors du passage piÃ©ton vert, mais ils peuvent Ãªtre inefficaces si le bruit ambiant 
+est trop fort. Les feux sonores sont Ã©galement plus coÃ»teux que les feux classiques : leur prix 
+varie entre 25 000 et 40 000 euros, soit environ 113% de plus qu'un feu standard. Un feu avec 
+volume ajustable et systÃ¨me tactile ou vibrant, plus adaptÃ©, coÃ»te entre 35 000 et 50 000 
+euros, soit environ 180% plus cher. 
+Dâun point de vue financier, notre dispositif revient Ã  moins de 500 euros, ce qui le rend trÃ¨s 
+intÃ©ressant et plus abordable, mÃªme si celui-ci ne permet dâÃ©quiper quâune seule personne. 
+ 
+Notre objectif est donc l'intÃ©gration Ã  un prix abordable de personnes atteintes dâun handicap 
+ou dâune incapacitÃ© visuelle. Ces lunettes pourraient amÃ©liorer considÃ©rablement la qualitÃ© de 
+vie des personnes malvoyantes en leur offrant une plus grande indÃ©pendance et une meilleure 
+intÃ©gration dans leur environnement quotidien, en plus d'une sÃ©curitÃ© accrue. 
+ 
+Notre projet consiste Ã  programmer un Raspberry Pi 5 et Ã  utiliser le flux vidÃ©o dâune camÃ©ra 
+pour interprÃ©ter l'environnement urbain. Nous nous sommes dâabord focalisÃ©s sur 
+l'identification des feux de signalisation et des passages piÃ©tons, pour une sÃ©curitÃ© accrue des 
+personnes aveugles ou malvoyantes. Un signal sonore interprÃ©tant l'identification de ces 
+infrastructures leur sera transmis et leur permettra de mieux interagir en sociÃ©tÃ© en 
+encourageant le dÃ©placement individuel dans des villes peu, voire pas adaptÃ©s, pour leur 
+handicap. 
+ 
+DÃ©finitions : 
+ 
+ 
+OpenCV (Open Source Computer Vision Library) est une bibliothÃ¨que 
+open-source spÃ©cialisÃ©e en vision par ordinateur et en apprentissage 
+automatique. Les projets open-source permettent Ã  nâimporte qui de les 
+utiliser, de les modifier et de les redistribuer librement. OpenCV peut 
+Ãªtre utilisÃ©e pour le traitement d'images en temps rÃ©el, la dÃ©tection 
+d'objets, la reconnaissance faciale, et bien d'autres applications. Dans 
+notre cas, nous l'avons utilisÃ© pour repÃ©rer des objets bien particuliers : 
+les feux de signalisation, les passages piÃ©tons et les obstacles. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Le Raspberry Pi est un nano-ordinateur monocarte, c'est-Ã -dire un 
+ordinateur rÃ©duit Ã  l'essentiel, tenant sur une seule carte Ã©lectronique de la 
+taille d'une carte de crÃ©dit. Il fonctionne avec un processeur ARM, comme 
+ceux des smartphones, et possÃ¨de des ports USB, HDMI et GPIO qui 
+permettent de le connecter Ã  divers pÃ©riphÃ©riques.
+
+Son principal intÃ©rÃªt est de rendre l'informatique accessible Ã  tous, Ã  un coÃ»t rÃ©duit, tout en 
+encourageant lâapprentissage de la programmation et des systÃ¨mes informatiques. En effet 
+son poids lÃ©ger fait de lui un nano-ordinateur facilement transportable, ce qui nous intÃ©resse 
+grandement dans notre projet, pour pouvoir crÃ©er un modÃ¨le de lunette compact et lÃ©ger, pour 
+une utilisation la plus pratique possible. 
+Questionnement : 
+A ce stade de notre rÃ©flexion, nous nous sommes posÃ©s de nombreuses questions : 
+- Est-ce que la dÃ©tection sera fiable ? 
+- Que voulons-nous repÃ©rer grÃ¢ce Ã  ces lunettes ? 
+- La camÃ©ra aura-t-elle une portÃ©e assez large ?  
+- Est-ce que la camÃ©ra sera assez petite et lÃ©gÃ¨re pour tenir sur des lunettes ? 
+- Quel type de signal allons-nous transmettre Ã  la personne (Ã  travers lâoreillette) ? 
+- Comment rÃ©guler le flux d'information qui arrivera Ã  l'oreillette ? 
+- La camÃ©ra arrivera-t-elle Ã  capter les objets assez rapidement ? 
+- Faut-il rajouter un voyant aux lunettes pour prÃ©venir qu'elles filment (pour lâÃ©thique) ? 
+- Sous quelles conditions les lunettes fonctionnent (luminositÃ©, contraste des couleurs...) ? 
+PremiÃ¨res rÃ©flexions 
+ 
+Le projet consiste Ã  interprÃ©ter lâenvironnement urbain en utilisant la camÃ©ra. Le flux vidÃ©o est 
+ensuite envoyÃ© au dispositif informatique autonome. Il faudra donc programmer la Raspberry 
+Pi 5 avec son accÃ©lÃ©rateur d'IA HAT pour interprÃ©ter les informations reÃ§ues en direct. 
+ 
+ 
+ 
+Lors de notre projet, nous nous sommes dâabord focalisÃ©s sur lâidentification des feux de 
+signalisation et des passages piÃ©tons, car ce sont deux Ã©lÃ©ments non indiquÃ©s sur des 
+applications comme âmapsâ, mais qui sont pourtant essentiels Ã  la sÃ©curitÃ© des personnes 
+malvoyantes ou aveugles lors de leurs dÃ©placements. 
+ 
+ 
+Bien que notre dispositif ne puisse pas empÃªcher tous les accidents, il 
+permettra de protÃ©ger au mieux la traversÃ©e des routes en milieu 
+urbain. Une fois que notre dispositif a identifiÃ© le passage protÃ©gÃ© et/ou 
+le feux de signalisation qui est bien vert pour les piÃ©tons, comment 
+prÃ©venir la personne ? 
+ 
+Nous avions pensÃ© dans un premier temps utiliser un signal sonore. Mais il y a de fortes 
+chances que la personne utilise dÃ©jÃ  des oreillettes pour recevoir les informations provenant 
+de lâapplication âMapsâ par exemple. Notre systÃ¨me ne doit donc pas interfÃ©rer avec des 
+Ã©couteurs. De plus, en ville, la pollution sonore et les bruits environnants peuvent atteindre 
+jusquâÃ  110 dB ! Il nous paraissait donc impossible de gÃ©nÃ©rer un systÃ¨me sonore pouvant 
+pallier tous ces problÃ¨mes.
+
+Nous avons alors dÃ©cidÃ© dâavertir lâutilisateur grÃ¢ce Ã  une vibration du boÃ®tier, la Raspberry pi 
+5 Ã©tant compatible avec des systÃ¨mes de buzzer. Il nous reste ensuite la question du message 
+en lui-mÃªme, comment avertir l'utilisateur ? Nous avons plusieurs idÃ©es en tÃªte quâil nous 
+faudra tester avant de choisir la plus efficace. Pour lâinstant la solution la plus simple nous 
+semble Ãªtre lâÃ©mission de deux vibrations distinctes : une plus rapide et puissante pour avertir 
+dâun danger imminent et une autre plus faible et longue pour signaler que le passager peut 
+traverser. 
+ 
+Installation des outils de dÃ©veloppement 
+Maintenant que le contexte est posÃ©, nous allons commencer Ã  exploiter le flux vidÃ©o de la 
+camÃ©ra. Nous nous sommes documentÃ©s et nous avons Ã©tÃ© orientÃ©s pour utiliser une 
+bibliothÃ¨que dâoutils spÃ©cialisÃ©e dans la vision : OpenCV. 
+ 
+AprÃ¨s une longue rÃ©flexion et quelques essais, nous avons optÃ© pour une installation plus 
+globale, câest-Ã -dire une installation de cette bibliothÃ¨que dans un environnement de travail 
+complet qui intÃ¨gre tous les outils de dÃ©veloppement dont nous aurons besoin : OpenCV + 
+Python + IDE pour python. Nous avons donc procÃ©dÃ© Ã  lâinstallation dâAnaconda. 
+ 
+Pour le moment, nous avons un ensemble opÃ©rationnel avec un environnement sous 
+Windows, mais Ã  terme, nous pensons travailler avec Linux. Comme nous avons choisi de 
+lâinformatique embarquÃ© avec une bibliothÃ¨que et des logiciels libres de droit, autant utiliser 
+Ã©galement un environnement aussi libre de droit comme Linux. 
+ 
+Sous Anaconda, nous obtenons lâinterface graphique suivante : 
+ 
+ 
+Depuis cet intÃ©grateur dâenvironnement nous avons accÃ¨s Ã  tous nos outils, et il suffit 
+dâutiliser lâIDE (Integrated Development Environment) Spyder. 
+Maintenant que nous avons choisi notre systÃ¨me 
+informatique et les diffÃ©rents outils que nous allons utiliser 
+pour effectuer le dÃ©veloppement, il ne reste plus que 
+l'essentiel, Ã  savoir, le dÃ©veloppement des diffÃ©rents 
+programmes permettant dâaider ces personnes.
+
+DÃ©tection des feux et des passages piÃ©tons 
+Au commencement de notre projet, nous nâavions pas les connaissances nÃ©cessaires au 
+dÃ©veloppement des programmes souhaitÃ©s sur OpenCV. Nous avons dÃ» apprendre Ã  utiliser 
+cette bibliothÃ¨que OpenCV, qui est trÃ¨s complexe et qui demande de la technicitÃ© quant Ã  sa 
+mise en Åuvre. Dans cette partie nous aborderons essentiellement la dÃ©tection des 
+couleurs. 
+ 
+1 - Affichage du flux vidÃ©o capturÃ© par la camÃ©ra dans une fenÃªtre : 
+ 
+ 
+ 
+ 
+ 
+ 
+2 - Quâest-ce quâune image ? 
+ 
+Une image est un ensemble de points Ã©lÃ©mentaire appelÃ© pixel. La dalle d'un Ã©cran peut 
+Ãªtre reprÃ©sentÃ©e sous forme matricielle. Dans lâexemple ci-dessous, nous avons un Ã©cran 
+de 60x35 : 
+Ce programme permet seulement 
+dâafficher le flux vidÃ©o de la camÃ©ra et de 
+lâafficher dans une fenÃªtre : 
+AprÃ¨s avoir mis en Åuvre la technique 
+permettant dâacquÃ©rir des images, voici 
+quelques exemples qui nous ont fait 
+comprendre comment dÃ©tecter une 
+couleur.
+
+(
+h
+t
+t
+(//nsimichelet91.github.io/snt/Theme1_Image_numerique/cours/) 
+ 
+ 
+ 
+ 
+De plus, chaque couleur est codÃ©e avec 
+une valeur de 0 Ã  255. Cela donne une 
+possibilitÃ© de 256x256x256 = 16 
+777 216 couleurs diffÃ©rentes pour 
+chaque pixel. Voici ci-dessous des 
+exemples de valeurs pour certaines 
+couleurs 
+ 
+ 
+(https://nsimichelet91.github.io/snt/Theme1_Image_numerique/cours/) 
+ 
+Le modÃ¨le RGB a Ã©tÃ© techniquement Ã©laborÃ© pour les diffÃ©rents Ã©crans. Cependant, il existe 
+dâautres modÃ¨les de reprÃ©sentation des couleurs dans lesquels la luminositÃ© ambiante 
+interfÃ¨re nettement moins la dÃ©tection de celle-ci. Câest notamment le cas pour le modÃ¨le 
+HSV. 
+Voici des exemples montrant la diffÃ©rentes entre ces deux modÃ¨les : 
+ 
+Pour Ãªtre affichÃ© sur un Ã©cran, chaque pixel doit possÃ©der 
+un certain nombre de caractÃ©ristiques. Les Ã©crans ont pour 
+la plupart besoin des paramÃ¨tres : R (Rouge), V (Vert) et B 
+(Bleu). Donc lorsque nous lisons une image avec un 
+traitement informatique, nous obtenons une image au format 
+RVB (BGR en anglais).
+
+Image codÃ©e en RGB : 	Image codÃ©e en HSV : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Comme vous pouvez le voir, le modÃ¨le HSV a pu mettre clairement en Ã©vidence les limites 
+du citron, en plus, elle a Ã©tÃ© capable d'Ã©liminer les effets d'Ã©clairage sur le citron lui-mÃªme. Il 
+en est de mÃªme avec lâimage du portrait ou des zones de couleurs apparaÃ®t. Mais pour cette 
+image ou la palette des couleurs est moins vaste, le rÃ©sultat obtenu doit Ãªtre un peu plus 
+interprÃ©tÃ©. 
+Une autre observation est qu'il y a une rougeur autour du citron, pour en comprendre la 
+raison, il faut savoir que pour le modÃ¨le HSV, il nây a que des couleurs, pas de teintes 
+blanche/gris/noir, ce qui signifie que si l'image a une partie qui est incolore (blanc, gris, noir), 
+alors sa reprÃ©sentation en HSV sera presque alÃ©atoire, parce que la saturation et la valeur 
+vont dÃ©truire la couleur rÃ©sultant de la couleur grisÃ¢tre que nous voyons. 
+ 
+Que signifie l'acronyme HSV ? 
+ 
+H (Hue) : reprÃ©sente les diffÃ©rentes couleurs disponibles et nous pouvons accÃ©der Ã  
+diffÃ©rentes couleurs en donnant des valeurs diffÃ©rentes pour la teinte sous forme d'angle.
+
+S (Saturation) : reprÃ©sente la quantitÃ© de couleur/pigment. Cela indique par exemple, que 
+pour une mÃªme couleur, l'objet est reprÃ©sentÃ© avec diffÃ©rente nuance en fonction de la 
+lumiÃ¨re ambiante. 
+V (Valeur) : reprÃ©sente la valeur de la brillance de la couleur. Cela indique par exemple, que 
+pour une mÃªme couleur, l'objet est reprÃ©sentÃ© avec diffÃ©rente intensitÃ© en fonction de la 
+lumiÃ¨re ambiante. 
+ 
+ 
+Câest donc le modÃ¨le HSV qui a Ã©tÃ© choisi pour la recherche dâune couleur sur une image. Le 
+jeu dâinstruction nÃ©cessaire est la suite : cv2.cvtColor (converti le modÃ¨le dâune couleur en un 
+autre modÃ¨le de couleur). Une mise Åuvre simple serait la suivante : 
+ 
+ 
+ 
+Nous allons maintenant voir comment cela a Ã©tÃ© utilisÃ© dans nos diffÃ©rents essais. 
+3 - DÃ©tection dâune seule couleur : ici le jaune 
+ 
+Nous avons commencÃ© par essayer dâadapter des applications nous permettant, par la suite, 
+de dÃ©tecter au mieux les couleurs qui nous intÃ©ressent. A savoir le rouge, lâorange et le vert. 
+Le programme ci-dessous permet dâidentifier dans le flux vidÃ©o la couleur jaune
+
+4 - Premier essai de dÃ©tection de trois couleurs : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Les rÃ©sultats sont encore Ã  affiner : 
+ 
+ 
+5 - Technique pour dÃ©tecter un objet 
+La segmentation d'image est un processus crucial en vision par ordinateur qui consiste Ã  
+diviser une image en plusieurs segments ou rÃ©gions. Cette technique aide Ã  simplifier la 
+reprÃ©sentation d'une image, facilitant ainsi son analyse. OpenCV propose diverses mÃ©thodes 
+pour la segmentation d'image. Nous allons juste prÃ©senter les grands principes efficaces 
+pour la segmentation d'image qu'utilise OpenCV, sans entrer dans les dÃ©tails 
+mathÃ©matiques.
+
+a) - Le seuillage est l'une des techniques les plus simples et les plus couramment utilisÃ©es 
+pour la segmentation d'image. Il convertit une image en niveaux de gris en une image binaire, 
+oÃ¹ les pixels sont classÃ©s comme avant-plan ou arriÃ¨re-plan en fonction d'une valeur seuil. 
+b) - La dÃ©tection de contours est une autre technique efficace pour la segmentation d'image. 
+Elle identifie les limites des objets dans une image, permettant une segmentation prÃ©cise. 
+ 
+ 
+c) - Un algorithme de segmentation avancÃ© comme GrabCut utilise des coupes de graphe 
+pour sÃ©parer l'avant-plan de l'arriÃ¨re-plan. Il nÃ©cessite un rectangle englobant autour de 
+l'objet d'intÃ©rÃªt. 
+ 
+La liste des algorithmes et des mÃ©thodes est assez longue. 
+ 
+ 
+ 
+6 - Premier essai pour la dÃ©tection dâobjet : un passage piÃ©ton 
+Le programme ci-aprÃ¨s permet de dÃ©tecter les formes caractÃ©ristiques des contours blancs 
+des passages piÃ©tons.
+
+Nous avons indiquÃ© ci-dessous deux exemples dâimages contenant un passage pour piÃ©ton : 
+ 
+Avant analyse de lâimage : 
+ 
+Image aprÃ¨s analyse : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Nous constatons quâen utilisant la bibliothÃ¨que OpenCV, il est possible d'obtenir un 
+ensemble de rÃ©sultats. Aussi bien au niveau de la reconnaissance des couleurs quâau niveau 
+de la dÃ©tection d'objets particuliers, comme lâont montrÃ© nos essais pour dÃ©tecter un passage 
+piÃ©ton. Mais nous ne pouvons ignorer le nombre consÃ©quent dâerreurs !
+
+Au niveau des couleurs, la dÃ©termination prÃ©cise des zones de couleurs nâest pas Ã©vidente. 
+Si la zone de couleur dÃ©tectÃ©e est trop restreinte, celle- ci ne sera pas dÃ©tectÃ©e. Et si nous 
+Ã©largissons cette zone alors trop de zones de cette couleur seront dÃ©tectÃ©es. Comme 
+prÃ©cÃ©demment la couleur ârougeâ, qui est perÃ§ue a tellement dâendroit de lâimage, que cela 
+devient inexploitable. Concernant la dÃ©tection des passages piÃ©ton, soit nous dÃ©tectons avec 
+ce programme une partie du passage piÃ©ton, soit pas du tout et le passage pour piÃ©ton est 
+perÃ§u comme le rond-point. 
+ 
+ 
+ 
+Nous avons alors cherchÃ© un peu dâaide extÃ©rieur, et nous avons 
+rÃ©ussi Ã  prendre contact avec Judy, une doctorante dans sa 
+deuxiÃ¨me annÃ©e Ã  l'universitÃ© de Lorraine. Judy a un diplÃ´me 
+d'informatique, et travaille durant sa thÃ¨se sur les thÃ¨mes de la 
+robotique, de l'informatique et de l'IA : des sujets qui ont un lien 
+direct avec notre projet. C'est notamment elle qui, aprÃ¨s notre 
+premier contact en visioconfÃ©rence, nous a orientÃ©s sur le 
+modÃ¨le Ultralytics YOLO. 
+ 
+Câest un modÃ¨le de dÃ©tection d'objets et de segmentation d'images en temps rÃ©el qui 
+s'appuie sur des avancÃ©es de pointe en matiÃ¨re d'apprentissage profond et de vision par 
+ordinateur. Et cela offre alors des performances inÃ©galÃ©es en termes de rapiditÃ© et de 
+prÃ©cision par rapport Ã  d'autres modÃ¨les comme la bibliothÃ¨que OpenCV. Nous nous 
+sommes alors lancÃ©s sur cette nouvelle piste avec passion. 
+ 
+Le modÃ¨le Ultralytics YOLO 
+ 
+1 - DÃ©tection dâobjet avec YOLO. 
+Maintenant nous allons prendre comme exemple une application YOLO qui dÃ©tecte les 
+joueurs et les ballons de football Ã  partir d'une image donnÃ©e. 
+ 
+https://www.datacamp.com/fr/blog/yolo-object-detection-explained 
+Lâalgorithme fonctionne selon les quatre approches suivantes : blocs rÃ©siduels / rÃ©gression par boÃ®te 
+englobante / intersection Over Unions ou IOU en abrÃ©gÃ© / suppression non maximale
+
+a) - Blocs rÃ©siduels : 
+Cette premiÃ¨re Ã©tape commence par la division de l'image originale (A) en NxN cellules de 
+grille de forme Ã©gale, oÃ¹ N, dans notre cas, est 4, comme le montre l'image de droite. Chaque 
+cellule de la grille est chargÃ©e de localiser et de prÃ©dire la classe de l'objet qu'elle recouvre, 
+ainsi que la valeur de probabilitÃ©/confiance. 
+ 
+ 
+b) - RÃ©gression par boÃ®te englobante : 
+L'Ã©tape suivante consiste Ã  dÃ©terminer les boÃ®tes de dÃ©limitation correspondant aux 
+rectangles, en mettant en Ã©vidence tous les objets de l'image. Il peut y avoir autant de 
+boÃ®tes englobantes qu'il y a d'objets dans une image donnÃ©e. 
+ 
+YOLO dÃ©termine les attributs de ces boÃ®tes de dÃ©limitation Ã  l'aide d'un seul module 
+de rÃ©gression dans le format suivant, oÃ¹ Y est la reprÃ©sentation vectorielle finale de 
+chaque boÃ®te de dÃ©limitation. 
+Y = [pc, bx, by, bh, bw, c1, c2] 
+pc correspond au score de probabilitÃ© de la grille contenant un objet.  
+bx, by sont les coordonnÃ©es x et y du centre de la boÃ®te englobante par rapport 
+Ã  la cellule de la grille enveloppante. 
+bhbw correspondent Ã  la hauteur et Ã  la largeur de la boÃ®te de 
+dÃ©limitation par rapport Ã  la maille enveloppante. c1 et c2 correspondent aux deux 
+classes Joueur et Balle. Nous pouvons avoir autant de classes que votre cas 
+d'utilisation l'exige. Regardons de plus prÃ¨s le joueur en bas Ã  droite :
+
+c) - Intersection Over Unions ou IOU en abrÃ©gÃ© : 
+La plupart du temps, un seul objet dans une image peut avoir plusieurs boÃ®tes Ã  grille 
+candidates Ã  la prÃ©diction, mÃªme si toutes ne sont pas pertinentes. L'objectif de l'IOU (une 
+valeur entre 0 et 1) est d'Ã©carter ces cases de la grille pour ne garder que celles qui sont 
+pertinentes. En voici la logique : 
+- L'utilisateur dÃ©finit son seuil de sÃ©lection des reconnaissances de dettes, qui peut 
+Ãªtre, par exemple, de 0,5. 
+- Ensuite, YOLO calcule l'IOU de chaque cellule de la grille, qui correspond Ã  la 
+zone d'intersection divisÃ©e par la zone d'union. 
+- Enfin, il ignore la prÃ©diction des cellules de la grille ayant un IOU â¤ seuil et prend en 
+compte celles ayant un IOU > seuil 
+ 
+Nous avons ci-dessous une illustration de l'application du processus de sÃ©lection de la grille 
+Ã  l'objet situÃ© en bas Ã  gauche. Nous pouvons observer que l'objet avait Ã  l'origine deux 
+candidats Ã  la grille, et que seule la "grille 2" a Ã©tÃ© sÃ©lectionnÃ©e Ã  la fin. 
+ 
+d) - suppression non maximale. 
+ 
+La fixation d'un seuil pour la reconnaissance n'est pas toujours suffisante, car un objet 
+peut comporter plusieurs cases avec une reconnaissance supÃ©rieure au seuil, et le 
+fait de laisser toutes ces cases peut inclure du bruit. C'est ici que nous pouvons utiliser 
+la suppression non maximale pour ne conserver que les boÃ®tes dont la probabilitÃ© de 
+dÃ©tection est la plus Ã©levÃ©e. 
+ 
+1 - Premier contact avec YOLO et les images 
+Nous avons rÃ©ussi Ã  implanter ce modÃ¨le sous Windows en passant par Anaconda. 
+Cependant cela pose encore un problÃ¨me sous Linux. 
+Donc, sous Windows, avec lâintÃ©grateur Anaconda, nous avons bien tous nos 
+diffÃ©rents outils qui sont exploitables. Le programme ci-dessous utilise le modÃ¨le 
+YOLO pour extraire des objets de lâimage :
+
+Nous constatons trÃ¨s vite la puissance de ce modÃ¨le. Il possÃ¨de une bibliothÃ¨que 
+d'objets de faÃ§on native, et celle-ci peut Ãªtre Ã©tendue. De plus, il indique un degrÃ© de 
+pertinence pour chaque objet dÃ©tectÃ©. Il nous reste Ã  faire apprendre Ã  ce modÃ¨le la 
+reconnaissance des objets que lâon dÃ©sire : les feux de signalisation et les passages 
+piÃ©tons. 
+ 
+Mais quand est-il pour le traitement dâun flux vidÃ©o ? 
+ 
+2 - DeuxiÃ¨me approche avec cette fois un flux vidÃ©o 
+Pour exploiter au mieux le flux vidÃ©o, nous allons utiliser aussi bien la bibliothÃ¨que 
+OpenCV que le modÃ¨le YOLO : 
+ 
+Image avant analyse : 
+ 
+Image aprÃ¨s analyse :
+
+Dans un premier temps, nous avons fait des essais pour rÃ©aliser le mÃªme type de 
+dÃ©tection que sur une simple image. Mais, ci-dessous, la capture dâÃ©cran Ã©tait sur le 
+flux vidÃ©o de la camÃ©ra de lâordinateur. Nous avons Ã©tÃ© bluffÃ©es par la puissance et la 
+rapiditÃ© de lâanalyse rÃ©alisÃ©e, mÃªme si ce nâÃ©tait que la dÃ©tection dâindividus (notre 
+Ã©quipe), et pas encore les objets voulus. 
+ 
+ 
+ 
+ 
+Puis nous avons commencÃ© les premiers tests avec la capture vidÃ©o dâun 
+environnement extÃ©rieur. Nous pouvons constater que le passage piÃ©ton nâest pas 
+encore identifiÃ©. En effet, les voitures sont bien repÃ©rÃ©es, mais le passage piÃ©ton, qui 
+nâest obstruÃ© par aucun obstacle, et qui est bien en vue, nâest absolument pas repÃ©rÃ©.
+
+Design et support du dispositif 
+Notre premiÃ¨re idÃ©e a Ã©tÃ© de fixer la camÃ©ra directement sur des lunettes. Cependant, 
+dâun point de vue logistique, nous avons dÃ» repenser le design de notre projet puisque 
+la taille de la camÃ©ra empÃªchait un montage efficace et durable. En effet, la plupart 
+des camÃ©ras USB ont un conducteur Ã©lectrique situÃ© Ã  l'arriÃ¨re de la camÃ©ra. Par 
+consÃ©quent, quâil sâagisse de la taille, de la forme ou du poids de la camÃ©ra, rien ne 
+permettait de lâassocier au design fin et Ã©lÃ©gant de lunettes. 
+ 
+ 
+Viens donc une des premiÃ¨res Ã©tapes de notre 
+questionnement : le support. Quel support 
+utiliser pour assurer la prise dâun maximum 
+d'informations tout en restant utile et peu 
+encombrant pour lâutilisateur ? 
+Notre attention sâest tout dâabord portÃ©e sur 
+lâidÃ©e dâun bracelet ou dâun systÃ¨me se basant 
+sur le Bluetooth. Cependant nous savions que 
+certaines personnes malvoyantes ou aveugles 
+utilisent dÃ©jÃ  des systÃ¨mes dâaides ou de 
+directions (tel quâun GPS) et nÃ©cessite donc 
+lâutilisation d'Ã©couteurs. 
+ 
+Ne pouvant donc pas perturber la communication filaire 
+ou Bluetooth nous avons trouvÃ© lâidÃ©e de lunettes avec 
+haut-parleurs intÃ©grÃ©s, qui seraient bien plus pratiques 
+quâun buzzer, car plus compacts et plus un moyen de 
+communication. En effet, les lunettes sont dÃ©jÃ  portÃ©es 
+par la plupart des personnes aveugles et malvoyantes, 
+en raison de lâintensitÃ© lumineuse, mais serviraient en 
+plus, dans le cadre de notre projet, Ã  communiquer les 
+informations, et cela sans rajouter de boitiers, de 
+ceintures ou de cÃ¢blages supplÃ©mentaires ! 
+ 
+Partenariat 
+Nous avions Ã  cÅur de faire un partenariat avec une association pour personnes 
+malvoyantes et aveugles. Le cÅur mÃªme de notre projet Ã©tant le bien-Ãªtre et l'intÃ©gration de 
+ces personnes atteintes de dÃ©ficience visuelle, nous voulions avoir l'avis et les conseils des 
+personnes concernÃ©es. DÃ¨s le dÃ©but de notre projet, nous avons donc contactÃ© plusieurs 
+fois l'association Voir Ensemble, localisÃ©e en Moselle, et nous avons pu avoir un partenariat 
+avec lâAuxiliaire des Aveugles de Moselle ! Nous assistons donc Ã  leurs rÃ©unions pour 
+entendre leurs avis et leurs conseils surtout du point de vue design et pratique, pour que 
+notre projet final puisse les aider aux mieux dans leur vie quotidienne.
+
+Evolution du projet. 
+ 
+Ce projet est actuellement en constante Ã©volution. Tant le niveau de technicitÃ© 
+requis est important pour le traitement du flux vidÃ©o. A SUIVRE! 
+ 
+Conclusion 
+Pour conclure, Ã  lâaide de ce travail dâÃ©quipe, nous pouvons dire quâaprÃ¨s avoir fait 
+face Ã  de nombreux dÃ©fis et avoir effectuÃ© plusieurs changements imprÃ©vus, mais 
+nÃ©cessaire, nous avons rÃ©ussi Ã  avoir les rÃ©sultats attendus. Ce projet nous a permis 
+dâen apprendre plus sur le travail dâÃ©quipe, la recherche, lâinformatique, lâorganisation 
+et la concrÃ©tisation d'idÃ©es ! Notre programme arrive Ã  repÃ©rer, avec une marge 
+dâerreur raisonnable, les passages piÃ©tons et les feux de signalisation, ce qui pourrait 
+donc assurer la sÃ©curitÃ© des personnes malvoyantes ou aveugles au sein des villes. 
+Nous avons encore bien sÃ»r des dÃ©tails Ã  amÃ©liorer, dâun point de vue concret par 
+rapport Ã  la taille de la camÃ©ra sur le bandeau, ou de la luminositÃ© de 
+lâenvironnementâ¦ Mais avec une identification fiable et lâavancÃ©e des outils 
+technologiques, nous aimerions la concrÃ©tisation de ce projet : un outil qui vient 
+complÃ©ter les systÃ¨mes dÃ©jÃ  existants, en offrant une sÃ©curitÃ© supplÃ©mentaire, qui 
+pourrait Ãªtre utilisÃ© durablement ! 
+Remerciements 
+ 
+Mr. Pierre, professeur du Club Robotique qui nous a aidÃ© dans toutes nos initiatives. 
+Mr. Nivoix, professeur de NSI de notre lycÃ©e qui nâa pas hÃ©sitÃ© Ã  nous guider  
+Judy AKL, doctorante de lâuniversitÃ© de Lorraine qui a pris de son temps pour nous guider 
+dans nos idÃ©es. 
+Sources 
+https://nsimichelet91.github.io/snt/Theme1_Image_numerique/cours/ 
+https://www.datacamp.com/fr/tutorial/installing-anaconda-windows 
+https://stacklima.com/configurer-opencv-avec-lenvironnement-anaconda/ 
+https://learn.microsoft.com/fr-fr/windows/ai/windows-ml/tutorials/ 
+https://www.anaconda.com/ 
+https://opencv.org/ 
+https://docs.ultralytics.com/fr 
+âTraitement d'images et de vidÃ©os avec OpenCV 4 en Pythonâ de Laurent 
+Berger Ãditions D-BookeR

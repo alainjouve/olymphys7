@@ -1,0 +1,953 @@
+1 
+ 
+      
+Olympiades nationales de Physique 2025-2026 
+ 
+ 
+PlaquÃ©s au sol par un avion en vol 
+Mesure du poids dâun avion en vol 
+ 
+ 
+Aristide ANDRES ; ThaÃ¯s CHAMPETIER ; Louis DUTOT 
+EncadrÃ©s par M.CROZATIER 
+ 
+CitÃ© Scolaire Internationale Europole de Grenoble
+
+2 
+ 
+Table des matiÃ¨res 
+I. Introduction ..................................................................................................................................... 3 
+Qui sommes-nous ? .......................................................................................................................... 3 
+IdÃ©e de dÃ©part ................................................................................................................................... 3 
+II. ExpÃ©riences prÃ©liminaires ............................................................................................................... 3 
+III. ModÃ¨le thÃ©orique du vol de lâavion .................................................................................................. 4 
+ La loi de Bernoulli  ............................................................................................................................ 4 
+ Loi de Newton  ................................................................................................................................. 5 
+IV. Nos hypothÃ¨ses............................................................................................................................... 5 
+HypothÃ¨se 1 : propagation de lâonde de surpression ......................................................................... 5 
+HypothÃ¨se 2 : propagation du courant dâair ....................................................................................... 6 
+V. Protocole et montage ...................................................................................................................... 6 
+Montage ............................................................................................................................................ 6 
+Fonctionnement des cellules de pesÃ©e et programmes informatiques ............................................... 6 
+Preuve du fonctionnement de nos balances ...................................................................................... 8 
+Choix de lâavion ................................................................................................................................. 8 
+Tentative de reproductibilitÃ©............................................................................................................... 9 
+Protocole ........................................................................................................................................... 9 
+VI. Mesures et analyse  ...................................................................................................................... 10 
+HypothÃ¨se du courant dâair .............................................................................................................. 10 
+ExpÃ©riences liÃ©es Ã  lâhypothÃ¨se de lâonde de surpression et mesures avec nos capteurs ............... 10 
+InterprÃ©tations des rÃ©sultats ............................................................................................................ 14 
+Vitesse de lâavion ............................................................................................................................ 15 
+VII. Incertitudes ............................................................................................................................... 15 
+Incertitude de type A ....................................................................................................................... 15 
+Incertitudes de poids et de temps liÃ©s Ã  nos capteurs...................................................................... 15 
+Incertitudes des plaques .................................................................................................................. 16 
+Incertitudes dues aux montages ...................................................................................................... 16 
+VIII. ModÃ©lisation de la pression au sol ............................................................................................ 16 
+ModÃ¨le de lâombre de pression au sol ............................................................................................. 16 
+ModÃ¨le gaussien ............................................................................................................................. 16 
+ModÃ¨le de lâonde sphÃ©rique/demi-sphÃ©rique ................................................................................... 17 
+IX. Conclusion .................................................................................................................................... 19 
+X. Sens critique ................................................................................................................................. 19 
+XI. Bibliographie ................................................................................................................................. 20 
+XII. Remerciements ......................................................................................................................... 20
+
+3 
+ 
+I. Introduction 
+Qui sommes-nous ? 
+Nous sommes trois lycÃ©ens (presque physiciens ?) en Terminale, nous connaissant depuis 2 ans, et avec 
+lâenvie depuis un petit moment de participer Ã  ces Olympiades expÃ©rimentales de physique.  
+IdÃ©e de dÃ©part 
+Tout a commencÃ© avec une publication Instagram de Fabrizio Bucella, qui demandait : 
+â Â« Si on pÃ¨se un bocal fermÃ© contenant une mouche qui vole, pÃ¨se-t-on aussi le poids de la 
+mouche ? Â» 
+â Â« Si le bocal est ouvert, que pÃ¨se-t-on ? Â» 
+Ã la sortie du lycÃ©e, nous en avons dÃ©battu et, aprÃ¨s discussion, nous en avons conclu que, lorsque le 
+bocal est fermÃ©, le poids de la mouche est mesurÃ© et, quâen ouvrant le bocal, rien ne devrait changer. 
+Mais pouvait-on facilement convaincre les personnes qui semblaient penser le contraire ? Et, plus 
+complexe, quâallait indiquer la balance si la mouche Ã©tait lÃ©gÃ¨rement au-dessus du bocal ? Plusieurs 
+semaines plus tard, nous avons regardÃ© une vidÃ©o (Â« I weighted an airplane... while it was flying! Â», de 
+AlphaPhoenix) dans laquelle il Ã©tait question de peser le poids dâun avion lorsque celui-ci Ã©tait en vol. Plus 
+ambitieux que la mouche... Le vidÃ©aste restait cependant assez flou sur les causes du dÃ©placement de la 
+force exercÃ©e par lâavion jusquâÃ  la balance et ne prÃ©cisait pas non plus comment se dÃ©plaÃ§ait cette force 
+en 3 dimensions. 
+Nous avons immÃ©diatement pensÃ© Ã  utiliser un drone, qui vole grÃ¢ce Ã  une propulsion dâair vers le bas. 
+Nous nous sommes donc dit que son poids devrait se retrouver sur une balance grÃ¢ce Ã  ce dÃ©placement 
+dâair, qui viendrait appuyer sur le plateau. Nous avons donc commencÃ© des expÃ©riences prÃ©liminaires, 
+avec dâabord un drone, puis avec un avion en papier. Les expÃ©riences avec lâavion nous ont semblÃ© plus 
+intÃ©ressantes et plus complexes. Nous avons donc basÃ© notre projet sur lâavion. 
+ 
+II. ExpÃ©riences prÃ©liminaires 
+Avertissement : Il est important de prÃ©ciser que tout au long de ce mÃ©moire, les mesures donnÃ©es par 
+nos balances sont exprimÃ©es en gramme. Les cellules de pesÃ©e de nos balances renvoient un courant 
+Ã©lectrique que lâon peut interprÃ©ter comme une pression ou une force, la rÃ©sistance du capteur variant en 
+fonction de la dÃ©formation causÃ©e par la force exercÃ©e sur le plateau. Dans le cas du vol de lâavion, cette 
+force rÃ©sulte du champ de pression au sol crÃ©Ã© par lâavion. Comme nous cherchons Ã  mesurer la masse 
+de lâavion, les forces exercÃ©es sur les plateaux seront interprÃ©tÃ©es comme un poids, converties et 
+exprimÃ©es en gramme, grÃ¢ce Ã  la formule í µí±= &#3627408474; Ã &#3627408468; . 
+Nous avons commencÃ© par faire des expÃ©riences avec notre balance de cuisine prÃ©cise Ã  1g prÃ¨s. Les 
+mesures avec le drone Ã©taient plutÃ´t concluantes, mais pour lâavion, nous nâobservions rien. Cependant, 
+nous ne nous sommes pas dÃ©couragÃ©s et avons dÃ©cidÃ© de tester avec une balance de meilleure prÃ©cision. 
+Pour cela, nous avons contactÃ© un chercheur en sciences expÃ©rimentales, CÃ©dric DâHam de lâUGA de 
+Grenoble. Nous avons pu accÃ©der au laboratoire de sciences et utiliser une balance prÃ©cise au centiÃ¨me 
+de gramme. Avec ce nouvel instrument, lorsque lâavion passait au-dessus, et suffisamment proche, nous 
+avons eu les premiÃ¨res mesures, qui montaient jusquâÃ  0.04g.
+
+4 
+ 
+Cela nous a interpelÃ©s, et nous nous sommes demandÃ© si nous pouvions peser lâintÃ©gralitÃ© du poids de 
+lâavion au sol. Nous avons donc centrÃ© notre projet sur les questions suivantes : 
+â Quel est le montage qui nous permet de mesurer au mieux le poids dâun avion en papier volant ? 
+â Quelle proportion du poids peut-on peser avec ce montage ? 
+â Quel est le meilleur avion pour nos expÃ©riences ? 
+â Quels sont les modÃ¨les thÃ©oriques qui permettent dâexpliquer la propagation du poids de lâavion 
+jusquâÃ  la balance ? 
+â Ces modÃ¨les permettent-ils dâexpliquer la rÃ©partition spatiale et temporelle de la pression mesurÃ©e 
+au sol ? 
+Pour commencer, nous nous sommes demandÃ© comment vole un avion. 
+III. ModÃ¨le thÃ©orique du vol de lâavion 
+Lors dâun vol thÃ©orique oÃ¹ lâavion garde une altitude et une vitesse constantes, la somme des forces 
+sâexerÃ§ant sur lâavion est nulle. En effet, son mouvement est rectiligne uniforme, donc dâaprÃ¨s la 1Ã¨re loi 
+de Newton, la portance de lâavion est Ã©gale au poids de lâavion. Afin de voler et donc de gÃ©nÃ©rer de la 
+portance, lâavion exerce une force de rÃ©action sur lâair. Câest donc cette force que nous essayons de 
+mesurer par la suite, et son origine que nous expliquons Ã  prÃ©sent. 
+Pour expliquer le vol dâun avion, on doit tout dâabord comprendre lâÃ©coulement de lâair autour de lâaile. Cet 
+Ã©coulement est thÃ©oriquement prÃ©dit par les Ã©quations de Navier et Stokes, dont les solutions donnent en 
+tout point la vitesse et la pression de lâair. Cette Ã©quation Ã©tant trÃ¨s compliquÃ©e, Kutta et Jukowski les ont 
+simplifiÃ©es Ã  lâaide de diffÃ©rentes approximations, sâavÃ©rant toutes fausses. Cependant, elles fonctionnent 
+suffisamment pour que lâon sâen serve encore maintenant. 
+En connaissant lâÃ©coulement de lâair en tout point, on peut expliquer le vol dâun avion de deux maniÃ¨res : 
+le principe de Bernoulli et celui de Newton. Les deux thÃ©ories sont souvent vues comme opposÃ©es, 
+cependant on peut dÃ©montrer quâelles sont Ã©quivalentes et que lâune fonctionne aussi bien que lâautre, 
+elles expliquent le mÃªme phÃ©nomÃ¨ne de diffÃ©rentes maniÃ¨res. 
+ La loi de Bernoulli  
+Principe de Bernoulli : dans un fluide s'Ã©coulant horizontalement, la pression du fluide aux points oÃ¹ sa 
+vitesse est Ã©levÃ©e est plus faible que la pression du fluide aux points oÃ¹ sa vitesse est plus faible. 
+En effet, la loi de Bernoulli, en deux points de lâÃ©coulement dâune mÃªme ligne de flux), sâÃ©crit :
+ 
+Les variables í µí±
+1, &#3627408483;
+1 et â
+1 reprÃ©sentent respectivement la pression, la 
+vitesse et l'altitude du fluide au point 1, tandis que les variables í µí±
+2, &#3627408483;
+2 
+et â
+2 font rÃ©fÃ©rence Ã  la pression, la vitesse et l'altitude du fluide au 
+point 2. Donc Ã  une altitude constante, lorsque la vitesse en un point 
+dâune ligne de flux augmente, la pression en ce point diminue.  
+DâaprÃ¨s les Ã©quations de Kutta-Jukoswki, lâair passant au dessus de 
+lâaile accÃ©lÃ¨re, cela crÃ©e donc une dÃ©pression dâaprÃ¨s le principe de 
+Bernoulli. Cette dÃ©pression Â« aspire Â» lâavion et vient compenser le 
+poids, ce qui maintient lâavion en lâair. Inversement, un ralentissement 
+de lâair sous lâaile est induit, cela cause une surpression qui Â« pousse Â» 
+lâaile vers le haut. 
+Figure 1 : champ de pression (source : 
+science Ã©tonnante)  
+bleu = basse pression                
+rouge = haute pression
+
+5 
+ 
+Une autre maniÃ¨re de comprendre lâorigine de cette variation de pression plus intuitivement est de 
+considÃ©rer que le flux dâair passant sous lâavion se heurte Ã  la face infÃ©rieure de lâaile Ã  cause de lâangle 
+dâattaque et se comprime donc en ce point, poussant lâavion vers le haut. De mÃªme, le dessus de lâaile se 
+trouve dans Â« lâombre Â» de lâaile par rapport au flux dâair, la pression y est donc plus basse. 
+Nous avons lu que la surpression sous lâavion serait responsable dâenviron 1/4 de la portance et donc la 
+dÃ©pression au dessus de lâavion serait responsable des 3/4 de la portance. 
+ Loi de Newton  
+Comme nous avons pu le montrer en filmant un avion traversant un nuage de fumÃ©e (Figure 2), il dÃ©vie 
+une masse dâair lors de son vol. Cette dÃ©viation sâexplique de deux maniÃ¨res. Les molÃ©cules arrivant en 
+dessous de lâavion se heurtent Ã  lâaile selon son angle dâattaque et sont donc 
+dÃ©viÃ©es vers le bas. De plus, une dÃ©pression Ã©tant crÃ©Ã©e au-dessus de lâaile, la 
+masse dâair situÃ©e au-dessus de lâavion se retrouve Â« aspirÃ©e Â» vers le bas. Les 
+lignes de flux entourant lâavion sont donc globalement dÃ©viÃ©es en direction du sol. 
+La premiÃ¨re loi de Newton nous dit que si un objet change de trajectoire, câest 
+quâune force sâest exercÃ©e dessus. Le seul objet Ã  proximitÃ© de lâair Ã©tant lâavion, 
+on en dÃ©duit que lâavion exerce une force sur lâair et le dÃ©vie. 
+Par ailleurs, la troisiÃ¨me loi de Newton nous dit que, si un objet exerce une force 
+sur un autre objet, alors celui-ci applique aussi une force sur le premier : le principe 
+Â« dâaction-rÃ©action Â». Donc lâair exerce une force sur lâavion, force contraire Ã  celle 
+exercÃ©e par lâavion sur lâair. Cette force se dÃ©compose en portance (la composante 
+perpendiculaire au vol de lâavion) et traÃ®nÃ©e (force opposÃ©e au vol de lâavion). 
+ 
+IV. Nos hypothÃ¨ses 
+Le modÃ¨le de Bernoulli montre quâune surpression se forme sous lâaile de lâavion. Cette surpression se 
+propage selon une onde se dÃ©plaÃ§ant Ã  la vitesse du son sous lâavion. Cela nous conduit donc Ã  faire 
+lâhypothÃ¨se que ce que nous mesurons au sol correspond Ã  cette onde sphÃ©rique. Le modÃ¨le de Newton 
+montre quâun flux dâair se propage vers le bas Ã  lâarriÃ¨re de lâavion. Cela nous conduit donc Ã  faire 
+lâhypothÃ¨se que ce que nous mesurons au sol correspond Ã  un flux dâair descendant, crÃ©ant un champ de 
+pression au sol. Il faut Ã©galement signaler que le vol de lâavion crÃ©e des 
+tourbillons autour de lâavion, qui sont responsables en partie de la 
+traÃ®nÃ©e, une force qui ralentit lâavion. Ces tourbillons sont des 
+mouvements turbulents circulaires de lâair, et sâils impactent le sol, ils 
+contribuent Ã  crÃ©er du Â« bruit Â» dans les mesures, rendant difficiles leur 
+interprÃ©tation. 
+Pour expliquer la transmission du poids de lâavion jusquâau sol, nous 
+avons donc pensÃ© et trouvÃ© deux hypothÃ¨ses, dÃ©duites de la thÃ©orie du 
+vol de lâavion (Bernoulli et Newton). 
+HypothÃ¨se 1 : propagation de lâonde de surpression 
+Comme nous avons dit prÃ©cÃ©demment, une surpression se crÃ©e sous lâavion. Câest Ã  dire que le nombre 
+de molÃ©cules dâair par unitÃ© de volume augmente. Celle-ci se propage alors sous forme dâonde de 
+surpression, et donc en tant quâonde (comparable Ã  une onde sonore), Ã  une vitesse de 340 m/s. 
+Contrairement au son, elle prend la forme dâune seule onde et non pas dâune suite pÃ©riodique dâondes, 
+les unes Ã  la suite des autres. Celle-ci arrive ensuite au sol et appuie donc sur la balance, 
+Figure 3 : DÃ©formation de l'air aprÃ¨s 
+passage d'un avion en papier  
+Figure 2 : tourbillons formÃ©s 
+aprÃ¨s le passage d'un 
+avion en papier
+
+6 
+ 
+proportionnellement Ã  sa surface, plus prÃ©cisÃ©ment Ã  sa surface projetÃ©e sur une sphÃ¨re. La force 
+pressante exercÃ©e est alors mesurÃ©e par la cellule de pesÃ©e. 
+Nous chercherons Ã  valider une autre hypothÃ¨se concernant la surpression : la surpression sous lâavion 
+et sa propagation serait responsable de seulement 1/4 de la portance. 
+HypothÃ¨se 2 : propagation du courant dâair 
+Lorsque lâavion passe au-dessus des balances, il dÃ©vie le flux dâair vers le bas crÃ©ant ainsi un courant 
+dâair dirigÃ© vers le sol. Cette hypothÃ¨se amÃ¨nerait Ã  la conclusion que le poids mesurÃ© est dÃ» aux 
+molÃ©cules dâair tapant sur la balance, aprÃ¨s avoir gagnÃ© une vitesse verticale. 
+V. Protocole et montage 
+Montage 
+Suite Ã  un Ã©change avec notre professeur, M.Crozatier, nous 
+avons pensÃ© Ã  dÃ©monter des balances et rÃ©cupÃ©rer les cellules 
+de pesÃ©e. Cela nous permettrait dâavoir des rÃ©sultats plus 
+prÃ©cis : dans une balance, la limite de prÃ©cision vient de la carte 
+Ã©lectronique et non de la rÃ©solution de la cellule de pesÃ©e. Nous 
+avons donc dÃ©montÃ© une balance usagÃ©e et fait un premier 
+montage.  
+Il nâÃ©tait pas optimal du tout : la cellule nâÃ©tait pas fixe et Ã©tait 
+difficilement reliable Ã  un Arduino. De plus, nous voulions faire plusieurs montages afin de pouvoir 
+observer et analyser comment se repartissait le poids de lâavion au sol. Cependant Thierry, lâaide de 
+laboratoire, nâÃ©tait pas trÃ¨s enjouÃ© Ã  lâidÃ©e de dÃ©monter 10 
+autres de ses balances. Nous avons donc commandÃ© 9 cellules 
+de pesÃ©e sur un site spÃ©cialisÃ© afin de pouvoir rÃ©aliser de 
+meilleurs montages. En attendant leur arrivÃ©e nous avons 
+rÃ©flÃ©chi Ã  comment arranger ces cellules afin de nous permettre 
+de peser le maximum du poids de lâavion, tout en ayant 
+plusieurs plaques amovibles afin que lâon puisse tester 
+plusieurs configurations. Nous avons donc, aprÃ¨s rÃ©flexion, 
+crÃ©Ã© le montage ci-contre. Lâensemble des piÃ¨ces au dessus de 
+la cellule fait aux alentours de 50g, soit la moitiÃ© de la masse 
+thÃ©orique maximale quâelle peut supporter. 
+Pour toutes les relier, nous avons dÃ» souder de longs fils â beaucoup (ce qui a nÃ©cessitÃ© deux jours de 
+travail...). Il y en avait besoin de 4 par cellule : deux pour lâalimentation, un pour les donnÃ©es rÃ©cupÃ©rÃ©es 
+et un pour communiquer le temps. Le montage final Ã©tait fastidieux car il y avait donc une grande quantitÃ© 
+de fils, qui sâentremÃªlaient, et laissaient place Ã  de possibles mauvais branchements sur la carte Arduino. 
+Il fallait de plus empÃªcher des courts circuits qui pourraient casser les cellules si jamais deux fils nus se 
+touchaient.  
+Fonctionnement des cellules de pesÃ©e et programmes informatiques 
+Tout dâabord, les capteurs se prÃ©sentent sous la forme de barres en mÃ©tal, dÃ©formables, en leur 
+centre. Deux fils conducteurs, des jauges de contrainte, sont situÃ©s en haut et en bas du capteur, et se 
+dÃ©forment en mÃªme temps que le capteur. Cette variation de longueur se traduit donc par une variation 
+de rÃ©sistance qui, Ã  lâaide dâun pont de Wheatstone (cf. Figure 2), provoque un courant Ã©lectrique faible 
+Figure 5 : Photo du montage final 
+Figure 4 : Photo du premier prototype
+
+7 
+ 
+qui peut Ãªtre mesurÃ© en un point du circuit. La cellule de pesÃ©e est 
+ensuite reliÃ©e Ã  un module HX711 dont la fonction est dâamplifier le 
+signal et de le convertir en signal numÃ©rique, qui peut ensuite Ãªtre 
+lu par la carte Arduino. 
+Lâacquisition des donnÃ©es se fait ensuite Ã  lâaide de 2 
+programmes, lâun, codÃ© en C qui est exÃ©cutÃ© sur la carte Arduino, 
+elle-mÃªme reliÃ©e aux cellules de pesÃ©e, permet dâenvoyer les 
+donnÃ©es mesurÃ©es par les balances Ã  lâordinateur. Lâautre, Ã©crit en 
+langage Python, permet de lire les donnÃ©es arrivant sur le port sÃ©rie 
+de lâordinateur puis de, dans un premier temps, tracer en temps rÃ©el 
+le poids mesurÃ© par une des Â« balances Â» et, dans un second 
+temps, gÃ©nÃ©rer un fichier texte contenant les valeurs mesurÃ©es par 
+chaque balance. Un autre programme, exÃ©cutable sur la carte 
+Arduino permet de calibrer les balances. Pour cela, nous plaÃ§ons un objet de poids connu et nous le 
+renseignons. Cela nous donne un Â« coefficient de proportionnalitÃ© Â» propre Ã  chaque capteur. La tare, 
+elle, est faite par la carte Arduino Ã  chaque fois que nous tÃ©lÃ©versons le programme puis Ã  nouveau au 
+dÃ©but de chaque acquisition par le programme Python. 
+Sur la carte Arduino, une boucle sâexÃ©cute donc 
+en continu : elle vÃ©rifie pour chaque balance si cette 
+derniÃ¨re est prÃªte Ã  envoyer des donnÃ©es (les balances 
+fonctionnant chacune Ã  une frÃ©quence thÃ©orique de 10 
+Hz) et le cas Ã©chÃ©ant, le programme envoie la date 
+dâacquisition suivie du numÃ©ro de la balance donc enfin 
+du poids lu par la balance. Sur le moniteur sÃ©rie de lâIDE 
+Arduino, nous pouvons donc lire les donnÃ©es (Figure 1). 
+ Le programme Python, exÃ©cutÃ© sur lâordinateur Ã  chaque fois quâune mesure est souhaitÃ©e, lit 
+ligne par ligne ce qui est envoyÃ© sur le port sÃ©rie. A 
+chaque nouvelle ligne envoyÃ©e sur le port sÃ©rie, on 
+ajoute un nouvel Ã©lÃ©ment Ã  une liste dont chaque 
+Ã©lÃ©ment contient des poids pour chaque balance ainsi 
+que le temps renvoyÃ© sur la ligne du port sÃ©rie. Ce 
+nouvel Ã©lÃ©ment est composÃ© Ã  chaque fois de la 
+nouvelle mesure (qui ne concerne quâune balance) et 
+toutes les autres valeurs de masse correspondant aux 
+autres balances sont simplement copiÃ©es du dernier 
+Ã©lÃ©ment de la liste. En mÃªme temps, une fonction 
+Matplotlib trace en direct un graphique du poids mesurÃ© 
+en fonction du temps pour une seule balance (cf. Figure 
+8)  
+ LâÃ©chelle de ce graphique ainsi que la durÃ©e de 
+lâacquisition peut Ãªtre modifiÃ©e Ã  sa guise. Enfin, un fichier texte est Ã©crit par le programme Python Ã  la fin 
+de chaque acquisition. Chaque ligne de ce document correspond Ã  un Ã©lÃ©ment de la liste stockant toutes 
+les valeurs de poids et toutes les dates. La premiÃ¨re colonne contient toutes les dates, les autres colonnes 
+correspondent chacune Ã  une balance. Nous pouvons donc ensuite tracer pour chaque balance, la masse 
+mesurÃ©e en fonction du temps grÃ¢ce au logiciel LatisPro. 
+Figure 2 : pont de wheatstone  
+Figure 1 : moniteur sÃ©rie de lâIDE Arduino 
+Figure 8 : rÃ©alisÃ© en temps rÃ©el par une fonction Matplotlib.
+
+8 
+ 
+Preuve du fonctionnement de nos balances 
+Pour vÃ©rifier que nos capteurs sont fiables et que nos expÃ©riences sont reproductibles nous avons conÃ§u 
+une expÃ©rience. Lâobjectif Ã©tait de montrer quâil y avait proportionnalitÃ© entre la masse mesurÃ©e par les 
+capteurs et la masse rÃ©elle de lâavion lancÃ©. 
+Nous avons donc lancÃ© quatre avions de masse 5.61g, 10.6g, 16,0g et 27,0g, et nous avons tracÃ© un 
+graphique reprÃ©sentant la masse mesurÃ©e par un capteur en fonction de la masse rÃ©elle de lâavion. 
+Ainsi, nous observons bien une proportionnalitÃ© entre la masse de lâavion, et la masse que lâon mesure 
+avec notre balance, pour un lancer toujours Ã©quivalent. Nous pouvons donc affirmer que les valeurs 
+mesurÃ©es par nos balances sont correctes. 
+Choix de lâavion 
+Comme expliquÃ© en dÃ©tail dans la partie prÃ©sentant le modÃ¨le thÃ©orique du vol de lâavion, pour pouvoir 
+considÃ©rer que le poids de notre avion est entiÃ¨rement transmis par lâair, nous avons cherchÃ© Ã  obtenir 
+lâavion perdant le moins dâaltitude possible lors de la phase de survol des balances.  
+Masse de lâavion 
+y = 0.046 x 
+Figure 9 : rÃ©capitulatif de lâÃ©lectronique du montage expÃ©rimental  
+Figure 3 : masse mesurÃ©e par une balance en fonction de la masse de l'avion
+
+9 
+ 
+Cependant lâavion doit aussi planer le plus doucement possible afin que les cellules de pesÃ©e aient le 
+temps de prendre le plus de mesures possible lors du survol de lâavion. La meilleure rÃ©solution temporelle 
+est dâen effet 8 Ã  10 mesures par seconde pour chaque capteur et la largeur des plaques est de 
+30cm. Avec un avion classique volant Ã  environ 5m/s (ce que nous avons pu mesurer Ã  lâaide dâune vidÃ©o 
+et en rÃ©alisant un pointage vidÃ©o sur LatisPro), lâavion reste donc au-dessus dâune balance pendant 
+environ 0,06s, ce qui est bien infÃ©rieur Ã  la durÃ©e moyenne entre 2 acquisitions, dâenviron 0,12s. Un avion 
+volant plus lentement est donc souhaitable. 
+Pour cela nous avons testÃ© diffÃ©rents avions : 
+â Nous avons testÃ© diffÃ©rents modÃ¨les dâavion en papier, et aprÃ¨s plusieurs lancers, nous avons 
+gardÃ© celui qui, a vu dâÅil, planait le mieux ; 
+â Nous avons fait la comparaison de diffÃ©rents types de papier, entre du papier simple (90 g/m
+2
+) et 
+du papier Â« Canson Â» (225g/m
+2
+). AprÃ¨s quelques mesures, nous avons remarquÃ© que la masse 
+mesurÃ©e avec un avion en papier simple Ã©tait trop proche de la sensibilitÃ© des cellules (0,1g mesurÃ© 
+pour une sensibilitÃ© de 0,02g), et la proportion de poids retrouvÃ©e par rapport au poids de lâavion 
+Ã©tait plus importante avec celui en papier Canson. Câest donc ce 
+type de feuille que lâon a gardÃ©. 
+Nous avons donc optÃ© pour lâavion de la Figure 10. 
+Il plane lentement Ã  une vitesse moyenne sur 3m de 4 m/s dâaprÃ¨s un 
+pointage vidÃ©o. 
+Tentative de reproductibilitÃ© 
+Afin de pouvoir toujours effectuer le mÃªme lancer et minimiser le vent lors 
+du lancer de lâavion (pour ne pas fausser nos valeurs), nous avons 
+fabriquÃ© un lance-avion (cf. Figure 11) . 
+Il y a diffÃ©rents clous et Ã©lastiques, ce qui permet de lancer lâavion avec diffÃ©rentes forces et donc des 
+vitesses initiales diffÃ©rentes, et donc de sâadapter aux diffÃ©rents avions (ils nÃ©cessitent une vitesse initiale 
+diffÃ©rente pour planer en ligne droite horizontalement). 
+Protocole 
+En premier lieu il faut calibrer les cellules de pesÃ©e. Pour 
+cela nous avons pesÃ© au prÃ©alable un objet avec une 
+prÃ©cision au centiÃ¨me de gramme, que lâon met ensuite 
+sur la cellule de pesÃ©e, puis on entre le poids dans le 
+programme Arduino. Cela nous donne un coefficient de 
+proportionnalitÃ© que nous pouvons ensuite conserver 
+pour la totalitÃ© des expÃ©riences. Nous avons vÃ©rifiÃ© que les cellules de pesÃ©e sont restÃ©es calibrÃ©es durant 
+la totalitÃ© de nos expÃ©riences. 
+Pour chaque mesure, nous avons Ã©tabli un protocole reproductible : lâun filme, un autre lance lâavion et le 
+troisiÃ¨me lance le programme puis tape lÃ©gÃ¨rement une jauge de pression. Cela permet de synchroniser 
+la vidÃ©o avec les mesures. Et en comparant la vidÃ©o et les mesures, nous pouvons savoir Ã  quel moment 
+lâavion passe au dessus des balances, et donc si nos mesures sont dues au passage de lâavion ou Ã  un 
+courant dâair involontaire. 
+Nous avons ensuite reproduit Ã  de nombreuses reprises cette expÃ©rience, en changeant diffÃ©rents 
+facteurs, dont essentiellement la disposition des balances. 
+Figure 11 : Lance avion  
+Figure 10 : Avion choisi, nommÃ© 
+Cracoucass
+
+10 
+ 
+Par ailleurs, tout au long de notre projet, nous avons supposÃ© que lâavion vole horizontalement et Ã  vitesse 
+constante sur la distance occupÃ©e par nos capteurs (environ 2m). Cela nous permet donc de supposer 
+que la traÃ®nÃ©e de lâavion est nulle et donc que la portance est lâopposÃ© du poids de lâavion. 
+VI. Mesures et analyse  
+HypothÃ¨se du courant dâair 
+Pour tester la validitÃ© de cette hypothÃ¨se, nous avons filmÃ© le passage de lâavion dans un nuage de fumÃ©e 
+pour visualiser les mouvements de lâair engendrÃ©s par le vol de lâavion. Les films mettent en Ã©vidence la 
+projection dâair vers le bas et la prÃ©sence de tourbillons latÃ©raux. Ceux-ci peuvent sâexpliquer par le fait 
+que lorsque lâavion vole, la diffÃ©rence de pression entre le dessous et le dessus de lâaile provoque une 
+circulation de lâair autour de lâaile, qui initie ces tourbillons. Ces tourbillons sont eux aussi accÃ©lÃ©rÃ©s vers 
+le bas (explication du vol de lâavion par Newton) et donc se 
+propagent jusquâau sol. 
+Pour vÃ©rifier si nos rÃ©sultats expÃ©rimentaux peuvent sâexpliquer par 
+ces tourbillons, nous devons estimer la vitesse de ces 
+turbulences Ã  lâaide de nos films. 
+En filmant perpendiculairement au vol de lâavion, on constate que  
+les tourbillons sont parfois parfaitement formÃ©s (cf. Figure 12), avec 
+une largeur dâenviron 46cm. Pour certains lancers, les tourbillons 
+sont parfois plus petits et plus nombreux. GrÃ¢ce Ã  un pointage 
+vidÃ©o nous avons calculÃ© que la colonne dâair descend Ã  une 
+vitesse verticale de 0,18m/s. 
+En filmant parallÃ¨lement au passage de lâavion nous avons pu 
+observer que de lâair Ã©tait aussi projetÃ© dans la direction du vol de 
+lâavion (cf. Figure 13). Par principe dâaction-rÃ©action, ceci cause 
+une force de trainÃ©e.  
+Cependant, en supposant que lâavion vole Ã  vitesse constante horizontalement, nous avons Ã©tÃ© conduits 
+Ã  nÃ©gliger les forces de traÃ®nÃ©e. Nos capteurs mesurent 
+seulement la composante verticale du mouvement de lâair 
+et des tourbillons. 
+ 
+ExpÃ©riences liÃ©es Ã  lâhypothÃ¨se de lâonde de 
+surpression et mesures avec nos capteurs 
+Nous avons expÃ©rimentÃ© plusieurs dispositifs. 
+ExpÃ©riences avec 7 
+cellules de pesÃ©e 
+alignÃ©es 
+perpendiculairement au vol de lâavion (ligne) 
+Nous avons commencÃ© par une premiÃ¨re expÃ©rience trÃ¨s simple afin 
+dâavoir une premiÃ¨re approximation de la masse mesurable par nos 
+capteurs.  
+Figure 4 : capteurs organisÃ©s en 
+ligne  
+Figure 12 : des tourbillons perpendiculaires 
+au vol de l'avion (symbolisÃ© par lâellipse 
+bleu)  
+Figure 13 : tourbillons parallÃ¨les au vol de l'avion 
+(symbolisÃ© par la flÃ¨che bleue)
+
+11 
+ 
+Nous avons lancÃ© lâavion 
+perpendiculairement Ã  la ligne des 
+cellules de pesÃ©e (cf. Figure 4) puis 
+tracÃ© sur LatisPro les graphiques 
+reprÃ©sentants la force mesurÃ©e par 
+les balances  (convertie en masse) en 
+fonction du temps (Figure 15). 
+On peut voir un pic important sur la 
+balance sous lâavion (capteur C3 en 
+vert sur la figure). Ce pic se dÃ©taille 
+aussi en 2 pics distincts, ce que nous 
+expliquerons plus tard. La masse 
+moyenne mesurÃ©es par cette balance 
+est de 1.17g et la masse maximale est 
+de 2.5g lorsque lâavion passe Ã  20cm au dessus de la balance. 
+On peut Ã©galement voir quâil y a des pics nÃ©gatifs sur les balances adjacentes, dâen moyenne Ã  0.50g. 
+Autres expÃ©riences 
+Nous avons aussi voulu tester dâautres configurations des capteurs pour tenter de comprendre la 
+rÃ©partition et la transmission du poids de lâavion dans la couche dâair. Nous prÃ©sentons les rÃ©sultats de 
+ces configurations dans le tableau ci-dessous. Ces rÃ©sultats nâÃ©tant, Ã  lâexception de ceux de la 
+configuration prÃ©cÃ©dente, pas suffisamment intÃ©ressants pour notre projet, nous avons rÃ©servÃ© leur 
+analyse Ã  lâannexe de ce mÃ©moire. 
+Nous avons positionnÃ© les capteurs de diffÃ©rentes maniÃ¨res, intitulÃ©es : en ââligneââ comme prÃ©sentÃ© ci-
+dessus, en ââcolonneââ (cf. Figure 16), en ââtableau de 2x3ââ (cf. Figure 6) et en ââ4 cellulesââ (cf. Figure 6). 
+De plus nous avons parfois ajoutÃ© des rebords autour des capteurs pour (Figure 19) empÃªcher lâair de 
+passer sous le plateau et ainsi de le soulever 
+(cf. Figure 7).  
+Nous avons essayÃ©, pour la mÃªme raison, de 
+mettre des feuilles pour faire la jonction entre 
+les balances. 
+Voici nos rÃ©sultats prÃ©sentÃ©s sous forme de 
+tableau. Des graphiques typiques de nos 
+rÃ©sultats pour chaque expÃ©rience sont 
+prÃ©sentÃ©s en annexe. 
+ colonne 	ligne 
+Figure 6 : cellules organisÃ©es en colonne   	Figure 6 : 4 cellules avec une plaque  Figure 6 : cellules organisÃ©es en 
+tableau 2x3  
+Figure 7 : ce que les bords 
+permettent dâÃ©viter 
+Figure 15 : masse mesurÃ©e par les capteurs en fonction du temps. 
+ReprÃ©sentatif des rÃ©sultats avec les capteurs en ligne   
+Figure 19 : exemple d'un rebord en 
+carton
+
+12 
+ 
+rien bord feuille feuille & 
+bord 
+ rien bord feuille feuille 
+et bord 
+masse max* 
+(g) 
+4.7 2,5  4,3 4.5 masse max* 1,8 1,2 0,74   1.5 
+masse 
+moyenne sur 
+plusieurs 
+lancers* (g) 
+2.8 
+ 
+2,4 2.8 4.0 
+ 
+masse 
+moyenne sur 
+plusieurs 
+lancers* (g) 
+1,17g  1.14 0,72 1.0 
+largeur 
+temporelle 
+(s)* 
+1,4 1,5 1.4 0,89 largeur 
+temporelle 
+(s)* 
+0,96 1,7 1.3 
+ 
+ 
+0.9 
+prÃ©sence dâun 
+pic vers le 
+bas** 
+NON  NON NON NON prÃ©sence dâun 
+pic vers le 
+bas** 
+OUI  
+(-0.50) 
+OUI 
+(-1,3) 
+OUI  
+(-0,37) 
+ 
+OUI  
+(-0.4) 
+**sur les balances adjacentes              *sur une cellule 
+EN BLEU : mesure trop peu rÃ©pÃ©tÃ©e pour Ãªtre prise en compte 
+ 	2x3 	4 cellules 
+plaque 	feuille 	plaque 
+Masse max (g) *  	2,3 	3,8 	2,5 
+Masse moyenne sur plusieurs 
+lancÃ©s (g) * 
+2.1 	X 	2.25 
+prÃ©sence dâun pic vers le bas OUI 
+(-0.7) 
+NON 	OUI 
+(-1.8) 
+*somme sur toutes les balances 
+AprÃ¨s avoir analysÃ© ces premiers rÃ©sultats et afin de valider nos hypothÃ¨ses nous avons rÃ©alisÃ© deux 
+autres expÃ©riences. 
+ExpÃ©rience avec les cellules de pesÃ©e penchÃ©es 
+Pour comprendre comment se repartit le poids de lâavion dans la couche dâair et comment celui-ci se 
+propage, nous avons pensÃ© Ã  mettre une cellule de pesÃ©e 
+en hauteur pour voir si le poids est le mÃªme que celui de la 
+cellule au sol (modÃ¨le de lâonde de surpression) ou 
+beaucoup plus faible (modÃ¨le du courant dâair) ou bien nul.  
+Pour cela nous avons rÃ©alisÃ© un support inclinÃ© (cf. Figure 
+21). 
+Figure 21 : construction permettant une certaine 
+reproductibilitÃ© et de faire tenir un capteur inclinÃ©
+
+13 
+ 
+Nous avons fait une premiÃ¨re sÃ©rie de 
+mesures dont les rÃ©sultats sont difficilement 
+exploitables. En effet nous avons mesurÃ© des 
+masses Ã©gales pour les deux balances. 
+Celles-ci Ã©tant de 0,2g, se rapprochant de la 
+zone dâincertitudes de nos capteurs.  
+Lors dâune deuxiÃ¨me sÃ©rie de mesures nous 
+avons eu des rÃ©sultats qui ne nous 
+permettent ni de valider ni dâinvalider aucune 
+des 2 hypothÃ¨ses, et que nous ne parvenons 
+pas Ã  expliquer. Nous avions soit une masse 
+mesurÃ©e nulle, ce qui peut sâexpliquer si 
+lâavion passe Ã  cotÃ© ou trop haut, soit des 
+graphiques avec des pics et des creux pour 
+les deux capteurs (cf. Figure 22 : masse mesurÃ©e par les capteurs en fonction du temps. ReprÃ©sentatif 
+des rÃ©sultats des expÃ©riences avec un capteur penchÃ©  Figure 22), difficile Ã  expliquer. 
+Nous avons donc dÃ©cidÃ© de ne pas exploiter les rÃ©sultats de cette expÃ©rience. 
+ 
+ExpÃ©rience avec une cellule de pesÃ©e renversÃ©e 
+Nous avons rÃ©alisÃ© que si lâonde de surpression se propageait, une onde de dÃ©pression devrait Ã©galement 
+elle-aussi se propager. Pour tester cette thÃ©orie, nous avons dÃ©cidÃ© de renverser un capteur afin de voir 
+sâil mesure, lui aussi, une force.  
+Nous avons crÃ©Ã© ce modÃ¨le (cf. Figure 23). 
+Nous avons eu de bons rÃ©sultats (cf. Figure 21). La cellule du bas 
+mesure une masse de 0.55g, ce qui est peu mais sâexplique car 
+lâavion est passÃ© Ã  30 cm du plateau (contre 20 cm pour les autres 
+expÃ©riences). Celle renversÃ©e mesure une masse nÃ©gative de -
+1.8g. Câest donc environ trois fois plus important (surtout que 
+lâavion est passÃ© Ã  20 cm du capteurs renversÃ© et Ã  30 cm de celle 
+du bas). Cela tendrait Ã  valider lâhypothÃ¨se que la surpression sous 
+lâavion est responsable de 1/4 de la 
+portance et la dÃ©pression au dessus de 
+lâavion des 3/4. 
+ 
+ 
+Figure 22 : masse mesurÃ©e par les capteurs en fonction du temps. 
+ReprÃ©sentatif des rÃ©sultats des expÃ©riences avec un capteur penchÃ©   
+C1 
+Courbe  
+mauve 
+C2 
+Courbe 
+verte 
+Figure 23 : montage qui permet de 
+renverser un capteur  
+Figure 21 : masse renvoyÃ©e par nos capteurs en fonction du temps. 
+RÃ©sultat reprÃ©sentatif des expÃ©riences avec le capteurs renversÃ©
+
+14 
+ 
+ 
+InterprÃ©tations des rÃ©sultats 
+Voici donc lâanalyse de nos rÃ©sultats. 
+Double pics 
+Nous allons proposÃ© une explication Ã  la prÃ©sence de double pics dans nos rÃ©sultats. Le premier serait 
+causÃ© par lâonde de suppression, qui donc se dÃ©placerait Ã  340m/s. Sur 20 cm de distance, on peut 
+considÃ©rer que câest instantanÃ© : dÃ¨s que lâavion passe au-dessus du plateau nous mesurons une pression 
+positive. Nous pouvons affirmer cette simultanÃ©itÃ© car nous avons synchronisÃ© une vidÃ©o de lâavion et la 
+mesure de la force reÃ§u par nos capteurs au sol. Pour synchroniser la vidÃ©o du vol de lâavion et les mesures 
+renvoyÃ©es par les capteurs, nous avons appuyÃ© sur lâun des capteurs, acte visible sur la vidÃ©o et sur les 
+donnÃ©es renvoyÃ©es. Nous avions ainsi le Ît correspondant au dÃ©calage temporel entre le dÃ©but de 
+acquisitions des capteurs et le dÃ©but de la vidÃ©o.  
+Le deuxiÃ¨me pic pourrait Ãªtre causÃ© par le courant dâair descendant, qui heurte un peu plus tard les 
+balances. Comme le courant dâair va Ã  une vitesse de 0,18 m/s il met 1,1s Ã  parcourir 20cm. On peut voir 
+que lors de nos acquisitions le í µí»¥&#3627408481; expÃ©rimental est de 0.8s en moyenne entre le dÃ©but du premier pic 
+(considÃ©rÃ© comme dÃ©but du passage de lâavion sur nos plateau) et le dÃ©but du deuxiÃ¨me pic. On peut 
+donc supposer que câest bien le flux dâair descendant qui est responsable de ce deuxiÃ¨me pic. 
+Pics nÃ©gatifs sur les balances adjacentes 
+Nous proposons ici une explication Ã  la prÃ©sence de pic nÃ©gatif sur les balances adjacentes Ã  la balance 
+centrale. Une hypothÃ¨se est que ce soit dÃ» aux tourbillons. Ceux-ci tournent du bas de lâavion vers le haut 
+de lâavion (de la surpression Ã  la dÃ©pression). En arrivant au sol ils tournent toujours dans le mÃªme sens. 
+Nous avons mesurÃ© grÃ¢ce Ã  des captations vidÃ©os que lâÃ©cart entre les 2 axes de rotation de ces 
+tourbillons est de 23cm, donc environ de mÃªme longueur que la largeur des balances. Les centres de ces 
+tourbillons sont donc alignÃ©s avec les jointures entre les 
+balances. Lorsque quâils arrivent au niveau des plateaux, ils 
+appuient donc sur le plateau central, directement sous 
+lâavion, et au contraire aspire les plateaux adjacents. Les 
+tourbillons faisant 46cm de largeur (pointage vidÃ©o) ils 
+peuvent impacter les cellules de pesÃ©e avoisinantes et donc 
+les Â« aspirer Â». En tirant vers le haut les plateaux, les 
+tourbillons exercent donc une force soulevant les plateaux. 
+Celle-ci est retranscrite en masse nÃ©gative par notre programme. 
+Une explication complÃ©mentaire serait quâen Ã©tant bloquÃ©s par les plateaux, les tourbillons 
+Â« sâÃ©taleraient Â». Lâair qui prÃ©cÃ©demment tournait est maintenant poussÃ© sur les cotÃ©. Lâair situÃ© au dessus 
+des balances adjacentes Ã  la balance centrale accÃ©lÃ¨re donc, ce qui selon la loi de Bernoulli crÃ©e une 
+dÃ©pression sur le dessus du plateau. Pour compenser cet Ã©cart de pression entre le dessous et le dessus 
+du plateau, celui-ci est attirÃ© vers le haut. Cette force est retranscrite en masse nÃ©gative. 
+Ces deux explications semblent Ãªtre validÃ©es car les mesures de dÃ©pression sur les balances adjacentes 
+viennent approximativement en mÃªme temps que le deuxiÃ¨me pic sur la balance du milieu. 
+Une autre hypothÃ¨se est quâun courant dâair provoquÃ© par lâavion passe sous les plateaux et donc les 
+soulÃ¨ve impliquant ainsi une mesure de pression nÃ©gative. Cependant cette hypothÃ¨se semble Ãªtre 
+rÃ©futÃ©e car la prÃ©sence de bords et de feuilles entre les plaques ne modifient pas nos rÃ©sultats (cf. 
+Annexes). 
+Figure 9 : action des tourbillons sur les balances
+
+15 
+ 
+Cellule renversÃ©e 
+Les rÃ©sultats du montage de la cellule renversÃ©e nous permettent de supposer que la dÃ©pression au-
+dessus des ailes de lâavion se propage de la mÃªme maniÃ¨re que la surpression sous lâavion. 
+De plus nous pouvons observer que la dÃ©pression mesurÃ©e sur la cellule renversÃ©e est trois fois plus 
+importante que la surpression mesurÃ©e sur la cellule au sol. Cela permet donc de valider 
+expÃ©rimentalement notre hypothÃ¨se et de considÃ©rer que la surpression est bien responsable de 
+seulement 1/4 de la portance. 
+Vitesse de lâavion 
+La vitesse de lâavion a aussi un impact sur les rÃ©sultats obtenus. 
+En effet, la frÃ©quence dâacquisition de nos cellules, le temps entre 
+deux valeurs, est de 95 ms en moyenne dâaprÃ¨s une observation 
+sur de nombreux tableaux de valeur rÃ©cupÃ©rÃ©s. Par ailleurs, nous 
+avons rÃ©alisÃ© un pointage vidÃ©o de plusieurs lancers de notre 
+avion avec le lance-avion (cf. Figure 26 : pointage vidÃ©o afin de 
+dÃ©terminer la vitesse de l'avion ), afin de calculer sa vitesse. Ainsi, 
+nous avons trouvÃ© une vitesse moyenne de 3,65 m/s, avec une 
+Ã©cart-type de 0,25 m/s. La longueur des plateaux de nos balances 
+Ã©tant de 30 cm, lâavion passe 82 ms au-dessus dâun plateau, soit une durÃ©e infÃ©rieure au temps 
+dâacquisition. Ainsi, notre avion peut passer au-dessus dâune balance sans que celle-ci nâacquiÃ¨re de 
+mesure, pouvant expliquer certaines incohÃ©rences dans nos rÃ©sultats. 
+VII. Incertitudes 
+Incertitude de type A  
+Nous rÃ©alisons une incertitude de type A, ici avec les mesures rÃ©alisÃ©es avec les balances disposÃ©es en 
+ligne, sans aucun autre paramÃ¨tre : 
+lancer 1 lancer 2 lancer 3 lancer 4 lancer 5 lancer 6 lancer 7  lancer 8 lancer 9 
+1,027g 1,034g 0,72g 1,00 1,8g 1,03g 1,48g 1,12g 1,29g 
+ 
+nombre de 
+valeur N 
+moyenne &#3627408474;Ì Ã©cart type í µí¼ 
+9 1,17 0,32 
+ 
+&#3627408482;(&#3627408474;)= 
+í µí¼
+âí µí±
+= 0,11&#3627408468;  donc 
+&#3627408482;(&#3627408474;)
+&#3627408474;Ì
+ = 0,09 = 9%  
+Nous avons donc un Ã©cart Ã  la moyenne de 9%, ce qui reste relativement faible compte-tenu des 
+nombreuses incertitudes qui suivent. 
+Ãtant donnÃ© que nos lancers sont tous semblables, notamment grÃ¢ce au lanceur dâavion, nous avons 
+extrapolÃ© cette incertitude Ã  tous nos lancers. 
+Incertitudes de poids et de temps liÃ©s Ã  nos capteurs 
+La cellule de pesÃ©e est prÃ©cise Ã  2x10
+-2
+g. 
+Figure 26 : pointage vidÃ©o afin de 
+dÃ©terminer la vitesse de l'avion
+
+16 
+ 
+Comme dÃ©taillÃ© prÃ©cÃ©demment, les capteurs ont une frÃ©quence dâacquisition trop faible par rapport Ã  la 
+vitesse Ã  laquelle lâavion survole nos balances.  
+Incertitudes des plaques 
+Du fait dâintempÃ©ries durant leur transport (de la grÃªle notamment), certaines plaques sont un peu 
+ondulÃ©es, cela a pu modifier nos mesures. 
+Incertitudes dues aux montages 
+Lorsque nous avons voulu modifier les paramÃ¨tres de chaque acquisition, la disposition des plaques des 
+balances les unes par rapport aux autres, des feuilles recouvrant les trous et des rebords a pu ne pas Ãªtre 
+rigoureuse. Les feuilles ont aussi par exemple pu se dÃ©former, faussant les mesures. 
+VIII. ModÃ©lisation de la pression au sol 
+Afin de vÃ©rifier nos 2 hypothÃ¨ses de transmission du poids de lâavion nous avons Ã©tabli diffÃ©rentes 
+modÃ©lisations de la rÃ©partition des forces au sol. Dans la partie suivante, nous considÃ©rerons que tout le 
+poids de lâavion reste Ã  transmettre au sol, afin de valider ou invalider chaque modÃ¨le. 
+ModÃ¨le de lâombre de pression au sol 
+Dans un premier temps nous avions fait lâhypothÃ¨se trÃ¨s simple dâune zone en surpression se propageant 
+verticalement sous lâavion : tout le poids se propagerait verticalement jusquâau sol, sur un cylindre dont la 
+base serait Ã©gale Ã  la forme de lâavion, telle une ombre. Ce modÃ¨le est peu rÃ©aliste mais câest le plus 
+simple et on peut le tester rapidement.  
+La base de ce cylindre aurait donc une surface Ã©gale Ã  celle de lâavion, qui vaut 12Ã18+
+18Ã10
+2
+=306 
+cm
+2
+. En comparaison, les plaques de nos balances ont une surface de 900 cm
+2
+, donc elles devraient 
+mesurer tout le poids de lâavion. Or lorsque lâavion passe exactement au-dessus dâune plaque, le poids le 
+plus important que lâon ait pu mesurer est dâenviron 1,8g. LâÃ©cart relatif entre le poids de lâavion et la valeur 
+mesurÃ©e est de  
+(27â1.8)
+27
+=0.9=90%. Il nây a donc pas accord entre la valeur thÃ©orique et celle 
+expÃ©rimentale : ce modÃ¨le nâest pas rÃ©aliste. 
+ModÃ¨le gaussien 
+Dans un deuxiÃ¨me temps, nous avons fait lâhypothÃ¨se dâune rÃ©partition gaussienne de la pression au sol. 
+Notons que câest le modÃ¨le utilisÃ© pour le vol dâun avion de ligne dans la vidÃ©o (Alphaphoenix, Brian Hidet) 
+citÃ©e prÃ©cÃ©demment, sans justification. 
+On peut expliquer la rÃ©partition gaussienne en imaginant le courant dâair se propageant jusquâau sol. La 
+thÃ©orie gÃ©nÃ©rale dit que la rÃ©partition du champ de pression horizontal 
+devient gaussien si on est Ã  une distance suffisamment grande de la 
+source du courant dâair. 
+Le poids de lâavion se repartirait donc au sol suivant une courbe en cloche 
+Ã  deux dimensions, avec un pic de pression au milieu diminuant de faÃ§on 
+exponentielle en sâÃ©loignant du centre.  
+Pour expliquer cette rÃ©partition gaussienne, nous avions imaginÃ© une 
+circulation des molÃ©cules dâair comme sur une planche de Galton 
+(cf.Figure ) : dans cette expÃ©rience, chaque bille lÃ¢chÃ©e verticalement se 
+Figure 10 : gaussienne en trois 
+dimensions
+
+17 
+ 
+dÃ©cale alÃ©atoirement soit Ã  droite soit Ã  gauche avec des probabilitÃ©s 1/2. Au final 
+aprÃ¨s une certaine distance, les billes ont Ã©tÃ© mÃ©langÃ©s et se rÃ©partissent suivant 
+une gaussienne. Le problÃ¨me est quâil est compliquÃ© de justifier lâÃ©coulement Ã  
+grande Ã©chelle de lâair selon le modÃ¨le de la planche de Galton. En effet, 
+lâÃ©coulement dâun fluide tel que lâair est turbulent et bien plus chaotique que les 
+billes dans la planche. Mais les molÃ©cules dans le courant dâair sont entraÃ®nÃ©es 
+alÃ©atoirement par les tourbillons (en trois dimensions). Lorsque le courant dâair est 
+devenu trÃ¨s turbulent, Ã  distance assez grande de la source, il sâest formÃ© des 
+tourbillons de toute taille qui mÃ©langent les molÃ©cules. La rÃ©partition horizontale de 
+toutes les grandeurs, en particulier la pression, devient gaussienne.  
+Dans nos expÃ©riences, la rÃ©partition spatiale ou 
+temporelle de la masse pesÃ©e par les capteurs a souvent la forme dâune 
+courbe en cloche, qui peut ressembler Ã  une gaussienne. Cela nous 
+incite donc Ã  penser que ce modÃ¨le pourrait se rapprocher de la rÃ©alitÃ©. 
+Par exemple dans le graphique ci-contre donnant le poids mesurÃ© en 
+fonction du temps sur la balance centrale, lâÃ©volution temporelle du poids 
+mesurÃ© pourrait correspondre Ã  une rÃ©partition gaussienne. Mais la 
+plupart des expÃ©riences donnent des valeurs nÃ©gatives de pression sur 
+les balances voisines de la balance centrale. Ces valeurs sont 
+probablement causÃ©es par les tourbillons de grande taille autour du courant dâair descendant. Nos 
+mesures invalident donc le modÃ¨le gaussien. 
+ModÃ¨le de lâonde sphÃ©rique/demi-sphÃ©rique 
+Le deuxiÃ¨me modÃ¨le sâinspire dâune onde de surpression continue qui se dÃ©place sous lâavion. Lâavion en 
+lâair Â« repose sur lâair Â» et avance : il provoque une perturbation de pression, qui comme toute perturbation 
+de pression (et comme les ondes acoustiques), se propage Ã  la vitesse du son, c = 340m/s Ã  20Â°C. Une 
+onde de surpression partirait du dessous de lâavion et se dÃ©placerait ensuite dans les 3 dimensions Ã  la 
+mÃªme vitesse. Cependant, la surpression Ã©tant situÃ©e sous lâavion lors de son vol, nous considÃ©rons ici 
+que lâonde de surpression suit une propagation demi-sphÃ©rique, en direction du sol. Nous considÃ©rons 
+Ã©galement que la surpression se repartit uniformÃ©ment sur la demi sphÃ¨re. 
+Calcul approchÃ© de la force Ã  lâaide dâune projection radiale 
+Pour le calcul suivant, visant Ã  Ã©valuer quelle part de la masse de lâavion devrait Ãªtre mesurÃ©e par chaque 
+balance sous lâavion, nous cherchons Ã  calculer la surface du projetÃ© de la balance sur une demi-sphÃ¨re. 
+En effet, nous avons fait lâhypothÃ¨se que la surpression se propage de maniÃ¨re uniforme sur les demi-
+sphÃ¨res. LâÃ©galitÃ© suivante est donc vÃ©rifiÃ©e : 
+í µí°¹&#3627408476;&#3627408479;&#3627408464;&#3627408466; &#3627408466;í µí±¥&#3627408466;&#3627408479;&#3627408464;Ã©&#3627408466; &#3627408480;&#3627408482;&#3627408479; &#3627408482;&#3627408475;&#3627408466; &#3627408463;&#3627408462;&#3627408473;&#3627408462;&#3627408475;&#3627408464;&#3627408466;
+í µí°¹&#3627408476;&#3627408479;&#3627408464;&#3627408466; &#3627408481;&#3627408476;&#3627408481;&#3627408462;&#3627408473;&#3627408466;
+=
+í µí±&#3627408482;&#3627408479;&#3627408467;&#3627408462;&#3627408464;&#3627408466; &#3627408477;&#3627408479;&#3627408476;&#3627408471;&#3627408466;&#3627408481;Ã©&#3627408466; &#3627408465;&#3627408466; &#3627408473;&#3627408462; &#3627408463;&#3627408462;&#3627408473;&#3627408462;&#3627408475;&#3627408464;&#3627408466; &#3627408480;&#3627408482;&#3627408479; &#3627408473;&#3627408462; &#3627408465;&#3627408466;&#3627408474;&#3627408470;â&#3627408480;&#3627408477;âÃ¨&#3627408479;&#3627408466;
+í µí±&#3627408482;&#3627408479;&#3627408467;&#3627408462;&#3627408464;&#3627408466; &#3627408465;&#3627408466; &#3627408473;&#3627408462; &#3627408465;&#3627408466;&#3627408474;&#3627408470;â&#3627408480;&#3627408477;âÃ¨&#3627408479;&#3627408466;
+ 
+Figure 29 : masse mesurÃ©e en 
+fonction du temps lorsque l'avion 
+passe au dessus de la cellule de 
+pesÃ©e    
+Figure 28 : Planche de 
+Galton  
+Figure 11 : ProjetÃ© de balances sur une demi sphÃ¨re, pour la balance centrale ainsi que les 2 Ã  sa droite
+
+18 
+ 
+Selon ces schÃ©mas, nous pouvons donc intuitivement conclure que les balances plus Ã©loignÃ©es de lâavion 
+mesurent une force plus faible que celle centrale, le membre de droite de lâÃ©galitÃ© ci-dessus diminuant 
+lorsque la balance sâÃ©loigne. 
+Afin de calculer lâaire du projetÃ© de la balance sur la demi-sphÃ¨re (ici en bleu foncÃ©), nous faisons 
+lâapproximation suivante : le projetÃ© est rectangulaire, de largeur L (Ã  dÃ©terminer) et 
+de longueur Ã©gale au cotÃ© de la balance. La largeur L varie donc en fonction de 
+lâÃ©loignement de la balance. 
+Les longueurs l, X et h sont connues. La longueur l vaut 30cm, câest la largeur dâune 
+balance, la longueur X dÃ©pend de la position de la balance, elle vaut par exemple 15cm pour la 2e balance 
+en partant du centre. h est la hauteur de vol de lâavion, estimÃ©e par pointage vidÃ©o. La diffÃ©rence entre 
+lâangle &#3627409148; et lâangle &#3627409149; vaut 2&#3627409150;. Par trigonomÃ©trie, nous trouvons les Ã©galitÃ©s suivantes : Î± = &#3627408481;&#3627408462;&#3627408475;
+â1
+í µí±¥ + &#3627408473;
+â
+   
+Î² = &#3627408481;&#3627408462;&#3627408475;
+â1
+í µí±¥
+â
+    Î³ = 
+Î±âÎ²
+2
+ 
+La longueur L sâexprime donc ainsi : í µí°¿ = 2Ã&#3627408479;Ã&#3627408480;&#3627408470;&#3627408475;&#3627409150;. La 
+surface dâune demie sphÃ¨re suit lâexpression suivante : 2Ãí µí¼Ã
+&#3627408479;
+2
+, avec r le rayon Ã©gal Ã  ââ
+2
++í µí±
+2
+ . Nous avons donc : 
+í µí±&#3627408482;&#3627408479;&#3627408467;&#3627408462;&#3627408464;&#3627408466; &#3627408477;&#3627408479;&#3627408476;&#3627408471;&#3627408466;&#3627408481;Ã©&#3627408466; &#3627408465;&#3627408466; &#3627408473;&#3627408462; &#3627408463;&#3627408462;&#3627408473;&#3627408462;&#3627408475;&#3627408464;&#3627408466; &#3627408480;&#3627408482;&#3627408479; &#3627408473;&#3627408462; &#3627408465;&#3627408466;&#3627408474;&#3627408470;â&#3627408480;&#3627408477;âÃ¨&#3627408479;&#3627408466;
+í µí±&#3627408482;&#3627408479;&#3627408467;&#3627408462;&#3627408464;&#3627408466; &#3627408465;&#3627408466; &#3627408473;&#3627408462; &#3627408465;&#3627408466;&#3627408474;&#3627408470;â&#3627408480;&#3627408477;âÃ¨&#3627408479;&#3627408466;
+ = 
+í µí°¿Ã&#3627408473;
+2Ãí µí¼Ã&#3627408479;
+2
+. 
+Comme calculÃ©e prÃ©cÃ©demment, la force transmise par les 
+tourbillons correspond Ã  seulement quelques grammes de la 
+masse totale de lâavion. Comme mesurÃ© et lu dans la littÃ©rature 
+scientifique, la surpression sous lâavion est responsable de seulement 
+1
+4
+ de la portance. La masse 
+renvoyÃ©e par chaque balance est donc la suivante : mthÃ©o = m Ã 
+1
+4
+ Ã 
+í µí°¿Ã&#3627408473;
+2Ãí µí¼Ã&#3627408479;
+2
+. 
+Pour la balance centrale, la dÃ©marche gÃ©nÃ©rale est la mÃªme mais une prÃ©cision est nÃ©cessaire. 
+Lâintersection de la demi sphÃ¨re et de la balance ne se faisant pas sur un cotÃ© de la balance (ce qui est 
+une condition nÃ©cessaire Ã  notre calcul gÃ©omÃ©trique), nous considÃ©rons 2 balances de largeur 15cm pour 
+Ã©tablir le projetÃ©.  
+Nous pouvons donc Ã  prÃ©sent calculer la masse renvoyÃ©e par la balance centrale et celles adjacentes en 
+fonction de la hauteur de vol Ã  lâaide dâune fonction python. Ã noter quâavec cette mÃ©thode de calcul, les 
+approximations ne sont plus nÃ©gligeables pour des hauteurs de vol trop petite, tel que 5cm ou 10cm. Ici 
+la premiÃ¨re masse renvoyÃ©e aprÃ¨s chaque hauteur correspond Ã  la balance centrale, puis les 2 suivantes 
+aux 2 balances Ã  sa droite ou Ã  sa gauche. 
+Comme nous pouvons le voir ci-dessus, la masse mesurÃ©e par chaque balance diminue lorsque la hauteur 
+de vol augmente. Ainsi nous pouvons comparer les masses thÃ©oriquement mesurÃ©es par la balance 
+ 
+ 
+Figure 13 : capture 
+d'Ã©cran de la fonction 
+python  
+h = 30 cm h = 15 cm 	h = 20 cm 
+ 
+Figure 12 : Calcul gÃ©omÃ©trique de la largeur L
+
+19 
+ 
+centrale Ã  diffÃ©rentes hauteurs de vol de lâavion. Ci-dessous, les points verts reprÃ©sentent les masses que 
+devrait 
+thÃ©oriquement 
+mesurer la 
+balance centrale 
+selon ce modÃ¨le, 
+en fonction de la 
+hauteur de survol 
+de lâavion. Les 
+valeurs rÃ©ellement 
+mesurÃ©es pour 
+des vols Ã  
+diffÃ©rentes 
+altitudes (ce qui a 
+Ã©tÃ© contrÃ´lÃ© par 
+pointage vidÃ©o) 
+sont reprÃ©sentÃ©es en violet. Des barres dâincertitude, calculÃ©es Ã  partir de lâincertitude relative dÃ©duite 
+dâun calcul statistique permettent de reprÃ©senter lâintervalle de confiance de nos mesures. 
+Nous pouvons donc observer que malgrÃ© le fait que les masses thÃ©oriques nâappartiennent pas Ã  
+lâintervalle de confiance des mesures, lâÃ©cart relatif des mesures avec la thÃ©orie reste faible, il est de 26% 
+en moyenne. Cet Ã©cart entre la masse qui devrait Ãªtre thÃ©oriquement mesurÃ©e et celle rÃ©ellement mesurÃ©e 
+pourrait sâexpliquer par les tourbillons qui transmettraient dÃ©jÃ  une part du poids de lâavion jusquâau sol. 
+De plus les valeurs thÃ©oriques et les valeurs mesurÃ©es semblent suivre la mÃªme tendance en fonction de 
+la hauteur de vol. Cela nous permet de partiellement valider ce modÃ¨le de lâonde de surpression se 
+dÃ©placent selon une demi-sphÃ¨re.  
+IX. Conclusion 
+Au cours de nos expÃ©riences et de nos recherches, nous avons pu montrer, Ã  lâaide dâun avion en papier, 
+que le poids dâun avion en vol est retransmis au sol et que nous pouvons, de maniÃ¨re reproductible, en 
+mesurer une partie Ã  lâaide de cellules de pesÃ©e. Nous avons observÃ© diffÃ©rents modes de transmission 
+du poids dans le milieu sÃ©parant lâavion du sol : lâair. Les mesures obtenues ont pu Ãªtre comparÃ©es Ã  
+diffÃ©rents modÃ¨les thÃ©oriques, notamment celui de la propagation dâonde de pression dans lâair. Nous 
+avons conclu que le vol de lâavion provoque Ã  la fois une onde de pression, que nous mesurons en premier 
+sur les balances, et un courant dâair descendant, bordÃ© de tourbillons, que nous mesurons dans un second 
+temps. Il est cependant difficile dâÃªtre affirmatif sur la nature rÃ©elle de la transmission du poids dâun avion 
+de par les incertitudes sur les rÃ©sultats obtenus. 
+Pour reprendre notre questionnement de dÃ©part, Ã  propos de la mouche dans le bocal nous pouvons 
+apporter une conclusion. La mouche, quâelle vole dans le bocal ouvert ou fermÃ©, dÃ©place une masse dâair, 
+qui exerce ensuite sur le fond du bocal. De plus, elle crÃ©e probablement une dÃ©pression au dessus, ce 
+qui aspire le couvercle dans le cas oÃ¹ le bocal est fermÃ©. Nous pouvons donc Ã©mettre lâhypothÃ¨se que 
+nous pouvons peser entiÃ¨rement la mouche dans le bocal fermÃ© et mesurer une partie de la masse de la 
+mouche quand le bocal est ouvert. La part de la masse mesurÃ©e dÃ©croÃ®t avec la hauteur de survol de la 
+mouche. 
+X. Sens critique 
+Figure 14 : graphique de la masse mesurÃ©e par la balance centrale en fonction de la hauteur de vol de 
+l'avion
+
+20 
+ 
+Ces olympiades ont Ã©tÃ© vraiment instructives. Nous avons appris plein de choses : programmer en C, en 
+Python (mÃªme si nous sommes loin de savoir bien coder encore aujourdâhui), apprendre Ã  se poser les 
+bonnes questions, Ã  modÃ©liser, Ã  dÃ©velopper une dÃ©marche scientifique afin de valider des modÃ¨les. Nous 
+avons mieux compris lâÃ©coulement de lâair autour dâun avion.  
+Nous pourrions approfondir ce projet de diffÃ©rentes maniÃ¨res. Tout dâabord, nous pourrions utiliser des 
+cellules de pesÃ©e de meilleure rÃ©solution temporelle (80 Hz plutÃ´t que 10Hz). Cela nous permettrait dâavoir 
+des mesures plus prÃ©cises et aussi dâavoir des mesures pour plusieurs balances avec un Ã©cart de temps 
+plus proche. Nous pourrions aussi fabriquÃ©s des bords hermÃ©tiques autour des cellules. Cela permettrait 
+quâaucun courant dâair ne passe et de bloquer lâonde de surpression, ce que nos bords actuellement ne 
+permettent pas. Des cellules de pesÃ©e de plus grande Ã©tendue de pesÃ©e nous permettrait de tester des 
+avions plus lourds, de 20 Ã  40g, pour vÃ©rifier le caractÃ¨re linÃ©aire des mesures en fonction dâun poids plus 
+Ã©levÃ©, et dâutiliser des plaques de plus grande dimension. Il serait en effet intÃ©ressant de tenter de 
+Â« peser Â» lâavion en utilisant une grande plaque, non dÃ©formable fixÃ©e directement Ã  la jauge de contrainte. 
+Enfin, on pourrait tenter de peser un avion de ligne au dÃ©collage, comme dans la vidÃ©o de AlphaPhoenix. 
+Notre Ã©tude sâapproche de diffÃ©rent domaine. Par exemple en aÃ©ronautique nous pourrions approfondir 
+nos expÃ©riences avant de mieux comprendre les Ã©coulements engendrÃ©s par lâavion. Les codes Python 
+et en C que nous avons utilisÃ©s pourraient Ãªtre utilisÃ©s Ã  des fin Ã©ducatives lors de TP. 
+XI. Bibliographie 
+Ce que disent les fluides, Guyon, Hulin, Petit, Belin Pour la Science 2011 (pour l'effet Venturi, la portance, le rÃ©gime turbulent, les 
+tourbillons) 
+Terminale SpÃ© PC, Le livre scolaire, 2019 (Ch 14) (pour l'effet Bernoulli) 
+Science Ã©tonnante : Comment les avions volent-ils ? (pour le vol thÃ©orique de lâavion) 
+AlphaPhoenix, Brian Hidet : J'ai pesÃ© un avion... pendant qu'il volait ! (pour lâidÃ©e des capteurs) 
+Pilote Pro : La portance : Bernoulli VS Newton (pour le vol thÃ©orique de lâavion) 
+Khan Academy (pour des prÃ©cisions sur la loi de Bernouilli) 
+Ãchanges avec Olivier Michel, enseignant chercheur Ã  lâUGA, agrÃ©gÃ© de physique et CÃ©dric Dâham chercheur en sciences 
+expÃ©rimentales de lâUGA de Grenoble  
+XII. Remerciements 
+Un grand merci Ã  M. Crozatier qui a acceptÃ© de nous encadrer et nous a accompagnÃ© tout au long de notre projet. Merci Ã©galement 
+Ã  Thierry Griffo qui nous a prÃªtÃ© tous ses outils : de la perceuse Ã  la machine Ã  fumÃ©e ! Merci aussi Ã  M. Martinet qui, grÃ¢ce Ã  
+son expÃ©rience, nous a permis de comprendre les attendus des Olympiades. Merci Ã©galement au lycÃ©e qui nous a soutenus dans 
+ce projet. Un trÃ¨s grand merci Ã  nos familles qui nous ont encouragÃ©es pendant ces derniers mois. Une mention spÃ©ciale Ã  Pierre-
+FranÃ§ois Dutot pour ses explications apportÃ©es sur la programmation en Python et Arduino et Ã  Axel Champetier qui nous a aidÃ© 
+Ã  souder tard le soir et Ã  dessiner les plans pour le lance-avion. Enfin merci Ã  Olivier Michel (professeur Ã  lâUGA, agrÃ©gÃ© de 
+physique) dâavoir rÃ©pondu Ã  nos questions avec une grande rapiditÃ©.

@@ -1,0 +1,656 @@
+PROJET PDP (Pomme De Pin) â
+ou une PDP aux ODP  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+V. ANSELME  
+L. DAO 
+T. De FRANCE 
+E. LE BELLOUR 
+V. PRATT 
+A. SONNEY 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+LYCÃE MILITAIRE DE SAINT CYR LâECOLE 
+ 
+PROFESSEUR RÃFÃRENT : JC JOUAN 
+ 
+ 
+ 
+ 
+ 
+2025 â 2026
+
+SOMMAIRE 
+ 
+ 
+RÃSUMÃâââââââââââ 3 
+ 
+INTRODUCTIONââââââââââ 3 
+ 
+I. EXPERIENCES PRELIMINAIRESââââââââ 3 
+ 
+1.âCHOIX DE L'ÃCAILLEÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·3 
+ 
+2.âMOUVEMENT DE L'ÃCAILLE DANS LâEAUÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·5 
+ 
+3.âSÃCHAGE DE L'ÃCAILLEÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·7 
+ 
+ 
+ 
+II. INFLUENCE DE L'HUMIDITÃ SUR LA DÃFORMATION DE L'ÃCAILLEââ  8 
+ 
+1.âHUMIDITÃ RELATIVE ET ABSOLUEÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·8 
+ 
+2.âHUMIDITÃ ET SOLUTIONS SATURÃESÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·8 
+ 
+3.âETUDE DE LA DÃFORMATION DE L'ÃCAILLE EN FONCTION DE L'HUMIDITÃ 
+RELATIVEÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·10 
+ 
+4.âUN HYGROMÃTRE LOW-COSTÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·12 
+ 
+ 
+III. ETUDE PHYSIQUE DE LA DÃFORMATION DE L'ÃCAILLEââââ  13 
+ 
+1.âLâEFFET BILAME THERMIQUEÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·13 
+ 
+2.âUN BILAME HYDRIQUEÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·14 
+ 
+3.âETUDE DE LA COURBURE EN FONCTION DE L'HUMIDITÃÂ·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·Â·15 
+ 
+CONCLUSIONââââââââââ  20 
+ 
+REMERCIEMENTSââââââââââ  20 
+ 
+BIBLIOGRAPHIEââââââââââ  21 
+ 
+ 
+ 
+2
+
+RÃSUMÃ :  
+Nous avons rÃ©alisÃ© un hygromÃ¨tre âlow costâ basÃ© sur la propriÃ©tÃ© que possÃ¨de une 
+Ã©caille de pomme de pin Ã  se dÃ©former avec lâhumiditÃ© puis Ã©tudiÃ© les mÃ©canismes 
+physiques responsables de cette dÃ©formation. Cette Ã©tude nous a amenÃ© Ã  concevoir un 
+dispositif bio inspirÃ© mimant le mouvement de lâÃ©caille.  
+ 
+INTRODUCTION 
+ 
+Par temps sec les pommes de pin sont ouvertes. Par temps humide les pommes de 
+pin se ferment. Partant de cette observation, nous nous sommes demandÃ©s sâil Ã©tait 
+possible de rÃ©aliser un hygromÃ¨tre Â« low cost Â» basÃ© sur la dÃ©formation de lâÃ©caille. La 
+mesure de lâhumiditÃ© revÃªt une importance dans de nombreuses situations : du contrÃ´le de 
+lâhumiditÃ© dâune serre, Ã  la conservation des Åuvres dâart en passant par la rÃ©gulation de 
+lâhumiditÃ© dans lâhabitat. Pour mener Ã  bien notre projet et approfondir les mÃ©canismes 
+physiques responsables du mouvement de lâÃ©caille nous avons contactÃ© M. Etienne Reyssat 
+de lâESPCI. LâÃ©tude physique de la dÃ©formation de lâÃ©caille fera ainsi lâobjet dâune troisiÃ¨me 
+et derniÃ¨re partie. La premiÃ¨re partie Ã©tant consacrÃ©e Ã  quelques expÃ©riences prÃ©liminaires 
+qui nous ont permis de visualiser le mouvement des Ã©cailles de pomme de pin. 
+ 
+ 
+ 
+I. EXPÃRIENCES PRÃLIMINAIRES 
+ 
+â La premiÃ¨re Ã©tape du projet a consistÃ© Ã  choisir la pomme de pin sur laquelle 
+travailler dans la suite. Pour cela nous avons Ã©tudiÃ© qualitativement le comportement de 
+diffÃ©rentes Ã©cailles, issues de diffÃ©rentes variÃ©tÃ©s de pins. 
+ 
+ 
+1. CHOIX DE L'ÃCAILLE 
+ 
+Les variÃ©tÃ©s de pin sont diverses : pin sylvestre (le plus commun), pin maritime, 
+Ã©picÃ©a, pin pleureur d'Himalaya comme le montre la Figure 1. 
+ 
+Nous avons commencÃ© par observer la dÃ©formation de diffÃ©rentes Ã©cailles que nous 
+avons immergÃ©es dans lâeau. Notre choix sâest tout de suite portÃ© sur les Ã©cailles de pin 
+maritime de par leur taille, plus grandes que celles du pin sylvestre donc plus faciles Ã  
+observer et de par lâamplitude de leur dÃ©formation importante. Pour les pommes de pins 
+allongÃ©es, lâamplitude de dÃ©formation est plus faible. Nous pouvons voir sur la Figure 2, une 
+pomme de pin maritime ouverte puis fermÃ©e suite Ã  une immersion dans lâeau. 
+ 
+3
+
+Figure 1 : Quelques variÃ©tÃ©s de pommes de pin rÃ©coltÃ©es 
+ 
+ 
+Figure 2 : Pomme de pin maritime ouverte et fermÃ©e 
+ 
+4
+
+2. MOUVEMENT DE L'ÃCAILLE DANS LâEAU 
+ 
+LâÃ©tape suivante a consistÃ© Ã  Ã©tudier le mouvement de lâÃ©caille dans lâeau. Pour cela 
+nous avons rÃ©alisÃ© lâexpÃ©rience ci-dessous : une Ã©caille placÃ©e depuis un certain temps Ã  
+lâÃ©tuve est fixÃ©e Ã  une pince crocodile et immergÃ©e, Ã  la date t = 0, dans de lâeau Ã  
+tempÃ©rature ambiante (20Â°C). Une photo de lâÃ©caille est prise Ã  intervalle de temps rÃ©gulier. 
+Une feuille de papier graduÃ©e en cm et fixÃ©e Ã  la cuve permet dâavoir un Ã©talon de longueur 
+pour les photos. Les photos sont ensuite exploitÃ©es avec le logiciel Gimp Â® qui nous permet 
+de mesurer lâangle entre le point de fixation de lâÃ©caille et son extrÃ©mitÃ© en fonction du 
+temps. Le schÃ©ma du montage est reprÃ©sentÃ© Figure 3 et une chronophotographie du 
+mouvement de lâÃ©caille Figure 4.
+ 
+ 
+ 
+Figure 3 : SchÃ©ma de lâexpÃ©rience 
+ 
+ 
+Les rÃ©sultats obtenus sont reprÃ©sentÃ©s sur la Figure 5. Nous observons une 
+dÃ©formation angulaire qui atteint une asymptote au bout de 60 minutes. Lâamplitude de 
+dÃ©formation angulaire est de 70 degrÃ©s sur 40 minutes ce qui correspond Ã  une vitesse 
+angulaire moyenne de : 
+ 	. 
+70Â°
+40 &#3627408474;í µí±&#3627408475;
+â¼1,75 Â°Â·&#3627408474;í µí±&#3627408475;
+â1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5
+
+Figure 4: Chronophotographie du mouvement de lâÃ©caille 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5 : Angle de dÃ©formation de lâÃ©caille (en degrÃ©s) en fonction du temps (en min) lors 
+de la phase immersion. 
+ 
+ 
+6
+
+3. SÃCHAGE DE L'ÃCAILLE 
+ 
+AprÃ¨s avoir Ã©tudiÃ© le mouvement de lâÃ©caille dans lâeau, nous nous sommes 
+intÃ©ressÃ©s Ã  la phase de sÃ©chage de lâÃ©caille. Nous avons rÃ©alisÃ© une expÃ©rience similaire Ã  
+la prÃ©cÃ©dente: lâÃ©caille est initialement immergÃ©e dans lâeau depuis un certain temps puis 
+laissÃ©e Ã  lâair libre. Nous obtenons les rÃ©sultats de la Figure 6.  
+ 
+Figure 6 : Angle de dÃ©formation de lâÃ©caille en fonction du temps lors de la phase de 
+sÃ©chage. 
+ 
+â Nous observons que le mouvement de lâÃ©caille commence 4h aprÃ¨s le dÃ©but de 
+lâexpÃ©rience et nous estimons la durÃ©e du mouvement Ã  6h pour une amplitude de 
+dÃ©formation angulaire de 55 degrÃ©s soit une vitesse angulaire de dÃ©formation de :  
+. 
+55Â°
+6 â
+â¼9 Â°Â·â
+â1
+â¼0,15 Â°.&#3627408474;í µí±&#3627408475;
+â1
+La vitesse du mouvement lors du sÃ©chage est donc 10 fois plus faible que lors de la phase 
+dâimmersion. Les mÃ©canismes physiques mis en jeu lors du sÃ©chage (Ã©vaporation dâeau Ã  
+lâair) et de lâimmersion (imprÃ©gnation en eau) ont donc des Ã©chelles de temps diffÃ©rentes. 
+ 
+Notons Ã©galement que la dÃ©formation angulaire en fin dâexpÃ©rience est de â 30 
+degrÃ©s et que lâÃ©caille ne retrouve pas la dÃ©formation angulaire de â 45 degrÃ©s (Figure 5) 
+quâelle avait en sortie de lâÃ©tuve. Ceci sâexplique par le fait que le taux dâhumiditÃ© de lâair est 
+diffÃ©rent de celui de lâÃ©tuve. Câest cette dÃ©pendance de la dÃ©formation en fonction de 
+lâhumiditÃ© que nous nous proposons dâÃ©tudier dans le paragraphe suivant. Ce qui nous 
+amÃ¨ne Ã  la question: comment contrÃ´ler lâhumiditÃ©? 
+ 
+ 
+ 
+7
+
+II. INFLUENCE DE L'HUMIDITÃ SUR LA DÃFORMATION DE 
+L'ÃCAILLE 
+ 
+AprÃ¨s avoir rappelÃ© quelques notions sur lâhumiditÃ© nous aborderons lâastuce trouvÃ©e 
+pour la contrÃ´ler. Nous serons alors en mesure dâÃ©tudier la dÃ©formation angulaire en 
+fonction de lâhumiditÃ©. 
+ 
+ 
+1. HUMIDITÃ RELATIVE et ABSOLUE [RÃ©fÃ©rence 1] 
+ 
+LâhumiditÃ© absolue correspond Ã  la masse de vapeur d'eau contenue dans un 
+volume d'air donnÃ©. Un volume dâair fermÃ© en prÃ©sence dâeau liquide se sature 
+progressivement en vapeur dâeau : la masse maximale dâeau que peut contenir 1 m
+3
+ d'air est 
+m
+max = 23 g Ã  25Â°C. Cette valeur dÃ©pend de la tempÃ©rature et augmente avec la 
+tempÃ©rature: Ã  55Â°C, m
+max = 104 g et Ã  5Â°C, m
+max = 7 g. 
+LâhumiditÃ© relative notÃ©e HR (ou degrÃ© hygromÃ©trique) correspond au rapport entre 
+la masse de vapeur dâeau dans un volume dâair et la masse maximale que le mÃªme volume 
+dâair peut contenir. Celle-ci est donc exprimÃ©e en pourcentage. Une humiditÃ© relative de 0% 
+correspond Ã  un air sec sans vapeur dâeau et une humiditÃ© de 100 % correspond Ã  un air 
+dont la masse en vapeur dâeau a atteint la masse maximale et dont lâexcÃ¨s sâest liquÃ©fiÃ©. 
+LâhumiditÃ© se mesure avec un hygromÃ¨tre. Il existe plusieurs types dâhygromÃ¨tres qui 
+fonctionnent selon des principes diffÃ©rents. Citons lâhygromÃ¨tre Ã  bobine mÃ©tal-papier, 
+lâhygromÃ¨tre Ã  cheveux, lâhygromÃ¨tre Ã  condensation ou encore lâhygromÃ¨tre Ã  capteur 
+Ã©lectronique dont la valeur dâun composant Ã©lectronique (rÃ©sistance ou condensateur) 
+dÃ©pend de lâhumiditÃ©. 
+ 
+ 
+2. HUMIDITÃ ET SOLUTION SATURÃE 
+ 
+Nous ne disposons pas au laboratoire de dispositif permettant de contrÃ´ler lâhumiditÃ©. 
+Il existe bien dans lâindustrie des chambres climatiques permettant de mener des 
+expÃ©riences Ã  humiditÃ© contrÃ´lÃ©e mais ce sont des dispositifs coÃ»teux et encombrants. Nous 
+avons trouvÃ© une astuce permettant de rÃ©soudre le problÃ¨me : une solution ionique 
+saturÃ©e en solide permet de contrÃ´ler lâhumiditÃ© . En effet, il sâavÃ¨re que lâhumiditÃ© de 
+lâair au-dessus dâune solution ionique saturÃ©e est fixÃ©e par la nature de la solution. Les 
+tableaux de la Figure 7, trouvÃ©s sur Internet, donnent quelques valeurs dâhumiditÃ©s relatives 
+pour diverses solutions ioniques et Ã  diffÃ©rentes tempÃ©ratures. Pour une Ã©tude systÃ©matique 
+de lâhumiditÃ© des solutions, se rÃ©fÃ©rer Ã  la [rÃ©fÃ©rence 2]. 
+ 
+ 
+8
+
+Figure 7 : HumiditÃ© relative de lâair au contact de diverses solutions salines saturÃ©es. 
+ 
+â Pour mener lâexpÃ©rience suivante, nous avons investi dans un hygromÃ¨tre 
+numÃ©rique du commerce et une enceinte Ã©tanche. Les solutions ioniques prÃ©sentes au 
+laboratoire permettent dâavoir une premiÃ¨re Ã©chelle dâhumiditÃ© mais des solutions sont en 
+commande pour augmenter le nombre de valeurs de lâÃ©chelle.  
+ 
+ 
+ 
+ 
+ 
+9
+
+3. ÃTUDE DE LA DÃFORMATION DE L'ÃCAILLE EN FONCTION DE 
+L'HUMIDITÃ RELATIVE 
+ 
+Pour Ã©tudier lâinfluence de lâhumiditÃ© relative sur la dÃ©formation de lâÃ©caille nous 
+avons rÃ©alisÃ© lâexpÃ©rience suivante (Figure 8) : lâÃ©caille est placÃ©e sur un support muni dâun 
+rapporteur et de faÃ§on Ã  ce que son point dâaccroche coÃ¯ncide avec le centre du rapporteur. 
+LâextrÃ©mitÃ© de lâÃ©caille est munie dâun index permettant la lecture de lâangle. Le support de 
+lâÃ©caille est placÃ© dans une enceinte hermÃ©tique contenant une solution ionique saturÃ©e 
+ainsi quâun hygromÃ¨tre. Pour chaque solution saturÃ©e, on note lâhumiditÃ© relative ainsi que 
+lâangle de lâindex. La mesure nÃ©cessite dâattendre que lâÃ©caille ait atteint sa position finale 
+tout en vÃ©rifiant avec lâhygromÃ¨tre la valeur de lâhumiditÃ© relative. 
+ 
+.
+ 
+Figure 8: Photo de lâexpÃ©rience permettant d'Ã©tudier lâinfluence de lâhumiditÃ© relative sur la 
+dÃ©formation de lâÃ©caille. 
+ 
+Les rÃ©sultats obtenus sont reprÃ©sentÃ©s sur la Figure 9. Nous avons tracÃ© la courbe 
+reprÃ©sentant la position angulaire de lâindex ( en degrÃ©s) en fonction de lâhumiditÃ© relative Î¸
+(HR). Les barres dâerreurs verticales correspondent Ã  lâincertitude sur la mesure de lâangle 
+soit . Les barres dâerreurs horizontales correspondent Ã  lâincertitude sur la valeur Â±1 Â° 
+donnÃ©e par lâhygromÃ¨tre, soit 3 % de la valeur lue comme indiquÃ© dans la notice de 
+lâappareil.  
+10
+
+La dÃ©formation de lâÃ©caille est bien progressive avec lâhumiditÃ© relative et la 
+position de lâindex permet une mesure de cette derniÃ¨re. 
+ 
+ 
+ 
+Figure 9 : Position de lâindex (en degrÃ©s) en fonction de lâhumiditÃ© relative.â
+ Courbe expÃ©rimentale et sa modÃ©lisation. 
+ 
+Le capteur dâhumiditÃ© ainsi rÃ©alisÃ© est non linÃ©aire. Les points expÃ©rimentaux sont ajustÃ©s 
+par un polynÃ´me du second degrÃ© : 
+ 
+Î¸=0,006957&#3627408485;
+2
++0,06807&#3627408485;â19,82
+Cette Ã©quation nous permet dâÃ©talonner lâÃ©caille pour la mesure de lâhumiditÃ© relative. Pour 
+faciliter la lecture du capteur, nous tournons le rapporteur afin de faire coÃ¯ncider 0Â° avec 0% 
+dâHR. Nous obtenons donc le tableau de conversion ci-dessous et le rapporteur de               
+la Figure 10.  
+HR (%) 0 10 20 30 40 50 60 70 80 90 100 
+Index (Â°) 0 1 4 8 14 21 29 39 50 62 76 
+ 
+11
+
+Figure 10 : Rapporteur donnant lâhumiditÃ© selon la position de lâindex de lâÃ©caille. 
+ 
+La rÃ©ponse du capteur Ã©tant non linÃ©aire, la sensibilitÃ© du capteur augmente avec lâhumiditÃ© 
+relative. A ce stade du projet, plusieurs questions restent en suspens : 
+-âComment caractÃ©riser la prÃ©cision du capteur? Comment lâamÃ©liorer? 
+-âQuel est le temps de rÃ©ponse du capteur? 
+-âQuelle est lâinfluence de la tempÃ©rature sur la dÃ©formation de lâÃ©caille (Ã  humiditÃ© 
+constante)? Des tests rÃ©alisÃ©s avec la solution de NaCl Ã  diffÃ©rentes tempÃ©ratures 
+devraient permettre de rÃ©pondre Ã  cette question. En effet, dâaprÃ¨s les tableaux de la 
+Figure 7 l'humiditÃ© relative dâune telle solution est indÃ©pendante de la tempÃ©rature. -âLa dÃ©formation de lâÃ©caille est-elle toujours reproductible aprÃ¨s un certain nombre de 
+cycles de dÃ©formations? 
+ 
+ 
+4. UN HYGROMÃTRE âLOW COSTâ 
+â A lâissue de cette Ã©tude nous sommes en mesure de concevoir un hygromÃ¨tre âlow 
+costâ et durable fonctionnant sans source dâÃ©lectricitÃ©. Comme le montre la Figure 11, nous 
+avons imprimÃ© en 3D un boÃ®tier pour protÃ©ger lâÃ©caille et sur lequel il reste Ã  fixer le 
+rapporteur indiquant la lecture de lâhumiditÃ©. LâÃ©caille est montÃ©e sur un axe dont 
+lâorientation peut-Ãªtre rÃ©ajustÃ©e si lâhygromÃ¨tre se dÃ©rÃ¨gle avec le temps. 
+Chaque nouvel hygromÃ¨tre fabriquÃ© avec une nouvelle Ã©caille nÃ©cessite une 
+procÃ©dure dâÃ©talonnage selon celle dÃ©crite au paragraphe prÃ©cÃ©dent. Celle-ci est certes 
+longue mais elle en fait un objet unique ! Argument commercial relevÃ© par lâun dâentre nous. 
+ 
+ 
+12
+
+Figure 11 : Prototype dâhygromÃ¨tre âlow costâ 
+ 
+EncouragÃ©s par ces premiers rÃ©sultats, nous ne nous sommes pas arrÃªtÃ©s lÃ  et nous 
+avons cherchÃ© Ã  comprendre les mÃ©canismes physiques Ã  lâorigine du mouvement de 
+lâÃ©caille. Câest lâobjet du paragraphe suivant. 
+ 
+ 
+ 
+III. ÃTUDE PHYSIQUE DE LA DÃFORMATION DE L'ÃCAILLE 
+ 
+La dÃ©formation de lâÃ©caille est liÃ©e Ã  un effet bilame Ã©tudiÃ© par E. REYSSAT 
+[rÃ©fÃ©rence 4]. Avant dâÃ©tudier cet effet nous ferons quelques rappels utiles sur un autre effet 
+bilame bien connu : le bilame thermique. 
+ 
+ 
+1. LâEFFET BILAME THERMIQUE 
+ 
+Un mÃ©tal soumis Ã  une augmentation de tempÃ©rature sâallonge : câest le phÃ©nomÃ¨ne 
+de dilatation thermique. Lâallongement relatif (L â L
+0)/L
+0 est proportionnel Ã  la variation de 
+tempÃ©rature T â T
+0 (L
+0 Ã©tant la longueur de la bande de mÃ©tal Ã  la tempÃ©rature T
+0) : 
+ 
+í µí°¿âí µí°¿
+0
+í µí°¿
+0
+= Î±(í µí±âí µí±
+0
+)
+oÃ¹  en Â°C
+â 1
+ est le coefficient de dilatation thermique [rÃ©fÃ©rence 3]. A titre dâexemple : Î±
+(acier) = 12.10
+â6   
+Â°C
+â1 
+; (aluminium) = 22.10
+â6   
+Â°C
+â1 
+ Î±	Î±
+ 
+Soudons maintenant entre eux deux mÃ©taux de coefficients de dilatation thermique 
+diffÃ©rents : on crÃ©e un bilame comme le montre la Figure 12. Soumis Ã  une augmentation 
+de tempÃ©rature, la structure se courbe; câest lâeffet bilame Ã©tudiÃ© thÃ©oriquement par 
+S.Timoshenko en 1925 [rÃ©fÃ©rence 5] qui a mis en Ã©vidence que la courbure dÃ©finie comme 
+lâinverse du rayon de courbure R est proportionnelle Ã  la variation de tempÃ©rature :  
+1
+í µí±
+â
+1
+í µí±
+0
+=í µí±(í µí±âí µí±
+0
+)=
+1
+â
+&#3627408467;(â
+1
+/â
+2
+,í µí°¸
+1
+/í µí°¸
+2
+)(Î±
+1
+âÎ±
+2
+)(í µí±âí µí±
+0
+) 
+13
+
+oÃ¹ k (en m
+â1
+.Â°C
+â 1
+) est un coefficient qui dÃ©pend de la gÃ©omÃ©trie des matÃ©riaux et de leurs 
+propriÃ©tÃ©s Ã©lastiques : h = h
+1 + h
+2 est lâÃ©paisseur totale de lâassemblage, h
+1 et h
+2 sont les 
+Ã©paisseurs respectives des deux mÃ©taux, E
+1 et E
+2 leurs modules de Young respectifs. R
+0 est 
+le rayon de courbure Ã  la tempÃ©rature T
+0. Cet effet bilame est bien connu et son fonctionnement est intÃ©grÃ© Ã  notre quotidien. Il 
+est utilisÃ© comme interrupteur thermique dans les bouilloires Ã©lectriques par exemple. Dans 
+ce cas, le bilame se dÃ©forme brusquement Ã  une tempÃ©rature prÃ©cise (on parle de 
+cloquage) ce qui a pour effet dâouvrir le circuit Ã©lectrique.  
+ 
+Figure 12 : Un bilame thermique soumis Ã  une augmentation de tempÃ©rature. Le matÃ©riau 
+du dessus est plus dilatable que celui du-dessous.â
+La deuxiÃ¨me figure met en Ã©vidence le rayon de courbure. 
+ 
+ 
+2. UN BILAME HYDRIQUE 
+ 
+LâhumiditÃ© est responsable de la dilatation de certains matÃ©riaux comme les fibres 
+naturelles (bois, papier, et mÃªme cheveux) qui sâallongent quand elles absorbent de lâeau. 
+Lâeffet est particuliÃ¨rement visible dans le cas dâune bande de papier calque dÃ©posÃ©e Ã  la 
+surface de lâeau. Le papier absorbe lâeau et subit une dilatation hydrique. Lâallongement est 
+anisotrope : selon la direction dans laquelle la bande de papier a Ã©tÃ© dÃ©coupÃ©e dans la 
+feuille, l'allongement est plus ou moins important. 
+Nous avons Ã©tudiÃ© ce phÃ©nomÃ¨ne en mesurant lâallongement de bandelettes de 
+papier calque (densitÃ© 70 g/m
+2
+) de diffÃ©rentes longueurs L
+0, de mÃªme largeur l = 1,5 cm en 
+fonction de la masse dâeau absorbÃ©e. La bandelette sÃ¨che est pesÃ©e avec une balance au 
+mg puis immergÃ©e quelques minutes avant dâÃªtre mise Ã  sÃ©cher. La longueur L est mesurÃ©e 
+ainsi que la masse m de la bandelette Ã  intervalles de temps rÃ©guliers. Nous obtenons les 
+rÃ©sultats de la Figure 13. 
+14
+
+Figure 13 : Longueur des bandelettes de papier calque en fonction de la masse dâeau 
+absorbÃ©e. 
+ 
+Nous pouvons observer que la masse maximale dâeau absorbÃ©e est proportionnelle 
+Ã  la longueur L
+0 de la bandelette et que le coefficient de dilatation hydrique est le mÃªme pour 
+toutes les bandelettes, soit : 
+ 
+âí µí°¿
+â&#3627408474;
+=0,014 &#3627408464;&#3627408474;.&#3627408474;&#3627408468;
+â1
+â En collant entre eux maintenant deux matÃ©riaux de coefficients de dilatation hydrique 
+diffÃ©rents, deux bandes de papier calque dÃ©coupÃ©es dans le sens de la largeur et de la 
+longueur dâune feuille par exemple, nous devrions Ãªtre en mesure de rÃ©aliser un bilame 
+hydrique. Câest cet effet qui est responsable de la dÃ©formation de lâÃ©caille. Comment 
+caractÃ©riser, plus prÃ©cisÃ©ment que dans lâexpÃ©rience prÃ©liminaire, la dÃ©formation de 
+lâÃ©caille? Câest ce que nous allons voir dans le paragraphe suivant. 
+ 
+ 
+3. ETUDE DE LA COURBURE DE L'ÃCAILLE EN FONCTION DE L'HUMIDITÃ RELATIVE 
+ 
+Afin de caractÃ©riser la dÃ©formation de lâÃ©caille avec lâhumiditÃ© relative, nous faisons 
+Ã©voluer le protocole de mesure. LâÃ©caille est placÃ©e pendant une durÃ©e minimale de 24h 
+dans une enceinte hermÃ©tique dont lâhumiditÃ© relative est contrÃ´lÃ©e. LâÃ©caille est ensuite 
+sortie de lâenceinte et son contour est reportÃ© au crayon sur papier. LâopÃ©ration est 
+reproduite huit fois avec huit enceintes dâhumiditÃ©s relatives diffÃ©rentes. Nous obtenons les 
+empreintes de la Figure 14. 
+Pour chaque empreinte la ligne mÃ©diane de lâÃ©caille est tracÃ©e et nous repÃ©rons les 
+coordonnÃ©es (x,y) de quelques points rÃ©guliÃ¨rement espacÃ©s le long de cette ligne, dans un 
+repÃ¨re (O,x,y) oÃ¹ lâorigine O est placÃ©e au niveau de la fixation de lâÃ©caille comme le montre 
+la Figure 15. Nous pouvons donc accÃ©der Ã  la courbe y = f(x) de la ligne mÃ©diane de 
+lâÃ©caille Figure 16.a. 
+15
+
+Figure 15 : repÃ©rage des coordonnÃ©es des points le long de la ligne mÃ©diane de 
+dÃ©formation (les points le long de la ligne mÃ©diane sont espacÃ©s de 5 mm). 
+Lâempreinte correspond Ã  une humiditÃ© relative de 47,8%. 
+ 
+ 
+ 
+ 
+Figure 16.a : courbe y = f(x) de la ligne mÃ©diane de lâÃ©caille. 
+ 
+ 
+ 
+16
+
+Figure 16.b : courbe y =f(x) pour les quatre premiers points et son ajustement par un 
+polynÃ´me de degrÃ© 2. 
+ 
+ 
+ 
+17
+
+Figure 14 : contours de lâÃ©caille pour diffÃ©rentes humiditÃ©s relatives allant de 97,1% Ã  8%. 
+La masse de lâÃ©caille et de son support (pince crocodile) est Ã©galement indiquÃ©e. 
+18
+
+â Pour accÃ©der Ã  la courbure de lâÃ©caille en x = 0 soit C(0) = 1/R(0) oÃ¹ R est le rayon 
+de courbure, nous modÃ©lisons la courbe y = f(x) au voisinage de x = 0 par un polynÃ´me de 
+degrÃ© 2 (Figure 16.b.): . Le rayon de courbe est ensuite calculÃ© par la formule: 
+&#3627408486;=&#3627408462;&#3627408485;
+2
++&#3627408463;&#3627408485;
+ 
+í µí±(&#3627408485;)=
+(1+&#3627408486;'
+2
+)
+3
+2
+&#3627408486;''
+oÃ¹ :  et &#3627408486;'(&#3627408485;) =2&#3627408462;&#3627408485;+&#3627408463; &#3627408486;''(&#3627408485;) =2&#3627408462;
+ 
+â Nous pouvons donc tracer lâÃ©volution de la courbure C(0) en fonction de lâhumiditÃ© 
+relative sur la Figure 18. 
+ 
+ 
+Figure 18 : Ã©volution de la courbure C(0) en x = 0 en fonction de lâhumiditÃ© relative 
+ 
+ 
+Les rÃ©sultats expÃ©rimentaux semblent en accord avec la relation affine de 
+Timoshenko :  
+ 
+1
+í µí±
+â
+1
+í µí±
+0
+=í µí±Ãí µí°»í µí±=
+1
+â
+Ã&#3627408467;Ã(Î²
+1
+âÎ²
+2
+)Ãí µí°»í µí±
+Attendu que et [RÃ©fÃ©rence 4], le coefficient directeur issu de 
+&#3627408467;â¼ 1,3Î²
+1
+âÎ²
+2
+â¼10
+â3
+lâajustement des points expÃ©rimentaux soit permet de calculer lâÃ©paisseur h 
+í µí±=0,035 &#3627408464;&#3627408474;
+â1
+de lâÃ©caille :  valeur infÃ©rieure Ã  celle attendue, comme le montre ââ¼0,04 &#3627408464;&#3627408474;=0,4 &#3627408474;&#3627408474;
+une vue en coupe de lâÃ©caille (Figure 19). Plusieurs hypothÃ¨ses peuvent Ãªtre avancÃ©es pour 
+expliquer cet Ã©cart. La prÃ©cision du protocole : une autre exploitation des empreintes de la 
+mÃªme Ã©caille conduit Ã  un coefficient directeur  soit  
+í µí±=0,014 &#3627408464;&#3627408474;
+â1
+ââ¼0,1  &#3627408464;&#3627408474;=1  &#3627408474;&#3627408474;
+valeur toujours infÃ©rieure Ã  celle que lâon peut mesurer Ã  partir de la Figure 19. Une zone 
+sensible Ã  lâhumiditÃ© dont lâÃ©paisseur est infÃ©rieure Ã  lâÃ©paisseur rÃ©elle de lâÃ©caille. Le 
+modÃ¨le de Timoshenko, valable pour de faibles dÃ©formations, nâest peut-Ãªtre pas adaptÃ© 
+pour dÃ©crire les dÃ©formations importantes de lâÃ©caille. 
+19
+
+Figure 19 : vue en coupe de lâÃ©caille qui montre une structure en bicouche. 
+ 
+ 
+ 
+ 
+ 
+ 
+CONCLUSION 
+â 
+Lâobservation de lâeffet pomme de pin nous a dâabord conduit Ã  rÃ©aliser un hygromÃ¨tre âlow 
+costâ basÃ© sur la dÃ©formation dâune Ã©caille de pomme de pin. Cet hygromÃ¨tre original qui ne 
+nÃ©cessite aucune source dâÃ©nergie Ã©lectrique en fait un produit innovant. La comprÃ©hension 
+des mÃ©canismes physiques mis en jeu dans la dÃ©formation de lâÃ©caille et la dÃ©couverte de 
+lâeffet bilame, nous a ensuite conduit Ã  imaginer des dispositifs bio inspirÃ©s qui pourraient 
+trouver des applications pratiques comme la rÃ©alisation dâinterrupteurs commandÃ©s par 
+lâhumiditÃ© dans des installations qui nÃ©cessitent de travailler Ã  humiditÃ© contrÃ´lÃ©e (serre,...). 
+L' effet pomme de pin a dâailleurs inspirÃ© lâarchitecte Achim Menges qui a dÃ©veloppÃ© le projet 
+âHygroSkinâ (2012) : un habitat dont les ouvertures miment le fonctionnement de la pomme 
+de pin et permettent de rÃ©guler lâhumiditÃ© sans apport dâÃ©nergie Ã©lectrique. A quand des 
+applications dans le domaine du textile? 
+ 
+ 
+ 
+ 
+REMERCIEMENTS 
+Nous remercions E. Reyssat de nous avoir fait lâhonneur de sa visite au lycÃ©e pour Ã©changer 
+sur nos expÃ©riences et pour les conseils quâil a pu nous prodiguer.  
+ 
+ 
+ 
+ 
+ 
+ 
+20
+
+BIBLIOGRAPHIE 
+ 
+[1] Courty, J-M., Kierlik E. (2025) Mesurer lâhumiditÃ©, au cheveu prÃ¨s. Pour La Science (FÃ©vrier 
+2025) 568 
+ 
+[2] Greenspan, L. (1977) Humidity Fixed Points of Binary Saturated Aqueous Solutions. Journal of 
+Research of the National Bureau of Standards- A. Physics and Chemistry (January- February 1977), 
+Vol. 81 A, No.1 
+ 
+[3] Chareyron, D., Horsin-Molinaro, H. (2020). Physique et IngÃ©nierie des objets: le bilame. 
+https://culturesciencesphysique.ens-lyon.fr/ressource/bilame.xml 
+ 
+[4] Reyssat, E., Mahadevan, L (2009) Hygromorphs : from pine cones to biomimetic bilayers. J. R. 
+Soc. Interface (2009) 6, 951-957. 
+ 
+[5] Timoshenko, S. 1925 Analysis of bi-metal thermostats. J. Opt. Soc. Am 11 233-235. 
+ 
+ 
+21
