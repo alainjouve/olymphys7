@@ -20,7 +20,9 @@
         {% if equipe.numero>=200 %}
             <h4> Centre de {{ equipe.centre }} - {{ equipe.titreProjet }} </h4>
         {% endif %}
-
+        {% if equipe.numero>=100 and equipe.numero<200 %}
+            <h4>  {{ equipe.titreProjet }} </h4>
+        {% endif %}
 
     </div>
 {% endblock %}

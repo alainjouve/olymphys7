@@ -36,6 +36,9 @@
                 {% if liste_equipes[0].numero>=200 %}
                     <h4>Centre de {{ liste_equipes[0].centrecia }} - {{ liste_equipes[0].titreProjet }} </h4>
                 {% endif %}
+                {% if liste_equipes[0].numero>=100 and liste_equipes[0].numero<200 %}
+                    <h4> {{ liste_equipes[0].titreProjet }} </h4>
+                {% endif %}
             </div>
             <div class="col-md-1">
                 <a href="{{ path('photos_voir_galerie',{'infos':'equipe'~'-'~ liste_equipes[0].id~'-'~numero_suiv}) }}"
