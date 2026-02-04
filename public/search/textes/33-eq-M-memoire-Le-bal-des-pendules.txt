@@ -1,613 +1,977 @@
-Lebaldespendules
-MÃ©line Bar, Augustin DurandâLagarrigue, Lana Jeauffroy, Evan Malet
-LycÃ©e Edmond Perrier, Tulle - Olympiades de Physique 2025-2026
-Projet encadrÃ© par CÃ©line Pouquet et StÃ©phane Belin
+Le bal des pendules
+Méline Bar, Augustin Durand–Lagarrigue, Lana Jeauffroy, Evan Malet
+Lycée Edmond Perrier, Tulle - Olympiades de Physique 2025-2026
 
-Table des matiÃ¨res
-1 Introduction	3
-2 Les oscillations dâun pendule	4
-2.1 Oscillations libres. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4
-2.1.1 Protocole. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4
-2.1.2 Observations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .5
-2.1.3 Analyse. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .6
-2.1.4 Ãlaboration dâun programme de modÃ©lisation. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7
-2.2 Oscillations forcÃ©es par une excitation horizontale (dite âDanse hawaÃ¯enneâ). . . . . . . . . . . . . . . . .7
-2.2.1 Observations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .8
-2.2.2 Comparaison avec la thÃ©orie et conclusion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .9
-2.3 Oscillations forcÃ©es par une excitation verticale (dite âQueue de chevalâ). . . . . . . . . . . . . . . . . . .11
-2.3.1 Observations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .11
-2.3.2 Comparaison avec la thÃ©orie et conclusion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .12
-3 LâexpÃ©rience de Kapitsa (dite du âCharmeur de penduleâ)	13
-3.1 Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .13
-3.2 Ãvolution de notre dispositif. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .13
-3.3 Manipulations et observations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .14
-3.3.1 Protocole de mesure. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
-3.3.2 Influence de lâamplitudeades excitations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
-3.3.3 Influence de la longueurldu pendule. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .15
-3.4 ThÃ©orie de Kapitsa et rÃ©solution numÃ©rique. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .16
-3.4.1 PrÃ©sentation de la thÃ©orie du pendule de Kapitsa. . . . . . . . . . . . . . . . . . . . . . . . . . . .16
-3.4.2 Utilisation de la mÃ©thode dâEuler pour valider la thÃ©orie de Kapitsa. . . . . . . . . . . . . . . . .16
-3.5 Comparaison entre lâexpÃ©rience et la thÃ©orie de Kapitsa. . . . . . . . . . . . . . . . . . . . . . . . . . . .17
-3.6 PiÃ¨ge de Paul. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .18
-4 Conclusion	19
-5 Remerciements et sources	20
-2
+Projet encadré par Céline Pouquet et Stéphane Belin
 
+Table des matières
 1 Introduction
-Un pendule qui pend ? Câest banal. Mais un pendule qui se redresse et qui se met Ã  danser dans les airs, Ã§a lâest moins !
-Et cela a mÃªme de quoi faire tourner la tÃªte.
-En 1851, le physicien franÃ§ais LÃ©on Foucault fut le premier Ã  prouver au grand public, dâune faÃ§on visuelle, Ã  lâaide
-du pendule qui portera son nom, que la Terre tourne sur elle-mÃªme. Cette expÃ©rience, alors novatrice, fut accessible Ã  tous
-et marqua un tournant dans lâhistoire des sciences. Elle fut spectaculaire, grÃ¢ce Ã  une installation impressionnante de 67
-mÃ¨tres de hauteur, rÃ©alisÃ©e Ã  Paris, au PanthÃ©on. Cette expÃ©rience fascinante a ensuite Ã©tÃ© reproduite dans des musÃ©es Ã 
-travers le monde.
-Câest lors dâune visite auDeutsches Museumde Munich que, intriguÃ©s, nous avons souhaitÃ© Ã©tudier cette expÃ©rience
-lors des Olympiades de Physique. Seulement, pourquoi se contenter de reproduire lâexpÃ©rience telle quelle, quand il est
-possible dâen changer le point de vue ? Câest avec lâidÃ©e de changer de rÃ©fÃ©rentiel que nous avons commencÃ© nos recherches.
-Ã lâaide dâun dispositif dÃ©jÃ  Ã  notre disposition, dâun pendule, dâun support, dâune camÃ©ra et dâune boÃ®te transparente,
-nous avons reproduit Ã  plus petite Ã©chelle lâexpÃ©rience de Foucault. En faisant tourner notre support et la boÃ®te, nous
-reproduisions les conditions de cette derniÃ¨re. Ã lâintÃ©rieur, une camÃ©ra observait ce que nous voyions face au pendule
-de Foucault. Le plan du pendule se dÃ©calait lÃ©gÃ¨rement par rapport Ã  la camÃ©ra, tandis que, depuis lâextÃ©rieur de ce
-rÃ©fÃ©rentiel, nous constations que le systÃ¨me restait dans son plan.
-Bien que fort intÃ©ressante, lâexpÃ©rience ne fut quâun point de dÃ©part pour nos recherches, puisque nous nous sommes
-ensuite davantage concentrÃ©s sur le pendule lui-mÃªme.
-Depuis plusieurs siÃ¨cles, le pendule fascine et est utilisÃ© dans bon nombre de domaines, y compris la divination et lâhyp-
-nose. Il attire et intrigue. En physique, dans un cadre pÃ©dagogique, le pendule est notamment utilisÃ© pour construire des
-expÃ©riences accessibles en lien avec des formules thÃ©oriques.
-Dans le cadre de notre enseignement au lycÃ©e, nous nous Ã©tions dÃ©jÃ  servis dâun pendule pour Ã©tudier son mouvement
-simple et libre. Pourtant, cette Ã©tude restait limitÃ©e et des questions persistaient : peut-on forcer le pendule Ã  osciller
-dâune certaine faÃ§on en lui imposant une excitation au niveau de son point dâattache ? Peut-on prÃ©voir quelles frÃ©quences
-dâexcitation le feront osciller avec une grande amplitude ? Dans quelle mesure les rÃ©ponses Ã  ces questions sont-elles liÃ©es Ã 
-une Ã©tude dâoscillations selon le modÃ¨le du pendule simple ? Comment expliquer ces phÃ©nomÃ¨nes ? Notre pendule peut-il
-osciller Ã  lâenvers, masse en haut, dÃ©fiant la gravitÃ© ?
-Câest avec toutes ces questions en tÃªte que nous avons commencÃ© nos travaux, Ã  tÃ¢tons, mais avec enthousiasme, rÃ©-
-flexion et esprit dâÃ©quipe. Nous sommes quatre Ã©lÃ¨ves et amis de terminale au lycÃ©e Edmond Perrier Ã  Tulle, passionnÃ©s
-par la physique.
-Dans ce mÃ©moire, nous Ã©tudierons, dans un premier temps, le comportement dâun pendule lors dâoscillations simples,
-puis les Ã©ventuelles surprises que rÃ©servent les oscillations forcÃ©es par des excitations horizontales ou verticales au niveau
-du point de suspension du pendule, chacune de ces deux situations ayant Ã©tÃ© rebaptisÃ©e par nos soins âDanse hawaÃ¯enneâ
-et âQueue de chevalâ. Puis, dans une seconde partie, nous essaierons de percer les mystÃ¨res du âCharmeur de penduleâ,
-câest-Ã -dire de lâexpÃ©rience du pendule inversÃ©, dit âde Kapitsaâ, avec masse en haut.
-Bonne lecture. Bienvenue au bal des pendules !
+
 3
 
-2 Les oscillations dâun pendule
-Dans cette partie, nous Ã©tudierons les oscillations dâun pendule dans trois situations : sans excitation, avec excitation
-horizontale, puis verticale, au niveau de son point dâattache. Pour chaque situation, nous disposons de cinq pendules de 2,
-4, 6, 8 et 10 cm, formÃ©s dâune tige rigide, terminÃ©s par un boulon en tant que masse ponctuelle et Ã©quipÃ©s de roulements
-Ã  billes pour limiter les forces de frottement du pivot.
-2.1 Oscillations libres
-Nous nous sommes dâabord attelÃ©s Ã  la recherche dâun modÃ¨le mathÃ©matique adaptÃ© pour dÃ©crire le mouvement de
-nos pendules.
-Le modÃ¨le du pendule simple, câest-Ã -dire dÃ©crivant unemasse ponctuelle fixÃ©e Ã  lâextrÃ©mitÃ© dâun fil sans masse et inex-
-tensible, semblait tout trouvÃ©. Cependant, il fallait encore vÃ©rifier que nos pendules sây conformaient.
-Tout dâabord, il Ã©tait nÃ©cessaire de peser nos pendules pour considÃ©rer que la tige reliÃ©e Ã  la masse ponctuelle du
-pendule peut Ãªtre considÃ©rÃ©e comme sans masse par rapport Ã  la masse totale du pendule. Nous avons obtenu le tableau
-suivant :
-longueurldu pendule(en cm)2 4 6 8 10
-masse de la tige(en g) 0.651.171.652.122.56
-masse du boulon(en g) 6.506.506.506.506.50
-masse totale(en g) 7.157.678.158.79.06
-La masse de la tige reste toujours bien infÃ©rieure Ã  la masse totale (rapport de 11 pour le pendule de 2 cm et rapport
-de 2.8 pour le pendule de 10 cm) mais reste tout de mÃªme assez consÃ©quente. Câest pourquoi nous avons cherchÃ© un autremoyen de vÃ©rifier que nos pendules se conforment bien au modÃ¨le du pendule simple.
-Nous nous sommes servis pour cela dâune propriÃ©tÃ© du pendule simple, lâexistence dâune frÃ©quence propre pour celui-ci,
-dÃ©finie comme lafrÃ©quence Ã  laquelle il oscille lorsquâil est en oscillation libre, câest-Ã -dire sans force excitatrice extÃ©rieure.
-A cette frÃ©quence propre est associÃ©e une pÃ©riode propre, letemps pris par le pendule pour effectuer une oscillation, en
-oscillation libre.
-Figure 1â Oscillations libres du pendule de 10 cm
-2.1.1 Protocole
-Pour effectuer une mesure rapide de la pÃ©riode propre dâoscillation libre de chaque pendule, nous les avons fait osciller
-librement autour du pivot, en mesurant la durÃ©e de 10 oscillations. Il a alors suffi de diviser cette durÃ©e par 10 pour trouverla pÃ©riode propreT0, durÃ©e dâune oscillation. La frÃ©quence propre correspond alors Ã f0= 1/T0.
-Pour des mesures plus prÃ©cises des pÃ©riodes dâoscillation, nous avons ensuite rÃ©alisÃ© un montage avec une fourche op-tique. Lorsque le pendule passe devant le laser, le capteur optique ne reÃ§oit plus de lumiÃ¨re et transmet cette informationÃ  lâordinateur, via le logiciel Latis Pro, rÃ©vÃ©lant le passage de notre pendule :
+2 Les oscillations d’un pendule
+2.1 Oscillations libres . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.1.1 Protocole . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.1.2 Observations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.1.3 Analyse . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.1.4 Élaboration d’un programme de modélisation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Oscillations forcées par une excitation horizontale (dite ”Danse hawaïenne”) . . . . . . . . . . . . . . . . .
+2.2.1 Observations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2.2 Comparaison avec la théorie et conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3 Oscillations forcées par une excitation verticale (dite ”Queue de cheval”) . . . . . . . . . . . . . . . . . . .
+2.3.1 Observations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3.2 Comparaison avec la théorie et conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
 4
-
-Figure 2â Montage avec la fourche optique, permettant la mesure de la frÃ©quence propre
-2.1.2 Observations
-Une pÃ©riode correspond Ã  la durÃ©e entre deux pics (aller et retour du pendule). Par souci de prÃ©cision, nous avons
-mesurÃ© plusieurs pÃ©riodes, puis divisÃ© la durÃ©e obtenue par le nombre de pÃ©riodes, pour trouver la pÃ©riode dâoscillation de
-notre pendule.
-Figure 3â Mesure dâune pÃ©riode dans Latis Pro
-Pour trouver la frÃ©quence dâoscillation, il suffit de prendre lâinverse de la pÃ©riode. Nous obtenons les rÃ©sultats suivants :
-Table 1â Calcul des frÃ©quences dâoscillation de nos diffÃ©rents pendules
-l(en cm) 2 4 6 8 10
-Toscillation(en s)0.2820.4060.4860.571 0.638
-Incertitude 0:0040:0040:0040:0040:004
-foscillation(en Hz)3.5462.4632.0581.751 1.567
-Incertitude 0:0500:0270:0170:0120:0098
-Pour un pendule simple, cette frÃ©quence dâoscillation correspond Ã  la frÃ©quence propref0du pendule.
+4
+4
 5
-
-2.1.3 Analyse
-La formule permettant de calculer la frÃ©quence propre pour un pendule simple (voirannexe thÃ©orie des pendulespour
-la dÃ©monstration) est :
-f0=
-1
-2
-r
-g
-l
-(1)
-Avec :
-âf0la frÃ©quence propre dâun pendule
-âlla longueur du pendule
-âgla constante dâaccÃ©lÃ©ration de la pesanteur Ã  la surface de la Terre
-Elle peut aussi sâÃ©crire :
-f0=
-p
-g
-2
-1
-p
-l
-(2)
-On constate alors que la frÃ©quence propre est proportionnelle Ã 
-1
-p
-l
-. Afin de vÃ©rifier que nos pendules se ramÃ¨nent bien au
-modÃ¨le du pendule simple, nous avons donc tracÃ© les points correspondant aux frÃ©quences propres en fonction de
-1
-p
-l
-.
-Figure 4â ModÃ©lisation de la frÃ©quence propre de chaque pendule en fonction de
-1
-p
-l
-On constate que la droite linÃ©aire donnÃ©e par le modÃ¨le du pendule simple passe par les points expÃ©rimentaux. Pour
-le vÃ©rifier avec prÃ©cision, nous avons calculÃ© le Z-score.
-Table 2â FrÃ©quences dâoscillation de nos diffÃ©rents pendules comparÃ©es
-l(en cm) 2 4 6 8 10
-foscillation(en Hz)3.5462.4632.0581.751 1.567
-Incertitude 0:0500:0270:0170:0120:0098
-fmodele(en Hz) 3.5252.4922.0351.762 1.576
-Incertitude 0:0800:0310:0170:0110:0079
-Z-score 0.2095-0.74410.9407-0.6737-0.7112
-On compare une valeur mesurÃ©exmesÃ  une valeur de rÃ©fÃ©rencexrefen calculant le Z-score suivant :
-Zscore=
-jxmes xrefj
-p
-u(xmes)
-2
-+u(xref)
-2
-oÃ¹u(xmes)est lâincertitude de la valeur mesurÃ©e,
-etu(xref)est lâincertitude de la valeur de rÃ©fÃ©rence (qui est ici due Ã  une incertitude surl, la longueur du pendule).
 6
-
-Le Z-score est compris entre -2 et 2, donc les frÃ©quences propres trouvÃ©es Ã  lâaide du modÃ¨le du pendule simple sont
-bien en accord avec les mesures expÃ©rimentales.
-Ainsi, nos pendules sont assimilables Ã  des pendules simples, ce qui valide lâutilisation de ce modÃ¨le pour nos expÃ©riences.
-2.1.4 Ãlaboration dâun programme de modÃ©lisation
-Afin de modÃ©liser le mouvement de notre pendule dans diffÃ©rentes situations dâexcitation, nous avons crÃ©Ã© un script
-Python utilisant les Ã©quations dÃ©duites du modÃ¨le du pendule simple. Ce script a permis de vÃ©rifier que les phÃ©nomÃ¨nes
-expÃ©rimentaux que nous avons vu apparaÃ®tre Ã©taient bien prÃ©dits par des Ã©quations thÃ©oriques.
-La dÃ©marche permettant de trouver lâÃ©quation diffÃ©rentielle qui rÃ©git le mouvement de nos pendules est expliquÃ©e dans
-lâannexe thÃ©orie des pendules. La mÃ©thode de rÃ©solution numÃ©rique de cette Ã©quation dans un script Python est, quant Ã 
-elle, dÃ©crite dans lâannexe modÃ©lisation numÃ©rique.
-Pour afficher les rÃ©sultats fournis par ce script de maniÃ¨re claire et agrÃ©able, nous avons enfin conÃ§u une interface gra-
-phique qui permet une simulation du comportement attendu du pendule, ainsi que la gÃ©nÃ©ration dâun graphique de lâangle
-(en radians) formÃ© par le pendule au cours du temps, tout en offrant la possibilitÃ© de faire varier, de faÃ§on assez lu-
-dique, les valeurs des paramÃ¨tres clÃ©s. Nous avons publiÃ© cette interface en ligne, sous licence libre, Ã  lâadresse suivante :
-https://gitlab.com/Felix.dev/ResonatingPendulumCalculations-OlympiadesPhysique.
-Figure 5â Notre interface graphique
-2.2 Oscillations forcÃ©es par une excitation horizontale (dite âDanse hawaÃ¯enneâ)
-Le but de cette expÃ©rience, et de la suivante, est de trouver une frÃ©quence de rÃ©sonance, câest-Ã -direune frÃ©quence, sous
-lâexcitation de laquelle, le systÃ¨me,ici notre pendule,va Ãªtre le siÃ¨ge dâoscillations de plus en plus importantes, jusquâÃ 
-atteindre un rÃ©gime dâÃ©quilibre.
-Ici, cela revient Ã  se demander sâil existe une frÃ©quence dâexcitation horizontale particuliÃ¨re, capable de forcer le pen-
-dule Ã  osciller avec une amplitude maximale.
-Pour cela, nous avons rÃ©alisÃ© un dispositif oÃ¹ le pendule est fixÃ© Ã  une accroche liÃ©e Ã  un haut-parleur positionnÃ©
-Ã  lâhorizontale. La frÃ©quence dâexcitation imposÃ©e par le support est rÃ©glÃ©e grÃ¢ce Ã  un gÃ©nÃ©rateur de basses frÃ©quences
-(GBF).
 7
-
-Figure 6â Montage du pendule avec des oscillations (flÃ¨che bleue) forcÃ©es par une excitation horizontale (flÃ¨che rouge)
-Pour plus de commoditÃ©, cette expÃ©rience sera nommÃ©e âDanse HawaÃ¯enneâ, puisquâelle Ã©tudie les oscillations forcÃ©es
-horizontales du pendule, dansant tel une danseuse hawaÃ¯enne.
-2.2.1 Observations
-En procÃ©dant par tÃ¢tonnements, en ajustant la frÃ©quence dâexcitation (flÃ¨che rouge sur le schÃ©ma plus haut) grÃ¢ce
-au GBF, nous nous sommes aperÃ§us quâil existait bien au moins une frÃ©quence dâexcitation pour laquelle le pendule se
-mettait Ã  osciller avec une grande amplitude. Ce phÃ©nomÃ¨ne de rÃ©sonance se produit en effet lorsque le pendule est excitÃ©
-horizontalement Ã  sa frÃ©quence propre. Pour une frÃ©quence infÃ©rieure, lâamplitude est plus faible voire inexistante, et pour
-une frÃ©quence supÃ©rieure Ã©galement.
-Table 3â FrÃ©quences dâexcitation horizontale (âDanse hawaÃ¯enneâ) provoquant la rÃ©sonance de nos diffÃ©rents pendules
-(fresonance), comparÃ©es Ã  leurs frÃ©quences propres (f0) trouvÃ©es prÃ©cÃ©demment
-l(en cm) 2 4 6 8 10
-fresonance(en Hz)3.42.52.01.81.5
-Incertitude 0:30:30:30:20:2
-f0(en Hz) 3.5462.4632.0581.7511.567
-On constate que les frÃ©quences de rÃ©sonance (fresonance) mesurÃ©es par nos soins sont en accord avec les frÃ©quences
-propres (f0)trouvÃ©es prÃ©cÃ©demment.
-Nous nous sommes ensuite penchÃ©s sur lâoscillation du pendule lui-mÃªme et notamment sur la frÃ©quence Ã  laquelle il
-oscille lorsquâil se trouve en rÃ©sonance (flÃ¨che bleue sur le schÃ©ma plus haut). A-t-elle un lien avec lâexcitation quâon lui
-impose ?
-Nous avons donc rÃ©alisÃ© une analyse vidÃ©o pour chacun des pendules, grÃ¢ce au logiciel Tracker, en effectuant un poin-
-tage. GrÃ¢ce aux donnÃ©es obtenues, il est possible de tracer, avec le logiciel Regressi, les amplitudes des oscillations du
-pendule et du haut-parleur en fonction du temps.
-Pour le pendule de 10 cm :
+7
 8
-
-Figure 7â Comparaison du mouvement horizontal du support excitateur du pendule en fonction du temps (courbe bleue)
-et du mouvement horizontal de la masse ponctuelle du pendule en fonction du temps (courbe noire)
-On constate graphiquement que les pÃ©riodes des deux courbes sont identiques. Ainsi, le pendule, en rÃ©sonance, oscille
-Ã  la mÃªme frÃ©quence que lâexcitation horizontale quâon lui impose via le haut-parleur.
-2.2.2 Comparaison avec la thÃ©orie et conclusion
-Ainsi, on sâaperÃ§oit que lorsquâon excite horizontalement le pendule Ã  sa frÃ©quence propre, un phÃ©nomÃ¨ne de rÃ©sonance
-se produit et le pendule oscille avec une amplitude maximale. Une excitation Ã  une frÃ©quence infÃ©rieure ne produit pas
-de rÃ©sonance, mais une excitation Ã  une frÃ©quence supÃ©rieure non plus ! En parallÃ¨le, le pendule lui-mÃªme oscille Ã  la
-frÃ©quence propre.
-VÃ©rifions maintenant que ces rÃ©sultats expÃ©rimentaux sont en accord avec les prÃ©dictions du modÃ¨le thÃ©orique.
-GrÃ¢ce Ã  lâinterface graphique, on peut facilement confirmer par tÃ¢tonnements que si lâon se place Ã  une excitation de
-frÃ©quence Ã©gale Ã  la frÃ©quence propre, le pendule acquiert une grande amplitude dâoscillation, mÃªme avec un faible angle
-initial. En dehors de cette frÃ©quence dâexcitation, le pendule oscille peu ou pas du tout.
-Par exemple, avec un pendule long de 4 cm, de frÃ©quence propref0=
-1
-2
-p
-g
-0:04
-= 2:49Hz, le programme dÃ©termine
-le graphique de lâangle formÃ© par le pendule en fonction du temps :
-Figure 8â ExcitÃ© Ã  une frÃ©quence de 1.5 Hz < 2.49 Hz, le pendule oscille avec une faible amplitude
 9
-
-Figure 9â ExcitÃ© Ã  2.49 Hz, sa frÃ©quence propre, le pendule se met Ã  osciller avec une grande amplitudeFigure 10â A une frÃ©quence de 7 Hz > 2.49 Hz, la frÃ©quence propre du pendule est dÃ©passÃ©e et celui-ci recommence Ã 
-faiblement osciller
-Pour visualiser la valeur de la frÃ©quence dâexcitation Ã  la rÃ©sonance, prÃ©dite par la thÃ©orie, on peut faire boucler le
-calcul de lâangle du pendule pour toutes les frÃ©quences dâun intervalle et ne sÃ©lectionner que les angles maximaux.
-Figure 11â Angle maximal atteint par le pendule en fonction de la frÃ©quence Ã  laquelle il est excitÃ© horizontalement
-10
-
-La frÃ©quence dâexcitation provoquant la rÃ©sonance est facilement repÃ©rÃ©e par le pic Ã  2.49 Hz. Elle est bien Ã©gale Ã  la
-frÃ©quence propre du pendule.
-2.3 Oscillations forcÃ©es par une excitation verticale (dite âQueue de chevalâ)
-Nous nous sommes ensuite demandÃ© sâil Ã©tait possible de faire entrer en rÃ©sonance un pendule Ã  lâaide dâune excitation
-verticale, cette fois-ci.
-Figure 12â Montage du pendule avec oscillations (flÃ¨che bleue) forcÃ©es par une excitation verticale (flÃ¨che rouge)
-Pour cette expÃ©rience, le montage est presque identique Ã  celui produisant une excitation horizontale. Il suffit de placer
-le haut-parleur Ã  la verticale (vers le bas).
-Le pendule oscille alors de gauche Ã  droite (flÃ¨che bleue), Ã  la maniÃ¨re dâune jeune personne sportive dont la queue
-de cheval oscillerait latÃ©ralement sous lâeffet des secousses verticales de sa course (flÃ¨che rouge).
-2.3.1 Observations
-Nous avons dâabord rÃ©glÃ© le haut-parleur excitateur Ã  la frÃ©quence propre du pendule et constatÃ©, avec surprise, que
-celui-ci nâoscillait pas. Nous avons donc cherchÃ© une rÃ©sonance avec des frÃ©quences supÃ©rieures et nous nous sommes aper-
-Ã§us que le pendule se met seulement Ã  osciller avec grande amplitude Ã  deux fois sa frÃ©quence propre !
-Une impulsion initiale est nÃ©cessaire pour lancer le processus.
-Ainsi, dans le cas dâune excitation verticale, la rÃ©sonance se produit pour une frÃ©quence dâexcitation Ã©gale Ã  deux fois la
-frÃ©quence propre du pendule.
-Table 4â FrÃ©quences dâexcitation verticale (âQueue de chevalâ) provoquant la rÃ©sonance de nos diffÃ©rents pendules
-(fresonance), comparÃ©es Ã  leurs frÃ©quences propres (f0)
-l(en cm) 2 4 6 8 10
-fresonance(en Hz) 6.84.854.1 3.53.1
-Incertitude 0:20:20:120:10:1
-fresonance/2(en Hz)3.42.4 2.0 1.81.7
-f0(en Hz) 3.5462.4632.0581.7511.567
-On constate que lorsquâon calcule la moitiÃ© des frÃ©quences de rÃ©sonance mesurÃ©es (fresonance/2), on trouve des valeurs
-en accord avec les frÃ©quences propres (f0)trouvÃ©es prÃ©cÃ©demment.
 11
-
-Quâen est-il de la frÃ©quence dâoscillation du pendule lui-mÃªme, entrÃ© en rÃ©sonance (flÃ¨che bleue sur le schÃ©ma plus haut) ?
-Est-elle diffÃ©rente de celle trouvÃ©e lors des excitations horizontales de type âDanse hawaÃ¯enneâ ?
-On rÃ©alise, comme plus haut, une analyse vidÃ©o pour chacun des pendules, puis on trace, avec le logiciel Regressi,
-lâamplitude des oscillations du pendule et des excitations Ã©mises par le haut-parleur en fonction du temps.
-Pour le pendule de 10 cm :
-Figure 13â Comparaison du mouvement vertical du support excitateur du pendule en fonction du temps (courbe bleue)
-et du mouvement horizontal de la masse ponctuelle du pendule en fonction du temps (courbe noire)
-Visiblement, dans le cas dâune excitation verticale, le pendule, en rÃ©sonance, oscille Ã  la moitiÃ© de la frÃ©quence dâexci-
-tation imposÃ©e par le haut-parleur. Le pendule oscille donc, dans ce cas, Ã  sa frÃ©quence propre.
-Le phÃ©nomÃ¨ne de rÃ©sonance est ici assez contre-intuitif : on impose une frÃ©quence dâexcitation verticale Ã  un pendule
-lui permettant dâentrer en rÃ©sonance, et il sâobstine Ã  osciller Ã  la moitiÃ© de cette frÃ©quence !
-2.3.2 Comparaison avec la thÃ©orie et conclusion
-Nous avons donc vu quâun pendule en oscillations forcÃ©es par une excitation verticale peut entrer en rÃ©sonance, mais,
-lorsque câest le cas, il oscille Ã  la moitiÃ© de la frÃ©quence des excitations quâon lui impose.
-Voyons maintenant si la thÃ©orie est en accord avec ces observations.
-En bouclant le calcul de lâangle du pendule pour toutes les frÃ©quences dâun intervalle et en ne sÃ©lectionnant que les
-angles maximaux, on obtient le graphique suivant :
+11
 12
 
-Figure 14â Angle maximal atteint par un pendule de 4 cm en fonction de la frÃ©quence Ã  laquelle il est excitÃ© verticalement
-La frÃ©quence dâexcitation provoquant la rÃ©sonance est facilement repÃ©rÃ©e, graphiquement, par le pic Ã  4.98 Hz.
-Elle est bien Ã©gale Ã  deux fois la frÃ©quence propre du pendule (2f0= 22:49 = 4:98Hz).
-Ainsi, nos observations sont en accord avec le modÃ¨le thÃ©orique.
-3 LâexpÃ©rience de Kapitsa (dite du âCharmeur de penduleâ)
-3.1 Introduction
-Le pendule de Kapitsa illustre Ã  merveille la maniÃ¨re dont la physique peut contredire notre intuition. Ce dispositif est
-constituÃ© dâune masse suspendue Ã  une tige solide, mais lÃ©gÃ¨re, dont le point dâattache est soumis Ã  une excitation verticale
-rapide. Une question naturelle nous vient alors : que devient cette masse lorsque le point dâattache est mis en mouvement ?
-De maniÃ¨re surprenante, la position inversÃ©e du pendule, qui est normalement instable, peut devenir stable lorsque lâexcita-
-tion est suffisamment rapide et dâamplitude adÃ©quate. Et ce nâest pas le seul phÃ©nomÃ¨ne qui possÃ¨de cette caractÃ©ristique :
-on la retrouve Ã©galement dans le piÃ¨ge de Paul, oÃ¹ des ions sont piÃ©gÃ©s lorsquâon alterne Ã  haute frÃ©quence les pÃ´les chargÃ©s
-des extrÃ©mitÃ©s.
-Ce comportement paradoxal des pendules excitÃ©s fut observÃ© dÃ¨s 1908 par Andrew Stephenson, mais ce nâest quâen
-1951 que le physicien soviÃ©tique Piotr LÃ©onidovitch Kapitsa (1894-1984) en proposa une explication complÃ¨te. Sa thÃ©orie
-est fondÃ©e sur la mÃ©canique vibrationnelle et montre comment des excitations rapides peuvent modifier la stabilitÃ© dâun
-systÃ¨me dynamique.
-Kapitsa, laurÃ©at du prix Nobel de physique en 1978, est restÃ© cÃ©lÃ¨bre pour sa capacitÃ© Ã  relier la thÃ©orie et lâexpÃ©-
-rience Ã  propos de phÃ©nomÃ¨nes apparemment simples mais en rÃ©alitÃ© complexes.
-Dans le cadre de cette partie du mÃ©moire, nous nous intÃ©resserons Ã  lâobservation et Ã  la modÃ©lisation dâun phÃ©nomÃ¨ne de
-stabilisation dynamique. Nous ferons varier plusieurs paramÃ¨tres expÃ©rimentaux, tels que la frÃ©quence, lâamplitude de la
-vibration du point dâattache, ainsi que la longueur du pendule, afin dâobserver leurs effets sur la stabilitÃ© du systÃ¨me.
-Nos rÃ©sultats expÃ©rimentaux seront ensuite comparÃ©s aux valeurs thÃ©oriques attendues, issues du modÃ¨le de Kapitsa,
-ce qui permettra dâÃ©valuer la cohÃ©rence entre la thÃ©orie et lâexpÃ©rimentation et de mieux saisir les conditions de la stabilitÃ©
-de ce systÃ¨me.
-3.2 Ãvolution de notre dispositif
-Bien quâaujourdâhui satisfaisant et fonctionnel, notre dispositif pour cette manipulation ne nous est pas apparu comme
-tel dÃ¨s le dÃ©part. Il est le rÃ©sultat dâessais et de recherches. Nous avons tout dâabord commencÃ© nos essais avec le haut-
-parleur de la premiÃ¨re partie. Seulement, ce dernier nâapportait pas de rÃ©sultats concluants. A la suite de nombreuses
+3 L’expérience de Kapitsa (dite du ”Charmeur de pendule”)
+3.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.2 Évolution de notre dispositif . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3 Manipulations et observations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3.1 Protocole de mesure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3.2 Influence de l’amplitude a des excitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3.3 Influence de la longueur l du pendule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.4 Théorie de Kapitsa et résolution numérique . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.4.1 Présentation de la théorie du pendule de Kapitsa . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.4.2 Utilisation de la méthode d’Euler pour valider la théorie de Kapitsa . . . . . . . . . . . . . . . . .
+3.5 Comparaison entre l’expérience et la théorie de Kapitsa . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.6 Piège de Paul . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
 13
-
-expÃ©rimentations, nous en sommes arrivÃ©s Ã  notre dispositif actuel. Vous trouverez en annexe (annexe matÃ©riel) plus de
-dÃ©tails sur lâÃ©volution de notre dispositif.
-En voici le fonctionnement global : un
-petit moteur entraÃ®ne un excentrique sur
-lequel est vissÃ© un bras. Ce bras est liÃ© par
-une vis Ã  un piston au mouvement vertical,
-guidÃ© par un tuyau en PVC. Ce piston
-entraÃ®ne alors directement le pendule.
-Afin dâexpÃ©rimenter diffÃ©rentes amplitudes, nous avons positionnÃ© 10 in-serts sur lâexcentrique :
-âAmplitude Jaune = 1.8 mm
-âAmplitude Bleue = 3.1 mm
-âAmplitude Rouge = 4.4 mm
-âAmplitude Bleu foncÃ© = 5.5 mm
-âAmplitude Rose = 6.1 mm
-âAmplitude Noire = 6.7 mm
-âAmplitude Verte = 8.3 mm
-âAmplitude Mauve = 9.6 mm
-âAmplitude Blanche = 10.0 mm
-Par ailleurs, il faut aussi prendre en compte un jeu mÃ©canique de 1 mm.
-La sonde Ã  effet Hall comptabilise chaque passage de
-lâaimant devant elle. La frÃ©quence dâapparition de lâai-
-mant devant la sonde est alors visible sur lâÃ©cran dâaf-
-fichage. Elle est exprimÃ©e en tours par minute (rpm).
-3.3 Manipulations et observations
-Dans cette premiÃ¨re sous-partie, nous procÃ©derons Ã  la variation de diffÃ©rents paramÃ¨tres afin dâobserver leurs effets
-sur la stabilitÃ© de notre systÃ¨me : la frÃ©quence dâexcitation, lâamplitude dâexcitation et la longueur de notre pendule.
+13
+13
 14
-
-3.3.1 Protocole de mesure
-On cherche Ã  dÃ©terminer la frÃ©quence minimale permettant Ã  notre pendule de se maintenir Ã  la verticale en position
-inversÃ©e.
-Protocole :
-1.DÃ©terminer lâamplitude et la longueur du pendule souhaitÃ©es pour la manipulation.
-âPour lâamplitude dâexcitation, dÃ©visser la partie du bras reliÃ©e Ã  lâexcentrique, puis la revisser dans lâinsert
-adÃ©quat.
-âPour le pendule, dÃ©visser celui dÃ©jÃ  en place et installer le pendule de la bonne longueur. Penser Ã  vÃ©rifier quâil
-peut tourner sans gÃªne autour de son axe.
-2.VÃ©rifier ensuite que toutes les vis du dispositif sont bien serrÃ©es, afin de sÃ©curiser le bon fonctionnement de la
-manipulation.
-3.Allumer le gÃ©nÃ©rateur reliÃ© au moteur et augmenter la tension progressivement jusquâÃ  ce que le pendule se main-
-tienne de lui-mÃªme Ã  la verticale. Si nÃ©cessaire, aider le pendule Ã  se placer initialement Ã  la verticale.
-4.Diminuer ensuite la tension progressivement afin de trouver le moment de bascule, la valeur Ã  partir de laquelle le
-pendule retombe.
-5.Relever la valeur du rÃ©gime (en rotation par minute, rpm) affichÃ©e sur lâÃ©cran de la sonde. Puis convertir cette
-valeur en hertz Ã  lâaide de la relationf=
-rpm
-60
-.
-6.RÃ©itÃ©rer lâexpÃ©rience.
-Suite Ã  nos expÃ©riences, nous avons dÃ©terminÃ© une incertitude de Â±100 rpm. Elle prend en compte lâincertitude de lecture,mais Ã©galement celle du rÃ©glage.
-3.3.2 Influence de lâamplitudeades excitations
-Pour cette expÃ©rience, nous utilisons notre pendule de 4 cm. Nous mesurons les frÃ©quences minimales, en fonction de
-lâamplitude des excitations nÃ©cessaires au maintien de ce dernier en position inversÃ©e. Les rÃ©sultats sont ensuite regroupÃ©s
-dans le tableau suivant, conformÃ©ment au protocole de manipulation.
-Table 5â FrÃ©quence minimale du pendule de 4 cm Ã  diffÃ©rentes amplitudes dâexcitation
-Amplitude ( en mm) 1,83,14,45,56,16,78,39,610
-FrÃ©quence minimale ( en rpm )2250184017751450120011301110950920
-Conclusion :
-GrÃ¢ce aux mesures rÃ©alisÃ©es avec le pendule de 4 cm, nous constatons que plus lâamplitude dâexcitation est Ã©levÃ©e, plusla frÃ©quence minimale nÃ©cessaire au maintien du pendule en position inversÃ©e est faible. On peut donc dire que cettefrÃ©quence minimale est strictement dÃ©croissante en fonction de lâamplitude. Ce phÃ©nomÃ¨ne est Ã©galement observable avectous nos autres pendules.
-3.3.3 Influence de la longueurldu pendule
-Pour cette expÃ©rience, nous testons tous nos pendules avec une amplitude dâexcitation de 6 mm.
-Table 6â FrÃ©quence minimale de pendules de diffÃ©rentes longueurs pour une amplitude dâexcitationa=6 mm
-l(en cm) 2 4 6 8 10
-FrÃ©quence minimale (en rpm)9501200135015001700
-Conclusion :
-Les rÃ©sultats montrent que plus la longueur (l) du pendule est grande plus la frÃ©quence minimale des excitations nÃ©cessaires
-Ã  la stabilisation en position inversÃ©e est Ã©levÃ©e. Cette frÃ©quence est strictement croissante, en fonction de la longueur du
-pendule. Ces observations sont Ã©galement valables pour les autres amplitudes.
-Seulement, une question persiste : ces mesures sont-elles en accord avec la thÃ©orie proposÃ©e par Kapitsa ?
 15
-
-3.4 ThÃ©orie de Kapitsa et rÃ©solution numÃ©rique
-3.4.1 PrÃ©sentation de la thÃ©orie du pendule de Kapitsa
-Figure 15â Formule de Kapitsa, telle quâelle apparaÃ®t dans lâarticle de 1951
-La formule de base prÃ©sentÃ©e ci-dessus provient de lâarticle original de Kapitsa. [3]. Elle donne une condition, sous la
-forme dâune inÃ©galitÃ©, pour que la stabilisation en position inversÃ©e soit effective. Les diffÃ©rentes grandeurs de cette formule
-sont :
-âa: amplitude de la vibration du support (en m),
-â!: pulsation de la vibration, exprimÃ©e en rad/s,
-âg: attraction gravitationnelle terrestre,g= 9:81NÂ·kg
- 1
-,
-âL: longueur du pendule (en m),
-âK: constante dÃ©pendante du modÃ¨le utilisÃ© (elle vaut0pour un pendule simple).
-Cette formule gÃ©nÃ©rale montre que la stabilisation du pendule fait bien intervenir deux grandeurs physiques : lâamplitude
-adu mouvement du support et la longueurLdu pendule (qui correspond Ã ldans notre travail).
-On va en extraire une inÃ©galitÃ© essentielle donnant la frÃ©quence minimale nÃ©cessaire Ã  la stabilisation du pendule :
-On sait que!= 2fetK= 0pour un pendule simple, alors on a :
-1
-2
-a
-2
-4
-2
-f
-2
-gl
-soit
-f
-p
-2gl
-2a
-dâoÃ¹
-fmin=
-p
-2gl
-2a
-Cette relation rÃ©sume lâidÃ©e principale de la thÃ©orie de Kapitsa, tout en restant accessible.
-Ainsi, dâaprÃ¨s la thÃ©orie de Kapitsa :
-âsi lâamplitudeaaugmente, la frÃ©quence minimale nÃ©cessaire Ã  la stabilisation diminue,
-âsi la longueurlaugmente, il faut une frÃ©quence plus Ã©levÃ©e pour maintenir lâÃ©quilibre en position inversÃ©e.
-Ces rÃ©sultats thÃ©oriques sont donc conformes Ã  ceux observÃ©s expÃ©rimentalement.
-3.4.2 Utilisation de la mÃ©thode dâEuler pour valider la thÃ©orie de Kapitsa
-Dans cette sous-partie, on se propose dâutiliser le script Ã©laborÃ© dans la premiÃ¨re partie, permettant de rÃ©soudre, par
-la mÃ©thode dâEuler, lâÃ©quation dÃ©crivant le mouvement du pendule, obtenue thÃ©oriquement (voirannexe modÃ©lisation
-numÃ©rique), dans le but de vÃ©rifier lâexpression de la frÃ©quence minimale donnÃ©e par la thÃ©orie de Kapitsa.
-Pour visualiser la valeur de la frÃ©quence minimale prÃ©dite par la thÃ©orie des pendules simples, on peut faire boucler,
-comme plus haut, le calcul de lâangle du pendule pour toutes les frÃ©quences dâun intervalle, en sÃ©lectionnant, cette fois-ci,
-la moyenne des angles dÃ©crits par le pendule. Si cette moyenne est proche de 0 rad, par rapport Ã  lâaxe vertical, le pendule
-ne reste pas dressÃ©. Si elle est aux environs derad, alors le pendule reste dressÃ©. On mesure ici la frÃ©quence minimale
-pour voir le pendule rester dressÃ© comme la frÃ©quence correspondant au saut dâun angle moyen de 0 rad Ã rad (3.14).
+15
+15
 16
-
-Figure 16â Angle moyen dÃ©crit par un pendule de 6 cm en fonction de la frÃ©quence Ã  laquelle il est excitÃ© verticalement
-pour une amplitude dâexcitationa= 4 mm
-On remarque sur la courbe que le pendule reste dressÃ© sif >44Hz. Câest donc la frÃ©quence minimale dâexcitation
-nÃ©cessaire Ã  la stabilisation en position inversÃ©e que nous cherchions.
-De cette maniÃ¨re, nous avons pu obtenir les valeurs de la frÃ©quence minimale fournies par la thÃ©orie du pendule simple et
-vÃ©rifier leur correspondance avec la thÃ©orie de Kapitsa.
-Nous avons comparÃ© les frÃ©quences minimales trouvÃ©es Ã  lâaide du script Python (fminP ython) et celles donnÃ©es par
-la formule de Kapitsa (fminKapitsa) en faisant varier les deux paramÃ¨tres que sont :
-âlâamplitude dâexcitationadu support,
-Table 7â Comparaison des calculs par Python et par Kapitsa defminsuivant les valeurs deapourl= 6cm
-a(en m) 0.00100.00200.00400.01000.0150
-fminP ython(en Hz)174.087.0044.0018.0012.00
-fminKapitsa(en Hz)172.786.3443.1717.2711.51
-âla longueurldu pendule.
-Table 8â Comparaison des calculs par Python et par Kapitsa defminsuivant les valeurs delpoura= 2mm
-l(en cm) 1 2 5 10 20
-fminP ython(en Hz)36.0051.0078.50113.0160.5
-fminKapitsa(en Hz)35.2549.8578.82111.5157.6
-DâaprÃ¨s nos rÃ©sultats, les frÃ©quences minimales trouvÃ©es Ã  lâaide de la mÃ©thode dâEuler et celles donnÃ©es par la formule
-de Kapitsa sont compatibles.
-La diffÃ©rence entre les deux valeurs est essentiellement due au manque de prÃ©cision de la rÃ©solution numÃ©rique dâEu-
-ler. On pourrait amÃ©liorer cela en diminuant le pas de rÃ©solution.
-3.5 Comparaison entre lâexpÃ©rience et la thÃ©orie de Kapitsa
-Dans le paragraphe prÃ©cÃ©dent, on a vÃ©rifiÃ© que notre modÃ¨le thÃ©orique Ã©tait compatible avec la formule donnÃ©e par la
-thÃ©orie de Kapitsa.
-fmin=
-p
-2gl
-2a
-DâaprÃ¨s la formule,fminest proportionnelle
-1
-a
-et Ã 
-p
-l.
-Afin de comparer nos mesures avec la thÃ©orie de Kapitsa, on se propose de tracerfmin(
-1
-a
-)etfmin(
-p
-l).
+16
+16
 17
-
-Figure 17â Valeurs defminen fonction de
-1
-a
-mesurÃ©es expÃ©rimentalement et celles donnÃ©es par la formule de Kapitsa,
-pour un pendule de longueurl= 4cm
-Figure 18â Valeurs defminen fonction de
-p
-lmesurÃ©es expÃ©rimentalement et celles donnÃ©es par la formule de Kapitsa,
-pour une amplitudea= 6mm
-On observe que nos valeurs expÃ©rimentales defminsont assez proches des valeurs prÃ©vues par la thÃ©orie de Kaptisa.
-Cependant des Ã©carts assez importants persistent pour les petites amplitudes.
-Afin de comprendre ces Ã©carts, nous avons recontactÃ© lâÃ©quipe de M. Ansermet. Ils nous ont indiquÃ© que ces derniers
-pourraient Ãªtre causÃ©s par la prÃ©sence de frottements et par le fait que le pendule ne se comporte peut-Ãªtre pas comme
-un pendule simple.
-MalgrÃ© ces lÃ©gÃ¨res diffÃ©rences quantitatives, la tendance expÃ©rimentale correspond Ã  celle prÃ©vue par la thÃ©orie. Ainsi,
-la thÃ©orie de Kapitsa semble fournir un cadre fiable et prÃ©dictif pour comprendre la stabilisation dynamique du pendule
-inversÃ©, mÃªme si des ajustements sont nÃ©cessaires pour tenir compte des effets rÃ©els du systÃ¨me.
-3.6 PiÃ¨ge de Paul
-Ce phÃ©nomÃ¨ne de stabilisation dynamique est Ã©galement prÃ©sent dans lepiÃ¨ge de Paul[4][5][6], utilisÃ© pour piÃ©ger des
-particules chargÃ©es. Ce piÃ¨ge a Ã©tÃ© inventÃ© par le physicien allemand Wolfgang Paul (1913-1993) dans le but de rÃ©soudre
-le problÃ¨me du piÃ©geage de ces particules. Cette invention a dâailleurs valu Ã  son auteur dâobtenir le prix Nobel en 1989.
 18
 
-Dans le champ Ã©lectrique statique crÃ©Ã© par le dispositif ci-contre, une
-particule ne peut Ãªtre piÃ©gÃ©e dans toutes les directions : si elle est confi-
-nÃ©e verticalement, elle sâÃ©chappe horizontalement, et inversement.
-Par exemple, si on place une particule chargÃ©e positivement dans
-le centre dâun piÃ¨ge composÃ© dâune Ã©lectrode horizontale positive et
-dâune Ã©lectrode verticale nÃ©gative, alors la particule sera confinÃ©e ho-
-rizontalement, car lâÃ©lectrode horizontale est de mÃªme charge. Mais la
-particule ne sera pas piÃ©gÃ©e dans la direction verticale. Si on inverse
-les polaritÃ©s des Ã©lectrodes, la particule positive sera dÃ©sormais stable
-verticalement, mais elle ne le sera plus horizontalement.
-En faisant osciller rapidement le potentiel Ã©lectrique, comme dans
-le dispositif ci-contre, on crÃ©e un potentiel, stable en moyenne, qui
-empÃªche la particule de sâÃ©chapper.
-Le principe est donc le mÃªme que dans le cas du penduleinversÃ© : une position instable devient stable grÃ¢ce Ã  la
-modulation rapide dâun paramÃ¨tre.
 4 Conclusion
-Nous avons montrÃ©, dans un premier temps, quâÃ  partir dâun simple haut-parleur lÃ©gÃ¨rement modifiÃ© et de diffÃ©rents
-pendules, il est possible de rÃ©aliser de nombreuses expÃ©riences intÃ©ressantes.
-Notre premier dispositif a permis dâÃ©tudier des oscillations forcÃ©es par des excitations horizontales (dites Â« Danse ha-
-waÃ¯enne Â») ou par des excitations verticales (dites Â« Queue de cheval Â») au niveau du point dâattache du pendule.
-De faÃ§on surprenante, les mesures ont mis en Ã©vidence quâun pendule peut entrer en rÃ©sonance, câest-Ã -dire se mettre
-Ã  osciller avec une amplitude maximale, si on lui impose des excitations dâune certaine frÃ©quence au niveau de son point
-dâattache. En deÃ§Ã  et au-delÃ  de cette frÃ©quence, le pendule oscille, mais avec une amplitude nettement plus faible.
-Nous avons observÃ© que pour faire entrer en rÃ©sonance un pendule, Ã  lâaide dâexcitationshorizontales(Â«Danse
-hawaÃ¯enneÂ») au niveau de son point dâattache, il faut que la frÃ©quence de ces excitations soit Ã©gale Ã  la frÃ©quence propre
-du pendule, câest-Ã -dire Ã  la frÃ©quence Ã  laquelle il oscille lorsquâil est en oscillation libre, sans force excitatrice extÃ©rieure.
-Nous avons Ã©galement observÃ© que, de maniÃ¨re contre-intuitive, pour faire entrer en rÃ©sonance un pendule Ã  lâaide
-dâexcitationsverticales(Â«Queue de chevalÂ») au niveau de son point dâattache, il faut que la frÃ©quence de ces excitations
-soit Ã©gale Ã deux foisla frÃ©quence propre du pendule !
-Des simulations numÃ©riques du comportement du pendule ont pu Ãªtre rÃ©alisÃ©es Ã  lâaide des Ã©quations diffÃ©rentielles
-dÃ©duites du modÃ¨le du pendule simple. Elles ont permis de vÃ©rifier que les surprenants phÃ©nomÃ¨nes expÃ©rimentaux que
-nous avons vu apparaÃ®tre Ã©taient bien en accord avec le modÃ¨le thÃ©orique.
-Pour ajouter une touche dâoriginalitÃ©, une interface graphique, spÃ©cialement conÃ§ue par nos soins Ã  cet effet, a permis
-de visualiser le comportement anticipÃ© du pendule et de gÃ©nÃ©rer un graphique de lâangle formÃ© par le pendule au cours
-du temps, tout en offrant la possibilitÃ© de faire varier, de faÃ§on assez ludique, les valeurs des paramÃ¨tres clÃ©s. Nous avons
-publiÃ© cette interface en ligne, sous licence libre.
-Dans un second temps, nous avons Ã©tudiÃ© le renversant pendule inversÃ© de Kapitsa. Ce pendule peut se redresser et
-osciller avec la masse en haut, Ã  condition de lui imposer, au niveau de son point dâattache, des excitations verticales dâune
-frÃ©quence et dâune amplitude adÃ©quates, des excitations qui ne sont pas sans rappeler les vibrations musicales produites
-par les charmeurs de serpentsÂ !
+
 19
 
-Pour rÃ©aliser cette expÃ©rience, il a fallu concevoir un deuxiÃ¨me dispositif, permettant de gÃ©nÃ©rer des excitations verti-
-cales dâamplitude importante et de haute frÃ©quence.
-Nous avons analysÃ© lâinfluence de trois paramÃ¨tres essentiels : la longueur du pendule, la frÃ©quence et lâamplitude
-dâexcitation.
-Les mesures ont montrÃ© que, plus le pendule est long, plus la frÃ©quence minimale dâexcitation nÃ©cessaire Ã  la stabilisation
-en position inversÃ©e augmente. Par ailleurs, plus lâamplitude dâexcitation est grande, moins la frÃ©quence minimale requise
-est Ã©levÃ©e. Comme prÃ©cÃ©demment, notre programme de simulation numÃ©rique a permis de vÃ©rifier que ces Ã©tonnants
-comportements sont bien en accord avec le modÃ¨le thÃ©orique. Lâinterface graphique associÃ©e a de nouveau Ã©tÃ© mobilisÃ©e
-pour visualiser les oscillations anticipÃ©es du pendule.
-Nous avons Ã©galement mis en Ã©vidence que le mÃ©canisme de stabilisation dynamique observÃ© dans ce systÃ¨me intervient
-dans dâautres contextes en physique.
-Notre dispositif reste perfectible, comme le montrent les faibles Ã©carts persistants entre la thÃ©orie et lâexpÃ©rience. Pour
-affiner lâanalyse, deux pistes peuvent Ãªtre envisagÃ©es. La premiÃ¨re consiste Ã  amÃ©liorer le dispositif expÃ©rimental, notam-
-ment en rÃ©duisant la rotation de notre piston dans son tube. Lâautre consisterait Ã  adopter une modÃ©lisation prenant en
-compte les spÃ©cificitÃ©s rÃ©elles de notre pendule, par exemple en passant par lâÃ©tude dâun pendule non simple. Malheureu-
-sement, le temps nous Ã©tant limitÃ©, nous nâavons pas encore testÃ© ces pistes, mais elles constituent de rÃ©elles perspectives
-de travail.
-NÃ©anmoins, ces expÃ©riences nous rappellent une vÃ©ritÃ© essentielle : la science nâexiste pleinement que lorsquâelle est
-partagÃ©e. Comme notre pendule qui entre en rÃ©sonance, les idÃ©es scientifiques ne vibrent vraiment que lorsquâelles touchent
-le monde, lorsquâelles rencontrent un public, lorsquâelles inspirent et interrogent.
 5 Remerciements et sources
-Nous tenons Ã  exprimer nos sincÃ¨res remerciements Ã  toutes les personnes qui ont contribuÃ© Ã  la rÃ©alisation de ce
-mÃ©moire. Nous remercions tout particuliÃ¨rement nos professeurs,M. StÃ©phane Belin et Mme CÃ©line Pouquet pour
-leurs conseils, leur accompagnement, leur soutien et leur disponibilitÃ© tout au long de ce projet, ainsi que pour tous
-ces bons moments passÃ©s ensemble. Nos remerciements sâadressent Ã©galement Ã  M. Pierre Wets, ingÃ©nieur ETS/HES Ã 
-lâEPFL, pour son temps et ses retours constructifs. Nous souhaitons remercier leLycÃ©e Edmond Perrier de Tulle, Mme
-Sylvie BoÃ«l, Proviseure, Mme Ãmilie Sureau, Proviseure-adjointe, Mme Carole Valette et M. Patrick Hallary, techniciens
-de laboratoire, pour lâaccÃ¨s aux Ã©quipements et lâenvironnement de travail mis Ã  notre disposition, ainsi que M. JÃ©rome
-Seignez pour lâusinage de lâexcentrique en aluminium. Enfin, nous adressons un remerciement particulier Ã  nos familles et
-amis pour leur soutien moral tout au long de cette belle aventure. Ã toutes et Ã  tous, merci.
-RÃ©fÃ©rences
-[1]Cours de mÃ©canique de Jean-Philippe Ansermet, Ecole Polytechnique FÃ©dÃ©rale de Lausanne.
-https://www.youtube.com/watch?v=8OmC6LV39Hk
-[2]Kapitsaâs pendulum, GetAClass - Physics.https://youtu.be/kjbY9_nLCFg?si=C0usm81TG3eKrZ
-[3]Kapitsa, P. L. (1951), Â« Dynamic stability of the pendulum with vibrating suspension point Â»,
-Soviet Physics JETP, 21, 588â597.
-[4]Pain, J.-Ch. Â« Paul, Penning et les piÃ¨ges Ã  ions Â»,
-Le BUP(1060-1061-1062), Janvier-FÃ©vrier-Mars 2024.
-[5]Haroche, S., Cours au CollÃ¨ge de France du 6 fÃ©vrier 2006, Â« Les outils de la physique des ions (I) : piÃ©geage et
-refroidissement Â».http://www.college-de-france.fr/media/serge-haroche/UPL50636_SHaroche_06022006.pdf
-[6]Courty, J.-M., Â« LâÃ©nigmatique pendule inversÃ© Â»,
-Pour la Science, nÂ° 311, septembre 2003.
+
 20
+
+2
+
+1
+
+Introduction
+
+Un pendule qui pend ? C’est banal. Mais un pendule qui se redresse et qui se met à danser dans les airs, ça l’est moins !
+Et cela a même de quoi faire tourner la tête.
+En 1851, le physicien français Léon Foucault fut le premier à prouver au grand public, d’une façon visuelle, à l’aide
+du pendule qui portera son nom, que la Terre tourne sur elle-même. Cette expérience, alors novatrice, fut accessible à tous
+et marqua un tournant dans l’histoire des sciences. Elle fut spectaculaire, grâce à une installation impressionnante de 67
+mètres de hauteur, réalisée à Paris, au Panthéon. Cette expérience fascinante a ensuite été reproduite dans des musées à
+travers le monde.
+C’est lors d’une visite au Deutsches Museum de Munich que, intrigués, nous avons souhaité étudier cette expérience
+lors des Olympiades de Physique. Seulement, pourquoi se contenter de reproduire l’expérience telle quelle, quand il est
+possible d’en changer le point de vue ? C’est avec l’idée de changer de référentiel que nous avons commencé nos recherches.
+À l’aide d’un dispositif déjà à notre disposition, d’un pendule, d’un support, d’une caméra et d’une boîte transparente,
+nous avons reproduit à plus petite échelle l’expérience de Foucault. En faisant tourner notre support et la boîte, nous
+reproduisions les conditions de cette dernière. À l’intérieur, une caméra observait ce que nous voyions face au pendule
+de Foucault. Le plan du pendule se décalait légèrement par rapport à la caméra, tandis que, depuis l’extérieur de ce
+référentiel, nous constations que le système restait dans son plan.
+Bien que fort intéressante, l’expérience ne fut qu’un point de départ pour nos recherches, puisque nous nous sommes
+ensuite davantage concentrés sur le pendule lui-même.
+Depuis plusieurs siècles, le pendule fascine et est utilisé dans bon nombre de domaines, y compris la divination et l’hypnose. Il attire et intrigue. En physique, dans un cadre pédagogique, le pendule est notamment utilisé pour construire des
+expériences accessibles en lien avec des formules théoriques.
+Dans le cadre de notre enseignement au lycée, nous nous étions déjà servis d’un pendule pour étudier son mouvement
+simple et libre. Pourtant, cette étude restait limitée et des questions persistaient : peut-on forcer le pendule à osciller
+d’une certaine façon en lui imposant une excitation au niveau de son point d’attache ? Peut-on prévoir quelles fréquences
+d’excitation le feront osciller avec une grande amplitude ? Dans quelle mesure les réponses à ces questions sont-elles liées à
+une étude d’oscillations selon le modèle du pendule simple ? Comment expliquer ces phénomènes ? Notre pendule peut-il
+osciller à l’envers, masse en haut, défiant la gravité ?
+C’est avec toutes ces questions en tête que nous avons commencé nos travaux, à tâtons, mais avec enthousiasme, réflexion et esprit d’équipe. Nous sommes quatre élèves et amis de terminale au lycée Edmond Perrier à Tulle, passionnés
+par la physique.
+Dans ce mémoire, nous étudierons, dans un premier temps, le comportement d’un pendule lors d’oscillations simples,
+puis les éventuelles surprises que réservent les oscillations forcées par des excitations horizontales ou verticales au niveau
+du point de suspension du pendule, chacune de ces deux situations ayant été rebaptisée par nos soins ‘Danse hawaïenne’
+et ‘Queue de cheval’. Puis, dans une seconde partie, nous essaierons de percer les mystères du ’Charmeur de pendule’,
+c’est-à-dire de l’expérience du pendule inversé, dit ”de Kapitsa”, avec masse en haut.
+Bonne lecture. Bienvenue au bal des pendules !
+
+3
+
+2
+
+Les oscillations d’un pendule
+
+Dans cette partie, nous étudierons les oscillations d’un pendule dans trois situations : sans excitation, avec excitation
+horizontale, puis verticale, au niveau de son point d’attache. Pour chaque situation, nous disposons de cinq pendules de 2,
+4, 6, 8 et 10 cm, formés d’une tige rigide, terminés par un boulon en tant que masse ponctuelle et équipés de roulements
+à billes pour limiter les forces de frottement du pivot.
+
+2.1
+
+Oscillations libres
+
+Nous nous sommes d’abord attelés à la recherche d’un modèle mathématique adapté pour décrire le mouvement de
+nos pendules.
+Le modèle du pendule simple, c’est-à-dire décrivant une masse ponctuelle fixée à l’extrémité d’un fil sans masse et inextensible, semblait tout trouvé. Cependant, il fallait encore vérifier que nos pendules s’y conformaient.
+Tout d’abord, il était nécessaire de peser nos pendules pour considérer que la tige reliée à la masse ponctuelle du
+pendule peut être considérée comme sans masse par rapport à la masse totale du pendule. Nous avons obtenu le tableau
+suivant :
+longueur l du pendule (en cm)
+masse de la tige (en g)
+masse du boulon (en g)
+masse totale (en g)
+
+2
+0.65
+6.50
+7.15
+
+4
+1.17
+6.50
+7.67
+
+6
+1.65
+6.50
+8.15
+
+8
+2.12
+6.50
+8.7
+
+10
+2.56
+6.50
+9.06
+
+La masse de la tige reste toujours bien inférieure à la masse totale (rapport de 11 pour le pendule de 2 cm et rapport
+de 2.8 pour le pendule de 10 cm) mais reste tout de même assez conséquente. C’est pourquoi nous avons cherché un autre
+moyen de vérifier que nos pendules se conforment bien au modèle du pendule simple.
+Nous nous sommes servis pour cela d’une propriété du pendule simple, l’existence d’une fréquence propre pour celui-ci,
+définie comme la fréquence à laquelle il oscille lorsqu’il est en oscillation libre, c’est-à-dire sans force excitatrice extérieure.
+A cette fréquence propre est associée une période propre, le temps pris par le pendule pour effectuer une oscillation, en
+oscillation libre.
+
+Figure 1 – Oscillations libres du pendule de 10 cm
+2.1.1
+
+Protocole
+
+Pour effectuer une mesure rapide de la période propre d’oscillation libre de chaque pendule, nous les avons fait osciller
+librement autour du pivot, en mesurant la durée de 10 oscillations. Il a alors suffi de diviser cette durée par 10 pour trouver
+la période propre T0 , durée d’une oscillation. La fréquence propre correspond alors à f0 = 1/T0 .
+Pour des mesures plus précises des périodes d’oscillation, nous avons ensuite réalisé un montage avec une fourche optique. Lorsque le pendule passe devant le laser, le capteur optique ne reçoit plus de lumière et transmet cette information
+à l’ordinateur, via le logiciel Latis Pro, révélant le passage de notre pendule :
+
+4
+
+Figure 2 – Montage avec la fourche optique, permettant la mesure de la fréquence propre
+2.1.2
+
+Observations
+
+Une période correspond à la durée entre deux pics (aller et retour du pendule). Par souci de précision, nous avons
+mesuré plusieurs périodes, puis divisé la durée obtenue par le nombre de périodes, pour trouver la période d’oscillation de
+notre pendule.
+
+Figure 3 – Mesure d’une période dans Latis Pro
+Pour trouver la fréquence d’oscillation, il suffit de prendre l’inverse de la période. Nous obtenons les résultats suivants :
+Table 1 – Calcul des fréquences d’oscillation de nos différents pendules
+l (en cm)
+Toscillation (en s)
+Incertitude
+foscillation (en Hz)
+Incertitude
+
+2
+0.282
+±0.004
+3.546
+±0.050
+
+4
+0.406
+±0.004
+2.463
+±0.027
+
+6
+0.486
+±0.004
+2.058
+±0.017
+
+8
+0.571
+±0.004
+1.751
+±0.012
+
+10
+0.638
+±0.004
+1.567
+±0.0098
+
+Pour un pendule simple, cette fréquence d’oscillation correspond à la fréquence propre f0 du pendule.
+
+5
+
+2.1.3
+
+Analyse
+
+La formule permettant de calculer la fréquence propre pour un pendule simple (voir annexe théorie des pendules pour
+la démonstration) est :
+r
+1
+g
+f0 =
+(1)
+2π l
+Avec :
+— f0 la fréquence propre d’un pendule
+— l la longueur du pendule
+— g la constante d’accélération de la pesanteur à la surface de la Terre
+Elle peut aussi s’écrire :
+
+√
+f0 =
+
+g 1
+√
+2π l
+
+(2)
+
+On constate alors que la fréquence propre est proportionnelle à √1l . Afin de vérifier que nos pendules se ramènent bien au
+modèle du pendule simple, nous avons donc tracé les points correspondant aux fréquences propres en fonction de √1l .
+
+Figure 4 – Modélisation de la fréquence propre de chaque pendule en fonction de √1l
+On constate que la droite linéaire donnée par le modèle du pendule simple passe par les points expérimentaux. Pour
+le vérifier avec précision, nous avons calculé le Z-score.
+Table 2 – Fréquences d’oscillation de nos différents pendules comparées
+l (en cm)
+foscillation (en Hz)
+Incertitude
+fmodele (en Hz)
+Incertitude
+Z-score
+
+2
+3.546
+±0.050
+3.525
+±0.080
+0.2095
+
+4
+2.463
+±0.027
+2.492
+±0.031
+-0.7441
+
+6
+2.058
+±0.017
+2.035
+±0.017
+0.9407
+
+8
+1.751
+±0.012
+1.762
+±0.011
+-0.6737
+
+10
+1.567
+±0.0098
+1.576
+±0.0079
+-0.7112
+
+On compare une valeur mesurée xmes à une valeur de référence xref en calculant le Z-score suivant :
+Zscore = p
+
+|xmes − xref |
+u(xmes )2 + u(xref )2
+
+où u(xmes ) est l’incertitude de la valeur mesurée,
+et u(xref ) est l’incertitude de la valeur de référence (qui est ici due à une incertitude sur l, la longueur du pendule).
+6
+
+Le Z-score est compris entre -2 et 2, donc les fréquences propres trouvées à l’aide du modèle du pendule simple sont
+bien en accord avec les mesures expérimentales.
+Ainsi, nos pendules sont assimilables à des pendules simples, ce qui valide l’utilisation de ce modèle pour nos expériences.
+2.1.4
+
+Élaboration d’un programme de modélisation
+
+Afin de modéliser le mouvement de notre pendule dans différentes situations d’excitation, nous avons créé un script
+Python utilisant les équations déduites du modèle du pendule simple. Ce script a permis de vérifier que les phénomènes
+expérimentaux que nous avons vu apparaître étaient bien prédits par des équations théoriques.
+La démarche permettant de trouver l’équation différentielle qui régit le mouvement de nos pendules est expliquée dans
+l’annexe théorie des pendules. La méthode de résolution numérique de cette équation dans un script Python est, quant à
+elle, décrite dans l’annexe modélisation numérique.
+Pour afficher les résultats fournis par ce script de manière claire et agréable, nous avons enfin conçu une interface graphique qui permet une simulation du comportement attendu du pendule, ainsi que la génération d’un graphique de l’angle
+(en radians) formé par le pendule au cours du temps, tout en offrant la possibilité de faire varier, de façon assez ludique, les valeurs des paramètres clés. Nous avons publié cette interface en ligne, sous licence libre, à l’adresse suivante :
+https://gitlab.com/Felix.dev/ResonatingPendulumCalculations-OlympiadesPhysique.
+
+Figure 5 – Notre interface graphique
+
+2.2
+
+Oscillations forcées par une excitation horizontale (dite ”Danse hawaïenne”)
+
+Le but de cette expérience, et de la suivante, est de trouver une fréquence de résonance, c’est-à-dire une fréquence, sous
+l’excitation de laquelle, le système, ici notre pendule, va être le siège d’oscillations de plus en plus importantes, jusqu’à
+atteindre un régime d’équilibre.
+Ici, cela revient à se demander s’il existe une fréquence d’excitation horizontale particulière, capable de forcer le pendule à osciller avec une amplitude maximale.
+Pour cela, nous avons réalisé un dispositif où le pendule est fixé à une accroche liée à un haut-parleur positionné
+à l’horizontale. La fréquence d’excitation imposée par le support est réglée grâce à un générateur de basses fréquences
+(GBF).
+
+7
+
+Figure 6 – Montage du pendule avec des oscillations (flèche bleue) forcées par une excitation horizontale (flèche rouge)
+Pour plus de commodité, cette expérience sera nommée ”Danse Hawaïenne”, puisqu’elle étudie les oscillations forcées
+horizontales du pendule, dansant tel une danseuse hawaïenne
+.
+2.2.1
+
+Observations
+
+En procédant par tâtonnements, en ajustant la fréquence d’excitation (flèche rouge sur le schéma plus haut) grâce
+au GBF, nous nous sommes aperçus qu’il existait bien au moins une fréquence d’excitation pour laquelle le pendule se
+mettait à osciller avec une grande amplitude. Ce phénomène de résonance se produit en effet lorsque le pendule est excité
+horizontalement à sa fréquence propre. Pour une fréquence inférieure, l’amplitude est plus faible voire inexistante, et pour
+une fréquence supérieure également.
+Table 3 – Fréquences d’excitation horizontale (”Danse hawaïenne”) provoquant la résonance de nos différents pendules
+(fresonance ), comparées à leurs fréquences propres (f0 ) trouvées précédemment
+l (en cm)
+fresonance (en Hz)
+Incertitude
+f0 (en Hz)
+
+2
+3.4
+±0.3
+3.546
+
+4
+2.5
+±0.3
+2.463
+
+6
+2.0
+±0.3
+2.058
+
+8
+1.8
+±0.2
+1.751
+
+10
+1.5
+±0.2
+1.567
+
+On constate que les fréquences de résonance (fresonance ) mesurées par nos soins sont en accord avec les fréquences
+propres (f0 ) trouvées précédemment.
+Nous nous sommes ensuite penchés sur l’oscillation du pendule lui-même et notamment sur la fréquence à laquelle il
+oscille lorsqu’il se trouve en résonance (flèche bleue sur le schéma plus haut). A-t-elle un lien avec l’excitation qu’on lui
+impose ?
+Nous avons donc réalisé une analyse vidéo pour chacun des pendules, grâce au logiciel Tracker, en effectuant un pointage. Grâce aux données obtenues, il est possible de tracer, avec le logiciel Regressi, les amplitudes des oscillations du
+pendule et du haut-parleur en fonction du temps.
+Pour le pendule de 10 cm :
+
+8
+
+Figure 7 – Comparaison du mouvement horizontal du support excitateur du pendule en fonction du temps (courbe bleue)
+et du mouvement horizontal de la masse ponctuelle du pendule en fonction du temps (courbe noire)
+On constate graphiquement que les périodes des deux courbes sont identiques. Ainsi, le pendule, en résonance, oscille
+à la même fréquence que l’excitation horizontale qu’on lui impose via le haut-parleur.
+2.2.2
+
+Comparaison avec la théorie et conclusion
+
+Ainsi, on s’aperçoit que lorsqu’on excite horizontalement le pendule à sa fréquence propre, un phénomène de résonance
+se produit et le pendule oscille avec une amplitude maximale. Une excitation à une fréquence inférieure ne produit pas
+de résonance, mais une excitation à une fréquence supérieure non plus ! En parallèle, le pendule lui-même oscille à la
+fréquence propre.
+Vérifions maintenant que ces résultats expérimentaux sont en accord avec les prédictions du modèle théorique.
+Grâce à l’interface graphique, on peut facilement confirmer par tâtonnements que si l’on se place à une excitation de
+fréquence égale à la fréquence propre, le pendule acquiert une grande amplitude d’oscillation, même avec un faible angle
+initial. En dehors de cette fréquence d’excitation, le pendule oscille peu ou pas du tout.
+1
+Par exemple, avec un pendule long de 4 cm, de fréquence propre f0 = 2π
+le graphique de l’angle formé par le pendule en fonction du temps :
+
+p g
+0.04
+
+= 2.49Hz, le programme détermine
+
+Figure 8 – Excité à une fréquence de 1.5 Hz < 2.49 Hz, le pendule oscille avec une faible amplitude
+
+9
+
+Figure 9 – Excité à 2.49 Hz, sa fréquence propre, le pendule se met à osciller avec une grande amplitude
+
+Figure 10 – A une fréquence de 7 Hz > 2.49 Hz, la fréquence propre du pendule est dépassée et celui-ci recommence à
+faiblement osciller
+Pour visualiser la valeur de la fréquence d’excitation à la résonance, prédite par la théorie, on peut faire boucler le
+calcul de l’angle du pendule pour toutes les fréquences d’un intervalle et ne sélectionner que les angles maximaux.
+
+Figure 11 – Angle maximal atteint par le pendule en fonction de la fréquence à laquelle il est excité horizontalement
+
+10
+
+La fréquence d’excitation provoquant la résonance est facilement repérée par le pic à 2.49 Hz. Elle est bien égale à la
+fréquence propre du pendule.
+
+2.3
+
+Oscillations forcées par une excitation verticale (dite ”Queue de cheval”)
+
+Nous nous sommes ensuite demandé s’il était possible de faire entrer en résonance un pendule à l’aide d’une excitation
+verticale, cette fois-ci.
+
+Figure 12 – Montage du pendule avec oscillations (flèche bleue) forcées par une excitation verticale (flèche rouge)
+Pour cette expérience, le montage est presque identique à celui produisant une excitation horizontale. Il suffit de placer
+le haut-parleur à la verticale (vers le bas).
+Le pendule oscille alors de gauche à droite (flèche bleue), à la manière d’une jeune personne sportive dont la queue
+.
+de cheval oscillerait latéralement sous l’effet des secousses verticales de sa course (flèche rouge)
+2.3.1
+
+Observations
+
+Nous avons d’abord réglé le haut-parleur excitateur à la fréquence propre du pendule et constaté, avec surprise, que
+celui-ci n’oscillait pas. Nous avons donc cherché une résonance avec des fréquences supérieures et nous nous sommes aperçus que le pendule se met seulement à osciller avec une grande amplitude à deux fois sa fréquence propre !
+Une impulsion initiale est nécessaire pour lancer le processus.
+Ainsi, dans le cas d’une excitation verticale, la résonance se produit pour une fréquence d’excitation égale à deux fois la
+fréquence propre du pendule.
+Table 4 – Fréquences d’excitation verticale (”Queue de cheval”) provoquant la résonance de nos différents pendules
+(fresonance ), comparées à leurs fréquences propres (f0 )
+l (en cm)
+fresonance (en Hz)
+Incertitude
+fresonance /2 (en Hz)
+f0 (en Hz)
+
+2
+6.8
+±0.2
+3.4
+3.546
+
+4
+4.85
+±0.2
+2.4
+2.463
+
+6
+4.1
+±0.12
+2.0
+2.058
+
+8
+3.5
+±0.1
+1.8
+1.751
+
+10
+3.1
+±0.1
+1.7
+1.567
+
+On constate que, lorsqu’on calcule la moitié des fréquences de résonance mesurées (fresonance /2), on trouve des valeurs
+en accord avec les fréquences propres (f0 ) trouvées précédemment.
+
+11
+
+Qu’en est-il de la fréquence d’oscillation du pendule lui-même, entré en résonance (flèche bleue sur le schéma plus haut) ?
+Est-elle différente de celle trouvée lors des excitations horizontales de type ”Danse hawaïenne” ?
+On réalise, comme plus haut, une analyse vidéo pour chacun des pendules, puis on trace, avec le logiciel Regressi,
+l’amplitude des oscillations du pendule et des excitations émises par le haut-parleur en fonction du temps.
+Pour le pendule de 10 cm :
+
+Figure 13 – Comparaison du mouvement vertical du support excitateur du pendule en fonction du temps (courbe bleue)
+et du mouvement horizontal de la masse ponctuelle du pendule en fonction du temps (courbe noire)
+Visiblement, dans le cas d’une excitation verticale, le pendule, en résonance, oscille à la moitié de la fréquence d’excitation imposée par le haut-parleur. Le pendule oscille donc, dans ce cas, à sa fréquence propre.
+Le phénomène de résonance est ici assez contre-intuitif : on impose une fréquence d’excitation verticale à un pendule
+lui permettant d’entrer en résonance, et il s’obstine à osciller à la moitié de cette fréquence !
+2.3.2
+
+Comparaison avec la théorie et conclusion
+
+Nous avons donc vu qu’un pendule en oscillations forcées par une excitation verticale peut entrer en résonance, mais,
+lorsque c’est le cas, il oscille à la moitié de la fréquence des excitations qu’on lui impose.
+Voyons maintenant si la théorie est en accord avec ces observations.
+En bouclant le calcul de l’angle du pendule pour toutes les fréquences d’un intervalle et en ne sélectionnant que les
+angles maximaux, on obtient le graphique suivant :
+
+12
+
+Figure 14 – Angle maximal atteint par un pendule de 4 cm en fonction de la fréquence à laquelle il est excité verticalement
+La fréquence d’excitation provoquant la résonance est facilement repérée, graphiquement, par le pic à 4.98 Hz.
+Elle est bien égale à deux fois la fréquence propre du pendule (2 ∗ f0 = 2 ∗ 2.49 = 4.98 Hz).
+Ainsi, nos observations sont en accord avec le modèle théorique.
+
+3
+
+L’expérience de Kapitsa (dite du ”Charmeur de pendule”)
+
+3.1
+
+Introduction
+
+Le pendule de Kapitsa illustre à merveille la manière dont la physique peut contredire notre intuition. Ce dispositif est
+constitué d’une masse suspendue à une tige solide, mais légère, dont le point d’attache est soumis à une excitation verticale
+rapide. Une question naturelle nous vient alors : que devient cette masse lorsque le point d’attache est mis en mouvement ?
+De manière surprenante, la position inversée du pendule, qui est normalement instable, peut devenir stable lorsque l’excitation est suffisamment rapide et d’amplitude adéquate. Et ce n’est pas le seul phénomène qui possède cette caractéristique :
+on la retrouve également dans le piège de Paul, où des ions sont piégés lorsqu’on alterne à haute fréquence les pôles chargés
+des extrémités.
+Ce comportement paradoxal des pendules excités fut observé dès 1908 par Andrew Stephenson, mais ce n’est qu’en
+1951 que le physicien soviétique Piotr Léonidovitch Kapitsa (1894-1984) en proposa une explication complète. Sa théorie
+est fondée sur la mécanique vibrationnelle et montre comment des excitations rapides peuvent modifier la stabilité d’un
+système dynamique.
+Kapitsa, lauréat du prix Nobel de physique en 1978, est resté célèbre pour sa capacité à relier la théorie et l’expérience à propos de phénomènes apparemment simples mais en réalité complexes.
+Dans le cadre de cette partie du mémoire, nous nous intéresserons à l’observation et à la modélisation d’un phénomène de
+stabilisation dynamique. Nous ferons varier plusieurs paramètres expérimentaux, tels que la fréquence, l’amplitude de la
+vibration du point d’attache, ainsi que la longueur du pendule, afin d’observer leurs effets sur la stabilité du système.
+Nos résultats expérimentaux seront ensuite comparés aux valeurs théoriques attendues, issues du modèle de Kapitsa,
+ce qui permettra d’évaluer la cohérence entre la théorie et l’expérimentation et de mieux saisir les conditions de la stabilité
+de ce système.
+
+3.2
+
+Évolution de notre dispositif
+
+Bien qu’aujourd’hui satisfaisant et fonctionnel, notre dispositif pour cette manipulation ne nous est pas apparu comme
+tel dès le départ. Il est le résultat d’essais et de recherches. Nous avons tout d’abord commencé nos essais avec le hautparleur de la première partie. Seulement, ce dernier n’apportait pas de résultats concluants. A la suite de nombreuses
+13
+
+expérimentations, nous en sommes arrivés à notre dispositif actuel. Vous trouverez en annexe (annexe matériel) plus de
+détails sur l’évolution de notre dispositif.
+
+En voici le fonctionnement global : un
+petit moteur entraîne un excentrique sur
+lequel est vissé un bras. Ce bras est lié par
+une vis à un piston au mouvement vertical,
+guidé par un tuyau en PVC. Ce piston
+entraîne alors directement le pendule.
+
+Afin d’expérimenter différentes amplitudes, nous avons positionné 10 inserts sur l’excentrique :
+— Amplitude Jaune = 1.8 mm
+— Amplitude Bleue = 3.1 mm
+— Amplitude Rouge = 4.4 mm
+— Amplitude Bleu foncé = 5.5 mm
+— Amplitude Rose = 6.1 mm
+— Amplitude Noire = 6.7 mm
+— Amplitude Verte = 8.3 mm
+— Amplitude Mauve = 9.6 mm
+— Amplitude Blanche = 10.0 mm
+Par ailleurs, il faut aussi prendre en compte un jeu mécanique de 1 mm.
+
+La sonde à effet Hall comptabilise chaque passage de
+l’aimant devant elle. La fréquence d’apparition de l’aimant devant la sonde est alors visible sur l’écran d’affichage. Elle est exprimée en tours par minute (rpm).
+
+3.3
+
+Manipulations et observations
+
+Dans cette première sous-partie, nous procéderons à la variation de différents paramètres afin d’observer leurs effets
+sur la stabilité de notre système : la fréquence d’excitation, l’amplitude d’excitation et la longueur de notre pendule.
+
+14
+
+3.3.1
+
+Protocole de mesure
+
+On cherche à déterminer la fréquence minimale permettant à notre pendule de se maintenir à la verticale en position
+inversée.
+Protocole :
+1. Déterminer l’amplitude et la longueur du pendule souhaitées pour la manipulation.
+— Pour l’amplitude d’excitation, dévisser la partie du bras reliée à l’excentrique, puis la revisser dans l’insert
+adéquat.
+— Pour le pendule, dévisser celui déjà en place et installer le pendule de la bonne longueur. Penser à vérifier qu’il
+peut tourner sans gêne autour de son axe.
+2. Vérifier ensuite que toutes les vis du dispositif sont bien serrées, afin de sécuriser le bon fonctionnement de la
+manipulation.
+3. Allumer le générateur relié au moteur et augmenter la tension progressivement jusqu’à ce que le pendule se maintienne de lui-même à la verticale. Si nécessaire, aider le pendule à se placer initialement à la verticale.
+4. Diminuer ensuite la tension progressivement afin de trouver le moment de bascule, la valeur à partir de laquelle le
+pendule retombe.
+5. Relever la valeur du régime (en rotation par minute, rpm) affichée sur l’écran de la sonde. Puis convertir cette
+valeur en hertz à l’aide de la relation f = rpm
+60 .
+6. Réitérer l’expérience.
+
+Suite à nos expériences, nous avons déterminé une incertitude de ±100 rpm. Elle prend en compte l’incertitude de lecture,
+mais également celle du réglage.
+3.3.2
+
+Influence de l’amplitude a des excitations
+
+Pour cette expérience, nous utilisons notre pendule de 4 cm. Nous mesurons les fréquences minimales, en fonction de
+l’amplitude des excitations nécessaires au maintien de ce dernier en position inversée. Les résultats sont ensuite regroupés
+dans le tableau suivant, conformément au protocole de manipulation.
+Table 5 – Fréquence minimale du pendule de 4 cm à différentes amplitudes d’excitation
+Amplitude ( en mm)
+Fréquence minimale ( en rpm )
+
+1,8
+2250
+
+3,1
+1840
+
+4,4
+1775
+
+5,5
+1450
+
+6,1
+1200
+
+6,7
+1130
+
+8,3
+1110
+
+9,6
+950
+
+10
+920
+
+Conclusion :
+Grâce aux mesures réalisées avec le pendule de 4 cm, nous constatons que plus l’amplitude d’excitation est élevée, plus
+la fréquence minimale nécessaire au maintien du pendule en position inversée est faible. On peut donc dire que cette
+fréquence minimale est strictement décroissante en fonction de l’amplitude. Ce phénomène est également observable avec
+tous nos autres pendules.
+3.3.3
+
+Influence de la longueur l du pendule
+
+Pour cette expérience, nous testons tous nos pendules avec une amplitude d’excitation de 6 mm.
+Table 6 – Fréquence minimale de pendules de différentes longueurs pour une amplitude d’excitation a = 6 mm
+l (en cm)
+Fréquence minimale (en rpm)
+
+2
+950
+
+4
+1200
+
+6
+1350
+
+8
+1500
+
+10
+1700
+
+Conclusion :
+Les résultats montrent que plus la longueur (l) du pendule est grande plus la fréquence minimale des excitations nécessaires
+à la stabilisation en position inversée est élevée. Cette fréquence est strictement croissante, en fonction de la longueur du
+pendule. Ces observations sont également valables pour les autres amplitudes.
+Seulement, une question persiste : ces mesures sont-elles en accord avec la théorie proposée par Kapitsa ?
+
+15
+
+3.4
+
+Théorie de Kapitsa et résolution numérique
+
+3.4.1
+
+Présentation de la théorie du pendule de Kapitsa
+
+Figure 15 – Formule de Kapitsa, telle qu’elle apparaît dans l’article de 1951
+La formule de base présentée ci-dessus provient de l’article original de Kapitsa. [3]. Elle donne une condition, sous la
+forme d’une inégalité, pour que la stabilisation en position inversée soit effective. Les différentes grandeurs de cette formule
+sont :
+— a : amplitude de la vibration du support (en m),
+— ω : pulsation de la vibration, exprimée en rad/s,
+— g : attraction gravitationnelle terrestre, g = 9.81 N·kg−1 ,
+— L : longueur du pendule (en m),
+— K : constante dépendante du modèle utilisé (elle vaut 0 pour un pendule simple).
+Cette formule générale montre que la stabilisation du pendule fait bien intervenir deux grandeurs physiques : l’amplitude
+a du mouvement du support et la longueur L du pendule (qui correspond à l dans notre travail).
+On va en extraire une inégalité essentielle donnant la fréquence minimale nécessaire à la stabilisation du pendule :
+On sait que ω = 2πf et K = 0 pour un pendule simple, alors on a :
+1 2 2 2
+a 4π f ≥ gl
+2
+soit
+
+√
+f≥
+
+2gl
+2πa
+
+d’où
+
+√
+fmin =
+
+2gl
+2πa
+
+Cette relation résume l’idée principale de la théorie de Kapitsa, tout en restant accessible.
+Ainsi, d’après la théorie de Kapitsa :
+— si l’amplitude a augmente, la fréquence minimale nécessaire à la stabilisation diminue,
+— si la longueur l augmente, il faut une fréquence plus élevée pour maintenir l’équilibre en position inversée.
+Ces résultats théoriques sont donc conformes à ceux observés expérimentalement.
+3.4.2
+
+Utilisation de la méthode d’Euler pour valider la théorie de Kapitsa
+
+Dans cette sous-partie, on se propose d’utiliser le script élaboré dans la première partie, permettant de résoudre, par
+la méthode d’Euler, l’équation décrivant le mouvement du pendule, obtenue théoriquement (voir annexe modélisation
+numérique), dans le but de vérifier l’expression de la fréquence minimale donnée par la théorie de Kapitsa.
+Pour visualiser la valeur de la fréquence minimale prédite par la théorie des pendules simples, on peut faire boucler,
+comme plus haut, le calcul de l’angle du pendule pour toutes les fréquences d’un intervalle, en sélectionnant, cette fois-ci,
+la moyenne des angles décrits par le pendule. Si cette moyenne est proche de 0 rad, par rapport à l’axe vertical, le pendule
+ne reste pas dressé. Si elle est aux environs de π rad, alors le pendule reste dressé. On mesure ici la fréquence minimale
+pour voir le pendule rester dressé comme la fréquence correspondant au saut d’un angle moyen de 0 rad à π rad (≈ 3.14).
+
+16
+
+Figure 16 – Angle moyen décrit par un pendule de 6 cm en fonction de la fréquence à laquelle il est excité verticalement
+pour une amplitude d’excitation a = 4 mm
+On remarque sur la courbe que le pendule reste dressé si f > 44Hz. C’est donc la fréquence minimale d’excitation
+nécessaire à la stabilisation en position inversée que nous cherchions.
+De cette manière, nous avons pu obtenir les valeurs de la fréquence minimale fournies par la théorie du pendule simple et
+vérifier leur correspondance avec la théorie de Kapitsa.
+Nous avons comparé les fréquences minimales trouvées à l’aide du script Python (fmin P ython) et celles données par
+la formule de Kapitsa (fmin Kapitsa) en faisant varier les deux paramètres que sont :
+— l’amplitude d’excitation a du support,
+Table 7 – Comparaison des calculs par Python et par Kapitsa de fmin suivant les valeurs de a pour l = 6 cm
+a (en m)
+fmin P ython (en Hz)
+fmin Kapitsa (en Hz)
+
+0.0010
+174.0
+172.7
+
+0.0020
+87.00
+86.34
+
+0.0040
+44.00
+43.17
+
+0.0100
+18.00
+17.27
+
+0.0150
+12.00
+11.51
+
+— la longueur l du pendule.
+Table 8 – Comparaison des calculs par Python et par Kapitsa de fmin suivant les valeurs de l pour a = 2 mm
+l (en cm)
+fmin P ython (en Hz)
+fmin Kapitsa (en Hz)
+
+1
+36.00
+35.25
+
+2
+51.00
+49.85
+
+5
+78.50
+78.82
+
+10
+113.0
+111.5
+
+20
+160.5
+157.6
+
+D’après nos résultats, les fréquences minimales trouvées à l’aide de la méthode d’Euler et celles données par la formule
+de Kapitsa sont compatibles.
+La différence entre les deux valeurs est essentiellement due au manque de précision de la résolution numérique d’Euler. On pourrait améliorer cela en diminuant le pas de résolution.
+
+3.5
+
+Comparaison entre l’expérience et la théorie de Kapitsa
+
+Dans le paragraphe précédent, on a vérifié que notre modèle théorique était compatible avec la formule donnée par la
+théorie de Kapitsa.
+√
+2gl
+fmin =
+2πa
+√
+1
+D’après la formule, fmin est proportionnelle a et à l.
+√
+Afin de comparer nos mesures avec la théorie de Kapitsa, on se propose de tracer fmin ( a1 ) et fmin ( l).
+17
+
+Figure 17 – Valeurs de fmin en fonction de a1 mesurées expérimentalement et celles données par la formule de Kapitsa,
+pour un pendule de longueur l = 4 cm
+
+Figure 18 – Valeurs de fmin en fonction de
+pour une amplitude a = 6 mm
+
+√
+
+l mesurées expérimentalement et celles données par la formule de Kapitsa,
+
+On observe que nos valeurs expérimentales de fmin sont assez proches des valeurs prévues par la théorie de Kaptisa.
+Cependant des écarts assez importants persistent pour les petites amplitudes.
+Afin de comprendre ces écarts, nous avons recontacté l’équipe de M. Ansermet. Ils nous ont indiqué que ces derniers
+pourraient être causés par la présence de frottements et par le fait que le pendule ne se comporte peut-être pas comme
+un pendule simple.
+Malgré ces légères différences quantitatives, la tendance expérimentale correspond à celle prévue par la théorie. Ainsi,
+la théorie de Kapitsa semble fournir un cadre fiable et prédictif pour comprendre la stabilisation dynamique du pendule
+inversé, même si des ajustements sont nécessaires pour tenir compte des effets réels du système.
+
+3.6
+
+Piège de Paul
+
+Ce phénomène de stabilisation dynamique est également présent dans le piège de Paul[4][5][6], utilisé pour piéger des
+particules chargées. Ce piège a été inventé par le physicien allemand Wolfgang Paul (1913-1993) dans le but de résoudre
+le problème du piégeage de ces particules. Cette invention a d’ailleurs valu à son auteur d’obtenir le prix Nobel en 1989.
+
+18
+
+Dans le champ électrique statique créé par le dispositif ci-contre, une
+particule ne peut être piégée dans toutes les directions : si elle est confinée verticalement, elle s’échappe horizontalement, et inversement.
+Par exemple, si on place une particule chargée positivement dans
+le centre d’un piège composé d’une électrode horizontale positive et
+d’une électrode verticale négative, alors la particule sera confinée horizontalement, car l’électrode horizontale est de même charge. Mais la
+particule ne sera pas piégée dans la direction verticale. Si on inverse
+les polarités des électrodes, la particule positive sera désormais stable
+verticalement, mais elle ne le sera plus horizontalement.
+En faisant osciller rapidement le potentiel électrique, comme dans
+le dispositif ci-contre, on crée un potentiel, stable en moyenne, qui
+empêche la particule de s’échapper.
+
+Le principe est donc le même que dans le cas du pendule
+inversé : une position instable devient stable grâce à la
+modulation rapide d’un paramètre.
+
+4
+
+Conclusion
+
+Nous avons montré, dans un premier temps, qu’à partir d’un simple haut-parleur légèrement modifié et de différents
+pendules, il est possible de réaliser de nombreuses expériences intéressantes.
+Notre premier dispositif a permis d’étudier des oscillations forcées par des excitations horizontales (dites « Danse hawaïenne ») ou par des excitations verticales (dites « Queue de cheval ») au niveau du point d’attache du pendule.
+De façon surprenante, les mesures ont mis en évidence qu’un pendule peut entrer en résonance, c’est-à-dire se mettre
+à osciller avec une amplitude maximale, si on lui impose des excitations d’une certaine fréquence au niveau de son point
+d’attache. En deçà et au-delà de cette fréquence, le pendule oscille, mais avec une amplitude nettement plus faible.
+Nous avons observé que pour faire entrer en résonance un pendule, à l’aide d’excitations horizontales («Danse
+hawaïenne») au niveau de son point d’attache, il faut que la fréquence de ces excitations soit égale à la fréquence propre
+du pendule, c’est-à-dire à la fréquence à laquelle il oscille lorsqu’il est en oscillation libre, sans force excitatrice extérieure.
+Nous avons également observé que, de manière contre-intuitive, pour faire entrer en résonance un pendule à l’aide
+d’excitations verticales («Queue de cheval») au niveau de son point d’attache, il faut que la fréquence de ces excitations
+soit égale à deux fois la fréquence propre du pendule !
+Des simulations numériques du comportement du pendule ont pu être réalisées à l’aide des équations différentielles
+déduites du modèle du pendule simple. Elles ont permis de vérifier que les surprenants phénomènes expérimentaux que
+nous avons vu apparaître étaient bien en accord avec le modèle théorique.
+Pour ajouter une touche d’originalité, une interface graphique, spécialement conçue par nos soins à cet effet, a permis
+de visualiser le comportement anticipé du pendule et de générer un graphique de l’angle formé par le pendule au cours
+du temps, tout en offrant la possibilité de faire varier, de façon assez ludique, les valeurs des paramètres clés. Nous avons
+publié cette interface en ligne, sous licence libre.
+Dans un second temps, nous avons étudié le renversant pendule inversé de Kapitsa. Ce pendule peut se redresser et
+osciller avec la masse en haut, à condition de lui imposer, au niveau de son point d’attache, des excitations verticales d’une
+fréquence et d’une amplitude adéquates, des excitations qui ne sont pas sans rappeler les vibrations musicales produites
+par les charmeurs de serpents !
+
+19
+
+Pour réaliser cette expérience, il a fallu concevoir un deuxième dispositif, permettant de générer des excitations verticales d’amplitude importante et de haute fréquence.
+Nous avons analysé l’influence de trois paramètres essentiels : la longueur du pendule, la fréquence et l’amplitude
+d’excitation.
+Les mesures ont montré que, plus le pendule est long, plus la fréquence minimale d’excitation nécessaire à la stabilisation
+en position inversée augmente. Par ailleurs, plus l’amplitude d’excitation est grande, moins la fréquence minimale requise
+est élevée. Comme précédemment, notre programme de simulation numérique a permis de vérifier que ces étonnants
+comportements sont bien en accord avec le modèle théorique. L’interface graphique associée a de nouveau été mobilisée
+pour visualiser les oscillations anticipées du pendule.
+Nous avons également mis en évidence que le mécanisme de stabilisation dynamique observé dans ce système intervient
+dans d’autres contextes en physique.
+Notre dispositif reste perfectible, comme le montrent les faibles écarts persistants entre la théorie et l’expérience. Pour
+affiner l’analyse, deux pistes peuvent être envisagées. La première consiste à améliorer le dispositif expérimental, notamment en réduisant la rotation de notre piston dans son tube. L’autre consisterait à adopter une modélisation prenant en
+compte les spécificités réelles de notre pendule, par exemple en passant par l’étude d’un pendule non simple. Malheureusement, le temps nous étant limité, nous n’avons pas encore testé ces pistes, mais elles constituent de réelles perspectives
+de travail.
+Néanmoins, ces expériences nous rappellent une vérité essentielle : la science n’existe pleinement que lorsqu’elle est
+partagée. Comme notre pendule qui entre en résonance, les idées scientifiques ne vibrent vraiment que lorsqu’elles touchent
+le monde, lorsqu’elles rencontrent un public, lorsqu’elles inspirent et interrogent.
+
+5
+
+Remerciements et sources
+
+Nous tenons à exprimer nos sincères remerciements à toutes les personnes qui ont contribué à la réalisation de ce
+mémoire. Nous remercions tout particulièrement nos professeurs, M. Stéphane Belin et Mme Céline Pouquet pour
+leurs conseils, leur accompagnement, leur soutien et leur disponibilité tout au long de ce projet, ainsi que pour tous
+ces bons moments passés ensemble. Nos remerciements s’adressent également à M. Pierre Wets, ingénieur ETS/HES à
+l’EPFL, pour son temps et ses retours constructifs. Nous souhaitons remercier le Lycée Edmond Perrier de Tulle, Mme
+Sylvie Boël, Proviseure, Mme Émilie Sureau, Proviseure-adjointe, Mme Carole Valette et M. Patrick Hallary, techniciens
+de laboratoire, pour l’accès aux équipements et l’environnement de travail mis à notre disposition, ainsi que M. Jérome
+Seignez pour l’usinage de l’excentrique en aluminium. Enfin, nous adressons un remerciement particulier à nos familles et
+amis pour leur soutien moral tout au long de cette belle aventure. À toutes et à tous, merci.
+
+Références
+[1] Cours de mécanique de Jean-Philippe Ansermet, Ecole Polytechnique Fédérale de Lausanne.
+https://www.youtube.com/watch?v=8OmC6LV39Hk
+[2] Kapitsa’s pendulum, GetAClass - Physics. https://youtu.be/kjbY9_nLCFg?si=C0usm81TG3eKrZ
+[3] Kapitsa, P. L. (1951), « Dynamic stability of the pendulum with vibrating suspension point »,
+Soviet Physics JETP, 21, 588–597.
+[4] Pain, J.-Ch. « Paul, Penning et les pièges à ions »,
+Le BUP (1060-1061-1062), Janvier-Février-Mars 2024.
+[5] Haroche, S., Cours au Collège de France du 6 février 2006, « Les outils de la physique des ions (I) : piégeage et
+refroidissement ». http://www.college-de-france.fr/media/serge-haroche/UPL50636_SHaroche_06022006.pdf
+[6] Courty, J.-M., « L’énigmatique pendule inversé »,
+Pour la Science, n° 311, septembre 2003.
+
+20
+
+

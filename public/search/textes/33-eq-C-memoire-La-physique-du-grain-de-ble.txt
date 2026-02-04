@@ -1,833 +1,924 @@
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        1/ 20 
- 
-La physique du grain de blÃ© 
- 
- 
- 
-Par les Ã©lÃ¨ves de l'atelier physique du lycÃ©e Palissy 
- 
- 
- 
- 
- 
-Avec LACLAVERIE Jean-Michel 
-Professeur encadrant  
-LycÃ©e Bernard Palissy- AGEN 
-AcadÃ©mie de Bordeaux
+La physique du grain de blé
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        2/ 20 
-Table des matiÃ¨res 
-ProblÃ©matique 
-Remerciements 
-Introduction 
-A- A la dÃ©couverte des Ã©tonnants milieux granulaires par lâexpÃ©rience 
-A-1 Mise en Ã©vidence des frottements 
-A-2 La sÃ©grÃ©gation 
-A-3 ExpÃ©rience de Reynolds 
-A-4 ExpÃ©rience du silo de Janssen 
-B- Etude statique dâun silo de Janssen 
-B-1 Ãquation diffÃ©rentielle du mouvement dâune tranche de matÃ©riau granulaire 
-B-2 A la poursuite du seuil de Janssen 
-B-3 Lenteur du phÃ©nomÃ¨ne 
-B-4 Visualisation de lignes de forces grÃ¢ce Ã  des matÃ©riaux photoÃ©lastiques 
-B-4.1 Visualisation dâune bille en lumiÃ¨re polarisÃ©e 
-B-4.2 Visualisation des chaÃ®nes de force . 
-C- Etude dynamique de la vidange et du remplissage dâun silo 
-C-1 Comparaison liquide-milieu granulaire: Ãcoulement dâeau 
-C-1.1 Etude expÃ©rimentale 
-C-1.2 Etude thÃ©orique 
-C-2 Ãcoulement des matÃ©riaux granulaires ( ExpÃ©riences du 17 septembre 2025, 1er et 
-8 octobre) 
-C3- Etude quantitative dâun Ã©coulement grÃ¢ce Ã  des capteurs de force et une webcam 
-C4-Avantages du fond conique pour une vidange optimale 
-D - ModÃ©lisation dâun silo Ã  grain par un circuit RC 
-Conclusion 
- 
- 
- 
-ProblÃ©matique 
-Est-il possible de dÃ©crire le comportement statique et dynamique de grains de blÃ© ou de 
-sable dans une colonne, pour pouvoir optimiser leur utilisation ? 
-Remerciements  
-Merci Ã  Monsieur Fernando Leal Calderon de l'ENSCPB pour son aide sur la recherche de 
-documentation sur la fabrication des matÃ©riaux photoÃ©lastiques ainsi quâÃ  Madame Reynier, 
-professeure ingÃ©nieure de notre lycÃ©e  qui a transmis nos demandes. 
-Merci Ã  Pierre Verdier, ingÃ©nieur docteur retraitÃ© pour avoir transmis nos demandes aux 
-ingÃ©nieurs de procÃ©dÃ©s industriels de Syngenta et Novartis.
+Par les élèves de l'atelier physique du lycée Palissy
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        3/ 20 
-Introduction 
- 
-Un matÃ©riau granulaire est un matÃ©riau constituÃ© d'un grand nombre de particules solides 
-distinctes, les grains , qui ne sont pas liÃ©s par des liaisons chimiques. Il peut sâagir de sable, 
-de pois chiches, de grains de blÃ© ou de gravier. MÃªme les cailloux de la ceinture d'astÃ©roÃ¯des 
-peuvent Ãªtre considÃ©rÃ©s comme des matÃ©riaux granulaires. Leur taille doit Ãªtre supÃ©rieure Ã  
-100 micromÃ¨tres. Sâils sont plus petits on parlera de poudres (par exemple la farine) mais leur 
-comportement diffÃ¨re de celui des milieux granulaires et nous ne les Ã©voquerons pas ici. Cette 
-division en Ã©lÃ©ments multiples entraÃ®ne des comportements particuliers de ces matÃ©riaux, 
-souvent indÃ©pendamment des propriÃ©tÃ©s individuelles des grains. Les grains interagissent par 
-contact et friction et les chocs entre grains sont la principale source de dissipation d'Ã©nergie 
-lors du mouvement d'un matÃ©riau granulaire sec, et sont Ã  l'origine des comportements 
-particuliers de ces matÃ©riaux. 
-Pourquoi sâintÃ©resser aux milieux granulaires? Ils constituent le second matÃ©riau le plus utilisÃ© 
-au monde aprÃ¨s lâeau et les applications sont nombreuses: mines, gÃ©ophysique, 
-agroalimentaireâ¦Tous les plastiques par exemple, sont transportÃ©s Ã  un moment de leur 
-fabrication sous forme de grains. Câest le cas aussi des mÃ©dicaments, des aliments pour 
-animaux, des graviers, de la lessive, des cÃ©rÃ©alesâ¦Les matÃ©riaux granulaires se retrouvent 
-dans les tempÃªtes de sable, les glissements de terrain ou les Ã©ruptions volcaniques. Il est 
-donc essentiel de comprendre leur comportement. Câest un domaine de recherche assez 
-rÃ©cent et les chercheurs ont encore du mal Ã  les dÃ©crire.  
-Les matÃ©riaux granulaires peuvent prÃ©senter, selon l'Ã©nergie qu'on leur fournit, des 
-comportements se rapprochant tantÃ´t de ceux d'un solide (une dune de sable), tantÃ´t de ceux 
-d'un fluide (Ã©coulement de sable), ou d'un gaz (tempÃªte de sable). Les Ã©coulements que nous 
-Ã©tudierons ici sont difficiles Ã  modÃ©liser et posent de nombreux problÃ¨mes dans lâindustrie ou 
-lâagriculture. 
-Nous voulons Ã©tudier le remplissage et lâÃ©coulement de grains de blÃ© dans un silo, ainsi que 
-la pression dans un silo plein
+Avec LACLAVERIE Jean-Michel
+Professeur encadrant
+Lycée Bernard Palissy- AGEN
+Académie de Bordeaux
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+1/ 20
+
+Table des matières
+Problématique
+Remerciements
+Introduction
+A- A la découverte des étonnants milieux granulaires par l’expérience
+A-1 Mise en évidence des frottements
+A-2 La ségrégation
+A-3 Expérience de Reynolds
+A-4 Expérience du silo de Janssen
+B- Etude statique d’un silo de Janssen
+B-1 Équation différentielle du mouvement d’une tranche de matériau granulaire
+B-2 A la poursuite du seuil de Janssen
+B-3 Lenteur du phénomène
+B-4 Visualisation de lignes de forces grâce à des matériaux photoélastiques
+B-4.1 Visualisation d’une bille en lumière polarisée
+B-4.2 Visualisation des chaînes de force .
+C- Etude dynamique de la vidange et du remplissage d’un silo
+C-1 Comparaison liquide-milieu granulaire: Écoulement d’eau
+C-1.1 Etude expérimentale
+C-1.2 Etude théorique
+C-2 Écoulement des matériaux granulaires ( Expériences du 17 septembre 2025, 1er et
+8 octobre)
+C3- Etude quantitative d’un écoulement grâce à des capteurs de force et une webcam
+C4-Avantages du fond conique pour une vidange optimale
+D - Modélisation d’un silo à grain par un circuit RC
+Conclusion
+
+Problématique
+Est-il possible de décrire le comportement statique et dynamique de grains de blé ou de
+sable dans une colonne, pour pouvoir optimiser leur utilisation ?
+
+Remerciements
+Merci à Monsieur Fernando Leal Calderon de l'ENSCPB pour son aide sur la recherche de
+documentation sur la fabrication des matériaux photoélastiques ainsi qu’à Madame Reynier,
+professeure ingénieure de notre lycée qui a transmis nos demandes.
+Merci à Pierre Verdier, ingénieur docteur retraité pour avoir transmis nos demandes aux
+ingénieurs de procédés industriels de Syngenta et Novartis.
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+2/ 20
+
+Introduction
+Un matériau granulaire est un matériau constitué d'un grand nombre de particules solides
+distinctes, les grains , qui ne sont pas liés par des liaisons chimiques. Il peut s’agir de sable,
+de pois chiches, de grains de blé ou de gravier. Même les cailloux de la ceinture d'astéroïdes
+peuvent être considérés comme des matériaux granulaires. Leur taille doit être supérieure à
+100 micromètres. S’ils sont plus petits on parlera de poudres (par exemple la farine) mais leur
+comportement diffère de celui des milieux granulaires et nous ne les évoquerons pas ici. Cette
+division en éléments multiples entraîne des comportements particuliers de ces matériaux,
+souvent indépendamment des propriétés individuelles des grains. Les grains interagissent par
+contact et friction et les chocs entre grains sont la principale source de dissipation d'énergie
+lors du mouvement d'un matériau granulaire sec, et sont à l'origine des comportements
+particuliers de ces matériaux.
+Pourquoi s’intéresser aux milieux granulaires? Ils constituent le second matériau le plus utilisé
+au monde après l’eau et les applications sont nombreuses: mines, géophysique,
+agroalimentaire…Tous les plastiques par exemple, sont transportés à un moment de leur
+fabrication sous forme de grains. C’est le cas aussi des médicaments, des aliments pour
+animaux, des graviers, de la lessive, des céréales…Les matériaux granulaires se retrouvent
+dans les tempêtes de sable, les glissements de terrain ou les éruptions volcaniques. Il est
+donc essentiel de comprendre leur comportement. C’est un domaine de recherche assez
+récent et les chercheurs ont encore du mal à les décrire.
+Les matériaux granulaires peuvent présenter, selon l'énergie qu'on leur fournit, des
+comportements se rapprochant tantôt de ceux d'un solide (une dune de sable), tantôt de ceux
+d'un fluide (écoulement de sable), ou d'un gaz (tempête de sable). Les écoulements que nous
+étudierons ici sont difficiles à modéliser et posent de nombreux problèmes dans l’industrie ou
+l’agriculture.
+Nous voulons étudier le remplissage et l’écoulement de grains de blé dans un silo, ainsi que
+la pression dans un silo plein1. Notre travail est divisé en quatre parties. Nous réaliserons
+d’abord quelques expériences qualitatives pour découvrir le comportement des grains et les
+forces de friction. Nous étudierons ensuite une colonne statique de grains: c’est l’expérience
+historique du silo de Janssen que nous explorerons en déterminant le rôle de plusieurs
+paramètres. Pour cela, nous chercherons à visualiser la formation de voûtes dans le milieu
+granulaire grâce à des billes de verre, puis avec des matériaux photoélastiques permettant de
+mettre en évidence les forces s'exerçant sur les billes. Lorsque des grains de sable s’écoulent
+dans un sablier ou un entonnoir, ce dernier se bouche parfois. Parce que les grains frottent
+entre eux, ils atteignent à certains moments un seuil de blocage. Cette situation peut être
+problématique dans de nombreuses applications industrielles, d’où l’importance de bien la
+comprendre pour l’éviter. Dans notre troisième partie, nous ferons une comparaison entre
+l’eau et les milieux granulaires lors d’un écoulement. Et enfin, nous chercherons à modéliser
+la pression dans un silo chargé de grains par la charge d’un condensateur.
+
+Notre principale source dans ce travail est : “Contraintes et débit lors de la vidange d'un silo de
+grains “ de Christophe Perge, lors d’un stage de recherche à l’ENS Lyon https://perso.enslyon.fr/jean-christophe.geminard/FILES/cperge2.pdf
 1
-. Notre travail est divisÃ© en quatre parties. Nous rÃ©aliserons 
-dâabord quelques expÃ©riences qualitatives pour dÃ©couvrir le comportement des grains et les 
-forces de friction. Nous Ã©tudierons ensuite une colonne statique de grains: câest lâexpÃ©rience 
-historique du silo de Janssen que nous explorerons en dÃ©terminant le rÃ´le de plusieurs 
-paramÃ¨tres. Pour cela, nous chercherons Ã  visualiser la formation de voÃ»tes dans le milieu 
-granulaire grÃ¢ce Ã  des billes de verre, puis avec des matÃ©riaux photoÃ©lastiques permettant de 
-mettre en Ã©vidence les forces s'exerÃ§ant sur les billes. Lorsque des grains de sable sâÃ©coulent 
-dans un sablier ou un entonnoir, ce dernier se bouche parfois. Parce que les grains frottent 
-entre eux, ils atteignent Ã  certains moments un seuil de blocage. Cette situation peut Ãªtre 
-problÃ©matique dans de nombreuses applications industrielles, dâoÃ¹ lâimportance de bien la 
-comprendre pour lâÃ©viter. Dans notre troisiÃ¨me partie, nous ferons une comparaison entre 
-lâeau et les milieux granulaires lors dâun Ã©coulement. Et enfin, nous chercherons Ã  modÃ©liser 
-la pression dans un silo chargÃ© de grains par la charge dâun condensateur.  
- 
- 
-1
- Notre principale source dans ce travail est : âContraintes et dÃ©bit lors de la vidange d'un silo de 
-grains â  de Christophe Perge, lors dâun stage de recherche Ã  lâENS Lyon https://perso.ens-
-lyon.fr/jean-christophe.geminard/FILES/cperge2.pdf
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        4/ 20 
-A- A la dÃ©couverte des Ã©tonnants milieux 
-granulaires par lâexpÃ©rience 
-Les matÃ©riaux granulaires sont constituÃ©s dâun grand nombre de particules interagissant entre 
-elles grÃ¢ce Ã  des forces de friction complexes. Ils peuvent se comporter de trois maniÃ¨res 
-diffÃ©rentes: 
-- comme des solides lors dâun empilement statique, et les lois de Newton, la gravitation, 
-la friction permettent de les dÃ©crire. 
-- comme des liquides lors dâun Ã©coulement, et câest la mÃ©canique des fluides qui sera 
-utilisÃ©e pour les Ã©tudier 
-- comme des gazs lors d'une 
-tempÃªte de sable. La physique 
-statistique pourra les modÃ©liser. 
-La principale force aprÃ¨s la gravitÃ© est la 
-force de friction, qui sâoppose au 
-mouvement de glissement entre deux 
-corps. Pour un systÃ¨me Ã  lâarrÃªt, la force 
-de friction qui est tangentielle est 
-proportionnelle Ã  la force normale 
-appliquÃ©e sur lâobjet
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+3/ 20
+
+A- A la découverte des
+granulaires par l’expérience
+
+étonnants
+
+milieux
+
+Les matériaux granulaires sont constitués d’un grand nombre de particules interagissant entre
+elles grâce à des forces de friction complexes. Ils peuvent se comporter de trois manières
+différentes:
+- comme des solides lors d’un empilement statique, et les lois de Newton, la gravitation,
+la friction permettent de les décrire.
+- comme des liquides lors d’un écoulement, et c’est la mécanique des fluides qui sera
+utilisée pour les étudier
+comme des gazs lors d'une
+tempête de sable. La physique
+statistique pourra les modéliser.
+La principale force après la gravité est la
+force de friction, qui s’oppose au
+mouvement de glissement entre deux
+corps. Pour un système à l’arrêt, la force
+de friction qui est tangentielle est
+proportionnelle à la force normale
+appliquée sur l’objet2.
+Soient μs et μc étant les coefficients de frottement statique et cinétique. Lorsque les surfaces
+sont immobiles l'une par rapport à l'autre, la force de frottement statique possède une valeur
+maximale fs max = μs N. Lorsque les surfaces glissent l'une sur l'autre, la force de frottement
+cinétique fc a une valeur constante fc = μcN.
+Les grains ou les billes exercent des forces de contact qui comportent une composante
+normale Fn , perpendiculaire au plan de contact entre les deux solides, et une composante
+tangentielle Ft , appartenant au plan de contact. Le glissement entre les deux solides se produit
+si Fn et Ft vérifient la relation de proportionnalité : Ft = μ Fn , où μ est le coefficient de frottement
+qui caractérise l’état des deux surfaces en contact. Tant que la force Ft est inférieure à μ Fn ,
+le glissement ne se produit pas, et on parle alors d’adhérence entre les deux solides.
+
+A-1 Mise en évidence des frottements
+Dans une éprouvette de 250 ml, on introduit un tube creux. On introduit des
+grains entre les deux tubes. On tasse en tapant légèrement sur l’éprouvette.
+On soulève l’ensemble du montage en tenant uniquement le tube intérieur.
+1er cas : Avec du sable. Les forces de friction sont insuffisantes et le tube
+intérieur est retiré, même en essayant de mobiliser la friction en vibrant
+l’éprouvette.
+2ème cas : Avec de la pierre ponce. Les forces de friction sont suffisantes
+pour soulever l’ensemble. Pour bouger, le sable doit se dilater s’il a été
+préalablement tassé. La pression normale augmente ainsi que la friction.
 2
-. 
- 
-Soient Î¼s et Î¼c Ã©tant les coefficients de frottement statique et cinÃ©tique. Lorsque les surfaces 
-sont immobiles l'une par rapport Ã  l'autre, la force de frottement statique possÃ¨de une valeur 
-maximale     fs max = Î¼s N. Lorsque les surfaces glissent l'une sur l'autre, la force de frottement 
-cinÃ©tique fc a une valeur constante fc = Î¼cN. 
-Les grains ou les billes exercent des forces de contact qui comportent une composante 
-normale Fn , perpendiculaire au plan de contact entre les deux solides, et une composante 
-tangentielle Ft , appartenant au plan de contact. Le glissement entre les deux solides se produit 
-si Fn et Ft vÃ©rifient la relation de proportionnalitÃ© : Ft = Î¼ Fn , oÃ¹ Î¼ est le coefficient de frottement 
-qui caractÃ©rise lâÃ©tat des deux surfaces en contact. Tant que la force Ft est infÃ©rieure Ã  Î¼ Fn , 
-le glissement ne se produit pas, et on parle alors dâadhÃ©rence entre les deux solides. 
-A-1 Mise en Ã©vidence des frottements 
- 
-Dans une Ã©prouvette de 250 ml, on introduit un tube creux. On introduit des 
-grains entre les deux tubes. On tasse en tapant lÃ©gÃ¨rement sur lâÃ©prouvette. 
-On soulÃ¨ve lâensemble du montage en tenant uniquement le tube intÃ©rieur. 
-1er cas : Avec du sable. Les forces de friction sont insuffisantes et le tube 
-intÃ©rieur est retirÃ©, mÃªme en essayant de mobiliser la friction en vibrant 
-lâÃ©prouvette. 
-2Ã¨me cas : Avec de la pierre ponce. Les forces de friction sont suffisantes 
-pour soulever lâensemble. Pour bouger, le sable doit se dilater sâil a Ã©tÃ© 
-prÃ©alablement tassÃ©. La pression normale augmente ainsi que la friction. 
- 
-2
- source: https://babel.cegep-ste-foy.qc.ca/profs/rfoy/capsules/frott.html
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        5/ 20 
-Câest un exemple de couplage friction-dilatance (variation de volume dâun milieu granulaire 
-soumis Ã  un cisaillement) 
-A-2 La sÃ©grÃ©gation 
- 
-Remplissons un bocal de sable, de quelques cailloux et dâune bille. En vibrant horizontalement 
-le rÃ©cipient, on constate que les cailloux et la bille se retrouvent sur le dessus. Câest la 
-percolation, les particules les plus grosses surnageant. Ce phÃ©nomÃ¨ne est aussi appelÃ© 
-flottation, et donne lâimpression quâil existe un Ã©quivalent de la poussÃ©e dâArchimÃ¨de dans les 
-milieux granulaires vibrÃ©s. Les particules sont donc sÃ©parÃ©es en fonction de leur taille. Câest 
-la sÃ©grÃ©gation. 
-A-3 ExpÃ©rience de Reynolds 
- 
-Contrairement Ã  la plupart des autres matÃ©riaux solides, un matÃ©riau granulaire compactÃ© 
-tend Ã  se dilater lorsqu'on le cisaille. Le phÃ©nomÃ¨ne de dilatance dÃ©crit cette variation de 
-volume. Nous avons rÃ©alisÃ© deux expÃ©riences. La premiÃ¨re avec un 
-bac Ã  sable humidifiÃ©, pour modÃ©liser le bord dâune plage plongeant 
-dans la mer. Si lâon appuie avec un bÃ©cher sur le sable humide, on le 
-voit se dessÃ©cher. Le milieu se dilate sous la pression et lâeau remplit 
-les espaces vides. PlaÃ§ons maintenant un tube dans une poche 
-contenant du sable humide. Versons un peu d'eau dans le tube. Si 
-nous dÃ©formons le sable, le niveau dâeau dans le tube diminue. 
-Comme prÃ©cÃ©demment, le milieu se dilate sous la pression et lâeau 
-remplit les espaces vides. Le 24 septembre et le 1er octobre 2025, 
-nous avons travaillÃ© sur ces expÃ©riences, en ajoutant du bleu brillant 
-pour rendre les mouvements de lâeau plus visibles. AprÃ¨s plusieurs 
-essais, nous avons rÃ©ussi Ã  rendre visible la baisse du niveau de lâeau. Il est indispensable 
-dâavoir initialement un sable soigneusement tassÃ©, pour que la dÃ©formation puisse permettre 
-de diminuer la masse volumique 
-apparente et dâaugmenter son volume 
-pour permettre Ã  lâeau de remplir les 
-vides. 
-A-4 ExpÃ©rience du silo de 
-Janssen  
-Une Ã©prouvette graduÃ©e sans fond est 
-maintenue au-dessus dâun cristallisoir 
-posÃ© sur une balance. On introduit 
-157.3g de blÃ©. On lit sur la balance 
-84.1g! Si on tapote sur le tube 
-lâindication diminue jusquâÃ  77.8g. Donc 
-49.5% de la masse de blÃ© seulement est portÃ©e par le fond!
+source: https://babel.cegep-ste-foy.qc.ca/profs/rfoy/capsules/frott.html
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        6/ 20 
-LâexpÃ©rience est reproduite avec des pois chiches et lâeffet est encore plus marquÃ©. Un quart 
-de la masse seulement est portÃ©e par le fond. en tapotant lâindication de la balance passe de 
-120.3g Ã  57.9g !!!! 
- Les forces de frictions 
-permettent aux parois de 
-lâÃ©prouvette de porter une 
-partie des grains. En tapotant 
-les forces de frictions 
-augmentent et 
-permettent aux 
-parois de 
-lâÃ©prouvette de 
-porter 
-dâavantage.  
-Pour comprendre 
-comment les grains se comportent dans le tube, nous faisons une analogie avec 
-un Ã©coulement de billes. On observe des voÃ»tes se former, elles sont assez 
-solides pour supporter des petits chocs. Avec des chocs plus importants , elles se 
-dÃ©molissent , l'Ã©coulement reprend et dâautres voÃ»tes peuvent se former. On peut 
-supposer que des voÃ»tes se forment dans le silo de Janssen. 
-Nous cherchons Ã  amÃ©liorer lâexpÃ©rience prÃ©cÃ©dente grÃ¢ce Ã  des capteurs de 
-force. Un tube creux (Ã©prouvette de 250 mL au fond dÃ©coupÃ©) est suspendu Ã  un 
-premier capteur de force. Un disque constituant le fond du tube est suspendu Ã  un 
-autre capteur de force. Nous remplissons avec du blÃ© en moins de 20 secondes 
-le tube. Nous traÃ§ons trois courbes, la masse totale, celle portÃ©e par le fond et celle portÃ©e 
-par les parois. 
-Nous observons que la masse augmente Ã  la fois sur le fond et sur les parois du tube. Le tube 
-est capable de porter une partie de la masse grÃ¢ce aux forces de friction. Dans ce cas, les 
-parois portent Ã  chaque instant plus que le fond. 
- 
- 
- 
- 
-Lors de lâÃ©coulement, par un trou de 22 mm, la masse pendant lâexpÃ©rience semble presque 
-entiÃ¨rement portÃ©e par les parois du tube. En effet, lâouverture est presque aussi large que le 
-tube, ce qui laisse peu de place pour que le fond supporte des grains. 
- 
-LâÃ©coulement du blÃ© est trÃ¨s irrÃ©gulier au dÃ©but, puis la masse totale semble se confondre 
-avec celle portÃ©e par le tube dans la seconde partie de lâexpÃ©rience, le diamÃ¨tre intÃ©rieur du 
-tube Ã©tant de 30 mm.
+4/ 20
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        7/ 20 
-B- Etude statique dâun silo de Janssen 
-Nous allons tout dâabord Ã©tudier le comportement statique de grains dans un silo. Il sâagit dâun 
-systÃ¨me difficile Ã  dÃ©crire car il comporte un grand nombre de particules et dâinteractions. 
-Nous Ã©tudierons plusieurs paramÃ¨tres mais pas la tempÃ©rature car ses variations sont 
-nÃ©gligeables. Nous commenÃ§ons par une description thÃ©orique. 
-B-1 Ãquation diffÃ©rentielle du mouvement dâune tranche de 
-matÃ©riau granulaire 
- 
- 
-Les pressions latÃ©rales sont les mÃªmes dans toutes 
-les directions et sâannulent mutuellement. on peut 
-donc faire un bilan de force vertical uniquement 
-On note  la surface dâun section horizontale du 
-cylindre et  la surface latÃ©rale de la section du 
-cylindre. 
-On a ainsi :  
-  
- 
- est la la force pressante exercÃ©e par le matÃ©riaux granulaire au-dessus de la section 
-considÃ©rÃ© et  correspond Ã  la force pressante exercÃ©e sous la section.  
-DâaprÃ¨s le principe de lâinertie, on obtient le bilan des forces suivantes : 
- 
- 
- 
- 
-On rappelle que . Les grains, comme les fluides, peuvent sâÃ©couler, mais leur masse 
-volumique est variable. Nous nâavons pas pu mettre en Ã©vidence de variations significatives 
-de la masse volumique apparente des matÃ©riaux granulaires que nous avons utilisÃ©s. Nous 
-la considÃ©rerons comme constante dans nos expÃ©riences. 
-Or 
- 
-En divisant par  on obtient :  
- 
-En remplaÃ§ant  par son expression en fonction de  on obtient :  
-  
-Soit    
-Or  
-Donc  
-MatÃ©r
-Tranche 
+C’est un exemple de couplage friction-dilatance (variation de volume d’un milieu granulaire
+soumis à un cisaillement)
+
+A-2 La ségrégation
+Remplissons un bocal de sable, de quelques cailloux et d’une bille. En vibrant horizontalement
+le récipient, on constate que les cailloux et la bille se retrouvent sur le dessus. C’est la
+percolation, les particules les plus grosses surnageant. Ce phénomène est aussi appelé
+flottation, et donne l’impression qu’il existe un équivalent de la poussée d’Archimède dans les
+milieux granulaires vibrés. Les particules sont donc séparées en fonction de leur taille. C’est
+la ségrégation.
+
+A-3 Expérience de Reynolds
+Contrairement à la plupart des autres matériaux solides, un matériau granulaire compacté
+tend à se dilater lorsqu'on le cisaille. Le phénomène de dilatance décrit cette variation de
+volume. Nous avons réalisé deux expériences. La première avec un
+bac à sable humidifié, pour modéliser le bord d’une plage plongeant
+dans la mer. Si l’on appuie avec un bécher sur le sable humide, on le
+voit se dessécher. Le milieu se dilate sous la pression et l’eau remplit
+les espaces vides. Plaçons maintenant un tube dans une poche
+contenant du sable humide. Versons un peu d'eau dans le tube. Si
+nous déformons le sable, le niveau d’eau dans le tube diminue.
+Comme précédemment, le milieu se dilate sous la pression et l’eau
+remplit les espaces vides. Le 24 septembre et le 1er octobre 2025,
+nous avons travaillé sur ces expériences, en ajoutant du bleu brillant
+pour rendre les mouvements de l’eau plus visibles. Après plusieurs
+essais, nous avons réussi à rendre visible la baisse du niveau de l’eau. Il est indispensable
+d’avoir initialement un sable soigneusement tassé, pour que la déformation puisse permettre
+de diminuer la masse volumique
+apparente et d’augmenter son volume
+pour permettre à l’eau de remplir les
+vides.
+
+A-4 Expérience du silo de
+Janssen
+Une éprouvette graduée sans fond est
+maintenue au-dessus d’un cristallisoir
+posé sur une balance. On introduit
+157.3g de blé. On lit sur la balance
+84.1g! Si on tapote sur le tube
+l’indication diminue jusqu’à 77.8g. Donc
+49.5% de la masse de blé seulement est portée par le fond!
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+5/ 20
+
+L’expérience est reproduite avec des pois chiches et l’effet est encore plus marqué. Un quart
+de la masse seulement est portée par le fond. en tapotant l’indication de la balance passe de
+120.3g à 57.9g !!!!
+Les forces de frictions
+permettent aux parois de
+l’éprouvette de porter une
+partie des grains. En tapotant
+les forces de frictions
+augmentent
+et
+permettent aux
+parois
+de
+l’éprouvette
+de
+porter
+d’avantage.
+Pour comprendre
+comment les grains se comportent dans le tube, nous faisons une analogie avec
+un écoulement de billes. On observe des voûtes se former, elles sont assez
+solides pour supporter des petits chocs. Avec des chocs plus importants , elles se
+démolissent , l'écoulement reprend et d’autres voûtes peuvent se former. On peut
+supposer que des voûtes se forment dans le silo de Janssen.
+Nous cherchons à améliorer l’expérience précédente grâce à des capteurs de
+force. Un tube creux (éprouvette de 250 mL au fond découpé) est suspendu à un
+premier capteur de force. Un disque constituant le fond du tube est suspendu à un
+autre capteur de force. Nous remplissons avec du blé en moins de 20 secondes
+le tube. Nous traçons trois courbes, la masse totale, celle portée par le fond et celle portée
+par les parois.
+Nous observons que la masse augmente à la fois sur le fond et sur les parois du tube. Le tube
+est capable de porter une partie de la masse grâce aux forces de friction. Dans ce cas, les
+parois portent à chaque instant plus que le fond.
+
+Lors de l’écoulement, par un trou de 22 mm, la masse pendant l’expérience semble presque
+entièrement portée par les parois du tube. En effet, l’ouverture est presque aussi large que le
+tube, ce qui laisse peu de place pour que le fond supporte des grains.
+L’écoulement du blé est très irrégulier au début, puis la masse totale semble se confondre
+avec celle portée par le tube dans la seconde partie de l’expérience, le diamètre intérieur du
+tube étant de 30 mm.
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+6/ 20
+
+B- Etude statique d’un silo de Janssen
+Nous allons tout d’abord étudier le comportement statique de grains dans un silo. Il s’agit d’un
+système difficile à décrire car il comporte un grand nombre de particules et d’interactions.
+Nous étudierons plusieurs paramètres mais pas la température car ses variations sont
+négligeables. Nous commençons par une description théorique.
+
+B-1 Équation différentielle du mouvement d’une tranche de
+matériau granulaire
+
+Pr
+
+Contra
+Tranche
+
 P
-Pr Contra
+Matér
+
 0
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        8/ 20 
-En posant on obtient :  
- 
- 
-Câest une Ã©quation diffÃ©rentielle du premier ordre avec second membre constant. 
- 
-La solution type est de la forme : avec , , et  trois constantes.  
-Or  est la dÃ©rivÃ©e de la pression en fonction de lâaltitude.  
-Donc en dÃ©rivant la solution type :  
-A nouveau en injectant la solution type on a :   
-On admettra que les termes constants doivent sâannuler câest-Ã -dire :  
-  
-Donc  
-Et  
-Donc  
- 
-Dans le vide si  alors  
-En revenant Ã  la solution type :    
-Donc câest-Ã -dire :  
- 
-Finalement    
- 
-On considÃ¨re en pression relative, que la pression en surface est nulle. On obtient lâÃ©quation 
-de Janssen. Câest une exponentielle dÃ©croissante. Donc si la hauteur de poudre z est 
-suffisante le terme en exponentielle est nÃ©gligeable et la pression constante. La pression tend 
-donc vers un seuil, si le silo est suffisamment haut.  
-B-2 A la poursuite du seuil de Janssen 
-Pour pouvoir faire le lien entre nos expÃ©riences et le modÃ¨le de Janssen, nous avons tout 
-dâabord dÃ©terminÃ© les masses volumiques des matÃ©riaux utilisÃ©s (voir annexe). 
-Pour mettre en Ã©vidence la prÃ©sence dâun seuil, nous devons faire le lien entre la pression 
-seuil de lâÃ©quation diffÃ©rentielle Î»Ïg et la masse que nous pouvons mesurer Ã  la balance: 
-í µí±=
-&#3627408441;
-&#3627408454;
+Les pressions latérales sont les mêmes dans toutes
+les directions et s’annulent mutuellement. on peut
+donc faire un bilan de force vertical uniquement
+On note
+la surface d’un section horizontale du
+cylindre et
+la surface latérale de la section du
+cylindre.
+On a ainsi :
+
+est la la force pressante exercée par le matériaux granulaire au-dessus de la section
+considéré et
+correspond à la force pressante exercée sous la section.
+D’après le principe de l’inertie, on obtient le bilan des forces suivantes :
+
+On rappelle que
+. Les grains, comme les fluides, peuvent s’écouler, mais leur masse
+volumique est variable. Nous n’avons pas pu mettre en évidence de variations significatives
+de la masse volumique apparente des matériaux granulaires que nous avons utilisés. Nous
+la considérerons comme constante dans nos expériences.
+Or
+En divisant par
+
+En remplaçant
+
+on obtient :
+
+par son expression en fonction de
+
+on obtient :
+
+Soit
+Or
+Donc
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+7/ 20
+
+En posant
+
+on obtient :
+
+C’est une équation différentielle du premier ordre avec second membre constant.
+La solution type est de la forme :
+
+avec , , et
+
+trois constantes.
+
+est la dérivée de la pression en fonction de l’altitude.
+
+Or
+
+Donc en dérivant la solution type :
+A nouveau en injectant la solution type on a :
+On admettra que les termes constants doivent s’annuler c’est-à-dire :
+
+Donc
+Et
+Donc
+Dans le vide si
+
+alors
+
+En revenant à la solution type :
+Donc
+c’est-à-dire :
+Finalement
+On considère en pression relative, que la pression en surface est nulle. On obtient l’équation
+de Janssen. C’est une exponentielle décroissante. Donc si la hauteur de poudre z est
+suffisante le terme en exponentielle est négligeable et la pression constante. La pression tend
+donc vers un seuil, si le silo est suffisamment haut.
+
+B-2 A la poursuite du seuil de Janssen
+Pour pouvoir faire le lien entre nos expériences et le modèle de Janssen, nous avons tout
+d’abord déterminé les masses volumiques des matériaux utilisés (voir annexe).
+Pour mettre en évidence la présence d’un seuil, nous devons faire le lien entre la pression
+seuil de l’équation différentielle λρg et la masse que nous pouvons mesurer à la balance:
+𝐹
+
+𝑃=𝑆=
+
+𝑚𝑔
+𝜋
+
+𝐷2
+
+−𝐻
+
+𝐷
+
+−𝐻
+
+= 𝜆𝜌𝑔(1 − 𝑒 𝜆 ) = 4𝜇𝐾 𝜌𝑔(1 − 𝑒 𝜆 ) avec H la hauteur de la colonne de grains.
+
+4
+
+On peut donc exprimer la masse ressentie par la balance au seuil:
+𝜌𝜋𝐷 3
+
+−𝐻
+
+𝑚⬚𝑏𝑎𝑙𝑎𝑛𝑐𝑒 = 16 𝜇𝐾 (1 − 𝑒 𝜆 ) et masse seuil 𝑚⬚𝑠𝑒𝑢𝑖𝑙 =
+
+𝜌𝜋𝐷 3
+16 𝜇𝐾
+
+−𝐻
+
+car 𝑒 𝜆 tend vers zéro. On peut
+
+estimer que si la hauteur de grains H vaut au moins 5λ, l’asymptote est presque atteinte.
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+8/ 20
+
+Nous avons essayé de déterminer les valeurs des coefficients de friction statique pour nos
+granulats avec le plastique des éprouvettes3. Pour cela nous plaçons un grain sur le
+l’éprouvette que nous inclinons jusqu’à ce que le grain se mette à glisser. Nous avons
+reproduit 10 fois l’expérience avec à chaque fois des résultats différents, car les grains sont
+tous différents. Le tableau en annexe contient les moyennes de nos résultats et l’incertitude
+calculée à partir de l’écart type et du nombre de mesures. On a alors: 𝜇 = 𝑡𝑎𝑛 𝛼 avec 𝛼
+l’angle d’inclinaison de l’éprouvette.Pour pouvoir essayer de prévoir la masse seuil pour
+chacune de nos expériences, ainsi que la longueur caractéristique λ, il nous faut connaître la
+constante de Janssen K. Pour un fluide K vaut 1, de même pour des billes de quelques
+centaines de μm comme dans le mémoire de recherche de l’ENS que nous avons utilisé. Mais
+pour nos expériences, les grains sont beaucoup plus gros par rapport au diamètre du tube et
+de forme complexe. Nous avons trouvé une seule référence nous donnant quelques valeurs
+de K (comprises entre 0.8 et 1.2).4 Le coefficient de Janssen K dépend de la masse volumique
+et de la forme et taille des grains. Dans l’impossibilité de prévoir le seuil à cause de l’inconnue
+K, nous allons essayer de déterminer cette constante par nos expériences.
+Nous disposons d'un tube de 62,0 cm de hauteur, et de diamètre de 6.5 cm, tenu par une
+pince et placé juste au-dessus d’une balance, sans contact. L’indication de la balance est
+donc de 0 g au début de l’expérience. Après avoir pesé notre granulat, nous le versons dans
+le tube tout en tapotant les parois pour augmenter la friction. Nous observons la balance lors
+du remplissage.
+Pois-chiche:
+Nous avons versé 1668 g de pois chiches et
+lu 1058 g comme indication finale de la
+balance. L’indication a constamment
+augmenté. Nous n’avons pas atteint le seuil.
+La hauteur du tube nous limite. Nous
+obtenons
+λ=36.9 cm et 𝑚⬚𝑠𝑒𝑢𝑖𝑙 = 1050g.
+
+𝑚⬚𝑠𝑒𝑢𝑖𝑙 =
+
+𝜌𝜋𝐷 3
+16 𝜇𝐾
+
+donc 𝐾 =
+
+𝜌𝜋𝐷 3
+16 𝜇𝑚⬚𝑠𝑒𝑢𝑖𝑙
+
 =
-&#3627408474;í µí±
-&#3627409163;
-í µí°·
-2
-4
- = &#3627409158;í µí¼í µí±(1âí µí±
-âí µí°»
-í µí¼) =
-&#3627408439;
-4í µí¼í µí°¾
-í µí¼í µí±(1âí µí±
-âí µí°»
-í µí¼) avec H la hauteur de la colonne de grains. 
-On peut donc exprimer la masse ressentie par la balance au seuil: 
-&#3627408474;â¬
-&#3627408463;&#3627408462;&#3627408473;&#3627408462;&#3627408475;&#3627408464;&#3627408466;=
-&#3627409164;&#3627409163;&#3627408439;
-3
-16 í µí¼í µí°¾
-(1âí µí±
-âí µí°»
-í µí¼) et masse seuil &#3627408474;â¬
-&#3627408480;&#3627408466;&#3627408482;í µí±&#3627408473;=
-&#3627409164;&#3627409163;&#3627408439;
-3
-16 í µí¼í µí°¾
- car í µí±
-âí µí°»
-í µí¼tend vers zÃ©ro. On peut 
-estimer que si la hauteur de grains H vaut au moins 5Î», lâasymptote est presque atteinte.
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        9/ 20 
-Nous avons essayÃ© de dÃ©terminer les valeurs des coefficients de friction statique pour nos 
-granulats avec le plastique des Ã©prouvettes
-3
-. Pour cela nous plaÃ§ons un grain sur le 
-lâÃ©prouvette que nous inclinons jusquâÃ  ce que le grain se mette Ã  glisser. Nous avons 
-reproduit 10 fois lâexpÃ©rience avec Ã  chaque fois des rÃ©sultats diffÃ©rents, car les grains sont 
-tous diffÃ©rents. Le tableau en annexe contient les moyennes de nos rÃ©sultats et lâincertitude 
-calculÃ©e Ã  partir de lâÃ©cart type et du nombre de mesures. On a alors: &#3627409159;= í µí±¡í µí±&#3627408475; í µí»¼ avec í µí»¼ 
-lâangle dâinclinaison de lâÃ©prouvette.Pour pouvoir essayer de prÃ©voir la masse seuil pour 
-chacune de nos expÃ©riences, ainsi que la longueur caractÃ©ristique Î», il nous faut connaÃ®tre la 
-constante de Janssen K. Pour un fluide K vaut 1, de mÃªme pour des billes de quelques 
-centaines de Î¼m comme dans le mÃ©moire de recherche de lâENS que nous avons utilisÃ©. Mais 
-pour nos expÃ©riences, les grains sont beaucoup plus gros par rapport au diamÃ¨tre du tube et 
-de forme complexe. Nous avons trouvÃ© une seule rÃ©fÃ©rence nous donnant quelques valeurs 
-de K (comprises entre 0.8 et 1.2).
-4
- Le coefficient de Janssen K dÃ©pend de la masse volumique 
-et de la forme et taille des grains. Dans lâimpossibilitÃ© de prÃ©voir le seuil Ã  cause de lâinconnue 
-K, nous allons essayer de dÃ©terminer cette constante par nos expÃ©riences. 
-Nous disposons d'un tube de 62,0 cm de hauteur, et de diamÃ¨tre de 6.5 cm, tenu par une 
-pince et placÃ© juste au-dessus dâune balance, sans contact. Lâindication de la balance est 
-donc de 0 g au dÃ©but de lâexpÃ©rience. AprÃ¨s avoir pesÃ© notre granulat, nous le versons dans 
-le tube tout en tapotant les parois pour augmenter la friction. Nous observons la balance lors 
-du remplissage. 
- 
-Pois-chiche: 
- 
-Nous avons versÃ© 1668 g de pois chiches et 
-lu 1058 g comme indication finale de la 
-balance. Lâindication a constamment 
-augmentÃ©. Nous nâavons pas atteint le seuil. 
-La hauteur du tube nous limite. Nous 
-obtenons 
-Î»=36.9 cm et &#3627408474;â¬
-&#3627408480;&#3627408466;&#3627408482;í µí±&#3627408473;= 1050g. 
-&#3627408474;â¬
-&#3627408480;&#3627408466;&#3627408482;í µí±&#3627408473;=
-&#3627409164;&#3627409163;&#3627408439;
-3
-16 í µí¼í µí°¾
- donc í µí°¾=
-&#3627409164;&#3627409163;&#3627408439;
-3
-16 í µí¼&#3627408474;â¬
-í µí± í µí±í µí±¢í µí±í µí±
-= 
-0.17 
- 
-Sable: 
-Nous pesons le sable en plusieurs fois due aux 
-limites de la balance (2000 g max). Nous versons 3 
-kg de sable dans le tube vibrÃ© mais n'atteignons 
-pas le seuil mais seulement la limite de notre 
-balance. Nous reproduisons lâexpÃ©rience avec un tube plus petit de hauteur: 29.0 cm  et de 
-diamÃ¨tre 3.5 cm . Seuil inaccessible. 
- 
-3
- https://www.nagwa.com/fr/videos/210196583418/ 
- 
-4
- http://www.legfr.fr/IMG/pdf/Revue/Vol3/Ovarlez_Vol.3_pp30-38_2003.pdf
+0.17
+Sable:
+Nous pesons le sable en plusieurs fois due aux
+limites de la balance (2000 g max). Nous versons 3
+kg de sable dans le tube vibré mais n'atteignons
+pas le seuil mais seulement la limite de notre
+balance. Nous reproduisons l’expérience avec un tube plus petit de hauteur: 29.0 cm et de
+diamètre 3.5 cm . Seuil inaccessible.
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        10/ 20 
-Î»= 20,25 cm 
- &#3627408474;â¬
-&#3627408480;&#3627408466;&#3627408482;í µí±&#3627408473;= 1250g donc K= 0.19 
-Vermiculite (mineral ressemblant Ã  
-du liÃ¨ge): 
-Nous versons 228.9 g de vermiculite 
-et nous atteignons une masse de 
-63.5g.  
-mseuil = 125 g donc K= 0.14 
-Î»=15.89 cm  
- 
-BlÃ©: 
-Le premier tube utilisÃ© dans ce cas a 
-un diamÃ¨tre intÃ©rieur de 3.5 cm. Nous versons  219.1  g et nous atteignons une masse finale 
-de  mseuil = 151 g donc K= 0.07   et   Î»= 15.2 cm  
- 
- 
-Le second tube utilisÃ© a un diamÃ¨tre intÃ©rieur de 4.7 cm. Nous versons  461.0  g et nous 
-atteignons une masse finale de  mseuil = 273 g donc K= 0.10    et   Î»= 11.9 cm  
- 
-Conclusion: Nous avons rÃ©ussi Ã  dÃ©terminer la valeur de K pour quatre types de grains, mais 
-sans pouvoir vÃ©rifier nos rÃ©sultats par manque de documentation sur le sujet. Lâincertitude est 
-importante, notamment Ã  cause de lâincertitude sur le coefficient de friction. 
-B-3 Lenteur du 
-phÃ©nomÃ¨ne 
-Pendant leur annÃ©e de 
-Seconde, 7 dâentre 
-nous avaient dÃ©jÃ  
-commencÃ© Ã  Ã©tudier le 
-silo de Janssen. 
-Remplissons un silo de 
-pierres ponces et 
-attendons 8 minutes, 
-sans toucher 
-lâexpÃ©rience. La masse 
-donnÃ©e par la balance 
-Ã©volue lentement car 
-lâempilement nâest pas 
-stable. LâexpÃ©rience reproduite plusieurs fois ne donne pas le mÃªme rÃ©sultat, la masse
+3
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        11/ 20 
-pouvant diminuer, en fonction des lignes de force entre grains qui sâÃ©tablissent ou se brisent. 
-Pour Ã©viter cette Ã©volution, il faut mobiliser les forces de friction en tapotant le cylindre. 
-B-4 Visualisation de lignes de forces grÃ¢ce Ã  des matÃ©riaux 
-photoÃ©lastiques 
-AmÃ co accompagne les professionnels et futurs professionnels de la construction, de 
-lâarchitecture et du design dans la conception et la rÃ©alisation de projets transformant les 
-matiÃ¨res naturelles disponibles localement en matÃ©riaux de construction. Sur leur site nous 
-avons trouvÃ© une remarquable expÃ©rience de visualisation des lignes de forces grÃ¢ce Ã  des 
-matÃ©riaux photoÃ©lastiques ( https://amaco.org/sous-la-poussee-des-grains/ ). Nous les avons 
-contactÃ©s mais sans aucune rÃ©ponse de leur part. Nous avons donc cherchÃ© Ã  reproduire 
-cette expÃ©rience par nos propres moyens. 
- GrÃ¢ce Ã  Madame C. Reynier, professeur et ingÃ©nieure de notre lycÃ©e, nous avons pu 
-entrer en contact avec M  F. Calderon de lâÃ©cole de chimie et de physique de Bordeaux, qui 
-nous a indiquÃ© une rÃ©fÃ©rence en anglais pour la fabrication des grains photoÃ©lastique en 
-gÃ©lose. 
-La technique de  photoÃ©lasticimÃ©trie permet de visualiser les chaÃ®nes de force. Les 
-forces se propagent par le rÃ©seau des grains, par contact. GrÃ¢ce Ã  une lumiÃ¨re polarisÃ©e, un 
-matÃ©riau  photoÃ©lastique  change de couleur quand on lui impose une force. Nous espÃ©rons 
-ainsi pouvoir visualiser les lignes de force amenant la formation de voÃ»tes.  
-B-4.1 Visualisation dâune bille en lumiÃ¨re polarisÃ©e 
- 
-Une source de lumiÃ¨re blanche Ã©claire deux filtres polarisant croisÃ©s. On obtient du 
-noir. LâexpÃ©rimentateur introduit une bille de gÃ©lose Ã  12 % (meilleur compromis entre soliditÃ© 
-et transparence aprÃ¨s des essais Ã  10% et 15 %) entre les filtres et appuie dessus. La bille 
-sombre sâÃ©claire en lumiÃ¨re blanche sous une faible pression puis, sous une pression plus 
-Ã©levÃ©e, des lignes rouges puis bleues apparaissent. Lorsquâon Ã©tudie un empilement de bille, 
-on voit apparaÃ®tre des lignes colorÃ©es. La lumiÃ¨re est bleue au point de contact et rouge au 
-centre des billes.  
-La lumiÃ¨re blanche de la source est polarisÃ©e dans une direction privilÃ©giÃ©e par le 
-premier polariseur. Elle traverse la bille puis est bloquÃ©e par le second polariseur croisÃ©. La 
-bille apparaÃ®t sombre. Lors dâune contrainte lÃ©gÃ¨re, la bille devient lumineuse. On peut en 
-dÃ©duire que le plan de polarisation de la lumiÃ¨re blanche a tournÃ© grÃ¢ce Ã  la contrainte et peut 
-maintenant passer Ã  travers le second polariseur croisÃ©. Puis si la contrainte augmente, seul 
-le rouge puis le bleu apparaissent. On suppose que la rotation du plan de polarisation de la 
-lumiÃ¨re dÃ©pend de la contrainte et de la longueur dâonde: 
-contrainte faible: rouge visible 
+https://www.nagwa.com/fr/videos/210196583418/
+
+4
+
+http://www.legfr.fr/IMG/pdf/Revue/Vol3/Ovarlez_Vol.3_pp30-38_2003.pdf
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+9/ 20
+
+λ= 20,25 cm
+
+𝑚⬚𝑠𝑒𝑢𝑖𝑙 = 1250g donc K= 0.19
+Vermiculite (mineral ressemblant à
+du liège):
+Nous versons 228.9 g de vermiculite
+et nous atteignons une masse de
+63.5g.
+mseuil = 125 g donc K= 0.14
+λ=15.89 cm
+Blé:
+Le premier tube utilisé dans ce cas a
+un diamètre intérieur de 3.5 cm. Nous versons 219.1 g et nous atteignons une masse finale
+de mseuil = 151 g donc K= 0.07 et λ= 15.2 cm
+
+Le second tube utilisé a un diamètre intérieur de 4.7 cm. Nous versons 461.0 g et nous
+atteignons une masse finale de mseuil = 273 g donc K= 0.10 et λ= 11.9 cm
+Conclusion: Nous avons réussi à déterminer la valeur de K pour quatre types de grains, mais
+sans pouvoir vérifier nos résultats par manque de documentation sur le sujet. L’incertitude est
+importante, notamment à cause de l’incertitude sur le coefficient de friction.
+
+B-3 Lenteur du
+phénomène
+Pendant leur année de
+Seconde, 7 d’entre
+nous avaient déjà
+commencé à étudier le
+silo
+de
+Janssen.
+Remplissons un silo de
+pierres
+ponces
+et
+attendons 8 minutes,
+sans
+toucher
+l’expérience. La masse
+donnée par la balance
+évolue lentement car
+l’empilement n’est pas
+stable. L’expérience reproduite plusieurs fois ne donne pas le même résultat, la masse
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+10/ 20
+
+pouvant diminuer, en fonction des lignes de force entre grains qui s’établissent ou se brisent.
+Pour éviter cette évolution, il faut mobiliser les forces de friction en tapotant le cylindre.
+
+B-4 Visualisation de lignes de forces grâce à des matériaux
+photoélastiques
+Amàco accompagne les professionnels et futurs professionnels de la construction, de
+l’architecture et du design dans la conception et la réalisation de projets transformant les
+matières naturelles disponibles localement en matériaux de construction. Sur leur site nous
+avons trouvé une remarquable expérience de visualisation des lignes de forces grâce à des
+matériaux photoélastiques ( https://amaco.org/sous-la-poussee-des-grains/ ). Nous les avons
+contactés mais sans aucune réponse de leur part. Nous avons donc cherché à reproduire
+cette expérience par nos propres moyens.
+Grâce à Madame C. Reynier, professeur et ingénieure de notre lycée, nous avons pu
+entrer en contact avec M F. Calderon de l’école de chimie et de physique de Bordeaux, qui
+nous a indiqué une référence en anglais pour la fabrication des grains photoélastique en
+gélose.
+La technique de photoélasticimétrie permet de visualiser les chaînes de force. Les
+forces se propagent par le réseau des grains, par contact. Grâce à une lumière polarisée, un
+matériau photoélastique change de couleur quand on lui impose une force. Nous espérons
+ainsi pouvoir visualiser les lignes de force amenant la formation de voûtes.
+
+B-4.1 Visualisation d’une bille en lumière polarisée
+Une source de lumière blanche éclaire deux filtres polarisant croisés. On obtient du
+noir. L’expérimentateur introduit une bille de gélose à 12 % (meilleur compromis entre solidité
+et transparence après des essais à 10% et 15 %) entre les filtres et appuie dessus. La bille
+sombre s’éclaire en lumière blanche sous une faible pression puis, sous une pression plus
+élevée, des lignes rouges puis bleues apparaissent. Lorsqu’on étudie un empilement de bille,
+on voit apparaître des lignes colorées. La lumière est bleue au point de contact et rouge au
+centre des billes.
+La lumière blanche de la source est polarisée dans une direction privilégiée par le
+premier polariseur. Elle traverse la bille puis est bloquée par le second polariseur croisé. La
+bille apparaît sombre. Lors d’une contrainte légère, la bille devient lumineuse. On peut en
+déduire que le plan de polarisation de la lumière blanche a tourné grâce à la contrainte et peut
+maintenant passer à travers le second polariseur croisé. Puis si la contrainte augmente, seul
+le rouge puis le bleu apparaissent. On suppose que la rotation du plan de polarisation de la
+lumière dépend de la contrainte et de la longueur d’onde:
+contrainte faible: rouge visible
 contrainte forte: bleu visible
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        12/ 20 
- 
-expÃ©rience du 24/09/2025  
-La birÃ©fringence est la propriÃ©tÃ© physique d'un matÃ©riau dans lequel la lumiÃ¨re se propage 
-grÃ¢ce Ã  la double rÃ©fraction, c'est-Ã -dire quâun rayon lumineux pÃ©nÃ©trant dans le cristal est 
-divisÃ© en deux. Lâindice de rÃ©fraction dÃ©pend de la polarisation et de la direction de 
-propagation de la lumiÃ¨re. Lorsqu'un matÃ©riau transparent est soumis Ã  une contrainte, il 
-prÃ©sente une birÃ©fringence proportionnelle Ã  la contrainte appliquÃ©e, ce qui permet de 
-visualiser les formes de contrainte. En faisant passer de la lumiÃ¨re polarisÃ©e Ã  travers le 
-matÃ©riau, les changements de polarisation provoquÃ©s par la contrainte peuvent Ãªtre observÃ©s 
-sous forme de motifs colorÃ©s, appelÃ©s franges, qui correspondent Ã  la distribution de la 
-contrainte
-5
-. 
-Lorsqu'un rayon de lumiÃ¨re traverse un matÃ©riau photoÃ©lastique, ses composantes d'onde 
-Ã©lectromagnÃ©tique subissent des indices de rÃ©fraction diffÃ©rents suivant deux directions. La 
-diffÃ©rence des indices de rÃ©fraction conduit Ã  une diffÃ©rence de chemin optique entre les deux 
-composants et donc Ã  des interfÃ©rences ( dÃ©crites par la loi de Brewster que nous 
-nâÃ©voquerons pas ici). Les franges obtenues correspondent Ã  des zones de contrainte 
-identique.
-6
- Ce sont des isochromes. 
-B-4.2 Visualisation des chaÃ®nes de force . 
-Nous avons rÃ©alisÃ© 
-cette expÃ©rience la 
-premiÃ¨re fois le 8 
-octobre, grÃ¢ce Ã  un 
-montage support 
-transparent rÃ©alisÃ© 
-par lâune dâentre 
-nous. Lâensemble 
-est sombre sans 
-quâune pression 
-soit exercÃ©e. 
-Lorsque la 
-pression augmente 
-nous voyons 
-apparaÃ®tre des 
-lignes lumineuses 
-mettant en 
-Ã©vidence dans notre exemple, une arche sur 4 billes au centre de lâimage. Ces endroits sont 
- 
-5
- dâaprÃ¨s https://www.samaterials.fr/blog/photoelasticity-stress-analysis-through-light.html 
-6
- https://cours.polymtl.ca/mec6405/Labo%20H06/MEC6405_lab5_h06.pdf
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        13/ 20 
-plus lumineux, car les contraintes sont plus fortes. Puisquâil est plus difficile dâappuyer sur un 
-ensemble de bille que sur une seule, nous voyons des zones blanches ou rouges mais pas 
-bleues. 
-C- Etude dynamique de la vidange et du 
-remplissage dâun silo 
-C-1 Comparaison liquide-milieu granulaire: Ãcoulement dâeau  
-C-1.1 Etude expÃ©rimentale 
- 
-Nous Ã©tudions lâÃ©coulement de lâeau depuis un large vase, muni dâune ouverture de 4 mm de 
-diamÃ¨tre. Pour cela, nous plaÃ§ons une balance tarÃ©e avec un cristallisoir pour recevoir 
-lâÃ©coulement, et nous filmons lâexpÃ©rience.  
- 
- 
-Nous traÃ§ons lâÃ©volution de la masse 
-dâeau Ã©coulÃ©e en fonction du temps. 
-La pente de la tangente Ã  la courbe 
-diminue. La masse dâeau qui sâÃ©coule 
-chaque seconde, c'est-Ã -dire le dÃ©bit 
-D, diminue au cours du temps.  
-D=v.s avec v la vitesse dâÃ©coulement 
-et s la section de sortie. La sortie a un 
-diamÃ¨tre de 4 mm, donc un section s= 
-1,26 10
--5
- mÂ². Nous pouvons ainsi 
-tracer lâÃ©volution du dÃ©bit et de la 
-vitesse dâÃ©jection. 
- 
- 
- 
- 
- 
+11/ 20
+
+expérience du 24/09/2025
+La biréfringence est la propriété physique d'un matériau dans lequel la lumière se propage
+grâce à la double réfraction, c'est-à-dire qu’un rayon lumineux pénétrant dans le cristal est
+divisé en deux. L’indice de réfraction dépend de la polarisation et de la direction de
+propagation de la lumière. Lorsqu'un matériau transparent est soumis à une contrainte, il
+présente une biréfringence proportionnelle à la contrainte appliquée, ce qui permet de
+visualiser les formes de contrainte. En faisant passer de la lumière polarisée à travers le
+matériau, les changements de polarisation provoqués par la contrainte peuvent être observés
+sous forme de motifs colorés, appelés franges, qui correspondent à la distribution de la
+contrainte5.
+Lorsqu'un rayon de lumière traverse un matériau photoélastique, ses composantes d'onde
+électromagnétique subissent des indices de réfraction différents suivant deux directions. La
+différence des indices de réfraction conduit à une différence de chemin optique entre les deux
+composants et donc à des interférences ( décrites par la loi de Brewster que nous
+n’évoquerons pas ici). Les franges obtenues correspondent à des zones de contrainte
+identique.6 Ce sont des isochromes.
+
+B-4.2 Visualisation des chaînes de force .
+Nous avons réalisé
+cette expérience la
+première fois le 8
+octobre, grâce à un
+montage support
+transparent réalisé
+par l’une d’entre
+nous. L’ensemble
+est sombre sans
+qu’une
+pression
+soit
+exercée.
+Lorsque
+la
+pression augmente
+nous
+voyons
+apparaître
+des
+lignes lumineuses
+mettant
+en
+évidence dans notre exemple, une arche sur 4 billes au centre de l’image. Ces endroits sont
+5
+6
+
+d’après https://www.samaterials.fr/blog/photoelasticity-stress-analysis-through-light.html
+https://cours.polymtl.ca/mec6405/Labo%20H06/MEC6405_lab5_h06.pdf
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+12/ 20
+
+plus lumineux, car les contraintes sont plus fortes. Puisqu’il est plus difficile d’appuyer sur un
+ensemble de bille que sur une seule, nous voyons des zones blanches ou rouges mais pas
+bleues.
+
+C- Etude dynamique de la vidange et du
+remplissage d’un silo
+C-1 Comparaison liquide-milieu granulaire: Écoulement d’eau
+C-1.1 Etude expérimentale
+Nous étudions l’écoulement de l’eau depuis un large vase, muni d’une ouverture de 4 mm de
+diamètre. Pour cela, nous plaçons une balance tarée avec un cristallisoir pour recevoir
+l’écoulement, et nous filmons l’expérience.
+
 cyl
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        14/ 20 
- 
- 
-Nous observons un jet dâeau avec une portÃ©e de plus en plus courte. Plus la hauteur dâeau 
-diminue dans le tube, plus la vitesse dâÃ©jection diminue.La vitesse de lâeau en B est la mÃªme 
-que celle dâun systÃ¨me en chute libre dâune hauteur h. 
- 
-Conclusion: Le dÃ©bit de lâeau diminue au cours du temps et dÃ©pend de la hauteur dâeau 
-restante dans le vase 
-C-1.2 Etude thÃ©orique 
-Nous avons voulu en faire une Ã©tude thÃ©orique, Ã  partir de la relation de Bernoulli. 
-On cherche Ã  dÃ©terminer la vitesse dâÃ©coulement de lâeau. Pour cela on sâappuie sur la formule 
-de Bernoulli, en considÃ©rant deux points :  
--A Ã  la surface de lâeau  
--B au robinet 
-On obtient alors :  
- 
-On constate aisÃ©ment que 	, on peut alors simplifier lâÃ©quation :  
-  
- 
-  
-Si on admet que , en posant de plus on a :
+Nous traçons l’évolution de la masse
+d’eau écoulée en fonction du temps.
+La pente de la tangente à la courbe
+diminue. La masse d’eau qui s’écoule
+chaque seconde, c'est-à-dire le débit
+D, diminue au cours du temps.
+D=v.s avec v la vitesse d’écoulement
+et s la section de sortie. La sortie a un
+diamètre de 4 mm, donc un section s=
+1,26 10-5 m². Nous pouvons ainsi
+tracer l’évolution du débit et de la
+vitesse d’éjection.
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        15/ 20 
- 
-Conclusion: Donc la vitesse dâÃ©coulement dÃ©pend de la hauteur h de liquide restante 
-dans le vase. Elle diminue donc au cours du temps 
-C-2 Ãcoulement des matÃ©riaux granulaires ( ExpÃ©riences du 17 septembre 
-2025, 1er et 8 octobre) 
-Nous choisissons une Ã©prouvette de 30 mm de large et une ouverture rÃ©glable de 0 Ã  25 mm. 
-Nous Ã©tudions lâÃ©coulement de graviers, de blÃ©, de pois chiches et de sable dans une balance. 
-Nous choisissons de les introduire dans lâÃ©prouvette avec un bÃ©cher et de ne pas les tasser, 
-donc de ne pas tapoter le tube. Comme pour lâeau, nous filmons lâexpÃ©rience pour en faire 
-une Ã©tude quantitative de la masse en fonction du temps. 
-Nous observons que lâÃ©coulement nâest pas toujours possible. Ãcoulement impossible pour le 
-blÃ©, les graviers et les pois chiches si le diamÃ¨tre de lâouverture est infÃ©rieur Ã  20 mm. Pour 
-le sable, lâÃ©coulement se bloque pour un diamÃ¨tre de lâouverture de 5 mm. 
-Voici nos rÃ©sultats dâÃ©coulement pour le sable, pour 4 ouvertures diffÃ©rentes. Dans tous 
-lâÃ©volution de la masse en fonction du temps est modÃ©lisable par une droite avec un coefficient 
-de corrÃ©lation proche de 1.  
- 
-Conclusion: LâÃ©coulement du sable sâeffectue avec un dÃ©bit constant, quelque soit la 
-hauteur restante dans le silo.  Câest la loi de Beverloo(1961). 
- 
- 
-Nous avons comparÃ© l'Ã©coulement de lâeau et de matÃ©riaux granulaires. Leur comportement 
-diffÃ¨re. MÃªme si les matÃ©riaux granulaires peuvent couler, ils ne le font pas comme les liquides 
-en ce qui concerne lâÃ©volution de leur dÃ©bit et la vitesse dâÃ©jection.
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        16/ 20 
-C3- Etude quantitative dâun Ã©coulement grÃ¢ce Ã  des capteurs de 
-force et une webcam 
-Deux outils sâoffrent Ã  nous pour lâÃ©tude de lâÃ©coulement des grains: 
-- les capteurs de forces pour diffÃ©rencier la masse portÃ©e par le socle et celle portÃ©e par 
-les parois. 
-- Une camÃ©ra pour Ã©tudier le mouvement de grains particuliers contre les parois. 
-Avec le mÃªme montage que prÃ©sentÃ© au dÃ©but de ce travail (paragraphe A4), nous Ã©tudions 
-le remplissage, la mobilisation et lâÃ©coulement de divers matÃ©riaux granulaires contenus dans 
-une Ã©prouvette de 250 ml Ã  ouverture rÃ©glable, et nous filmons les parois pour Ã©tablir des 
-profils de vitesse dans le tube. (ExpÃ©riences du 01/10/2025) 
-La mobilisation est le moment oÃ¹ en tapotant les parois on favorise lâÃ©tablissement de forces 
-de frottements entre les grains et avec les parois. Nos enregistrements font apparaÃ®tre des 
-oscillations lors de la vidange dont nous dÃ©terminons la pÃ©riode. Elles sont dues au choc des 
-grains sur les limites de lâorifice de sortie et sont liÃ©es Ã  la vitesse dâÃ©coulement des grains. 
-Connaissant la masse volumique des grains et le diamÃ¨tre du tube, nous pouvons retrouver 
-la hauteur de grain Ã  chaque instant, connaissant la masse totale prÃ©sente dans le montage. 
-Nous comparons la vitesse des grains Ã  trois hauteurs diffÃ©rentes dans le tube en fonction du 
-temps. 
-ExpÃ©rience 1:  blÃ© et D= 20 mm.  
-Nous versons une masse 
-de blÃ© dans un tube de 
-diamÃ¨tre intÃ©rieur 34 mm 
-et dâouverture infÃ©rieure 
-25 mm.   
-Nous mesurons des forces 
-Ã  partir desquelles nous 
-pouvons calculer les 
-masses correspondantes. 
-Lâindication des capteurs 
-nâest pas nulle Ã  t=0 Ã  
-cause du poids du tube et 
-du fond. Connaissant la 
-masse volumique du 
-grain, nous pouvons calculer la hauteur de grain dans le tube, dans la feuille de calcul de 
-LatisPro:. 
-masseTube=(Ftube-1)/9.81 
-masseSocle=(Fsocle-4.7)/9.81 
-masseTotal=masseTube+masseSocle 
-z=4*masseTotal*10000/(740*3.14*(3.4*3.4)) 
-Nous visualisons lâaugmentation de la masse portÃ©e par le tube et par le fond pendant le 
-remplissage. Elles nâÃ©voluent pas de la mÃªme maniÃ¨re, mais atteignent dans cet exemple la 
-mÃªme valeur Ã  la fin du remplissage, soit 120 g.
+13/ 20
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        17/ 20 
- 
-Nous mobilisons ensuite les forces de friction en tapotant le tube: la masse portÃ©e par le tube 
-augmente jusquâÃ  143 g, et celle par le fond diminue jusquâÃ  97 g. A cet instant lâeffet Janssen 
-est visible. Christophe Perge indique dans son travail que lâeffet Janssen nâest observable 
-quâÃ  partir de lâinstant oÃ¹ la friction sur les parois est entiÃ¨rement mobilisÃ©e. Câest ce que nous 
-avons fait et observÃ©. Lors de la vidange, il y a beaucoup de vibrations dues aux chocs des 
-grains sur lâouverture du fond. Les pics les plus importants au dÃ©but de la vidange 
-correspondent au moment de retrait du papier empÃªchant lâÃ©coulement des grains. Durant la 
-vidange, câest dâabord la masse portÃ©e par 
-le fond qui diminue rapidement. Câest la chute rapide des grains situÃ©s sous les premiÃ¨res 
-voÃ»tes. Ensuite la masse portÃ©e par le tube diminue rapidement,  puis celle portÃ©e par le fond 
-Ã  partir de lâinstant 18,5s pour les derniers grains. La vidange sâeffectue Ã  dÃ©bit constant de 
-36.2 g/s. La dÃ©bit de la masse portÃ©e par le tube est de 26.8 g/s, et celui du socle de 6.3 g/s. 
-A cause des nombreuses oscillations dues aux chocs de grains, les modÃ¨les de Latispro 
-manquent de prÃ©cision. 
-En modÃ©lisant lâÃ©volution de la masse du socle pour la derniÃ¨re partie de la vidange on trouve 
-Î»dynamique= 16.6 cm et une masse seuil de 51 g. Le coefficient  est proche de celui obtenu en 
-statique: Î»statique= 15.2 cm 
-Conclusion: 
-Nous avons mis en Ã©vidence un effet Janssen dynamique lors de la vidange. 
-LâÃ©tude des profils de vitesse sur LoggerPro sur un Ã©coulement nous montre que pendant 
-lâensemble de la vidange la vitesse des grains en contact avec la paroi (ceux que nous
+Nous observons un jet d’eau avec une portée de plus en plus courte. Plus la hauteur d’eau
+diminue dans le tube, plus la vitesse d’éjection diminue.La vitesse de l’eau en B est la même
+que celle d’un système en chute libre d’une hauteur h.
+Conclusion: Le débit de l’eau diminue au cours du temps et dépend de la hauteur d’eau
+restante dans le vase
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        18/ 20 
-pouvons filmer) est lÃ©gÃ¨rement plus Ã©levÃ©e en haut, quâau milieu ou en bas pour les pois 
-chiches, la pierre ponce et le blÃ©. Impossible Ã  dÃ©terminer pour le sable Ã  cause de la petitesse 
-des grains, mÃªme sâil semble sans mesure que ce soit la mÃªme chose. Par exemple pour un 
-vidange de durÃ©e totale 15s de pierre ponce dâun tube de 3.4 cm de diamÃ¨tre par une 
-ouverture de 14 mm, LâÃ©coulement semble se produire sans zones mortes. 
- 
-La vitesse est de 0.029 m/s pour un grain initialement en haut du tube, 0.024 m/s pour un 
-grain initialement situÃ© au 
-milieu et 0.021 m/s pour un 
-grain situÃ© dans la partie 
-basse.  
-Conclusion: La vitesse de 
-chaque grain est constante 
-au cours de la vidange. 
-Nous retrouvons le rÃ©sultat 
-de la loi de Beverloo 
- 
- 
-C4-Avantages 
-du fond conique 
-pour une vidange 
-optimale
+C-1.2 Etude théorique
+Nous avons voulu en faire une étude théorique, à partir de la relation de Bernoulli.
+On cherche à déterminer la vitesse d’écoulement de l’eau. Pour cela on s’appuie sur la formule
+de Bernoulli, en considérant deux points :
+-A à la surface de l’eau
+-B au robinet
+On obtient alors :
+
+On constate aisément que
+
+Si on admet que
+
+, on peut alors simplifier l’équation :
+
+, en posant de plus
+
+on a :
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+14/ 20
+
+Conclusion: Donc la vitesse d’écoulement dépend de la hauteur h de liquide restante
+dans le vase. Elle diminue donc au cours du temps
+
+C-2 Écoulement des matériaux granulaires ( Expériences du 17 septembre
+2025, 1er et 8 octobre)
+
+Nous choisissons une éprouvette de 30 mm de large et une ouverture réglable de 0 à 25 mm.
+Nous étudions l’écoulement de graviers, de blé, de pois chiches et de sable dans une balance.
+Nous choisissons de les introduire dans l’éprouvette avec un bécher et de ne pas les tasser,
+donc de ne pas tapoter le tube. Comme pour l’eau, nous filmons l’expérience pour en faire
+une étude quantitative de la masse en fonction du temps.
+Nous observons que l’écoulement n’est pas toujours possible. Écoulement impossible pour le
+blé, les graviers et les pois chiches si le diamètre de l’ouverture est inférieur à 20 mm. Pour
+le sable, l’écoulement se bloque pour un diamètre de l’ouverture de 5 mm.
+Voici nos résultats d’écoulement pour le sable, pour 4 ouvertures différentes. Dans tous
+l’évolution de la masse en fonction du temps est modélisable par une droite avec un coefficient
+de corrélation proche de 1.
+Conclusion: L’écoulement du sable s’effectue avec un débit constant, quelque soit la
+hauteur restante dans le silo. C’est la loi de Beverloo(1961).
+
+Nous avons comparé l'écoulement de l’eau et de matériaux granulaires. Leur comportement
+diffère. Même si les matériaux granulaires peuvent couler, ils ne le font pas comme les liquides
+en ce qui concerne l’évolution de leur débit et la vitesse d’éjection.
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+15/ 20
+
+C3- Etude quantitative d’un écoulement grâce à des capteurs de
+force et une webcam
+Deux outils s’offrent à nous pour l’étude de l’écoulement des grains:
+- les capteurs de forces pour différencier la masse portée par le socle et celle portée par
+les parois.
+- Une caméra pour étudier le mouvement de grains particuliers contre les parois.
+Avec le même montage que présenté au début de ce travail (paragraphe A4), nous étudions
+le remplissage, la mobilisation et l’écoulement de divers matériaux granulaires contenus dans
+une éprouvette de 250 ml à ouverture réglable, et nous filmons les parois pour établir des
+profils de vitesse dans le tube. (Expériences du 01/10/2025)
+La mobilisation est le moment où en tapotant les parois on favorise l’établissement de forces
+de frottements entre les grains et avec les parois. Nos enregistrements font apparaître des
+oscillations lors de la vidange dont nous déterminons la période. Elles sont dues au choc des
+grains sur les limites de l’orifice de sortie et sont liées à la vitesse d’écoulement des grains.
+Connaissant la masse volumique des grains et le diamètre du tube, nous pouvons retrouver
+la hauteur de grain à chaque instant, connaissant la masse totale présente dans le montage.
+Nous comparons la vitesse des grains à trois hauteurs différentes dans le tube en fonction du
+temps.
+Expérience 1: blé et D= 20 mm.
+Nous versons une masse
+de blé dans un tube de
+diamètre intérieur 34 mm
+et d’ouverture inférieure
+25 mm.
+Nous mesurons des forces
+à partir desquelles nous
+pouvons
+calculer
+les
+masses correspondantes.
+L’indication des capteurs
+n’est pas nulle à t=0 à
+cause du poids du tube et
+du fond. Connaissant la
+masse
+volumique
+du
+grain, nous pouvons calculer la hauteur de grain dans le tube, dans la feuille de calcul de
+LatisPro:.
+masseTube=(Ftube-1)/9.81
+masseSocle=(Fsocle-4.7)/9.81
+masseTotal=masseTube+masseSocle
+z=4*masseTotal*10000/(740*3.14*(3.4*3.4))
+Nous visualisons l’augmentation de la masse portée par le tube et par le fond pendant le
+remplissage. Elles n’évoluent pas de la même manière, mais atteignent dans cet exemple la
+même valeur à la fin du remplissage, soit 120 g.
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+16/ 20
+
+Nous mobilisons ensuite les forces de friction en tapotant le tube: la masse portée par le tube
+augmente jusqu’à 143 g, et celle par le fond diminue jusqu’à 97 g. A cet instant l’effet Janssen
+est visible. Christophe Perge indique dans son travail que l’effet Janssen n’est observable
+qu’à partir de l’instant où la friction sur les parois est entièrement mobilisée. C’est ce que nous
+avons fait et observé. Lors de la vidange, il y a beaucoup de vibrations dues aux chocs des
+grains sur l’ouverture du fond. Les pics les plus importants au début de la vidange
+correspondent au moment de retrait du papier empêchant l’écoulement des grains. Durant la
+
+vidange, c’est d’abord la masse portée par
+le fond qui diminue rapidement. C’est la chute rapide des grains situés sous les premières
+voûtes. Ensuite la masse portée par le tube diminue rapidement, puis celle portée par le fond
+à partir de l’instant 18,5s pour les derniers grains. La vidange s’effectue à débit constant de
+36.2 g/s. La débit de la masse portée par le tube est de 26.8 g/s, et celui du socle de 6.3 g/s.
+A cause des nombreuses oscillations dues aux chocs de grains, les modèles de Latispro
+manquent de précision.
+En modélisant l’évolution de la masse du socle pour la dernière partie de la vidange on trouve
+λdynamique= 16.6 cm et une masse seuil de 51 g. Le coefficient est proche de celui obtenu en
+statique: λstatique= 15.2 cm
+Conclusion:
+Nous avons mis en évidence un effet Janssen dynamique lors de la vidange.
+L’étude des profils de vitesse sur LoggerPro sur un écoulement nous montre que pendant
+l’ensemble de la vidange la vitesse des grains en contact avec la paroi (ceux que nous
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+17/ 20
+
+pouvons filmer) est légèrement plus élevée en haut, qu’au milieu ou en bas pour les pois
+chiches, la pierre ponce et le blé. Impossible à déterminer pour le sable à cause de la petitesse
+des grains, même s’il semble sans mesure que ce soit la même chose. Par exemple pour un
+vidange de durée totale 15s de pierre ponce d’un tube de 3.4 cm de diamètre par une
+ouverture de 14 mm, L’écoulement semble se produire sans zones mortes.
+La vitesse est de 0.029 m/s pour un grain initialement en haut du tube, 0.024 m/s pour un
+grain initialement situé au
+milieu et 0.021 m/s pour un
+grain situé dans la partie
+basse.
+Conclusion: La vitesse de
+chaque grain est constante
+au cours de la vidange.
+Nous retrouvons le résultat
+de la loi de Beverloo
+
+C4-Avantages
+du fond conique
+
+pour une vidange
+optimale7
+Le fond conique pour une cellule à
+grains peut présenter de nombreux
+atouts par rapport aux fonds plats
+traditionnels et permettre une
+vidange presque complète du silo
+grâce une meilleure fluidité des
+produits lors de la vidange et une diminution des zones mortes où les grains peuvent stagner
+ainsi qu’une réduction du temps nécessaire pour vider complètement le silo.
+Le mercredi 1er octobre, Anastasia, Louis, et Yanis ont réalisé la comparaison de l’écoulement
+avec fond plat et avec fond conique (entonnoir plastique d’angle 45°) pour l’écoulement du
+sable dans un silo éprouvette de 3,5 cm de diamètre intérieur. La vidéo de l’écoulement
+montre l’absence de zone morte avec cône.
+
 7
- 
-Le fond conique pour une cellule Ã  
-grains peut prÃ©senter de nombreux 
-atouts par rapport aux fonds plats 
-traditionnels et permettre une 
-vidange presque complÃ¨te du silo 
-grÃ¢ce une meilleure fluiditÃ© des 
-produits lors de la vidange et une diminution des zones mortes oÃ¹ les grains peuvent stagner 
-ainsi quâune rÃ©duction du temps nÃ©cessaire pour vider complÃ¨tement le silo. 
-Le mercredi 1er octobre, Anastasia, Louis, et Yanis ont rÃ©alisÃ© la comparaison de lâÃ©coulement 
-avec fond plat et avec fond conique (entonnoir plastique dâangle 45Â°) pour lâÃ©coulement du 
-sable dans un silo Ã©prouvette de 3,5 cm de diamÃ¨tre intÃ©rieur. La vidÃ©o de lâÃ©coulement 
-montre lâabsence de zone morte avec cÃ´ne. 
- 
- 
-7
- source: https://nte.mines-albi.fr/STP/OU/fr/co/uc_Probleme.html et 
-https://ingenieursdeparis.fr/2025/01/27/fond-conique-cellule-grains-solutions-stockage-
-ventilation-silos-agricoles-industriels/
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        19/ 20 
- 
- 
- 
-On observe une vitesse plus importante lorsqu' un cÃ´ne est utilisÃ©. Donc pour favoriser et 
-permettre un Ã©coulement plus rapide il faut utiliser un cÃ´ne. 
-D - ModÃ©lisation dâun silo Ã  grain par un circuit 
-RC 
-Il existe un champ Ã©lectrique dans un condensateur qui stocke des charges Ã©lectriques et un 
-champ gravitationnel dans un silo plein de grains. Les deux sont uniformes. La constante de 
-temps du circuit Ã©lectrique peut modÃ©liser la constante de longueur du silo Ã  grains. La tension 
-du gÃ©nÃ©rateur modÃ©lise la pression maximale qui peut Ãªtre atteinte au fond du silo ou la masse 
-mesurÃ©e par la balance. Pour le circuit RC, la tension du condensateur augmente au cours 
-du temps. Câest en fonction de la profondeur que la pression augmente dans un silo. Les deux 
-Ã©quations diffÃ©rentielles sont du premier ordre Ã  coefficients constants avec second membre. 
-La principale diffÃ©rence entre les deux vient du lien existant entre les coefficients pour 
-lâÃ©volution de pression, qui nâexiste pas pour le circuit RC. E est indÃ©pendant de RC. Mais ÏgÎ» 
-dÃ©pend de la constante de longueur Î».  
- 
-MatÃ©riau Sable Pois chiche Vermiculite blÃ© 
-masse volumique 1.8 g/ml 0.84 g/ml 0.14 g/ml 0.74 g/ml 
-Ïg (N/m
-3
-) 18 . 10
-3 
-8,4 . 10
-3
- 1.4. 10
-3
- 7.4. 10
-3
- 
-k(V/s) 18 . 10
-3
- 8,4 . 10
-3
- 1.4. 10
-3
- 7.4. 10
-3
- 
-&#3627409159; 0.42 0.25 0.42 0.58 
-&#3627409158;=
-&#3627408439;
-4í µí¼í µí°¾
-  (m) 
-0.21 0.38 0.27 0.16 
-Pour D=6.5 cm de diamÃ¨tre. 
-Nous choisissons de modÃ©liser la pression dans le silo obÃ©issant Ã  lâÃ©quation   
-í µí¼í µí±&#3627409158;=í µí± +&#3627409158;
-&#3627408465;í µí±
-&#3627408465;í µí±§
- soit í µí¼í µí±
-&#3627408439;
-4í µí°¾í µí¼
-=í µí± +
-&#3627408439;
-4í µí¼í µí°¾
-&#3627408465;í µí±
-&#3627408465;í µí±§
- par la tension dâun condensateur dans un circuit RC 
-obÃ©issant Ã  lâÃ©quation í µí±í µí¼=í µí±í µí± +í µí¼
-&#3627408465;&#3627408482;&#3627408464;
-&#3627408465;&#3627408481;
-  soit í µí°¸=í µí±í µí±í µí°¶=í µí±í µí± +í µí±í µí°¶
-&#3627408465;&#3627408482;&#3627408464;
-&#3627408465;&#3627408481;
-. Donc: 
-- la profondeur z(m) est reprÃ©sentÃ©e par le temps t (s)
+source: https://nte.mines-albi.fr/STP/OU/fr/co/uc_Probleme.html et
+https://ingenieursdeparis.fr/2025/01/27/fond-conique-cellule-grains-solutions-stockageventilation-silos-agricoles-industriels/
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
 
-La physique du grain de blÃ© / LycÃ©e Bernard Palissy dâAgen/ AnnÃ©e scolaire 2025-2026.        20/ 20 
-- í µí¼í µí± est reprÃ©sentÃ©e par le coefficient k=
-&#3627408440;â1000
-&#3627408453;&#3627408438;
-.  (Le coefficient 1000 permet dâobtenir 
-des tensions de quelques volts.) 
- 
- 
-Conclusion 
-GrÃ¢ce Ã  ce projet, nous avons rÃ©ussi Ã  explorer le monde fascinant des matÃ©riaux granulaires. 
-15 Ã©lÃ¨ves de PremiÃ¨re et Terminale ont participÃ© Ã  ce travail avec notre professeur Jean-
-Michel Laclaverie. Nous avons choisi ce thÃ¨me car il est dâimportance dans le monde actuel 
-oÃ¹ les matÃ©riaux granulaires sont partout, de lâagriculture, au bÃ¢timent, Ã  lâindustrieâ¦ 
-Nous avons pu rÃ©investir nos connaissances de Terminale pour Ã©tablir et exploiter lâÃ©quation 
-diffÃ©rentielle de la pression dans le tube de Janssen, et ainsi explorer le comportement solide 
-et liquide des grains.  
-Nous avons pu mettre en Ã©vidence quâun fond conique permettait un Ã©coulement plus rapide 
-des grains. Câest pour cette raison quâil est largement utilisÃ© par exemple dans les silos 
-agricoles.  
-Enfin, nous avons modÃ©lisÃ© par un circuit RC la pression dans un silo chargÃ© de grains.  
-Nos pistes de travail pour amÃ©liorer notre travail sont nombreuses. Nous voudrions essayer 
-de dÃ©terminer les coefficients de friction ainsi que les constantes de Janssen K avec une autre 
-mÃ©thode pour obtenir des rÃ©sultats plus fiables. Nous voudrions refaire nos expÃ©riences avec 
-des tubes plus grands pour mettre plus facilement en Ã©vidence le seuil de Janssen. Il nous 
-faut amÃ©liorer la prÃ©cision de notre travail pour faire correspondre nos mesures et nos 
-prÃ©visions par le calcul plus correctement. Merci pour lâattention que vous avez portÃ© Ã  notre 
+18/ 20
+
+On observe une vitesse plus importante lorsqu' un cône est utilisé. Donc pour favoriser et
+permettre un écoulement plus rapide il faut utiliser un cône.
+
+D - Modélisation d’un silo à grain par un circuit
+RC
+Il existe un champ électrique dans un condensateur qui stocke des charges électriques et un
+champ gravitationnel dans un silo plein de grains. Les deux sont uniformes. La constante de
+temps du circuit électrique peut modéliser la constante de longueur du silo à grains. La tension
+du générateur modélise la pression maximale qui peut être atteinte au fond du silo ou la masse
+mesurée par la balance. Pour le circuit RC, la tension du condensateur augmente au cours
+du temps. C’est en fonction de la profondeur que la pression augmente dans un silo. Les deux
+équations différentielles sont du premier ordre à coefficients constants avec second membre.
+La principale différence entre les deux vient du lien existant entre les coefficients pour
+l’évolution de pression, qui n’existe pas pour le circuit RC. E est indépendant de RC. Mais ρgλ
+dépend de la constante de longueur λ.
+Matériau
+
+Sable
+
+Pois chiche
+
+Vermiculite
+
+blé
+
+masse volumique
+
+1.8 g/ml
+
+0.84 g/ml
+
+0.14 g/ml
+
+0.74 g/ml
+
+ρg (N/m3)
+
+18 . 103
+
+8,4 . 103
+
+1.4. 103
+
+7.4. 103
+
+k(V/s)
+
+18 . 103
+
+8,4 . 103
+
+1.4. 103
+
+7.4. 103
+
+0.42
+
+0.25
+
+0.42
+
+0.58
+
+0.21
+
+0.38
+
+0.27
+
+0.16
+
+𝜇
+𝐷
+
+𝜆 = 4𝜇𝐾 (m)
+
+Pour D=6.5 cm de diamètre.
+Nous choisissons de modéliser la pression dans le silo obéissant à l’équation
+𝑑𝑃
+
+𝐷
+
+𝐷 𝑑𝑃
+
+𝜌𝑔𝜆 = 𝑃 + 𝜆 𝑑𝑧 soit 𝜌𝑔 4𝐾𝜇 = 𝑃 + 4𝜇𝐾 𝑑𝑧 par la tension d’un condensateur dans un circuit RC
+𝑑𝑢𝑐
+
+𝑑𝑢𝑐
+
+obéissant à l’équation 𝑘𝜏 = 𝑈𝑐 + 𝜏 𝑑𝑡 soit 𝐸 = 𝑘𝑅𝐶 = 𝑈𝑐 + 𝑅𝐶 𝑑𝑡 . Donc:
+-
+
+la profondeur z(m) est représentée par le temps t (s)
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+19/ 20
+
+-
+
+𝜌𝑔 est représentée par le coefficient k=
+
+𝐸∗1000
+.
+𝑅𝐶
+
+(Le coefficient 1000 permet d’obtenir
+
+des tensions de quelques volts.)
+
+Conclusion
+Grâce à ce projet, nous avons réussi à explorer le monde fascinant des matériaux granulaires.
+15 élèves de Première et Terminale ont participé à ce travail avec notre professeur JeanMichel Laclaverie. Nous avons choisi ce thème car il est d’importance dans le monde actuel
+où les matériaux granulaires sont partout, de l’agriculture, au bâtiment, à l’industrie…
+Nous avons pu réinvestir nos connaissances de Terminale pour établir et exploiter l’équation
+différentielle de la pression dans le tube de Janssen, et ainsi explorer le comportement solide
+et liquide des grains.
+Nous avons pu mettre en évidence qu’un fond conique permettait un écoulement plus rapide
+des grains. C’est pour cette raison qu’il est largement utilisé par exemple dans les silos
+agricoles.
+Enfin, nous avons modélisé par un circuit RC la pression dans un silo chargé de grains.
+Nos pistes de travail pour améliorer notre travail sont nombreuses. Nous voudrions essayer
+de déterminer les coefficients de friction ainsi que les constantes de Janssen K avec une autre
+méthode pour obtenir des résultats plus fiables. Nous voudrions refaire nos expériences avec
+des tubes plus grands pour mettre plus facilement en évidence le seuil de Janssen. Il nous
+faut améliorer la précision de notre travail pour faire correspondre nos mesures et nos
+prévisions par le calcul plus correctement. Merci pour l’attention que vous avez porté à notre
 travail.
+
+La physique du grain de blé / Lycée Bernard Palissy d’Agen/ Année scolaire 2025-2026.
+
+20/ 20
+
+

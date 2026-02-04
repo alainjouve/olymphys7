@@ -1,53 +1,677 @@
-2025-2026 
-Un café sonore 
-What else?  Sarah BAQLOUL Léonore GARGUILLO Lily KATANIC CASIMIRI  Lycée Vauvenargues  Sous la direction de Hervé IODA et Olivier POLIDORO -Aix en Provence Académie d'Aix -Marseille  Sommaire INTRODUCTION .........................................................•................................•................................•............... 1 
-, 1. OBSERVATION DES FREQUENCES ...................•................................•................................•............... 1 
-1. Analyse spectrale du son............................................................................................................................ 1 
-2. Analyse spectrale de l'expérience .............................................................................................................. 2 
-3. us ondes ................................................................................................................................................... 2 
-4. Vitesse du son dans les fluides .................................................................................................................. 3 
-, II. LE SON EMIS PAR LE VERRE ............................•................................•................................•............... 6 
-1. Cas du verre vide ( ou rempli d'air) ............................................................................................................ 6 
-2. us ondes stationnaires .............................................................................................................................. 6 
-3. Verre frappé sur le côté .............................................................................................................................. 7 
-, III. LE SON EMIS PAR LE VERRE AVEC DE L'EAU ...........................•................................•............. 10 
-1. Influence de l'eau sur les fréquences ....................................................................................................... 10 
-2. u son émis avec de l'eau contenant des bulles ....................................................................................... 12 
-3. L'effet allasonique dans le bécher : Modélisation ................................................................................... 13 
-4. Expérience finale ..................................................................................................................................... 16 
-CONCLUSION ..............................................................•................................•................................•............. 19 
-INTRODUCTION 
-Quand on prend un café ou un chocolat chaud dans une tasse, après l'avoir mélangé, il est possible d'entendre un phénomène bizarre ... En effet, si on s'amuse à taper le fond avec notre cuillère. Le son entendu devient de plus en plus aigu ! Nous avons trouvé une vidéo sur You Tube réalisée par M Bobroff [l] -Le café qui chante qui montre ce phénomène: [l] https://www .youtube.com/watch ?v=R3dNaKIKgfs Celui-ci parle de l'effet allasonique (ou effet chocolat chaud) qui semble dépendre de la hauteur d'eau et de la vitesse du son. Tout cela nous a interpellées et nous avons voulu comprendre et expliquer ce phénomène. Objet de notre étude : Peut-on observer et mesurer ces fréquences? Est-il possible d'expliquer théoriquement ce phénomène? Pour commencer : Comment observer et mesurer les fréquences d'un signal ? , 1.OBSERVATION DES FREQUENCES 1. ANALYSE SPECTRALE DU SON 1.a. Spectre d'un son pur Un son pur correspond un signal sinusoïdal. Il faut deux informations (l'amplitude A et la fréquence f) pour le caractériser. La représentation fréquentielle de ces caractéristiques donne le spectre du son étudié. 1,5 Exemple d'un son pur de fréquence f = 100 Hz et d'amplitude relative A= 1.r(s) 0 ,5 f(Hz) T=_!_ f 200 300 400 500 600 1. b. Spectre d'un son complexe Dans le cas d'un son complexe constitué de plusieurs sons purs, la représentation fréquentielle permet, d'un simple coup d'œil, de connaître les caractéristiques de celui-ci. 1,5 0,5 100 200 300 400 500 Boo/(Hz) Représentation d'un son complexe et son spectre Fréquence Amplitud e Sonagramme : Il est possible de représenter Tempsl'évolution temporelle du spectre d'un signal sur un Temps Freq ueuce même graphique appelé sonagramme. Amplitude • ~--------,>)l Sonagramme vu en 20 [l] 1.c. Décomposition en série de Fourier Théorème de Fourier : Il existe un théorème qui dit qu'un ! signal ! Ipériodique Ipeut se toujours décomposer en une somme d'ondes sinusoïdales de fréquences multiples (harmoniques). On parle de décomposition en série de Fourier. Cet outil mathématique permet l'analyse des fréquences (le ! spectre bd'un signal, comme le son. 2. ANALYSE SPECTRALE DE L'EXPÉRIENCE Son d'un luth (note ré) -Flash-FFTL'application PHYPHOX sur le SMARTPHONE permet de représenter et mesurer ces fréquences : La trace blanche qui se dessine représente la variation de la fréquence qui varie en fonction du temps (en s). Celle-ci varie donc entre 1,2 kHz et 2,5 kHz environ. Nous constatons que la fréquence augmente comme attendu, le son perçu devenant de plus en plus aigu. Les mêmes mesures effectuées avec le logiciel Spectrogram 16: Expérience sur Phyphox réalisée avec une tasse de café • Spectrogram rn Conclusion: Sur les sonagrammes, on arrive à observer des fréquences qui varient au cours du temps mais peut-on expliquer ce phénomène qui relève du domaine des ondes.  Mais, qu'est ce qu'une onde ?  3.LES ONDES  3.a. Définition  .-r_\  WIK IPÉDIA L'en,y clop, die l,b,c  Une onde est la propagation au cours du temps d'une perturbation produisant  sur son passage une variation réversible des propriétés physiques locales du milieu. Elle se  déplace avec une vitesse déterminée qui dépend des caractéristiques du milieu de propagation  Un exemple d'ond e  3.b. Différents types d'ondes  de gravité  En mécanique classique, on distingue principalement deux types d'ondes, les ondes mécaniques qui ont besoin d'un milieu matériel pour se propager et les ondes électromagnétiques qui peuvent de propager dans le vide. Exemples d'ondes mécaniques: Nécessite un milieu matériel pour se propager. I f~·-:milli·T:'.. . ········.... ........ ..... ········. ..... ········. . ..... ········. ... lnngu t l6 d'on d,:, Ondes dans une corde Surface vibrante Ondes acoustiques Ondes le long d'un ressort Dans le cas de l'onde acoustique, on parle d'onde de pression. [2] Les ondes électromagnétiques : Correspond à la propagation (même dans le vide) d'un champ électrique et d'un champ magnétique. 3.c. Les ondes sinusoïdales 	Spectre des ondes électromagnétiques Comme on peut le voir sur le spectre électromagnétique précédent, il existe une catégorie fondamentale d'onde appelée onde sinusoïdale. Celle-ci est modélisée par une fonction sinusoïdale qui dépend de l'espace et du temps. Son expression mathématique est la suivante :  ~~~~~~~~~~~~~~ z(x,t) = z.cos(3;1-3ix+91 J  Où:  Zoest l'amplitude de l'onde T =_!__est la fréquence de  f  La longueur d'onde et la période (ou la fréquence) sont liées par la relation suivante dans laquelle  Â=c.T=. c  l'onde ( et f la fréquence) Â, la longueur d'onde  intervient la célérité ( ou vitesse) de l'onde.  f  rp la phase à l'origine  z(xo, t)  T  z(x. to)  ,\  Une onde se propage à une certaine vitesse, peut-on la calculer et la mesurer ? 4. VITESSE DU SON DANS LES FLUIDES 4.a. Aspect théorique Notre expérience concerne le son qui ce propage dans l'eau ou l'air que l'on appelle des fluides. Dans la littérature scientifique, on trouve l'expression de la vitesse ou célérité d'une onde sonore dans les fluides : Où: 	cest la célérité (ou vitesse) du son (en mis) Xsest le module de compressibilité isentropique ( ou coefficient de compressibilité adiabatique) du fluide ( en Pa-1 ). Il représente la résistance du fluide à la compression. Le coefficient Xsexprime de combien se comprime un volume si on exerce une pression sur lui p est la masse volumique du fluide (en kg.m-3 ). Concrètement, c'est une formule qui relie l'élasticité et l'inertie du milieu: [3] 4.b. Exemple de l'air !/ Mesure de z :Expérience de mesure de Zspour l'air Protocole: Avec une seringue remplie d'air et un capteur de pression (manomètre P 401 de Phytex). On appuie rapidement afin d'enfoncer le piston et l'on mesure la variation de pression correspondante . z.fàP=-f-soit z. 1 ~=--ln J\ v, V -P;P1 V1 Nous avons enfoncé la seringue de AR =2 cm pour une longueur initiale de fi =4 cm avec une variation de pression P1 -P; = 0, 97 bar= 0,97.105 Pa . 1Numériquement : z. = ln 2 =7, 1.10~ Pa-1 0,97.105 Cette valeur est cohérente avec la littérature qui donne z.=7.10~ Pa-1 Nous pouvons estimer la vitesse du son dans l'air avec c = IT et p . = M ai,P =1, 2 kg.ra -à 20°C.fpz. "'' RT 3 Nous trouvons alors: cai,=345 m.s-1 (résultat en adéquation avec la valeur de référence ci-dessous) Valeurs de référence 1 Milieu IlCélérité de référence (c) Il Commentaires 1 IEau (pure, 20°C) Il ~ 1500m/s IIDépend fortement de la température, de la salinité (pour l'eau de mer) et de la pression. -.. - ~ r (sec, 20°C) Il ~343 mis ,Â Dépend principalement de la température : cair ~ 331,4 + 0,6· T ( où Test en °C).  [4] 
-Èmeneur Rêcc:p1eurA RCccpteu.r B Mesure de la vitesse du son dans l'air: Protocole: On dispose d'un émetteur d'ultrasons sinusoïdaux (fréquence des ultrasons autour de 40 kHz). L'émetteur permet d'obtenir une émission par salves (émises à environ 100 Hz) et de deux récepteurs d'ultrasons identiques, dont la sortie sera reliée à une entrée de l'oscilloscope. Exploitation : La mesure du retard entre les récepteurs donne une mesure directe de la vitesse du son par : c = ..!!:.._ At Avec d = 11 cm = 0, 11 m et At = 318 µs , il vient : 0,11 ~ c. = =346 m.s arr 318.10---<i On retrouve une valeur proche de la référence. 4.c. Exemple de l'eau Contrairement à l'air, la mesure directe de z. (Zs =4,6.10-10 Pa-1 ) nous est impossible car l'eau est quasi incompressible (surtout avec notre seringue en plastique ... ). Par contre, il est possible de réaliser la mesure de la vitesse du son directement avec le même protocole que pour l'air. Mesure de la vitesse du son dans l'eau : Protocole : On utilise un émetteur d'ultrasons sinusoïdaux ( f = 40 kHz) permettant d'obtenir une émission par salves et d'un récepteur. Les deux étant reliées à l'oscilloscope afin d'obtenir l'oscillogramme ci-dessous. dExploitation : La mesure du retard entre émetteur et récepteur donne une mesure de la vitesse du son par c = -. At 9Avec d=9cm=0,09m et At=62µs,ilvient: c = O,o-6 =1450m.s-1 eau 62.10 Ce résultat (à comparer avec la valeur de référence du tableau de la page précédente) montre que cette méthode de mesure est pertinente. La suite : Pour entendre l'effet allasonique, il faut taper au fond d'une tasse ou d'un verre mais ... Que se passe-t-il dans le verre quand on tape au fond ? [5] , II. LE SON EMIS PAR LE VERRE 1. CAS DU VERRE VIDE (OU REMPLI D'AIR) .( Son émis par le verre vide : Protocole : Dans notre expérience, nous allons frapper un verre (hauteur 14 cm) au fond avec la cuillère. Le son est analysé avec le logiciel Spectrogram 16. Résultat: On mesure essentiellement une fréquence d'environ 600 Hz. La présence de cette fréquence peut s'expliquer par les ondes stationnaires. Qu'est ce qu'une onde stationnaire? 2. LES ONDES STATIONNAIRES ~ L·x 2.a. Définition --~~--.Une onde stationnaire résulte de la superposition d'une onde ---------le=~ ~ incidente et d'une onde réfléchie de même amplitude et de o=.:::::::::__ ---, _. ---L • x L = 3i.../ 2 même fréquence se propageant en sens inverse. ~c ---:::--,,~ •x O~ -----------~ L L = 21c Celle-ci présente des : -Nœuds : Points où l'amplitude de vibration est nulle. o<C><=><=::>: \~ L• X -Ventres: Points où l'amplitude de vibration est maximale. Les fréquences et longueurs d'ondes sont liées aux ï. 12 ventre nœudU4 ' conditions aux limites du milieu de propagation. Les Ondes stationnaires pour une corde fixe aux extrémités extrémités du milieu (corde, colonne d'air, etc.) imposent donc des contraintes qui déterminent les fréquences possibles (fréquences propres ou harmoniques). Ces conditions peuvent être : Fixe (Nœud): L'amplitude doit être nulle 
+
+2025-2026 
+
+Un caf√© sonore 
+
+
+What else?  
+Sarah BAQLOUL L√©onore GARGUILLO Lily KATANIC CASIMIRI  Lyc√©e Vauvenargues  Sous la direction de Herv√© IODA et Olivier POLIDORO -Aix en Provence Acad√©mie d'Aix -Marseille  
+
+Sommaire 
+INTRODUCTION .........................................................‚Ä¢................................‚Ä¢................................‚Ä¢............... 1 
+
+, 
+1. OBSERVATION DES FREQUENCES ...................‚Ä¢................................‚Ä¢................................‚Ä¢............... 1 
+
+1. 
+Analyse spectrale du son............................................................................................................................ 1 
+
+
+2. 
+Analyse spectrale de l'exp√©rience .............................................................................................................. 2 
+
+
+3. 
+us ondes ................................................................................................................................................... 2 
+
+
+4. 
+Vitesse du son dans les fluides .................................................................................................................. 3 
+
+
+
+, 
+II. LE SON EMIS PAR LE VERRE ............................‚Ä¢................................‚Ä¢................................‚Ä¢............... 6 
+
+1. 
+Cas du verre vide ( ou rempli d'air) ............................................................................................................ 6 
+
+
+2. 
+us ondes stationnaires .............................................................................................................................. 6 
+
+
+3. 
+Verre frapp√© sur le c√¥t√© .............................................................................................................................. 7 
+
+
+
+, 
+III. LE SON EMIS PAR LE VERRE AVEC DE L'EAU ...........................‚Ä¢................................‚Ä¢............. 10 
+
+1. 
+Influence de l'eau sur les fr√©quences ....................................................................................................... 10 
+
+
+2. 
+u son √©mis avec de l'eau contenant des bulles ....................................................................................... 12 
+
+
+3. 
+L'effet allasonique dans le b√©cher : Mod√©lisation ................................................................................... 13 
+
+
+4. 
+Exp√©rience finale ..................................................................................................................................... 16 
+
+
+
+CONCLUSION ..............................................................‚Ä¢................................‚Ä¢................................‚Ä¢............. 19 
+
+INTRODUCTION 
+
+Quand on prend un caf√© ou un chocolat chaud dans une tasse, apr√®s l'avoir m√©lang√©, il est possible d'entendre un ph√©nom√®ne bizarre ... 
+En effet, si on s'amuse √† taper le fond avec notre cuill√®re. Le son entendu devient de plus en plus aigu ! 
+Nous avons trouv√© une vid√©o sur You Tube r√©alis√©e par M Bobroff 
+[l] 
+-Le caf√© qui chante qui montre ce ph√©nom√®ne: 
+
+[l] 
+https://www .youtube.com/watch ?v=R3dNaKIKgfs 
+
+
+
+Celui-ci parle de l'effet allasonique (ou effet chocolat chaud) qui semble d√©pendre de la hauteur d'eau et de la vitesse du son. 
+Tout cela nous a interpell√©es et nous avons voulu comprendre et expliquer ce ph√©nom√®ne. 
+Objet de notre √©tude : Peut-on observer et mesurer ces fr√©quences? Est-il possible d'expliquer th√©oriquement ce ph√©nom√®ne? 
+Pour commencer : Comment observer et mesurer les fr√©quences d'un signal ? 
+, 
+1.OBSERVATION DES FREQUENCES 
+1. ANALYSE SPECTRALE DU SON 
+1.a. Spectre d'un son pur 
+Un son pur correspond un signal sinuso√Ødal. Il faut deux informations (l'amplitude A et la fr√©quence f) pour le caract√©riser. La repr√©sentation fr√©quentielle de ces caract√©ristiques donne le spectre du son √©tudi√©. 
+
+1,5 
+Exemple d'un son pur de fr√©quence f = 100 Hz 
+et d'amplitude relative A= 1.
+r(s) 
+0 ,5 
+f(Hz) 
+
+T=_!_ 
+f 200 300 400 500 600 
+1. b. Spectre d'un son complexe 
+Dans le cas d'un son complexe constitu√© de plusieurs sons purs, la repr√©sentation fr√©quentielle permet, d'un simple coup d'≈ìil, de conna√Ætre les caract√©ristiques de celui-ci. 
+
+1,5 
+0,5 
+
+100 200 300 400 500 
+Boo/(Hz) 
+Repr√©sentation d'un son complexe et son spectre 
+Fr√©quence Amplitud e 
+Sonagramme : Il est possible de repr√©senter 
+
+Temps
+l'√©volution temporelle du spectre d'un signal sur un 
+Temps 
+Freq ueuce 
+m√™me graphique appel√© sonagramme. 
+Amplitude ‚Ä¢ ~--------,>)
+l 
+Sonagramme vu en 20 
+[l] 
+
+1.c. D√©composition en s√©rie de Fourier 
+Th√©or√®me de Fourier : Il existe un th√©or√®me qui dit qu'un ! signal ! Ip√©riodique Ipeut se toujours d√©composer en une somme d'ondes 
+sinuso√Ødales de fr√©quences multiples (harmoniques). On parle de d√©composition en s√©rie de Fourier. Cet outil math√©matique permet l'analyse des fr√©quences (le ! spectre bd'un signal, comme le son. 
+2. ANALYSE SPECTRALE DE L'EXP√âRIENCE 
+Son d'un luth (note r√©) -Flash-FFT
+L'application PHYPHOX sur le SMARTPHONE permet de repr√©senter et mesurer ces fr√©quences : 
+La trace blanche qui se dessine repr√©sente la variation de la fr√©quence qui varie en fonction du temps (en s). 
+Celle-ci varie donc entre 1,2 kHz et 2,5 kHz environ. Nous constatons que la fr√©quence augmente comme attendu, le son per√ßu devenant de plus en plus aigu. 
+Les m√™mes mesures effectu√©es avec le logiciel Spectrogram 16: 
+Exp√©rience sur Phyphox r√©alis√©e avec une tasse de caf√© 
+‚Ä¢ Spectrogram rn 
+Conclusion: Sur les sonagrammes, on arrive √† observer des fr√©quences qui varient au cours du temps mais peut-on 
+expliquer ce ph√©nom√®ne qui rel√®ve du domaine des ondes.  
+Mais, qu'est ce qu'une onde ?  
+3.LES ONDES  
+3.a. D√©finition  
+.-r_\  WIK IP√âDIA L'en,y clop, die l,b,c  Une onde est la propagation au cours du temps d'une perturbation produisant  
+sur son passage une variation r√©versible des propri√©t√©s physiques locales du milieu. Elle se  
+d√©place avec une vitesse d√©termin√©e qui d√©pend des caract√©ristiques du milieu de propagation  Un exemple d'ond e  
+3.b. Diff√©rents types d'ondes  de gravit√©  
+
+En m√©canique classique, on distingue principalement deux types d'ondes, les ondes m√©caniques qui ont besoin d'un milieu mat√©riel pour se propager et les ondes √©lectromagn√©tiques qui peuvent de propager dans le vide. 
+Exemples d'ondes m√©caniques: N√©cessite un milieu mat√©riel pour se propager. 
+
+
+
+
+I f~¬∑-:milli
+¬∑T:'
+.. 
+. 
+¬∑¬∑¬∑¬∑¬∑¬∑¬∑¬∑.... ...
+..... 
+...
+.. ¬∑¬∑¬∑¬∑¬∑¬∑¬∑¬∑. ..
+... 
+¬∑¬∑¬∑¬∑¬∑¬∑¬∑¬∑. . 
+..
+... ¬∑¬∑¬∑¬∑¬∑¬∑¬∑¬∑. ... 
+lnngu t l6 d'on d,:, 
+Ondes dans une corde 
+Surface vibrante 
+Ondes acoustiques 
+Ondes le long d'un ressort 
+
+Dans le cas de l'onde acoustique, on parle d'onde de pression. 
+[2] 
+Les ondes √©lectromagn√©tiques : Correspond √† la propagation (m√™me dans le vide) d'un champ √©lectrique et d'un champ magn√©tique. 
+
+
+3.c. Les ondes sinuso√Ødales 	Spectre des ondes √©lectromagn√©tiques 
+Comme on peut le voir sur le spectre √©lectromagn√©tique pr√©c√©dent, il existe une cat√©gorie fondamentale d'onde appel√©e onde sinuso√Ødale. Celle-ci est mod√©lis√©e par une fonction sinuso√Ødale qui d√©pend de l'espace et du temps. 
+Son expression math√©matique est la suivante :  
+~~~~~~~~~~~~~~ z(x,t) = z.cos(3;1-3ix+91 J  O√π:  Zoest l'amplitude de l'onde T =_!__est la fr√©quence de  
+f  
+La longueur d'onde et la p√©riode (ou la fr√©quence) sont li√©es par la relation suivante dans laquelle  √Ç=c.T=. c  l'onde ( et f la fr√©quence) √Ç, la longueur d'onde  
+intervient la c√©l√©rit√© ( ou vitesse) de l'onde.  f  rp la phase √† l'origine  
+z(xo, t)  T  z(x. to)  ,\  
+
+
+Une onde se propage √† une certaine vitesse, peut-on la calculer et la mesurer ? 
+4. VITESSE DU SON DANS LES FLUIDES 
+4.a. Aspect th√©orique 
+Notre exp√©rience concerne le son qui ce propage dans l'eau ou l'air que l'on appelle des fluides. Dans la litt√©rature scientifique, on trouve l'expression de la vitesse ou c√©l√©rit√© d'une onde sonore dans les fluides : 
+
+O√π: 	cest la c√©l√©rit√© (ou vitesse) du son (en mis) Xsest le module de compressibilit√© isentropique ( ou coefficient de compressibilit√© adiabatique) du fluide ( en Pa-1 ). Il repr√©sente la r√©sistance du fluide √† la compression. 
+
+Le coefficient Xsexprime de combien se comprime un volume si on exerce une pression sur lui p est la masse volumique du fluide (en kg.m-3 ). Concr√®tement, c'est une formule qui relie l'√©lasticit√© et l'inertie du milieu: 
+[3] 
+4.b. Exemple de l'air !/ Mesure de z :Exp√©rience de mesure de Zspour l'air 
+Protocole: Avec une seringue remplie d'air et un capteur de pression (manom√®tre P 401 de Phytex). On appuie rapidement afin d'enfoncer le piston et l'on mesure la variation de pression correspondante . 
+
+z.f√†P=-f-soit z. 1 ~
+=--ln J\ v, V -P;
+P1 V1 Nous avons enfonc√© la seringue de AR =2 cm pour une longueur initiale de fi =4 cm avec une variation de pression P1 -P; = 0, 97 bar= 0,97.105 Pa . 
+
+1
+Num√©riquement : z. = ln 2 =7, 1.10~ Pa-1 
+0,97.105 Cette valeur est coh√©rente avec la litt√©rature qui donne z.=7.10~ Pa-1 
+Nous pouvons estimer la vitesse du son dans l'air avec c = IT et p . = M ai,P =1, 2 kg.ra -√† 20¬∞C.
+fpz. "'' RT 3 Nous trouvons alors: cai,=345 m.s-1 (r√©sultat en ad√©quation avec la valeur de r√©f√©rence ci-dessous) 
+Valeurs de r√©f√©rence 
+1 Milieu IlC√©l√©rit√© de r√©f√©rence (c) Il Commentaires 1 
+IEau (pure, 20¬∞C) Il ~ 1500m/s IID√©pend fortement de la temp√©rature, de la salinit√© (pour l'eau de mer) et de la pression. -.. - 
+~ r (sec, 20¬∞C) Il ~343 mis ,√Ç D√©pend principalement de la temp√©rature : cair ~ 331,4 + 0,6¬∑ T ( o√π Test en ¬∞C).  
+
+[4] 
+
+
+√àmeneur R√™cc:p1eurA RCccpteu.r B 
+Mesure de la vitesse du son dans l'air: 
+Protocole: On dispose d'un √©metteur d'ultrasons sinuso√Ødaux (fr√©quence des ultrasons autour de 40 kHz). L'√©metteur permet d'obtenir une √©mission par salves (√©mises √† environ 100 Hz) et de deux r√©cepteurs d'ultrasons identiques, dont la sortie sera reli√©e √† une entr√©e de l'oscilloscope. 
+Exploitation : La mesure du retard entre les r√©cepteurs 
+donne une mesure directe de la vitesse du son par : c = ..!!:.._ At Avec d = 11 cm = 0, 11 m et At = 318 ¬µs , il vient : 
+0,11 ~ 
+c. = =346 m.s 
+arr 318.10---<i On retrouve une valeur proche de la r√©f√©rence. 
+
+4.c. Exemple de l'eau 
+Contrairement √† l'air, la mesure directe de z. (Zs =4,6.10-10 Pa-1 ) nous est impossible car l'eau est quasi incompressible (surtout avec notre seringue en plastique ... ). Par contre, il est possible de r√©aliser la mesure de la vitesse du son directement avec le m√™me protocole que pour l'air. 
+Mesure de la vitesse du son dans l'eau : Protocole : On utilise un √©metteur d'ultrasons sinuso√Ødaux ( f = 40 kHz) permettant d'obtenir une √©mission par salves et d'un r√©cepteur. Les deux √©tant reli√©es √† l'oscilloscope afin d'obtenir l'oscillogramme ci-dessous. 
+
+d
+Exploitation : La mesure du retard entre √©metteur et r√©cepteur donne une mesure de la vitesse du son par c = -. 
+At 
+9
+Avec d=9cm=0,09m et At=62¬µs,ilvient: c = O,o-6 =1450m.s-1 
+eau 62.10 Ce r√©sultat (√† comparer avec la valeur de r√©f√©rence du tableau de la page pr√©c√©dente) montre que cette m√©thode de mesure est pertinente. 
+La suite : Pour entendre l'effet allasonique, il faut taper au fond d'une tasse ou d'un verre mais ... 
+Que se passe-t-il dans le verre quand on tape au fond ? 
+[5] 
+, 
+II. LE SON EMIS PAR LE VERRE 
+1. CAS DU VERRE VIDE (OU REMPLI D'AIR) 
+.( Son √©mis par le verre vide : 
+Protocole : Dans notre exp√©rience, nous allons frapper un verre (hauteur 14 cm) au fond avec la cuill√®re. Le son est analys√© avec le logiciel Spectrogram 16. 
+
+R√©sultat: On mesure essentiellement une fr√©quence d'environ 600 Hz. 
+
+La pr√©sence de cette fr√©quence peut s'expliquer par les ondes stationnaires. Qu'est ce qu'une onde stationnaire? 
+2. LES ONDES STATIONNAIRES 
+
+~ L¬∑x 
+2.a. D√©finition 
+--~
+
+~--.
+Une onde stationnaire r√©sulte de la superposition d'une onde 
+---------le=~ ~ 
+incidente et d'une onde r√©fl√©chie de m√™me amplitude et de o=.:::::::::__ ---, _. ---L ‚Ä¢ x 
+L = 3i.../ 2 
+m√™me fr√©quence se propageant en sens inverse. 
+~c ---:::--,,~ ‚Ä¢x 
+O~ -----------~ L L = 21c 
+Celle-ci pr√©sente des : 
+-N≈ìuds : Points o√π l'amplitude de vibration est nulle. 
+
+o<C><=><=::>: \~ L‚Ä¢ X 
+-Ventres: Points o√π l'amplitude de vibration est maximale. Les fr√©quences et longueurs d'ondes sont li√©es aux 
+√Ø. 12 ventre n≈ìud
+U4 ' 
+conditions aux limites du milieu de propagation. Les 
+Ondes stationnaires pour une corde fixe aux extr√©mit√©s 
+extr√©mit√©s du milieu (corde, colonne d'air, etc.) imposent donc des contraintes qui d√©terminent les fr√©quences possibles (fr√©quences propres ou harmoniques). Ces conditions peuvent √™tre : 
+Fixe (N≈ìud): L'amplitude doit √™tre nulle 
 Libre (Ventre): L'amplitude est maximale 
-Comme on peut le voir sur la figure ci-dessus, dans le cas d'une corde aux deux extrémités fixes, les ondes 1stationnaires ne peuvent exister que si la longueur L du milieu est un multiple entier de . 2 L = nx À <::::>.Â. = 2L et comme 2 =c.T =.E.,il vient les fréquences possibles f. -n c 2 n n f n 2L Annexe: Nous avons réalisé l'expérience de la corde de Melde afin de vérifier l'existence des ondes stationnaires pour une corde fixe aux extrémités. [6] =-U 4 2.b. Cas d'une colonne d'air : Comme nous l'avons vu précédemment, une onde acoustique est une =:;..._JL---========_ onde de pression. Dans le cas d'une colonne d'air, les conditions 	-=-------~aux r---""""'==-.limites sont imposées soit par : : -Une ouverture avec l'extérieur qui fixe la pression atmosphérique Poet __ qui représente un nœud de la vibration. -Une extrémité fermée qui représente alors un ventre de pression. L = 5À14 Il est donc possible de se mettre dans les mêmes conditions que __ ____ _____ _ l'expérience de la corde de Melde avec un tuyau ouvert-ouvert ou bien de réaliser un tuyau ouvert-fermé. Onde de pression dans un tuyau ouvert-fermé Dans ce cas, la longueur L du milieu est un multiple entier impaire de 	Â . 4 Â 4L 	c c.L = nx -{::::}Â = -et comme Â = c . .T = -:::::> f. = n ~ avec n = 1 , 3 , 5 , ... 4 n n 	arr f n 4L 2.c. Retour sur l'expérience du verre: Présence d'ondes stationnaires! Le fond fermé du verre est un ventre de pression (l'air est bloqué, la variation de pression est maximale). L'ouverture du verre est un nœud de pression (la pression y est égale à la pression atmosphérique). L=I4 cm=0,14 m -600 Hz Avec l'expression de la fréquence fn = n cair , pour n = 1 (fondamental) et cair = 340 ms-1 : fi= 607 Hz 4L La comparaison théorie I expérience nous conforte dans l'idée d'ondes stationnaires acoustiques dans le verre. Et si on frappe le verre sur le côté ? 3. VERRE FRAPPÉ SUR LE CÔTÉ 3.a. Différences du son émis par le verre Verre frappé au fond Verre frappé sur le côté 	Les mesures Résultats: Il apparait de nouvelles fréquences plus aigues qui n'ont pas de lien avec la fréquence de l'onde stationnaire existant dans la colonne d'air à 600 Hz. Toutefois, celle-ci reste présente, bien qu'atténuée, dans le son émis. [7] 
-Interprétation: D'après le travail d'une équipe des Olympiades de Physique ([2] -2005 -Sur les traces de la Castafiore), il s'agit des vibrations latérales du verre lui-même. Celui-ci présente la encore des ondes stationnaires (donc des nœuds et des ventres) sur sa circonférence avec des modes propres dont les formes sont les suivantes: 1  ---1-. -. ....  1  ' '  1  1  1  1  1  ' '  1  '  Mode 1  Mode2  Mode3  Vérification : Afin de vérifier simplement la nature de ces vibrations, nous avons comparé le son du verre frappé dans deux configurations différentes, à savoir le verre libre de vibrer et le verre tenu fermement au niveau de la circonférence avec les doigts. ----:---\ -; . 1 . 1 Zone d'impact 1 
+
+Comme on peut le voir sur la figure ci-dessus, dans le cas d'une corde aux deux extr√©mit√©s fixes, les ondes 
+1
+stationnaires ne peuvent exister que si la longueur L du milieu est un multiple entier de . 
+2 
+L = nx √Ä <::::>.√Ç. = 2L et comme 2 =c.T =.E.,il vient les fr√©quences possibles f. -n c 
+2 n n f n 2L 
+Annexe: Nous avons r√©alis√© l'exp√©rience de la corde de Melde afin de v√©rifier l'existence des ondes stationnaires pour une corde fixe aux extr√©mit√©s. 
+[6] 
+=-U 4 
+2.b. Cas d'une colonne d'air : 
+Comme nous l'avons vu pr√©c√©demment, une onde acoustique est une =:;..._J
+L---========
+_ 
+onde de pression. Dans le cas d'une colonne d'air, les conditions 	-=-------~
+aux r---""""'==-.limites sont impos√©es soit par : : -Une ouverture avec l'ext√©rieur qui fixe la pression atmosph√©rique Poet __ qui repr√©sente un n≈ìud de la vibration. 
+-Une extr√©mit√© ferm√©e qui repr√©sente alors un ventre de pression. 
+L = 5√Ä14 
+Il est donc possible de se mettre dans les m√™mes conditions que 
+__ ____ _____ _ l'exp√©rience de la corde de Melde avec un tuyau ouvert-ouvert ou bien de r√©aliser un tuyau ouvert-ferm√©. Onde de pression dans un tuyau ouvert-ferm√© 
+Dans ce cas, la longueur L du milieu est un multiple entier impaire de 	√Ç . 4 
+
+√Ç 4L 	c c.
+L = nx -{::::}√Ç = -et comme √Ç = c . .T = -:::::> f. = n ~ avec n = 1 , 3 , 5 , ... 
+4 n n 	arr f n 4L 
+2.c. Retour sur l'exp√©rience du verre: Pr√©sence d'ondes stationnaires! 
+Le fond ferm√© du verre est un ventre de pression (l'air est bloqu√©, la variation de pression est maximale). L'ouverture du verre est un n≈ìud de pression (la pression y est √©gale √† la pression atmosph√©rique). 
+
+L=I4 cm=0,14 m 
+-600 Hz 
+
+
+Avec l'expression de la fr√©quence fn = n cair , pour n = 1 (fondamental) et cair = 340 ms-1 : fi= 607 Hz 4L 
+La comparaison th√©orie I exp√©rience nous conforte dans l'id√©e d'ondes stationnaires acoustiques dans le verre. 
+Et si on frappe le verre sur le c√¥t√© ? 
+3. VERRE FRAPP√â SUR LE C√îT√â 
+3.a. Diff√©rences du son √©mis par le verre 
+
+Verre frapp√© au fond Verre frapp√© sur le c√¥t√© 	Les mesures 
+R√©sultats: Il apparait de nouvelles fr√©quences plus aigues qui n'ont pas de lien avec la fr√©quence de l'onde stationnaire existant dans la colonne d'air √† 600 Hz. Toutefois, celle-ci reste pr√©sente, bien qu'att√©nu√©e, dans le son √©mis. 
+[7] 
+
+Interpr√©tation: D'apr√®s le travail d'une √©quipe des Olympiades de Physique ([2] -2005 -Sur les traces de la Castafiore), il s'agit des vibrations lat√©rales du verre lui-m√™me. Celui-ci pr√©sente la encore des ondes stationnaires (donc des n≈ìuds et des ventres) sur sa circonf√©rence avec des modes propres dont les formes sont les suivantes: 
+1  ---1-. -. 
+....  
+1  ' '  
+1  1  
+1  
+1  
+1  ' '  
+1  '  
+Mode 1  Mode2  Mode3  
+
+V√©rification : Afin de v√©rifier simplement la nature de ces vibrations, nous avons compar√© le son du verre frapp√© dans deux configurations diff√©rentes, √† savoir le verre libre de vibrer et le verre tenu fermement au niveau de la circonf√©rence avec les doigts. 
+----:---\ -; 
+. 1 
+
+. 
 1 
-1 t t 
-Zone d'impact Quelle que soit la zone d'impact, on retrouve toujours la vibration de la colonne d'air. Par contre avec l'impact sur le côté, les vibrations du verre sont très atténuées quand celui-ci est maintenu fermement avec les doigts. Cette petite expérience confirme notre hypothèse des vibrations latérales du verre. [8] 
-Conclusion: Le son d'un verre frappé est constitué, à minima, de la superposition des vibrations mécaniques latérales et des vibrations acoustiques de la colonne d'air (avec pour les deux plusieurs modes possibles). Pour les distinguer facilement, il suffit de frapper préférentiellement le verre au fond ou sur le côté. Verre frappé sur le fond Verre frappé sur le bord Zone d'impact -\ / ---:----,;: .\ 1 1 1 1 1 1 On privilégie les ondes mécaniques latérales du verre • Zone d'impact On privilégie les ondes stationnaires dans la colonne d'air / L'ensemble du son émis se représente par la superposition des vibrations 
-Et si on teste pour différents verres ? 
-3.b. Généralisation avec différents verres L'expérience: Afin de confirmer notre interprétation du son émis par un verre, nous avons voulu refaire l'expérience avec d'autres verres de hauteurs et largeurs différentes. Résultats : On retrouve à chaque fois une fréquence basse correspondant à la vibration acoustique de la colonne d'air suivi des vibrations latérales. Vibrations du verre Hauteurs: 12 cm 14cm et 6,5 cm Vibration de la colonne d'air Respectivement, les fréquences de la colonne d'air sont: -720 Hz (12 cm), -600 Hz (14 cm) et -1200 Hz (6,5 cm) Interprétation : Théoriquement, on doit retrouver ces valeurs avec la formule fn = n :~ pour n = 1. Hauteur (cm)  12  14  6,5  hxp(Hz)  720  600  1200  f. = cair (Hz) thE<Jriquc 4L  708  607  1300  Les valeurs expérimentales et théoriques sont très proches et semble confirmer cet aspect théorique. Conclusion: Il n'y a pas de verre« spécial». Par la suite, toutes nos manipulations seront faites avec un bécher ou une éprouvette pour rendre les expériences reproductibles et réalisables par tous. [9] , III. LE SON EMIS PAR LE VERRE AVEC DE L'EAU 1. INFLUENCE DE L'EAU SUR LES FRÉQUENCES ......... -. ----.1.a. Expérience lors du remplissage Hauteur de lai Protocole : Afin de visualiser l'influence de l'eau, nous avons colonne d' air décidé d'analyser les fréquences pour quatre hauteurs d'eau différentes dans un bécher (voir photo ci-contre). , ••••••••• Résultats : Voici le sonagramme de l'expérience pour les quatre hauteurs d'eau. 4,5cm 7,5cm Le lv erre vide Ipermet de distinguer la vibration de la colonne d'air des vibrations latérales. En effet, vu la hauteur du verre, la fréquence de l'onde stationnaire acoustique doit être de l'ordre de ft1t1oriqw =cair = 670 Hz. 4L 9,8 cm  7,5 cm  :: ô  ......  ""  Il  4_5 Clll  "'4  OClll  Bécher avec des hauteurs  d'eau différentes  Vibrations du ven e Au cours du remplissage, on remarque une baisse des Ifréquences du verre Iet une augmentation de la Ifréquence IIassociée à la colonne d'air ~ Comment interpréter ces variations ? [10] 1.b. Quelle interprétation ? Il faut distinguer les deux situations : À savoir la fréquence associée à la colonne d'air et les vibrations du verre. 1 -La colonne d'air: Au fur et à mesure que la hauteur d'eau monte, la colonne d'air diminue. Vu l'expression de la fréquence ( f = cai, ), si Lair\.. alors f /' comme le montre le tableau suivant: 4L,., Hauteur d'eau ( cm)  0  4,5  7,5  9,8  Colonne d'air (cm)  12,7  8,2  5,2  2,9  c . ft1tfurique =4z(Hz) arr  670  1030  1630  2930  fcxp (Hz)  600  820  1100  ?  Le résultat est cohérent en termes d'évolution mais plus la colonne d'air est petite et plus l'écart entre la théorie et l'expérience augmente ! Après une recherche sur internet, nous avons trouvé un article dans le magazine [3] Pour la Science: Un bon tuyau pour accorder un orgue. Dans cet article, on apprend que la fréquence du son émis par un tuyau dépend de la longueur mais aussi du diamètre. Ces résultats sont issus des travaux de Lord Rayleigh en 1877 ainsi que des physiciens Harold Levine et Julian Schwinger en 1948. Concrètement dans le cas d'un tuyau cylindrique, plus le tuyau est court et plus il faut corriger la longueur réelle en ajoutant 0,3 fois son diamètre, soit : 4œlle=4,yau+0,3D LE BOUT DU TUNNEL L'émission d'un son à l'extrém ité d'un tuyau Ile pointilfé blanc} dépend du diamètre de celui·ci, car l'onde sonore, c'est-à-dire la pression acoustique (les valeurS de son amplitude tes plus élevées sont en rouge et les plus basses en bleu sombre }, sort . Pour Ul"I diamètre donnf, plus la fréquence de l'onde sonore incidente est élevée (celle de droite est 10 fois supérieure à:celle de gauche }, plus l'émissio n est importante et direct ionnelle. On doit ten ir compte de cet effet pour ajuster la longueur d'un tuyau et obten ir 1a note vou.lue. Extrait de l'article En reprenant cette formule, il vient le tableau suivant pour un diamètre D =7, 2 cm Hauteur d'eau (cm)  0  4,5  7,5  9,8  Colonne d'air (cm)  12,7  8,2  5,2  2,9  c . !. =____!!!_ (Hz)théorique 4L . arr  670  1030  1630  2930  !. = cai, (Hz) oom&ée 4(Lair+0,3D)  570  820  1150  1670  fe'P(Hz)  600  820  1100  ?  On retrouve une forte concordance entre la théorie (corrigée) et l'expérience, c'est encourageant. II -Les vibrations du verre : Verre au repos ' ' Déplacement du bord Les fréquences des vibrations du verre diminuent quand on ajoute de l'eau. ' ' Une explication simple est possible en assimilant le verre à un système ' )Xl )masse -ressort. 0 ...----..La fréquence d'un tel système est : O ~ avec k la constante de raideur du ressort en N.m-' et la masse m en kg ~"" (m] ~----YYYNtf En ajoutant de l' eau, on augmente la masse du système qui oscille impliquant une baisse de la fréquence. Pour résumer : si m /' alors f \.. [11] Conclusions : Il y a deux conclusions importantes 1 -Quelque soit le verre utilisé, on retrouve systématiquement les mêmes types de vibrations ( ondes sonores liées à la colonne d'air et les vibrations de la circonférence du verre). Cela va nous permettre dans la suite de nos recherches d'utiliser exclusivement de la verrerie de chimie, à savoir des béchers ou des éprouvettes . 2 -Pour une hauteur d'eau fixée, les fréquences émises sont constantes dans le temps. Il n'y a aucun effet allasonique avec simplement de l'eau dans le verre. Pour l'observer, il faut impérativement bien mélanger un café avec de la mousse. Mais pourquoi est-ce important de mélanger le café pour observer l'effet allasonique? 2. LE SON ÉMIS AVEC DE L'EAU CONTENANT DES BULLES Quand on mélange vigoureusement le café, cela permet d'avoir des bulles d'air dans le liquide. Afin de confirmer la nécessité de celles-ci et d'être capable d'avoir un protocole expérimental simple et reproductible, nous devions trouver des méthodes pour avoir des bulles dans l'eau. 2.a. Comment avoir des bulles dans l'eau? Voici quelques idées pour créer des bulles dans de l'eau ainsi que les observations directes de ces expériences. (D Liquide vaisselle : Mettre du liquide vaisselle dans un verre d'eau et touiller énergiquement pour incorporer de l'air et créer de la mousse. Observation : Lorsque l'on arrête de touiller, de la mousse apparaît à la surface et les bulles remontent doucement dans le verre. @ Mousse à raser: Mettre de la mousse à raser dans un verre d'eau et touiller pour l'incorporer. Observation : Le mélange devient tout blanc et opaque. On le voit ensuite « décanter » lentement en deux phases (eau et mousse au dessus). Nous présumons que la remontée de la mousse est due aux bulles d'air emprisonnées dans celle-ci, car elle se reforme en surface. @ Eau chaude en sortie de robinet : Faire couler doucement de l'eau chaude du robinet dans un verre. Observation: Il apparaît des bulles de dégagement gazeux (dégazage) dues à la baisse de pression entre la tuyauterie et la pression extérieure. © Cachet d'aspirine: Mettre un cachet effervescent d'aspirine dans de l'eau. Observation: Il se forme rapidement une grande quantité de bulles mais le mélange n'est pas homogène. De plus, il reste des résidus dans le verre après la remontée des bulles. ··· 1., -
-Œ) UPSA ASPIRINE UPSA. TAMPONNlE EFFERVESCENTE ACIDf ACÛYI.SAL/CYUQUE CD Liquide vaisselle  q> Mousse à raser  ® Eau chaude  en sortie de robinet  Reste maintenant  à tester notre eau « bullée » !  [12]  Q) Liquide vaisselle ~Mousse à raser Conclusion: Pour toutes ces expériences on observe un effet allasonique (une variation de fréquence en fonction du temps). Concernant le liquide vaisselle comme la mousse à raser, le résultat est très dépendant de la manière de mélanger. Avec le cachet d'aspirine, l'effet allasonique est très chaotique. Pour ces raisons, toutes nos manipulations seront faites avec l'eau chaude sous pression du robinet pour rendre les expériences reproductibles. 3. L'EFFET ALLASONIOUE DANS LE BÉCHER: MODÉLISATION [13] 
-Observations: En tapant sur le bécher, nous observons les bulles qui remontent jusqu'à disparaitre et une 
-modification de la fréquence du son. Le son devient de plus en plus aigu. Nous avons bien l'effet allasonique 
+Zone d'impact 
+1 
+1 
+
+1 
+
+t t 
+
+Zone d'impact 
+
+Quelle que soit la zone d'impact, on retrouve toujours la vibration de la colonne d'air. Par contre avec l'impact sur le c√¥t√©, les vibrations du verre sont tr√®s att√©nu√©es quand celui-ci est maintenu fermement avec les doigts. Cette petite exp√©rience confirme notre hypoth√®se des vibrations lat√©rales du verre. 
+[8] 
+
+Conclusion: Le son d'un verre frapp√© est constitu√©, √† minima, de la superposition des vibrations m√©caniques lat√©rales et des vibrations acoustiques de la colonne d'air (avec pour les deux plusieurs modes possibles). Pour les distinguer facilement, il suffit de frapper pr√©f√©rentiellement le verre au fond ou sur le c√¥t√©. 
+Verre frapp√© sur le fond 
+Verre frapp√© sur le bord Zone d'impact -\ / ---:----,;: .
+\ 1 
+1 
+1 1 1 1 
+On privil√©gie les ondes m√©caniques lat√©rales du verre ‚Ä¢ Zone d'impact 
+On privil√©gie les ondes stationnaires dans la colonne d'air 
+/ 
+
+L'ensemble du son √©mis se repr√©sente par la superposition des vibrations 
+Et si on teste pour diff√©rents verres ? 
+
+3.b. G√©n√©ralisation avec diff√©rents verres 
+L'exp√©rience: Afin de confirmer notre interpr√©tation du son √©mis par un verre, nous avons voulu refaire l'exp√©rience avec d'autres verres de hauteurs et largeurs diff√©rentes. 
+R√©sultats : On retrouve √† chaque fois une fr√©quence basse correspondant √† la vibration acoustique de la colonne d'air suivi des vibrations lat√©rales. 
+Vibrations du verre Hauteurs: 12 cm 14cm et 6,5 cm 
+Vibration de la colonne d'air 
+
+
+Respectivement, les fr√©quences de la colonne d'air sont: -720 Hz (12 cm), -600 Hz (14 cm) et -1200 Hz (6,5 cm) Interpr√©tation : Th√©oriquement, on doit retrouver ces valeurs avec la formule fn = n :~ pour n = 1. 
+Hauteur (cm)  12  14  6,5  
+hxp(Hz)  720  600  1200  
+f. = cair (Hz) thE<Jriquc 4L  708  607  1300  
+
+Les valeurs exp√©rimentales et th√©oriques sont tr√®s proches et semble confirmer cet aspect th√©orique. 
+Conclusion: Il n'y a pas de verre¬´ sp√©cial¬ª. Par la suite, toutes nos manipulations seront faites avec un b√©cher ou une √©prouvette pour rendre les exp√©riences reproductibles et r√©alisables par tous. 
+[9] 
+, 
+III. LE SON EMIS PAR LE VERRE AVEC DE L'EAU 
+1. INFLUENCE DE L'EAU SUR LES FR√âQUENCES ......... -. ----.
+1.a. Exp√©rience lors du remplissage Hauteur de lai Protocole : Afin de visualiser l'influence de l'eau, nous avons colonne d' air 
+d√©cid√© d'analyser les fr√©quences pour quatre hauteurs d'eau 
+diff√©rentes dans un b√©cher (voir photo ci-contre). , ‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢ 
+R√©sultats : Voici le sonagramme de l'exp√©rience pour les quatre hauteurs d'eau. 
+4,5cm 7,5cm 
+Le lv erre vide Ipermet de distinguer la vibration de la colonne d'air des vibrations lat√©rales. En effet, vu la hauteur du verre, la fr√©quence de l'onde 
+stationnaire acoustique doit √™tre de l'ordre de ft1t1oriqw =cair = 670 Hz. 
+4L 
+9,8 cm  
+7,5 cm  :: √¥  
+......  
+""  
+Il  
+4_5 Clll  "'4  
+OClll  
+B√©cher avec des hauteurs  
+d'eau diff√©rentes  
+
+Vibrations du ven e 
+Au cours du remplissage, on remarque une baisse des Ifr√©quences du verre Iet une augmentation de la Ifr√©quence IIassoci√©e √† la colonne d'air ~ 
+
+Comment interpr√©ter ces variations ? 
+[10] 
+1.b. Quelle interpr√©tation ? Il faut distinguer les deux situations : √Ä savoir la fr√©quence associ√©e √† la colonne d'air et les vibrations du verre. 1 -La colonne d'air: Au fur et √† mesure que la hauteur d'eau monte, la colonne d'air diminue. 
+Vu l'expression de la fr√©quence ( f = cai, ), si Lair\.. alors f /' comme le montre le tableau suivant: 
+4L,., 
+Hauteur d'eau ( cm)  0  4,5  7,5  9,8  
+Colonne d'air (cm)  12,7  8,2  5,2  2,9  
+c . ft1tfurique =4z(Hz) arr  670  1030  1630  2930  
+fcxp (Hz)  600  820  1100  ?  
+
+Le r√©sultat est coh√©rent en termes d'√©volution mais plus la colonne d'air est petite et plus l'√©cart entre la th√©orie et 
+l'exp√©rience augmente ! 
+Apr√®s une recherche sur internet, nous avons trouv√© un article dans le magazine [3] Pour la Science: 
+Un bon tuyau pour accorder un orgue. 
+Dans cet article, on apprend que la fr√©quence du son √©mis par un tuyau d√©pend de la longueur mais aussi du diam√®tre. Ces r√©sultats sont issus des travaux de Lord Rayleigh en 1877 ainsi que des physiciens Harold Levine et Julian Schwinger en 1948. 
+Concr√®tement dans le cas d'un tuyau cylindrique, plus le tuyau est court et plus il faut corriger la longueur r√©elle en ajoutant 0,3 fois son diam√®tre, soit : 
+4≈ìlle=4,yau+0,3D 
+LE BOUT DU TUNNEL 
+L'√©mission d'un son √† l'extr√©m it√© d'un tuyau Ile pointilf√© blanc} d√©pend du diam√®tre de celui¬∑ci, car l'onde sonore, c'est-√†-dire la pression acoustique (les valeurS de son amplitude tes plus √©lev√©es sont en rouge et les plus basses en bleu sombre }, sort . Pour Ul"I diam√®tre donnf, plus la fr√©quence de l'onde sonore incidente est √©lev√©e (celle de droite est 10 fois sup√©rieure √†:celle de gauche }, plus l'√©missio n est importante et direct ionnelle. On doit ten ir compte de cet effet pour ajuster la longueur d'un tuyau et obten ir 1a note vou.lue. 
+
+Extrait de l'article 
+En reprenant cette formule, il vient le tableau suivant pour un diam√®tre D =7, 2 cm 
+Hauteur d'eau (cm)  0  4,5  7,5  9,8  
+Colonne d'air (cm)  12,7  8,2  5,2  2,9  
+c . !. =____!!!_ (Hz)th√©orique 4L . arr  670  1030  1630  2930  
+!. = cai, (Hz) oom&√©e 4(Lair+0,3D)  570  820  1150  1670  
+fe'P(Hz)  600  820  1100  ?  
+
+On retrouve une forte concordance entre la th√©orie (corrig√©e) et l'exp√©rience, c'est encourageant. II -Les vibrations du verre : Verre au repos ' ' D√©placement du bord 
+Les fr√©quences des vibrations du verre diminuent quand on ajoute de l'eau. 
+' 
+' 
+Une explication simple est possible en assimilant le verre √† un syst√®me ' )X
+l )
+masse -ressort. 0 ...----..
+La fr√©quence d'un tel syst√®me est : 
+O 
+~ 
+avec k la constante de raideur du ressort en N.m-' et la masse m en kg ~"" (m] 
+~----YYYNtf 
+En ajoutant de l' eau, on augmente la masse du syst√®me qui oscille impliquant une baisse de la fr√©quence. Pour r√©sumer : si m /' alors f \.. 
+[11] 
+Conclusions : Il y a deux conclusions importantes 
+1 -Quelque soit le verre utilis√©, on retrouve syst√©matiquement les m√™mes types de vibrations ( ondes sonores li√©es √† la colonne d'air et les vibrations de la circonf√©rence du verre). Cela va nous permettre dans la suite de nos recherches d'utiliser exclusivement de la verrerie de chimie, √† savoir des b√©chers ou des √©prouvettes . 
+2 -Pour une hauteur d'eau fix√©e, les fr√©quences √©mises sont constantes dans le temps. Il n'y a aucun effet allasonique avec simplement de l'eau dans le verre. Pour l'observer, il faut imp√©rativement bien m√©langer un caf√© avec de la mousse. 
+Mais pourquoi est-ce important de m√©langer le caf√© pour observer l'effet allasonique? 
+2. LE SON √âMIS AVEC DE L'EAU CONTENANT DES BULLES 
+Quand on m√©lange vigoureusement le caf√©, cela permet d'avoir des bulles d'air dans le liquide. Afin de confirmer la n√©cessit√© de celles-ci et d'√™tre capable d'avoir un protocole exp√©rimental simple et reproductible, nous devions trouver des m√©thodes pour avoir des bulles dans l'eau. 
+2.a. Comment avoir des bulles dans l'eau? Voici quelques id√©es pour cr√©er des bulles dans de l'eau ainsi que les observations directes de ces exp√©riences. 
+(D Liquide vaisselle : Mettre du liquide vaisselle dans un verre d'eau et touiller √©nergiquement pour incorporer de l'air et cr√©er de la mousse. Observation : Lorsque l'on arr√™te de touiller, de la mousse appara√Æt √† la surface et les bulles remontent doucement dans le verre. 
+@ Mousse √† raser: Mettre de la mousse √† raser dans un verre d'eau et touiller pour l'incorporer. 
+Observation : Le m√©lange devient tout blanc et opaque. On le voit ensuite ¬´ d√©canter ¬ª lentement en deux phases (eau et mousse au dessus). Nous pr√©sumons que la remont√©e de la mousse est due aux bulles d'air emprisonn√©es dans celle-ci, car elle se reforme en surface. 
+@ Eau chaude en sortie de robinet : Faire couler doucement de l'eau chaude du robinet dans un verre. Observation: Il appara√Æt des bulles de d√©gagement gazeux (d√©gazage) dues √† la baisse de pression entre la tuyauterie et la pression ext√©rieure. 
+¬© Cachet d'aspirine: Mettre un cachet effervescent d'aspirine dans de l'eau. Observation: Il se forme rapidement une grande quantit√© de bulles mais le m√©lange n'est pas homog√®ne. De plus, il reste des r√©sidus dans le verre apr√®s la remont√©e des bulles. 
+¬∑¬∑¬∑ 1., 
+-
+
+
+
+
+
+≈í) UPSA 
+ASPIRINE UPSA. 
+TAMPONNlE EFFERVESCENTE 
+ACIDf AC√õYI.SAL/CYUQUE 
+
+CD Liquide vaisselle  q> Mousse √† raser  ¬Æ Eau chaude  
+en sortie de robinet  
+Reste maintenant  √† tester notre eau ¬´ bull√©e ¬ª !  
+[12]  
+
+
+Q) Liquide vaisselle ~Mousse √† raser 
+
+Conclusion: Pour toutes ces exp√©riences on observe un effet allasonique (une variation de fr√©quence en fonction du temps). Concernant le liquide vaisselle comme la mousse √† raser, le r√©sultat est tr√®s d√©pendant de la mani√®re de m√©langer. Avec le cachet d'aspirine, l'effet allasonique est tr√®s chaotique. Pour ces raisons, toutes nos manipulations seront faites avec l'eau chaude sous pression du robinet pour rendre les exp√©riences reproductibles. 
+3. L'EFFET ALLASONIOUE DANS LE B√âCHER: MOD√âLISATION 
+
+[13] 
+
+Observations: En tapant sur le b√©cher, nous observons les bulles qui remontent jusqu'√† disparaitre et une 
+modification de la fr√©quence du son. Le son devient de plus en plus aigu. Nous avons bien l'effet allasonique 
 attendu,ouf! 
-Au début, les fréquences partent de très bas (-900 Hz) puis montent jusqu'à terminer sur une fréquence de 
-vibration du bécher rempli d'eau sans bulles. 
-Interprétation : Si le son perçu correspond à une onde stationnaire dans la colonne d'eau de hauteur 9 cm, vu la 
-vitesse du son, il vient la fréquence : 
-f =ceau = 1450 :::::4 kHz 4L 4x0.09 Cette valeur est trop grande à moins que la vitesse ne soit pas bonne. En effet, pour avoir une fréquence d'environ 900 Hz, il faudrait que la vitesse soit divisée par plus de 4 (environ 320 m.s-1 ) ••• Conclusion : La présence des bulles est nécessaire pour le changement de fréquence qui semble lié à la disparition de celles-ci. Mais il y a une interrogation sur la vitesse du son dans l'eau« bullée ». Est-ce que les bulles change la vitesse du son dans l'eau ? 3.b. Influence des bulles sur la vitesse On cherche à montrer qualitativement l'influence des bulles sur la vitesse du son dans l'eau. Mesure de la vitesse du son dans l'eau avec des bulles: Protocole: Nous avons repris l'expérience de la mesure de la vitesse du son dans l'eau mais nous y avons ajouté un bulleur d'aquarium. Ici, d = 9 cm = 0, 09 m Le bulleur d'aquarium dExploitation : La mesure du retard entre les récepteurs donne une mesure directe de la vitesse du son par c = -. l'lt 9 1Avec d=9cm=0,09m et At=234µs,ilvient: c 0,0 =384m.s.eau+bulle = _10-6234Conclusion: La vitesse du son est fortement diminuée et l'on peut conclure que la présence des bulles dans l'eau diminue significativement la vitesse du son dans ce milieu. Peut-on prévoir théoriquement cette diminution ? [14] 3.c. Notre modèle théorique de vitesse Théorie: La vitesse du son dans un fluide dépend de sa masse volumiqu.À~.:~ ...debl compress~~~ité: le=~ P~. I r 	/ ... , Zeau= 4, 6Jf .~~) Pa-1 Peau~.!Q:J g.m-3Les valeurs de ces deux paramètres diffèrent Eau énormément entre l'air et l'eau. Air Dans le mélange, il y a un volume d'air Vair en petite quantité dans le volume d'eau Veau.En notant le volume total du mélange V =V= +v,.,on peut définirla fraction volumique d'air ( ou pourcentage) par : E:t] Il faut donc étudier séparément les variations de p et .zdans le cas du mélange eau + bulle en fonction de a. 1 -La ~volumique : La masse volumique du mélange p se détermine avec la masse totale du mélange. m=meau+mairavec meau=Peau·veau•mair=pair.v... et m=p.V Il vient p.V =Peau.Veau+pair.Vair que l'on peut diviser par V : !P= (1-a) .Peau + a.pairI II -La compressibilité 	: La compressibilité du mélange peut être vue comme l'association de deux ressorts ayant des raideurs très différentes. ressort« dur» (eau) ressort« mou» (air) Expérimentalement, ce ressort équivalent est essentiellement« mou» car il est facile de l'allonger. C'est le même principe pour la compressibilité du mélange eau + air. Il existe une loi simple appelé loi de Wood reliant la fraction volumiqueet les compressibilités pour le mélange de deux fluides immiscibles comme l'eau et l'air en bulles : Loi de Wood : !z = (1-a).zeau + a .zarr I Conséquence pour un mélange à 1% d'air: p = (l-O,Ol)xlOOO+O,Olxl,2=990 kg.m-3 et z= (l-O,Ol)x4,6.10-10 +O,Olx7.10--{; =7.10-8 Pa-1 Ce petit calcul montre que la masse volumique du mélange varie peu avec les bulles contrairement à la 
-compressibilité qui est multipliée par 100 ! 
-La vitesse du son pour ce mélange à 1% est alors : !c=120 m.s-1 !soit 10 fois moins que pour l'eau pure ... 
-Mm de mieux visualiser l'influence des bulles, nous avons tracé avec un petit programme Python (voir annexe) la vitesse du son en fonction de la fraction volumique d'air entre O et 1 %. Effet des bulles d'air sur la vitesse du son dans l'eau 1400 
+
+Au d√©but, les fr√©quences partent de tr√®s bas (-900 Hz) puis montent jusqu'√† terminer sur une fr√©quence de 
+
+vibration du b√©cher rempli d'eau sans bulles. 
+Interpr√©tation : Si le son per√ßu correspond √† une onde stationnaire dans la colonne d'eau de hauteur 9 cm, vu la 
+vitesse du son, il vient la fr√©quence : 
+
+f =ceau = 1450 :::::4 kHz 4L 4x0.09 Cette valeur est trop grande √† moins que la vitesse ne soit pas bonne. En effet, pour avoir une fr√©quence d'environ 
+900 Hz, il faudrait que la vitesse soit divis√©e par plus de 4 (environ 320 m.s-1 ) ‚Ä¢‚Ä¢‚Ä¢ Conclusion : La pr√©sence des bulles est n√©cessaire pour le changement de fr√©quence qui semble li√© √† la disparition de celles-ci. Mais il y a une interrogation sur la vitesse du son dans l'eau¬´ bull√©e ¬ª. 
+Est-ce que les bulles change la vitesse du son dans l'eau ? 
+3.b. Influence des bulles sur la vitesse 
+On cherche √† montrer qualitativement l'influence des bulles sur la vitesse du son dans l'eau. 
+Mesure de la vitesse du son dans l'eau avec des bulles: 
+Protocole: Nous avons repris l'exp√©rience de la mesure de la vitesse du son dans l'eau mais nous y avons ajout√© un bulleur d'aquarium. 
+
+Ici, d = 9 cm = 0, 09 m Le bulleur d'aquarium 
+d
+Exploitation : La mesure du retard entre les r√©cepteurs donne une mesure directe de la vitesse du son par c = -. 
+l'lt 
+
+9 1
+Avec d=9cm=0,09m et At=234¬µs,ilvient: c 0,0 =384m.s.
+eau+bulle = _10-6
+234Conclusion: La vitesse du son est fortement diminu√©e et l'on peut conclure que la pr√©sence des bulles dans l'eau diminue significativement la vitesse du son dans ce milieu. Peut-on pr√©voir th√©oriquement cette diminution ? 
+[14] 
+3.c. Notre mod√®le th√©orique de vitesse Th√©orie: La vitesse du son dans un fluide d√©pend de sa masse volumiqu.√Ä~.:~ ...debl compress~~~it√©: le=~ P~. I 
+r 	/ ... , 
+Zeau= 4, 6Jf .~~) Pa-1 Peau~.!Q:J g.m-3
+Les valeurs de ces deux param√®tres diff√®rent Eau 
+√©norm√©ment entre l'air et l'eau. 
+Air 
+
+Dans le m√©lange, il y a un volume d'air Vair en petite quantit√© dans le volume d'eau Veau.En notant le volume 
+total du m√©lange V =V= +v,.,on peut d√©finirla fraction volumique d'air ( ou pourcentage) par : E:t] 
+Il faut donc √©tudier s√©par√©ment les variations de p et .zdans le cas du m√©lange eau + bulle en fonction de a. 
+1 -La ~volumique : La masse volumique du m√©lange p se d√©termine avec la masse totale du m√©lange. 
+m=meau+mairavec meau=Peau¬∑veau‚Ä¢mair=pair.v... et m=p.V 
+Il vient p.V =Peau.Veau+pair.Vair que l'on peut diviser par V : !P= (1-a) .Peau + a.pairI 
+II -La compressibilit√© 	: La compressibilit√© du m√©lange peut √™tre vue comme l'association de deux ressorts ayant 
+des raideurs tr√®s diff√©rentes. 
+
+ressort¬´ dur¬ª (eau) ressort¬´ mou¬ª (air) Exp√©rimentalement, ce ressort √©quivalent est essentiellement¬´ mou¬ª car il est facile de l'allonger. C'est le m√™me principe pour la compressibilit√© du m√©lange eau + air. Il existe une loi simple appel√© loi de Wood reliant la fraction volumiqueet les compressibilit√©s pour le m√©lange de deux fluides immiscibles comme l'eau et l'air en bulles : Loi de Wood : !z = (1-a).zeau + a .zarr I Cons√©quence pour un m√©lange √† 1% d'air: p = (l-O,Ol)xlOOO+O,Olxl,2=990 kg.m-3 et z= (l-O,Ol)x4,6.10-10 +O,Olx7.10--{; =7.10-8 Pa-1 
+Ce petit calcul montre que la masse volumique du m√©lange varie peu avec les bulles contrairement √† la 
+compressibilit√© qui est multipli√©e par 100 ! 
+La vitesse du son pour ce m√©lange √† 1% est alors : !c=120 m.s-1 !soit 10 fois moins que pour l'eau pure ... 
+
+Mm de mieux visualiser l'influence des bulles, nous avons trac√© avec un petit programme Python (voir annexe) la vitesse du son en fonction de la fraction volumique d'air entre O et 1 %. Effet des bulles d'air sur la vitesse du son dans l'eau 
+1400 
 1200 
-~ Vl ]_ 1000 -Vitesse du son dans l'eau avec bulles d 'air ~ 800.g ----Eau pure,:: 1450 mls ~ 600 ~ > 400 200 0.0 	0.2 0.4 0.6 0.8 1.0 Fraction volumique d'air( %) Conclusion : Une très faible quantité d'air modifie énormément la compressibilité et donc la vitesse du son. Peut-on mesurer la quantité d'air dans notre eau.: bullée » ? [15] 3.d. La fraction volumique de bulle dans l'eau chaude Protocole: Avec deux pesées (fiole vide et fiole remplie d'eau chaude« bullée »), on détermine la masse (et donc le volume d'eau). Ensuite il faut juste attendre que les bulles remontent en formant un ménisque d'air au dessus. Pour finir, une dernière pesée donne accès à la petite quantité d'eau ajoutée pour revenir au niveau initial afin de connaitre le volume occupé par l'air des bulles. mfiole =302 g mfinale =1314 g mfiole+eau+bulles / / fiole vide fiole pleine l'eau à dégazée ajout d'eau pour d'eau« bullée » (ménisque air/eau) obtenir le volume d'air Exploitation: La mesure manque de précision en raison de la balance utilisée et de la difficulté de travailler à la goutte près, mais nous avons maintenant un protocole simple pour déterminer un ordre de grandeur de la fraction volumique de l'eau«  huilée».  Voir l'annexe pour le détail des calculs de notre expérience.  '!OP.•••••••••••~  Avec l'eau chaude « huilée » en sortie de robinet, on trouve :  1a  =~ ~0, 1 % 1  200  ;  À partir de notre modèle (voir page précédente), la vitesse du son est:  c::::: 360 m.s-1  o,.o  o.:  Ce résultat est très proche de celui attendu lors de notre première analyse. Il faut maintenant confronter notre modèle avec une ultime expérience. ~ 4. EXPÉRIENCE FINALE Pour obtenir un temps de mesure suffisant de la hauteur de la colonne de bulles durant l'effet allasonique, nous utilisons une grande éprouvette graduée (donc une grande colonne d'eau). 4.a. Mise en place de l'expérience Protocole: Nous remplissons l'éprouvette du mélange eau « bullée » en sortie du robinet sur une hauteur de 27 cm. De plus nous traçons des repères le long de la hauteur à 3, 7, 11, 14, 18 et 20 cm qui vont permettre de suivre la remonté de front de séparation eau pure I eau« bullée ». L'expérience se déroule alors comme suit: Lorsque le front de bulles atteint un repère prédéfini, nous tapons sur l'éprouvette. L'analyse de l'évolution du sonagramme permet d'avoir la fréquence et le temps correspondant à chaque repère. Colonne d'eau« bullée » Colonne d'eau« bullée » :.il ... Exemple de remontée du front de bulle au cours du temps [16] Résultaû: Voici le sonagramme de l'expérience sur lequel on retrouve les vibrations de l'éprouvette par comparaison avec le sonagramme de 1'éprouvette avec 27 cm d'eau sans bulles et notre fréquence variable causée par l'effet allasonique (on voit essentiellement la plus basse fréquence ici). Les mesures du sonagramme sont les suivantes: Incertitude Temps (s)  4  10  20  24  30  34  At=±36 ms  Colonne d'eau« bullée » (cm)  24  20  16  13  9  7  M.=± l cm  Fréquence (Hz)  345  335  414  562  717  750  Af=±30 Hz  Incertitudes des mesures : Pour toutes nos mesures, il y a une incertitude liée à trois facteurs. 
--Le temps : La précision est directement donnée, soit !J.t=±36 ms Time ( msec) : 20036 +/-36 
--La fréquence : Pour cette mesure, bien que Spectrogram 16 affiche une résolution de ±6 Hz , un zoom sur le spectre montre une largeur plus importante. En encadrant la zone au mieux (voir ci-contre) et en maximisant les écarts (par exemple ( 431 +6) -( 414 -6) =29Hz), on estime l'incertitude 11/=±30 Hz . Frequency (Hz) : 397 +/-6.0 414 +/-6.0 431 +/-6.0 -La hauteur de la colonne bullée : Il est difficile de faire une séparation nette eau bullée I eau non huilée. Il semble réaliste de prendre une marge de 2 cm soit Les encadrements en fréquence !J.L=±1cm. et hauteur Place à l'exploitation. 4.b. Exploitation L'exploitation de ces résultats comporte plusieurs étapes. 1 -La vitesse du son dans l'eau« huilée»: Dans l'hypothèse d'une onde stationnaire cdans la colonne d'eau « bullée », la fréquence est liée à la hauteur de la colonne d'eau par : f(t) =4L(t) On détermine alors la vitesse du son pour chaque point avec c =f x4L puis la fraction volumique d' air. , . Colonne d'eau« huilée» (cm)  24  20  16  13  9  Fréquence (Hz)  345  335  414  562  717  Vitesse (mis)  330  270  265  290  260  Fraction volumique d'air(%)  0,12  0,18  0,19  0,16  0,20  200 , ~----..L~ . 0.0 •.0.2 Excepté le premier point, la vitesse du son dans l'eau « huilée » est en moyenne de c = 270m.s-1 correspondant à une fraction volumique d'air dont l'ordre de grandeur est Méthode pour déterminer a à partir de la vitessea= 0,18%. Ce résultat est parfaitement compatible avec notre précédente mesure à la fiole. Conclusion: On peut en conclure que c'est vraisemblablement l'ensemble des bulles qui monte au cours du temps sans changer notablement la fraction volumique d'air. Concernant le premier point, il n'y a pas de raison de penser à une erreur de mesure et il faudra donc revenir dessus pour l'expliquer dans un deuxième temps ... [17] II -La vitesse de remontée du front de bulles : 
-En traçant la hauteur en fonction du temps, on peut déterminer la vitesse de remontée du front de bulles. 
-0 5 10 15 20 25 30 35 40 Temps (s) L'équation de la régression linéaire passant au mieux des points expérimentaux est: L =-0,56xt+ 26,2 Le coefficient de la pente donne directement la vitesse (en cm.s-1 ), soit: vbulle= 0,56 cm.s-1 =5,6.10-3 m.s-1 Avec notre modèle et ces données, il est possible de confronter modèle et expérience. 4.c. Modèle vs expérience Le modèle final : Connaissant la vitesse de remontée du front de bulles au cours du temps et la vitesse du son dans l'eau« bullée », il est possible de simuler l'évolution de la fréquence en fonction du temps avec python. Le principe de la simulation est le suivant : Lahauteurd'eaus'exprimepar 	L(t)=-41-vbullext avec vbu11e=5,6.10-3 m.s-1 et 4=0,27m 1Lafréquence f(t)=-c-avec c=~ 4L(t) PZ, 
-p et z. dépendent de la fraction volumique a= 0, 18% qui reste constante 
-Fréquence du son dans l'eau avec bulles d' air en fonction du temps 
--f{r) 900 ,..... 800 N :i:: ~ 700 ~ .g 6oo "u c g 500 O" '~ ~ 400 300 0  5  lO  15  20  25  30  35  Tem sp (s)  Courbe modélisée et points expérimentaux  ••  1  , .... ,  " I·  , u•·  Conclusion : Compte tenu des incertitudes , les points expérimentaux sont très proches de la courbe théorique. Le résultat est très satisfaisant à première vu et conforte notre modèle. [18] 
-CONCLUSION L'ensemble de ce travail nous a permis de tenter d'expliquer l'effet allasonique. On peut se satisfaire de ce résultat mais il y a deux comportements expérimentaux bizarres ! 1 -Dans le cas de l'eau chaude en sortie de robinet, nous avons remarqué que le début de l'expérience commence souvent par une baisse de fréquence avant de remonter suivant notre loi. Ce phénomène n'est jamais présent avec les autres méthodes de« bullages » comme l'eau+ liquide vaisselle ou la mousse à raser. Comment l'expliquer? 2 -Les fréquences de la colonne d'eau« bu1lée » s'arrêtent au bout d'un moment. Celui-ci correspond visiblement à l'égalité entre la fréquence de l'eau « bullée » et celle du verre lui-même. Au passage, on note que la fréquence du verre correspondante n'est pas visible au début. Quelle est la raison de ce phénomène. Pour illustrer des deux points, voici le sonagramme d'un bécher de 9 cm rempli avec de l'eau chaude« bullée »: Un début de réponse: Voici nos idées pour répondre à ces deux points. 1 -Nous avons remarqué que lorsqu'on commence à touiller avec la cuillère dans l'eau chaude « bullée », il y a très rapidement plus de bulles qui apparaissent. Visiblement, le fait de bouger aide l'eau chaude à dégazer. Ensuite, on retrouve un comportement normal identique aux autres méthodes de bullages. C'est ce phénomène qui nous permet d'expliquer la « bizarrerie » de la mesure du premier point de notre expérience finale . .--..... Col01me d 'eau « bullée » (cm )  V 24 "  20  Fréquence (Hz) l  345  1 335  Vitesse (m/s) 1  330  1270  Fraction volumique d'air(%)  ~ 0,12  0,18  '--" 2 -Une piste évoquée avec nos professeurs serait un problème d'oscillateurs couplés (les vibrations de l'eau et les vibrations du verre). Cela reste encore très flou pour nous mais on espère avoir le temps d'y travailler avant la fin de l'année. REMERCIEMENTS Nous remercions chaleureusement nos professeurs accompagnateurs, Hervé IODA et Olivier POLIDORO, pour leur disponibilité, leurs conseils précieux, leur exigence scientifique et leur accompagnement constant, sans lesquels ce travail n'aurait pu aboutir dans de telles conditions. Nous tenons à adresser nos plus sincères remerciements à Madame LAGADEC, Proviseure de notre lycée, pour son soutien et la confiance qu'elle nous a accordée tout au long de ce projet. Nous exprimons également notre profonde gratitude au jury des Olympiades académiques d'Aix-Marseille, qui nous a permis d'accéder aux Olympiades Nationales à Paris, ainsi qu'à l'organisation des Olympiades de Physique, pour l'opportunité exceptionnelle offerte aux élèves de s'engager dans une démarche de recherche expérimentale. [19] 
-
+
+~ 
+Vl 
+]_ 1000 
+
+-Vitesse du son dans l'eau avec bulles d 'air 
+~ 
+800
+.g 
+----Eau pure,:: 1450 mls 
+~ 600 
+~ 
+> 400 
+200 
+0.0 	0.2 0.4 0.6 0.8 1.0 Fraction volumique d'air( %) 
+Conclusion : Une tr√®s faible quantit√© d'air modifie √©norm√©ment la compressibilit√© et donc la vitesse du son. Peut-on mesurer la quantit√© d'air dans notre eau.: bull√©e ¬ª ? 
+[15] 
+3.d. La fraction volumique de bulle dans l'eau chaude 
+Protocole: Avec deux pes√©es (fiole vide et fiole remplie d'eau chaude¬´ bull√©e ¬ª), on d√©termine la masse (et donc le volume d'eau). Ensuite il faut juste attendre que les bulles remontent en formant un m√©nisque d'air au dessus. 
+Pour finir, une derni√®re pes√©e donne acc√®s √† la petite quantit√© d'eau ajout√©e pour revenir au niveau initial afin de connaitre le volume occup√© par l'air des bulles. 
+mfiole =302 g 
+
+
+mfinale =1314 g 
+mfiole+eau+bulles 
+/ 
+
+/ 
+fiole vide fiole pleine l'eau √† d√©gaz√©e ajout d'eau pour d'eau¬´ bull√©e ¬ª (m√©nisque air/eau) obtenir le volume d'air 
+Exploitation: La mesure manque de pr√©cision en raison de la balance utilis√©e et de la difficult√© de travailler √† la goutte pr√®s, mais nous avons maintenant un protocole simple pour d√©terminer un ordre de grandeur de la fraction 
+volumique de l'eau¬´  huil√©e¬ª.  Voir l'annexe pour le d√©tail des calculs de notre exp√©rience.  '!OP.‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢‚Ä¢~  
+Avec l'eau chaude ¬´ huil√©e ¬ª en sortie de robinet, on trouve :  1a  =~ ~0, 1 % 1  200  ;  
+√Ä partir de notre mod√®le (voir page pr√©c√©dente), la vitesse du son est:  c::::: 360 m.s-1  o,.o  o.:  
+
+Ce r√©sultat est tr√®s proche de celui attendu lors de notre premi√®re analyse. 
+Il faut maintenant confronter notre mod√®le avec une ultime exp√©rience. ~ 
+4. EXP√âRIENCE FINALE 
+Pour obtenir un temps de mesure suffisant de la hauteur de la colonne de bulles durant l'effet allasonique, nous utilisons une grande √©prouvette gradu√©e (donc une grande colonne d'eau). 
+4.a. Mise en place de l'exp√©rience 
+Protocole: Nous remplissons l'√©prouvette du m√©lange eau ¬´ bull√©e ¬ª en sortie du robinet sur une hauteur de 27 cm. De plus nous tra√ßons des rep√®res le long de la hauteur √† 3, 7, 11, 14, 18 et 20 cm qui vont permettre de suivre la remont√© de front de s√©paration eau pure I eau¬´ bull√©e ¬ª. 
+L'exp√©rience se d√©roule alors comme suit: Lorsque le front de bulles atteint un rep√®re pr√©d√©fini, nous tapons sur l'√©prouvette. L'analyse de l'√©volution du sonagramme permet d'avoir la fr√©quence et le temps correspondant √† chaque rep√®re. 
+
+Colonne d'eau¬´ bull√©e ¬ª Colonne d'eau¬´ bull√©e ¬ª 
+:.il ... 
+Exemple de remont√©e du front de bulle au cours du temps 
+[16] 
+
+R√©sulta√ª: Voici le sonagramme de l'exp√©rience sur lequel on retrouve les vibrations de l'√©prouvette par comparaison avec le sonagramme de 1'√©prouvette avec 27 cm d'eau sans bulles et notre fr√©quence variable caus√©e par l'effet allasonique (on voit essentiellement la plus basse fr√©quence ici). 
+
+Les mesures du sonagramme sont les suivantes: Incertitude 
+Temps (s)  4  10  20  24  30  34  At=¬±36 ms  
+Colonne d'eau¬´ bull√©e ¬ª (cm)  24  20  16  13  9  7  M.=¬± l cm  
+Fr√©quence (Hz)  345  335  414  562  717  750  Af=¬±30 Hz  
+
+Incertitudes des mesures : Pour toutes nos mesures, il y a une incertitude li√©e √† trois facteurs. 
+-Le temps : La pr√©cision est directement donn√©e, soit !J.t=¬±36 ms Time ( msec) : 20036 +/-36 
+
+-La fr√©quence : Pour cette mesure, bien que Spectrogram 16 affiche une r√©solution de ¬±6 Hz , un zoom sur le spectre montre une largeur plus importante. En encadrant la zone au mieux (voir ci-contre) et en maximisant les √©carts (par exemple 
+( 431 +6) -( 414 -6) =29Hz), on estime l'incertitude 11/=¬±30 Hz . 
+Frequency (Hz) : 397 +/-6.0 414 +/-6.0 431 +/-6.0 
+-La hauteur de la colonne bull√©e : Il est difficile de faire une s√©paration nette eau bull√©e I eau non huil√©e. Il semble r√©aliste de prendre une marge de 2 cm soit 
+Les encadrements en fr√©quence 
+!J.L=¬±1cm. 
+et hauteur 
+Place √† l'exploitation. 
+4.b. Exploitation L'exploitation de ces r√©sultats comporte plusieurs √©tapes. 1 -La vitesse du son dans l'eau¬´ huil√©e¬ª: Dans l'hypoth√®se d'une onde stationnaire 
+c
+dans la colonne d'eau ¬´ bull√©e ¬ª, la fr√©quence est li√©e √† la hauteur de la colonne d'eau par : 
+f(t) =4L(t) 
+
+On d√©termine alors la vitesse du son pour chaque point avec c =f x4L puis la fraction volumique d' air. , . 
+Colonne d'eau¬´ huil√©e¬ª (cm)  24  20  16  13  9  
+Fr√©quence (Hz)  345  335  414  562  717  
+Vitesse (mis)  330  270  265  290  260  
+Fraction volumique d'air(%)  0,12  0,18  0,19  0,16  0,20  
+
+200 , 
+~----..
+L~ 
+. 
+0.0 ‚Ä¢.0.2 
+Except√© le premier point, la vitesse du son dans l'eau ¬´ huil√©e ¬ª est en moyenne de 
+c = 270m.s-1 correspondant √† une fraction volumique d'air dont l'ordre de grandeur est 
+M√©thode pour d√©terminer a √† partir de la vitesse
+a= 0,18%. Ce r√©sultat est parfaitement compatible avec notre pr√©c√©dente mesure √† la fiole. 
+Conclusion: On peut en conclure que c'est vraisemblablement l'ensemble des bulles qui monte au cours du temps sans changer notablement la fraction volumique d'air. Concernant le premier point, il n'y a pas de raison de penser √† une erreur de mesure et il faudra donc revenir dessus pour l'expliquer dans un deuxi√®me temps ... 
+[17] 
+II -La vitesse de remont√©e du front de bulles : 
+En tra√ßant la hauteur en fonction du temps, on peut d√©terminer la vitesse de remont√©e du front de bulles. 
+
+
+0 5 10 15 20 25 30 35 40 Temps (s) 
+L'√©quation de la r√©gression lin√©aire passant au mieux des points exp√©rimentaux est: L =-0,56xt+ 26,2 
+Le coefficient de la pente donne directement la vitesse (en cm.s-1 ), soit: vbulle= 0,56 cm.s-1 =5,6.10-3 m.s-1 Avec notre mod√®le et ces donn√©es, il est possible de confronter mod√®le et exp√©rience. 
+4.c. Mod√®le vs exp√©rience Le mod√®le final : Connaissant la vitesse de remont√©e du front de bulles au cours du temps et la vitesse du son dans l'eau¬´ bull√©e ¬ª, il est possible de simuler l'√©volution de la fr√©quence en fonction du temps avec python. Le principe de la simulation est le suivant : 
+Lahauteurd'eaus'exprimepar 	L(t)=-41-vbullext avec vbu11e=5,6.10-3 m.s-1 et 4=0,27m 1
+Lafr√©quence f(t)=-c-avec c=~ 
+4L(t) PZ, 
+p et z. d√©pendent de la fraction volumique a= 0, 18% qui reste constante 
+Fr√©quence du son dans l'eau avec bulles d' air en fonction du temps 
+
+-f{r) 
+900 
+,..... 800 
+N 
+:i:: 
+~ 700 
+~ .g 6oo 
+"
+u 
+c 
+g 500 
+O" 
+'~ 
+~ 400 
+300 
+
+0  5  lO  15  20  25  30  35  
+Tem sp (s)  
+Courbe mod√©lis√©e et points exp√©rimentaux  
+‚Ä¢‚Ä¢  1  
+, .... ,  " I¬∑  
+, u‚Ä¢¬∑  
+
+Conclusion : Compte tenu des incertitudes , les points exp√©rimentaux sont tr√®s proches de la courbe th√©orique. Le r√©sultat est tr√®s satisfaisant √† premi√®re vu et conforte notre mod√®le. 
+[18] 
+
+CONCLUSION 
+L'ensemble de ce travail nous a permis de tenter d'expliquer l'effet allasonique. On peut se satisfaire de ce r√©sultat mais il y a deux comportements exp√©rimentaux bizarres ! 
+1 -Dans le cas de l'eau chaude en sortie de robinet, nous avons remarqu√© que le d√©but de l'exp√©rience commence souvent par une baisse de fr√©quence avant de remonter suivant notre loi. Ce ph√©nom√®ne n'est jamais pr√©sent avec les autres m√©thodes de¬´ bullages ¬ª comme l'eau+ liquide vaisselle ou la mousse √† raser. Comment l'expliquer? 
+2 -Les fr√©quences de la colonne d'eau¬´ bu1l√©e ¬ª s'arr√™tent au bout d'un moment. Celui-ci correspond visiblement √† l'√©galit√© entre la fr√©quence de l'eau ¬´ bull√©e ¬ª et celle du verre lui-m√™me. Au passage, on note que la fr√©quence du verre correspondante n'est pas visible au d√©but. Quelle est la raison de ce ph√©nom√®ne. 
+Pour illustrer des deux points, voici le sonagramme d'un b√©cher de 9 cm rempli avec de l'eau chaude¬´ bull√©e ¬ª: 
+
+Un d√©but de r√©ponse: Voici nos id√©es pour r√©pondre √† ces deux points. 
+1 -Nous avons remarqu√© que lorsqu'on commence √† touiller avec la cuill√®re dans l'eau chaude ¬´ bull√©e ¬ª, il y a tr√®s rapidement plus de bulles qui apparaissent. Visiblement, le fait de bouger aide l'eau chaude √† d√©gazer. Ensuite, on retrouve un comportement normal identique aux autres m√©thodes de bullages. C'est ce ph√©nom√®ne qui nous permet d'expliquer la ¬´ bizarrerie ¬ª de la mesure du premier point de notre exp√©rience finale . 
+.--..... 
+Col01me d 'eau ¬´ bull√©e ¬ª (cm )  V 24 "  20  
+Fr√©quence (Hz) l  345  1 335  
+Vitesse (m/s) 1  330  1270  
+Fraction volumique d'air(%)  ~ 0,12  0,18  
+
+'--" 
+2 -Une piste √©voqu√©e avec nos professeurs serait un probl√®me d'oscillateurs coupl√©s (les vibrations de l'eau et les vibrations du verre). Cela reste encore tr√®s flou pour nous mais on esp√®re avoir le temps d'y travailler avant la fin de l'ann√©e. 
+REMERCIEMENTS 
+Nous remercions chaleureusement nos professeurs accompagnateurs, Herv√© IODA et Olivier POLIDORO, pour leur disponibilit√©, leurs conseils pr√©cieux, leur exigence scientifique et leur accompagnement constant, sans lesquels ce travail n'aurait pu aboutir dans de telles conditions. 
+Nous tenons √† adresser nos plus sinc√®res remerciements √† Madame LAGADEC, Proviseure de notre lyc√©e, pour son soutien et la confiance qu'elle nous a accord√©e tout au long de ce projet. 
+Nous exprimons √©galement notre profonde gratitude au jury des Olympiades acad√©miques d'Aix-Marseille, qui nous a permis d'acc√©der aux Olympiades Nationales √† Paris, ainsi qu'√† l'organisation des Olympiades de Physique, pour l'opportunit√© exceptionnelle offerte aux √©l√®ves de s'engager dans une d√©marche de recherche exp√©rimentale. 
+[19] 
+
+
+
+

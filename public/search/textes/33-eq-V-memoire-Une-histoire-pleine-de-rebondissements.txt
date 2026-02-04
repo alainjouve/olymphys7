@@ -1,1068 +1,1077 @@
-1 
- 
- 
- 
-Une histoire pleine de  
-rebondissementsâ¦ 
- 
- 
- 
- 
- 
- 
- 
- 
-Un mÃ©moire de : Clochard Aymeric, Hebrard de Veyrinas MÃ©lanie 
-KurdzielâVincent Oscar et  Prouteau Thomas. 
-EncadrÃ©s par: ClÃ©ment Tristan et Meyer Jean-Brice.
+Une histoire pleine de
+rebondissements…
 
-2 
- 
-RÃ©sumÃ© :  
-Nous avons Ã©tudiÃ© la faÃ§on dont une balle de ping-pong rebondit. Mais bien que ce sujet soit loin dâÃªtre 
-simple, nous avons pu le dÃ©couvrir au cours de notre projet, nous avons en plus rempli la balle de 
-diffÃ©rents ingrÃ©dients. Suffisamment dâingrÃ©dients en tout cas pour aboutir Ã  des rÃ©flexions qui nous ont 
-souvent passionnÃ©s, et qui nous ont aussi fait douter. Alors que les balles remplies de diffÃ©rents liquides 
-rebondissent quasiment Ã  la mÃªme hauteur, dâautres variables montrent des comportements diffÃ©rents 
-dâune balle Ã  lâautre, comme par exemple la durÃ©e ou encore la surface de contact. Autant de donnÃ©es 
-que nous avons pu exploiter pour tenter dâexpliquer nos observations. Câest cette dÃ©marche 
-dâinvestigation que nous prÃ©sentons dans ce mÃ©moire. 
- 
-Sommaire :  
-I â Mise en Ã©vidence de lâÃ©nergie perdue lors du rebond de la balle                                Page 3 
-1 ) A quelles hauteurs rebondissent ces deux balles 
-2 ) Influence de la force de frottement fluide sur la balle remplie dâair 
-3 ) Comparaison de la variation dâÃ©nergie cinÃ©tique perdue lors de lâimpact 
- 
-II â Approche dynamique du rebond et recherche dâun modÃ¨le            Page 6  
-1 ) Evaluation de la force subie par la balle lors de lâimpact 
-2 ) DÃ©formation de la balle 
-3 ) Relation contrainte â Ã©crasement : recherche dâun modÃ¨le 
-4 ) Ecrasement statique de la balle 
- 
-III â Comment la balle rebondit-elle une fois remplie de diffÃ©rents liquides            Page 12 
-1 ) Hauteur du rebond 
-2 ) Ecrasement de la balle lors de lâimpact 
- 
-IV â Que se passe-t-il dans le liquide lors de lâimpact ?              Page 14 
-1 ) Le liquide peut-il se comprimer ? 
-2 ) Une onde de pression peut-elle se propager ? 
- 
-Bibliographie / Webographie :  
-- []Physique â De Boeck â Perez â Lagoute â CompressibilitÃ© des liquides 
-- []https://experts-insitu.com/wp-content/uploads/2019/04/cours-hydraulique-82-la-
-compressibilite.pdf CompressibilitÃ© - Variation du volume avec la pression 
-Introduction :  
-Nous nous sommes amusÃ©s Ã  remplir une balle de ping-pong avec de lâeau. Nous avons alors Ã©tÃ© 
-surpris de la voir rebondir apparemment de la mÃªme maniÃ¨re quâune balle de ping-pong remplie 
-dâair, câest-Ã -dire quasiment Ã  la mÃªme hauteur. Est-ce rÃ©ellement le cas et pouvait-on sây attendre ? 
-RÃ©pondre Ã  cette derniÃ¨re question revient Ã  Ã©tudier prÃ©cisÃ©ment ce qui se passe au moment de 
-lâimpact de la balle sur la table.  
-Dans ce rapport, nous axons tout dâabord notre travail sur les balles remplies dâair et remplies dâeau, 
-pour aboutir Ã  une discussion Ã©nergÃ©tique qui nous occupera tout au long du mÃ©moire. Puis nous 
-Ã©tudierons le problÃ¨me sous un angle dynamique, avant de remplir les balles de diffÃ©rents liquides, 
-prÃ©sentant des caractÃ©ristiques variables. Enfin, comme plusieurs phÃ©nomÃ¨nes physiques peuvent 
-intervenir lors du rebond, nous tenterons de faire la part des choses de faÃ§on argumentÃ©e.
+Un mémoire de : Clochard Aymeric, Hebrard de Veyrinas Mélanie
+Kurdziel–Vincent Oscar et Prouteau Thomas.
+Encadrés par: Clément Tristan et Meyer Jean-Brice.
 
-3 
- 
-I â Mise en Ã©vidence de lâÃ©nergie perdue lors de lâimpact de la balle 
- 
-1 ) A quelles hauteurs rebondissent ces deux balles ? 
- 
-Prenons le temps de comparer les hauteurs auxquelles les balles remplies dâair et remplies dâeau 
-rebondissent. 
-Nous avons travaillÃ© avec des balles identiques, Â« Artango 40+ Â» de la marque DÃ©cathlon. Nous nous 
-sommes assurÃ©s que ces balles avaient des masses similaires, en mesurant les masses de 34 balles. Nous 
-avons pu constater que leur masse Ã©tait relativement constante, Ã©gale Ã   2,79 g avec un Ã©cart-type de 0,07 
-g et une incertitude absolue de 0,03 g avec un intervalle de confiance Ã  95 %. 
- 
-ß
-à±à±à±¥à±¥à±à·(ÏºÉ§Ï¿ÐÂ±Ï¸É§Ï¸Ï») ß 
- 
- 
-Nous avons alors commencÃ© par faire 
-tomber une balle remplie dâair, en la 
-lÃ¢chant de diffÃ©rentes hauteurs ß
-à±¢, et 
-nous avons mesurÃ© la hauteur ß
-à± Ã  
-laquelle elle remonte. Puis nous avons 
-fait de mÃªme avec une balle remplie 
-dâeau.  Voici les rÃ©sultats obtenus : 
-figure 1 
- 
- 
- 
- 
- 
-Ces rÃ©sultats expÃ©rimentaux montrent effectivement que les deux balles rebondissent quasiment Ã  la mÃªme 
-hauteur. On remarque toutefois que plus la hauteur de lÃ¢cher est grande, et plus une diffÃ©rence de hauteur 
-de rebond apparaÃ®t. 
-En rÃ©alitÃ©, comparer les hauteurs des rebonds pour Ã©tudier ce qui se passe lors de lâimpact nâest pas ce quâil 
-y a de plus pertinent. En effet, dans le cas de la balle de ping-pong remplie dâair, des forces de frottement 
-avec lâair peuvent ne pas Ãªtre nÃ©gligeables devant la force de pesanteur durant la montÃ©e et la descente de 
-la balle, alors quâelles le sont sans Ã©quivoque dans le cas de la balle remplie dâeau. 
- 
-2 ) Influence de la force de frottement fluide sur la balle remplie dâair :  
-En effet, la masse de la balle remplie dâair Ã©tant m = 2,7 g, la force de pesanteur exercÃ©e sur la balle remplie 
-dâair vaut Þ¸à·Ï¸É§Ï¸Ï¸ÏºÏ¿ÃÐÉ§ÐÏ¹à·ÏºÉ§Ï¾ÉªÏ¹Ï¸
-à¯à®¼
-Þ¶ 
-Quant Ã  la force de pesanteur exercÃ©e sur la balle remplie dâeau, de masse mâ = 35g, elle vaut Þ¸à·
-Ï¸É§Ï¸Ï»Ï½ÃÐÉ§ÐÏ¹à·Ï¸É§Ï»Ï¼ Þ¶ 
-Comparons ces forces Ã  la force de frottement :  
-DâaprÃ¨s la littÃ©rature scientifique, une balle de ping-pong lÃ¢chÃ©e dâune hauteur de 1m atteint une vitesse 
-suffisamment grande pour subir des forces de frottement proportionnelles Ã  la vitesse au carrÃ©, telles que 
-Þ®à·Ï»É§Ï¼ÉªÏ¹Ï¸
-à¯à®¾
-ÃßÐ. Et pour connaÃ®tre la vitesse de la balle lors de sa chute, nous avons lÃ¢chÃ© et filmÃ© la 
-chute dâune balle dâune hauteur de 2,50 m. Nous avons alors relevÃ© sa position au cours de la chute. Nous 
-avons ensuite dÃ©rivÃ© la position pour avoir la vitesse, et nous avons pu en dÃ©duire la vitesse de la balle aprÃ¨s 
-1 m de chute (atteinte au bout de 436 ms) : figure 2. 
-Figure 1 : Ã©volution de la hauteur du rebond en 
-fonction de la hauteur du lÃ¢cher pour les balles 
-de ping-pong pleines dâair et pleines dâeau.
+1
 
-4 
- 
- 
-Figure 2 : Evolution de la position et de la vitesse dâune balle vide lÃ¢chÃ©e Ã  250 cm de hauteur pour estimer les frottements. 
- 
-Nous mesurons une vitesse de 4 m/s (au lieu de 4,4 m/s que lâon aurait obtenu dans le cas de lâabsence de 
-forces de frottement).  Avec une telle vitesse, la force de frottement serait Ã©gale Ã  Ï½É§Ï¼ÉªÏ¹Ï¸
-à¯à®½
-Þ¶. Cette force 
-est bien nÃ©gligeable par rapport Ã  la force de pesanteur exercÃ©e sur la balle remplie dâeau, mais ne lâest pas 
-sur la balle remplie dâair puisquâelle reprÃ©sente environ 20% de la valeur de la force de pesanteur quâelle 
-subit.  
-Par consÃ©quent, plutÃ´t que de tracer la hauteur du rebond en fonction de la hauteur de lÃ¢cher pour 
-comparer le rebond de ces deux balles, nous avons tracÃ© la vitesse immÃ©diatement aprÃ¨s le rebond, en 
-fonction de la vitesse immÃ©diatement avant le rebond. 
- 
-3 ) Comparaison de la variation dâÃ©nergie cinÃ©tique perdue lors de lâimpact 
- 
- 
-Il fallait rÃ©aliser des mesures 
-prÃ©cises, ce que nous avons pu 
-faire en filmant le rebond de la 
-balle avec une camÃ©ra Ã  40 000 
-images par seconde. Nous avons 
-rÃ©alisÃ© cinq mesures, pour cinq 
-hauteurs de chute diffÃ©rentes, 
-et voici ce que nous avons 
-obtenu pour la balle remplie 
-dâair et pour celle remplie dâeau 
-: figure 3. 
- 
- 
- 
-. 
- 
+Résumé :
+Nous avons étudié la façon dont une balle de ping-pong rebondit. Mais bien que ce sujet soit loin d’être
+simple, nous avons pu le découvrir au cours de notre projet, nous avons en plus rempli la balle de
+différents ingrédients. Suffisamment d’ingrédients en tout cas pour aboutir à des réflexions qui nous ont
+souvent passionnés, et qui nous ont aussi fait douter. Alors que les balles remplies de différents liquides
+rebondissent quasiment à la même hauteur, d’autres variables montrent des comportements différents
+d’une balle à l’autre, comme par exemple la durée ou encore la surface de contact. Autant de données
+que nous avons pu exploiter pour tenter d’expliquer nos observations. C’est cette démarche
+d’investigation que nous présentons dans ce mémoire.
+Sommaire :
+I – Mise en évidence de l’énergie perdue lors du rebond de la balle
+1 ) A quelles hauteurs rebondissent ces deux balles
+2 ) Influence de la force de frottement fluide sur la balle remplie d’air
+3 ) Comparaison de la variation d’énergie cinétique perdue lors de l’impact
+
+Page 3
+
+II – Approche dynamique du rebond et recherche d’un modèle
+1 ) Evaluation de la force subie par la balle lors de l’impact
+2 ) Déformation de la balle
+3 ) Relation contrainte – écrasement : recherche d’un modèle
+4 ) Ecrasement statique de la balle
+
+Page 6
+
+III – Comment la balle rebondit-elle une fois remplie de différents liquides
+1 ) Hauteur du rebond
+2 ) Ecrasement de la balle lors de l’impact
+
+Page 12
+
+IV – Que se passe-t-il dans le liquide lors de l’impact ?
+1 ) Le liquide peut-il se comprimer ?
+2 ) Une onde de pression peut-elle se propager ?
+
+Page 14
+
+Bibliographie / Webographie :
+-
+
+[]Physique – De Boeck – Perez – Lagoute – Compressibilité des liquides
+[]https://experts-insitu.com/wp-content/uploads/2019/04/cours-hydraulique-82-lacompressibilite.pdf Compressibilité - Variation du volume avec la pression
+
+Introduction :
+Nous nous sommes amusés à remplir une balle de ping-pong avec de l’eau. Nous avons alors été
+surpris de la voir rebondir apparemment de la même manière qu’une balle de ping-pong remplie
+d’air, c’est-à-dire quasiment à la même hauteur. Est-ce réellement le cas et pouvait-on s’y attendre ?
+Répondre à cette dernière question revient à étudier précisément ce qui se passe au moment de
+l’impact de la balle sur la table.
+Dans ce rapport, nous axons tout d’abord notre travail sur les balles remplies d’air et remplies d’eau,
+pour aboutir à une discussion énergétique qui nous occupera tout au long du mémoire. Puis nous
+étudierons le problème sous un angle dynamique, avant de remplir les balles de différents liquides,
+présentant des caractéristiques variables. Enfin, comme plusieurs phénomènes physiques peuvent
+intervenir lors du rebond, nous tenterons de faire la part des choses de façon argumentée.
+2
+
+I – Mise en évidence de l’énergie perdue lors de l’impact de la balle
+1 ) A quelles hauteurs rebondissent ces deux balles ?
+Prenons le temps de comparer les hauteurs auxquelles les balles remplies d’air et remplies d’eau
+rebondissent.
+Nous avons travaillé avec des balles identiques, « Artango 40+ » de la marque Décathlon. Nous nous
+sommes assurés que ces balles avaient des masses similaires, en mesurant les masses de 34 balles. Nous
+avons pu constater que leur masse était relativement constante, égale à 2,79 g avec un écart-type de 0,07
+g et une incertitude absolue de 0,03 g avec un intervalle de confiance à 95 %.
+𝑚𝑏𝑎𝑙𝑙𝑒 = (2,79 ± 0,03) 𝑔
+Nous avons alors commencé par faire
+tomber une balle remplie d’air, en la
+lâchant de différentes hauteurs ℎ𝑖 , et
+nous avons mesuré la hauteur ℎ𝑓 à
+laquelle elle remonte. Puis nous avons
+fait de même avec une balle remplie
+d’eau. Voici les résultats obtenus :
+figure 1
+Figure 1 : évolution de la hauteur du rebond en
+fonction de la hauteur du lâcher pour les balles
+de ping-pong pleines d’air et pleines d’eau.
+
+Ces résultats expérimentaux montrent effectivement que les deux balles rebondissent quasiment à la même
+hauteur. On remarque toutefois que plus la hauteur de lâcher est grande, et plus une différence de hauteur
+de rebond apparaît.
+En réalité, comparer les hauteurs des rebonds pour étudier ce qui se passe lors de l’impact n’est pas ce qu’il
+y a de plus pertinent. En effet, dans le cas de la balle de ping-pong remplie d’air, des forces de frottement
+avec l’air peuvent ne pas être négligeables devant la force de pesanteur durant la montée et la descente de
+la balle, alors qu’elles le sont sans équivoque dans le cas de la balle remplie d’eau.
+2 ) Influence de la force de frottement fluide sur la balle remplie d’air :
+En effet, la masse de la balle remplie d’air étant m = 2,7 g, la force de pesanteur exercée sur la balle remplie
+d’air vaut 𝑃 = 0,0027 × 9,81 = 2,6. 10−2 𝑁
+Quant à la force de pesanteur exercée sur la balle remplie d’eau, de masse m’ = 35g, elle vaut 𝑃 =
+0,035 × 9,81 = 0,34 𝑁
+Comparons ces forces à la force de frottement :
+D’après la littérature scientifique, une balle de ping-pong lâchée d’une hauteur de 1m atteint une vitesse
+suffisamment grande pour subir des forces de frottement proportionnelles à la vitesse au carré, telles que
+𝐹 = 3,4. 10−4 × 𝑣². Et pour connaître la vitesse de la balle lors de sa chute, nous avons lâché et filmé la
+chute d’une balle d’une hauteur de 2,50 m. Nous avons alors relevé sa position au cours de la chute. Nous
+avons ensuite dérivé la position pour avoir la vitesse, et nous avons pu en déduire la vitesse de la balle après
+1 m de chute (atteinte au bout de 436 ms) : figure 2.
+
+3
+
+Vitesse (m/s)
+
 Altitude (m)
- 
-Vitesse (m/s)
- 
-Figure 3 : Vitesse immÃ©diatement aprÃ¨s le rebond en fonction de la vitesse immÃ©diatement avant le rebond pour les balles air et eau.
 
-5 
- 
-On peut remarquer que finalement, mÃªme si la balle remplie dâeau rebondit Ã©tonnamment haut, Ã  vitesse 
-avant lâimpact Ã©gale, la balle remplie dâair rebondit plus haut que la balle remplie dâeau.  
-Dâautre part, comme sur le graphique apparaissent les vitesses immÃ©diatement avant et aprÃ¨s lâimpact, 
-nous pouvons estimer la variation dâÃ©nergie cinÃ©tique du centre dâinertie de la balle au moment du choc :  
- 
-ÑÞ­
-à±à·
-Ï¹
-Ïº
-ß(ß
-à±
-à®¼
-âß
-à±¢
-à®¼
-) 
- 
-Et sans faire de calcul, il apparaÃ®t clairement que pour la balle remplie dâair, cette variation dâÃ©nergie 
-cinÃ©tique est trÃ¨s faible comparÃ©e Ã  celle subie par la balle remplie dâeau. Et ceci est dâautant plus vrai que 
-la balle tombe dâune grande hauteur. 
- 
-OÃ¹ passe cette Ã©nergie ? Une partie est transformÃ©e en Ã©nergie acoustique et est donc perdue par la balle. 
-On peut aussi supposer quâune autre partie est convertie en Ã©nergie thermique lors de lâimpact. Dâautre 
-part, lors de lâimpact, la balle fait vibrer le support et cela nâest pas sans consÃ©quence : nous avons fait ces 
-expÃ©riences sur un bureau dâÃ©paisseur environ 2 cm, puis sur un plan sous lequel se trouvait un pied, 
-empÃªchant la vibration du plan Ã  lâendroit de lâimpact, et les diffÃ©rences de hauteur de rebond Ã©taient 
-considÃ©rables. Nous avons dâailleurs choisi de rÃ©aliser toutes nos expÃ©riences en Ã©vitant cette vibration de 
-la table. 
- 
-Mais il y a aussi la possibilitÃ© que lâÃ©nergie soit perdue dans la dÃ©formation de la balle lors du choc, qui serait 
-dâautant plus grande que la balle tombe dâune grande hauteur : lors de lâimpact, la balle doit se dÃ©former 
-de faÃ§on inÃ©lastique probablement du fait dâune certaine viscoÃ©lasticitÃ© de la balle. 
-Et il y a aussi la possibilitÃ© que lâeau bouge dans la balle lors de lâimpact, ce qui traduirait un transfert 
-dâÃ©nergie entre lâÃ©nergie cinÃ©tique du centre dâinertie de la balle et lâÃ©nergie associÃ©e Ã  un mouvement de 
-lâeau par rapport Ã  la balle. Lâeau pourrait par exemple tourner Ã  lâintÃ©rieur de la balle suite Ã  lâimpact. 
-Nous avons voulu tester ce dernier point en mesurant le rebond de balles partiellement remplies dâeau, 
-avec des volumes dâeau de 5 ml, 10 ml, 15 ml, 20 ml, 25 ml et 28 ml, sachant que la balle de ping-pong peut 
-contenir un maximum de 31 ml. 
- 
-Nous avons fait chuter ces balles de quatre hauteurs diffÃ©rentes : 30, 40, 50 et 70 cm. Parmi toutes les balles 
-partiellement remplie dâeau, seules les balles remplies avec 5 ml dâeau et 28 ml dâeau rebondissent de faÃ§on 
-significative. La balle remplie avec 28 ml dâeau rebondit Ã  des hauteurs identiques Ã  la balle entiÃ¨rement 
-remplie dâeau. Or, le fait que cette balle soit partiellement remplie dâeau (puisquâil reste environ 3 ml 
-disponibles), permet davantage Ã  lâeau de bouger Ã  lâintÃ©rieur de la balle lors de lâimpact, quâelle ne peut le 
-faire dans la balle entiÃ¨rement remplie dâeau. Et pourtant, cela nâa pas de consÃ©quence sur le rebond de la 
-balle. On peut donc en dÃ©duire que lâÃ©nergie perdue lors du rebond nâest pas due Ã  un mouvement de lâeau 
-Ã  lâintÃ©rieur de la balle. 
- 
-Par contre, il peut y avoir un dÃ©placement trÃ¨s localisÃ© de lâeau dans la zone dâimpact, ce qui peut 
-reprÃ©senter une contrainte Ã  la dÃ©formation de la coque de la balle. 
-Notre rÃ©flexion nous amÃ¨ne donc au raisonnement suivant : une balle remplie dâeau va acquÃ©rir davantage 
-dâÃ©nergie cinÃ©tique au moment de lâimpact quâune balle remplie dâair. Cette Ã©nergie cinÃ©tique va Ãªtre 
-transmise Ã  la balle, sous forme dâune Ã©nergie potentielle Ã©lastique, de la mÃªme maniÃ¨re quâun perchiste 
-transfert son Ã©nergie Ã  sa perche. La coque se dÃ©forme donc, puis reprend sa forme en transfÃ©rant Ã  la balle 
-son Ã©nergie potentielle sous forme dâÃ©nergie cinÃ©tique. La balle remonte. Donc plus la balle a une grande 
-masse, et plus elle doit se dÃ©former (car Ec = 0,5mvÂ²), mais lâeau reprÃ©sente Ã©galement sans doute une 
-contrainte pour la dÃ©formation de la coque.  
-A nous maintenant de vÃ©rifier tout cela. 
-Puisque cette dÃ©formation est engendrÃ©e par la force exercÃ©e par le support sur la balle, nous avons voulu 
-Ã©valuer cette force, et la comparer pour une balle remplie dâair et une balle remplie dâeau.
+Figure 2 : Evolution de la position et de la vitesse d’une balle vide lâchée à 250 cm de hauteur pour estimer les frottements.
 
-6 
- 
-II â Approche dynamique du rebond et recherche dâun modÃ¨le  
-1 ) Evaluation de la force subie par la balle lors de lâimpact 
-ReprÃ©sentons la balle au moment du choc : figure 4 
-Nous allons appliquer la deuxiÃ¨me loi de Newton Ã  la balle. 
-La bille passe dâune vitesse ß
-à²°á²á²á²Ö¬ immÃ©diatement avant le choc, Ã  une vitesse ß
-à±á²á²á²á²Ö¬ 
-immÃ©diatement aprÃ¨s le choc, durant la durÃ©e du choc Ñß. 
-LâaccÃ©lÃ©ration de la bille lors du choc est donc 
-ßÖ¬à·
-ÑßÖ¬
-Ñß
-à·
-ß
-à±á²á²á²á²Ö¬âß
-à²°á²á²á²Ö¬
-Ñß
- 
-ProjetÃ© sur lâaxe (Oy),  
-ß
-à±²à·
-ß
-à±à±²âß
-à±¢à±²
-Ñß
-à·
-ß
-à±+ß
-à±¢
-Ñß
- 
-Comme par ailleurs,  
-à¹Þ®
-à±à±±à±­
-á²á²á²á²á²á²á²Ö¬à·ßßÖ¬
-à±¢
- 
-En appelant Þ¸á²Ö¬ la force de pesanteur appliquÃ©e Ã  la bille, et Þ®Ö¬ la force exercÃ©e 
-par la table sur la balle,  
-Þ¸á²Ö¬+Þ®Ö¬à·ßßÖ¬ 
-Comme  
-Þ¸á²Ö¬à·²
-Þ¸
-à±±à·Ï¸
-Þ¸
-à±²à·âÞ¸
-à·¶     ßß   Þ®Ö¬à·²
-Þ®
-à±±
-Þ®
-à±²
-à·¶   
-On en dÃ©duit que  
-Þ®
-à±²âÞ¸à·ß
-ß
-à±+ß
-à±¢
-Ñß
-à»Þ®
-à±²à·ßà·²ß+
-ß
-à±+ß
-à±¢
-Ñß
-à·¶ 
- 
-Pour faire ces calculs, nous avons choisi dâutiliser les vitesses ß
-à±¢  et ß
-à± calculÃ©es grÃ¢ce aux vidÃ©os rÃ©alisÃ©es 
-Ã  lâuniversitÃ© avec la camÃ©ra Ã  40 000 images par seconde.  
-Quant Ã  la durÃ©e de lâimpact, nous avions tentÃ© dans un premier temps de lâÃ©valuer grÃ¢ce Ã  lâexpÃ©rience 
-suivante : figure 5 
-Un faisceau LASER lÃ©gÃ¨rement inclinÃ© par rapport Ã  lâhorizontale se rÃ©flÃ©chit sur une surface vitrÃ©e collÃ©e 
-sur un bloc de bois massif. Le rayon rÃ©flÃ©chi est alors envoyÃ© vers une photodiode. Quand la balle percute 
-la surface, cela obture le faisceau Laser, ce qui conduit Ã  une chute de tension aux bornes de la rÃ©sistance. 
-La difficultÃ© est de faire tomber trÃ¨s prÃ©cisÃ©ment la balle au point dâimpact du faisceau Laser sur la vitre. 
-Pour cela, on guide la balle au plus prÃ¨s Ã  lâaide dâun tube de diamÃ¨tre Ã  peine plus grand que celui de la 
-balle. Comme nous supposons que la durÃ©e de lâimpact dÃ©pend de la hauteur de chute, nous avons fait ces 
-mesures pour des chutes de hauteur 12 cm, 20 cm, 40 cm et 70 cm. 
- 
- 
- 
- 
- 
- 
- 
- 
-Balle  
-à¤á²á²Ö¬ 
-à£¸á²á²Ö¬ 
-y 
-à¤¢
-à®á²á²á²Ö¬ 
-à¤¢
-à¤á²á²á²á²Ö¬ 
-Figure 4 : schÃ©ma 
-reprÃ©sentatif dâune 
-balle au moment de 
-lâimpact 
-GÃ©nÃ©rateur 
-RÃ©sistance 
-Photodiode 
-Plaque 
-Tube : guide 
-pour la balle 
-Vers carte 
-dâacquisition 
-Figure 5 : Dispositif pour Ã©valuer la durÃ©e du contact lors de lâimpact de la balle sur le support
+Nous mesurons une vitesse de 4 m/s (au lieu de 4,4 m/s que l’on aurait obtenu dans le cas de l’absence de
+forces de frottement). Avec une telle vitesse, la force de frottement serait égale à 5,4. 10−3 𝑁. Cette force
+est bien négligeable par rapport à la force de pesanteur exercée sur la balle remplie d’eau, mais ne l’est pas
+sur la balle remplie d’air puisqu’elle représente environ 20% de la valeur de la force de pesanteur qu’elle
+subit.
+Par conséquent, plutôt que de tracer la hauteur du rebond en fonction de la hauteur de lâcher pour
+comparer le rebond de ces deux balles, nous avons tracé la vitesse immédiatement après le rebond, en
+fonction de la vitesse immédiatement avant le rebond.
+3 ) Comparaison de la variation d’énergie cinétique perdue lors de l’impact
 
-7 
- 
-Les rÃ©sultats montrent alors des durÃ©es de contact qui vont dâenviron 400 Ã  1000 Âµs pour la balle remplie 
-dâair, et de 1000 Ã  2800 Âµs pour les balles remplies dâeau, mais de faÃ§on parfois trÃ¨s variable pour une mÃªme 
-balle et une mÃªme hauteur de chute. Cela nous a montrÃ© que nos expÃ©riences manquaient cruellement de 
-prÃ©cision quant au point dâimpact de la balle, mÃªme avec le guide cylindrique. 
-Câest la raison pour laquelle nous sommes entrÃ©s en contact avec la composante Pprime de lâuniversitÃ© de 
-Poitiers. Vu les mesures de durÃ©e obtenues, nous avons calculÃ© quâune camÃ©ra filmant la zone du choc Ã  
-40000 images par seconde permettrait de visualiser un minimum de 16 images durant les contacts les plus 
-courts. Voici le dispositif expÃ©rimental et un exemple de clichÃ© obtenu juste avant lâimpact : figure 6. 
- 
-                             
-Figure 6 : A gauche : dispositif expÃ©rimental pour la captation â A droite, une image parmi tant dâautres dâune balle juste avant lâimpact. 
- 
-GrÃ¢ce Ã  ce dispositif expÃ©rimental, nous avons alors pu 
-obtenir les durÃ©es de contact suivantes, en fonction de la 
-hauteur des lÃ¢chers, en rÃ©alisant cinq lÃ¢chers pour chaque 
-hauteur pour chacune des deux balles : figure 7a ci-contre. 
-Nous commenterons ces rÃ©sultats par la suite. En attendant, 
-nous pouvons nous en servir pour Ã©valuer la valeur de la 
-force recherchÃ©e. Nous obtenons des forces F ci-contre 
-(figure 7b), en fonction de la hauteur de chute :  
- 
-Figure 7 : En haut : durÃ©e de contact lors de lâimpact. En bas : calcul de 
-la force subie par la balle lors de lâimpact 
- 
-La force qui catapulte la balle vers le haut est donc comme prÃ©vu bien plus forte pour la balle remplie dâeau. 
-On peut Ãªtre Ã©tonnÃ© de la valeur de cette force pour une hauteur de 100 cm, car câest comme si lors de 
-lâimpact, la balle en plastique recevait un coup par une masse dâenviron 17 kg ! 
-Nous savons maintenant quelle force subit la balle. Si nous pouvons connaÃ®tre la dÃ©formation quâelle subit 
-lors de lâimpact,  nous pouvons tenter de voir si la force qui dÃ©forme la balle lors de lâimpact suit un modÃ¨le 
-connu. Mais comment mesurer la longueur à¡¢ sur laquelle sâÃ©crase la balle ? 
- 
-2 ) DÃ©formation de la balle 
-Nous avons eu une idÃ©e trÃ¨s simple pour mesurer la dÃ©formation de la 
-balle lors de lâimpact : il suffit de la faire tomber sur du papier carbone 
-recouvrant une feuille blanche. Lâimpact de la balle laisse alors une trace 
-trÃ¨s nette et bien dÃ©finie (figure 9), de forme circulaire de rayon ß qui nous 
-permet de remonter Ã  lâÃ©crasement Î´ de la balle. 
-  
- 
-H (cm) VIDE (ms) EAU (ms) 
-20 0,558 1,817 
-40 0,583 1,700 
-60 0,542 1,658 
-80 0,550 1,642 
-100 0,533 1,683 
-H (cm) F(N) F(N) 
-20 17 70 
-40 24 105 
-60 32 129 
-80 36 151 
-100 41 167 
-Capteur 
-synchronisÃ© sur 
-la camÃ©ra, 
-permettant le 
-dÃ©clenchement 
-au passage de la 
-balle 
-CamÃ©ra 
-LED 
-puissante 
-Socle 
-massique sur 
-lequel 
-tombe la 
-balle 
-R 
- 
-Î´ 
-à¤ 
-Balle 
-Zone Ã©crasÃ©e 
-Figure 8 : SchÃ©ma  (coupe de la balle sur un plan vertical) illustrant 
-la zone Ã©crasÃ©e de la balle par le support lors de lâimpact
+Il fallait réaliser des mesures
+précises, ce que nous avons pu
+faire en filmant le rebond de la
+balle avec une caméra à 40 000
+images par seconde. Nous avons
+réalisé cinq mesures, pour cinq
+hauteurs de chute différentes,
+et voici ce que nous avons
+obtenu pour la balle remplie
+d’air et pour celle remplie d’eau
+: figure 3.
 
-8 
- 
-En effet, dâun point de vu gÃ©omÃ©trique (voir figure 8) 
-à¡¢à·Þºâà¸«Þº
-à®¼
-âßÐ 
- 
-Voici alors par exemple la marque laissÃ©e par une balle 
-remplie dâeau tombant dâune hauteur de 70 cm sur une feuille 
-de papier carbone :  
- 
- 
- 
-Et voici alors comment Ã©volue lâÃ©crasement de la balle en fonction de la hauteur de lÃ¢cher, pour des balles 
-remplies dâair et remplies dâeau : figure 10 
- 
- 
- 
- 
-3 ) Relation contrainte â Ã©crasement : recherche dâun modÃ¨le 
-Nous pouvons alors faire le lien entre la force exercÃ©e par le support lors de lâimpact et lâÃ©crasement de la 
-balle, grÃ¢ce au tableau figure 7 et au graphique figure 8 :  
- 
- 
-0
-0,0005
-0,001
-0,0015
-0,002
-0,0025
-0,003
-0 20 40 60 80 100 120 140 160
-Air
-Î´(m)
-Hauteur lÃ¢cher (cm)
-F = 87642 x Î´
--50
-0
-50
-100
-150
-200
-0 0,00050,0010,00150,0020,0025
-Feau(N)
--10
-0
-10
+. Figure 3 : Vitesse immédiatement après le rebond en fonction de la vitesse immédiatement avant le rebond pour les balles air et eau.
+
+4
+
+On peut remarquer que finalement, même si la balle remplie d’eau rebondit étonnamment haut, à vitesse
+avant l’impact égale, la balle remplie d’air rebondit plus haut que la balle remplie d’eau.
+D’autre part, comme sur le graphique apparaissent les vitesses immédiatement avant et après l’impact,
+nous pouvons estimer la variation d’énergie cinétique du centre d’inertie de la balle au moment du choc :
+∆𝐸𝐶 =
+
+1
+𝑚(𝑣𝑓2 − 𝑣𝑖2 )
+2
+
+Et sans faire de calcul, il apparaît clairement que pour la balle remplie d’air, cette variation d’énergie
+cinétique est très faible comparée à celle subie par la balle remplie d’eau. Et ceci est d’autant plus vrai que
+la balle tombe d’une grande hauteur.
+Où passe cette énergie ? Une partie est transformée en énergie acoustique et est donc perdue par la balle.
+On peut aussi supposer qu’une autre partie est convertie en énergie thermique lors de l’impact. D’autre
+part, lors de l’impact, la balle fait vibrer le support et cela n’est pas sans conséquence : nous avons fait ces
+expériences sur un bureau d’épaisseur environ 2 cm, puis sur un plan sous lequel se trouvait un pied,
+empêchant la vibration du plan à l’endroit de l’impact, et les différences de hauteur de rebond étaient
+considérables. Nous avons d’ailleurs choisi de réaliser toutes nos expériences en évitant cette vibration de
+la table.
+Mais il y a aussi la possibilité que l’énergie soit perdue dans la déformation de la balle lors du choc, qui serait
+d’autant plus grande que la balle tombe d’une grande hauteur : lors de l’impact, la balle doit se déformer
+de façon inélastique probablement du fait d’une certaine viscoélasticité de la balle.
+Et il y a aussi la possibilité que l’eau bouge dans la balle lors de l’impact, ce qui traduirait un transfert
+d’énergie entre l’énergie cinétique du centre d’inertie de la balle et l’énergie associée à un mouvement de
+l’eau par rapport à la balle. L’eau pourrait par exemple tourner à l’intérieur de la balle suite à l’impact.
+Nous avons voulu tester ce dernier point en mesurant le rebond de balles partiellement remplies d’eau,
+avec des volumes d’eau de 5 ml, 10 ml, 15 ml, 20 ml, 25 ml et 28 ml, sachant que la balle de ping-pong peut
+contenir un maximum de 31 ml.
+Nous avons fait chuter ces balles de quatre hauteurs différentes : 30, 40, 50 et 70 cm. Parmi toutes les balles
+partiellement remplie d’eau, seules les balles remplies avec 5 ml d’eau et 28 ml d’eau rebondissent de façon
+significative. La balle remplie avec 28 ml d’eau rebondit à des hauteurs identiques à la balle entièrement
+remplie d’eau. Or, le fait que cette balle soit partiellement remplie d’eau (puisqu’il reste environ 3 ml
+disponibles), permet davantage à l’eau de bouger à l’intérieur de la balle lors de l’impact, qu’elle ne peut le
+faire dans la balle entièrement remplie d’eau. Et pourtant, cela n’a pas de conséquence sur le rebond de la
+balle. On peut donc en déduire que l’énergie perdue lors du rebond n’est pas due à un mouvement de l’eau
+à l’intérieur de la balle.
+Par contre, il peut y avoir un déplacement très localisé de l’eau dans la zone d’impact, ce qui peut
+représenter une contrainte à la déformation de la coque de la balle.
+Notre réflexion nous amène donc au raisonnement suivant : une balle remplie d’eau va acquérir davantage
+d’énergie cinétique au moment de l’impact qu’une balle remplie d’air. Cette énergie cinétique va être
+transmise à la balle, sous forme d’une énergie potentielle élastique, de la même manière qu’un perchiste
+transfert son énergie à sa perche. La coque se déforme donc, puis reprend sa forme en transférant à la balle
+son énergie potentielle sous forme d’énergie cinétique. La balle remonte. Donc plus la balle a une grande
+masse, et plus elle doit se déformer (car Ec = 0,5mv²), mais l’eau représente également sans doute une
+contrainte pour la déformation de la coque.
+A nous maintenant de vérifier tout cela.
+Puisque cette déformation est engendrée par la force exercée par le support sur la balle, nous avons voulu
+évaluer cette force, et la comparer pour une balle remplie d’air et une balle remplie d’eau.
+5
+
+II – Approche dynamique du rebond et recherche d’un modèle
+1 ) Evaluation de la force subie par la balle lors de l’impact
+Représentons la balle au moment du choc : figure 4
+y
+Nous allons appliquer la deuxième loi de Newton à la balle.
+La bille passe d’une vitesse ⃗⃗𝑣⃗𝑖 immédiatement avant le choc, à une vitesse ⃗⃗⃗⃗
+𝑣𝑓
+immédiatement après le choc, durant la durée du choc ∆𝑡.
+L’accélération de la bille lors du choc est donc
+𝑣𝑓 − ⃗⃗⃗
+𝑣𝑖
+∆𝑣 ⃗⃗⃗⃗
+𝑎=
+=
+∆𝑡
+∆𝑡
+⃗⃗⃗⃗𝒇
+𝒗
+Projeté sur l’axe (Oy),
+𝑣𝑓𝑦 − 𝑣𝑖𝑦 𝑣𝑓 + 𝑣𝑖
+Balle
+𝑎𝑦 =
+=
+∆𝑡
+∆𝑡
+Comme par ailleurs,
+⃗𝑭
+∑ ⃗⃗⃗⃗⃗⃗⃗
+𝐹𝑒𝑥𝑡 = 𝑚𝑎
+𝑖
+
+⃗⃗⃗𝒊
+𝒗
+
+⃗⃗
+𝑷
+
+Figure 4 : schéma
+représentatif d’une
+balle au moment de
+l’impact
+
+En appelant 𝑃⃗ la force de pesanteur appliquée à la bille, et 𝐹 la force exercée
+par la table sur la balle,
+𝑃⃗ + 𝐹 = 𝑚𝑎
+Comme
+𝑃𝑥 = 0
+𝐹𝑥
+𝑃⃗ (𝑃 = −𝑃 ) 𝑒𝑡 𝐹 (𝐹 )
+𝑦
+𝑦
+On en déduit que
+𝑣𝑓 + 𝑣𝑖
+𝑣𝑓 + 𝑣𝑖
+)
+𝐹𝑦 − 𝑃 = 𝑚
+⟺ 𝐹𝑦 = 𝑚 (𝑔 +
+∆𝑡
+∆𝑡
+
+Pour faire ces calculs, nous avons choisi d’utiliser les vitesses 𝑣𝑖 et 𝑣𝑓 calculées grâce aux vidéos réalisées
+à l’université avec la caméra à 40 000 images par seconde.
+Quant à la durée de l’impact, nous avions tenté dans un premier temps de l’évaluer grâce à l’expérience
+suivante : figure 5
+Un faisceau LASER légèrement incliné par rapport à l’horizontale se réfléchit sur une surface vitrée collée
+sur un bloc de bois massif. Le rayon réfléchi est alors envoyé vers une photodiode. Quand la balle percute
+la surface, cela obture le faisceau Laser, ce qui conduit à une chute de tension aux bornes de la résistance.
+La difficulté est de faire tomber très précisément la balle au point d’impact du faisceau Laser sur la vitre.
+Pour cela, on guide la balle au plus près à l’aide d’un tube de diamètre à peine plus grand que celui de la
+balle. Comme nous supposons que la durée de l’impact dépend de la hauteur de chute, nous avons fait ces
+mesures pour des chutes de hauteur 12 cm, 20 cm, 40 cm et 70 cm.
+
+Vers carte
+d’acquisition
+
+Tube : guide
+pour la balle
+
+Photodiode
+
+Résistance
+Plaque
+
+Générateur
+
+Figure 5 : Dispositif pour évaluer la durée du contact lors de l’impact de la balle sur le support
+
+6
+
+Les résultats montrent alors des durées de contact qui vont d’environ 400 à 1000 µs pour la balle remplie
+d’air, et de 1000 à 2800 µs pour les balles remplies d’eau, mais de façon parfois très variable pour une même
+balle et une même hauteur de chute. Cela nous a montré que nos expériences manquaient cruellement de
+précision quant au point d’impact de la balle, même avec le guide cylindrique.
+C’est la raison pour laquelle nous sommes entrés en contact avec la composante Pprime de l’université de
+Poitiers. Vu les mesures de durée obtenues, nous avons calculé qu’une caméra filmant la zone du choc à
+40000 images par seconde permettrait de visualiser un minimum de 16 images durant les contacts les plus
+courts. Voici le dispositif expérimental et un exemple de cliché obtenu juste avant l’impact : figure 6.
+
+LED
+puissante
+Socle
+massique sur
+lequel
+tombe la
+balle
+
+Capteur
+synchronisé sur
+la caméra,
+permettant le
+déclenchement
+au passage de la
+balle
+
+Caméra
+
+Figure 6 : A gauche : dispositif expérimental pour la captation – A droite, une image parmi tant d’autres d’une balle juste avant l’impact.
+
+Grâce à ce dispositif expérimental, nous avons alors pu
+obtenir les durées de contact suivantes, en fonction de la
+hauteur des lâchers, en réalisant cinq lâchers pour chaque
+hauteur pour chacune des deux balles : figure 7a ci-contre.
+Nous commenterons ces résultats par la suite. En attendant,
+nous pouvons nous en servir pour évaluer la valeur de la
+force recherchée. Nous obtenons des forces F ci-contre
+(figure 7b), en fonction de la hauteur de chute :
+Figure 7 : En haut : durée de contact lors de l’impact. En bas : calcul de
+la force subie par la balle lors de l’impact
+
+H (cm)
 20
-30
 40
-50
-0 0,00010,00020,00030,00040,0005
-Fair(N)
-Î´(m) 
-Î´(m) 
-Figure 9 : Trace laissÃ©e par lâimpact de la balle sur une feuille recouverte 
-dâune feuille de papier carbone 
- 
-Figure 10 : Evolution de lâÃ©crasement maximal de la balle remplie dâeau (en bleu) et dâair (en vert) en fonction de la hauteur du lÃ¢cher. 
- 
-Figure 11 : Relation Â« contrainte â dÃ©formation Â» pour les balles remplies dâeau et remplies dâair. 
- 
+60
+80
+100
+
+VIDE (ms)
+0,558
+0,583
+0,542
+0,550
+0,533
+
+EAU (ms)
+1,817
+1,700
+1,658
+1,642
+1,683
+
+H (cm)
+20
+40
+60
+80
+100
+
+F(N)
+17
+24
+32
+36
+41
+
+F(N)
+70
+105
+129
+151
+167
+
+La force qui catapulte la balle vers le haut est donc comme prévu bien plus forte pour la balle remplie d’eau.
+On peut être étonné de la valeur de cette force pour une hauteur de 100 cm, car c’est comme si lors de
+l’impact, la balle en plastique recevait un coup par une masse d’environ 17 kg !
+Nous savons maintenant quelle force subit la balle. Si nous pouvons connaître la déformation qu’elle subit
+lors de l’impact, nous pouvons tenter de voir si la force qui déforme la balle lors de l’impact suit un modèle
+connu. Mais comment mesurer la longueur 𝛿 sur laquelle s’écrase la balle ?
+
+2 ) Déformation de la balle
+Nous avons eu une idée très simple pour mesurer la déformation de la
+balle lors de l’impact : il suffit de la faire tomber sur du papier carbone
+recouvrant une feuille blanche. L’impact de la balle laisse alors une trace
+très nette et bien définie (figure 9), de forme circulaire de rayon 𝑟 qui nous
+permet de remonter à l’écrasement δ de la balle.
+Figure 8 : Schéma (coupe de la balle sur un plan vertical) illustrant
+la zone écrasée de la balle par le support lors de l’impact
+
+Balle
+
+R
+𝒓
+
+Zone écrasée
+
+δ
+7
+
+En effet, d’un point de vu géométrique (voir figure 8)
+𝛿 = 𝑅 − √𝑅 2 − 𝑟²
+
 1 graduation = 0,5 mm
 
-9 
- 
-A priori, on pourrait conclure que le lien entre la force et lâÃ©crasement de la balle suit la loi de Hooke pour 
-la balle remplie dâeau, alors que ce nâest pas le cas pour la balle remplie dâair. 
-Mais en rÃ©alitÃ©, il y a deux problÃ¨mes. Un premier problÃ¨me vient du fait que cette loi concerne des 
-dÃ©formations Ã©lastiques, or cela semble peu probable du fait que la balle ne rebondit pas Ã  la mÃªme hauteur 
-que celle du lÃ¢cher. Le deuxiÃ¨me problÃ¨me vient du fait que si la loi de Hooke est valable, lâÃ©nergie Ã©lastique 
-stockÃ©e au plus fort de lâÃ©crasement de la balle serait  
- 
-Þ­
-à±¤à·
-Ï¹
-Ïº
-ßà¡¢Ð 
- 
-Or câest cette Ã©nergie qui permet Ã  la balle de sâÃ©lever, donc de gagner lâÃ©nergie potentielle de pesanteur 
- 
-Þ­
-à±©à·ßßß 
- 
-oÃ¹ h est lâaltitude maximale atteinte par la balle. 
-Ainsi, en prenant les valeurs pour un lÃ¢cher de 1 m de hauteur, la balle devrait, selon le modÃ¨le de Hooke, 
-rebondir Ã  une hauteur de 0,5 m. Or la balle dâeau avec ces conditions initiales rebondit Ã  0,7 m. 
-La dÃ©formation ne suit  donc pas la loi de Hooke.  
-En faisant des recherches, nous avons vu quâil existait une autre loi concernant la dÃ©formation des solides 
-soumis Ã  une contrainte : la loi de Hertz :  
-Þ®à·ßà¡¢
-à®½
-à®¼ 
-Nous alors tracÃ© F en fonction de à¡¢
-à²µ
-à²´ pour la balle remplie dâeau et celle remplie dâair : figure 12 
- 
- 
-Apparemment, la relation contrainte-dÃ©formation ne suit pas la loi de Hertz, ni en ce qui concerne lâallure 
-de la courbe obtenue, ni en termes Ã©nergÃ©tiques. En effet, un systÃ¨me qui suit la loi de Hertz stocke une 
-Ã©nergie Ã©lastique sous la forme :  
- 
-Þ­à·
-Ïº
-Ï½
-ßà¡¢
-à®¿
-à®¼ 
- 
-Nous avons voulu tester si cette Ã©nergie Ã©tait valable pour un Ã©crasement relativement faible de la balle, 
-sachant que pour un tel Ã©crasement, lâaspect inÃ©lastique du rebond doit Ãªtre plus modÃ©rÃ©. En utilisant alors 
-le fait que cette Ã©nergie permet lâÃ©lÃ©vation de la balle Ã  une hauteur h, on peut Ã©crire que  
-Þ­à·
-Ïº
-Ï½
-ßà¡¢
-à®¿
-à®¼à·ßßß 
- 
-Avec une estimation  pour k Ã©gale Ã  k = 3,5.10
-6
- pour la balle remplie dâeau pour un faible Ã©crasement 
-(dâenviron 0,7 mm, pour une force subie par la balle Ã©gale Ã  70 N lors de lâimpact), nous prÃ©voyons  que la 
-balle remplie dâeau rebondisse Ã  une hauteur dâenviron 6 cm alors que nous avons mesurÃ© 
-expÃ©rimentalement des rebonds Ã  15 cm de hauteur.  
-Il y a quelque chose de trÃ¨s particulier qui doit se passer pour expliquer une telle diffÃ©rence, et pour 
-expliquer lâallure gÃ©nÃ©rale de la courbe montrant la relation entre la contrainte et lâÃ©crasement puissance 
-Figure 12 : Test de la loi de Hertz : tracÃ© de la force subie lors de lâimpact en fonction de à¡¢
-à²µ
-à²´
+Voici alors par exemple la marque laissée par une balle
+remplie d’eau tombant d’une hauteur de 70 cm sur une feuille
+de papier carbone :
+Figure 9 : Trace laissée par l’impact de la balle sur une feuille recouverte
+d’une feuille de papier carbone
 
-10 
- 
-3/2. Car une telle allure signifie que la dÃ©formation de la balle  entre dans le domaine plastique. Mais si tel 
-Ã©tait rÃ©ellement le cas, la balle ne devrait plus revenir dans sa forme initiale une fois la contrainte levÃ©e. Or 
-ce nâest pas le cas. 
-Alors, pour tenter de comprendre ce qui se passe, nous avons dÃ©cidÃ© de voir lâÃ©crasement de la balle, 
-directement, au moment de lâÃ©crasement, en posant des masses dessus. 
- 
-4 ) Ecrasement statique de la balle.  
-Nous avons posÃ© des masses connues sur la balle, de 500 g Ã  9 kg. Ces masses tenaient facilement sur la 
-balle au moyen dâune bague de PVC. La balle elle-mÃªme Ã©tait limitÃ©e dans ses mouvements par un cadre 
-en bois dimensionnÃ© sur mesure. Voici le dispositif expÃ©rimental schÃ©matisÃ© : figure 13 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Figure 13 :  Mesure de lâÃ©crasement de la balle soumise Ã  une force connue en statique. 
-Pour voir lâÃ©crasement sous la balle, un miroir inclinÃ© Ã  45Â° renvoie lâimage du dessous vers lâappareil photo. 
-Et pour mesurer la surface Ã©crasÃ©e, une graduation prÃ©cise sur un film transparent est dÃ©posÃ©e contre le 
-plan sur lequel repose la balle, dans le voisinage du point de contact. Enfin, lâexpÃ©rience est Ã©clairÃ©e de sorte 
-Ã  bien faire ressortir la zone de la balle Ã©crasÃ©e.  
-Voici quelques clichÃ©s (figure 14) obtenus pour des certaines masses, avec la balle remplie dâeau et avec la 
-balle remplie dâair : le cercle clair qui apparaÃ®t sur les photos nâa pas Ã©tÃ© ajoutÃ©, mais bien capturÃ© par 
-lâappareil photo. 
- 
- 
- 
-Figure 14 :  Ecrasement de la balle remplie dâeau (ligne du dessus) et remplie dâair (ligne du dessous) 
-soumises Ã  des masses de la gauche vers la droite (en kg) : 0,5 â 1, 2, 3, 4, 5, 6, 7, 9 
-Balle 
-Miroir 
-BoÃ®te en 
-plexiglas 
-Vers 
-lâappareil 
-photo 
+Et voici alors comment évolue l’écrasement de la balle en fonction de la hauteur de lâcher, pour des balles
+remplies d’air et remplies d’eau : figure 10
+0,003
+
+δ(m)
+
+0,0025
+
+0,002
+
+0,0015
+
+0,001
+
+Air
+
+0,0005
+
+Hauteur lâcher (cm)
+
+0
+0
+
+20
+
+40
+
+60
+
+80
+
+100
+
+120
+
+140
+
+160
+
+Figure 10 : Evolution de l’écrasement maximal de la balle remplie d’eau (en bleu) et d’air (en vert) en fonction de la hauteur du lâcher.
+
+3 ) Relation contrainte – écrasement : recherche d’un modèle
+Nous pouvons alors faire le lien entre la force exercée par le support lors de l’impact et l’écrasement de la
+balle, grâce au tableau figure 7 et au graphique figure 8 :
+
+Feau(N)
+
+Fair(N)
+
+200
+
+50
+F = 87642 x δ
+
+150
+
+40
+30
+
+100
+
+20
+50
+
+δ(m)
+
+0
+0
+-50
+
+0,0005
+
+0,001
+
+0,0015
+
+0,002
+
+0,0025
+
+10
+
+δ(m)
+
+0
+-10
+
+0
+
+0,0001
+
+0,0002
+
+0,0003
+
+0,0004
+
+0,0005
+
+Figure 11 : Relation « contrainte – déformation » pour les balles remplies d’eau et remplies d’air.
+
+8
+
+A priori, on pourrait conclure que le lien entre la force et l’écrasement de la balle suit la loi de Hooke pour
+la balle remplie d’eau, alors que ce n’est pas le cas pour la balle remplie d’air.
+Mais en réalité, il y a deux problèmes. Un premier problème vient du fait que cette loi concerne des
+déformations élastiques, or cela semble peu probable du fait que la balle ne rebondit pas à la même hauteur
+que celle du lâcher. Le deuxième problème vient du fait que si la loi de Hooke est valable, l’énergie élastique
+stockée au plus fort de l’écrasement de la balle serait
+1
+𝑘𝛿²
+2
+Or c’est cette énergie qui permet à la balle de s’élever, donc de gagner l’énergie potentielle de pesanteur
+𝐸𝑘 =
+
+𝐸𝑝 = 𝑚𝑔ℎ
+où h est l’altitude maximale atteinte par la balle.
+Ainsi, en prenant les valeurs pour un lâcher de 1 m de hauteur, la balle devrait, selon le modèle de Hooke,
+rebondir à une hauteur de 0,5 m. Or la balle d’eau avec ces conditions initiales rebondit à 0,7 m.
+La déformation ne suit donc pas la loi de Hooke.
+En faisant des recherches, nous avons vu qu’il existait une autre loi concernant la déformation des solides
+soumis à une contrainte : la loi de Hertz :
+3
+
+𝐹 = 𝑘𝛿 2
+3
+
+Nous alors tracé F en fonction de 𝛿 2 pour la balle remplie d’eau et celle remplie d’air : figure 12
+
+3
+
+Figure 12 : Test de la loi de Hertz : tracé de la force subie lors de l’impact en fonction de 𝛿 2
+
+Apparemment, la relation contrainte-déformation ne suit pas la loi de Hertz, ni en ce qui concerne l’allure
+de la courbe obtenue, ni en termes énergétiques. En effet, un système qui suit la loi de Hertz stocke une
+énergie élastique sous la forme :
+2 5
+𝐸 = 𝑘𝛿 2
+5
+Nous avons voulu tester si cette énergie était valable pour un écrasement relativement faible de la balle,
+sachant que pour un tel écrasement, l’aspect inélastique du rebond doit être plus modéré. En utilisant alors
+le fait que cette énergie permet l’élévation de la balle à une hauteur h, on peut écrire que
+2 5
+𝐸 = 𝑘𝛿 2 = 𝑚𝑔ℎ
+5
+Avec une estimation pour k égale à k = 3,5.106 pour la balle remplie d’eau pour un faible écrasement
+(d’environ 0,7 mm, pour une force subie par la balle égale à 70 N lors de l’impact), nous prévoyons que la
+balle remplie d’eau rebondisse à une hauteur d’environ 6 cm alors que nous avons mesuré
+expérimentalement des rebonds à 15 cm de hauteur.
+Il y a quelque chose de très particulier qui doit se passer pour expliquer une telle différence, et pour
+expliquer l’allure générale de la courbe montrant la relation entre la contrainte et l’écrasement puissance
+9
+
+3/2. Car une telle allure signifie que la déformation de la balle entre dans le domaine plastique. Mais si tel
+était réellement le cas, la balle ne devrait plus revenir dans sa forme initiale une fois la contrainte levée. Or
+ce n’est pas le cas.
+Alors, pour tenter de comprendre ce qui se passe, nous avons décidé de voir l’écrasement de la balle,
+directement, au moment de l’écrasement, en posant des masses dessus.
+
+4 ) Ecrasement statique de la balle.
+Nous avons posé des masses connues sur la balle, de 500 g à 9 kg. Ces masses tenaient facilement sur la
+balle au moyen d’une bague de PVC. La balle elle-même était limitée dans ses mouvements par un cadre
+en bois dimensionné sur mesure. Voici le dispositif expérimental schématisé : figure 13
+
+Balle
+
+Boîte en
+plexiglas
+
 Bague PVC
 
-11 
- 
- 
- 
-On remarque trÃ¨s nettement sur ces clichÃ©s quâun creux se forme au centre de la zone Ã©crasÃ©e. Or, sur le 
-graphique reprÃ©sentant la force appliquÃ©e en fonction de lâÃ©crasement, on remarque une cassure de la 
-courbe qui correspond justement Ã  lâapparition de ce creux. Alors, mÃªme sâil semble dÃ©licat de faire une 
-analogie entre la force exercÃ©e en posant des masses sur la balle, et la force exercÃ©e par le support sur la 
-balle lors de lâimpact, nous pensons que la raison pour laquelle les courbes se cassent figure 12 vient de 
-lâapparition de ce creux. Une fois que ce creux se forme,  lâallure de la courbe montre que pour une mÃªme 
-variation de la force, la variation de lâÃ©crasement est plus grand que lorsque le creux nâest pas formÃ©. Nous 
-observons le mÃªme phÃ©nomÃ¨ne avec la balle remplie dâair. 
- 
-On retrouve dâailleurs cette cassure des courbes en traÃ§ant Ã  nouveau la force en fonction de lâÃ©crasement 
-puissance 3/2 pour les balles remplies dâeau et dâair dans lâexpÃ©rience de lâÃ©crasement statique de la balle : 
-figure 15. 
- 
- 
- 
- 
-Une remarque aussi trÃ¨s intÃ©ressante qui dÃ©coule de ces diffÃ©rentes mesures : que ce soit pour lâÃ©crasement 
-de la balle produite par lâimpact, ou en posant des masses dessus, on sâaperÃ§oit que pour une force Ã©quivalente 
-exercÃ©e sur la balle remplie dâeau ou remplie dâair, la dÃ©formation produite est plus importante pour la balle 
-remplie dâeau que pour la balle remplie dâair. On le voit par exemple lorsque la balle est soumise Ã  une force 
-de 40 N, sur les graphiques reprÃ©sentant la force en fonction de lâÃ©crasement, pour les balles remplies dâeau 
-et dâair dans les 2 types dâexpÃ©riences. 
- 
-Alors quel rÃ´le joue le liquide dans la dÃ©formation de la balle ? Et quel est sa part dans la perte Ã©nergÃ©tique 
-lors du rebond ? 
- 
-Pour rÃ©pondre Ã  ces questions, nous avons dÃ©cidÃ© de remplir la balle de contenus diffÃ©rents et de dÃ©crire ce 
-qui se passe lors de lâÃ©crasement de ces balles sur la table lors de lâimpact. 
- 
- 
- 
- 
- 
-Figure 15 : Test de la loi de Hertz : tracÃ© de la force subie lors de lâimpact en fonction de à¡¢
-à²µ
-à²´
+Miroir
+Vers
+l’appareil
+photo
 
-12 
- 
-III â Comment la balle rebondit-elle une fois remplie de diffÃ©rents liquides ? 
-1 â Hauteur du rebond 
-Nous avons mesurÃ© la hauteur des rebonds (figure 16) de balles entiÃ¨rement remplies dâÃ©thanol, dâhuile, de 
-glycÃ©rine, de sable et de silicone (qui durcit en sÃ©chant), ces matÃ©riaux prÃ©sentant des caractÃ©ristiques 
-diffÃ©rentes, en particulier en termes de masse volumique, de viscositÃ©, de compressibilitÃ©, etc. Voici, par 
-exemple, les masses des balles ainsi remplies :  
-Balle VIDE EAU SABLE SILICONE HUILE ETHANOL GLYCERINE 
-Masse (g) 2,79 34,0 51,0 31,9 31,8 34,1 44,0 
- 
- 
-Figure 16 : hauteur du rebonds des balles entiÃ¨rement remplies de liquides en fonction de la hauteur du lÃ¢cher 
- 
-On remarque que pour toutes les balles contenant un liquide, le rebond se fait Ã  la mÃªme hauteur, 
-indÃ©pendamment de la masse ou de la viscositÃ©. Il nâen est pas de mÃªme pour la balle contenant un 
-matÃ©riau solide ou granulaire. Pour autant, cela ne signifie pas que la masse nâest pas un paramÃ¨tre qui va 
-influencer le rebond. En effet, nous avons mesurÃ© la surface Ã©crasÃ©e lors de lâimpact en faisant des lÃ¢chers 
-sur papier carbone :   
- 
--10
-0
+Figure 13 : Mesure de l’écrasement de la balle soumise à une force connue en statique.
+
+Pour voir l’écrasement sous la balle, un miroir incliné à 45° renvoie l’image du dessous vers l’appareil photo.
+Et pour mesurer la surface écrasée, une graduation précise sur un film transparent est déposée contre le
+plan sur lequel repose la balle, dans le voisinage du point de contact. Enfin, l’expérience est éclairée de sorte
+à bien faire ressortir la zone de la balle écrasée.
+Voici quelques clichés (figure 14) obtenus pour des certaines masses, avec la balle remplie d’eau et avec la
+balle remplie d’air : le cercle clair qui apparaît sur les photos n’a pas été ajouté, mais bien capturé par
+l’appareil photo.
+
+Figure 14 : Ecrasement de la balle remplie d’eau (ligne du dessus) et remplie d’air (ligne du dessous)
+soumises à des masses de la gauche vers la droite (en kg) : 0,5 – 1, 2, 3, 4, 5, 6, 7, 9
+
 10
-20
-30
-40
-50
-60
-70
+
+On remarque très nettement sur ces clichés qu’un creux se forme au centre de la zone écrasée. Or, sur le
+graphique représentant la force appliquée en fonction de l’écrasement, on remarque une cassure de la
+courbe qui correspond justement à l’apparition de ce creux. Alors, même s’il semble délicat de faire une
+analogie entre la force exercée en posant des masses sur la balle, et la force exercée par le support sur la
+balle lors de l’impact, nous pensons que la raison pour laquelle les courbes se cassent figure 12 vient de
+l’apparition de ce creux. Une fois que ce creux se forme, l’allure de la courbe montre que pour une même
+variation de la force, la variation de l’écrasement est plus grand que lorsque le creux n’est pas formé. Nous
+observons le même phénomène avec la balle remplie d’air.
+On retrouve d’ailleurs cette cassure des courbes en traçant à nouveau la force en fonction de l’écrasement
+puissance 3/2 pour les balles remplies d’eau et d’air dans l’expérience de l’écrasement statique de la balle :
+figure 15.
+
+3
+
+Figure 15 : Test de la loi de Hertz : tracé de la force subie lors de l’impact en fonction de 𝛿 2
+
+Une remarque aussi très intéressante qui découle de ces différentes mesures : que ce soit pour l’écrasement
+de la balle produite par l’impact, ou en posant des masses dessus, on s’aperçoit que pour une force équivalente
+exercée sur la balle remplie d’eau ou remplie d’air, la déformation produite est plus importante pour la balle
+remplie d’eau que pour la balle remplie d’air. On le voit par exemple lorsque la balle est soumise à une force
+de 40 N, sur les graphiques représentant la force en fonction de l’écrasement, pour les balles remplies d’eau
+et d’air dans les 2 types d’expériences.
+Alors quel rôle joue le liquide dans la déformation de la balle ? Et quel est sa part dans la perte énergétique
+lors du rebond ?
+Pour répondre à ces questions, nous avons décidé de remplir la balle de contenus différents et de décrire ce
+qui se passe lors de l’écrasement de ces balles sur la table lors de l’impact.
+
+11
+
+III – Comment la balle rebondit-elle une fois remplie de différents liquides ?
+1 – Hauteur du rebond
+Nous avons mesuré la hauteur des rebonds (figure 16) de balles entièrement remplies d’éthanol, d’huile, de
+glycérine, de sable et de silicone (qui durcit en séchant), ces matériaux présentant des caractéristiques
+différentes, en particulier en termes de masse volumique, de viscosité, de compressibilité, etc. Voici, par
+exemple, les masses des balles ainsi remplies :
+Balle
+Masse (g)
+
+VIDE
+2,79
+
+EAU
+34,0
+
+SABLE
+51,0
+
+SILICONE
+31,9
+
+HUILE
+31,8
+
+ETHANOL
+34,1
+
+GLYCERINE
+44,0
+
 80
--20 0 20 40 60 80 100 120
+
 Hauteur du rebond(cm)
-Hauteur du lÃ¢cher (cm)
 
-13 
- 
-2 â Ecrasement de la balle lors de lâimpact : figure 17 
-  
- 
- 
- 
- 
- 
-On peut affirmer que la nature du liquide contenu dans la balle a une importance concernant le rebond, 
-Ã©tant donnÃ© que, malgrÃ© une surface Ã©crasÃ©e diffÃ©rente entre les balles, et donc une Ã©nergie Ã©lastique 
-diffÃ©rente engendrÃ©e par la dÃ©formation de la balle, les balles contenant un liquide rebondissent Ã  la mÃªme 
-hauteur.  Lorsque lâon compare la surface Ã©crasÃ©e de la balle remplie dâair et les balle remplie de liquides, il 
-est Ã©vident que la masse de la balle va permettre dâobtenir une surface Ã©crasÃ©e plus grande et ainsi une 
-Ã©nergie Ã©lastique stockÃ©e plus grande. Mais la masse du liquide Ã  elle seule ne peut pas suffire pour 
-expliquer la faÃ§on dont la balle rebondit. En effet, comparons par exemple lâÃ©volution de la hauteur du 
-rebond des balles remplies dâeau et de glycÃ©rine. La masse de la balle remplie de glycÃ©rine est 30% plus 
-grande que celle remplie dâeau, or ces deux balles rebondissent Ã  la mÃªme hauteur et la surface Ã©crasÃ©e 
-lors de lâimpact est quasiment identique. Dâautres caractÃ©ristique du liquide doivent donc intervenir dans le 
-rebond de la balle. 
-Nous pensons que lorsque la balle se dÃ©forme, le liquide, en contact avec la balle, reprÃ©sente une contrainte 
-pour la coque de la balle, et cette contrainte va dÃ©pendre des caractÃ©ristique du liquide. 
-Il pourrait sâagir de la viscositÃ©, ou pourquoi pas de la compressibilitÃ©, mÃªme trÃ¨s faible du liquide. Et par le 
-biais de ces caractÃ©ristiques, la balle pourrait alors perdre de lâÃ©nergie lors du rebond. En partant sur ces 
-hypothÃ¨ses, nous avons voulu faire la part de choses : quelle Ã©nergie est perdue via la viscoÃ©lasticitÃ© de la 
-coque de la balle, et quelle part est perdue dans le liquide, ou dans lâinteraction que peut avoir le liquide 
-sur la balle ? Dans la partie suivante, nous essayons alors de comprendre ce quâil se passe concernant le 
-liquide lors de lâimpact. 
-0
+70
+
+60
+
 50
+
+40
+
+30
+
+20
+
+10
+
+Hauteur du lâcher (cm)
+0
+-20
+
+0
+
+20
+
+40
+
+60
+
+80
+
 100
-150
-200
-250
-300
+
+120
+
+-10
+
+Figure 16 : hauteur du rebonds des balles entièrement remplies de liquides en fonction de la hauteur du lâcher
+
+On remarque que pour toutes les balles contenant un liquide, le rebond se fait à la même hauteur,
+indépendamment de la masse ou de la viscosité. Il n’en est pas de même pour la balle contenant un
+matériau solide ou granulaire. Pour autant, cela ne signifie pas que la masse n’est pas un paramètre qui va
+influencer le rebond. En effet, nous avons mesuré la surface écrasée lors de l’impact en faisant des lâchers
+sur papier carbone :
+12
+
+2 – Ecrasement de la balle lors de l’impact : figure 17
 350
-0 20 40 60 80 100 120 140 160
-SI SA EAU ETH H V GLY Poly. (V)
-Ethanol
+
+Surface de contact (mm²)
+300
+
 Huile
+Ethanol
 Silicium
+
+250
+
+200
+
+150
+
+100
+
 Sable
-Surface de contact (mmÂ²)
-Hauteur du lÃ¢cher (cm)
 Air
-Figure 17 : Surface de lâimpact de balles remplies de diffÃ©rents matÃ©riaux en fonction de la hauteur du lÃ¢cher.
 
-14 
- 
-IV â Que se passe-t-il dans le liquide lors de lâimpact ? 
-Le liquide subit :  
-- obligatoirement un dÃ©placement en mÃªme temps que la dÃ©formation de la coque de la balle.  
-- Ã©ventuellement une compression.  
- 
-Dans les deux cas, quâil y ait dÃ©placement ou compression, cela doit sâaccompagner de perte dâÃ©nergie du 
-fait de la viscositÃ© du liquide. Voyons ce qui peut se passer en termes de compressibilitÃ© : quelle variation 
-de volume la balle subit-elle lors de lâimpact ? 
- 
-1 â Le liquide peut-il se comprimer lors de lâimpact ? 
- 
-Si le contenu est de lâair, une deuxiÃ¨me sÃ©rie dâexpÃ©riences rÃ©alisÃ©es Ã  lâinstitut Pprime de lâuniversitÃ© de 
-Poitiers nous a permis de nous rendre compte de la dÃ©formation globale de la balle lors de lâimpact : figure 
-18. En fait, nous avons grossi lâimage sur grand Ã©cran et nous avons dessinÃ© un cercle parfait contournant 
-la balle avant lâimpact. Nous avons alors dÃ©placÃ© le cercle en question sur la balle au plus fort de son 
-Ã©crasement. Il sâavÃ¨re alors que la coque de la balle nâest pas dÃ©formÃ©e ailleurs quâau niveau de son contact 
-avec lâobstacle frappÃ©. 
- 
- 
-Figure 18 : la balle remplie dâair se dÃ©forme-t-elle lors de lâimpact ? 
-Nous avons pu, en travaillant alors Ã  nouveau avec les clichÃ©s montrant la zone dâimpact, calculer la variation 
-du volume de la balle. Nous avons pour cela recherchÃ© la formule permettant de dÃ©terminer le volume ÑÞ¾ 
-de la calotte sphÃ©rique dont le volume de la balle a Ã©tÃ© rÃ©duit : en notant R le rayon de la balle, Î´ la 
-diminution du rayon de la balle lors du contact, et r le rayon de la base de la balle tronquÃ©e :  
- 
-ÑÞ¾à·
-à²Ãà±¡Ð(à®½à±à¯Ë)
-à®½
-  avec ßà·Þºâà¸«Þº
-à®¼
-âßÐ 
- 
-Nous trouvons alors, pour un lÃ¢cher Ã  1m de hauteur, pour un rayon ß dâenviron 4 mm (mesurÃ© lors de nos 
-expÃ©riences avec le papier carbone et vÃ©rifiÃ© avec les clichÃ©s prÃ©cis obtenus Ã  lâinstitut Pprime) :  
- 
-ÑÞ¾à·Ï¹ÉªÏ¹Ï¸
-à¯à®¼
-ßß
-à®½
- 
- 
-Ce qui correspond Ã  une variation de volume relatif : 
- 
-ÑÞ¾
-Þ¾
-à·Ï»ÉªÏ¹Ï¸
-à¯à®¾
-à·Ï¸É§Ï¸Ï»Ð®
+50
 
-15 
- 
-Cette trÃ¨s faible dÃ©formation relative, et le fait que le contenu de la balle soit de lâair est en adÃ©quation avec 
-la faible Ã©nergie perdue par la balle de ping-pong lors de lâimpact. 
- 
-Quâen est-il de la balle remplie dâeau ? Nous pouvons le voir sur les clichÃ©s ci-dessous : figure 19 
- 
- 
-Figure 19 : DÃ©formation de la base de la balle remplie dâeau lors de lâimpact 
-Au plus fort de lâÃ©crasement, la forme de la balle est une fois de plus trÃ¨s similaire Ã  une sphÃ¨re tronquÃ©e. 
-On peut toutefois voir que la balle subit une dÃ©formation Ã©galement dans le voisinage direct de la surface 
-impactÃ©e (câest-Ã -dire de la surface de la balle en contact avec le support au plus fort de lâÃ©crasement). Cette 
-dÃ©formation de la balle semblant trÃ¨s faible, nous avons alors calculÃ© la force quâil aurait fallu appliquer Ã  
-la balle pour quâelle puisse comprimer lâeau sans tenir compte de cette dÃ©formation. 
-En appliquant la mÃªme formule que prÃ©cÃ©demment pour calculer la variation de volume de la balle au 
-moment de lâimpact, toujours pour un lÃ¢cher dâune hauteur de 1m, on trouve (avec ßà·Ðßß) 
- 
-ÑÞ¾à·Ï»ÉªÏ¹Ï¸
-à¯à®»
-ßß
-à®½
- 
-Ce qui correspond Ã  une variation de volume relatif : 
-ÑÞ¾
-Þ¾
-à·ÐÉªÏ¹Ï¸
-à¯à®½
-à·Ï¸É§ÐÐ® 
-En rÃ©alitÃ©, ce rÃ©sultat pose question : est-il possible de comprimer un liquide de 0,8% de son volume initial ? 
-Quelle force faudrait-il lui appliquer pour faire cela ? La question nous intÃ©resse, car sâil sâagit dâÃ©valuer 
-lâÃ©nergie perdue du fait de la viscositÃ© du liquide, cette Ã©nergie ne sera  sans doute pas la mÃªme sâil sâagit 
-dâune compression ou dâun dÃ©placement du liquide. 
-Nous avons pu lire, dans lâouvrage Â« Physique Â», que lâeau a un module de compressibilitÃ© Þ­à·ÏºÉ§ÏºÉªÏ¹Ï¸
-à¯
-Þ¸ß 
-On peut alors calculer la variation de pression de lâeau due Ã  une variation relative de volume grÃ¢ce Ã  la 
-relation :  
-ÑÞ¸à·Þ­
-ÑÞ¾
-Þ¾
-à·ÏºÉªÏ¹Ï¸
-à¯
-Þ¸ß 
-Et dans la mesure oÃ¹ la force de pression sâexerce sur un disque de rayon ßà·Ðßß, la force Ã  appliquÃ©e est 
-de lâordre de  
-Þ®à·ÑÞ¸Ãà¡®ß
-à®¼
-à·Ï¹É§ÐÉªÏ¹Ï¸
-à®¾
-Þ¶    Ö«É® 
- 
-Cette force nâest absolument pas atteinte lors de lâimpact. Dans le cas de la balle dâeau lÃ¢chÃ©e Ã  une hauteur 
-de 1m, la force mesurÃ©e dâenviron 160N pourrait Ã  peine comprimer lâeau avec une variation relative 
-DÃ©formation trÃ¨s localisÃ©e
+Hauteur du lâcher (cm)
 
-16 
- 
-dâenviron 0,007%. Cela signifie que la balle doit se dÃ©former pour que le volume impactÃ© lors du choc se 
-retrouve dans une boursouflure qui entoure  la zone dâimpact. 
- 
- 
-Nous avons voulu confirmer cela 
-en exploitant les clichÃ©s pris de 
-la zone dâimpact : GrÃ¢ce Ã  un jeu 
-de comparaison entre lâimage 
-de la balle non dÃ©formÃ©e et celle 
-de la balle dÃ©formÃ©e 
-(explication schÃ©matisÃ©e figure 
-20), on arrive Ã  dÃ©limiter, en 
-coupe, la zone dÃ©formÃ©e par 
-lâimpact : figure 21.  
- 
- 
-Nous pouvons voir ci-dessous ce que cela donne avec les images rÃ©elles 
- 
- 
- 
-Figure 21 : DÃ©formation de la base de la balle remplie dâeau lors de lâimpact 
-Courbe de la balle 
-dÃ©formÃ©e, 
-superposÃ©e Ã  
-lâimage de la balle 
-non dÃ©formÃ©e  
- 
-zoom 
-Volume Ã©crasÃ© de la balle (zone 1) 
-Forme de la balle sphÃ©rique sâil nây 
-avait pas eu lâimpact 
-Volume apparu au plus 
-fort de lâÃ©crasement 
-(zone 2) 
-zone 2 
-Balle non dÃ©formÃ©e au 
-tout dÃ©but de lâimpact 
-Forme sphÃ©rique de la 
-balle, sous le support, sâil 
-nây avait pas eu dâimpact. 
-Zone dÃ©formÃ©e de la balle 
-au plus fort de lâimpact 
-(zone 2) 
+0
+0
+
+20
+SI
+
+40
+SA
+
+60
+EAU
+
+80
+ETH
+
+100
+H
+
+120
+V
+
+140
+GLY
+
+160
+Poly. (V)
+
+Figure 17 : Surface de l’impact de balles remplies de différents matériaux en fonction de la hauteur du lâcher.
+
+On peut affirmer que la nature du liquide contenu dans la balle a une importance concernant le rebond,
+étant donné que, malgré une surface écrasée différente entre les balles, et donc une énergie élastique
+différente engendrée par la déformation de la balle, les balles contenant un liquide rebondissent à la même
+hauteur. Lorsque l’on compare la surface écrasée de la balle remplie d’air et les balle remplie de liquides, il
+est évident que la masse de la balle va permettre d’obtenir une surface écrasée plus grande et ainsi une
+énergie élastique stockée plus grande. Mais la masse du liquide à elle seule ne peut pas suffire pour
+expliquer la façon dont la balle rebondit. En effet, comparons par exemple l’évolution de la hauteur du
+rebond des balles remplies d’eau et de glycérine. La masse de la balle remplie de glycérine est 30% plus
+grande que celle remplie d’eau, or ces deux balles rebondissent à la même hauteur et la surface écrasée
+lors de l’impact est quasiment identique. D’autres caractéristique du liquide doivent donc intervenir dans le
+rebond de la balle.
+Nous pensons que lorsque la balle se déforme, le liquide, en contact avec la balle, représente une contrainte
+pour la coque de la balle, et cette contrainte va dépendre des caractéristique du liquide.
+Il pourrait s’agir de la viscosité, ou pourquoi pas de la compressibilité, même très faible du liquide. Et par le
+biais de ces caractéristiques, la balle pourrait alors perdre de l’énergie lors du rebond. En partant sur ces
+hypothèses, nous avons voulu faire la part de choses : quelle énergie est perdue via la viscoélasticité de la
+coque de la balle, et quelle part est perdue dans le liquide, ou dans l’interaction que peut avoir le liquide
+sur la balle ? Dans la partie suivante, nous essayons alors de comprendre ce qu’il se passe concernant le
+liquide lors de l’impact.
+13
+
+IV – Que se passe-t-il dans le liquide lors de l’impact ?
+Le liquide subit :
+- obligatoirement un déplacement en même temps que la déformation de la coque de la balle.
+- éventuellement une compression.
+Dans les deux cas, qu’il y ait déplacement ou compression, cela doit s’accompagner de perte d’énergie du
+fait de la viscosité du liquide. Voyons ce qui peut se passer en termes de compressibilité : quelle variation
+de volume la balle subit-elle lors de l’impact ?
+1 – Le liquide peut-il se comprimer lors de l’impact ?
+Si le contenu est de l’air, une deuxième série d’expériences réalisées à l’institut Pprime de l’université de
+Poitiers nous a permis de nous rendre compte de la déformation globale de la balle lors de l’impact : figure
+18. En fait, nous avons grossi l’image sur grand écran et nous avons dessiné un cercle parfait contournant
+la balle avant l’impact. Nous avons alors déplacé le cercle en question sur la balle au plus fort de son
+écrasement. Il s’avère alors que la coque de la balle n’est pas déformée ailleurs qu’au niveau de son contact
+avec l’obstacle frappé.
+
+Figure 18 : la balle remplie d’air se déforme-t-elle lors de l’impact ?
+
+Nous avons pu, en travaillant alors à nouveau avec les clichés montrant la zone d’impact, calculer la variation
+du volume de la balle. Nous avons pour cela recherché la formule permettant de déterminer le volume ∆𝑉
+de la calotte sphérique dont le volume de la balle a été réduit : en notant R le rayon de la balle, δ la
+diminution du rayon de la balle lors du contact, et r le rayon de la base de la balle tronquée :
+
+∆𝑉 =
+
+𝜋×ℎ²(3𝑅−δ)
+3
+
+avec ℎ = 𝑅 − √𝑅 2 − 𝑟²
+
+Nous trouvons alors, pour un lâcher à 1m de hauteur, pour un rayon 𝑟 d’environ 4 mm (mesuré lors de nos
+expériences avec le papier carbone et vérifié avec les clichés précis obtenus à l’institut Pprime) :
+∆𝑉 = 1. 10−2 𝑐𝑚3
+Ce qui correspond à une variation de volume relatif :
+∆𝑉
+= 3.10−4 = 0,03%
+𝑉
+
+14
+
+Cette très faible déformation relative, et le fait que le contenu de la balle soit de l’air est en adéquation avec
+la faible énergie perdue par la balle de ping-pong lors de l’impact.
+Qu’en est-il de la balle remplie d’eau ? Nous pouvons le voir sur les clichés ci-dessous : figure 19
+
+Déformation très localisée
+
+Figure 19 : Déformation de la base de la balle remplie d’eau lors de l’impact
+
+Au plus fort de l’écrasement, la forme de la balle est une fois de plus très similaire à une sphère tronquée.
+On peut toutefois voir que la balle subit une déformation également dans le voisinage direct de la surface
+impactée (c’est-à-dire de la surface de la balle en contact avec le support au plus fort de l’écrasement). Cette
+déformation de la balle semblant très faible, nous avons alors calculé la force qu’il aurait fallu appliquer à
+la balle pour qu’elle puisse comprimer l’eau sans tenir compte de cette déformation.
+En appliquant la même formule que précédemment pour calculer la variation de volume de la balle au
+moment de l’impact, toujours pour un lâcher d’une hauteur de 1m, on trouve (avec 𝑟 = 9𝑚𝑚)
+∆𝑉 = 3. 10−1 𝑐𝑚3
+Ce qui correspond à une variation de volume relatif :
+∆𝑉
+= 8.10−3 = 0,8%
+𝑉
+
+En réalité, ce résultat pose question : est-il possible de comprimer un liquide de 0,8% de son volume initial ?
+Quelle force faudrait-il lui appliquer pour faire cela ? La question nous intéresse, car s’il s’agit d’évaluer
+l’énergie perdue du fait de la viscosité du liquide, cette énergie ne sera sans doute pas la même s’il s’agit
+d’une compression ou d’un déplacement du liquide.
+Nous avons pu lire, dans l’ouvrage « Physique », que l’eau a un module de compressibilité 𝐸 = 2,2. 109 𝑃𝑎
+On peut alors calculer la variation de pression de l’eau due à une variation relative de volume grâce à la
+relation :
+∆𝑉
+∆𝑃 = 𝐸
+= 2. 107 𝑃𝑎
+𝑉
+Et dans la mesure où la force de pression s’exerce sur un disque de rayon 𝑟 = 9𝑚𝑚, la force à appliquée est
+de l’ordre de
+𝐹 = ∆𝑃 × 𝜋𝑟 2 = 1,8. 104 𝑁 ‼!
+Cette force n’est absolument pas atteinte lors de l’impact. Dans le cas de la balle d’eau lâchée à une hauteur
+de 1m, la force mesurée d’environ 160N pourrait à peine comprimer l’eau avec une variation relative
+15
+
+d’environ 0,007%. Cela signifie que la balle doit se déformer pour que le volume impacté lors du choc se
+retrouve dans une boursouflure qui entoure la zone d’impact.
+
+Nous avons voulu confirmer cela
+en exploitant les clichés pris de
+la zone d’impact : Grâce à un jeu
+de comparaison entre l’image
+de la balle non déformée et celle
+de
+la
+balle
+déformée
+(explication schématisée figure
+20), on arrive à délimiter, en
+coupe, la zone déformée par
+l’impact : figure 21.
+
+Balle non déformée au
+tout début de l’impact
+
+Zone déformée de la balle
+au plus fort de l’impact
+(zone 2)
+
 Figure 20
 
-17 
- 
-Nous avons alors voulu savoir si cette boursouflure, positionnÃ©e autour de la surface impactÃ©e, avait un 
-volume similaire au volume de lâÃ©crasement de la balle. Nous avons alors considÃ©rÃ© que la zone 2 entoure 
-la surface impactÃ©e de faÃ§on symÃ©trique autour de la balle. Comme cette zone nâa pas une forme simple, il 
-ne nous a pas Ã©tÃ© possible de calculer le volume en appliquant une formule connue. Alors, nous avons 
-comptÃ© les pixels contenus dans cette zone dans le plan de lâimage, et nous avons utilisÃ© la symÃ©trie de la 
-situation pour en dÃ©duire le nombre de pixels du volume concernÃ©. Comme nous avions une Ã©chelle, nous 
-connaissions la taille rÃ©elle reprÃ©sentÃ©e par 1 pixel. Voici plus en dÃ©tail la dÃ©marche : figure 22.  
- 
- 
-Le pixel i est situÃ© Ã  un rayon ß
-à±¢ de lâaxe de 
-symÃ©trie de la sphÃ¨re. Le pÃ©rimÃ¨tre du cercle 
-sur lequel se trouve ce pixel est Ïºà¡®ß
-à±¢ 
-Le rayon ß
-à±¢ comporte Þ¶
-à±«à±¢ pixels de dimension 
-Â« ß Â», donc ß
-à±¢à·Þ¶
-à±«à±¢Ãß 
-Le nombre de pixels se trouvant sur le cercle 
-de rayon ß
-à±¢ est : 
- 
-Þ¶
-à±¢à·
-Ïºà¡®ß
-à±¢
-ß
-à·Ïºà¡®Þ¶
-à±«à±¢ 
- 
-En nommant Þ°
-à±¢ le nombre de pixels contenue 
-dans le plan de la feuille sur la colonne i , le 
-nombre de pixels contenus dans lâenveloppe 
-cylindrique de rayon ß
-à±¢ est :  
- 
-Þ¶
-à±¢ÃÞ°
-à±¢à·Ïºà¡®Þ¶
-à±«à±¢ÃÞ°
-à±¢ 
- 
-Ainsi, en ayant les coordonnÃ©es (x,y) des points O, A et B en pixels, il nous a Ã©tÃ© possible de compter Þ¶
-à±«à±¢ et 
-Þ¶
-à±à±¢, pour chacune des 240 colonnes i de la zone 2. 
-La somme de toutes ces valeurs nous a donnÃ© le volume Þ¾
-à±© en pixel
-3
- de la zone 2. Nous avons trouvÃ© Þ¾
-à±©à·
-Ï¼ Ï¹Ï¾Ï» Ï¹Ï¹Ï» ßß
-à®½
- 
-Connaissant la longueur du cÃ´tÃ© dâun pixel (0,0405 mm), un pixel-cube est donc Ã©gal Ã  0,0405
-3
- mm
-3
-. On 
-calcule donc que le volume de la boursouflure est dâenviron 276,6 mm
-3
- soit 2,766*10
--1
- cm
-3
-. 
-Le volume de la balle est de 33,5 cm
-3
-. On calcule donc que le volume de la boursouflure reprÃ©sente 0,8% 
-du volume de la balle. Or, nous avons calculÃ© prÃ©cÃ©demment que le volume Ã©crasÃ© de la balle (celui de la 
-zone 2 â figure â¦..) reprÃ©sente justement 0,8% du volume initial de la balle non dÃ©formÃ©e ! 
- 
-On peut donc affirmer que le volume âdisparuâ avec lâÃ©crasement de la balle sur la table se retrouve dans 
-la boursouflure qui se crÃ©e. Sâil y a une compression lors de lâimpact, elle doit donc Ãªtre nÃ©gligeable. 
-Le liquide est donc uniquement dÃ©placÃ© lors de lâimpact, pour suivre la dÃ©formation de la balle.  
- 
-Est-ce quâau cours de ce dÃ©placement, la viscositÃ© du liquide explique la faÃ§on dont rebondissent les balles ? 
-En exploitant nos expÃ©riences prÃ©cÃ©dentes, au cours desquelles nous avons mesurÃ© les vitesses avant et 
-aprÃ¨s lâimpact, pour un lÃ¢cher de 1m de hauteur, nous avons calculÃ© que la balle perd les Ã©nergies cinÃ©tiques 
-suivantes en fonction des liquides quâelle contient :  
- 
-Liquide Ethanol Eau Huile GlycÃ©rine 
-ÑÞ­ß(ßÞ²) 11,9 12,4 12,9 6,8 
- 
-ß
-à±¢ 
-Colonne i 
-Þ°
-à±¢ pixels 
-dans la 
-colonne i 
+Forme sphérique de la
+balle, sous le support, s’il
+n’y avait pas eu d’impact.
+
+Nous pouvons voir ci-dessous ce que cela donne avec les images réelles
+
+Courbe de la balle
+déformée,
+superposée à
+l’image de la balle
+non déformée
+Volume apparu au plus
+fort de l’écrasement
+Volume écrasé de la balle (zone 1) (zone 2)
+
+Forme de la balle sphérique s’il n’y
+avait pas eu l’impact
+zoom
+
+zone 2
+
+Figure 21 : Déformation de la base de la balle remplie d’eau lors de l’impact
+
+16
+
+Nous avons alors voulu savoir si cette boursouflure, positionnée autour de la surface impactée, avait un
+volume similaire au volume de l’écrasement de la balle. Nous avons alors considéré que la zone 2 entoure
+la surface impactée de façon symétrique autour de la balle. Comme cette zone n’a pas une forme simple, il
+ne nous a pas été possible de calculer le volume en appliquant une formule connue. Alors, nous avons
+compté les pixels contenus dans cette zone dans le plan de l’image, et nous avons utilisé la symétrie de la
+situation pour en déduire le nombre de pixels du volume concerné. Comme nous avions une échelle, nous
+connaissions la taille réelle représentée par 1 pixel. Voici plus en détail la démarche : figure 22.
+
+Le pixel i est situé à un rayon 𝑟𝑖 de l’axe de
+symétrie de la sphère. Le périmètre du cercle
+sur lequel se trouve ce pixel est 2𝜋𝑟𝑖
+Le rayon 𝑟𝑖 comporte 𝑁𝑟𝑖 pixels de dimension
+« 𝑎 », donc 𝑟𝑖 = 𝑁𝑟𝑖 × 𝑎
+Le nombre de pixels se trouvant sur le cercle
+de rayon 𝑟𝑖 est :
+𝑁𝑖 =
+
+Colonne i
+
+2𝜋𝑟𝑖
+= 2𝜋𝑁𝑟𝑖
+𝑎
+𝑟𝑖
+
+En nommant 𝐻𝑖 le nombre de pixels contenue
+dans le plan de la feuille sur la colonne i , le
+nombre de pixels contenus dans l’enveloppe
+cylindrique de rayon 𝑟𝑖 est :
+
+𝐻𝑖 pixels
+dans la
+colonne i
+
 Figure 22 : Mesure du volume de la boursouflure
 
-18 
- 
-Ce nâest donc pas la viscositÃ© qui explique la perte dâÃ©nergie cinÃ©tique lors de lâimpact, car si cela avait Ã©tÃ© 
-le cas, elle aurait Ã©tÃ© plus grande pour la glycÃ©rine, qui a une viscositÃ© environ 1400 fois plus grande que 
-celle de lâeau, et environ 80 fois plus grande que celle de lâhuile de tournesol. 
-Cela dit, la notion de pression peut Ãªtre prÃ©sente sous la forme dâune Â« onde de pression Â» qui se 
-propagerait dans la balle suite Ã  lâimpact. 
- 
-2 ) Une onde de pression peut-elle se propager dans la balle suite Ã  lâimpact ? 
-Nous avons pensÃ© quâune onde de pression lors du choc remontait du bas vers le haut de la balle, et que 
-cette onde de choc intervenait dans le rebond de la balle.  En effet, durant la chute de la balle, le liquide se 
-trouve en microgravitÃ© par rapport Ã  la balle et, par consÃ©quent, la pression dans le liquide est la mÃªme 
-dans tout le liquide. Mais au moment de lâimpact, la balle subit une accÃ©lÃ©ration Â« a Â» liÃ©e Ã  la variation 
-brutale de vitesse. Par exemple, pour la balle de glycÃ©rine, nos mesures permettent de trouver une 
-accÃ©lÃ©ration de 4,6. 10
-3
- m/sÂ² ! De ce fait, en appliquant la loi de lâhydrostatique des fluides, cela engendre 
-une compression dans le liquide Ã©gale Ã , en prenant h = 4 cm, câest-Ã -dire le diamÃ¨tre de la balle :  
- 
-ÑÞ¸à·à¡¯ßßà·Ï¹ÏºÏ¾Ï¸ÃÏ¼É§Ï¾ÉªÏ¹Ï¸
-à®½
-ÃÏ¸É§Ï¸Ï¼à·ÏºÉ§Ï¼ÉªÏ¹Ï¸
-à®¿
-Þ¸ß 
-Comme le choc de la balle sur le support concerne tout dâabord le bas de la balle, il doit alors y avoir une 
-onde de pression qui remonte vers le haut. Et comme cette onde de pression Ã©ventuelle dÃ©pend du facteur 
-dâincompressibilitÃ© du liquide,  cela pourrait influencer le rebond de la balle. Alors, nous avons cherchÃ© les 
-modules K des diffÃ©rents liquides utilisÃ©s. A priori, on pourrait penser que le module K de la glycÃ©rine rend 
-la balle plus rigide, ce qui pourrait assurer un rebond plus haut, indÃ©pendamment de la valeur trÃ¨s Ã©levÃ©e 
-de la viscositÃ© de la glycÃ©rine :  
- 
-Liquide ViscositÃ© Dynamique (Î· Ã  20Ù¢C) Module K (RigiditÃ©) 
-GlycÃ©rine â1,5 PaÜs  	4,5 GPa  
-Eau â0,001 PaÜs  	2,2 GPa  
-Huile de tournesol â0,050 PaÜs  	â1,3 GPa 
-Ãthanol â0,0012 PaÜs  	1,1 GPa  
- 
-Nous avons souhaitÃ© mesurer une Ã©ventuelle variation de pression lors de lâimpact de balles vides ou 
-remplies de diffÃ©rents liquides. 
- 
-Nous avons pour cela percÃ© les balles avec 
-un foret de 0,5 cm de diamÃ¨tre pour insÃ©rer 
-un tuyau dans la balle, reliÃ© Ã  un capteur de 
-pression, lui-mÃªme reliÃ© Ã  une carte 
-dâacquisition : figure 23 
- 
-Figure 23 : Mesure de la pression Ã  lâintÃ©rieur de la balle lors du choc 
-Le but Ã©tant dans un premier temps de voir si, lors dâun choc de la balle sur un obstacle, on observe une 
-variation de pression, nous avons simplement Ã  ce stade frappÃ© quelques balles, avec des vitesses plus ou 
-moins grandes que nous nâavons pas pris le temps de mesurer pour le moment. Voici alors ce que lâon 
+𝑁𝑖 × 𝐻𝑖 = 2𝜋𝑁𝑟𝑖 × 𝐻𝑖
+Ainsi, en ayant les coordonnées (x,y) des points O, A et B en pixels, il nous a été possible de compter 𝑁𝑟𝑖 et
+𝑁𝑐𝑖 , pour chacune des 240 colonnes i de la zone 2.
+La somme de toutes ces valeurs nous a donné le volume 𝑉𝑝 en pixel3 de la zone 2. Nous avons trouvé 𝑉𝑝 =
+4 163 113 𝑝𝑥 3
+Connaissant la longueur du côté d’un pixel (0,0405 mm), un pixel-cube est donc égal à 0,04053 mm3. On
+calcule donc que le volume de la boursouflure est d’environ 276,6 mm3 soit 2,766*10-1 cm3.
+Le volume de la balle est de 33,5 cm3. On calcule donc que le volume de la boursouflure représente 0,8%
+du volume de la balle. Or, nous avons calculé précédemment que le volume écrasé de la balle (celui de la
+zone 2 – figure …..) représente justement 0,8% du volume initial de la balle non déformée !
+On peut donc affirmer que le volume “disparu” avec l’écrasement de la balle sur la table se retrouve dans
+la boursouflure qui se crée. S’il y a une compression lors de l’impact, elle doit donc être négligeable.
+Le liquide est donc uniquement déplacé lors de l’impact, pour suivre la déformation de la balle.
+Est-ce qu’au cours de ce déplacement, la viscosité du liquide explique la façon dont rebondissent les balles ?
+En exploitant nos expériences précédentes, au cours desquelles nous avons mesuré les vitesses avant et
+après l’impact, pour un lâcher de 1m de hauteur, nous avons calculé que la balle perd les énergies cinétiques
+suivantes en fonction des liquides qu’elle contient :
+Liquide
+∆𝐸𝑐(𝑚𝐽)
+
+Ethanol
+11,9
+
+Eau
+12,4
+
+Huile
+12,9
+
+Glycérine
+6,8
+
+17
+
+Ce n’est donc pas la viscosité qui explique la perte d’énergie cinétique lors de l’impact, car si cela avait été
+le cas, elle aurait été plus grande pour la glycérine, qui a une viscosité environ 1400 fois plus grande que
+celle de l’eau, et environ 80 fois plus grande que celle de l’huile de tournesol.
+Cela dit, la notion de pression peut être présente sous la forme d’une « onde de pression » qui se
+propagerait dans la balle suite à l’impact.
+2 ) Une onde de pression peut-elle se propager dans la balle suite à l’impact ?
+Nous avons pensé qu’une onde de pression lors du choc remontait du bas vers le haut de la balle, et que
+cette onde de choc intervenait dans le rebond de la balle. En effet, durant la chute de la balle, le liquide se
+trouve en microgravité par rapport à la balle et, par conséquent, la pression dans le liquide est la même
+dans tout le liquide. Mais au moment de l’impact, la balle subit une accélération « a » liée à la variation
+brutale de vitesse. Par exemple, pour la balle de glycérine, nos mesures permettent de trouver une
+accélération de 4,6. 103 m/s² ! De ce fait, en appliquant la loi de l’hydrostatique des fluides, cela engendre
+une compression dans le liquide égale à, en prenant h = 4 cm, c’est-à-dire le diamètre de la balle :
+∆𝑃 = 𝜌𝑎ℎ = 1260 × 4,6. 103 × 0,04 = 2,4. 105 𝑃𝑎
+Comme le choc de la balle sur le support concerne tout d’abord le bas de la balle, il doit alors y avoir une
+onde de pression qui remonte vers le haut. Et comme cette onde de pression éventuelle dépend du facteur
+d’incompressibilité du liquide, cela pourrait influencer le rebond de la balle. Alors, nous avons cherché les
+modules K des différents liquides utilisés. A priori, on pourrait penser que le module K de la glycérine rend
+la balle plus rigide, ce qui pourrait assurer un rebond plus haut, indépendamment de la valeur très élevée
+de la viscosité de la glycérine :
+Liquide
+
+Viscosité Dynamique (η à 20∘C) Module K (Rigidité)
+
+Glycérine
+
+≈1,5 Pa⋅s
+
+4,5 GPa
+
+Eau
+
+≈0,001 Pa⋅s
+
+2,2 GPa
+
+Huile de tournesol ≈0,050 Pa⋅s
+
+≈1,3 GPa
+
+Éthanol
+
+1,1 GPa
+
+≈0,0012 Pa⋅s
+
+Nous avons souhaité mesurer une éventuelle variation de pression lors de l’impact de balles vides ou
+remplies de différents liquides.
+Nous avons pour cela percé les balles avec
+un foret de 0,5 cm de diamètre pour insérer
+un tuyau dans la balle, relié à un capteur de
+pression, lui-même relié à une carte
+d’acquisition : figure 23
+Figure 23 : Mesure de la pression à l’intérieur de la balle lors du choc
+
+Le but étant dans un premier temps de voir si, lors d’un choc de la balle sur un obstacle, on observe une
+variation de pression, nous avons simplement à ce stade frappé quelques balles, avec des vitesses plus ou
+moins grandes que nous n’avons pas pris le temps de mesurer pour le moment. Voici alors ce que l’on
 observe : figures 24 et 25
 
-19 
- 
-Avec une balle remplie dâÃ©thanol : figure 24. 
- 
- 
-Figure 24 : Evolution de la pression Ã  lâintÃ©rieur de la balle remplie dâÃ©thanol 
-On remarque une vibration rapide de la pression Ã  une frÃ©quence dâenviron 780 Hz, ainsi quâune variation 
-plus lente dâenviron 80 Hz. La pression subit quant Ã  elle une variation de lâordre de 0,3 bar. 
- 
-Voyons le rÃ©sultat ave une balle remplie dâeau : figure 25. 
- 
-Figure 25 : Evolution de la pression Ã  lâintÃ©rieur de la balle remplie dâeau 
-On note que la pression varie rapidement avec une frÃ©quence dâenviron 730 Hz, et Ã©galement selon une 
-frÃ©quence plus lente de 80 Hz. Les variations de pression au moment du choc sont de lâordre de 0,5 bar, ce 
-qui nâest pas nÃ©gligeable.
+18
 
-20 
- 
-Mais on peut tout de mÃªme dâores et dÃ©jÃ  remarquer que la frÃ©quence rapide correspond Ã  une pÃ©riode du 
-mÃªme ordre de grandeur que la durÃ©e de contact de la balle lors de lâimpact. 
-Mais surtout, ce qui a attirÃ© notre attention, câest de voir la variation de la pression. Elle reste certes de 
-faible amplitude par rapport Ã  celle attendue, mais cette variation de la pression tÃ©moigne dâune vibration 
-de la coque de la balle qui est sÃ»rement trÃ¨s lÃ©gÃ¨re, mais qui se propage sur toute la surface de la balle. Et 
-dâailleurs, peut-Ãªtre que la variation pÃ©riodique de la pression que lâon mesure sur ces graphiques tÃ©moigne 
-de cette vibration de la balle. Et il est alors possible que plus le liquide contenu dans la balle est visqueux, 
-plus ces vibrations de la balle seront amorties rapidement. En dâautres termes, une balle remplie dâeau peut 
-vibrer davantage lors de lâimpact quâune balle de glycÃ©rine. Et comme la dÃ©formation de la coque de la balle 
-sâaccompagne de pertes Ã©nergÃ©tiques dues Ã  la viscoÃ©lasticitÃ© de la balle, la glycÃ©rine permettrait une plus 
-faible perte Ã©nergÃ©tique en stoppant la vibration de la balle 
-Donc lÃ  encore, cette rÃ©flexion est trÃ¨s rÃ©cente, donc on nâa pas eu le temps de tester cette hypothÃ¨se. Mais 
-elle est simple Ã  tester puisquâÃ  priori, il suffit de faire de nouvelles mesures de pression, cette fois-ci avec 
-une balle remplie de glycÃ©rine. 
- 
- 
-Conclusion :  
- 
-Le rebond est dÃ©jÃ  quelque chose qui semble complexe, car diffÃ©rentes Ã©nergies entrent en jeu. Le fait de 
-rajouter des matÃ©riaux dans les balles ne rend pas la tÃ¢che plus simple, mais la rend encore plus 
-intÃ©ressante. Lâensemble de notre dÃ©marche nous amÃ¨ne Ã  une conclusion intÃ©ressante et crÃ©dible quant 
-aux raisons qui expliquent quâune balle remplie de glycÃ©rine va paradoxalement permettre Ã  la balle de 
-moins perdre dâÃ©nergie cinÃ©tique lors du rebond. Nous pouvons encore poursuivre nos expÃ©riences et notre 
-rÃ©flexion en ce qui concerne les mesures de pression et de lâonde de pression. 
- 
-Ce travail ne sâarrÃªte pas lÃ ,  car nous avons menÃ© des expÃ©riences avec des balles remplies de sable, mais 
-aussi des balles partiellement remplies dâeau, de sable, et des autres liquides utilisÃ©s lors de ce projet. Les 
-rÃ©sultats expÃ©rimentaux, dont nous pourrons discuter de vive voix, permettent dâenvisager des applications 
-intÃ©ressantes Ã  tout ce travail.
+Avec une balle remplie d’éthanol : figure 24.
+
+Figure 24 : Evolution de la pression à l’intérieur de la balle remplie d’éthanol
+
+On remarque une vibration rapide de la pression à une fréquence d’environ 780 Hz, ainsi qu’une variation
+plus lente d’environ 80 Hz. La pression subit quant à elle une variation de l’ordre de 0,3 bar.
+Voyons le résultat ave une balle remplie d’eau : figure 25.
+
+Figure 25 : Evolution de la pression à l’intérieur de la balle remplie d’eau
+
+On note que la pression varie rapidement avec une fréquence d’environ 730 Hz, et également selon une
+fréquence plus lente de 80 Hz. Les variations de pression au moment du choc sont de l’ordre de 0,5 bar, ce
+qui n’est pas négligeable.
+
+19
+
+Mais on peut tout de même d’ores et déjà remarquer que la fréquence rapide correspond à une période du
+même ordre de grandeur que la durée de contact de la balle lors de l’impact.
+Mais surtout, ce qui a attiré notre attention, c’est de voir la variation de la pression. Elle reste certes de
+faible amplitude par rapport à celle attendue, mais cette variation de la pression témoigne d’une vibration
+de la coque de la balle qui est sûrement très légère, mais qui se propage sur toute la surface de la balle. Et
+d’ailleurs, peut-être que la variation périodique de la pression que l’on mesure sur ces graphiques témoigne
+de cette vibration de la balle. Et il est alors possible que plus le liquide contenu dans la balle est visqueux,
+plus ces vibrations de la balle seront amorties rapidement. En d’autres termes, une balle remplie d’eau peut
+vibrer davantage lors de l’impact qu’une balle de glycérine. Et comme la déformation de la coque de la balle
+s’accompagne de pertes énergétiques dues à la viscoélasticité de la balle, la glycérine permettrait une plus
+faible perte énergétique en stoppant la vibration de la balle
+Donc là encore, cette réflexion est très récente, donc on n’a pas eu le temps de tester cette hypothèse. Mais
+elle est simple à tester puisqu’à priori, il suffit de faire de nouvelles mesures de pression, cette fois-ci avec
+une balle remplie de glycérine.
+
+Conclusion :
+Le rebond est déjà quelque chose qui semble complexe, car différentes énergies entrent en jeu. Le fait de
+rajouter des matériaux dans les balles ne rend pas la tâche plus simple, mais la rend encore plus
+intéressante. L’ensemble de notre démarche nous amène à une conclusion intéressante et crédible quant
+aux raisons qui expliquent qu’une balle remplie de glycérine va paradoxalement permettre à la balle de
+moins perdre d’énergie cinétique lors du rebond. Nous pouvons encore poursuivre nos expériences et notre
+réflexion en ce qui concerne les mesures de pression et de l’onde de pression.
+Ce travail ne s’arrête pas là, car nous avons mené des expériences avec des balles remplies de sable, mais
+aussi des balles partiellement remplies d’eau, de sable, et des autres liquides utilisés lors de ce projet. Les
+résultats expérimentaux, dont nous pourrons discuter de vive voix, permettent d’envisager des applications
+intéressantes à tout ce travail.
+
+20
+
+

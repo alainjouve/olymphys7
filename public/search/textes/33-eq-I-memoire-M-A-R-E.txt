@@ -1,1425 +1,1256 @@
-Finale nationale des Olympiades de Physique France 
- Ã  lâiXcampus de Saint-Germain-en-Laye 
- 
-Vendredi 30 janvier 2026 
- 
- 
-Sarah DEMARTHE    Louane PRUVOST 
-Martin KUSZEK    Ruben VINUESA 
- 
- 
- 
- 
- 
- 
- 
- 
-  
- 
- 
- 
- 
-  
-     
-M.A.R.E. 
- 
- 
-EncadrÃ©s par Olivier BURIDANT et Didier SORET
+Finale nationale des Olympiades de Physique France
+à l’iXcampus de Saint-Germain-en-Laye
+Vendredi 30 janvier 2026
 
-2  
-RÃ©sumÃ© 
- 
-Le projet M.A.R.E. vise Ã  comprendre et dÃ©tecter les microplastiques, ces particules de 1 Âµm Ã  5 mm qui rÃ©sultent de la dÃ©gradation lente 
-des plastiques dans lâenvironnement. AprÃ¨s avoir constatÃ© la difficultÃ© Ã  produire soi-mÃªme des microplastiques (Ã©checs des broyeurs 
-domestiques, risques de fusion, enroulement autour des lames), nous avons entamÃ© une collaboration avec lâANSES. La visite du laboratoire 
-a permis de comprendre les mÃ©thodes professionnelles  
- 
-Pour avancer vers une dÃ©tection en continu, nous avons dÃ©cidÃ© dâÃ©tudier la diffusion de la lumiÃ¨re, phÃ©nomÃ¨ne Ã  la base de la couleur du 
-ciel. Nous avons construit un photomÃ¨tre Arduino utilisant un capteur TSL25911 afin de mesurer la lumiÃ¨re diffusÃ©e en lux. AprÃ¨s vÃ©rification 
-de la linÃ©aritÃ© du capteur via la loi de Beer-Lambert, plusieurs milieux diffusants ont Ã©tÃ© testÃ©s : lait Ã©crÃ©mÃ© (particules trop grosses, diffusion 
-non-Rayleigh), puis soufre colloÃ¯dal, qui montre une diffusion proche de la loi en 1/Î»â´. 
- 
-Enfin, les premiÃ¨res mesures avec des microplastiques dispersÃ©s dans lâeau montrent une augmentation de la diffusion avec la concentration, 
-malgrÃ© des difficultÃ©s techniques de dispersion, de bulles et dâhomogÃ©nÃ©isation. 
- 
- 
- 
+Sarah DEMARTHE
+Martin KUSZEK
+
+Louane PRUVOST
+Ruben VINUESA
+
+M.A.R.E.
+Encadrés par Olivier BURIDANT et Didier SORET
+
+Résumé
+Le projet M.A.R.E. vise à comprendre et détecter les microplastiques, ces particules de 1 µm à 5 mm qui résultent de la dégradation lente
+des plastiques dans l’environnement. Après avoir constaté la difficulté à produire soi-même des microplastiques (échecs des broyeurs
+domestiques, risques de fusion, enroulement autour des lames), nous avons entamé une collaboration avec l’ANSES. La visite du laboratoire
+a permis de comprendre les méthodes professionnelles
+Pour avancer vers une détection en continu, nous avons décidé d’étudier la diffusion de la lumière, phénomène à la base de la couleur du
+ciel. Nous avons construit un photomètre Arduino utilisant un capteur TSL25911 afin de mesurer la lumière diffusée en lux. Après vérification
+de la linéarité du capteur via la loi de Beer-Lambert, plusieurs milieux diffusants ont été testés : lait écrémé (particules trop grosses, diffusion
+non-Rayleigh), puis soufre colloïdal, qui montre une diffusion proche de la loi en 1/λ⁴.
+Enfin, les premières mesures avec des microplastiques dispersés dans l’eau montrent une augmentation de la diffusion avec la concentration,
+malgré des difficultés techniques de dispersion, de bulles et d’homogénéisation.
+
 Partenaires
 
-3 
- 
-Sommaire 
-  
-M.A.R.E. 
- 
-Partenaires ______________________________________________________________________________ 2 
-Remerciements ___________________________________________________________________________ 4 
-Introduction ______________________________________________________________________________ 5 
-Quâest-ce quâun microplastique ? ___________________________________________________________________ 5 
-Comment obtenir des microplastiques ? _____________________________________________________________ 6 
-1) Le hachoir Ã©lectrique _______________________________________________________________________________ 6 
-2) Le moulin Ã  cafÃ© Ã©lectrique __________________________________________________________________________ 6 
-3) Le mixer _________________________________________________________________________________________ 6 
-4) Le hachoir demi-lune _______________________________________________________________________________ 7 
-5) La mÃ©thode du persil _______________________________________________________________________________ 7 
-6) Lâachat __________________________________________________________________________________________ 7 
-La visite du laboratoire de lâANSES __________________________________________________________________ 7 
-La diffusion de la lumiÃ¨re _________________________________________________________________________ 8 
-Petits rappels historiques _________________________________________________________________________________ 8 
-La lumiÃ¨re et les molÃ©cules ________________________________________________________________________________ 9 
-Notre photomÃ¨tre ______________________________________________________________________________ 12 
-Notre capteur est-il linÃ©aire ? _____________________________________________________________________________ 13 
-Mesure de la diffusion de la lumiÃ¨re _______________________________________________________________ 15 
-Montage _____________________________________________________________________________________________ 15 
-Mesures avec le lait _____________________________________________________________________________________ 16 
-Mesures avec le soufre colloÃ¯dal ___________________________________________________________________________ 17 
-Mesures avec les microplastiques _________________________________________________________________________ 18 
-Conclusion ______________________________________________________________________________ 19 
-Bibliographie ____________________________________________________________________________ 20 
- 
- 
-Annexes 
- 
-Annexe I : Identification des plastiques _____________________________________________________________ 23 
-Annexe II : Quelques exemples dâutilisation des plastiques. ____________________________________________ 24 
-Annexe III : CaractÃ©ristiques des polymÃ¨res _________________________________________________________ 27 
-Annexe IV : Calcul de lâÃ©paisseur dâatmosphÃ¨re traversÃ©e au coucher du soleil et au zÃ©nith __________________ 28 
-Annexe V : Notre code Arduino ___________________________________________________________________ 29 
+2
+
+Sommaire
+
+M.A.R.E.
+Partenaires ______________________________________________________________________________ 2
+Remerciements ___________________________________________________________________________ 4
+Introduction______________________________________________________________________________ 5
+Qu’est-ce qu’un microplastique ? ___________________________________________________________________ 5
+Comment obtenir des microplastiques ? _____________________________________________________________ 6
+1)
+2)
+3)
+4)
+5)
+6)
+
+Le hachoir électrique _______________________________________________________________________________ 6
+Le moulin à café électrique __________________________________________________________________________ 6
+Le mixer _________________________________________________________________________________________ 6
+Le hachoir demi-lune _______________________________________________________________________________ 7
+La méthode du persil _______________________________________________________________________________ 7
+L’achat __________________________________________________________________________________________ 7
+
+La visite du laboratoire de l’ANSES __________________________________________________________________ 7
+La diffusion de la lumière _________________________________________________________________________ 8
+Petits rappels historiques _________________________________________________________________________________ 8
+La lumière et les molécules ________________________________________________________________________________ 9
+
+Notre photomètre ______________________________________________________________________________ 12
+Notre capteur est-il linéaire ? _____________________________________________________________________________ 13
+
+Mesure de la diffusion de la lumière _______________________________________________________________ 15
+Montage _____________________________________________________________________________________________ 15
+Mesures avec le lait _____________________________________________________________________________________ 16
+Mesures avec le soufre colloïdal ___________________________________________________________________________ 17
+Mesures avec les microplastiques _________________________________________________________________________ 18
+
+Conclusion ______________________________________________________________________________ 19
+Bibliographie ____________________________________________________________________________ 20
+
+Annexes
+Annexe I : Identification des plastiques _____________________________________________________________ 23
+Annexe II : Quelques exemples d’utilisation des plastiques. ____________________________________________ 24
+Annexe III : Caractéristiques des polymères _________________________________________________________ 27
+Annexe IV : Calcul de l’épaisseur d’atmosphère traversée au coucher du soleil et au zénith __________________ 28
+Annexe V : Notre code Arduino ___________________________________________________________________ 29
 Annexe VI : Calcul des correctifs ___________________________________________________________________ 31
 
-4 
- 
-Remerciements 
- 
-Ce projet nâaurait pu aboutir sans lâaide et le soutien de nombreuses personnes, que nous tenons Ã  remercier ici. 
- 
- M. Ãric LENGAGNE, proviseur, Mme Delphine ANQUEZ, proviseure adjointe, M. RÃ©gis LOONIS, chef des travaux, et Mme Sophie 
-NEYRINCK, intendante de notre lycÃ©e, grÃ¢ce Ã  qui nous pouvons vous prÃ©senter ce projet, pour leur soutien et leur confiance. 
- 
- M. Didier SORET, professeur de mathÃ©matiques retraitÃ© depuis plus de dix ans, continue de venir chaque mercredi pour nous aider 
-et nous offrir gÃ©nÃ©reusement de nombreux conseils et suggestions afin dâamÃ©liorer notre travail. Sans oublier tous les petits coups 
-de main en mathÃ©matiques, qui nous permettent de consacrer nos mercredis aux Olympiades, mÃªme Ã  la veille des devoirs 
-surveillÃ©s. 
- 
- Mme CÃ©line BALLY et Mme Sophie DEPERLECQUE, professeures de franÃ§ais, pour leurs relectures attentives et les corrections 
-apportÃ©es Ã  ce dossier. 
- 
- M. StÃ©phane DEMART:E, professeur de sciences de lâingÃ©nieur et de numÃ©rique et sciences informatiques (NS=), pour son aide 
-prÃ©cieuse dans la rÃ©alisation dâun photomÃ¨tre maison. 
- 
- Mme Catherine PERON et M. Hean-Pierre PERON, agents dâaccueil du lycÃ©e Branly, qui ont toujours trouvÃ© pour nous un local obscur 
-muni dâune prise Ã©lectrique afin que nous puissions rÃ©aliser nos expÃ©riences. 
- Mme Sylvie MACQUET et Mme Sabrina CORD=ER, agents dâentretien de lâÃ©tage de physique, qui ont acceptÃ© de modifier leur 
-planning de travail pour nous permettre de mener nos manipulations dans de bonnes conditions. 
- Les personnels de laboratoire, et plus particuliÃ¨rement Mme REMOND, technicienne, pour ses prÃ©cieux conseils, sa patience et sa 
-gentillesse. 
- 
- Nos camarades des autres groupes des Olympiades, avec qui nous partageons chaque mercredi des moments heureux et amusants. 
- 
- Le jury des Olympiades de lâannÃ©e prÃ©cÃ©dente pour leurs nombreux conseils, en particulier sur la bibliographie, ainsi que le jury de 
-lâÃ©dition en cours pour la qualitÃ© de leurs Ã©changes et de leurs remarques. 
- 
- M. LÃ©andre MACHIN, notre rapporteur lors du concours rÃ©gional dâ:azebrouck, pour les corrections apportÃ©es Ã  notre dossier, ses 
-remarques dâapprofondissement, ainsi que les articles quâil nous a recommandÃ©s, notamment concernant le domaine de validitÃ© 
-de la loi de Beer-Lambert. 
- 
- M. Guillaume DUFLOS, directeur de recherche Ã  lâANSES de Boulogne-sur-Mer, pour le temps quâil nous a consacrÃ©, la richesse de 
-ses explications, les rÃ©fÃ©rences bibliographiques quâil nous a communiquÃ©es, ainsi que pour son accueil Ã  plusieurs reprises dans 
-son laboratoire dans le cadre de travaux de prÃ©paration dâÃ©chantillons. Son soutien constant et la confiance quâil a accordÃ©e Ã  notre 
-projet ont constituÃ© un encouragement dÃ©terminant tout au long de ce travail. 
- 
- M. Cyril CONTANT, professeur de physique en classe de MP au lycÃ©e Robespierre dâArras, pour ses Ã©clairages scientifiques et ses 
-conseils sur la physique de la diffusion. 
- 
- M. Nicolas PERNET (OdP 2010 & 2011
-a
-, TS2 Philippe LANCEL), ingÃ©nieur SupOptique et ingÃ©nieur de la 133áµ promotion de lâESPC= 
-Paris, pour son expertise en traitement du signal et son accompagnement prÃ©cieux dans lâanalyse des donnÃ©es issues de lâArduino. 
- 
- M. Jean-Dominique FRÃRE, directeur du site de Samer pour Bic ContÃ©, pour la qualitÃ© de ses Ã©changes et le partage de son expertise 
-sur les matÃ©riaux plastiques. Son accompagnement, illustrant le savoir-faire industriel et lâengagement de Bic ContÃ© en matiÃ¨re de 
-maÃ®trise des matÃ©riaux, a contribuÃ© de maniÃ¨re significative Ã  la rigueur et Ã  la qualitÃ© scientifique de ce projet. 
- 
- M. Olivier BUR=DANT, pour ses prÃ©cieux conseils et les nombreuses heures quâil nous a consacrÃ©es. Nous avons beaucoup appris 
-grÃ¢ce Ã  lui et lui en sommes extrÃªmement reconnaissants. 
- 
- Enfin, nos parents, qui nous accompagnent chaque mercredi et nous soutiennent sans relÃ¢che. 
- 
-  
- 
-a
- 2010 : Â« Platini, RibÃ©ry, Branly Â» et 2011 : Â« Un radar automatique Ã  ultrasons Â».
+3
 
-5 
- 
-Introduction 
- 
-En ce moment, la question de la pollution occupe une place centrale dans les dÃ©bats publics : pour des raisons Ã©cologiques, 
-sanitaires et sociÃ©tales, il devient urgent dâagir. Cet Ã©tÃ©, du 5 au 14 aoÃ»t 2025, sâest tenu Ã  GenÃ¨ve un sommet consacrÃ© Ã  
-la nÃ©gociation dâun traitÃ© mondial sur les plastiques. PrÃ¨s de 180 dÃ©lÃ©gations sây sont rÃ©unies pour tenter de conclure un 
-accord international visant Ã  rÃ©duire la pollution plastique. Cependant, malgrÃ© une semaine dâÃ©changes, la rÃ©union sâest 
-achevÃ©e sans parvenir Ã  adopter un texte final juridiquement contraignant. 
- 
-En section europÃ©enne SVT, nous avons menÃ© plusieurs actions de sensibilisation afin dâinformer nos proches et nos 
-camarades sur cette problÃ©matique. La visite des laboratoires de lâ=FREMER Ã  Boulogne-sur-Mer, lors de la FÃªte de la 
-science, nous a particuliÃ¨rement marquÃ©s. Elle nous a permis de comprendre que le plastique le plus dangereux nâest pas 
-forcÃ©ment celui que lâon voit, mais plutÃ´t celui qui nous Ã©chappe Ã  lâÅil nu : les microplastiques. 
- 
-Face Ã  ce constat, plusieurs questions essentielles se sont imposÃ©es : 
-â¢ Que sont exactement les microplastiques ? 
-â¢ Pourquoi reprÃ©sentent-ils un danger pour la biodiversitÃ© et pour la santÃ© humaine ? 
-â¢ Comment peut-on les dÃ©tecter et les mesurer alors quâils sont si petits ? 
-â¢ Et surtout : comment mesurer en continu la prÃ©sence de microplastiques dans lâeau ? 
- 
-Câest autour de cette question centrale que nous avons construit notre projet, intitulÃ© M.A.R.E., pour Microplastics And 
-Research Exploration â un acronyme qui Ã©voque Ã©galement mare, Â« la mer Â» en latin. Lâobjectif de ce projet est dâimaginer 
-une mÃ©thode capable de dÃ©tecter les microplastiques directement en solution et en temps rÃ©el. 
- 
-Pour cela, nous avons choisi dâexplorer les bases physiques dâun phÃ©nomÃ¨ne particuliÃ¨rement intÃ©ressant : la diffusion de 
-la lumiÃ¨re. Lorsquâun faisceau lumineux traverse un milieu contenant des particules en suspension, celles-ci peuvent 
-diffuser, dÃ©vier ou attÃ©nuer la lumiÃ¨re. Nous nous sommes donc demandÃ© si cette diffusion pouvait constituer une mÃ©thode 
-fiable pour mesurer la quantitÃ© de microparticules prÃ©sentes dans lâeau, et notamment les microplastiques. 
- 
-Dans ce cadre, nous avons dÃ©butÃ© une collaboration avec lâAgence de sÃ©curitÃ© alimentaire, afin dâexaminer la possibilitÃ© 
-dâadapter des mÃ©thodes de mesure en continu dÃ©jÃ  utilisÃ©es dans dâautres domaines, et de tester leur pertinence pour la 
-dÃ©tection des microplastiques. 
- 
-Nous prÃ©sentons ici notre dÃ©marche scientifique pour explorer cette piste.  
- 
-Quâest-ce quâun microplastique ? 
- 
-Un microplastique est un fragment de plastique de trÃ¨s petite taille, dÃ©fini par la lÃ©gislation europÃ©enne comme une particule de 1 Âµm 
-Ã  5 mm(1). 
- 
-Pour mieux comprendre, rappelons dâabord ce quâest un plastique. Selon le CNRTL
-b
- Â« Toute matiÃ¨re synthÃ©tique basÃ©e sur l'emploi des 
-macromolÃ©cules et transformables par moulage, formage, coulage, habituellement avec emploi de la chaleur et d'une pression Â»`. 
- 
-Enfin, selon notre cours de terminale : Â« Les polymÃ¨res sont des macromolÃ©cules formÃ©es par la rÃ©pÃ©tition dâun motif Ã©lÃ©mentaire appelÃ© 
-monomÃ¨re. Â» 
- 
- 
-SchÃ©ma classique dâun polymÃ¨re (chaque rectangle reprÃ©sente un monomÃ¨re) 
-En 1988, lâassociation des industries du plastique propose un systÃ¨me dâidentification des emballages(2), ce systÃ¨me sera repris en 
-1996 au niveau mondial par la norme ISO 11469(3) pour faciliter le tri sÃ©lectif. 
- 
-Voici un tableau qui prÃ©sente le symbole de recyclage, le nom abrÃ©gÃ©, le nom scientifique, le motif chimique, et quelques et lâutilisation 
-de ces matÃ©riaux dans la vie quotidienne. Lâannexe == en propose une liste plus exhaustive. 
- 
-Symbole 
-AbrÃ©viation 
-internationale 
-Nom scientifique 
- 
-Motif chimique 	Usages usuels 
-â³ 
-PET PolyÃ©thylÃ¨ne tÃ©rÃ©phtalate CC
-O O
-n 
- 
-Bouteilles dâeau, textiles (polaires, 
-doudounes, â¦), barquettes, fibres â¦ 
- 
-b
- Le CNRTL (Centre national de ressources textuelles et lexicales) est un organisme qui dÃ©pend du CNRS.
+Remerciements
+Ce projet n’aurait pu aboutir sans l’aide et le soutien de nombreuses personnes, que nous tenons à remercier ici.
+M. Éric LENGAGNE, proviseur, Mme Delphine ANQUEZ, proviseure adjointe, M. Régis LOONIS, chef des travaux, et Mme Sophie
+NEYRINCK, intendante de notre lycée, grâce à qui nous pouvons vous présenter ce projet, pour leur soutien et leur confiance.
+M. Didier SORET, professeur de mathématiques retraité depuis plus de dix ans, continue de venir chaque mercredi pour nous aider
+et nous offrir généreusement de nombreux conseils et suggestions afin d’améliorer notre travail. Sans oublier tous les petits coups
+de main en mathématiques, qui nous permettent de consacrer nos mercredis aux Olympiades, même à la veille des devoirs
+surveillés.
+Mme Céline BALLY et Mme Sophie DEPERLECQUE, professeures de français, pour leurs relectures attentives et les corrections
+apportées à ce dossier.
+M. Stéphane DEMARTHE, professeur de sciences de l’ingénieur et de numérique et sciences informatiques (NSI), pour son aide
+précieuse dans la réalisation d’un photomètre maison.
+Mme Catherine PERON et M. Jean-Pierre PERON, agents d’accueil du lycée Branly, qui ont toujours trouvé pour nous un local obscur
+muni d’une prise électrique afin que nous puissions réaliser nos expériences.
+Mme Sylvie MACQUET et Mme Sabrina CORDIER, agents d’entretien de l’étage de physique, qui ont accepté de modifier leur
+planning de travail pour nous permettre de mener nos manipulations dans de bonnes conditions.
+Les personnels de laboratoire, et plus particulièrement Mme REMOND, technicienne, pour ses précieux conseils, sa patience et sa
+gentillesse.
+Nos camarades des autres groupes des Olympiades, avec qui nous partageons chaque mercredi des moments heureux et amusants.
+Le jury des Olympiades de l’année précédente pour leurs nombreux conseils, en particulier sur la bibliographie, ainsi que le jury de
+l’édition en cours pour la qualité de leurs échanges et de leurs remarques.
+M. Léandre MACHIN, notre rapporteur lors du concours régional d’Hazebrouck, pour les corrections apportées à notre dossier, ses
+remarques d’approfondissement, ainsi que les articles qu’il nous a recommandés, notamment concernant le domaine de validité
+de la loi de Beer-Lambert.
+M. Guillaume DUFLOS, directeur de recherche à l’ANSES de Boulogne-sur-Mer, pour le temps qu’il nous a consacré, la richesse de
+ses explications, les références bibliographiques qu’il nous a communiquées, ainsi que pour son accueil à plusieurs reprises dans
+son laboratoire dans le cadre de travaux de préparation d’échantillons. Son soutien constant et la confiance qu’il a accordée à notre
+projet ont constitué un encouragement déterminant tout au long de ce travail.
+M. Cyril CONTANT, professeur de physique en classe de MP au lycée Robespierre d’Arras, pour ses éclairages scientifiques et ses
+conseils sur la physique de la diffusion.
+M. Nicolas PERNET (OdP 2010 & 2011a, TS2 Philippe LANCEL), ingénieur SupOptique et ingénieur de la 133ᵉ promotion de l’ESPCI
+Paris, pour son expertise en traitement du signal et son accompagnement précieux dans l’analyse des données issues de l’Arduino.
+M. Jean-Dominique FRÈRE, directeur du site de Samer pour Bic Conté, pour la qualité de ses échanges et le partage de son expertise
+sur les matériaux plastiques. Son accompagnement, illustrant le savoir-faire industriel et l’engagement de Bic Conté en matière de
+maîtrise des matériaux, a contribué de manière significative à la rigueur et à la qualité scientifique de ce projet.
+M. Olivier BURIDANT, pour ses précieux conseils et les nombreuses heures qu’il nous a consacrées. Nous avons beaucoup appris
+grâce à lui et lui en sommes extrêmement reconnaissants.
+Enfin, nos parents, qui nous accompagnent chaque mercredi et nous soutiennent sans relâche.
 
-6 
- 
-â´ 
-HDPE PolyÃ©thylÃ¨ne haute densitÃ© n
+a
+
+2010 : « Platini, Ribéry, Branly » et 2011 : « Un radar automatique à ultrasons ».
+
+4
+
+Introduction
+En ce moment, la question de la pollution occupe une place centrale dans les débats publics : pour des raisons écologiques,
+sanitaires et sociétales, il devient urgent d’agir. Cet été, du 5 au 14 août 2025, s’est tenu à Genève un sommet consacré à
+la négociation d’un traité mondial sur les plastiques. Près de 180 délégations s’y sont réunies pour tenter de conclure un
+accord international visant à réduire la pollution plastique. Cependant, malgré une semaine d’échanges, la réunion s’est
+achevée sans parvenir à adopter un texte final juridiquement contraignant.
+En section européenne SVT, nous avons mené plusieurs actions de sensibilisation afin d’informer nos proches et nos
+camarades sur cette problématique. La visite des laboratoires de l’IFREMER à Boulogne-sur-Mer, lors de la Fête de la
+science, nous a particulièrement marqués. Elle nous a permis de comprendre que le plastique le plus dangereux n’est pas
+forcément celui que l’on voit, mais plutôt celui qui nous échappe à l’œil nu : les microplastiques.
+Face à ce constat, plusieurs questions essentielles se sont imposées :
+• Que sont exactement les microplastiques ?
+• Pourquoi représentent-ils un danger pour la biodiversité et pour la santé humaine ?
+• Comment peut-on les détecter et les mesurer alors qu’ils sont si petits ?
+• Et surtout : comment mesurer en continu la présence de microplastiques dans l’eau ?
+C’est autour de cette question centrale que nous avons construit notre projet, intitulé M.A.R.E., pour Microplastics And
+Research Exploration — un acronyme qui évoque également mare, « la mer » en latin. L’objectif de ce projet est d’imaginer
+une méthode capable de détecter les microplastiques directement en solution et en temps réel.
+Pour cela, nous avons choisi d’explorer les bases physiques d’un phénomène particulièrement intéressant : la diffusion de
+la lumière. Lorsqu’un faisceau lumineux traverse un milieu contenant des particules en suspension, celles-ci peuvent
+diffuser, dévier ou atténuer la lumière. Nous nous sommes donc demandé si cette diffusion pouvait constituer une méthode
+fiable pour mesurer la quantité de microparticules présentes dans l’eau, et notamment les microplastiques.
+Dans ce cadre, nous avons débuté une collaboration avec l’Agence de sécurité alimentaire, afin d’examiner la possibilité
+d’adapter des méthodes de mesure en continu déjà utilisées dans d’autres domaines, et de tester leur pertinence pour la
+détection des microplastiques.
+Nous présentons ici notre démarche scientifique pour explorer cette piste.
+
+Qu’est-ce qu’un microplastique ?
+Un microplastique est un fragment de plastique de très petite taille, défini par la législation européenne comme une particule de 1 µm
+à 5 mm(1).
+Pour mieux comprendre, rappelons d’abord ce qu’est un plastique. Selon le CNRTLb « Toute matière synthétique basée sur l'emploi des
+macromolécules et transformables par moulage, formage, coulage, habituellement avec emploi de la chaleur et d'une pression »`.
+Enfin, selon notre cours de terminale : « Les polymères sont des macromolécules formées par la répétition d’un motif élémentaire appelé
+monomère. »
+Schéma classique d’un polymère (chaque rectangle représente un monomère)
+
+En 1988, l’association des industries du plastique propose un système d’identification des emballages(2), ce système sera repris en
+1996 au niveau mondial par la norme ISO 11469(3) pour faciliter le tri sélectif.
+Voici un tableau qui présente le symbole de recyclage, le nom abrégé, le nom scientifique, le motif chimique, et quelques et l’utilisation
+de ces matériaux dans la vie quotidienne. L’annexe II en propose une liste plus exhaustive.
+Symbole
+
+♳
+b
+
+Abréviation
+internationale
+PET
+
+Nom scientifique
+
+Polyéthylène téréphtalate
+
+Motif chimique
+
+Usages usuels
+
+O
+
+O
+
+C
+
+C
+
+Bouteilles d’eau, textiles (polaires,
+doudounes, …), barquettes, fibres …
+n
+
+Le CNRTL (Centre national de ressources textuelles et lexicales) est un organisme qui dépend du CNRS.
+
+5
+
+♴
+
+HDPE
+
+PVC
+
+♶
+
+LDPE
+
+♸
+♹
+♺
+
+ABS
+
+Tuyaux, fenêtres,
+plastiques…
+
+C CH2
+
+Polychlorure de vinyle
+
+CH2 CH2
+
+Polyéthylène basse densité
+
+Polypropylène
+
 CH
-2
+
+OTHER
+
+PLA
+
+ABS
+
+CH2
+
+Barquettes alimentaires, gobelets et
+couverts jetables, boîtiers d’appareils
+électroniques, isolation (Polystyrène
+expansé) …
+
+n
+
+Polymères divers :
+PC (polycarbonate)
+ABS (voir ci-dessous)
+PLA (acide polylactique)
+PA (polyamide ex : nylons)
+Etc. …
+
+Divers.
+
 CH
-2 
- 
-Flacons de lait, bidons, jouets, tuyaux â¦  
-âµ 
-PVC Polychlorure de vinyle CCH
-2
-H
+
+Acide polylactique
+
+Butadiène
+
+gaines,
+
+n
+
+Polystyrène
+
+Acrylonitrile
+Styrène
+
+Sacs,
+films
+plastiques,
+emballages souples …
+
+Pots de yaourt, bouchons, seringues,
+fibres …
+
+CH2 CH
+PS
+
+cartes
+
+n
+
+CH3
+PP
+
+câbles,
+
+n
+
 Cl
-n 
- 
-Tuyaux, fenÃªtres, cÃ¢bles, cartes 
-plastiquesâ¦ 
-â¶ 
-LDPE PolyÃ©thylÃ¨ne basse densitÃ© n
-CH
-2
-CH
-2 
- 
-Sacs, films plastiques, gaines, 
-emballages souples â¦ 
-â· 
-PP PolypropylÃ¨ne CHCH
-2
-CH
-3
-n 
- 
-Pots de yaourt, bouchons, seringues, 
-fibres â¦ 
-â¸ 
-PS PolystyrÃ¨ne CH
-2
-CH
-n 
- 
-Barquettes alimentaires, gobelets et 
-couverts jetables, boÃ®tiers dâappareils 
-Ã©lectroniques, isolation (PolystyrÃ¨ne 
-expansÃ©) â¦ 
- 
-â¹ 
-OTHER 
-PolymÃ¨res divers :  
-PC (polycarbonate)  
-ABS (voir ci-dessous)  
-PLA (acide polylactique) 
-PA (polyamide ex : nylons)  
-Etc. â¦ 
- 	Divers. 
-âº 
-PLA 
-PLA Acide polylactique n
-CH
-3
-CHCO
-O 
- 
-Gobelets et couverts compostables, 
-films et emballages biodÃ©gradables, 
-filament dâimpression 3D sacs 
-compostables â¦ 
- 
-âº 
-ABS 
-ABS 
-Acrylonitrile ButadiÃ¨ne 
-StyrÃ¨ne 
-CopolymÃ¨re
-c
- ternaire (formÃ© 
-de trois monomÃ¨res 
-diffÃ©rents le styrÃ¨ne, 
-lâacrylonitrile et le butadiÃ¨ne) 
-LEGOÂ® et jouets rigides, coques 
-dâappareils Ã©lectroniques (ordinateurs, 
-tÃ©lÃ©viseurs, aspirateursâ¦) carÃ©nages 
-automobiles, casques, fils dâimpression 
-3D â¦ 
-Remarque : le code 7 âOtherâ inclut les polymÃ¨res techniques (ABS, PCâ¦) et biodÃ©gradables (PLA), parfois reprÃ©sentÃ©s par des pictogrammes distincts. 
-Comment obtenir des microplastiques ? 
- 
-Ã lâorigine, le problÃ¨me nous semblait dâune grande simplicitÃ©. Nous avons donc entrepris de collecter et conserver plusieurs 
-Ã©chantillons des diffÃ©rents plastiques prÃ©sents dans notre environnement, avant de commencer notre Ã©tude. Les annexes I et II donnent 
-un aperÃ§u de leur omniprÃ©sence et proposent des moyens de les identifier Ã  un niveau lycÃ©e. 
-1) Le hachoir Ã©lectrique 
- 
-Nous avons tous cet accessoire dans nos cuisines. =l suffit de trois bouchons de bouteilles dâeau, dâune simple pressionâ¦ et câest parti ! 
-Enfin, câest ce que pensent ceux qui nâont jamais essayÃ© ! 
-En rÃ©alitÃ©, câest tout autre chose : Ã§a fait un bruit dâenfer, et les bouchons ressortent presque intacts,  Ã  peine quelques Ã©gratignures. 
-Alors, on retente : cette fois, on coupe les bouchons en trois ou quatre morceaux avec un couteau, on relance le mixeur, on laisse 
-tourner un bon momentâ¦ 
-Mauvaise idÃ©e. TrÃ¨s vite, Ã§a sent le brÃ»lÃ©, le moteur chauffe, et quand on ouvreâ¦ lâintÃ©rieur est couvert de traces de plastique fondu. 
-2) Le moulin Ã  cafÃ© Ã©lectrique 
- 
-Convaincus quâil nous fallait mieux, nous nous sommes tournÃ©s vers les conseils de nos grands-parents, avec leur lÃ©gendaire moulin Ã  
-cafÃ© des annÃ©es 80. AprÃ¨s tout, sâil peut rÃ©duire des grains en poudre, une bille en plastique ne devrait pas lui poser problÃ¨me. RÃ©sultat 
-: mÃªme scÃ©nario. Beaucoup de bruit, des fragments presque intacts, quelques zones fonduesâ¦ et, avec les plastiques souples, un 
-enroulement parfait autour de lâhÃ©lice, jusquâÃ  lâarrÃªt complet du dispositif. 
-3) Le mixer 
-Une idÃ©e semblait Ã©vidente : si le plastique chauffe, il suffit de refroidir en travaillant dans lâeau, Ã  lâaide dâun mixeur ou dâun blender. 
-Cela paraÃ®t simple. En pratique : mÃªme problÃ¨me. Le plastique est Ã  peine entamÃ© et la masse souple sâenroule toujours autour des 
-lames.  
- 
-c
- Un copolymÃ¨re est le produit dâau moins deux monomÃ¨res (motifs Ã©lÃ©mentaires).
 
-7 
- 
-4) Le hachoir demi-lune  
- 
-Nous explorons alors une autre voie : la dÃ©coupe manuelle trÃ¨s fine. AprÃ¨s avoir achetÃ© un hachoir demi-lune neuf et soigneusement 
-affÃ»tÃ©, nous avons tentÃ© la âbonne vieille mÃ©thodeâ. Pour Ã©viter toute contamination du support, nous avons posÃ© de fins films 
-plastiques sur une plaque de verre. Nouveau rÃ©sultat : Ã©chec. Les fragments obtenus restent trop gros et ne se fragmentent pas 
-suffisamment. 
-5) La mÃ©thode du persil  
- 
-Pour hacher finement le persil, nos grands-mÃ¨res disposent dâune technique redoutablement efficace : une paire de ciseaux et un verre. 
-On introduit les feuilles dans le rÃ©cipient, puis on donne de multiples coups de ciseaux. La taille diminue progressivement. 
-Nous avons appliquÃ© cette technique Ã  des morceaux de sachets plastiques, puis Ã  des supports usagÃ©s provenant de rubans 
-correcteurs. Et lÃ , enfin, Ã§a fonctionne ! Câest trÃ¨s long, mais en se relayant, nous parvenons Ã  obtenir environ 0,1 g de plastique hachÃ© 
-en une heure. En revanche, cette mÃ©thode ne fonctionne que pour des films minces. 
-6) Lâachat  
- 
-Au niveau europÃ©en, une nouvelle rÃ©glementation entrÃ©e en vigueur le 17 octobre 2023 interdit la mise sur le marchÃ© de 
-microparticules de polymÃ¨res synthÃ©tiques (microplastiques), quâelles soient commercialisÃ©es seules ou intentionnellement ajoutÃ©es Ã  
-des mÃ©langes. Cette restriction sâapplique dÃ¨s lors que leur concentration est Ã©gale ou supÃ©rieure Ã  0,01 % en masse. En France, la loi 
-nÂ° 2020-105 du 10 fÃ©vrier 2020 relative Ã  la lutte contre le gaspillage et Ã  lâÃ©conomie circulaire lâinterdisait dÃ©jÃ . 
- 
-Notre situation semblait dÃ©sespÃ©rÃ©e, jusquâÃ  ce que nous contactions un laboratoire qui travaille sur ce problÃ¨me. 
-La visite du laboratoire de lâANSES 
- 
-Depuis 30 ans, la sÃ©curitÃ© sanitaire franÃ§aise est passÃ©e dâun systÃ¨me centrÃ© sur les Services vÃ©tÃ©rinaires vers une organisation plus 
-indÃ©pendante et spÃ©cialisÃ©e. 
-En 1998, Ã  la suite de la crise de lâESB (encÃ©phalopathie spongiforme bovine, âvache folleâ), la France crÃ©e lâAgence FranÃ§aise de SÃ©curitÃ© 
-Sanitaire des Aliments (AFSSA) pour garantir une expertise scientifique indÃ©pendante dans le domaine alimentaire. 
-En 2005, la crÃ©ation de lâAgence FranÃ§aise de SÃ©curitÃ© Sanitaire de lâEnvironnement et du Travail (AFSSET) Ã©tend lâÃ©valuation des risques 
-aux domaines environnemental et professionnel. 
-En 2009â2010, les Services vÃ©tÃ©rinaires deviennent les Directions DÃ©partementales de la Protection des Populations (DDPP), et la fusion 
-de lâAFSSA avec lâAFSSET donne lâAgence Nationale de SÃ©curitÃ© Sanitaire de lâalimentation, de lâenvironnement et du travail (ANSES). 
-LâANSES possÃ¨de neuf sites en France, chacun spÃ©cialisÃ© dans un domaine scientifique prÃ©cis. Son siÃ¨ge se situe Ã  Maisons-Alfort, au 
-sein de lâÃcole nationale vÃ©tÃ©rinaire dâAlfort, et le site de Boulogne-sur-Mer est notamment spÃ©cialisÃ© dans la sÃ©curitÃ© sanitaire des 
-produits de la mer. Il est Ã  2 km de notre lycÃ©e, aprÃ¨s quelques Ã©changes par mail nous nous rendons sur le site. 
- 
-Nous sommes accueillis par Monsieur Guillaume DUFLOS qui y est directeur de recherche. Il nous a prÃ©parÃ© un beau diaporama 
-personnalisÃ©. Il nous met trÃ¨s vite Ã  lâaise la prÃ©sentation tourne Ã  une discussion directe entre chercheurs. Le diaporama est lÃ  pour 
-illustrer ses propos.  
- 
-Il nous explique trÃ¨s bien, trÃ¨s clairement comment on passe du macroplastique, au mÃ©soplastique puis au microplastique et 
-nanoplastique. 
-CatÃ©gorie Taille 
-Macroplastiques > 25 mm 
-MÃ©soplastiques 5 mm Ã  25 mm 
-Microplastiques 1Âµm Ã  5 mm 
-Nanoplastiques <1Âµm 
- 
-Sous lâeffet des UV du soleil, le plastique se fragilise et se fissure progressivement. Les vagues et les courants provoquent ensuite des 
-chocs rÃ©pÃ©tÃ©s qui cassent le matÃ©riau en fragments plus petits. Lâabrasion sur les rochers, le sable et les coquillages accentue cette 
-usure mÃ©canique. Ainsi, les macroplastiques deviennent dâabord des mÃ©soplastiques, puis se dÃ©gradent en microplastiques. Ce 
-processus est lent et continu, et contribue Ã  la dispersion de particules facilement ingÃ©rÃ©es par la faune marine. 
- 
- 
- 
- 
- 
-Temps dans 
-la nature 
-Taille dominante 
-des fragments 
-Ãtat du plastique 
-0 an ~10 cm (objet entier)  Souple, intact 
-1â5 ans 1 Ã  5 cm DÃ©colorÃ©, dÃ©but fissures (UV) 
-5â20 ans 5 mm Ã  1 cm Cassant, brisÃ© en morceaux 
-(abrasion) 
-20â50 ans 1 Ã  5 mm   Fragmentation avancÃ©e 
-50â200 ans < 1 mm Microplastiques trÃ¨s nombreux 
->200 ans < 1 Âµm  Impossible Ã  rÃ©cupÃ©rer, 
-dispersion totale 
-Evolution de la taille dâun gobelet 
- 
- 
- 
- 
+C
+
+CH3 O
+
+PLA
+
+♺
+
+n
+
+H
+
+♵
+
+♷
+
+Flacons de lait, bidons, jouets, tuyaux …
+
+CH2 CH2
+
+Polyéthylène haute densité
+
+O
+n
+
+Copolymèrec ternaire (formé
+de
+trois
+monomères
+différents
+le
+styrène,
+l’acrylonitrile et le butadiène)
+
+Gobelets et couverts compostables,
+films et emballages biodégradables,
+filament d’impression 3D sacs
+compostables …
+LEGO® et jouets rigides, coques
+d’appareils électroniques (ordinateurs,
+téléviseurs, aspirateurs…) carénages
+automobiles, casques, fils d’impression
+3D …
+
+Remarque : le code 7 “Other” inclut les polymères techniques (ABS, PC…) et biodégradables (PLA), parfois représentés par des pictogrammes distincts.
+
+Comment obtenir des microplastiques ?
+À l’origine, le problème nous semblait d’une grande simplicité. Nous avons donc entrepris de collecter et conserver plusieurs
+échantillons des différents plastiques présents dans notre environnement, avant de commencer notre étude. Les annexes I et II donnent
+un aperçu de leur omniprésence et proposent des moyens de les identifier à un niveau lycée.
+1) Le hachoir électrique
+Nous avons tous cet accessoire dans nos cuisines. Il suffit de trois bouchons de bouteilles d’eau, d’une simple pression… et c’est parti !
+Enfin, c’est ce que pensent ceux qui n’ont jamais essayé !
+En réalité, c’est tout autre chose : ça fait un bruit d’enfer, et les bouchons ressortent presque intacts, à peine quelques égratignures.
+Alors, on retente : cette fois, on coupe les bouchons en trois ou quatre morceaux avec un couteau, on relance le mixeur, on laisse
+tourner un bon moment…
+Mauvaise idée. Très vite, ça sent le brûlé, le moteur chauffe, et quand on ouvre… l’intérieur est couvert de traces de plastique fondu.
+2) Le moulin à café électrique
+Convaincus qu’il nous fallait mieux, nous nous sommes tournés vers les conseils de nos grands-parents, avec leur légendaire moulin à
+café des années 80. Après tout, s’il peut réduire des grains en poudre, une bille en plastique ne devrait pas lui poser problème. Résultat
+: même scénario. Beaucoup de bruit, des fragments presque intacts, quelques zones fondues… et, avec les plastiques souples, un
+enroulement parfait autour de l’hélice, jusqu’à l’arrêt complet du dispositif.
+3) Le mixer
+Une idée semblait évidente : si le plastique chauffe, il suffit de refroidir en travaillant dans l’eau, à l’aide d’un mixeur ou d’un blender.
+Cela paraît simple. En pratique : même problème. Le plastique est à peine entamé et la masse souple s’enroule toujours autour des
+lames.
+c
+
+Un copolymère est le produit d’au moins deux monomères (motifs élémentaires).
+
+6
+
+4) Le hachoir demi-lune
+Nous explorons alors une autre voie : la découpe manuelle très fine. Après avoir acheté un hachoir demi-lune neuf et soigneusement
+affûté, nous avons tenté la “bonne vieille méthode”. Pour éviter toute contamination du support, nous avons posé de fins films
+plastiques sur une plaque de verre. Nouveau résultat : échec. Les fragments obtenus restent trop gros et ne se fragmentent pas
+suffisamment.
+5) La méthode du persil
+Pour hacher finement le persil, nos grands-mères disposent d’une technique redoutablement efficace : une paire de ciseaux et un verre.
+On introduit les feuilles dans le récipient, puis on donne de multiples coups de ciseaux. La taille diminue progressivement.
+Nous avons appliqué cette technique à des morceaux de sachets plastiques, puis à des supports usagés provenant de rubans
+correcteurs. Et là, enfin, ça fonctionne ! C’est très long, mais en se relayant, nous parvenons à obtenir environ 0,1 g de plastique haché
+en une heure. En revanche, cette méthode ne fonctionne que pour des films minces.
+6) L’achat
+Au niveau européen, une nouvelle réglementation entrée en vigueur le 17 octobre 2023 interdit la mise sur le marché de
+microparticules de polymères synthétiques (microplastiques), qu’elles soient commercialisées seules ou intentionnellement ajoutées à
+des mélanges. Cette restriction s’applique dès lors que leur concentration est égale ou supérieure à 0,01 % en masse. En France, la loi
+n° 2020-105 du 10 février 2020 relative à la lutte contre le gaspillage et à l’économie circulaire l’interdisait déjà.
+Notre situation semblait désespérée, jusqu’à ce que nous contactions un laboratoire qui travaille sur ce problème.
+
+La visite du laboratoire de l’ANSES
+Depuis 30 ans, la sécurité sanitaire française est passée d’un système centré sur les Services vétérinaires vers une organisation plus
+indépendante et spécialisée.
+En 1998, à la suite de la crise de l’ESB (encéphalopathie spongiforme bovine, “vache folle”), la France crée l’Agence Française de Sécurité
+Sanitaire des Aliments (AFSSA) pour garantir une expertise scientifique indépendante dans le domaine alimentaire.
+En 2005, la création de l’Agence Française de Sécurité Sanitaire de l’Environnement et du Travail (AFSSET) étend l’évaluation des risques
+aux domaines environnemental et professionnel.
+En 2009–2010, les Services vétérinaires deviennent les Directions Départementales de la Protection des Populations (DDPP), et la fusion
+de l’AFSSA avec l’AFSSET donne l’Agence Nationale de Sécurité Sanitaire de l’alimentation, de l’environnement et du travail (ANSES).
+L’ANSES possède neuf sites en France, chacun spécialisé dans un domaine scientifique précis. Son siège se situe à Maisons-Alfort, au
+sein de l’École nationale vétérinaire d’Alfort, et le site de Boulogne-sur-Mer est notamment spécialisé dans la sécurité sanitaire des
+produits de la mer. Il est à 2 km de notre lycée, après quelques échanges par mail nous nous rendons sur le site.
+Nous sommes accueillis par Monsieur Guillaume DUFLOS qui y est directeur de recherche. Il nous a préparé un beau diaporama
+personnalisé. Il nous met très vite à l’aise la présentation tourne à une discussion directe entre chercheurs. Le diaporama est là pour
+illustrer ses propos.
+Il nous explique très bien, très clairement comment on passe du macroplastique, au mésoplastique puis au microplastique et
+nanoplastique.
+Catégorie
+Macroplastiques
+Mésoplastiques
+Microplastiques
+Nanoplastiques
+
+Taille
+> 25 mm
+5 mm à 25 mm
+1µm à 5 mm
+<1µm
+
+Sous l’effet des UV du soleil, le plastique se fragilise et se fissure progressivement. Les vagues et les courants provoquent ensuite des
+chocs répétés qui cassent le matériau en fragments plus petits. L’abrasion sur les rochers, le sable et les coquillages accentue cette
+usure mécanique. Ainsi, les macroplastiques deviennent d’abord des mésoplastiques, puis se dégradent en microplastiques. Ce
+processus est lent et continu, et contribue à la dispersion de particules facilement ingérées par la faune marine.
 Graphiquement
+Temps dans
+la nature
+0 an
+1–5 ans
+5–20 ans
 
-8 
- 
-La taille des plastiques diminue lentement en moyenne, mais dÃ¨s quâils sont fragilisÃ©s, ils peuvent libÃ©rer trÃ¨s vite de nombreux 
-microplastiques plus petits. 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Micrographies MEB de surfaces plastiques vieillies aprÃ¨s 12 mois d'exposition aux forces d'Ã©rosion marine (4) (LDPE) 
- 
-Ici en 1 an, on a coexistence des 4 formes macro, mÃ©so, micro et nano. La nature avec du temps et de grands moyens broie le plastique. 
- 
-TrÃ¨s rapidement, la question du broyage des plastiques est abordÃ©e. Il comprend parfaitement nos difficultÃ©s : son Ã©quipe a rencontrÃ© 
-les mÃªmes problÃ¨mes il y a plus de vingt ans. 
- 
-Les plastiques ne peuvent pas Ãªtre broyÃ©s efficacement avec des mÃ©thodes classiques (mixeur, hachoir, lames rapides) en raison de 
-leurs propriÃ©tÃ©s mÃ©caniques. Ce sont des matÃ©riaux ductiles et viscoÃ©lastiques : ils peuvent subir de fortes dÃ©formations plastiques 
-avant de rompre et absorbent lâÃ©nergie mÃ©canique au lieu de se fragmenter. 
- 
-Le broyage rapide engendre des frottements et des cisaillements importants, provoquant une Ã©lÃ©vation locale de la tempÃ©rature. Au 
-voisinage de la tempÃ©rature de transition vitreuse, le polymÃ¨re se ramollit, devient collant et dissipe lâÃ©nergie sous forme de chaleur et 
-de dÃ©formation, empÃªchant la formation de fissures. Lâannexe === donne un aperÃ§u de ces propriÃ©tÃ©s. 
-LâÃ©nergie nâest pas convertie en fragmentation mais en dissipation viscoÃ©lastique, ce qui rend ces techniques inefficaces. Le broyage 
-nâest possible quâavec des broyeurs industriels Ã  faible vitesse, Ã  contre-lames, Ã  fort couple, fonctionnant comme des paires de ciseaux, 
-ou par broyage cryogÃ©nique, oÃ¹ le plastique est rendu cassant par immersion dans lâazote liquide Ã  â196Â°C. 
- 
-Comme nous, ils ont testÃ© plusieurs mÃ©thodes avant de retenir le cryobroyage, un broyage dans lâazote liquide comme solution la plus 
-efficace. 
- 
-La prÃ©sentation terminÃ©e, nous partons en visite des laboratoires. LâANSES de Boulogne-sur-Mer dispose de plusieurs unitÃ©s dÃ©diÃ©es 
-au suivi de la qualitÃ© de lâeau et du milieu marin. Nous nous rendons vers le laboratoire spÃ©cialisÃ© dans lâÃ©tude des microplastiques. 
- 
-Avant dâentrer, nous devons respecter un protocole strict pour Ã©viter toute contamination : passage par un sas, enfilage de 
-surchaussures et dâune blouse en coton. Nous marchons ensuite sur un tapis adhÃ©sif pour retirer les fibres plastiques encore prÃ©sentes, 
-puis nous franchissons un double sas qui limite les apports par les courants dâair. 
- 
-Dans ce laboratoire, lâobjectif est de compter et identifier les microplastiques prÃ©sents dans des organismes marins tels que les 
-coquillages, les crustacÃ©s ou les poissons. La premiÃ¨re Ã©tape consiste Ã  Ã©liminer la matiÃ¨re organique : lâÃ©chantillon est mis en prÃ©sence 
-de soude puis placÃ© 24 h Ã  lâÃ©tuve Ã  55 Â°C sous agitation magnÃ©tique. Avant toute manipulation, toute la verrerie est chauffÃ©e Ã  450 Â°C 
-afin de supprimer toute trace rÃ©siduelle de plastique. Dans la salle, aucun matÃ©riau plastique nâest autorisÃ©, Ã  lâexception dâune seule 
-pissette dâeau nÃ©cessaire aux manipulations. 
-La solution obtenue est ensuite filtrÃ©e Ã  lâaide dâun filtre non tissÃ©, similaire Ã  celui des masques FFP2, qui retient les particules solides. 
-Le filtre est placÃ© sous microscope optique pour repÃ©rer les microplastiques, dont la taille varie de 1 Âµm Ã  5 mm. Chaque particule 
-suspecte est prÃ©levÃ©e individuellement avec une pince fine, puis dÃ©posÃ©e dans un micro-tube. 
-Ce micro-tube est placÃ© dans un four spÃ©cial : les vapeurs Ã©mises lors du chauffage sont collectÃ©es puis analysÃ©es, ce qui permet de 
-dÃ©terminer la composition chimique de chaque microplastique. Câest la pyrolyse CPG. 
- 
-Nous remercions trÃ¨s chaleureusement M. DUFLOS pour son accueil gÃ©nÃ©reux et sa passion communicative. Cette visite nous a 
-Ã©normÃ©ment enrichis : nous repartons avec des connaissances solides, des documents prÃ©cieuxâ¦ et surtout une grande motivation 
-pour la suite de notre projet. Nous avons dÃ©jÃ  pris rendez-vous pour revenir broyer nos plastiques Ã  lâANSES. 
- 
-La diffusion de la lumiÃ¨re 
-Petits rappels historiques 
- 
-Depuis lâAntiquitÃ©, les hommes lÃ¨vent les yeux vers le ciel, fascinÃ©s par les halos du Soleil, les couchers flamboyants ou lâazur profond 
-du jour, sans en connaÃ®tre la cause physique. 
- 
-AR=STOTE et ses disciples, cherchant Ã  expliquer ces merveilles, pensaient quâelles provenaient de vapeurs, ou dâun mÃ©lange de feu et 
-dâair (5).
+Taille dominante
+des fragments
+~10 cm (objet entier)
+1 à 5 cm
+5 mm à 1 cm
 
-9 
- 
-Bien plus tard, en 1704, Isaac NEWTON (6) rÃ©volutionne la comprÃ©hension de la lumiÃ¨re. Ã lâaide dâun prisme, il montre que la lumiÃ¨re 
-blanche nâest pas pure, mais composÃ©e de plusieurs couleurs. =l remarque aussi que lâatmosphÃ¨re altÃ¨re ces teintes, et Ã©voque dÃ©jÃ  la 
-rÃ©fraction et la rÃ©flexion diffuse. 
- 
-Un siÃ¨cle sâouvre alors oÃ¹ la lumiÃ¨re devient un objet dâÃ©tude passionnant. En 1801, Thomas YOUNG (7) franchit une Ã©tape dÃ©cisive : 
-grÃ¢ce Ã  sa cÃ©lÃ¨bre expÃ©rience de la double fente, il dÃ©montre expÃ©rimentalement que la lumiÃ¨re se comporte comme une onde. 
- 
-Quelques annÃ©es plus tard, le 15 mars 1819, Augustin FRESNEL reÃ§oit le Grand Prix de lâAcadÃ©mie des sciences. Par ses travaux sur la 
-diffraction, il Ã©tablit mathÃ©matiquement la nature ondulatoire de la lumiÃ¨re (8), confirmant ainsi les intuitions de Young. 
- 
-Les dÃ©cennies suivantes poursuivent cette aventure scientifique. En 1869, John TYNDALL (9) sâintÃ©resse Ã  la diffusion de la lumiÃ¨re et 
-met en Ã©vidence lâorigine du bleu du ciel. Selon lui, la lumiÃ¨re solaire est diffusÃ©e par de trÃ¨s fines particules en suspension dans lâair. 
-Ces particules dispersent davantage les courtes longueurs dâonde, notamment le bleu. La lumiÃ¨re qui continue sa route, appauvrie en 
-bleu, apparaÃ®t alors plus rouge, dâoÃ¹ la couleur si caractÃ©ristique des couchers de Soleil. 
- 
-Deux ans plus tard, John W. STRUTT
-d
- (10) apporte une prÃ©cision essentielle : le bleu du ciel ne vient pas de poussiÃ¨res, mais bien des 
-molÃ©cules de lâair elles-mÃªmes. =l dÃ©montre que lâintensitÃ© de la lumiÃ¨re diffusÃ©e est inversement proportionnelle Ã  la quatriÃ¨me 
-puissance de la longueur dâonde
-e
- : 
-&#3627408444;â
+20–50 ans
+50–200 ans
+>200 ans
+
+1 à 5 mm
+< 1 mm
+< 1 µm
+
+État du plastique
+Souple, intact
+Décoloré, début fissures (UV)
+Cassant, brisé en morceaux
+(abrasion)
+Fragmentation avancée
+Microplastiques très nombreux
+Impossible
+à
+récupérer,
+dispersion totale
+
+Evolution de la taille d’un gobelet
+
+7
+
+La taille des plastiques diminue lentement en moyenne, mais dès qu’ils sont fragilisés, ils peuvent libérer très vite de nombreux
+microplastiques plus petits.
+
+Micrographies MEB de surfaces plastiques vieillies après 12 mois d'exposition aux forces d'érosion marine (4) (LDPE)
+
+Ici en 1 an, on a coexistence des 4 formes macro, méso, micro et nano. La nature avec du temps et de grands moyens broie le plastique.
+Très rapidement, la question du broyage des plastiques est abordée. Il comprend parfaitement nos difficultés : son équipe a rencontré
+les mêmes problèmes il y a plus de vingt ans.
+Les plastiques ne peuvent pas être broyés efficacement avec des méthodes classiques (mixeur, hachoir, lames rapides) en raison de
+leurs propriétés mécaniques. Ce sont des matériaux ductiles et viscoélastiques : ils peuvent subir de fortes déformations plastiques
+avant de rompre et absorbent l’énergie mécanique au lieu de se fragmenter.
+Le broyage rapide engendre des frottements et des cisaillements importants, provoquant une élévation locale de la température. Au
+voisinage de la température de transition vitreuse, le polymère se ramollit, devient collant et dissipe l’énergie sous forme de chaleur et
+de déformation, empêchant la formation de fissures. L’annexe III donne un aperçu de ces propriétés.
+L’énergie n’est pas convertie en fragmentation mais en dissipation viscoélastique, ce qui rend ces techniques inefficaces. Le broyage
+n’est possible qu’avec des broyeurs industriels à faible vitesse, à contre-lames, à fort couple, fonctionnant comme des paires de ciseaux,
+ou par broyage cryogénique, où le plastique est rendu cassant par immersion dans l’azote liquide à –196°C.
+Comme nous, ils ont testé plusieurs méthodes avant de retenir le cryobroyage, un broyage dans l’azote liquide comme solution la plus
+efficace.
+La présentation terminée, nous partons en visite des laboratoires. L’ANSES de Boulogne-sur-Mer dispose de plusieurs unités dédiées
+au suivi de la qualité de l’eau et du milieu marin. Nous nous rendons vers le laboratoire spécialisé dans l’étude des microplastiques.
+Avant d’entrer, nous devons respecter un protocole strict pour éviter toute contamination : passage par un sas, enfilage de
+surchaussures et d’une blouse en coton. Nous marchons ensuite sur un tapis adhésif pour retirer les fibres plastiques encore présentes,
+puis nous franchissons un double sas qui limite les apports par les courants d’air.
+Dans ce laboratoire, l’objectif est de compter et identifier les microplastiques présents dans des organismes marins tels que les
+coquillages, les crustacés ou les poissons. La première étape consiste à éliminer la matière organique : l’échantillon est mis en présence
+de soude puis placé 24 h à l’étuve à 55 °C sous agitation magnétique. Avant toute manipulation, toute la verrerie est chauffée à 450 °C
+afin de supprimer toute trace résiduelle de plastique. Dans la salle, aucun matériau plastique n’est autorisé, à l’exception d’une seule
+pissette d’eau nécessaire aux manipulations.
+La solution obtenue est ensuite filtrée à l’aide d’un filtre non tissé, similaire à celui des masques FFP2, qui retient les particules solides.
+Le filtre est placé sous microscope optique pour repérer les microplastiques, dont la taille varie de 1 µm à 5 mm. Chaque particule
+suspecte est prélevée individuellement avec une pince fine, puis déposée dans un micro-tube.
+Ce micro-tube est placé dans un four spécial : les vapeurs émises lors du chauffage sont collectées puis analysées, ce qui permet de
+déterminer la composition chimique de chaque microplastique. C’est la pyrolyse CPG.
+Nous remercions très chaleureusement M. DUFLOS pour son accueil généreux et sa passion communicative. Cette visite nous a
+énormément enrichis : nous repartons avec des connaissances solides, des documents précieux… et surtout une grande motivation
+pour la suite de notre projet. Nous avons déjà pris rendez-vous pour revenir broyer nos plastiques à l’ANSES.
+
+La diffusion de la lumière
+Petits rappels historiques
+Depuis l’Antiquité, les hommes lèvent les yeux vers le ciel, fascinés par les halos du Soleil, les couchers flamboyants ou l’azur profond
+du jour, sans en connaître la cause physique.
+ARISTOTE et ses disciples, cherchant à expliquer ces merveilles, pensaient qu’elles provenaient de vapeurs, ou d’un mélange de feu et
+d’air (5).
+
+8
+
+Bien plus tard, en 1704, Isaac NEWTON (6) révolutionne la compréhension de la lumière. À l’aide d’un prisme, il montre que la lumière
+blanche n’est pas pure, mais composée de plusieurs couleurs. Il remarque aussi que l’atmosphère altère ces teintes, et évoque déjà la
+réfraction et la réflexion diffuse.
+Un siècle s’ouvre alors où la lumière devient un objet d’étude passionnant. En 1801, Thomas YOUNG (7) franchit une étape décisive :
+grâce à sa célèbre expérience de la double fente, il démontre expérimentalement que la lumière se comporte comme une onde.
+Quelques années plus tard, le 15 mars 1819, Augustin FRESNEL reçoit le Grand Prix de l’Académie des sciences. Par ses travaux sur la
+diffraction, il établit mathématiquement la nature ondulatoire de la lumière (8), confirmant ainsi les intuitions de Young.
+Les décennies suivantes poursuivent cette aventure scientifique. En 1869, John TYNDALL (9) s’intéresse à la diffusion de la lumière et
+met en évidence l’origine du bleu du ciel. Selon lui, la lumière solaire est diffusée par de très fines particules en suspension dans l’air.
+Ces particules dispersent davantage les courtes longueurs d’onde, notamment le bleu. La lumière qui continue sa route, appauvrie en
+bleu, apparaît alors plus rouge, d’où la couleur si caractéristique des couchers de Soleil.
+Deux ans plus tard, John W. STRUTTd (10) apporte une précision essentielle : le bleu du ciel ne vient pas de poussières, mais bien des
+molécules de l’air elles-mêmes. Il démontre que l’intensité de la lumière diffusée est inversement proportionnelle à la quatrième
+puissance de la longueur d’ondee :
 1
-  í µí¼
-4
-  
- 
- 
-Ainsi, si lâon compare les extrÃ©mitÃ©s du spectre visible : 
-  &#3627408444;
-&#3627408483;í µí±í µí±&#3627408473;&#3627408466;&#3627408481; &#3627408456;&#3627408457;  
- &#3627408444;
-í µí±í µí±&#3627408482;&#3627408468;&#3627408466; í µí°¼í µí±
-=
-  í µí¼
-í µí±í µí±&#3627408482;&#3627408468;&#3627408466; í µí°¼í µí±  
-4
- í µí¼
-&#3627408483;í µí±í µí±&#3627408473;&#3627408466;&#3627408481; &#3627408456;&#3627408457;
-4
+𝐼∝ 4
+𝜆
+Ainsi, si l’on compare les extrémités du spectre visible :
+𝜆4𝑟𝑜𝑢𝑔𝑒 𝐼𝑅
+𝐼𝑣𝑖𝑜𝑙𝑒𝑡 𝑈𝑉
+800 4
+= 4
 =(
- 800 
-   400   
-)
-4
-=2
-4
-=16 
- 
-Un rayonnement Ã  400 nm est donc seize fois plus diffusÃ© quâun rayonnement Ã  800 nm. La lumiÃ¨re nâest pas absorbÃ©e, mais rÃ©Ã©mise 
-dans toutes les directions : la diffusion est une propriÃ©tÃ© essentielle des ondes. 
- 
-Câest alors que Lord Rayleigh propose un modÃ¨le mathÃ©matique pour dÃ©crire cette diffusion par des particules bien plus petites que la 
-longueur dâonde de la lumiÃ¨re. Ã lâÃ©poque, la structure molÃ©culaire de lâair nâest pas encore clairement identifiÃ©e, et lâorigine 
-microscopique du phÃ©nomÃ¨ne demeure, pour un temps encore, un mystÃ¨re. 
- 
-Comme le rappelait  NEWTON en 1704 (6):  
-âLight consists of corpuscles emitted from luminous bodiesâ  
- Â« la lumiÃ¨re est formÃ©e de corpuscules Ã©mis par les corps lumineux Â»  
-Si cette vision a Ã©tÃ© supplantÃ©e par la thÃ©orie ondulatoire, elle retrouvera une place essentielle au XXáµ siÃ¨cle avec la notion de photon, 
-rÃ©conciliant ainsi corpuscules et ondes. 
- 
-Ã la fin du XIXáµ siÃ¨cle, la description ondulatoire de la lumiÃ¨re sâimpose avec lâÃ©lectromagnÃ©tisme de Maxwell. Quelques annÃ©es plus 
-tard, PLANCK (11) et EINSTEIN (12) introduisent une quantification de lâÃ©nergie lumineuse : les photons. Sans Ãªtre nÃ©cessaires pour 
-exposer la diffusion de Rayleigh, les photons sont utiles pour dÃ©crire les interactions microscopiques (diffusion, absorption, 
-transmission) qui affectent un faisceau lumineux dans lâatmosphÃ¨re.  
- 
-La lumiÃ¨re, dÃ©sormais dÃ©crite comme un flux de photons, peut interagir avec la matiÃ¨re. Ã lâÃ©chelle microscopique, chaque photon peut 
-Ãªtre diffusÃ©, absorbÃ© ou transmis lors de sa rencontre avec une particule. Ces interactions Ã©tant alÃ©atoires, on introduit une grandeur 
-statistique essentielle : le libre parcours moyen, qui reprÃ©sente la distance moyenne parcourue par un photon avant un choc. 
- 
-La lumiÃ¨re et les molÃ©cules 
- 
-Lâexplication proposÃ©e par RAYLE=G: est sÃ©duisante, mais elle ne rend pas compte, Ã  elle seule, des variations subtiles de couleur du 
-Soleil et du ciel au fil de la journÃ©e. 
- 
-Câest dans un tout autre contexte que le concept de libre parcours moyen voit le jour. En 1858, Rudolf CLAUSIUS (13) lâintroduit dans 
-la thÃ©orie cinÃ©tique des gaz : il reprÃ©sente la distance moyenne parcourue par une particule avant dâentrer en collision. 
-Peu aprÃ¨s, James Clerk MAXWELL en donne une description statistique complÃ¨te, reliant cette distance Ã  la densitÃ© des particules et Ã  
-leur vitesse moyenne. 
- 
-PrÃ¨s dâun siÃ¨cle plus tard, Subrahmanyan CHANDRASEKHAR
-f
- (14) transpose cette idÃ©e Ã  la physique du rayonnement. Il formalise la 
-probabilitÃ© dâinteraction dâun photon sous la loi exponentielle : 
- 
-&#3627408451;(í µí±§)=1â&#3627408466;
-âí µí±í µí¼í µí±§
- 
-OÃ¹ 
- 
+) = 24 = 16
+𝐼𝑟𝑜𝑢𝑔𝑒 𝐼𝑅
+400
+𝜆𝑣𝑖𝑜𝑙𝑒𝑡 𝑈𝑉
+Un rayonnement à 400 nm est donc seize fois plus diffusé qu’un rayonnement à 800 nm. La lumière n’est pas absorbée, mais réémise
+dans toutes les directions : la diffusion est une propriété essentielle des ondes.
+C’est alors que Lord Rayleigh propose un modèle mathématique pour décrire cette diffusion par des particules bien plus petites que la
+longueur d’onde de la lumière. À l’époque, la structure moléculaire de l’air n’est pas encore clairement identifiée, et l’origine
+microscopique du phénomène demeure, pour un temps encore, un mystère.
+Comme le rappelait NEWTON en 1704 (6):
+“Light consists of corpuscles emitted from luminous bodies”
+« la lumière est formée de corpuscules émis par les corps lumineux »
+Si cette vision a été supplantée par la théorie ondulatoire, elle retrouvera une place essentielle au XXᵉ siècle avec la notion de photon,
+réconciliant ainsi corpuscules et ondes.
+À la fin du XIXᵉ siècle, la description ondulatoire de la lumière s’impose avec l’électromagnétisme de Maxwell. Quelques années plus
+tard, PLANCK (11) et EINSTEIN (12) introduisent une quantification de l’énergie lumineuse : les photons. Sans être nécessaires pour
+exposer la diffusion de Rayleigh, les photons sont utiles pour décrire les interactions microscopiques (diffusion, absorption,
+transmission) qui affectent un faisceau lumineux dans l’atmosphère.
+La lumière, désormais décrite comme un flux de photons, peut interagir avec la matière. À l’échelle microscopique, chaque photon peut
+être diffusé, absorbé ou transmis lors de sa rencontre avec une particule. Ces interactions étant aléatoires, on introduit une grandeur
+statistique essentielle : le libre parcours moyen, qui représente la distance moyenne parcourue par un photon avant un choc.
+La lumière et les molécules
+L’explication proposée par RAYLEIGH est séduisante, mais elle ne rend pas compte, à elle seule, des variations subtiles de couleur du
+Soleil et du ciel au fil de la journée.
+C’est dans un tout autre contexte que le concept de libre parcours moyen voit le jour. En 1858, Rudolf CLAUSIUS (13) l’introduit dans
+la théorie cinétique des gaz : il représente la distance moyenne parcourue par une particule avant d’entrer en collision.
+Peu après, James Clerk MAXWELL en donne une description statistique complète, reliant cette distance à la densité des particules et à
+leur vitesse moyenne.
+Près d’un siècle plus tard, Subrahmanyan CHANDRASEKHARf (14) transpose cette idée à la physique du rayonnement. Il formalise la
+probabilité d’interaction d’un photon sous la loi exponentielle :
+𝑃(𝑧) = 1 − 𝑒 −𝑁𝜎𝑧
+Où
+
 d
- John William STRUTT devient Lord RAYLEIGH en 1872 et reÃ§oit le prix Nobel de physique en 1904 Â« pour ses recherches sur les densitÃ©s des gaz les plus importants et 
-pour sa dÃ©couverte de lâargon en rapport avec ces Ã©tudes Â». 
+
+John William STRUTT devient Lord RAYLEIGH en 1872 et reçoit le prix Nobel de physique en 1904 « pour ses recherches sur les densités des gaz les plus importants et
+pour sa découverte de l’argon en rapport avec ces études ».
 e
- HypothÃ¨ses du modÃ¨le : la diffusion de Rayleigh sâapplique Ã  des particules bien plus petites que la longueur dâonde (dâªÎ»), dans un milieu homogÃ¨ne et pour une 
-diffusion simple (sans interactions multiples).  
+Hypothèses du modèle : la diffusion de Rayleigh s’applique à des particules bien plus petites que la longueur d’onde (d≪λ), dans un milieu homogène et pour une
+diffusion simple (sans interactions multiples).
 f
- Subrahmanyan CHANDRASEKHAR a obtenu le prix Nobel de physique en 1983 Â« pour ses Ã©tudes thÃ©oriques sur les processus physiques importants pour la structure et 
-lâÃ©volution des Ã©toiles Â»
+Subrahmanyan CHANDRASEKHAR a obtenu le prix Nobel de physique en 1983 « pour ses études théoriques sur les processus physiques importants pour la structure et
+l’évolution des étoiles »
 
-10 
- 
-â¢ P(z) est la probabilitÃ© quâun photon ait subi au moins une interaction aprÃ¨s avoir parcouru la distance z 
-â¢ N, la densitÃ© de particules (en mâ»Â³).Câest le nombre de molÃ©cules ou de particules diffusantes prÃ©sentes par unitÃ© de volume. 
-Exemple : dans lâair, N=
-N
-A
-VM
- = 2,6Ã10
-25
-âm
+9
+
+•
+•
+
+P(z) est la probabilité qu’un photon ait subi au moins une interaction après avoir parcouru la distance z
+N, la densité de particules (en m⁻³).C’est le nombre de molécules ou de particules diffusantes présentes par unité de volume.
+Exemple : dans l’air, N=
+
+•
+•
+
 -3
-  Ã  pression et tempÃ©rature normales. 
-â¢ Ï est la section efficace (en mÂ²).Elle reprÃ©sente la "surface apparente" quâoffre une particule aux photons susceptibles 
-dâinteragir avec elle. 
-â¢ z est la distance parcourue par la lumiÃ¨re (en m). 
- 
-et la longueur du libre parcours moyen, â vaut 
-â=
+NA
+= 2,6×10 m à pression et température normales.
+VM
+25
+
+σ est la section efficace (en m²).Elle représente la "surface apparente" qu’offre une particule aux photons susceptibles
+d’interagir avec elle.
+z est la distance parcourue par la lumière (en m).
+
+et la longueur du libre parcours moyen, ℓ vaut
 1
-NÏ
- 
-Ainsi, le libre parcours moyen assure aujourdâhui le lien entre la physique statistique des gaz et la propagation des photons dans les 
-milieux diffusants, quâil sâagisse de lâatmosphÃ¨re terrestre ou de particules en suspension. 
- 
-Aujourdâhui, aprÃ¨s plus de 150 ans de physique de la diffusion de la lumiÃ¨re dans un milieu matÃ©riel quelconque, on calcule Ï par la 
-relation (15) : 
- 
-í µí¼(í µí¼)=
-24í µí¼
-3
-í µí¼
-4
-&#3627408449;
+Nσ
+Ainsi, le libre parcours moyen assure aujourd’hui le lien entre la physique statistique des gaz et la propagation des photons dans les
+milieux diffusants, qu’il s’agisse de l’atmosphère terrestre ou de particules en suspension.
+ℓ=
+
+Aujourd’hui, après plus de 150 ans de physique de la diffusion de la lumière dans un milieu matériel quelconque, on calcule σ par la
+relation (15) :
 2
- (
-&#3627408475;
-2
-â1
-&#3627408475;
-2
-+2
+
+24𝜋 3 𝑛2 − 1 6 + 3𝛿
+𝜎(𝜆) = 4 2 ( 2
 )
-2
-6+3&#3627409151;
-6â7&#3627409151;
- 
-On retrouve les paramÃ¨tres prÃ©cÃ©dents et : 
-â¢ n, lâindice de rÃ©fraction du milieu diffusant ; dans notre cas, celui de lâair, 
-â¢ &#3627409151;, est le rapport de dÃ©polarisation du milieu (sans dimension), qui corrige la diffusion Rayleigh pour des molÃ©cules non 
-parfaitement symÃ©triques ; pour lâair, &#3627409151; = 0,03. 
-Dans le vide, il nây a pas de diffuseurs (N = 0) ; donc í µí¼=&#3627408449;í µí¼í µí±§ est nulle et aucune diffusion nâa lieu. 
- 
-Appliquons maintenant cette relation Ã  lâatmosphÃ¨re terrestre. 
-Par souci de simplification, nous la considÃ©rons comme homogÃ¨ne en tous points. 
-â¢ On considÃ¨re que la valeur de lâaccÃ©lÃ©ration de la pesanteur est constante et vaut g0 = 9,80665 mâs
-â2
- (16), nous savons quâelle 
-varie avec lâaltitude. 
- 
-â¢ Lâindice de rÃ©fraction de lâair au niveau de la mer vaut nair=1,000277  Ã  589 nm (raie D du sodium), 15 Â°C et 1 atm, dâaprÃ¨s le 
-CRC Handbook of Chemistry and Physics (16).Cet indice dÃ©pend toutefois de nombreux paramÃ¨tres comme la tempÃ©rature, 
-la pression, lâhumiditÃ© et la longueur dâonde â¦ ; pour la suite, nous retiendrons la valeur arrondie : nair=1,0003. 
- 
-â¢ LâÂ« Ã©paisseur Â» de lâatmosphÃ¨re peut Ãªtre estimÃ©e Ã  partir de la pression atmosphÃ©rique normale, soit P0=101325 Pa.  
-Si lâon suppose lâatmosphÃ¨re uniforme, avec une masse volumique constante Ï0 = 1,2250 kgâm
-â3
- Ã  P0 = 101325 Pa 
-et T0 = 288,15 K(16). 
- 
-La statique des fluides nous donne : 
-P= Ïgh âº h =
+𝜆 𝑁 𝑛 + 2 6 − 7𝛿
+On retrouve les paramètres précédents et :
+• n, l’indice de réfraction du milieu diffusant ; dans notre cas, celui de l’air,
+• 𝛿, est le rapport de dépolarisation du milieu (sans dimension), qui corrige la diffusion Rayleigh pour des molécules non
+parfaitement symétriques ; pour l’air, 𝛿 = 0,03.
+Dans le vide, il n’y a pas de diffuseurs (N = 0) ; donc 𝜏 = 𝑁𝜎𝑧 est nulle et aucune diffusion n’a lieu.
+Appliquons maintenant cette relation à l’atmosphère terrestre.
+Par souci de simplification, nous la considérons comme homogène en tous points.
+• On considère que la valeur de l’accélération de la pesanteur est constante et vaut g0 = 9,80665 m⋅s–2 (16), nous savons qu’elle
+varie avec l’altitude.
+•
+
+L’indice de réfraction de l’air au niveau de la mer vaut nair=1,000277 à 589 nm (raie D du sodium), 15 °C et 1 atm, d’après le
+CRC Handbook of Chemistry and Physics (16).Cet indice dépend toutefois de nombreux paramètres comme la température,
+la pression, l’humidité et la longueur d’onde … ; pour la suite, nous retiendrons la valeur arrondie : nair=1,0003.
+
+•
+
+L’« épaisseur » de l’atmosphère peut être estimée à partir de la pression atmosphérique normale, soit P0=101325 Pa.
+Si l’on suppose l’atmosphère uniforme, avec une masse volumique constante ρ0 = 1,2250 kg⋅m−3 à P0 = 101325 Pa
+et T0 = 288,15 K(16).
+
+La statique des fluides nous donne :
+P= ρgh ⟺ h =
+
 P
-  Ïg 
- 
- En remplaÃ§ant : 
-h = 
+ρg
+
+En remplaçant :
 101325
-  1,2250 Ã 9,80665
- 
-h â 8,43 km 
- 
-Ainsi, dans cette approximation trÃ¨s simple, lâatmosphÃ¨re Ã©quivalente Ã  pression uniforme aurait une hauteur effective dâenviron 
-8,4 km, ce qui correspond bien Ã  lâordre de grandeur de la couche troposphÃ©rique. Dans cette approximation, la contribution de la 
-stratosphÃ¨re est nÃ©gligÃ©e car sa densitÃ© est trop faible pour influencer significativement la diffusion visible. 
- 
-Cette estimation, bien que rudimentaire, permet de relier les propriÃ©tÃ©s globales de lâatmosphÃ¨re Ã  la probabilitÃ© dâinteraction de la 
-lumiÃ¨re avec la matiÃ¨re. En effet, la distance moyenne parcourue par un photon avant diffusion, le libre parcours moyen, dÃ©pend 
-directement de la densitÃ© molÃ©culaire et de la section efficace de diffusion, deux grandeurs qui dÃ©coulent de ces paramÃ¨tres 
-atmosphÃ©riques de base. 
- 
-Le tableau ci-dessus prÃ©sente la part de lumiÃ¨re solaire diffusÃ©e dans lâatmosphÃ¨re en fonction de la longueur dâonde et de la distance 
-traversÃ©e par les rayons, comparant deux situations : 
-â¢ le Soleil au zÃ©nith, oÃ¹ le trajet optique est minimal (8,43 km), 
-â¢ et le Soleil Ã  lâhorizon, oÃ¹ la lumiÃ¨re parcourt un trajet beaucoup plus long (328 km
-g
-). 
-Fraction diffusÃ©e (modÃ¨le de Rayleigh) 
-Longueur dâonde en nm 400 450 500 550 600 650 700 750 800 
-Part de la lumiÃ¨re 
-diffusÃ©e pour 8,43 km 
-31,9% 21,3% 14,5% 10,2% 7,3% 5,4% 4,0% 3,1% 2,4% 
-Part de la lumiÃ¨re 
-diffusÃ©e pour 328 km 
-â100,0% â100,0% 99,8% 98,5% 94,8% 88,2% 79,6% 70,1% 60,7% 
- 
-g
- Le calcul dÃ©taillÃ© apparait en annexe IV.
+1,2250 × 9,80665
+h ≈ 8,43 km
+h=
 
-11 
- 
- 
-On observe que la fraction de lumiÃ¨re diffusÃ©e diminue rapidement lorsque la longueur dâonde augmente. Ainsi, pour un trajet vertical 
-de 8,43 km, environ 32 % de la lumiÃ¨re bleue Ã  400 nm est diffusÃ©e, contre seulement 2,4 % pour la lumiÃ¨re rouge Ã  800 nm. Ce 
-comportement suit la loi de Rayleigh, selon laquelle la diffusion varie en inverse de la puissance quatriÃ¨me de la longueur dâonde : les 
-courtes longueurs dâonde (bleu, violet) sont donc beaucoup plus dÃ©viÃ©es par les molÃ©cules de lâair que les longues (rouge). Si le ciel 
-paraÃ®t bleu et non violet, câest parce que notre Åil est peu sensible au violet, que le Soleil en Ã©met peu, et quâune partie est absorbÃ©e 
-par lâozone. 
- 
-Lorsque le Soleil est Ã  lâhorizon, la distance optique parcourue dans lâatmosphÃ¨re est environ 39 fois plus grande. Dans ces conditions, 
-la quasi-totalitÃ© des courtes longueurs dâonde est diffusÃ©e (prÃ¨s de 100 % Ã  400â450 nm), alors que les grandes longueurs dâonde ne le 
-sont que partiellement (environ 60 % Ã  800 nm).  
- 
-Les valeurs chiffrÃ©es obtenues sont du mÃªme ordre de grandeur que les profondeurs optiques de Rayleigh publiÃ© par Bodhaine et al. 
-(15) pour une atmosphÃ¨re standard, ce qui indique que notre modÃ¨le est physiquement cohÃ©rent. 
- 
-Nous avons choisi de visualiser lâimpact sur un spectre. 
- 
-Nous supposons que le spectre extraterrestre du Soleil est uniforme, la lumiÃ¨re solaire est alors blanche. 
- 
-Spectre de la lumiÃ¨re solaire Â« extraterrestre Â» (Fictif et idÃ©alisÃ©) 
- 
-Remarque. Le spectre âextraterrestreâ rÃ©el (AM0)(16) nâest pas plat ; de plus, lâozone et les aÃ©rosols influencent la couleur observÃ©e, surtout Ã  lâhorizon. Ce choix de 
-âspectre platâ vise Ã  isoler lâeffet Rayleigh. 
- 
-Situation 
-LumiÃ¨re diffusÃ©e (ciel) 	LumiÃ¨re transmise (Soleil) 
-Spectre Teinte perÃ§ue 
-h
- Spectre Teinte perÃ§ue  
-Soleil au zÃ©nith 
- 
- 
- 
- 
-Soleil Ã  lâhorizon 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-On observe que la proportion de lumiÃ¨re diffusÃ©e augmente fortement lorsque la longueur dâonde diminue et lorsque la trajectoire 
-optique sâallonge. Ainsi, la diffusion des courtes longueurs dâonde (bleu) devient presque totale pour un Soleil bas Ã  lâhorizon, alors que 
-la lumiÃ¨re directe, appauvrie en bleu, apparaÃ®t orangÃ©e ou rouge. Ce rÃ©sultat est en accord avec lâobservation : le ciel devient bleu et le 
-Soleil rougit au coucher. 
- 
-h
- Les teintes du ciel et du Soleil ont Ã©tÃ© obtenues Ã  lâaide des outils en ligne gratuits https://lokeshdhakar.com/projects/color-thief/ et https://imagecolorpicker.com/, 
-permettant dâextraire la couleur dominante Ã  partir dâimages spectrales.
+Ainsi, dans cette approximation très simple, l’atmosphère équivalente à pression uniforme aurait une hauteur effective d’environ
+8,4 km, ce qui correspond bien à l’ordre de grandeur de la couche troposphérique. Dans cette approximation, la contribution de la
+stratosphère est négligée car sa densité est trop faible pour influencer significativement la diffusion visible.
+Cette estimation, bien que rudimentaire, permet de relier les propriétés globales de l’atmosphère à la probabilité d’interaction de la
+lumière avec la matière. En effet, la distance moyenne parcourue par un photon avant diffusion, le libre parcours moyen, dépend
+directement de la densité moléculaire et de la section efficace de diffusion, deux grandeurs qui découlent de ces paramètres
+atmosphériques de base.
+Le tableau ci-dessus présente la part de lumière solaire diffusée dans l’atmosphère en fonction de la longueur d’onde et de la distance
+traversée par les rayons, comparant deux situations :
+• le Soleil au zénith, où le trajet optique est minimal (8,43 km),
+• et le Soleil à l’horizon, où la lumière parcourt un trajet beaucoup plus long (328 kmg).
+Longueur d’onde en nm
+Part de la lumière
+diffusée pour 8,43 km
+Part de la lumière
+diffusée pour 328 km
+g
 
-12 
- 
-Notre photomÃ¨tre 
- 
-Pour rÃ©aliser un photomÃ¨tre maison, nous sommes allÃ©s voir M. StÃ©phane DEMART:E, professeur de sciences de lâingÃ©nieur et de 
-numÃ©rique et sciences informatiques (NSI). Nous cherchions un capteur de lumiÃ¨re peu coÃ»teux et facilement transportable dans le 
-lycÃ©e. AprÃ¨s de nombreux Ã©changes et conseils techniques, nous le remercions sincÃ¨rement pour sa patience, sa disponibilitÃ© et son 
-aide prÃ©cieuse. 
- 
-Nous avons choisi le capteur CQRobot TSL25911 pour sa grande plage de mesure (600 millions de valeurs possibles) et sa prÃ©cision, lui 
-permettant de dÃ©tecter aussi bien de faibles que de fortes intensitÃ©s lumineuses. Il est facile Ã  piloter avec un microcontrÃ´leur Arduino, 
-et sa double photodiode (visible + infrarouge) amÃ©liore la fiabilitÃ© des mesures. 
-Nous avons Ã©galement choisi dây ajouter un afficheur LCD, afin de consulter directement les valeurs mesurÃ©es sans avoir recours Ã  un 
-ordinateur. Lâutilisation dâun chargeur de tÃ©lÃ©phone ou dâune batterie externe permet enfin de rendre le dispositif autonome et de 
-sâaffranchir des problÃ¨mes de connectique ou de connexion au PC. 
- 
-Ce qui nous permet de rÃ©aliser le montage suivant : 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-SchÃ©ma de cÃ¢blage de notre montage Arduino 
-M. DEMARTHE nous a Ã©galement fourni un code permettant de convertir les signaux reÃ§us en valeurs exploitables (Annexe V). Le 
-TSL25911 est un capteur dâÃ©clairement lumineux, câest-Ã -dire quâil mesure la quantitÃ© de lumiÃ¨re reÃ§ue par une surface. =l fournit 
-directement des valeurs en lux (lx). Un lux correspond Ã  lâÃ©clairement produit par un flux lumineux dâun lumen rÃ©parti sur un mÃ¨tre 
-carrÃ©. 
- 
- 
-Quelques valeurs dâÃ©clairement 
-Situation Ãclairement (lux) 
-Nuit trÃ¨s sombre (sans lune) ~0,001 â 0,01 lx 
-Nuit claire / Pleine lune ~0,1 â 1 lx 
-Rue peu Ã©clairÃ©e la nuit ~5 â 20 lx 
-Ãclairage public moderne ~20 â 50 lx 
-Couloir intÃ©rieur ~50 â 100 lx 
-Salon bien Ã©clairÃ© ~100 â 300 lx 
-Salle de classe ~300 â 500 lx 
-SupermarchÃ© ~500 â 1 000 lx 
-Bureau / Salle de travail ~300 â 1 000 lx 
-Labo scientifique ~1 000 â 2 000 lx 
-Ãclairage de studio photo ~2 000 â 10 000 lx 
-LumiÃ¨re du jour (ciel couvert) ~1 000 â 5 000 lx 
-ExtÃ©rieur en plein jour ~10 000 â 25 000 lx 
-Soleil direct ~100 000 lx 
- 
-Remarque importante : les valeurs fournies par le capteur sont exprimÃ©es en lux, une unitÃ© basÃ©e sur la sensibilitÃ© de lâÅil humain. Le 
-lux ne mesure donc pas la puissance lumineuse rÃ©elle, mais la lumiÃ¨re perÃ§ue. Ã lâinverse, la grandeur physique qui quantifie lâÃ©nergie 
-lumineuse reÃ§ue est lâirradiance, exprimÃ©e en W/mÂ², et indÃ©pendante de la perception humaine. Comme ces deux grandeurs ne 
-dÃ©crivent pas la lumiÃ¨re de la mÃªme maniÃ¨re, il nâexiste pas de conversion directe entre lux et W/mÂ² sans connaÃ®tre le spectre de la 
-lumiÃ¨re. Le TSL25911 permet donc de mesurer un Ã©clairement perÃ§u, mais pas directement la puissance lumineuse physique. 
- 
-La conversion entre lux et W/mÂ² sâappuie sur la fonction de sensibilitÃ© de lâÅil humain dÃ©finie par la Commission Internationale de 
-lâÃclairage (C=E) dans le document officiel (17). 
-Ce document fournit pour chaque longueur dâonde, un coefficient V(Î») indispensable pour relier lâÃ©clairement photomÃ©trique, í µí°¸ (en 
-lux), basÃ©e sur la perception humaine, Ã  lâirradiance radiomÃ©trique í µí°¸
-&#3627408466; (W.m
-â
-Â²), basÃ©e sur la puissance rÃ©ellement reÃ§ue. 
+400
+
+Fraction diffusée (modèle de Rayleigh)
+450
+500
+550
+600
+650
+
+700
+
+750
+
+800
+
+31,9%
+
+21,3%
+
+14,5%
+
+10,2%
+
+7,3%
+
+5,4%
+
+4,0%
+
+3,1%
+
+2,4%
+
+≈100,0% ≈100,0% 99,8%
+
+98,5%
+
+94,8%
+
+88,2%
+
+79,6%
+
+70,1%
+
+60,7%
+
+Le calcul détaillé apparait en annexe IV.
+
+10
+
+On observe que la fraction de lumière diffusée diminue rapidement lorsque la longueur d’onde augmente. Ainsi, pour un trajet vertical
+de 8,43 km, environ 32 % de la lumière bleue à 400 nm est diffusée, contre seulement 2,4 % pour la lumière rouge à 800 nm. Ce
+comportement suit la loi de Rayleigh, selon laquelle la diffusion varie en inverse de la puissance quatrième de la longueur d’onde : les
+courtes longueurs d’onde (bleu, violet) sont donc beaucoup plus déviées par les molécules de l’air que les longues (rouge). Si le ciel
+paraît bleu et non violet, c’est parce que notre œil est peu sensible au violet, que le Soleil en émet peu, et qu’une partie est absorbée
+par l’ozone.
+Lorsque le Soleil est à l’horizon, la distance optique parcourue dans l’atmosphère est environ 39 fois plus grande. Dans ces conditions,
+la quasi-totalité des courtes longueurs d’onde est diffusée (près de 100 % à 400–450 nm), alors que les grandes longueurs d’onde ne le
+sont que partiellement (environ 60 % à 800 nm).
+Les valeurs chiffrées obtenues sont du même ordre de grandeur que les profondeurs optiques de Rayleigh publié par Bodhaine et al.
+(15) pour une atmosphère standard, ce qui indique que notre modèle est physiquement cohérent.
+Nous avons choisi de visualiser l’impact sur un spectre.
+Nous supposons que le spectre extraterrestre du Soleil est uniforme, la lumière solaire est alors blanche.
+
+Spectre de la lumière solaire « extraterrestre » (Fictif et idéalisé)
+Remarque. Le spectre “extraterrestre” réel (AM0)(16) n’est pas plat ; de plus, l’ozone et les aérosols influencent la couleur observée, surtout à l’horizon. Ce choix de
+“spectre plat” vise à isoler l’effet Rayleigh.
+
+Situation
+
+Lumière diffusée (ciel)
+Spectre
+Teinte perçue h
+
+Lumière transmise (Soleil)
+Spectre
+Teinte perçue
+
+Soleil au zénith
+
+Soleil à l’horizon
+
+On observe que la proportion de lumière diffusée augmente fortement lorsque la longueur d’onde diminue et lorsque la trajectoire
+optique s’allonge. Ainsi, la diffusion des courtes longueurs d’onde (bleu) devient presque totale pour un Soleil bas à l’horizon, alors que
+la lumière directe, appauvrie en bleu, apparaît orangée ou rouge. Ce résultat est en accord avec l’observation : le ciel devient bleu et le
+Soleil rougit au coucher.
+
+h
+
+Les teintes du ciel et du Soleil ont été obtenues à l’aide des outils en ligne gratuits https://lokeshdhakar.com/projects/color-thief/ et https://imagecolorpicker.com/,
+permettant d’extraire la couleur dominante à partir d’images spectrales.
+
+11
+
+Notre photomètre
+Pour réaliser un photomètre maison, nous sommes allés voir M. Stéphane DEMARTHE, professeur de sciences de l’ingénieur et de
+numérique et sciences informatiques (NSI). Nous cherchions un capteur de lumière peu coûteux et facilement transportable dans le
+lycée. Après de nombreux échanges et conseils techniques, nous le remercions sincèrement pour sa patience, sa disponibilité et son
+aide précieuse.
+Nous avons choisi le capteur CQRobot TSL25911 pour sa grande plage de mesure (600 millions de valeurs possibles) et sa précision, lui
+permettant de détecter aussi bien de faibles que de fortes intensités lumineuses. Il est facile à piloter avec un microcontrôleur Arduino,
+et sa double photodiode (visible + infrarouge) améliore la fiabilité des mesures.
+Nous avons également choisi d’y ajouter un afficheur LCD, afin de consulter directement les valeurs mesurées sans avoir recours à un
+ordinateur. L’utilisation d’un chargeur de téléphone ou d’une batterie externe permet enfin de rendre le dispositif autonome et de
+s’affranchir des problèmes de connectique ou de connexion au PC.
+Ce qui nous permet de réaliser le montage suivant :
+
 SDA
 
-13 
- 
-í µí°¸
-&#3627408466; =
-í µí°¸
-  683 &#3627408457;
-í µí¼  
- 
- 
-Le 683 est un nombre officiel, dÃ©fini internationalement, et il vient directement de la dÃ©finition du lumen et de la candela dans le 
-SystÃ¨me International (SI). 
- 
-Exemple : 
-â¢ Ã 555 nm, oÃ¹   &#3627408457;
-í µí¼  =1, on obtient pour 1000 lux 
-í µí°¸
-&#3627408466;555 &#3627408475;&#3627408474;
- =
+Schéma de câblage de notre montage Arduino
+
+M. DEMARTHE nous a également fourni un code permettant de convertir les signaux reçus en valeurs exploitables (Annexe V). Le
+TSL25911 est un capteur d’éclairement lumineux, c’est-à-dire qu’il mesure la quantité de lumière reçue par une surface. Il fournit
+directement des valeurs en lux (lx). Un lux correspond à l’éclairement produit par un flux lumineux d’un lumen réparti sur un mètre
+carré.
+
+Quelques valeurs d’éclairement
+Situation
+Éclairement (lux)
+Nuit très sombre (sans lune)
+~0,001 – 0,01 lx
+Nuit claire / Pleine lune
+~0,1 – 1 lx
+Rue peu éclairée la nuit
+~5 – 20 lx
+Éclairage public moderne
+~20 – 50 lx
+Couloir intérieur
+~50 – 100 lx
+Salon bien éclairé
+~100 – 300 lx
+Salle de classe
+~300 – 500 lx
+Supermarché
+~500 – 1 000 lx
+Bureau / Salle de travail
+~300 – 1 000 lx
+Labo scientifique
+~1 000 – 2 000 lx
+Éclairage de studio photo
+~2 000 – 10 000 lx
+Lumière du jour (ciel couvert)
+~1 000 – 5 000 lx
+Extérieur en plein jour
+~10 000 – 25 000 lx
+Soleil direct
+~100 000 lx
+
+Remarque importante : les valeurs fournies par le capteur sont exprimées en lux, une unité basée sur la sensibilité de l’œil humain. Le
+lux ne mesure donc pas la puissance lumineuse réelle, mais la lumière perçue. À l’inverse, la grandeur physique qui quantifie l’énergie
+lumineuse reçue est l’irradiance, exprimée en W/m², et indépendante de la perception humaine. Comme ces deux grandeurs ne
+décrivent pas la lumière de la même manière, il n’existe pas de conversion directe entre lux et W/m² sans connaître le spectre de la
+lumière. Le TSL25911 permet donc de mesurer un éclairement perçu, mais pas directement la puissance lumineuse physique.
+La conversion entre lux et W/m² s’appuie sur la fonction de sensibilité de l’œil humain définie par la Commission Internationale de
+l’Éclairage (CIE) dans le document officiel (17).
+Ce document fournit pour chaque longueur d’onde, un coefficient V(λ) indispensable pour relier l’éclairement photométrique, 𝐸 (en
+lux), basée sur la perception humaine, à l’irradiance radiométrique 𝐸𝑒 (W.m–²), basée sur la puissance réellement reçue.
+12
+
+𝐸𝑒 =
+
+𝐸
+683 𝑉𝜆
+
+Le 683 est un nombre officiel, défini internationalement, et il vient directement de la définition du lumen et de la candela dans le
+Système International (SI).
+Exemple :
+• À 555 nm, où 𝑉𝜆 = 1, on obtient pour 1000 lux
+𝐸𝑒555 𝑛𝑚 =
+•
+
 1000
-  683Ã1 
-  
-=1,46 &#3627408458;.&#3627408474;
-â2
- 
- 
-â¢ Ã 450 nm, oÃ¹   &#3627408457;
-í µí¼  =0,038 pour le mÃªme Ã©clairement  
-í µí°¸
-&#3627408466;450 &#3627408475;&#3627408474;
-=
+= 1,46 𝑊. 𝑚−2
+683 × 1
+
+À 450 nm, où 𝑉𝜆 = 0,038 pour le même éclairement
+𝐸𝑒450 𝑛𝑚 =
+
 1000
-  683Ã0,038 
-  
-=38,5 &#3627408458;.&#3627408474;
-â2
- 
- 
-Ã 450 nm, pour obtenir le mÃªme Ã©clairement visuel (1000 lux), il faut beaucoup plus de puissance physique, ce qui explique pourquoi 
-lâirradiance est bien plus Ã©levÃ©e (38,5 WÂ·mâ»Â²) quâÃ  555 nm (1,46 WÂ·mâ»Â²). 
- 
-Notre capteur est-il linÃ©aire ? 
- 
-Pour vÃ©rifier la linÃ©aritÃ© du capteur, nous avons cherchÃ© Ã  tester la loi de Beer-Lambert en rÃ©alisant un montage spectrophotomÃ©trique. 
-Cette loi relie lâabsorbance dâune solution Ã  la concentration de lâespÃ¨ce absorbante. Si le capteur est linÃ©aire dans la zone Ã©tudiÃ©e, les 
-mesures obtenues doivent suivre cette relation. 
- 
-Pour faire varier la concentration sans changer les rÃ©glages. La balance permet de mesurer avec prÃ©cision les ajouts. 
- 
-La loi de Beer- Lambert exprime la variation dâintensitÃ© dâun faisceau lumineux traversant un milieu absorbant(18) : 
-í µí°´
-í µí¼= âlog(
-  &#3627408444;  
-&#3627408444;
-0
-)=&#3627409152;
-í µí¼&#3627408473;í µí°¶ 
-OÃ¹ &#3627408444;
-0 est lâintensitÃ© incidente, &#3627408444; lâintensitÃ© finale, &#3627409152; le coefficient dâabsorption molaire, C la concentration molaire de la substance 
-absorbante, et l la longueur du trajet optique 
- 
-En terminale on rencontre plus souvent la forme : 
-í µí°´= &#3627408472;í µí°¶ 
-Lâabsorbance est proportionnelle Ã  la concentration, le graphe est une droite passant par lâorigine. 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Ce qui suppose dâavoir lâorigine (0,0) lâabsorbance dâune solution sans solutÃ© est posÃ©e comme nulle. 
- 
-Or, exposer directement notre capteur Ã  un faisceau laser trop intense pourrait entraÃ®ner sa dÃ©gradation, voire sa destruction. Une 
-rÃ©duction prÃ©alable de lâintensitÃ© est donc indispensable : nous ne pouvons pas mesurer directement &#3627408444;
-0.  
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Laser  
-Balance  326.56 g 
-Laser 
-Capteur 
-Arduino 
-Agitateur 
-magnÃ©tique 
-Cuve carrÃ©e 
-Solution de 
-concentration C 
-45 mm 
-Ajout dâeau pour modifier la concentration  
-A 
-C 
-0 
+= 38,5 𝑊. 𝑚−2
+683 × 0,038
+
+À 450 nm, pour obtenir le même éclairement visuel (1000 lux), il faut beaucoup plus de puissance physique, ce qui explique pourquoi
+l’irradiance est bien plus élevée (38,5 W·m⁻²) qu’à 555 nm (1,46 W·m⁻²).
+Notre capteur est-il linéaire ?
+Pour vérifier la linéarité du capteur, nous avons cherché à tester la loi de Beer-Lambert en réalisant un montage spectrophotométrique.
+Cette loi relie l’absorbance d’une solution à la concentration de l’espèce absorbante. Si le capteur est linéaire dans la zone étudiée, les
+mesures obtenues doivent suivre cette relation.
+Ajout d’eau pour modifier la concentration
+
+Cuve carrée
+45 mm
+
+Solution de
+concentration C
+
+Laser
+Agitateur
+magnétique
+
+Balance
+
+326.56 g
+
+Capteur
+Arduino
+
+Pour faire varier la concentration sans changer les réglages. La balance permet de mesurer avec précision les ajouts.
+La loi de Beer- Lambert exprime la variation d’intensité d’un faisceau lumineux traversant un milieu absorbant(18) :
+𝐼
+𝐴𝜆 = − log ( ) = 𝜀𝜆 𝑙𝐶
+𝐼0
+Où 𝐼0 est l’intensité incidente, 𝐼 l’intensité finale, 𝜀 le coefficient d’absorption molaire, C la concentration molaire de la substance
+absorbante, et l la longueur du trajet optique
+En terminale on rencontre plus souvent la forme :
+𝐴 = 𝑘𝐶
+L’absorbance est proportionnelle à la concentration, le graphe est une droite passant par l’origine.
+A
+
 0
 
-14 
- 
- 
-Pour contourner cette contrainte, nous utilisons une solution de rÃ©fÃ©rence de concentrationí µí°¶
-1.La mesure dâintensitÃ© transmise 
-correspondante, &#3627408444;
-1 , donne : 
-í µí°´
-1= &#3627408472;í µí°¶
-1= âlog(
-  &#3627408444;
-1  
-&#3627408444;
 0
-)=log&#3627408444;
-0â&#3627408473;&#3627408476;í µí±&#3627408444;
-1 
-Puis, nous prÃ©parons une seconde solution de concentration í µí°¶
-2>í µí°¶
-1 , pour laquelle nous mesurons &#3627408444;
-2. Ainsi : 
-í µí°´
-2= &#3627408472;í µí°¶
-2= âlog(
-  &#3627408444;
-2  
-&#3627408444;
+
+C
+
+Ce qui suppose d’avoir l’origine (0,0) l’absorbance d’une solution sans soluté est posée comme nulle.
+Or, exposer directement notre capteur à un faisceau laser trop intense pourrait entraîner sa dégradation, voire sa destruction. Une
+réduction préalable de l’intensité est donc indispensable : nous ne pouvons pas mesurer directement 𝐼0 .
+13
+
+Pour contourner cette contrainte, nous utilisons une solution de référence de concentration𝐶1 .La mesure d’intensité transmise
+correspondante, 𝐼1 , donne :
+𝐼1
+𝐴1 = 𝑘𝐶1 = − log (
+) = log 𝐼0 − 𝑙𝑜𝑔𝐼1
+𝐼0
+Puis, nous préparons une seconde solution de concentration 𝐶2 > 𝐶1 , pour laquelle nous mesurons 𝐼2 . Ainsi :
+𝐼2
+𝐴2 = 𝑘𝐶2 = − log (
+) = log 𝐼0 − 𝑙𝑜𝑔𝐼2
+𝐼0
+En faisant la différence :
+𝐴2 − 𝐴1 = 𝑘𝐶2 − 𝑘𝐶1 = (log 𝐼0 − 𝑙𝑜𝑔𝐼2 ) − (log 𝐼0 − 𝑙𝑜𝑔𝐼1 )
+𝐼2
+𝐴2 − 𝐴1 = 𝑘(𝐶2 − 𝐶1 ) = 𝑙𝑜𝑔𝐼1 − 𝑙𝑜𝑔𝐼2 = −𝑙𝑜𝑔
+𝐼1
+On définit alors :
+𝐴′ = 𝐴2 − 𝐴1 (Absorbance relative à la référence𝐶1 ).
+𝐶′ = 𝐶2 − 𝐶1 , (concentration relative à la référence).
+On obtient ainsi la forme relative de la loi de Beer-Lambert :
+𝐴′ = 𝑘𝐶′
+Cette relation ne dépend plus de 𝐼0 : nous pouvons donc exploiter la loi de Beer-Lambert sans jamais exposer le capteur à un faisceau
+trop intense.
+A’
+
+A
+
+C’
 0
-)=log&#3627408444;
-0â&#3627408473;&#3627408476;í µí±&#3627408444;
-2 
-En faisant la diffÃ©rence : 
-í µí°´
-2âí µí°´
-1= &#3627408472;í µí°¶
-2â&#3627408472;í µí°¶
-1=(log&#3627408444;
-0â&#3627408473;&#3627408476;í µí±&#3627408444;
-2)â(log&#3627408444;
-0â&#3627408473;&#3627408476;í µí±&#3627408444;
-1) 
-í µí°´
-2âí µí°´
-1= &#3627408472;(í µí°¶
-2âí µí°¶
-1)=&#3627408473;&#3627408476;í µí±&#3627408444;
-1â&#3627408473;&#3627408476;í µí±&#3627408444;
-2=â&#3627408473;&#3627408476;í µí±
-  &#3627408444;
-2  
-  &#3627408444;
-1
- 
-On dÃ©finit alors : 
-í µí°´
-â²
-=í µí°´
-2âí µí°´
-1 (Absorbance relative Ã  la rÃ©fÃ©renceí µí°¶
-1). 
-í µí°¶â²=í µí°¶
-2âí µí°¶
-1, (concentration relative Ã  la rÃ©fÃ©rence). 
-On obtient ainsi la forme relative de la loi de Beer-Lambert : 
-í µí°´â²= &#3627408472;í µí°¶â² 
-Cette relation ne dÃ©pend plus de &#3627408444;
-0 : nous pouvons donc exploiter la loi de Beer-Lambert sans jamais exposer le capteur Ã  un faisceau 
-trop intense. 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Choix des solutions pour Ã©talonner notre capteur 
- 
-Pour le laser vert, nous avons choisi 
-une solution de permanganate de 
-potassium Ã  5,0.10
-â3
- mol.L
--1 
- 
- 
- 
- 
-Spectre
-i
- du permanganate de potassium 
-í µí¼
-&#3627408474;&#3627408462;í µí±¥=525 &#3627408475;&#3627408474;   
-Cette valeur est voisine de celle admise 
-de 530 nm. Ce qui est voisin de la 
-longueur dâonde de notre laser 532 nm  
- 
- 
-Pour le laser rouge, nous avons choisi 
-une solution dâions cuivre (==) 
-complexÃ©s par un excÃ¨s 
-dâammoniaque, formant le complexe 
-í µí°¶í µí±¢(&#3627408449;&#3627408443;
-3)
+
+0
+
+C
+
+Choix des solutions pour étalonner notre capteur
+Pour le laser vert, nous avons choisi
+une solution de permanganate de
+potassium à 5,0.10–3 mol.L-1
+
+Pour le laser rouge, nous avons choisi
+une solution d’ions cuivre (II)
+complexés
+par
+un
+excès
+d’ammoniaque, formant le complexe
+–2
+–1
+𝐶𝑢(𝑁𝐻3 )2+
+4 à 2,0.10 mol.L
+
+Pour le laser violet, nous avons choisi
+une solution de Lugol qui est une
+solution de diiode dans un excès
+d’iodure de potassium à 2,5.10–4 mol.L–
+
+Spectre du complexe 𝐶𝑢(𝑁𝐻3 )2+
 4
-2+
-Ã  2,0.10
-â2
- mol.L
-â1
- 
- 
- 
-Spectre du complexe í µí°¶í µí±¢(&#3627408449;&#3627408443;
-3)
-4
-2+
- 
-í µí¼
-&#3627408474;&#3627408462;í µí±¥=630 &#3627408475;&#3627408474;   
-Ce qui est voisin de la longueur dâonde 
-de notre laser rouge 635 nm  
- 
- 
- 
- 
-Pour le laser violet, nous avons choisi 
-une solution de Lugol qui est une 
-solution de diiode dans un excÃ¨s 
-dâiodure de potassium Ã  2,5.10
-â4
- mol.L
-â
+
+𝜆𝑚𝑎𝑥 = 490 𝑛𝑚
+
 1
- 
- 
-Spectre du Lugol 
-í µí¼
-&#3627408474;&#3627408462;í µí±¥=490 &#3627408475;&#3627408474;   
- 
-Ce qui est assez Ã©loignÃ© de la longueur 
-dâonde de notre laser violet 404 nm. 
-Mais nous notons quâÃ  cette longueur 
-dâonde lâabsorbance est importante et 
-nous permettra de faire de la 
-spectrophotomÃ©trie. 
-  
- 
+
+Spectre du Lugol
 i
- =nitialement, nous avions fait des spectres Ã  lâaide dâun spectrophotomÃ¨tre SecomamÂ® Primlight connectÃ© Ã  un ordinateur. Cependant, un incident informatique majeur survenu au lycÃ©e nous a contraint Ã  revenir une mÃ©thode manuelle en reportant nos valeurs dans Excel Ã  la maison. 
-Les valeurs obtenues sont donc lÃ©gÃ¨rement moins prÃ©cises que celle obtenues au dÃ©part, et nous vous prions de bien vouloir nous en excuser. 
-A 
-C 
-0 
-0 
-Câ 
-Aâ
 
-15 
- 
-RÃ©sultats pour les diffÃ©rentes solutions  
- 
-    
- 
-Dans les trois cas, mÃªme si lâalignement des points expÃ©rimentaux nâest pas parfait, les valeurs Ã©levÃ©es du coefficient de corrÃ©lation RÂ² 
-montrent que la loi de Beer-Lambert est bien vÃ©rifiÃ©e pour chaque longueur dâonde. On peut donc en conclure que notre capteur 
-prÃ©sente une rÃ©ponse linÃ©aire pour chacune dâentre elles. Cela signifie quâil peut Ãªtre utilisÃ© de maniÃ¨re fiable pour mesurer la quantitÃ© 
-de lumiÃ¨re diffusÃ©e. 
-Mesure de la diffusion de la lumiÃ¨re 
-Montage  
- 
-Voici le montage que nous avons utilisÃ© : 
- 
- 
-Nous avons choisi de travailler dans un local obscur et nous avons vÃ©rifiÃ© que le rÃ©troÃ©clairage, en lâabsence de toute autre source 
-lumineuse, produisait bien un signal nul. Dans ces conditions, la valeur affichÃ©e Ã©tait Â«  â â â â â â  Â» 
- 
-La lampe LES choisie est : Senlan Led 9W RGB 3-IN-1. DâaprÃ¨s la notice (19) son spectre est le suivant. 
- 
-Trois LED (rouge, verte et bleue) peuvent Ãªtre allumÃ©es ensemble ou sÃ©parÃ©ment Ã  lâaide dâune tÃ©lÃ©commande, ce qui permet dâobtenir 
-une grande variÃ©tÃ© de combinaisons de teintes. Ces LED ne sont pas parfaitement monochromatiques : elles possÃ¨dent une largeur 
-spectrale non nulle. En annexe V=, nous prÃ©sentons lâÃ©tude de ce profil spectral ainsi que les choix mÃ©thodologiques qui nous ont 
-conduits Ã  considÃ©rer trois couleurs fondamentales : rouge (í µí¼=630 &#3627408475;&#3627408474; ) , vert (í µí¼=520 &#3627408475;&#3627408474; )  et bleu (í µí¼=456 &#3627408475;&#3627408474; )
+Spectre du permanganate de potassium
 
-16 
- 
-Mesures avec le lait 
- 
-Le lait est un liquide classique pour montrer la diffusion de la lumiÃ¨re, et constitue dâailleurs une dÃ©monstration attribuÃ©e Ã  John Tyndall. 
-Nous avons donc commencÃ© par le tester en utilisant du lait entier, câest probablement celui qui se rapproche le plus de celui 
-quâemployait Tyndall au X=Xáµ siÃ¨cle. 
- 
-LâexpÃ©rience sâest avÃ©rÃ©e peu concluante, ce qui nous a finalement permis dâen apprendre beaucoup. Notre professeur nous a dâailleurs 
-rapportÃ© une anecdote : lors dâun TP de chimie, un lait fermier trÃ¨s gras ne filtrait quasiment pas, rendant la suite impossible. Sur ses 
-conseils, nous avons tentÃ© lâexpÃ©rience avec du lait Ã©crÃ©mÃ©. 
- 
-Nous avons diluÃ© 10 fois le lait Ã©crÃ©mÃ© avant de lâajouter progressivement dans 800 g dâeau Ã  lâaide dâune burette graduÃ©e. Voici nos 
-premiÃ¨res mesures. Dans le cas du lait, le terme concentration est employÃ© de maniÃ¨re abusive : il dÃ©signe ici la masse de lait (en 
-grammes) introduite par litre de solution, et non la concentration effective en particules diffusantes. 
- 
-PremiÃ¨re analyse, le lait diffuse bien la lumiÃ¨re. Le bleu est la lumiÃ¨re pour laquelle nous mesurons le plus de lumiÃ¨re diffusÃ©e avec 
-notre montage. Si on effectue un zoom sur les faibles concentrations, nous obtenons. 
- 
-Les valeurs mesurÃ©es sont proportionnelles Ã  la concentration quand elle est trÃ¨s faible. 
-Oui, nous parlons de valeurs mesurÃ©es, car nous mesurons un Ã©clairement en lux. Par ailleurs, câest Nicolas PERNET, ancien Ã©lÃ¨ve qui a 
-fait deux fois les olympiades, qui nous a fait remarquer que, mÃªme si une proportionnalitÃ© existe, nous ne pouvons ni comparer ni 
-conclure. 
- 
-Pour deux raisons : 
-â¢ Le spectre de notre lampe, ci-dessus, montre quâelle ne produit pas la mÃªme quantitÃ© de chaque couleur. 
-â¢ 50000 unitÃ©s normalisÃ©es pour le bleu Ã  455 nm, 
-â¢ 25000 Ã  525 nm pour le vert, 
-â¢ 55000 Ã  630 nm pour le rouge  
-Un rapport RGB 1/0,45/0,91 dont il faut tenir compte. 
- 
-â¢ Dâautre part la notice de notre capteur (20) nous montre quâil ne rÃ©agit pas de la mÃªme maniÃ¨re Ã  la lumiÃ¨re, il se comporte selon 
-le modÃ¨le CIE. 
- 
- 
-  
- 
- 
- 
- 
- 
- 
- 
-Cette fois le rapport RGB est de 0,9/0,8/0,15. 
-En annexe =V, nous dÃ©taillons la procÃ©dure qui nous a permis de trancher et dâÃ©tablir les correctifs suivants : 
-&#3627408446;
-&#3627408463;&#3627408473;&#3627408466;&#3627408482; â22,75, &#3627408446;
-&#3627408483;&#3627408466;í µí±&#3627408481; â6,39 et &#3627408446;
-í µí±í µí±&#3627408482;&#3627408468;&#3627408466; â2,14  I     C
-      
-I     C
-      
-I     C
-      
- 
-  
-  
-  
-  
-   
-   
-           
-val eu r me surÃ©e s en l ux
-Conce nt ra on  e n l ai t en  .L
-  
-Va leurs mesurÃ©es en  onc on du c oncentra on 
+𝜆𝑚𝑎𝑥 = 525 𝑛𝑚
+Cette valeur est voisine de celle admise
+de 530 nm. Ce qui est voisin de la
+longueur d’onde de notre laser 532 nm
+
+𝜆𝑚𝑎𝑥 = 630 𝑛𝑚
+Ce qui est voisin de la longueur d’onde
+de notre laser rouge 635 nm
+
+Ce qui est assez éloigné de la longueur
+d’onde de notre laser violet 404 nm.
+Mais nous notons qu’à cette longueur
+d’onde l’absorbance est importante et
+nous permettra de faire de la
+spectrophotométrie.
+
+i
+
+Initialement, nous avions fait des spectres à l’aide d’un spectrophotomètre Secomam® Primlight connecté à un ordinateur. Cependant, un incident informatique majeur surven
+Les valeurs obtenues sont donc légèrement moins précises que celle obtenues au départ, et nous vous prions de bien vouloir nous en excuser.
+
+14
+
+Résultats pour les différentes solutions
+
+Dans les trois cas, même si l’alignement des points expérimentaux n’est pas parfait, les valeurs élevées du coefficient de corrélation R²
+montrent que la loi de Beer-Lambert est bien vérifiée pour chaque longueur d’onde. On peut donc en conclure que notre capteur
+présente une réponse linéaire pour chacune d’entre elles. Cela signifie qu’il peut être utilisé de manière fiable pour mesurer la quantité
+de lumière diffusée.
+
+Mesure de la diffusion de la lumière
+Montage
+Voici le montage que nous avons utilisé :
+
+Nous avons choisi de travailler dans un local obscur et nous avons vérifié que le rétroéclairage, en l’absence de toute autre source
+lumineuse, produisait bien un signal nul. Dans ces conditions, la valeur affichée était « – – – – – – »
+La lampe LES choisie est : Senlan Led 9W RGB 3-IN-1. D’après la notice (19) son spectre est le suivant.
+
+Trois LED (rouge, verte et bleue) peuvent être allumées ensemble ou séparément à l’aide d’une télécommande, ce qui permet d’obtenir
+une grande variété de combinaisons de teintes. Ces LED ne sont pas parfaitement monochromatiques : elles possèdent une largeur
+spectrale non nulle. En annexe VI, nous présentons l’étude de ce profil spectral ainsi que les choix méthodologiques qui nous ont
+conduits à considérer trois couleurs fondamentales : rouge (𝜆 = 630 𝑛𝑚 ) , vert (𝜆 = 520 𝑛𝑚 ) et bleu (𝜆 = 456 𝑛𝑚 )
+
+15
+
+Mesures avec le lait
+Le lait est un liquide classique pour montrer la diffusion de la lumière, et constitue d’ailleurs une démonstration attribuée à John Tyndall.
+Nous avons donc commencé par le tester en utilisant du lait entier, c’est probablement celui qui se rapproche le plus de celui
+qu’employait Tyndall au XIXᵉ siècle.
+L’expérience s’est avérée peu concluante, ce qui nous a finalement permis d’en apprendre beaucoup. Notre professeur nous a d’ailleurs
+rapporté une anecdote : lors d’un TP de chimie, un lait fermier très gras ne filtrait quasiment pas, rendant la suite impossible. Sur ses
+conseils, nous avons tenté l’expérience avec du lait écrémé.
+Nous avons dilué 10 fois le lait écrémé avant de l’ajouter progressivement dans 800 g d’eau à l’aide d’une burette graduée. Voici nos
+premières mesures. Dans le cas du lait, le terme concentration est employé de manière abusive : il désigne ici la masse de lait (en
+grammes) introduite par litre de solution, et non la concentration effective en particules diffusantes.
+
+Première analyse, le lait diffuse bien la lumière. Le bleu est la lumière pour laquelle nous mesurons le plus de lumière diffusée avec
+notre montage. Si on effectue un zoom sur les faibles concentrations, nous obtenons.
+Valeurs mesurées en onc on du concentra on
 en lait
- ou e	Vert leu
-Lin Ã©aire  Vert Lin Ã©aire  Vert Lin Ã©aire   leu
+ou e
 
-17 
- 
-AprÃ¨s traitement, on obtient une grandeur simplement proportionnelle Ã  lâintensitÃ© lumineuse, mais qui ne correspond pas Ã  une 
-intensitÃ© photomÃ©trique (en WÂ·mâ»Â²). Les valeurs sont donc exprimÃ©es en unitÃ©s arbitraires, car le signal issu du capteur nâa pas Ã©tÃ© 
-Ã©talonnÃ© en absolu.  
- 
-Pour le lait Ã©crÃ©mÃ©. 
- 
-Les courbes gardent leur linÃ©aritÃ©, seul les coefficients directeurs changent. 
-Les pentes obtenues montrent une diffusion trÃ¨s forte du bleu (â 2106), plus faible pour le vert (â 426) et presque nulle pour le rouge 
-(â 32). Si la diffusion suivait une loi de Rayleigh, on attendrait une variation en 1/Î»â´ : entre 456 nm (bleu) et 630 nm (rouge), cela ne 
-donnerait quâun facteur dâenviron 4. Or le rapport observÃ© entre les pentes bleu et rouge est dâenviron 66, bien plus Ã©levÃ©. De plus, 
-mÃªme dans du lait Ã©crÃ©mÃ©, les micelles de casÃ©ine ont une taille comparable aux longueurs dâonde visibles. On conclut donc que le 
-modÃ¨le de Rayleigh ne convient pas pour dÃ©crire la diffusion observÃ©e dans le lait 
- 
-Nous dÃ©cidons alors de changer de milieu diffusant pour passer Ã  des particules plus petites. 
- 
-Mesures avec le soufre colloÃ¯dal 
- 
-Le soufre colloÃ¯dal est une suspension trÃ¨s fine de microscopiques particules de soufre dans lâeau. Câest un exemple classique de 
-colloÃ¯de, câest-Ã -dire un mÃ©lange oÃ¹ les particules sont assez petites pour rester en suspension, mais assez grosses pour diffuser la 
-lumiÃ¨re. Le soufre colloÃ¯dal est obtenu lorsquâon forme des particules de soufre dâenviron 20 Ã  100 nm dans lâeau. 
-Pour lâobtenir de maniÃ¨re classique, on fait rÃ©agir une solution de thiosulfate de sodium avec un acide. =l apparaÃ®t alors lentement un 
-trouble laiteux dÃ» Ã  la formation de soufre colloÃ¯dal, constituÃ© de trÃ¨s fines particules de soufre en suspension. Ces particules grossissent 
-progressivement et finissent par sÃ©dimenter : la solution, dâabord incolore, devient lÃ©gÃ¨rement bleutÃ©e, puis blanchÃ¢tre, avant que tout 
-le soufre ne prÃ©cipite. 
-&#3627408454;
-2&#3627408450;
-3
-2â
-+2 &#3627408443;
-3&#3627408450;
-+
-â¶&#3627408454;+&#3627408454;&#3627408450;
-2+3 &#3627408443;
-2&#3627408450; 
- 
-Nous avons prÃ©parÃ© une solution de thiosulfate Ã  2,5 g.L
-â1
- (â1,0.10
-â2
- mol.L
-â1
-), Ã  laquelle nous avons ajoutÃ© 10,0 mL de vinaigre Ã  8Â°. 
-Quelques minutes plus tard, un voile blanc apparaÃ®t progressivement, signe de la formation de soufre colloÃ¯dal.  
-Sur les conseils de M. Duflos, nous avons ajoutÃ© 0,20 mL de Tween 80â¢, un agent dispersant qui empÃªche les particules de sâagglomÃ©rer 
-et de sÃ©dimenter. GrÃ¢ce Ã  cet ajout, la suspension obtenue reste stable pendant environ 48 h (nous nâavons pas testÃ© au-delÃ ). 
-Nous nâavons pas mesurÃ© la quantitÃ© de soufre colloÃ¯dal formÃ©e ni la taille des particules (un rendez-vous est prÃ©vu Ã  la station marine 
-de Wimereux pour rÃ©aliser des mesures et des clichÃ©s). En revanche, nous disposons dâune solution de concentration initiale í µí°¶
-0 Ã  partir 
-de laquelle nous pouvons obtenir diffÃ©rentes dilutions. 
-Pour cela, nous sommes partis dâun volume total dâune masse de 800,0 g de solution. AprÃ¨s chaque sÃ©rie de mesures optiques, nous 
-retirions 100,0 g de la suspension et ajoutions 100,0 g dâeau distillÃ©e afin dâabaisser la concentration. Cette procÃ©dure est simple mais 
-assez longue, car il faut attendre que la solution soit homogÃ¨ne avant chaque nouvelle mesure. 
-AprÃ¨s traitement des mesures voici comment varie lâintensitÃ© lumineuse en fonction de la concentration. 
- 
-La courbe montre que lâintensitÃ© diffusÃ©e augmente linÃ©airement avec la concentration de soufre colloÃ¯dal, pour les trois couleurs 
-Ã©tudiÃ©es. Comme attendu pour un milieu diffusant dont les particules sont trÃ¨s petites, la diffusion est plus forte pour le bleu 
-(pente â 90), intermÃ©diaire pour le vert (â 84) et plus faible pour le rouge (â 27). 
-Le rapport mesurÃ© bleu/rouge (â 90 / 26,6 â 3,4) est proche de la valeur â 3,8 attendue pour une diffusion de Rayleigh Ã  partir du 
-rapport (Î»R/Î»B)
-4
-. En revanche, le rapport vert/rouge (â 84 / 26,6 â 3,2) est nettement supÃ©rieur au â 2,0 prÃ©dit par (Î»R/Î»V)
-4
-.
+Vert
 
-18 
- 
-Ainsi, si la diffusion du soufre colloÃ¯dal suit globalement la tendance imposÃ©e par le modÃ¨le de Rayleigh, elle ne correspond pas 
-parfaitement Ã  une loi en 1/Î»
-4
-. Le fait que le vert soit presque autant diffusÃ© que le bleu suggÃ¨re que la suspension ne contient pas 
-uniquement des particules parfaitement nanomÃ©triques, mais plutÃ´t une distribution de tailles, ce qui conduit Ã  une diffusion 
-seulement Â« quasi-Rayleigh Â». 
-Mesures avec les microplastiques 
- 
-Les premiers essais expÃ©rimentaux se sont rÃ©vÃ©lÃ©s particuliÃ¨rement laborieux et peu concluants, voire dÃ©courageants. En plus de la 
-difficultÃ©, dÃ©jÃ  Ã©voquÃ©e, liÃ©e Ã  lâobtention de microplastiques, un problÃ¨me majeur est apparu lors de la prÃ©paration de ce que lâon 
-appelle une solution de microplastiques. Cette dÃ©nomination est toutefois impropre : les microplastiques ne se dissolvent pas dans 
-lâeau, mais y sont dispersÃ©s sous forme de particules solides. Le systÃ¨me obtenu est donc hÃ©tÃ©rogÃ¨ne, de type dispersion solideâliquide, 
-et non une solution au sens chimique du terme. 
- 
-Lâun des premiers obstacles rencontrÃ©s concerne la densitÃ© des microplastiques. Lâannexe === a Ã©tÃ© Ã©laborÃ©e afin dâidentifier des 
-matÃ©riaux candidats, tandis que lâannexe == recense les sources possibles. Lâobjectif est dâobtenir une dispersion aussi stable que 
-possible, câest-Ã -dire ne prÃ©sentant ni prÃ©cipitation des particules ni flottation, tout en limitant la formation dâagrÃ©gats. 
- 
-Un second obstacle rÃ©side dans la quantitÃ© limitÃ©e de matÃ©riau disponible. Les quantitÃ©s de micro- et nanoplastiques obtenues sont 
-restreintes : le broyage rÃ©alisÃ© Ã  lâANSES permet lâobtention dâenviron 2 g de matÃ©riau par opÃ©ration de 50 minutes, le plus souvent 
-rÃ©alisÃ©e en deux Ã©tapes successives. Bien que notre partenaire fournisse Ã©galement du matÃ©riau prÃ©alablement broyÃ©, les quantitÃ©s 
-disponibles demeurent limitÃ©es, ce qui contraint le nombre de rÃ©pÃ©titions expÃ©rimentales. 
- 
-Une dispersion mÃ¨re relativement stable a finalement pu Ãªtre obtenue grÃ¢ce aux recommandations de spÃ©cialistes. Elle est prÃ©parÃ©e 
-en dispersant 200 mg de broyat de Bic Cristal (ou de plexiglas) dans 1,000 L dâeau distillÃ©e, contenant 1,00 g de dodÃ©cylsulfate de 
-sodium (SDS) prÃ©alablement dissous. Le mÃ©lange est ensuite soumis Ã  une agitation magnÃ©tique continue pendant 24 h, dans une fiole 
-bouchÃ©e. Les particules sÃ©dimentent Ã  une vitesse dâenviron 5 mm par jour. Cette sÃ©dimentation lente est compatible, au regard de la 
-loi de Stokes, avec des particules de taille micromÃ©trique, de lâordre du micromÃ¨tre, situÃ©es Ã  la frontiÃ¨re entre nanoplastiques et 
-microplastiques. 
- 
-Cette dispersion mÃ¨re est ensuite utilisÃ©e par dilutions successives, Ã  la maniÃ¨re du lait ajoutÃ© progressivement Ã  une grande quantitÃ© 
-dâeau. Lâajout est rÃ©alisÃ© lentement, afin de limiter la formation de bulles et de rÃ©duire les phÃ©nomÃ¨nes parasites de diffusion. 
-Voici lâun de nos rÃ©sultats. 
- 
-Pour les trois sÃ©ries de mesures, lâintensitÃ© diffusÃ©e augmente de maniÃ¨re quasi linÃ©aire avec la concentration en microplastiques. Les 
-ajustements linÃ©aires prÃ©sentent des coefficients de corrÃ©lation Ã©levÃ©s. Cela indique que, dans le domaine de concentrations Ã©tudiÃ©, la 
-diffusion est proportionnelle au nombre de particules diffusantes. Ces rÃ©sultats montrent que lâintensitÃ© de la lumiÃ¨re diffusÃ©e par les 
-microplastiques de polystyrÃ¨ne est proportionnelle Ã  leur concentration dans la gamme Ã©tudiÃ©e. La forte linÃ©aritÃ© observÃ©e valide 
-lâutilisation de la diffusion lumineuse comme mÃ©thode de quantification relative des microplastiques, tout en soulignant lâimportance 
-de la configuration optique sur la sensibilitÃ© de la mesure. 
- 
-Ce qui nous plaÃ®t particuliÃ¨rement, câest la capacitÃ© Ã  dÃ©tecter de trÃ¨s faibles concentrations massiques, infÃ©rieures Ã  5 mgÂ·Lâ»Â¹. Cela 
-nous rappelle nos premiers dosages, et notamment les cÃ©lÃ¨bres 322 mgÂ·Lâ»Â¹ dâions chlorure du Vichy Saint-Yorre. Aujourdâhui, nous 
-faisons prÃ¨s de 100 fois mieux. 
-Ã cette Ã©chelle, 1 mg de microplastiques de 1 Âµm correspond Ã  environ un million de particules par millilitre : un nombre Ã©norme, a 
-priori peu rÃ©aliste, sauf si lâon considÃ¨re quâune seule particule de 1 mm peut thÃ©oriquement gÃ©nÃ©rer jusquâÃ  un milliard de particules 
-de 1 micromÃ¨tre.  I     C
-      
-I      C
-      
-I     C
-      
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  
-           
-I nten sitÃ© d i u sÃ© e 
- 
-e n unitÃ© arb itra ire
- 
-Con ce ntra on e n microp las que d e po l s t rÃ¨ ne e n m  L
-IntensitÃ© di usÃ©e en  onc on du concentra on en m icroplas que   S
+leu
 
-19 
- 
-Conclusion 
- 
-Notre projet M.A.R.E. est nÃ© dâune question simple mais ambitieuse : peut-on dÃ©tecter les microplastiques directement dans lâeau, sans 
-filtration, grÃ¢ce Ã  la diffusion de la lumiÃ¨re ? Pour y rÃ©pondre, nous avons dÃ©fini plusieurs objectifs : comprendre la nature des 
-microplastiques, explorer leur formation, maÃ®triser la physique de diffusion de la lumiÃ¨re et construire un dispositif capable de mesurer 
-finement cette diffusion. 
- 
-Au fil du projet, nous avons atteint une grande partie de ces objectifs. Nous avons dâabord constatÃ© la grande difficultÃ© du 
-broyage domestique, qui produit soit des fragments trop gros, soit du plastique fondu, soit des amas inutilisables. Cette 
-Ã©tape nous a conduits Ã  collaborer avec lâANSES, oÃ¹ nous avons dÃ©couvert les contraintes professionnelles : protocole 
-anti-contamination, digestion chimique, filtration, identification microscopique et pyrolyse-CPG. Cette visite nous a permis 
-dâacquÃ©rir une comprÃ©hension scientifique solide de la chaÃ®ne complÃ¨te dâanalyse des microplastiques. 
- 
-Sur le plan expÃ©rimental, nous avons construit un photomÃ¨tre autonome Ã  partir dâun capteur TSL25911, validÃ© ensuite 
-par un test de la loi de Beer-Lambert. Les trois longueurs dâonde testÃ©es (rouge, vert, violet) ont toutes montrÃ© une rÃ©ponse 
-linÃ©aire, confirmant que le capteur peut Ãªtre utilisÃ© pour suivre une intensitÃ© lumineuse transmise ou diffusÃ©e de maniÃ¨re 
-fiable. 
- 
-Nous avons ensuite Ã©tudiÃ© la diffusion dans diffÃ©rents milieux : 
-â¢ Avec le lait Ã©crÃ©mÃ©, nous avons observÃ© une diffusion trÃ¨s forte du bleu (pente â 679) et quasi nulle du rouge (â 
-16). Ce comportement, trÃ¨s Ã©loignÃ© de la loi en 1/Î»â´, nous a montrÃ© que les particules du lait sont trop grosses pour 
-un modÃ¨le de Rayleigh : la diffusion y est dominÃ©e par des phÃ©nomÃ¨nes plus complexes 
- 
-â¢ Le soufre colloÃ¯dal, en revanche, nous a fourni des rÃ©sultats beaucoup plus instructifs. Les pentes mesurÃ©es (â 90 
-pour le bleu, â 84 pour le vert, â 27 pour le rouge) montrent une diffusion plus forte pour les courtes longueurs 
-dâonde, avec un rapport bleu/rouge â 3,4 trÃ¨s proche de la valeur thÃ©orique attendue (â 3,8). MÃªme si le vert 
-diffuse davantage que prÃ©vu par Rayleigh, la tendance gÃ©nÃ©rale confirme que notre montage est capable de 
-dÃ©tecter des particules nanomÃ©triques, avec une rÃ©ponse cohÃ©rente Ã  la physique de la diffusion. 
- 
-â¢ Les mesures dÃ©sormais rÃ©alisÃ©es sur des microplastiques de polystyrÃ¨ne, obtenues Ã  partir de dispersions mieux 
-maÃ®trisÃ©es et de plusieurs sÃ©ries expÃ©rimentales, mettent en Ã©vidence une relation globalement quasi linÃ©aire entre 
-lâintensitÃ© lumineuse diffusÃ©e et la concentration. Pour les trois longueurs dâonde Ã©tudiÃ©es, lâintensitÃ© diffusÃ©e 
-augmente avec la quantitÃ© de particules, le bleu Ã©tant systÃ©matiquement le plus diffusÃ© et le rouge le moins, 
-conformÃ©ment aux attentes thÃ©oriques. MalgrÃ© une dispersion rÃ©siduelle des mesures, liÃ©e notamment aux 
-agrÃ©gats, aux bulles dâair et Ã  lâhomogÃ©nÃ©isation imparfaite des dispersions, ces rÃ©sultats confirment de maniÃ¨re 
-plus robuste la capacitÃ© du dispositif Ã  dÃ©tecter optiquement des microplastiques, y compris dans des suspensions 
-trÃ¨s diluÃ©es. 
- 
-Ces rÃ©sultats constituent une avancÃ©e : ils montrent quâun photomÃ¨tre simple, correctement calibrÃ© et associÃ© Ã  un 
-montage optique adÃ©quat, est capable dâidentifier une augmentation de concentration en microplastiques par la seule 
-mesure de diffusion latÃ©rale. Encore faudra-t-il discriminer les non plastiques. Un contact avec un autre laboratoire nous 
-ouvre de nouvelles pistes. 
- 
-Il reste nÃ©anmoins plusieurs Ã©tapes Ã  franchir pour que cette mÃ©thode puisse Ã©voluer vers une solution de mesure en 
-continu, notamment lâamÃ©lioration de la dispersion des particules et de lâÃ©limination des bulles, ainsi que la caractÃ©risation 
-prÃ©cise de la taille rÃ©elle des microplastiques utilisÃ©s. 
- 
-LâidÃ©e de dÃ©part est aujourdâhui clairement validÃ©e : la diffusion lumineuse sâimpose comme une piste crÃ©dible et 
-prometteuse pour la dÃ©tection des microplastiques dans lâeau en temps rÃ©el. Nous sommes satisfaits du chemin parcouru 
-et des rÃ©sultats obtenus, dâautant plus au regard des difficultÃ©s expÃ©rimentales rencontrÃ©es. Il reste cependant encore des 
-pistes majeures Ã  explorer, en particulier la caractÃ©risation de la signature optique des microplastiques, que nous aurions 
-aimÃ© approfondir davantage.
+Linéaire Vert
 
-20 
- 
-Bibliographie 
- 
-1. RÃ¨glement (UE) 2023/2055 de la Commission du 25 septembre 2023 modifiant lâannexe XV== du rÃ¨glement (CE) nÂ° 1907/2006 (REAC:) 
-en ce qui concerne les microparticules de polymÃ¨re synthÃ©tique. 25 septembre 2023. 2023/2055.  
-2. SOCIETY OF THE PLASTICS INDUSTRY, PLASTIC BOTTLE INSTITUTE. Technical Bulletin PBI-24-1988 : Voluntary GuidelinesâPlastic 
-Bottle Material Code System. Washington, D.C. : Society of the Plastics Industry, 1988.  
-3. Plastiques â Identification gÃ©nÃ©rique et marquage des produits en matiÃ¨re plastique (Plastics â Generic identification and marking 
-of plastics products). Norme internationale. 1 octobre 2016. GenÃ¨ve : ISO. ISO 11469.  
-4. MADD=SON, Carbery, SAT:=S:, C. =, LAKS:M=, Daggubati, OâCONNOR, Wayne et PALAN=SAM=, Thava. An advanced analytical approach 
-to assess the long-term degradation of microplastics in the marine environment. Materials Degradation, Nature Portfolio. 26 juillet 
-2023. Vol. 7, pp. 59. 
-5. ARISTOTE. MÃ©tÃ©orologiques. . Paris : Flammarion, 2010.  
-6. NEWTON, Sir Isaac. Opticks: Or, a Treatise of the Reflections, Refractions, Inflections and Colours of Light. Sam. Smith and Benj. 
-Walford. London, 1704.  
-7. YOUNG, Thomas. On the Theory of Light and Colours. Philosophical Transactions of the Royal Society of London. 1802. Vol. 92, 
-pp. 12-48.  
-8. FRESNEL, Augustin. MÃ©moire sur la diffraction de la lumiÃ¨re. MÃ©moires de lâAcadÃ©mie royale des sciences de lâ=nstitut de France. 
-Imprimerie Royale. Paris, 29 juillet 1818. pp. 339-475.  
-9. TYNDALL, John. On the Blue Colour of the Sky, the Polarization of Skylight, and on the Polarization of Light by Cloudy Matter Generally. 
-Proceedings of the Royal Society of London. 1869. Vol. 17, pp. 223-233.  
-10. STRUTT, John W. On the Light from the Sky, its Polarization and Colour. Philosophical Magazine. 1871. Vol. 41, pp. 107-120 & 
-274-279.  
-11. PLANCK, Max. Zur Theorie des Gesetzes der Energieverteilung im Normalspectrum. Verhandlungen der Deutschen Physikalischen 
-Gesellschaft. 1900. Vol. 2, pp. 237-245.  
-12. EINSTEIN, Albert. Ãber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt. Annalen der 
-Physik. 1905. Vol. 17, pp. 132-148.  
-13. CLAUSIUS, Rudolf. On the Nature of the Motion which we call Heat. The London, Edinburgh, and Dublin Philosophical Magazine and 
-Journal of Science. 1857. Vol. 14, pp. 108-127.  
-14. CHANDRASEKHAR, Subrahmanyan. Radiative Transfer. . Clarendon Press. Oxford, 1950. Oxford Monographs.  
-15. BODHAINE, Barry, WOOD, Norman, DUTTON, Ellsworth et SLUSSER, James. On Rayleigh Optical Depth Calculations. Journal of 
-Atmospheric and Oceanic Technology. 1999. Vol. 16, nÂ° 11, pp. 1854-1861.  
-16. HAYNES, William M. Handbook of chemistry and physics. . CRC Press. Boca Raton, Florida, 2014.  
-17. CIE JTC 2. CIE 018:2019 The Basis of Physical Photometry, 3rd Edition. International Commission on Illumination (CIE). .  
-18. PIARD, Jonathan, DORÃ, ClÃ©ment et PLACIAL-MARZIN, Jean-Pierre. Discussion sur les limites de loi de Beer-Lambert. Le BUP. 
-novembre 2022. Vol. 116, nÂ° 1048, pp. 1043-1056.  
-19. EPREL Public website. : https://eprel.ec.europa.eu/screen/product/lightsources/1711848?navigatingfrom=qr 
-20.  TSL2591 Datasheet. https://cdn-shop.adafruit.com/datasheets/TSL25911_Datasheet_EN_v1.pdf
+Linéaire Vert
+
+Linéaire
+
+leu
+
+valeur mesurées en lux
+
+I
+
+C
+
+I
+I
+
+C
+C
+
+Concentra on en lait en .L
+
+Les valeurs mesurées sont proportionnelles à la concentration quand elle est très faible.
+Oui, nous parlons de valeurs mesurées, car nous mesurons un éclairement en lux. Par ailleurs, c’est Nicolas PERNET, ancien élève qui a
+fait deux fois les olympiades, qui nous a fait remarquer que, même si une proportionnalité existe, nous ne pouvons ni comparer ni
+conclure.
+Pour deux raisons :
+➢ Le spectre de notre lampe, ci-dessus, montre qu’elle ne produit pas la même quantité de chaque couleur.
+• 50000 unités normalisées pour le bleu à 455 nm,
+• 25000 à 525 nm pour le vert,
+• 55000 à 630 nm pour le rouge
+Un rapport RGB 1/0,45/0,91 dont il faut tenir compte.
+➢
+
+D’autre part la notice de notre capteur (20) nous montre qu’il ne réagit pas de la même manière à la lumière, il se comporte selon
+le modèle CIE.
+
+Cette fois le rapport RGB est de 0,9/0,8/0,15.
+En annexe IV, nous détaillons la procédure qui nous a permis de trancher et d’établir les correctifs suivants :
+𝐾𝑏𝑙𝑒𝑢 ≈ 22,75, 𝐾𝑣𝑒𝑟𝑡 ≈ 6,39 et 𝐾𝑟𝑜𝑢𝑔𝑒 ≈ 2,14
+16
+
+Après traitement, on obtient une grandeur simplement proportionnelle à l’intensité lumineuse, mais qui ne correspond pas à une
+intensité photométrique (en W·m⁻²). Les valeurs sont donc exprimées en unités arbitraires, car le signal issu du capteur n’a pas été
+étalonné en absolu.
+Pour le lait écrémé.
+
+Les courbes gardent leur linéarité, seul les coefficients directeurs changent.
+Les pentes obtenues montrent une diffusion très forte du bleu (≈ 2106), plus faible pour le vert (≈ 426) et presque nulle pour le rouge
+(≈ 32). Si la diffusion suivait une loi de Rayleigh, on attendrait une variation en 1/λ⁴ : entre 456 nm (bleu) et 630 nm (rouge), cela ne
+donnerait qu’un facteur d’environ 4. Or le rapport observé entre les pentes bleu et rouge est d’environ 66, bien plus élevé. De plus,
+même dans du lait écrémé, les micelles de caséine ont une taille comparable aux longueurs d’onde visibles. On conclut donc que le
+modèle de Rayleigh ne convient pas pour décrire la diffusion observée dans le lait
+Nous décidons alors de changer de milieu diffusant pour passer à des particules plus petites.
+Mesures avec le soufre colloïdal
+Le soufre colloïdal est une suspension très fine de microscopiques particules de soufre dans l’eau. C’est un exemple classique de
+colloïde, c’est-à-dire un mélange où les particules sont assez petites pour rester en suspension, mais assez grosses pour diffuser la
+lumière. Le soufre colloïdal est obtenu lorsqu’on forme des particules de soufre d’environ 20 à 100 nm dans l’eau.
+Pour l’obtenir de manière classique, on fait réagir une solution de thiosulfate de sodium avec un acide. Il apparaît alors lentement un
+trouble laiteux dû à la formation de soufre colloïdal, constitué de très fines particules de soufre en suspension. Ces particules grossissent
+progressivement et finissent par sédimenter : la solution, d’abord incolore, devient légèrement bleutée, puis blanchâtre, avant que tout
+le soufre ne précipite.
+
+𝑆2 𝑂32− + 2 𝐻3 𝑂+ ⟶ 𝑆 + 𝑆𝑂2 + 3 𝐻2 𝑂
+Nous avons préparé une solution de thiosulfate à 2,5 g.L–1 (≈1,0.10–2 mol.L–1), à laquelle nous avons ajouté 10,0 mL de vinaigre à 8°.
+Quelques minutes plus tard, un voile blanc apparaît progressivement, signe de la formation de soufre colloïdal.
+Sur les conseils de M. Duflos, nous avons ajouté 0,20 mL de Tween 80™, un agent dispersant qui empêche les particules de s’agglomérer
+et de sédimenter. Grâce à cet ajout, la suspension obtenue reste stable pendant environ 48 h (nous n’avons pas testé au-delà).
+Nous n’avons pas mesuré la quantité de soufre colloïdal formée ni la taille des particules (un rendez-vous est prévu à la station marine
+de Wimereux pour réaliser des mesures et des clichés). En revanche, nous disposons d’une solution de concentration initiale 𝐶0 à partir
+de laquelle nous pouvons obtenir différentes dilutions.
+Pour cela, nous sommes partis d’un volume total d’une masse de 800,0 g de solution. Après chaque série de mesures optiques, nous
+retirions 100,0 g de la suspension et ajoutions 100,0 g d’eau distillée afin d’abaisser la concentration. Cette procédure est simple mais
+assez longue, car il faut attendre que la solution soit homogène avant chaque nouvelle mesure.
+Après traitement des mesures voici comment varie l’intensité lumineuse en fonction de la concentration.
+
+La courbe montre que l’intensité diffusée augmente linéairement avec la concentration de soufre colloïdal, pour les trois couleurs
+étudiées. Comme attendu pour un milieu diffusant dont les particules sont très petites, la diffusion est plus forte pour le bleu
+(pente ≈ 90), intermédiaire pour le vert (≈ 84) et plus faible pour le rouge (≈ 27).
+Le rapport mesuré bleu/rouge (≈ 90 / 26,6 ≈ 3,4) est proche de la valeur ≈ 3,8 attendue pour une diffusion de Rayleigh à partir du
+rapport (λR/λB)4. En revanche, le rapport vert/rouge (≈ 84 / 26,6 ≈ 3,2) est nettement supérieur au ≈ 2,0 prédit par (λR/λV)4.
+17
+
+Ainsi, si la diffusion du soufre colloïdal suit globalement la tendance imposée par le modèle de Rayleigh, elle ne correspond pas
+parfaitement à une loi en 1/λ4. Le fait que le vert soit presque autant diffusé que le bleu suggère que la suspension ne contient pas
+uniquement des particules parfaitement nanométriques, mais plutôt une distribution de tailles, ce qui conduit à une diffusion
+seulement « quasi-Rayleigh ».
+Mesures avec les microplastiques
+Les premiers essais expérimentaux se sont révélés particulièrement laborieux et peu concluants, voire décourageants. En plus de la
+difficulté, déjà évoquée, liée à l’obtention de microplastiques, un problème majeur est apparu lors de la préparation de ce que l’on
+appelle une solution de microplastiques. Cette dénomination est toutefois impropre : les microplastiques ne se dissolvent pas dans
+l’eau, mais y sont dispersés sous forme de particules solides. Le système obtenu est donc hétérogène, de type dispersion solide–liquide,
+et non une solution au sens chimique du terme.
+L’un des premiers obstacles rencontrés concerne la densité des microplastiques. L’annexe III a été élaborée afin d’identifier des
+matériaux candidats, tandis que l’annexe II recense les sources possibles. L’objectif est d’obtenir une dispersion aussi stable que
+possible, c’est-à-dire ne présentant ni précipitation des particules ni flottation, tout en limitant la formation d’agrégats.
+Un second obstacle réside dans la quantité limitée de matériau disponible. Les quantités de micro- et nanoplastiques obtenues sont
+restreintes : le broyage réalisé à l’ANSES permet l’obtention d’environ 2 g de matériau par opération de 50 minutes, le plus souvent
+réalisée en deux étapes successives. Bien que notre partenaire fournisse également du matériau préalablement broyé, les quantités
+disponibles demeurent limitées, ce qui contraint le nombre de répétitions expérimentales.
+Une dispersion mère relativement stable a finalement pu être obtenue grâce aux recommandations de spécialistes. Elle est préparée
+en dispersant 200 mg de broyat de Bic Cristal (ou de plexiglas) dans 1,000 L d’eau distillée, contenant 1,00 g de dodécylsulfate de
+sodium (SDS) préalablement dissous. Le mélange est ensuite soumis à une agitation magnétique continue pendant 24 h, dans une fiole
+bouchée. Les particules sédimentent à une vitesse d’environ 5 mm par jour. Cette sédimentation lente est compatible, au regard de la
+loi de Stokes, avec des particules de taille micrométrique, de l’ordre du micromètre, situées à la frontière entre nanoplastiques et
+microplastiques.
+Cette dispersion mère est ensuite utilisée par dilutions successives, à la manière du lait ajouté progressivement à une grande quantité
+d’eau. L’ajout est réalisé lentement, afin de limiter la formation de bulles et de réduire les phénomènes parasites de diffusion.
+Voici l’un de nos résultats.
+Intensité di usée en onc on du concentra on en microplas que
+
+S
+
+Intensité di usée en unité arbitraire
+
+I
+
+C
+
+I
+
+C
+
+I
+
+C
+
+Concentra on en microplas que de pol st rène en m L
+
+Pour les trois séries de mesures, l’intensité diffusée augmente de manière quasi linéaire avec la concentration en microplastiques. Les
+ajustements linéaires présentent des coefficients de corrélation élevés. Cela indique que, dans le domaine de concentrations étudié, la
+diffusion est proportionnelle au nombre de particules diffusantes. Ces résultats montrent que l’intensité de la lumière diffusée par les
+microplastiques de polystyrène est proportionnelle à leur concentration dans la gamme étudiée. La forte linéarité observée valide
+l’utilisation de la diffusion lumineuse comme méthode de quantification relative des microplastiques, tout en soulignant l’importance
+de la configuration optique sur la sensibilité de la mesure.
+Ce qui nous plaît particulièrement, c’est la capacité à détecter de très faibles concentrations massiques, inférieures à 5 mg·L⁻¹. Cela
+nous rappelle nos premiers dosages, et notamment les célèbres 322 mg·L⁻¹ d’ions chlorure du Vichy Saint-Yorre. Aujourd’hui, nous
+faisons près de 100 fois mieux.
+À cette échelle, 1 mg de microplastiques de 1 µm correspond à environ un million de particules par millilitre : un nombre énorme, a
+priori peu réaliste, sauf si l’on considère qu’une seule particule de 1 mm peut théoriquement générer jusqu’à un milliard de particules
+de 1 micromètre.
+
+18
+
+Conclusion
+Notre projet M.A.R.E. est né d’une question simple mais ambitieuse : peut-on détecter les microplastiques directement dans l’eau, sans
+filtration, grâce à la diffusion de la lumière ? Pour y répondre, nous avons défini plusieurs objectifs : comprendre la nature des
+microplastiques, explorer leur formation, maîtriser la physique de diffusion de la lumière et construire un dispositif capable de mesurer
+finement cette diffusion.
+
+Au fil du projet, nous avons atteint une grande partie de ces objectifs. Nous avons d’abord constaté la grande difficulté du
+broyage domestique, qui produit soit des fragments trop gros, soit du plastique fondu, soit des amas inutilisables. Cette
+étape nous a conduits à collaborer avec l’ANSES, où nous avons découvert les contraintes professionnelles : protocole
+anti-contamination, digestion chimique, filtration, identification microscopique et pyrolyse-CPG. Cette visite nous a permis
+d’acquérir une compréhension scientifique solide de la chaîne complète d’analyse des microplastiques.
+Sur le plan expérimental, nous avons construit un photomètre autonome à partir d’un capteur TSL25911, validé ensuite
+par un test de la loi de Beer-Lambert. Les trois longueurs d’onde testées (rouge, vert, violet) ont toutes montré une réponse
+linéaire, confirmant que le capteur peut être utilisé pour suivre une intensité lumineuse transmise ou diffusée de manière
+fiable.
+Nous avons ensuite étudié la diffusion dans différents milieux :
+• Avec le lait écrémé, nous avons observé une diffusion très forte du bleu (pente ≈ 679) et quasi nulle du rouge (≈
+16). Ce comportement, très éloigné de la loi en 1/λ⁴, nous a montré que les particules du lait sont trop grosses pour
+un modèle de Rayleigh : la diffusion y est dominée par des phénomènes plus complexes
+•
+
+Le soufre colloïdal, en revanche, nous a fourni des résultats beaucoup plus instructifs. Les pentes mesurées (≈ 90
+pour le bleu, ≈ 84 pour le vert, ≈ 27 pour le rouge) montrent une diffusion plus forte pour les courtes longueurs
+d’onde, avec un rapport bleu/rouge ≈ 3,4 très proche de la valeur théorique attendue (≈ 3,8). Même si le vert
+diffuse davantage que prévu par Rayleigh, la tendance générale confirme que notre montage est capable de
+détecter des particules nanométriques, avec une réponse cohérente à la physique de la diffusion.
+
+•
+
+Les mesures désormais réalisées sur des microplastiques de polystyrène, obtenues à partir de dispersions mieux
+maîtrisées et de plusieurs séries expérimentales, mettent en évidence une relation globalement quasi linéaire entre
+l’intensité lumineuse diffusée et la concentration. Pour les trois longueurs d’onde étudiées, l’intensité diffusée
+augmente avec la quantité de particules, le bleu étant systématiquement le plus diffusé et le rouge le moins,
+conformément aux attentes théoriques. Malgré une dispersion résiduelle des mesures, liée notamment aux
+agrégats, aux bulles d’air et à l’homogénéisation imparfaite des dispersions, ces résultats confirment de manière
+plus robuste la capacité du dispositif à détecter optiquement des microplastiques, y compris dans des suspensions
+très diluées.
+
+Ces résultats constituent une avancée : ils montrent qu’un photomètre simple, correctement calibré et associé à un
+montage optique adéquat, est capable d’identifier une augmentation de concentration en microplastiques par la seule
+mesure de diffusion latérale. Encore faudra-t-il discriminer les non plastiques. Un contact avec un autre laboratoire nous
+ouvre de nouvelles pistes.
+Il reste néanmoins plusieurs étapes à franchir pour que cette méthode puisse évoluer vers une solution de mesure en
+continu, notamment l’amélioration de la dispersion des particules et de l’élimination des bulles, ainsi que la caractérisation
+précise de la taille réelle des microplastiques utilisés.
+L’idée de départ est aujourd’hui clairement validée : la diffusion lumineuse s’impose comme une piste crédible et
+prometteuse pour la détection des microplastiques dans l’eau en temps réel. Nous sommes satisfaits du chemin parcouru
+et des résultats obtenus, d’autant plus au regard des difficultés expérimentales rencontrées. Il reste cependant encore des
+pistes majeures à explorer, en particulier la caractérisation de la signature optique des microplastiques, que nous aurions
+aimé approfondir davantage.
+
+19
+
+Bibliographie
+1. Règlement (UE) 2023/2055 de la Commission du 25 septembre 2023 modifiant l’annexe XVII du règlement (CE) n° 1907/2006 (REACH)
+en ce qui concerne les microparticules de polymère synthétique. 25 septembre 2023. 2023/2055.
+2. SOCIETY OF THE PLASTICS INDUSTRY, PLASTIC BOTTLE INSTITUTE. Technical Bulletin PBI-24-1988 : Voluntary Guidelines—Plastic
+Bottle Material Code System. Washington, D.C. : Society of the Plastics Industry, 1988.
+3. Plastiques — Identification générique et marquage des produits en matière plastique (Plastics — Generic identification and marking
+of plastics products). Norme internationale. 1 octobre 2016. Genève : ISO. ISO 11469.
+4. MADDISON, Carbery, SATHISH, C. I, LAKSHMI, Daggubati, O’CONNOR, Wayne et PALANISAMI, Thava. An advanced analytical approach
+to assess the long-term degradation of microplastics in the marine environment. Materials Degradation, Nature Portfolio. 26 juillet
+2023. Vol. 7, pp. 59.
+5. ARISTOTE. Météorologiques. . Paris : Flammarion, 2010.
+6. NEWTON, Sir Isaac. Opticks: Or, a Treatise of the Reflections, Refractions, Inflections and Colours of Light. Sam. Smith and Benj.
+Walford. London, 1704.
+7. YOUNG, Thomas. On the Theory of Light and Colours. Philosophical Transactions of the Royal Society of London. 1802. Vol. 92,
+pp. 12-48.
+8. FRESNEL, Augustin. Mémoire sur la diffraction de la lumière. Mémoires de l’Académie royale des sciences de l’Institut de France.
+Imprimerie Royale. Paris, 29 juillet 1818. pp. 339-475.
+9. TYNDALL, John. On the Blue Colour of the Sky, the Polarization of Skylight, and on the Polarization of Light by Cloudy Matter Generally.
+Proceedings of the Royal Society of London. 1869. Vol. 17, pp. 223-233.
+10. STRUTT, John W. On the Light from the Sky, its Polarization and Colour. Philosophical Magazine. 1871. Vol. 41, pp. 107-120 &
+274-279.
+11. PLANCK, Max. Zur Theorie des Gesetzes der Energieverteilung im Normalspectrum. Verhandlungen der Deutschen Physikalischen
+Gesellschaft. 1900. Vol. 2, pp. 237-245.
+12. EINSTEIN, Albert. Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt. Annalen der
+Physik. 1905. Vol. 17, pp. 132-148.
+13. CLAUSIUS, Rudolf. On the Nature of the Motion which we call Heat. The London, Edinburgh, and Dublin Philosophical Magazine and
+Journal of Science. 1857. Vol. 14, pp. 108-127.
+14. CHANDRASEKHAR, Subrahmanyan. Radiative Transfer. . Clarendon Press. Oxford, 1950. Oxford Monographs.
+15. BODHAINE, Barry, WOOD, Norman, DUTTON, Ellsworth et SLUSSER, James. On Rayleigh Optical Depth Calculations. Journal of
+Atmospheric and Oceanic Technology. 1999. Vol. 16, n° 11, pp. 1854-1861.
+16. HAYNES, William M. Handbook of chemistry and physics. . CRC Press. Boca Raton, Florida, 2014.
+17. CIE JTC 2. CIE 018:2019 The Basis of Physical Photometry, 3rd Edition. International Commission on Illumination (CIE). .
+18. PIARD, Jonathan, DORÉ, Clément et PLACIAL-MARZIN, Jean-Pierre. Discussion sur les limites de loi de Beer-Lambert. Le BUP.
+novembre 2022. Vol. 116, n° 1048, pp. 1043-1056.
+19. EPREL Public website. : https://eprel.ec.europa.eu/screen/product/lightsources/1711848?navigatingfrom=qr
+20.
+
+TSL2591 Datasheet. https://cdn-shop.adafruit.com/datasheets/TSL25911_Datasheet_EN_v1.pdf
+
+20
+
+

@@ -1,608 +1,1361 @@
-La hauteur de mousse idÃ©ale : un
-problÃ¨me de physique... et de goÃ»t!
-ÃlÃ¨ves
-CÃ©lian<> Laviron
-Mathis<> Feraut
-Mehdi<> Mihoubi
+La hauteur de mousse idéale : un
+problème de physique. . . et de goût !
+
+Élèves
+Célian Laviron
+Mathis Feraut
+Mehdi Mihoubi
+
 Encadrante
-Nora<> Alleg
+Nora Alleg
 
-Table des matiÃ¨res
-Table des matiÃ¨res
-Avant-propos 3
-Introduction 3
-1 DÃ©finition de la mousse liquide 4
-1.1 Quâest-ce que la mousse liquide ? . . . . . . . . . . . . . . . . . . . . . . .<> 4
-2 Arrangement et Ã©volution des bulles dans une mousse 5
-2.1 Structure des mousses . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<> 5
-2.2 Le phÃ©nomÃ¨ne de drainage . . . . . . . . . . . . . . . . . . . . . . . . . . .<> 5
-2.3 Le phÃ©nomÃ¨ne de mÃ»rissement : la loi de Laplace . . . . . . . . . . . . . .<> 6
-2.4 Le phÃ©nomÃ¨ne de coalescence . . . . . . . . . . . . . . . . . . . . . . . . .<> 7
-2.5 Ãvolution globale de la mousse . . . . . . . . . . . . . . . . . . . . . . . . .<> 7
-3 MatÃ©riels et mÃ©thode expÃ©rimentale 7
-3.1 Dispositif expÃ©rimental . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<> 7
-3.2 Protocole expÃ©rimental . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<> 8
-3.3 MÃ©thode dâanalyse des donnÃ©es . . . . . . . . . . . . . . . . . . . . . . . .<> 8
-4 RÃ©sultats expÃ©rimentaux 11
-4.1 Ãvolution de la hauteur de mousse en fonction du temps . . . . . . . . . .<> 11
-4.2 Ãvolution de la fraction volumique de liquide dans la mousse . . . . . . . .<> 14
-4.3 Influence du rÃ©cipient . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<> 16
-4.4 Influence du caractÃ¨re sec/humide du verre . . . . . . . . . . . . . . . . . .<> 16
-5 Conclusion 17
-5.1 Applications pratiques . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<> 17
-5.2 Perspectives et travaux futurs . . . . . . . . . . . . . . . . . . . . . . . . .<> 18
-5.3 Remarques de fin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<> 18
-Remerciements 19
-Sitographie 19
-Annexes 20
-Ãtude des mousses de biÃ¨re 2
+Table des matières
 
-Table des matiÃ¨res
+Table des matières
 Avant-propos
-Les mousses sont des matÃ©riaux particuliers caractÃ©risÃ©s par la prÃ©sence simultanÃ©e
-de deux phases : une phase gazeuse dispersÃ©e dans une phase liquide ou solide. Elles
-occupent aujourdâhui une place importante dans de nombreux domaines industriels. On
-distingue principalement deux types de mousses : les mousses liquides, rencontrÃ©es dans
-les brasseries et les industries chimiques et les mousses solides, utilisÃ©es dans les secteurs
-textiles, agroalimentaires, pharmaceutiques et dans la fabrication de matÃ©riaux isolants.
-Dans le cadre de notre Ã©tude, nous nous intÃ©resserons plus particuliÃ¨rement aux mousses
-liquides, Ã  travers la biÃ¨re. La mousse de biÃ¨re, bien que souvent perÃ§ue uniquement comme
-un aspect esthÃ©tique, possÃ¨de une importance physico-chimique notable. Sa formation et
-sa stabilitÃ© dÃ©pendent de plusieurs paramÃ¨tres dont la tempÃ©rature du liquide, la nature
-du rÃ©cipient et les conditions de service. Notre travail consistera donc Ã  analyser lâinfluence
-de diffÃ©rents facteurs sur la quantitÃ© et la stabilitÃ© de la mousse de biÃ¨re, afin de mieux
-comprendre les mÃ©canismes Ã  lâorigine de sa formation.
+
+3
+
 Introduction
-La biÃ¨re est aujourdâhui lâune des boissons alcoolisÃ©es les plus consommÃ©es au monde.
-Son origine remonte Ã  plus de 7000 ans, et au fil du temps, les techniques de fabrication, de
-fermentation et de conservation se sont diversifiÃ©es, permettant lâapparition dâune grande
-variÃ©tÃ© de biÃ¨res. Cependant, malgrÃ© cette diversitÃ©, un Ã©lÃ©ment demeure commun Ã  toutes
-les biÃ¨res : la mousse. Celle-ci constitue un critÃ¨re essentiel dâapprÃ©ciation sensorielle et es-
-thÃ©tique. Elle joue un rÃ´le dans lâarÃ´me, la saveur, mais aussi dans la protection du liquide
-contre lâoxydation. La formation de la mousse rÃ©sulte de lâinteraction entre les protÃ©ines,
-les gaz dissous (principalement le CO2) et certaines substances tensioactives prÃ©sentes
-dans la biÃ¨re. Sa stabilitÃ© peut Ãªtre influencÃ©e par divers facteurs : la tempÃ©rature du li-
-quide, la propretÃ© du verre, la maniÃ¨re de verser la biÃ¨re, et mÃªme la composition chimique
-du produit. Dans ce travail, nous chercherons Ã  Ã©tudier expÃ©rimentalement lâÃ©volution de
-la mousse de biÃ¨re en faisant varier des paramÃ¨tres tels que la nature du rÃ©cipient et la
-mÃ©thode de service.
-Cette Ã©tude nous permettra dâidentifier les conditions favorables Ã  une mousse stable
-et durable, mais aussi de comprendre les phÃ©nomÃ¨nes physiques qui interviennent dans sa
+
+3
+
+1 Définition de la mousse liquide
+1.1 Qu’est-ce que la mousse liquide ? . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+4
+
+2 Arrangement et évolution des bulles dans une mousse
+2.1 Structure des mousses . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Le phénomène de drainage . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3 Le phénomène de mûrissement : la loi de Laplace . . . . . . . . . . . . . .
+2.4 Le phénomène de coalescence . . . . . . . . . . . . . . . . . . . . . . . . .
+2.5 Évolution globale de la mousse . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+5
+5
+6
+7
+7
+
+3 Matériels et méthode expérimentale
+3.1 Dispositif expérimental . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.2 Protocole expérimental . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3 Méthode d’analyse des données . . . . . . . . . . . . . . . . . . . . . . . .
+
+7
+7
+8
+8
+
+4 Résultats expérimentaux
+4.1 Évolution de la hauteur de mousse en fonction du temps . . . . . . . . . .
+4.2 Évolution de la fraction volumique de liquide dans la mousse . . . . . . . .
+4.3 Influence du récipient . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.4 Influence du caractère sec/humide du verre . . . . . . . . . . . . . . . . . .
+
+11
+11
+14
+16
+16
+
+5 Conclusion
+5.1 Applications pratiques . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.2 Perspectives et travaux futurs . . . . . . . . . . . . . . . . . . . . . . . . .
+5.3 Remarques de fin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+17
+17
+18
+18
+
+Remerciements
+
+19
+
+Sitographie
+
+19
+
+Annexes
+
+20
+
+Étude des mousses de bière
+
+2
+
+Table des matières
+
+Avant-propos
+Les mousses sont des matériaux particuliers caractérisés par la présence simultanée
+de deux phases : une phase gazeuse dispersée dans une phase liquide ou solide. Elles
+occupent aujourd’hui une place importante dans de nombreux domaines industriels. On
+distingue principalement deux types de mousses : les mousses liquides, rencontrées dans
+les brasseries et les industries chimiques et les mousses solides, utilisées dans les secteurs
+textiles, agroalimentaires, pharmaceutiques et dans la fabrication de matériaux isolants.
+Dans le cadre de notre étude, nous nous intéresserons plus particulièrement aux mousses
+liquides, à travers la bière. La mousse de bière, bien que souvent perçue uniquement comme
+un aspect esthétique, possède une importance physico-chimique notable. Sa formation et
+sa stabilité dépendent de plusieurs paramètres dont la température du liquide, la nature
+du récipient et les conditions de service. Notre travail consistera donc à analyser l’influence
+de différents facteurs sur la quantité et la stabilité de la mousse de bière, afin de mieux
+comprendre les mécanismes à l’origine de sa formation.
+
+Introduction
+La bière est aujourd’hui l’une des boissons alcoolisées les plus consommées au monde.
+Son origine remonte à plus de 7000 ans, et au fil du temps, les techniques de fabrication, de
+fermentation et de conservation se sont diversifiées, permettant l’apparition d’une grande
+variété de bières. Cependant, malgré cette diversité, un élément demeure commun à toutes
+les bières : la mousse. Celle-ci constitue un critère essentiel d’appréciation sensorielle et esthétique. Elle joue un rôle dans l’arôme, la saveur, mais aussi dans la protection du liquide
+contre l’oxydation. La formation de la mousse résulte de l’interaction entre les protéines,
+les gaz dissous (principalement le CO2 ) et certaines substances tensioactives présentes
+dans la bière. Sa stabilité peut être influencée par divers facteurs : la température du liquide, la propreté du verre, la manière de verser la bière, et même la composition chimique
+du produit. Dans ce travail, nous chercherons à étudier expérimentalement l’évolution de
+la mousse de bière en faisant varier des paramètres tels que la nature du récipient et la
+méthode de service.
+Cette étude nous permettra d’identifier les conditions favorables à une mousse stable
+et durable, mais aussi de comprendre les phénomènes physiques qui interviennent dans sa
 formation.
-Ãtude des mousses de biÃ¨re 3
 
-1 DÃ©finition de la mousse liquide
-1 DÃ©finition de la mousse liquide
-1.1 Quâest-ce que la mousse liquide ?
-La mousse peut Ãªtre dÃ©finie comme une dispersion dâau moins 70% de gaz dans du
-liquide contenant des tensioactifs. Elle est ainsi constituÃ©e dâun ensemble de bulles com-
-pressÃ©es les unes contre les autres, sÃ©parÃ©es par un rÃ©seau de canaux contenant le liquide.
-Câest un systÃ¨me complexe composÃ© de deux phases :
-- La premiÃ¨re est gazeuse : la mousse est une matrice polymÃ¨re remplie de gaz. Elle
-a donc une faible densitÃ©.
-- La deuxiÃ¨me phase est liquide, elle correspond au film mince qui sÃ©pare les bulles et
-aux canaux appelÃ©s plateaux frontiÃ¨re oÃ¹ le liquide sâaccumule sous lâeffet de la gravitÃ©.
-Cette phase liquide a pour rÃ´le essentiel la stabilitÃ© de la mousse.
-Lorsque la phase liquide est abondante, la mousse est dite âmousse humideâ : les films
-sont Ã©pais, les bulles sont bien sÃ©parÃ©es.
-Ã lâinverse, quand la mousse perd du liquide, elle devient une âmousse sÃ¨cheâ : les films
-sâamincissent, les bulles se dÃ©forment et deviennent polygonales, ce qui accÃ©lÃ¨re lâÃ©clate-
-ment.Dans notre Ã©tude, nous nous intÃ©ressons spÃ©cifiquement Ã  une mousse liquide, car
-la mousse de biÃ¨re fraÃ®chement servie contient encore suffisamment de liquide pour que la
-coalescence soit limitÃ©e dans les premiÃ¨res secondes.
-Dans le cas dâune mousse de biÃ¨re, on peut dÃ©finir ce systÃ¨me comme un empilement
-de bulles dâeau, de protÃ©ines, de sucres faisant guise de tensioactif. Ici la phase liquide est
-lâeau, les protÃ©ines et les sucres, et la phase fluide est le CO2. La mousse liquide a une
-trÃ¨s grande surface spÃ©cifique (surface/volume).
-On dit quâune mousse est sÃ¨che lorsque la fraction volumique du liquide (notÃ©e<> Ïµ) est
-infÃ©rieure Ã  0,05 est quâelle est humide lorsque<> Ïµ<> est compris entre 0,05 et 0,30. La frac-
-tion volumique dâune mousse (ou fraction liquide) est la quantitÃ© de liquide contenu dans
-la mousse. Elle sâobtient en divisant le volume de liquide prÃ©sent dans la mousse par le
-volume total de la mousse. Une mousse liquide ne peut pas avoir un<> Ïµ<> supÃ©rieur Ã  0,30,
-autrement câest un liquide bulleux. On remarque donc que plus le<> Ïµ<> augmente plus les
-bulles sont dispersÃ©es. On dÃ©signe par<> Ïµ<> la limite en dessous de laquelle les bulles perdent
-leur aspect sphÃ©rique et deviennent des cellules.
-Ãtude des mousses de biÃ¨re 4
+Étude des mousses de bière
 
-2 Arrangement et Ã©volution des bulles dans une mousse
-Figure 1<> â SchÃ©ma reprÃ©sentant la fraction volumique selon la mousse
-2 Arrangement et Ã©volution des bulles dans une mousse
-Pour comprendre les diffÃ©rentes caractÃ©ristiques des mousses, nous avons ensuite dÃ©cidÃ©
-dâÃ©tudier lâarrangement des bulles dans la mousse et les phÃ©nomÃ¨nes qui rÃ©gissent les
-cellules. Pour comprendre ces phÃ©nomÃ¨nes, nous allons donc nous intÃ©resser aux mousses
-liquides. Nous allons en premier lieu Ã©tudier la structure dâune mousse, puis Ã©tudier les
-phÃ©nomÃ¨nes de drainage, de mÃ»rissement et de coalescence.
-2.1 Structure des mousses
-Dans une mousse, les bulles sont compressÃ©es les unes contre les autres, ce qui impose
-une organisation gÃ©omÃ©trique spÃ©cifique. Lorsque deux bulles se touchent, elles forment
-un film liquide (ou film de savon), une membrane fine sÃ©parant les deux volumes gazeux.
-Si une troisiÃ¨me bulle sâajoute Ã  cette structure, les films se rejoignent selon une arÃªte
-commune appelÃ©e bord de Plateau, oÃ¹ trois films se rencontrent sous des angles bien
-dÃ©terminÃ©s. Lorsquâune quatriÃ¨me bulle se juxtapose, lâintersection des bords de Plateau
-forme un sommet (ou vertex) oÃ¹ quatre arÃªtes se rencontrent.
-Lâensemble des lois rÃ©gissant la structure dâune mousse constitue ce que lâon appelle les
-lois de Plateau, formulÃ©es 1873 par le physicien belge Joseph Antoine Ferdinand Plateau :
-PremiÃ¨re loi de Plateau<> : La courbure moyenne dâun film sÃ©parant deux bulles est constante.
-Ainsi la convexitÃ© du film est donnÃ©e par la diffÃ©rence de pression entre les deux bulles.
-DeuxiÃ¨me loi de Plateau<> : Les films se rejoignent toujours par trois pour former un bord
-de Plateau avec un angle de 120Â°<> entre les films.
-TroisiÃ¨me loi de Plateau<> : Quatre bords de Plateau se rejoignent en un vertex avec un
-angle de 109.5Â°<> entre les bords.
-2.2 Le phÃ©nomÃ¨ne de drainage
-Soumis Ã  la gravitÃ© terrestre, le liquide contenu dans la mousse sâÃ©coule au travers du
-rÃ©seau de bords de Plateau, de noeuds et de films vers le bas de la mousse. La consÃ©quence
-est au cours du temps une diminution du paramÃ¨tre appelÃ© fraction volumique de liquide
-Ã  mesure que lâon sâÃ©lÃ¨ve dans la colonne de mousse. Câest pour cela que lâon distingue
-les mousses sÃ¨ches des mousses humides.
-Ãtude des mousses de biÃ¨re 5
+3
 
-2 Arrangement et Ã©volution des bulles dans une mousse
-2.3 Le phÃ©nomÃ¨ne de mÃ»rissement : la loi de Laplace
-Le mÃ»rissement dâune mousse rÃ©sulte des diffÃ©rences de pression existant entre les
-bulles. Selon la relation de Laplace, la pression Ã  lâintÃ©rieur dâune bulle dÃ©pend de la cour-
-bure de son interface : la diffÃ©rence de pression entre deux rÃ©gions sÃ©parÃ©es par une surface
-courbe sâexprime en fonction des rayons de courbure R(1) et R(2) ainsi que de la tension
-de surface du film liquide. Ainsi, les bulles les plus petites prÃ©sentant une courbure plus
-forte possÃ¨dent une pression interne plus Ã©levÃ©e que les bulles plus grandes ce qui pro-
-voque leur Ã©clatement puis la diffusion de leur gaz vers les plus grosses bulles. La diffusion
-est donc due dans le mÃªme temps Ã  une diffÃ©rence de pression de part et dâautre dâune
-interface due Ã  la courbure de celle-ci (Loi de de Laplace prÃ©cÃ©dente). La consÃ©quence
+1 Définition de la mousse liquide
+
+1
+
+Définition de la mousse liquide
+
+1.1
+
+Qu’est-ce que la mousse liquide ?
+
+La mousse peut être définie comme une dispersion d’au moins 70% de gaz dans du
+liquide contenant des tensioactifs. Elle est ainsi constituée d’un ensemble de bulles compressées les unes contre les autres, séparées par un réseau de canaux contenant le liquide.
+C’est un système complexe composé de deux phases :
+- La première est gazeuse : la mousse est une matrice polymère remplie de gaz. Elle
+a donc une faible densité.
+- La deuxième phase est liquide, elle correspond au film mince qui sépare les bulles et
+aux canaux appelés plateaux frontière où le liquide s’accumule sous l’effet de la gravité.
+Cette phase liquide a pour rôle essentiel la stabilité de la mousse.
+Lorsque la phase liquide est abondante, la mousse est dite “mousse humide” : les films
+sont épais, les bulles sont bien séparées.
+À l’inverse, quand la mousse perd du liquide, elle devient une “mousse sèche” : les films
+s’amincissent, les bulles se déforment et deviennent polygonales, ce qui accélère l’éclatement.Dans notre étude, nous nous intéressons spécifiquement à une mousse liquide, car
+la mousse de bière fraîchement servie contient encore suffisamment de liquide pour que la
+coalescence soit limitée dans les premières secondes.
+Dans le cas d’une mousse de bière, on peut définir ce système comme un empilement
+de bulles d’eau, de protéines, de sucres faisant guise de tensioactif. Ici la phase liquide est
+l’eau, les protéines et les sucres, et la phase fluide est le CO2 . La mousse liquide a une
+très grande surface spécifique (surface/volume).
+On dit qu’une mousse est sèche lorsque la fraction volumique du liquide (notée ϵ) est
+inférieure à 0,05 est qu’elle est humide lorsque ϵ est compris entre 0,05 et 0,30. La fraction volumique d’une mousse (ou fraction liquide) est la quantité de liquide contenu dans
+la mousse. Elle s’obtient en divisant le volume de liquide présent dans la mousse par le
+volume total de la mousse. Une mousse liquide ne peut pas avoir un ϵ supérieur à 0,30,
+autrement c’est un liquide bulleux. On remarque donc que plus le ϵ augmente plus les
+bulles sont dispersées. On désigne par ϵ la limite en dessous de laquelle les bulles perdent
+leur aspect sphérique et deviennent des cellules.
+
+Étude des mousses de bière
+
+4
+
+2 Arrangement et évolution des bulles dans une mousse
+
+Figure 1 – Schéma représentant la fraction volumique selon la mousse
+
+2
+
+Arrangement et évolution des bulles dans une mousse
+
+Pour comprendre les différentes caractéristiques des mousses, nous avons ensuite décidé
+d’étudier l’arrangement des bulles dans la mousse et les phénomènes qui régissent les
+cellules. Pour comprendre ces phénomènes, nous allons donc nous intéresser aux mousses
+liquides. Nous allons en premier lieu étudier la structure d’une mousse, puis étudier les
+phénomènes de drainage, de mûrissement et de coalescence.
+
+2.1
+
+Structure des mousses
+
+Dans une mousse, les bulles sont compressées les unes contre les autres, ce qui impose
+une organisation géométrique spécifique. Lorsque deux bulles se touchent, elles forment
+un film liquide (ou film de savon), une membrane fine séparant les deux volumes gazeux.
+Si une troisième bulle s’ajoute à cette structure, les films se rejoignent selon une arête
+commune appelée bord de Plateau, où trois films se rencontrent sous des angles bien
+déterminés. Lorsqu’une quatrième bulle se juxtapose, l’intersection des bords de Plateau
+forme un sommet (ou vertex) où quatre arêtes se rencontrent.
+L’ensemble des lois régissant la structure d’une mousse constitue ce que l’on appelle les
+lois de Plateau, formulées 1873 par le physicien belge Joseph Antoine Ferdinand Plateau :
+Première loi de Plateau : La courbure moyenne d’un film séparant deux bulles est constante.
+Ainsi la convexité du film est donnée par la différence de pression entre les deux bulles.
+Deuxième loi de Plateau : Les films se rejoignent toujours par trois pour former un bord
+de Plateau avec un angle de 120° entre les films.
+Troisième loi de Plateau : Quatre bords de Plateau se rejoignent en un vertex avec un
+angle de 109.5° entre les bords.
+
+2.2
+
+Le phénomène de drainage
+
+Soumis à la gravité terrestre, le liquide contenu dans la mousse s’écoule au travers du
+réseau de bords de Plateau, de noeuds et de films vers le bas de la mousse. La conséquence
+est au cours du temps une diminution du paramètre appelé fraction volumique de liquide
+à mesure que l’on s’élève dans la colonne de mousse. C’est pour cela que l’on distingue
+les mousses sèches des mousses humides.
+Étude des mousses de bière
+
+5
+
+2 Arrangement et évolution des bulles dans une mousse
+
+2.3
+
+Le phénomène de mûrissement : la loi de Laplace
+
+Le mûrissement d’une mousse résulte des différences de pression existant entre les
+bulles. Selon la relation de Laplace, la pression à l’intérieur d’une bulle dépend de la courbure de son interface : la différence de pression entre deux régions séparées par une surface
+courbe s’exprime en fonction des rayons de courbure R(1) et R(2) ainsi que de la tension
+de surface du film liquide. Ainsi, les bulles les plus petites présentant une courbure plus
+forte possèdent une pression interne plus élevée que les bulles plus grandes ce qui provoque leur éclatement puis la diffusion de leur gaz vers les plus grosses bulles. La diffusion
+est donc due dans le même temps à une différence de pression de part et d’autre d’une
+interface due à la courbure de celle-ci (Loi de de Laplace précédente). La conséquence
 de ce processus est une diminution du nombre total de bulles et une augmentation de la
 taille moyenne des bulles sans changer la hauteur de la mousse.
-Pour comprendre lâÃ©volution dâune bulle dans une mousse au cours du temps, et donc
-lâÃ©volution dâune mousse au cours de sa formation, il faut faire intervenir les lois de La-
-place.
-Une bulle est une petite sphÃ¨re de gaz entourÃ©e dâun liquide. En raison de la tension
-superficielle du liquide, les films de liquide sont dotÃ©s dâune certaine Ã©lasticitÃ© et il faut
-dÃ©penser un peu dâÃ©nergie pour les Ã©tirer et permettre la formation de la bulle. Les forces
-de tension superficielle ont tendance Ã  faire contracter la bulle, par consÃ©quent la pression
-Ã  lâintÃ©rieure de la bulle P int va Ãªtre supÃ©rieure Ã  la pression extÃ©rieure P ext .
-Une bulle tend, naturellement, Ã  prendre la forme qui lui permet dâenfermer un volume
-de gaz donnÃ© dans une surface dâaire minimale.
-La pression Ã  lâintÃ©rieur dâune bulle est lÃ©gÃ¨rement supÃ©rieure Ã  celle de lâextÃ©rieur. Elle
-est donnÃ©e par la formule de Laplace :
-PÂ¡Â¿(int) =<> PÂ¡Â¿(ext) +
-4Î³
-R
+Pour comprendre l’évolution d’une bulle dans une mousse au cours du temps, et donc
+l’évolution d’une mousse au cours de sa formation, il faut faire intervenir les lois de Laplace.
+Une bulle est une petite sphère de gaz entourée d’un liquide. En raison de la tension
+superficielle du liquide, les films de liquide sont dotés d’une certaine élasticité et il faut
+dépenser un peu d’énergie pour les étirer et permettre la formation de la bulle. Les forces
+de tension superficielle ont tendance à faire contracter la bulle, par conséquent la pression
+à l’intérieure de la bulle P int va être supérieure à la pression extérieure P ext .
+Une bulle tend, naturellement, à prendre la forme qui lui permet d’enfermer un volume
+de gaz donné dans une surface d’aire minimale.
+La pression à l’intérieur d’une bulle est légèrement supérieure à celle de l’extérieur. Elle
+est donnée par la formule de Laplace :
+4γ
 (1)
-On peut dÃ©jÃ  remarquer que la diffÃ©rence de pression est dâautant plus importante que
-la bulle est petite (R petit) ce qui va avoir des consÃ©quences sur le vieillissement de lamousse liquide.
-Une mousse est constituÃ©e de bulles jointives : chaque bulle contient du gaz entourÃ©
+R
+On peut déjà remarquer que la différence de pression est d’autant plus importante que
+la bulle est petite (R petit) ce qui va avoir des conséquences sur le vieillissement de la
+mousse liquide.
+Une mousse est constituée de bulles jointives : chaque bulle contient du gaz entouré
 par une fine enveloppe de liquide. Comme le gaz est partiellement soluble dans le liquide, il
-peut diffuser dâune bulle Ã  lâautre. Cette diffusion est causÃ©e par une diffÃ©rence de pression
-entre bulles, elle-mÃªme liÃ©e Ã  la courbure des interfaces (loi de Laplace). Les petites bulles,
-plus fortement courbÃ©es, sont en surpression ; les bulles plus grandes, moins courbÃ©es, sont
-en sous-pression. Le gaz diffuse donc des petites bulles vers les grandes. Ce phÃ©nomÃ¨ne,
-appelÃ© disproportionation, conduit progressivement Ã  la disparition des petites bulles et Ã 
-lâaugmentation de la taille moyenne des bulles restantes. Dans une structure de mousse,
-les bulles ayant moins de six voisines perdent du gaz et se rÃ©tractent jusquâÃ  disparaÃ®tre,
-tandis que celles ayant plus de six voisines gagnent du gaz et grossissent. La consÃ©quence
+peut diffuser d’une bulle à l’autre. Cette diffusion est causée par une différence de pression
+entre bulles, elle-même liée à la courbure des interfaces (loi de Laplace). Les petites bulles,
+plus fortement courbées, sont en surpression ; les bulles plus grandes, moins courbées, sont
+en sous-pression. Le gaz diffuse donc des petites bulles vers les grandes. Ce phénomène,
+appelé disproportionation, conduit progressivement à la disparition des petites bulles et à
+l’augmentation de la taille moyenne des bulles restantes. Dans une structure de mousse,
+les bulles ayant moins de six voisines perdent du gaz et se rétractent jusqu’à disparaître,
+tandis que celles ayant plus de six voisines gagnent du gaz et grossissent. La conséquence
 globale est une diminution du nombre total de bulles, un grossissement de la mousse et
-une perte progressive de stabilitÃ© ce qui mÃ¨ne Ã  terme Ã  la baisse progressive du volume
+une perte progressive de stabilité ce qui mène à terme à la baisse progressive du volume
 de mousse au cours du temps.
-Ãtude des mousses de biÃ¨re 6
+P (int) = P (ext) +
 
-3 MatÃ©riels et mÃ©thode expÃ©rimentale
-2.4 Le phÃ©nomÃ¨ne de coalescence
-La coalescence correspond Ã  la fusion de deux bulles lorsquâelles entrent en contact.
-Dans une mousse, les bulles sont sÃ©parÃ©es par de trÃ¨s minces films liquides. Avec le temps,
-ces films sâamincissent sous lâeffet du drainage ou de petites vibrations. Lorsquâun film
-devient trop fragile pour rÃ©sister Ã  la pression du gaz, il se rompt et les bulles fusionnent
-pour former une bulle plus grande. Ce phÃ©nomÃ¨ne fait grossir la taille moyenne des bulles
-et entraÃ®ne une perte progressive de structure : la mousse devient moins fine, moins dense,
-puis finit par sâeffondrer. La coalescence est donc lâun des principaux mÃ©canismes de
-dÃ©gradation de la mousse.
-Figure 2<> â Mousse peu de temps
-aprÃ¨s sa formation
-Figure 3<> â La mÃªme mousse quelques
-temps aprÃ¨s
-2.5 Ãvolution globale de la mousse
-La dÃ©croissance de lâÃ©paisseur de mousse de biÃ¨re est considÃ©rÃ©e comme un exemple
-classique de dÃ©croissance exponentielle : câest dâailleurs le sujet du prix IgNobel (parodiedu prix Nobel qui nomme les recherches scientifiques les plus drÃ´les) de physique de 2002.
-3 MatÃ©riels et mÃ©thode expÃ©rimentale
-3.1 Dispositif expÃ©rimental
-MatÃ©riels pour les expÃ©riences :
-â<> BÃ©cher de 50 mL
-â<> BÃ©cher de 150 mL
-â<> Ãprouvette graduÃ©e en verre de 250 mL
-â<> BiÃ¨re Leffe
-â<> Bande de mesure millimÃ©trÃ©e de 40,0 cm
-â<> Tableau unicolore (servant de fond)
-â<> CamÃ©ra + pied de camÃ©ra
-â<> Entonnoir
-Ãtude des mousses de biÃ¨re 7
+Étude des mousses de bière
 
-3 MatÃ©riels et mÃ©thode expÃ©rimentale
-3.2 Protocole expÃ©rimental
-Ce protocole permet de filmer la mousse de biÃ¨re sur un certain temps aprÃ¨s versement.
-Lâentonnoir sert Ã  avoir un dÃ©bit de liquide rÃ©pÃ©table : avec une biÃ¨re versÃ©e en penchant
-manuellement le bÃ©cher nous avons obtenu des rÃ©sultats trop alÃ©atoires. Comme Ã©talon
-nous avons au dÃ©but choisi une bande graduÃ©e qui permet dâavoir les Ã©paisseurs de mousse
-en centimÃ¨tres. Nous avons ensuite dÃ©cidÃ© dâutiliser directement les graduations sur les
-Ã©prouvettes graduÃ©es ; Celles-ci se voyant souvent difficilement sur les vidÃ©os nous, colorons
-avec un feutre celles Ã  10 mL et Ã  100 mL, afin dâÃ©tablir une distance correspondant Ã  90
+6
+
+3 Matériels et méthode expérimentale
+
+2.4
+
+Le phénomène de coalescence
+
+La coalescence correspond à la fusion de deux bulles lorsqu’elles entrent en contact.
+Dans une mousse, les bulles sont séparées par de très minces films liquides. Avec le temps,
+ces films s’amincissent sous l’effet du drainage ou de petites vibrations. Lorsqu’un film
+devient trop fragile pour résister à la pression du gaz, il se rompt et les bulles fusionnent
+pour former une bulle plus grande. Ce phénomène fait grossir la taille moyenne des bulles
+et entraîne une perte progressive de structure : la mousse devient moins fine, moins dense,
+puis finit par s’effondrer. La coalescence est donc l’un des principaux mécanismes de
+dégradation de la mousse.
+
+Figure 2 – Mousse peu de temps
+après sa formation
+
+2.5
+
+Figure 3 – La même mousse quelques
+temps après
+
+Évolution globale de la mousse
+
+La décroissance de l’épaisseur de mousse de bière est considérée comme un exemple
+classique de décroissance exponentielle : c’est d’ailleurs le sujet du prix IgNobel (parodie
+du prix Nobel qui nomme les recherches scientifiques les plus drôles) de physique de 2002.
+
+3
+
+Matériels et méthode expérimentale
+
+3.1
+
+Dispositif expérimental
+
+Matériels pour les expériences :
+— Bécher de 50 mL
+— Bécher de 150 mL
+— Éprouvette graduée en verre de 250 mL
+— Bière Leffe
+— Bande de mesure millimétrée de 40,0 cm
+— Tableau unicolore (servant de fond)
+— Caméra + pied de caméra
+— Entonnoir
+
+Étude des mousses de bière
+
+7
+
+3 Matériels et méthode expérimentale
+
+3.2
+
+Protocole expérimental
+
+Ce protocole permet de filmer la mousse de bière sur un certain temps après versement.
+L’entonnoir sert à avoir un débit de liquide répétable : avec une bière versée en penchant
+manuellement le bécher nous avons obtenu des résultats trop aléatoires. Comme étalon
+nous avons au début choisi une bande graduée qui permet d’avoir les épaisseurs de mousse
+en centimètres. Nous avons ensuite décidé d’utiliser directement les graduations sur les
+éprouvettes graduées ; Celles-ci se voyant souvent difficilement sur les vidéos nous, colorons
+avec un feutre celles à 10 mL et à 100 mL, afin d’établir une distance correspondant à 90
 mL.
-1.<> Installer un tableau unicolore comme fond pour faciliter la lisibilitÃ© des mesures.
-2.<> Fixer verticalement la bande de mesure millimÃ©trÃ©e au centre du tableau.
-3.<> Placer le rÃ©cipient Ã  tester juste Ã  cÃ´tÃ© de la bande, de maniÃ¨re Ã  ce quâÃ  la camÃ©ra,
-le bord du rÃ©cipient soit alignÃ© avec les graduations.
-4.<> RÃ©gler la camÃ©ra sur son pied de maniÃ¨re Ã  ce quâelle filme clairement la bande de
-mesure et le rÃ©cipient.
-5.<> Verser doucement la quantitÃ© de biÃ¨re souhaitÃ©e dans un bÃ©cher pour limiter au
+1. Installer un tableau unicolore comme fond pour faciliter la lisibilité des mesures.
+2. Fixer verticalement la bande de mesure millimétrée au centre du tableau.
+3. Placer le récipient à tester juste à côté de la bande, de manière à ce qu’à la caméra,
+le bord du récipient soit aligné avec les graduations.
+4. Régler la caméra sur son pied de manière à ce qu’elle filme clairement la bande de
+mesure et le récipient.
+5. Verser doucement la quantité de bière souhaitée dans un bécher pour limiter au
 maximum la formation de mousse.
-6.<> Boucher lâextrÃ©mitÃ© infÃ©rieure de lâentonnoir avec votre doigt.
-7.<> Transvaser la biÃ¨re contenue dans le bÃ©cher dans lâentonnoir.
-8.<> Positionner lâextrÃ©mitÃ© infÃ©rieure de lâentonnoir Ã  la hauteur de versement choisie,
-repÃ©rÃ©e grÃ¢ce Ã  la bande millimÃ©trÃ©e.
-9.<> Placer lâentonnoir au-dessus du rÃ©cipient dÃ©jÃ  mis en place.
-10.<> DÃ©marrer la sÃ©quence vidÃ©o de la camÃ©ra.
-11.<> Retirer votre doigt afin de laisser la biÃ¨re sâÃ©couler dans le rÃ©cipient.
-12.<> Laisser la camÃ©ra filmer lâÃ©volution de la mousse pour pouvoir mesurer prÃ©cisÃ©ment
+6. Boucher l’extrémité inférieure de l’entonnoir avec votre doigt.
+7. Transvaser la bière contenue dans le bécher dans l’entonnoir.
+8. Positionner l’extrémité inférieure de l’entonnoir à la hauteur de versement choisie,
+repérée grâce à la bande millimétrée.
+9. Placer l’entonnoir au-dessus du récipient déjà mis en place.
+10. Démarrer la séquence vidéo de la caméra.
+11. Retirer votre doigt afin de laisser la bière s’écouler dans le récipient.
+12. Laisser la caméra filmer l’évolution de la mousse pour pouvoir mesurer précisément
 sa hauteur au cours du temps.
-3.3 MÃ©thode dâanalyse des donnÃ©es
-Afin de quantifier lâÃ©volution de lâÃ©paisseur de mousse au cours du temps, il est nÃ©-
-cessaire de calculer la distance entre le haut et le bas de la mousse sur plusieurs images
-dâune vidÃ©o. Le logiciel SalsaJ a Ã©tÃ© utilisÃ© afin de mesurer des distances, et afin dâobtenir
-des images Ã  des intervalles rÃ©guliers on sâest servi du logiciel Ffmpeg.
-Traitement des donnÃ©es de la vidÃ©o :
-1.<> Ouvrir le tableur
-2.<> CrÃ©er des lignes pour le temps, le numÃ©ro de lâimage et les Ã©paisseurs de mousse
-mesurÃ©es
-3.<> Ouvrir la vidÃ©o, le logiciel SalsaJ et lâinvite de commande
-4.<> Rentrer
-ffmpeg -ss <temps de la vidÃ©o oÃ¹ lâon dÃ©bute lâanalyse>
--i <chemin vers la vidÃ©o>
--t <durÃ©e sur laquelle les images sont rÃ©alisÃ©es>
+
+3.3
+
+Méthode d’analyse des données
+
+Afin de quantifier l’évolution de l’épaisseur de mousse au cours du temps, il est nécessaire de calculer la distance entre le haut et le bas de la mousse sur plusieurs images
+d’une vidéo. Le logiciel SalsaJ a été utilisé afin de mesurer des distances, et afin d’obtenir
+des images à des intervalles réguliers on s’est servi du logiciel Ffmpeg.
+Traitement des données de la vidéo :
+1. Ouvrir le tableur
+2. Créer des lignes pour le temps, le numéro de l’image et les épaisseurs de mousse
+mesurées
+3. Ouvrir la vidéo, le logiciel SalsaJ et l’invite de commande
+4. Rentrer
+ffmpeg -ss <temps de la vidéo où l’on débute l’analyse>
+-i <chemin vers la vidéo>
+-t <durée sur laquelle les images sont réalisées>
 -vf fps=1/<intervalle entre les images en secondes>
-<chemin vers le dossier des images Ã  faire>/%d.jpg
-Ãtude des mousses de biÃ¨re 8
+<chemin vers le dossier des images à faire>/%d.jpg
+Étude des mousses de bière
 
-3 MatÃ©riels et mÃ©thode expÃ©rimentale
-Figure 4<> â SchÃ©ma de montage de lâexpÃ©rienceFigure 5<> â Image du
-dispositif expÃ©rimental
-Figure 6<> â Image dâune
-vidÃ©o, montrant les
-graduations surlignÃ©es
-dans lâinvite de commande en indiquant les paramÃ¨tres (cela dÃ©coupera la vidÃ©o
-en une succession dâimage) Comme temps de dÃ©but dâanalyse on prend le moment
-oÃ¹ la quantitÃ© de mousse est maximale ; pour la durÃ©e, ce sera soit 65s soit toute
-la vidÃ©o ; et pour lâintervalle nous avons choisi soit 5s soit 10s.
-5.<> Donner une Ã©chelle de mesure grÃ¢ce Ã  la bande graduÃ©e sur le logiciel SalsaJ
-6.<> Puis pour chaque image tracer un trait partant de la base de la mousse jusquâen
-haut. Ã partir de la cinquiÃ¨me image on voit que la mousse colle parfois beaucoup
-aux parois. Il faut donc faire attention Ã  prendre lâÃ©paisseur au bon endroit.
-7.<> Noter la valeur obtenue dans le tableur
-Ãtude des mousses de biÃ¨re 9
+8
 
-3 MatÃ©riels et mÃ©thode expÃ©rimentale
-Figure 7<> â Ouvrir
+3 Matériels et méthode expérimentale
+
+Figure 4 – Schéma de montage de l’expérience
+
+Figure 6 – Image d’une
+vidéo, montrant les
+graduations surlignées
+
+Figure 5 – Image du
+dispositif expérimental
+
+dans l’invite de commande en indiquant les paramètres (cela découpera la vidéo
+en une succession d’image) Comme temps de début d’analyse on prend le moment
+où la quantité de mousse est maximale ; pour la durée, ce sera soit 65s soit toute
+la vidéo ; et pour l’intervalle nous avons choisi soit 5s soit 10s.
+5. Donner une échelle de mesure grâce à la bande graduée sur le logiciel SalsaJ
+6. Puis pour chaque image tracer un trait partant de la base de la mousse jusqu’en
+haut. À partir de la cinquième image on voit que la mousse colle parfois beaucoup
+aux parois. Il faut donc faire attention à prendre l’épaisseur au bon endroit.
+7. Noter la valeur obtenue dans le tableur
+
+Étude des mousses de bière
+
+9
+
+3 Matériels et méthode expérimentale
+
+Figure 7 – Ouvrir
 les images avec
 SalsaJ
-Figure 8<> â Cliquer
+
+Figure 8 – Cliquer
 sur la loupe qui
 permet de zoomer
 avec le clic gauche et
 dezoomer avec le
 droit.
-Figure 9<> â
-Agrandir lâimage
-pour ne voir que la
-mousse et Ãªtre plus
-prÃ©cis
-Figure 10<> â Tracer
-un trait de 10 cm
-grÃ¢ce a la bande
-graduÃ©e
-Figure 11<> â Aller dans Analyse ->
-Indiquer lâÃ©chelle. Dans distance rÃ©elle
-taper 10 en cm puis cocher global
-Figure 12<> â Tracer un trait
-partant de la base de la
-mousse jusquâen haut de la
-mousse
-Figure 13<> â Sans lÃ¢cher le trait regarder
-la valeur indiquÃ©e dans "length"
-Ãtude des mousses de biÃ¨re 10
 
-4 RÃ©sultats expÃ©rimentaux
-4 RÃ©sultats expÃ©rimentaux
-Dans tous les tableaux suivants les Ã©paisseurs sont en centimÃ¨tres, les durÃ©es en se-
-condes et les volumes en millilitres.
-4.1 Ãvolution de la hauteur de mousse en fonction du temps
-Ce tableau prÃ©sente les mesures de lâÃ©paisseur de la mousse en centimÃ¨tres dans 6
-Ã©prouvettes en fonction du temps.Â¡Â¿ 45ââ¤ Â±Â¡Â¿ 3<> mL de biÃ¨re Leffe a Ã©tÃ© versÃ©e Ã  une hauteur de
-22.5ââ¤ Â±Â¡Â¿ 0.5<> cm dans des Ã©prouvettes en verre sÃ¨ches Ã  tempÃ©rature ambiante. Concernant
-le dÃ©bit, le gros de lâentonnoir se vide en une seconde sur les vidÃ©os, de la mÃªme maniÃ¨re
-dans toutes les Ã©prouvettes. Lâincertitude Ã©largie pour un niveau de confiance de 95% est
-calculÃ©e avec la formule
-UÂ¡Â¿(epaisseurÂ¡Â¿) =
+Figure 11 – Aller dans Analyse ->
+Indiquer l’échelle. Dans distance réelle
+taper 10 en cm puis cocher global
+
+Figure 9 –
+Agrandir l’image
+pour ne voir que la
+mousse et être plus
+précis
+
+Figure 10 – Tracer
+un trait de 10 cm
+grâce a la bande
+graduée
+
+Figure 12 – Tracer un trait
+partant de la base de la
+mousse jusqu’en haut de la
+mousse
+
+Figure 13 – Sans lâcher le trait regarder
+la valeur indiquée dans "length"
+Étude des mousses de bière
+10
+
+4 Résultats expérimentaux
+
+4
+
+Résultats expérimentaux
+
+Dans tous les tableaux suivants les épaisseurs sont en centimètres, les durées en secondes et les volumes en millilitres.
+
+4.1
+
+Évolution de la hauteur de mousse en fonction du temps
+
+Ce tableau présente les mesures de l’épaisseur de la mousse en centimètres dans 6
+éprouvettes en fonction du temps. 45 ± 3 mL de bière Leffe a été versée à une hauteur de
+22.5 ± 0.5 cm dans des éprouvettes en verre sèches à température ambiante. Concernant
+le débit, le gros de l’entonnoir se vide en une seconde sur les vidéos, de la même manière
+dans toutes les éprouvettes. L’incertitude élargie pour un niveau de confiance de 95% est
+calculée avec la formule
 s
-(kââ¤ Â·<> u(SalsaJÂ¡Â¿))
+
+2
+t · smesures
 2
-+
-â
-tââ¤ Â·<> smesures
-â
+U (epaisseur) = (k · u(SalsaJ)) + √
 nmesures
-Â«
-2
-avec<> smesureslâÃ©cart-type Ã©chantillon,<> n	mesuresle nombre de mesures,<> t<> le coefficient de
-Student qui vautÂ¡Â¿ 2.57<> pour 6 mesures,<> k<> le coefficient pour obtenir lâincertitude Ã©largie
-qui est deÂ¡Â¿ 2, et<> u(SalsaJÂ¡Â¿)<> lâincertitude introduite par lâutilisation de SalsaJ, estimÃ©e Ã  0.3
-cm car la limite de la mousse est souvent incertaine sur les vidÃ©os.
-Temps (s) 0,010,020,030,040,050,060,070,080,090,0
-Ãprouvette 1 12,910,59,38,17,56,86,35,85,75,5
-Ãprouvette 2 12,810,79,48,57,77,16,46,15,65,5
-Ãprouvette 3 16,515,414,313,512,411,811,010,410,210,0
-Ãprouvette 4 17,315,814,513,012,111,310,810,210,09,5
-Ãprouvette 5 17,715,314,513,712,111,010,19,68,98,5
-Ãprouvette 6 10,39,07,77,16,56,36,05,85,65,4
-Ãpaisseur moyenne14,612,811,610,79,79,18,48,07,77,4
-Incertitude 3,23,23,43,32,92,82,62,52,52,4
-Table 1<> â Mesures de lâÃ©paisseur de mousse (en cm) en fonction du temps de 45 mL de
-biÃ¨re Leffe versÃ©e depuis 22,5 cm de hauteur dans 6 Ã©prouvettes mouillÃ©es Ã  tempÃ©rature
+avec smesures l’écart-type échantillon, nmesures le nombre de mesures, t le coefficient de
+Student qui vaut 2.57 pour 6 mesures, k le coefficient pour obtenir l’incertitude élargie
+qui est de 2, et u(SalsaJ) l’incertitude introduite par l’utilisation de SalsaJ, estimée à 0.3
+cm car la limite de la mousse est souvent incertaine sur les vidéos.
+Temps (s)
+Éprouvette 1
+Éprouvette 2
+Éprouvette 3
+Éprouvette 4
+Éprouvette 5
+Éprouvette 6
+Épaisseur moyenne
+Incertitude
+
+0,0
+12,9
+12,8
+16,5
+17,3
+17,7
+10,3
+14,6
+3,2
+
+10,0
+10,5
+10,7
+15,4
+15,8
+15,3
+9,0
+12,8
+3,2
+
+20,0
+9,3
+9,4
+14,3
+14,5
+14,5
+7,7
+11,6
+3,4
+
+30,0
+8,1
+8,5
+13,5
+13,0
+13,7
+7,1
+10,7
+3,3
+
+40,0
+7,5
+7,7
+12,4
+12,1
+12,1
+6,5
+9,7
+2,9
+
+50,0
+6,8
+7,1
+11,8
+11,3
+11,0
+6,3
+9,1
+2,8
+
+60,0
+6,3
+6,4
+11,0
+10,8
+10,1
+6,0
+8,4
+2,6
+
+70,0
+5,8
+6,1
+10,4
+10,2
+9,6
+5,8
+8,0
+2,5
+
+80,0
+5,7
+5,6
+10,2
+10,0
+8,9
+5,6
+7,7
+2,5
+
+90,0
+5,5
+5,5
+10,0
+9,5
+8,5
+5,4
+7,4
+2,4
+
+Table 1 – Mesures de l’épaisseur de mousse (en cm) en fonction du temps de 45 mL de
+bière Leffe versée depuis 22,5 cm de hauteur dans 6 éprouvettes mouillées à température
 ambiante
 On obtient la courbe suivante :
-Ãtude des mousses de biÃ¨re 11
 
-4 RÃ©sultats expÃ©rimentaux
-Ãtonnamment, le coefficient de corrÃ©lation est plus Ã©levÃ© en modÃ©lisant avec une pa-
-rabole quâavec une exponentielle :
-Ãtude des mousses de biÃ¨re 12
+Étude des mousses de bière
 
-4 RÃ©sultats expÃ©rimentaux
-Ãvidemment, une parabole ne peut pas correctement modÃ©liser lâÃ©paisseur de mousse
-car celle-ci remonte vers lâinfini aprÃ¨s un certain temps, mais le modÃ¨le exponentiel ne
-paraÃ®t pas convaincant. MÃªme dans lâarticle qui a reÃ§u le prix IgNobel, les courbes expo-
-nentielles proposÃ©es paraissent passer relativement loin des points.
-AprÃ¨s quelques recherches, on trouve un autre article qui propose un autre modÃ¨le
-pour lâÃ©paisseur de mousse de biÃ¨re en fonction du temps :
-h(t) =<> e
-aâbtâct
+11
+
+4 Résultats expérimentaux
+
+Étonnamment, le coefficient de corrélation est plus élevé en modélisant avec une parabole qu’avec une exponentielle :
+
+Étude des mousses de bière
+
+12
+
+4 Résultats expérimentaux
+Évidemment, une parabole ne peut pas correctement modéliser l’épaisseur de mousse
+car celle-ci remonte vers l’infini après un certain temps, mais le modèle exponentiel ne
+paraît pas convaincant. Même dans l’article qui a reçu le prix IgNobel, les courbes exponentielles proposées paraissent passer relativement loin des points.
+Après quelques recherches, on trouve un autre article qui propose un autre modèle
+pour l’épaisseur de mousse de bière en fonction du temps :
+h(t) = ea−bt−ct
+
 2.5
-Ce modÃ¨le se rapproche bien de 0 aprÃ¨s beaucoup de temps.
+
+Ce modèle se rapproche bien de 0 après beaucoup de temps.
 Afin de le tester, on utilise Python avec les modules Scipy et Matplotlib.
-On voit que ce modÃ¨le colle mieux aux donnÃ©es que la parabole et lâexponentielle
-simple, mais il ne rÃ©sout pas le problÃ¨me de lâexplosion vers lâinfini : en effet le coefficientc<> trouvÃ© est ici positif. On peut le forcer Ã  Ãªtre nÃ©gatif dans le programme, mais onnâobtient alors pas mieux quâune dÃ©croissance exponentielle.
-Afin de remÃ©dier Ã  cela nous avons Ã©tudiÃ© la mousse sur une durÃ©e plus longue, jusquâÃ 
-ce quâelle ait presque disparu. Le tableau et le graphique suivants montrent lâÃ©volution duvolume de mousse de 45 mL de biÃ¨re Grimbergen versÃ©e Ã  une hauteur de 22,5 cm dans
-une Ã©prouvette.
-Ãtude des mousses de biÃ¨re 13
 
-4 RÃ©sultats expÃ©rimentaux
-t (s)0306090120150180210240270300330360390420450
-Ãp. 171585145383330262321168 6 4 4 3
-Ãp. 27355474135312927201711106 5 5 4
-Ãp. 37358514540353026211813119 7 6
-Ãp. 464474036332923191514128 6 5 5
-Ãp. 55843363228241916141312119 8
-Ãp. 664514537342823181614107 5
-V moy.67524539353026221816129 7 6 5 4
-U(V) 99988 8 8 8 7 7 7 7 7 7 6 9
-Table 2<> â Mesures du volume (en mL) en fonction du temps de la mousse de 45 mL de
-biÃ¨re Leffe versÃ©e depuis 22,5 cm de hauteur dans 6 Ã©prouvettes mouillÃ©es Ã  tempÃ©rature
+On voit que ce modèle colle mieux aux données que la parabole et l’exponentielle
+simple, mais il ne résout pas le problème de l’explosion vers l’infini : en effet le coefficient
+c trouvé est ici positif. On peut le forcer à être négatif dans le programme, mais on
+n’obtient alors pas mieux qu’une décroissance exponentielle.
+Afin de remédier à cela nous avons étudié la mousse sur une durée plus longue, jusqu’à
+ce qu’elle ait presque disparu. Le tableau et le graphique suivants montrent l’évolution du
+volume de mousse de 45 mL de bière Grimbergen versée à une hauteur de 22,5 cm dans
+une éprouvette.
+
+Étude des mousses de bière
+
+13
+
+4 Résultats expérimentaux
+t (s)
+Ép. 1
+Ép. 2
+Ép. 3
+Ép. 4
+Ép. 5
+Ép. 6
+V moy.
+U(V)
+
+0
+71
+73
+73
+64
+58
+64
+67
+9
+
+30
+58
+55
+58
+47
+43
+51
+52
+9
+
+60
+51
+47
+51
+40
+36
+45
+45
+9
+
+90
+45
+41
+45
+36
+32
+37
+39
+8
+
+120
+38
+35
+40
+33
+28
+34
+35
+8
+
+150
+33
+31
+35
+29
+24
+28
+30
+8
+
+180
+30
+29
+30
+23
+19
+23
+26
+8
+
+210
+26
+27
+26
+19
+16
+18
+22
+8
+
+240
+23
+20
+21
+15
+14
+16
+18
+7
+
+270
+21
+17
+18
+14
+13
+14
+16
+7
+
+300
+16
+11
+13
+12
+12
+10
+12
+7
+
+330
+8
+10
+11
+8
+11
+7
+9
+7
+
+360
+6
+6
+9
+6
+9
+5
+7
+7
+
+390
+4
+5
+7
+5
+8
+
+420
+4
+5
+6
+5
+
+450
+3
+4
+
+6
+7
+
+5
+6
+
+4
+9
+
+Table 2 – Mesures du volume (en mL) en fonction du temps de la mousse de 45 mL de
+bière Leffe versée depuis 22,5 cm de hauteur dans 6 éprouvettes mouillées à température
 ambiante
-4.2 Ãvolution de la fraction volumique de liquide dans la mousse
+
+4.2
+
+Évolution de la fraction volumique de liquide dans la mousse
+
 Afin de calculer la fraction volumique de liquide dans la mousse, il faut avoir non
-seulement le volume de la mousse, quâon dÃ©duit de la hauteur, mais aussi le volume de
-liquide prÃ©sent dedans. Pour obtenir ce dernier, on mesure la hauteur de liquide qui nâest
-pas de la mousse dans le rÃ©cipient, puis on calcule le volume de liquide qui nâest pas dans
-la mousse, et on la soustrait enfin au volume total de biÃ¨re introduite. Il suffit ensuite
-dâeffectuer la division. On obtient le volume Ã  partir de lâÃ©paisseur grÃ¢ce Ã  la formule
-VÂ¡Â¿ =<> Ïââ¤ Â·Â¡Â¿ (
-diametre
+seulement le volume de la mousse, qu’on déduit de la hauteur, mais aussi le volume de
+liquide présent dedans. Pour obtenir ce dernier, on mesure la hauteur de liquide qui n’est
+pas de la mousse dans le récipient, puis on calcule le volume de liquide qui n’est pas dans
+la mousse, et on la soustrait enfin au volume total de bière introduite. Il suffit ensuite
+d’effectuer la division. On obtient le volume à partir de l’épaisseur grâce à la formule
+V = π · ( diametre
+)2 · epaisseur en faisant une approximation d’un volume cylindrique. Le
 2
-)
-2
-Â·<> epaisseur<> en faisant une approximation dâun volume cylindrique. Le
-diamÃ¨tre dâune Ã©prouvette est deÂ¡Â¿ 2.8ââ¤ Â±Â¡Â¿ 0<>.1<> cm. Ce tableau recense la hauteur de liquidedans les Ã©prouvettes prÃ©cÃ©dentes en fonction du temps. Ainsi on peut calculer la fraction
-Ãtude des mousses de biÃ¨re 14
+diamètre d’une éprouvette est de 2.8 ± 0.1 cm. Ce tableau recense la hauteur de liquide
+dans les éprouvettes précédentes en fonction du temps. Ainsi on peut calculer la fraction
+Étude des mousses de bière
 
-4 RÃ©sultats expÃ©rimentaux
+14
+
+4 Résultats expérimentaux
 volumique et obtenir un graphique.
-Temps (s)	0,010,020,030,040,050,060,070,080,090,0
-Ãprouvette 1	2,64,35,15,66,16,56,76,97,07,2
-Ãprouvette 2	2,43,94,85,45,96,26,46,56,66,7
-Ãprouvette 3	0,71,62,23,03,74,04,44,85,15,3
-Ãprouvette 4	1,02,03,03,84,54,85,25,65,86,0
-Ãprouvette 5	1,02,23,24,04,65,35,76,16,36,5
-Ãprouvette 6	3,54,85,55,96,16,36,46,56,66,6
-Ãpaisseur de liquide moyenne1,93,14,04,65,25,55,86,16,26,4
-Incertitude	1,21,41,41,21,11,11,00,90,90,8
-Table 3<> â Mesures de lâÃ©paisseur de mousse (en cm) en fonction du temps de la partie
-liquide de 45 mL de biÃ¨re Leffe versÃ©e depuis 22,5 cm de hauteur dans 6 Ã©prouvettes
-mouillÃ©es Ã  tempÃ©rature ambiante
-Temps (s) 0,010,020,030,040,050,060,070,080,090,0
-Vol. de mousse (mL)89,878,771,565,659,855,751,949,247,245,6
-Vol. de liquide (mL)11,519,324,428,431,734,035,737,438,439,3
-Frac. vol. (sans unitÃ©)0,3730,3270,2880,2530,2220,1980,1790,1560,1400,125
-On voit que la fraction volumique dÃ©croÃ®t exponentiellement. Celle-ci, Ã  partir de 10
-secondes, reste comprise entre 0,05 et 0,30 : la mousse est donc liquide Ã  partir de ce
-moment-lÃ .
-Ãtude des mousses de biÃ¨re 15
+Temps (s)
+Éprouvette 1
+Éprouvette 2
+Éprouvette 3
+Éprouvette 4
+Éprouvette 5
+Éprouvette 6
+Épaisseur de liquide moyenne
+Incertitude
 
-4 RÃ©sultats expÃ©rimentaux
-4.3 Influence du rÃ©cipient
-Nous comparons les volumes de moussese formÃ©e entre un bÃ©cher de 150 mL en verre et
-une Ã©prouvette graduÃ©e en verre. Nous utilisons les donnÃ©es prÃ©cÃ©dentes pour lâÃ©prouvette
-et les donnÃ©es suivantes pour le bÃ©cher tout en gardant les mÃªmes paramÃ¨tres :
-Temps (s) 05101520253035
-BÃ©cher 1 1,31,31,21,00,90,80,70,7
-BÃ©cher 2 2,01,81,51,21,11,11,00,9
-BÃ©cher 3 1,81,71,41,00,90,80,80,7
-Moyenne (cm)1,71,61,41,11,00,90,80,8
-Incertitude0,80,70,70,60,60,60,60,6
-Table 4<> â Mesures de lâÃ©paisseur de mousse (en cm )en fonction du temps de 45 mL de
-biÃ¨re Leffe versÃ©e depuis 22,5 cm de hauteur dans 3 bÃ©chers mouillÃ©s Ã  tempÃ©rature
-ambiante
-Pour faire une comparaison entre les deux il nous faut dâabord calculer les volumes
-de mousse avec la formule prÃ©cÃ©dente : le diamÃ¨tre des bÃ©chers est deÂ¡Â¿ 5.2ââ¤ Â±Â¡Â¿ 0.1<> cm. Celanous donne le graphique suivant :
-On observe que le volume de mousse est supÃ©rieur dans les Ã©prouvettes. Nous remar-
-quons aussi quâil ne paraÃ®t pas y avoir de grosse diffÃ©rence de vitesse de dÃ©croissance duvolume selon le contenant (les bÃ©chers ont Ã©tÃ© cependant observÃ©s sur moins de temps).
-4.4 Influence du caractÃ¨re sec/humide du verre
-Pour vÃ©rifier si le fait que le rÃ©cipient soit humide a une influence sur la mousse,
-lâexpÃ©rience avec des Ã©prouvettes sÃ¨ches dÃ©crite prÃ©cÃ©demment (45 mL de biÃ¨re versÃ©e Ã 
-22.5 cm de hauteur) a Ã©tÃ© rÃ©pÃ©tÃ©e avec les mÃªmes Ã©prouvettes cette fois humides. Voici
-les rÃ©sultats :
-Ãtude des mousses de biÃ¨re 16
+0,0
+2,6
+2,4
+0,7
+1,0
+1,0
+3,5
+1,9
+1,2
 
-5 Conclusion
-Temps (s) 0,010,020,030,040,050,060,070,080,090,0
-Ãprouvette 116,015,314,513,412,710,610,110,19,09,0
-Ãprouvette 213,912,611,510,79,89,58,78,38,27,9
-Moyenne (cm)14,914,013,012,011,310,19,49,28,68,5
-Incertitude4,05,05,54,95,42,02,63,41,62,1
-Table 5<> â Mesures de lâÃ©paisseur de mousse (en cm) en fonction du temps de 45 mL de
-biÃ¨re Leffe versÃ©e depuis 22,5 cm de hauteur dans 2 Ã©prouvettes sÃ¨ches Ã  tempÃ©rature
+10,0
+4,3
+3,9
+1,6
+2,0
+2,2
+4,8
+3,1
+1,4
+
+20,0
+5,1
+4,8
+2,2
+3,0
+3,2
+5,5
+4,0
+1,4
+
+30,0
+5,6
+5,4
+3,0
+3,8
+4,0
+5,9
+4,6
+1,2
+
+40,0
+6,1
+5,9
+3,7
+4,5
+4,6
+6,1
+5,2
+1,1
+
+50,0
+6,5
+6,2
+4,0
+4,8
+5,3
+6,3
+5,5
+1,1
+
+60,0
+6,7
+6,4
+4,4
+5,2
+5,7
+6,4
+5,8
+1,0
+
+70,0
+6,9
+6,5
+4,8
+5,6
+6,1
+6,5
+6,1
+0,9
+
+80,0
+7,0
+6,6
+5,1
+5,8
+6,3
+6,6
+6,2
+0,9
+
+90,0
+7,2
+6,7
+5,3
+6,0
+6,5
+6,6
+6,4
+0,8
+
+Table 3 – Mesures de l’épaisseur de mousse (en cm) en fonction du temps de la partie
+liquide de 45 mL de bière Leffe versée depuis 22,5 cm de hauteur dans 6 éprouvettes
+mouillées à température ambiante
+Temps (s)
+Vol. de mousse (mL)
+Vol. de liquide (mL)
+Frac. vol. (sans unité)
+
+0,0
+89,8
+11,5
+0,373
+
+10,0
+78,7
+19,3
+0,327
+
+20,0
+71,5
+24,4
+0,288
+
+30,0
+65,6
+28,4
+0,253
+
+40,0
+59,8
+31,7
+0,222
+
+50,0
+55,7
+34,0
+0,198
+
+60,0
+51,9
+35,7
+0,179
+
+70,0
+49,2
+37,4
+0,156
+
+80,0
+47,2
+38,4
+0,140
+
+On voit que la fraction volumique décroît exponentiellement. Celle-ci, à partir de 10
+secondes, reste comprise entre 0,05 et 0,30 : la mousse est donc liquide à partir de ce
+moment-là.
+Étude des mousses de bière
+
+15
+
+90,0
+45,6
+39,3
+0,125
+
+4 Résultats expérimentaux
+
+4.3
+
+Influence du récipient
+
+Nous comparons les volumes de moussese formée entre un bécher de 150 mL en verre et
+une éprouvette graduée en verre. Nous utilisons les données précédentes pour l’éprouvette
+et les données suivantes pour le bécher tout en gardant les mêmes paramètres :
+Temps (s)
+Bécher 1
+Bécher 2
+Bécher 3
+Moyenne (cm)
+Incertitude
+
+0
+1,3
+2,0
+1,8
+1,7
+0,8
+
+5
+1,3
+1,8
+1,7
+1,6
+0,7
+
+10
+1,2
+1,5
+1,4
+1,4
+0,7
+
+15
+1,0
+1,2
+1,0
+1,1
+0,6
+
+20
+0,9
+1,1
+0,9
+1,0
+0,6
+
+25
+0,8
+1,1
+0,8
+0,9
+0,6
+
+30
+0,7
+1,0
+0,8
+0,8
+0,6
+
+35
+0,7
+0,9
+0,7
+0,8
+0,6
+
+Table 4 – Mesures de l’épaisseur de mousse (en cm )en fonction du temps de 45 mL de
+bière Leffe versée depuis 22,5 cm de hauteur dans 3 béchers mouillés à température
 ambiante
-Nous observons quâil y a un peu plus de mousse dans les Ã©prouvettes humides, mais
-cela peut Ãªtre dÃ» aux incertitudes des expÃ©riences et de mesures. Nous ne constatons pas
-de diffÃ©rence de vitesse de diminution de lâÃ©paisseur.
-5 Conclusion
-5.1 Applications pratiques
-Dans la vie quotidienne, les mousses sont trÃ¨s utilisÃ©es, quâelles soient solides comme
-dans un matelas ou dans un isolant, ou liquides qui bien que plus Ã©phÃ©mÃ¨res conservent un
-rÃ´le important. Leur structure, composÃ©e de bulles de gaz emprisonnÃ©es dans un liquide,
-leur confÃ¨re des propriÃ©tÃ©s uniques telles que la lÃ©gÃ¨retÃ©, la capacitÃ© de recouvrir une
-surface et la possibilitÃ© dâemprisonner des substances actives. Ces caractÃ©ristiques font
+Pour faire une comparaison entre les deux il nous faut d’abord calculer les volumes
+de mousse avec la formule précédente : le diamètre des béchers est de 5.2 ± 0.1 cm. Cela
+nous donne le graphique suivant :
+
+On observe que le volume de mousse est supérieur dans les éprouvettes. Nous remarquons aussi qu’il ne paraît pas y avoir de grosse différence de vitesse de décroissance du
+volume selon le contenant (les béchers ont été cependant observés sur moins de temps).
+
+4.4
+
+Influence du caractère sec/humide du verre
+
+Pour vérifier si le fait que le récipient soit humide a une influence sur la mousse,
+l’expérience avec des éprouvettes sèches décrite précédemment (45 mL de bière versée à
+22.5 cm de hauteur) a été répétée avec les mêmes éprouvettes cette fois humides. Voici
+les résultats :
+Étude des mousses de bière
+
+16
+
+5 Conclusion
+Temps (s)
+Éprouvette 1
+Éprouvette 2
+Moyenne (cm)
+Incertitude
+
+0,0
+16,0
+13,9
+14,9
+4,0
+
+10,0
+15,3
+12,6
+14,0
+5,0
+
+20,0
+14,5
+11,5
+13,0
+5,5
+
+30,0
+13,4
+10,7
+12,0
+4,9
+
+40,0
+12,7
+9,8
+11,3
+5,4
+
+50,0
+10,6
+9,5
+10,1
+2,0
+
+60,0
+10,1
+8,7
+9,4
+2,6
+
+70,0
+10,1
+8,3
+9,2
+3,4
+
+80,0
+9,0
+8,2
+8,6
+1,6
+
+90,0
+9,0
+7,9
+8,5
+2,1
+
+Table 5 – Mesures de l’épaisseur de mousse (en cm) en fonction du temps de 45 mL de
+bière Leffe versée depuis 22,5 cm de hauteur dans 2 éprouvettes sèches à température
+ambiante
+
+Nous observons qu’il y a un peu plus de mousse dans les éprouvettes humides, mais
+cela peut être dû aux incertitudes des expériences et de mesures. Nous ne constatons pas
+de différence de vitesse de diminution de l’épaisseur.
+
+5
+
+Conclusion
+
+5.1
+
+Applications pratiques
+
+Dans la vie quotidienne, les mousses sont très utilisées, qu’elles soient solides comme
+dans un matelas ou dans un isolant, ou liquides qui bien que plus éphémères conservent un
+rôle important. Leur structure, composée de bulles de gaz emprisonnées dans un liquide,
+leur confère des propriétés uniques telles que la légèreté, la capacité de recouvrir une
+surface et la possibilité d’emprisonner des substances actives. Ces caractéristiques font
 des mousses liquides des outils utiles dans de nombreux domaines divers, par exemple les
-produits dâhygiÃ¨ne et de nettoyage : shampoings, gels douche, savons, mousse Ã  raser...
-Les mousses liquides sont Ã©galement essentielles dans des applications techniques ou de
-sÃ©curitÃ©. Lâun des exemples les plus importants est leur utilisation dans les extincteurs Ã 
-Ãtude des mousses de biÃ¨re 17
+produits d’hygiène et de nettoyage : shampoings, gels douche, savons, mousse à raser...
+Les mousses liquides sont également essentielles dans des applications techniques ou de
+sécurité. L’un des exemples les plus importants est leur utilisation dans les extincteurs à
+Étude des mousses de bière
 
-5 Conclusion
-mousse ou les systÃ¨mes dâextinction des incendies. La mousse projetÃ©e permet dâÃ©touffer
-les flammes en couvrant le combustible et en le sÃ©parant de lâoxygÃ¨ne de lâair, ce qui bloque
-la combustion. Dans les aÃ©roports ou les installations industrielles, des rampes Ã  mousse
-sont utilisÃ©es pour contrÃ´ler rapidement de grands feux, notamment ceux impliquant des
+17
+
+5 Conclusion
+mousse ou les systèmes d’extinction des incendies. La mousse projetée permet d’étouffer
+les flammes en couvrant le combustible et en le séparant de l’oxygène de l’air, ce qui bloque
+la combustion. Dans les aéroports ou les installations industrielles, des rampes à mousse
+sont utilisées pour contrôler rapidement de grands feux, notamment ceux impliquant des
 liquides inflammables.
-Par ailleurs, les mousses liquides jouent un rÃ´le notable dans lâindustrie alimentaire et
-notamment dans les boissons, comme la mousse de biÃ¨re, qui constitue un cas particu-
-liÃ¨rement Ã©tudiÃ©. Lors du service, la libÃ©ration du CO2contenu dans la biÃ¨re forme une
-mousse dont la fonction dÃ©passe lâaspect visuel. Cette mousse permet en effet de conserver
-les arÃ´mes et dâamÃ©liorer la stabilitÃ© et la texture en bouche. Une mousse bien formÃ©e est
-donc un Ã©lÃ©ment de qualitÃ© recherchÃ© par les brasseurs et apprÃ©ciÃ© par les consommateurs.
-Elle illustre parfaitement la maniÃ¨re dont les propriÃ©tÃ©s physico-chimiques des mousses
-liquides peuvent influencer la prÃ©sentation et lâexpÃ©rience globale dâun produit.
-Les mousses de ce genre ont un usage concret : une biÃ¨re se renverse moins facilement
-quâun autre liquide, car lorsquâon secoue un verre de biÃ¨re la mousse qui la recouvre
+Par ailleurs, les mousses liquides jouent un rôle notable dans l’industrie alimentaire et
+notamment dans les boissons, comme la mousse de bière, qui constitue un cas particulièrement étudié. Lors du service, la libération du CO2 contenu dans la bière forme une
+mousse dont la fonction dépasse l’aspect visuel. Cette mousse permet en effet de conserver
+les arômes et d’améliorer la stabilité et la texture en bouche. Une mousse bien formée est
+donc un élément de qualité recherché par les brasseurs et apprécié par les consommateurs.
+Elle illustre parfaitement la manière dont les propriétés physico-chimiques des mousses
+liquides peuvent influencer la présentation et l’expérience globale d’un produit.
+Les mousses de ce genre ont un usage concret : une bière se renverse moins facilement
+qu’un autre liquide, car lorsqu’on secoue un verre de bière la mousse qui la recouvre
 agit comme un amortisseur naturel. Les bulles, en se frottant aux parois et entre elles,
-dissipent une partie de lâÃ©nergie des mouvements, ce qui rÃ©duit fortement les oscillations du
-liquide sous-jacent. Ainsi, quand on bouge le verre, la biÃ¨re reste plus stable et dÃ©borde
-moins quâun liquide sans mousse. Les scientifiques montrent que quelques couches de
+dissipent une partie de l’énergie des mouvements, ce qui réduit fortement les oscillations du
+liquide sous-jacent. Ainsi, quand on bouge le verre, la bière reste plus stable et déborde
+moins qu’un liquide sans mousse. Les scientifiques montrent que quelques couches de
 bulles suffisent pour produire cet effet, et que 5 couches de bulles seulement permettent
-de diviser par 10 lâeffet. Ce principe pourrait Ãªtre utilisÃ© pour stabiliser le transport de
+de diviser par 10 l’effet. Ce principe pourrait être utilisé pour stabiliser le transport de
 liquides sensibles ou dangereux.
-5.2 Perspectives et travaux futurs
-Pour la suite, il serait intÃ©ressant de faire dâautres expÃ©riences en influant sur des pa-
-ramÃ¨tres qui auraient des effets sur la mousse, comme lâinclinaison. Par ailleurs, certaines
-incertitudes restent encore trop hautes et il faudrait les diminuer encore en rÃ©pÃ©tant les
-expÃ©riences de maniÃ¨re encore mieux contrÃ´lÃ©e.
-5.3 Remarques de fin
-GrÃ¢ce Ã  nos expÃ©riences, nous avons pu dÃ©terminer les conditions qui permettent
-dâobtenir une mousse de biÃ¨re Ã  la fois abondante et stable. Les diffÃ©rentes expÃ©riences
-montrent que la hauteur de mousse dÃ©pend fortement des paramÃ¨tres de service. Ainsi,
-la hauteur de versement sâest rÃ©vÃ©lÃ©e dÃ©terminante : plus la biÃ¨re est versÃ©e depuis une
-hauteur importante (ici 22,5 cm), plus la mousse initiale formÃ©e est Ã©levÃ©e. De mÃªme, le
-rÃ©cipient joue un rÃ´le non nÃ©gligeable : les Ã©prouvettes, plus Ã©troites, gÃ©nÃ¨rent un volume
-de mousse supÃ©rieur Ã  celui obtenu dans les bÃ©chers plus larges, mÃªme si la vitesse dâeffon-
-drement reste comparable. Ensuite, le caractÃ¨re sec ou humide du verre semble favoriser
-lÃ©gÃ¨rement la formation de mousse.
-Lâanalyse des courbes de hauteur de mousse a permis de montrer que celle-ci diminue
-de maniÃ¨re rÃ©guliÃ¨re au cours du temps, sans suivre parfaitement une loi exponentielle
-simple. Quoi quâil en soit, les mesures indiquent quâaprÃ¨s environ 30 Ã  40 secondes, la
-mousse atteint un rÃ©gime plus stable oÃ¹ la hauteur devient moins sensible aux variations
-brusques : la mousse est alors clairement dans le domaine Â« mousse liquide Â» (fraction
-volumique comprise entre 0,05 et 0,30). Ainsi, une mousse stable et visuellement homogÃ¨ne
-Ãtude des mousses de biÃ¨re 18
 
-5 Conclusion
-se forme en une trentaine de secondes environ aprÃ¨s le service.
-Finalement, nos rÃ©sultats confirment que les pratiques des barmans : hauteur de ver-
-sement contrÃ´lÃ©e, vitesse constante, etc., reposent sur de rÃ©elles considÃ©rations physico-
-chimiques. Pour obtenir une mousse optimale, il est donc recommandÃ© de verser la biÃ¨re
-depuis une hauteur suffisante, dans un rÃ©cipient relativement Ã©troit, puis dâattendre une
-trentaine de secondes afin que la mousse se stabilise. Ces conditions constituent les pa-
-ramÃ¨tres les plus favorables pour obtenir une mousse Ã©paisse, durable et de qualitÃ©. Ces
-conditions prÃ©cises constituent les facteurs clÃ©s pour atteindre une hauteur de mousse
-idÃ©ale, tout en garantissant sa durabilitÃ© et sa qualitÃ©.
+5.2
+
+Perspectives et travaux futurs
+
+Pour la suite, il serait intéressant de faire d’autres expériences en influant sur des paramètres qui auraient des effets sur la mousse, comme l’inclinaison. Par ailleurs, certaines
+incertitudes restent encore trop hautes et il faudrait les diminuer encore en répétant les
+expériences de manière encore mieux contrôlée.
+
+5.3
+
+Remarques de fin
+
+Grâce à nos expériences, nous avons pu déterminer les conditions qui permettent
+d’obtenir une mousse de bière à la fois abondante et stable. Les différentes expériences
+montrent que la hauteur de mousse dépend fortement des paramètres de service. Ainsi,
+la hauteur de versement s’est révélée déterminante : plus la bière est versée depuis une
+hauteur importante (ici 22,5 cm), plus la mousse initiale formée est élevée. De même, le
+récipient joue un rôle non négligeable : les éprouvettes, plus étroites, génèrent un volume
+de mousse supérieur à celui obtenu dans les béchers plus larges, même si la vitesse d’effondrement reste comparable. Ensuite, le caractère sec ou humide du verre semble favoriser
+légèrement la formation de mousse.
+L’analyse des courbes de hauteur de mousse a permis de montrer que celle-ci diminue
+de manière régulière au cours du temps, sans suivre parfaitement une loi exponentielle
+simple. Quoi qu’il en soit, les mesures indiquent qu’après environ 30 à 40 secondes, la
+mousse atteint un régime plus stable où la hauteur devient moins sensible aux variations
+brusques : la mousse est alors clairement dans le domaine « mousse liquide » (fraction
+volumique comprise entre 0,05 et 0,30). Ainsi, une mousse stable et visuellement homogène
+Étude des mousses de bière
+
+18
+
+5 Conclusion
+se forme en une trentaine de secondes environ après le service.
+Finalement, nos résultats confirment que les pratiques des barmans : hauteur de versement contrôlée, vitesse constante, etc., reposent sur de réelles considérations physicochimiques. Pour obtenir une mousse optimale, il est donc recommandé de verser la bière
+depuis une hauteur suffisante, dans un récipient relativement étroit, puis d’attendre une
+trentaine de secondes afin que la mousse se stabilise. Ces conditions constituent les paramètres les plus favorables pour obtenir une mousse épaisse, durable et de qualité. Ces
+conditions précises constituent les facteurs clés pour atteindre une hauteur de mousse
+idéale, tout en garantissant sa durabilité et sa qualité.
+
 Remerciements
-Nous tenions Ã  remercier le LycÃ©e Germaine Tillion qui nous autorise Ã  manipuler sans
-contraintes dans le cadre dâexpÃ©riences scientifiques. Mme Christine Louis, la technicienne
-de laboratoire qui nous a permis dâaccÃ©der au laboratoire et dâutiliser le matÃ©riel Ã  dis-
-position. Nous souhaitons Ã©galement remercier notre professeure encadrante Mme Alleg
-qui nous a accompagnÃ©e, aidÃ©e, qui a rÃ©pondu Ã  nos questionnements et encouragÃ©e tout
-au long de ce projet. Nous remercions Mme Marie Le Merrer pour son accueil Ã  lâinstitut
-LumiÃ¨re MatiÃ¨re et son aide sur nos recherches et sur les photos prises.
+Nous tenions à remercier le Lycée Germaine Tillion qui nous autorise à manipuler sans
+contraintes dans le cadre d’expériences scientifiques. Mme Christine Louis, la technicienne
+de laboratoire qui nous a permis d’accéder au laboratoire et d’utiliser le matériel à disposition. Nous souhaitons également remercier notre professeure encadrante Mme Alleg
+qui nous a accompagnée, aidée, qui a répondu à nos questionnements et encouragée tout
+au long de ce projet. Nous remercions Mme Marie Le Merrer pour son accueil à l’institut
+Lumière Matière et son aide sur nos recherches et sur les photos prises.
+
 Sitographie
-- Reine-Marie Guillermic. PropriÃ©tÃ©s physico-chimiques des mousses : Ã©tudes approfon-
-dies sur des mousses modÃ¨les et Ã©tudes exploratoires sur de nouvelles mousses.. Analyse
-de donnÃ©es, Statistiques et ProbabilitÃ©s [physics.data-an]. UniversitÃ© Rennes 1, 2011.
-- Ãtude de la formation et de la stabilitÃ© de la mousse de la biÃ¨re : mise en place de lâÃ©tude
-HACCP en brasserie LoÃ¯c Moral
+- Reine-Marie Guillermic. Propriétés physico-chimiques des mousses : études approfondies sur des mousses modèles et études exploratoires sur de nouvelles mousses.. Analyse
+de données, Statistiques et Probabilités [physics.data-an]. Université Rennes 1, 2011.
+- Étude de la formation et de la stabilité de la mousse de la bière : mise en place de l’étude
+HACCP en brasserie Loïc Moral
 - Prix IgNobels de 2002, https ://improbable.com/ig/winners/#ig2002
 - A Leike 2002 Eur. J. Phys. 23 21 : Demonstration of the exponential decay law using
 beer froth
 - S, Sauerbrei & Hass, Ernst-Christoph & Plath, Peter. (2006). The Apollonian decay of
 beer foam bubble size distribution and the lattices of Young diagrams and their correlated
 mixing functions. Discrete Dynamics in Nature and Society. 2006. 10.1155/DDNS/2006/79717.
-Ãtude des mousses de biÃ¨re 19
 
-5 Conclusion
+Étude des mousses de bière
+
+19
+
+5 Conclusion
+
 Annexes
-Programme utilisÃ© pour tester une courbe de tendance
-1<> import<> matplotlib . pyplot<> as<> plt
-2<> import<> numpy<> as<> np
-3<> from<> scipy . optimize<> import<> curve_fit
+Programme utilisé pour tester une courbe de tendance
+import matplotlib . pyplot as plt
+import numpy as np
+3 from scipy . optimize import curve_fit
+1
+2
+
 4
-5<> #<> Donnees
-6<> time = np. arange (0 , 100 , 10)
-7<> foam_height = np. array ((14.6 , 12.8 , 11.6 , 10.7 , 9.7 , 9.1 , 8.4 , 8.0 , 7.7 ,
+
+# Donnees
+time = np . arange (0 , 100 , 10)
+7 foam_height = np . array ((14.6 , 12.8 , 11.6 , 10.7 , 9.7 , 9.1 , 8.4 , 8.0 , 7.7 ,
 7.4) )
+5
+6
+
 8
 9
-10<> def<> curve (t, a, b, c):
-11<> return<> np. exp (a + b * t + c * t **2.5)
+10
+11
+
+def curve (t , a , b , c ) :
+return np . exp ( a + b * t + c * t **2.5)
+
 12
-13<> coefs , _ = curve_fit ( curve , time , foam_height , p0 =(1 , -1e -4 , -1e -7) )<> #
-Le<> parametre<> p0<> permet<> de<> saisir<> des<> estimations<> des<> coefficients
+13
+
+coefs , _ = curve_fit ( curve , time , foam_height , p0 =(1 , -1e -4 , -1e -7) ) #
+Le parametre p0 permet de saisir des estimations des coefficients
+
 14
-15<> #<> Scipy<> ne<> calcule<> apparemment<> pas<> r2<> donc<> on<> le<> fait<> ici
-16<> #<> J<>â<>ai<> suivi<> les<> instructions<> sur<> https<> ://<> stackoverflow<> .<> com<> /<> questions
-/19189362/<> getting<> -<>the<> -<>r<>-<> squared<> -<> value<> -<> using<> -<> curve<> -<> fit
-17<> residuals = foam_height - curve (time , * coefs )
-18<> ss_res = np.<> sum<> ( residuals **2)
-19<> ss_tot = np.<> sum<> (( foam_height - np. mean ( foam_height )) ** 2)
-20<> r2 = 1 - ( ss_res / ss_tot )
+
+# Scipy ne calcule apparemment pas r2 donc on le fait ici
+# J ’ ai suivi les instructions sur https :// stackoverflow . com / questions
+/19189362/ getting - the -r - squared - value - using - curve - fit
+17 residuals = foam_height - curve ( time , * coefs )
+18 ss_res = np . sum ( residuals **2)
+19 ss_tot = np . sum (( foam_height - np . mean ( foam_height ) ) ** 2)
+20 r2 = 1 - ( ss_res / ss_tot )
+15
+16
+
 21
 22
-23<> #<> Affichage<> des<> d o n n e s
-24<> plt . plot (
-25<> time ,
-26<> foam_height ,
-27<> "<>+<>b<>"<>,
-28<> )
+
+# Affichage des d o n n e s
+plt . plot (
+25
+time ,
+26
+foam_height ,
+27
+"+b",
+28 )
+23
+24
+
 29
-30<> #<> Affichage<> de<> la<> courbe<> et<> de<> son<> equation
-31<> plt . plot (time , curve (time , * coefs ),<> "<>-<>r<>"<>)
-32<> plt . text (
-33<> 9,
-34<> 14 ,
-35<> "<>h<>(<>t<>)<> =<> e<> ^({:.2<> e<>}<> +<> {:.2<> e<>}<> *<> t<> +<> {:.2<> e<>}<> *<> t<> ^2.5)<> \<> nr2<> =<> {:.5}<> "<>.<> format
+
+# Affichage de la courbe et de son equation
+plt . plot ( time , curve ( time , * coefs ) , " -r " )
+32 plt . text (
+33
+9,
+34
+14 ,
+35
+" h ( t ) = e ^({:.2 e } + {:.2 e } * t + {:.2 e } * t ^2.5) \ nr2 = {:.5} " . format
 (
-36<> * coefs , r2
-37<> ),<> #<> {:.2<> e<>}<> met<> un<> nombre<> en<> ecriture<> scientifique<> avec<> 2<> chiffres
+36
+* coefs , r2
+37
+) , # {:.2 e } met un nombre en ecriture scientifique avec 2 chiffres
 decimaux
-38<> color =<>"<> red<> "<>,
-39<> )
+38
+color = " red " ,
+39 )
+30
+31
+
 40
-41<> plt . title (
-42<> "<> Epaisseur<> de<> mousse<> de<> 45<> mL<> biere<> versee<> a<> 22 ,5<> cm<>\<>n<> de<> hauteur
-dans<> une<> eprouvette<> seche<> en<> fonction<> du<> temps<> "
-43<> )
-44<> plt . xlabel (<>"<> Temps<> (<>s<>)<>"<>)
-45<> plt . ylabel (<>"<> Epaisseur<> de<> mousse<> (<>cm<>)<>"<>)
+
+plt . title (
+" Epaisseur de mousse de 45 mL biere versee a 22 ,5 cm \ n de hauteur
+dans une eprouvette seche en fonction du temps "
+43 )
+44 plt . xlabel ( " Temps ( s ) " )
+45 plt . ylabel ( " Epaisseur de mousse ( cm ) " )
+41
+42
+
 46
-47<> plt . show ()
-Ãtude des mousses de biÃ¨re 20
+47
+
+plt . show ()
+
+Étude des mousses de bière
+
+20
+
+

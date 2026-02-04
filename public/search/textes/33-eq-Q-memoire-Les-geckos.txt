@@ -1,822 +1,1175 @@
-0
-Les prÃ©cisions en annexe sont dÃ©signÃ©es comme ceci dans le texte :
-[0]
-.
+0
+
+Introduction
+Les précisions en annexe sont désignées comme ceci dans le texte : [0] .
+
 0.1
-Une des difficultÃ©s des Olympiades de Physique se trouve dans le concept mÃªme du concours,
-ouvrant la porte Ã  des possibilitÃ©s presque infinies. Se retrouver avec comme consigne Â« se poser une
-question autour dâun phÃ©nomÃ¨ne et lâÃ©tudier Ã  lâaide dâexpÃ©riences reproductibles, sâappuyant sur un
-modÃ¨le Â» change beaucoup des questions limitÃ©es, trouvÃ©es dans les copies dâexamens, oÃ¹ rÃ©soudre un
-systÃ¨me dâÃ©quations, ou bien rÃ©pondre en justifiant suffit gÃ©nÃ©ralement pour obtenir la note maximale.
-Dans notre situation, plusieurs idÃ©es se sont proposÃ©es assez vite, notamment un travail sur les
-vagues cÃ´tiÃ¨res et les digues, sur les lasers attosecondes, sur lâeffet dÃ©perlant des nÃ©nuphars. . . Mais
-pour trois de nos sujets favoris, deux problÃ©matiques sont apparues : la premiÃ¨re, lâutilisation et la
-rÃ©utilisation de certains sujets, notamment sur la tension de surface de lâeau, qui bien quâintÃ©ressants,
-enlÃ¨vent le cÃ´tÃ© original de la problÃ©matique, et la seconde, le manque de problÃ©matique prÃ©cise, qui
-aurait conduit Ã  un raisonnement sans but, et Ã  une expÃ©rimentation vide de sens. Finalement, aucun
-de ces trois sujets nâa emportÃ© la dÃ©cision finale, et câest vers un petit reptile nommÃ© gecko que notre
-attention sâest tournÃ©e.
+
+Recherche du thème
+
+Une des difficultés des Olympiades de Physique se trouve dans le concept même du concours,
+ouvrant la porte à des possibilités presque infinies. Se retrouver avec comme consigne « se poser une
+question autour d’un phénomène et l’étudier à l’aide d’expériences reproductibles, s’appuyant sur un
+modèle » change beaucoup des questions limitées, trouvées dans les copies d’examens, où résoudre un
+système d’équations, ou bien répondre en justifiant suffit généralement pour obtenir la note maximale.
+Dans notre situation, plusieurs idées se sont proposées assez vite, notamment un travail sur les
+vagues côtières et les digues, sur les lasers attosecondes, sur l’effet déperlant des nénuphars. . . Mais
+pour trois de nos sujets favoris, deux problématiques sont apparues : la première, l’utilisation et la
+réutilisation de certains sujets, notamment sur la tension de surface de l’eau, qui bien qu’intéressants,
+enlèvent le côté original de la problématique, et la seconde, le manque de problématique précise, qui
+aurait conduit à un raisonnement sans but, et à une expérimentation vide de sens. Finalement, aucun
+de ces trois sujets n’a emporté la décision finale, et c’est vers un petit reptile nommé gecko que notre
+attention s’est tournée.
+
 0.2
-Le gecko
-[4.1]
-est dÃ©fini comme :
-massive, insectivore et comptant plus de 58 genres et 1300 espÃ¨ces rÃ©parties dans le monde entier. Â»
-Une caractÃ©ristique majeure de cette espÃ¨ce est sa capacitÃ© dâadhÃ©rence, hors normes pour sa taille
-dans le monde animal : ce lÃ©zard peut marcher aux murs, au plafond et mÃªme tenir accrochÃ© sur une
-patte. . . sur une surface uniforme. Les crochets normalement utilisÃ©s par les araignÃ©es, fourmis, fÃ©lins,
+
+Gecko Gekkota, késaco
+
+Le gecko[4.1] est défini comme : « un petit reptile saurien, vivant dans les régions chaudes, à la tête
+massive, insectivore et comptant plus de 58 genres et 1300 espèces réparties dans le monde entier. »
+Une caractéristique majeure de cette espèce est sa capacité d’adhérence, hors normes pour sa taille
+dans le monde animal : ce lézard peut marcher aux murs, au plafond et même tenir accroché sur une
+patte. . . sur une surface uniforme. Les crochets normalement utilisés par les araignées, fourmis, félins,
 la poigne des singes ou une ventouse ne permettent pas le mouvement fluide du gecko courant sur un
 mur.
-Les scientifiques se sont posÃ©s la question dÃ¨s lâantiquitÃ©, et ont trouvÃ© une rÃ©ponse durant les annÃ©es
-2000. Les chercheurs de plusieurs universitÃ©s â Cambridge (Royaume-Uni), Bologne (Italie), Calgary
-(Canada), Tsinghua (Chine), Akron, Stanford, Massachusetts Institute of Technology et Berkeley (Ãtats-
-Unis), etc. â ont alors publiÃ© prÃ¨s dâune trentaine de travaux sur Â« lâadhÃ©sion gecko Â».
+Les scientifiques se sont posés la question dès l’antiquité, et ont trouvé une réponse durant les années
+2000. Les chercheurs de plusieurs universités – Cambridge (Royaume-Uni), Bologne (Italie), Calgary
+(Canada), Tsinghua (Chine), Akron, Stanford, Massachusetts Institute of Technology et Berkeley (ÉtatsUnis), etc. – ont alors publié près d’une trentaine de travaux sur « l’adhésion gecko ».
+
 0.3
-Les forces de van der Waals
-[2][4.2]
-correspondent Ã  Â«une interaction Ã©lectrique dâintensitÃ© faible
-ayant lieu Ã  courtes distances entre atomes et/ou molÃ©culesÂ». Ces forces sont le rÃ©sultat de la somme
+
+Introduction aux forces de van der Waals
+
+Les forces de van der Waals[2][4.2] correspondent à «une interaction électrique d‘intensité faible
+ayant lieu à courtes distances entre atomes et/ou molécules». Ces forces sont le résultat de la somme
 de trois composantes principales : les forces de Keesom, les forces de Debye et les forces de London ;
-et dÃ©croissent extrÃªmement rapidement avec la distance. En effet, elles dÃ©pendent de la distance Ã  la
-puissance â7. Ces forces sont donc microscopiques et gÃ©nÃ©ralement nÃ©gligeables, mais le gecko a trouvÃ©
-un moyen de les utiliser Ã  son profit
-[4.3]
-. En augmentant la surface de contact grÃ¢ce Ã  ses setae, il est
-capable de gÃ©nÃ©rer des forces de van der Waals suffisantes pour soutenir son propre poids sur un seul
-de ses doigts. Ce petit reptile est donc une crÃ©ature complexe, utilisant une variÃ©tÃ© de moyens pour se
-dÃ©placer sur presque toutes les surfaces.
-Mais pouvons-nous reproduire cette adhÃ©sion avec les moyens Ã  notre disposition ?
-1
-
-Sommaire
-0 Introduction	1
-0.1 Recherche du thÃ¨me
-0.2 Gecko Gekkota, kÃ©saco
-0.3 Introduction aux forces de van der Waals
-1 AdhÃ©rence du Gecko
-1.1 Structure des doigts du gecko
-1.2 Ordres de grandeurs de la structure des doigts du gecko
-1.3 Fonctionnement de lâadhÃ©rence du gecko
-2 ThÃ©orie des frottements
-2.1 Les diffÃ©rents types de frottements
-2.2 Calcul du coefficient de frottement statique
-2.3 DÃ©termination de lâincertitude du coefficient de frottement
-3 ExpÃ©riences avec le papier Ã  poncer
-3.1 Objectifs
-3.2 Liste de matÃ©riel
-3.3 Protocole
-3.4 Tableau et Graphique de lâexperience avec lâaluminium
-3.5 Tableau et Graphique de lâexperience avec lâaluminium percÃ©
-3.6 InterprÃ©tation
-4 Rencontre avec des chercheurs
-4.1 Objectifs
-4.2 Pauline Faura
-4.3 StÃ©phane Valette
-5 Mesure du grain rÃ©el du papier Ã  poncer
-5.1 Objectifs
-5.2 MatÃ©riel nÃ©cessaire
-5.3 Protocole
-5.4 RÃ©sultats de la mesure et reprÃ©sentation graphique
-5.5 InterprÃ©tation
-6 ExpÃ©riences avec les impressions 3D
-6.1 Objectifs
-6.2 Liste de matÃ©riel
-6.3 Protocole
-6.4 Tableau et Graphique
-6.5 InterprÃ©tation
-7 ExpÃ©riences avec les modÃ¨les en silicone
-7.1 Objectifs
-7.2 Liste de matÃ©riel
-7.3 Protocole
-7.4 Tableau et graphique
-7.5 InterprÃ©tation
-8 Conclusion	16
-2
+et décroissent extrêmement rapidement avec la distance. En effet, elles dépendent de la distance à la
+puissance –7. Ces forces sont donc microscopiques et généralement négligeables, mais le gecko a trouvé
+un moyen de les utiliser à son profit[4.3] . En augmentant la surface de contact grâce à ses setae, il est
+capable de générer des forces de van der Waals suffisantes pour soutenir son propre poids sur un seul
+de ses doigts. Ce petit reptile est donc une créature complexe, utilisant une variété de moyens pour se
+déplacer sur presque toutes les surfaces.
+Mais pouvons-nous reproduire cette adhésion avec les moyens à notre disposition ?
 
 1
-1.1
-Figure 1
-Les doigts du gecko sont constituÃ©s de sortes de poils (les setae) divisÃ©s Ã  leur extrÃ©mitÃ© en spatulae.
-1.2
-LâadhÃ©rence des doigts du gecko est due Ã  la finesse de leur structure. Chaque doigt est recou-
-vert dâenviron
-6
-setae, et chaque seta fait environ
-â5
-m
-10
-â10
-m
-2
-). Chaque seta se subdivise en spatulae, avec entre
-2
-et
+
+Sommaire
+0 Introduction
+0.1 Recherche du thème . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+0.2 Gecko Gekkota, késaco . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+0.3 Introduction aux forces de van der Waals . . . . . . . . . . . . . . . . . . . . . . . . .
+
+1
+1
+1
+1
+
+1 Adhérence du Gecko
+1.1 Structure des doigts du gecko . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2 Ordres de grandeurs de la structure des doigts du gecko . . . . . . . . . . . . . . . . .
+1.3 Fonctionnement de l’adhérence du gecko . . . . . . . . . . . . . . . . . . . . . . . . .
+
 3
-subdivisions sur chaque seta,
-et chaque spatula fait environ
-â7
-m dâÃ©paisseur (donc occupe une surface de
-â14
-m
-2
-). La surface
-dâun doigt de gecko est dâenviron
-â4
-m
-2
-.
-Dans lâarticle Â« letters to nature : Adhesive force of a single gecko foot-hair Â» de Kellar Autumn,
-ce dernier estime les forces de van der Waals sur la surface dâune spatulae Ã  environ,ÂµN
-quâun gecko degÂµN
-donc pour
-6
-setae, nous obtenons une force par doigt de gecko deN
-En comparaison, les geckos ont une masse comprise entreg
-dans un champ gravitationnel uniforme,m.s
-â2
-varie donc entre,,N
-bien infÃ©rieur Ã  la force de van der Waals appliquÃ©e sur un seul doigt.
-Ã noter cependant quâau vu des reliefs variÃ©s des surfaces auxquelles le gecko sâaccroche, toutes les
-spatulae ne sont pas forcÃ©ment en contact avec la paroi.
-1.3
-Les doigts du gecko utilisent les forces de van der Waals pour sâaccrocher aux surfaces. Ces forces
-Ã©tant trÃ¨s faibles, il faut une grande surface de contact pour que lâeffet devienne significatif. La flexibilitÃ©
-des setae et spatulae du gecko permet dâaugmenter la surface de contact en Ã©pousant du mieux possible
-les micros-reliefs et ainsi atteindre une force dâadhÃ©rence suffisante.
-De plus, les setae du gecko sont capables de se nettoyer des poussiÃ¨res pouvant altÃ©rer lâadhÃ©rence.
-Elles sont aussi capables de se reconstituer, du fait de leur nature organique.
-Une Ã©tude du NIST a rÃ©cemment mis en Ã©vidence la prÃ©sence dâune fine couche de lipides recouvrant
-la surface des doigts du gecko, permettant de conserver leur adhÃ©rence mÃªme sur des surfaces mouillÃ©es.
-Remarque : les lipides sont dÃ©finis comme des substances biologiques, composÃ©es de chaÃ®nes hydro-
-carbonÃ©es, hydrophobes dans le cas du gecko, crÃ©ant une surface repoussant les gouttelettes dâeau, et
-maintenant un contact uniforme avec la surface apposÃ©e.
-2
-2.1
-MÃªme si les geckos nâutilisent pas, pour sâaccrocher, des frottements Ã  proprement parler (câest-
-Ã -dire des collisions Ã  trÃ¨s petite Ã©chelle entre les irrÃ©gularitÃ©s des surfaces en contact), nous pouvons
-essayer de modÃ©liser leur adhÃ©rence en mesurant la force de frottement, puisque cette mesure englobe
-toutes les interactions entre les surfaces testÃ©es qui sâopposent Ã  leur glissement.
-Pour cela, il faut savoir que le frottement est une force qui sâoppose au glissement de deux surfaces en
-contact, et quâil dÃ©pend de la force appliquÃ©e pour faire glisser les deux surfaces. Ainsi, pour caractÃ©riser
+3
+3
 3
 
-le frottement, nous utilisons le coefficient de frottement, notÃ©, qui associe la force de frottement Ã 
-la force reÃ§ue pour faire glisser les deux surfaces, et qui ne dÃ©pend que de la nature des deux surfaces.
-Donc, quand nous disons que nous mesurons les frottements, nous mesurons en rÃ©alitÃ© le coefficient
-de frottement. Il faut Ã©galement faire une distinction entre les diffÃ©rents types de frottements, qui se
-mesurent diffÃ©remment :
-1.
-posent que les surfaces testÃ©es soient immobiles lâune par rapport Ã  lâautre, alors que les frotte-
-ments dynamiques supposent que les surfaces testÃ©es aient dÃ©jÃ  commencÃ© Ã  glisser. Les doigts
-des geckos ne glissant pas sur les surfaces, le modÃ¨le des frottements statiques est le plus adaptÃ©.
-2.
-la prÃ©sence de liquide entre les surfaces testÃ©es, alors que les frottements secs supposent que
-lâinfluence de potentiels liquides est nÃ©gligeable. Les doigts des geckos Ã©tant hydrophobes, le
-modÃ¨le des frottements secs est le plus adaptÃ©.
-3.
-que les surfaces testÃ©es soient indÃ©formables, alors que les frottements souples supposent que
-les surfaces testÃ©es soient dÃ©formÃ©es par lâinteraction de frottement. Les doigts des geckos Ã©tant
-souples, le modÃ¨le des frottements souples est le plus adaptÃ©. Cependant, il est bien plus difficile
-de trouver des surfaces souples dont la structure ressemble Ã  celle des doigts du gecko, donc,
-dans un premier temps, nous allons utiliser des frottements solides.
-Nous allons donc rÃ©aliser des mesures de frottement secs, statiques et solides pour modÃ©liser lâadhÃ©rence
-des geckos et tenter de mettre en Ã©vidence le phÃ©nomÃ¨ne qui leur permet de sâaccrocher.
-Figure 2
-2.2
-Le systÃ¨me est Ã©tudiÃ© dans le rÃ©fÃ©rentiel terrestre supposÃ© galilÃ©en. Les forces qui sâappliquent sont :
-le poids
-â
-P
-â
-f
-â
-R
-nÃ©gligÃ©s.
-Figure 3
+2 Théorie des frottements
+2.1 Les différents types de frottements . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Calcul du coefficient de frottement statique . . . . . . . . . . . . . . . . . . . . . . .
+2.3 Détermination de l’incertitude du coefficient de frottement . . . . . . . . . . . . . . .
+
+3
+3
 4
-
-Le systÃ¨me est, en lâoccurence, soit du papier Ã  poncer avec un bloc de bois, soit une impression 3D,
-soit une structure en silicone.
-La norme des vecteurs nâest pas respectÃ©e sur ce schÃ©ma.
-â
-f
-â
-R
-â
-P
-(O
-l
-h
-d
-Î¸
-Î¸lim: angle formÃ© par la plaque et la table au point de rupture
-Pour une valeur	lim, le systÃ¨me est en Ã©quilibre.
-DâaprÃ¨s la 2
-e
-loi de Newton, nous obtenons :
-X
-â
-Fext= â0
-â
-f
-â
-R
-â
-P â0
-En projetant
-[4.4]
-sur le repÃ¨re (O
-Ã¦
-âf(Î¸
-0 +(Î¸
-Ã¦
-f(Î¸
-RÎ¸
-Pour mesurer le coefficient de frottement statique, il faut que la force de frottement soit
-maximale, ce qui est le cas au point de rupture. Nous avons alors :	lim.
-Le coefficient de frottement	sest dÃ©finit comme :
-Âµs=
-f
-R
-Soit :
-Âµs=
-f
-R
-=
-P(Î¸ lim)
-P(Î¸ lim)
-=
-sin(Î¸ lim)
-cos(Î¸ lim)
-=(Î¸ lim) =
-h
-d
-Donc :
-Âµs=
-h
-d
-Nous ne connaissons pas
-l
-2
-=
-2
-+
-2
-d
-p
-l
-2
-â
-2
-Finalement :
-Âµs=
-h
-â
-l
-2
-â
-2
-Avec :
-Âµs: coefficient de frottement statique
-h
-l,cm
-5
-
-2.3
-Lâincertitude du coefficient de frottement statique (obtenue par propagation dâincertitude) est :
-u(Âµs) =
-s
-`
-l
-2
-(l
-2
-â
-2
-)
-3
-2
-Ã(h)
-Â´
-2
-+
-`
-h
-(l
-2
-â
-2
-)
-3
-2
-Ã(l
-Â´
-2
-Avec :
-u(Âµs)
-h
-u(h)
-l,cm
-u(l,cm
-Dans ces formule,(l(h)
-est une incertitude de type A car
-Formule de la hauteur du haut de la plaque (moyenne) :
-Â¯
-h
-N
-X
-k
-hk
-N
-Avec :
-hk: hauteur du haut de la plaque de la mesure
-Â¯
-h
-N
-Formule de lâincertitude de la hauteur du haut de la plaque (type A, Ã©cart type Ã©chantillon) :
-u(h) =
-v
-u
-u
-u
-u
-t
-N
-X
-k
-(hkâ
-Â¯
-h)
-2
-N
-Avec :
-hk: hauteur du haut de la plaque de la mesure
-Â¯
-h
-u(h)
-N
-3
-3.1
-Nous allons essayer de reproduire le phÃ©nomÃ¨ne qui permet aux pattes des geckos dâadhÃ©rer sur
-quasiment nâimporte quelle surface. Pour ce faire, nous allons essayer de savoir si augmenter la densitÃ©
-de points de contact entre un objet et un support permet Ã  lâobjet de mieux adhÃ©rer au support, en
-mesurant le coefficient de frottement statique.
-Pour imiter lâadhÃ©rence du gecko, nous devons trouver un objet dont la structure ressemble Ã  celle
-des doigts du gecko en multipliant les points de contact, facilement achetable, et disponible avec
-plusieurs densitÃ©s de points de contact.
-Le papier Ã  poncer est remarquable du fait de sa structure en grains plus ou moins fins, de sa facilitÃ©
-Ã  Ãªtre achetÃ© et de son Ã©chelle (assez petite mÃªme si câest encore bien plus grand que lâÃ©helle du gecko).
-Cependant, il nâexiste pas de norme commune Ã  tous les fabricants concernant le grain, nous avons
-donc achetÃ© tous nos papiers Ã  poncer chez un unique fabricant (de la marque Honoson).
-Afin de pouvoir comparer nos rÃ©sultats entre diffÃ©rentes surfaces, nous avons dÃ©cidÃ© de mesurer le
-coefficient de frottement statique du papier Ã  poncer sur deux supports en aluminium, lâun des deux
-Ã©tant une simple plaque dâaluminium lisse classique et lâautre une plaque dâaluminium percÃ©e.
 6
 
-3.2
-1 plaque solide (ici en aluminium) dâenviron 50 cm de long.1 support Ã©lÃ©vateur.12 papiers Ã  poncer de grains diffÃ©rents (320, 400, 600, 1000, 1500, 1800, 2000, 2400, 3000, 3200,
-3600, 4000).
-2 cartes plastifiÃ©s (afin de dÃ©poser le papier Ã  poncer dÃ©licatement).1 marqueur.1 mÃ¨tre Ã  mesurer.
-3.3
-Les images du protocole sont en annexe
-[3.1]
-.
-Positionner fixement la plaque solide sur le support Ã©lÃ©vateur, de telle maniÃ¨re que lâangle formÃ© par
-la table et la plaque puisse Ãªtre modifiÃ© librement en ajustant la hauteur du support Ã©lÃ©vateur.
-Baisser le support Ã©lÃ©vateur au maximum.Marquer lâemplacement de dÃ©part des papiers Ã  poncer Ã  lâaide du marqueur (tous les papiers Ã 
-poncer devront Ãªtre placÃ©s Ã  ce marquage tout au long de la manipulation).
-Placer le papier Ã  poncer au niveau du marquage prÃ©alablement tracÃ©, en utilisant les cartes plasti-
-fiÃ©es : placer la premiÃ¨re carte plastifiÃ©e sous le papier Ã  poncer, dÃ©poser le tout sur la plaque, puis
-retirer la premiÃ¨re carte plastifiÃ©e en retenant le papier Ã  poncer avec la deuxiÃ¨me carte plastifiÃ©e,
-de maniÃ¨re Ã  dÃ©poser le papier Ã  poncer le plus dÃ©licatement possible, afin quâil ne Â« marque Â» pas
-la surface, ce qui fausserait la mesure.
-Faire monter peu Ã  peu le support Ã©lÃ©vateur pour augmenter lâangle formÃ© par la table et la plaque
-(sans faire dâÃ -coups).
-ArrÃªter lâÃ©lÃ©vation du support Ã©lÃ©vateur lorsque le point de rupture a Ã©tÃ© atteint et que le papier Ã 
-poncer se met Ã  glisser le long de la plaque.
-Mesurer la hauteur du support Ã©lÃ©vateur et en dÃ©duire le coefficient de frottement statique grÃ¢ce
-aux formules dÃ©taillÃ©es plus bas.
-Recommencer la manipulation autant de fois que nÃ©cÃ©ssaire avec les autres papiers Ã  poncer.
-3.4
-Grain (unitÃ©
-constructeur)
-Hauteur
-moyenne
-mesurÃ©e
-(cm)
-Incertitude
-u(h) (cm)
-Coefficient de
-frottement
-statique s
-Incertitude
-u(Âµs)
-RÃ©sultat du
-coefficient de
-frottement statique
-Âµs
-320 24,93 1,129 0,5782 0,035 0,578
-400 21,31 1,847 0,4734 0,050 0,473
-600 20,38 2,262 0,4485 0,060 0,449
-1000 21,70 2,471 0,4841 0,068 0,484
-1500 19,63 1,609 0,4289 0,042 0,429
-1800 21,04 1,070 0,4661 0,029 0,466
-2000 22,79 1,298 0,5147 0,037 0,515
-2400 20,93 1,322 0,4632 0,036 0,463
-3000 23,79 0,8283 0,5438 0,025 0,544
-3200 22,55 1,742 0,5079 0,049 0,508
-3600 24,10 1,051 0,5530 0,031 0,553
-4000 23,94 1,171 0,5482 0,035 0,548
-Figure 4
-que les coefficients de frottement statique et les incertitudes correspondantes.
+3 Expériences avec le papier à poncer
+3.1 Objectifs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.2 Liste de matériel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3 Protocole . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.4 Tableau et Graphique de l’experience avec l’aluminium . . . . . . . . . . . . . . . . .
+3.5 Tableau et Graphique de l’experience avec l’aluminium percé . . . . . . . . . . . . . .
+3.6 Interprétation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+6
 7
-
-Figure 5
-poncer, ainsi que les incertitudes associÃ©es, sur lâaluminium.
-3.5
-Grain (unitÃ©
-constructeur)
-Hauteur
-moyenne
-mesurÃ©e
-(cm)
-Incertitude
-u(h) (cm)
-Coefficient de
-frottement
-statique s
-Incertitude
-u(Âµs)
-RÃ©sultat du
-coefficient de
-frottement statique
-Âµs
-320 19,85 3,530 0,4346 0,092 0,4346
-400 20,67 1,761 0,4562 0,047 0,4562
-600 24,27 1,920 0,5581 0,058 0,5581
-1000 27,02 1,694 0,6459 0,057 0,6459
-1500 23,73 3,193 0,5173 0,052 0,5173
-1800 24,29 2,671 0,5587 0,081 0,5587
-2000 25,88 2,109 0,6083 0,068 0,6083
-2400 23,22 2,706 0,5271 0,078 0,5271
-3000 23,21 2,144 0,5268 0,062 0,5268
-3200 23,68 1,707 0,5405 0,050 0,5405
-3600 22,83 2,055 0,5158 0,059 0,5158
-4000 23,10 1,960 0,5236 0,057 0,5236
-Figure 6
-ainsi que les coefficients de frottement statique et les incertitudes correspondantes.
+7
+7
 8
-
-Figure 7
-poncer, ainsi que les incertitudes associÃ©es, sur lâaluminium percÃ©.
-3.6
-Nous pouvons observer que le coefficient de frottement statique semble relativement constant en
-fonction du grain et que les incertitudes dÃ©passent les variations. Aucune tendance croissante ou dÃ©crois-
-sante du coefficient de frottement ne se dÃ©gage clairement. Cela signifie que le phÃ©nomÃ¨ne dâadhÃ©rence
-du gecko Ã  la surface de contact nâest pas mis en Ã©vidence dans notre manipulation.
-Nous pouvons envisager diffÃ©rentes explications pour ces rÃ©sultats
-LâÃ©chelle Ã  laquelle nous travaillons est peut-Ãªtre trop Ã©levÃ©e : nous pouvons mesurer la densitÃ©
-rÃ©elle de points de contact entre la plaque et le papier Ã  poncer et la comparer Ã  la densitÃ© des setae
-et spatulae des geckos. De plus, de par leur taille et forme diffÃ©rentes, tous les points du papier Ã 
-poncer ne semblent pas avoir Ã©tÃ© en contact avec la surface testÃ©e : nous pouvons essayer de reproduire
-lâexpÃ©rience avec une structure souple pour Ãªtre sÃ»rs que tous les points soient rÃ©ellement en contact
-avec la surface testÃ©e.
-La texture du matÃ©riau pourrait Ãªtre diffÃ©rente : nous pourrions rÃ©itÃ©rer lâexpÃ©rience avec une surface
-plus proche des pattes de gecko, pour augmenter lâadhÃ©rence et la surface de contact. Le papier Ã  poncer
-est en effet conÃ§u pour ne pas adhÃ©rer : sa composition est spÃ©cialement rÃ©flÃ©chie pour maximiser
-lâabrasivitÃ© et minimiser lâadhÃ©rence, ce qui diminue lâÃ©cart des mesures de frottements, compliquant la
-mise en Ã©vidence du phÃ©nomÃ¨ne. Changer de surface texturÃ©e pourrait Ãªtre bÃ©nÃ©fique, nous allons essayer
-dâimprimer une version en 3D de nos systÃ¨mes, permettant dâavoir une deuxiÃ¨me sÃ©rie dâexpÃ©riences,
-et donc une comparaison et, dans laquelle nous contrÃ´lons mieux la densitÃ© de points de contact.
-Les donnÃ©es fournies pourraient ne pas Ãªtres justes, faussant les valeurs attendues : compter les
-points de contact mis en jeu durant les expÃ©riences au papier Ã  poncer aura aussi un intÃ©rÃªt bÃ©nÃ©fique,
-permettant de mettre en valeur la diffÃ©rence de surface entre chaque expÃ©rience.
-4
-4.1
-Avant de commencer nos expÃ©riences, nous avons voulu rencontrer des chercheurs du domaine, pour
-quâils nous expliquent leurs parcours, leurs recherches, et pour quâils nous donnent Ã©ventuellement des
-conseils pour les expÃ©riences et les mesures.
 9
 
-4.2
-Nous avons obtenu le contact de Pauline Faura (ingÃ©nieure en tribologie et doctorante) via une des
-prÃ©paratrices de laboratoire de notre lycÃ©e. Nous lui avons dÃ©taillÃ© les expÃ©riences que nous prÃ©voyions
-de rÃ©aliser, afin dâavoir son avis et quâelle nous donne des conseils. Elle nous a notamment expliquÃ©
-que, lors de lâÃ©tude des frottements, il est possible quâune surface abÃ®me lâautre, ce qui changerait sa
-texture et fausserait la mesure. Câest ceci prÃ©cisÃ©ment que nous avons cherchÃ© Ã  Ã©viter, en utilisant les
-cartes plastifiÃ©es pour dÃ©poser dÃ©licatement les surfaces Ã  tester (dÃ©tails dans la sous-section).
-Nous en avons profitÃ© pour faire valider nos formules, et connaÃ®tre les limites de leur validitÃ©.
-Elle a confirmÃ©, par exemple, notre choix de nous concentrer sur les frottements secs et statiques,
-correspondant mieux au gecko.
-4.3
-Câest en contactant lâÃ©cole Centrale Lyon pour obtenir un rendez-vous avec le laboratoire de tri-
-bologie en partenariat, que nous avons Ã©tÃ© mis en contact avec StÃ©phane Valette qui travaille dans
-ce laboratoire en tant quâenseignant-chercheur et responsable dâÃ©tude. Nous avons pu avoir une vi-
-sioconfÃ©rence avec lui aprÃ¨s avoir terminÃ© la premiÃ¨re sÃ©rie de mesures (dÃ©taillÃ©e dans la sous-section
-3.4).
-En recherche de pistes dâamÃ©lioration, nous lui avons donc demandÃ© des conseils pour amÃ©liorer nos
-mesures et vÃ©rifier la cohÃ©rence de notre protocole. Il nous a notamment conseillÃ© dâeffectuer la mesure
-du grain rÃ©el du papier Ã  poncer (dÃ©taillÃ©e dans la section), et il nous a donnÃ© des recommandations
-sur la faÃ§on dâinterprÃ©ter les rÃ©sultats que nous avons obtenus, tel que comparer les Ã©chelles des doigts
-du gecko et du papier Ã  poncer.
-Câest Ã©galement lui qui nous a conseillÃ© de tester une structure diffÃ©rente, ce qui nous a conduits Ã 
-mettre en place le protocole de la structure 3D.
-5
-5.1
-Les fabricants de papier Ã  poncer utilisent des unitÃ©s et des normes diffÃ©rentes pour dÃ©finir le grain
-de leurs papiers Ã  poncer. Lâobjectif ici est donc de mesurer la densitÃ© rÃ©elle de points de contact entre
-la plaque et le papier Ã  poncer (nombre de grains du papier Ã  poncer par
-2
-).
-Pour des raisons de praticitÃ© et de justesse, nous essayerons de dÃ©nombrer les grains du papier
-Ã  poncer avec une loupe binoculaire dans un premier temps (Grain
-microscope (Grain
-5.2
-Papier Ã  poncer Ã  mesurer.Papier millimÃ©trÃ©.CamÃ©ra (celle dâun tÃ©lÃ©phone dans notre cas).Loupe binoculaire ou microscope
-[1]
-.
-5.3
-Les images du protocole sont en annexe
-[3.2]
-.
-Pour le test avec une loupe binoculaire :
-Placer le papier Ã  poncer sous une loupe binoculaire, de faÃ§on Ã  observer le relief des grains.Ajouter une Ã©chelle de papier millimÃ©trÃ© graduÃ© pour mettre en place lâÃ©chelle de mesures.Capturer un clichÃ© de la zone agrandie, avec lâÃ©chelle.Ouvrir Mesurim 2, importer lâimage et dÃ©nombrer la quantitÃ© de grains sur un carrÃ© visible de 1
-de cÃ´tÃ©.
-RÃ©pÃ©ter la mesure.Calculer le nombre de grains par
-2
-.
+4 Rencontre avec des chercheurs
+4.1 Objectifs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.2 Pauline Faura . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.3 Stéphane Valette . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+9
+10
 10
 
-Le mÃªme protocole a Ã©tÃ© rÃ©alisÃ© avec, au lieu de la loupe binoculaire, un microscope optique, pour
-les grains trop fins.
-Nous pouvons remarquer que ces deux tests sont trÃ¨s similaires, cependant diffÃ©rents sur certains
-points, permettant de choisir le plus adaptÃ© suivant le grain Ã  observer.
-Test au microscope	Test Ã  la loupe binoculaire
-Grossissement modifiable (de60 Ã 600)	Grossissement fixe (Ã20)
-LumiÃ¨re unique venant du bas LumiÃ¨re venant du haut, permettant un
-Ã©clairage fixe
-compatibilitÃ© avec une camÃ©ra NÃ©cessite une camÃ©ra extÃ©rieure
-Le grain du papier Ã  poncer nâest pas visible Ã  lâÅil nu, et aprÃ¨s quelques tests, le zoom de la loupe
-binoculaire ne parvient pas une qualitÃ© suffisante pour compter le nombre de grains par
-2
-au dessus
-du grain 1000. Les microscopes optiques de Biologie et GÃ©ologie sont faits pour Ã©clairer par le dessous,
-avec des systÃ¨mes de lames et lamelles selon le schÃ©ma en annexe
-[1]
-, mais les papiers Ã  poncer ne sont
-pas transparent donc nous avons eu besoin dâutiliser un Ã©clairage externe, par le dessus.
-AprÃ¨s tests, il nâest pas possible avec nos instruments de donner une Ã©chelle Ã  nos papiers Ã  poncer
-au-dessus du grain 3000, mÃªme avec un grossissement600. Nous allons essayer de conjecturer une
-Ã©volution probable du grain du papier Ã  poncer par
-2
-en fonction de la mesure indiquÃ©e.
-5.4
-En utilisant le protocole prÃ©cÃ©dent pour les 3 grains les plus clairs et donc les moins susceptibles
-dâÃªtre faussÃ©s, nous obtenons :
-Grain annoncÃ©
-(unitÃ© constructeur)
-concentration rÃ©elle du grain
-gmm
-â2
-)
-Incertitude
-u(g,
-RÃ©sultats finaux
-(g(g)
-320	150	7,5 150
-600	1074	53,5 1074
-1000	2310	115,5 2310
-Figure 8
-valeur annoncÃ©e du papier Ã  poncer.
-Figure 9
-incertitudes associÃ©es.
-11
+5 Mesure du grain réel du papier à poncer
+5.1 Objectifs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.2 Matériel nécessaire . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.3 Protocole . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.4 Résultats de la mesure et représentation graphique . . . . . . . . . . . . . . . . . . .
+5.5 Interprétation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-AprÃ¨s avoir modÃ©lisÃ© ces rÃ©sultats sur LatisPro, nous obtenons une courbe affine, dâÃ©quation thÃ©orique :
-y,x
-A,,
-B851
-Les incertitudes Ã©tant liÃ©es Ã  un pourcentage des valeurs, lâordonnÃ©e Ã  lâorigine B se retrouve donc bien
-moins certaine que voulu.
-Nous pourrons cependant utiliser cette droite pour convertir nos grains en valeurs utilisables Ã  partir
-de ce point.
-5.5
-Le papier Ã  poncer est conÃ§u pour ses caractÃ©ristiques abrasives, mais aussi pour minimiser lâadhÃ©-
-rence avec la surface de contact. En outre, la friabilitÃ© est aussi une caractÃ©ristique importante des
-papiers Ã  poncer, dÃ©finie comme Â« la capacitÃ© des grains abrasifs Ã  se briser et Ã  sâauto-affÃ»ter sous
-tension et par laquelle le matÃ©riau abrasif fonctionne de maniÃ¨re optimale pour effectuer la tÃ¢che sou-
-haitÃ©e Â» ce qui modifie en permanence la surface de contact, et permet une abrasivitÃ© plus optimale.
-Ce qui nous a poussÃ© Ã  utiliser le papier Ã  poncer est la facilitÃ© de se procurer le produit, ainsi que
-la finesse possible du grain et enfin la variÃ©tÃ© des grains disponibles.
-En thÃ©orie, cette variÃ©tÃ© devrait induire une Ã©volution de lâadhÃ©rence du papier Ã  poncer en fonction
-des diffÃ©rents grains.
-Mais en pratique, les capacitÃ©s antiadhÃ©rentes et le comportement du papier Ã  poncer lorsquâil
-est soumis Ã  une contrainte changent sa faÃ§on de se comporter, rendant caduque les rÃ©sultats. Les
-diffÃ©rences les plus notables avec les doigt du gecko sont les suivantes :
-Doigt du gecko	Papier Ã  poncer
-ConÃ§u pour maximiser la surface de contact
-grÃ¢ce Ã  ses subdivisions en setae et spatulae,
-maximisant donc lâadhÃ©rence.
-ConÃ§u pour obtenir le meilleur ratio possible
-entre abrasivitÃ© et usure, minimisant donc
-lâadhÃ©rence.
-Souplesse des setae pour augmenter la surface
-de contact et les forces de van der Waals
-DuretÃ© du papier pour limiter lâusure
-Subdivision des setae	Grains formant des pointes fines
-PrÃ©sence dâune fine couche de lipides pour
-rÃ©duire lâinfluence de lâeau
-Contact direct avec les grains de sable Ã  la
-surface du papier Ã  poncer
-Adaptation Ã  la surface rencontrÃ©e, pas
-dâinfluence sur le matÃ©riau
-AbrasivitÃ© forte, potentiels changements entre
-les essais dus Ã  lâabrasion de la surface
-Pour toutes ces raisons, nous avons dÃ©cidÃ© de changer le matÃ©riau du systÃ¨me pour sâaffranchir des
-biais du papier Ã  poncer sur nos expÃ©riences.
-6
-6.1
-Nous allons Ã  nouveau mesurer le coefficient de frottement statique, en utilisant cette fois des
-structures imprimÃ©es en 3D, et essayer de mettre en Ã©vidence un changement de comportement avec un
-matÃ©riau peu abrasif, peu dÃ©formÃ© durant le procÃ©dÃ©, et toujours avec une densitÃ© de points de contact
-variable.
-Lâavantage des impressions 3D est que nous pouvons dÃ©finir trÃ¨s prÃ©cisÃ©ment la densitÃ© de points
-de contact. Le dÃ©savantage est que lâÃ©chelle des impressions 3D est encore plus grande que lâÃ©chelle des
-papiers Ã  poncer. Nous espÃ©rons que ce changement permettra de diminuer les incertitudes liÃ©es Ã  la
-distribution des points de contact et ainsi de mettre en Ã©vidence le phÃ©nomÃ¨ne dâadhÃ©rence des geckos.
-6.2
-1 plaque solide (ici en aluminium) dâenviron 50 cm de long.1 support Ã©lÃ©vateur.4 plaques en impression 3D couvertes dâun rÃ©seau de pointes de densitÃ©s diffÃ©rentes.1 mÃ¨tre Ã  mesurer.
+10
+10
+10
+10
+11
 12
 
-6.3
-Les images du protocole sont en annexe
-[3.3]
-.
-En lien avec ce changement de matÃ©riau du systÃ¨me, nous avons pu optimiser la mise en Åuvre des
-mesures. Le protocole a donc Ã©tÃ© lÃ©gÃ¨rement modifiÃ©. En effet, toutes les impressions 3D seront testÃ©es
-en mÃªme temps, sur toute la largeur de la plaque, et comme les impressions 3D ne sont pas abrasives,
-nous nâavons plus besoin dâutiliser le systÃ¨me de cartes plastifiÃ©es pour les dÃ©poser dÃ©licatement. Cela
-nous donne ce nouveau protocole :
-Positionner fixement la plaque en aluminium sur le support Ã©lÃ©vateur, de telle maniÃ¨re que lâangle
-formÃ© par la table et la plaque puisse Ãªtre modifiÃ© librement en ajustant la hauteur du support
-Ã©lÃ©vateur.
-Baisser le support Ã©lÃ©vateur au maximum.Placer les impressions 3D en haut de la plaque dâaluminium.Faire monter peu Ã  peu le support Ã©lÃ©vateur pour augmenter lâangle formÃ© par la table et la plaque
-(sans faire dâÃ -coups).
-ArrÃªter lâÃ©lÃ©vation du support Ã©lÃ©vateur chaque fois que le point de rupture a Ã©tÃ© atteint pour lâune
-des impressions 3D et quâelle se met Ã  glisser le long de la plaque et retirer lâimpression 3D qui a
-glissÃ©.
-Mesurer la hauteur du support Ã©lÃ©vateur et en dÃ©duire le coefficient de frottement statique grÃ¢ce
-aux formules dÃ©taillÃ©es Ã  la section.
-Refaire les trois Ã©tapes prÃ©cÃ©dentes jusquâÃ  ce quâil nây ait plus dâimpression 3D.RÃ©aliser la manipulation 10 fois au total pour obtenir un nombre de mesures significatif pour le
-calcul des incertitudes de type A.
-6.4
-DensitÃ© de
-points de
-contact
-(m
-â2
-)
-Hauteur
-moyenne
-mesurÃ©ecm)
-Incertitude
-u(h)
-(cm)
-Coefficient de
-frottement
-statique s
-Incertitude
-u(Âµs)
-RÃ©sultats du
-coefficient de
-frottement statique	s
-10264 20,38 1,360 0,4485 0,036 0,449
-23094 20,48 0,6909 0,4512 0,018 0,451
-47131 21,22 0,8377 0,4710 0,023 0,471
-92376 20,27 1,365 0,4456 0,036 0,446
-Figure 10
-ficients de frottement statique et les incertitudes correspondantes.
-13
+6 Expériences avec les impressions 3D
+6.1 Objectifs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6.2 Liste de matériel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6.3 Protocole . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6.4 Tableau et Graphique . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6.5 Interprétation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-Figure 11
-de contact de la surface, ainsi que les incertitudes associÃ©es.
-6.5
-Nous pouvons observer que les incertitudes dÃ©passent une nouvelle fois les variations : comme vu
-prÃ©cÃ©demment, le coefficient de frottement statique semble donc relativement constant en fonction
-de la surface de contact. Aucune tendance croissante ou dÃ©croissante du coefficient de frottement ne
-se dÃ©gage clairement. Cela signifie que le phÃ©nomÃ¨ne nâest toujours pas mis en Ã©vidence dans notre
-manipulation.
-Nous pouvons donc en dÃ©duire que le comportement dâune surface sur une autre nâest pas fortement
-influencÃ© par la densitÃ© de points de contact, en tout cas Ã  cette Ã©chelle et avec ces matÃ©riaux.
-Il est donc nÃ©cessaire de travailler Ã  plus petite Ã©chelle ou avec dâautres types de matÃ©riaux pour
-espÃ©rer mettre en Ã©vidence le phÃ©nomÃ¨ne qui permet aux geckos de sâaccrocher Ã  nâimporte quel type de
-surface. Cependant, nous nâavons pu trouver aucun objet dâassez petite Ã©chelle et suffisamment simple
-Ã  acheter pour rÃ©aliser une nouvelle sÃ©rie de mesures. Nous avons donc dÃ©cidÃ© de changer de type de
-matÃ©riau pour la prochaine expÃ©rience.
-7
-7.1
-Nous allons une nouvelle fois mesurer le coefficient de frottement statique, en utilisant cette fois des
-structures en silicone (des plaques de PVC recouvertes de pointes en silicone), pour essayer de mettre
-en Ã©vidence le phÃ©nomÃ¨ne avec un matÃ©riau souple, et toujours avec une densitÃ© de points de contact
-variable.
-Lâavantage dâutiliser un matÃ©riau souple (ici le silicone) est que toutes les pointes constituent un
-rÃ©el point de contact.
-7.2
-1 plaque solide (ici en aluminium) dâenviron 50 cm de long.1 support Ã©lÃ©vateur.3 plaques en PVC recouvertes dâun rÃ©seau de pointes en silicone (ici rÃ©alisÃ© Ã  lâaide dâun tube de
-silicone de la marque Elch) de densitÃ©s diffÃ©rentes.
-1 mÃ¨tre Ã  mesurer.
+12
+12
+12
+13
+13
 14
 
-7.3
-Les images du protocole sont en annexe
-[3.4]
-.
+7 Expériences avec les modèles en silicone
+7.1 Objectifs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7.2 Liste de matériel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7.3 Protocole . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7.4 Tableau et graphique . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7.5 Interprétation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+14
+14
+14
+15
+15
+16
+
+8 Conclusion
+
+16
+
+2
+
+1
+
+Adhérence du Gecko
+
+1.1
+
+Structure des doigts du gecko
+
+Figure 1 – Photos au M.E.B. des setae et spatulae d’un gecko.
+Les doigts du gecko sont constitués de sortes de poils (les setae) divisés à leur extrémité en spatulae.
+
+1.2
+
+Ordres de grandeurs de la structure des doigts du gecko
+
+L’adhérence des doigts du gecko est due à la finesse de leur structure. Chaque doigt est recouvert d’environ 106 setae, et chaque seta fait environ 10−5 m d’épaisseur (donc occupe une surface de
+10−10 m2 ). Chaque seta se subdivise en spatulae, avec entre 102 et 103 subdivisions sur chaque seta,
+et chaque spatula fait environ 10−7 m d’épaisseur (donc occupe une surface de 10−14 m2 ). La surface
+d’un doigt de gecko est d’environ 10−4 m2 .
+Dans l’article « letters to nature : Adhesive force of a single gecko foot-hair » de Kellar Autumn,
+ce dernier estime les forces de van der Waals sur la surface d’une spatulae à environ 0, 4µN , sachant
+qu’un gecko de 100g environ possède 100 spatulae par seta, nous avons environ 40 à 400µN par setae,
+donc pour 106 setae, nous obtenons une force par doigt de gecko de 40 à 400N .
+En comparaison, les geckos ont une masse comprise entre 5 et 200g. Le poids de ces petits animaux
+dans un champ gravitationnel uniforme g = 9, 81m.s−2 varie donc entre 0, 0490 et 1, 96N , ce qui est
+bien inférieur à la force de van der Waals appliquée sur un seul doigt.
+À noter cependant qu’au vu des reliefs variés des surfaces auxquelles le gecko s’accroche, toutes les
+spatulae ne sont pas forcément en contact avec la paroi.
+
+1.3
+
+Fonctionnement de l’adhérence du gecko
+
+Les doigts du gecko utilisent les forces de van der Waals pour s’accrocher aux surfaces. Ces forces
+étant très faibles, il faut une grande surface de contact pour que l’effet devienne significatif. La flexibilité
+des setae et spatulae du gecko permet d’augmenter la surface de contact en épousant du mieux possible
+les micros-reliefs et ainsi atteindre une force d‘adhérence suffisante.
+De plus, les setae du gecko sont capables de se nettoyer des poussières pouvant altérer l’adhérence.
+Elles sont aussi capables de se reconstituer, du fait de leur nature organique.
+Une étude du NIST a récemment mis en évidence la présence d’une fine couche de lipides recouvrant
+la surface des doigts du gecko, permettant de conserver leur adhérence même sur des surfaces mouillées.
+Remarque : les lipides sont définis comme des substances biologiques, composées de chaînes hydrocarbonées, hydrophobes dans le cas du gecko, créant une surface repoussant les gouttelettes d’eau, et
+maintenant un contact uniforme avec la surface apposée.
+
+2
+
+Théorie des frottements
+
+2.1
+
+Les différents types de frottements
+
+Même si les geckos n’utilisent pas, pour s’accrocher, des frottements à proprement parler (c’està-dire des collisions à très petite échelle entre les irrégularités des surfaces en contact), nous pouvons
+essayer de modéliser leur adhérence en mesurant la force de frottement, puisque cette mesure englobe
+toutes les interactions entre les surfaces testées qui s’opposent à leur glissement.
+Pour cela, il faut savoir que le frottement est une force qui s’oppose au glissement de deux surfaces en
+contact, et qu’il dépend de la force appliquée pour faire glisser les deux surfaces. Ainsi, pour caractériser
+
+3
+
+le frottement, nous utilisons le coefficient de frottement, noté µ, qui associe la force de frottement à
+la force reçue pour faire glisser les deux surfaces, et qui ne dépend que de la nature des deux surfaces.
+Donc, quand nous disons que nous mesurons les frottements, nous mesurons en réalité le coefficient
+de frottement. Il faut également faire une distinction entre les différents types de frottements, qui se
+mesurent différemment :
+1. Les frottements statiques et les frottements dynamiques. En effet, les frottements statiques supposent que les surfaces testées soient immobiles l’une par rapport à l’autre, alors que les frottements dynamiques supposent que les surfaces testées aient déjà commencé à glisser. Les doigts
+des geckos ne glissant pas sur les surfaces, le modèle des frottements statiques est le plus adapté.
+2. Les frottements secs et les frottements humides. En effet, les frottements humides supposent
+la présence de liquide entre les surfaces testées, alors que les frottements secs supposent que
+l’influence de potentiels liquides est négligeable. Les doigts des geckos étant hydrophobes, le
+modèle des frottements secs est le plus adapté.
+3. Les frottements solides et les frottements souples. En effet, les frottements solides supposent
+que les surfaces testées soient indéformables, alors que les frottements souples supposent que
+les surfaces testées soient déformées par l’interaction de frottement. Les doigts des geckos étant
+souples, le modèle des frottements souples est le plus adapté. Cependant, il est bien plus difficile
+de trouver des surfaces souples dont la structure ressemble à celle des doigts du gecko, donc,
+dans un premier temps, nous allons utiliser des frottements solides.
+Nous allons donc réaliser des mesures de frottement secs, statiques et solides pour modéliser l’adhérence
+des geckos et tenter de mettre en évidence le phénomène qui leur permet de s’accrocher.
+
+Figure 2 – Schéma des frottements solides entre deux surfaces à l’échelle microscopique.
+
+2.2
+
+Calcul du coefficient de frottement statique
+
+Le système est étudié dans le référentiel terrestre supposé galiléen. Les forces qui s’appliquent sont :
+⃗ Les frottements de l’air sont
+le poids P⃗ , les frottements avec la plaque f⃗ et la réaction de la plaque R.
+négligés.
+
+Figure 3 – Schéma de l’expérience de mesure des frottements entre le système et la plaque.
+
+4
+
+Le système est, en l’occurence, soit du papier à poncer avec un bloc de bois, soit une impression 3D,
+soit une structure en silicone.
+La norme des vecteurs n’est pas respectée sur ce schéma.
+f⃗ : force de frottement du système sur la plaque
+⃗ : force normale de la plaque sur le système
+R
+P⃗ : Poids du système
+(O; Ox, Oy) : repère utilisé pour les calculs
+l : longueur de la plaque
+h : hauteur du haut de la plaque
+d : longueur de la projection de la plaque sur l’horizontale
+θ : angle formé par la plaque et la table
+θlim : angle formé par la plaque et la table au point de rupture
+Pour une valeur θ ≤ θlim , le système est en équilibre.
+D’après la 2e loi de Newton, nous obtenons :
+X
+F⃗ext = m⃗a = ⃗0
+⃗ + P⃗ = ⃗0
+f⃗ + R
+En projetant[4.4] sur le repère (O; Ox, Oy) :
+
+−f + 0 + P × sin(θ) = 0
+0 + R − P × cos(θ) = 0
+
+
+f = P × sin(θ)
+R = P × cos(θ)
+
+Pour mesurer le coefficient de frottement statique, il faut que la force de frottement soit
+maximale, ce qui est le cas au point de rupture. Nous avons alors : θ = θlim .
+Le coefficient de frottement µs est définit comme :
+µs =
+Soit :
+µs =
+
+f
+R
+
+f
+P × sin(θlim )
+sin(θlim )
+h
+=
+=
+= tan(θlim ) =
+R
+P × cos(θlim )
+cos(θlim )
+d
+
+Donc :
+
+h
+d
+Nous ne connaissons pas d mais nous pouvons l’obtenir grace au théorème de pythagore :
+µs =
+
+l2 = h2 + d2
+p
+d = l 2 − h2
+Finalement :
+µs = √
+Avec :
+
+h
+l 2 − h2
+
+µs : coefficient de frottement statique
+h : hauteur du haut de la plaque
+l = 49, 8cm : longueur de la plaque
+
+5
+
+2.3
+
+Détermination de l’incertitude du coefficient de frottement
+
+L’incertitude du coefficient de frottement statique (obtenue par propagation d’incertitude) est :
+s
+2 
+2
+l2
+h×l
+u(µs ) =
++
+3 × u(h)
+3 × u(l)
+(l2 − h2 ) 2
+(l2 − h2 ) 2
+Avec :
+
+u(µs ) : incertitude du coefficient de frottement statique
+h : hauteur du haut de la plaque
+u(h) : incertitude de la hauteur du haut de la plaque
+l = 49, 8cm : longueur de la plaque
+u(l) = 0, 05cm : incertitude de la longueur de la plaque
+
+Dans ces formule, u(l) est une incertitude de type B car l est constante et est mesurée une fois, et u(h)
+est une incertitude de type A car h est mesurée statistiquement grâce aux formules détaillées ci-dessous.
+Formule de la hauteur du haut de la plaque (moyenne) :
+N
+X
+
+h̄ =
+Avec :
+
+hk
+
+k=1
+
+N
+
+hk : hauteur du haut de la plaque de la mesure k
+h̄ : hauteur moyenne du haut de la plaque
+N : nombre de mesures
+
+Formule de l’incertitude de la hauteur du haut de la plaque (type A, écart type échantillon) :
+v
+u N
+uX
+u
+(hk − h̄)2
+u
+t k=1
+u(h) =
+N −1
+Avec :
+
+hk : hauteur du haut de la plaque de la mesure k
+h̄ : hauteur moyenne du haut de la plaque
+u(h) : incertitude de la hauteur du haut de la plaque
+N : nombre de mesures
+
+3
+
+Expériences avec le papier à poncer
+
+3.1
+
+Objectifs
+
+Nous allons essayer de reproduire le phénomène qui permet aux pattes des geckos d’adhérer sur
+quasiment n’importe quelle surface. Pour ce faire, nous allons essayer de savoir si augmenter la densité
+de points de contact entre un objet et un support permet à l’objet de mieux adhérer au support, en
+mesurant le coefficient de frottement statique.
+Pour imiter l’adhérence du gecko, nous devons trouver un objet dont la structure ressemble à celle
+des doigts du gecko en multipliant les points de contact, facilement achetable, et disponible avec
+plusieurs densités de points de contact.
+Le papier à poncer est remarquable du fait de sa structure en grains plus ou moins fins, de sa facilité
+à être acheté et de son échelle (assez petite même si c’est encore bien plus grand que l’éhelle du gecko).
+Cependant, il n’existe pas de norme commune à tous les fabricants concernant le grain, nous avons
+donc acheté tous nos papiers à poncer chez un unique fabricant (de la marque Honoson).
+Afin de pouvoir comparer nos résultats entre différentes surfaces, nous avons décidé de mesurer le
+coefficient de frottement statique du papier à poncer sur deux supports en aluminium, l’un des deux
+étant une simple plaque d’aluminium lisse classique et l’autre une plaque d’aluminium percée.
+
+6
+
+3.2
+
+Liste de matériel
+
+1 plaque solide (ici en aluminium) d’environ 50 cm de long.
+1 support élévateur.
+12 papiers à poncer de grains différents (320, 400, 600, 1000, 1500, 1800, 2000, 2400, 3000, 3200,
+3600, 4000).
+2 cartes plastifiés (afin de déposer le papier à poncer délicatement).
+1 marqueur.
+1 mètre à mesurer.
+
+3.3
+
+Protocole
+
+Les images du protocole sont en annexe[3.1] .
+Positionner fixement la plaque solide sur le support élévateur, de telle manière que l’angle formé par
+la table et la plaque puisse être modifié librement en ajustant la hauteur du support élévateur.
+Baisser le support élévateur au maximum.
+Marquer l’emplacement de départ des papiers à poncer à l’aide du marqueur (tous les papiers à
+poncer devront être placés à ce marquage tout au long de la manipulation).
+Placer le papier à poncer au niveau du marquage préalablement tracé, en utilisant les cartes plastifiées : placer la première carte plastifiée sous le papier à poncer, déposer le tout sur la plaque, puis
+retirer la première carte plastifiée en retenant le papier à poncer avec la deuxième carte plastifiée,
+de manière à déposer le papier à poncer le plus délicatement possible, afin qu’il ne « marque » pas
+la surface, ce qui fausserait la mesure.
+Faire monter peu à peu le support élévateur pour augmenter l’angle formé par la table et la plaque
+(sans faire d’à-coups).
+Arrêter l’élévation du support élévateur lorsque le point de rupture a été atteint et que le papier à
+poncer se met à glisser le long de la plaque.
+Mesurer la hauteur du support élévateur et en déduire le coefficient de frottement statique grâce
+aux formules détaillées plus bas.
+Recommencer la manipulation autant de fois que nécéssaire avec les autres papiers à poncer.
+
+3.4
+
+Tableau et Graphique de l’experience avec l’aluminium
+
+Grain (unité
+constructeur)
+
+320
+400
+600
+1000
+1500
+1800
+2000
+2400
+3000
+3200
+3600
+4000
+
+Hauteur
+moyenne
+mesurée h
+(cm)
+24,93
+21,31
+20,38
+21,70
+19,63
+21,04
+22,79
+20,93
+23,79
+22,55
+24,10
+23,94
+
+Incertitude
+u(h) (cm)
+
+Coefficient de
+frottement
+statique µs
+
+Incertitude
+u(µs )
+
+1,129
+1,847
+2,262
+2,471
+1,609
+1,070
+1,298
+1,322
+0,8283
+1,742
+1,051
+1,171
+
+0,5782
+0,4734
+0,4485
+0,4841
+0,4289
+0,4661
+0,5147
+0,4632
+0,5438
+0,5079
+0,5530
+0,5482
+
+0,035
+0,050
+0,060
+0,068
+0,042
+0,029
+0,037
+0,036
+0,025
+0,049
+0,031
+0,035
+
+Résultat du
+coefficient de
+frottement statique
+µs
+0,578 ± 0,035
+0,473 ± 0,050
+0,449 ± 0,060
+0,484 ± 0,068
+0,429 ± 0,042
+0,466 ± 0,029
+0,515 ± 0,037
+0,463 ± 0,036
+0,544 ± 0,025
+0,508 ± 0,049
+0,553 ± 0,031
+0,548 ± 0,035
+
+Figure 4 – Tableau des hauteurs moyennes obtenues lors de l’expérience avec l’aluminium, ainsi
+que les coefficients de frottement statique et les incertitudes correspondantes.
+
+7
+
+Figure 5 – Graphique des coefficients de frottements statiques en fonction du grain du papier à
+poncer, ainsi que les incertitudes associées, sur l’aluminium.
+
+3.5
+
+Tableau et Graphique de l’experience avec l’aluminium percé
+Grain (unité
+constructeur)
+
+320
+400
+600
+1000
+1500
+1800
+2000
+2400
+3000
+3200
+3600
+4000
+
+Hauteur
+moyenne
+mesurée h
+(cm)
+19,85
+20,67
+24,27
+27,02
+23,73
+24,29
+25,88
+23,22
+23,21
+23,68
+22,83
+23,10
+
+Incertitude
+u(h) (cm)
+
+Coefficient de
+frottement
+statique µs
+
+Incertitude
+u(µs )
+
+3,530
+1,761
+1,920
+1,694
+3,193
+2,671
+2,109
+2,706
+2,144
+1,707
+2,055
+1,960
+
+0,4346
+0,4562
+0,5581
+0,6459
+0,5173
+0,5587
+0,6083
+0,5271
+0,5268
+0,5405
+0,5158
+0,5236
+
+0,092
+0,047
+0,058
+0,057
+0,052
+0,081
+0,068
+0,078
+0,062
+0,050
+0,059
+0,057
+
+Résultat du
+coefficient de
+frottement statique
+µs
+0,4346 ± 0,092
+0,4562 ± 0,047
+0,5581 ± 0,058
+0,6459 ± 0,057
+0,5173 ± 0,052
+0,5587 ± 0,081
+0,6083 ± 0,068
+0,5271 ± 0,078
+0,5268 ± 0,062
+0,5405 ± 0,050
+0,5158 ± 0,059
+0,5236 ± 0,057
+
+Figure 6 – Tableau des hauteurs moyennes obtenues lors de l’expérience avec l’aluminium percé,
+ainsi que les coefficients de frottement statique et les incertitudes correspondantes.
+
+8
+
+Figure 7 – Graphique des coefficients de frottements statiques en fonction du grain du papier à
+poncer, ainsi que les incertitudes associées, sur l’aluminium percé.
+
+3.6
+
+Interprétation
+
+Nous pouvons observer que le coefficient de frottement statique semble relativement constant en
+fonction du grain et que les incertitudes dépassent les variations. Aucune tendance croissante ou décroissante du coefficient de frottement ne se dégage clairement. Cela signifie que le phénomène d’adhérence
+du gecko à la surface de contact n’est pas mis en évidence dans notre manipulation.
+Nous pouvons envisager différentes explications pour ces résultats
+L’échelle à laquelle nous travaillons est peut-être trop élevée : nous pouvons mesurer la densité
+réelle de points de contact entre la plaque et le papier à poncer et la comparer à la densité des setae
+et spatulae des geckos. De plus, de par leur taille et forme différentes, tous les points du papier à
+poncer ne semblent pas avoir été en contact avec la surface testée : nous pouvons essayer de reproduire
+l’expérience avec une structure souple pour être sûrs que tous les points soient réellement en contact
+avec la surface testée.
+La texture du matériau pourrait être différente : nous pourrions réitérer l’expérience avec une surface
+plus proche des pattes de gecko, pour augmenter l’adhérence et la surface de contact. Le papier à poncer
+est en effet conçu pour ne pas adhérer : sa composition est spécialement réfléchie pour maximiser
+l’abrasivité et minimiser l’adhérence, ce qui diminue l’écart des mesures de frottements, compliquant la
+mise en évidence du phénomène. Changer de surface texturée pourrait être bénéfique, nous allons essayer
+d’imprimer une version en 3D de nos systèmes, permettant d’avoir une deuxième série d’expériences,
+et donc une comparaison et, dans laquelle nous contrôlons mieux la densité de points de contact.
+Les données fournies pourraient ne pas êtres justes, faussant les valeurs attendues : compter les
+points de contact mis en jeu durant les expériences au papier à poncer aura aussi un intérêt bénéfique,
+permettant de mettre en valeur la différence de surface entre chaque expérience.
+
+4
+
+Rencontre avec des chercheurs
+
+4.1
+
+Objectifs
+
+Avant de commencer nos expériences, nous avons voulu rencontrer des chercheurs du domaine, pour
+qu’ils nous expliquent leurs parcours, leurs recherches, et pour qu’ils nous donnent éventuellement des
+conseils pour les expériences et les mesures.
+
+9
+
+4.2
+
+Pauline Faura
+
+Nous avons obtenu le contact de Pauline Faura (ingénieure en tribologie et doctorante) via une des
+préparatrices de laboratoire de notre lycée. Nous lui avons détaillé les expériences que nous prévoyions
+de réaliser, afin d’avoir son avis et qu’elle nous donne des conseils. Elle nous a notamment expliqué
+que, lors de l’étude des frottements, il est possible qu’une surface abîme l’autre, ce qui changerait sa
+texture et fausserait la mesure. C’est ceci précisément que nous avons cherché à éviter, en utilisant les
+cartes plastifiées pour déposer délicatement les surfaces à tester (détails dans la sous-section 3.3).
+Nous en avons profité pour faire valider nos formules, et connaître les limites de leur validité.
+Elle a confirmé, par exemple, notre choix de nous concentrer sur les frottements secs et statiques,
+correspondant mieux au gecko.
+
+4.3
+
+Stéphane Valette
+
+C’est en contactant l’école Centrale Lyon pour obtenir un rendez-vous avec le laboratoire de tribologie en partenariat, que nous avons été mis en contact avec Stéphane Valette qui travaille dans
+ce laboratoire en tant qu’enseignant-chercheur et responsable d’étude. Nous avons pu avoir une visioconférence avec lui après avoir terminé la première série de mesures (détaillée dans la sous-section
+3.4).
+En recherche de pistes d’amélioration, nous lui avons donc demandé des conseils pour améliorer nos
+mesures et vérifier la cohérence de notre protocole. Il nous a notamment conseillé d’effectuer la mesure
+du grain réel du papier à poncer (détaillée dans la section 5), et il nous a donné des recommandations
+sur la façon d’interpréter les résultats que nous avons obtenus, tel que comparer les échelles des doigts
+du gecko et du papier à poncer.
+C’est également lui qui nous a conseillé de tester une structure différente, ce qui nous a conduits à
+mettre en place le protocole de la structure 3D.
+
+5
+
+Mesure du grain réel du papier à poncer
+
+5.1
+
+Objectifs
+
+Les fabricants de papier à poncer utilisent des unités et des normes différentes pour définir le grain
+de leurs papiers à poncer. L’objectif ici est donc de mesurer la densité réelle de points de contact entre
+la plaque et le papier à poncer (nombre de grains du papier à poncer par cm2 ).
+Pour des raisons de praticité et de justesse, nous essayerons de dénombrer les grains du papier
+à poncer avec une loupe binoculaire dans un premier temps (Grain < 1000), puis nous utiliserons le
+microscope (Grain > 1000), plus long à mettre en place, mais disposant d’un meilleur grossissement.
+
+5.2
+
+Matériel nécessaire
+
+Papier à poncer à mesurer.
+Papier millimétré.
+Caméra (celle d’un téléphone dans notre cas).
+Loupe binoculaire ou microscope[1] .
+
+5.3
+
+Protocole
+
+Les images du protocole sont en annexe[3.2] .
+Pour le test avec une loupe binoculaire :
+Placer le papier à poncer sous une loupe binoculaire, de façon à observer le relief des grains.
+Ajouter une échelle de papier millimétré gradué pour mettre en place l’échelle de mesures.
+Capturer un cliché de la zone agrandie, avec l’échelle.
+Ouvrir Mesurim 2, importer l’image et dénombrer la quantité de grains sur un carré visible de 1 mm
+de côté.
+Répéter la mesure.
+Calculer le nombre de grains par mm2 .
+
+10
+
+Le même protocole a été réalisé avec, au lieu de la loupe binoculaire, un microscope optique, pour
+les grains trop fins.
+Nous pouvons remarquer que ces deux tests sont très similaires, cependant différents sur certains
+points, permettant de choisir le plus adapté suivant le grain à observer.
+Test au microscope
+Grossissement modifiable (de ×60 à ×600)
+Lumière unique venant du bas
+
+Test à la loupe binoculaire
+Grossissement fixe (×20)
+Lumière venant du haut, permettant un
+éclairage fixe
+Nécessite une caméra extérieure
+
+compatibilité avec une caméra
+
+Le grain du papier à poncer n’est pas visible à l’œil nu, et après quelques tests, le zoom de la loupe
+binoculaire ne parvient pas une qualité suffisante pour compter le nombre de grains par mm2 au dessus
+du grain 1000. Les microscopes optiques de Biologie et Géologie sont faits pour éclairer par le dessous,
+avec des systèmes de lames et lamelles selon le schéma en annexe[1] , mais les papiers à poncer ne sont
+pas transparent donc nous avons eu besoin d’utiliser un éclairage externe, par le dessus.
+Après tests, il n’est pas possible avec nos instruments de donner une échelle à nos papiers à poncer
+au-dessus du grain 3000, même avec un grossissement ×600. Nous allons essayer de conjecturer une
+évolution probable du grain du papier à poncer par mm2 en fonction de la mesure indiquée.
+
+5.4
+
+Résultats de la mesure et représentation graphique
+
+En utilisant le protocole précédent pour les 3 grains les plus clairs et donc les moins susceptibles
+d’être faussés, nous obtenons :
+Grain annoncé
+(unité constructeur)
+320
+600
+1000
+
+concentration réelle du grain
+g (mm−2 )
+150
+1074
+2310
+
+Incertitude
+u(g) = g ×0, 05
+7,5
+53,5
+115,5
+
+Résultats finaux
+(g ± u(g))
+150 ± 7,5
+1074 ± 53,5
+2310 ± 115,5
+
+Figure 8 – Tableau de la concentration en grains de papier à poncer par mm² en fonction de la
+valeur annoncée du papier à poncer.
+
+Figure 9 – Graphique de la concentration réelle du grain fonction du grain annoncé, ainsi que les
+incertitudes associées.
+11
+
+Après avoir modélisé ces résultats sur LatisPro, nous obtenons une courbe affine, d’équation théorique :
+y = Ax + B = 3, 171x − 851
+
+A = 3, 171 ± 0, 700
+B = −851 ± 500
+
+Les incertitudes étant liées à un pourcentage des valeurs, l’ordonnée à l’origine B se retrouve donc bien
+moins certaine que voulu.
+Nous pourrons cependant utiliser cette droite pour convertir nos grains en valeurs utilisables à partir
+de ce point.
+
+5.5
+
+Interprétation
+
+Le papier à poncer est conçu pour ses caractéristiques abrasives, mais aussi pour minimiser l’adhérence avec la surface de contact. En outre, la friabilité est aussi une caractéristique importante des
+papiers à poncer, définie comme « la capacité des grains abrasifs à se briser et à s’auto-affûter sous
+tension et par laquelle le matériau abrasif fonctionne de manière optimale pour effectuer la tâche souhaitée » ce qui modifie en permanence la surface de contact, et permet une abrasivité plus optimale.
+Ce qui nous a poussé à utiliser le papier à poncer est la facilité de se procurer le produit, ainsi que
+la finesse possible du grain et enfin la variété des grains disponibles.
+En théorie, cette variété devrait induire une évolution de l’adhérence du papier à poncer en fonction
+des différents grains.
+Mais en pratique, les capacités antiadhérentes et le comportement du papier à poncer lorsqu’il
+est soumis à une contrainte changent sa façon de se comporter, rendant caduque les résultats. Les
+différences les plus notables avec les doigt du gecko sont les suivantes :
+Doigt du gecko
+Conçu pour maximiser la surface de contact
+grâce à ses subdivisions en setae et spatulae,
+maximisant donc l’adhérence.
+Souplesse des setae pour augmenter la surface
+de contact et les forces de van der Waals
+Subdivision des setae
+Présence d’une fine couche de lipides pour
+réduire l’influence de l’eau
+Adaptation à la surface rencontrée, pas
+d’influence sur le matériau
+
+Papier à poncer
+Conçu pour obtenir le meilleur ratio possible
+entre abrasivité et usure, minimisant donc
+l’adhérence.
+Dureté du papier pour limiter l’usure
+Grains formant des pointes fines
+Contact direct avec les grains de sable à la
+surface du papier à poncer
+Abrasivité forte, potentiels changements entre
+les essais dus à l’abrasion de la surface
+
+Pour toutes ces raisons, nous avons décidé de changer le matériau du système pour s’affranchir des
+biais du papier à poncer sur nos expériences.
+
+6
+
+Expériences avec les impressions 3D
+
+6.1
+
+Objectifs
+
+Nous allons à nouveau mesurer le coefficient de frottement statique, en utilisant cette fois des
+structures imprimées en 3D, et essayer de mettre en évidence un changement de comportement avec un
+matériau peu abrasif, peu déformé durant le procédé, et toujours avec une densité de points de contact
+variable.
+L’avantage des impressions 3D est que nous pouvons définir très précisément la densité de points
+de contact. Le désavantage est que l’échelle des impressions 3D est encore plus grande que l’échelle des
+papiers à poncer. Nous espérons que ce changement permettra de diminuer les incertitudes liées à la
+distribution des points de contact et ainsi de mettre en évidence le phénomène d’adhérence des geckos.
+
+6.2
+
+Liste de matériel
+
+1 plaque solide (ici en aluminium) d’environ 50 cm de long.
+1 support élévateur.
+4 plaques en impression 3D couvertes d’un réseau de pointes de densités différentes.
+1 mètre à mesurer.
+
+12
+
+6.3
+
+Protocole
+
+Les images du protocole sont en annexe[3.3] .
+En lien avec ce changement de matériau du système, nous avons pu optimiser la mise en œuvre des
+mesures. Le protocole a donc été légèrement modifié. En effet, toutes les impressions 3D seront testées
+en même temps, sur toute la largeur de la plaque, et comme les impressions 3D ne sont pas abrasives,
+nous n’avons plus besoin d’utiliser le système de cartes plastifiées pour les déposer délicatement. Cela
+nous donne ce nouveau protocole :
+Positionner fixement la plaque en aluminium sur le support élévateur, de telle manière que l’angle
+formé par la table et la plaque puisse être modifié librement en ajustant la hauteur du support
+élévateur.
+Baisser le support élévateur au maximum.
+Placer les impressions 3D en haut de la plaque d’aluminium.
+Faire monter peu à peu le support élévateur pour augmenter l’angle formé par la table et la plaque
+(sans faire d’à-coups).
+Arrêter l’élévation du support élévateur chaque fois que le point de rupture a été atteint pour l’une
+des impressions 3D et qu’elle se met à glisser le long de la plaque et retirer l’impression 3D qui a
+glissé.
+Mesurer la hauteur du support élévateur et en déduire le coefficient de frottement statique grâce
+aux formules détaillées à la section 2.2.
+Refaire les trois étapes précédentes jusqu’à ce qu’il n’y ait plus d’impression 3D.
+Réaliser la manipulation 10 fois au total pour obtenir un nombre de mesures significatif pour le
+calcul des incertitudes de type A.
+
+6.4
+
+Tableau et Graphique
+Densité de
+points de
+contact
+(m−2 )
+10264
+23094
+47131
+92376
+
+Hauteur
+moyenne
+mesurée h (cm)
+20,38
+20,48
+21,22
+20,27
+
+Incertitude Coefficient de
+u(h)
+frottement
+(cm)
+statique µs
+1,360
+0,6909
+0,8377
+1,365
+
+0,4485
+0,4512
+0,4710
+0,4456
+
+Incertitude
+u(µs )
+
+Résultats du
+coefficient de
+frottement statique µs
+
+0,036
+0,018
+0,023
+0,036
+
+0,449 ± 0,036
+0,451 ± 0,018
+0,471 ± 0,023
+0,446 ± 0,036
+
+Figure 10 – Tableau des hauteurs moyennes obtenues lors de cette expérience, ainsi que les coefficients de frottement statique et les incertitudes correspondantes.
+
+13
+
+Figure 11 – Graphique des coefficients de frottement statique en fonction de la densité de points
+de contact de la surface, ainsi que les incertitudes associées.
+
+6.5
+
+Interprétation
+
+Nous pouvons observer que les incertitudes dépassent une nouvelle fois les variations : comme vu
+précédemment, le coefficient de frottement statique semble donc relativement constant en fonction
+de la surface de contact. Aucune tendance croissante ou décroissante du coefficient de frottement ne
+se dégage clairement. Cela signifie que le phénomène n’est toujours pas mis en évidence dans notre
+manipulation.
+Nous pouvons donc en déduire que le comportement d’une surface sur une autre n’est pas fortement
+influencé par la densité de points de contact, en tout cas à cette échelle et avec ces matériaux.
+Il est donc nécessaire de travailler à plus petite échelle ou avec d’autres types de matériaux pour
+espérer mettre en évidence le phénomène qui permet aux geckos de s’accrocher à n’importe quel type de
+surface. Cependant, nous n’avons pu trouver aucun objet d’assez petite échelle et suffisamment simple
+à acheter pour réaliser une nouvelle série de mesures. Nous avons donc décidé de changer de type de
+matériau pour la prochaine expérience.
+
+7
+
+Expériences avec les modèles en silicone
+
+7.1
+
+Objectifs
+
+Nous allons une nouvelle fois mesurer le coefficient de frottement statique, en utilisant cette fois des
+structures en silicone (des plaques de PVC recouvertes de pointes en silicone), pour essayer de mettre
+en évidence le phénomène avec un matériau souple, et toujours avec une densité de points de contact
+variable.
+L’avantage d’utiliser un matériau souple (ici le silicone) est que toutes les pointes constituent un
+réel point de contact.
+
+7.2
+
+Liste de matériel
+
+1 plaque solide (ici en aluminium) d’environ 50 cm de long.
+1 support élévateur.
+3 plaques en PVC recouvertes d’un réseau de pointes en silicone (ici réalisé à l’aide d’un tube de
+silicone de la marque Elch) de densités différentes.
+1 mètre à mesurer.
+
+14
+
+7.3
+
+Protocole
+
+Les images du protocole sont en annexe[3.4] .
 Les structures en silicone imposant de nouvelles contraintes, nous devons donc adapter le protocole :
-Positionner fixement la plaque en aluminium sur le support Ã©lÃ©vateur, de telle maniÃ¨re que lâangle
-formÃ© par la table et la plaque puisse Ãªtre modifiÃ© librement en ajustant la hauteur du support
-Ã©lÃ©vateur.
-Baisser le support Ã©lÃ©vateur au maximum.Placer la structure en silicone en haut de la plaque dâaluminium.Faire monter peu Ã  peu le support Ã©lÃ©vateur pour augmenter lâangle formÃ© par la table et la plaque
-(sans faire dâÃ -coups).
-ArrÃªter lâÃ©lÃ©vation du support Ã©lÃ©vateur rÃ©guliÃ¨rement pour attendre quelques dizaines de secondes
-pour savoir si la structure en silicone a commencÃ© Ã  glisser le long de la plaque.
-Si la structure en silicone a commencÃ© Ã  glisser le long de la plaque, abaisser un peu la plaque.
-Sinon, si la structure en silicone nâa pas commencÃ© Ã  glisser le long de la plaque, continuer Ã  monter
+Positionner fixement la plaque en aluminium sur le support élévateur, de telle manière que l’angle
+formé par la table et la plaque puisse être modifié librement en ajustant la hauteur du support
+élévateur.
+Baisser le support élévateur au maximum.
+Placer la structure en silicone en haut de la plaque d’aluminium.
+Faire monter peu à peu le support élévateur pour augmenter l’angle formé par la table et la plaque
+(sans faire d’à-coups).
+Arrêter l’élévation du support élévateur régulièrement pour attendre quelques dizaines de secondes
+pour savoir si la structure en silicone a commencé à glisser le long de la plaque.
+Si la structure en silicone a commencé à glisser le long de la plaque, abaisser un peu la plaque.
+Sinon, si la structure en silicone n’a pas commencé à glisser le long de la plaque, continuer à monter
 la plaque.
-Refaire les deux Ã©tapes prÃ©cÃ©dentes jusquâÃ  trouver la hauteur prÃ©cise Ã  partir de laquelle la structure
-en silicone commence Ã  glisser le long de la plaque (algorithme de la recherche binaire pour trouver
-la hauteur Ã  laquelle la structure en silicone commence Ã  glisser en sachant uniquement si nous
+Refaire les deux étapes précédentes jusqu’à trouver la hauteur précise à partir de laquelle la structure
+en silicone commence à glisser le long de la plaque (algorithme de la recherche binaire pour trouver
+la hauteur à laquelle la structure en silicone commence à glisser en sachant uniquement si nous
 sommes au dessus ou en dessous de cette hauteur).
-Mesurer la hauteur du support Ã©lÃ©vateur et en dÃ©duire le coefficient de frottement statique grÃ¢ce
-aux formules dÃ©taillÃ©es Ã  la section.
+Mesurer la hauteur du support élévateur et en déduire le coefficient de frottement statique grâce
+aux formules détaillées à la section 2.2.
 Recommencer la manipulation pour chaque structure en silicone.
-Nous avons remarquÃ© que la mesure du point de rupture des structures en silicone est beaucoup plus
-fidÃ¨le que lors des expÃ©riences prÃ©cÃ©dentes (elles glissent toujours Ã  partir de la mÃªme hauteur), ce qui
-nous permet de nâeffectuer quâune seule mesure par structure en silicone et dâutiliser des incertitudes
+Nous avons remarqué que la mesure du point de rupture des structures en silicone est beaucoup plus
+fidèle que lors des expériences précédentes (elles glissent toujours à partir de la même hauteur), ce qui
+nous permet de n’effectuer qu’une seule mesure par structure en silicone et d’utiliser des incertitudes
 de type B.
+
 7.4
-DensitÃ© de points
+
+Tableau et graphique
+Densité de points
 de contact
-(m
-â2
-)
-Hauteur mesurÃ©e
+(m−2 )
+6400
+10000
+14400
+
+Hauteur mesurée
 h (cm)
+12,7
+18,7
+22,7
+
 Coefficient de
 frottement
 statique
+0,2637
+0,4052
+0,5121
+
 Incertitude
-u(Âµs)
+u(µs )
 (type B)
-RÃ©sultat du coefficient
+0,025
+0,025
+0,025
+
+Résultat du coefficient
 de frottement statique
-Âµs
-6400 12,7 0,2637 0,025 0,264
-10000 18,7 0,4052 0,025 0,405
-14400 22,7 0,5121 0,025 0,512
-Figure 12
+µs
+0,264 ± 0,025
+0,405 ± 0,025
+0,512 ± 0,025
+
+Figure 12 – Tableau des hauteurs obtenues lors de cette expérience, ainsi que les coefficients de
 frottement statique et les incertitudes correspondantes.
+
 15
 
-Figure 13
-de contact de la surface, ainsi que les incertitudes associÃ©es.
+Figure 13 – Graphique des coefficients de frottement statique en fonction de la densité de points
+de contact de la surface, ainsi que les incertitudes associées.
+
 7.5
+
+Interprétation
+
 Nous pouvons observer une nette progression croissante : le coefficient de frottement statique semble
-donc positivement corrÃ©lÃ© avec la densitÃ© de points de contact, conformÃ©ment Ã  la thÃ©orie. Cependant,
-le nombre de mesures est faible (seulement 3), donc il pourrait potentiellement sâagir dâune coÃ¯ncidence.
-De plus, mÃªme en Ã©cartant cette possibilitÃ©, il nâest pas certain que le phÃ©nomÃ¨ne mis en Ã©vidence dans
-cette manipulation soit le mÃªme que celui qui permet aux geckos dâadhÃ©rer aux surfaces.
-Nous pouvons donc prudemment en dÃ©duire que notre manipulation met probablement en Ã©vidence
-un phÃ©nomÃ¨ne, au moins similaire, sinon identique, Ã  celui qui permet aux geckos dâadhÃ©rer aux surfaces,
-mais quâil faudrait la rÃ©itÃ©rer avec plus de structures en silicone de densitÃ©s de points de contact
-diffÃ©rentes pour avoir plus de mesures et ainsi vÃ©rifier la corrÃ©lation.
+donc positivement corrélé avec la densité de points de contact, conformément à la théorie. Cependant,
+le nombre de mesures est faible (seulement 3), donc il pourrait potentiellement s’agir d’une coïncidence.
+De plus, même en écartant cette possibilité, il n’est pas certain que le phénomène mis en évidence dans
+cette manipulation soit le même que celui qui permet aux geckos d’adhérer aux surfaces.
+Nous pouvons donc prudemment en déduire que notre manipulation met probablement en évidence
+un phénomène, au moins similaire, sinon identique, à celui qui permet aux geckos d’adhérer aux surfaces,
+mais qu’il faudrait la réitérer avec plus de structures en silicone de densités de points de contact
+différentes pour avoir plus de mesures et ainsi vérifier la corrélation.
+
 8
-En conclusion, bien que nos premiÃ¨res expÃ©riences nâaient pas abouti aux rÃ©sultats espÃ©rÃ©s, elles nous
-ont tout de mÃªme permis de mieux comprendre le phÃ©nomÃ¨ne physique qui se cache derriÃ¨re les facultÃ©s
-des geckos Ã  adhÃ©rer Ã  nâimporte quelle surface. La derniÃ¨re expÃ©rience a Ã©tÃ© un peu plus satisfaisante,
-mÃªme si elle ne permet pas de tirer une conclusion dÃ©finitive. Nous sommes bien conscients quâil nous
-est impossible de reproduire exactement les caractÃ©ristiques physiques des doigts du gecko dans la
-mesure oÃ¹ les phÃ©nomÃ¨mes physiques en action (tels que les liaisons de van der Waals) ne peuvent Ãªtre
-observÃ©s quâÃ  lâÃ©chelle molÃ©culaire. NÃ©anmoins, expÃ©rimenter fait partie de la dÃ©marche scientifique, et
-lâabsence de rÃ©sultats concluants est un dÃ©jÃ  rÃ©sultat en soi. Nous avons pu mettre en valeur, de par
-nos expÃ©riences, la complexitÃ© des forces de van der Waals, ce qui Ã©tait lâobjectif scientifique de notre
-dÃ©marche.
-Les conseils du jury, suite Ã  notre premier passage, nous ont grandement aidÃ©s, nous permettant
-dâobtenir une expÃ©rience plus concluante. Nous ressortons donc grandis de ces olympiades, forts de
-nouvelles compÃ©tences scientifiques expÃ©rimentales, poussÃ©s par le dÃ©sir dâen savoir plus sur notre
+
+Conclusion
+
+En conclusion, bien que nos premières expériences n’aient pas abouti aux résultats espérés, elles nous
+ont tout de même permis de mieux comprendre le phénomène physique qui se cache derrière les facultés
+des geckos à adhérer à n’importe quelle surface. La dernière expérience a été un peu plus satisfaisante,
+même si elle ne permet pas de tirer une conclusion définitive. Nous sommes bien conscients qu’il nous
+est impossible de reproduire exactement les caractéristiques physiques des doigts du gecko dans la
+mesure où les phénomèmes physiques en action (tels que les liaisons de van der Waals) ne peuvent être
+observés qu’à l’échelle moléculaire. Néanmoins, expérimenter fait partie de la démarche scientifique, et
+l’absence de résultats concluants est un déjà résultat en soi. Nous avons pu mettre en valeur, de par
+nos expériences, la complexité des forces de van der Waals, ce qui était l’objectif scientifique de notre
+démarche.
+Les conseils du jury, suite à notre premier passage, nous ont grandement aidés, nous permettant
+d’obtenir une expérience plus concluante. Nous ressortons donc grandis de ces olympiades, forts de
+nouvelles compétences scientifiques expérimentales, poussés par le désir d’en savoir plus sur notre
 monde.
-Participer aux Olympiades de Physique a Ã©galement Ã©tÃ© une belle et enrichissante expÃ©rience en
-termes de rencontres. Ã ce titre, nous voudrions remercier toutes les personnes qui nous ont aidÃ©s et
-sans qui tout cela nâaurait pas Ã©tÃ© possible, Ã  commencer par : Vincent Moy, Camille Perrin et Corentin
+Participer aux Olympiades de Physique a également été une belle et enrichissante expérience en
+termes de rencontres. À ce titre, nous voudrions remercier toutes les personnes qui nous ont aidés et
+sans qui tout cela n’aurait pas été possible, à commencer par : Vincent Moy, Camille Perrin et Corentin
+
 16
 
-Lamothe les assistants techniques, qui ont Ã©tÃ© dâun soutien indÃ©fectible lors de la rÃ©alisation de nos
-projets. StÃ©phane Valette (enseignant chercheur et responsable dâÃ©tude) et Pauline Faura (IngÃ©nieure
-en tribologie et doctorante dans cette discipline) qui ont Ã©tÃ© dâun conseil prÃ©cieux et nous ont permis de
-pousser plus loin notre rÃ©flexion. Notre professeur de Sciences de lâingÃ©nieur, monsieur Prouteau sans
-qui nous nâaurions pas pu rÃ©aliser les impressions 3D. Nous tenons Ã©galement Ã  remercier Marie-Claire
-Cambourieux et Arnaud BrugÃ¨re, nos deux professeurs encadrants qui nous ont suivis durant tout ce
-projet, autant dans la rÃ©ussite que dans la difficultÃ©. Pour finir nous remercions nos camarades des
-Ã©quipes âAquavore-Texâ et ârob-eau, flottera pas ? Ou flottera !â pour le soutien apportÃ© tout au long
-de notre prÃ©paration commune de ces olympiades.
-Merci enfin Ã  vous dâavoir lu notre mÃ©moire.
-LâÃ©quipe Geckoscotch, une idÃ©e qui accroche
+Lamothe les assistants techniques, qui ont été d’un soutien indéfectible lors de la réalisation de nos
+projets. Stéphane Valette (enseignant chercheur et responsable d’étude) et Pauline Faura (Ingénieure
+en tribologie et doctorante dans cette discipline) qui ont été d’un conseil précieux et nous ont permis de
+pousser plus loin notre réflexion. Notre professeur de Sciences de l’ingénieur, monsieur Prouteau sans
+qui nous n’aurions pas pu réaliser les impressions 3D. Nous tenons également à remercier Marie-Claire
+Cambourieux et Arnaud Brugère, nos deux professeurs encadrants qui nous ont suivis durant tout ce
+projet, autant dans la réussite que dans la difficulté. Pour finir nous remercions nos camarades des
+équipes “Aquavore-Tex” et “rob-eau, flottera pas ? Ou flottera !” pour le soutien apporté tout au long
+de notre préparation commune de ces olympiades.
+Merci enfin à vous d’avoir lu notre mémoire.
+
+L’équipe Geckoscotch, une idée qui accroche
+
 17
+
+

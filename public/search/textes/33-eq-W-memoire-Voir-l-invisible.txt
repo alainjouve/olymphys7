@@ -1,834 +1,729 @@
-1 
-33
-ES OLYMPIADES DE PHYSIQUE FRANCE 
- 
-Voir lâinvisible : 
-Des Bits qui Flip, la menace invisible de la radioactivitÃ© et du rayonnement 
-cosmique 
- 
-Equipe W :  
-MikaÃ«l CAZOT-MOUKABED 
-MaÃ«lle DUPLANTIER 
-Dara LASSERRE 
-RaphaÃ«l MIROCHNITCHENKO    
-Thomas PIGNOL 
- 
- 
-Table des matiÃ¨res 
-Introduction .................................................................................................................................................................................................. 2 
-PrÃ©requis pour comprendre le sujet ..................................................................................................................................................... 2 
-a. Fonctionnement dâun transistor type MOSFET (le plus rÃ©pandu) .................................................................................... 2 
-b. Le Bit flip .................................................................................................................................................................................................... 3 
-I. Quâest-ce quâune chambre Ã  brouillard ? .................................................................................................................................... 4 
-a. Historique du dispositif ....................................................................................................................................................................... 4 
-b. Le fonctionnement ................................................................................................................................................................................. 5 
-II. Notre chambre Ã  brouillard ............................................................................................................................................................ 5 
-a. Les prototypes ......................................................................................................................................................................................... 5 
-b. Version finale ........................................................................................................................................................................................... 7 
-III. ExpÃ©rimentations ............................................................................................................................................................................ 10 
-IV. Traitement des rÃ©sultats .......................................................................................................................................................... 10 
-a. ExpÃ©rience 1 : Observation de la radioactivitÃ© naturelle.................................................................................................... 12 
-b. ExpÃ©rience 2 : Contamination dâun matÃ©riaux et Ã©mission de particules alphas ..................................................... 14 
-c. ExpÃ©rience 3 : Etude de lâimpact des matÃ©riaux sur la trajectoire des particules alphas ..................................... 16 
-d. ExpÃ©rience 4 : Etude des neutrons .............................................................................................................................................. 16 
-Conclusion .................................................................................................................................................................................................. 19 
-Remerciements ......................................................................................................................................................................................... 19 
+33ES OLYMPIADES DE PHYSIQUE FRANCE
+Voir l’invisible :
+Des Bits qui Flip, la menace invisible de la radioactivité et du rayonnement
+cosmique
+Equipe W :
+Mikaël CAZOT-MOUKABED
+Maëlle DUPLANTIER
+Dara LASSERRE
+Raphaël MIROCHNITCHENKO
+Thomas PIGNOL
+
+Table des matières
+Introduction .................................................................................................................................................................................................. 2
+Prérequis pour comprendre le sujet ..................................................................................................................................................... 2
+a. Fonctionnement d’un transistor type MOSFET (le plus répandu) .................................................................................... 2
+b. Le Bit flip .................................................................................................................................................................................................... 3
+I.
+a.
+b.
+II.
+
+Qu’est-ce qu’une chambre à brouillard ? .................................................................................................................................... 4
+Historique du dispositif ....................................................................................................................................................................... 4
+Le fonctionnement ................................................................................................................................................................................. 5
+
+Notre chambre à brouillard ............................................................................................................................................................ 5
+a. Les prototypes ......................................................................................................................................................................................... 5
+b. Version finale ........................................................................................................................................................................................... 7
+
+III. Expérimentations............................................................................................................................................................................ 10
+IV.
+a.
+b.
+c.
+d.
+
+Traitement des résultats .......................................................................................................................................................... 10
+Expérience 1 : Observation de la radioactivité naturelle.................................................................................................... 12
+Expérience 2 : Contamination d’un matériaux et émission de particules alphas ..................................................... 14
+Expérience 3 : Etude de l’impact des matériaux sur la trajectoire des particules alphas ..................................... 16
+Expérience 4 : Etude des neutrons .............................................................................................................................................. 16
+
+Conclusion .................................................................................................................................................................................................. 19
+Remerciements ......................................................................................................................................................................................... 19
 Sitographie ................................................................................................................................................................................................. 20
 
-2 
-Introduction 
- 
-En 2003, un avion commercial a connu une anomalie inexplicable. Lâavion, transportant des centaines de passagers, 
-s'est soudainement mis Ã  descendre en piquÃ© sans raison apparente. Lâavion, une fois stabilisÃ©, sâest soudainement 
-remis Ã  plonger. MalgrÃ© les investigations, aucune cause nâa pu Ãªtre clairement identifiÃ©e. Le matÃ©riel informatique 
-Ã©tait en Ã©tat de marche et il nây avait aucune dÃ©gradation apparente sur lâappareil. Mais alors ? Pourquoi et comment 
-ce vol a-t-il failli tourner au dÃ©sastre. Bien quâaucune rÃ©ponse ne soit prouvÃ©e, aujourd'hui, une thÃ©orie Ã©merge : 
-selon certains, câest le systÃ¨me embarquÃ© de lâavion qui aurait Ã©tÃ© victime dâune âSoft Errorâ, ou erreur douce en 
-franÃ§ais. Autrement dit, une erreur qui ne laisse aucune traceâ¦ 
-Par ailleurs, alors quâun joueur tentait de battre, en temps record, un jeu Mario, son personnage sâest soudain 
-tÃ©lÃ©portÃ© au-dessus de la zone de jeu. Pensant quâil sâagissait dâun âglitchâ (dÃ©faut de conception), le joueur a tentÃ© 
-de le reproduire, mais en vain. Au final, des internautes ont reconstituÃ© la scÃ¨ne, et ont observÃ© quâen changeant la 
-valeur dâun bit prÃ©cis, de 0 Ã  1, le phÃ©nomÃ¨ne se reproduisait.  
-La console du speedrunner et l'avion avaient subi un bit flip. 
-Ce phÃ©nomÃ¨ne advient lorsquâune particule ionisante traverse un processeur et provoque le changement de valeur 
-(de 1 Ã  0 ou de 0 Ã  1) dâun ou plusieurs bits (les causes de ce phÃ©nomÃ¨ne seront vues plus loin). 
- 
-Mais alors, dâoÃ¹ viennent ces particules ? Lesquelles sont dangereuses ? Comment protÃ©ger nos systÃ¨mes 
-informatiques ? 
-Plus gÃ©nÃ©ralement, nous sommes amenÃ©s Ã  nous poser la question : Les particules qui nous entourent sont-elles 
-susceptibles de provoquer un bits-flip et si oui, pouvons-nous protÃ©ger nos ordinateurs ? 
-Afin de mettre en Ã©vidence lâexistence de particules ionisantes susceptibles de provoquer des bits flips, nous avons 
-choisi de rÃ©aliser une chambre Ã  brouillard. 
- 
- 
-PrÃ©requis pour comprendre le sujet 
- 
-a. Fonctionnement dâun transistor type MOSFET (le plus rÃ©pandu)  
- 
-Le transistor est le composant informatique le plus important jamais crÃ©Ã©. Il possÃ¨de deux Ã©tats logiques : 0 et 1. 
-En associant des milliers (aujourdâhui des milliards par centimÃ¨tre dans les processeurs) de transistors, on peut 
-crÃ©er des portes logiques, qui permettent de crÃ©er des systÃ¨mes informatiques complexes, comme des calculatrices, 
-et bien sÃ»r des processeurs. 
-Un transistor possÃ¨de : 
-- une source, dâoÃ¹ provient le courant. 
-- le drain, oÃ¹ sort le courant. 
-- la grille, qui contrÃ´le le passage du courant. 
- 
-Figure 1 : Transistor MOSFET (crÃ©dit : the Engineering Mindset).
+1
 
-3 
-Le schÃ©ma ci-dessus reprÃ©sente un Transistor MOSFET. 
-La source et le drain sont reliÃ©s Ã  des zones de silicium dopÃ©es nÃ©gativement (N-type). Ces zones se situent dans 
-une zone P, dopÃ©e positivement (P-type).  
-Entre la zone N et P, une jonction NP se forme et crÃ©e un champ Ã©lectrique Ã  cause du mÃ©lange des charges. Ce 
-champ empÃªche le passage du courant de la source vers le drain. 
-Lorsque la grille est chargÃ©e positivement, un champ se crÃ©e, qui attire les Ã©lectrons de la zone P entre les deux 
-zones N. Ces Ã©lectrons se collent Ã  la couche isolante (oxyde de silicium dâoÃ¹ Metal Oxide dans MOSFET). Ils 
-sâaccumulent, jusquâÃ  crÃ©er une voie permettant le passage du courant entre Source et Drain. Le courant passe : 
-lâÃ©tat logique est codÃ© 1, comme on le voit ci-dessous. 
- 
-Figure 2 : Ã©tat logique 1, le courant passe. (CrÃ©dit : the engineering Mindset). 
- 
-b. Le Bit flip 
- 
-Les semi-conducteurs sont au cÅur des processeurs et des transistors, comme le silicium (cf. prÃ©requis). Or dans 
-un semi-conducteur, les Ã©lectrons des atomes occupent des niveaux dâÃ©nergie organisÃ©s en bandes : 
-â¢ Bande de valence (BV) : niveaux dâÃ©nergie occupÃ©s par les Ã©lectrons liÃ©s. 
-â¢ Bande de conduction (BC) : niveaux dâÃ©nergie oÃ¹ les Ã©lectrons sont libres de se dÃ©placer et donc de conduire 
-le courant. 
-â¢ Entre les deux : un gap (ou bande interdite). 
- 
-Quand un Ã©lectron reÃ§oit suffisamment dâÃ©nergie (par exemple : lumiÃ¨re, chaleur, champ Ã©lectrique), il peut quitter 
-la bande de valence et atteindre la bande de conduction. 
-â¢ LâÃ©lectron excitÃ© devient mobile : il contribue au courant Ã©lectrique. 
-â¢ Le dÃ©part de cet Ã©lectron laisse un âtrouâ dans la bande de valence : une position vide qui peut aussi se 
-dÃ©placer et agir comme une charge positive. On appelle cela une paire Ã©lectron-trou. 
- 
-De ce fait, en passant, les particules ionisantes peuvent exciter les Ã©lectrons du silicium, semi-conducteur le plus 
-rÃ©pandu en informatique, crÃ©ant une traÃ®nÃ©e de paires Ã©lectron-trou le long de leur trajectoire.  
-Ces charges supplÃ©mentaires peuvent alors se dÃ©placer et sâaccumuler dans des zones sensibles du transistor 
-MOSFET, en particulier : 
-â¢ dans le substrat (zone P) sous la grille, 
-â¢ ou dans lâoxyde isolant de la grille. 
- 
-Cette accumulation locale de charges perturbe le champ Ã©lectrique du transistor et modifie sa tension de seuil. Le 
-transistor peut alors : 
-â¢ se mettre Ã  conduire alors quâil devrait Ãªtre Ã©teint, 
-â¢ ou au contraire cesser de conduire alors quâil devrait Ãªtre allumÃ©.
+Introduction
+En 2003, un avion commercial a connu une anomalie inexplicable. L’avion, transportant des centaines de passagers,
+s'est soudainement mis à descendre en piqué sans raison apparente. L’avion, une fois stabilisé, s’est soudainement
+remis à plonger. Malgré les investigations, aucune cause n’a pu être clairement identifiée. Le matériel informatique
+était en état de marche et il n’y avait aucune dégradation apparente sur l’appareil. Mais alors ? Pourquoi et comment
+ce vol a-t-il failli tourner au désastre. Bien qu’aucune réponse ne soit prouvée, aujourd'hui, une théorie émerge :
+selon certains, c’est le système embarqué de l’avion qui aurait été victime d’une “Soft Error”, ou erreur douce en
+français. Autrement dit, une erreur qui ne laisse aucune trace…
+Par ailleurs, alors qu’un joueur tentait de battre, en temps record, un jeu Mario, son personnage s’est soudain
+téléporté au-dessus de la zone de jeu. Pensant qu’il s’agissait d’un “glitch” (défaut de conception), le joueur a tenté
+de le reproduire, mais en vain. Au final, des internautes ont reconstitué la scène, et ont observé qu’en changeant la
+valeur d’un bit précis, de 0 à 1, le phénomène se reproduisait.
+La console du speedrunner et l'avion avaient subi un bit flip.
+Ce phénomène advient lorsqu’une particule ionisante traverse un processeur et provoque le changement de valeur
+(de 1 à 0 ou de 0 à 1) d’un ou plusieurs bits (les causes de ce phénomène seront vues plus loin).
+Mais alors, d’où viennent ces particules ? Lesquelles sont dangereuses ? Comment protéger nos systèmes
+informatiques ?
+Plus généralement, nous sommes amenés à nous poser la question : Les particules qui nous entourent sont-elles
+susceptibles de provoquer un bits-flip et si oui, pouvons-nous protéger nos ordinateurs ?
+Afin de mettre en évidence l’existence de particules ionisantes susceptibles de provoquer des bits flips, nous avons
+choisi de réaliser une chambre à brouillard.
 
-4 
-Dans les circuits numÃ©riques - notamment les cellules SRAM qui stockent les bits - cette perturbation suffit Ã  
-inverser lâÃ©tat logique du transistor. Câest ainsi quâune particule ionisante peut provoquer un bit flip, en modifiant 
-briÃ¨vement la charge dans un transistor au point de le faire basculer dans lâÃ©tat opposÃ©. 
-Ce phÃ©nomÃ¨ne peut avoir des consÃ©quences dramatiques, que ce soit la perte de donnÃ©es ou la perte de contrÃ´le 
-dâun vÃ©hicule autonome. Il est donc nÃ©cessaire de le comprendre et de sâen protÃ©ger, surtout dans un monde de 
-plus en plus digitalisÃ©. 
-Pour ce faire, il nây a pas mieux que la chambre Ã  Brouillard pour montrer au grand public la menace permanente 
-que reprÃ©sentent les particules ionisantes. 
- 
- 
-I. Quâest-ce quâune chambre Ã  brouillard ? 
- 
-a. Historique du dispositif 
- 
-Au dÃ©but du XXÃ¨me siÃ¨cle, le physicien Charles Thomson Rees Wilson, Ã©tudie la formation de nuages. Pour ce faire, 
-il met au point une chambre Ã  expansion, capable, en abaissant rapidement la pression, de condenser la vapeur 
-contenue dans lâair pendant un bref instant. TrÃ¨s vite, il se rend compte que les ions pouvaient agir comme des 
-noyaux de condensation pour les gouttelettes dâeau, cela signifie quâils attirent les molÃ©cules dâeau environnantes 
-pour former des microgouttelettes dâeau. 
-Figure 3 : La chambre Ã  brouillard originelle utilisÃ©e par Wilson, situÃ©e au laboratoire Cavendish de lâuniversitÃ© de 
-Cambridge, et son schÃ©ma. LÃ©gende : A) air humide saturÃ©. B) piston. C) chambre Ã  vide. D) bloc en bois pour rÃ©duire lâespace 
-dâair de la chambre. 
- 
-Il continua ses recherches et amÃ©liora son dispositif, cette fois, non pas pour Ã©tudier les nuages, mais bien la 
-radioactivitÃ©. En 1911, il a mis au point la premiÃ¨re chambre Ã  brouillard.  Toutefois, cette chambre Ã  expansion ne 
-permet pas de visualiser en continu le passage de particules. En 1936 a alors Ã©tÃ© dÃ©veloppÃ©e la chambre Ã  diffusion, 
-qui utilise une plaque froide pour provoquer la condensation. Câest ce dispositif que nous avons choisi de rÃ©aliser.
- 
- 
-Partout dans le monde, la chambre Ã  brouillard devient un outil clÃ© des dÃ©couvertes 
-en physique des particules. Par exemple, Carl Anderson (1905-1991) identifie en 
-1932, dans le rayonnement cosmique, un flux de particules venant de lâespace, une 
-particule jusque-lÃ  jamais observÃ©e : lâÃ©lectron positif, ou positon. Cette dÃ©couverte 
-lui vaut le prix Nobel de physique en 1936. 
- 
-Figure 4 : ClichÃ© Wilson dâun positon rÃ©alisÃ© par Anderson en 1933 
+Prérequis pour comprendre le sujet
+a. Fonctionnement d’un transistor type MOSFET (le plus répandu)
+Le transistor est le composant informatique le plus important jamais créé. Il possède deux états logiques : 0 et 1.
+En associant des milliers (aujourd’hui des milliards par centimètre dans les processeurs) de transistors, on peut
+créer des portes logiques, qui permettent de créer des systèmes informatiques complexes, comme des calculatrices,
+et bien sûr des processeurs.
+Un transistor possède :
+- une source, d’où provient le courant.
+- le drain, où sort le courant.
+- la grille, qui contrôle le passage du courant.
+
+Figure 1 : Transistor MOSFET (crédit : the Engineering Mindset).
+
+2
+
+Le schéma ci-dessus représente un Transistor MOSFET.
+La source et le drain sont reliés à des zones de silicium dopées négativement (N-type). Ces zones se situent dans
+une zone P, dopée positivement (P-type).
+Entre la zone N et P, une jonction NP se forme et crée un champ électrique à cause du mélange des charges. Ce
+champ empêche le passage du courant de la source vers le drain.
+Lorsque la grille est chargée positivement, un champ se crée, qui attire les électrons de la zone P entre les deux
+zones N. Ces électrons se collent à la couche isolante (oxyde de silicium d’où Metal Oxide dans MOSFET). Ils
+s’accumulent, jusqu’à créer une voie permettant le passage du courant entre Source et Drain. Le courant passe :
+l’état logique est codé 1, comme on le voit ci-dessous.
+
+Figure 2 : état logique 1, le courant passe. (Crédit : the engineering Mindset).
+
+b. Le Bit flip
+Les semi-conducteurs sont au cœur des processeurs et des transistors, comme le silicium (cf. prérequis). Or dans
+un semi-conducteur, les électrons des atomes occupent des niveaux d’énergie organisés en bandes :
+• Bande de valence (BV) : niveaux d’énergie occupés par les électrons liés.
+• Bande de conduction (BC) : niveaux d’énergie où les électrons sont libres de se déplacer et donc de conduire
+le courant.
+• Entre les deux : un gap (ou bande interdite).
+Quand un électron reçoit suffisamment d’énergie (par exemple : lumière, chaleur, champ électrique), il peut quitter
+la bande de valence et atteindre la bande de conduction.
+•
+L’électron excité devient mobile : il contribue au courant électrique.
+•
+Le départ de cet électron laisse un “trou” dans la bande de valence : une position vide qui peut aussi se
+déplacer et agir comme une charge positive. On appelle cela une paire électron-trou.
+De ce fait, en passant, les particules ionisantes peuvent exciter les électrons du silicium, semi-conducteur le plus
+répandu en informatique, créant une traînée de paires électron-trou le long de leur trajectoire.
+Ces charges supplémentaires peuvent alors se déplacer et s’accumuler dans des zones sensibles du transistor
+MOSFET, en particulier :
+• dans le substrat (zone P) sous la grille,
+• ou dans l’oxyde isolant de la grille.
+Cette accumulation locale de charges perturbe le champ électrique du transistor et modifie sa tension de seuil. Le
+transistor peut alors :
+•
+se mettre à conduire alors qu’il devrait être éteint,
+•
+ou au contraire cesser de conduire alors qu’il devrait être allumé.
+
+3
+
+Dans les circuits numériques - notamment les cellules SRAM qui stockent les bits - cette perturbation suffit à
+inverser l’état logique du transistor. C’est ainsi qu’une particule ionisante peut provoquer un bit flip, en modifiant
+brièvement la charge dans un transistor au point de le faire basculer dans l’état opposé.
+Ce phénomène peut avoir des conséquences dramatiques, que ce soit la perte de données ou la perte de contrôle
+d’un véhicule autonome. Il est donc nécessaire de le comprendre et de s’en protéger, surtout dans un monde de
+plus en plus digitalisé.
+Pour ce faire, il n’y a pas mieux que la chambre à Brouillard pour montrer au grand public la menace permanente
+que représentent les particules ionisantes.
+
+I.
+
+Qu’est-ce qu’une chambre à brouillard ?
+
+a. Historique du dispositif
+Au début du XXème siècle, le physicien Charles Thomson Rees Wilson, étudie la formation de nuages. Pour ce faire,
+il met au point une chambre à expansion, capable, en abaissant rapidement la pression, de condenser la vapeur
+contenue dans l’air pendant un bref instant. Très vite, il se rend compte que les ions pouvaient agir comme des
+noyaux de condensation pour les gouttelettes d’eau, cela signifie qu’ils attirent les molécules d’eau environnantes
+pour former des microgouttelettes d’eau.
+
+Figure 3 : La chambre à brouillard originelle utilisée par Wilson, située au laboratoire Cavendish de l’université de
+Cambridge, et son schéma. Légende : A) air humide saturé. B) piston. C) chambre à vide. D) bloc en bois pour réduire l’espace
+d’air de la chambre.
+
+Il continua ses recherches et améliora son dispositif, cette fois, non pas pour étudier les nuages, mais bien la
+radioactivité. En 1911, il a mis au point la première chambre à brouillard. Toutefois, cette chambre à expansion ne
+permet pas de visualiser en continu le passage de particules. En 1936 a alors été développée la chambre à diffusion,
+qui utilise une plaque froide pour provoquer la condensation. C’est ce dispositif que nous avons choisi de réaliser.
+
+Partout dans le monde, la chambre à brouillard devient un outil clé des découvertes
+en physique des particules. Par exemple, Carl Anderson (1905-1991) identifie en
+1932, dans le rayonnement cosmique, un flux de particules venant de l’espace, une
+particule jusque-là jamais observée : l’électron positif, ou positon. Cette découverte
+lui vaut le prix Nobel de physique en 1936.
+Figure 4 : Cliché Wilson d’un positon réalisé par Anderson en 1933
 (https://journals.aps.org)
 
-5 
-b. Le fonctionnement 
- 
-La chambre Ã  brouillard est une cuve qui contient un gaz (pour nous de lâair) saturÃ© en vapeur dâalcool. Lâalcool a 
-un point dâÃ©bullition bas et se condense plus facilement que lâeau. Ainsi, lâalcool se vaporise et est en suspension 
-dans la cuve sans nÃ©cessiter des tempÃ©ratures Ã©levÃ©es pour le faire sâÃ©vaporer, ce qui serait plus complexe Ã  gÃ©rer. 
-Au fond de la cuve, une plaque refroidi cette vapeur : lorsquâune particule ionisante, câest Ã  dire capable dâarracher 
-des Ã©lectrons aux atomes ou aux molÃ©cules de la matiÃ¨re traverse la chambre, elle provoque la condensation de la 
-vapeur et sa trajectoire est alors visible.   
-La plaque froide, Ã  la base, crÃ©e une couche dâalcool sursaturÃ©e : une rÃ©gion de lâair contenant plus de vapeur (dâeau 
-ou dâalcool) que ce quâil peut normalement contenir Ã  cette tempÃ©rature. Lâair peut contenir une certaine quantitÃ© 
-maximale de vapeur : câest lâÃ©tat de saturation. Cet Ã©tat apparaÃ®t si on refroidit brusquement un air dÃ©jÃ  saturÃ©. Sa 
-capacitÃ© Ã  contenir de la vapeur va diminuer. Ainsi il se retrouve avec trop de vapeur, il devient sursaturÃ©. Dans cet 
-Ã©tat, la vapeur cherche Ã  se condenser pour revenir Ã  lâÃ©quilibre Ã  la moindre perturbation (prÃ©sence dâun ion, 
-poussiÃ¨re). 
- 
-Figure 5 : SchÃ©ma dâune chambre Ã  diffusion (https://nuledo.com) 
- 
-Lorsquâune particule chargÃ©e (par exemple un Ã©lectron, une particule alpha ou un muon cosmique) traverse la 
-chambre, elle ionise les molÃ©cules du gaz sur son trajet. Ces ions deviennent alors des noyaux de condensation : les 
-molÃ©cules de vapeur, qui sont polaires, se collent autour, en raison du champ Ã©lectrique que les ions crÃ©ent autour 
-de lui, formant de minuscules gouttelettes. 
-Ainsi, une traÃ®nÃ©e visible apparaÃ®t le long du trajet de la particule. Elle apparait sous la forme dâune trace de couleur 
-blanche (alcool condensÃ© lors du passage de la particule chargÃ©e). 
- 
- 
- 
-II. Notre chambre Ã  brouillard 
- 
-a. Les prototypes 
- 
-Premier prototype (utilisÃ© de mai 2025 Ã  octobre 2025) 
- 
-Nous avons dâabord rÃ©alisÃ© un premier prototype dans le cadre dâun projet dâenseignement scientifique, qui nous 
-a permis de mettre en Ã©vidence la dÃ©croissance du nombre de muons observÃ©s dans notre chambre Ã  brouillard en 
+4
+
+b. Le fonctionnement
+La chambre à brouillard est une cuve qui contient un gaz (pour nous de l’air) saturé en vapeur d’alcool. L’alcool a
+un point d’ébullition bas et se condense plus facilement que l’eau. Ainsi, l’alcool se vaporise et est en suspension
+dans la cuve sans nécessiter des températures élevées pour le faire s’évaporer, ce qui serait plus complexe à gérer.
+Au fond de la cuve, une plaque refroidi cette vapeur : lorsqu’une particule ionisante, c’est à dire capable d’arracher
+des électrons aux atomes ou aux molécules de la matière traverse la chambre, elle provoque la condensation de la
+vapeur et sa trajectoire est alors visible.
+La plaque froide, à la base, crée une couche d’alcool sursaturée : une région de l’air contenant plus de vapeur (d’eau
+ou d’alcool) que ce qu’il peut normalement contenir à cette température. L’air peut contenir une certaine quantité
+maximale de vapeur : c’est l’état de saturation. Cet état apparaît si on refroidit brusquement un air déjà saturé. Sa
+capacité à contenir de la vapeur va diminuer. Ainsi il se retrouve avec trop de vapeur, il devient sursaturé. Dans cet
+état, la vapeur cherche à se condenser pour revenir à l’équilibre à la moindre perturbation (présence d’un ion,
+poussière).
+
+Figure 5 : Schéma d’une chambre à diffusion (https://nuledo.com)
+
+Lorsqu’une particule chargée (par exemple un électron, une particule alpha ou un muon cosmique) traverse la
+chambre, elle ionise les molécules du gaz sur son trajet. Ces ions deviennent alors des noyaux de condensation : les
+molécules de vapeur, qui sont polaires, se collent autour, en raison du champ électrique que les ions créent autour
+de lui, formant de minuscules gouttelettes.
+Ainsi, une traînée visible apparaît le long du trajet de la particule. Elle apparait sous la forme d’une trace de couleur
+blanche (alcool condensé lors du passage de la particule chargée).
+
+II.
+
+Notre chambre à brouillard
+
+a. Les prototypes
+Premier prototype (utilisé de mai 2025 à octobre 2025)
+Nous avons d’abord réalisé un premier prototype dans le cadre d’un projet d’enseignement scientifique, qui nous
+a permis de mettre en évidence la décroissance du nombre de muons observés dans notre chambre à brouillard en
 fonction de sa profondeur dans le sol lors de la mesure.
 
-6 
- 
-Figure 6 : Premier prototype de chambre Ã  brouillard - annÃ©e 2024-2025 
- 
-Ce premier prototype nous a permis dâacquÃ©rir une premiÃ¨re expÃ©rience et une comprÃ©hension des phÃ©nomÃ¨nes 
-physiques qui nous entourent. Cependant, ce modÃ¨le Ã©tait nÃ©anmoins limitÃ© par sa taille, câest pourquoi nous avons 
-souhaitÃ© lâamÃ©liorer en construisant une version plus grande et plus performante.   
- 
-Second prototype (utilisÃ© dâoctobre 2025 Ã  mi-novembre 2025) : 
- 
-Dans la suite du projet, lâimpression 3D va Ãªtre grandement utilisÃ©e. Elle nous permet de facilement mettre en 
-Åuvre nos idÃ©es en sâadaptant au matÃ©riel Ã  notre disposition. 
-Ainsi, le second prototype est muni d'un support imprimÃ©, permettant de disposer des barres de refroidissement 
-Ã  eau sur lesquelles sont montÃ©s 4 modules Peltier, refroidissant une plaque dâaluminium de 11 cm x 11 cm. 
- 
- 
- 
- 
- 
- 
-  
- 
- 
- 
- 
- 
- 
-Figure 7 : ModÃ©lisation 3D du support   Figure 8 : Montage global du 2
-e
- prototype 
- 
-AmÃ©liorations apportÃ©es : 
-- PrÃ©sence dâun champ Ã©lectrique permettant une meilleure visibilitÃ© des traces (plaque en aluminium chargÃ©e 
-nÃ©gativement) 
-- Plus grandes surfaces refroidies, donc plus de particules observables. 
-- Refroidissement Ã  eau, permettant aux modules Peltier dâatteindre les -40Â°C, ce qui amÃ©liore aussi la qualitÃ© 
+5
+
+Figure 6 : Premier prototype de chambre à brouillard - année 2024-2025
+
+Ce premier prototype nous a permis d’acquérir une première expérience et une compréhension des phénomènes
+physiques qui nous entourent. Cependant, ce modèle était néanmoins limité par sa taille, c’est pourquoi nous avons
+souhaité l’améliorer en construisant une version plus grande et plus performante.
+Second prototype (utilisé d’octobre 2025 à mi-novembre 2025) :
+Dans la suite du projet, l’impression 3D va être grandement utilisée. Elle nous permet de facilement mettre en
+œuvre nos idées en s’adaptant au matériel à notre disposition.
+Ainsi, le second prototype est muni d'un support imprimé, permettant de disposer des barres de refroidissement
+à eau sur lesquelles sont montés 4 modules Peltier, refroidissant une plaque d’aluminium de 11 cm x 11 cm.
+
+Figure 7 : Modélisation 3D du support
+
+Figure 8 : Montage global du 2e prototype
+
+Améliorations apportées :
+- Présence d’un champ électrique permettant une meilleure visibilité des traces (plaque en aluminium chargée
+négativement)
+- Plus grandes surfaces refroidies, donc plus de particules observables.
+- Refroidissement à eau, permettant aux modules Peltier d’atteindre les -40°C, ce qui améliore aussi la qualité
 des traces.
 
-7 
-RÃ´le du champ Ã©lectrique : 
-Sans champ Ã©lectrique, de nombreux ions parasites (dus au passage de particules chargÃ©es) restent en suspension. 
-RÃ©sultat : une condensation diffuse partout dans la chambre et des traces floues, ou peu visibles. 
-Le champ Ã©lectrique a alors plusieurs fonctions : 
-- @liminer les ions parasites, en anglais, ce champ est dâailleurs appelÃ© Â« ion scrubber Â» 
-- Donner une meilleure dÃ©finition des ions : le champ polarise davantage la vapeur dâalcool, ce qui renforce 
-lâattraction entre les molÃ©cules dâalcool et les particules chargÃ©es passantes : les traces sont alors plus 
-denses et donc mieux visibles. 
-Avec son application, les traces sont plus fines mais aussi de plus courte durÃ©e, ce qui permet dâen voir plus.  
- 
-Limites du dispositif : 
-- Mauvaise visibilitÃ© : la cuve nâayant pas les bords droits et une Ã©ponge Ã©tant sur le dessus, nous ne pouvions 
-pas prendre des vidÃ©os de qualitÃ©. Or, notre projet repose sur la prise de vidÃ©os, qui sont ensuite exploitÃ©es. 
-- Ce prototype de chambre Ã  brouillard nâÃ©tait pas assez fiable. Il ne permettait pas de voir Ã  chaque 
-expÃ©rience les diffÃ©rentes particules. En effet le contact entre les modules Peltier et la plaque ne reposait 
-que sur le serrage de la sangle ce qui laissait une part dâalÃ©atoire dans l'expÃ©rience. 
- 
- 
-b. Version finale  
- 
-Suite Ã  notre visite du musÃ©e science ACO, rattachÃ© Ã  lâIJC lab. dâOrsay, nous avons pu Ã©changer avec M. Jeanjean, 
-ancien chercheur en physique des particules. Ayant rÃ©alisÃ© plusieurs chambres Ã  brouillard, il nous a apportÃ© les 
-connaissances qui nous manquaient pour amÃ©liorer notre dispositif. Câest alors quâen sâinspirant de sa chambre Ã  
-reflux (pesant plus de 20kg), nous avons rÃ©alisÃ© la nÃ´tre, bien plus adaptÃ©e Ã  la prise de vidÃ©o. 
-Un nouveau modÃ¨le 3D a Ã©tÃ© rÃ©alisÃ©, en prenant en compte les dÃ©fauts et limites des anciens dispositifs. Cette fois, 
-lâentiÃ¨retÃ© de la cuve est imprimÃ©e, ce qui nous a donnÃ© une grande flexibilitÃ©. Nous avons de ce fait changÃ© la 
-disposition des Ã©lÃ©ments de notre chambre pour pouvoir observer les particules par le haut. Nous avons Ã©galement 
-changÃ© le champ Ã©lectrique afin quâil soit plus uniforme en tissant des fils de cuivres Ã  intervalles rÃ©guliers de 1 cm. 
-LâintensitÃ© du champ est modulable en jouant sur la distance des fils Ã  la plaque. 
- 
-AmÃ©liorations : 
-- Cuve entiÃ¨rement rÃ©alisÃ©e en impression 3D, avec du plastique noir permettant un meilleur contraste, 
-- IntÃ©gration des Ã©ponges dans les parois de la cuve : elles ne gÃªnent plus la visibilitÃ©. 
-- Application de pÃ¢te thermique pour un meilleur contact entre les Peltier et la plaque. 
-- Ruban LED faisant tout le pÃ©rimÃ¨tre de la cuve, encastrÃ© dans la paroi, et associÃ© Ã  un rideau pour un    
-Ã©clairage puissant et rasant. 
-- Champ Ã©lectrique appliquÃ© avec des fils de cuivre trÃ¨s fins, permettant une observation par le haut.
+6
 
-8 
- 
-Figure 9 : ModÃ©lisation 3D de la cuve de notre rÃ©alisation finale. 
- 
-Figure 10 : RÃ©alisation finale. 
- 
-CaractÃ©ristiques finales : 
- 
-Alimentation : 
-Deux sources Ã©lectriques sont nÃ©cessaires, une pour les modules Peltier, lâautre pour le champ. Les modules Peltier 
-sont alimentÃ©s par quatre chargeurs de PC portable, dÃ©livrant chacun une puissance de 120W sous la forme de 12V, 
-10A.  
-Le champ Ã©lectrique est alimentÃ© par une raquette Ã©lectrique. La tension entre les fils disposÃ©s en haut de la cuve 
-et la plaque en aluminium du bas est de 1138 V. Puisque nous visons un champ entre 100 et 300 V/cm, les fils sont 
-disposÃ©s Ã  6 cm de la plaque du dessous. Si ces fils sont trop bas, les traces sont coupÃ©es par le champ au niveau du 
-fil, puisquâil nâest pas assez uniforme et trop intense. 
-Refroidissement : 
-Pour assurer une bonne visibilitÃ© des traces, la plaque du fond doit Ãªtre Ã  une tempÃ©rature de -35Â°C. Pour atteindre 
-de si basse tempÃ©rature, plusieurs Ã©lÃ©ments sont requis :
+Rôle du champ électrique :
+Sans champ électrique, de nombreux ions parasites (dus au passage de particules chargées) restent en suspension.
+Résultat : une condensation diffuse partout dans la chambre et des traces floues, ou peu visibles.
+Le champ électrique a alors plusieurs fonctions :
+- Éliminer les ions parasites, en anglais, ce champ est d’ailleurs appelé « ion scrubber »
+- Donner une meilleure définition des ions : le champ polarise davantage la vapeur d’alcool, ce qui renforce
+l’attraction entre les molécules d’alcool et les particules chargées passantes : les traces sont alors plus
+denses et donc mieux visibles.
+Avec son application, les traces sont plus fines mais aussi de plus courte durée, ce qui permet d’en voir plus.
+Limites du dispositif :
+- Mauvaise visibilité : la cuve n’ayant pas les bords droits et une éponge étant sur le dessus, nous ne pouvions
+pas prendre des vidéos de qualité. Or, notre projet repose sur la prise de vidéos, qui sont ensuite exploitées.
+- Ce prototype de chambre à brouillard n’était pas assez fiable. Il ne permettait pas de voir à chaque
+expérience les différentes particules. En effet le contact entre les modules Peltier et la plaque ne reposait
+que sur le serrage de la sangle ce qui laissait une part d’aléatoire dans l'expérience.
 
-9 
-- 4 modules Peltier TEC2, c'est-Ã -dire des modules Peltier Ã  2 Ã©tages, donc effectivement 2 modules Peltier 
-empilÃ©s.  
-- Un systÃ¨me de dissipation thermique efficace : si les modules Peltier refroidissent, ils chauffent aussi 
-beaucoup. Sans refroidissement, leur face chaude peut facilement atteindre les 80Â°C, ce qui les met en 
-danger. Pour Ã©viter ce risque de surchauffe, des barres de refroidissement en aluminium dans lesquelles 
-passe de lâeau Ã  un dÃ©bit dâenviron 2L/min sont disposÃ©es sous les modules Peltier. Deux modules Peltier 
-partagent une barre, et les barres sont connectÃ©es en sÃ©rie pour simplifier le montage. 
-Avec tous ces Ã©lÃ©ments, la tempÃ©rature de la plaque du fond atteint, dans les meilleures conditions, une 
-tempÃ©rature de -42 Â°C. 
-Figure 11 : Dessous de la cuve avec les barres de refroidissement Ã  eau 
-Eclairage : 
-Le principal dÃ©faut de nos deux premiÃ¨res conceptions Ã©tait lâÃ©clairage. Pour voir des traces, il fallait tenir Ã  la main 
-une lampe torche et se positionner dans un angle prÃ©cis. Autrement dit, seule une personne pouvait observer la 
-chambre Ã  la fois, et la prise de vidÃ©os Ã©tait trÃ¨s complexe. 
-Pour rÃ©soudre ce souci, la cuve en impression 3D possÃ¨de 4 trous rectangulaires de 12 cm dans lesquels est insÃ©rÃ© 
-un ruban LED dâune puissance affichÃ©e de 2000 lumens. LâÃ©clairage est contrÃ´lable depuis une tÃ©lÃ©commande. Avec 
-ce nouveau systÃ¨me, toutes les particules sont visibles, quel que soit lâangle depuis lequel elles sont observÃ©es. 
-Figure 12 : Cuve avec lâÃ©clairage LED rasant.
+b. Version finale
+Suite à notre visite du musée science ACO, rattaché à l’IJC lab. d’Orsay, nous avons pu échanger avec M. Jeanjean,
+ancien chercheur en physique des particules. Ayant réalisé plusieurs chambres à brouillard, il nous a apporté les
+connaissances qui nous manquaient pour améliorer notre dispositif. C’est alors qu’en s’inspirant de sa chambre à
+reflux (pesant plus de 20kg), nous avons réalisé la nôtre, bien plus adaptée à la prise de vidéo.
+Un nouveau modèle 3D a été réalisé, en prenant en compte les défauts et limites des anciens dispositifs. Cette fois,
+l’entièreté de la cuve est imprimée, ce qui nous a donné une grande flexibilité. Nous avons de ce fait changé la
+disposition des éléments de notre chambre pour pouvoir observer les particules par le haut. Nous avons également
+changé le champ électrique afin qu’il soit plus uniforme en tissant des fils de cuivres à intervalles réguliers de 1 cm.
+L’intensité du champ est modulable en jouant sur la distance des fils à la plaque.
+Améliorations :
+- Cuve entièrement réalisée en impression 3D, avec du plastique noir permettant un meilleur contraste,
+- Intégration des éponges dans les parois de la cuve : elles ne gênent plus la visibilité.
+- Application de pâte thermique pour un meilleur contact entre les Peltier et la plaque.
+- Ruban LED faisant tout le périmètre de la cuve, encastré dans la paroi, et associé à un rideau pour un
+éclairage puissant et rasant.
+- Champ électrique appliqué avec des fils de cuivre très fins, permettant une observation par le haut.
 
-10 
-III. ExpÃ©rimentations  
- 
-Les bits flips peuvent Ãªtre causÃ©s par des particules alphas Ã©mises par des impuretÃ©s prÃ©sentes dans les matÃ©riaux 
-du circuit intÃ©grÃ© lui-mÃªme (les particules alphas ne parcourent quâune courte distance et par consÃ©quent, celles 
-qui atteignent le silicium proviennent gÃ©nÃ©ralement des matÃ©riaux internes de la puce). Le SER (Soft Error Rate) 
-dÃ» aux particules alphas est minimisÃ© par lâutilisation de matÃ©riaux Ã  trÃ¨s faible Ã©mission alpha (ULA, Ultra Low 
-Alpha). 
- 
-Cependant, le risque nâest pas nul et il reste possible quâun bit flip soit provoquÃ© par des particules alphas, des 
-Ã©lectrons, des muons ou encore des protons. 
- 
-Nous avons rÃ©alisÃ© plusieurs expÃ©riences, filmÃ©es chacune dans des vidÃ©os de 5 minutes :  
-1. expÃ©rience âtÃ©moinsâ : chambre Ã  brouillard en fonctionnement sans sources radioactives. Notre objectif 
-Ã©tait alors de montrer que la radioactivitÃ© naturelle est omniprÃ©sente et dÃ©tectable, 
-2. expÃ©riences avec sources radioactives : du thorium Ã©metteur de particules alphas susceptible de provoquer 
-un bit flip, 
-3. expÃ©rience sur la pÃ©nÃ©tration des particules alphas dans une feuille de papier, 
-4. expÃ©rience pour dÃ©tecter des neutrons : Ã©mission de protons de recul aprÃ¨s avoir disposÃ© une feuille de 
-polyÃ©thylÃ¨ne  
- 
- 
- 
-IV. Traitement des rÃ©sultats  
- 
-Dans un premier temps, nous avons tentÃ© de rÃ©aliser un algorithme qui appliquait diffÃ©rents filtres, grÃ¢ce Ã  des 
-masques openCV (bibliothÃ¨que python), sur nos vidÃ©os pour dÃ©tecter les particules et en extraire des 
-caractÃ©ristiques que nous pourrions alors utiliser pour dÃ©terminer le type de particule, Ã  lâaide dâun modÃ¨le de 
-classification. (Random Forest ou XGBoost).  
-  Figure 13 : VidÃ©o aprÃ¨s application de diffÃ©rents masques openCV 
- 
-Les images sont converties en niveaux de gris, puis, un masque openCV est appliquÃ©. Le masque appliquÃ© permet 
-de ne conserver que les Ã©lÃ©ments en mouvement sur la vidÃ©o, de maniÃ¨re Ã  isoler les traces qui correspondent aux 
-particules (Figure 13).  
-Des opÃ©rations sont Ã©galement appliquÃ©es pour corriger toutes les discontinuitÃ©s des traces (sinon interprÃ©tÃ©es 
-comme plusieurs traces). Les segments dÃ©tectÃ©s sont regroupÃ©s lorsque leur proximitÃ© et leur forme suggÃ¨rent
+7
 
-11 
-quâils proviennent dâune mÃªme particule. Nous avons pour cela tentÃ© une rÃ©gression linÃ©aire qui associait Ã  chaque 
-trace une droite, ce qui nous indiquait sa direction approximative. Si deux traces sont associÃ©es Ã  une droite de 
-mÃªme Ã©quation, et sont proches, alors on les relie pour nâen former quâune seule. 
- 
-Pour Ã©viter de compter plusieurs fois une mÃªme particule se trouvant sur plusieurs images successives de la vidÃ©o, 
-il suffisait de comparer la localisation de la trace dÃ©tectÃ©e avec les prÃ©cÃ©dentes.  
-Des grandeurs gÃ©omÃ©triques sont extraites (longueur, largeurâ¦) servant dâindicateurs pour lâidentification des 
-particules. 
- 
-Cependant, ce modÃ¨le sâest trÃ¨s vite retrouvÃ© limitÃ©. PremiÃ¨rement, il ne traitait que les traces rectilignes (alphas, 
-protons). De plus, le filtre appliquÃ© pour le mouvement avait une sensibilitÃ© trÃ¨s Ã©levÃ©e, menant Ã  la dÃ©tection 
-d'Ã©lÃ©ments qui n'Ã©taient que du brouillard, pas des traces. Enfin, nous nâavons pu obtenir un code rÃ©ellement 
-fonctionnel : il fallait trouver une autre mÃ©thode. 
-Une partie du groupe ayant participÃ© aux Olympiades FranÃ§aises dâIA de 2025 jusquâen finale nationale, et un 
-membre aux Olympiades internationales Ã  PÃ©kin, nous avons souhaitÃ© mettre Ã  l'Åuvre nos connaissances sur le 
-sujet. 
- 
-Ainsi, afin de pouvoir compter les centaines de traces prÃ©vues dans les vidÃ©os de plusieurs minutes, nous avons 
-crÃ©Ã© un modÃ¨le dâintelligence artificielle de vision par ordinateur. Ce modÃ¨le est capable de diffÃ©rencier 3 grands 
-types de particules : 
-- Les Ã©lectrons, muons et positrons, qui sont par dÃ©faut notÃ©s Ã©lectron car difficilement diffÃ©renciable  
-- Les particules alphas 
-- Les protons 
-Pour cela, il a fallu labelliser manuellement (faire correspondre chaque trace au passage dâune particule) 250 
-images de notre chambre Ã  brouillard. En ajoutant quelques images de dataset trouvÃ©es en ligne, nous disposions 
-dâun jeu de donnÃ©es suffisant pour entraÃ®ner notre modÃ¨le (622 images, dont certaines de synthÃ¨ses).  
-     Figure 14 : labÃ©lisation dâÃ©lectrons observÃ©s dans notre chambre Ã  brouillard 
- 
-Par la suite, nous avons utilisÃ© le modÃ¨le RF-DETR-medium proposÃ© sur le site de machine Learning Roboflow. Ce 
-modÃ¨le est plus prÃ©cis que le fameux Yolo v11, tout en Ã©tant plus rapide Ã  entraÃ®ner. 
-Notre modÃ¨le a ainsi passÃ© 36 heures Ã  s'entraÃ®ner avant dâÃªtre prÃªt Ã  lâemploi.  
-Au final, la prÃ©cision du modÃ¨le (Ã©valuÃ©e grÃ¢ce Ã  une crosse-validation), est de 75,7%, ce qui pour notre usage est 
-acceptable. En effet, le modÃ¨le dÃ©tecte la majoritÃ© des traces, et les erreurs proviennent surtout de la classification 
-des particules.
+Figure 9 : Modélisation 3D de la cuve de notre réalisation finale.
 
-12 
-Ainsi, le modÃ¨le reste peu prÃ©cis sur des Ã©chelles de temps courtes. Il lui arrive de dÃ©couper les traces et donc de 
-compter plus de particules quâil nây en a rÃ©ellement ; mais, du moment que la longueur de la vidÃ©o est supÃ©rieure Ã  
-quelques dizaines de secondes, la prÃ©cision se rapproche du chiffre donnÃ© prÃ©cÃ©demment.  
- 
-Mais comment Ã©valuer la dangerositÃ© dâune particule ? 
- 
-Pour dÃ©terminer si une particule est susceptible de provoquer un bit flip, il faut dÃ©terminer si elle dÃ©pose assez de 
-charge dans le transistor pour inverser son Ã©tat logique.  
-Aujourdâhui, dans les systÃ¨mes modernes, la charge Ã©lectrique critique, notÃ©  &#3627408452;
-&#3627408464;í µí±í µí±í µí±¡, nÃ©cessaire pour cette inversion 
-est infÃ©rieure Ã  0,1 fC (femtoCoulomb) ou 0,2 fC (selon la source), avec des transistors de 28 nm, et ne cesse de 
-diminuer. 
-On peut alors dÃ©terminer le pouvoir dâarrÃªt minimum câest Ã  dire indirectement lâÃ©nergie dÃ©posÃ©e par la particule 
-dans un transistor, notÃ© &#3627408451;
-&#3627408474;í µí±&#3627408475;, nÃ©cessaire au bit flip. 
-En effet, lorsquâune particule transfÃ¨re son Ã©nergie aux atomes du matÃ©riaux quâelle traverse, elle va dÃ©poser de 
-lâÃ©nergie et crÃ©er des paires Ã©lectrons-trous. Il faut, dans le silicium, 3,6 eV pour crÃ©er une paire. Une paire 
-correspond Ã  une charge de &#3627408466; =1,6Ã10
-â19
-&#3627408438;. 
-Donc, le nombres de pairs nÃ©cessaires pour atteindre &#3627408452;
-&#3627408464;í µí±í µí±í µí±¡ est  
-&#3627408449;=
-í µí±
-í µí±í µí±í µí±í µí±¡
-&#3627408466;
-  avec &#3627408452;
-&#3627408464;í µí±í µí±í µí±¡ en C. 
-LâÃ©nergie nÃ©cessaire pour crÃ©er autant de paires Ã©lectrons trou est alors donnÃ©e par : 
- &#3627408440;=&#3627408449;Ã3,6Ã10
-â6
-=
-&#3627408452;
-&#3627408464;&#3627408479;í µí±&#3627408481;
-&#3627408466;
-Ã3,6 Ã 10
-â6
- (&#3627408466;&#3627408475; &#3627408448;&#3627408466;í µí±).        
- 
-Or, lâÃ©nergie dÃ©posÃ©e par unitÃ© de distance est : 
-        
-&#3627408465;í µí°¸
-&#3627408465;í µí±
-=
-í µí°¸
-&#3627408465;
-=
-&#3627408452;
-&#3627408464;&#3627408479;í µí±&#3627408481;
-&#3627408466;
-Ã3,6Ã10
-â6
-Ã
-1
-&#3627408465;
- (&#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;
-â1
-) ;  
-avec &#3627408465; la distance parcourue par la particule (donc les dimensions du transistor).  
- 
-Enfin, on calcule le pouvoir dâarrÃªt &#3627408451;
-&#3627408474;í µí±&#3627408475; en divisant par la masse volumique í µí¼, on obtient finalement :    
-       &#3627408451;
-&#3627408474;í µí±&#3627408475;=
-1
-í µí¼
-&#3627408465;í µí°¸
-&#3627408465;í µí±
-=
-í µí±
-í µí±í µí±í µí±í µí±¡
-&#3627408466;
-Ã3,6Ã10
-â6
-Ã
-1
-&#3627408465;
-Ã
-1
-í µí¼
- (&#3627408466;&#3627408475; &#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;Â².&#3627408474;&#3627408468;
-â1
-) 
- 
-Pour un transistor de 28 nm : 
-&#3627408451;
-&#3627408474;í µí±&#3627408475;(&#3627408452;
-&#3627408464;í µí±í µí±í µí±¡=0,2&#3627408467;&#3627408438;) =
-0,20Ã10
-â15
-1,6Ã10
-â19
-Ã3,6Ã 10
-â6
-Ã
-1
-28Ã10
-â7
-Ã
-1
-2,33Ã10
-3
-   
-&#3627408451;
-&#3627408474;í µí±&#3627408475;(&#3627408452;
-&#3627408464;í µí±í µí±í µí±¡=0,2&#3627408467;&#3627408438;) =0,69 &#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;Â².&#3627408474;&#3627408468;
-â1
- 
-Donc :         &#3627408451;
-&#3627408474;í µí±&#3627408475;(&#3627408452;
-&#3627408464;í µí±í µí±í µí±¡ = 0,1fC) = 0,34 &#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;Â².&#3627408474;&#3627408468;
-â1
-. 
- 
- 
-On prend alors  &#3627408451;
-&#3627408474;í µí±&#3627408475;=0,52 &#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;Â².&#3627408474;&#3627408468;
-â1
-  (moyenne).  
-Remarque : cette valeur est aussi vraie pour les transistors 7 nm avec &#3627408452;
-&#3627408464;í µí±í µí±í µí±¡ < 0,05 fC. 
- 
- 
- 
- 
-a. ExpÃ©rience 1 : Observation de la radioactivitÃ© naturelle. 
- 
-Objectifs :  
-- Sâassurer que les particules observÃ©es par la suite proviennent bien des sources placÃ©es dans la chambre 
-- Mettre en Ã©vidence lâomniprÃ©sence des particules ionisantes.
+Figure 10 : Réalisation finale.
 
-13 
-Observations : 
- 
-Image 1         Image 2 
-Figure 15 : Identification des particules prÃ©sentent dans la chambre Ã  brouillard par notre modÃ¨le dâintelligence 
-artificielle 
-RÃ©sultats : 
-Lâimmense majoritÃ© des traces sont des Ã©lectrons, ou des positrons, des particules faiblement ionisantes, comme le 
-montre leur trace fine. Elles interagissent fortement avec la matiÃ¨re, dâoÃ¹ leur trajectoire sinueuse, et lâÃ©mission 
-d'autres Ã©lectrons aprÃ¨s la collision avec des atomes (Figure 15, image 2). 
-Ces particules sont abondantes : des centaines de ces particules traversent nos ordinateurs par minute. Sur nos 
-vidÃ©os filmÃ©es Ã  30 fps, lâIA a dÃ©tectÃ© plus dâune trace par image ! 
-Mais, heureusement pour nos ordinateurs, ces particules ne semblent pas susceptibles de provoquer des bits flips, 
-au vu de leur faible pouvoir ionisant, ce qui sera confirmÃ© avec le calcul de lâÃ©nergie dâun Ã©lectron. 
-Parfois, des muons cosmiques sont visibles, mais, au vu de leurs traces fines et de leur faible abondance, ils ne sont 
-pas non plus suffisamment ionisants pour provoquer frÃ©quemment des bits flips : 
-Figure 16 :  Trace probablement laissÃ©e par un muon : rectiligne et trÃ¨s fine traduisant la faible ionisation par unitÃ© de 
-distance.              
- 
-Calcul de lâÃ©nergie dâun Ã©lectron (voir annexe pour les dÃ©monstrations) : 
- 
- 
-Le rayon du cercle dÃ©crivant la trajectoire (rayon de courbure) est :  
-&#3627408453;=
-&#3627408438;&#3627408439;
-2
-+
-&#3627408436;&#3627408437;
-2
-8Ã&#3627408438;&#3627408439;
- 
-Avec &#3627408453;,&#3627408438;&#3627408439; &#3627408466;&#3627408481; &#3627408436;&#3627408437;, indiquÃ©es sur la figure 17, exprimÃ©es en m. 
- 
-Figure 17 : Exemple de trajectoire de particule courbÃ©e
+Caractéristiques finales :
+Alimentation :
+Deux sources électriques sont nécessaires, une pour les modules Peltier, l’autre pour le champ. Les modules Peltier
+sont alimentés par quatre chargeurs de PC portable, délivrant chacun une puissance de 120W sous la forme de 12V,
+10A.
+Le champ électrique est alimenté par une raquette électrique. La tension entre les fils disposés en haut de la cuve
+et la plaque en aluminium du bas est de 1138 V. Puisque nous visons un champ entre 100 et 300 V/cm, les fils sont
+disposés à 6 cm de la plaque du dessous. Si ces fils sont trop bas, les traces sont coupées par le champ au niveau du
+fil, puisqu’il n’est pas assez uniforme et trop intense.
+Refroidissement :
+Pour assurer une bonne visibilité des traces, la plaque du fond doit être à une température de -35°C. Pour atteindre
+de si basse température, plusieurs éléments sont requis :
+8
 
-14 
-La quantitÃ© de mouvement de la particule est donnÃ©e par : 
-í µí±=0,3Ã&#3627408437;Ã&#3627408453; 
-Avec :  í µí± la quantitÃ© de mouvement de la particule (en &#3627408442;&#3627408466;í µí±.&#3627408438;
-â1
-) 
-&#3627408437; lâintensitÃ© du champ magnÃ©tique crÃ©Ã© par lâaimant (en í µí±)  
-et &#3627408453; le rayon de courbure de la trajectoire de la particule (en &#3627408474;) 
- 
-LâintensitÃ© du champ magnÃ©tique en tout point de notre chambre Ã  brouillard a Ã©tÃ© estimÃ©e grÃ¢ce Ã  une simulation 
-numÃ©rique obtenue sur un site internet (voir bibliographie). 
-Figure 18 : ModÃ©lisation du champ magnÃ©tique de lâaimant 
- 
-Enfin, lâÃ©nergie cinÃ©tique relativiste í µí°¾
-&#3627408466; est donnÃ©e par :  
-í µí°¾
-&#3627408466;=â(í µí±&#3627408464;)
-2
-+(&#3627408474;
-0&#3627408464;
-2
-)
-2
-â&#3627408474;
-0&#3627408464;
-2
- 
-Avec : &#3627408474;
-0 la masse au repos de la particule (en &#3627408448;&#3627408466;í µí±.&#3627408438;
-â2
-) 
-&#3627408464; la vitesse de la lumiÃ¨re (en &#3627408474;.&#3627408480;
-â1
-) 
-í µí± la quantitÃ© de mouvement de la particule (en &#3627408448;&#3627408466;í µí±.&#3627408438;
-â1
-)  
- 
-Nous avons ainsi calculÃ© pour un Ã©lectron observÃ© dans notre chambre Ã  brouillard :  
-&#3627408453;=0,02 &#3627408474;      ;      í µí±=0,60 &#3627408448;&#3627408466;í µí±.&#3627408438;
-â1
- ;          í µí°¾
-&#3627408466;=0,27 &#3627408448;&#3627408466;í µí±  
- 
-Cette Ã©nergie correspond Ã  un pouvoir dâarrÃªt de lâordre de 
+-
+
+4 modules Peltier TEC2, c'est-à-dire des modules Peltier à 2 étages, donc effectivement 2 modules Peltier
+empilés.
+- Un système de dissipation thermique efficace : si les modules Peltier refroidissent, ils chauffent aussi
+beaucoup. Sans refroidissement, leur face chaude peut facilement atteindre les 80°C, ce qui les met en
+danger. Pour éviter ce risque de surchauffe, des barres de refroidissement en aluminium dans lesquelles
+passe de l’eau à un débit d’environ 2L/min sont disposées sous les modules Peltier. Deux modules Peltier
+partagent une barre, et les barres sont connectées en série pour simplifier le montage.
+Avec tous ces éléments, la température de la plaque du fond atteint, dans les meilleures conditions, une
+température de -42 °C.
+
+Figure 11 : Dessous de la cuve avec les barres de refroidissement à eau
+
+Eclairage :
+Le principal défaut de nos deux premières conceptions était l’éclairage. Pour voir des traces, il fallait tenir à la main
+une lampe torche et se positionner dans un angle précis. Autrement dit, seule une personne pouvait observer la
+chambre à la fois, et la prise de vidéos était très complexe.
+Pour résoudre ce souci, la cuve en impression 3D possède 4 trous rectangulaires de 12 cm dans lesquels est inséré
+un ruban LED d’une puissance affichée de 2000 lumens. L’éclairage est contrôlable depuis une télécommande. Avec
+ce nouveau système, toutes les particules sont visibles, quel que soit l’angle depuis lequel elles sont observées.
+
+Figure 12 : Cuve avec l’éclairage LED rasant.
+
+9
+
+III.
+
+Expérimentations
+
+Les bits flips peuvent être causés par des particules alphas émises par des impuretés présentes dans les matériaux
+du circuit intégré lui-même (les particules alphas ne parcourent qu’une courte distance et par conséquent, celles
+qui atteignent le silicium proviennent généralement des matériaux internes de la puce). Le SER (Soft Error Rate)
+dû aux particules alphas est minimisé par l’utilisation de matériaux à très faible émission alpha (ULA, Ultra Low
+Alpha).
+Cependant, le risque n’est pas nul et il reste possible qu’un bit flip soit provoqué par des particules alphas, des
+électrons, des muons ou encore des protons.
+Nous avons réalisé plusieurs expériences, filmées chacune dans des vidéos de 5 minutes :
+1. expérience “témoins” : chambre à brouillard en fonctionnement sans sources radioactives. Notre objectif
+était alors de montrer que la radioactivité naturelle est omniprésente et détectable,
+2. expériences avec sources radioactives : du thorium émetteur de particules alphas susceptible de provoquer
+un bit flip,
+3. expérience sur la pénétration des particules alphas dans une feuille de papier,
+4. expérience pour détecter des neutrons : émission de protons de recul après avoir disposé une feuille de
+polyéthylène
+
+IV.
+
+Traitement des résultats
+
+Dans un premier temps, nous avons tenté de réaliser un algorithme qui appliquait différents filtres, grâce à des
+masques openCV (bibliothèque python), sur nos vidéos pour détecter les particules et en extraire des
+caractéristiques que nous pourrions alors utiliser pour déterminer le type de particule, à l’aide d’un modèle de
+classification. (Random Forest ou XGBoost).
+
+Figure 13 : Vidéo après application de différents masques openCV
+Les images sont converties en niveaux de gris, puis, un masque openCV est appliqué. Le masque appliqué permet
+de ne conserver que les éléments en mouvement sur la vidéo, de manière à isoler les traces qui correspondent aux
+particules (Figure 13).
+Des opérations sont également appliquées pour corriger toutes les discontinuités des traces (sinon interprétées
+comme plusieurs traces). Les segments détectés sont regroupés lorsque leur proximité et leur forme suggèrent
 10
-â3
-&#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;Â².&#3627408474;&#3627408468;
-â1
-, ce qui est largement infÃ©rieur au Pmin 
-calculÃ©. 
-Ainsi, il nâest pas susceptible de provoquer un bit flip.  
- 
- 
- 
- 
-Figure 19 : Pouvoir dâarrÃªt dâun Ã©lectron dans le Silicium en 
-fonction de son Ã©nergie cinÃ©tique. 
- 
-b.  
-c. ExpÃ©rience 2 : Contamination dâun matÃ©riaux et Ã©mission de particules alphas 
- 
-Dans les annÃ©es 1990, Intel a rencontrÃ© un problÃ¨me inattendu de fiabilitÃ© sur certains processeurs, liÃ© Ã  des bit 
-flips provoquÃ©s par des particules alphas. AprÃ¨s enquÃªte, il a Ã©tÃ© dÃ©couvert que le matÃ©riau utilisÃ© dans le packaging 
-des puces contenait des traces dâÃ©lÃ©ments radioactifs, issus notamment de minerais extraits dans dâanciennes 
-mines contenant des isotopes Ã©metteurs dâalphas. 
-Pour simuler au mieux cette contamination, nous avons utilisÃ© des baguettes de soudures en tungstÃ¨ne, contenant 
-2% en masse de thorium, donc une quantitÃ© minimale.
 
-15 
-Afin de maximiser la prÃ©cision de nos mesures, nous avons choisi dâeffectuer manuellement les observations des 
-particules alphas Ã©mises par une baguette de tungstÃ¨ne placÃ©e dans la cuve, plutÃ´t que de recourir Ã  notre modÃ¨le 
-dâIA. 
-En effet, contrairement aux Ã©lectrons, qui apparaissent plusieurs par seconde, lâÃ©mission des particules alphas est 
-lÃ©gÃ¨rement plus faible. Ainsi, nous avons observÃ© quatre cent trente-deux particules issues de la baguette sur 5 
-minutes, soit prÃ¨s de 3 particules toutes les 2 secondes. 
-Figure 20 : Observation de nombreuses traces rectilignes et courtes, donc des particules alphas Ã©mises par le thorium. 
- 
-Comme le montre cette expÃ©rience, mÃªme une faible contamination peut Ãªtre Ã  lâorigine dâune intense Ã©mission de 
-particules.  
-Par ailleurs, la densitÃ© des traces tÃ©moigne bien dâune forte ionisation de la matiÃ¨re : elles sont blanches et vives (Ã  
-comparer avec la trace dâun Ã©lectron dans lâexpÃ©rience 1). Elles sont donc dâautant plus susceptibles dâÃªtre Ã  
-lâorigine dâun bit flips. 
-Nous avons pu estimer lâÃ©nergie cinÃ©tique des particules alphas Ã©mises en mesurant la longueur des traces puis 
-en nous rÃ©fÃ©rant Ã  des tables faisant la correspondance entre longueur des traces et Ã©nergie cinÃ©tique. Nous 
-obtenons le graphique suivant (celui de droite) : 
- 
-Figure 21 : Pourvoir dâarrÃªt du silicium en fonction de leur Ã©nergie et Distribution des Ã©nergies cinÃ©tiques des particules 
-observÃ©es.
+qu’ils proviennent d’une même particule. Nous avons pour cela tenté une régression linéaire qui associait à chaque
+trace une droite, ce qui nous indiquait sa direction approximative. Si deux traces sont associées à une droite de
+même équation, et sont proches, alors on les relie pour n’en former qu’une seule.
+Pour éviter de compter plusieurs fois une même particule se trouvant sur plusieurs images successives de la vidéo,
+il suffisait de comparer la localisation de la trace détectée avec les précédentes.
+Des grandeurs géométriques sont extraites (longueur, largeur…) servant d’indicateurs pour l’identification des
+particules.
+Cependant, ce modèle s’est très vite retrouvé limité. Premièrement, il ne traitait que les traces rectilignes (alphas,
+protons). De plus, le filtre appliqué pour le mouvement avait une sensibilité très élevée, menant à la détection
+d'éléments qui n'étaient que du brouillard, pas des traces. Enfin, nous n’avons pu obtenir un code réellement
+fonctionnel : il fallait trouver une autre méthode.
+Une partie du groupe ayant participé aux Olympiades Françaises d’IA de 2025 jusqu’en finale nationale, et un
+membre aux Olympiades internationales à Pékin, nous avons souhaité mettre à l'œuvre nos connaissances sur le
+sujet.
+Ainsi, afin de pouvoir compter les centaines de traces prévues dans les vidéos de plusieurs minutes, nous avons
+créé un modèle d’intelligence artificielle de vision par ordinateur. Ce modèle est capable de différencier 3 grands
+types de particules :
+- Les électrons, muons et positrons, qui sont par défaut notés électron car difficilement différenciable
+- Les particules alphas
+- Les protons
+Pour cela, il a fallu labelliser manuellement (faire correspondre chaque trace au passage d’une particule) 250
+images de notre chambre à brouillard. En ajoutant quelques images de dataset trouvées en ligne, nous disposions
+d’un jeu de données suffisant pour entraîner notre modèle (622 images, dont certaines de synthèses).
 
-16 
-Comme on peut lâobserver sur ce graphique (Figure 21), les particules Ã©mises ont une Ã©nergie autour de 5 MeV. 
-Cela correspond Ã  un pouvoir dâarrÃªt de lâordre de 1 &#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;
+Figure 14 : labélisation d’électrons observés dans notre chambre à brouillard
+Par la suite, nous avons utilisé le modèle RF-DETR-medium proposé sur le site de machine Learning Roboflow. Ce
+modèle est plus précis que le fameux Yolo v11, tout en étant plus rapide à entraîner.
+Notre modèle a ainsi passé 36 heures à s'entraîner avant d’être prêt à l’emploi.
+Au final, la précision du modèle (évaluée grâce à une crosse-validation), est de 75,7%, ce qui pour notre usage est
+acceptable. En effet, le modèle détecte la majorité des traces, et les erreurs proviennent surtout de la classification
+des particules.
+11
+
+Ainsi, le modèle reste peu précis sur des échelles de temps courtes. Il lui arrive de découper les traces et donc de
+compter plus de particules qu’il n’y en a réellement ; mais, du moment que la longueur de la vidéo est supérieure à
+quelques dizaines de secondes, la précision se rapproche du chiffre donné précédemment.
+Mais comment évaluer la dangerosité d’une particule ?
+Pour déterminer si une particule est susceptible de provoquer un bit flip, il faut déterminer si elle dépose assez de
+charge dans le transistor pour inverser son état logique.
+Aujourd’hui, dans les systèmes modernes, la charge électrique critique, noté 𝑄𝑐𝑟𝑖𝑡 , nécessaire pour cette inversion
+est inférieure à 0,1 fC (femtoCoulomb) ou 0,2 fC (selon la source), avec des transistors de 28 nm, et ne cesse de
+diminuer.
+On peut alors déterminer le pouvoir d’arrêt minimum c’est à dire indirectement l’énergie déposée par la particule
+dans un transistor, noté 𝑃𝑚𝑖𝑛 , nécessaire au bit flip.
+En effet, lorsqu’une particule transfère son énergie aux atomes du matériaux qu’elle traverse, elle va déposer de
+l’énergie et créer des paires électrons-trous. Il faut, dans le silicium, 3,6 eV pour créer une paire. Une paire
+correspond à une charge de 𝑒 = 1,6 × 10−19 𝐶.
+Donc, le nombres de pairs nécessaires pour atteindre 𝑄𝑐𝑟𝑖𝑡 est
+𝑁=
+
+𝑄𝑐𝑟𝑖𝑡
+avec 𝑄𝑐𝑟𝑖𝑡 en C.
+𝑒
+
+L’énergie nécessaire pour créer autant de paires électrons trou est alors donnée par :
+𝐸 = 𝑁 × 3,6 × 10−6 =
+
+𝑄𝑐𝑟𝑖𝑡
+𝑒
+
+× 3,6 × 10−6 (𝑒𝑛 𝑀𝑒𝑉).
+
+Or, l’énergie déposée par unité de distance est :
+𝑄
+𝑑𝐸
+𝐸
+1
+= 𝑑 = 𝑐𝑟𝑖𝑡
+× 3,6 × 10−6 × 𝑑 (𝑀𝑒𝑉. 𝑐𝑚−1 ) ;
+𝑑𝑋
+𝑒
+
+avec 𝑑 la distance parcourue par la particule (donc les dimensions du transistor).
+Enfin, on calcule le pouvoir d’arrêt 𝑃𝑚𝑖𝑛 en divisant par la masse volumique 𝜌, on obtient finalement :
+1 𝑑𝐸
+
+𝑃𝑚𝑖𝑛 = 𝜌 𝑑𝑋 =
+
+𝑄𝑐𝑟𝑖𝑡
+1
+1
+× 3,6 × 10−6 × 𝑑 × 𝜌 (𝑒𝑛 𝑀𝑒𝑉. 𝑐𝑚². 𝑚𝑔−1 )
+𝑒
+
+Pour un transistor de 28 nm :
+𝑃𝑚𝑖𝑛 (𝑄𝑐𝑟𝑖𝑡 = 0,2𝑓𝐶) =
+Donc :
+
+0,20×10−15
+1
+1
+× 3,6 × 10−6 ×
+×
+1,6×10−19
+28×10−7
+2,33×103
+−1
+
+𝑃𝑚𝑖𝑛 (𝑄𝑐𝑟𝑖𝑡 = 0,2𝑓𝐶) = 0,69 𝑀𝑒𝑉. 𝑐𝑚². 𝑚𝑔
+𝑃𝑚𝑖𝑛 (𝑄𝑐𝑟𝑖𝑡 = 0,1fC) = 0,34 𝑀𝑒𝑉. 𝑐𝑚². 𝑚𝑔−1.
+
+On prend alors 𝑃𝑚𝑖𝑛 = 0,52 𝑀𝑒𝑉. 𝑐𝑚². 𝑚𝑔−1 (moyenne).
+Remarque : cette valeur est aussi vraie pour les transistors 7 nm avec 𝑄𝑐𝑟𝑖𝑡 < 0,05 fC.
+
+a. Expérience 1 : Observation de la radioactivité naturelle.
+Objectifs :
+- S’assurer que les particules observées par la suite proviennent bien des sources placées dans la chambre
+- Mettre en évidence l’omniprésence des particules ionisantes.
+12
+
+Observations :
+
+Image 1
+
+Image 2
+
+Figure 15 : Identification des particules présentent dans la chambre à brouillard par notre modèle d’intelligence
+artificielle
+
+Résultats :
+L’immense majorité des traces sont des électrons, ou des positrons, des particules faiblement ionisantes, comme le
+montre leur trace fine. Elles interagissent fortement avec la matière, d’où leur trajectoire sinueuse, et l’émission
+d'autres électrons après la collision avec des atomes (Figure 15, image 2).
+Ces particules sont abondantes : des centaines de ces particules traversent nos ordinateurs par minute. Sur nos
+vidéos filmées à 30 fps, l’IA a détecté plus d’une trace par image !
+Mais, heureusement pour nos ordinateurs, ces particules ne semblent pas susceptibles de provoquer des bits flips,
+au vu de leur faible pouvoir ionisant, ce qui sera confirmé avec le calcul de l’énergie d’un électron.
+Parfois, des muons cosmiques sont visibles, mais, au vu de leurs traces fines et de leur faible abondance, ils ne sont
+pas non plus suffisamment ionisants pour provoquer fréquemment des bits flips :
+
+Figure 16 : Trace probablement laissée par un muon : rectiligne et très fine traduisant la faible ionisation par unité de
+distance.
+
+Calcul de l’énergie d’un électron (voir annexe pour les démonstrations) :
+
+Le rayon du cercle décrivant la trajectoire (rayon de courbure) est :
+𝐶𝐷
+𝐴𝐵2
+𝑅=
++
 2
-.&#3627408474;&#3627408468;
-â1
-, ce qui est 2 fois supÃ©rieur au seuil de 0,52 
- &#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;
-2
-.&#3627408474;&#3627408468;
-â1
-. Les particules alphas sont donc susceptibles de provoquer un bit flip. 
-Par ailleurs, la distribution des valeurs dâÃ©nergie semble suivre une loi normale. Cela reflÃ¨te alors le lien qui existe 
-entre le matÃ©riau source dâalphas et leur Ã©nergie. Ici, l'isotope en question semble libÃ©rer majoritairement des 
-alphas avec une Ã©nergie au voisinage de 5,5 MeV.  
-De ce fait, on peut affirmer que lâisotope du thorium prÃ©sent dans la baguette de soudure est du thorium 228, dont 
-72% des Ã©missions sont des particules alphas de 5,423 MeV, et le reste des particules alphas de 5,340 MeV. Cet 
-isotope fait partie de la chaÃ®ne de dÃ©sintÃ©gration du thorium. 
-Cette expÃ©rience montre ainsi que les particules alphas Ã©mises par des sources radioactives possÃ¨dent des Ã©nergies 
-suffisantes pour provoquer des bits flips. Il faut alors veiller Ã  la contamination des matÃ©riaux entrant en jeu dans 
-la construction des processeurs.  
- 
- 
-d. ExpÃ©rience 3 : Etude de lâimpact des matÃ©riaux sur la trajectoire des particules alphas 
-Figure 22 : Dispositif expÃ©rimental. 
- 
-Nous avons dÃ©cidÃ© dâÃ©tudier lâimpact des matÃ©riaux sur les particules alphas Ã©mises par une baguette de thorium. 
-Pour cela, nous avons disposÃ© une baguette de thorium Ã©mettrice de particules alphas dans notre chambre Ã  
-brouillard avant de disposer de part et dâautre 2 feuilles de papier.  
-Notre expÃ©rience montre quâune simple feuille de papier suffit Ã  arrÃªter les particules alphas Ã©mises. Ce 
-comportement illustre alors le faible pouvoir pÃ©nÃ©trant des particules alphas dont lâÃ©nergie est rapidement 
-dissipÃ©e lorsquâelles traversent un matÃ©riau mÃªme peu dense comme le papier. 
-Ainsi, pour protÃ©ger les semi-conducteurs des bits flips causÃ©s directement par des particules alphas, il suffirait de 
-disposer une fine couche dâisolant (de lâordre de quelques mm) car les particules alphas perdraient toute leur 
-Ã©nergie dans le matÃ©riau choisi et n'atteindront pas le composant Ã©lectronique.  
-Mais alors, dâoÃ¹ vient la menace principale ? 
- 
- 
-e. ExpÃ©rience 4 : Etude des neutrons 
- 
-Comme le montre le graphique ci-dessous, provenant du travail de J. McCann dans The Effect of Cosmic Rays on the 
-Soft Error Rate of a DRAM at Ground Level (PubliÃ© dans : IEEE Transactions on Electron Devices (Volume : 41, 
-NumÃ©ro : 4, avril 1994)), en traÃ§ant lâÃ©volution de la quantitÃ© de bit-flip provoquÃ©e sur le circuit en fonction du flux 
-de neutron, une fonction linÃ©aire est obtenue. Ainsi la quantitÃ© de bit-flip provoquÃ©e sur un circuit est directement 
+8 × 𝐶𝐷
+Avec 𝑅, 𝐶𝐷 𝑒𝑡 𝐴𝐵, indiquées sur la figure 17, exprimées en m.
+Figure 17 : Exemple de trajectoire de particule courbée
+
+13
+
+La quantité de mouvement de la particule est donnée par :
+𝑝 = 0,3 × 𝐵 × 𝑅
+Avec : 𝑝 la quantité de mouvement de la particule (en 𝐺𝑒𝑉. 𝐶 −1 )
+𝐵 l’intensité du champ magnétique créé par l’aimant (en 𝑇)
+et 𝑅 le rayon de courbure de la trajectoire de la particule (en 𝑚)
+L’intensité du champ magnétique en tout point de notre chambre à brouillard a été estimée grâce à une simulation
+numérique obtenue sur un site internet (voir bibliographie).
+
+Figure 18 : Modélisation du champ magnétique de l’aimant
+Enfin, l’énergie cinétique relativiste 𝐾𝑒 est donnée par :
+𝐾𝑒 = √(𝑝𝑐)2 + (𝑚0 𝑐 2 )2 − 𝑚0 𝑐 2
+Avec : 𝑚0 la masse au repos de la particule (en 𝑀𝑒𝑉. 𝐶 −2 )
+𝑐 la vitesse de la lumière (en 𝑚. 𝑠 −1 )
+𝑝 la quantité de mouvement de la particule (en 𝑀𝑒𝑉. 𝐶 −1 )
+Nous avons ainsi calculé pour un électron observé dans notre chambre à brouillard :
+𝑅 = 0,02 𝑚 ; 𝑝 = 0,60 𝑀𝑒𝑉. 𝐶 −1 ;
+𝐾𝑒 = 0,27 𝑀𝑒𝑉
+Cette énergie correspond à un pouvoir d’arrêt de l’ordre de
+10−3 𝑀𝑒𝑉. 𝑐𝑚². 𝑚𝑔−1 , ce qui est largement inférieur au Pmin
+calculé.
+Ainsi, il n’est pas susceptible de provoquer un bit flip.
+
+Figure 19 : Pouvoir d’arrêt d’un électron dans le Silicium en
+fonction de son énergie cinétique.
+
+b.
+c. Expérience 2 : Contamination d’un matériaux et émission de particules alphas
+Dans les années 1990, Intel a rencontré un problème inattendu de fiabilité sur certains processeurs, lié à des bit
+flips provoqués par des particules alphas. Après enquête, il a été découvert que le matériau utilisé dans le packaging
+des puces contenait des traces d’éléments radioactifs, issus notamment de minerais extraits dans d’anciennes
+mines contenant des isotopes émetteurs d’alphas.
+Pour simuler au mieux cette contamination, nous avons utilisé des baguettes de soudures en tungstène, contenant
+2% en masse de thorium, donc une quantité minimale.
+14
+
+Afin de maximiser la précision de nos mesures, nous avons choisi d’effectuer manuellement les observations des
+particules alphas émises par une baguette de tungstène placée dans la cuve, plutôt que de recourir à notre modèle
+d’IA.
+En effet, contrairement aux électrons, qui apparaissent plusieurs par seconde, l’émission des particules alphas est
+légèrement plus faible. Ainsi, nous avons observé quatre cent trente-deux particules issues de la baguette sur 5
+minutes, soit près de 3 particules toutes les 2 secondes.
+
+Figure 20 : Observation de nombreuses traces rectilignes et courtes, donc des particules alphas émises par le thorium.
+
+Comme le montre cette expérience, même une faible contamination peut être à l’origine d’une intense émission de
+particules.
+Par ailleurs, la densité des traces témoigne bien d’une forte ionisation de la matière : elles sont blanches et vives (à
+comparer avec la trace d’un électron dans l’expérience 1). Elles sont donc d’autant plus susceptibles d’être à
+l’origine d’un bit flips.
+Nous avons pu estimer l’énergie cinétique des particules alphas émises en mesurant la longueur des traces puis
+en nous référant à des tables faisant la correspondance entre longueur des traces et énergie cinétique. Nous
+obtenons le graphique suivant (celui de droite) :
+
+Figure 21 : Pourvoir d’arrêt du silicium en fonction de leur énergie et Distribution des énergies cinétiques des particules
+observées.
+
+15
+
+Comme on peut l’observer sur ce graphique (Figure 21), les particules émises ont une énergie autour de 5 MeV.
+Cela correspond à un pouvoir d’arrêt de l’ordre de 1 𝑀𝑒𝑉. 𝑐𝑚2 . 𝑚𝑔−1 , ce qui est 2 fois supérieur au seuil de 0,52
+𝑀𝑒𝑉. 𝑐𝑚2 . 𝑚𝑔−1 . Les particules alphas sont donc susceptibles de provoquer un bit flip.
+Par ailleurs, la distribution des valeurs d’énergie semble suivre une loi normale. Cela reflète alors le lien qui existe
+entre le matériau source d’alphas et leur énergie. Ici, l'isotope en question semble libérer majoritairement des
+alphas avec une énergie au voisinage de 5,5 MeV.
+De ce fait, on peut affirmer que l’isotope du thorium présent dans la baguette de soudure est du thorium 228, dont
+72% des émissions sont des particules alphas de 5,423 MeV, et le reste des particules alphas de 5,340 MeV. Cet
+isotope fait partie de la chaîne de désintégration du thorium.
+Cette expérience montre ainsi que les particules alphas émises par des sources radioactives possèdent des énergies
+suffisantes pour provoquer des bits flips. Il faut alors veiller à la contamination des matériaux entrant en jeu dans
+la construction des processeurs.
+
+d. Expérience 3 : Etude de l’impact des matériaux sur la trajectoire des particules alphas
+
+Figure 22 : Dispositif expérimental.
+
+Nous avons décidé d’étudier l’impact des matériaux sur les particules alphas émises par une baguette de thorium.
+Pour cela, nous avons disposé une baguette de thorium émettrice de particules alphas dans notre chambre à
+brouillard avant de disposer de part et d’autre 2 feuilles de papier.
+Notre expérience montre qu’une simple feuille de papier suffit à arrêter les particules alphas émises. Ce
+comportement illustre alors le faible pouvoir pénétrant des particules alphas dont l’énergie est rapidement
+dissipée lorsqu’elles traversent un matériau même peu dense comme le papier.
+Ainsi, pour protéger les semi-conducteurs des bits flips causés directement par des particules alphas, il suffirait de
+disposer une fine couche d’isolant (de l’ordre de quelques mm) car les particules alphas perdraient toute leur
+énergie dans le matériau choisi et n'atteindront pas le composant électronique.
+Mais alors, d’où vient la menace principale ?
+
+e. Expérience 4 : Etude des neutrons
+Comme le montre le graphique ci-dessous, provenant du travail de J. McCann dans The Effect of Cosmic Rays on the
+Soft Error Rate of a DRAM at Ground Level (Publié dans : IEEE Transactions on Electron Devices (Volume : 41,
+Numéro : 4, avril 1994)), en traçant l’évolution de la quantité de bit-flip provoquée sur le circuit en fonction du flux
+de neutron, une fonction linéaire est obtenue. Ainsi la quantité de bit-flip provoquée sur un circuit est directement
 proportionnelle au flux de neutrons incidents sur le circuit.
+16
 
-17 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Figure 23 : Cosmic ray component of the SER as a function of the atmospheric neutron flux at sea level, 1,6 km and 3.1 km (J. 
-McCann) 
- 
-Le problÃ¨me : les neutrons sont impossibles Ã  dÃ©tecter directement dans notre dispositif. 
-Les neutrons sont Ã©lectriquement neutres, donc ils ne crÃ©ent pas de trace dans les chambres Ã  brouillard. Pour 
-quâun neutron soit dÃ©tectable, il faut quâil interagisse avec un noyau et provoque lâÃ©jection dâune particule chargÃ©e 
-que lâon peut dÃ©tecter dans la chambre Ã  brouillard. Pour cela, nous avons utilisÃ© du polyÃ©thylÃ¨ne. En effet, le 
-polyÃ©thylÃ¨ne (CâHâ) est riche en hydrogÃ¨ne qui interagit facilement avec les neutrons par diffusion Ã©lastique 
-(collision entre une particule et un noyau atomique sans perte de lâÃ©nergie totale du systÃ¨me) : 
- &#3627408475;+
-1 
-&#3627408443;â&#3627408475;+í µí± 
- 
-Câest-Ã -dire que le neutron frappe un proton (un noyau dâhydrogÃ¨ne) et lui transmet une partie de son Ã©nergie. 
- 
-Comme on peut le voir sur cette image, aucune trace nâest visible derriÃ¨re le polyÃ©thylÃ¨ne, 
-indiquant que les traces observÃ©es ne sont pas des particules ionisantes traversant 
-simplement la plaque. Elles sont donc issues dâune interaction entre les neutrons du 
-rayonnement cosmique et les atomes dâhydrogÃ¨ne du polyÃ©thylÃ¨ne, provoquant la libÃ©ration 
-dâun ion H
-+ (proton). 
- 
- 
-Figure 24 : protons de reculs issus de la collision entre un neutron et un noyau dâhydrogÃ¨ne (prÃ©sent 
-dans le polyÃ©thylÃ¨ne) 
- 
- 
- 
-Par ailleurs, en fin de trajectoire, on peut observer un Ã©paississement de la trace. Cela 
-est dÃ» au ralentissement de la particule, qui ionise alors davantage par unitÃ© de 
-distance (voir graphique de gauche figure 25) : câest Ã  ce moment quâelle est 
-susceptible de provoquer un bit flip. Cette forme est caractÃ©ristique des protons. 
- 
- 
-   Figure 25 : Ã©paississement bien visible sur cette trace. 
- 
-Nous avons comparÃ© lâÃ©nergie estimÃ©e des particules observÃ©es (figure 26, graphique de droite) Ã  lâÃ©nergie 
-dâionisation maximale dans le silicium (Figure 21, graphique de gauche). Ces observations ont Ã©tÃ© faites sur une 
-autre vidÃ©o de 30 traces.
+Figure 23 : Cosmic ray component of the SER as a function of the atmospheric neutron flux at sea level, 1,6 km and 3.1 km (J.
+McCann)
 
-18 
-Figure 26 : Pouvoir dâarrÃªt du silicium en fonction de leur Ã©nergie et Distribution des Ã©nergies cinÃ©tiques des particules 
-observÃ©es. 
- 
-Nous constatons que la majoritÃ© des particules observÃ©es ont une Ã©nergie de lâordre de 1 MeV. Ces protons au cours 
-de leur trajectoire vont alors ralentir, et atteindront Ã  un instant lâÃ©nergie cinÃ©tique correspondant au pouvoir 
-dâarrÃªt maximum, soit environ 0,7 &#3627408448;&#3627408466;í µí±.&#3627408464;&#3627408474;
-2
-.&#3627408474;&#3627408468;
-â1
- comme le montre le graphique de gauche sur la figure 22. Ce 
-pouvoir dâarrÃªt est donc supÃ©rieur Ã  &#3627408451;
-&#3627408474;í µí±&#3627408475;. 
-Autrement dit, si ces particules avaient Ã©tÃ© libÃ©rÃ©es dans un systÃ¨me informatique moderne, elles auraient pu 
-provoquer un ou mÃªme plusieurs bits flips. 
-En revanche, la distribution de nos valeurs dâÃ©nergie semble trÃ¨s alÃ©atoire, ce qui nous amÃ¨ne Ã  penser quâil nây a 
-pas de lien direct entre le matÃ©riau (ici polyÃ©thylÃ¨ne) et lâÃ©nergie des protons Ã©mis. En effet, cette Ã©nergie dÃ©pend 
-sÃ»rement de celle du neutron qui a provoquÃ© la libÃ©ration du proton plus que du matÃ©riau lui-mÃªme, dâautant plus 
-que la majoritÃ© des neutrons (60%) ont une Ã©nergie entre 1 et 10 MeV (ce qui coÃ¯ncide avec nos observations sur 
-les protons). 
-Pour rÃ©sumer, les neutrons sont une source indirecte importante de particules fortement ionisantes. Dans les 
-systÃ¨mes informatiques, les neutrons sont alors susceptibles de frapper le silicium, et de provoquer la libÃ©ration 
-de charge (Ã©lectrons, ou noyaux positifs). 
-MÃªme sâils sont neutres, cette expÃ©rience montre quâils constituent lâun des dangers principaux.
+Le problème : les neutrons sont impossibles à détecter directement dans notre dispositif.
+Les neutrons sont électriquement neutres, donc ils ne créent pas de trace dans les chambres à brouillard. Pour
+qu’un neutron soit détectable, il faut qu’il interagisse avec un noyau et provoque l’éjection d’une particule chargée
+que l’on peut détecter dans la chambre à brouillard. Pour cela, nous avons utilisé du polyéthylène. En effet, le
+polyéthylène (C₂H₄) est riche en hydrogène qui interagit facilement avec les neutrons par diffusion élastique
+(collision entre une particule et un noyau atomique sans perte de l’énergie totale du système) :
+𝑛+1 𝐻 → 𝑛 + 𝑝
+C’est-à-dire que le neutron frappe un proton (un noyau d’hydrogène) et lui transmet une partie de son énergie.
+Comme on peut le voir sur cette image, aucune trace n’est visible derrière le polyéthylène,
+indiquant que les traces observées ne sont pas des particules ionisantes traversant
+simplement la plaque. Elles sont donc issues d’une interaction entre les neutrons du
+rayonnement cosmique et les atomes d’hydrogène du polyéthylène, provoquant la libération
+d’un ion H+ (proton).
 
-19 
-Conclusion 
- 
-La construction de notre chambre Ã  Brouillard nous a permis de mettre en Ã©vidence lâexistence de particules 
-ionisantes dans notre entourage. Toutefois, nos observations nous ont montrÃ© que la majoritÃ© de ces particules 
-sont des Ã©lectrons, dont la capacitÃ© Ã  ioniser nâest pas suffisante pour provoquer un bit flip.  
-Au vu de nos expÃ©rimentations, il existe des particules, naturellement prÃ©sentes, susceptibles de provoquer un bit 
-flip, en particulier les protons et les particules alphas qui sont fortement ionisantes. En revanche, ces particules 
-sont rapidement stoppÃ©es dans la matiÃ¨re. Le vrai danger est incarnÃ© par les neutrons. Bien quâÃ©tant neutres, ces 
-particules peuvent provoquer la libÃ©ration dâautres particules ionisantes par collision directement dans le matÃ©riel 
-informatique sensible. 
-Aujourdâhui, des entreprises comme Intel sâefforce de rÃ©duire au maximum la prÃ©sence dâisotopes radioactifs dans 
-leurs produits, tÃ©moignant dâune prise de conscience accrue de cette problÃ©matique. 
-Dans un monde oÃ¹ lâautomatisation progresse rapidement, avec des vÃ©hicules autonomes dÃ©jÃ  en circulation, un 
-simple bit flip dans le systÃ¨me de contrÃ´le pourrait entraÃ®ner des consÃ©quences graves, voire dramatiques.  
-Dâailleurs, trÃ¨s rÃ©cemment, le 30 octobre 2025, un vol de la compagnie aÃ©rienne Jet Blue (un Airbus A320) a Ã©tÃ© 
-perturbÃ© par un piquÃ© (perte d'altitude) non commandÃ©, supposÃ©ment attribuÃ© Ã  un bit flip dans lâunitÃ© ELAC, un 
-systÃ¨me crucial pour le contrÃ´le de vol. AprÃ¨s des investigations, Airbus a confirmÃ© que lâÃ©vÃ©nement Ã©tait dÃ» Ã  une 
-corruption des donnÃ©es causÃ©e par des particules ionisantes issues dâintenses rayonnements solaires. Le 28 
-novembre 2025 Airbus a donc lancÃ© une mise Ã  jour mondiale touchant plus de 6 000 appareils afin de renforcer 
-la robustesse logicielle contre ces erreurs. A ce jour, les avions concernÃ©s ont Ã©tÃ© largement mis Ã  jour, et aucun 
-nouvel incident majeur nâa Ã©tÃ© signalÃ© par l'avionneur grÃ¢ce Ã  la mise en place des correctifs. Cependant, cet 
-Ã©vÃ©nement souligne la nÃ©cessitÃ© de protection physique et logicielle accrue pour prÃ©venir de telles dÃ©faillances 
-dans des systÃ¨mes critiques, particuliÃ¨rement en aÃ©ronautique et dans les systÃ¨mes autonomes.  
-Nous souhaiterions approfondir ces pistes en Ã©tudiant plus prÃ©cisÃ©ment la pÃ©nÃ©tration des particules ionisantes 
-dans les matÃ©riaux, et la possibilitÃ© de les dÃ©vier, par exemple grÃ¢ce Ã  un champ magnÃ©tique. Il serait ainsi possible 
-de diminuer ce risque, voire de lâÃ©liminer complÃ¨tement.  
- 
- 
-Remerciements    
- 
-Nous tenions tout dâabord Ã  remercier notre enseignante de physique-chimie Madame Palisse et Madame Guarda-
-Michel pour leur investissement et leur soutien sans faille tout au long de notre projet. Nous tenons aussi Ã  
-remercier Madame Soyer, prÃ©paratrice du laboratoire, qui sâest occupÃ©e de nous fournir le matÃ©riel nÃ©cessaire Ã  
-nos expÃ©riences. Nous remercions Ã©galement M. Jack Jeanjean du musÃ©e Science ACO de Saclay, rattachÃ© Ã  lâIJC lab., 
-ainsi que ses collÃ¨gues pour leur aide prÃ©cieuse, leurs conseils avisÃ©s ainsi que les inspirations quâils nous ont 
-donnÃ©es afin dâaffiner nos connaissances et notre dispositif.
+Figure 24 : protons de reculs issus de la collision entre un neutron et un noyau d’hydrogène (présent
+dans le polyéthylène)
 
-20 
-Sitographie 
- 
-Tables de rÃ©fÃ©rences utilisÃ©es pour exploiter nos rÃ©sultats et faire les calculs Ã©nergÃ©tiques des particules : 
- 
-â Berger, M.J., Coursey, J.S., Zucker, M.A. & Chang, J., Stopping-Power & Range Tables for Electrons, 
-Protons, and Helium Ions (NIST Standard Reference Database 124), National Institute of Standards and 
-Technology, 2017 (derniÃ¨re mise Ã  jour), consultÃ© le 9 dÃ©cembre 2025, 
-https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions  
-â [Auteur inconnu], Playful science â Chambre Ã  brouillard, ScienceOnStage Belgium, PDF, consultÃ© le 09 
-dÃ©cembre 2025, 
+Par ailleurs, en fin de trajectoire, on peut observer un épaississement de la trace. Cela
+est dû au ralentissement de la particule, qui ionise alors davantage par unité de
+distance (voir graphique de gauche figure 25) : c’est à ce moment qu’elle est
+susceptible de provoquer un bit flip. Cette forme est caractéristique des protons.
+
+Figure 25 : épaississement bien visible sur cette trace.
+Nous avons comparé l’énergie estimée des particules observées (figure 26, graphique de droite) à l’énergie
+d’ionisation maximale dans le silicium (Figure 21, graphique de gauche). Ces observations ont été faites sur une
+autre vidéo de 30 traces.
+
+17
+
+Figure 26 : Pouvoir d’arrêt du silicium en fonction de leur énergie et Distribution des énergies cinétiques des particules
+observées.
+
+Nous constatons que la majorité des particules observées ont une énergie de l’ordre de 1 MeV. Ces protons au cours
+de leur trajectoire vont alors ralentir, et atteindront à un instant l’énergie cinétique correspondant au pouvoir
+d’arrêt maximum, soit environ 0,7 𝑀𝑒𝑉. 𝑐𝑚2 . 𝑚𝑔−1 comme le montre le graphique de gauche sur la figure 22. Ce
+pouvoir d’arrêt est donc supérieur à 𝑃𝑚𝑖𝑛 .
+Autrement dit, si ces particules avaient été libérées dans un système informatique moderne, elles auraient pu
+provoquer un ou même plusieurs bits flips.
+En revanche, la distribution de nos valeurs d’énergie semble très aléatoire, ce qui nous amène à penser qu’il n’y a
+pas de lien direct entre le matériau (ici polyéthylène) et l’énergie des protons émis. En effet, cette énergie dépend
+sûrement de celle du neutron qui a provoqué la libération du proton plus que du matériau lui-même, d’autant plus
+que la majorité des neutrons (60%) ont une énergie entre 1 et 10 MeV (ce qui coïncide avec nos observations sur
+les protons).
+Pour résumer, les neutrons sont une source indirecte importante de particules fortement ionisantes. Dans les
+systèmes informatiques, les neutrons sont alors susceptibles de frapper le silicium, et de provoquer la libération
+de charge (électrons, ou noyaux positifs).
+Même s’ils sont neutres, cette expérience montre qu’ils constituent l’un des dangers principaux.
+
+18
+
+Conclusion
+La construction de notre chambre à Brouillard nous a permis de mettre en évidence l’existence de particules
+ionisantes dans notre entourage. Toutefois, nos observations nous ont montré que la majorité de ces particules
+sont des électrons, dont la capacité à ioniser n’est pas suffisante pour provoquer un bit flip.
+Au vu de nos expérimentations, il existe des particules, naturellement présentes, susceptibles de provoquer un bit
+flip, en particulier les protons et les particules alphas qui sont fortement ionisantes. En revanche, ces particules
+sont rapidement stoppées dans la matière. Le vrai danger est incarné par les neutrons. Bien qu’étant neutres, ces
+particules peuvent provoquer la libération d’autres particules ionisantes par collision directement dans le matériel
+informatique sensible.
+Aujourd’hui, des entreprises comme Intel s’efforce de réduire au maximum la présence d’isotopes radioactifs dans
+leurs produits, témoignant d’une prise de conscience accrue de cette problématique.
+Dans un monde où l’automatisation progresse rapidement, avec des véhicules autonomes déjà en circulation, un
+simple bit flip dans le système de contrôle pourrait entraîner des conséquences graves, voire dramatiques.
+D’ailleurs, très récemment, le 30 octobre 2025, un vol de la compagnie aérienne Jet Blue (un Airbus A320) a été
+perturbé par un piqué (perte d'altitude) non commandé, supposément attribué à un bit flip dans l’unité ELAC, un
+système crucial pour le contrôle de vol. Après des investigations, Airbus a confirmé que l’événement était dû à une
+corruption des données causée par des particules ionisantes issues d’intenses rayonnements solaires. Le 28
+novembre 2025 Airbus a donc lancé une mise à jour mondiale touchant plus de 6 000 appareils afin de renforcer
+la robustesse logicielle contre ces erreurs. A ce jour, les avions concernés ont été largement mis à jour, et aucun
+nouvel incident majeur n’a été signalé par l'avionneur grâce à la mise en place des correctifs. Cependant, cet
+événement souligne la nécessité de protection physique et logicielle accrue pour prévenir de telles défaillances
+dans des systèmes critiques, particulièrement en aéronautique et dans les systèmes autonomes.
+Nous souhaiterions approfondir ces pistes en étudiant plus précisément la pénétration des particules ionisantes
+dans les matériaux, et la possibilité de les dévier, par exemple grâce à un champ magnétique. Il serait ainsi possible
+de diminuer ce risque, voire de l’éliminer complètement.
+
+Remerciements
+Nous tenions tout d’abord à remercier notre enseignante de physique-chimie Madame Palisse et Madame GuardaMichel pour leur investissement et leur soutien sans faille tout au long de notre projet. Nous tenons aussi à
+remercier Madame Soyer, préparatrice du laboratoire, qui s’est occupée de nous fournir le matériel nécessaire à
+nos expériences. Nous remercions également M. Jack Jeanjean du musée Science ACO de Saclay, rattaché à l’IJC lab.,
+ainsi que ses collègues pour leur aide précieuse, leurs conseils avisés ainsi que les inspirations qu’ils nous ont
+données afin d’affiner nos connaissances et notre dispositif.
+
+19
+
+Sitographie
+Tables de références utilisées pour exploiter nos résultats et faire les calculs énergétiques des particules :
+
+●
+
+Berger, M.J., Coursey, J.S., Zucker, M.A. & Chang, J., Stopping-Power & Range Tables for Electrons,
+Protons, and Helium Ions (NIST Standard Reference Database 124), National Institute of Standards and
+Technology, 2017 (dernière mise à jour), consulté le 9 décembre 2025,
+https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions
+
+●
+
+[Auteur inconnu], Playful science – Chambre à brouillard, ScienceOnStage Belgium, PDF, consulté le 09
+décembre 2025,
 https://www.scienceonstage.be/onewebmedia/Playful%20science/Playful%20science%2015/Proto
-coleFR/14%20Mkhalfi%20-%20Elias%20-%20Chambre%20%C3%A0%20brouillard.pdf  
-â [Auteur inconnu], Soft errors and cosmic rays: impact on reliability of scaled CMOS circuits, Columbia 
-University â CS4823 course handout, PDF, consultÃ© le 09 dÃ©cembre 2025, 
-https://www.cs.columbia.edu/~cs4823/handouts/karnik-soft-errors-DSC-04.pdf  
-â [Auteur inconnu], DIY Manual â Cloud Chamber, CERN / ScoolLab, PDF (version 7, 21 mai 2020), 
-consultÃ© le 09 dÃ©cembre 2025, 
+coleFR/14%20Mkhalfi%20-%20Elias%20-%20Chambre%20%C3%A0%20brouillard.pdf
+
+●
+
+[Auteur inconnu], Soft errors and cosmic rays: impact on reliability of scaled CMOS circuits, Columbia
+University — CS4823 course handout, PDF, consulté le 09 décembre 2025,
+https://www.cs.columbia.edu/~cs4823/handouts/karnik-soft-errors-DSC-04.pdf
+
+●
+
+[Auteur inconnu], DIY Manual – Cloud Chamber, CERN / ScoolLab, PDF (version 7, 21 mai 2020),
+consulté le 09 décembre 2025,
 https://scoollab.web.cern.ch/sites/default/files/documents/20200521_JW_DIYManual_CloudChamb
-er_v7.pdf  
-â [Organisation NULEDO], NULEDO â Accelerators and Neutron Sources, site web, consultÃ© le 09 
-dÃ©cembre 2025, https://nuledo.com/en/#alfa-castice  
-â [Organisation CloudyLabs], Lorentz â CloudyLabs, site web, consultÃ© le 09 dÃ©cembre 2025, 
-https://www.cloudylabs.fr/wp/lorentz/  
-â [Organisation Wikipedia], Neutron cross section, Wikipedia (consultÃ© le 09 dÃ©cembre 2025), 
-https://en.wikipedia.org/wiki/Neutron_cross_section  
-â [Organisation National Nuclear Data Center (NNDC)], ENDF/B-VIII.0: The 8th Major Release of the 
-Nuclear Reaction Data Library, Nuclear Data Sheets, vol. 148, 2018, consultÃ© le 09 dÃ©cembre 2025, 
-https://www.nndc.bnl.gov/endf-b8.0  
-â K&J Magnetics, Magnetic Field Calculator, K&J Magnetics Inc., consultÃ© le 10 janvier 2026, 
+er_v7.pdf
+
+●
+
+[Organisation NULEDO], NULEDO – Accelerators and Neutron Sources, site web, consulté le 09
+décembre 2025, https://nuledo.com/en/#alfa-castice
+
+●
+
+[Organisation CloudyLabs], Lorentz – CloudyLabs, site web, consulté le 09 décembre 2025,
+https://www.cloudylabs.fr/wp/lorentz/
+
+●
+
+[Organisation Wikipedia], Neutron cross section, Wikipedia (consulté le 09 décembre 2025),
+https://en.wikipedia.org/wiki/Neutron_cross_section
+
+●
+
+[Organisation National Nuclear Data Center (NNDC)], ENDF/B-VIII.0: The 8th Major Release of the
+Nuclear Reaction Data Library, Nuclear Data Sheets, vol. 148, 2018, consulté le 09 décembre 2025,
+https://www.nndc.bnl.gov/endf-b8.0
+
+●
+
+K&J Magnetics, Magnetic Field Calculator, K&J Magnetics Inc., consulté le 10 janvier 2026,
 https://www.kjmagnetics.com/magnetic-field-calculator.asp
+
+20
+
+

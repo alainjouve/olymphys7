@@ -1,788 +1,750 @@
-2026 
- 
-La physique de la remise en forme 
- 
-LYCÃE JEAN BART 
-DUNKERQUE 
- 
- 
- 
- 
- 
-Abdel Hakim ALI     AmÃ©lie BARBRY     Chahd BEN SEDDIQ 
-Marie MALHOMME      Ouassim MOULAY 
- 
- 
- 
- 
- 
- 
- 
-    
-CNRS UMR 8207 - UniversitÃ© de Lille
+2026
 
-2 
- 
-La physique de la remise en forme 
- 
- 
-RÃ©sumÃ© 
- 
- 
-La plupart des matÃ©riaux peuvent se dÃ©former quand on exerce une force sur eux. Dans ce projet 
-nous cherchons Ã  caractÃ©riser cette dÃ©formation et Ã  comprendre pourquoi dans certains cas le 
-matÃ©riau peut retrouver sa forme initiale lorsque la contrainte est relÃ¢chÃ©e, ou au contraire Ãªtre 
-dÃ©formÃ© de faÃ§on irrÃ©versible. GrÃ¢ce Ã  notre visite du laboratoire UMET, nous avons pu mettre en 
-place des expÃ©riences pour mesurer le module de Young de quelques matÃ©riaux, caractÃ©ristique 
-de leur rigiditÃ© dans le domaine de dÃ©formation Ã©lastique. Nous avons en particulier fabriquÃ© un 
-banc de traction Ã  vibrations qui utilise la mesure de la frÃ©quence de vibration dâune corde tendue 
-pour dÃ©terminer la contrainte appliquÃ©e. Nous avons ainsi pu caractÃ©riser complÃ¨tement un ressort 
-et un fil en nitinol, un matÃ©riau dont les propriÃ©tÃ©s dÃ©pendent de la tempÃ©rature, pour comprendre 
+La physique de la remise en forme
+
+LYCÉE JEAN BART
+DUNKERQUE
+
+Abdel Hakim ALI
+Amélie BARBRY
+Chahd BEN SEDDIQ
+Marie MALHOMME
+Ouassim MOULAY
+
+CNRS UMR 8207 - Université de Lille
+
+La physique de la remise en forme
+Résumé
+La plupart des matériaux peuvent se déformer quand on exerce une force sur eux. Dans ce projet
+nous cherchons à caractériser cette déformation et à comprendre pourquoi dans certains cas le
+matériau peut retrouver sa forme initiale lorsque la contrainte est relâchée, ou au contraire être
+déformé de façon irréversible. Grâce à notre visite du laboratoire UMET, nous avons pu mettre en
+place des expériences pour mesurer le module de Young de quelques matériaux, caractéristique
+de leur rigidité dans le domaine de déformation élastique. Nous avons en particulier fabriqué un
+banc de traction à vibrations qui utilise la mesure de la fréquence de vibration d’une corde tendue
+pour déterminer la contrainte appliquée. Nous avons ainsi pu caractériser complètement un ressort
+et un fil en nitinol, un matériau dont les propriétés dépendent de la température, pour comprendre
 les nombreuses applications possibles.
 
-3 
-Introduction 
- 
-Contrairement aux liquides ou aux gaz, un solide admet une forme propre. Lorsque lâon applique une force 
-sur un matÃ©riau solide, comme une tige, une barre ou un ressort, on peut le plier, le tordre ou mÃªme lâallonger. 
-Que se passe-t-il lorsque lâon dÃ©forme un matÃ©riau ? Un matÃ©riau peut-il Ãªtre dÃ©formÃ© indÃ©finiment et peut-il 
-revenir Ã  sa forme initiale si on relÃ¢che la force ? 
-Dans cette Ã©tude, on se propose de caractÃ©riser la dÃ©formation de quelques matÃ©riaux sous lâeffet dâune force 
-et de relier ces observations Ã  leur structure microscopique. Lâenjeu est de taille dans de nombreux domaines 
-de lâindustrie ou de la recherche lorsque lâon souhaite fabriquer des piÃ¨ces mÃ©caniques qui doivent adopter et 
-conserver leur forme dans des conditions extrÃªmes ou au contraire pouvoir se dÃ©former sans casser.  
- 
- 
-En aÃ©ronautique, les piÃ¨ces mÃ©caniques sont soumises Ã  de fortes contraintes 
- 
-Sommaire 
-PremiÃ¨re partie : la physique a du ressort 
-La loi de Hooke 
-Ãtude au dynamomÃ¨tre 
-Oscillateur mÃ©canique Ã  ressort 
-Vers une dÃ©formation irrÃ©versible 
- 
-DeuxiÃ¨me partie : dÃ©formation professionnelle 
-Mesures de dÃ©formation au laboratoire 
-Comportement microscopique du matÃ©riau 
-Un banc de traction fait maison 
-Fabrication dâun banc de traction Ã  vibrations 
- 
-TroisiÃ¨me partie : la mÃ©moire de la forme 
-Le nitinol 
-ExpÃ©riences pour caractÃ©riser le nitinol 
-Quelques applications du nitinol 
-  
-Source
- 
-: https://www.remystahl.de/fr/produits/aeronautique
--
-et
--
-aerospatiale
-
-4 
-PremiÃ¨re partie 
-La physique a du ressort 
- 
-Lâobjet le plus simple que lâon puisse dÃ©former facilement est le ressort. Il sâagit dâun fil, gÃ©nÃ©ralement 
-mÃ©tallique, en forme de spirale, qui peut Ãªtre allongÃ© ou comprimÃ© lorsque lâon exerce sur lui une force de 
-traction ou de compression. On trouve des ressorts de toutes tailles avec des applications nombreuses, de la 
-montre mÃ©canique aux amortisseurs de voitures. 
- 
-Quelle force faut-il exercer sur un ressort pour quâil se dÃ©forme ? 
- 
-La loi de Hooke 
-Pour connaÃ®tre la force exercÃ©e, nous avons suspendu des masses marquÃ©es Ã  un ressort maintenu 
-verticalement pour le dÃ©former. Nous avons alors mesurÃ© la longueur totale du ressort, notÃ©e L, pour 
-diffÃ©rentes masses m (protocole 1). LâexpÃ©rience a Ã©tÃ© refaite pour diffÃ©rents ressorts appelÃ©s 1, 2, 3, et 4. 
- 
-       
- 
-On trace ensuite la force de traction F mg=  (oÃ¹ g = 9,81 m.s
--2
- est le champ de pesanteur) imposÃ©e au ressort 
-par le poids des masses marquÃ©es en fonction de la longueur de chaque ressort. Le graphe ci-dessous prÃ©sente 
-les rÃ©sultats obtenus pour les ressorts 1 et 2 :
-
-5 
-Lâanalyse de ces rÃ©sultats montre que la force de traction imposÃ©e pour dÃ©former chaque ressort semble varier 
-linÃ©airement avec la longueur du ressort. Une rÃ©gression linÃ©aire permet de confirmer cette hypothÃ¨se en 
-proposant un modÃ¨le affine de la forme : F aL b=+ (en trait noir sur le graphe), que lâon trouve plus 
-couramment sous la forme : ( )
-0
-F k L L=â . Cette relation constitue la loi de Hooke (du nom du scientifique 
-anglais Robert Hooke qui dÃ©couvrit cette loi en 1676) dÃ©crivant la force de rappel Ã©lastique exercÃ©e par un 
-ressort de longueur L et de longueur Ã  vide L0. La constante k, appelÃ©e constante de raideur, caractÃ©rise la 
-rigiditÃ© du ressort. La force de rappel est ainsi proportionnelle Ã  lâallongement du ressort (L â L0). 
-Par exemple, pour le ressort 2 (points bleus sur le graphe), on obtient : 
-k = 19,0 N.m
--1
- et L0 = 189 mm 
-Les ressorts 1 et 2 Ã©tudiÃ©s ici diffÃ¨rent essentiellement par leur longueur Ã  vide (ce qui est confirmÃ© par la 
-photo des ressorts) et assez peu par leur constante de raideur (pour le ressort 1 on a en effet k = 20,8 N.m
--1
- et 
-L0 = 105 mm). Le ressort 1 est ainsi lÃ©gÃ¨rement plus rigide que le ressort 2. 
- 
-Ãtude au dynamomÃ¨tre 
-Il est possible de mesurer directement la force de rappel exercÃ©e par un ressort Ã  lâaide dâun dynamomÃ¨tre. 
-On place cette fois le ressort 2 Ã©tudiÃ© prÃ©cÃ©demment horizontalement entre le dynamomÃ¨tre et une potence 
-fixe et on mesure la force de rappel pour diffÃ©rentes longueurs imposÃ©es du ressort (protocole 2). On utilise 
-un banc dâoptique graduÃ© pour faciliter la mesure de la longueur du ressort. 
- 
- 
- 
-On trace comme prÃ©cÃ©demment la force de rappel en fonction de la longueur du ressort (Ã  gauche) et on 
-superpose ces points Ã  ceux de lâexpÃ©rience prÃ©cÃ©dente (protocoles 1 et 2, Ã  droite) :
-
-6 
-Cette expÃ©rience vient Ã  nouveau confirmer la validitÃ© de la loi de Hooke ( )
-0
-F k L L=â  pour le ressort 2 avec 
-des valeurs similaires aux prÃ©cÃ©dentes aux incertitudes de mesure prÃ¨s : k = 19,0 N.m
--1
- et L0 = 188 mm 
-(obtenues par rÃ©gression linÃ©aire). Les incertitudes de mesures sont essentiellement dues Ã  la mesure de la 
-longueur du ressort (au rÃ©glet avec le protocole 1 et au banc dâoptique graduÃ© pour le protocole 2) et Ã  la 
-mesure de la force au dynamomÃ¨tre (protocole 2 uniquement). 
- 
-Nous avons constatÃ© expÃ©rimentalement que ce comportement linÃ©aire du ressort est Ã©galement rÃ©versible, 
-puisque les points de mesure restent alignÃ©s sur la mÃªme droite quel que soit le sens de dÃ©formation du ressort 
-(mesures par longueurs croissantes ou dÃ©croissantes). 
- 
-Oscillateur mÃ©canique Ã  ressort 
-La force de rappel Ã©lastique des ressorts est souvent utilisÃ©e dans les oscillateurs mÃ©caniques, dont lâexemple 
-le plus simple est constituÃ© dâune masse m accrochÃ©e Ã  un ressort de constante de raideur k. On trouve 
-thÃ©oriquement que le mouvement de la masse est harmonique (ou sinusoÃ¯dal) de frÃ©quence 1
 2
-k
-f
-mï°
-= . 
-On utilise Ã  nouveau le ressort 2. On lÃ¢che la masse sans vitesse initiale et on mesure la pÃ©riode des oscillations 
-(on a en fait mesurÃ© 10 pÃ©riodes dâoscillation en filmant le mouvement de la masse pour plus de prÃ©cision). 
-On a tracÃ© ci-dessous la frÃ©quence f des oscillations en fonction de la masse m, puis le carrÃ© de cette frÃ©quence 
-en fonction de 1/m : 
- 
-  
- 
-Plus la masse Ã  dÃ©placer est grande, plus les oscillations sont lentes et la frÃ©quence faible. Le tracÃ© de f
-2
- en 
-fonction de 1/m montre ainsi une Ã©volution linÃ©aire de la forme : 2 1
-fa
-m
-=ï´ oÃ¹ lâon identifie 2
-4
-k
-a
-ï°
-=  dâaprÃ¨s 
-le modÃ¨le thÃ©orique. Avec a = 0,472 kg.Hz
-2
-, on en dÃ©duit : k = 18,6 N.m
--1
-. On retrouve une valeur proche de 
-celle dÃ©jÃ  obtenue pour la constante de raideur du ressort 2. On a constatÃ© que les incertitudes sur la frÃ©quence 
-des oscillations Ã©taient plus grandes lorsque les masses Ã©taient faibles car il est plus difficile de mesurer la 
-pÃ©riode avec un mouvement trop rapide. 
- 
-Par exemple, les ressorts utilisÃ©s dans les suspensions de voiture permettent dâobtenir une frÃ©quence 
-dâoscillation libre de lâordre de 1 Hz. En considÃ©rant un vÃ©hicule de masse moyenne 1,2.10
+
+Introduction
+Contrairement aux liquides ou aux gaz, un solide admet une forme propre. Lorsque l’on applique une force
+sur un matériau solide, comme une tige, une barre ou un ressort, on peut le plier, le tordre ou même l’allonger.
+Que se passe-t-il lorsque l’on déforme un matériau ? Un matériau peut-il être déformé indéfiniment et peut-il
+revenir à sa forme initiale si on relâche la force ?
+
+Source : https://www.remystahl.de/fr/produits/aeronautique-et-aerospatiale
+
+Dans cette étude, on se propose de caractériser la déformation de quelques matériaux sous l’effet d’une force
+et de relier ces observations à leur structure microscopique. L’enjeu est de taille dans de nombreux domaines
+de l’industrie ou de la recherche lorsque l’on souhaite fabriquer des pièces mécaniques qui doivent adopter et
+conserver leur forme dans des conditions extrêmes ou au contraire pouvoir se déformer sans casser.
+
+En aéronautique, les pièces mécaniques sont soumises à de fortes contraintes
+
+Sommaire
+Première partie : la physique a du ressort
+La loi de Hooke
+Étude au dynamomètre
+Oscillateur mécanique à ressort
+Vers une déformation irréversible
+
+Deuxième partie : déformation professionnelle
+Mesures de déformation au laboratoire
+Comportement microscopique du matériau
+Un banc de traction fait maison
+Fabrication d’un banc de traction à vibrations
+
+Troisième partie : la mémoire de la forme
+Le nitinol
+Expériences pour caractériser le nitinol
+Quelques applications du nitinol
 3
- kg, on obtient 
-une constante de raideur Ã©quivalente 22
-4k f mï°=  de lâordre de 5.10
+
+Première partie
+La physique a du ressort
+L’objet le plus simple que l’on puisse déformer facilement est le ressort. Il s’agit d’un fil, généralement
+métallique, en forme de spirale, qui peut être allongé ou comprimé lorsque l’on exerce sur lui une force de
+traction ou de compression. On trouve des ressorts de toutes tailles avec des applications nombreuses, de la
+montre mécanique aux amortisseurs de voitures.
+Quelle force faut-il exercer sur un ressort pour qu’il se déforme ?
+La loi de Hooke
+Pour connaître la force exercée, nous avons suspendu des masses marquées à un ressort maintenu
+verticalement pour le déformer. Nous avons alors mesuré la longueur totale du ressort, notée L, pour
+différentes masses m (protocole 1). L’expérience a été refaite pour différents ressorts appelés 1, 2, 3, et 4.
+
+On trace ensuite la force de traction F = mg (où g = 9,81 m.s-2 est le champ de pesanteur) imposée au ressort
+par le poids des masses marquées en fonction de la longueur de chaque ressort. Le graphe ci-dessous présente
+les résultats obtenus pour les ressorts 1 et 2 :
+
 4
- N.m
--1 
-!
 
-7 
-La linÃ©aritÃ© de la loi de Hooke et la rÃ©versibilitÃ© du comportement Ã©lastique dâun ressort sont trÃ¨s pratiques 
-lorsque lâon veut rÃ©aliser un dynamomÃ¨tre Ã  ressort : il suffit de repÃ©rer lâallongement (L â L0) du ressort avec 
-des graduations rÃ©parties linÃ©airement utilisant un facteur de conversion pour obtenir la valeur de la force. 
- 
- 
-DynamomÃ¨tres utilisÃ©s pour mesurer au maximum 1 N ou 5 N respectivement 
- 
-Mais la loi de Hooke est-elle toujours valable ? 
- 
-Vers une dÃ©formation irrÃ©versible 
-Nous avons dÃ©cidÃ© de sacrifier le ressort 1 (que nous avions en double exemplaire) et de tirer dessus de maniÃ¨re 
-plus consÃ©quente afin de tester la loi de Hooke pour des grandes dÃ©formations. 
-On utilise le protocole 2 prÃ©cÃ©dent pour mesurer, avec le dynamomÃ¨tre, la force de rappel exercÃ©e par le ressort 
-lorsquâon lui impose une longueur donnÃ©e, mesurÃ©e au banc dâoptique. Nous avons rÃ©ussi Ã  atteindre une 
-longueur du ressort de lâordre de 1,3 m pour une force de rappel de 23 N, ce qui correspondrait au poids dâun 
-objet de lâordre de 2,3 kg (voir photo ci-dessous). Le dynamomÃ¨tre a Ã©tÃ© rÃ©glÃ© sur le calibre maximal de 50 N. 
-On trace alors la force de rappel en fonction de la longueur du ressort sur le graphe suivant (points rouges) : 
- 
-     
- 
-On constate que la relation entre la force de rappel et la longueur reste linÃ©aire tant que la longueur du ressort 
-reste infÃ©rieure Ã  1 100 mm, ce qui confirme la validitÃ© de la loi de Hooke dans cette plage (trait noir). 
-Cependant, pour des longueurs plus importantes, la force de rappel mesurÃ©e devient plus faible que celle 
-prÃ©vue par la loi de Hooke et les points commencent Ã  sâÃ©loigner du modÃ¨le linÃ©aire. 
-Nous avons alors constatÃ© en relÃ¢chant le ressort quâil nâa pas repris sa forme initiale : le ressort a Ã©tÃ© dÃ©formÃ© 
-de faÃ§on irrÃ©versible car sa longueur Ã  vide est plus importante quâauparavant !
+L’analyse de ces résultats montre que la force de traction imposée pour déformer chaque ressort semble varier
+linéairement avec la longueur du ressort. Une régression linéaire permet de confirmer cette hypothèse en
+proposant un modèle affine de la forme : F = aL + b (en trait noir sur le graphe), que l’on trouve plus
+couramment sous la forme : F = k ( L − L0 ) . Cette relation constitue la loi de Hooke (du nom du scientifique
+anglais Robert Hooke qui découvrit cette loi en 1676) décrivant la force de rappel élastique exercée par un
+ressort de longueur L et de longueur à vide L0. La constante k, appelée constante de raideur, caractérise la
+rigidité du ressort. La force de rappel est ainsi proportionnelle à l’allongement du ressort (L – L0).
+Par exemple, pour le ressort 2 (points bleus sur le graphe), on obtient :
+k = 19,0 N.m-1 et L0 = 189 mm
+Les ressorts 1 et 2 étudiés ici diffèrent essentiellement par leur longueur à vide (ce qui est confirmé par la
+photo des ressorts) et assez peu par leur constante de raideur (pour le ressort 1 on a en effet k = 20,8 N.m-1 et
+L0 = 105 mm). Le ressort 1 est ainsi légèrement plus rigide que le ressort 2.
+Étude au dynamomètre
+Il est possible de mesurer directement la force de rappel exercée par un ressort à l’aide d’un dynamomètre.
+On place cette fois le ressort 2 étudié précédemment horizontalement entre le dynamomètre et une potence
+fixe et on mesure la force de rappel pour différentes longueurs imposées du ressort (protocole 2). On utilise
+un banc d’optique gradué pour faciliter la mesure de la longueur du ressort.
 
-8 
-En recommenÃ§ant lâexpÃ©rience de traction avec le ressort dÃ©formÃ©, on remarque (points bleus sur le graphe) 
-que les nouvelles mesures sont dÃ©calÃ©es par rapport aux points prÃ©cÃ©dents. Les points bleus sont maintenant 
-alignÃ©s tant que la longueur du ressort reste infÃ©rieure Ã  1 200 mm, avec une pente identique au cas prÃ©cÃ©dent : 
-on retrouve la loi de Hooke (tirets noirs) avec une constante de raideur inchangÃ©e. Au-delÃ  de 1 200 mm, on 
-retrouve lâÃ©cart par rapport au modÃ¨le linÃ©aire avec une dÃ©formation irrÃ©versible du ressort. 
- 
- 
-Ressort 1 initial (en haut) et aprÃ¨s dÃ©formation irrÃ©versible (en bas) 
- 
-La loi de Hooke, qui dÃ©crit la relation linÃ©aire entre la force de rappel exercÃ©e par un ressort et sa longueur, 
-reste donc valable tant que la dÃ©formation nâest pas trop grande. Nous allons chercher Ã  comprendre ce quâil 
-se passe au niveau microscopique. 
- 
- 
- 
-DeuxiÃ¨me partie 
-DÃ©formation professionnelle 
- 
-Dans le cadre de notre projet, nous avons contactÃ© le laboratoire UMET (UnitÃ© MatÃ©riaux et Transformations) 
-de lâUniversitÃ© de Lille pour en savoir plus sur les mÃ©thodes de caractÃ©risation mÃ©canique des matÃ©riaux. Nous 
-avons pu Ãªtre reÃ§us par Madame Ingrid Proriol-Serre, directrice de recherche CNRS et cheffe dâÃ©quipe au 
-laboratoire, et Monsieur Jocelyn Golek, ingÃ©nieur dâÃ©tudes CNRS, et nous avons eu la chance de participer Ã  
-des tests de traction sur des Ã©chantillons mÃ©talliques. 
- 
-  
- 
-Mesures de dÃ©formation au laboratoire 
-Comme dans notre expÃ©rience avec le ressort, il sâagit de tirer sur une piÃ¨ce mÃ©tallique pour la dÃ©former et 
-mesurer en mÃªme temps la force appliquÃ©e.
+On trace comme précédemment la force de rappel en fonction de la longueur du ressort (à gauche) et on
+superpose ces points à ceux de l’expérience précédente (protocoles 1 et 2, à droite) :
 
-9 
-Les Ã©chantillons utilisÃ©s, que lâon appelle des Ã©prouvettes, ont une forme normalisÃ©e qui permet la 
-comparaison entre diffÃ©rents matÃ©riaux. Les parties larges aux extrÃ©mitÃ©s de lâÃ©prouvette permettent de fixer 
-la piÃ¨ce dans les mors (sorte de pince sur mesure) du banc de traction sans fragiliser lâensemble. Le banc de 
-traction permet dâimposer trÃ¨s prÃ©cisÃ©ment la distance L entre les mors, câest-Ã -dire la longueur de 
-lâÃ©chantillon, en exerÃ§ant une force F
-ïµïµ  pouvant jusquâÃ  plusieurs milliers de newtons ! 
- 
- 
- 
-Tout se passe comme si les Ã©chantillons Ã©tudiÃ©s avaient la forme dâune tige rectangulaire de longueur initiale 
-L0 = 15,0 mm et de section S = eh = 3,25.10
--6
- m
+5
+
+Cette expérience vient à nouveau confirmer la validité de la loi de Hooke F = k ( L − L0 ) pour le ressort 2 avec
+des valeurs similaires aux précédentes aux incertitudes de mesure près : k = 19,0 N.m-1 et L0 = 188 mm
+(obtenues par régression linéaire). Les incertitudes de mesures sont essentiellement dues à la mesure de la
+longueur du ressort (au réglet avec le protocole 1 et au banc d’optique gradué pour le protocole 2) et à la
+mesure de la force au dynamomètre (protocole 2 uniquement).
+Nous avons constaté expérimentalement que ce comportement linéaire du ressort est également réversible,
+puisque les points de mesure restent alignés sur la même droite quel que soit le sens de déformation du ressort
+(mesures par longueurs croissantes ou décroissantes).
+Oscillateur mécanique à ressort
+La force de rappel élastique des ressorts est souvent utilisée dans les oscillateurs mécaniques, dont l’exemple
+le plus simple est constitué d’une masse m accrochée à un ressort de constante de raideur k. On trouve
+
+1 k
+.
+2 m
+On utilise à nouveau le ressort 2. On lâche la masse sans vitesse initiale et on mesure la période des oscillations
+(on a en fait mesuré 10 périodes d’oscillation en filmant le mouvement de la masse pour plus de précision).
+On a tracé ci-dessous la fréquence f des oscillations en fonction de la masse m, puis le carré de cette fréquence
+en fonction de 1/m :
+théoriquement que le mouvement de la masse est harmonique (ou sinusoïdal) de fréquence f =
+
+Plus la masse à déplacer est grande, plus les oscillations sont lentes et la fréquence faible. Le tracé de f2 en
+1
+k
+fonction de 1/m montre ainsi une évolution linéaire de la forme : f 2 = a  où l’on identifie a = 2 d’après
+m
+4
 2
-. 
-Lâordinateur reliÃ© au banc de traction permet de tracer directement la force de traction exercÃ©e en fonction de 
-la longueur de lâÃ©chantillon. Le graphe suivant prÃ©sente les rÃ©sultats obtenus pour une Ã©prouvette en cuivre : 
- 
- 
- 
-Afin de sâaffranchir de la taille des Ã©chantillons, on dÃ©finit la contrainte F
-S
-ï³=  (exprimÃ©e gÃ©nÃ©ralement en 
-MPa) et lâallongement relatif 0
-0
-LL
+-1
+le modèle théorique. Avec a = 0,472 kg.Hz , on en déduit : k = 18,6 N.m . On retrouve une valeur proche de
+celle déjà obtenue pour la constante de raideur du ressort 2. On a constaté que les incertitudes sur la fréquence
+des oscillations étaient plus grandes lorsque les masses étaient faibles car il est plus difficile de mesurer la
+période avec un mouvement trop rapide.
+Par exemple, les ressorts utilisés dans les suspensions de voiture permettent d’obtenir une fréquence
+d’oscillation libre de l’ordre de 1 Hz. En considérant un véhicule de masse moyenne 1,2.103 kg, on obtient
+une constante de raideur équivalente k = 4 2 f 2 m de l’ordre de 5.104 N.m-1 !
+6
+
+La linéarité de la loi de Hooke et la réversibilité du comportement élastique d’un ressort sont très pratiques
+lorsque l’on veut réaliser un dynamomètre à ressort : il suffit de repérer l’allongement (L – L0) du ressort avec
+des graduations réparties linéairement utilisant un facteur de conversion pour obtenir la valeur de la force.
+
+Dynamomètres utilisés pour mesurer au maximum 1 N ou 5 N respectivement
+Mais la loi de Hooke est-elle toujours valable ?
+Vers une déformation irréversible
+Nous avons décidé de sacrifier le ressort 1 (que nous avions en double exemplaire) et de tirer dessus de manière
+plus conséquente afin de tester la loi de Hooke pour des grandes déformations.
+On utilise le protocole 2 précédent pour mesurer, avec le dynamomètre, la force de rappel exercée par le ressort
+lorsqu’on lui impose une longueur donnée, mesurée au banc d’optique. Nous avons réussi à atteindre une
+longueur du ressort de l’ordre de 1,3 m pour une force de rappel de 23 N, ce qui correspondrait au poids d’un
+objet de l’ordre de 2,3 kg (voir photo ci-dessous). Le dynamomètre a été réglé sur le calibre maximal de 50 N.
+On trace alors la force de rappel en fonction de la longueur du ressort sur le graphe suivant (points rouges) :
+
+On constate que la relation entre la force de rappel et la longueur reste linéaire tant que la longueur du ressort
+reste inférieure à 1 100 mm, ce qui confirme la validité de la loi de Hooke dans cette plage (trait noir).
+Cependant, pour des longueurs plus importantes, la force de rappel mesurée devient plus faible que celle
+prévue par la loi de Hooke et les points commencent à s’éloigner du modèle linéaire.
+Nous avons alors constaté en relâchant le ressort qu’il n’a pas repris sa forme initiale : le ressort a été déformé
+de façon irréversible car sa longueur à vide est plus importante qu’auparavant !
+7
+
+En recommençant l’expérience de traction avec le ressort déformé, on remarque (points bleus sur le graphe)
+que les nouvelles mesures sont décalées par rapport aux points précédents. Les points bleus sont maintenant
+alignés tant que la longueur du ressort reste inférieure à 1 200 mm, avec une pente identique au cas précédent :
+on retrouve la loi de Hooke (tirets noirs) avec une constante de raideur inchangée. Au-delà de 1 200 mm, on
+retrouve l’écart par rapport au modèle linéaire avec une déformation irréversible du ressort.
+
+Ressort 1 initial (en haut) et après déformation irréversible (en bas)
+La loi de Hooke, qui décrit la relation linéaire entre la force de rappel exercée par un ressort et sa longueur,
+reste donc valable tant que la déformation n’est pas trop grande. Nous allons chercher à comprendre ce qu’il
+se passe au niveau microscopique.
+
+Deuxième partie
+Déformation professionnelle
+Dans le cadre de notre projet, nous avons contacté le laboratoire UMET (Unité Matériaux et Transformations)
+de l’Université de Lille pour en savoir plus sur les méthodes de caractérisation mécanique des matériaux. Nous
+avons pu être reçus par Madame Ingrid Proriol-Serre, directrice de recherche CNRS et cheffe d’équipe au
+laboratoire, et Monsieur Jocelyn Golek, ingénieur d’études CNRS, et nous avons eu la chance de participer à
+des tests de traction sur des échantillons métalliques.
+
+Mesures de déformation au laboratoire
+Comme dans notre expérience avec le ressort, il s’agit de tirer sur une pièce métallique pour la déformer et
+mesurer en même temps la force appliquée.
+8
+
+Les échantillons utilisés, que l’on appelle des éprouvettes, ont une forme normalisée qui permet la
+comparaison entre différents matériaux. Les parties larges aux extrémités de l’éprouvette permettent de fixer
+la pièce dans les mors (sorte de pince sur mesure) du banc de traction sans fragiliser l’ensemble. Le banc de
+traction permet d’imposer très précisément la distance L entre les mors, c’est-à-dire la longueur de
+
+l’échantillon, en exerçant une force F pouvant jusqu’à plusieurs milliers de newtons !
+
+L0
+
 L
-ï¥
-â
-=  oÃ¹ L est la longueur de lâÃ©chantillon dÃ©formÃ© (ï¥  est sans dimension). 
- 
-L 
-L0 
-e 
-h 
-mors 
-Ã©prouvette 
-(ici en cuivre) 
-L0 = 15,0 mm 
-e = 1,70 mm 
+
+éprouvette
+(ici en cuivre)
+
+e
+mors
+
+h
+
+L0 = 15,0 mm
+e = 1,70 mm
 h = 1,91 mm
 
-10 
-On trace alors la contrainte en fonction de lâallongement relatif pour lâÃ©prouvette en cuivre : 
- 
-La courbe obtenue est caractÃ©ristique dâun test de traction et reste similaire pour diffÃ©rents matÃ©riaux. On peut 
-distinguer quatre zones principales : 
-â¢ la zone E dans laquelle la contrainte varie linÃ©airement avec lâallongement relatif. Câest la zone de 
-dÃ©formation Ã©lastique du matÃ©riau. 
-â¢ la zone P dans laquelle la contrainte augmente plus lentement avec lâallongement, pour atteindre un 
-maximum. Câest la zone de dÃ©formation plastique. 
-â¢ la zone S dans la laquelle la contrainte mesurÃ©e diminue Ã  cause du phÃ©nomÃ¨ne de striction. 
-â¢ la zone R qui se limite Ã  la fin de la courbe et correspondant Ã  la rupture de lâÃ©prouvette. 
- 
-A la fin du test, on sort lâÃ©prouvette du banc de traction et on constate quâelle est dÃ©formÃ©e de faÃ§on 
-irrÃ©versible, ayant subi un allongement global et un rÃ©trÃ©cissement local de sa section. 
- 
- 
-A gauche : Ã©prouvette avant le test ; Ã  droite : Ã©prouvette aprÃ¨s le test de traction 
- 
-Comportement microscopique du matÃ©riau 
-Dans la zone de dÃ©formation Ã©lastique (zone E), on peut modÃ©liser la contrainte en fonction de lâallongement 
-relatif sous la forme Eï³ï¥=  oÃ¹ E est la pente de la droite, appelÃ©e module de Young, caractÃ©ristique du 
-matÃ©riau Ã©tudiÃ©. Une rÃ©gression linÃ©aire Ã  partir des rÃ©sultats pour le cuivre Ã©tudiÃ© (trait en pointillÃ©s noirs sur 
-le graphe) donne ainsi E = 13,4 GPa. 
-Ce modÃ¨le reste valable tant que la contrainte appliquÃ©e reste infÃ©rieure Ã  une contrainte maximale appelÃ©e 
-limite dâÃ©lasticitÃ©. Pour le cuivre, on peut mesurer 180 GPa
-lim
-ï³= . 
-zone 
-E 	zone P 
-zone S 
+Tout se passe comme si les échantillons étudiés avaient la forme d’une tige rectangulaire de longueur initiale
+L0 = 15,0 mm et de section S = eh = 3,25.10-6 m2.
+L’ordinateur relié au banc de traction permet de tracer directement la force de traction exercée en fonction de
+la longueur de l’échantillon. Le graphe suivant présente les résultats obtenus pour une éprouvette en cuivre :
+
+Afin de s’affranchir de la taille des échantillons, on définit la contrainte  =
+MPa) et l’allongement relatif  =
+
+F
+(exprimée généralement en
+S
+
+L − L0
+où L est la longueur de l’échantillon déformé (  est sans dimension).
+L0
+
+9
+
+On trace alors la contrainte en fonction de l’allongement relatif pour l’éprouvette en cuivre :
+
+zone
+E
+
+zone P
+
+zone S
 zone R
 
-11 
-On peut ainsi remonter Ã  la force de traction 0
-0
-LL
-F S ES
-L
-ï³
-â
-== , câest-Ã -dire ( )
-eq 0
-F k L L=â et on retrouve 
-une loi similaire Ã  la loi de Hooke oÃ¹ lâon identifie eq
-0
+La courbe obtenue est caractéristique d’un test de traction et reste similaire pour différents matériaux. On peut
+distinguer quatre zones principales :
+➢ la zone E dans laquelle la contrainte varie linéairement avec l’allongement relatif. C’est la zone de
+déformation élastique du matériau.
+➢ la zone P dans laquelle la contrainte augmente plus lentement avec l’allongement, pour atteindre un
+maximum. C’est la zone de déformation plastique.
+➢ la zone S dans la laquelle la contrainte mesurée diminue à cause du phénomène de striction.
+➢ la zone R qui se limite à la fin de la courbe et correspondant à la rupture de l’éprouvette.
+A la fin du test, on sort l’éprouvette du banc de traction et on constate qu’elle est déformée de façon
+irréversible, ayant subi un allongement global et un rétrécissement local de sa section.
+
+A gauche : éprouvette avant le test ; à droite : éprouvette après le test de traction
+Comportement microscopique du matériau
+Dans la zone de déformation élastique (zone E), on peut modéliser la contrainte en fonction de l’allongement
+relatif sous la forme  = E où E est la pente de la droite, appelée module de Young, caractéristique du
+matériau étudié. Une régression linéaire à partir des résultats pour le cuivre étudié (trait en pointillés noirs sur
+le graphe) donne ainsi E = 13,4 GPa.
+Ce modèle reste valable tant que la contrainte appliquée reste inférieure à une contrainte maximale appelée
+limite d’élasticité. Pour le cuivre, on peut mesurer  lim = 180 GPa .
+
+10
+
+On peut ainsi remonter à la force de traction F =  S = ES
+
+L − L0
+, c’est-à-dire F = keq ( L − L0 ) et on retrouve
+L0
+
 ES
-k
-L
-= . Dans cette zone, lâÃ©chantillon de cuivre se 
-comporte en fait comme un ressort avec une dÃ©formation Ã  la fois Ã©lastique et rÃ©versible. La constante de 
-raideur Ã©quivalente vaut alors keq = 2,9.10
-6
- N.m
--1
-, bien plus grande quâavec un seul ressort ! 
-Au niveau microscopique, les atomes sont liÃ©s les uns aux autres par des liaisons mÃ©talliques Ã©quivalentes Ã  
-des ressorts identiques de constante de raideur k que lâon va chercher Ã  estimer. 
- 
- 
-Dans lâÃ©prouvette sans dÃ©formation (figure (a)), les atomes sont rÃ©partis au niveau microscopique avec une 
-distance moyenne interatomique a. Si on considÃ¨re quâil y a N plans atomiques le long de lâÃ©chantillon de 
-longueur L0 et n atomes dans chaque section S, on a ainsi 0
-L Na= et 2
-S na= . 
-En appliquant la force de traction F, les liaisons interatomiques sont toutes dÃ©formÃ©es de u si bien que la 
-longueur de lâÃ©chantillon devient ()L N a u=+ (figure (b)). Lâallongement relatif 0
-0
-LL u
-La
-ï¥
-â
-== reste le 
-mÃªme pour lâÃ©prouvette de laboratoire que pour chaque liaison atomique. La force de traction F exercÃ©e Ã  
-lâextrÃ©mitÃ© est alors compensÃ©e par toutes les forces de rappel microscopiques f des n atomes situÃ©s sur la 
-derniÃ¨re tranche de matÃ©riau, câest-Ã -dire : F nf= oÃ¹ f ku= en appliquant la loi de Hooke sur chaque 
-ressort. 
-Finalement, on obtient 2
-S kS
-F ku ES
-aa
-ï¥ï¥= = =  oÃ¹ lâon identifie le module de Young du matÃ©riau k
-E
+. Dans cette zone, l’échantillon de cuivre se
+L0
+comporte en fait comme un ressort avec une déformation à la fois élastique et réversible. La constante de
+raideur équivalente vaut alors keq = 2,9.106 N.m-1, bien plus grande qu’avec un seul ressort !
+Au niveau microscopique, les atomes sont liés les uns aux autres par des liaisons métalliques équivalentes à
+des ressorts identiques de constante de raideur k que l’on va chercher à estimer.
+
+une loi similaire à la loi de Hooke où l’on identifie keq =
+
+(a) éprouvette non déformée
+
+(b) éprouvette avec déformation
+
+L0
+
 a
-= . On 
-peut ainsi Ã©valuer la constante de raideur des liaisons interatomiques : k Ea= . 
-Pour le cuivre, on a mesurÃ© E = 13,4 GPa et la distance interatomique dans le cuivre est par ailleurs de lâordre 
-de 9,8.10
--8
- m (soit 100 nm). On obtient ainsi : k = 1,3.10
-3
- N.m
--1
-, soit environ 50 fois plus faible que pour un 
-amortisseur de voiture. 
- 
-Dans la zone de dÃ©formation plastique (zone P), on nous a expliquÃ© que la force de traction est suffisante pour 
-dÃ©placer les plans atomiques les uns par rapport aux autres de faÃ§on irrÃ©versible, notamment Ã  lâendroit oÃ¹ il 
-y a des dÃ©fauts de structure. Ces dÃ©placements sâappellent des dislocations et sont Ã  lâorigine de la ductilitÃ© 
-des matÃ©riaux, câest-Ã -dire la propriÃ©tÃ© Ã  se dÃ©former sans casser et Ã  rester dans leur nouvelle forme, comme 
-quand on plie un trombone en deux. Lorsque lâon relÃ¢che la contrainte, les liaisons atomiques (Ã©quivalentes Ã  
-des ressorts) reviennent Ã  leur taille initiale, mais les dislocations persistent : le matÃ©riau est dÃ©formÃ© 
-irrÃ©versiblement. 
-L0 
-L 
-F 
-a  a  a 
-a + u a + u a + u 
-f 
-(a) Ã©prouvette non dÃ©formÃ©e 
-(b) Ã©prouvette avec dÃ©formation 
-N atomes sur la longueur L 
-n atomes sur 
+
+a
+
+a
+L
+
+F
+
+N atomes sur la longueur L
+
+a+u
+
+a+u
+
+a+u
+
+n atomes sur
 la section S
 
-12 
-Dans la zone S, on constate que la contrainte mesurÃ©e diminue alors que lâon continue Ã  allonger lâÃ©prouvette. 
-En rÃ©alitÃ©, il apparaÃ®t un rÃ©trÃ©cissement local dÃ» une accumulation de dislocations qui fait augmenter fortement 
-la contrainte Ã  cet endroit, accentuant encore la dÃ©formation et le rÃ©trÃ©cissement. Câest le phÃ©nomÃ¨ne de 
-striction qui finit par aboutir Ã  la rupture de lâÃ©prouvette (zone R). 
-Finalement les caractÃ©ristiques mÃ©caniques dâun Ã©chantillon sont bien expliquÃ©es par la structure 
-microscopique du matÃ©riau. 
- 
-Nous avons refait le test de traction pour une Ã©prouvette en acier avec les rÃ©sultats suivants : 
- 
- 
- 
-On retrouve les zones de dÃ©formation Ã©lastique, de dÃ©formation plastique, le phÃ©nomÃ¨ne de striction et la 
-rupture et on peut Ã©valuer le module de Young et la limite Ã©lastique pour lâacier en comparaison au cuivre : 
- 
- 	Acier Cuivre 
-Module de Young 
-E (GPa) 
-33,0 	13,4 
-Limite dâÃ©lasticitÃ© lim
-ï³ 
- (MPa) 
-291 	180 
- 
-Avec un module de Young plus Ã©levÃ©, lâacier est plus rigide que le cuivre. Sa limite dâÃ©lasticitÃ© est Ã©galement 
-plus Ã©levÃ©e si bien quâil sera plus difficile dâobtenir une dÃ©formation plastique avec lâacier quâavec le cuivre. 
- 
-Un banc de traction fait maison 
-Pour fabriquer notre propre banc de traction, comme celui du laboratoire UMET, nous avons repris le 
-protocole de mesure avec le dynamomÃ¨tre que nous avions dÃ©jÃ  utilisÃ© pour caractÃ©riser nos ressorts : on 
-mesure la force exercÃ©e par un fil de nylon sur un dynamomÃ¨tre en fonction de sa longueur. 
- 
-L 
-F 
-fil de nylon 
-dynamomÃ¨tre
+f
 
-13 
-Nous avons choisi de prendre un fil en nylon car câest un matÃ©riau a priori facile Ã  dÃ©former. Le fil a une 
-longueur initiale L0 = 685 mm et un diamÃ¨tre d = 0,6 mm (mesurÃ© au pied Ã  coulisse). Nous avons tirÃ© le fil 
-au maximum et obtenu une variation de sa longueur dâenviron 40 mm pour atteindre la force maximale 
-pouvant Ãªtre mesurÃ© avec notre dynamomÃ¨tre (soit 50 N). Le fil de nylon Ã©tait tellement tendu quâon pouvait 
-le faire vibrer comme une corde de guitare ! 
-On peut alors tracer la contrainte F
-S
-ï³=  avec 2
-4
-d
-S
-ï°
-= (section du fil) en fonction de lâallongement relatif 0
-0
-LL
-L
-ï¥
-â
-= 
-comme nous lâavons fait au laboratoire UMET : 
- 
-     
- 
-Les points sâalignent assez bien tant que la contrainte reste infÃ©rieure Ã  environ 70 MPa qui correspond Ã  la 
-limite dâÃ©lasticitÃ© du nylon. La pente de la droite donne le module de Young du nylon E = 3,2 GPa, avec une 
-incertitude de 0,5 GPa (obtenue Ã  partir de la rÃ©partition statistique des points). Pour des contraintes 
-supÃ©rieures, les points sâÃ©cartent de la droite : on retrouve un comportement plastique avec une dÃ©formation 
-irrÃ©versible du fil. 
-Cette expÃ©rience reproduit bien le principe du banc de traction, mais prÃ©sente plusieurs inconvÃ©nients 
-pratiques si on veut lâutiliser pour caractÃ©riser des matÃ©riaux : 
-â¢ il est difficile dâaccrocher le fil sans le fragiliser (on a fait un nÅud Ã  chaque extrÃ©mitÃ©) ; câest pourquoi 
-au laboratoire on utilise des mors sur mesure 
-â¢ on est vite limitÃ© par les caractÃ©ristiques du dynamomÃ¨tre qui peut mesurer au maximum une force de 
-50 N 
-Par exemple, pour allonger un fil dâacier de 1 m de longueur et 0,6 mm de diamÃ¨tre, il faudrait imposer une 
-force de traction F ESï¥=  (avec E = 33 GPa). Pour une dÃ©formation de 10 mm, on aurait Îµ = 0,01 ce qui 
-impose F = 93 N, bien supÃ©rieure Ã  ce que lâon pourrait mesurer. Câest pourquoi, nous avons conÃ§u un 
-nouveau banc de caractÃ©risation que lâon pourrait utiliser avec diffÃ©rents matÃ©riaux. 
- 
-Fabrication dâun banc de traction Ã  vibrations 
-Lorsque le fil de nylon Ã©tait tendu, nous avons pu le faire vibrer pour quâil Ã©mette un son. Câest le principe de 
-la guitare : en rÃ©glant la tension des cordes on peut ajuster la frÃ©quence du son Ã©mis et accorder lâinstrument. 
-Nous avons donc transformÃ© une guitare en appareil de mesure du module de Young : en mesurant la frÃ©quence 
-de vibration des cordes, on peut connaÃ®tre leur tension (câest-Ã -dire la force de traction exercÃ©e). Il suffit alors 
-de modifier lâallongement des cordes en tournant les clÃ©s du manche pour modifier la frÃ©quence du son jouÃ©, 
-donc la tension. Le tracÃ© de la contrainte en fonction de lâallongement permettra de caractÃ©riser le matÃ©riau. 
-Dans la zone de dÃ©formation Ã©lastique on pourra ainsi dÃ©terminer le module de Young du matÃ©riau constituant 
-les cordes. Nous avons choisi dâÃ©tudier des cordes en nylon, en cuivre, en acier et en nitinol (alliage de nickel 
-et de titane, voir TroisiÃ¨me Partie).
-
-14 
-         
-Banc de traction Ã  vibrations en cours de construction 
- 
- 
- 
-Les cordes ont toutes la mÃªme longueur de vibration Lv = 650 mm imposÃ©e par la distance entre les sillets. La 
-longueur totale L0 de chaque corde est mesurÃ©e entre le cylindre de tÃªte et le sillet infÃ©rieur. 
-CaractÃ©ristiques des cordes utilisÃ©es : 
- 
-Corde Nylon 1 Nylon 2 Cuivre Acier Nitinol 
-DiamÃ¨tre d 0,6 mm 1,0 mm 0,2 mm 0,6 mm 0,1 mm 
-Longueur L0 700 mm 735 mm 775 mm 735 mm 775 mm 
-Masse 
-volumique Ï 
-1,2.10
-3
- kg.m
--3 
-1,2.10
-3
- kg.m
--3
- 8,96.10
-3
- kg.m
--3 
-7,8.10
-3
- kg.m
--3 
-6,45.10
-3
- kg.m
--3 
-sillet supÃ©rieur 
-sillet infÃ©rieur 
-longueur de 
-vibration 
-tÃªte avec clÃ©s 
-de rÃ©glage 	laser, miroir et 
-photorÃ©cepteur 
-cordes en nylon 
-cuivre 
-acier 
-nitinol 
-L0 
-Lv 
-F 
-laser 
-photorÃ©cepteur 
-sillet supÃ©rieur 	sillet infÃ©rieur 
-corde en vibration 
-clÃ© et systÃ¨me 
-dâenroulement de la corde 
-miroir 
-cylindre 
-de tÃªte
-
-15 
-Pour mesurer la frÃ©quence de vibration, on fait passer un faisceau laser prÃ¨s de la corde Ã©tudiÃ©e. Le faisceau 
-se rÃ©flÃ©chit sur un miroir collÃ© sur le manche et arrive sur un montage photorÃ©cepteur qui mesure lâintensitÃ© 
-lumineuse. Lâanalyse du signal Ã  lâoscilloscope permet de dÃ©terminer la frÃ©quence de vibration. On mesure en 
-fait plusieurs pÃ©riodes avec les curseurs pour gagner en prÃ©cision. La mÃ©thode est dÃ©taillÃ©e en ANNEXE. 
- 
-Pour mesurer lâallongement de la corde, on compte le nombre N de tours rÃ©alisÃ©s avec la clÃ© (qui permet 
-normalement dâaccorder la guitare). 
- 
-Le cylindre de tÃªte, sur lequel la corde est enroulÃ©e, a un diamÃ¨tre 2 a = 9,3 mm. DâaprÃ¨s le mÃ©canisme qui 
-utilise une vis sans fin et une roue crantÃ©e, il faut 14 tours de clÃ© pour que le cylindre fasse un tour complet. 
-La longueur de corde qui sâenroule sur le cylindre correspond Ã  lâallongement de la corde et vaut donc : 2
-14
+Dans l’éprouvette sans déformation (figure (a)), les atomes sont répartis au niveau microscopique avec une
+distance moyenne interatomique a. Si on considère qu’il y a N plans atomiques le long de l’échantillon de
+longueur L0 et n atomes dans chaque section S, on a ainsi L0 = Na et S = na 2 .
+En appliquant la force de traction F, les liaisons interatomiques sont toutes déformées de u si bien que la
+L − L0 u
+longueur de l’échantillon devient L = N (a + u) (figure (b)). L’allongement relatif  =
+= reste le
+L0
 a
-LN
-ï°
-ï = ï´ 
-. On peut ainsi calculer lâallongement relatif de la corde de longueur initiale L0 : 0
+même pour l’éprouvette de laboratoire que pour chaque liaison atomique. La force de traction F exercée à
+l’extrémité est alors compensée par toutes les forces de rappel microscopiques f des n atomes situés sur la
+dernière tranche de matériau, c’est-à-dire : F = nf où f = ku en appliquant la loi de Hooke sur chaque
+ressort.
+S
+kS
+k
+Finalement, on obtient F = 2 ku =  = ES où l’on identifie le module de Young du matériau E = . On
+a
+a
+a
+peut ainsi évaluer la constante de raideur des liaisons interatomiques : k = Ea .
+Pour le cuivre, on a mesuré E = 13,4 GPa et la distance interatomique dans le cuivre est par ailleurs de l’ordre
+de 9,8.10-8 m (soit 100 nm). On obtient ainsi : k = 1,3.103 N.m-1, soit environ 50 fois plus faible que pour un
+amortisseur de voiture.
+Dans la zone de déformation plastique (zone P), on nous a expliqué que la force de traction est suffisante pour
+déplacer les plans atomiques les uns par rapport aux autres de façon irréversible, notamment à l’endroit où il
+y a des défauts de structure. Ces déplacements s’appellent des dislocations et sont à l’origine de la ductilité
+des matériaux, c’est-à-dire la propriété à se déformer sans casser et à rester dans leur nouvelle forme, comme
+quand on plie un trombone en deux. Lorsque l’on relâche la contrainte, les liaisons atomiques (équivalentes à
+des ressorts) reviennent à leur taille initiale, mais les dislocations persistent : le matériau est déformé
+irréversiblement.
+11
+
+Dans la zone S, on constate que la contrainte mesurée diminue alors que l’on continue à allonger l’éprouvette.
+En réalité, il apparaît un rétrécissement local dû une accumulation de dislocations qui fait augmenter fortement
+la contrainte à cet endroit, accentuant encore la déformation et le rétrécissement. C’est le phénomène de
+striction qui finit par aboutir à la rupture de l’éprouvette (zone R).
+Finalement les caractéristiques mécaniques d’un échantillon sont bien expliquées par la structure
+microscopique du matériau.
+Nous avons refait le test de traction pour une éprouvette en acier avec les résultats suivants :
+
+On retrouve les zones de déformation élastique, de déformation plastique, le phénomène de striction et la
+rupture et on peut évaluer le module de Young et la limite élastique pour l’acier en comparaison au cuivre :
+
+Module de Young
+E (GPa)
+Limite d’élasticité
+ lim (MPa)
+
+Acier
+
+Cuivre
+
+33,0
+
+13,4
+
+291
+
+180
+
+Avec un module de Young plus élevé, l’acier est plus rigide que le cuivre. Sa limite d’élasticité est également
+plus élevée si bien qu’il sera plus difficile d’obtenir une déformation plastique avec l’acier qu’avec le cuivre.
+Un banc de traction fait maison
+Pour fabriquer notre propre banc de traction, comme celui du laboratoire UMET, nous avons repris le
+protocole de mesure avec le dynamomètre que nous avions déjà utilisé pour caractériser nos ressorts : on
+mesure la force exercée par un fil de nylon sur un dynamomètre en fonction de sa longueur.
 L
-L
-ï¥
-ï
-= . 
-Il reste enfin Ã  relier la frÃ©quence f de vibration Ã  la tension F de la corde, puis Ã  la contrainte appliquÃ©e. On 
-montre que la frÃ©quence fondamentale de vibration dÃ©pend de la longueur Lv de la corde en vibration par la 
-relation 1
-2
-v
 F
-f
-LSï²
-= oÃ¹ 2
-4
-d
+fil de nylon
+
+dynamomètre
+
+12
+
+Nous avons choisi de prendre un fil en nylon car c’est un matériau a priori facile à déformer. Le fil a une
+longueur initiale L0 = 685 mm et un diamètre d = 0,6 mm (mesuré au pied à coulisse). Nous avons tiré le fil
+au maximum et obtenu une variation de sa longueur d’environ 40 mm pour atteindre la force maximale
+pouvant être mesuré avec notre dynamomètre (soit 50 N). Le fil de nylon était tellement tendu qu’on pouvait
+le faire vibrer comme une corde de guitare !
+d2
+F
+On peut alors tracer la contrainte  =
+avec S =
+(section du fil) en fonction de l’allongement relatif
 S
-ï°
-= est la section de la corde (supposÃ©e constante), soit encore 1
-2
-v
-f
-L
-ï³
-ï²
-= 
-en introduisant la contrainte F
-S
-ï³= . Finalement on obtient la contrainte : 22
 4
-v
-Lfï³ï²= , connaissant la masse 
-volumique Ï de chaque matÃ©riau. 
-Les graphes ci-dessous montrent les rÃ©sultats obtenus pour la corde de Nylon 2. 
-Par rapport au banc de traction, les mesures sont plus faciles Ã  rÃ©aliser et les incertitudes de mesure sont 
-globalement plus faibles (mesure de frÃ©quence avec plusieurs pÃ©riodes et mesure du nombre de tours de clÃ©). 
- 
-6 pÃ©riodes 
-cylindre 
-de tÃªte 
-corde 
+L − L0
+comme nous l’avons fait au laboratoire UMET :
+=
+L0
+
+Les points s’alignent assez bien tant que la contrainte reste inférieure à environ 70 MPa qui correspond à la
+limite d’élasticité du nylon. La pente de la droite donne le module de Young du nylon E = 3,2 GPa, avec une
+incertitude de 0,5 GPa (obtenue à partir de la répartition statistique des points). Pour des contraintes
+supérieures, les points s’écartent de la droite : on retrouve un comportement plastique avec une déformation
+irréversible du fil.
+Cette expérience reproduit bien le principe du banc de traction, mais présente plusieurs inconvénients
+pratiques si on veut l’utiliser pour caractériser des matériaux :
+➢ il est difficile d’accrocher le fil sans le fragiliser (on a fait un nœud à chaque extrémité) ; c’est pourquoi
+au laboratoire on utilise des mors sur mesure
+➢ on est vite limité par les caractéristiques du dynamomètre qui peut mesurer au maximum une force de
+50 N
+Par exemple, pour allonger un fil d’acier de 1 m de longueur et 0,6 mm de diamètre, il faudrait imposer une
+force de traction F = ES (avec E = 33 GPa). Pour une déformation de 10 mm, on aurait ε = 0,01 ce qui
+impose F = 93 N, bien supérieure à ce que l’on pourrait mesurer. C’est pourquoi, nous avons conçu un
+nouveau banc de caractérisation que l’on pourrait utiliser avec différents matériaux.
+Fabrication d’un banc de traction à vibrations
+Lorsque le fil de nylon était tendu, nous avons pu le faire vibrer pour qu’il émette un son. C’est le principe de
+la guitare : en réglant la tension des cordes on peut ajuster la fréquence du son émis et accorder l’instrument.
+Nous avons donc transformé une guitare en appareil de mesure du module de Young : en mesurant la fréquence
+de vibration des cordes, on peut connaître leur tension (c’est-à-dire la force de traction exercée). Il suffit alors
+de modifier l’allongement des cordes en tournant les clés du manche pour modifier la fréquence du son joué,
+donc la tension. Le tracé de la contrainte en fonction de l’allongement permettra de caractériser le matériau.
+Dans la zone de déformation élastique on pourra ainsi déterminer le module de Young du matériau constituant
+les cordes. Nous avons choisi d’étudier des cordes en nylon, en cuivre, en acier et en nitinol (alliage de nickel
+et de titane, voir Troisième Partie).
+13
+
+Banc de traction à vibrations en cours de construction
+tête avec clés
+de réglage
+
+sillet inférieur
+
+sillet supérieur
+laser, miroir et
+photorécepteur
+
+cordes en nylon
+
+longueur de
+vibration
+acier
+
+nitinol
+
+cuivre
+L0
+Lv
+
+F
+
+miroir
+
+sillet supérieur
+cylindre
+de tête
+
+sillet inférieur
+
+corde en vibration
+
+photorécepteur
+laser
+
+clé et système
+d’enroulement de la corde
+
+Les cordes ont toutes la même longueur de vibration Lv = 650 mm imposée par la distance entre les sillets. La
+longueur totale L0 de chaque corde est mesurée entre le cylindre de tête et le sillet inférieur.
+Caractéristiques des cordes utilisées :
+Corde
+
+Nylon 1
+
+Nylon 2
+
+Cuivre
+
+Acier
+
+Nitinol
+
+Diamètre d
+
+0,6 mm
+
+1,0 mm
+
+0,2 mm
+
+0,6 mm
+
+0,1 mm
+
+Longueur L0
+Masse
+volumique ρ
+
+700 mm
+
+735 mm
+
+775 mm
+
+735 mm
+
+775 mm
+
+1,2.103 kg.m-3
+
+1,2.103 kg.m-3
+
+8,96.103 kg.m-3
+
+7,8.103 kg.m-3
+
+6,45.103 kg.m-3
+
+14
+
+Pour mesurer la fréquence de vibration, on fait passer un faisceau laser près de la corde étudiée. Le faisceau
+se réfléchit sur un miroir collé sur le manche et arrive sur un montage photorécepteur qui mesure l’intensité
+lumineuse. L’analyse du signal à l’oscilloscope permet de déterminer la fréquence de vibration. On mesure en
+fait plusieurs périodes avec les curseurs pour gagner en précision. La méthode est détaillée en ANNEXE.
+
+6 périodes
+
+Pour mesurer l’allongement de la corde, on compte le nombre N de tours réalisés avec la clé (qui permet
+normalement d’accorder la guitare).
+corde
+
 2a
+cylindre
+de tête
 
-16 
-    
- 
-La contrainte varie bien linÃ©airement avec lâallongement relatif, ce qui est caractÃ©ristique dâune dÃ©formation 
-Ã©lastique. On mesure ainsi le module de Young pour le nylon E = 3,5 GPa avec une incertitude de 0,1 GPa. 
-Nous avions Ã©valuÃ© la limite Ã©lastique du nylon Ã  70 MPa, ce qui limite la frÃ©quence Ã  150 Hz si on ne veut 
-pas atteindre la dÃ©formation plastique et dÃ©former le fil de faÃ§on irrÃ©versible. 
-On peut maintenant caractÃ©riser les fils en acier et en cuivre. Les graphes ci-dessous montrent les rÃ©sultats 
-pour lâacier. Puisque la limite dâÃ©lasticitÃ© de lâacier vaut 291 MPa, la frÃ©quence maximale est de 210 Hz pour 
-garder une dÃ©formation Ã©lastique : 
- 
-     
- 
-Le tableau suivant rassemble les rÃ©sultats obtenus avec lâacier et le cuivre : 
-Corde 	Acier Cuivre 
-FrÃ©quence maximale 210 Hz 115 Hz 
-Module de Young (18,2 Â± 2,6) GPa  (11,1 Â± 1,0) GPa 
-(valeur UMET) (33,0 GPa) (13,4 GPa) 
- 
-Ces rÃ©sultats sont similaires Ã  ceux que nous avions obtenus Ã  lâUMET de lâUniversitÃ© de Lille, sachant que 
-la composition exacte des alliages peut modifier les caractÃ©ristiques du matÃ©riau. 
- 
-On se proposer enfin de caractÃ©riser un matÃ©riau qui semble avoir des propriÃ©tÃ©s bien particuliÃ¨res, un alliage 
-de nickel et de titane appelÃ© nitinol.
+Le cylindre de tête, sur lequel la corde est enroulée, a un diamètre 2 a = 9,3 mm. D’après le mécanisme qui
+utilise une vis sans fin et une roue crantée, il faut 14 tours de clé pour que le cylindre fasse un tour complet.
+La longueur de corde qui s’enroule sur le cylindre correspond à l’allongement de la corde et vaut donc :
+2 a
+L
+L =
+ N . On peut ainsi calculer l’allongement relatif de la corde de longueur initiale L0 :  =
+.
+14
+L0
+Il reste enfin à relier la fréquence f de vibration à la tension F de la corde, puis à la contrainte appliquée. On
+montre que la fréquence fondamentale de vibration dépend de la longueur Lv de la corde en vibration par la
+relation f =
 
-17 
-TroisiÃ¨me partie 
-La mÃ©moire de la forme 
- 
-Le nitinol 
-Le nitinol est un alliage Ã  base de nickel (Ã  environ 55 %) et de titane (Ã  environ 45 %) dÃ©couvert en 1962 au 
-Naval Ordnance Laboratory (Maryland, USA), dâoÃ¹ son nom (Nickel-Titane-NOL). AprÃ¨s quelques 
-recherches, on peut lire que le nitinol est un alliage Ã  mÃ©moire de forme dotÃ© dâune super Ã©lasticitÃ© et dont les 
-caractÃ©ristiques dÃ©pendent de la tempÃ©rature. Il a des applications notamment en aÃ©rospatiale et en mÃ©decine. 
-Peut-on mesurer les caractÃ©ristiques du nitinol et comprendre ses propriÃ©tÃ©s si particuliÃ¨res ? 
- 
-Nous avons achetÃ© sur internet quelques ressorts en nitinol, ainsi quâun fil en nitinol, pour pouvoir rÃ©aliser nos 
-expÃ©riences. Le matÃ©riau est assez cher : compter environ 10 â¬ chaque ressort (de 20 mm de long) et 30 â¬ le 
-fil (5 m de long et 0,1 mm de diamÃ¨tre), ce qui revient Ã  100 000 â¬ le kilogramme de nitinol ! 
- 
-Dans un premier temps on accroche verticalement une masse Ã  un ressort de nitinol. Comme attendu, le ressort 
-se dÃ©forme dâautant plus que la masse est importante. Lorsque la masse devient supÃ©rieure Ã  300 g, le ressort 
-est mÃªme Ã©tirÃ© de maniÃ¨re irrÃ©versible, câest la dÃ©formation plastique. Cependant, en chauffant le ressort 
-quelques secondes avec un sÃ¨che-cheveux, on constate queâ¦ le ressort se recomprime tout seul et fait mÃªme 
-remonter la masse ! En Ã©tant chauffÃ©, le ressort a retrouvÃ© sa forme initiale. On parle de mÃ©moire de forme. 
-Le constructeur indique que le ressort change de propriÃ©tÃ©s au-delÃ  de 70 Â°C. 
- 
-    
-Lorsquâil est chauffÃ©, le ressort en nitinol se recomprime ! 
- 
-ExpÃ©riences pour caractÃ©riser le nitinol 
-Pour caractÃ©riser notre ressort en nitinol, on mesure la force de rappel au dynamomÃ¨tre en fonction de la 
-longueur du ressort en utilisant notre banc de traction. La courbe obtenue (points rouges sur le graphe ci-aprÃ¨s) 
-montre que tant que la longueur du ressort ne dÃ©passe 35 mm, la loi de Hooke reste valable, avec une constante 
-de raideur k1 = 139 N.m
--1
-. Pour des longueurs supÃ©rieures, on arrive ensuite dans la zone de dÃ©formation 
-plastique. 
-On souhaite caractÃ©riser le ressort lorsquâil est chauffÃ©. Le sÃ¨che-cheveux ne permet pas de chauffer le ressort 
-de faÃ§on homogÃ¨ne, donc on se propose de le chauffer par lâintÃ©rieur en faisant passer un courant Ã©lectrique 
-dans le ressort (le nitinol Ã©tant un matÃ©riau conducteur). On utilise une alimentation Ã  courant continu 
-permettant de dÃ©livrer un courant Ã©lectrique dâintensitÃ© I rÃ©glable. Le constructeur du ressort indique que le 
-courant dâutilisation est de lâordre de 2 Ã  3 A. 
-On reprend donc lâexpÃ©rience de traction pour un courant dâintensitÃ© I = 2 A. La courbe (points bleus sur le 
-graphe) montre une Ã©volution linÃ©aire de la force de rappel avec la longueur du ressort. La constante de raideur 
-vaut maintenant k2 = 272 N.m
--1
- et la dÃ©formation reste Ã©lastique jusquâÃ  au moins 60 mm de longueur. Le 
-ressort en nitinol est donc bien plus rigide lorsque la tempÃ©rature est plus Ã©levÃ©e, chose que lâon nâa jamais 
-constatÃ©e avec un ressort en acier !
+1
+2 Lv
 
-18 
- 
- 
-On peut prÃ©ciser la valeur du courant Ã  partir duquel le matÃ©riau change de propriÃ©tÃ©s. On mesure cette fois la 
-force de rappel exercÃ©e par le ressort dÃ©formÃ© Ã  30 mm de long en fonction de lâintensitÃ© I : 
- 
-On remarque quâÃ  partir dâune intensitÃ© de 1 A, la force de rappel augmente fortement : lâaugmentation de 
-tempÃ©rature due Ã  lâeffet Joule crÃ©Ã© par le passage du courant a modifiÃ© les propriÃ©tÃ©s du nitinol. 
- 
-Que se passe-t-il dans le matÃ©riau au niveau microscopique ? 
-Lors de notre visite du laboratoire UMET, nous avons rencontrÃ© un ingÃ©nieur dâÃ©tude, spÃ©cialiste du 
-microscope Ã©lectronique Ã  balayage (MEB), qui nous a montrÃ© que lâon pouvait dÃ©duire la structure 
-microscopique locale dâun Ã©chantillon en observant directement sa surface. Le faisceau dâÃ©lectrons qui sert Ã  
-analyser les matÃ©riaux rÃ©agit en effet diffÃ©remment selon lâarrangement du rÃ©seau cristallin, ce qui se traduit 
-par des couleurs diffÃ©rentes sur lâimage traitÃ©e par ordinateur (voir capture dâÃ©cran ci-dessous).
+F
+1 
+d2
+où S =
+est la section de la corde (supposée constante), soit encore f =
+4
+S
+2 Lv 
 
-19 
-En fait la structure cristalline du nitinol change en fonction de la tempÃ©rature. Ã basse tempÃ©rature, le rÃ©seau 
-cristallin est sous une forme martensite, avec des liaisons entre Ni et Ti fortement inclinÃ©es et des plans 
-atomiques dÃ©calÃ©s les uns par rapport aux autres, qui a la propriÃ©tÃ© dâÃªtre trÃ¨s Ã©lastique et ductile, câest-Ã -dire 
-facilement dÃ©formable dans sa zone plastique. Lorsque la tempÃ©rature augmente et passe au-delÃ  dâun seuil 
-(qui dÃ©pend de la composition exacte de lâalliage), il se produit une transition de phase cristalline et le rÃ©seau 
-passe sous forme austÃ©nite, avec une configuration cubique Ã  faces centrÃ©es, qui est une configuration trÃ¨s 
-symÃ©trique et bien plus rigide, permettant au matÃ©riau de retrouver sa forme initiale. 
- 
-Pour caractÃ©riser lâÃ©lasticitÃ© du nitinol en phase martensite (Ã  basse tempÃ©rature) et en phase austÃ©nite (pour 
-une tempÃ©rature supÃ©rieure Ã  70 Â°C), on reprend lâÃ©tude des frÃ©quences de vibration dâun fil de nitinol avec 
-notre banc de traction Ã  vibrations (guitare transformÃ©e). Le changement de phase est provoquÃ© par le passage 
-dâun courant Ã©lectrique de 0,7 A dans le fil (valeur recommandÃ©e par le constructeur). 
- 
- 
- 
-Lorsque lâon fait circuler le courant Ã©lectrique, le fil chauffe, ce qui provoque la transition de phase martensite 
-vers austÃ©nite. La contrainte exercÃ©e sur le fil augmente trÃ¨s fortement, le fil se tend le long du manche de 
-guitare et la frÃ©quence de vibration augmente : le son perÃ§u est plus aigu. On constate que la dÃ©formation reste 
-Ã©lastique dans les deux cas car la contrainte varie linÃ©airement avec lâallongement relatif, mais la pente de la 
-droite change fortement : le module de Young est multipliÃ© par 10 entre la phase martensite et la phase 
-austÃ©nite ! 
- 
-Phase Martensite AustÃ©nite 
-IntensitÃ© du courant 0 A 0,7 A 
-Module de Young 17,8 GPa 180 GPa  
-dÃ©formation 
-phase martensite 	phase austÃ©nite 
-tempÃ©rature 
-tempÃ©rature de transition de phase 
-Ni 
+en introduisant la contrainte  =
+
+F
+. Finalement on obtient la contrainte :  = 4  L2v f 2 , connaissant la masse
+S
+
+volumique ρ de chaque matériau.
+Les graphes ci-dessous montrent les résultats obtenus pour la corde de Nylon 2.
+Par rapport au banc de traction, les mesures sont plus faciles à réaliser et les incertitudes de mesure sont
+globalement plus faibles (mesure de fréquence avec plusieurs périodes et mesure du nombre de tours de clé).
+
+15
+
+La contrainte varie bien linéairement avec l’allongement relatif, ce qui est caractéristique d’une déformation
+élastique. On mesure ainsi le module de Young pour le nylon E = 3,5 GPa avec une incertitude de 0,1 GPa.
+Nous avions évalué la limite élastique du nylon à 70 MPa, ce qui limite la fréquence à 150 Hz si on ne veut
+pas atteindre la déformation plastique et déformer le fil de façon irréversible.
+On peut maintenant caractériser les fils en acier et en cuivre. Les graphes ci-dessous montrent les résultats
+pour l’acier. Puisque la limite d’élasticité de l’acier vaut 291 MPa, la fréquence maximale est de 210 Hz pour
+garder une déformation élastique :
+
+Le tableau suivant rassemble les résultats obtenus avec l’acier et le cuivre :
+Corde
+
+Acier
+
+Cuivre
+
+Fréquence maximale
+
+210 Hz
+
+115 Hz
+
+Module de Young
+
+(18,2 ± 2,6) GPa
+
+(11,1 ± 1,0) GPa
+
+(valeur UMET)
+
+(33,0 GPa)
+
+(13,4 GPa)
+
+Ces résultats sont similaires à ceux que nous avions obtenus à l’UMET de l’Université de Lille, sachant que
+la composition exacte des alliages peut modifier les caractéristiques du matériau.
+On se proposer enfin de caractériser un matériau qui semble avoir des propriétés bien particulières, un alliage
+de nickel et de titane appelé nitinol.
+16
+
+Troisième partie
+La mémoire de la forme
+Le nitinol
+Le nitinol est un alliage à base de nickel (à environ 55 %) et de titane (à environ 45 %) découvert en 1962 au
+Naval Ordnance Laboratory (Maryland, USA), d’où son nom (Nickel-Titane-NOL). Après quelques
+recherches, on peut lire que le nitinol est un alliage à mémoire de forme doté d’une super élasticité et dont les
+caractéristiques dépendent de la température. Il a des applications notamment en aérospatiale et en médecine.
+Peut-on mesurer les caractéristiques du nitinol et comprendre ses propriétés si particulières ?
+Nous avons acheté sur internet quelques ressorts en nitinol, ainsi qu’un fil en nitinol, pour pouvoir réaliser nos
+expériences. Le matériau est assez cher : compter environ 10 € chaque ressort (de 20 mm de long) et 30 € le
+fil (5 m de long et 0,1 mm de diamètre), ce qui revient à 100 000 € le kilogramme de nitinol !
+Dans un premier temps on accroche verticalement une masse à un ressort de nitinol. Comme attendu, le ressort
+se déforme d’autant plus que la masse est importante. Lorsque la masse devient supérieure à 300 g, le ressort
+est même étiré de manière irréversible, c’est la déformation plastique. Cependant, en chauffant le ressort
+quelques secondes avec un sèche-cheveux, on constate que… le ressort se recomprime tout seul et fait même
+remonter la masse ! En étant chauffé, le ressort a retrouvé sa forme initiale. On parle de mémoire de forme.
+Le constructeur indique que le ressort change de propriétés au-delà de 70 °C.
+
+Lorsqu’il est chauffé, le ressort en nitinol se recomprime !
+Expériences pour caractériser le nitinol
+Pour caractériser notre ressort en nitinol, on mesure la force de rappel au dynamomètre en fonction de la
+longueur du ressort en utilisant notre banc de traction. La courbe obtenue (points rouges sur le graphe ci-après)
+montre que tant que la longueur du ressort ne dépasse 35 mm, la loi de Hooke reste valable, avec une constante
+de raideur k1 = 139 N.m-1. Pour des longueurs supérieures, on arrive ensuite dans la zone de déformation
+plastique.
+On souhaite caractériser le ressort lorsqu’il est chauffé. Le sèche-cheveux ne permet pas de chauffer le ressort
+de façon homogène, donc on se propose de le chauffer par l’intérieur en faisant passer un courant électrique
+dans le ressort (le nitinol étant un matériau conducteur). On utilise une alimentation à courant continu
+permettant de délivrer un courant électrique d’intensité I réglable. Le constructeur du ressort indique que le
+courant d’utilisation est de l’ordre de 2 à 3 A.
+On reprend donc l’expérience de traction pour un courant d’intensité I = 2 A. La courbe (points bleus sur le
+graphe) montre une évolution linéaire de la force de rappel avec la longueur du ressort. La constante de raideur
+vaut maintenant k2 = 272 N.m-1 et la déformation reste élastique jusqu’à au moins 60 mm de longueur. Le
+ressort en nitinol est donc bien plus rigide lorsque la température est plus élevée, chose que l’on n’a jamais
+constatée avec un ressort en acier !
+17
+
+On peut préciser la valeur du courant à partir duquel le matériau change de propriétés. On mesure cette fois la
+force de rappel exercée par le ressort déformé à 30 mm de long en fonction de l’intensité I :
+
+On remarque qu’à partir d’une intensité de 1 A, la force de rappel augmente fortement : l’augmentation de
+température due à l’effet Joule créé par le passage du courant a modifié les propriétés du nitinol.
+Que se passe-t-il dans le matériau au niveau microscopique ?
+Lors de notre visite du laboratoire UMET, nous avons rencontré un ingénieur d’étude, spécialiste du
+microscope électronique à balayage (MEB), qui nous a montré que l’on pouvait déduire la structure
+microscopique locale d’un échantillon en observant directement sa surface. Le faisceau d’électrons qui sert à
+analyser les matériaux réagit en effet différemment selon l’arrangement du réseau cristallin, ce qui se traduit
+par des couleurs différentes sur l’image traitée par ordinateur (voir capture d’écran ci-dessous).
+
+18
+
+En fait la structure cristalline du nitinol change en fonction de la température. À basse température, le réseau
+cristallin est sous une forme martensite, avec des liaisons entre Ni et Ti fortement inclinées et des plans
+atomiques décalés les uns par rapport aux autres, qui a la propriété d’être très élastique et ductile, c’est-à-dire
+facilement déformable dans sa zone plastique. Lorsque la température augmente et passe au-delà d’un seuil
+(qui dépend de la composition exacte de l’alliage), il se produit une transition de phase cristalline et le réseau
+passe sous forme austénite, avec une configuration cubique à faces centrées, qui est une configuration très
+symétrique et bien plus rigide, permettant au matériau de retrouver sa forme initiale.
+
+Ni
+
+déformation
+
 Ti
+phase austénite
 
-20 
-Quelques applications du nitinol 
-Avec des propriÃ©tÃ©s mÃ©caniques qui changent avec la tempÃ©rature, on retrouve le nitinol dans de nombreux 
-domaines dâapplications. En mÃ©decine, on utilise gÃ©nÃ©ralement du nitinol avec des tempÃ©ratures de transition 
-de phase voisines de 37 Â°C (tempÃ©rature du corps humain). Le fil de nitinol dâun appareil dentaire pourra ainsi 
-se rÃ©tracter Ã  la tempÃ©rature de la bouche et maintenir les dents. En chirurgie vasculaire, on utilise des stents 
-en nitinol pour Ã©carter les vaisseaux sanguins et permettre une circulation plus facile du sang. En aÃ©ronautique, 
-on sait fabriquer des piÃ¨ces mÃ©caniques qui se dÃ©forment avec la tempÃ©rature, comme des aubes ou des volets 
-qui peuvent sâouvrir ou se fermer pour optimiser les conditions de vol ou de fonctionnement dâun rÃ©acteur. La 
-NASA Ã©tudie mÃªme des projets de roues Ã  base de nitinol pour les rovers des prochaines missions spatiales. 
-Le nitinol promet de belles applications dans le futur. 
- 
-   
-Le nitinol a de nombreuses applications en mÃ©decine et en aÃ©ronautique 
- 
- 
-Conclusion 
- 
-On peut obtenir les propriÃ©tÃ©s mÃ©caniques des matÃ©riaux en mesurant lâallongement selon la contrainte 
-appliquÃ©e. Le module de Young caractÃ©rise ainsi la rigiditÃ© dâun matÃ©riau lors dâune dÃ©formation Ã©lastique, 
-par analogie avec la constante de raideur dâun ressort. Le nitinol est un matÃ©riau dont la structure cristalline 
-change selon la tempÃ©rature, ce qui modifie ses propriÃ©tÃ©s mÃ©caniques et permet des applications pratiques 
-dans de nombreux domaines. 
- 
- 
-Bibliographie et rÃ©fÃ©rences 
- 
-â¢ Loi de Hooke : https://fr.wikipedia.org/wiki/Robert_Hooke 
- 
-â¢ Muscles Ã©lectriques en nitinol LEXTRONIC : https://www.lextronic.fr/muscles-electriques-7537 
- 
-â¢ Courty, J.-M., Kierlik, E, Le rÃ©seau a de la mÃ©moire, IdÃ©es de physique, Pour la science nÂ°347, 
-septembre 2006 
- 
-â¢ How NASA Reinvented The Wheel, YouTube, VeritasiumÂ· : https://youtu.be/vSNtifE0Z2Q 
- 
- 
-Remerciements 
- 
-Nous tenons Ã  remercier Madame Ingrid Proriol-Serre et Monsieur Jocelyn Golek pour la journÃ©e organisÃ©e 
-au laboratoire UMET de lâUniversitÃ© de Lille qui nous a permis de mieux comprendre les caractÃ©ristiques 
-mÃ©caniques des matÃ©riaux, le magasin Musique Passion de Dunkerque pour nous avoir trouvÃ© une guitare Ã  
-dÃ©monter, ainsi que nos professeurs Monsieur et Madame DÃ©pret.
+phase martensite
+
+température
+
+température de transition de phase
+
+Pour caractériser l’élasticité du nitinol en phase martensite (à basse température) et en phase austénite (pour
+une température supérieure à 70 °C), on reprend l’étude des fréquences de vibration d’un fil de nitinol avec
+notre banc de traction à vibrations (guitare transformée). Le changement de phase est provoqué par le passage
+d’un courant électrique de 0,7 A dans le fil (valeur recommandée par le constructeur).
+
+Lorsque l’on fait circuler le courant électrique, le fil chauffe, ce qui provoque la transition de phase martensite
+vers austénite. La contrainte exercée sur le fil augmente très fortement, le fil se tend le long du manche de
+guitare et la fréquence de vibration augmente : le son perçu est plus aigu. On constate que la déformation reste
+élastique dans les deux cas car la contrainte varie linéairement avec l’allongement relatif, mais la pente de la
+droite change fortement : le module de Young est multiplié par 10 entre la phase martensite et la phase
+austénite !
+Phase
+
+Martensite
+
+Austénite
+
+Intensité du courant
+
+0A
+
+0,7 A
+
+Module de Young
+
+17,8 GPa
+
+180 GPa
+
+19
+
+Quelques applications du nitinol
+Avec des propriétés mécaniques qui changent avec la température, on retrouve le nitinol dans de nombreux
+domaines d’applications. En médecine, on utilise généralement du nitinol avec des températures de transition
+de phase voisines de 37 °C (température du corps humain). Le fil de nitinol d’un appareil dentaire pourra ainsi
+se rétracter à la température de la bouche et maintenir les dents. En chirurgie vasculaire, on utilise des stents
+en nitinol pour écarter les vaisseaux sanguins et permettre une circulation plus facile du sang. En aéronautique,
+on sait fabriquer des pièces mécaniques qui se déforment avec la température, comme des aubes ou des volets
+qui peuvent s’ouvrir ou se fermer pour optimiser les conditions de vol ou de fonctionnement d’un réacteur. La
+NASA étudie même des projets de roues à base de nitinol pour les rovers des prochaines missions spatiales.
+Le nitinol promet de belles applications dans le futur.
+
+Le nitinol a de nombreuses applications en médecine et en aéronautique
+
+Conclusion
+On peut obtenir les propriétés mécaniques des matériaux en mesurant l’allongement selon la contrainte
+appliquée. Le module de Young caractérise ainsi la rigidité d’un matériau lors d’une déformation élastique,
+par analogie avec la constante de raideur d’un ressort. Le nitinol est un matériau dont la structure cristalline
+change selon la température, ce qui modifie ses propriétés mécaniques et permet des applications pratiques
+dans de nombreux domaines.
+
+Bibliographie et références
+➢ Loi de Hooke : https://fr.wikipedia.org/wiki/Robert_Hooke
+➢ Muscles électriques en nitinol LEXTRONIC : https://www.lextronic.fr/muscles-electriques-7537
+➢ Courty, J.-M., Kierlik, E, Le réseau a de la mémoire, Idées de physique, Pour la science n°347,
+septembre 2006
+➢ How NASA Reinvented The Wheel, YouTube, Veritasium· : https://youtu.be/vSNtifE0Z2Q
+
+Remerciements
+Nous tenons à remercier Madame Ingrid Proriol-Serre et Monsieur Jocelyn Golek pour la journée organisée
+au laboratoire UMET de l’Université de Lille qui nous a permis de mieux comprendre les caractéristiques
+mécaniques des matériaux, le magasin Musique Passion de Dunkerque pour nous avoir trouvé une guitare à
+démonter, ainsi que nos professeurs Monsieur et Madame Dépret.
+20
+
+

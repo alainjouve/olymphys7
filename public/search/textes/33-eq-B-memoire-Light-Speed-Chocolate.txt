@@ -1,363 +1,342 @@
-Light Speed Chocolate  
-ElÃ¨ves : Marco Pangione and Antonio Torralba SÃ¡nchez  
-Professeur : Dr. Henri Hay 
-Ãcole Internationale de Provence Alpes CÃ´te-d'Azur, Manosque 
- 
-RÃ©sumÃ© 
-Le but de cette expÃ©rience Ã©tait de mesurer la vitesse de la lumiÃ¨re Ã  lâaide dâun dispositif simple et peu coÃ»teux 
-constituÃ© dâun disque de chocolat et dâun four Ã  micro-ondes domestique. En retirant le plateau tournant, le 
-micro-ondes produit une onde Ã©lectromagnÃ©tique stationnaire, ce qui provoque la fusion du chocolat aux 
-anti-nÅuds â les points de maximum dâÃ©nergie, sÃ©parÃ©s dâune demi-longueur dâonde. Nous avons identifiÃ© 
-puis mesurÃ© la distance entre ces zones fondues Ã  lâaide dâune rÃ¨gle mÃ©tallique et dâune camÃ©ra thermique afin 
-dâamÃ©liorer la prÃ©cision. AprÃ¨s 15 essais rÃ©alisÃ©s dans des conditions optimisÃ©es (800 W, 15â20 secondes de 
-chauffage), nous avons obtenu une longueur dâonde moyenne de à¡©à·Ï¹ÏºÉ§ÐÂ±Ï¹É§Ïºâcm. En utilisant la 
-frÃ©quence connue du micro-ondes (2450 MHz) et lâÃ©quation des ondes ßà·ßà¡©, nous avons calculÃ© la vitesse 
-de la lumiÃ¨re Ã  Ï»ÉªÏ¹Â±Ï¸ÉªÏ»ÃÏ¹Ï¸
-à¯
- m/s, soit une erreur relative de 9,7 % par rapport Ã  la valeur admise, ce qui 
-montre que notre intervalle est entre  ÏºÉ§ÐÐÃÏ¹Ï¸
-à¯
- et Ï»É§Ï¼Ï»ÃÏ¹Ï¸
-à¯
-. Lâanalyse dâincertitude, basÃ©e sur la 
-mÃ©thode de la racine de la somme des carrÃ©s, a donnÃ© une incertitude totale de Â±0,25 cm par demi-longueur 
-dâonde, cohÃ©rente avec notre erreur expÃ©rimentale. Ces rÃ©sultats montrent quâune estimation fiable de la 
-vitesse de la lumiÃ¨re peut Ãªtre obtenue Ã  partir dâune expÃ©rience simple, peu coÃ»teuse et facilement 
-reproductible lorsquâun protocole rigoureux est appliquÃ©. 
- 
-INTRODUCTION 
- 
-Nous voulions que notre expÃ©rience soit la moins coÃ»teuse possible afin quâelle puisse Ãªtre 
-reproduite nâimporte oÃ¹. En comptant le micro-ondes, les tablettes de chocolat et le matÃ©riel permettant de 
-mesurer les points chauds, comme la camÃ©ra thermique et les rÃ¨gles, nous avons estimÃ© le coÃ»t total Ã  environ 
-350 euros. 
-Notre objectif est de mesurer la vitesse de la lumiÃ¨re avec un haut degrÃ© de prÃ©cision grÃ¢ce Ã  une 
-procÃ©dure facilement reproductible. Nous avons conÃ§u un expÃ©riment utilisant une tablette de chocolat et 
-un four Ã  micro-ondes. La vitesse de la lumiÃ¨re est une valeur trÃ¨s importante dans plusieurs domaines de la 
-physique tel que lâÃ©lectromagnÃ©tisme, la physique quantique et la relativitÃ© gÃ©nÃ©rale et restreinte. 
-Nous souhaitions que notre expÃ©rience soit la moins coÃ»teuse possible, afin quâelle puisse Ãªtre 
-reproduite partout. Au total, incluant le micro-ondes, les tablettes de chocolat et le matÃ©riel nÃ©cessaire pour 
-mesurer la distance entre les points chauds, comme la camÃ©ra thermique et les rÃ¨gles, le coÃ»t estimÃ© de notre 
-projet Ã©tait dâenviron 350 euros. 
-Nous avons ensuite allumÃ© le micro-ondes Ã  sa puissance maximale pendant une durÃ©e variable 
-(courte), les meilleurs rÃ©sultats ont Ã©tÃ© obtenus entre 15 et 20 secondes. Nous lâavons retirÃ© puis analysÃ© les 
-zones fondues en les identifiant et en mesurant la distance entre les points successifs. Nous avons mesurÃ© la
+Light Speed Chocolate
+Elèves : Marco Pangione and Antonio Torralba Sánchez
+Professeur : Dr. Henri Hay
+École Internationale de Provence Alpes Côte-d'Azur, Manosque
 
-distance Ã  lâaide dâune rÃ¨gle, dâabord Ã  travers une camÃ©ra thermique pour repÃ©rer avec prÃ©cision les zones les 
-plus chaudes, puis une seconde fois sans la camÃ©ra thermique. Nous avons ensuite retirÃ© le chocolat qui nâavait 
-pas fondu, ne laissant que les points fondus sur notre plaque, les avons Ã  nouveau mesurÃ©s, puis les avons 
-rÃ©cupÃ©rÃ©s pour en faire des biscuits. 
-Comme les fours Ã  micro-ondes fonctionnent en produisant des ondes Ã©lectromagnÃ©tiques 
-stationnaires, le chocolat fond aux points de maximum dâabsorption dâÃ©nergie, correspondant aux anti-
-nÅuds de lâonde. En identifiant et en mesurant la distance entre ces points chauds, nous pouvons dÃ©terminer 
-la demi-longueur dâonde et ainsi trouver la vitesse de la lumiÃ¨re grÃ¢ce Ã  lâÃ©quation des ondes  
-Les ondes Ã©lectromagnÃ©tiques stationnaires produites par le micro-ondes ont des longueurs dâonde 
-relativement grandes ; elles se situent vers lâextrÃ©mitÃ© du spectre Ã©lectromagnÃ©tique, seules les ondes radio 
-ayant des longueurs dâonde plus importantes. Nous pouvons donc les mesurer avec une rÃ¨gle et obtenir des 
-mesures prÃ©cises. Nous savons que les ondes stationnaires sont dÃ©finies comme des ondes qui oscillent sans 
-que leur amplitude maximale ne se dÃ©place dans lâespace (Figure 1). Les points dâamplitude maximale, et donc 
-dâÃ©nergie maximale, sont appelÃ©s anti-nÅuds ; les points sans amplitude ni Ã©nergie sont appelÃ©s nÅuds. Nous 
-savons que ces points ne se dÃ©placent pas dans lâespace en raison de la dÃ©finition mÃªme des ondes stationnaires. 
-Cela signifie que, dans notre micro-ondes, les ondes Ã©lectromagnÃ©tiques frappent toujours les mÃªmes endroits 
-du chocolat. Cela confirme que les points fondus (anti-nÅuds) sont effectivement sÃ©parÃ©s dâune distance 
-Ã©gale Ã  Î»/2, tout comme les points solides (nÅuds). 
- 
-Figure 1 : Ondes stationnaires en 1D 
- 
-Pour expliquer la thÃ©orie des ondes stationnaires, nous nâaborderons que les ondes Ã  une 
-dimension, car expliquer les ondes Ã  deux ou trois dimensions serait trop complexe pour des Ã©lÃ¨ves de 
-Terminale. Nous pouvons analyser lâexpression gÃ©nÃ©rale et la dÃ©finition des ondes stationnaires pour 
-comprendre la physique derriÃ¨re notre expÃ©rience. 
-Nous pouvons dÃ©finir une onde stationnaire comme une onde rÃ©sultant de lâinterfÃ©rence entre 
-deux ondes de mÃªme frÃ©quence et de mÃªme amplitude, gÃ©nÃ©ralement une onde incidente et son onde rÃ©flÃ©chie 
-correspondante. Nous pouvons considÃ©rer une onde incidente ß
-à±¢(ßÉ§ß) se propageant vers le cÃ´tÃ© +ß et une 
-onde rÃ©flÃ©chie ß
-à±«(ßÉ§ß) se propageant dans la direction opposÃ©e, dâoÃ¹ le terme dâonde rÃ©flÃ©chie. Lâexpression 
+Résumé
+Le but de cette expérience était de mesurer la vitesse de la lumière à l’aide d’un dispositif simple et peu coûteux
+constitué d’un disque de chocolat et d’un four à micro-ondes domestique. En retirant le plateau tournant, le
+micro-ondes produit une onde électromagnétique stationnaire, ce qui provoque la fusion du chocolat aux
+anti-nœuds — les points de maximum d’énergie, séparés d’une demi-longueur d’onde. Nous avons identifié
+puis mesuré la distance entre ces zones fondues à l’aide d’une règle métallique et d’une caméra thermique afin
+d’améliorer la précision. Après 15 essais réalisés dans des conditions optimisées (800 W, 15–20 secondes de
+chauffage), nous avons obtenu une longueur d’onde moyenne de 𝜆 = 12,8 ± 1,2 cm. En utilisant la
+fréquence connue du micro-ondes (2450 MHz) et l’équation des ondes 𝑐 = 𝑓𝜆, nous avons calculé la vitesse
+de la lumière à 3.1 ± 0.3 × 108 m/s, soit une erreur relative de 9,7 % par rapport à la valeur admise, ce qui
+montre que notre intervalle est entre 2,99 × 108 et 3,43 × 108 . L’analyse d’incertitude, basée sur la
+méthode de la racine de la somme des carrés, a donné une incertitude totale de ±0,25 cm par demi-longueur
+d’onde, cohérente avec notre erreur expérimentale. Ces résultats montrent qu’une estimation fiable de la
+vitesse de la lumière peut être obtenue à partir d’une expérience simple, peu coûteuse et facilement
+reproductible lorsqu’un protocole rigoureux est appliqué.
+
+INTRODUCTION
+Nous voulions que notre expérience soit la moins coûteuse possible afin qu’elle puisse être
+reproduite n’importe où. En comptant le micro-ondes, les tablettes de chocolat et le matériel permettant de
+mesurer les points chauds, comme la caméra thermique et les règles, nous avons estimé le coût total à environ
+350 euros.
+Notre objectif est de mesurer la vitesse de la lumière avec un haut degré de précision grâce à une
+procédure facilement reproductible. Nous avons conçu un expériment utilisant une tablette de chocolat et
+un four à micro-ondes. La vitesse de la lumière est une valeur très importante dans plusieurs domaines de la
+physique tel que l’électromagnétisme, la physique quantique et la relativité générale et restreinte.
+Nous souhaitions que notre expérience soit la moins coûteuse possible, afin qu’elle puisse être
+reproduite partout. Au total, incluant le micro-ondes, les tablettes de chocolat et le matériel nécessaire pour
+mesurer la distance entre les points chauds, comme la caméra thermique et les règles, le coût estimé de notre
+projet était d’environ 350 euros.
+Nous avons ensuite allumé le micro-ondes à sa puissance maximale pendant une durée variable
+(courte), les meilleurs résultats ont été obtenus entre 15 et 20 secondes. Nous l’avons retiré puis analysé les
+zones fondues en les identifiant et en mesurant la distance entre les points successifs. Nous avons mesuré la
+
+distance à l’aide d’une règle, d’abord à travers une caméra thermique pour repérer avec précision les zones les
+plus chaudes, puis une seconde fois sans la caméra thermique. Nous avons ensuite retiré le chocolat qui n’avait
+pas fondu, ne laissant que les points fondus sur notre plaque, les avons à nouveau mesurés, puis les avons
+récupérés pour en faire des biscuits.
+Comme les fours à micro-ondes fonctionnent en produisant des ondes électromagnétiques
+stationnaires, le chocolat fond aux points de maximum d’absorption d’énergie, correspondant aux antinœuds de l’onde. En identifiant et en mesurant la distance entre ces points chauds, nous pouvons déterminer
+la demi-longueur d’onde et ainsi trouver la vitesse de la lumière grâce à l’équation des ondes
+Les ondes électromagnétiques stationnaires produites par le micro-ondes ont des longueurs d’onde
+relativement grandes ; elles se situent vers l’extrémité du spectre électromagnétique, seules les ondes radio
+ayant des longueurs d’onde plus importantes. Nous pouvons donc les mesurer avec une règle et obtenir des
+mesures précises. Nous savons que les ondes stationnaires sont définies comme des ondes qui oscillent sans
+que leur amplitude maximale ne se déplace dans l’espace (Figure 1). Les points d’amplitude maximale, et donc
+d’énergie maximale, sont appelés anti-nœuds ; les points sans amplitude ni énergie sont appelés nœuds. Nous
+savons que ces points ne se déplacent pas dans l’espace en raison de la définition même des ondes stationnaires.
+Cela signifie que, dans notre micro-ondes, les ondes électromagnétiques frappent toujours les mêmes endroits
+du chocolat. Cela confirme que les points fondus (anti-nœuds) sont effectivement séparés d’une distance
+égale à λ/2, tout comme les points solides (nœuds).
+
+Figure 1 : Ondes stationnaires en 1D
+Pour expliquer la théorie des ondes stationnaires, nous n’aborderons que les ondes à une
+dimension, car expliquer les ondes à deux ou trois dimensions serait trop complexe pour des élèves de
+Terminale. Nous pouvons analyser l’expression générale et la définition des ondes stationnaires pour
+comprendre la physique derrière notre expérience.
+Nous pouvons définir une onde stationnaire comme une onde résultant de l’interférence entre
+deux ondes de même fréquence et de même amplitude, généralement une onde incidente et son onde réfléchie
+correspondante. Nous pouvons considérer une onde incidente 𝑦𝑖 (𝑥, 𝑡) se propageant vers le côté +𝑥 et une
+onde réfléchie 𝑦𝑟 (𝑥, 𝑡) se propageant dans la direction opposée, d’où le terme d’onde réfléchie. L’expression
 des deux ondes est donc :
 
-ß
-à±¢(ßÉ§ß)à·ß
-à®ºÄÄÄà·²
-Ïºà¡®ß
-Þ¼
-â
-Ïºà¡®ß
-à¡©
-à·¶ 
-ß
-à±«(ßÉ§ß)à·ß
-à®ºÄÄÄà·²
-Ïºà¡®ß
-Þ¼
+𝑦𝑖 (𝑥, 𝑡) = 𝑦0 sin (
+
+2𝜋𝑡 2𝜋𝑥
+−
+)
+𝑇
+𝜆
+
+𝑦𝑟 (𝑥, 𝑡) = 𝑦0 sin (
+
+2𝜋𝑡 2𝜋𝑥
 +
-Ïºà¡®ß
-à¡©
-à·¶ 
-Ces ondes peuvent se combiner selon le principe de superposition. Lorsque deux ondes se chevauchent dans 
-lâespace, elles subissent des interfÃ©rences. 
-ß
-à±­à±¨à±­à±à±¥(ßÉ§ß)à·ß
-à±¢(ßÉ§ß)+ß
-à±«(ßÉ§ß) 
-ß
-à±­à±¨à±­à±à±¥(ßÉ§ß)à· ß
-à®ºà·ªÄÄÄà·²
-Ïºà¡®ß
-Þ¼
-â
-Ïºà¡®ß
-à¡©
-à·¶+ÄÄÄà·²
-Ïºà¡®ß
-Þ¼
+)
+𝑇
+𝜆
+
+Ces ondes peuvent se combiner selon le principe de superposition. Lorsque deux ondes se chevauchent dans
+l’espace, elles subissent des interférences.
+𝑦𝑡𝑜𝑡𝑎𝑙 (𝑥, 𝑡) = 𝑦𝑖 (𝑥, 𝑡) + 𝑦𝑟 (𝑥, 𝑡)
+𝑦𝑡𝑜𝑡𝑎𝑙 (𝑥, 𝑡) = 𝑦0 [sin (
+
+2𝜋𝑡 2𝜋𝑥
+2𝜋𝑡 2𝜋𝑥
+−
+) + sin (
 +
-Ïºà¡®ß
-à¡©
-à·¶à·® 
-En utilisant les rÃ¨gles trigonomÃ©triques, nous savons que ÄÄÄ (à¡)+ÄÄÄ (à¡ )à·ÏºÄÄÄ (
-à²à¯à²
-à®¼
-)ÄÄÄ (
-à²à¯à²
-à®¼
-). 
-Nous pouvons rÃ©arranger cette expression pour obtenir lâÃ©quation : 
-ß
-à±­à±¨à±­à±à±¥(ßÉ§ß)à·Ïºß
-à®ºÄÄÄà·²
-Ïºà¡®ß
-Þ¼
-à·¶ÄÄÄà·²
-Ïºà¡®ß
-à¡©
-à·¶ 
-Ainsi, lâonde rÃ©sultant de la superposition de lâonde incidente et de lâonde rÃ©flÃ©chie est une onde oÃ¹ les 
-variables dâespace et de temps sont dÃ©couplÃ©es. Par consÃ©quent, il existera des points dans lâespace oÃ¹ 
-lâamplitude sera toujours Ã©gale Ã  0, quel que soit le moment. Câest par exemple le cas pour ßà·à¡©ÊÏ¼. Cette 
-situation correspond aux nÅuds. Les fonctions sinus et cosinus peuvent Ãªtre interchangÃ©es librement, selon 
+)]
+𝑇
+𝜆
+𝑇
+𝜆
+𝛼+𝛽
+
+𝛼−𝛽
+
+En utilisant les règles trigonométriques, nous savons que sin (𝛼) + sin (𝛽) = 2sin ( 2 )cos ( 2 ).
+Nous pouvons réarranger cette expression pour obtenir l’équation :
+𝑦𝑡𝑜𝑡𝑎𝑙 (𝑥, 𝑡) = 2𝑦0 sin (
+
+2𝜋𝑡
+2𝜋𝑥
+) cos (
+)
+𝑇
+𝜆
+
+Ainsi, l’onde résultant de la superposition de l’onde incidente et de l’onde réfléchie est une onde où les
+variables d’espace et de temps sont découplées. Par conséquent, il existera des points dans l’espace où
+l’amplitude sera toujours égale à 0, quel que soit le moment. C’est par exemple le cas pour 𝑥 = 𝜆/4. Cette
+situation correspond aux nœuds. Les fonctions sinus et cosinus peuvent être interchangées librement, selon
 la physique du milieu.
 
-METHODE 
-Nous avons commencÃ© lâexpÃ©rience en plaÃ§ant des tablettes ou des disques de chocolat au centre du 
-micro-ondes (voir Figure 9). Le plateau tournant du micro-ondes Ã©tait retirÃ© pour chaque essai, empÃªchant le 
-chocolat de tourner et garantissant que lâonde stationnaire se forme Ã  des positions stables et prÃ©visibles.  
-Nous avons ensuite allumÃ© le micro-ondes pendant des durÃ©es variables jusquâÃ  lâapparition de zones fondues. 
-Nous retirions ensuite soigneusement le chocolat du micro-ondes afin de mesurer rapidement la distance 
-entre les points chauds avant que la zone environnante ne fonde. 
-AprÃ¨s une expÃ©rience, le chocolat Ã©tait entiÃ¨rement refondu puis remodelÃ© afin dâÃªtre utilisÃ© pour une 
-nouvelle expÃ©rience un autre jour. Nous ne pouvions pas utiliser le mÃªme morceau de chocolat deux fois, car 
-cela aurait conduit Ã  un bloc complÃ¨tement fondu aprÃ¨s le second passage. 
-Nous avons observÃ© que la modification de certaines conditions de lâexpÃ©rience â comme lâintensitÃ© 
-du micro-ondes et le temps de chauffage â entraÃ®nait diffÃ©rents niveaux de prÃ©cision. Lors de notre premier 
-essai, nous avons utilisÃ© le micro-ondes Ã  faible puissance (150 W) pendant 30 secondes. Nous avons ensuite 
-essayÃ© une puissance moyenne (400 W) pendant 15 secondes et obtenu une valeur de la longueur dâonde plus 
-proche de celle attendue, car il Ã©tait plus facile de mesurer la demi-longueur dâonde grÃ¢ce Ã  des points chauds 
-plus petits et plus concentrÃ©s. Nous avons confirmÃ© cela Ã  lâaide dâune camÃ©ra thermique, qui nous a permis 
-de repÃ©rer prÃ©cisÃ©ment le centre du point chaud (voir Figures 3, 4, 7). 
-Nous avons tentÃ© une derniÃ¨re fois Ã  pleine puissance (800 W) pendant seulement 10 secondes et 
-avons obtenu des valeurs encore plus proches de lâattendu. Nous avons donc rÃ©alisÃ© toutes les expÃ©riences 
-suivantes avec ces rÃ©glages. 
-Nous souhaitions Ã©galement optimiser la forme du chocolat. Au dÃ©part, utiliser deux tablettes cÃ´te Ã  
-cÃ´te conduisait Ã  la formation dâanti-nÅuds sur les bords. Cela rendait difficile la localisation du maximum 
-dâintensitÃ© et entraÃ®nait une perte de prÃ©cision. Pour contourner ce problÃ¨me, le chocolat a Ã©tÃ© fondu et moulÃ© 
-en un disque dâun diamÃ¨tre supÃ©rieur Ã  la largeur de deux tablettes, ce qui facilitait la dÃ©tection des maximas 
-dâintensitÃ©. Cela nous a permis dâobtenir des valeurs plus proches de celles attendues, amÃ©liorant ainsi la 
-prÃ©cision de la mesure de la vitesse de la lumiÃ¨re. 
-Cependant, lorsque le chocolat Ã©tait fissurÃ©, les espaces entre les morceaux ainsi que les fissures 
-chauffaient davantage que le reste du chocolat et fondaient avant les vÃ©ritables points chauds aux anti-nÅuds 
-de lâonde. LâÃ©paisseur et la forme du disque de chocolat ont donc Ã©tÃ© maintenues aussi uniformes que possible 
-pour Ã©viter que des variations internes de tempÃ©rature nâaffectent le motif de fusion. 
-Nous avons aussi essayÃ© de refroidir ou de congeler le chocolat dans lâespoir quâun gradient de 
-tempÃ©rature plus important augmente le contraste sur la camÃ©ra thermique et amÃ©liore ainsi la prÃ©cision. 
-Nous lâavons fait avant de le mettre au micro-ondes ; cependant, cela rendait le chocolat cassant, et la taille des 
-points chauds restait inchangÃ©e par rapport aux expÃ©riences prÃ©cÃ©dentes. Nous en avons donc conclu que 
-cette Ã©tape Ã©tait inutile et ne lâavons pas retenue pour les expÃ©riences finales, dâautant plus que nous avons 
-obtenu de meilleures valeurs lors des essais ultÃ©rieurs sans refroidir le chocolat en dessous de la tempÃ©rature 
-ambiante.  
-Si le chocolat avait dÃ©jÃ  fondu, alors la taille des zones fondues augmentait fortement. Cela incluait 
-les bords, et si nous le touchions Ã  mains nues, la chaleur de nos doigts agrandissait les zones fondues, qui se 
-rejoignaient alors, rendant toute mesure impossible et le chocolat inutilisable pour lâexpÃ©rience. Nous avons 
-donc dÃ» utiliser un nouveau disque de chocolat pour chaque expÃ©rience et Ã©viter de le toucher avec nos mains.
+METHODE
+Nous avons commencé l’expérience en plaçant des tablettes ou des disques de chocolat au centre du
+micro-ondes (voir Figure 9). Le plateau tournant du micro-ondes était retiré pour chaque essai, empêchant le
+chocolat de tourner et garantissant que l’onde stationnaire se forme à des positions stables et prévisibles.
+Nous avons ensuite allumé le micro-ondes pendant des durées variables jusqu’à l’apparition de zones fondues.
+Nous retirions ensuite soigneusement le chocolat du micro-ondes afin de mesurer rapidement la distance
+entre les points chauds avant que la zone environnante ne fonde.
+Après une expérience, le chocolat était entièrement refondu puis remodelé afin d’être utilisé pour une
+nouvelle expérience un autre jour. Nous ne pouvions pas utiliser le même morceau de chocolat deux fois, car
+cela aurait conduit à un bloc complètement fondu après le second passage.
+Nous avons observé que la modification de certaines conditions de l’expérience — comme l’intensité
+du micro-ondes et le temps de chauffage — entraînait différents niveaux de précision. Lors de notre premier
+essai, nous avons utilisé le micro-ondes à faible puissance (150 W) pendant 30 secondes. Nous avons ensuite
+essayé une puissance moyenne (400 W) pendant 15 secondes et obtenu une valeur de la longueur d’onde plus
+proche de celle attendue, car il était plus facile de mesurer la demi-longueur d’onde grâce à des points chauds
+plus petits et plus concentrés. Nous avons confirmé cela à l’aide d’une caméra thermique, qui nous a permis
+de repérer précisément le centre du point chaud (voir Figures 3, 4, 7).
+Nous avons tenté une dernière fois à pleine puissance (800 W) pendant seulement 10 secondes et
+avons obtenu des valeurs encore plus proches de l’attendu. Nous avons donc réalisé toutes les expériences
+suivantes avec ces réglages.
+Nous souhaitions également optimiser la forme du chocolat. Au départ, utiliser deux tablettes côte à
+côte conduisait à la formation d’anti-nœuds sur les bords. Cela rendait difficile la localisation du maximum
+d’intensité et entraînait une perte de précision. Pour contourner ce problème, le chocolat a été fondu et moulé
+en un disque d’un diamètre supérieur à la largeur de deux tablettes, ce qui facilitait la détection des maximas
+d’intensité. Cela nous a permis d’obtenir des valeurs plus proches de celles attendues, améliorant ainsi la
+précision de la mesure de la vitesse de la lumière.
+Cependant, lorsque le chocolat était fissuré, les espaces entre les morceaux ainsi que les fissures
+chauffaient davantage que le reste du chocolat et fondaient avant les véritables points chauds aux anti-nœuds
+de l’onde. L’épaisseur et la forme du disque de chocolat ont donc été maintenues aussi uniformes que possible
+pour éviter que des variations internes de température n’affectent le motif de fusion.
+Nous avons aussi essayé de refroidir ou de congeler le chocolat dans l’espoir qu’un gradient de
+température plus important augmente le contraste sur la caméra thermique et améliore ainsi la précision.
+Nous l’avons fait avant de le mettre au micro-ondes ; cependant, cela rendait le chocolat cassant, et la taille des
+points chauds restait inchangée par rapport aux expériences précédentes. Nous en avons donc conclu que
+cette étape était inutile et ne l’avons pas retenue pour les expériences finales, d’autant plus que nous avons
+obtenu de meilleures valeurs lors des essais ultérieurs sans refroidir le chocolat en dessous de la température
+ambiante.
+Si le chocolat avait déjà fondu, alors la taille des zones fondues augmentait fortement. Cela incluait
+les bords, et si nous le touchions à mains nues, la chaleur de nos doigts agrandissait les zones fondues, qui se
+rejoignaient alors, rendant toute mesure impossible et le chocolat inutilisable pour l’expérience. Nous avons
+donc dû utiliser un nouveau disque de chocolat pour chaque expérience et éviter de le toucher avec nos mains.
 
-RESULTATS 
- 
-Figure 2 : histogramme reprÃ©sentant les rÃ©sultats avec les pourcentages dâerreur 
- 
-Demi-longueur 
-dâonde mesurÃ© (cm) 
-Effectif Longueur dâonde (m) 
-Vitesse de la lumiÃ¨re 
-(m/s) 
-6 	3 	0.12 	2.94E
-8
- 
-6.3 	4 	0.126 	3.09E
-8
- 
-6.5 	5 	0.13 	3.19E
-8
- 
-6.7 	2 	0.134 	3.28E
-8
- 
-7 	1 	0.14 	3.43E
-8
- 
-Total 	15   
-Figure 3 : Tableau reprÃ©sentant les rÃ©sultats 
- 
- 
- 
-Figure 4 : image des points chauds prise avec 
-une camÃ©ra thermique 
- 
-Figure 5 : Image thermique des point chauds 
-avec une rÃ¨gle en mÃ©tal 
-0
-1
-2
-3
-4
-5
+RESULTATS
+Resultats après 15 points de données
 6
-6	6,3 6,5 6,7	7
+5
+
 Effectif
+
+4
+3
+2
+1
+0
+6
+
+6,3
+
+6,5
+
+6,7
+
+7
+
 Demi-longeur d'onde (cm)
-Resultats aprÃ¨s 15 points de donnÃ©es
 
-Figure 6 : Points fondus visibles sur le 
-chocolat 
- 
-Figure 7 : distance entre points fondus mesure 
-avec une rÃ¨gle en mÃ©tal 
- 
-Figure 8 : points fondus trÃ¨s grands visibles 
-sur le disc 	Figure 9 : montage expÃ©rimental 
- 
-AprÃ¨s avoir collectÃ© 15 points de donnÃ©es, voici nos rÃ©sultats. 
-En utilisant lâÃ©quation à¡©à·à¡©ÉÂ±Ïºà¡°, oÃ¹ à¡©Éà·Ï¹ÏºÉªÐ cm est notre valeur moyenne de la longueur 
-dâonde et à¡°à·Ï¸É§Ï¾ cm est lâÃ©cart-type entre les valeurs, nous avons trouvÃ© à¡©à·Ï¹ÏºÉ§ÐÂ±Ï¹É§Ïº cm. 
-Statistiquement, la valeur mesure de la longueur dâonde a donc 95% de chances dâÃªtre comprise entre 11.6 cm 
-et 14 cm. En appliquant la formule ßà·ßà¡©, oÃ¹ ß est la vitesse de la lumiÃ¨re, ß la frÃ©quence â qui Ã©tait toujours 
-de 2450 MHz â et à¡© notre longueur dâonde, nous obtenons une vitesse de la lumiÃ¨re minimale de 
-ÏºÉªÐÏ¼ÃÏ¹Ï¸
-à¯
-m/s, et une valeur maximale  Ï»ÉªÏ¼Ï»ÃÏ¹Ï¸
-à¯
-m/s. Donc notre valeur pour la vitesse de lumiÃ¨re est de 
-Ï»ÉªÏ¹Â±Ï¸ÉªÏ»ÃÏ¹Ï¸
-à¯
- m/s. Notre valeur de la vitesse de la lumiÃ¨re est plus Ã©levÃ©e que la valeur admise de 
-Ï»É§Ï¸ÃÏ¹Ï¸
-à¯
-m/s ; nous savons donc que notre valeur de longueur dâonde est Ã©galement trop Ã©levÃ©e. 
-Nous avons calculÃ© lâerreur relative associÃ©e en utilisant la formule :  
-à¡¢à·Ùª
-ß(ß
-à±)
-ß
-à±
-ÙªÃÏ¹Ï¸Ï¸É§ 
-OÃ¹ à¡¢ est lâerreur relative en pourcentage, ß
-à± est la vitesse de la lumiÃ¨re expÃ©rimentale et ß(ß
-à±) est lâerreur 
-statistique associÃ©e Ã  la sÃ©rie de mesures de ß
-à±. Notre pourcentage dâerreur est de 9.7 %. 
-Notre graphique (Figure 2) montre le nombre de fois oÃ¹ nos demi-longueurs dâonde ont Ã©tÃ© rÃ©pÃ©tÃ©es.
+Figure 2 : histogramme représentant les résultats avec les pourcentages d’erreur
+Demi-longueur
+d’onde mesuré (cm)
 
-DISCUSSION 
- 
-AprÃ¨s avoir terminÃ© notre expÃ©rience, nous avons tirÃ© plusieurs conclusions sur la maniÃ¨re dont 
-nous aurions pu Ãªtre plus prÃ©cis. 
-MÃªme si notre erreur estimÃ©e dans la mesure de la demi-longueur dâonde Ã©tait de Â±0,5 cm, notre 
-pourcentage dâerreur pour la valeur de la vitesse de la lumiÃ¨re nâÃ©tait que de 9.7% 
-Bien que notre expÃ©rience ait obtenu un faible pourcentage dâerreur et une mesure fiable de la 
-longueur dâonde, plusieurs modifications pourraient encore amÃ©liorer la prÃ©cision. Une amÃ©lioration serait 
-dâutiliser un outil de mesure plus prÃ©cis, comme un pied Ã  coulisse numÃ©rique ou du papier millimÃ©trÃ© placÃ© 
-sous le chocolat, ce qui fournirait une grille de rÃ©fÃ©rence et rÃ©duirait lâincertitude de lecture. Une deuxiÃ¨me 
-amÃ©lioration consisterait Ã  utiliser un support en chocolat plus uniforme, comme une feuille de chocolat plate 
-fabriquÃ©e industriellement, afin dâÃ©liminer les variations dâÃ©paisseur. 
-Augmenter le nombre dâessais rÃ©duirait lâinfluence des erreurs alÃ©atoires et fournirait une moyenne 
-plus stable. De plus, utiliser un micro-ondes dont les dimensions internes et la distribution du champ 
-Ã©lectromagnÃ©tique sont connues permettrait de rÃ©duire lâincertitude systÃ©matique. 
-Avec ces amÃ©liorations, lâexpÃ©rience pourrait potentiellement atteindre un pourcentage dâerreur plus faible, 
-rendant la mesure de la vitesse de la lumiÃ¨re encore plus proche de la valeur de rÃ©fÃ©rence. 
-Afin de renforcer la fiabilitÃ© et lâintÃ©gritÃ© scientifique de notre expÃ©rience, nous avons rÃ©alisÃ© une 
-analyse dÃ©taillÃ©e des incertitudes et des erreurs. La principale source dâincertitude provenait de lâidentification 
-et de la mesure de la distance entre les points chauds fondus, qui correspondent aux anti-nÅuds de lâonde 
-Ã©lectromagnÃ©tique stationnaire. La mesure a Ã©tÃ© effectuÃ©e avec une rÃ¨gle mÃ©tallique prÃ©sentant une 
-incertitude de Â±0,1 cm. Une erreur de type B a Ã©tÃ© associÃ©e Ã  cette mesure de longueur. En utilisant une rÃ¨gle 
-graduÃ©e au millimÃ¨tre, nous avons estimÃ© cette erreur Ã  une demi-graduation, soit 0,5mm. 
-La combinaison de ces incertitudes Ã  lâaide de la mÃ©thode de la racine de la somme des carrÃ©s, 
-Ñ
-à±­à±¨à±­à±à±¥à± à· à¸«à¡¢
-à®»
-à®¼
-+à¡¢
-à®¼
-à®¼
-+à¡¢
-à®½
-à®¼
-,  ou à¡¢
-à®»
-à®¼
-à·Ï¸ÉªÏ½cm est incertitude de la rÃ¨gle,  à¡¢
-à®¼
-à®¼
-à·Ï¸ÉªÏ»cm est lâincertitude de 
-lâÃ©tendue de la zone fondue, et à¡¢
-à®½
-à®¼
-à·Ï¸ÉªÏºcm est lâincertitude de la camÃ©ra thermique, conduit Ã  une 
-incertitude totale de Â±0,25 cm pour chaque valeur de demi-longueur dâonde. Comme la vitesse de la lumiÃ¨re 
-est calculÃ©e avec la formule ßà·ßà¡©, et que la frÃ©quence du micro-ondes est fixe et connue (2450 MHz), nous 
-supposons que lâincertitude sur cette valeur est beaucoup plus faible que notre erreur de mesure. Nous 
-nÃ©gligeons donc lâerreur potentiellement associÃ©e Ã  la frÃ©quence. Lâincertitude relative sur notre valeur de la 
-vitesse de la lumiÃ¨re dÃ©pend donc entiÃ¨rement de lâincertitude relative sur la longueur dâonde. 
-En utilisant notre longueur dâonde moyenne de 12,8 cm avec une incertitude totale de Â±0,5 cm, 
-nous obtenons une incertitude relative de 3,9 %. Cette valeur est cohÃ©rente avec le pourcentage dâerreur 
-calculÃ© de 4,67 %, ce qui montre que nos mesures et notre propagation dâerreurs sont cohÃ©rentes. La valeur 
-de la vitesse de la lumiÃ¨re de rÃ©fÃ©rence est dans notre intervalle de sÃ©curitÃ©.  
-Pour nous assurer que nos mesures Ã©taient reproductibles et non influencÃ©es par des facteurs 
-incontrÃ´lÃ©s, nous avons identifiÃ© et maintenu plusieurs variables de contrÃ´le clÃ©s tout au long de lâexpÃ©rience. 
-La frÃ©quence du micro-ondes a Ã©tÃ© maintenue constante Ã  sa valeur fixe de 2450 MHz, car la formule de la 
-vitesse de la lumiÃ¨re dÃ©pend de maniÃ¨re cruciale de cette quantitÃ© connue. 
-Le micro-ondes a toujours Ã©tÃ© utilisÃ© Ã  puissance maximale, et le temps de chauffe a Ã©tÃ© limitÃ© Ã  15â
-20 secondes pour Ã©viter une fonte excessive. Chaque essai a Ã©tÃ© rÃ©alisÃ© avec le mÃªme type de chocolat (seule la
+Effectif
 
-forme Ã©tait modifiÃ©e pour expÃ©rimentation), lâorientation Ã©tait rÃ©guliÃ¨rement changÃ©e afin de trouver la 
-position optimale dans laquelle lâonde stationnaire se manifestait, et les conditions environnementales sont 
-restÃ©es identiques. Nous avons veillÃ© Ã  ce que les diffÃ©rences entre les essais proviennent principalement de la 
-variation naturelle dans la formation des points chauds et de lâincertitude de mesure, plutÃ´t que 
-dâincohÃ©rences dans le dispositif expÃ©rimental. Cette cohÃ©rence mÃ©thodologique a augmentÃ© la fiabilitÃ© de 
-nos rÃ©sultats et rÃ©duit lâinfluence des erreurs systÃ©matiques. 
- 
-CONCLUSION 
- 
-Cette expÃ©rience a montrÃ© quâil est possible de mesurer la vitesse de la lumiÃ¨re Ã  lâaide dâun dispositif 
-simple, peu coÃ»teux et facilement reproductible. En utilisant un micro-ondes domestique et un disque de 
-chocolat, nous avons pu identifier les anti-nÅuds dâune onde Ã©lectromagnÃ©tique stationnaire et dÃ©terminer 
-la longueur dâonde moyenne du des ondes Ã©lectromagnÃ©tiques utilisÃ©es. Les mesures obtenues, combinÃ©es Ã  
-la frÃ©quence connue de 2450 MHz, nous ont permis de calculer une valeur de la vitesse de la lumiÃ¨re Ã©gale Ã  
-Ï»ÉªÏ¹Â±Ï¸ÉªÏ»ÃÏ¹Ï¸
-à¯
- m/s, soit une erreur relative de seulement 9,7 %. Nos mesures sont donc en accord, aux 
-incertitudes prÃ¨s, avec la valeur de rÃ©fÃ©rence, mesurÃ©e de maniÃ¨re plus prÃ©cise Ã  lâaide de dispositifs couteux. 
-Lâanalyse des incertitudes montre que nos rÃ©sultats sont cohÃ©rents dâun point de vue scientifique. 
-Les principaux facteurs limitant la prÃ©cision proviennent des variations dâÃ©paisseur du chocolat et de 
-lâÃ©tendue des points chauds. Plusieurs amÃ©liorations (comme lâutilisation dâune surface plus uniforme, de 
-repÃ¨res millimÃ©trÃ©s ou dâun outil de mesure plus prÃ©cise) permettraient encore de rÃ©duire lâerreur 
-expÃ©rimentale. 
-En dÃ©finitive, notre projet dÃ©montre que la physique fondamentale peut Ãªtre explorÃ©e de maniÃ¨re 
-crÃ©ative et accessible. MalgrÃ© la simplicitÃ© de lâexpÃ©rience, nous avons obtenu une estimation fiable dâune 
-constante universelle essentielle, montrant quâune approche rigoureuse peut transformer des outils du 
-quotidien en vÃ©ritables instruments scientifiques. 
- 
-REFERENCES 
- 
-[1] Michael Hajduk, Karen J. Uffalussy, Evan J. Granite : Determining the Speed of Light in a 
-Microwave. (2016) 
-[2] Mark Lattery, Greta Voit : Determining the Speed of Light with a Chocolate Bar (2006) 
+Longueur d’onde (m)
+
+Vitesse de la lumière
+(m/s)
+
+6
+
+3
+
+0.12
+
+2.94E8
+
+6.3
+
+4
+
+0.126
+
+3.09E8
+
+6.5
+
+5
+
+0.13
+
+3.19E8
+
+6.7
+
+2
+
+0.134
+
+3.28E8
+
+7
+
+1
+
+0.14
+
+3.43E8
+
+Total
+15
+Figure 3 : Tableau représentant les résultats
+
+Figure 4 : image des points chauds prise avec Figure 5 : Image thermique des point chauds
+une caméra thermique
+avec une règle en métal
+
+Figure 6 : Points fondus visibles sur le Figure 7 : distance entre points fondus mesure
+chocolat
+avec une règle en métal
+
+Figure 8 : points fondus très grands visibles
+sur le disc
+Figure 9 : montage expérimental
+Après avoir collecté 15 points de données, voici nos résultats.
+En utilisant l’équation 𝜆 = 𝜆ˉ ± 2𝜎, où 𝜆ˉ = 12.8 cm est notre valeur moyenne de la longueur
+d’onde et 𝜎 = 0,6 cm est l’écart-type entre les valeurs, nous avons trouvé 𝜆 = 12,8 ± 1,2 cm.
+Statistiquement, la valeur mesure de la longueur d’onde a donc 95% de chances d’être comprise entre 11.6 cm
+et 14 cm. En appliquant la formule 𝑐 = 𝑓𝜆, où 𝑐 est la vitesse de la lumière, 𝑓 la fréquence — qui était toujours
+de 2450 MHz — et 𝜆 notre longueur d’onde, nous obtenons une vitesse de la lumière minimale de
+2.84 × 108 m/s, et une valeur maximale 3.43 × 108 m/s. Donc notre valeur pour la vitesse de lumière est de
+3.1 ± 0.3 × 108 m/s. Notre valeur de la vitesse de la lumière est plus élevée que la valeur admise de
+3,0 × 108m/s ; nous savons donc que notre valeur de longueur d’onde est également trop élevée.
+Nous avons calculé l’erreur relative associée en utilisant la formule :
+𝑢(𝑐𝑒 )
+𝛿 =∣
+∣× 100,
+𝑐𝑒
+Où 𝛿 est l’erreur relative en pourcentage, 𝑐𝑒 est la vitesse de la lumière expérimentale et 𝑢(𝑐𝑒 ) est l’erreur
+statistique associée à la série de mesures de 𝑐𝑒 . Notre pourcentage d’erreur est de 9.7 %.
+Notre graphique (Figure 2) montre le nombre de fois où nos demi-longueurs d’onde ont été répétées.
+
+DISCUSSION
+Après avoir terminé notre expérience, nous avons tiré plusieurs conclusions sur la manière dont
+nous aurions pu être plus précis.
+Même si notre erreur estimée dans la mesure de la demi-longueur d’onde était de ±0,5 cm, notre
+pourcentage d’erreur pour la valeur de la vitesse de la lumière n’était que de 9.7%
+Bien que notre expérience ait obtenu un faible pourcentage d’erreur et une mesure fiable de la
+longueur d’onde, plusieurs modifications pourraient encore améliorer la précision. Une amélioration serait
+d’utiliser un outil de mesure plus précis, comme un pied à coulisse numérique ou du papier millimétré placé
+sous le chocolat, ce qui fournirait une grille de référence et réduirait l’incertitude de lecture. Une deuxième
+amélioration consisterait à utiliser un support en chocolat plus uniforme, comme une feuille de chocolat plate
+fabriquée industriellement, afin d’éliminer les variations d’épaisseur.
+Augmenter le nombre d’essais réduirait l’influence des erreurs aléatoires et fournirait une moyenne
+plus stable. De plus, utiliser un micro-ondes dont les dimensions internes et la distribution du champ
+électromagnétique sont connues permettrait de réduire l’incertitude systématique.
+Avec ces améliorations, l’expérience pourrait potentiellement atteindre un pourcentage d’erreur plus faible,
+rendant la mesure de la vitesse de la lumière encore plus proche de la valeur de référence.
+Afin de renforcer la fiabilité et l’intégrité scientifique de notre expérience, nous avons réalisé une
+analyse détaillée des incertitudes et des erreurs. La principale source d’incertitude provenait de l’identification
+et de la mesure de la distance entre les points chauds fondus, qui correspondent aux anti-nœuds de l’onde
+électromagnétique stationnaire. La mesure a été effectuée avec une règle métallique présentant une
+incertitude de ±0,1 cm. Une erreur de type B a été associée à cette mesure de longueur. En utilisant une règle
+graduée au millimètre, nous avons estimé cette erreur à une demi-graduation, soit 0,5mm.
+La combinaison de ces incertitudes à l’aide de la méthode de la racine de la somme des carrés,
+∆𝑡𝑜𝑡𝑎𝑙𝑒 = √𝛿12 + 𝛿22 + 𝛿32 , ou 𝛿12 = 0.5cm est incertitude de la règle, 𝛿22 = 0.3cm est l’incertitude de
+l’étendue de la zone fondue, et 𝛿32 = 0.2cm est l’incertitude de la caméra thermique, conduit à une
+incertitude totale de ±0,25 cm pour chaque valeur de demi-longueur d’onde. Comme la vitesse de la lumière
+est calculée avec la formule 𝑐 = 𝑓𝜆, et que la fréquence du micro-ondes est fixe et connue (2450 MHz), nous
+supposons que l’incertitude sur cette valeur est beaucoup plus faible que notre erreur de mesure. Nous
+négligeons donc l’erreur potentiellement associée à la fréquence. L’incertitude relative sur notre valeur de la
+vitesse de la lumière dépend donc entièrement de l’incertitude relative sur la longueur d’onde.
+En utilisant notre longueur d’onde moyenne de 12,8 cm avec une incertitude totale de ±0,5 cm,
+nous obtenons une incertitude relative de 3,9 %. Cette valeur est cohérente avec le pourcentage d’erreur
+calculé de 4,67 %, ce qui montre que nos mesures et notre propagation d’erreurs sont cohérentes. La valeur
+de la vitesse de la lumière de référence est dans notre intervalle de sécurité.
+Pour nous assurer que nos mesures étaient reproductibles et non influencées par des facteurs
+incontrôlés, nous avons identifié et maintenu plusieurs variables de contrôle clés tout au long de l’expérience.
+La fréquence du micro-ondes a été maintenue constante à sa valeur fixe de 2450 MHz, car la formule de la
+vitesse de la lumière dépend de manière cruciale de cette quantité connue.
+Le micro-ondes a toujours été utilisé à puissance maximale, et le temps de chauffe a été limité à 15–
+20 secondes pour éviter une fonte excessive. Chaque essai a été réalisé avec le même type de chocolat (seule la
+
+forme était modifiée pour expérimentation), l’orientation était régulièrement changée afin de trouver la
+position optimale dans laquelle l’onde stationnaire se manifestait, et les conditions environnementales sont
+restées identiques. Nous avons veillé à ce que les différences entre les essais proviennent principalement de la
+variation naturelle dans la formation des points chauds et de l’incertitude de mesure, plutôt que
+d’incohérences dans le dispositif expérimental. Cette cohérence méthodologique a augmenté la fiabilité de
+nos résultats et réduit l’influence des erreurs systématiques.
+
+CONCLUSION
+Cette expérience a montré qu’il est possible de mesurer la vitesse de la lumière à l’aide d’un dispositif
+simple, peu coûteux et facilement reproductible. En utilisant un micro-ondes domestique et un disque de
+chocolat, nous avons pu identifier les anti-nœuds d’une onde électromagnétique stationnaire et déterminer
+la longueur d’onde moyenne du des ondes électromagnétiques utilisées. Les mesures obtenues, combinées à
+la fréquence connue de 2450 MHz, nous ont permis de calculer une valeur de la vitesse de la lumière égale à
+3.1 ± 0.3 × 108 m/s, soit une erreur relative de seulement 9,7 %. Nos mesures sont donc en accord, aux
+incertitudes près, avec la valeur de référence, mesurée de manière plus précise à l’aide de dispositifs couteux.
+L’analyse des incertitudes montre que nos résultats sont cohérents d’un point de vue scientifique.
+Les principaux facteurs limitant la précision proviennent des variations d’épaisseur du chocolat et de
+l’étendue des points chauds. Plusieurs améliorations (comme l’utilisation d’une surface plus uniforme, de
+repères millimétrés ou d’un outil de mesure plus précise) permettraient encore de réduire l’erreur
+expérimentale.
+En définitive, notre projet démontre que la physique fondamentale peut être explorée de manière
+créative et accessible. Malgré la simplicité de l’expérience, nous avons obtenu une estimation fiable d’une
+constante universelle essentielle, montrant qu’une approche rigoureuse peut transformer des outils du
+quotidien en véritables instruments scientifiques.
+
+REFERENCES
+[1] Michael Hajduk, Karen J. Uffalussy, Evan J. Granite : Determining the Speed of Light in a
+Microwave. (2016)
+[2] Mark Lattery, Greta Voit : Determining the Speed of Light with a Chocolate Bar (2006)
 [3] Viiri J : Temperature Distribution in a Microwave Oven (1998)
+
+

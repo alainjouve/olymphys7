@@ -1,1642 +1,1568 @@
-Il est des phÃ©nomÃ¨nes qui se ne dÃ©voilent quâÃ  ceux qui acceptent de regarder lâinvisible. 
-La lumiÃ¨re, souveraine silencieuse, tÃ©moin des origines, Ã  la fois si perceptible et 
-fugace, semble nâobÃ©ir quâÃ  elle-mÃªme. Elle file, insaisissable, droite, indiffÃ©rente, 
-inaltÃ©rable. Du moins, le croyait-on ; lâUnivers consent parfois Ã  dÃ©voiler ses secrets. 
-En 1845, Michael Faraday eut une intuition, presque un rÃªve :                                                     
-et si nous pouvions influencer la lumiÃ¨re?   
-k 
-Alors, sous lâemprise dâun champ magnÃ©tique, sâest fait entendre un infime murmure 
-optique : une rotation subtile, quasi imperceptible, comme un secret glissÃ© dans le 
-faisceau imperturbable dâun laser.  
-La lumiÃ¨re, soudain, sâinclina ; elle ne se contentait plus dâÃ©clairer, elle rÃ©vÃ©lait. 
-Aux frontiÃ¨res de lâÃ©lectromagnÃ©tisme et de lâoptique, lÃ  oÃ¹ se mÃªlent lumiÃ¨re et 
-matiÃ¨re, notre exploration dÃ©bute : comment la lumiÃ¨re se laisse-t-elle guider, dÃ©vier, 
-transformer par des entitÃ©s invisibles ?  
-VoilÃ  notre voyage ; celui de rendre lâindÃ©celable mesurable,                                              
-aux confins du rÃ©el et de lâindicible.
+Il est des phénomènes qui se ne dévoilent qu’à ceux qui acceptent de regarder l’invisible.
+La lumière, souveraine silencieuse, témoin des origines, à la fois si perceptible et
+fugace, semble n’obéir qu’à elle-même. Elle file, insaisissable, droite, indifférente,
+inaltérable. Du moins, le croyait-on ; l’Univers consent parfois à dévoiler ses secrets.
+En 1845, Michael Faraday eut une intuition, presque un rêve :
 
-Sommaire : 
-I) Notions dâintroductions au projet 
-A. Polarisation linÃ©aire dâune onde lumineuse 
-B. Pouvoir rotatoire naturel 
-C. Effet magnÃ©to â optique  
- 
-II) PremiÃ¨res mesures relatives Ã  lâeffet magnÃ©to â optique  
-A. PrÃ©sentation du dispositif  
-B. Etablissement dâun protocole expÃ©rimental 
-C. Mesure du double de lâangle de rotation pour un laser vert 
- 
-III) Mesures de champ magnÃ©tique dans la zone dâinfluence locale 
-A. Objectifs 
-B. DÃ©termination de lâutilitÃ© des cÃ´nes dans le dispositif 
-C. Mesure de la composante horizontale du champ magnÃ©tique avec 
-prÃ©sence des cÃ´nes 
- 
-IV) Mesures de lâangle de rotation de polarisation pour le Flint  
-A. AmÃ©liorations du procÃ©dÃ© de mesures 
-B. Mesure en Åuvre : mesure du double de lâangle de rotation  
-C. Analyse des rÃ©sultats et incertitudes 
- 
-V) La constante de Verdet : lien entre angle de rotation et champ 
-magnÃ©tique  
-A. Mise en Ã©vidence  
-B. Calcul des valeurs de la constante de Verdet pour le flint 
-C. Incertitudes : exemple pour à¥à·à­¤à­¢à­¡ à¤à¤ et à¤à·à­¡É§à­¦ à¤à¤  
- 
-VI) Pour aller plus loin 
-A. Comparaisons Ã  des valeurs tabulÃ©es 
-B. Un autre modÃ¨le ? 
-C. Une application de lâeffet magnÃ©to â optique : lâisolateur optique 
-Remerciements : 
-Nous tenons Ã  remercier lâensemble de la direction du lycÃ©e (M. GLOMERON, Mme ZAIDI, â¦) 
-pour leur soutien. On remercie Ã©galement M. CHENEAU pour la visite de lâInstitut dâOptique de 
-Palaiseau, et M. LEOPOLDES pour nous avoir aiguillÃ© au dÃ©but du projet. Notamment aussi M. 
-FARCY et M. FOLLIN pour leurs investissements dans le projet. On remercie aussi nos parents 
-pour leurs soutiens inconditionnels. Et le meilleur pour la fin, M. CROS pour son 
-investissement, son temps infini consacrÃ© au projet, et les expÃ©riences incroyables quâil nous a 
-fait vivre, et pour son charisme naturel ! 
+et si nous pouvions influencer la lumière?
+k
+
+Alors, sous l’emprise d’un champ magnétique, s’est fait entendre un infime murmure
+optique : une rotation subtile, quasi imperceptible, comme un secret glissé dans le
+faisceau imperturbable d’un laser.
+La lumière, soudain, s’inclina ; elle ne se contentait plus d’éclairer, elle révélait.
+Aux frontières de l’électromagnétisme et de l’optique, là où se mêlent lumière et
+matière, notre exploration débute : comment la lumière se laisse-t-elle guider, dévier,
+transformer par des entités invisibles ?
+Voilà notre voyage ; celui de rendre l’indécelable mesurable,
+aux confins du réel et de l’indicible.
+
+Sommaire :
+I)
+
+Notions d’introductions au projet
+A. Polarisation linéaire d’une onde lumineuse
+B. Pouvoir rotatoire naturel
+C. Effet magnéto – optique
+
+II)
+
+Premières mesures relatives à l’effet magnéto – optique
+A. Présentation du dispositif
+B. Etablissement d’un protocole expérimental
+C. Mesure du double de l’angle de rotation pour un laser vert
+
+III) Mesures de champ magnétique dans la zone d’influence locale
+A. Objectifs
+B. Détermination de l’utilité des cônes dans le dispositif
+C. Mesure de la composante horizontale du champ magnétique avec
+présence des cônes
+IV) Mesures de l’angle de rotation de polarisation pour le Flint
+A. Améliorations du procédé de mesures
+B. Mesure en œuvre : mesure du double de l’angle de rotation
+C. Analyse des résultats et incertitudes
+V)
+
+La constante de Verdet : lien entre angle de rotation et champ
+magnétique
+A. Mise en évidence
+B. Calcul des valeurs de la constante de Verdet pour le flint
+C. Incertitudes : exemple pour 𝝀 = 𝟓𝟑𝟐 𝒏𝒎 et 𝒅 = 𝟐, 𝟕 𝒄𝒎
+
+VI) Pour aller plus loin
+A. Comparaisons à des valeurs tabulées
+B. Un autre modèle ?
+C. Une application de l’effet magnéto – optique : l’isolateur optique
+Remerciements :
+Nous tenons à remercier l’ensemble de la direction du lycée (M. GLOMERON, Mme ZAIDI, …)
+pour leur soutien. On remercie également M. CHENEAU pour la visite de l’Institut d’Optique de
+Palaiseau, et M. LEOPOLDES pour nous avoir aiguillé au début du projet. Notamment aussi M.
+FARCY et M. FOLLIN pour leurs investissements dans le projet. On remercie aussi nos parents
+pour leurs soutiens inconditionnels. Et le meilleur pour la fin, M. CROS pour son
+investissement, son temps infini consacré au projet, et les expériences incroyables qu’il nous a
+fait vivre, et pour son charisme naturel !
+
 2
 
-Le projet dÃ©bute en mars 2025, par suite dâune discussion autour de lunettes de cinÃ©ma 3D. 
-Nous commenÃ§ons alors Ã  nous intÃ©resser Ã  la polarisation. Sans rÃ©el fil conducteur au dÃ©part, 
-nous dÃ©butons avec les notions relatives au sujet, dÃ©sireux de trouver une idÃ©e.    
-I) Notions dâintroductions au projet 
-A. Polarisation linÃ©aire dâune onde lumineuse 
-La lumiÃ¨re peut Ãªtre dÃ©crite comme une onde Ã©lectromagnÃ©tique (abrÃ©gÃ© OEM), composÃ©e 
-dâ±un champ Ã©lectrique et dâ±un champ magnÃ©tique oscillant perpendiculairement lâ±un Ã  lâ±autre et Ã  la 
-direction de propagation. Par convention, le plan contenant le champ Ã©lectrique est appelÃ© plan de 
-polarisation de lâ±OEM. La droite parallÃ¨le Ã  la 
-direction du champ Ã©lectrique est appelÃ©e axe 
-de polarisation ou direction de polarisation.  
-Figure 1 : reprÃ©sentation de lâOEM 
-Les directions dâ±oscillation du champ 
-Ã©lectrique sont alÃ©atoires dans une lumiÃ¨re 
-naturelle, dite non polarisÃ©e (la lumiÃ¨re du soleil ou dâ±un laser par exemple). Si on sÃ©lectionne une 
-direction particuliÃ¨re dâ±oscillation du champ Ã©lectrique, la lumiÃ¨re est alors polarisÃ©e linÃ©airement. 
-On utilise pour cela un polariseur : dispositif optique constituÃ© de polymÃ¨res (longues molÃ©cules) 
-orientÃ©s lors de la fabrication. Les chaÃ®nes molÃ©culaires quâ±ils contiennent absorbent la composante 
-du champ Ã©lectrique parallÃ¨le Ã  leur direction, tandis que la 
-composante perpendiculaire est transmise. La lumiÃ¨re 
-sortante est donc polarisÃ©e selon une seule direction dans 
-le cas dâ±une polarisation linÃ©aire : câ±est ce type de 
-polarisation que nous allons utiliser pour notre projet. Dans 
-toute la suite du mÃ©moire, lorsque nous Ã©voquerons les 
-termes Â« polarisation Â», Â« polariseur Â», Â« analyseur Â», il 
-sâ±agira Ã  chaque fois de polarisation rectiligne.              Figure 2 : schÃ©ma de principe de la polarisation  
-Pour illustrer ce phÃ©nomÃ¨ne, on rÃ©alise lâ±expÃ©rience suivante : sur un banc optique, on place 
-une source de lumiÃ¨re verte et un Ã©cran, sÃ©parÃ©s de Ï½Ï¸ ßß. On place ensuite un premier polariseur 
-entre le laser et lâ±Ã©cran, dont lâ±axe dâ±orientation est alignÃ© avec la verticale (graduation Â« Ï¸Ð¿ Â») ; la 
-lumiÃ¨re du laser est alors polarisÃ©e rectilignement selon lâ±axe vertical (polarisation rectiligne 
-verticale). En pratique, on nâ±observe rien de particulier Ã  lâ±Ã©cran.  
-Pour vÃ©rifier la direction de polarisation verticale, on place un second polariseur, appelÃ© 
-analyseur, dont lâ±axe dâ±orientation est alignÃ© avec la verticale 
-(graduation Â« Ï¸Ð¿ Â»). Sur lâ±Ã©cran, on nâ±observe toujours aucune 
-diffÃ©rence. On fait tourner lâ±analyseur progressivement et on observe 
-peu Ã  peu la lumiÃ¨re du laser sur lâ±Ã©cran sâ±assombrir sur lâ±Ã©cran 
-jusquâ±Ã  lâ±extinction totale pour un angle de ÐÏ¸Ð¿ (plus de lumiÃ¨re 
-visible). En effet, pour cette valeur dâ±angle, lâ±analyseur ne laisse 
-passer que les directions horizontales dâ±oscillations du champ 
-Ã©lectrique de la lumiÃ¨re du laser. Cette derniÃ¨re Ã©tant polarisÃ©e 
-verticalement, toute la lumiÃ¨re transmise par le polariseur est 
-absorbÃ©e : il y a extinction totale de la lumiÃ¨re sur lâ±Ã©cran.   
-Figure 3 : photographies du montage lorsque le polariseur et 
-lâanalyseur sont orientÃ©s relativement Ã  Ï¸Ð¿ et Ã  ÐÏ¸Ð¿Éª 
+Le projet débute en mars 2025, par suite d’une discussion autour de lunettes de cinéma 3D.
+Nous commençons alors à nous intéresser à la polarisation. Sans réel fil conducteur au départ,
+nous débutons avec les notions relatives au sujet, désireux de trouver une idée.
+
+I) Notions d’introductions au projet
+A. Polarisation linéaire d’une onde lumineuse
+La lumière peut être décrite comme une onde électromagnétique (abrégé OEM), composée
+d’un champ électrique et d’un champ magnétique oscillant perpendiculairement l’un à l’autre et à la
+direction de propagation. Par convention, le plan contenant le champ électrique est appelé plan de
+polarisation de l’OEM. La droite parallèle à la
+direction du champ électrique est appelée axe
+de polarisation ou direction de polarisation.
+Figure 1 : représentation de l’OEM
+Les directions d’oscillation du champ
+électrique sont aléatoires dans une lumière
+naturelle, dite non polarisée (la lumière du soleil ou d’un laser par exemple). Si on sélectionne une
+direction particulière d’oscillation du champ électrique, la lumière est alors polarisée linéairement.
+On utilise pour cela un polariseur : dispositif optique constitué de polymères (longues molécules)
+orientés lors de la fabrication. Les chaînes moléculaires qu’ils contiennent absorbent la composante
+du champ électrique parallèle à leur direction, tandis que la
+composante perpendiculaire est transmise. La lumière
+sortante est donc polarisée selon une seule direction dans
+le cas d’une polarisation linéaire : c’est ce type de
+polarisation que nous allons utiliser pour notre projet. Dans
+toute la suite du mémoire, lorsque nous évoquerons les
+termes « polarisation », « polariseur », « analyseur », il
+s’agira à chaque fois de polarisation rectiligne.
+Figure 2 : schéma de principe de la polarisation
+Pour illustrer ce phénomène, on réalise l’expérience suivante : sur un banc optique, on place
+une source de lumière verte et un écran, séparés de 50 𝑐𝑚. On place ensuite un premier polariseur
+entre le laser et l’écran, dont l’axe d’orientation est aligné avec la verticale (graduation « 0° ») ; la
+lumière du laser est alors polarisée rectilignement selon l’axe vertical (polarisation rectiligne
+verticale). En pratique, on n’observe rien de particulier à l’écran.
+Pour vérifier la direction de polarisation verticale, on place un second polariseur, appelé
+analyseur, dont l’axe d’orientation est aligné avec la verticale
+(graduation « 0° »). Sur l’écran, on n’observe toujours aucune
+différence. On fait tourner l’analyseur progressivement et on observe
+peu à peu la lumière du laser sur l’écran s’assombrir sur l’écran
+jusqu’à l’extinction totale pour un angle de 90° (plus de lumière
+visible). En effet, pour cette valeur d’angle, l’analyseur ne laisse
+passer que les directions horizontales d’oscillations du champ
+électrique de la lumière du laser. Cette dernière étant polarisée
+verticalement, toute la lumière transmise par le polariseur est
+absorbée : il y a extinction totale de la lumière sur l’écran.
+Figure 3 : photographies du montage lorsque le polariseur et
+l’analyseur sont orientés relativement à 0° et à 90°.
+
 3
 
-Si on continue Ã  faire tourner lâ±analyseur, on observe peu Ã  peu que la lumiÃ¨re rÃ©apparaÃ®t sur 
-lâ±Ã©cran, jusquâ±Ã  lâ±intensitÃ© lumineuse maximale lorsque lâ±analyseur est Ã  Ï¹ÐÏ¸Ð¿ : dans ce cas, il laisse 
-passer les directions verticales dâ±oscillations du champ Ã©lectrique de la lumiÃ¨re du laser, qui sont 
-bien les directions que le polariseur a laissÃ© passer : lâ±intensitÃ© lumineuse est maximale. 
-Il en est de mÃªme pour les angles ÏºÏ¿Ï¸Ð¿ (extinction totale sur lâ±Ã©cran) et Ï»Ï¾Ï¸ Ð¿ (Ã©quivalent Ã  
-Ï¸Ð¿) (intensitÃ© lumineuse maximale sur lâ±Ã©cran). Si on fixe lâ±analyseur Ã  la graduation Ï¸Ð¿ et quâ±on fait 
-tourner le polariseur, on observe les rÃ©sultats Ã©quivalents.  
-Remarque : une lumiÃ¨re polarisÃ©e rectilignement 
-est la superposition de deux ondes polarisÃ©es 
-circulairement : une polarisÃ©e circulairement droite, et 
-une gauche ; respectivement en rotation dans le sens 
-horaire et anti-horaire, de mÃªme amplitude et longueur 
-dâ±onde. La superposition de ces deux Â« composantes 
-droite et gauche Â» donne une polarisation rectiligne, car 
-la Â« somme Â» des vecteurs champ Ã©lectrique Ã  tout 
-instant donne des vecteurs rÃ©sultants colinÃ©aires entre 
-eux, dirigÃ©s selon lâ±axe de polarisation.                 Figure 4 : modÃ©lisation des composantes circulaires 
- gauche et droite Ã  lâorigine dâune polarisation rectiligne 
-B. Pouvoir rotatoire naturel 
-Le pouvoir rotatoire est la propriÃ©tÃ© de certains milieux, qualifiÃ©s dâ± Â« optiquement actifs Â», de 
-faire tourner le plan de polarisation de la lumiÃ¨re qui les traverse.   
-Pour observer ce phÃ©nomÃ¨ne, on place dans une cuve Ã  hublots de Ï¹Ï½É§Ï¸ ßß un Ã©chantillon 
-dâ±acide lactique. Pour montrer que cet Ã©chantillon est optiquement actif, il faut montrer quâ±il y a 
-rotation du plan de polarisation dâ±une lumiÃ¨re polarisÃ©e, lorsquâ±elle traverse la substance. On a vu 
-prÃ©cÃ©demment que lorsquâ±un polariseur et un analyseur linÃ©aires sont orientÃ©s dâ±un angle Ã©gal Ã  
-ÐÏ¸Ð¿, il y a extinction totale de la lumiÃ¨re du laser sur lâ±Ã©cran. On place lâ±Ã©chantillon dâ±acide lactique 
-entre le polariseur et lâ±analyseur, lorsquâ±ils sont orientÃ©s Ã  ÐÏ¸Ð¿ lâ±un de lâ±autre. On observe alors la 
-lumiÃ¨re polarisÃ©e apparaÃ®tre Ã  lâ±Ã©cran : une partie de la lumiÃ¨re a pu traverser lâ±analyseur. Cela 
-signifie que lâ±axe de polarisation de la lumiÃ¨re nâ±est plus strictement 
-vertical Ã  la sortie de lâ±Ã©chantillon dâ±acide lactique : il y a eu rotation 
-du plan de polarisation : lâ±acide lactique est optiquement actif. 
-Pour Ã©valuer la valeur lâ±angle de rotation de polarisation pour 
-cet Ã©chantillon, on tourne lâ±analyseur vers la gauche pour atteindre 
-lâ±extinction Ã  lâ±Ã©cran pour un observateur regardant la source, pour 
-un angle à¡
-à±à·ÏºÐÏ¿Ð¿âÏºÏ¿Ï¸Ð¿ à· +Ï¹Ï¿ Ð¿ (caractÃ¨re Â« lÃ©vogyre Â»).  
-Figure 5 : polariseur et analyseurs orientÃ©s Ã  ÐÏ¸Ð¿, puis Ã  
-+Ï¹Ï¿Ð¿ au-dessus pour retrouver lâextinction. 
-On procÃ¨de de mÃªme avec une solution de 
-saccharose de concentration massique Ï¹Ï½Ï¸ ßÉªÞ´
-à¯à®»
-. AprÃ¨s avoir placÃ© 
-polariseur et analyseur Ã  ÐÏ¸Ð¿ lâ±un de lâ±autre, on place un Ã©chantillon 
-de cette solution dans la cuve Ã  hublots de Ï¹Ï½É§Ï¸ ßß : on observe Ã  
-nouveau le faisceau laser Ã  lâ±Ã©cran, preuve que la solution utilisÃ©e 
-est optiquement active. Pour retrouver lâ±extinction, on fait tourner 
-lâ±analyser vers la droite par rapport Ã  un observateur qui regarde la 
+Si on continue à faire tourner l’analyseur, on observe peu à peu que la lumière réapparaît sur
+l’écran, jusqu’à l’intensité lumineuse maximale lorsque l’analyseur est à 180° : dans ce cas, il laisse
+passer les directions verticales d’oscillations du champ électrique de la lumière du laser, qui sont
+bien les directions que le polariseur a laissé passer : l’intensité lumineuse est maximale.
+Il en est de même pour les angles 270° (extinction totale sur l’écran) et 360 ° (équivalent à
+0°) (intensité lumineuse maximale sur l’écran). Si on fixe l’analyseur à la graduation 0° et qu’on fait
+tourner le polariseur, on observe les résultats équivalents.
+Remarque : une lumière polarisée rectilignement
+est la superposition de deux ondes polarisées
+circulairement : une polarisée circulairement droite, et
+une gauche ; respectivement en rotation dans le sens
+horaire et anti-horaire, de même amplitude et longueur
+d’onde. La superposition de ces deux « composantes
+droite et gauche » donne une polarisation rectiligne, car
+la « somme » des vecteurs champ électrique à tout
+instant donne des vecteurs résultants colinéaires entre
+eux, dirigés selon l’axe de polarisation.
+Figure 4 : modélisation des composantes circulaires
+gauche et droite à l’origine d’une polarisation rectiligne
+
+B. Pouvoir rotatoire naturel
+Le pouvoir rotatoire est la propriété de certains milieux, qualifiés d’ « optiquement actifs », de
+faire tourner le plan de polarisation de la lumière qui les traverse.
+Pour observer ce phénomène, on place dans une cuve à hublots de 15,0 𝑐𝑚 un échantillon
+d’acide lactique. Pour montrer que cet échantillon est optiquement actif, il faut montrer qu’il y a
+rotation du plan de polarisation d’une lumière polarisée, lorsqu’elle traverse la substance. On a vu
+précédemment que lorsqu’un polariseur et un analyseur linéaires sont orientés d’un angle égal à
+90°, il y a extinction totale de la lumière du laser sur l’écran. On place l’échantillon d’acide lactique
+entre le polariseur et l’analyseur, lorsqu’ils sont orientés à 90° l’un de l’autre. On observe alors la
+lumière polarisée apparaître à l’écran : une partie de la lumière a pu traverser l’analyseur. Cela
+signifie que l’axe de polarisation de la lumière n’est plus strictement
+vertical à la sortie de l’échantillon d’acide lactique : il y a eu rotation
+du plan de polarisation : l’acide lactique est optiquement actif.
+Pour évaluer la valeur l’angle de rotation de polarisation pour
+cet échantillon, on tourne l’analyseur vers la gauche pour atteindre
+l’extinction à l’écran pour un observateur regardant la source, pour
+un angle 𝛼𝐿 = 287° − 270° = +17 ° (caractère « lévogyre »).
+Figure 5 : polariseur et analyseurs orientés à 90°, puis à
++17° au-dessus pour retrouver l’extinction.
+On procède de même avec une solution de
+saccharose de concentration massique 150 𝑔. 𝐿−1. Après avoir placé
+polariseur et analyseur à 90° l’un de l’autre, on place un échantillon
+de cette solution dans la cuve à hublots de 15,0 𝑐𝑚 : on observe à
+nouveau le faisceau laser à l’écran, preuve que la solution utilisée
+est optiquement active. Pour retrouver l’extinction, on fait tourner
+l’analyser vers la droite par rapport à un observateur qui regarde la
+
 4
 
-source, preuve que la solution est dite Â« dextrogyre Â». Lâ±angle de 
-rotation de lâ±analyseur est : à¡
-à±à·ÏºÏ»Ï¼âÏºÏ¿Ï¸à· âÏ»Ï¾Ð¿. 
-Figure 6 : polariseur et analyseurs orientÃ©s Ã  ÐÏ¸Ð¿ (page 
-prÃ©cÃ©dente), puis Ã  âÏ»Ï¾Ð¿ pour retrouver lâextinction. 
- 
-On dÃ©termine que la nature de la substance, son 
-Ã©ventuelle concentration massique, la longueur du milieu traversÃ©e et la tempÃ©rature sont les 
-paramÃ¨tres dont dÃ©pend lâ±activitÃ© optique (voir partie 1 du dossier annexe).  
-Câ±est la structure microscopique du milieu qui peut expliquer lâ±activitÃ© optique naturelle. Les 
-molÃ©cules non superposables Ã  leur image dans un miroir plan sont qualifiÃ©es de chirales : elles 
-interagissent diffÃ©remment avec les composantes droite et gauche de la lumiÃ¨re polarisÃ©e 
-circulairement (voir remarque dans la partie prÃ©cÃ©dente). Le milieu modifie lÃ©gÃ¨rement la vitesse 
-(donc lâ±indice de rÃ©fraction) de lâ±une des composantes circulaires : la somme des vecteurs champ 
-Ã©lectrique donne un vecteur qui nâ±est plus sur le mÃªme axe de polarisation, il y a donc rotation du 
-plan de polarisation.  
-Lors de nos recherches, nous avons appris que lâ±activitÃ© optique pouvait aussi Ãªtre 
-provoquÃ©e, notamment par un champ magnÃ©tique : on parle alors dâ±effet magnÃ©to-optique.  
-C. Effet magnÃ©to â optique  
-Câ±est en 1845 que le physicien Michael Faraday dÃ©couvrit que la prÃ©sence dâ±un 
-champ magnÃ©tique dans un milieu transparent provoquait une rotation du plan de 
-polarisation dâ±une lumiÃ¨re qui le traverse : câ±est lâ±effet magnÃ©to â optique ou effet 
-Faraday. Dans ce cas-lÃ , le pouvoir rotatoire est provoquÃ© par lâ±application dâ±un champ 
-magnÃ©tique externe dans un milieu qui est optiquement inactif, dirigÃ© dans lâ±axe de 
-propagation de la lumiÃ¨re : ici il sâ±agit de la 
-composante horizontale, que nous noterons Þª
-à±±Éª 
-Figure 7 : schÃ©ma de principe de lâeffet magnÃ©to â optique : 
-rotation du plan de polarisation dans une substance 
-optiquement inactive sous lâeffet dâun champ magnÃ©tique 
-Cette dÃ©couverte historique constitue la 
-premiÃ¨re preuve expÃ©rimentale du lien entre 
-lâ±Ã©lectromagnÃ©tisme et la lumiÃ¨re, par 
-anticipation aux travaux de Maxwell de 1865.  
-Nous dÃ©cisions dâ±en faire lâ±objet de notre projet en dÃ©couvrant ce phÃ©nomÃ¨ne, 
-riche dâ±un point de vue expÃ©rimental, et peu courant, mÃªme dans le supÃ©rieur. 
-NÃ©cessitant un matÃ©riel spÃ©cifique que nous nâ±avons pas, nous avons contactÃ© M. LEOPOLDES, 
-enseignant chercher Ã  lâ±UniversitÃ© Gustave Eiffel Ã  Champs-Sur-Marne, ainsi que M. FOLIN, 
-assistant ingÃ©nieur, pour nous permettre dâ±effectuer des premiÃ¨res mesures. 
-Pour observer la rotation provoquÃ©e du plan de polarisation dâ±une lumiÃ¨re polarisÃ©e, et 
-dÃ©terminer les Ã©ventuelles lois caractÃ©ristiques, il est nÃ©cessaire dâ±utiliser un dispositif adaptÃ© 
-capable de gÃ©nÃ©rer un champ magnÃ©tique, ainsi quâ±une source de lumiÃ¨re que lâ±on va polariser 
-rectilignement afin de mesurer lâ±Ã©ventuel angle de rotation du plan de polarisation avec un 
-analyseur. Enfin, il faut utiliser un milieu transparent adÃ©quat, qui permette dâ±observer les meilleures 
-mesures possibles.  
-Nous remercions M. FOLLIN et M LEOPOLDES. et lâ±ensemble des intervenants de 
-lâ±UniversitÃ© Gustave Eiffel pour avoir mis Ã  notre disposition leur kit complet dâ±effet magnÃ©to optique. 
+source, preuve que la solution est dite « dextrogyre ». L’angle de
+rotation de l’analyseur est : 𝛼𝐷 = 234 − 270 = −36°.
+Figure 6 : polariseur et analyseurs orientés à 90° (page
+précédente), puis à −36° pour retrouver l’extinction.
+On détermine que la nature de la substance, son
+éventuelle concentration massique, la longueur du milieu traversée et la température sont les
+paramètres dont dépend l’activité optique (voir partie 1 du dossier annexe).
+C’est la structure microscopique du milieu qui peut expliquer l’activité optique naturelle. Les
+molécules non superposables à leur image dans un miroir plan sont qualifiées de chirales : elles
+interagissent différemment avec les composantes droite et gauche de la lumière polarisée
+circulairement (voir remarque dans la partie précédente). Le milieu modifie légèrement la vitesse
+(donc l’indice de réfraction) de l’une des composantes circulaires : la somme des vecteurs champ
+électrique donne un vecteur qui n’est plus sur le même axe de polarisation, il y a donc rotation du
+plan de polarisation.
+Lors de nos recherches, nous avons appris que l’activité optique pouvait aussi être
+provoquée, notamment par un champ magnétique : on parle alors d’effet magnéto-optique.
+
+C. Effet magnéto – optique
+C’est en 1845 que le physicien Michael Faraday découvrit que la présence d’un
+champ magnétique dans un milieu transparent provoquait une rotation du plan de
+polarisation d’une lumière qui le traverse : c’est l’effet magnéto – optique ou effet
+Faraday. Dans ce cas-là, le pouvoir rotatoire est provoqué par l’application d’un champ
+magnétique externe dans un milieu qui est optiquement inactif, dirigé dans l’axe de
+propagation de la lumière : ici il s’agit de la
+composante horizontale, que nous noterons 𝐵𝑥 .
+Figure 7 : schéma de principe de l’effet magnéto – optique :
+rotation du plan de polarisation dans une substance
+optiquement inactive sous l’effet d’un champ magnétique
+Cette découverte historique constitue la
+première preuve expérimentale du lien entre
+l’électromagnétisme et la lumière, par
+anticipation aux travaux de Maxwell de 1865.
+Nous décisions d’en faire l’objet de notre projet en découvrant ce phénomène,
+riche d’un point de vue expérimental, et peu courant, même dans le supérieur.
+Nécessitant un matériel spécifique que nous n’avons pas, nous avons contacté M. LEOPOLDES,
+enseignant chercher à l’Université Gustave Eiffel à Champs-Sur-Marne, ainsi que M. FOLIN,
+assistant ingénieur, pour nous permettre d’effectuer des premières mesures.
+Pour observer la rotation provoquée du plan de polarisation d’une lumière polarisée, et
+déterminer les éventuelles lois caractéristiques, il est nécessaire d’utiliser un dispositif adapté
+capable de générer un champ magnétique, ainsi qu’une source de lumière que l’on va polariser
+rectilignement afin de mesurer l’éventuel angle de rotation du plan de polarisation avec un
+analyseur. Enfin, il faut utiliser un milieu transparent adéquat, qui permette d’observer les meilleures
+mesures possibles.
+Nous remercions M. FOLLIN et M LEOPOLDES. et l’ensemble des intervenants de
+l’Université Gustave Eiffel pour avoir mis à notre disposition leur kit complet d’effet magnéto optique.
+
 5
 
-II) PremiÃ¨res mesures relatives Ã  lâeffet magnÃ©to â optique  
-A. PrÃ©sentation du dispositif  
-Nous lâ±avons vu prÃ©cÃ©demment : lâ±effet 
-magnÃ©to â optique est lâ±acquisition dâ±une activitÃ© 
-optique par un milieu optiquement inactif lorsquâ±il 
-est soumis Ã  un champ magnÃ©tique.  
-Afin de ne pas influencer nos premiÃ¨res 
-mesures, nous ne recherchons pas une Ã©ventuelle 
-relation entre lâ±angle de rotation et le champ 
-magnÃ©tique.  
-Figure 8 : photos et schÃ©mas du montage 
-expÃ©rimental de lâUniversitÃ© Gustave Eiffel  
-Pour prÃ©parer notre premiÃ¨re venue Ã  lâ±UniversitÃ© le 18 juin 2025, nous avons vu avec M. 
-CROS que lorsquâ±un courant Þ± parcourt le fil enroulÃ© une bobine, un champ magnÃ©tique Þª est crÃ©Ã©, 
-dont la valeur au centre de la bobine est proportionnelle Ã  Þ± (voir partie 3 du dossier annexe). Deux 
-bobines sont introduites dans un entrefer, surmontÃ©es de piÃ¨ces mÃ©talliques dont les extrÃ©mitÃ©s 
-coniques pointent vers un milieu transparent, dispositif que nous avions dÃ©jÃ  vu lors de notre 
-prÃ©paration pour la sortie Ã  lâ±UniversitÃ©. Nous comprenons que ce montage permet dâ±obtenir dans 
-ce que nous appellerons pour la suite du projet Â« rÃ©gion dâ±influence Â», un champ magnÃ©tique.  
-B. Etablissement dâun protocole expÃ©rimental 
-Grace Ã  des recherches prÃ©alables, nous avons appris quâ±un barreau de verre Flint 
-permettaient dâ±obtenir de grandes mesures. Puisque lâ±effet magnÃ©to â optique 
-semble quantifier lâ±angle de rotation du plan de polarisation et la valeur du champ 
-magnÃ©tique, nous dÃ©cidons de mesurer les couples de ces deux valeurs.  
-                 Figure 9 : barreau de Flint 
-Pour cela, de la mÃªme maniÃ¨re que nous lâ±avions 
-fait dans notre TP de prÃ©paration (partie 4 du dossier 
-annexe), on fait varier lâ±intensitÃ© du courant Þ± circulant 
-dans les bobines entre âÏ¹Ï¸É§Ï¸Ï¸ Þ© et +Ï¹Ï¸É§Ï¸Ï¸ Þ©, et on 
-mesure la composante horizontale du champ magnÃ©tique 
-notÃ©e Þª
-à±± au centre du dispositif Ã  lâ±aide dâ±un teslamÃ¨tre.            Figure 10 : Position du TeslamÃ¨tre  
-Figure 11 : Þª
-à±±à·ß(Þ±) au centre de la rÃ©gion 
-dâinfluence  
-La valeur de la composante horizontale 
-du magnÃ©tique Þª
-à±± au centre de la rÃ©gion 
-dâ±influence semble proportionnelle Ã  la valeur 
-du courant Ã©lectrique lorsque Þ± à¡¹ [âÏ¼É§Ï½ É¨Ï¼É§Ï½] Þ©Éª 
-Pour les valeurs hors de cet intervalle, il y a 
-bien une dÃ©pendance de Þª
-à±± Ã  Þ±, mais il nâ±y a 
-pas de situation de proportionnalitÃ© (voir 
-partie 6 du dossier annexe). Les bobines utilisÃ©es, constituÃ©es de Þ¶
-à®»à·Ï¼ÐÏ¸ spires peuvent accepter 
-un courant maximal dâ±intensitÃ© Þ±
-à±¦à±à±±à®»à·Ï¹Ï¸É§Ï¸Ï¸ Þ©. AprÃ¨s de nombreuses recherches chez lâ±ensemble 
-des fournisseurs de matÃ©riel scientifique, nous remarquons que de telles bobines sont trÃ¨s rares, et 
-fabriquÃ©es uniquement sur commande (avec 6 mois de dÃ©lais, et des prix inabordables).  
--250
--200
--150
--100
--50
-0
-50
-100
-150
-200
+II)
+
+Premières mesures relatives à l’effet magnéto – optique
+A. Présentation du dispositif
+
+Nous l’avons vu précédemment : l’effet
+magnéto – optique est l’acquisition d’une activité
+optique par un milieu optiquement inactif lorsqu’il
+est soumis à un champ magnétique.
+Afin de ne pas influencer nos premières
+mesures, nous ne recherchons pas une éventuelle
+relation entre l’angle de rotation et le champ
+magnétique.
+Figure 8 : photos et schémas du montage
+expérimental de l’Université Gustave Eiffel
+
+Pour préparer notre première venue à l’Université le 18 juin 2025, nous avons vu avec M.
+CROS que lorsqu’un courant 𝐼 parcourt le fil enroulé une bobine, un champ magnétique 𝐵 est créé,
+dont la valeur au centre de la bobine est proportionnelle à 𝐼 (voir partie 3 du dossier annexe). Deux
+bobines sont introduites dans un entrefer, surmontées de pièces métalliques dont les extrémités
+coniques pointent vers un milieu transparent, dispositif que nous avions déjà vu lors de notre
+préparation pour la sortie à l’Université. Nous comprenons que ce montage permet d’obtenir dans
+ce que nous appellerons pour la suite du projet « région d’influence », un champ magnétique.
+
+B. Etablissement d’un protocole expérimental
+
+B x(mT)
+
+Grace à des recherches préalables, nous avons appris qu’un barreau de verre Flint
+permettaient d’obtenir de grandes mesures. Puisque l’effet magnéto – optique
+semble quantifier l’angle de rotation du plan de polarisation et la valeur du champ
+magnétique, nous décidons de mesurer les couples de ces deux valeurs.
+Figure 9 : barreau de Flint
+Pour cela, de la même manière que nous l’avions
+fait dans notre TP de préparation (partie 4 du dossier
+annexe), on fait varier l’intensité du courant 𝐼 circulant
+dans les bobines entre −10,00 𝐴 et +10,00 𝐴, et on
+mesure la composante horizontale du champ magnétique
+notée 𝐵𝑥 au centre du dispositif à l’aide d’un teslamètre.
+Figure 10 : Position du Teslamètre
+Figure 11 : 𝐵𝑥 = 𝑓(𝐼) au centre de la région
 250
--10-9-8-7-6-5-4-3-2-1012345678910
-B 
-x
-(mT
-)
+200
+d’influence
+150
+La valeur de la composante horizontale
+100
+du magnétique 𝐵𝑥 au centre de la région
+50
 I (A)
+0
+d’influence semble proportionnelle à la valeur
+-1 0 1 2 3 4 5 6 7 8 9 10
+du courant électrique lorsque 𝐼 𝜖 [−4,5 ; 4,5] 𝐴. -10-9 -8 -7 -6 -5 -4 -3 -2-50
+-100
+Pour les valeurs hors de cet intervalle, il y a
+-150
+-200
+bien une dépendance de 𝐵𝑥 à 𝐼, mais il n’y a
+-250
+pas de situation de proportionnalité (voir
+partie 6 du dossier annexe). Les bobines utilisées, constituées de 𝑁1 = 480 spires peuvent accepter
+un courant maximal d’intensité 𝐼𝑚𝑎𝑥1 = 10,00 𝐴. Après de nombreuses recherches chez l’ensemble
+des fournisseurs de matériel scientifique, nous remarquons que de telles bobines sont très rares, et
+fabriquées uniquement sur commande (avec 6 mois de délais, et des prix inabordables).
+
 6
 
-On place le barreau de verre flint mesurant Þ´à·ÏºÉ§Ï¸Ï¸ ßß dans la rÃ©gion dâ±influence ; le centre 
-du barreau se situant Ã  la position du capteur du TeslamÃ¨tre avec lequel nous avons effectuÃ© les 
-mesures. On utilise comme source de lumiÃ¨re un laser vert de longueur dâ±onde à¡©à·Ï½Ï»Ïº ßß. 
-On rÃ¨gle lâ±analyseur de telle sorte quâ±il y ait extinction totale de la lumiÃ¨re Ã  lâ±Ã©cran. Si par la 
-suite, lorsquâ±un courant traverse les bobines, de la lumiÃ¨re apparaÃ®t Ã  lâ±Ã©cran, cela signifie que la 
-prÃ©sence du champ magnÃ©tique a bien engendrÃ© la rotation du plan de polarisation de la lumiÃ¨re 
-polarisÃ©e rectilignement du laser (effet magnÃ©to â optique) : activitÃ© optique provoquÃ©e.  
-C. Mesures du double de lâangle de rotation pour un laser vert  
-On fait circuler un courant de Ï¸É§Ï½Ï¸Þ© dans les bobines, en branchant les pÃ´les positifs au 
-centre (voir schÃ©ma partie III) B. en figure 16). PlongÃ©s dans le noir, on observe la prÃ©sence trÃ¨s 
-claire de lumiÃ¨re Ã  lâ±Ã©cran. En tournant lâ±analyseur dans le sens antihoraire pour un observateur 
-face Ã  la source, on remarque que lâ±angle de rotation à¡¼ est quasiment imperceptible et impossible 
-Ã  Ã©valuer sur lâ±analyseur, vu les graduations peu prÃ©cises dont il dispose. On replace lâ±analyseur 
-extinction totale de la lumiÃ¨re Ã  lâ±Ã©cran (sans courant Ã©lectrique circulant dans les bobines), puis on 
-recherche lâ±extinction en imposant Þ±à·â Ï¸É§Ï½Ï¸ Þ©. On fait tourner lâ±analyseur dans le sens horaire ; la 
-mesure de lâ±angle de rotation à¡¼ sur lâ±analyseur est impossible pour les mÃªmes raisons. Pour Þ±à·
-Ï¼É§Ï¸Ï¸ Þ©, la mesure de lâ±angle de rotation à¡¼ semble bien plus Ã©levÃ©e ; mais Ã  
-nouveau impossible Ã  mesurer de faÃ§on prÃ©cise, vu les graduations. Nous 
-nâ±avons pas de photo des observations faites Ã  lâ±Ã©cran, la luminositÃ© du faisceau 
-Ã©mergent Ã©tant trop faible. Il nous faut une paire de polariseurs et analyseurs 
-prÃ©sentant des graduations prÃ©cises, que nous nous recevrons au cours de 
-lâ±Ã©criture de la partie III).       Figure 12 : analyseur de lâUniversitÃ© Gustave Eiffel 
-Pour notre visite suivante Ã  lâ±UniversitÃ©, le 09 juillet 2025 (juste avant les vacances dâ±Ã©tÃ©), 
-nous rÃ©flÃ©chissons comment faire des mesures plus prÃ©cises, nâ±ayant pas reÃ§u nos polariseurs. Il 
-nous vient alors une idÃ©e pour rÃ©duire les incertitudes (voir partie IV) A.) et tenter dâ±Ãªtre plus prÃ©cis: 
-mesurer le double de lâ±angle de rotation notÃ© Ïºà¡¼ en imposant un courant positif + Þ± puis nÃ©gatif â Þ± 
-de mÃªme valeur absolue (composantes horizontales du champ magnÃ©tique respectivement 
-+Þª
-à±± puis âÞª
-à±±) ; lâ±Ã©cart dâ±angle entre les deux positions de lâ±analyseur notÃ©es à¡
-à¯
-et à¡
-à¯
- pour retrouver 
-lâ±extinction de la lumiÃ¨re Ã  lâ±Ã©cran pour les deux valeurs de courant est Ã©gal Ã  Ïºà¡¼ : Ïºà¡¼à·à¡
-à¯
-âà¡
-à¯
- 
-Nous effectuons les mesures du double de 
-lâ±angle de rotation du plan de polarisation Ïºà¡¼ de la 
-lumiÃ¨re polarisÃ©e rectilignement du laser vert de 
-longueur dâ±onde à¡©à·Ï½Ï»Ïº ßß, et on trace le 
-graphique Ïºà¡¼à·ß(Þª
-à±±). Nous prenons en photo 
-lâ±analyseur afin de dÃ©terminer la valeur de lâ±angle 
-de rotation en utilisant lâ±Ã©chelle des graduations 
-prÃ©sentes, en faisant le plus prÃ©cisÃ©ment possible. 
-        Figure 13 : Ïº à¡¼ à· ß(Þª
-à±±) pour à¡© à·
- Ï½Ï»Ïº ßß (dispositif expÃ©rimental de lâUniversitÃ©) 
-Pour ne pas influencer nos mesures, nous nâ±avions pas tentÃ© de chercher au prÃ©alable sâ±il y 
-avait une Ã©ventuelle relation entre à¡¼ et Þª
-à±±. On voit quâ±il y a bien une dÃ©pendance entre ces 
-grandeurs. Il semble que lorsque Þª
-à±± augmente, à¡¼ augmente aussi. Il se pourrait quâ±il y ait 
-proportionnalitÃ© entre ces deux valeurs. Si tel Ã©tait le cas, les mesures effectuÃ©es manquent de 
-prÃ©cision. Avec dâ±autres lasers de longueurs dâ±onde diffÃ©rentes, nous faisons le mÃªme constat (voir 
-partie 2 du dossier annexe).  
+On place le barreau de verre flint mesurant 𝐿 = 2,00 𝑐𝑚 dans la région d’influence ; le centre
+du barreau se situant à la position du capteur du Teslamètre avec lequel nous avons effectué les
+mesures. On utilise comme source de lumière un laser vert de longueur d’onde 𝜆 = 532 𝑛𝑚.
+On règle l’analyseur de telle sorte qu’il y ait extinction totale de la lumière à l’écran. Si par la
+suite, lorsqu’un courant traverse les bobines, de la lumière apparaît à l’écran, cela signifie que la
+présence du champ magnétique a bien engendré la rotation du plan de polarisation de la lumière
+polarisée rectilignement du laser (effet magnéto – optique) : activité optique provoquée.
+
+C. Mesures du double de l’angle de rotation pour un laser vert
+On fait circuler un courant de 0,50𝐴 dans les bobines, en branchant les pôles positifs au
+centre (voir schéma partie III) B. en figure 16). Plongés dans le noir, on observe la présence très
+claire de lumière à l’écran. En tournant l’analyseur dans le sens antihoraire pour un observateur
+face à la source, on remarque que l’angle de rotation 𝜙 est quasiment imperceptible et impossible
+à évaluer sur l’analyseur, vu les graduations peu précises dont il dispose. On replace l’analyseur
+extinction totale de la lumière à l’écran (sans courant électrique circulant dans les bobines), puis on
+recherche l’extinction en imposant 𝐼 = − 0,50 𝐴. On fait tourner l’analyseur dans le sens horaire ; la
+mesure de l’angle de rotation 𝜙 sur l’analyseur est impossible pour les mêmes raisons. Pour 𝐼 =
+4,00 𝐴, la mesure de l’angle de rotation 𝜙 semble bien plus élevée ; mais à
+nouveau impossible à mesurer de façon précise, vu les graduations. Nous
+n’avons pas de photo des observations faites à l’écran, la luminosité du faisceau
+émergent étant trop faible. Il nous faut une paire de polariseurs et analyseurs
+présentant des graduations précises, que nous nous recevrons au cours de
+l’écriture de la partie III).
+Figure 12 : analyseur de l’Université Gustave Eiffel
+Pour notre visite suivante à l’Université, le 09 juillet 2025 (juste avant les vacances d’été),
+nous réfléchissons comment faire des mesures plus précises, n’ayant pas reçu nos polariseurs. Il
+nous vient alors une idée pour réduire les incertitudes (voir partie IV) A.) et tenter d’être plus précis:
+mesurer le double de l’angle de rotation noté 2𝜙 en imposant un courant positif + 𝐼 puis négatif − 𝐼
+de même valeur absolue (composantes horizontales du champ magnétique respectivement
++𝐵𝑥 puis −𝐵𝑥 ) ; l’écart d’angle entre les deux positions de l’analyseur notées 𝛼 + et 𝛼 − pour retrouver
+l’extinction de la lumière à l’écran pour les deux valeurs de courant est égal à 2𝜙 : 2𝜙 = 𝛼 + − 𝛼 −
 y = 0,0464x
-RÂ² = 0,9747
-0
-2
-4
-6
-8
-10
-12
+R² = 0,9747
+
+2 φ (°)
+
+Nous effectuons les mesures du double de
 14
-0 50100150200250
-2 Ï 
-(
-Â°
-)
-B
-x(mT)
+l’angle de rotation du plan de polarisation 2𝜙 de la
+12
+lumière polarisée rectilignement du laser vert de
+10
+longueur d’onde 𝜆 = 532 𝑛𝑚, et on trace le
+graphique 2𝜙 = 𝑓(𝐵𝑥 ). Nous prenons en photo 8
+l’analyseur afin de déterminer la valeur de l’angle 6
+de rotation en utilisant l’échelle des graduations 4
+présentes, en faisant le plus précisément possible. 2
+Figure 13 : 2 𝜙 = 𝑓(𝐵𝑥 ) pour 𝜆 = 0
+532 𝑛𝑚 (dispositif expérimental de l’Université)
+0
+
+Bx (mT)
+50
+
+100
+
+150
+
+200
+
+250
+
+Pour ne pas influencer nos mesures, nous n’avions pas tenté de chercher au préalable s’il y
+avait une éventuelle relation entre 𝜙 et 𝐵𝑥 . On voit qu’il y a bien une dépendance entre ces
+grandeurs. Il semble que lorsque 𝐵𝑥 augmente, 𝜙 augmente aussi. Il se pourrait qu’il y ait
+proportionnalité entre ces deux valeurs. Si tel était le cas, les mesures effectuées manquent de
+précision. Avec d’autres lasers de longueurs d’onde différentes, nous faisons le même constat (voir
+partie 2 du dossier annexe).
+
 7
 
-III) Mesures de champ magnÃ©tique dans la rÃ©gion dâinfluence  
-A. Objectifs 
-Les mesures que nous avons effectuÃ©es prÃ©cÃ©demment ne permettaient pas de dÃ©terminer 
-une relation Â« Ã©vidente Â» entre la valeur de lâ±angle de rotation du plan de polarisation à¡¼ et la valeur 
-de la composante horizontale du magnÃ©tique Þª
-à±±.  En effet, nous avons mesurÃ© la valeur de Þª
-à±± au 
-centre de la rÃ©gion dâ±influence, en supposant que sa valeur Ã©tait constante. Nous nâ±avons dâ±ailleurs 
-pas dÃ©placÃ© lÃ©gÃ¨rement le teslamÃ¨tre de quelques millimÃ¨tres Ã  gauche et Ã  droite de la position 
-au centre pour voir lâ±influence sur la valeur de Þª
-à±± et nous le regrettons. Le barreau Flint mesurant 
-Þ´à·ÏºÉ§Ï¸Ï¸ ßß, nous avons besoin de connaÃ®tre dâ±Ã©valuer cette valeur de faÃ§on prÃ©cise.  
-Notre objectif dÃ©sormais est clair : comprendre la rÃ©partition du champ magnÃ©tique dans la 
-rÃ©gion dâ±influence, et connaÃ®tre avec prÃ©cision les valeurs de sa composante horizontale. Pour cela, 
-nous avons besoin dâ±un teslamÃ¨tre qui puisse passer dâ±un bout Ã  lâ±autre de la rÃ©gion dâ±influence, Ã  
-lâ±intÃ©rieur mÃªme des cÃ´nes, Ã  lâ±origine trop Ã©troits. En mars 2025, M. CROS a pris contact avec M. 
-FARCY de la sociÃ©tÃ© Nova Physics concernant une sonde Ã  effet hall (SEH) dont le diamÃ¨tre et la 
-longueur pourraient nous permettre de faire de faire nos mesures en faisant percer les cÃ´nes dâ±un 
-diamÃ¨tre compatible celles de la SEH. Il a fallu usiner correctement la SEH en rÃ©duisant la largeur 
-de la tige pour que cette derniÃ¨re puisse entrer dans les cÃ´nes : ainsi, nous perdons une partie du 
-circuit imprimÃ©, et avec elle la mesure de la valeur de tension correspondante Ã  Þª
-à±±. DÃ©sormais 
-(selon lâ±orientation du capteur), nous ne pourrons mesurer quâ±une composante du 
-champ magnÃ©tique Ã  la fois. Pour notre projet, nous devons connaÃ®tre la valeur la plus 
-prÃ©cise possible de la composante horizontale, dirigÃ©e selon lâ±axe de la rÃ©gion 
-dâ±influence.   
-Figure 14 : photographies des cÃ´nes 
-et de la SEH avant et aprÃ¨s usinage 
-Nous recevons les piÃ¨ces usinÃ©es (cÃ´nes et SEH) Ã  la fin de lâ±Ã©tÃ©, aprÃ¨s des semaines 
-dâ±attente, en raison de difficultÃ©s dâ±approvisionnement. Nous remercions infiniment M. FARCY que 
-nous avons contactÃ© et sollicitÃ© plusieurs fois chaque semaine depuis mars 2025, et qui sâ±est montrÃ© 
-particuliÃ¨rement disponible et arrangeant, en venant plusieurs fois au lycÃ©e pour nous dÃ©panner.  
- Dans le mÃªme temps, nous recevons les bobines que nous avons mis des mois Ã  choisir. Il 
-faut gÃ©nÃ©rer un champ magnÃ©tique le plus grand possible. Les bobines de lâ±UniversitÃ© de Þ¶
-à®»à·Ï¼ÐÏ¸ 
-spires et acceptant Þ±
-à±¦à±à±±à®»à·Ï¹Ï¸É§Ï¸Ï¸ Þ© sont inenvisageables pour nous vu les prix annoncÃ©s et les 
-dÃ©lais de livraison. Notre choix sâ±est portÃ© sur un modÃ¨le fourni par Nova Physics : constituÃ©es de 
-Þ¶
-à®¼à·ÐÏ¸Ï¸ spires et Þ±
-à±¦à±à±±à®¼à·Ï½É§Ï¸Ï¸ Þ©. En effet, on sait que e champ magnÃ©tique Þª gÃ©nÃ©rÃ© au centre 
-dâ±une bobine constituÃ©e de Þ¶ spires, de longueur Þ´, et traversÃ©e par un courant dâ±intensitÃ© Þ± est 
-dirigÃ© selon lâ±axe de la bobine, et a pour expression : Þªà·
-à²à²²Éªà±Éªà±
-à±
-, oÃ¹ à¡ª
-à®º est la permÃ©abilitÃ© du vide.   
- Comme le montre le tableau ci-contre, le modÃ¨le 
-proposÃ© par Nova Physics permet finalement de gÃ©nÃ©rer 
-un champ magnÃ©tique au centre de valeur quasiment 
-Ã©gale Ã  celles du modÃ¨le 1. La fiche dâ±utilisation des 
-bobines du modÃ¨le 2 que nous avons indiquÃ© quâ±il est 
-possible dâ±augmenter la valeur du courant jusquâ±Ã  Ï¾É§Ï¸Ï¸ Þ© 
-sur un court instant. Pour ne prendre aucun risque, nous effectuerons des 
-mesures jusquâ±Ã  Ï½É§Ï½Ï¸ Þ©, (nos bobines se mettent en sÃ©curitÃ© en cas de 
-surchauffe, un interrupteur placÃ© Ã  lâ±intÃ©rieur du boitier sâ±ouvre, ce qui nâ±est 
-pas le cas du modÃ¨le ancien utilisÃ© Ã  lâ±UniversitÃ© qui nâ±a pas les mÃªmes 
-normes).                      Figure 15 : photographie de la face avant de la bobine 
-ModÃ¨le 1 
-Þ¶
-à®»à·Ï¼ÐÏ¸ spires ; 
-Þ±
-à±¦à±à±±à®»à·Ï¹Ï¸É§Ï¸Ï¸ Þ© 
-ModÃ¨le 2 
-Þ¶
-à®¼à·ÐÏ¸Ï¸ spires ; 
-Þ±
-à±¦à±à±±à®¼à·Ï½É§Ï¸Ï¸ Þ© 
- 
-MÃªmes dimensions : Þª
-à®»à·Þª
-à®¼à·à¡£ÉªÞ¶ÉªÞ´ 
-oÃ¹ à¡£ est une valeur constante. 
-Þª
-à®»à·à¡£ÃÏ¼ÐÏ¸Ï¸ Þª
-à®»à·à¡£ÃÏ¼Ï½Ï¸Ï¸ 
+III) Mesures de champ magnétique dans la région d’influence
+A. Objectifs
+Les mesures que nous avons effectuées précédemment ne permettaient pas de déterminer
+une relation « évidente » entre la valeur de l’angle de rotation du plan de polarisation 𝜙 et la valeur
+de la composante horizontale du magnétique 𝐵𝑥 . En effet, nous avons mesuré la valeur de 𝐵𝑥 au
+centre de la région d’influence, en supposant que sa valeur était constante. Nous n’avons d’ailleurs
+pas déplacé légèrement le teslamètre de quelques millimètres à gauche et à droite de la position
+au centre pour voir l’influence sur la valeur de 𝐵𝑥 et nous le regrettons. Le barreau Flint mesurant
+𝐿 = 2,00 𝑐𝑚, nous avons besoin de connaître d’évaluer cette valeur de façon précise.
+Notre objectif désormais est clair : comprendre la répartition du champ magnétique dans la
+région d’influence, et connaître avec précision les valeurs de sa composante horizontale. Pour cela,
+nous avons besoin d’un teslamètre qui puisse passer d’un bout à l’autre de la région d’influence, à
+l’intérieur même des cônes, à l’origine trop étroits. En mars 2025, M. CROS a pris contact avec M.
+FARCY de la société Nova Physics concernant une sonde à effet hall (SEH) dont le diamètre et la
+longueur pourraient nous permettre de faire de faire nos mesures en faisant percer les cônes d’un
+diamètre compatible celles de la SEH. Il a fallu usiner correctement la SEH en réduisant la largeur
+de la tige pour que cette dernière puisse entrer dans les cônes : ainsi, nous perdons une partie du
+circuit imprimé, et avec elle la mesure de la valeur de tension correspondante à 𝐵𝑥 . Désormais
+(selon l’orientation du capteur), nous ne pourrons mesurer qu’une composante du
+champ magnétique à la fois. Pour notre projet, nous devons connaître la valeur la plus
+précise possible de la composante horizontale, dirigée selon l’axe de la région
+d’influence.
+Figure 14 : photographies des cônes
+et de la SEH avant et après usinage
+Nous recevons les pièces usinées (cônes et SEH) à la fin de l’été, après des semaines
+d’attente, en raison de difficultés d’approvisionnement. Nous remercions infiniment M. FARCY que
+nous avons contacté et sollicité plusieurs fois chaque semaine depuis mars 2025, et qui s’est montré
+particulièrement disponible et arrangeant, en venant plusieurs fois au lycée pour nous dépanner.
+Dans le même temps, nous recevons les bobines que nous avons mis des mois à choisir. Il
+faut générer un champ magnétique le plus grand possible. Les bobines de l’Université de 𝑁1 = 480
+spires et acceptant 𝐼𝑚𝑎𝑥1 = 10,00 𝐴 sont inenvisageables pour nous vu les prix annoncés et les
+délais de livraison. Notre choix s’est porté sur un modèle fourni par Nova Physics : constituées de
+𝑁2 = 900 spires et 𝐼𝑚𝑎𝑥2 = 5,00 𝐴. En effet, on sait que e champ magnétique 𝐵 généré au centre
+d’une bobine constituée de 𝑁 spires, de longueur 𝐿, et traversée par un courant d’intensité 𝐼 est
+dirigé selon l’axe de la bobine, et a pour expression : 𝐵 =
+
+𝜇0 .𝑁.𝐼
+
+, où 𝜇0 est la perméabilité du vide.
+Modèle 1
+Modèle 2
+𝑁1 = 480 spires ;
+𝑁2 = 900 spires ;
+𝐼𝑚𝑎𝑥1 = 10,00 𝐴
+𝐼𝑚𝑎𝑥2 = 5,00 𝐴
+Mêmes dimensions : 𝐵1 = 𝐵2 = 𝜀. 𝑁. 𝐿
+où 𝜀 est une valeur constante.
+𝐵1 = 𝜀 × 4800
+𝐵1 = 𝜀 × 4500
+
+𝐿
+
+Comme le montre le tableau ci-contre, le modèle
+proposé par Nova Physics permet finalement de générer
+un champ magnétique au centre de valeur quasiment
+égale à celles du modèle 1. La fiche d’utilisation des
+bobines du modèle 2 que nous avons indiqué qu’il est
+possible d’augmenter la valeur du courant jusqu’à 6,00 𝐴
+sur un court instant. Pour ne prendre aucun risque, nous effectuerons des
+mesures jusqu’à 5,50 𝐴, (nos bobines se mettent en sécurité en cas de
+surchauffe, un interrupteur placé à l’intérieur du boitier s’ouvre, ce qui n’est
+pas le cas du modèle ancien utilisé à l’Université qui n’a pas les mêmes
+normes).
+Figure 15 : photographie de la face avant de la bobine
+
 8
 
-B. DÃ©termination de lâutilitÃ© des cÃ´nes dans le dispositif  
-Dans lâ±ensemble des TP trouvÃ©s sur internet et aussi sur des pages de fournisseur, le 
-dispositif expÃ©rimental que nous avons dÃ©jÃ  utilisÃ© est prÃ©sentÃ©. Nous nous doutons donc que câ±est 
-avec cette configuration que le champ magnÃ©tique dans la rÃ©gion dâ±influence doit Ãªtre optimisÃ© et 
-maximal. Pour en avoir la certitude, nous devons connaÃ®tre les valeurs des composantes du champ 
-magnÃ©tique horizontale Þª
-à±± et verticale Þª
-à±³ le long de la rÃ©gion dâ±influence, sans puis avec prÃ©sence 
-des cÃ´nes. Avant cela, on reprÃ©sente lâ±orientation du champ magnÃ©tique sur les lignes de champ 
-dâ±aprÃ¨s le sens du courant de mÃªme intensitÃ© circulant dans les bobines tel que nous lâ±avions fait 
-dans la partie II). Si on inverse le sens du courant de la bobine de droite par exemple, dans ce cas 
-le champ magnÃ©tique sera nul au centre de la rÃ©gion dâ±influence, car les orientations des lignes de 
-champ des deux bobines seront opposÃ©es. On remarque quâ±au 
-centre de la rÃ©gion dâ±influence, lâ±orientation des lignes de champ de 
-la bobine de gauche concorde avec celle de droite. On sâ±attend 
-alors Ã  ce que la composante du champ magnÃ©tique verticale soit 
-maximale au centre de chaque bobine, et que la composante 
-horizontale soit maximale au centre de la rÃ©gion dâ±influence. 
-Figure 16 : orientation du champ magnÃ©tique  
-sur les lignes de champ dans la rÃ©gion dâinfluence. 
-On va faire les mesures nÃ©cessaires pour tracer les 
-graphiques de lâ±Ã©volution de la composante verticale Þª
-à±³ du champ magnÃ©tique le long de lâ±axe de 
-visÃ© de la rÃ©gion dâ±influence ; et de mÃªme pour la composante horizontale Þª
-à±±. Pour cela, on doit 
-orienter le capteur situÃ© au bout de la SEH en fonction de la mesure que lâ±on souhaite effectuer. 
-Pour mesurer la composante horizontale, le capteur doit Ãªtre placÃ© Ã  la verticale ; et inversement 
-pour la composante verticale (voir partie 8 du dossier annexe). A lâ±aide des graduations indiquÃ©es 
-sur la SEH, on mesure la valeur de la tension correspondante Ã  la composante horizontale du 
-champ magnÃ©tique le long de lâ±axe de la rÃ©gion dâ±influence pour ßà·Ï¸ ßß  Ã  ßà·ÏºÏ½É§Ï¸ ßß par pas 
-de Ï¸É§Ï½ ßß, pour Þ±à·Ï¹É§Ï¸Ï¸ Þ© et Þ±à·Ï¼É§Ï¸Ï¸ Þ©É§ puis on trace les graphiques correspondants.  
-Figures 17 : photographies du dispositif ;         Þªà·ß(ß) sans les cÃ´nes pour les composantes 
-horizontale et verticale du champ magnÃ©tique 
- 
- 
-On remarque que les tracÃ©s correspondants ont des allures similaires, avec des valeurs plus 
-importantes lorsque lâ±intensitÃ© augmente. Comme nous lâ±avions supposÃ©, sur lâ±axe de la rÃ©gion 
-dâ±influence, on remarque que le champ magnÃ©tique est maximal :  
-â et quasiment constant dans la zone situÃ©e entre les deux bobines (composante horizontale) ;  
-â au-dessus de chaque bobines (composante verticale).  
-Afin de dÃ©terminer lâ±influence des cÃ´nes dans le dispositif sur la valeur du champ magnÃ©tique, 
-on rÃ©alise les mÃªmes mesures avec les cÃ´nes espacÃ©s lâ±un et lâ±autre dâ±une distance ßà·ÏºÉ§Ï¿ ßß.  
--1135791113151719212325
--100
+B. Détermination de l’utilité des cônes dans le dispositif
+
+100
+50
+
+B (mT)
+
+Dans l’ensemble des TP trouvés sur internet et aussi sur des pages de fournisseur, le
+dispositif expérimental que nous avons déjà utilisé est présenté. Nous nous doutons donc que c’est
+avec cette configuration que le champ magnétique dans la région d’influence doit être optimisé et
+maximal. Pour en avoir la certitude, nous devons connaître les valeurs des composantes du champ
+magnétique horizontale 𝐵𝑥 et verticale 𝐵𝑧 le long de la région d’influence, sans puis avec présence
+des cônes. Avant cela, on représente l’orientation du champ magnétique sur les lignes de champ
+d’après le sens du courant de même intensité circulant dans les bobines tel que nous l’avions fait
+dans la partie II). Si on inverse le sens du courant de la bobine de droite par exemple, dans ce cas
+le champ magnétique sera nul au centre de la région d’influence, car les orientations des lignes de
+champ des deux bobines seront opposées. On remarque qu’au
+centre de la région d’influence, l’orientation des lignes de champ de
+la bobine de gauche concorde avec celle de droite. On s’attend
+alors à ce que la composante du champ magnétique verticale soit
+maximale au centre de chaque bobine, et que la composante
+horizontale soit maximale au centre de la région d’influence.
+Figure 16 : orientation du champ magnétique
+sur les lignes de champ dans la région d’influence.
+On va faire les mesures nécessaires pour tracer les
+graphiques de l’évolution de la composante verticale 𝐵𝑧 du champ magnétique le long de l’axe de
+visé de la région d’influence ; et de même pour la composante horizontale 𝐵𝑥 . Pour cela, on doit
+orienter le capteur situé au bout de la SEH en fonction de la mesure que l’on souhaite effectuer.
+Pour mesurer la composante horizontale, le capteur doit être placé à la verticale ; et inversement
+pour la composante verticale (voir partie 8 du dossier annexe). A l’aide des graduations indiquées
+sur la SEH, on mesure la valeur de la tension correspondante à la composante horizontale du
+champ magnétique le long de l’axe de la région d’influence pour 𝑥 = 0 𝑐𝑚 à 𝑥 = 25,0 𝑐𝑚 par pas
+de 0,5 𝑐𝑚, pour 𝐼 = 1,00 𝐴 et 𝐼 = 4,00 𝐴, puis on trace les graphiques correspondants.
+Figures 17 : photographies du dispositif ;
+𝐵 = 𝑓(𝑥) sans les cônes pour les composantes
+horizontale et verticale du champ magnétique
+
+0
+-1 1 3 5 7 9 11 13 15 17 19 21 23 25
 -50
-0
-50
-100
-x (cm)
-B (mT)
-9
-
-En prÃ©sence des cÃ´nes, les valeurs des 
-composantes horizontale Þª
-à±± et verticale Þª
-à±³ sont 
-totalement diffÃ©rentes le long de lâ±axe de la rÃ©gion 
-dâ±influence : Þª
-à±³ est quasiment nulle entre les 
-cÃ´nes, alors que Þª
-à±± a une valeur bien Ã©levÃ©e.que 
-sans les cÃ´nes. Cette derniÃ¨re a Ã©tÃ© multipliÃ©e 
-par Ï¼É§Ï» pour Þ±à·Ï¹É§Ï¸Ï¸ Þ© et par Ï¼É§Ï¿ pour Þ±à·Ï¼É§Ï¸Ï¸ Þ©Éª                                         
-Figure 18 : Þªà·ß(ß) pour  
-Þ±à·Ï¹É§Ï¸Ï¸ et Ï¼É§Ï¸Ï¸ Þ© avec prÃ©sence des  
-cÃ´nes sÃ©parÃ©s de ßà·ÏºÉ§Ï¿ ßß  
-On comprend lâ±utilitÃ© des cÃ´nes : ils redirigent les lignes de champ magnÃ©tique selon la 
-direction imposÃ©e par leurs pointes, dans lâ±axe de propagation de la lumiÃ¨re, oÃ¹ on place le Flint.  
- 
- 
- 
- 
- 
-La valeur de la Þª
-à±± mesurÃ©e avec les cÃ´nes Ã©tant bien plus Ã©levÃ©e que la somme des maxima 
-des composantes horizontale et verticale sans prÃ©sence des cÃ´nes pour une mÃªme intensitÃ© du 
-courant. On peut en dÃ©duire que ces derniers concentrent le champ magnÃ©tique dans la rÃ©gion 
-dâ±influence : ce sont leurs extrÃ©mitÃ©s cÃ´niques metalliques qui imposent la direction des lignes de 
-champ magnÃ©tique de la zone supÃ©rieure.  Figure 19 : photographies du montage pour lequel 
-Þ½
-à±à±à±<Ï¸, car Þªá²Ö¬ est dans le sens nÃ©gatif pa 
-rapport Ã  la mesure effectuÃ©e par la SEH  
-Ces derniÃ¨res, nâ±Ã©tant plus dans 
-toutes les directions de lâ±espace comme 
-dans la figure 16, sont superposÃ©es les 
-unes aux autres dans lâ±axe imposÃ© par les 
-extrÃ©mitÃ©s cÃ´niques. Cette affirmation pourrait expliquer le fait que, au centre de la rÃ©gion 
-dâ±influence, le champ magnÃ©tique est moins Ã©levÃ© quâ±au niveau des extrÃ©mitÃ©s cÃ´niques. En effet 
-la direction des lignes de champ est imposÃ©e par la partie metallique des cÃ´nes ; mais au centre, 
-entre les cÃ´nes leur influence est moins importante, ainsi, les lignes de champ magnÃ©tique sont 
-libÃ©rÃ©es de la direction qui leur ait imposÃ©e. Elles peuvent donc sâ±Ã©parpiller lÃ©gÃ¨rement dans 
-lâ±espace, et auront donc des directions autres que celle de lâ±axe de la rÃ©gion dâ±influence.  
-C. Mesure de la composante horizontale du champ magnÃ©tique avec 
-prÃ©sence des cÃ´nes 
-On vient de voir que les cÃ´nes permettaient de 
-diriger et concentrer le champ magnÃ©tique sur 
-lâ±axe de la rÃ©gion dâ±influence oÃ¹ le barreau Flint 
-sera placÃ©. Dans la partie II), nous avons conclu 
-que nous devions dÃ©terminer prÃ©cisÃ©ment la 
-valeur du champ magnÃ©tique dans cette zone 
-pour :   Þ± à¡¹ [Ï¹É§Ï¸Ï¸ É¨ÏºÉ§Ï¸Ï¸ É¨É« É¨Ï½É§Ï¸Ï¸] Þ© 
-pour amÃ©liorer la prÃ©cision de nos mesures.  
- Figure 20 : Þª
-à±±à·ß(ß) Ã  diffÃ©rentes intensitÃ©s du courant pour ßà·Ï¼É§Ð ßß entre les cÃ´nes 
-Câ±est ce que nous allons faire ici, en faisant varier la distance ß entre les cÃ´nes :  
-ßà·{Ï¼É§Ï¿ É¨Ï»É§Ð É¨ÏºÉ§Ï¿ É¨ÏºÉ§Ï»} ßßÉª 
-Þª(ßßßßßßßßßß)à·Þª
-à±± 
- 
-Þ± Avec les cÃ´nes, 
-ßà·ÏºÉ§Ï¿ ßß 
-Sans les 
-cÃ´nes 
-Ï¹É§Ï¸Ï¸Þ© ÐÏ½ ßÞ¼ Ï¹Ð ßÞ¼ 
-Ï¼É§Ï¸Ï¸ Þ© Ï»Ï¸Ï¸ ßÞ¼ Ï¿Ï¸ ßÞ¼ 
-681012141618
 -100
+
+x (cm)
+
+On remarque que les tracés correspondants ont des allures similaires, avec des valeurs plus
+importantes lorsque l’intensité augmente. Comme nous l’avions supposé, sur l’axe de la région
+d’influence, on remarque que le champ magnétique est maximal :
+● et quasiment constant dans la zone située entre les deux bobines (composante horizontale) ;
+● au-dessus de chaque bobines (composante verticale).
+Afin de déterminer l’influence des cônes dans le dispositif sur la valeur du champ magnétique,
+on réalise les mêmes mesures avec les cônes espacés l’un et l’autre d’une distance 𝑑 = 2,7 𝑐𝑚.
+
+9
+
+B (mT)
+
+En présence des cônes, les valeurs des
+composantes horizontale 𝐵𝑥 et verticale 𝐵𝑧 sont 300
+totalement différentes le long de l’axe de la région
+d’influence : 𝐵𝑧 est quasiment nulle entre les 200
+cônes, alors que 𝐵𝑥 a une valeur bien élevée.que
+sans les cônes. Cette dernière a été multipliée 100
+par 4,3 pour 𝐼 = 1,00 𝐴 et par 4,7 pour 𝐼 = 4,00 𝐴.
+x (cm)
 0
-100
-200
-300
-x (cm)
-B (mT)
-6 8 10 12 14 16 18
--10
-90
-190
-x (cm)
-B
-x
-(mT)
+Figure 18 : 𝐵 = 𝑓(𝑥) pour
+6
+8 10 12 14 16 18
+𝐼 = 1,00 et 4,00 𝐴 avec présence des
+-100
+cônes séparés de 𝑑 = 2,7 𝑐𝑚
+On comprend l’utilité des cônes : ils redirigent les lignes de champ magnétique selon la
+direction imposée par leurs pointes, dans l’axe de propagation de la lumière, où on place le Flint.
+
+𝐵(ℎ𝑜𝑟𝑖𝑧𝑜𝑛𝑡𝑎𝑙 ) = 𝐵𝑥
+Avec les cônes, Sans les
+cônes
+𝑑 = 2,7 𝑐𝑚
+1,00𝐴
+85 𝑚𝑇
+18 𝑚𝑇
+4,00 𝐴
+300 𝑚𝑇
+70 𝑚𝑇
+La valeur de la 𝐵𝑥 mesurée avec les cônes étant bien plus élevée que la somme des maxima
+des composantes horizontale et verticale sans présence des cônes pour une même intensité du
+courant. On peut en déduire que ces derniers concentrent le champ magnétique dans la région
+d’influence : ce sont leurs extrémités côniques metalliques qui imposent la direction des lignes de
+champ magnétique de la zone supérieure. Figure 19 : photographies du montage pour lequel
+⃗ est dans le sens négatif pa
+𝑈𝑆𝐸𝐻 < 0, car 𝐵
+𝐼
+
+⃗⃗ ≡ ⃗⃗⃗⃗⃗
+𝑩
+𝑩𝒙
+
+rapport à la mesure effectuée par la SEH
+Ces dernières, n’étant plus dans
+𝑰(𝑨)
+𝑰(𝑨)
+toutes les directions de l’espace comme
+dans la figure 16, sont superposées les
+𝑼𝑺𝑬𝑯 (𝑽)
+unes aux autres dans l’axe imposé par les
+extrémités côniques. Cette affirmation pourrait expliquer le fait que, au centre de la région
+d’influence, le champ magnétique est moins élevé qu’au niveau des extrémités côniques. En effet
+la direction des lignes de champ est imposée par la partie metallique des cônes ; mais au centre,
+entre les cônes leur influence est moins importante, ainsi, les lignes de champ magnétique sont
+libérées de la direction qui leur ait imposée. Elles peuvent donc s’éparpiller légèrement dans
+l’espace, et auront donc des directions autres que celle de l’axe de la région d’influence.
+
+Bx (mT)
+
+C. Mesure de la composante horizontale du champ magnétique avec
+présence des cônes
 d = 4,8 cm
- à£»(à£³)  à£»(à£³) 
- à¤
-à¤à£·à£º (à¤) 
-à£´á²á²Ö¬ Ú¦à£´
-à¤¤
-á²á²á²á²á²Ö¬ 
-    
+
+On vient de voir que les cônes permettaient de
+190
+diriger et concentrer le champ magnétique sur
+l’axe de la région d’influence où le barreau Flint
+sera placé. Dans la partie II), nous avons conclu
+90
+que nous devions déterminer précisément la
+valeur du champ magnétique dans cette zone
+x (cm)
+pour : 𝐼 𝜖 [1,00 ; 2,00 ; … ; 5,00] 𝐴
+-10
+6
+8
+10
+12
+14
+16
+18
+pour améliorer la précision de nos mesures.
+Figure 20 : 𝐵𝑥 = 𝑓(𝑥) à différentes intensités du courant pour 𝑑 = 4,8 𝑐𝑚 entre les cônes
+C’est ce que nous allons faire ici, en faisant varier la distance 𝑑 entre les cônes :
+𝑑 = {4,7 ; 3,8 ; 2,7 ; 2,3} 𝑐𝑚.
+
 10
 
-Figures 21 et 22 : Þª
-à±±à·ß(ß) pour Þ±à·{Ï¸ É¨Ï¸É§Ï½ É¨É«É¨Ï½É§Ï½}Þ© pour ßà·Ï»É§Ð ßß et  ßà·ÏºÉ§Ï¿ ßß  
- 
-Figure 23 : Þª
-à±±à·ß(ß) Ã  diffÃ©rentes 
-intensitÃ©s du courant pour ßà·ÏºÉ§Ï» ßß entre 
-les cÃ´nes  
-Lorsque la distance ß entre les 
-cÃ´nes diminue, la valeur de la composante 
-horizontale du champ magnÃ©tique 
-Þª
-à±± augm ente, comme le montre le tracÃ© ci-
-dessous, rÃ©alisÃ© avec les valeurs 
-moyennes du champ magnÃ©tique sur une 
-longueur de Þ´à·ÏºÉ§Ï¸Ï¸ ßß dans la zone oÃ¹ 
-le barreau Flint sera placÃ©.  
-Figure 24 : valeur de la 
-composante horizontale du champ magnÃ©tique 
-moyenne dans la zone de la rÃ©gion 
-dâinfluence oÃ¹ sera placÃ© le barreau, 
-pour ßà¡¹ [ÐÉ§Ï½ É¨Ï¹Ï¸É§Ï½ ]ßß en fonction de 
-la distance entre les cÃ´nes   
-En partie II), nous avons 
-souhaitÃ© amÃ©liorer la prÃ©cision des mesures de lâ±angle 
-de rotation à¡¼. Pour cela, nous devons pouvoir mesurer 
-les valeurs les plus Ã©levÃ©es possible de lâ±angle de 
-rotation, pour rÃ©duire les incertitudes. On a vu que à¡¼ est 
-dâ±autant plus Ã©levÃ© que la valeur de Þª
-à±± lâ±est aussi. On 
-choisi donc la configuration du dispositif pour laquelle les 
-valeurs de Þª
-à±± seront les plus Ã©levÃ©es possible, câ±est-Ã -dire pour ßà·ÏºÉ§Ï» ßß et ßà·ÏºÉ§Ï¿ ßß. Dans ce 
-cas, pour avoir le plus de points possible sur le tracÃ© du graphique, on mesure la valeur de Þª
-à±± pour 
-Þ± à¡¹ [Ï¸É§Ï½Ï¸ É¨Ï¹É§Ï¸Ï¸ É¨É«É¨Ï½É§Ï½Ï¸] Þ©.  
-Pour conclure, on comprend que la prÃ©sence des cÃ´nes permet dâ±optimiser, diriger, et 
-concentrer la composante horizontale du champ magnÃ©tique selon lâ±axe de la rÃ©gion dâ±influence, 
-dans la zone situÃ©e entre les cÃ´nes, pour quâ±elle soit maximale. La valeur de la Þª
-à±± nâ±est pas 
-constante dans cette zone. Pour la suite du projet, nous dÃ©terminons donc une valeur moyenne de 
-Þª
-à±± entre les cÃ´nes sur la longueur du barreau Þ´à·ÏºÉ§Ï¸Ï¸ ßß, dans la partie 6 du dossier annexe.  
-681012141618
-0
-100
-200
-300
-x (cm)
-B
-x
-(mT)
+Bx (mT)
+
 d = 3,8 cm
-6 8 10121416
-0
-100
-200
 300
+
+200
+
+200
+
+100
+
 x (cm)
-B
-x
-(mT)
+0
+
 d = 2,7 cm
-6 8 10 12 14 16
-0
-50
-100
-150
-200
-250
-300
-350
-400
-450
-x (cm)
-B
-x
-(mT)
-d = 2,3 cm
-0
-100
-200
-300
-400
-22,533,544,55
-Bx (moyen)rÃ©gion(mT)
-d (cm)
-Bx(moyen) dans la rÃ©gion 
-d'influence = f(d) pour diffÃ©rentes 
-intensitÃ©s 
-11
 
-IV) Mesures de lâangle de rotation de polarisation pour le Flint 
-A. AmÃ©liorations du procÃ©dÃ© de mesures 
-Dans la partie II), nous avons conclu que nous devions dÃ©terminer avec plus de prÃ©cision les 
-mesures du double de lâ±angle de rotation Ïºà¡¼ du plan de polarisation de la lumiÃ¨re polarisÃ©e 
-rectilignement du laser et la valeur de la composante horizontale du champ magnÃ©tique Þª
-à±± dans la 
-rÃ©gion dâ±influence. On mesure Ïºà¡¼ (comme dans la partie II)), Ã  partir de la valeur de lâ±angle de 
-rotation à¡
-à¯
- pour une orientation +Þª
-à±± et de la valeur à¡
-à¯
- pour âÞª
-à±± : Ïºà¡¼à·à¡
-à¯
-âà¡
-à¯
- , ce qui permet 
-dâ±augmenter la valeur de lâ±angle mesurÃ©. Comme on va le voir dans la suite du projet, les mesures 
-que nous allons effectuer se feront au demi-entier prÃ¨s (Ê¤à·Ï¸É§Ï½Ð¿). 
- La mesure du double de lâ±angle de rotation Ïºà¡¼ permet de rÃ©duire les incertitudes de lecture, 
-comme dÃ©montrÃ© dans la partie 10 du dossier annexe.   
-Dans la partie III), nous avons dÃ©terminÃ© de faÃ§on plus prÃ©cise la valeur 
-moyenne de la composante horizontale du champ magnÃ©tique. 
-Pour mesurer plus prÃ©cisÃ©ment Ïºà¡¼, nous disposons dÃ©sormais de 
-nos polariseurs, prÃ©sentant des graduations prÃ©cises.  
-Figure 25 : comparaison des polariseurs    
-Etant donnÃ© que nous travaillerons parfois sur des rotations 
-infimes aux intensitÃ©s les plus faibles, les diffÃ©rences de luminositÃ© de la lumiÃ¨re 
-Ã©mergente de lâ±analyseur sur lâ±Ã©cran seront trop dÃ©risoires pour Ãªtre visibles Ã  lâ±Åil nu. Il faudrait 
-donc utiliser un capteur permettant dâ±effectuer une mesure dont la valeur serait directement reliÃ©e 
-Ã  la luminositÃ© de la lumiÃ¨re Ã©mergente une photodiode. Profitons-en pour remercier le 
-comitÃ© rÃ©gional et national des Olympiades qui nous ont permis de financer lâ±achat de 
-cette photodiode auprÃ¨s de notre fournisseur Nova Physics.     Figure 26 : photodiode 
-B. Mise en Åuvre : mesure du double de lâangle de rotation 
-Nous pouvons enfin dÃ©marrer nos mesures du double de lâ±angle de rotation du plan de 
-polarisation de la lumiÃ¨re polarisÃ©e rectilignement dâ±un laser vert (à¡©à·Ï½Ï»Ïº ßß)É§ en mettant en 
-Åuvre les procÃ©dures Ã©noncÃ©es prÃ©cÃ©demment pour amÃ©liorer la prÃ©cision des mesures :  
-â utilisation des valeurs moyennes et incertitudes de 
-la composante horizontale du champ magnÃ©tique ;  
-â mesure du double de lâ±angle de rotation du plan de 
-polarisation avec une photodiode, que lâ±on rÃ¨gle avec 
-sa sensibilitÃ© maximale pour dÃ©tecter les variations 
-dâ±intensitÃ© lumineuse les plus faibles.  
-Figure 27 : photographie du montage et 
-reprÃ©sentations de Þªá²Ö¬ et à¡¼ selon lâorientation de Þªá²Ö¬. 
- On procÃ¨de de la mÃªme maniÃ¨re que lors de 
-nos premiÃ¨res mesures Ã  lâ±UniversitÃ© : on place le polariseur Ã  la graduation Þ·Ð¿, puis on fait tourner 
-lâ±analyseur de telle sorte Ã  lire une valeur minimale sur le voltmÃ¨tre placÃ© en dÃ©rivation Ã  la 
-photodiode. On remarque que câ±est bien pour la graduation ÐÏ¸Ð¿ que lâ±analyseur est Ã  une position 
-telle quâ±il y a extinction totale de la lumiÃ¨re du laser sur lâ±Ã©cran, en absence de champ magnÃ©tique.  
- On impose ensuite un courant Þ±à·Ï¸É§Ï½Ï¸ Þ© aux deux bobines, selon les branchements indiquÃ©s 
-sur la Figure 16. On observe lâ±apparition sur la photodiode de lumiÃ¨re: câ±est la manifestation de 
-lâ±effet magnÃ©to â optique, puisque cette lumiÃ¨re nâ±Ã©tait pas visible avant de faire circuler le courant 
-dans les bobines. Il y a donc une activitÃ© optique provoquÃ©e, induite par le champ magnÃ©tique pour 
-le Flint. La composante horizontale du champ magnÃ©tique crÃ©Ã©e par les bobines a provoquÃ© la 
-rotation du plan de polarisation de la lumiÃ¨re polarisÃ©e rectilignement du laser vert.  
-    
- à£´
-à¤¤
-á²á²á²á²á²Ö¬ 
-à£»(à£³) 	à£»(à£³) 
-à¤(à¤à¤à¤à¤ à¤à¤à¤à¤à¤à¤) 
+Bx (mT)
+
+300
+
+100
+0
+
+6
+
+8
+
+10
+
 12
 
-Pour retrouver lâ±extinction, on fait tourner lâ±analyseur jusquâ±Ã  voir apparaÃ®tre la valeur 
-minimale sur lâ±Ã©cran du voltmÃ¨tre reliÃ© Ã  la photodiode (on remarquera dâ±ailleurs que pour 
-lâ±ensemble de nos mesures, la valeur minimale affichÃ©e nâ±est jamais nulle. Elle augmente dâ±ailleurs 
-au fur et Ã  mesure quâ±on augmente la valeur du courant dans les bobines. On propose une 
-explication dans la partie 6 du dossier annexe). Pour Þ±à·Ï¸É§Ï½Ï¸ Þ©, il faut faire tourner 
-lâ±analyseur pour un angle à¡
-à®ºÉ§à®¿à±
-à¯
->ÐÏ¸É§Ï¸Ð¿. Pour un observateur regardant la source, il y a 
-eu rotation du plan de polarisation de la lumiÃ¨re polarisÃ©e du laser vers la droite ; on 
-peut qualifier cette activitÃ© optique provoquÃ©e de sens dextrogyre (flÃ¨ches vertes sur la 
-figure 27).  Pour voir une valeur minimale sâ±afficher Ã  lâ±Ã©cran du voltmÃ¨tre reliÃ© Ã  la 
-photodiode jusquâ±Ã  lâ±angle à¡
-à®ºÉ§à®¿à±
-à¯
-à·ÐÏ¸É§Ï½Ð¿Éª         Figure 28 : photographie de lâanalyseur 
- 
-On inverse le sens du courant (Þ±à·â Ï¸É§Ï½Ï¸ Þ©) ; il faut tourner lâ±analyseur jusquâ±Ã   à¡
-à®ºÉ§à®¿à±
-à¯
-à·ÐÐÉ§Ï½Ð¿ 
-pour retrouver une valeur minimale sur le voltmÃ¨tre afin de revenir Ã  lâ±extinction. Cette fois, il y a eu 
-rotation du plan de polarisation vers la droite, donc activitÃ© optique provoquÃ©e de sens levogyre.  
-Finalement, Ïºà¡¼à·à¡
-à®ºÉ§à®¿à±
-à¯
-âà¡
-à®ºÉ§à®¿à±
-à¯
-à·ÐÏ¸É§Ï½Ð¿âÐÐÉ§Ï½Ð¿à·Ï¹É§Ï¸Ð¿. On poursuit nos mesures ainsi jusquâ±Ã  
-Þ±à·Ï½É§Ï½Ï¸ Þ©, puis on trace le graphique Ïºà¡¼à·ß(Þª
-à±±), donnÃ© ci-dessous.  
-Remarque : on se permet pour la suite du projet de prendre des valeurs dâ±angles à¡ demi-
-entiÃ¨res. Nous nous Ã©tions imposÃ©s au dÃ©part de ne pas le faire, mais avons changÃ© dâ±avis aprÃ¨s 
-avoir tracÃ© Ï» graphiques dont les points avaient rÃ©guliÃ¨rement la mÃªme ordonnÃ©e pour deux valeurs 
-dâ±abscisses successives. En prenant en photo systÃ©matiquement lâ±analyseur, un zoom performant 
-nous permettait une mesure dâ±angle que nous avons jugÃ© prÃ©cise. Nous avons alors dÃ» tout 
-reprendre Ã  Ï¸ aprÃ¨s Ï» graphiques tracÃ©s ! 
- 
-Figure 29 : Ïºà¡¼à·ß(Þª
-à±±) pour un laser vert à¡©à·Ï½Ï»Ïº ßß pour deux distances entre les cÃ´nes 
-Les tracÃ©s Ïºà¡¼à·ß(Þª
-à±±)  peuvent Ãªtre modÃ©lisÃ©s par une droite passant par lâ±origine et au plus 
-prÃ¨s de tous les points : il semble donc quâ±il y ait proportionnalitÃ© entre le double de lâ±angle de 
-rotation du plan de polarisation de la lumiÃ¨re polarisÃ©e rectilignement du laser vert de longueur 
-dâ±onde à¡©à·Ï½Ï»Ïº ßß et la valeur de la composante horizontale du champ magnÃ©tique pour le barreau 
-Flint de longueur Þ´à·ÏºÉ§Ï¸Ï¸ cm. Les coefficients de dÃ©termination de ces tracÃ©s sont plus proches de 
-Ï¹ que celui de la droite modÃ©lisÃ©e dans le graphique partie II). Cela indique que les points des 
-graphiques de cette partie sont plus rapprochÃ©s au tracÃ©, comme on peut aussi le voir visuellement. 
-Si les grandeurs à¡¼ et Þª
-à±± sont effectivement proportionnelles, les amÃ©liorations proposÃ©es pour nos 
-mesures ont Ã©tÃ© bÃ©nÃ©fiques, puisquâ±elles ont donnÃ© lieu Ã  des points bien plus proches de la droite 
-modÃ¨le sur le graphique.  
-On reproduit les mesures avec des lasers de longueur dâ±onde à¡©à·Ï¼Ï¸Ï½ ßß, à¡©à·Ï¼Ï½Ï¸ ßß et 
-à¡©à·Ï¾Ï½Ï¸ ßßÉ§ pour des distances entre les cÃ´nes Ã©gales Ã  ßà·ÏºÉ§Ï» ßß et ÏºÉ§Ï¿ ßß. Les tracÃ©s obtenus 
-sont Ã  retrouver dans la partie 11 du dossier annexe.  
-0
-1
-2,5
-4
-6
-7,5
-8,5
-9
-9,5
-1010
-y = 0,0305x
-RÂ² = 0,9966
-0
-2
-4
-6
-8
-10
-12
-0 100200300400
-2Ï (
-Â°
-)
-B
-x(mT)
-Î»= 532 nm ; d = 2,3 cm
-0
-1
-2,5
-3
-5
-6
-6,5
-7,5
-8
-9
-9,5
-10
-y = 0,0299x
-RÂ² = 0,9961
-0
-5
-10
-050100150200250300
-2Ï (
-Â°
-)
-B
-x(mT)
-Î»= 532 nm ; d = 2,7 cm
-13
-
-C. Analyse des rÃ©sultats et incertitudes 
- Pour les longueurs dâ±onde :  à¡©à·Ï¼Ï¸Ï½ ßß É¨ à¡©à·Ï¼Ï½Ï¸ ßß et 
-à¡©à·Ï¾Ï½Ï¸ ßßÉ§ il semble lÃ  aussi que le double de lâ±angle de 
-rotation Ïºà¡¼  du plan de polarisation de la lumiÃ¨re polarisÃ©e 
-rectilignement des diffÃ©rents lasers soit proportionnelle Ã  la 
-valeur de la composante horizontale Þª
-à±± du champ magnÃ©tique. 
-Pour une mÃªme distance ß entre les cÃ´nes, on remarque des valeurs diffÃ©rentes pour les 
-coefficients directeurs ß ; lâ±angle de rotation à¡¼ semble donc dÃ©pendre de la longueur dâ±onde à¡©. 
-Lorsque la longueur dâ±onde diminue, la valeur du coefficient augmente. Autrement dit, lâ±angle de 
-rotation diminue lorsque la longueur dâ±onde augmente, pour une mÃªme valeur de la composante 
-horizontale du champ magnÃ©tique. Nous avions bien remarquÃ© que pour à¡©à·Ï¾Ï½Ï¸ ßß, les mesures 
-dâ±angles Ã©taient bien plus petites que pour les autres. Notamment, de nombreuses valeurs Ã©taient 
-difficiles Ã  Ã©valuer en raison des faibles diffÃ©rences pour deux prises de mesures Ã  Ï¸É§Ï½Ï¸ Þ© prÃ¨s.  
-On dÃ©termine le pourcentage dâ±Ã©cart relatif à¡¢
-Ð® entre les valeurs des coefficients directeurs ß 
-aux deux distances ß entre les cÃ´nes pour une mÃªme longueur dâ±onde : à¡¢
-Ð®à·
-Êà±¤à²´É§à²µà¯à±¤à²´É§à²¹Ê
-à±¤à²´É§à²µ
-ÃÏ¹Ï¸Ï¸ 
- Puisque nous avons affectÃ© les valeurs correctes correspondantes de la composante 
-horizontale du champ magnÃ©tique Þª
-à±± mesurÃ©es pour chaque distance ß aux angles de rotation à¡¼, 
-sâ±il y a bien proportionnalitÃ© entre ces deux grandeurs, nous devrions (si nos mesures Ã©taient 
-parfaites), obtenir des coefficients directeurs ß de mÃªme valeur aux deux distances ß. Comme 
-lâ±attestent les Ã©carts relatifs faibles, les coefficients directeurs obtenus pour les deux distances ß 
-sont trÃ¨s proches. On peut attribuer les diffÃ©rences aux incertitudes de mesures (voir partie V) C.). 
-Lâ±Ã©cart relatif le plus Ã©levÃ© est pour la longueur dâ±onde à¡©à·Ï¾Ï½Ï¸ ßß, celle pour laquelle les prises de 
-mesures Ã©taient complexes en raison de faibles Ã©carts, ce qui confirme le fait que les incertitudes 
-Ã©taient plus Ã©levÃ©es pour ces valeurs. On a vu en partie 8 du dossier annexe que pour les intensitÃ©s 
-les plus Ã©levÃ©es, il y a saturation du champ magnÃ©tique. Cela nâ±affecte cependant pas la 
-proportionnalitÃ© que nous avons supposÃ© entre Ïºà¡¼ et Þª
-à±± puisque mÃªme si les valeurs de Þª
-à±± ne sont 
-plus proportionnelles Ã  Þ±, elles le restent Ã  Ïºà¡¼. On observera des points plus proches sur le tracÃ©.   
-Nous en profitons pour remarquer que nos mesures dâ±angles de rotation sont trÃ¨s 
-satisfaisantes. Sur les ressources que nous avons pu consulter (voir rÃ©fÃ©rences bibliographiques 
-dans la partie 7 du dossier annexe), les angles de rotation Ã©taient bien infÃ©rieurs au nÃ´tres (entre 
-ÏºÐ¿ et Ï¾Ð¿). Nos efforts dâ±optimisation (champ et mesures) ont eu lâ±effet escomptÃ©. 
-Pour dÃ©terminer un Ã©ventuel lien entre lâ±angle de rotation à¡¼ et la longueur dâ±onde à¡©, on 
-cherche une relation entre le coefficient directeur ß des tracÃ©s et à¡© en traÃ§ant le graphique ßà·ß(à¡©).  
-Nous avons comparÃ© plusieurs modÃ¨les dans Â« courbes de tendance Â», et retenu le modÃ¨le 
-Â« puissance Â» dont le coefficient de dÃ©termination Þº
-à®¼
- est le plus Ã©levÃ©, car il dÃ©crit le mieux la 
-corrÃ©lation entre les valeurs mesurÃ©es et le modÃ¨le sÃ©lectionnÃ©.  
- 
-Figure 30 : tracÃ© du graphique ßà·ß(à¡©) pour les deux distances entre les cÃ´nes 
-y = 534221x
--2,664
-RÂ² = 0,9977
-0,017
-0,037
-0,057
-0,077
-350 450 550 650
-k (
-Â°
-.(mT)^
--
-1) 
-Î»(nm) 
-modÃ¨le puissance ; d = 2,3 cm 
-y = 157328x
--2,468
-RÂ² = 0,9997
-0,017
-0,037
-0,057
-0,077
-350 450 550 650
-k (
-Â°
-.(mT)^
--
-1) 
-Î»(nm) 
-modÃ¨le puissance d = 2,7 cm 
- ß (Ð¿Éª(ßÞ¼)
-à¯à®»
-) à¡¢
-Ð® 
- 
-à¡© (ßß) ßà·ÏºÉ§Ï» ßß ßà·ÏºÉ§Ï¿ ßß  
-Ï¼Ï¸Ï½ ßß Ï¸É§Ï¸Ï½ÐÏ¾ Ï¸É§Ï¸Ï½Ï¿Ð Ï»É§Ï¸Ð® 
-Ï¼Ï½Ï¸ ßß Ï¸É§Ï¸Ï¼Ï½Ïº Ï¸É§Ï¸Ï¼Ï¼Ï» ÏºÉ§Ï¸Ð® 
-Ï½Ï»Ïº ßß Ï¸É§Ï¸Ï»Ï¸Ï½ Ï¸É§Ï¸ÏºÐÐ ÏºÉ§Ï¸Ð® 
-Ï¾Ï½Ï¸ ßß Ï¸É§Ï¸Ï¹ÐÏ¹ Ï¸É§Ï¸Ï¹ÐÏ» Ï¾É§Ï¾Ð® 
 14
 
-On a vu quâ±Ã  priori il y a proportionnalitÃ© entre lâ±angle de rotation à¡¼ du plan de polarisation 
-dâ±une lumiÃ¨re polarisÃ©e rectilignement dans un milieu transparent soumis Ã  un champ magnÃ©tique 
-Þª dirigÃ© selon lâ±axe de propagation de la lumiÃ¨re. Pour la suite, par gain de temps pour le moment, 
-on travaillera pour ßà·ÏºÉ§Ï¿ ßß (nous analyserons nos rÃ©sultats pour ßà·ÏºÉ§Ï» ßß dans la suite du 
-projet). Si on fait la moyenne des valeurs absolues de puissance : ßà·
-à®¼É§à¯à¯à®¾à¯à®¼É§à®¾à¯à¯
-à®¼
-âÏºÉ§Ï¾Éª  Cette valeur 
-semble suggÃ©rer que le coefficient directeur ß est liÃ© Ã  à¡©
-à¯à±§
-à·
-à®»
-à²
-àµ
- . Pour vÃ©rifier ces hypothÃ¨ses, nous 
-allons Ã©tudier les lois thÃ©oriques liant lâ±angle de rotation et la valeur du champ magnÃ©tique orientÃ©e 
-selon lâ±axe de propagation dans la partie V). 
-DÃ©terminons les incertitudes types associÃ©es au coefficient directeur ß, sachant quâ±il dÃ©pend 
-de la mesure de Ïºà¡¼, Þª
-à±±, et de la position du barreau (nous lâ±estimons Ã  ß(ß)à·Ï¸É§Ïº ßß)Éª  
-ConsidÃ©rons quâ±on calcule le coefficient directeur ß
-à±¢ pour chaque mesure ß de lâ±angle Ïºà¡¼
-à±¢ : 
-ß(ß
-à±¢)à·ß
-à±¢Éªâ(
-à±®(à®¼à²«
-àµ
-)
-à®¼à²«
-àµ
-)
-à®¼
-+(
-à±®(à±àµ©àµ
-)
-à±àµ©àµ
-)
-à®¼
-É§ avec  ß(Ïºà¡¼
-à±¢)à·Ï¸É§Ï» Ð¿ (partie 10 du dossier annexe) 
-Lâ±incertitude type sur la valeur de Þª
-à±±à±¢ est la combinaison de celle calculÃ©e dans la partie 9 du 
-dossier annexe (Figure N) notÃ©e ß
-à®»(Þª
-à±±à±¢), et de celle dÃ»e Ã  la position du barreau ß
-à®¼à±©à±¨à±¬(Þª
-à±±à±¢) : 
- ß(Þª
-à±±à±¢)à·âß
-à®»(Þª
-à±±à±¢)
-à®¼
-+ß
-à®¼à±©à±¨à±¬(Þª
-à±±)
-à±¢Ð . Par analogie Ã  ß
-à±©à±¨à±¬(Þª
-à±±à±¢) de la partie 9 du dossier annexe, on a : 
-ß
-à®¼à±©à±¨à±¬(Þª
-à¯É§à®¿à±à±¦É§)
-à±¢
-à· á 
-à±(à¯É§à®ºà±à±¦)à±¢à¯à±(à¯É§à®º à±à±¦)à±¢
-à®¼à°à±±
-á Éªß(ß) Ã  ßà·ÐÉ§Ï½ ßß et de mÃªme Ã  ßà·Ï¹Ï¸É§Ï½ ßß sachant que 
-ß(ß)à·Ï¸É§Ïº ßßÉ§ et Ê¥ßà·Ï¸É§Ï½ ßß. Cette relation permet dâ±Ã©valuer dans quelle mesure une erreur sur la 
-position se rÃ©percute sur la valeur de Þª
-à±±à±¢.  
-Finalement : ß(Þª
-à±±à±¢)à·âß
-à®»(Þª
-à±±à±¢)
-à®¼
-+(
-à±(à±±à±¢à¯à®ºÉ§à®¿à±à±¦)à¯à±(à±±à±¢à¯à®ºÉ§à®¿à±à±¦)
-à®»É§à®º à±à±¦
-ÃÏ¸É§Ïº ßß)
-à®¼
- ; Ï¹É§Ï¸ ßß au dÃ©nominateur montre 
-quâ±on a bien calculÃ© une dÃ©rivÃ©e et garder la cohÃ©rence des unitÃ©s. On calcule la moyenne pondÃ©rÃ©e 
-des incertitudes types de lâ±ensemble des coefficients :                                                      ß(ß)à·
-Ï¹
-â
-Ñ
-Ï¹
-  ß(ß
-ß
-)
-Ïº
-Ï¹Ï¸
-ßà·Ï¹
- 
- 
- 
- 
- 
-Þ­Ï» correspond Ã  Þª
-à±± à¯ à¯É§à®º et Þ¬
-à®½ Ã  de Þª
-à±± à¯ à¯É§à®º 
-Valeur moyenne de ß :  
-   
- 
-Correspond Ã  la moyenne des ß
-à±¢ 
-  
-Þ«Ï» correspond ß
-à®»(Þª
-à±±) et Þ°Ï» Ã  ß
-à®¼à±©à±¨à±¬ (Þª
-à±±)
-à¯É§à®¿ 
-   Þ©Ï» correspond Ã  Ïºà¡¼
-à±¢ et ÞªÏ» Ã  Þª
-à±±à±¢ Valeur moyenne pondÃ©rÃ©e des ß(ß) : 
- â¦ 
-Jusquâ±Ã  ÞµÏ¹Ïº. 
- 
- 
-Þ´
-à®½ : Ã  ß
-à±¢ ; Þ²Ï» : ß(Þª
-à±±à±¢
-)
-à¯É§à®¿
- ; Þ³Ï» : ß(Þª
-à±±à±¢)
-à®»à®ºÉ§à®¿.  
-Voici lâ±ensemble des 
-valeurs des coefficients 
-directeurs de Ïºà¡¼à·ß(Þª
-à±±) et 
-leurs incertitudes types :  
-à¡©à·Ï¼Ï¸Ï½ ßß  ßà·(Ï¸É§Ï¸Ï½Ï¿Â±Ï¸É§Ï¸Ï¸Ï¼)Ð¿Éª(ßÞ¼)
-à¯à®»
- ß(ß)Êßà·Ï¸É§Ï¸Ï¿Ï¸ 
-à¡©à·Ï¼Ï½Ï¸ ßß  ßà·(Ï¸É§Ï¸Ï¼Ï¼Â±Ï¸É§Ï¸Ï¸Ï»)Ð¿Éª(ßÞ¼)
-à¯à®»
- ß(ß)Êßà·Ï¸É§Ï¸Ï¾Ð 
-à¡©à·Ï½Ï»Ïº ßß  ßà·(Ï¸É§Ï¸ÏºÐÂ±Ï¸É§Ï¸Ï¸Ïº)Ð¿Éª(ßÞ¼)
-à¯à®»
- ß(ß)Êßà·Ï¸É§Ï¸Ï¿Ï¹ 
-à¡©à·Ï¾Ï½Ï¸ ßß  ßà·(Ï¸É§Ï¸Ï¹ÐÂ±Ï¸É§Ï¸Ï¸Ïº)Ð¿Éª(ßÞ¼)
-à¯à®»
- ß(ß)Êßà·Ï¸É§Ï¹Ï¸Ï½ 
-Figure 31 : feuille de calcul pour à¡©à·Ï½Ï»Ïº ßß  et ßà·ÏºÉ§Ï¿ ßß. 
-à±®(à±
-àµ©
-)
-à±
-àµ©
- est calculÃ© pour V) C. 
- 
-15
-
-V) La constante de Verdet : lien entre angle de rotation et champ 
-magnÃ©tique  
-A. Mise en Ã©vidence 
-Lâ±angle de rotation à¡¼ du plan de polarisation dâ±une lumiÃ¨re de longueur dâ±onde à¡© polarisÃ©e 
-rectilignement est liÃ© Ã  la valeur du champ magnÃ©tique Þª dirigÃ© selon lâ±axe de propagation de la 
-lumiÃ¨re (Þªà·Þª
-à±± ici) dans un milieu transparent de longueur Þ´ par la relation : 
- 
-à¡¼à·Þ¾(à¡©)ÉªÞ´ÉªÞª       oÃ¹ Þ¾(à¡©)à·
-à±Éªà±
-à±¦Éªà±
-Éª
-à®»
-à²Ð
- est la constante de Verdet du milieu Ã©tudiÃ© 
- 
-ßÙ½ charge de lâ±Ã©lectron ; ßÙ½ masse de lâ±Ã©lectron ; ßÙ½ vitesse de la lumiÃ¨re dans le vide ;                              
-ß : coefficient de la formule de Cauchy liÃ© Ã  lâ±indice de rÃ©fraction du milieu traversÃ©. 
-La partie 12 du dossier annexe prÃ©sente la dÃ©monstration de Þ¾(à¡©) et lâ±interprÃ©tation microscopique. 
- 
-Dâ±aprÃ¨s lâ±expression de lâ±angle de rotation à¡¼ dÃ©terminÃ©e dans la partie 12 du dossier annexe, 
-on remarque en effet que lâ±angle de rotation à¡¼ est proportionnel Ã  la valeur du champ magnÃ©tique 
-Þª
-à±± dirigÃ© selon lâ±axe de propagation de la lumiÃ¨re puisque Ïºà¡¼à·ß(à¡©)ÉªÞª avec ß(à¡©)à·ÏºÉªÞ¾(à¡©)ÉªÞ´.  
-Nous avons pu vÃ©rifier cela dans la partie IV du mÃ©moire puisque les tracÃ©s des graphiques 
-Ïºà¡¼à·ß(Þª
-à±±), Ã©quivalents Ã   à¡¼Ö¨à·ß(Þª
-à±±) É§ Ã©taient modÃ©lisÃ©s par des droite passant par lâ±origine et au 
-plus prÃ¨s de tous les points : on retrouve donc bien la situation de proportionnalitÃ© entre à¡¼ et Þª. 
-Nous avons vu prÃ©cÃ©demment que le coefficient directeur semblait Ãªtre liÃ© Ã  
-à®»
-à²
-àµ
-, avec ßà·ÏºÉ§Ï½. 
-Le coefficient directeur ß(à¡©) du tracÃ© est proportionnel Ã  lâ±inverse du carrÃ© de la longueur dâ±onde 
-puisque ß(à¡©)à·ÏºÞ´Éª
-à±Éªà±
-à±¦Éªà±
-Éª
-à®»
-à²Ð
-. que lâ±on peut Ã©crire ß(à¡©)à·ß
-à±¯ÉªÊ¬Éª avec ß
-à±¯à·ÏºÞ´Éª
-à±Éªà±
-à±¦Éªà±
- et Ê¬à·
-à®»
-à°¡
-à²´
-.       
-La valeur attendue pour ß semble donc Ãªtre ßà·ÏºÉª  
-TraÃ§ons les graphiques ßà·ß(Ê¬) pour les deux distances entre les cÃ´nes pour rÃ©Ã©valuer nos 
-mesures et les confronter au modÃ¨le.  
- 
- Figure 32 : ßà·ß(
-à®»
-à²
-à²´
-) pour les deux distances entre les cÃ´nes 
-On modÃ©lise de faÃ§on affine le tracÃ©, dâ±aprÃ¨s la valeur non nulle lâ±ordonnÃ©e Ã  lâ±origine, ce qui 
-ne permet pas de vÃ©rifier la relation ßà·ÏºÞ´Éª
-à±Éªà±
-à±¦Éªà±
-Éª
-à®»
-à²Ð
- oÃ¹ : ßà·ß(
-à®»
-à²
-à²´
-) serait linÃ©aire. Nous reviendrons 
-sur cela dans la partie VI) A. du mÃ©moire. 
- 
- 
-B. Calcul des valeurs de la constante de Verdet 
- 
-La constante de Verdet se dÃ©termine en faisant le rapport du coefficient directeur du tracÃ© de 
-Ïºà¡¼à·ß(Þª
-à±±) par la longueur du milieu plongÃ© dans le champ magnÃ©tique : Þ¾(à¡©)à·
-à±¤(à²)
-à®¼à±
-. Nous allons 
-calculer les valeurs des constantes de Verdet Þ¾(à¡©)É§ et leurs incertitudes types ß(Þ¾(à¡©)) Ã  partir des 
-valeurs des coefficients directeurs ß(à¡©) pour chaque longueur dâ±onde, en utilisant la longueur du 
-barreau de Flint Þ´à· ÏºÉ§Ï¸Ï¸ ßß. Nous avons passÃ© des semaines Ã  demander au fournisseur 3b les 
-informations relatives au barreau Flint, quâ±on a fini par nous accorder : sa longueur est prÃ©cise Ã  
-ß
-à®¾à·ÏºÉ§Ï½Ð®, et les informations quant Ã  son indice de rÃ©fraction : ß(à¡©)à·Ï¹É§Ï¾Ïº+
-à¯à¯à®¼à®º à±§à±¦Ð
-à²Ð
-.  
-y = 1E-14x -0,0106
-RÂ² = 0,9988
-0,01
-0,03
-0,05
-0,07
-2E+12 4E+12 6E+12
-k (
-Â°
-.(mT)^
--
-1)
-1/Î»Â² (m^-2) 
-k = f(1/Î»Â²); x = 2,3 cm
-y = 1E-14x -0,0079
-RÂ² = 0,9992
-0,01
-0,03
-0,05
-0,07
-2E+12 4E+12 6E+12
-k (
-Â°
-.(mT)^
--
-1
-1/Î»Â² (m^-2) 
-k = f(1/Î»Â²); x = 2,7 cm
 16
 
-On peut alors calculer Þ¾(à¡©)à·
-à±¤(à²)
-à®¼à±
- ; ß(Þ¾(à¡©))à·Þ¾(à¡©)Éªâ(
-à±®(à±¤(à²))
-à±¤(à²)
-)
-à®¼
-+(
-à±©
-à²¶
-à®»à®ºà®º
-)
-à®¼
- , puis Þ¾(à¡©)à·
-à±Éªà±
-à±¦Éªà±
-Éª
-à®»
-à²Ð
-. Dans 
-lâ±expression de la constante de Verdet, les constantes empiriques extÃ©rieures Ã  lâ±expÃ©rience directe 
-sont celles de la vitesse de la lumiÃ¨re ß, et de la charge spÃ©cifique de lâ±Ã©lectron 
-à±
-à±¦
-. En sciences 
-physiques au lycÃ©e, nous sommes trop souvent amenÃ©s Ã  utiliser des valeurs Â« toutes prÃªtes Â» de 
-ces constantes, sans toutefois savoir comment elles ont Ã©tÃ© dÃ©terminÃ©es. Pour les Olympiades, 
-nous menons une dÃ©marche autodidacte et approfondie pour mener Ã  bien notre projet ; câ±est dans 
-cette optique que nous avons dÃ©cidÃ© de dÃ©terminer expÃ©rimentalement la valeur du rapport 
-à±
-à±¦
-. Notre 
-lycÃ©e a la chance de disposer dâ±un tube Ã  dÃ©viation Ã©lectronique, que nous avons utilisÃ© pour la 
-partie 13 du dossier 
-annexe. Nous 
-calculerons alors Þ¾(à¡©) 
-cette valeur.  
-Par manque de 
-temps, nous nâ±avons 
-pas encore dÃ©terminÃ© 
-ß(
-à±
-à±¦
-), qui est dans 
-notre liste de choses Ã  
-faire !  
- 
- Dans ÞªÏ¿Ù½   et dans Þ¬Ï¿ :  
-Þ½(Þ¾(à¡©)) 
-Dans Þ¬Ï¿ :  
- 
-Dans Þ°ÏºÙ½ (avec conversion en Â°) 
- Dans Þ²Ïº (avec conversion en Â°) :  
-Figure 33 : Feuille de calcul Excel pour les dÃ©terminations et comparaisons de Þ¾(à¡©). 
- On remarque tout dâ±abord que lorsque la longueur dâ±onde diminue, lâ±incertitude relative sur 
-le coefficient directeur est la plus Ã©levÃ©e, puisque les mesures dâ±angles sont les plus faibles, donc 
-les incertitudes types associÃ©es affectent davantage les mesures. Les valeurs de constantes de 
-Verdet expÃ©rimentales ne permettent pas de retrouver la valeur attendue, mÃªme en tenant compte 
-des incertitudes. Dressons une liste concise des incertitudes expÃ©rimentales principales. 
-C. Incertitudes : exemple pour à¥à·à­¤à­¢à­¡ à¤à¤ et à¤à·à­¡É§à­¦ à¤à¤ 
-Mesureâ¦ 	Descriptif succinct 	Estimation de lâincertitude relative 
-Du champ 
-magnÃ©tique  
-Position du capteur, Ã©talonnage de la SEH, 
-lectures sur les appareils de mesure (Þ±É§Þ½
-à±à±à±É§Þª
-à±±à±«à±à±) 
-ß(Þª
-à±±)
-Þª
-à±±
-Î·Ï¸É§Ïº 
- 
-De lâ±angle Valeur affichÃ©e sur le VoltmÃ¨tre, alignement des 
-Ã©lÃ©ments sur lâ±axe, lumiÃ¨re rÃ©siduelle au minimum 
-à±®(à®¼à²«)
-à®¼à²«
-à·
-à®ºÉ§à®½Ð¿
-à®ºÉ§à®¿Ð¿
-à·Ï¸É§Ï¾ ou 
-à®ºÉ§à®½Ð¿
-à®»à¯Ð¿
-à·Ï¸É§Ï¸Ïº 
-Position du 
-barreau 
-Taille du barreau et position, qui affectent les 
-valeurs de Þª
-à±± Ã  considÃ©rer dans les calculs  
-ß(Þ´)
-Þ´
-à·Ï¸É§Ï¸ÏºÏ½ 
- 
-Regression 
-linÃ©aire 
-Les ß
-à±¢ sont censÃ©s tous Ãªtre Ã©gaux (mÃªme cons-
-tante physique), on Ã©value leur dispersion pour ß 
-Incertitude type A sur les ß
-à±¢ : 
-ß(ß
-à±¢)à·
-à®¼Ãà®ºÉ§à®ºà®ºà®¾
-Ñà®»à®»
-Ø¢
-à±®(à±¤
-àµ
-)
-à±¤
-àµ
-à·Ï¸É§Ï¸Ï¿  
-Lâ±incertitude relative sur la composante horizontale du champ magnÃ©tique Þª
-à±± est la plus 
-importante, de lâ±ordre de ÏºÏ¸ Ð®Ù½ câ±est la principale source dâ±erreur systÃ©matique. Elle sâ±explique par 
-la dÃ©pendance Ã  lâ±Ã©talonnage du capteur de la SEH, lâ±inhomogÃ©nÃ©itÃ© du champ dans la rÃ©gion 
-dâ±influence, et surtout la position du barreau, dont un lÃ©ger dÃ©calage par rapport aux valeurs choisies 
-ß à¡¹ [ÐÉ§Ï½ É¨Ï¹Ï¸É§Ï½]ßß affecte les valeurs de Þª
-à±± effectivement Ã  considÃ©rer.  
-La prÃ©cision de lecture de lâ±angle est satisfaisante puisque lâ±incertitude relative est infÃ©rieure 
-Ã  Ï¹Ï¸ Ð®, pour des angles pas trop faibles. La longueur du barreau contribue faiblement Ã  lâ±incertitude 
-finale. Lâ±incertitude relative de Ï¿ Ð® pour le coefficient directeur traduit une variabilitÃ© modÃ©rÃ©e entre 
-les sÃ©ries : la mesure est donc raisonnablement rÃ©pÃ©table, mais reste sensible aux fluctuations du 
-champ magnÃ©tique et Ã  la prÃ©cision de lecture de lâ±angle. Il faudrait amÃ©liorer la mesure de Þª
-à±± pour 
-rÃ©duire lâ±incertitude globale. 
-17
-
-VI) Pour aller plus loin 
-A. Comparaisons Ã  des valeurs 
-tabulÃ©es  
-La loi de Cauchy permet de calculer 
-lâ±indice de rÃ©fraction du Flint (donnÃ©es 
-fournisseur) :  ß(Ï¾Ï»Ï»)à·Ï¹É§Ï¾Ïº+
-à¯à¯à®¼à®º à±§à±¦Ð
-à¯à®½à®½Ð
-à·Ï¹É§Ï¾Ï¼.  
-La lettre Â« F Â» dÃ©signe un verre de type Flint, et 
-(Â« SF Â» un Flint dense). Dâ±aprÃ¨s le Â« Handbook 
-of optical materials Â», page 259, la ligne 
-correspondante pourrait Ãªtre celle de SF2.                 Figure 34 : extrait du Â« Handbook Â», page 259 
-On Ã©value la constante de Verdet Ã  à¡©à·Ï¾Ï»Ï» ßß pour nos mesures expÃ©rimentales dâ±aprÃ¨s 
-la figure 32 en utilisant la rÃ©gression linÃ©aire : 
-ß(Ï¾Ï»Ï» ßß)à·
-à®»É§à®ºà®ºÃà®»à®º
-à²½à²³à²¶
-à²
-à²´
-âÏ¸É§Ï¸Ï¸Ï¿Ðà·
-à®»É§à®ºà®ºÃà®»à®º
-à²½à²³à²¶
-(à¯à®½à®½Ãà®»à®º
-à²½à²»)
-à²´
-âÏ¸É§Ï¸Ï¸Ï¿Ðà·Ï¸É§Ï¸Ï¹Ï¿Ï¹ Ð¿Éª(ßÞ¼)
-à¯à®»
-.  
-On a vu prÃ©cÃ©demment que ß(ß
-à¯à®¿à®ºà±§à±¦)à·Ï¸É§Ï¸Ï¸ÏºÐ¿Éª(ßÞ¼)
-à¯à®»
- (mÃªme valeur pour à¡©à·Ï½Ï»Ïº ßß) on 
-va donc considÃ©rer que ß(ß
-à¯à®½à®½à±§à±¦)à·Ï¸É§Ï¸Ï¸ÏºÐ¿Éª(ßÞ¼)
-à¯à®»
- 
-ß(Ï¾Ï»Ï» ßß)à·
-à®ºÉ§à®ºà®»à¯à®»Ã(à®»à®º
-à²½à²µ
-)
-à²½à²³
-Ãà²
-à®»à¯à®º
- ßßßÉªÞ¼
-à¯à®»
-à·Ï¸É§ÏºÐÐ ßßßÉªÞ¼
-à¯à®»
- ; ß(ß
-à¯à®½à®½à±§à±¦)à·Ï¸É§Ï¸Ï¼ ßßßÉª(ßÞ¼)
-à¯à®»
- 
-Puisque Þ¾(Ï¾Ï»Ï» ßß)à·
-à±¤(à¯à®½à®½ à±§à±¦)
-à®¼à±
- alors : Þ¾(Ï¾Ï»Ï» ßß)à·
-à®ºÉ§à®½à®º à±«à±à±Éªà±
-à²½à²³
-à®¼Ãà®¼É§à®ºà®ºÃà®»à®º
-à²½à²´
-à±¦
-à·Ï¿É§Ï½ ßßßÉª(Þ¼Éªß)
-à¯à®»
- 
-ß(Þ¾(Ï¾Ï»Ï» ßß))à·Ï¿É§Ï½Ãâ(
-à®ºÉ§à®ºà®¾
-à®ºÉ§à®½à®º
-)
-à®¼
-+Ï¸É§Ï¸ÏºÏ½ÐâÏ¹É§Ï¸ÏºâÏº ßßßÉª(Þ¼Éªß)
-à¯à®»
- arrondi Ã  lâ±excÃ¨s. 
-Donc  Ï¾â¤Þ¾(Ï¾Ï»Ï» ßß)(ßßßÉª(Þ¼Éªß)
-à¯à®»
-)â¤Ï¹Ï¸Éª 
-La valeur attendue Ã©tant Þ¾
-à±à±­à±­(Ï¾Ï»Ï» ßß)à·Ï¹Ï¹É§Ï¾ ßßßÉª(Þ¼Éªß)
-à¯à®»
-, les rÃ©sultats expÃ©rimentaux ne 
-permettent pas de vÃ©rifier la valeur attendue. Nous nâ±avons pas la certitude que le barreau utilisÃ© 
-correspond exactement au verre SF2 du tableau. MÃªme si lâ±indice de rÃ©fraction est Ã©gal (aux chiffres 
-significatifs prÃ¨s), une diffÃ©rence de composition chimique ou de dispersion peut affecter la valeur 
-de la constante de Verdet. On se souvient aussi de la non-linÃ©aritÃ© de ßà·ß(
-à®»
-à²
-à²´
-) (partie V) A.), ce 
-qui ne correspondait pas Ã  lâ±expression.  Une hypothÃ¨se serait lâ±existence dâ±un modÃ¨le diffÃ©rent.  
- 
-B. Un autre modÃ¨le ?  
- 
-Le Â« Handbook Â» indique le modÃ¨le de la Â« loi de Becquerel Â» pour exprimer la constante de 
-Verdet, valable Â« loin des rÃ©sonances Â», dont 
-lâ±expression est :  Þ¾(à¡©)à·
-à²
-à²
-Éª
-à±§(à²)
-à²´
-à¯à®»
-à±§(à²)
-Éª(Þ©+
-à±
-à²
-à²´
-à¯à²
-à²²
-à²´). 
-Pour une longueur dâ±onde donnÃ©e, la constante de 
-Verdet dÃ©pend donc de la dispersion optique ß(à¡©), 
-et dâ±une rÃ©sonnance Ã©lectronique dont la longueur 
-dâ±onde caractÃ©ristique est à¡©
-à®º. Þ© et Þª Sont des 
-constantes empiriques, dÃ©terminÃ©es par 
-lâ±expÃ©rience (respectivement contribution de fond 
-et contribution rÃ©sonante). Les documents que 
-nous avons consultÃ©s suggÃ¨rent une rÃ©sonnance 
-Ã©lectronique dans le domaine des UV pour les 
-verres de type Flint. On remarque donc que :  
-Þ¾(à¡©)à·Þ¸(à¡©)Éª(Þ©+
-à±
-à²
-à²´
-à¯à²
-à²²
-à²´), avec Þ¸(à¡©)à·
-à²
-à²
-Éª
-à±§(à²)
-à²´
-à¯à®»
-à±§(à²)
-. Donc : ß(à¡©)à·ÏºÞ´ÉªÞ¾(à¡©)à·ÏºÞ´ÉªÞ¸(à¡©)Éª(Þ©+
-à±
-à²
-à²´
-à¯à²
-à²²
-à²´), . 
-Soit finalement : 
-à±¤(à²)
-à®¼à±Éªà±(à²)
-à·(Þ©+
-à±
-à²
-à²´
-à¯à²
-à²²
-à²´) Sous Excel, on calcule
-à±¤(à²)
-à®¼à±Éªà±(à²)
- dans une colonne, et 
-à®»
-à²
-à²´
-à¯à²
-à²²
-à²´ dans 
-une autre colonne (on fixe à¡©
-à®ºà·Ï¹Ï»Ï¼É§Ï¾ ßß). Le modÃ¨le affine convient au tracÃ© 
-à±¤(à²)
-à®¼à±Éªà±(à²)
-à·ß(
-à®»
-à²
-à²´
-à¯à²
-à²²
-à²´) Ã©tant 
-donnÃ© le coefficient de dÃ©termination proche de Ï¹, ce qui confirme que nos rÃ©sultats expÃ©rimentaux 
-sont mieux modÃ©lisÃ©s par cette loi. Ainsi : Þ©à·ÐÃÏ¹Ï¸
-à¯à¯
- ßßßÉªÞ¼
-à¯à®»
- ; Þªà·Ï»ÃÏ¹Ï¸
-à¯à®»à¯
-ßßßÉªßÐÉªÞ¼
-à¯à®»
- ;  ce qui 
-est proche des valeurs tabulÃ©es, respectivement Ï¿É§Ï¸ÏºÃÏ¹Ï¸
-à¯à¯
- ßßßÉªÞ¼
-à¯à®»
- et Ï½É§Ï¿ÃÏ¹Ï¸
-à¯à®»à¯
- ßßßÉªß
-à®¼
-ÉªÞ¼
-à¯à®»
-. 
-Ceci met en Ã©vidence que la rotation du plan de polarisation suit une rÃ©sonnance dans lâ±ultraviolet. 
-Figure 35 : 
-à±¤(à²)
-à®¼à±Éªà±(à²)
-à·ß(
-à®»
-à²
-à²´
-à¯à²
-à²²
-à²´) 
-y = 3E-19x + 8E-07
-RÂ² = 0,9931
-1,50E-06
-2,00E-06
-2,50E-06
-3,00E-06
-3,50E-06
-2,0E+124,0E+126,0E+12
-k/(2LP(
-Î»
-)) 
-1/(Î»Â² -Î»0Â²) (m^-2)
-k/(2LP(Î»)) = f(1/(Î»Â² -Î»0Â²))
 18
 
-C. Une application de lâeffet magnÃ©to â optique : lâisolateur optique 
-Pour prolonger notre Ã©tude, nous nous sommes intÃ©ressÃ©s Ã  une application pratique  : le 
-rotateur magnÃ©to-optique (de Faraday). Il met Ã  profit la rotation du plan de polarisation pour crÃ©er 
-un dispositif essentiel dans le domaine des technologies photoniques modernes : lâisolateur optique.  
-Nous passons donc de la lumiÃ¨re Â« sous influence Â» Ã  la lumiÃ¨re Â« maÃ®trisÃ©e Â» ! 
- 
-Pour comprendre et illustrer ce phÃ©nomÃ¨ne, rÃ©utilisons le dispositif expÃ©rimental pour 
-montrer quâ±un faisceau lumineux rÃ©flÃ©chi dans le sens inverse de la propagation initiale nâ±est plus 
-transmis : la lumiÃ¨re passe donc dans un seul sens. Imaginons le cas oÃ¹ le dispositif provoque une 
-rotation du plan de polarisation dâ±une lumiÃ¨re polarisÃ©e rectilignement dâ±un angle à¡¡
-à®»à·Ï¼Ï½É§Ï¸Ð¿ Ã  lâ±issue 
-de sa traversÃ©e du milieu utilisÃ©. Si ce faisceau est rÃ©flÃ©chi et se propage Ã  nouveau dans le 
-dispositif, il subira de nouveau une rotation du plan de polarisation du mÃªme angle à¡¡
-à®¼à·Ï¼Ï½É§Ï¸Ð¿. Ainsi, 
-lâ±angle de rotation du plan de polarisation total vaut : à¡¡à·à¡¡
-à®»+à¡¡
-à®¼à·ÐÏ¸É§Ï¸Ð¿, et sera ainsi bloquÃ© par le 
-premier polariseur, Ã©tant donnÃ© les directions orthogonales des deux plans de polarisation. 
-Figure 36 : schÃ©ma de 
-principe de lâisolateur 
-optique par effet 
-magnÃ©to â optique 
- 
- 
- 
- 
- 
- 
- 
- 
-Nous avons pu visiter lâ±Institut dâ±Optique du laboratoire Charles Fabry Ã  Palaiseau pour voir 
-diffÃ©rents isolateurs optiques et leurs applications concrÃ¨tes dans les travaux de recherches menÃ©s 
-par M. CHENEAU le vendredi 21 novembre 2025. Nous le remercions ! 
- 
-Nous avons vu des montages oÃ¹ une vingtaine dâ±isolateurs optiques sont systÃ©matiquement 
-utilisÃ©s pour Ã©viter des retours parasites de la lumiÃ¨re lors de sa propagation vers la source laser. 
-Cela permet de ne pas perturber son fonctionnement : M. CHENEAU a pris comme exemple visuel 
-le fait que si la lumiÃ¨re revenait Ã  la source, câ±est un peu comme si deux personnes voulaient faire 
-osciller le mÃªme objet en effectuant des gestes excitateurs diffÃ©rents !  Il sâ±agit aussi de protÃ©ger la 
-source contre sa propre puissance (Ï½Ï¸Þ¿  pour certains lasers, contre Ï¹ ßÞ¿ pour les nÃ´tres !).  
- 
- 
- 
- 
- 
- 
- 
- 
-Figure 37 : photographies des isolateurs optiques de lâInstitut Optique Ã  Palaiseau 
- Ainsi, lâ±isolateur optique illustre parfaitement comment un phÃ©nomÃ¨ne physique 
-fondamental, ici lâ±effet magnÃ©to-optique, peut Ãªtre exploitÃ© pour rÃ©pondre Ã  une contrainte 
-technologique majeure : imposer un sens unique de propagation Ã  la lumiÃ¨re. 
-Contrairement aux dispositifs optiques usuels, le rotateur de Faraday prÃ©sente un caractÃ¨re 
-non rÃ©ciproque : la rotation du plan de polarisation est indÃ©pendante du sens de propagation du 
-faisceau lumineux. Cette propriÃ©tÃ© permet de bloquer efficacement toute lumiÃ¨re rÃ©flÃ©chie vers la 
-source, protÃ©geant ainsi les lasers des retours parasites susceptibles de perturber leur 
-fonctionnement ou dâ±endommager leurs composants. 
-Ã travers lâ±isolateur optique, la lumiÃ¨re nâ±est plus seulement Â« sous emprise Â» dâ±un champ 
-magnÃ©tique : elle est contrÃ´lÃ©e, orientÃ©e et sÃ©curisÃ©e par lâ±exploitation maÃ®trisÃ©e des lois de la 
-physique. Ce dispositif constitue ainsi une transition emblÃ©matique entre lâ±Ã©tude des interactions 
-lumiÃ¨re-matiÃ¨re et leur mise en Åuvre technologique au service de la recherche scientifique. 
+6
+
+8
+
+10
+
+12
+
+14
+
+x (cm)
+16
+
+450
+400
+350
+300
+250
+200
+150
+100
+50
+0
+
+Bx (mT)
+
+Figures 21 et 22 : 𝐵𝑥 = 𝑓(𝑥) pour 𝐼 = {0 ; 0,5 ; … ; 5,5}𝐴 pour 𝑑 = 3,8 𝑐𝑚 et 𝑑 = 2,7 𝑐𝑚
+
+d = 2,3 cm
+
+Figure 23 : 𝐵𝑥 = 𝑓(𝑥) à différentes
+intensités du courant pour 𝑑 = 2,3 𝑐𝑚 entre
+les cônes
+
+Bx (moyen)région(mT)
+
+Lorsque la distance 𝑑 entre les
+cônes diminue, la valeur de la composante
+horizontale
+du
+champ
+magnétique
+𝐵𝑥 augm ente, comme le montre le tracé cidessous, réalisé avec les valeurs
+moyennes du champ magnétique sur une
+x (cm) longueur de 𝐿 = 2,00 𝑐𝑚 dans la zone où
+6
+8
+10
+12
+14
+16 le barreau Flint sera placé.
+Figure 24 : valeur de la
+Bx(moyen) dans la région
+composante horizontale du champ magnétique
+d'influence = f(d) pour différentes
+moyenne dans la zone de la région
+400
+intensités
+d’influence où sera placé le barreau,
+pour 𝑥𝜖 [8,5 ; 10,5 ]𝑐𝑚 en fonction de
+300
+la distance entre les cônes
+En partie II), nous avons
+200
+souhaité améliorer la précision des mesures de l’angle
+d (cm)
+de rotation 𝜙. Pour cela, nous devons pouvoir mesurer
+100
+les valeurs les plus élevées possible de l’angle de
+rotation, pour réduire les incertitudes. On a vu que 𝜙 est
+0
+2 2,5 3 3,5 4 4,5 5 d’autant plus élevé que la valeur de 𝐵𝑥 l’est aussi. On
+choisi donc la configuration du dispositif pour laquelle les
+valeurs de 𝐵𝑥 seront les plus élevées possible, c’est-à-dire pour 𝑑 = 2,3 𝑐𝑚 et 𝑑 = 2,7 𝑐𝑚. Dans ce
+cas, pour avoir le plus de points possible sur le tracé du graphique, on mesure la valeur de 𝐵𝑥 pour
+𝐼 𝜖 [0,50 ; 1,00 ; … ; 5,50] 𝐴.
+Pour conclure, on comprend que la présence des cônes permet d’optimiser, diriger, et
+concentrer la composante horizontale du champ magnétique selon l’axe de la région d’influence,
+dans la zone située entre les cônes, pour qu’elle soit maximale. La valeur de la 𝐵𝑥 n’est pas
+constante dans cette zone. Pour la suite du projet, nous déterminons donc une valeur moyenne de
+𝐵𝑥 entre les cônes sur la longueur du barreau 𝐿 = 2,00 𝑐𝑚, dans la partie 6 du dossier annexe.
+
+11
+
+IV) Mesures de l’angle de rotation de polarisation pour le Flint
+A. Améliorations du procédé de mesures
+Dans la partie II), nous avons conclu que nous devions déterminer avec plus de précision les
+mesures du double de l’angle de rotation 2𝜙 du plan de polarisation de la lumière polarisée
+rectilignement du laser et la valeur de la composante horizontale du champ magnétique 𝐵𝑥 dans la
+région d’influence. On mesure 2𝜙 (comme dans la partie II)), à partir de la valeur de l’angle de
+rotation 𝛼 + pour une orientation +𝐵𝑥 et de la valeur 𝛼 − pour −𝐵𝑥 : 2𝜙 = 𝛼 + − 𝛼 − , ce qui permet
+d’augmenter la valeur de l’angle mesuré. Comme on va le voir dans la suite du projet, les mesures
+que nous allons effectuer se feront au demi-entier près (Γ = 0,5°).
+La mesure du double de l’angle de rotation 2𝜙 permet de réduire les incertitudes de lecture,
+comme démontré dans la partie 10 du dossier annexe.
+Dans la partie III), nous avons déterminé de façon plus précise la valeur
+moyenne de la composante horizontale du champ magnétique.
+Pour mesurer plus précisément 2𝜙, nous disposons désormais de
+nos polariseurs, présentant des graduations précises.
+Figure 25 : comparaison des polariseurs
+Etant donné que nous travaillerons parfois sur des rotations
+infimes aux intensités les plus faibles, les différences de luminosité de la lumière
+émergente de l’analyseur sur l’écran seront trop dérisoires pour être visibles à l’œil nu. Il faudrait
+donc utiliser un capteur permettant d’effectuer une mesure dont la valeur serait directement reliée
+à la luminosité de la lumière émergente une photodiode. Profitons-en pour remercier le
+comité régional et national des Olympiades qui nous ont permis de financer l’achat de
+cette photodiode auprès de notre fournisseur Nova Physics.
+Figure 26 : photodiode
+
+B. Mise en œuvre : mesure du double de l’angle de rotation
+Nous pouvons enfin démarrer nos mesures du double de l’angle de rotation du plan de
+polarisation de la lumière polarisée rectilignement d’un laser vert (𝜆 = 532 𝑛𝑚), en mettant en
+œuvre les procédures énoncées précédemment pour améliorer la précision des mesures :
+● utilisation des valeurs moyennes et incertitudes de
+la composante horizontale du champ magnétique ;
+● mesure du double de l’angle de rotation du plan de
+⃗⃗⃗⃗⃗
+𝑩𝒙
+polarisation avec une photodiode, que l’on règle avec
+sa sensibilité maximale pour détecter les variations
+d’intensité lumineuse les plus faibles.
+Figure 27 : photographie du montage et
+𝑼(𝒑𝒉𝒐𝒕𝒐𝒅𝒊𝒐𝒅𝒆)
+𝑰(𝑨)
+𝑰(𝑨)
+⃗ et 𝜙 selon l’orientation de 𝐵
+⃗.
+représentations de 𝐵
+On procède de la même manière que lors de
+nos premières mesures à l’Université : on place le polariseur à la graduation 𝑂°, puis on fait tourner
+l’analyseur de telle sorte à lire une valeur minimale sur le voltmètre placé en dérivation à la
+photodiode. On remarque que c’est bien pour la graduation 90° que l’analyseur est à une position
+telle qu’il y a extinction totale de la lumière du laser sur l’écran, en absence de champ magnétique.
+On impose ensuite un courant 𝐼 = 0,50 𝐴 aux deux bobines, selon les branchements indiqués
+sur la Figure 16. On observe l’apparition sur la photodiode de lumière: c’est la manifestation de
+l’effet magnéto – optique, puisque cette lumière n’était pas visible avant de faire circuler le courant
+dans les bobines. Il y a donc une activité optique provoquée, induite par le champ magnétique pour
+le Flint. La composante horizontale du champ magnétique créée par les bobines a provoqué la
+rotation du plan de polarisation de la lumière polarisée rectilignement du laser vert.
+
+12
+
+Pour retrouver l’extinction, on fait tourner l’analyseur jusqu’à voir apparaître la valeur
+minimale sur l’écran du voltmètre relié à la photodiode (on remarquera d’ailleurs que pour
+l’ensemble de nos mesures, la valeur minimale affichée n’est jamais nulle. Elle augmente d’ailleurs
+au fur et à mesure qu’on augmente la valeur du courant dans les bobines. On propose une
+explication dans la partie 6 du dossier annexe). Pour 𝐼 = 0,50 𝐴, il faut faire tourner
++
+l’analyseur pour un angle 𝛼0,5𝐴
+> 90,0°. Pour un observateur regardant la source, il y a
+eu rotation du plan de polarisation de la lumière polarisée du laser vers la droite ; on
+peut qualifier cette activité optique provoquée de sens dextrogyre (flèches vertes sur la
+figure 27). Pour voir une valeur minimale s’afficher à l’écran du voltmètre relié à la
++
+photodiode jusqu’à l’angle 𝛼0,5𝐴
+= 90,5°.
+Figure 28 : photographie de l’analyseur
+
+10
+
+λ = 532 nm ; d = 2,3 cm
+8,5
+
+y = 0,0305x
+R² = 0,9966
+
+8
+6
+
+0
+
+10 10
+9,5
+
+10
+λ = 532 nm ; d = 2,7 cm
+9,5
+9
+
+y = 0,0299x
+R² = 0,9961
+
+7,5
+6
+
+2,5
+
+2,5
+
+6
+
+8
+
+6,5
+
+3
+
+1
+
+1
+
+Bx (mT)
+
+0
+
+0
+
+7,5
+
+5
+
+5
+
+4
+
+4
+2
+
+9
+
+10
+
+2φ (°)
+
+12
+
+2φ (°)
+
+−
+On inverse le sens du courant (𝐼 = − 0,50 𝐴) ; il faut tourner l’analyseur jusqu’à 𝛼0,5𝐴
+= 89,5°
+pour retrouver une valeur minimale sur le voltmètre afin de revenir à l’extinction. Cette fois, il y a eu
+rotation du plan de polarisation vers la droite, donc activité optique provoquée de sens levogyre.
++
+−
+Finalement, 2𝜙 = 𝛼0,5𝐴
+− 𝛼0,5𝐴
+= 90,5° − 89,5° = 1,0°. On poursuit nos mesures ainsi jusqu’à
+𝐼 = 5,50 𝐴, puis on trace le graphique 2𝜙 = 𝑓(𝐵𝑥 ), donné ci-dessous.
+Remarque : on se permet pour la suite du projet de prendre des valeurs d’angles 𝛼 demientières. Nous nous étions imposés au départ de ne pas le faire, mais avons changé d’avis après
+avoir tracé 3 graphiques dont les points avaient régulièrement la même ordonnée pour deux valeurs
+d’abscisses successives. En prenant en photo systématiquement l’analyseur, un zoom performant
+nous permettait une mesure d’angle que nous avons jugé précise. Nous avons alors dû tout
+reprendre à 0 après 3 graphiques tracés !
+
+100
+
+200
+
+300
+
+400
+
+0
+
+0
+
+Bx (mT)
+
+0
+
+50 100 150 200 250 300
+
+Figure 29 : 2𝜙 = 𝑓(𝐵𝑥 ) pour un laser vert 𝜆 = 532 𝑛𝑚 pour deux distances entre les cônes
+Les tracés 2𝜙 = 𝑓(𝐵𝑥 ) peuvent être modélisés par une droite passant par l’origine et au plus
+près de tous les points : il semble donc qu’il y ait proportionnalité entre le double de l’angle de
+rotation du plan de polarisation de la lumière polarisée rectilignement du laser vert de longueur
+d’onde 𝜆 = 532 𝑛𝑚 et la valeur de la composante horizontale du champ magnétique pour le barreau
+Flint de longueur 𝐿 = 2,00 cm. Les coefficients de détermination de ces tracés sont plus proches de
+1 que celui de la droite modélisée dans le graphique partie II). Cela indique que les points des
+graphiques de cette partie sont plus rapprochés au tracé, comme on peut aussi le voir visuellement.
+Si les grandeurs 𝜙 et 𝐵𝑥 sont effectivement proportionnelles, les améliorations proposées pour nos
+mesures ont été bénéfiques, puisqu’elles ont donné lieu à des points bien plus proches de la droite
+modèle sur le graphique.
+On reproduit les mesures avec des lasers de longueur d’onde 𝜆 = 405 𝑛𝑚, 𝜆 = 450 𝑛𝑚 et
+𝜆 = 650 𝑛𝑚, pour des distances entre les cônes égales à 𝑑 = 2,3 𝑐𝑚 et 2,7 𝑐𝑚. Les tracés obtenus
+sont à retrouver dans la partie 11 du dossier annexe.
+
+13
+
+𝑘 (°. (𝑚𝑇)−1 )
+
+C. Analyse des résultats et incertitudes
+𝜆 (𝑛𝑚)
+
+𝑑 = 2,3 𝑐𝑚
+
+𝛿%
+
+𝑑 = 2,7 𝑐𝑚
+
+Pour les longueurs d’onde : 𝜆 = 405 𝑛𝑚 ; 𝜆 = 450 𝑛𝑚 et
+405 𝑛𝑚
+0,0596
+0,0578
+3,0%
+𝜆 = 650 𝑛𝑚, il semble là aussi que le double de l’angle de
+450 𝑛𝑚
+0,0452
+0,0443
+2,0%
+rotation 2𝜙 du plan de polarisation de la lumière polarisée
+532 𝑛𝑚
+0,0305
+0,0299
+2,0%
+rectilignement des différents lasers soit proportionnelle à la
+0,0181
+0,0193
+6,6%
+valeur de la composante horizontale 𝐵𝑥 du champ magnétique. 650 𝑛𝑚
+Pour une même distance 𝑑 entre les cônes, on remarque des valeurs différentes pour les
+coefficients directeurs 𝑘 ; l’angle de rotation 𝜙 semble donc dépendre de la longueur d’onde 𝜆.
+Lorsque la longueur d’onde diminue, la valeur du coefficient augmente. Autrement dit, l’angle de
+rotation diminue lorsque la longueur d’onde augmente, pour une même valeur de la composante
+horizontale du champ magnétique. Nous avions bien remarqué que pour 𝜆 = 650 𝑛𝑚, les mesures
+d’angles étaient bien plus petites que pour les autres. Notamment, de nombreuses valeurs étaient
+difficiles à évaluer en raison des faibles différences pour deux prises de mesures à 0,50 𝐴 près.
+On détermine le pourcentage d’écart relatif 𝛿% entre les valeurs des coefficients directeurs 𝑘
+aux deux distances 𝑑 entre les cônes pour une même longueur d’onde : 𝛿% =
+
+|𝑘2,3 −𝑘2,7 |
+𝑘2,3
+
+× 100
+
+Puisque nous avons affecté les valeurs correctes correspondantes de la composante
+horizontale du champ magnétique 𝐵𝑥 mesurées pour chaque distance 𝑑 aux angles de rotation 𝜙,
+s’il y a bien proportionnalité entre ces deux grandeurs, nous devrions (si nos mesures étaient
+parfaites), obtenir des coefficients directeurs 𝑘 de même valeur aux deux distances 𝑑. Comme
+l’attestent les écarts relatifs faibles, les coefficients directeurs obtenus pour les deux distances 𝑑
+sont très proches. On peut attribuer les différences aux incertitudes de mesures (voir partie V) C.).
+L’écart relatif le plus élevé est pour la longueur d’onde 𝜆 = 650 𝑛𝑚, celle pour laquelle les prises de
+mesures étaient complexes en raison de faibles écarts, ce qui confirme le fait que les incertitudes
+étaient plus élevées pour ces valeurs. On a vu en partie 8 du dossier annexe que pour les intensités
+les plus élevées, il y a saturation du champ magnétique. Cela n’affecte cependant pas la
+proportionnalité que nous avons supposé entre 2𝜙 et 𝐵𝑥 puisque même si les valeurs de 𝐵𝑥 ne sont
+plus proportionnelles à 𝐼, elles le restent à 2𝜙. On observera des points plus proches sur le tracé.
+Nous en profitons pour remarquer que nos mesures d’angles de rotation sont très
+satisfaisantes. Sur les ressources que nous avons pu consulter (voir références bibliographiques
+dans la partie 7 du dossier annexe), les angles de rotation étaient bien inférieurs au nôtres (entre
+2° et 6°). Nos efforts d’optimisation (champ et mesures) ont eu l’effet escompté.
+Pour déterminer un éventuel lien entre l’angle de rotation 𝜙 et la longueur d’onde 𝜆, on
+cherche une relation entre le coefficient directeur 𝑘 des tracés et 𝜆 en traçant le graphique 𝑘 = 𝑓(𝜆).
+Nous avons comparé plusieurs modèles dans « courbes de tendance », et retenu le modèle
+« puissance » dont le coefficient de détermination 𝑅 2 est le plus élevé, car il décrit le mieux la
+corrélation entre les valeurs mesurées et le modèle sélectionné.
+
+k (°.(mT)^-1)
+
+0,057
+0,037
+
+0,077
+
+modèle puissance ; d = 2,3 cm
+
+0,017
+
+350
+
+y = 534221x-2,664 0,057
+R² = 0,9977
+0,037
+
+λ(nm)
+450
+550
+
+650
+
+k (°.(mT)^-1)
+
+0,077
+
+modèle puissance d = 2,7 cm
+
+y = 157328x-2,468
+R² = 0,9997
+
+λ(nm)
+
+0,017
+350
+
+450
+
+550
+
+650
+
+Figure 30 : tracé du graphique 𝑘 = 𝑓(𝜆) pour les deux distances entre les cônes
+
+14
+
+On a vu qu’à priori il y a proportionnalité entre l’angle de rotation 𝜙 du plan de polarisation
+d’une lumière polarisée rectilignement dans un milieu transparent soumis à un champ magnétique
+𝐵 dirigé selon l’axe de propagation de la lumière. Pour la suite, par gain de temps pour le moment,
+on travaillera pour 𝑑 = 2,7 𝑐𝑚 (nous analyserons nos résultats pour 𝑑 = 2,3 𝑐𝑚 dans la suite du
+projet). Si on fait la moyenne des valeurs absolues de puissance : 𝑛 =
+
+2,664+2,468
+2
+
+≈ 2,6. Cette valeur
+
+1
+
+semble suggérer que le coefficient directeur 𝑘 est lié à 𝜆−𝑛 = 𝜆𝑛 . Pour vérifier ces hypothèses, nous
+allons étudier les lois théoriques liant l’angle de rotation et la valeur du champ magnétique orientée
+selon l’axe de propagation dans la partie V).
+Déterminons les incertitudes types associées au coefficient directeur 𝑘, sachant qu’il dépend
+de la mesure de 2𝜙, 𝐵𝑥 , et de la position du barreau (nous l’estimons à 𝑢(𝑥) = 0,2 𝑐𝑚).
+Considérons qu’on calcule le coefficient directeur 𝑘𝑖 pour chaque mesure 𝑖 de l’angle 2𝜙𝑖 :
+𝑢(2𝜙 ) 2
+
+𝑢(𝐵𝑥 )
+
+𝑖
+
+𝑥𝑖
+
+2
+
+𝑢(𝑘𝑖 ) = 𝑘𝑖 . √( 2𝜙 𝑖 ) + ( 𝐵 𝑖 ) , avec 𝑢(2𝜙𝑖 ) = 0,3 ° (partie 10 du dossier annexe)
+L’incertitude type sur la valeur de 𝐵𝑥𝑖 est la combinaison de celle calculée dans la partie 9 du
+dossier annexe (Figure N) notée 𝑢1 (𝐵𝑥𝑖 ), et de celle dûe à la position du barreau 𝑢2𝑝𝑜𝑠 (𝐵𝑥𝑖 ) :
+𝑢(𝐵𝑥𝑖 ) = √𝑢1 (𝐵𝑥𝑖 )2 + 𝑢2𝑝𝑜𝑠 (𝐵𝑥 )𝑖 ² . Par analogie à 𝑢𝑝𝑜𝑠 (𝐵𝑥𝑖 ) de la partie 9 du dossier annexe, on a :
+𝐵(8,0𝑐𝑚)𝑖−𝐵(9,0 𝑐𝑚)𝑖
+
+𝑢2𝑝𝑜𝑠 (𝐵8,5𝑐𝑚, )𝑖 = |
+
+2Δ𝑥
+
+| . 𝑢(𝑥) à 𝑥 = 8,5 𝑐𝑚 et de même à 𝑥 = 10,5 𝑐𝑚 sachant que
+
+𝑢(𝑥) = 0,2 𝑐𝑚, et Δ𝑥 = 0,5 𝑐𝑚. Cette relation permet d’évaluer dans quelle mesure une erreur sur la
+position se répercute sur la valeur de 𝐵𝑥𝑖 .
+𝐵(𝑥𝑖+0,5𝑐𝑚)−𝐵(𝑥𝑖−0,5𝑐𝑚)
+
+Finalement : 𝑢(𝐵𝑥𝑖 ) = √𝑢1 (𝐵𝑥𝑖 )2 + (
+
+1,0 𝑐𝑚
+
+2
+
+× 0,2 𝑐𝑚) ; 1,0 𝑐𝑚 au dénominateur montre
+
+qu’on a bien calculé une dérivée et garder la cohérence des unités. On calcule la moyenne pondérée
+
+𝑢(𝑘) =
+
+des incertitudes types de l’ensemble des coefficients :
+Figure 31 : feuille de calcul pour 𝜆 = 532 𝑛𝑚 et 𝑑 = 2,7 𝑐𝑚.
+
+𝑢(𝐵𝑥 )
+est calculé pour V) C.
+𝐵𝑥
+
+1
+∑10
+√ 𝑖=1
+
+1
+2
+𝑢(𝑘𝑖)
+
+Valeur moyenne de 𝑘 :
+𝐸3 correspond à 𝐵𝑥 = 9,0 et 𝐷3 à de 𝐵𝑥 = 8,0
+𝐶3 correspond 𝑢1 (𝐵𝑥 ) et 𝐻3 à 𝑢2𝑝𝑜𝑠 (𝐵𝑥 )8,5
+𝐴3 correspond à 2𝜙𝑖 et 𝐵3 à 𝐵𝑥𝑖
+𝐿3 : à 𝑘𝑖 ; 𝐽3 : 𝑢(𝐵𝑥 𝑖 )
+
+8,5
+
+Voici
+l’ensemble
+des
+valeurs des coefficients
+directeurs de 2𝜙 = 𝑓(𝐵𝑥 ) et
+leurs incertitudes types :
+
+; 𝐾3 : 𝑢(𝐵𝑥𝑖 )10,5.
+
+𝜆 = 405 𝑛𝑚
+𝜆 = 450 𝑛𝑚
+𝜆 = 532 𝑛𝑚
+𝜆 = 650 𝑛𝑚
+
+Correspond à la moyenne des 𝑘𝑖
+Valeur moyenne pondérée des 𝑢(𝑘) :
+…
+Jusqu’à 𝑀12.
+
+𝑘 = (0,057 ± 0,004)°. (𝑚𝑇)−1
+𝑘 = (0,044 ± 0,003)°. (𝑚𝑇)−1
+𝑘 = (0,028 ± 0,002)°. (𝑚𝑇)−1
+𝑘 = (0,018 ± 0,002)°. (𝑚𝑇)−1
+
+𝑢(𝑘)/𝑘 = 0,070
+𝑢(𝑘)/𝑘 = 0,068
+𝑢(𝑘)/𝑘 = 0,071
+𝑢(𝑘)/𝑘 = 0,105
+
+15
+
+V)
+
+La constante de Verdet : lien entre angle de rotation et champ
+magnétique
+A. Mise en évidence
+L’angle de rotation 𝜙 du plan de polarisation d’une lumière de longueur d’onde 𝜆 polarisée
+rectilignement est lié à la valeur du champ magnétique 𝐵 dirigé selon l’axe de propagation de la
+lumière (𝐵 = 𝐵𝑥 ici) dans un milieu transparent de longueur 𝐿 par la relation :
+où 𝑉(𝜆) =
+
+𝜙 = 𝑉(𝜆). 𝐿. 𝐵
+
+𝑒.𝑏
+
+.
+
+1
+
+𝑚.𝑐 𝜆²
+
+est la constante de Verdet du milieu étudié
+
+𝑒 ∶ charge de l’électron ; 𝑚 ∶ masse de l’électron ; 𝑐 ∶ vitesse de la lumière dans le vide ;
+𝑏 : coefficient de la formule de Cauchy lié à l’indice de réfraction du milieu traversé.
+La partie 12 du dossier annexe présente la démonstration de 𝑉(𝜆) et l’interprétation microscopique.
+D’après l’expression de l’angle de rotation 𝜙 déterminée dans la partie 12 du dossier annexe,
+on remarque en effet que l’angle de rotation 𝜙 est proportionnel à la valeur du champ magnétique
+𝐵𝑥 dirigé selon l’axe de propagation de la lumière puisque 2𝜙 = 𝑘(𝜆). 𝐵 avec 𝑘(𝜆) = 2. 𝑉(𝜆). 𝐿.
+Nous avons pu vérifier cela dans la partie IV du mémoire puisque les tracés des graphiques
+2𝜙 = 𝑓(𝐵𝑥 ), équivalents à 𝜙′ = 𝑓(𝐵𝑥 ) , étaient modélisés par des droite passant par l’origine et au
+plus près de tous les points : on retrouve donc bien la situation de proportionnalité entre 𝜙 et 𝐵.
+1
+Nous avons vu précédemment que le coefficient directeur semblait être lié à 𝜆𝑛 , avec 𝑛 = 2,5.
+Le coefficient directeur 𝑘(𝜆) du tracé est proportionnel à l’inverse du carré de la longueur d’onde
+puisque 𝑘(𝜆) = 2𝐿.
+
+𝑒.𝑏
+
+1
+
+𝑒.𝑏
+
+𝑚.𝑐 𝜆²
+
+𝑚.𝑐
+
+. . que l’on peut écrire 𝑘(𝜆) = 𝑘𝑣 . Λ. avec 𝑘𝑣 = 2𝐿.
+
+1
+
+et Λ = 2.
+λ
+
+La valeur attendue pour 𝑛 semble donc être 𝑛 = 2.
+Traçons les graphiques 𝑘 = 𝑓(Λ) pour les deux distances entre les cônes pour réévaluer nos
+mesures et les confronter au modèle.
+
+k = f(1/λ²) ; x = 2,3 cm
+
+0,01
+2E+12
+
+1/λ² (m^-2)
+4E+12
+6E+12
+
+0,05
+0,03
+
+0,07
+
+k (°.(mT)^-1
+
+k (°.(mT)^-1)
+
+0,07
+
+0,05
+y = 1E-14x - 0,0106
+R² = 0,9988
+
+0,03
+
+k = f(1/λ²) ; x = 2,7 cm
+
+y = 1E-14x - 0,0079
+R² = 0,9992
+
+0,01
+
+2E+12
+
+4E+12
+
+1/λ² (m^-2)
+6E+12
+
+1
+
+Figure 32 : 𝑘 = 𝑓 (𝜆2 ) pour les deux distances entre les cônes
+On modélise de façon affine le tracé, d’après la valeur non nulle l’ordonnée à l’origine, ce qui
+ne permet pas de vérifier la relation 𝑘 = 2𝐿.
+sur cela dans la partie VI) A. du mémoire.
+
+𝑒.𝑏
+
+.
+
+1
+
+𝑚.𝑐 𝜆²
+
+1
+
+où : 𝑘 = 𝑓 ( 2 ) serait linéaire. Nous reviendrons
+𝜆
+
+B. Calcul des valeurs de la constante de Verdet
+La constante de Verdet se détermine en faisant le rapport du coefficient directeur du tracé de
+𝑘(𝜆)
+
+2𝜙 = 𝑓(𝐵𝑥 ) par la longueur du milieu plongé dans le champ magnétique : 𝑉(𝜆) = 2𝐿 . Nous allons
+calculer les valeurs des constantes de Verdet 𝑉(𝜆), et leurs incertitudes types 𝑢(𝑉(𝜆)) à partir des
+valeurs des coefficients directeurs 𝑘(𝜆) pour chaque longueur d’onde, en utilisant la longueur du
+barreau de Flint 𝐿 = 2,00 𝑐𝑚. Nous avons passé des semaines à demander au fournisseur 3b les
+informations relatives au barreau Flint, qu’on a fini par nous accorder : sa longueur est précise à
+𝑝4 = 2,5%, et les informations quant à son indice de réfraction : 𝑛(𝜆) = 1,62 +
+
+8920 𝑛𝑚²
+𝜆²
+
+.
+
+16
+
+𝑘(𝜆)
+
+𝑢(𝑘(𝜆))
+
+2
+
+𝑝
+
+2
+
+𝑒.𝑏
+
+1
+
+4
+On peut alors calculer 𝑉(𝜆) = 2𝐿 ; 𝑢(𝑉(𝜆)) = 𝑉(𝜆). √( 𝑘(𝜆) ) + (100
+. . Dans
+) , puis 𝑉(𝜆) =
+𝑚.𝑐 𝜆²
+
+l’expression de la constante de Verdet, les constantes empiriques extérieures à l’expérience directe
+𝑒
+sont celles de la vitesse de la lumière 𝑐, et de la charge spécifique de l’électron 𝑚. En sciences
+physiques au lycée, nous sommes trop souvent amenés à utiliser des valeurs « toutes prêtes » de
+ces constantes, sans toutefois savoir comment elles ont été déterminées. Pour les Olympiades,
+nous menons une démarche autodidacte et approfondie pour mener à bien notre projet ; c’est dans
+𝑒
+cette optique que nous avons décidé de déterminer expérimentalement la valeur du rapport 𝑚. Notre
+lycée a la chance de disposer d’un tube à déviation électronique, que nous avons utilisé pour la
+partie 13 du dossier
+annexe.
+Nous
+calculerons alors 𝑉(𝜆)
+cette valeur.
+Par manque de
+temps, nous n’avons
+pas encore déterminé
+𝑒
+𝑢 (𝑚), qui est dans
+notre liste de choses à
+faire !
+Dans 𝐵7 ∶
+𝑈(𝑉(𝜆))
+
+et dans 𝐷7 :
+
+Dans 𝐷7 :
+Dans 𝐻2 ∶ (avec conversion en °)
+
+Dans 𝐽2 (avec conversion en °) :
+Figure 33 : Feuille de calcul Excel pour les déterminations et comparaisons de 𝑉(𝜆).
+On remarque tout d’abord que lorsque la longueur d’onde diminue, l’incertitude relative sur
+le coefficient directeur est la plus élevée, puisque les mesures d’angles sont les plus faibles, donc
+les incertitudes types associées affectent davantage les mesures. Les valeurs de constantes de
+Verdet expérimentales ne permettent pas de retrouver la valeur attendue, même en tenant compte
+des incertitudes. Dressons une liste concise des incertitudes expérimentales principales.
+
+C. Incertitudes : exemple pour 𝝀 = 𝟓𝟑𝟐 𝒏𝒎 et 𝒅 = 𝟐, 𝟕 𝒄𝒎
+Estimation de l’incertitude relative
+Mesure…
+Descriptif succinct
+𝑢(𝐵𝑥 )
+Du champ Position du capteur, étalonnage de la SEH,
+~0,2
+magnétique lectures sur les appareils de mesure (𝐼, 𝑈𝑆𝐸𝐻 , 𝐵𝑥𝑟𝑒𝑓 )
+𝐵𝑥
+De l’angle
+Valeur affichée sur le Voltmètre, alignement des 𝑢(2𝜙) = 0,3° = 0,6 ou 0,3° = 0,02
+0,5°
+18°
+éléments sur l’axe, lumière résiduelle au minimum 2𝜙
+𝑢(𝐿)
+Position du Taille du barreau et position, qui affectent les
+= 0,025
+barreau
+valeurs de 𝐵𝑥 à considérer dans les calculs
+𝐿
+Regression Les 𝑘𝑖 sont censés tous être égaux (même cons- Incertitude type A sur les 𝑘𝑖 :
+linéaire
+tante physique), on évalue leur dispersion pour 𝑢 𝑢(𝑘 ) = 2×0,004 ⇒ 𝑢(𝑘𝑖 ) = 0,07
+𝑖
+𝑘
+√11
+
+𝑖
+
+L’incertitude relative sur la composante horizontale du champ magnétique 𝐵𝑥 est la plus
+importante, de l’ordre de 20 % ∶ c’est la principale source d’erreur systématique. Elle s’explique par
+la dépendance à l’étalonnage du capteur de la SEH, l’inhomogénéité du champ dans la région
+d’influence, et surtout la position du barreau, dont un léger décalage par rapport aux valeurs choisies
+𝑥 𝜖 [8,5 ; 10,5]𝑐𝑚 affecte les valeurs de 𝐵𝑥 effectivement à considérer.
+La précision de lecture de l’angle est satisfaisante puisque l’incertitude relative est inférieure
+à 10 %, pour des angles pas trop faibles. La longueur du barreau contribue faiblement à l’incertitude
+finale. L’incertitude relative de 7 % pour le coefficient directeur traduit une variabilité modérée entre
+les séries : la mesure est donc raisonnablement répétable, mais reste sensible aux fluctuations du
+champ magnétique et à la précision de lecture de l’angle. Il faudrait améliorer la mesure de 𝐵𝑥 pour
+réduire l’incertitude globale.
+
+17
+
+VI) Pour aller plus loin
+A. Comparaisons à des valeurs
+tabulées
+La loi de Cauchy permet de calculer
+l’indice de réfraction du Flint (données
+8920 𝑛𝑚²
+
+fournisseur) : 𝑛(633) = 1,62 + 633² = 1,64.
+La lettre « F » désigne un verre de type Flint, et
+(« SF » un Flint dense). D’après le « Handbook
+of optical materials », page 259, la ligne
+correspondante pourrait être celle de SF2.
+Figure 34 : extrait du « Handbook », page 259
+On évalue la constante de Verdet à 𝜆 = 633 𝑛𝑚 pour nos mesures expérimentales d’après
+la figure 32 en utilisant la régression linéaire :
+𝑘(633 𝑛𝑚) =
+
+1,00×10−14
+𝜆2
+
+1,00×10−14
+
+− 0,0079 = (633×10−9)2 − 0,0079 = 0,0171 °. (𝑚𝑇)−1.
+
+On a vu précédemment que 𝑢(𝑘650𝑛𝑚 ) = 0,002°. (𝑚𝑇)−1 (même valeur pour 𝜆 = 532 𝑛𝑚) on
+va donc considérer que 𝑢(𝑘633𝑛𝑚 ) = 0,002°. (𝑚𝑇)−1
+𝑘(633 𝑛𝑚) =
+
+0,0171×(10−3 )
+
+Puisque 𝑉(633 𝑛𝑚) =
+
+−1
+
+×𝜋
+
+180
+𝑘(633 𝑛𝑚)
+2𝐿
+
+𝑟𝑎𝑑. 𝑇 −1 = 0,298 𝑟𝑎𝑑. 𝑇 −1 ; 𝑢(𝑘633𝑛𝑚 ) = 0,04 𝑟𝑎𝑑. (𝑚𝑇)−1
+0,30 𝑟𝑎𝑑.𝑇 −1
+
+alors : 𝑉(633 𝑛𝑚) = 2×2,00×10−2𝑚 = 7,5 𝑟𝑎𝑑. (𝑇. 𝑚)−1
+
+0,04 2
+
+𝑢(𝑉(633 𝑛𝑚)) = 7,5 × √(0,30) + 0,025² ≈ 1,02 ≈ 2 𝑟𝑎𝑑. (𝑇. 𝑚)−1 arrondi à l’excès.
+Donc 6 ≤ 𝑉(633 𝑛𝑚)(𝑟𝑎𝑑. (𝑇. 𝑚)−1 ) ≤ 10.
+La valeur attendue étant 𝑉𝑎𝑡𝑡 (633 𝑛𝑚) = 11,6 𝑟𝑎𝑑. (𝑇. 𝑚)−1, les résultats expérimentaux ne
+permettent pas de vérifier la valeur attendue. Nous n’avons pas la certitude que le barreau utilisé
+correspond exactement au verre SF2 du tableau. Même si l’indice de réfraction est égal (aux chiffres
+significatifs près), une différence de composition chimique ou de dispersion peut affecter la valeur
+1
+de la constante de Verdet. On se souvient aussi de la non-linéarité de 𝑘 = 𝑓 ( 2 ) (partie V) A.), ce
+𝜆
+qui ne correspondait pas à l’expression. Une hypothèse serait l’existence d’un modèle différent.
+
+B. Un autre modèle ?
+
+𝑘(𝜆)
+
+1
+
+Figure 35 : 2𝐿.𝑃(𝜆) = 𝑓 (𝜆2 −𝜆2)
+Le « Handbook » indique le modèle de la « loi de Becquerel » pour exprimer
+la constante0de
+Verdet, valable « loin des résonances », dont
+𝑉(𝜆) = 𝜆 .
+
+𝑛(𝜆)
+
+𝐵
+
+. (𝐴 + 𝜆2 −𝜆2).
+0
+
+Pour une longueur d’onde donnée, la constante de
+Verdet dépend donc de la dispersion optique 𝑛(𝜆),
+et d’une résonnance électronique dont la longueur
+d’onde caractéristique est 𝜆0 . 𝐴 et 𝐵 Sont des
+constantes
+empiriques,
+déterminées
+par
+l’expérience (respectivement contribution de fond
+et contribution résonante). Les documents que
+nous avons consultés suggèrent une résonnance
+électronique dans le domaine des UV pour les
+verres de type Flint. On remarque donc que :
+
+3,00E-06
+2,50E-06
+
+k/(2LP(λ)) = f(1/(λ² - λ0²))
+
+2,00E-06
+1,50E-06
+2,0E+12
+
+y = 3E-19x + 8E-07
+R² = 0,9931
+
+1/(λ² - λ0²) (m^-2)
+4,0E+12
+
+6,0E+12
+
+𝜋 𝑛(𝜆)2 −1
+
+𝐵
+
+𝑉(𝜆) = 𝑃(𝜆). (𝐴 + 𝜆2 −𝜆2 ), avec 𝑃(𝜆) = 𝜆 .
+0
+
+𝑘(𝜆)
+
+3,50E-06
+
+k/(2LP(λ))
+
+𝜋 𝑛(𝜆)2 −1
+
+l’expression est :
+
+𝐵
+
+𝑛(𝜆)
+
+𝐵
+
+. Donc : 𝑘(𝜆) = 2𝐿. 𝑉(𝜆) = 2𝐿. 𝑃(𝜆). (𝐴 + 𝜆2 −𝜆2), .
+0
+
+𝑘(𝜆)
+
+1
+
+Soit finalement : 2𝐿.𝑃(𝜆) = (𝐴 + 𝜆2 −𝜆2 ) Sous Excel, on calcule2𝐿.𝑃(𝜆) dans une colonne, et 𝜆2 −𝜆2 dans
+0
+
+0
+
+𝑘(𝜆)
+
+1
+
+une autre colonne (on fixe 𝜆0 = 134,6 𝑛𝑚). Le modèle affine convient au tracé 2𝐿.𝑃(𝜆) = 𝑓(𝜆2−𝜆2 ) étant
+0
+
+donné le coefficient de détermination proche de 1, ce qui confirme que nos résultats expérimentaux
+sont mieux modélisés par cette loi. Ainsi : 𝐴 = 8 × 10−7 𝑟𝑎𝑑. 𝑇 −1 ; 𝐵 = 3 × 10−19 𝑟𝑎𝑑. 𝑚². 𝑇 −1 ; ce qui
+est proche des valeurs tabulées, respectivement 7,02 × 10−7 𝑟𝑎𝑑. 𝑇 −1 et 5,7 × 10−19 𝑟𝑎𝑑. 𝑚2 . 𝑇 −1 .
+Ceci met en évidence que la rotation du plan de polarisation suit une résonnance dans l’ultraviolet.
+
+18
+
+C. Une application de l’effet magnéto – optique : l’isolateur optique
+Pour prolonger notre étude, nous nous sommes intéressés à une application pratique : le
+rotateur magnéto-optique (de Faraday). Il met à profit la rotation du plan de polarisation pour créer
+un dispositif essentiel dans le domaine des technologies photoniques modernes : l’isolateur optique.
+Nous passons donc de la lumière « sous influence » à la lumière « maîtrisée » !
+Pour comprendre et illustrer ce phénomène, réutilisons le dispositif expérimental pour
+montrer qu’un faisceau lumineux réfléchi dans le sens inverse de la propagation initiale n’est plus
+transmis : la lumière passe donc dans un seul sens. Imaginons le cas où le dispositif provoque une
+rotation du plan de polarisation d’une lumière polarisée rectilignement d’un angle 𝛾1 = 45,0° à l’issue
+de sa traversée du milieu utilisé. Si ce faisceau est réfléchi et se propage à nouveau dans le
+dispositif, il subira de nouveau une rotation du plan de polarisation du même angle 𝛾2 = 45,0°. Ainsi,
+l’angle de rotation du plan de polarisation total vaut : 𝛾 = 𝛾1 + 𝛾2 = 90,0°, et sera ainsi bloqué par le
+premier polariseur, étant donné les directions orthogonales des deux plans de polarisation.
+Figure 36 : schéma de
+principe de l’isolateur
+optique par effet
+magnéto – optique
+
+Nous avons pu visiter l’Institut d’Optique du laboratoire Charles Fabry à Palaiseau pour voir
+différents isolateurs optiques et leurs applications concrètes dans les travaux de recherches menés
+par M. CHENEAU le vendredi 21 novembre 2025. Nous le remercions !
+Nous avons vu des montages où une vingtaine d’isolateurs optiques sont systématiquement
+utilisés pour éviter des retours parasites de la lumière lors de sa propagation vers la source laser.
+Cela permet de ne pas perturber son fonctionnement : M. CHENEAU a pris comme exemple visuel
+le fait que si la lumière revenait à la source, c’est un peu comme si deux personnes voulaient faire
+osciller le même objet en effectuant des gestes excitateurs différents ! Il s’agit aussi de protéger la
+source contre sa propre puissance (50𝑊 pour certains lasers, contre 1 𝑚𝑊 pour les nôtres !).
+
+Figure 37 : photographies des isolateurs optiques de l’Institut Optique à Palaiseau
+Ainsi, l’isolateur optique illustre parfaitement comment un phénomène physique
+fondamental, ici l’effet magnéto-optique, peut être exploité pour répondre à une contrainte
+technologique majeure : imposer un sens unique de propagation à la lumière.
+Contrairement aux dispositifs optiques usuels, le rotateur de Faraday présente un caractère
+non réciproque : la rotation du plan de polarisation est indépendante du sens de propagation du
+faisceau lumineux. Cette propriété permet de bloquer efficacement toute lumière réfléchie vers la
+source, protégeant ainsi les lasers des retours parasites susceptibles de perturber leur
+fonctionnement ou d’endommager leurs composants.
+À travers l’isolateur optique, la lumière n’est plus seulement « sous emprise » d’un champ
+magnétique : elle est contrôlée, orientée et sécurisée par l’exploitation maîtrisée des lois de la
+physique. Ce dispositif constitue ainsi une transition emblématique entre l’étude des interactions
+lumière-matière et leur mise en œuvre technologique au service de la recherche scientifique.
+
 19
 
-Notre dÃ©marche a consistÃ© Ã  comprendre, modÃ©liser et mesurer le pouvoir rotatoire 
-magnÃ©tique induit, ou effet magnÃ©to-optique, sur un Ã©chantillon de Flint. 
-La mesure du champ magnÃ©tique avec une sonde Ã  effet Hall unique, ainsi que les valeurs dâ±angles 
-de rotation de polarisation de la lumiÃ¨re se propageant dans la mÃªme direction que le champ 
-magnÃ©tique ont permis de montrer la proportionnalitÃ© entre ces grandeurs. Si le modÃ¨le simplifiÃ© que 
-nous avons dÃ©montrÃ© prÃ©disait une dÃ©pendance Ã  lâ±inverse du carrÃ© de la longueur dâ±onde, nos 
-mesures ont rÃ©vÃ©lÃ© un lÃ©ger Ã©cart, montrant quâ±un modÃ¨le plus Ã©laborÃ© introduisant une rÃ©sonance 
-Ã©lectronique et une dispersion optique dÃ©crivait mieux les mesures.  
-Le champ magnÃ©tique a rÃ©vÃ©lÃ© ceux qui, tapis au cÅur de la matiÃ¨re, en font ses propriÃ©tÃ©s : les 
-Ã©lectrons. Dans leur folle prÃ©cession, sous lâ±effet dâ±un audacieux champ magnÃ©tique, ces derniers 
-provoquent une diffÃ©rence dâ±indice de rÃ©fraction du matÃ©riau, ce qui engendre les rotations observÃ©es. 
-Enfin, câ±est avec lâ±isolateur optique que ce phÃ©nomÃ¨ne prend tout son sens, permettant une 
-propagation non rÃ©ciproque de la lumiÃ¨re pour protÃ©ger de rÃ©flexions parasites. 
-Ceci nâ±est pas la fin de notre projet, mais le dÃ©but dâ±un tout nouveau ; nous envisageons de poursuivre 
-de notre Ã©tude Ã  de nouveaux matÃ©riaux (huile dâ±olive, autres types de verre, â¦), puisque nos 
-procÃ©dures sont dÃ©jÃ  en place, et mettre en Åuvre le dispositif dâ±isolateur optique.  
-On a coutume de dire que la nature a horreur du vide.  
-La lumiÃ¨re aussi ! Câest en interagissant avec la matiÃ¨re quâelle en rÃ©vÃ¨le les plus 
-insoupÃ§onnables propriÃ©tÃ©s, faÃ§onnant ainsi toute sa singularitÃ©. 
- 
- 
- 
-LâÃ©quipe Ã  lâInstitut optique de Palaiseau â  
-KHAN BEGUM Luqman      BRUNET Damien 
-LAVAKUMAR Baannuhan   HIRECHE Mirina 
-         CAPATÃNA Alexa     DHIEB InÃ¨s     
- 
- 
-CROS Indy, professeur encadrant 
- 
-LycÃ©e EugÃ¨ne Delacroix, Drancy (93)
+Notre démarche a consisté à comprendre, modéliser et mesurer le pouvoir rotatoire
+magnétique induit, ou effet magnéto-optique, sur un échantillon de Flint.
+La mesure du champ magnétique avec une sonde à effet Hall unique, ainsi que les valeurs d’angles
+de rotation de polarisation de la lumière se propageant dans la même direction que le champ
+magnétique ont permis de montrer la proportionnalité entre ces grandeurs. Si le modèle simplifié que
+nous avons démontré prédisait une dépendance à l’inverse du carré de la longueur d’onde, nos
+mesures ont révélé un léger écart, montrant qu’un modèle plus élaboré introduisant une résonance
+électronique et une dispersion optique décrivait mieux les mesures.
+Le champ magnétique a révélé ceux qui, tapis au cœur de la matière, en font ses propriétés : les
+électrons. Dans leur folle précession, sous l’effet d’un audacieux champ magnétique, ces derniers
+provoquent une différence d’indice de réfraction du matériau, ce qui engendre les rotations observées.
+Enfin, c’est avec l’isolateur optique que ce phénomène prend tout son sens, permettant une
+propagation non réciproque de la lumière pour protéger de réflexions parasites.
+Ceci n’est pas la fin de notre projet, mais le début d’un tout nouveau ; nous envisageons de poursuivre
+de notre étude à de nouveaux matériaux (huile d’olive, autres types de verre, …), puisque nos
+procédures sont déjà en place, et mettre en œuvre le dispositif d’isolateur optique.
+On a coutume de dire que la nature a horreur du vide.
+La lumière aussi ! C’est en interagissant avec la matière qu’elle en révèle les plus
+insoupçonnables propriétés, façonnant ainsi toute sa singularité.
+
+L’équipe à l’Institut optique de Palaiseau →
+KHAN BEGUM Luqman BRUNET Damien
+LAVAKUMAR Baannuhan HIRECHE Mirina
+CAPATÎNA Alexa DHIEB Inès
+CROS Indy, professeur encadrant
+Lycée Eugène Delacroix, Drancy (93)
+
+
