@@ -228,7 +228,10 @@ function changelotcadeau(sel, idlot, type) {
 
     console.log(sel.value)
     var numlot = sel.value;
-    var url = '/cadeaux/changecadeau'
+    var url = '/public/index.php/cadeaux/changecadeau'
+    if (window.location.href.includes('localhost')) {
+        url = '/cadeaux/changecadeau'
+    }
     //formIsDirty = true;
     $.ajax({
         url: url,
@@ -253,7 +256,10 @@ function changecontenucadeau(cont, idlot, type) {
 
     console.log(cont.value)
     var contenu = cont.value;
-    var url = '/cadeaux/changecadeau'
+    var url = '/public/index.php/cadeaux/changecadeau';
+    if (window.location.href.includes('localhost')) {
+        url = '/cadeaux/changecadeau'
+    }
     //formIsDirty = true;
     $.ajax({
         url: url,
@@ -279,7 +285,10 @@ function changeequipecadeau(eq, idlot, type) {
     console.log(eq.value)
     var idEquipe = eq.value;
 
-    var url = '/cadeaux/changecadeau'
+    var url = '/public/index.php/cadeaux/changecadeau'
+    if (window.location.href.includes('localhost')) {
+        url = '/cadeaux/changecadeau'
+    }
     $.ajax({
         url: url,
         type: "PATCH",//Pour que la requête de déclanche pas l'erreur MethodNotAllowedHttpException
@@ -304,7 +313,10 @@ function changefournisseurcadeau(four, idlot, type) {
     console.log(four.value)
     var fournisseur = four.value;
 
-    var url = '/cadeaux/changecadeau'
+    var url = '/public/index.php/cadeaux/changecadeau'
+    if (window.location.href.includes('localhost')) {
+        url = '/cadeaux/changecadeau'
+    }
     //formIsDirty = true;
     $.ajax({
         url: url,
@@ -330,7 +342,10 @@ function changemontantcadeau(mont, idlot, type) {
 
     console.log(mont.value)
     var montant = mont.value;
-    var url = '/cadeaux/changecadeau'
+    var url = '/public/index.php/cadeaux/changecadeau'
+    if (window.location.href.includes('localhost')) {
+        url = '/cadeaux/changecadeau'
+    }
     //formIsDirty = true;
     $.ajax({
         url: url,
@@ -355,7 +370,10 @@ function changeraccourcicadeau(rac, idlot, type) {//change le raccourci d'un lot
 
     console.log(rac.value)
     var raccourci = rac.value;
-    var url = '/cadeaux/changecadeau'
+    var url = '/public/index.php/cadeaux/changecadeau'
+    if (window.location.href.includes('localhost')) {
+        url = '/cadeaux/changecadeau'
+    }
     //formIsDirty = true;
     $.ajax({
         url: url,
