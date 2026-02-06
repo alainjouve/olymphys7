@@ -58,14 +58,23 @@
                                     <img class="d-block w-100"
                                          src="{{ asset('odpf/odpf-archives/'~photo.equipe.edition.ed~'/photoseq/'~photo.photo) }}"
                                          alt="{{ photo.photo }}">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>{{ photo.coment }}</p>
+                                    </div>
                                 </div>
+
                             {% endif %}
                             {% if i>0 %}
                                 <div class="carousel-item">
                                     <img class="d-block w-100"
                                          src="{{ asset('odpf/odpf-archives/'~photo.equipe.edition.ed~'/photoseq/'~photo.photo) }}"
-                                         alt="{{ photo.photo }}"></div>
+                                         alt="{{ photo.photo }}">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>{{ photo.coment }}</p>
+                                    </div>
+                                </div>
                             {% endif %}
+
                             {% set  i = i + 1 %}
                         {% endfor %}
                     </div>

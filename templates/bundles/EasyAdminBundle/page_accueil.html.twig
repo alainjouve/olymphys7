@@ -64,7 +64,14 @@
     <a href="{{ urlmemoiresnat }}" type="button" class="btn btn-primary">Les mémoires</a>
     <a href="{{ urlresumesnat }}" type="button" class="btn btn-primary">Les résumés</a>
     <a href="{{ urlphotosnat }}" type="button" class="btn btn-primary">Les photos</a><br>
-   {#  <hr>
+    <hr>
+    {% set urlcadeauxnat = ea_url()
+        .setDashboard('App\\Controller\\Admin\\DashboardController')
+        .setController('App\\Controller\\Admin\\CadeauxCrudController')
+        .set('concours','national')
+        .setAction('index') %}
+    <a href="{{ urlcadeauxnat }}" type="button" class="btn btn-warning">Les cadeaux</a>
+    {#  <hr>
     <a href="{{ path('invitations_cn') }}" type="button" class="btn btn-warning">Créer une invitation pour le concours
         national</a><br>
     <hr>

@@ -31,6 +31,9 @@ class Cadeaux
     #[ORM\Column(nullable: true)]
     private ?bool $attribue = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $lot = null;
+
 
     public function __toString()
     {
@@ -136,6 +139,18 @@ class Cadeaux
     public function setAttribue(?bool $attribue): static
     {
         $this->attribue = $attribue;
+
+        return $this;
+    }
+
+    public function getLot(): ?int
+    {
+        return $this->lot;
+    }
+
+    public function setLot(?int $lot): static
+    {
+        $this->lot = $lot;
 
         return $this;
     }
