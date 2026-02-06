@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Controller\Admin\DashboardController;
 use App\Entity\Cadeaux;
 use App\Entity\Edition;
 use App\Entity\Equipes;
@@ -27,12 +28,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
-use Mpdf\PsrHttpMessageShim\Request;
-use PhpOffice\PhpSpreadsheet\Calculation\Logical\Boolean;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -43,6 +43,64 @@ class CadeauxCrudController extends AbstractCrudController
     public function __Construct(protected EntityManagerInterface $doctrine, protected RequestStack $requestStack, protected AdminUrlGenerator $adminUrlGenerator)
     {
 
+    }
+
+    #[Route("/admin/cadeaux/next/{id}", name: "admin_cadeaux_next")]
+    public function nextCadeau(Cadeaux $cadeau): Response
+    {
+        $nextCadeau = $this->doctrine->getRepository(Cadeaux::class)->createQueryBuilder('c')
+            ->where('c.montant < :montant')
+            ->setParameter('montant', $cadeau->getmontant())
+            ->orderBy('c.montant', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        if (!$nextCadeau) {
+            $nextCadeau = $this->doctrine->getRepository(Cadeaux::class)->createQueryBuilder('c')
+                ->orderBy('c.montant', 'DESC')
+                ->setMaxResults(1)
+                ->getQuery()
+                ->getOneOrNullResult();
+        }
+
+        $url = $this->adminUrlGenerator
+            ->setDashboard(DashboardController::class)
+            ->setController(self::class)
+            ->setAction(Action::EDIT)
+            ->setEntityId($nextCadeau->getId())
+            ->generateUrl();
+
+        return $this->redirect($url);
+    }
+
+    #[Route("/admin/cadeaux/prev/{id}", name: "admin_cadeaux_prev")]
+    public function prevCadeau(Cadeaux $cadeau): Response
+    {
+        $prevCadeau = $this->doctrine->getRepository(Cadeaux::class)->createQueryBuilder('c')
+            ->where('c.montant > :montant')
+            ->setParameter('montant', $cadeau->getmontant())
+            ->orderBy('c.montant', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        if (!$prevCadeau) {
+            $prevCadeau = $this->doctrine->getRepository(Cadeaux::class)->createQueryBuilder('c')
+                ->orderBy('c.montant', 'ASC')
+                ->setMaxResults(1)
+                ->getQuery()
+                ->getOneOrNullResult();
+        }
+
+        $url = $this->adminUrlGenerator
+            ->setDashboard(DashboardController::class)
+            ->setController(self::class)
+            ->setAction(Action::EDIT)
+            ->setEntityId($prevCadeau->getId())
+            ->generateUrl();
+
+        return $this->redirect($url);
     }
 
     public static function getEntityFqcn(): string
@@ -61,7 +119,8 @@ class CadeauxCrudController extends AbstractCrudController
         return $crud->showEntityActionsInlined()
             ->setPageTitle('edit', 'Modifier le lot n° ' . $cadeau)
             ->setFormOptions(['attr' => ['id' => 'edit-Cadeaux-form']])
-            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',])
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',
+                'crud/edit' => 'bundles/EasyAdminBundle/editCadeaux.html.twig'])
             ->setEntityLabelInSingular('Cadeau')
             ->setEntityLabelInPlural('Cadeaux')
             ->setSearchFields(['lot', 'contenu', 'fournisseur', 'montant', 'raccourci']);
@@ -154,11 +213,10 @@ class CadeauxCrudController extends AbstractCrudController
                 'attr' => ['onchange' => $onchange['fournisseur']],
             ]),
             $montant = MoneyField::new('montant')->setFormTypeOptions([
-
-                'attr' => ['onchange' => $onchange['montant']],
-
+                'attr' => ['onchange' => $onchange['montant'], 'style' => 'width: 50px'],
             ])
-                ->setCurrency('EUR'),
+                ->setCurrency('EUR')
+                ->setStoredAsCents(false),
             $raccourci = TextField::new('raccourci')->setFormTypeOptions([
 
                 'attr' => ['onchange' => $onchange['raccourci']],
@@ -207,19 +265,22 @@ class CadeauxCrudController extends AbstractCrudController
         }
 
         $ligne = 1;
-        $sheet->setCellValue('A' . $ligne, 'contenu')
-            ->setCellValue('B' . $ligne, 'fournisseur')
+        $sheet->setCellValue('A' . $ligne, 'Num lot')
+            ->setCellValue('B' . $ligne, 'equipe')
+            ->setCellValue('F' . $ligne, 'contenu')
+            ->setCellValue('D' . $ligne, 'fournisseur')
             ->setCellValue('C' . $ligne, 'montant')
-            ->setCellValue('D' . $ligne, 'equipe')
-            ->setCellValue('E' . $ligne, 'raccourci');
+            ->setCellValue('E' . $ligne, 'raccourci');;
 
 
         $ligne += 1;
         foreach ($listeCadeaux as $cadeau) {
-            $sheet->setCellValue('A' . $ligne, $cadeau->getContenu())
-                ->setCellValue('B' . $ligne, $cadeau->getFournisseur())
+
+            $sheet->setCellValue('A' . $ligne, $cadeau->getLot())
+                ->setCellValue('B' . $ligne, $cadeau->getEquipe())
+                ->setCellValue('F' . $ligne, $cadeau->getContenu())
+                ->setCellValue('D' . $ligne, $cadeau->getFournisseur())
                 ->setCellValue('C' . $ligne, $cadeau->getMontant() . ' €')
-                ->setCellValue('D' . $ligne, $cadeau->getEquipe())
                 ->setCellValue('E' . $ligne, $cadeau->getRaccourci());
 
             $ligne += 1;
