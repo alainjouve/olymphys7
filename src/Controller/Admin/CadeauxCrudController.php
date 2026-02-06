@@ -23,6 +23,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -152,10 +153,12 @@ class CadeauxCrudController extends AbstractCrudController
 
                 'attr' => ['onchange' => $onchange['fournisseur']],
             ]),
-            $montant = NumberField::new('montant')->setFormTypeOptions([
+            $montant = MoneyField::new('montant')->setFormTypeOptions([
 
                 'attr' => ['onchange' => $onchange['montant']],
-            ]),
+
+            ])
+                ->setCurrency('EUR'),
             $raccourci = TextField::new('raccourci')->setFormTypeOptions([
 
                 'attr' => ['onchange' => $onchange['raccourci']],
@@ -270,11 +273,9 @@ class CadeauxCrudController extends AbstractCrudController
         }
         if ($type == 'equipe') {
             $idEquipe = $request->request->get('idEquipe');
-            dump($idEquipe);
             $equipe = null;
             if ($idEquipe != null) {
                 $equipe = $this->doctrine->getRepository(Equipes::class)->find(intval($idEquipe));
-                
             }
             $cadeau->setEquipe($equipe);
         }
@@ -303,80 +304,5 @@ class CadeauxCrudController extends AbstractCrudController
         return $this->redirect($url);
     }
 
-    #[Route("/cadeaux/changeequipe", name: "changeequipe")]
-    public function changeequipe(\Symfony\Component\HttpFoundation\Request $request)//: Response
-    {
-        $idlot = $request->request->get('idlot');
-        $idEquipe = $request->request->get('idEquipe');
-        $cadeau = $this->doctrine->getRepository(Cadeaux::class)->find($idlot);
-        $equipe = $this->doctrine->getRepository(Equipes::class)->find($idEquipe);
-        $cadeau->setEquipe($equipe);
-        $this->doctrine->persist($cadeau);
-        $this->doctrine->flush();
 
-        $url = $this->adminUrlGenerator->setAction(Action::EDIT)
-            ->setDashboard(DashboardController::class)
-            ->setController(CadeauxCrudController::class)
-            ->setEntityId($idlot)
-            ->generateUrl();
-
-        return $this->redirect($url);
-    }
-
-    #[Route("/cadeaux/changefournisseur", name: "changefournisseur")]
-    public function changefournisseur(\Symfony\Component\HttpFoundation\Request $request)//: Response
-    {
-        $idlot = $request->request->get('idlot');
-        $fournisseur = $request->request->get('fournisseur');
-        $cadeau = $this->doctrine->getRepository(Cadeaux::class)->find($idlot);
-        $cadeau->setFournisseur($fournisseur);
-        $this->doctrine->persist($cadeau);
-        $this->doctrine->flush();
-
-        $url = $this->adminUrlGenerator->setAction(Action::EDIT)
-            ->setDashboard(DashboardController::class)
-            ->setController(CadeauxCrudController::class)
-            ->setEntityId($idlot)
-            ->generateUrl();
-
-        return $this->redirect($url);
-    }
-
-    #[Route("/cadeaux/changemontant", name: "changemontant")]
-    public function changemontant(\Symfony\Component\HttpFoundation\Request $request)//: Response
-    {
-        $idlot = $request->request->get('idlot');
-        $montant = $request->request->get('montant');
-        $cadeau = $this->doctrine->getRepository(Cadeaux::class)->find($idlot);
-        $cadeau->setMontant($montant);
-        $this->doctrine->persist($cadeau);
-        $this->doctrine->flush();
-
-        $url = $this->adminUrlGenerator->setAction(Action::EDIT)
-            ->setDashboard(DashboardController::class)
-            ->setController(CadeauxCrudController::class)
-            ->setEntityId($idlot)
-            ->generateUrl();
-
-        return $this->redirect($url);
-    }
-
-    #[Route("/cadeaux/changeraccourci", name: "changeraccourci")]
-    public function changeraccourci(\Symfony\Component\HttpFoundation\Request $request)//: Response
-    {
-        $idlot = $request->request->get('idlot');
-        $raccourci = $request->request->get('raccourci');
-        $cadeau = $this->doctrine->getRepository(Cadeaux::class)->find($idlot);
-        $cadeau->setRaccourci($raccourci);
-        $this->doctrine->persist($cadeau);
-        $this->doctrine->flush();
-
-        $url = $this->adminUrlGenerator->setAction(Action::EDIT)
-            ->setDashboard(DashboardController::class)
-            ->setController(CadeauxCrudController::class)
-            ->setEntityId($idlot)
-            ->generateUrl();
-
-        return $this->redirect($url);
-    }
 }
