@@ -375,7 +375,7 @@ class AdminsiteCrudController extends AbstractCrudController
 
         $metaData = $pdf->getDetails();
         $texte = $pdf->getText();
-        $cleanedText = mb_convert_encoding($texte, 'UTF-8', 'ISO-8859-1');
+        $cleanedText = mb_convert_encoding($texte, 'UTF-8');
         $fichiertexte = fopen($repertoire . $nomFichier . '.txt', 'w');
         fwrite($fichiertexte, $cleanedText);
         fclose($fichiertexte);
