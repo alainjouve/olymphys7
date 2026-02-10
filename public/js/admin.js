@@ -10,7 +10,7 @@ window.onload = function () {
             //$(sizeFile[1]).html(inputFile.files[0].size);
         })
     }
-    if (document.getElementById('edit-Cadeaux-form')) {
+    if (document.getElementById('edit-Cadeaux-form')) {//empêche le message d'avertissement lorsqu'on quitte le formulaire
         //window.removeEventListener('beforeunload', warnOnLeave);
         //formIsDirty = true;
         window.addEventListener('beforeunload', (event) => {
@@ -20,6 +20,18 @@ window.onload = function () {
 
         // Désactive l'avertissement natif d'EasyAdmin 3+
         document.getElementById('edit-Cadeaux-form').classList.remove('ea-edit-form', 'ea-new-form');
+
+    }
+    if (document.getElementById('new-Cadeaux-form')) {
+        //window.removeEventListener('beforeunload', warnOnLeave);
+        //formIsDirty = true;
+        window.addEventListener('beforeunload', (event) => {
+            event.stopImmediatePropagation();
+        }, true);
+        window.onbeforeunload = null;
+
+        // Désactive l'avertissement natif d'EasyAdmin 3+
+        document.getElementById('new-Cadeaux-form').classList.remove('ea-edit-form', 'ea-new-form');
 
     }
 }
@@ -381,6 +393,33 @@ function changeraccourcicadeau(rac, idlot, type) {//change le raccourci d'un lot
         data: {
             idlot: idlot,
             raccourci: raccourci,
+            type: type
+        },
+        success: function () {
+            window.location.reload();
+        },
+
+        error: function (data) {
+            alert("Error while submitting Data");
+        },
+
+    })
+}
+
+function changenewcadeau(item, type) {//change le raccourci d'un lot de cadeau
+
+    console.log(item.value)
+    var valeur = item.value;
+    var url = '/public/index.php/cadeaux/newcadeau'
+    if (window.location.href.includes('localhost')) {
+        url = '/cadeaux/newcadeau'
+    }
+    //formIsDirty = true;
+    $.ajax({
+        url: url,
+        type: "PATCH",//Pour que la requête ne déclenche pas l'erreur MethodNotAllowedHttpException
+        data: {
+            valeur: valeur,
             type: type
         },
         success: function () {
