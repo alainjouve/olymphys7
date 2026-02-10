@@ -6,14 +6,15 @@
 {% block content_title %}
 
     {%- apply spaceless -%}
-        <a href="{{ path('admin_cadeaux_prev', {id: entity.instance.id}) }}" class="btn btn-link pr-0">Précédent<i
-                    class="fas fa-chevron-left fa-2x" title="Lot cadeau précédent"></i></a>
+
         {% set custom_page_title = ea.crud.customPageTitle(pageName, entity ? entity.instance : null) %}
         {{ custom_page_title is null
         ? 'Edition d\'un lot de cadeaux'
-        : custom_page_title|raw }}
-        <a href="{{ path('admin_cadeaux_next', {id: entity.instance.id}) }}" class="btn btn-link pl-0"><i
-                    class="fas fa-chevron-right fa-2x" title="Lot cadeau suivant"></i>Suivant</a>
+        : custom_page_title|raw }}<br>
+        <a href="{{ path('admin_cadeaux_prev', {id: entity.instance.id}) }}" class="btn btn-secondary pr-0"><i
+                    class="fas fa-chevron-left fa-2x" title="Lot cadeau précédent"></i>Précédent</a>
+        <a href="{{ path('admin_cadeaux_next', {id: entity.instance.id}) }}" class="btn btn-secondary pl-0">Suivant<i
+                    class="fas fa-chevron-right fa-2x" title="Lot cadeau suivant"></i></a>
     {%- endapply -%}
 
 {% endblock %}
