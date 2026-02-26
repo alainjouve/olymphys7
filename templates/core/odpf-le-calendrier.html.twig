@@ -16,10 +16,10 @@
             <li>dépôt du mémoire (pdf), du résumé, des autorisations photos&nbsp; ainsi que de la fiche matériel et
                 sécurité (doc) sur le site Olymphys, dans l'espace du Professeur, avant
                 le <b>{{ date(app.session.get('edition').datelimcia)|date('j ') }}
-                    novembre {{ date(app.session.get('edition').datelimcia)|date('Y') }}(22 h, heure de Paris)</b></li>
+                    novembre {{ date(app.session.get('edition').datelimcia)|date('Y') }} (22 h, heure de Paris)</b></li>
         </ul>
     </li>
-    <li>avant le concours inter académique&nbsp;: compléter les documents d'inscription (adresses...)</li>
+    <li>avant le concours interacadémique&nbsp;: compléter les documents d'inscription (adresses...)</li>
     <li><strong>Mercredi {{ date(app.session.get('edition').concourscia)|date('j') }}
             décembre {{ date(app.session.get('edition').concourscia)|date('Y') }}</strong> : concours interacadémiques
     </li>
@@ -36,7 +36,7 @@
     </li>
 
     {# #}
-    <li><strong>Vendredi {{ date(app.session.get('edition').date)|date('j') }} et
+    <li><strong>Vendredi {{ date(app.session.get('edition').date|date_modify("-1 day"))|date('j') }} et
             samedi {{ date(app.session.get('edition').concourscn)|date('j') }}
             {% if date(app.session.get('edition').concourscn)|date('m') == 1 %}
                 janvier
@@ -48,6 +48,7 @@
 
 </ul>
 <p><strong>DATES LIMITES</strong></p>
+
 <ul>
     <li>{{ date(app.session.get('edition').datelimcia)|date('j') }}
         novembre {{ date(app.session.get('edition').datelimcia)|date('Y') }} 22h (heure de Paris) : dépôt sur Olymphys,
