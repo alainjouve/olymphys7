@@ -29,7 +29,7 @@ class OdpfCreateArray
 
         try {
             $edition = $this->requestStack->getSession()->get('edition');
-            $ouvertes = 'sont ouvertes';
+            $ouvertes = 'sont ouvertes sur la plateforme Adage';
             $inscrip = true;
             if ($edition->getDateOuvertureSite() > new \DateTime('now')) {
                 $ouvertes = 'ne sont pas encore ouvertes';
@@ -50,8 +50,8 @@ class OdpfCreateArray
 
 
         $article = $repo->findOneBy(['choix' => $choix]);
-        if ($choix=='edition'){
-            $article=$this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' =>$this->requestStack->getSession()->get('edition')->getEd()-1])->getArticle();
+        if ($choix == 'edition') {
+            $article = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $this->requestStack->getSession()->get('edition')->getEd() - 1])->getArticle();
 
 
         }
@@ -59,11 +59,12 @@ class OdpfCreateArray
         $texte = $article->getTexte();
         if ($choix == 'inscriptions') {
             //Afin que le lien fonctionne en local pour les essais et sur le serveur
-            if ($_SERVER['SERVER_NAME'] == '127.0.0.1' or $_SERVER['SERVER_NAME'] == 'localhost') {
+            /*if ($_SERVER['SERVER_NAME'] == '127.0.0.1' or $_SERVER['SERVER_NAME'] == 'localhost') {
                 $path = '/Utilisateur/inscrire_equipe,x';
             } else {
                 $path = '/public/index.php/Utilisateur/inscrire_equipe,x';
-            }
+            }*/
+            $path = 'https://adage-pr.phm.education.gouv.fr/adage/';
             //La première ligne de la page les inscriptions est remplie automatiquement selon la date
             if ($inscrip) {
                 $texte = '<p><span style="color:#ff0000; font-size:12pt"><a href="' . $path . '" target="_blank" title="Inscrire une équipe">Les inscriptions ' . $ouvertes . '</a></span><span style="font-size:12pt">.</span></p>'
