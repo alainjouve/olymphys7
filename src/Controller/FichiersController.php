@@ -1031,59 +1031,63 @@ class FichiersController extends AbstractController
         $createAttestation = new CreateAttestationsElevesCia();
         $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['id' => $equipeId]);
         $eleves = $this->doctrine->getRepository(Elevesinter::class)->findBy(['equipe' => $equipe]);
-        $path = 'odpf/attestations_eleves/';
-        if (file_exists($path . $equipe->getNumero())) {
-            $files = scandir($path . $equipe->getNumero() . '/');
+        if ($eleves) {
+            $path = 'odpf/attestations_eleves/';
+            if (file_exists($path . $equipe->getNumero())) {
+                $files = scandir($path . $equipe->getNumero() . '/');
 
-            if ($files) {
-                foreach ($files as $file) {
-                    if (!is_dir($path . $equipe->getNumero() . '/' . $file)) {
-                        unlink($path . $equipe->getNumero() . '/' . $file);
+                if ($files) {
+                    foreach ($files as $file) {
+                        if (!is_dir($path . $equipe->getNumero() . '/' . $file)) {
+                            unlink($path . $equipe->getNumero() . '/' . $file);
+                        }
                     }
+
+
+                }
+            }
+            foreach ($eleves as $eleve) {
+                try {
+                    $createAttestation->createAttestationsElevesCia($eleve);
+                } catch (Exception $e) {
+                    $message = 'Les attestations ne sont pas encore disponibles';
                 }
 
-
-            }
-        }
-        foreach ($eleves as $eleve) {
-            try {
-                $createAttestation->createAttestationsElevesCia($eleve);
-            } catch (Exception $e) {
-                $message = 'Les attestations ne sont pas encore disponibles';
             }
 
-        }
+            if (file_exists($path . $equipe->getLettre())) {
+                $files = scandir($path . $equipe->getNumero());
 
-        if (file_exists($path . $equipe->getLettre())) {
-            $files = scandir($path . $equipe->getNumero());
+                if ($files) {
+                    $zipFile = new ZipArchive();
+                    $fileNamezip = 'Attestations_equipe_' . $equipe->getNumero() . (new DateTime('now'))->format('YmdHis') . '.zip';
+                    if ($zipFile->open($fileNamezip, ZipArchive::CREATE) === TRUE) {
+                        foreach ($files as $file) {
+                            if (!is_dir($file)) {
+                                $filePath = ($path . $equipe->getNumero());
+                                $zipFile->addFromString(basename($file), file_get_contents($filePath . '/' . $file));
+                            }
 
-            if ($files) {
-                $zipFile = new ZipArchive();
-                $fileNamezip = 'Attestations_equipe_' . $equipe->getNumero() . (new DateTime('now'))->format('YmdHis') . '.zip';
-                if ($zipFile->open($fileNamezip, ZipArchive::CREATE) === TRUE) {
-                    foreach ($files as $file) {
-                        if (!is_dir($file)) {
-                            $filePath = ($path . $equipe->getNumero());
-                            $zipFile->addFromString(basename($file), file_get_contents($filePath . '/' . $file));
+
                         }
 
+                        $zipFile->close();
+                        $response = new Response(file_get_contents($fileNamezip));//voir https://stackoverflow.com/questions/20268025/symfony2-create-and-download-zip-file
+                        $disposition = HeaderUtils::makeDisposition(
+                            HeaderUtils::DISPOSITION_ATTACHMENT,
+                            $fileNamezip,
+                        );
+                        $response->headers->set('Content-Type', 'application/zip');
+                        $response->headers->set('Content-Disposition', $disposition);
+                        @unlink($fileNamezip);
+                        return $response;
 
                     }
-
-                    $zipFile->close();
-                    $response = new Response(file_get_contents($fileNamezip));//voir https://stackoverflow.com/questions/20268025/symfony2-create-and-download-zip-file
-                    $disposition = HeaderUtils::makeDisposition(
-                        HeaderUtils::DISPOSITION_ATTACHMENT,
-                        $fileNamezip,
-                    );
-                    $response->headers->set('Content-Type', 'application/zip');
-                    $response->headers->set('Content-Disposition', $disposition);
-                    @unlink($fileNamezip);
-                    return $response;
-
                 }
-            }
 
+            }
+        } else {
+            $message = 'pas encore d\'élèves inscrits pour cette équipe';
         }
         $this->requestStack->getSession()->set('info', $message);
         return $this->redirectToRoute('fichiers_afficher_liste_fichiers_prof', ['infos' => $equipe->getId() . '-interacadémique-liste_prof']);

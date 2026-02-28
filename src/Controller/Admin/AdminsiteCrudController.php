@@ -63,9 +63,11 @@ class AdminsiteCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
+            ->showEntityActionsInlined()
             ->setPageTitle(Crud::PAGE_INDEX, 'Réglage des éditions')
             ->setSearchFields(['id', 'ed', 'ville', 'lieu'])
             ->setPaginatorPageSize(30)
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig'])
             ->setDefaultSort(['ed' => 'DESC']);
     }
 
@@ -99,9 +101,15 @@ class AdminsiteCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
 
-        $creerEditionPassee = Action::new('creer_edition_passee', 'Creer une édition passée', 'fa fa-cubes')
+        $creerEditionPassee = Action::new('creer_edition_passee', '', 'fa fa-cubes')->setHtmlAttributes(['title' => 'Créer l\'édition passée'])
             ->linkToCrudAction('creer_edition_passee');//->createAsBatchAction();
-        return $actions->add(Crud::PAGE_INDEX, $creerEditionPassee);
+        return $actions->update('index', Action::EDIT, function (Action $action) {
+            return $action->setIcon('fa fa-pencil-alt')->setLabel(false);
+        })
+            ->update('index', Action::DELETE, function (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);
+            })
+            ->add(Crud::PAGE_INDEX, $creerEditionPassee);
 
 
     }
@@ -254,7 +262,7 @@ class AdminsiteCrudController extends AbstractCrudController
                 ->setParameter('value', 4)
                 ->setParameter('national', true)
                 ->getQuery()->getResult();
-            
+
 
             if ($listeFichiers) {
                 foreach ($listeFichiers as $fichier) {
