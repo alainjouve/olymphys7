@@ -75,21 +75,34 @@
             </a>
         </div>
         <div class="content">
-            <h1 class="text-center">Bienvenue {{ jure.prenom }} {{ jure.nom }} !</h1>
+            <h1 class="text-center">Bienvenue {{ NomPrenomProf }} !</h1>
             <p class="block">
-                Votre compte <strong>olymphys.fr</strong> a été créé.
+                Votre compte <strong>olymphys.fr</strong> a été créé. Ce compte a été créé lors de la mise à jour des
+                données du site Olymphys à partir des données de la plateforme Adage.
+            </p>
+            <p>Si vous aviez déjà un compte sur Olymphys, l'identifiant devait être une adresse mail différente d'une
+                adresse académique. <br>
+                Adage ne connaît que les adresses académiques, aussi lors de la mise à jour des inscriptions des équipes
+                il a été nécessaire de créé un nouveau compte utilisateur.<br>
+
+            </p>
+            <p> Une fois connecté sur ce compte, nous vous recommandons d'indiquer dans la rubrique "contact" de votre
+                profil une adresse différente, non académique, pour que vous receviez effectivement les courriels que
+                nous
+                vous adresserons à partir d'olymphys car les serveurs académiques bloquent souvent les messages ne
+                provenant pas de serveurs institutionnels.
             </p>
             <p class="block text-center">
                 Vos identifiants sont :<br>
-                login : {{ mailJure }}<br>
-                mot de passe : {{ pwd }} à modifier
+                login : {{ mailProf }}<br>
+                mot de passe : {{ pwd }} (à modifier)
             </p>
             <p class="block">Ils vous permettent de vous connecter sur le site Olymphys
             <p>
             <p class="block">Info : pour modifier ou en cas d'oubli du mot de passe, vous pouvez utiliser la
                 fonctionalité "mot de passe
                 oublié"
-                en utilisant l'adresse mail {{ mailJure }} seule reconnue par Olymphys</p>
+                en utilisant l'adresse mail {{ mailProf }} seule reconnue par Olymphys</p>
         </div>
         <div class="footer">
             <p class="block">

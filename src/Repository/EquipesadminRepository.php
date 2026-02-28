@@ -137,6 +137,7 @@ class EquipesadminRepository extends ServiceEntityRepository
      */
     public function getListeEquipe($user, $concours, $choix, $centre)
     {
+
         $em = $this->getEntityManager();
         $editionN = $this->requestStack->getSession()->get('edition');
         $editionN1 = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $editionN->getEd() - 1]);
@@ -148,6 +149,7 @@ class EquipesadminRepository extends ServiceEntityRepository
             $edition = $editionN1;
 
         }
+
         $concours == 'interacadémique' ? $selectionnee = 0 : $selectionnee = 1;
 
         $qb = $em->getRepository(Equipesadmin::class)->createQueryBuilder('e')
@@ -159,7 +161,7 @@ class EquipesadminRepository extends ServiceEntityRepository
         /* $d = $edition->getConcourscia()->format('d');
          $m = $edition->getConcourscia()->format('m');
          $Y = $edition->getConcourscia()->format('Y');*/
-        $m =5 ;//Pour que les professur puissent télécharger les attestations cia jusqu'au 1 mai environ.
+        $m = 5;//Pour que les professeurs puissent télécharger les attestations cia jusqu'au 1 mai environ.
         $dateciastr = $edition->getConcourscia()->format('Y-m-d');//Les organisateurs et profs  peuvent déposer les fichiers 20 jours après la date du concours CIA pour compléter leur dossier
         $datelim = new DateTime($dateciastr);//il faut créer une nouvelle date à partir de la date ia chaîne de caractère et ensuite ajoputer les 30 jours
         $datelim = $datelim->modify('+' . $m . ' month');//L'ajout direct des 5 mois  à la date concourscia modifie la date concourscia dans la variable session !
@@ -170,7 +172,6 @@ class EquipesadminRepository extends ServiceEntityRepository
             if (in_array('ROLE_PROF', $user->getRoles()) and (!in_array('ROLE_JURY', $user->getRoles()))) {// à cause du juré qui est prof et juré selon les années
                 $qb->andWhere('e.idProf1 =:prof or e.idProf2 =:prof')
                     ->setParameter('prof', $user);
-
             }
         }
         if ($date > $datelim) {
@@ -204,7 +205,7 @@ class EquipesadminRepository extends ServiceEntityRepository
         }
 
         $listeEquipes = $qb->getQuery()->getResult();
-        //dd($listeEquipes);
+       
         return $listeEquipes;
     }
 

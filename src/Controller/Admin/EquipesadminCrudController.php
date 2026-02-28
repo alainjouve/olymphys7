@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use AllowDynamicProperties;
 use App\Controller\Admin\Filter\CustomCentreFilter;
 use App\Controller\Admin\Filter\CustomEditionFilter;
 use App\Entity\Centrescia;
@@ -11,9 +12,11 @@ use App\Entity\Equipesadmin;
 use App\Entity\Fichiersequipes;
 use App\Entity\Odpf\OdpfEditionsPassees;
 use App\Entity\Professeurs;
+use App\Entity\Uai;
 use App\Entity\User;
 use App\Form\Type\Admin\CustomCentreFilterType;
 use App\Form\Type\CentreType;
+use App\Service\Mailer;
 use App\Service\Maj_profsequipes;
 use App\Service\OdpfRempliEquipesPassees;
 use DateTime;
@@ -42,12 +45,23 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Orm\EntityRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\String\UnicodeString;
+use Twig\Environment;
 
+#[AllowDynamicProperties]
 class EquipesadminCrudController extends AbstractCrudController
 
 {
@@ -55,11 +69,15 @@ class EquipesadminCrudController extends AbstractCrudController
     private AdminContextProvider $adminContextProvider;
     private ManagerRegistry $doctrine;
 
-    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, ManagerRegistry $doctrine)
+    public function __construct(RequestStack         $requestStack,
+                                AdminContextProvider $adminContextProvider,
+                                ManagerRegistry      $doctrine,
+                                AdminUrlGenerator    $adminUrlGenerator)
     {
         $this->requestStack = $requestStack;;
         $this->adminContextProvider = $adminContextProvider;
         $this->doctrine = $doctrine;
+        $this->adminUrlGenerator = $adminUrlGenerator;
     }
 
     public static function getEntityFqcn(): string
@@ -96,11 +114,12 @@ class EquipesadminCrudController extends AbstractCrudController
             ->setPaginatorPageSize(50)
             ->renderContentMaximized()
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ]);
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',]);
 
         return $crud;
 
     }
+
     public function index(AdminContext $context)
     {
         $edition = $this->requestStack->getSession()->get('edition');
@@ -114,15 +133,15 @@ class EquipesadminCrudController extends AbstractCrudController
             ->andWhere('e.numero < 100')
             ->setParameters(['edition' => $edition, 'inscrite' => 1])
             ->getQuery()->getResult();
-        $nbEquipesInscrites=count($equipes_inscrites);
-        $equipes_abandon=$this->doctrine->getRepository(Equipesadmin::class)->createQueryBuilder('e')
+        $nbEquipesInscrites = count($equipes_inscrites);
+        $equipes_abandon = $this->doctrine->getRepository(Equipesadmin::class)->createQueryBuilder('e')
             ->where('e.edition =:edition')
             ->andWhere('e.inscrite = :inscrite')
             ->andWhere('e.numero < 100')
             ->setParameters(['edition' => $edition, 'inscrite' => 0])
             ->getQuery()->getResult();
-        $nbAbandons=count($equipes_abandon);
-        $this->requestStack->getSession()->set('bilanEquipes',['nbEquipes'=> $nbEquipesInscrites,'nbAbandons'=>$nbAbandons]);
+        $nbAbandons = count($equipes_abandon);
+        $this->requestStack->getSession()->set('bilanEquipes', ['nbEquipes' => $nbEquipesInscrites, 'nbAbandons' => $nbAbandons]);
         return parent::index($context);
     }
 
@@ -162,7 +181,7 @@ class EquipesadminCrudController extends AbstractCrudController
 
         if (!isset($_REQUEST['lycees'])) {
 
-            $tableauexcel = Action::new('equipestableauexcel', 'Créer un tableau excel des équipes', 'fa fa_array',)
+            $tableauexcel = Action::new('equipestableauexcel', 'Créer un tableau excel des équipes', 'fa fa_array')
                 // if the route needs parameters, you can define them:
                 // 1) using an array
                 ->linkToRoute('equipes_tableau_excel', ['ideditioncentre' => $editionId . '-' . $centreId . '-' . $selectionnee])
@@ -174,37 +193,43 @@ class EquipesadminCrudController extends AbstractCrudController
         if (isset($_REQUEST['lycees'])) {
 
 
-            $tableauexcel = Action::new('equipestableauexcel', 'Créer un tableau excel des lycées', 'fa fa_array',)
+            $tableauexcel = Action::new('equipestableauexcel', 'Créer un tableau excel des lycées', 'fa fa_array')
                 // if the route needs parameters, you can define them:
                 // 1) using an array
                 ->linkToRoute('etablissements_tableau_excel', ['ideditioncentre' => $editionId . '-' . $centreId])
                 ->createAsGlobalAction();
             //->displayAsButton()->setCssClass('btn btn-primary');
         }
-
+        $extractionAdage = Action::new('extractionAdage')->createAsGlobalAction()
+            ->linkToCrudAction('extractionAdage');
         $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
-            ->update('index', Action::DELETE,function  (Action $action) {
-                            return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            ->add(Crud::PAGE_INDEX, $extractionAdage)
+            ->setPermission($extractionAdage, 'ROLE_SUPER_ADMIN')
+            ->update('index', Action::DELETE, function (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);
+            }
             )
-            ->update('index', Action::EDIT,function  (Action $action) {
-                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            ->update('index', Action::EDIT, function (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);
+            }
             )
-            ->update('index', Action::DETAIL,function  (Action $action) {
-                return $action->setIcon('fa fa-eye')->setLabel(false);}
+            ->update('index', Action::DETAIL, function (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);
+            }
             )
             ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN')
-            ->update('index', Action::NEW,function  (Action $action) {
+            ->update('index', Action::NEW, function (Action $action) {
                 return $action->setLabel('Nouvelle équipe');
             })
             ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
             ->setPermission(Action::EDIT, 'ROLE_COMITE');
-        if(isset($_REQUEST['lycees'])) {
+        if (isset($_REQUEST['lycees'])) {
             $actions->remove(Crud::PAGE_INDEX, Action::NEW)
-            ->remove(Crud::PAGE_INDEX, Action::DELETE)
-            ->remove(Crud::PAGE_INDEX, Action::EDIT);
+                ->remove(Crud::PAGE_INDEX, Action::DELETE)
+                ->remove(Crud::PAGE_INDEX, Action::EDIT);
         }
         return $actions;
     }
@@ -249,7 +274,7 @@ class EquipesadminCrudController extends AbstractCrudController
         $denominationLycee = TextField::new('denominationLycee')->hideOnIndex();
         $lyceeLocalite = TextField::new('lyceeLocalite', 'Ville')->hideOnIndex();
         $lyceeAcademie = TextField::new('lyceeAcademie', 'Académie')->hideOnIndex();
-        $lyceeNomAcademie=TextField::new('lyceeNomAcademie', 'Nom/Ville/Académie')->onlyOnIndex();
+        $lyceeNomAcademie = TextField::new('lyceeNomAcademie', 'Nom/Ville/Académie')->onlyOnIndex();
         $uai = TextField::new('uaiId.uai', 'Code UAI')->setFormTypeOption('required', false);
         $lyceeAdresse = TextField::new('uaiId.adresse', 'Adresse');
         $lyceeCP = TextField::new('uaiId.codePostal', 'Code Postal');
@@ -287,7 +312,7 @@ class EquipesadminCrudController extends AbstractCrudController
 
                 return [$lyceePays, $lyceeAcademie, $nomLycee, $lyceeAdresse, $lyceeCP, $lyceeLocalite, $uai];
             } else {
-                return [$numero, $lettre, $centreCentre, $titreProjet, $IdProf1, $IdProf2, $lyceeNomAcademie, $selectionnee, $nbeleves, $inscrite,$createdAt];
+                return [$numero, $lettre, $centreCentre, $titreProjet, $IdProf1, $IdProf2, $lyceeNomAcademie, $selectionnee, $nbeleves, $inscrite, $createdAt];
             }
         } elseif (Crud::PAGE_DETAIL === $pageName) {
 
@@ -320,7 +345,7 @@ class EquipesadminCrudController extends AbstractCrudController
             ->andWhere('e.edition =:edition')
             //->andWhere('e.numero <:value')
             ->setParameter('edition', $edition);
-            //->setParameter('value', 100);;
+        //->setParameter('value', 100);;
         if (isset($_REQUEST['filters'])) {
             if (isset($_REQUEST['filters']['edition'])) {
                 $editionId = $_REQUEST['filters']['edition'];
@@ -573,8 +598,7 @@ class EquipesadminCrudController extends AbstractCrudController
     }
 
 
-    #[Route("/Admin/EquipesadminCrud/etablissements_tableau_excel,{ideditioncentre}", name:"etablissements_tableau_excel")]
-
+    #[Route("/Admin/EquipesadminCrud/etablissements_tableau_excel,{ideditioncentre}", name: "etablissements_tableau_excel")]
     public function etablissementstableauexcel($ideditioncentre)
     {
         $idedition = explode('-', $ideditioncentre)[0];
@@ -733,6 +757,7 @@ class EquipesadminCrudController extends AbstractCrudController
 
         parent::updateEntity($entityManager, $entityInstance); // TODO: Change the autogenerated stub
     }
+
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $uai = $entityInstance->getUaiId();
@@ -743,13 +768,11 @@ class EquipesadminCrudController extends AbstractCrudController
             $entityInstance->setLyceeAcademie($uai->getAcademie());
             $maj_profsequipes = new Maj_profsequipes($this->doctrine);
             $maj_profsequipes->maj_profsequipes($entityInstance);
-        }
-        else{//equipes technique
+        } else {//equipes technique
             //pour les cia
-            if($entityInstance->getCentre()!=null) {
+            if ($entityInstance->getCentre() != null) {
                 $entityInstance->setVille($entityInstance->getCentre()->getCentre());
-            }
-            else{//Concours national
+            } else {//Concours national
 
                 $entityInstance->setSelectionnee(true);
             }
@@ -760,4 +783,126 @@ class EquipesadminCrudController extends AbstractCrudController
         parent::persistEntity($entityManager, $entityInstance);
     }
 
+    public function extractionAdage(Request $request, UserPasswordHasherInterface $passwordHasher, MailerInterface $mailer, Environment $twig)
+    {//Importe les données adage depuis le tableau excel
+        $repoUser = $this->doctrine->getRepository(User::class);
+        $sluger = new AsciiSlugger();
+        $mailerUtil = new Mailer($mailer, $twig, $this->requestStack);
+        $form = $this->createFormBuilder()
+            ->add('fichier', FileType::class, ['required' => true])
+            ->add('Valider', SubmitType::class)
+            ->getForm();
+        $edition = $this->doctrine->getRepository(Edition::class)->find($this->requestStack->getSession()->get('edition')->getId());
+        $listeEquipes = $this->doctrine->getRepository(Equipesadmin::class)->findBy(['edition' => $edition], ['numero' => 'ASC']);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $fichier = $form->get('fichier')->getData();
+            $spreadsheet = IOFactory::load($fichier);
+            $worksheet = $spreadsheet->getActiveSheet();
+            $highestRow = $worksheet->getHighestDataRow();
+            for ($row = 2; $row <= $highestRow; ++$row) {
+                //1     2	            3	4	    5	        6	         7	        8	        9	            10	    11	                        12	        13	      14	15	            16	          17	       18	19  20    21	      22	 23	        24	        25	            26	        27	         28	     29	            30                      31	         32	                     33	                 34	              35	          36	                37	        38
+                //ID	DATE CREATION	UAI	DEGRE	SECTEUR	CIRCONSCRIPTION	TYPE	MINISTÈRE	DENOMINATION	COMMUNE	COMMUNAUTE D'AGGLOMERATION	DEPARTEMENT	ACADEMIE	REGION	REP	CHEF ETAB / DIRECTEUR	COURRIEL	ADRESSE	CP	TEL	SIRET	DECLINAISON	TITRE	DOMAINE 1	DOMAINE 2	COORDONNATEUR	COURRIEL	EFFECTIF	PARTENAIRE 1	PARTENAIRE 2	AUTRE PARTENAIRE	NOMBRE DE CLASSES	AVIS CHEF ETAB / IEN	OBSERVATIONS	AVIS COMMISSION	OBSERVATIONS	FINANCEMENT DEMANDE	ETAT
+                $mailprof1 = $worksheet->getCell([27, $row])->getValue();
+                $prof = $repoUser->findOneBy(['email' => $mailprof1]);
+                $uai = $worksheet->getCell([3, $row])->getValue();
+                $etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
+                if ($etablissement == null) {
+                    $etablissement = new Uai();
+                    $etablissement->setUai($uai);
+                }
+                //on réécrit les données de l'établissement s'il existe déjà, on suppose que les données adage sont plus à jour que nos données
+                $etablissement->setNom($worksheet->getCell([9, $row])->getValue());
+                $etablissement->setCourriel($worksheet->getCell([17, $row])->getValue());
+                $etablissement->setProviseur($worksheet->getCell([16, $row])->getValue());
+                $etablissement->setAdresse($worksheet->getCell([18, $row])->getValue());
+                $etablissement->setCodePostal($worksheet->getCell([19, $row])->getValue());
+                $etablissement->setCommune($worksheet->getCell([10, $row])->getValue());
+                $etablissement->setAcademie($worksheet->getCell([13, $row])->getValue());
+                $etablissement->setTel($worksheet->getCell([20, $row])->getValue());
+                $this->doctrine->getManager()->persist($etablissement);
+                $this->doctrine->getManager()->flush();
+                if ($prof == null) {//Il n'y a pas d'user avec ce mail identifiant unique
+                    $prof = new User();
+                    $prof->setCreatedAt(new \DateTime('now'));
+                    $nomPrenomProf = $worksheet->getCell([26, $row])->getValue();//Adage fournit NOM Prénom, pas le nom et le prénom séparés
+                    $prof->setEmail($mailprof1);
+                    $prof->setUsername($sluger->slug($nomPrenomProf)->toString());
+                    $prof->setUai($uai);
+                    $prof->setUaiId($etablissement);
+                    $prof->setNom(mb_strtoupper(explode(' ', $nomPrenomProf)[0]));
+                    $prof->setPrenom(ucfirst(strtolower(explode(' ', $nomPrenomProf)[1])));
+                    $plainPassword = 'olymphys' . uniqid();//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
+                    $password = $passwordHasher->hashPassword($prof, $plainPassword);
+                    $prof->setPassword($password);
+                    $prof->setRoles(['ROLE_PROF']);
+                    $this->doctrine->getManager()->persist($prof);
+                    $this->doctrine->getManager()->flush();
+
+
+                    $mailerUtil->sendCreationCompteProf($prof, $nomPrenomProf, $plainPassword);
+                }
+                $idAdage = $worksheet->getCell([1, $row])->getValue();
+                $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['idAdage' => $idAdage]);//L'id d'adage est sensé discriminer les équipes du tableau excel
+                if (!$equipe) {
+
+                    $equipe = new Equipesadmin();
+                    $equipe->setIdAdage($idAdage);
+                    if (count($listeEquipes) == 0) {//Pour la première équipe qui s'inscrit
+                        $numero = 1;
+                        $equipe->setNumero($numero);
+                    } else {
+                        $i = 0;
+                        foreach ($listeEquipes as $equipelist) {
+                            $numero[$i] = $equipelist->getNumero();
+                            $i = $i + 1;
+                        }
+                        $maxNumero = max($numero);
+                        $numero = $maxNumero + 1;
+                        $equipe->setNumero($numero);
+                    }
+                    $equipe->setEdition($edition);
+                    $equipe->setLyceeLocalite($etablissement->getCommune());
+                    $equipe->setDenominationLycee($etablissement->getDenominationPrincipale());
+                    $equipe->setNomLycee($etablissement->getnom());
+                    $equipe->setSelectionnee(false);
+                    $equipe->setUaiId($etablissement);
+                    /*dd($worksheet->getCell([2, $row])->getValue());
+                    $createdAt = new \DateTime($worksheet->getCell([2, $row])->getValue());
+                    $equipe->setCreatedAt($createdAt);*/
+                }
+
+                $equipe->setTitreProjet($worksheet->getCell([23, $row])->getValue());
+                $equipe->setIdProf1($prof);
+                $equipe->setNbeleves($worksheet->getCell([28, $row])->getValue());
+                $equipe->setPartenaire($worksheet->getCell([29, $row])->getValue()
+                    . ', ' . $worksheet->getCell([30, $row])->getValue()
+                    . ', ' . $worksheet->getCell([31, $row])->getValue());
+                $equipe->setDescription($worksheet->getCell([36, $row])->getValue());
+                $this->doctrine->getManager()->persist($equipe);
+                $this->doctrine->getManager()->flush();
+                $professeur = $this->doctrine->getRepository(Professeurs::class)->findOneBy(['user' => $prof]);
+                if ($professeur == null) {
+                    $professeur = new Professeurs();
+                    $professeur->setUser($prof);
+                }
+                $professeur->addEquipe($equipe);
+                $this->doctrine->getManager()->persist($professeur);
+                $this->doctrine->getManager()->flush();
+
+                $row++;
+            }
+            $url = $this->adminUrlGenerator->setDashboard(DashboardController::class)
+                ->setController(EquipesadminCrudController::class)
+                ->setAction('index')->generateUrl();
+            return $this->redirect($url);
+
+
+        }
+
+        return $this->render('bundles/EasyAdminBundle/extractionAdage.html.twig', array('form' => $form->createView()));
+
+
+    }
 }

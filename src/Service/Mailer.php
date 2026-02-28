@@ -249,6 +249,27 @@ class Mailer
     /**
      * @throws TransportExceptionInterface
      */
+    public function sendCreationCompteProf($prof, $nomPrenomProf, $pwd): TemplatedEmail
+    {
+        $email = (new TemplatedEmail())
+            ->from('info@olymphys.fr')
+            ->to($prof->getEmail())//Pour prévenir le prof de son inscription,
+            ->addCc('info@olymphys.fr')//prévient olymphys pour vérification
+            ->htmlTemplate('email/confirme_user_prof.html.twig')
+            ->context(['NomPrenomProf' => $nomPrenomProf,
+                'mailProf' => $prof->getEmail(),
+                'pwd' => $pwd])
+            ->subject('OdPF-Votre compte professeur du concours national ');
+
+
+        $this->mailer->send($email);
+        return $email;
+
+    }
+
+    /**
+     * @throws TransportExceptionInterface
+     */
     public function sendConseil($conseil, $prof1, User $prof2 = null): TemplatedEmail
     {
         $email = (new TemplatedEmail())

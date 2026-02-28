@@ -111,6 +111,9 @@ class Equipesadmin
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $idAdage = null;
+
 
     public function __construct()
     {
@@ -560,6 +563,18 @@ class Equipesadmin
     {
 
         return $this->nomLycee.'/'.$this->lyceeLocalite.'/'.$this->lyceeAcademie;
+    }
+
+    public function getIdAdage(): ?int
+    {
+        return $this->idAdage;
+    }
+
+    public function setIdAdage(?int $idAdage): static
+    {
+        $this->idAdage = $idAdage;
+
+        return $this;
     }
 
 

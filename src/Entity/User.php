@@ -98,6 +98,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne]
     private ?Centrescia $centrecia;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $contact = null;
+
 
     #[Pure] public function __construct()
     {
@@ -469,6 +472,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCentrecia(?Centrescia $centrecia): self
     {
         $this->centrecia = $centrecia;
+
+        return $this;
+    }
+
+    public function getContact(): ?string
+    {
+        return $this->contact;
+    }
+
+    public function setContact(?string $contact): static
+    {
+        $this->contact = $contact;
 
         return $this;
     }

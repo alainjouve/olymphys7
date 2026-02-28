@@ -62,6 +62,15 @@ class Uai
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $nom;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $tel = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $courriel = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $proviseur = null;
+
     public function __toString()
     {
         return $this->uai.' - '.$this->nom.' - '.$this->commune.' - '.$this->academie;
@@ -260,6 +269,42 @@ class Uai
     public function setNom(?string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getTel(): ?string
+    {
+        return $this->tel;
+    }
+
+    public function setTel(?string $tel): static
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getCourriel(): ?string
+    {
+        return $this->courriel;
+    }
+
+    public function setCourriel(?string $courriel): static
+    {
+        $this->courriel = $courriel;
+
+        return $this;
+    }
+
+    public function getProviseur(): ?string
+    {
+        return $this->proviseur;
+    }
+
+    public function setProviseur(?string $proviseur): static
+    {
+        $this->proviseur = $proviseur;
 
         return $this;
     }

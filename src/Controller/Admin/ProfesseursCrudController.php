@@ -324,7 +324,7 @@ class ProfesseursCrudController extends AbstractCrudController
             ->setCategory("Test result file");
 
         $sheet = $spreadsheet->getActiveSheet();
-        foreach (['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'] as $letter) {
+        foreach (['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'] as $letter) {
             $sheet->getColumnDimension($letter)->setAutoSize(true);
 
         }
@@ -344,8 +344,8 @@ class ProfesseursCrudController extends AbstractCrudController
             ->setCellValue('I' . $ligne, 'Lycée')
             ->setCellValue('J' . $ligne, 'Commune lycée')
             ->setCellValue('K' . $ligne, 'Académie')
-            ->setCellValue('L' . $ligne, 'Equipes');;
-
+            ->setCellValue('L' . $ligne, 'Equipes')
+            ->setCellValue('M' . $ligne, 'Contact');;
         $ligne += 1;
 
         foreach ($listProfs as $prof) {
@@ -362,7 +362,8 @@ class ProfesseursCrudController extends AbstractCrudController
                 $sheet->setCellValue('H' . $ligne, $prof->getUser()->getUaiId()->getUai())
                     ->setCellValue('I' . $ligne, $prof->getUser()->getUaiId()->getNom())
                     ->setCellValue('J' . $ligne, $prof->getUser()->getUaiId()->getCommune())
-                    ->setCellValue('K' . $ligne, $prof->getUser()->getUaiId()->getAcademie());
+                    ->setCellValue('K' . $ligne, $prof->getUser()->getUaiId()->getAcademie())
+                    ->setCellValue('L' . $ligne, $prof->getUser()->getContact());
             }
 
             //$equipesstring = explode('-', $prof->getEquipesstring());
@@ -467,7 +468,7 @@ class ProfesseursCrudController extends AbstractCrudController
             ->setCategory("Test result file");
 
         $sheet = $spreadsheet->getActiveSheet();
-        foreach (['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'] as $letter) {
+        foreach (['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'] as $letter) {
             $sheet->getColumnDimension($letter)->setAutoSize(true);
 
         }
@@ -482,13 +483,14 @@ class ProfesseursCrudController extends AbstractCrudController
             ->setCellValue('D' . $ligne, 'Ville')
             ->setCellValue('E' . $ligne, 'Code Postal')
             ->setCellValue('F' . $ligne, 'Courriel')
-            ->setCellValue('G' . $ligne, 'téléphone')
-            ->setCellValue('H' . $ligne, 'Code UAI')
-            ->setCellValue('I' . $ligne, 'Lycée')
-            ->setCellValue('J' . $ligne, 'Commune lycée')
-            ->setCellValue('K' . $ligne, 'Académie')
-            ->setCellValue('L' . $ligne, 'Equipes')
-            ->setCellValue('M' . $ligne, 'Lettres');
+            ->setCellValue('G' . $ligne, 'Contact')
+            ->setCellValue('H' . $ligne, 'téléphone')
+            ->setCellValue('I' . $ligne, 'Code UAI')
+            ->setCellValue('J' . $ligne, 'Lycée')
+            ->setCellValue('K' . $ligne, 'Commune lycée')
+            ->setCellValue('L' . $ligne, 'Académie')
+            ->setCellValue('M' . $ligne, 'Equipes')
+            ->setCellValue('N' . $ligne, 'Lettres');
         $ligne += 1;
 
         foreach ($listProfs as $prof) {
@@ -500,18 +502,19 @@ class ProfesseursCrudController extends AbstractCrudController
                 ->setCellValue('D' . $ligne, $prof->getUser()->getVille())
                 ->setCellValue('E' . $ligne, $prof->getUser()->getCode())
                 ->setCellValue('F' . $ligne, $prof->getUser()->getEmail())
-                ->getCell('G' . $ligne)->setValueExplicit($prof->getUser()->getPhone(), \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-            $sheet->setCellValue('H' . $ligne, $prof->getUser()->getUaiId()->getUai())
-                ->setCellValue('I' . $ligne, $prof->getUser()->getUaiId()->getNom())
-                ->setCellValue('J' . $ligne, $prof->getUser()->getUaiId()->getCommune());
-            $sheet->setCellValue('K' . $ligne, $prof->getUser()->getUaiId()->getAcademie());
+                ->setCellValue('G' . $ligne, $prof->getUser()->getContact())
+                ->getCell('H' . $ligne)->setValueExplicit($prof->getUser()->getPhone(), \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $sheet->setCellValue('I' . $ligne, $prof->getUser()->getUaiId()->getUai())
+                ->setCellValue('J' . $ligne, $prof->getUser()->getUaiId()->getNom())
+                ->setCellValue('K' . $ligne, $prof->getUser()->getUaiId()->getCommune());
+            $sheet->setCellValue('L' . $ligne, $prof->getUser()->getUaiId()->getAcademie());
 
             $equipesstring = $prof->getEquipesstring();
             $sheet->getRowDimension($ligne)->setRowHeight(14 * $nbEquipes[$prof->getId()]);
             $sheet->getCell('L' . $ligne)->setValueExplicit($equipesstring, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);//'abc \n cde'
             //$sheet->getCell('M' . $ligne)->setValue($lettres[$prof->getId()]);
 
-            $sheet->getStyle('A' . $ligne . ':M' . $ligne)->getAlignment()->setWrapText(true);
+            $sheet->getStyle('A' . $ligne . ':N' . $ligne)->getAlignment()->setWrapText(true);
             $ligne += 1;
         }
         $selectionne = ' ';
@@ -605,11 +608,12 @@ class ProfesseursCrudController extends AbstractCrudController
         $sheet->setCellValue('A' . $ligne, 'Nom')
             ->setCellValue('B' . $ligne, 'Prénom')
             ->setCellValue('C' . $ligne, 'Courriel')
-            ->setCellValue('D' . $ligne, 'Centre Cia')
-            ->setCellValue('E' . $ligne, 'N° Equipe')
-            ->setCellValue('F' . $ligne, 'Nom Equipe')
-            ->setCellValue('G' . $ligne, 'Adresse Centre')
-            ->setCellValue('H' . $ligne, 'Organisteur');
+            ->setCellValue('D' . $ligne, 'Contact')
+            ->setCellValue('E' . $ligne, 'Centre Cia')
+            ->setCellValue('F' . $ligne, 'N° Equipe')
+            ->setCellValue('G' . $ligne, 'Nom Equipe')
+            ->setCellValue('H' . $ligne, 'Adresse Centre')
+            ->setCellValue('I' . $ligne, 'Organisteur');
 
 
         $ligne += 1;
@@ -618,15 +622,16 @@ class ProfesseursCrudController extends AbstractCrudController
             foreach ($listeEquipeProfs[$prof->getId()] as $equipe) {
                 $sheet->setCellValue('A' . $ligne, $prof->getUser()->getNom())
                     ->setCellValue('B' . $ligne, $prof->getUser()->getPrenom())
-                    ->setCellValue('C' . $ligne, $prof->getUser()->getEmail());
+                    ->setCellValue('C' . $ligne, $prof->getUser()->getEmail())
+                    ->setCellValue('D' . $ligne, $prof->getUser()->getContact());
                 if ($equipe != null) {
                     if ($equipe->getCentre() != null) {
-                        $sheet->setCellValue('D' . $ligne, $equipe->getCentre()->getCentre())
-                            ->setCellValue('G' . $ligne, $equipe->getCentre()->getLieu())
-                            ->setCellValue('H' . $ligne, $equipe->getCentre()->getOrganisateur());;
+                        $sheet->setCellValue('E' . $ligne, $equipe->getCentre()->getCentre())
+                            ->setCellValue('H' . $ligne, $equipe->getCentre()->getLieu())
+                            ->setCellValue('I' . $ligne, $equipe->getCentre()->getOrganisateur());;
                     }
-                    $sheet->setCellValue('E' . $ligne, $equipe->getNumero())
-                        ->setCellValue('F' . $ligne, $equipe->getTitreProjet());
+                    $sheet->setCellValue('F' . $ligne, $equipe->getNumero())
+                        ->setCellValue('G' . $ligne, $equipe->getTitreProjet());
                 }
                 $ligne += 1;
             }
@@ -684,7 +689,8 @@ class ProfesseursCrudController extends AbstractCrudController
 
         $sheet->setCellValue('A' . $ligne, 'Nom')
             ->setCellValue('B' . $ligne, 'Prénom')
-            ->setCellValue('C' . $ligne, 'Courriel');
+            ->setCellValue('C' . $ligne, 'Courriel')
+            ->setCellValue('D' . $ligne, 'Contact');
 
 
         $ligne += 1;
@@ -694,7 +700,8 @@ class ProfesseursCrudController extends AbstractCrudController
                 if ($prof->getUser() != null) {
                     $sheet->setCellValue('A' . $ligne, $prof->getUser()->getNom())
                         ->setCellValue('B' . $ligne, $prof->getUser()->getPrenom())
-                        ->setCellValue('C' . $ligne, $prof->getUser()->getEmail());
+                        ->setCellValue('C' . $ligne, $prof->getUser()->getEmail())
+                        ->setCellValue('D' . $ligne, $prof->getUser()->getContact());
 
                     $ligne += 1;
                 }

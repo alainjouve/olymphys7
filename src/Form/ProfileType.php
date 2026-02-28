@@ -22,14 +22,15 @@ class ProfileType extends AbstractType
             ->add('prenom', TextType::class, ['required' => true, 'label' => 'Votre prénom'])
             ->add('adresse', TextType::class, ['required' => true, 'label' => 'Votre adresse (numéro +rue)'])
             ->add('email', EmailType::class, ['required' => true, 'label' => 'Votre email et identifiant'])
+            ->add('contact', EmailType::class, ['required' => false, 'label' => 'Adresse de contact autre que l\'adresse académique'])
             ->add('ville', TextType::class, ['required' => true, 'label' => 'Votre ville'])
-            ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code'])
-            ->add('phone', TextType::class, ['required' => true, 'label' => 'Votre téléphone, portable, si possible',])
+            ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code postal'])
+            ->add('phone', TextType::class, ['required' => false, 'label' => 'Votre téléphone, portable, si possible',])
             ->add('uai', TextType::class, ['required' => false, 'label' => 'UAI, si vous comptez inscrire une équipe'])
             ->add('Modification', SubmitType::class, ['label' => 'Valider ces modifications']);;
     }
 
-    public function configureOptions(OptionsResolver $resolver) : void
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => User::class,
