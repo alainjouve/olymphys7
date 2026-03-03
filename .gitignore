@@ -44,4 +44,6 @@ yarn-error.log
 /public/odpf/
 /bundles/
 /public/bundles/fosckeditor/
-.vscode/launch.json
+
+.vscode/
+/MT_fichiers_perso/
