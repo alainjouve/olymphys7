@@ -97,13 +97,14 @@
                                         <li><a href="{{ path('core_pages', {choix:'le_concours_national'}) }}">Le
                                                 concours national</a></li>
                                     </ul>
-                                    Participer au financement participatif en cliquant sur :
+                                    {#  Participer au financement participatif en cliquant sur :
                                     <iframe id="haWidget" allowtransparency="true"
                                             src="https://www.helloasso.com/associations/societe-francaise-de-physique/collectes/olympiades-de-physique-france-33eme/widget-bouton"
                                             style="width: 100%; height: 70px; border: none;"
                                             onload="window.addEventListener( 'message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidget'); haWidgetElement.height = dataHeight + 'px'; } )"></iframe>
                                     Ou en flashant : <img src="{{ asset('odpf/odpf-images/QR financement participatif.png')}}"
                                                           width="80">
+                                    #}
                                 </div>
                             </div>
                         </div><!-- bloc-concours-->

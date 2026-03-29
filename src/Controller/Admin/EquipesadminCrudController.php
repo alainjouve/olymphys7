@@ -802,13 +802,13 @@ class EquipesadminCrudController extends AbstractCrudController
             $worksheet = $spreadsheet->getActiveSheet();
             $highestRow = $worksheet->getHighestDataRow();
             for ($row = 2; $row <= $highestRow; ++$row) {
-                //1     2	            3	4	    5	        6	         7	        8	        9	            10	    11	                        12	        13	      14	15	            16	          17	       18	19  20    21	      22	 23	        24	        25	            26	        27	         28	     29	            30                      31	         32	                     33	                 34	              35	          36	                37	        38
-                //ID	DATE CREATION	UAI	DEGRE	SECTEUR	CIRCONSCRIPTION	TYPE	MINISTÈRE	DENOMINATION	COMMUNE	COMMUNAUTE D'AGGLOMERATION	DEPARTEMENT	ACADEMIE	REGION	REP	CHEF ETAB / DIRECTEUR	COURRIEL	ADRESSE	CP	TEL	SIRET	DECLINAISON	TITRE	DOMAINE 1	DOMAINE 2	COORDONNATEUR	COURRIEL	EFFECTIF	PARTENAIRE 1	PARTENAIRE 2	AUTRE PARTENAIRE	NOMBRE DE CLASSES	AVIS CHEF ETAB / IEN	OBSERVATIONS	AVIS COMMISSION	OBSERVATIONS	FINANCEMENT DEMANDE	ETAT
+                //1     2	            3     4	      5	        6	         7	        8	        9	            10	    11	                        12	        13	      14	15	            16	          17	       18	19  20    21	      22	 23	        24	        25	            26	        27	         28	     29	            30                      31	         32	                     33	                 34	                 35	          36	                37	           38
+                //ID	DATE CREATION	UAI	DEGRE	SECTEUR	CIRCONSCRIPTION	TYPE	MINISTÈRE	DENOMINATION	COMMUNE	COMMUNAUTE D'AGGLOMERATION	DEPARTEMENT	ACADEMIE	REGION	REP	CHEF ETAB / DIRECTEUR	COURRIEL	ADRESSE	CP	TEL	SIRET	DECLINAISON	TITRE	DOMAINE 1	DOMAINE 2	COORDONNATEUR	COURRIEL	EFFECTIF	PARTENAIRE 1	PARTENAIRE 2	AUTRE PARTENAIRE	NOMBRE DE CLASSES	AVIS CHEF ETAB / IEN	OBSERVATIONS	AVIS COMMISSION	OBSERVATIONS	FINANCEMENT DEMANDE   ETAT
                 $mailprof1 = $worksheet->getCell([27, $row])->getValue();
                 $prof = $repoUser->findOneBy(['email' => $mailprof1]);
                 $uai = $worksheet->getCell([3, $row])->getValue();
                 $etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
-                if ($etablissement == null) {
+                if ($etablissement == null) {//Nouvel établissement pas encore dans notre table uai
                     $etablissement = new Uai();
                     $etablissement->setUai($uai);
                 }
@@ -833,7 +833,7 @@ class EquipesadminCrudController extends AbstractCrudController
                     $prof->setUaiId($etablissement);
                     $prof->setNom(mb_strtoupper(explode(' ', $nomPrenomProf)[0]));
                     $prof->setPrenom(ucfirst(strtolower(explode(' ', $nomPrenomProf)[1])));
-                    $plainPassword = 'olymphys' . uniqid();//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
+                    $plainPassword = 'olymphys' . uniqid('', true);//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
                     $password = $passwordHasher->hashPassword($prof, $plainPassword);
                     $prof->setPassword($password);
                     $prof->setRoles(['ROLE_PROF']);
@@ -841,11 +841,11 @@ class EquipesadminCrudController extends AbstractCrudController
                     $this->doctrine->getManager()->flush();
 
 
-                    $mailerUtil->sendCreationCompteProf($prof, $nomPrenomProf, $plainPassword);
+                    $mailerUtil->sendCreationCompteProf($prof, $nomPrenomProf, $plainPassword);//on informe le professeur de son inscription sur Olymphys avec ses identifiants
                 }
-                $idAdage = $worksheet->getCell([1, $row])->getValue();
+                $idAdage = $worksheet->getCell([1, $row])->getValue();//l'id adage évite  de créer  plusieurs fois la même équipe
                 $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['idAdage' => $idAdage]);//L'id d'adage est sensé discriminer les équipes du tableau excel
-                if (!$equipe) {
+                if (!$equipe) {//pas d'équipe avec cet idadage, donc il faut créer l'équipe
 
                     $equipe = new Equipesadmin();
                     $equipe->setIdAdage($idAdage);
@@ -863,6 +863,7 @@ class EquipesadminCrudController extends AbstractCrudController
                         $equipe->setNumero($numero);
                     }
                     $equipe->setEdition($edition);
+
                     $equipe->setLyceeLocalite($etablissement->getCommune());
                     $equipe->setDenominationLycee($etablissement->getDenominationPrincipale());
                     $equipe->setNomLycee($etablissement->getnom());
