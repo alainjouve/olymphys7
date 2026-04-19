@@ -25,9 +25,11 @@ class UserRegistrationFormType extends AbstractType
             ->add('email', RepeatedType::class, ['required' => true,
                 'mapped' => true,
                 'type' => EmailType::class,
-                'first_options' => array('label' => 'Votre courriel (éviter le mail académique souvent protégé par les services des rectorats)*'),
+                'label' => 'Courriel et identifiant. Si vous êtes professeur, votre courriel académique pour faciliter les imports de données depuis Adage*',
+                'first_options' => array('label' => 'Votre courriel*'),
                 'second_options' => array('label' => 'Vérification du courriel*'),
             ])
+            ->add('contact', TextType::class, ['required' => false, 'label' => 'Adresse mail de contact autre que l\'adresse académique, recommandée car les couriels provenant d\'Olymphys sous souvent bloqués par les serveurs académiques'])
             ->add('nom', TextType::class, ['required' => true, 'label' => 'Votre nom*'])
             ->add('prenom', TextType::class, ['required' => true, 'label' => 'Votre prénom*'])
             ->add('plainPassword', RepeatedType::class, array('required' => true,
@@ -37,10 +39,10 @@ class UserRegistrationFormType extends AbstractType
                 'second_options' => array('label' => 'Confirmer le mot de passe*'),))
             //->add('nom',TextType::class)
             ->add('uai', TextType::class, ['required' => true,
-                'label' => 'Le code UAI de votre établissement, de la forme 0123456A)*'])
+                'label' => 'Le code UAI de votre établissement(de la forme 0123456A)*'])
             ->add('adresse', TextType::class, ['required' => true, 'label' => 'Votre adresse (numéro +rue)*'])
             ->add('ville', TextType::class, ['required' => true, 'label' => 'Votre ville*'])
-            ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code*'])
+            ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code postal*'])
             ->add('phone', TextType::class, ['required' => true, 'label' => 'Votre téléphone, portable, de préférence*',])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -61,7 +63,7 @@ class UserRegistrationFormType extends AbstractType
             });
     }
 
-    public function configureOptions(OptionsResolver $resolver) : void
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => User::class,
