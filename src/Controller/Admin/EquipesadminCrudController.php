@@ -386,7 +386,7 @@ class EquipesadminCrudController extends AbstractCrudController
         if (isset($_REQUEST['sort'])) {
             $qb->resetDQLPart('orderBy');
             $sort = $_REQUEST['sort'];
-            if (key($sort) == 'lettre') {
+            if (key($sort) === 'lettre') {
                 $qb->addOrderBy('e.lettre', $sort['lettre']);
             }
             if (key($sort) == 'numero') {
@@ -463,7 +463,7 @@ class EquipesadminCrudController extends AbstractCrudController
         } else {
             $queryBuilder->addOrderBy('e.numero', 'ASC');
         }
-        if (($idcentre != 0) and ($idcentre != 'na')) {
+        if (($idcentre != 0) and ($idcentre !== 'na')) {
             $centre = $repositoryCentre->findOneBy(['id' => $idcentre]);
 
             $queryBuilder

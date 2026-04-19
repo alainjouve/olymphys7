@@ -2,30 +2,40 @@
 
 {% block title %}Profil{% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
+{% block body %}
+    <p style="color: red">
+        {{ app.session.get('message') }}
+    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h3">Votre profil</h1><br>
+                Si vous souhaitez changer votre mot de passe <a href="{{ path('forgotten_password') }}">Cliquez ici</a>
+                <br/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="btn btn-warning">Attention avant toute modification de votre adresse email (qui est aussi
+                    identifiant olymphys), vérifier la validité de cette dernière, surtout si vous désirez modifier
+                    votre mot de passe ensuite
+                </div>
+                {{ form_start(form) }}
+                {% for field in form.children %}
+                    <div class="row">
+                        <div class="col">
+                            <h6>{{ field.vars['label'] }}</h6>
+                            {{ form_widget(field) }}
+                        </div>
+                    </div>
+                    <br>
+
+                {% endfor %}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
- {% block body %}
-     <p style="color: red">
-         {{ app.session.get('message') }}
-     </p>
-     <div class="container">
-         <div class="row">
-             <div class="col-12 col-md-8">
-                 <h1 class="h3 mb-3 font-weight-normal">Profil de l'utilisateur {{ user.userIdentifier }}</h1><br>
-                 Vous souhaitez changer votre mot de passe <a href="{{ path('forgotten_password') }}">Cliquez ici</a>
-                 <br/><br/>
-             </div>
-         </div>
-         <div class="row">
-             <div class="col-12 col-md-8">
-                 <div class="btn btn-warning">Attention avant toute modification de votre adresse  email (aussi identifiant olymphys), vérifier la validité de cette dernière, surtout si vous désirez modifier votre mot de passe ensuite</div>
-                 {{ form_start(form) }}
-                 {{ form_end(form) }}
-             </div>
-         </div>
-     </div>
-
-
- {% endblock %}
