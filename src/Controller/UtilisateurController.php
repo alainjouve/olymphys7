@@ -74,6 +74,7 @@ class UtilisateurController extends AbstractController
     }
 
     #[Route("/Utilisateur/inscrire_equipe,{idequipe}", name: "inscrire_equipe")]
+    #[IsGranted('ROLE_PROF')]
     public function inscrire_equipe(Request $request, Mailer $mailer, ManagerRegistry $doctrine, $idequipe): RedirectResponse|Response
     {
 
@@ -87,7 +88,7 @@ class UtilisateurController extends AbstractController
 
 
             }
-            if ($idequipe == 'x') {
+            if ($idequipe === 'x') {
                 if ($date < $session->get('edition')->getDateouverturesite() or ($date > $session->get('edition')->getDateclotureinscription())) {
                     $this->requestStack->getSession()
                         ->set('info', 'Les inscriptions sont closes. Inscriptions entre le ' . $session->get('edition')->getDateouverturesite()->format('d-m-Y') . ' et le ' . $session->get('edition')->getDateclotureinscription()->format('d-m-Y') . ' 22 heures(heure de Paris)');
