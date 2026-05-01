@@ -66,14 +66,14 @@ class OdpfCreateArray
             }*/
             $path = 'https://adage-pr.phm.education.gouv.fr/adage/';
             //La première ligne de la page les inscriptions est remplie automatiquement selon la date
-            if ($inscrip) {
+            /*if ($inscrip) {
                 $texte = '<p><span style="color:#ff0000; font-size:12pt"><a href="' . $path . '" target="_blank" title="Inscrire une équipe">Les inscriptions ' . $ouvertes . '</a></span><span style="font-size:12pt">.</span></p>'
                     . $texte;
             }// Le texte de la page inscriptions se rajoute à cette phrase.
             else {
                 $texte = 'Les inscriptions ' . $ouvertes . '</span><span style="font-size:12pt">.</span></p>'
                     . $texte;
-            }
+            }*/
         }
         $titre = $article->getTitre();
         $titre_objectifs = $article->getTitreObjectifs();
