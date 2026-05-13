@@ -245,14 +245,14 @@ class EquipesadminCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         $session = $this->requestStack->getSession();
-        $listeCentres = $this->doctrine->getManager()->getRepository(Centrescia::class)->findBy(['actif' => true], ['centre' => 'ASC']);
+        $listeCentres = $this->doctrine->getManager()->getRepository(Centrescia::class)->findBy(['actif' => true], ['centre' => 'ASC']);;
+        if ($pageName === 'edit') {
 
-        if ($pageName == 'edit') {
             $idEquipe = $this->adminContextProvider->getContext()->getRequest()->query->get('entityId');
             $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['id' => $idEquipe]);
 
-            $uai = $equipe->getUai();
-            $listProfs = $this->doctrine->getManager()->getRepository(User::class)->findBy(['uai' => $uai, 'isActive' => true]);//pour que seuls les profs rattachés au lycée de l'équipe soient proposés dans le choix des profs du formulaire d'édition
+            $etablissement = $equipe->getUaiId();
+            $listProfs = $this->doctrine->getManager()->getRepository(User::class)->findBy(['uaiId' => $etablissement, 'isActive' => true]);//pour que seuls les profs rattachés au lycée de l'équipe soient proposés dans le choix des profs du formulaire d'édition
             $listeCentres = $this->doctrine->getManager()->getRepository(Centrescia::class)->findBy(['actif' => true], ['centre' => 'ASC']);
         } else {
             $listProfs = [];
@@ -812,6 +812,19 @@ class EquipesadminCrudController extends AbstractCrudController
                     $etablissement = new Uai();
                     $etablissement->setUai($uai);
                 }
+
+                if ($prof == null)//Pour retouver le professeur à partir de son uai et de son nom si son compte olymphys a un email non académique
+                {
+                    $nomProf = explode(' ', $worksheet->getCell([26, $row])->getValue())[1];
+                    $prenomProf = explode(' ', $worksheet->getCell([26, $row])->getValue())[2];
+                    $prof = $repoUser->findOneBy(['prenomNom' => $prenomProf . ' ' . $nomProf, 'uaiId' => $etablissement]);
+                    if ($prof != null) {//On garde le login initial du professeur mais on ajoute dans contact son adresse académique
+                        $prof->setContact($worksheet->getCell([27, $row])->getValue());
+
+                    }
+                }
+
+
                 //on réécrit les données de l'établissement s'il existe déjà, on suppose que les données adage sont plus à jour que nos données
                 $etablissement->setNom($worksheet->getCell([9, $row])->getValue());
                 $etablissement->setCourriel($worksheet->getCell([17, $row])->getValue());
@@ -876,11 +889,11 @@ class EquipesadminCrudController extends AbstractCrudController
 
                 $equipe->setTitreProjet($worksheet->getCell([23, $row])->getValue());
                 $equipe->setIdProf1($prof);
-                $equipe->setNbeleves($worksheet->getCell([28, $row])->getValue());
-                $equipe->setPartenaire($worksheet->getCell([29, $row])->getValue()
-                    . ', ' . $worksheet->getCell([30, $row])->getValue()
-                    . ', ' . $worksheet->getCell([31, $row])->getValue());
-                $equipe->setDescription($worksheet->getCell([36, $row])->getValue());
+                //$equipe->setNbeleves($worksheet->getCell([28, $row])->getValue());
+                $equipe->setPartenaire($worksheet->getCell([30, $row])->getValue()
+                    . ', ' . $worksheet->getCell([31, $row])->getValue()
+                    . ', ' . $worksheet->getCell([32, $row])->getValue());
+                //$equipe->setDescription($worksheet->getCell([36, $row])->getValue());
                 $this->doctrine->getManager()->persist($equipe);
                 $this->doctrine->getManager()->flush();
                 $professeur = $this->doctrine->getRepository(Professeurs::class)->findOneBy(['user' => $prof]);
