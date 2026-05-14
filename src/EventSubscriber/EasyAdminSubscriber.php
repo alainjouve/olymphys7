@@ -53,13 +53,10 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         $entity = $event->getEntityInstance();
 
         if (!($entity instanceof User)) {
+            
             return;
         }
-        $entity = $event->getEntityInstance();
 
-        if (!($entity instanceof User)) {
-            return;
-        }
         $entity->setCreatedAt(new  DateTime('now'));
         $entity->setLastVisit(new  DateTime('now'));//Pour que le nouvel user puisse se connecter sans avoir une demande de confirmation de l'adresse mail
         $this->setPassword($entity);

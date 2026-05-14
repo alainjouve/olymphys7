@@ -249,7 +249,7 @@ class Mailer
     /**
      * @throws TransportExceptionInterface
      */
-    public function sendCreationCompteProf($prof, $nomPrenomProf, $pwd): TemplatedEmail
+    public function sendCreationCompteProf($prof, $nomPrenomProf, $pwd): TemplatedEmail//utilisé lors de l'import des données adage
     {
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
