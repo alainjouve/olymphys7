@@ -25,12 +25,15 @@ class OdpfListeEquipes
     public function getArray($choix): array
     {
         $edition = $this->requestStack->getSession()->get('edition');
+
         $editionN1 = $this->requestStack->getSession()->get('editionN1');
-        if (new \DateTime('now' > $editionN1->getConcourscn() and new \DateTime('now') < $edition->getDatedebutinscriptions())) {
+
+        if ((new \DateTime('now') > $editionN1->getConcourscn() && (new \DateTime('now')) < $edition->getDateOuvertureSite())) {
             $edition = $editionN1;
 
+
         }
-        
+
         $repo = $this->em->getRepository(OdpfArticle::class);
         $article = $repo->findOneBy(['choix' => $choix]);
         $categorie = $article->getCategorie();
@@ -62,7 +65,7 @@ class OdpfListeEquipes
             ->setParameter('numero', 100)
             ->orderBy('e.numero', 'ASC');
 
-        if ($choix != 'la_carte_des_equipes') {//Toutes les équipes comptent pour la page de la carte même celles qui se sont désistées
+        if ($choix !== 'la_carte_des_equipes') {//Toutes les équipes comptent pour la page de la carte même celles qui se sont désistées
 
             $qb->andWhere('e.inscrite !=0');
         }

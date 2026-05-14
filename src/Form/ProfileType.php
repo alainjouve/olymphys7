@@ -18,15 +18,15 @@ class ProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextType::class, ['required' => true, 'label' => 'Votre nom'])
-            ->add('prenom', TextType::class, ['required' => true, 'label' => 'Votre prénom'])
-            ->add('adresse', TextType::class, ['required' => true, 'label' => 'Votre adresse (numéro +rue)'])
-            ->add('email', EmailType::class, ['required' => true, 'label' => 'Votre email et identifiant'])
-            ->add('contact', EmailType::class, ['required' => false, 'label' => 'Adresse de contact autre que l\'adresse académique'])
-            ->add('ville', TextType::class, ['required' => true, 'label' => 'Votre ville'])
-            ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code postal'])
-            ->add('phone', TextType::class, ['required' => false, 'label' => 'Votre téléphone, portable, si possible',])
-            ->add('uai', TextType::class, ['required' => false, 'label' => 'UAI, si vous comptez inscrire une équipe'])
+            ->add('nom', TextType::class, ['required' => true, 'label' => 'Votre nom', 'attr' => ["placeholder" => "Votre nom"]])
+            ->add('prenom', TextType::class, ['required' => true, 'label' => 'Votre prénom', 'attr' => ['placeholder' => "Votre prenom"]])
+            ->add('adresse', TextType::class, ['required' => true, 'label' => 'Votre adresse (numéro +rue)', 'attr' => ['placeholder' => "Votre adresse"]])
+            ->add('email', EmailType::class, ['required' => true, 'label' => 'Votre email et identifiant, adresse académique afin de faciliter les imports de données depuis Adage si vous êtes professeur', 'attr' => ['placeholder' => "Votre email et identifiant"]])
+            ->add('contact', EmailType::class, ['required' => false, 'label' => 'Adresse mail de contact autre que l\'adresse académique', 'attr' => ['placeholder' => "Adresse de contact"]])
+            ->add('ville', TextType::class, ['required' => true, 'label' => 'Votre ville', 'attr' => ['placeholder' => "Ville"]])
+            ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code postal', 'attr' => ['placeholder' => "Code postal"]])
+            ->add('phone', TextType::class, ['required' => false, 'label' => 'Votre téléphone, portable, si possible', 'attr' => ['placeholder' => 'tel']])
+            ->add('uai', TextType::class, ['required' => false, 'label' => 'UAI de votre établissement, si vous comptez inscrire une équipe', 'attr' => ['placeholder' => 'UAI']])
             ->add('Modification', SubmitType::class, ['label' => 'Valider ces modifications']);;
     }
 

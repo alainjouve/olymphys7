@@ -60,6 +60,13 @@ class CoreController extends AbstractController
                 $concours = 'interacadémique';
             }
             $this->requestStack->getSession()->set('concours', $concours);
+            if ($user->getContact() == null and in_array('ROLE_PROF', $user->getRoles())) {
+                if (str_contains($user->getEmail(), '@ac-')) {
+                    $this->requestStack->getSession()->set('info', 'Vous n\'avez pas encore renseigné  de courriel différent de votre adresse académique<br>
+                Pourriez-vous compléter votre profil pour en indiquer un dans le champ \'contact\'.<br>
+                Les serveurs académiques bloquent souvent les courriers provenant d\'adresses non institutionnelles telles que contact@olymphys.fr');
+                }
+            }
         }
         $this->requestStack->getSession()->set('pageCourante', 1); //actus
         $this->requestStack->getSession()->set('pageFCourante', 1); //FAQ

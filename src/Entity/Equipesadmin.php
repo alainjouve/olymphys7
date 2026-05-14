@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use AllowDynamicProperties;
 use App\Entity\Cia\JuresCia;
 use App\Entity\Cia\NotesCia;
 use App\Repository\EquipesadminRepository;
@@ -13,9 +14,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\JoinColumn;
 use phpDocumentor\Reflection\Types\Nullable;
 
+#[AllowDynamicProperties]
 #[ORM\Table(options: ["collate" => "utf8mb4_unicode_ci", "charset" => "utf8mb4"])]
 #[ORM\Entity(repositoryClass: EquipesadminRepository::class)]
-
 class Equipesadmin
 {
     #[ORM\Id]
@@ -68,7 +69,7 @@ class Equipesadmin
     private ?Uai $uaiId = null;
 
     #[ORM\ManyToOne]
-    private ?Centrescia $centre=null;
+    private ?Centrescia $centre = null;
 
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -132,7 +133,7 @@ class Equipesadmin
             if ($this->getLettre() != null) {
                 return $ed . '-' . $this->numero . '-' . $this->lettre . '-' . $this->titreProjet;
             } else {
-                return $ed . '-' .$this->centre.'-'. $this->numero . '-' . $this->titreProjet;
+                return $ed . '-' . $this->centre . '-' . $this->numero . '-' . $this->titreProjet;
             }
         }
         return '';
@@ -194,7 +195,7 @@ class Equipesadmin
         $nom_equipe = $this->getTitreProjet();
         $ville = $this->getLyceeLocalite();
 
-        $infoequipe = $edition->getEd() .'-'.$this->centre.'-' . 'Eq ' . $Numero . ' - ' . $nom_equipe . ' - ' . $ville;
+        $infoequipe = $edition->getEd() . '-' . $this->centre . '-' . 'Eq ' . $Numero . ' - ' . $nom_equipe . ' - ' . $ville;
         return $infoequipe;
     }
 
@@ -559,10 +560,11 @@ class Equipesadmin
 
         return $this;
     }
+
     public function getLyceeNomAcademie(): ?string
     {
 
-        return $this->nomLycee.'/'.$this->lyceeLocalite.'/'.$this->lyceeAcademie;
+        return $this->nomLycee . '/' . $this->lyceeLocalite . '/' . $this->lyceeAcademie;
     }
 
     public function getIdAdage(): ?int
