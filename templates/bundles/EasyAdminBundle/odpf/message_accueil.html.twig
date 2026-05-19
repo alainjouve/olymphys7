@@ -7,8 +7,9 @@
     <div class="rougeodpf"><h1>Administration du site</h1></div>
     <hr>
 
-    <a href="{{ path('elfinder') }}" type="button" class="btn btn-primary" target="_blank">Gérer les médias</a>
-<hr>
+    <a href="{{ path('odpfdocuments_browser') }}" type="button" class="btn btn-primary" target="_blank">Voir les
+        médias</a>
+    <hr>
     {% set urlphotos = ea_url()
         .setDashboard('App\\Controller\\OdpfAdmin\\OdpfDashboardController')
         .setController('App\\Controller\\OdpfAdmin\\OdpfPhotosCrudController')
