@@ -70,10 +70,16 @@ class OdpfArticle
         $this->createdAt = new DateTime('now');
         $this->publie = false;
     }
-    public function __toString() : string
-        {
-            return $this->titre;
+
+    public function __toString(): string
+    {
+        $titre = $this->titre;
+        if ($titre == null) {
+            $titre = 'Titre_' . $this->id;
         }
+        return $titre;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -134,7 +140,7 @@ class OdpfArticle
     public function getTitreObjectifs(): ?string
     {
         // return  StringUtils::convertBinaryString($this->titre_objectifs);
-        return  $this->titre_objectifs;
+        return $this->titre_objectifs;
     }
 
     public function setTitreObjectifs(?string $titre_objectifs): self

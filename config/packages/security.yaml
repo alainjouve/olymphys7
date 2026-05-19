@@ -12,7 +12,7 @@ security:
 
   role_hierarchy:
     ROLE_COMITE: [ ROLE_USER,ROLE_ADMIN ]
-    ROLE_SECRETARIAT_JURY:  [ ROLE_USER,ROLE_ADMIN]
+    ROLE_SECRETARIAT_JURY: [ ROLE_USER,ROLE_ADMIN ]
     ROLE_ORGACIA: [ ROLE_JURYCIA, ROLE_USER, ROLE_PROF ]
     ROLE_JURYCIA: [ ROLE_PROF, ROLE_USER ]
     ROLE_JURY: [ ROLE_PROF, ROLE_USER ]
@@ -49,3 +49,4 @@ security:
     - { path: ^/authorize, roles: IS_AUTHENTICATED_REMEMBERED }
     - { path: ^/efconnect, role: ROLE_ADMIN }
     - { path: ^/elfinder , roles: ROLE_ADMIN }
+    - { path: ^/odpfdocuments_browser , roles: ROLE_ADMIN }

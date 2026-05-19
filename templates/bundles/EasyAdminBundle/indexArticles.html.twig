@@ -1,7 +1,7 @@
 {# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
 {# @var entities \EasyCorp\Bundle\EasyAdminBundle\Collection\EntityCollection #}
 {# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
-{% extends '@!EasyAdmin/page/content.html.twig' %}
+{% extends '@!EasyAdmin/crud/index.html.twig' %}
 {% trans_default_domain ea.i18n.translationDomain %}
 {% block content_title %}
 
@@ -11,10 +11,11 @@
 {% block main %}
     <div class="header-index">
         <div class="row">
-            <div class="col"> <h2> {%- set custom_page_title = ea.crud.customPageTitle('index', null, ea.i18n.translationParameters, ea.i18n.translationDomain) -%}
-                {{- custom_page_title is null
-                ? ea.crud.defaultPageTitle('index', null, ea.i18n.translationParameters)|trans|raw
-                : custom_page_title|trans|raw -}}</h2>
+            <div class="col">
+                <h2> {%- set custom_page_title = ea.crud.customPageTitle('index', null, ea.i18n.translationParameters, ea.i18n.translationDomain) -%}
+                    {{- custom_page_title is null
+                    ? ea.crud.defaultPageTitle('index', null, ea.i18n.translationParameters)|trans|raw
+                    : custom_page_title|trans|raw -}}</h2>
                 {% if app.session.get('categorieChoisie')!=null %}
                     <h4>Categorie:{{ app.session.get('categorieChoisie').categorie }}</h4>
                 {% endif %}
@@ -31,65 +32,74 @@
         {% set num_results = entities|length %}
         {% set has_batch_actions = batch_actions|length > 0 %}
         {% set listeCategories=app.session.get('liste_categories') %}
-        {% set categorieChoisie= app.session.get('categorieChoisie')%}
-                {% if filters|length > 0 %}
-                    <div class="row">
-                        <div class="col" style="text-align: right">
-                            Pour sélectionner des résultats sur une équipe ou une édition, ...,  utiliser les filtres  :
-                        </div>
-                    <div class="col">
-                        <div class="datagrid-filters">
-                            {% block filters %}
-                                {% set applied_filters = ea.request.query.all['filters']|default([])|keys %}
-                                <div class="btn-group action-filters">
-                                    <a href="#" data-href="{{ ea_url().setAction('renderFilters') }}" class="btn btn-secondary btn-labeled btn-labeled-right action-filters-button disabled {{ applied_filters ? 'action-filters-applied' }}" data-bs-toggle="modal" data-bs-target="#modal-filters">
-                                        <twig:ea:Icon name="internal:filter" /> {{ t('filter.title', ea.i18n.translationParameters, 'EasyAdminBundle')|trans }}{% if applied_filters %} <span class="action-filters-button-count">({{ applied_filters|length }})</span>{% endif %}
-                                    </a>
-                                    {% if applied_filters %}
-                                        <a href="{{ ea_url().unset('filters').setAction('index') }}" class="btn btn-secondary action-filters-reset">
-                                            <twig:ea:Icon name="internal:xmark" />
-                                        </a>
-
-                                    {% endif %}
-                                </div>
-                        </div>
-                            {% endblock filters %}
-
-                    </div>
-                    </div>
-                    <hr>
-                {% endif %}
+        {% set categorieChoisie= app.session.get('categorieChoisie') %}
+        {% if filters|length > 0 %}
             <div class="row">
+                <div class="col" style="text-align: right">
+                    Pour sélectionner des résultats sur une équipe ou une édition, ..., utiliser les filtres :
+                </div>
                 <div class="col">
-                    Pour choisir une catégorie d'article:
-                    <select id="categoriearticle" name="categoriearticle" autocomplete="off" onchange="choixcategoriearticle(this)">
-                        <option value="">Toutes</option>
+                    <div class="datagrid-filters">
+                        {% block filters %}
+                        {% set applied_filters = ea.request.query.all['filters']|default([])|keys %}
+                        <div class="btn-group action-filters">
+                            <a href="#" data-href="{{ ea_url().setAction('renderFilters') }}"
+                               class="btn btn-secondary btn-labeled btn-labeled-right action-filters-button disabled {{ applied_filters ? 'action-filters-applied' }}"
+                               data-bs-toggle="modal" data-bs-target="#modal-filters">
+                                <twig:ea:Icon
+                                        name="internal:filter"/> {{ t('filter.title', ea.i18n.translationParameters, 'EasyAdminBundle')|trans }}{% if applied_filters %}
+                                    <span class="action-filters-button-count">
+                                    ({{ applied_filters|length }})</span>{% endif %}
+                            </a>
+                            {% if applied_filters %}
+                                <a href="{{ ea_url().unset('filters').setAction('index') }}"
+                                   class="btn btn-secondary action-filters-reset">
+                                    <twig:ea:Icon name="internal:xmark"/>
+                                </a>
 
-                        {% for categorie in listeCategories %}
-                            <option value="{{ categorie.id }}"
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endblock filters %}
 
-                                    {% if categorieChoisie!=null %}
-                                        {% if categorie.id==categorieChoisie.id %}
-                                            selected
-                                        {% endif %}
-                                    {% endif %}
-
-                            >{{ categorie.categorie }} </option>
-
-
-                        {% endfor %}
-                    </select>
                 </div>
             </div>
-                {% for action in global_actions %}
-                    {% if action.name!='new' %}
-                        <div class="row">
+            <hr>
+        {% endif %}
+        <div class="row">
+            <div class="col">
+                Pour choisir une catégorie d'article:
+                <select id="categoriearticle" name="categoriearticle" autocomplete="off"
+                        onchange="choixcategoriearticle(this)">
+                    <option value="">Toutes</option>
 
-                        <div class="col"> <a href="{{ action.linkUrl }}" type="button" class="btn btn-warning"><i class="{{ action.icon }}"></i> {{ action.label}}</a>
-                        </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}<hr>
+                    {% for categorie in listeCategories %}
+                        <option value="{{ categorie.id }}"
+
+                                {% if categorieChoisie!=null %}
+                                    {% if categorie.id==categorieChoisie.id %}
+                                        selected
+                                    {% endif %}
+                                {% endif %}
+
+                        >{{ categorie.categorie }} </option>
+
+
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        {% for action in global_actions %}
+            {% if action.name!='new' %}
+                <div class="row">
+
+                    <div class="col"><a href="{{ action.linkUrl }}" type="button" class="btn btn-warning"><i
+                                    class="{{ action.icon }}"></i> {{ action.label }}</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <hr>
         <div class="row>">
             {% for action in global_actions %}
                 {% if action.name=='new' %}
@@ -97,7 +107,7 @@
 
                         {{ include(action.templatePath, { action: action }, with_context = false) }}
                     </div>
-                <hr>
+                    <hr>
                 {% endif %}
             {% endfor %}
             {% if has_batch_actions %}
@@ -117,7 +127,8 @@
                     {% if has_batch_actions %}
                         <th>
                             <div class="form-check">
-                                <span><input type="checkbox" class="form-check-input form-batch-checkbox-all" id="form-batch-checkbox-all"></span>
+                                <span><input type="checkbox" class="form-check-input form-batch-checkbox-all"
+                                             id="form-batch-checkbox-all"></span>
                             </div>
                         </th>
                     {% endif %}
@@ -133,7 +144,9 @@
                         {% set next_sort_direction = is_sorting_field ? (ea.search.sortDirection(field.property) == ea_sort_desc ? ea_sort_asc : ea_sort_desc) : ea_sort_desc %}
                         {% set column_icon = is_sorting_field ? (next_sort_direction == ea_sort_desc ? 'internal:sort-arrow-up' : 'internal:sort-arrow-down') : 'internal:sort-arrows' %}
 
-                        <th data-column="{{ field.property }}" class="{{ is_searchable ? 'searchable' }} {{ is_sorting_field ? 'sorted' }} {{ field.isVirtual ? 'field-virtual' }} header-for-{{ field.cssClass|split(' ')|filter(class => class starts with 'field-')|join('') }} text-{{ field.textAlign }}" dir="{{ ea.i18n.textDirection }}">
+                        <th data-column="{{ field.property }}"
+                            class="{{ is_searchable ? 'searchable' }} {{ is_sorting_field ? 'sorted' }} {{ field.isVirtual ? 'field-virtual' }} header-for-{{ field.cssClass|split(' ')|filter(class => class starts with 'field-')|join('') }} text-{{ field.textAlign }}"
+                            dir="{{ ea.i18n.textDirection }}">
                             {% if field.isSortable %}
                                 {% set sortable_url = ea_url().set('page', 1).set('sort', { (field.property): next_sort_direction }) %}
                                 {% if ea.usePrettyUrls %}
@@ -141,7 +154,8 @@
                                 {% endif %}
 
                                 <a href="{{ sortable_url }}">
-                                    {{ field.label|trans|raw }} <twig:ea:Icon name="{{ column_icon }}" />
+                                    {{ field.label|trans|raw }}
+                                    <twig:ea:Icon name="{{ column_icon }}"/>
                                 </a>
                             {% else %}
                                 <span>{{ field.label|trans|raw }}</span>
@@ -163,7 +177,9 @@
                         {% if has_batch_actions %}
                             <td class="batch-actions-selector">
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input form-batch-checkbox" id="form-batch-checkbox-{{ loop.index0 }}" value="{{ entity.primaryKeyValue }}">
+                                    <input type="checkbox" class="form-check-input form-batch-checkbox"
+                                           id="form-batch-checkbox-{{ loop.index0 }}"
+                                           value="{{ entity.primaryKeyValue }}">
                                 </div>
                             </td>
                         {% endif %}
@@ -173,7 +189,7 @@
                                     {% if ea.crud.showEntityActionsAsDropdown %}
                                         <twig:ea:ActionMenu class="dropdown-actions">
                                             <twig:ea:ActionMenu:Button withoutDropdownToggleMarker>
-                                                <twig:ea:Icon name="internal:dots-horizontal" />
+                                                <twig:ea:Icon name="internal:dots-horizontal"/>
                                             </twig:ea:ActionMenu:Button>
 
                                             <twig:ea:ActionMenu:Overlay>
@@ -184,7 +200,8 @@
                                                                 class="{{ action.cssClass }}" url="{{ action.linkUrl }}"
                                                                 icon="{{ action.icon }}" icon:class="action-icon"
                                                                 htmlAttributes="{{ action.htmlAttributes }}"
-                                                                label="{{ action.label|trans }}" label:class="action-label" renderLabelRaw />
+                                                                label="{{ action.label|trans }}"
+                                                                label:class="action-label" renderLabelRaw/>
 
                                                     {% endfor %}
                                                 </twig:ea:ActionMenu:ActionList>
@@ -201,8 +218,10 @@
                         {% for field in entity.fields %}
                             {% set is_searchable = null == ea.crud.searchFields or field.property in ea.crud.searchFields %}
 
-                            <td data-column="{{ field.property }}" data-label="{{ field.label|trans|e('html') }}" class="{{ is_searchable ? 'searchable' }} {{ field.property == sort_field_name ? 'sorted' }} text-{{ field.textAlign }} {{ field.cssClass }}" dir="{{ ea.i18n.textDirection }}" {% for name, value in field.htmlAttributes %}{{ name }}="{{ value|e('html_attr') }}" {% endfor %}>
-                                {{ include(field.templatePath, { field: field, entity: entity }, with_context = false) }}
+                            <td data-column="{{ field.property }}" data-label="{{ field.label|trans|e('html') }}"
+                                class="{{ is_searchable ? 'searchable' }} {{ field.property == sort_field_name ? 'sorted' }} text-{{ field.textAlign }} {{ field.cssClass }}"
+                                dir="{{ ea.i18n.textDirection }}" {% for name, value in field.htmlAttributes %}{{ name }}="{{ value|e('html_attr') }}" {% endfor %}>
+                            {{ include(field.templatePath, { field: field, entity: entity }, with_context = false) }}
                             </td>
                         {% endfor %}
 
@@ -236,7 +255,8 @@
             {% if some_results_are_hidden %}
                 <tr class="datagrid-row-empty">
                     <td class="text-center" colspan="100">
-                        <span class="datagrid-row-empty-message"><twig:ea:Icon name="internal:lock" class="mr-1" /> {{ 'datagrid.hidden_results'|trans({}, 'EasyAdminBundle') }}</span>
+                        <span class="datagrid-row-empty-message"><twig:ea:Icon name="internal:lock"
+                                                                               class="mr-1"/> {{ 'datagrid.hidden_results'|trans({}, 'EasyAdminBundle') }}</span>
                     </td>
                 </tr>
             {% endif %}
@@ -262,4 +282,7 @@
     {% if has_filters %}
         {{ include('@EasyAdmin/crud/includes/_filters_modal.html.twig') }}
     {% endif %}
+    {% block delete_form %}
+        {{ include('@EasyAdmin/crud/includes/_delete_form.html.twig', with_context = false) }}
+    {% endblock delete_form %}
 {% endblock main %}

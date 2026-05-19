@@ -9,7 +9,7 @@ fos_ck_editor:
       versionCheck: false #pour éviter un message d'erreur de version soit disant non sécure(ck éditor veut faire de l'argent : 9600 $ /an la licence !) lors de l'affichage de ckeditor
       language: fr
       toolbar: full
-      filebrowserBrowseRoute: elfinder
+      filebrowserBrowseRoute: odpfdocuments_browser
       filebrowserBrowseRouteParameters: [ ]
       config.extraPlugins: 'wordcount,notification,autogrow'
       width: 900px

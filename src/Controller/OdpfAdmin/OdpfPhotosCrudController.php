@@ -79,7 +79,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
     private AdminUrlGenerator $adminUrlGenerator;
 
 
-    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, EntityManagerInterface $doctrine,AdminUrlGenerator $adminUrlGenerator)
+    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, EntityManagerInterface $doctrine, AdminUrlGenerator $adminUrlGenerator)
     {
         $this->adminUrlGenerator = $adminUrlGenerator;
         $this->requestStack = $requestStack;;
@@ -93,12 +93,13 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
         return Photos::class;
     }
+
     public function configureCrud(Crud $crud): Crud
     {
         return $crud->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig',
-                'crud/edit'=>'bundles/EasyAdminBundle/editPhotos.html.twig',
-                'crud/new'=>'bundles/EasyAdminBundle/newPhoto.html.twig',]);
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',
+                'crud/edit' => 'bundles/EasyAdminBundle/editPhotos.html.twig',
+                'crud/new' => 'bundles/EasyAdminBundle/newPhoto.html.twig',]);
     }
 
 
@@ -112,60 +113,60 @@ class OdpfPhotosCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        $typesSujets=$this->doctrine->getRepository(OdpfSujetsPhotos::class)->findAll();
-        $listeTypesSujets=[];
+        $typesSujets = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->findAll();
+        $listeTypesSujets = [];
         foreach ($typesSujets as $typeSujet) {
 
-            $listeTypesSujets[$typeSujet->getLibelle()]=$typeSujet->getLibelle();
+            $listeTypesSujets[$typeSujet->getLibelle()] = $typeSujet->getLibelle();
 
         }
-        $editions=$this->doctrine->getRepository(OdpfEditionsPassees::class)->findAll();
-        $editionEnCours=end($editions);
-        $required=false;
-           if( $pageName=='new') $required=true;
+        $editions = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findAll();
+        $editionEnCours = end($editions);
+        $required = false;
+        if ($pageName == 'new') $required = true;
 
-        return[
-        IntegerField::new('id', 'ID')->onlyOnDetail(),
-        AssociationField::new('editionspassees', 'edition')->setQueryBuilder(
-                fn (QueryBuilder $queryBuilder)=> $queryBuilder
+        return [
+            IntegerField::new('id', 'ID')->onlyOnDetail(),
+            AssociationField::new('editionspassees', 'edition')->setQueryBuilder(
+                fn(QueryBuilder $queryBuilder) => $queryBuilder
                     ->orderBy('entity.edition', 'DESC')
             )->setSortable(true)->hideOnForm(),
-        IntegerField::new('equipepassee.numero', 'N° équipe')->setSortable(true)->hideOnForm(),
-        TextField::new('equipepassee.lettre', 'Lettre équipe')->setSortable(true)->hideOnForm(),
-        AssociationField::new('equipepassee', 'Projet')->setQueryBuilder(
-            fn (QueryBuilder $queryBuilder)=> $queryBuilder
-                ->leftJoin('entity.editionspassees','ed')
-                ->orderBy('ed.edition','DESC')
-                ->addOrderBy('entity.numero', 'ASC')
-        )
-            ->setFormTypeOptions([
-                'required' => true,
-                'empty_data' => null,
-                'placeholder'=>'Choisir une équipe'
+            IntegerField::new('equipepassee.numero', 'N° équipe')->setSortable(true)->hideOnForm(),
+            TextField::new('equipepassee.lettre', 'Lettre équipe')->setSortable(true)->hideOnForm(),
+            AssociationField::new('equipepassee', 'Projet')->setQueryBuilder(
+                fn(QueryBuilder $queryBuilder) => $queryBuilder
+                    ->leftJoin('entity.editionspassees', 'ed')
+                    ->orderBy('ed.edition', 'DESC')
+                    ->addOrderBy('entity.numero', 'ASC')
+            )
+                ->setFormTypeOptions([
+                    'required' => true,
+                    'empty_data' => null,
+                    'placeholder' => 'Choisir une équipe'
 
-            ])->setRequired(true)
-            ->setSortable(true)
+                ])->setRequired(true)
+                ->setSortable(true)
             ,
-        TextField::new('photo')
-            ->setTemplatePath('bundles\EasyAdminBundle\photos.html.twig')
-            ->setLabel('Photo')->setSortable(false)
-            ->setFormTypeOptions(['disabled' => 'disabled','id'=>'photo'])->hideOnForm(),
-        TextField::new('coment', 'commentaire'),
-        Field::new('national','Photo prise lors du concours national')->hideOnIndex(),
-        DateTimeField::new('updatedAt', 'Déposé le ')->hideOnForm(),
+            TextField::new('photo')
+                ->setTemplatePath('bundles\EasyAdminBundle\photos.html.twig')
+                ->setLabel('Photo')->setSortable(false)
+                ->setFormTypeOptions(['disabled' => 'disabled', 'id' => 'photo'])->hideOnForm(),
+            TextField::new('coment', 'commentaire'),
+            Field::new('national', 'Photo prise lors du concours national')->hideOnIndex(),
+            DateTimeField::new('updatedAt', 'Déposé le ')->hideOnForm(),
 
-       Field::new('photoFile')
-            ->setFormType(FileType::class)
-            ->setLabel('Photo')
-           ->setFormTypeOptions([
-               'required' => $required,
-           ])
-            ->onlyonForms(),
+            Field::new('photoFile')
+                ->setFormType(FileType::class)
+                ->setLabel('Photo')
+                ->setFormTypeOptions([
+                    'required' => $required,
+                ])
+                ->onlyonForms(),
 
-       TextField::new('typeSujet','Type de sujet')->setSortable(true)->hideOnForm(),
-       AssociationField::new('typeSujet','Choix du type de sujet')
-            ->setFormTypeOptions(['required' => false, 'placeholder'=>'Choisir un type de sujet'])
-           ->onlyOnForms(),
+            TextField::new('typeSujet', 'Type de sujet')->setSortable(true)->hideOnForm(),
+            AssociationField::new('typeSujet', 'Choix du type de sujet')
+                ->setFormTypeOptions(['required' => false, 'placeholder' => 'Choisir un type de sujet'])
+                ->onlyOnForms(),
         ];
 
     }
@@ -184,8 +185,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
         $oldEntity = $this->doctrine->getRepository(Photos::class)->findOneBy(['id' => $entityInstance->getId()]);
         $entityInstance->setEditionspassees($entityInstance->getEquipepassee()->getEditionspassees());//L
-        $edition=$this->doctrine->getRepository(Edition::class)->findOneBy(['ed'=>$entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
-        $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition'=>$edition,'numero'=>$entityInstance->getEquipepassee()->getNumero()]);
+        $edition = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
+        $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition' => $edition, 'numero' => $entityInstance->getEquipepassee()->getNumero()]);
         $equipe === null ? $entityInstance->setEquipe(null) : $entityInstance->setEquipe($equipe);
         $equipe === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($edition);
 
@@ -256,11 +257,10 @@ class OdpfPhotosCrudController extends AbstractCrudController
         if (count($parseOldName) > 2) //Le nom contient plusieurs points
         {
             $endName = $parseOldName[count($parseOldName) - 2] . '.' . $parseOldName[count($parseOldName) - 1];
-        }
-        else{//Le n° d'identification est séparé par un tiret
-            $parseName=explode('-', $parseOldName[0]);
-            $num=end($parseName);
-            $endName =$num.'.'.end($parseOldName);
+        } else {//Le n° d'identification est séparé par un tiret
+            $parseName = explode('-', $parseOldName[0]);
+            $num = end($parseName);
+            $endName = $num . '.' . end($parseOldName);
         }
         $slugger = new AsciiSlugger();
         $ed = $entityInstance->getEditionspassees()->getEdition();
@@ -268,47 +268,48 @@ class OdpfPhotosCrudController extends AbstractCrudController
         $equipe = $entityInstance->getEquipe();
         if ($equipe !== null) {
 
-                $nlleEquipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition' => $equipe->getEdition(), 'numero' => $equipe->getNumero()]);//il faut réattribuer la bonne équipe la photo
-                $entityInstance->setEquipe($nlleEquipe);
+            $nlleEquipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition' => $equipe->getEdition(), 'numero' => $equipe->getNumero()]);//il faut réattribuer la bonne équipe la photo
+            $entityInstance->setEquipe($nlleEquipe);
         }
         $centre = ' ';
         $lettre_equipe = '';
         if ($equipe) {
-                if ($equipe->getCentre()) {//le centre est perdu pour les éditions passées
-                    $centre = $equipe->getCentre()->getCentre() . '-eq';
-                } else {
-                    $centre = 'CIA-eq';
-          };
+            if ($equipe->getCentre()) {//le centre est perdu pour les éditions passées
+                $centre = $equipe->getCentre()->getCentre() . '-eq';
+            } else {
+                $centre = 'CIA-eq';
+            };
 
         }
-            $numero_equipe = $equipepassee->getNumero();
-            $nom_equipe = $equipepassee->getTitreProjet();
-            $nom_equipe = $slugger->slug($nom_equipe)->toString();
-            if ($entityInstance->getNational() == FALSE) {
-                $newFileName = $slugger->slug($ed . '-' . $centre .'-'.$numero_equipe . '-' . $nom_equipe ). '.' . $endName;
-            }
-            if (($entityInstance->getNational() == TRUE) or ($entityInstance->getEquipepassee()->getNumero()>=100) ) {
-                $equipepassee->getLettre() === null ? $idEquipe = $equipepassee->getNumero() : $idEquipe = $equipepassee->getLettre();
+        $numero_equipe = $equipepassee->getNumero();
+        $nom_equipe = $equipepassee->getTitreProjet();
+        $nom_equipe = $slugger->slug($nom_equipe)->toString();
+        if ($entityInstance->getNational() == FALSE) {
+            $newFileName = $slugger->slug($ed . '-' . $centre . '-' . $numero_equipe . '-' . $nom_equipe) . '.' . $endName;
+        }
+        if (($entityInstance->getNational() == TRUE) or ($entityInstance->getEquipepassee()->getNumero() >= 100)) {
+            $equipepassee->getLettre() === null ? $idEquipe = $equipepassee->getNumero() : $idEquipe = $equipepassee->getLettre();
 
-                $newFileName = $ed . '-CN-eq-' . $idEquipe . '-' . $nom_equipe . '.' . $endName;
-            }
-            $entityInstance->setPhoto($newFileName);
-            $oldPathName = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/' . $name;
-            $newPathName = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/' . $newFileName;
-            $oldPathNameThumb = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/thumbs/' . $name;
-            $newPathNameThumb = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/thumbs/' . $newFileName;
-            if (file_exists($oldPathName)) {
-                rename($oldPathName, $newPathName);
-            }
-            if (file_exists($oldPathNameThumb)) {
-                rename($oldPathNameThumb, $newPathNameThumb);
-            }
+            $newFileName = $ed . '-CN-eq-' . $idEquipe . '-' . $nom_equipe . '.' . $endName;
+        }
+        $entityInstance->setPhoto($newFileName);
+        $oldPathName = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/' . $name;
+        $newPathName = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/' . $newFileName;
+        $oldPathNameThumb = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/thumbs/' . $name;
+        $newPathNameThumb = 'odpf/odpf-archives/' . $entityInstance->getEditionsPassees()->getEdition() . '/photoseq/thumbs/' . $newFileName;
+        if (file_exists($oldPathName)) {
+            rename($oldPathName, $newPathName);
+        }
+        if (file_exists($oldPathNameThumb)) {
+            rename($oldPathNameThumb, $newPathNameThumb);
+        }
 
         //}
         parent::updateEntity($entityManager, $entityInstance);
         //$entityInstance->createThumbs($entityInstance);
     }
-    public function setImageType($image,$nameExtLess,$path)
+
+    public function setImageType($image, $nameExtLess, $path)
     {
         try {
             $imageOrig = new Imagick($path . $image->getPhoto());
@@ -316,11 +317,10 @@ class OdpfPhotosCrudController extends AbstractCrudController
             $imageOrig->setImageCompression(Imagick::COMPRESSION_JPEG);
             $fileNameParts = explode('.', $image->getPhoto());
             $imageOrig->writeImage($path . $nameExtLess . '.jpg');
-        }
-        catch(\Exception $e){
+        } catch (\Exception $e) {
 
 
-            $_REQUEST['erreur']='yes';
+            $_REQUEST['erreur'] = 'yes';
 
         }
 
@@ -329,12 +329,12 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $entityInstance->setEditionspassees($entityInstance->getEquipepassee()->getEditionspassees());//L
-        $edition=$this->doctrine->getRepository(Edition::class)->findOneBy(['ed'=>$entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
-        $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition'=>$edition,'numero'=>$entityInstance->getEquipepassee()->getNumero()]);
+        $edition = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $entityInstance->getEquipepassee()->getEditionspassees()->getEdition()]);
+        $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['edition' => $edition, 'numero' => $entityInstance->getEquipepassee()->getNumero()]);
         $equipe === null ? $entityInstance->setEquipe(null) : $entityInstance->setEquipe($equipe);
         $equipe === null ? $entityInstance->setEdition(null) : $entityInstance->setEdition($edition);
 
-        if ($entityInstance->getEquipePassee()->getNumero()>=100){
+        if ($entityInstance->getEquipePassee()->getNumero() >= 100) {
             $entityInstance->setNational(true);
         }
 
@@ -351,7 +351,7 @@ class OdpfPhotosCrudController extends AbstractCrudController
         return $this->redirect($url);
     }
 
-    #[Route("/Admin/PhotosCrud/charge-photos",name:"charge-photos")]
+    #[Route("/Admin/PhotosCrud/charge-photos", name: "charge-photos")]
     public function charger_photos(Request $request, AdminContext $context)
     {//fontion appelée à disparaître lorsque le basculement odpf vers Olymphys sera achevé
         $qb = $this->doctrine->getRepository(OdpfEquipesPassees::class)->createQueryBuilder('e')
@@ -421,11 +421,11 @@ class OdpfPhotosCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
 
-        $this->requestStack->getSession()->set('idEdPassee',null);//remise à zéro de l'affichage de la planche contact
-       /* $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
-            ->linkToRoute('charge-photos')->createAsGlobalAction();*/ //fonction qui n'a servi que lors du passe de odpf.org à olymphys.
+        $this->requestStack->getSession()->set('idEdPassee', null);//remise à zéro de l'affichage de la planche contact
+        /* $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
+             ->linkToRoute('charge-photos')->createAsGlobalAction();*/ //fonction qui n'a servi que lors du passe de odpf.org à olymphys.
 
-        $afficheTablePhotos=Action::new('afficheTablePhotos', 'Afficher les photos dans un tableau', 'fa fa-th')
+        $afficheTablePhotos = Action::new('afficheTablePhotos', 'Afficher les photos dans un tableau', 'fa fa-th')
             ->linkToRoute('affiche_table_photos')->createAsGlobalAction();//affichage de la page des planches contact
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
@@ -439,18 +439,16 @@ class OdpfPhotosCrudController extends AbstractCrudController
                 return $action->setLabel('Déposer une photo')->setHtmlAttributes(['concours' => $this->requestStack->getCurrentRequest()->query->get('concours')]);
             })
             //->add(Crud::PAGE_INDEX, $attribEditionPassee)
-           // ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')
-            ->update('index', Action::DELETE,function  (Action $action) {
-                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            // ->setPermission($attribEditionPassee, 'ROLE_SUPER_ADMIN')
+            ->update('index', Action::DELETE, function (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);
+            }
             )
-            ->update('index', Action::EDIT,function  (Action $action) {
-                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            ->update('index', Action::EDIT, function (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);
+            }
             )
-          ->add(Crud::PAGE_INDEX, $afficheTablePhotos)
-
-
-
-           ;
+            ->add(Crud::PAGE_INDEX, $afficheTablePhotos);
 
     }
 
@@ -458,29 +456,28 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
         $response = $this->container->get(EntityRepository::class)->createQueryBuilder($searchDto, $entityDto, $fields, $filters) //le tri selon les éditions ne fonctionne pas bien
 
-            ->join('entity.equipepassee', 'eq')
+        ->join('entity.equipepassee', 'eq')
             ->join('entity.editionspassees', 'ed')
             ->resetDQLPart('orderBy');
 
-        if (isset($_REQUEST['sort'])){
-            $sort=$_REQUEST['sort'];
-            if (key($sort)=='equipepassee.lettre'){
+        if (isset($_REQUEST['sort'])) {
+            $sort = $_REQUEST['sort'];
+            if (key($sort) == 'equipepassee.lettre') {
                 $response->addOrderBy('eq.lettre', $sort['equipepassee.lettre']);
             }
-            if (key($sort)=='equipepassee.numero'){
+            if (key($sort) == 'equipepassee.numero') {
                 $response->addOrderBy('eq.numero', $sort['equipepassee.numero']);
             }
 
-            if (key($sort)=='editionspassees'){
-               $response->addOrderBy('ed.edition', $sort['editionspassees'])
-                        ->addOrderBy('eq.numero', 'ASC')
-                        ->addOrderBy('eq.lettre', 'ASC');
+            if (key($sort) == 'editionspassees') {
+                $response->addOrderBy('ed.edition', $sort['editionspassees'])
+                    ->addOrderBy('eq.numero', 'ASC')
+                    ->addOrderBy('eq.lettre', 'ASC');
             }
-        }
-        else {
+        } else {
 
             $response->OrderBy('ed.edition', 'DESC')
-                     ->addOrderBy('eq.numero', 'ASC');
+                ->addOrderBy('eq.numero', 'ASC');
         }
 
         return $response;
@@ -488,71 +485,68 @@ class OdpfPhotosCrudController extends AbstractCrudController
     }
 
 
-
-
     #[Route("/photos/afficheTablePhotos", name: "affiche_table_photos")]
-    public function afficheTablePhotos(Request $request) : Response
+    public function afficheTablePhotos(Request $request): Response
     {
 
-        $idTypeSujet=null;
-        $ed= $this->requestStack->getSession()->get('edition')->getEd();
-        if(new \DateTime('now') < $this->requestStack->getSession()->get('edition')->getConcourscia()) {
+        $idTypeSujet = null;
+        $ed = $this->requestStack->getSession()->get('edition')->getEd();
+        if (new \DateTime('now') < $this->requestStack->getSession()->get('edition')->getConcourscia()) {
             $ed = $this->requestStack->getSession()->get('edition')->getEd() - 1;//L'édition qui précéde l'édition en cours
         }
-        $idEdPassee=$this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $ed])->getId();
-        $idTypeSujet=$this->requestStack->getSession()->get('idTypesujet');
-        $idEquipe=$this->requestStack->getSession()->get('idEquipe');
-        if($this->requestStack->getSession()->get('idEdPassee')){//Dans ce cas un choix de l'édition a été réalisée sur la planche contact
-           // dd($this->requestStack->getSession()->get('idEdPassee'));
-            $idEdPassee=$this->requestStack->getSession()->get('idEdPassee');
+        $idEdPassee = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $ed])->getId();
+        $idTypeSujet = $this->requestStack->getSession()->get('idTypesujet');
+        $idEquipe = $this->requestStack->getSession()->get('idEquipe');
+        if ($this->requestStack->getSession()->get('idEdPassee')) {//Dans ce cas un choix de l'édition a été réalisée sur la planche contact
+            // dd($this->requestStack->getSession()->get('idEdPassee'));
+            $idEdPassee = $this->requestStack->getSession()->get('idEdPassee');
         }
-        $editionPassee=$this->doctrine->getRepository(OdpfEditionsPassees::class)->find($idEdPassee);
-        $listeEditionsPassees=$this->doctrine->getRepository(OdpfEditionsPassees::class)->createQueryBuilder('p')//Pour les choix des éditions de l'input select
-            ->where('p.edition >:value')
+        $editionPassee = $this->doctrine->getRepository(OdpfEditionsPassees::class)->find($idEdPassee);
+        $listeEditionsPassees = $this->doctrine->getRepository(OdpfEditionsPassees::class)->createQueryBuilder('p')//Pour les choix des éditions de l'input select
+        ->where('p.edition >:value')
             ->setParameter('value', 20)
             ->orderBy('p.edition', 'DESC')
             ->getQuery()->getResult();
 
         $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee], ['equipepassee' => 'ASC']);
-        $equipe=null;
-        if($idEquipe!=null){
-            $equipe=$this->doctrine->getRepository(OdpfEquipesPassees::class)->find($idEquipe);
+        $equipe = null;
+        if ($idEquipe != null) {
+            $equipe = $this->doctrine->getRepository(OdpfEquipesPassees::class)->find($idEquipe);
         }
 
-        if( $equipe!== null){
+        if ($equipe !== null) {
             $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['equipepassee' => $equipe], ['equipepassee' => 'ASC']);
         }
-        $qbEquipes=$this->doctrine->getRepository(OdpfEquipesPassees::class)->createQueryBuilder('e')
+        $qbEquipes = $this->doctrine->getRepository(OdpfEquipesPassees::class)->createQueryBuilder('e')
             ->where('e.editionspassees = :editionpassee')
             ->setParameter('editionpassee', $editionPassee);
         $listeEquipes = $qbEquipes->getQuery()->getResult();
-        if($idTypeSujet!=null) {
+        if ($idTypeSujet != null) {
             $typeSujet = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->find($idTypeSujet);
-            if($typeSujet->getLibelle()!=null and $typeSujet->getLibelle()!='Tous') {
-                if( $equipe!== null){
+            if ($typeSujet->getLibelle() != null and $typeSujet->getLibelle() != 'Tous') {
+                if ($equipe !== null) {
                     $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['equipepassee' => $equipe, 'typeSujet' => $typeSujet], ['equipepassee' => 'ASC']);
-                }
-                else{
+                } else {
                     $listePhotos = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $editionPassee, 'typeSujet' => $typeSujet], ['equipepassee' => 'ASC']);
                 }
             }
         }
 
-        $typesSujets=$this->doctrine->getRepository(OdpfSujetsPhotos::class)->findAll();
-        $builder=$this->createFormBuilder();
+        $typesSujets = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->findAll();
+        $builder = $this->createFormBuilder();
         foreach ($listePhotos as $photo) {
 
-            $builder->add('photo-'.$photo->getId(),CheckboxType::class,[
-                'required'=>false,
-                'label'=>false,
+            $builder->add('photo-' . $photo->getId(), CheckboxType::class, [
+                'required' => false,
+                'label' => false,
                 'attr' => ['id' => $photo->getId()],
 
             ]);
 
         }
-        $builder->add('telecharger', SubmitType::class,[
+        $builder->add('telecharger', SubmitType::class, [
             'label' => 'Télécharger',
-            'attr'=>['class'=>'btn btn-primary'],
+            'attr' => ['class' => 'btn btn-primary'],
         ]);
         $form = $builder->getForm();
         $form->handleRequest($request);
@@ -607,22 +601,23 @@ class OdpfPhotosCrudController extends AbstractCrudController
 
         return $this->render('bundles/EasyAdminBundle/table_photos.html.twig', [
             'form' => $form->createView(),
-            'listePhotos'=>$listePhotos,
-            'editionPassee'=>$editionPassee,
-            'listeEditionsPassees'=>$listeEditionsPassees,
-            'listeTypesSujets'=>$typesSujets,
-            'listeEquipes'=>$listeEquipes,
-            'equipe'=>$equipe,
-            ]);
+            'listePhotos' => $listePhotos,
+            'editionPassee' => $editionPassee,
+            'listeEditionsPassees' => $listeEditionsPassees,
+            'listeTypesSujets' => $typesSujets,
+            'listeEquipes' => $listeEquipes,
+            'equipe' => $equipe,
+        ]);
 
     }
+
     #[Route("/photos/choixeditionpassee", name: "choixeditionpassee")]//Permet de contourner la création d'une url admin dans la fonction js
-    public function choixEdition(Request $request) :Response
+    public function choixEdition(Request $request): Response
     {
 
-        $this->requestStack->getSession()->set('idEdPassee',$request->get('idEdPassee'));//On transmet l'id de l'édition passée par une variable de session
-        $this->requestStack->getSession()->set('idEquipe',null);
-        $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
+        $this->requestStack->getSession()->set('idEdPassee', $request->get('idEdPassee'));//On transmet l'id de l'édition passée par une variable de session
+        $this->requestStack->getSession()->set('idEquipe', null);
+        $url = $this->adminUrlGenerator->setRoute('affiche_table_photos')
             ->setDashboard(OdpfDashboardController::class)
             ->generateUrl();
 
@@ -631,36 +626,38 @@ class OdpfPhotosCrudController extends AbstractCrudController
     }
 
     #[Route("/photos/set_type_sujet_photo", name: "set_type_sujet_photo")]//Permet de contourner la création d'une url admin dans la fonction js
-    public function setTypeSujetPhoto(Request $request) :Response
+    public function setTypeSujetPhoto(Request $request): Response
     {
-            $idPhoto=$request->get('idPhoto');
-            $idSujetPhoto=$request->get('idSujetPhoto');
-            $sujetPhoto=$this->doctrine->getRepository(OdpfSujetsPhotos::class)->find($idSujetPhoto);
-            $photo=$this->doctrine->getRepository(Photos::class)->find($idPhoto);
-            $photo->setTypeSujet($sujetPhoto);
-            $this->doctrine->persist($photo);
-            $this->doctrine->flush();
-            $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
-                ->setDashboard(OdpfDashboardController::class)
-                ->generateUrl();
-            return $this->redirect($url);
-    }
-    #[Route("/photos/choix_type_sujet_photo", name: "choix_type_sujet_photo")]//Permet de contourner la création d'une url admin dans la fonction js
-    public function choixTypeSujetPhoto(Request $request) :Response
-    {
-        $idSujet=$request->get('idSujetPhoto');
-        $this->requestStack->getSession()->set('idTypesujet',$idSujet);
-        $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
+        $idPhoto = $request->get('idPhoto');
+        $idSujetPhoto = $request->get('idSujetPhoto');
+        $sujetPhoto = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->find($idSujetPhoto);
+        $photo = $this->doctrine->getRepository(Photos::class)->find($idPhoto);
+        $photo->setTypeSujet($sujetPhoto);
+        $this->doctrine->persist($photo);
+        $this->doctrine->flush();
+        $url = $this->adminUrlGenerator->setRoute('affiche_table_photos')
             ->setDashboard(OdpfDashboardController::class)
             ->generateUrl();
         return $this->redirect($url);
     }
-    #[Route("/photos/choix_equipe_photo", name: "choix_equipe_photo")]//Permet de contourner la création d'une url admin dans la fonction js
-    public function choixEquipePhoto(Request $request) :Response
+
+    #[Route("/photos/choix_type_sujet_photo", name: "choix_type_sujet_photo")]//Permet de contourner la création d'une url admin dans la fonction js
+    public function choixTypeSujetPhoto(Request $request): Response
     {
-        $idEquipe=$request->get('idEquipe');
-        $this->requestStack->getSession()->set('idEquipe',$idEquipe);
-        $url=$this->adminUrlGenerator->setRoute('affiche_table_photos')
+        $idSujet = $request->get('idSujetPhoto');
+        $this->requestStack->getSession()->set('idTypesujet', $idSujet);
+        $url = $this->adminUrlGenerator->setRoute('affiche_table_photos')
+            ->setDashboard(OdpfDashboardController::class)
+            ->generateUrl();
+        return $this->redirect($url);
+    }
+
+    #[Route("/photos/choix_equipe_photo", name: "choix_equipe_photo")]//Permet de contourner la création d'une url admin dans la fonction js
+    public function choixEquipePhoto(Request $request): Response
+    {
+        $idEquipe = $request->get('idEquipe');
+        $this->requestStack->getSession()->set('idEquipe', $idEquipe);
+        $url = $this->adminUrlGenerator->setRoute('affiche_table_photos')
             ->setDashboard(OdpfDashboardController::class)
             ->generateUrl();
         return $this->redirect($url);

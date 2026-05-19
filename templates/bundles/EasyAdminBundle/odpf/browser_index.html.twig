@@ -1,0 +1,316 @@
+{% extends 'baseckeditor.html.twig' %}
+
+{% block body %}
+    <style>
+        .mosaic-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .mosaic-item {
+            width: 120px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .mosaic-item img, .mosaic-item i.fa-5x {
+            width: 110px;
+            height: 90px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .mosaic-item img {
+            object-fit: cover;
+        }
+
+        .mosaic-item i.fa-5x {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mosaic-item img:hover, .mosaic-item i.fa-5x:hover {
+            border-color: #f0a500;
+            transform: scale(1.05);
+        }
+
+        .mosaic-item .mosaic-name {
+            font-size: 11px;
+            word-break: break-all;
+            margin-top: 4px;
+        }
+
+        #btn-toggle-view.active-mosaic {
+            background-color: #f0a500;
+            color: #fff;
+            border-color: #f0a500;
+        }
+
+        /* Style pour le breadcrumb */
+        .breadcrumb {
+            background-color: transparent;
+            padding: 8px 0;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb .active {
+            color: #6c757d;
+        }
+    </style>
+    {% set baseUrl = path('odpfdocuments_browser') %}
+    {% set nextOrderNom  = (sort == 'nom'  and order == 'asc') ? 'desc' : 'asc' %}
+    {% set nextOrderDate = (sort == 'date' and order == 'asc') ? 'desc' : 'asc' %}
+    <div class="container">
+        <div class="row" id="header-bar"
+             style="position: fixed; z-index: 10; background: #fff; padding-bottom: 4px; left: 0; right: 0; margin: 0 auto; max-width: inherit;">
+            <div class="col-md-12" style="padding: 0">
+                <section class="content-header">
+                    <div class="content-header-title">
+                        <h4 class="title">Documents et
+                            images du site Olymphys
+                        </h4>
+                    </div>
+                </section>
+
+                <div class="text-center mb-1">
+                    <button id="btn-toggle-view" class="btn btn-sm btn-outline-secondary" onclick="toggleView()"
+                            title="Basculer vue mosaïque / liste">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             viewBox="0 0 16 16" id="icon-mosaic">
+                            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3A1.5 1.5 0 0 1 15 10.5v3A1.5 1.5 0 0 1 13.5 15h-3A1.5 1.5 0 0 1 9 13.5z"/>
+                        </svg>
+                        Mosaïque
+                    </button>
+                    {% if subfolder != '' %}
+                        {% set parentFolder = subfolder|split('/')|slice(0, -1)|join('/') %}
+                        <a href="{{ path('odpfdocuments_browser', { 'subfolder': parentFolder, 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                           class="btn btn-sm btn-outline-primary" title="Retour au dossier parent">
+                            <i class="fas fa-arrow-left"></i> Retour
+                        </a>
+                    {% endif %}
+                </div>
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="breadcrumb text-center">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="{{ path('odpfdocuments_browser', { 'subfolder': '', 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}">
+                                Accueil
+                            </a>
+                        </li>
+                        {% if subfolder != '' %}
+                            {% set breadcrumbParts = subfolder|split('/') %}
+                            {% set currentPath = '' %}
+                            {% for part in breadcrumbParts %}
+                                {% set currentPath = (currentPath ~ '/' ~ part)|trim('/', 'left') %}
+                                <li class="breadcrumb-item">
+                                    <a href="{{ path('odpfdocuments_browser', { 'subfolder': currentPath, 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}">
+                                        {{ part }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+                    </ol>
+                </nav>
+                <hr class="mt-0">
+            </div>
+        </div>
+
+        {# Vue liste #}
+        <div id="view-list" style="padding-top: 150px">
+            <div class="row text-center">
+                <div class="col-md-3 d-none d-md-block">
+                    Vignette
+                </div>
+                <div class="col-md-4 d-none d-md-block">
+
+                    <a href="{{ baseUrl }}?sort=nom&order={{ nextOrderNom }}&subfolder={{ subfolder }}"
+                       class="text-decoration-none text-dark fw-bold">
+                        Nom
+                        <i class="fa fa-{{ sort == 'nom' ? (order == 'asc' ? 'sort-alpha-asc' : 'sort-alpha-desc') : 'sort' }}"></i>
+                    </a>
+                </div>
+
+                <div class="col-md-2 d-none d-md-block">
+                    Créée le
+                </div>
+                <div class="col-md-2 d-none d-md-block">
+                    <a href="{{ baseUrl }}?sort=date&order={{ nextOrderDate }}&subfolder={{ subfolder }}"
+                       class="text-decoration-none text-dark fw-bold">
+                        Modifiée le <i
+                                class="fa fa-{{ sort == 'date' ? (order == 'asc' ? 'sort-numeric-asc' : 'sort-numeric-desc') : 'sort' }}"></i>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            {% if listeFiles != null %}
+                {% for file in listeFiles %}
+                    <div class="row text-center">
+                        <div class="col-md-3 col-sm-12">
+                            {% if file[3] == 'folder' %}
+                                <a href="{{ path('odpfdocuments_browser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                                   title="Ouvrir le dossier">
+                                    <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
+                                </a>
+                            {% elseif file[3] == 'image' %}
+                                <img src="{{ asset(path~'/'~file[0]) }}" alt="vignette"
+                                     style="max-width:50px; max-height: 50px; transition: transform 0.3s;"
+                                     onmouseover="this.style.transform='scale(4)'"
+                                     onmouseout="this.style.transform='scale(1)'"
+                                     onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
+                            {% elseif file[3] == 'file' %}
+                                {% set extension = file[0]|split('.')|last|lower %}
+                                {% set icon = 'fa-file' %}
+                                {% if extension == 'pdf' %}{% set icon = 'fa-file-pdf' %}
+                                {% elseif extension in ['doc', 'docx'] %}{% set icon = 'fa-file-word' %}
+                                {% elseif extension in ['xls', 'xlsx'] %}{% set icon = 'fa-file-excel' %}
+                                {% elseif extension in ['ppt', 'pptx'] %}{% set icon = 'fa-file-powerpoint' %}
+                                {% elseif extension in ['zip', 'rar', '7z'] %}{% set icon = 'fa-file-archive' %}
+                                {% elseif extension == 'txt' %}{% set icon = 'fa-file-alt' %}
+                                {% endif %}
+                                <i class="fas {{ icon }} fa-2x" style="color: #6c757d; cursor: pointer"
+                                   onclick="selectImage('{{ asset(path~'/'~file[0]) }}')"
+                                   title="Sélectionner le fichier"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-5 col-sm-12">{{ file[0] }}</div>
+                        <div class="col-md-2 col-sm-12">
+                            <span class="d-md-none">Créée le </span>{{ file[1] }}
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <span class="d-md-none">Modifiée le </span>{{ file[2] }}
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {# Vue mosaïque #}
+        <div id="view-mosaic" style="display:none; padding-top: 120px">
+            <div class="mosaic-grid">
+                {% if listeFiles != null %}
+                    {% for file in listeFiles %}
+                        {% if file[3] == 'folder' %}
+                            <div class="mosaic-item">
+                                <a href="{{ path('odpfdocuments_browser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                                   style="text-decoration: none; color: inherit;">
+                                    <i class="fas fa-folder fa-5x"
+                                       style="color: #f0a500; display: block; margin: 0 auto 5px;"></i>
+                                    <div class="mosaic-name">{{ file[0] }}</div>
+                                </a>
+                            </div>
+                        {% elseif file[3] == 'image' %}
+                            <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
+                                <img src="{{ asset(path~'/'~file[0]) }}" alt="{{ file[0] }}" title="{{ file[0] }}">
+                                <div class="mosaic-name">{{ file[0] }}</div>
+                            </div>
+                        {% elseif file[3] == 'file' %}
+                            <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
+                                {% set extension = file[0]|split('.')|last|lower %}
+                                {% set icon = 'fa-file' %}
+                                {% if extension == 'pdf' %}{% set icon = 'fa-file-pdf' %}
+                                {% elseif extension in ['doc', 'docx'] %}{% set icon = 'fa-file-word' %}
+                                {% elseif extension in ['xls', 'xlsx'] %}{% set icon = 'fa-file-excel' %}
+                                {% elseif extension in ['ppt', 'pptx'] %}{% set icon = 'fa-file-powerpoint' %}
+                                {% elseif extension in ['zip', 'rar', '7z'] %}{% set icon = 'fa-file-archive' %}
+                                {% elseif extension == 'txt' %}{% set icon = 'fa-file-alt' %}
+                                {% endif %}
+                                <i class="fas {{ icon }} fa-5x"
+                                   style="color: #6c757d; display: block; margin: 0 auto 5px;"></i>
+                                <div class="mosaic-name">{{ file[0] }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var currentView = localStorage.getItem('imageBrowserView') || 'mosaic';
+
+        function applyView() {
+            var btn = document.getElementById('btn-toggle-view');
+            if (currentView === 'mosaic') {
+                document.getElementById('view-list').style.display = 'none';
+                document.getElementById('view-mosaic').style.display = 'block';
+                btn.classList.add('active-mosaic');
+                btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 12a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1z"/></svg> Liste';
+            } else {
+                document.getElementById('view-list').style.display = 'block';
+                document.getElementById('view-mosaic').style.display = 'none';
+                btn.classList.remove('active-mosaic');
+                btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3A1.5 1.5 0 0 1 15 10.5v3A1.5 1.5 0 0 1 13.5 15h-3A1.5 1.5 0 0 1 9 13.5z"/></svg> Mosaïque';
+            }
+        }
+
+        function toggleView() {
+            currentView = (currentView === 'list') ? 'mosaic' : 'list';
+            localStorage.setItem('imageBrowserView', currentView);
+            applyView();
+        }
+
+        applyView();
+
+        // Envoyer l'URL de l'image à CKEditor
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var funcNum = getParameterByName('CKEditorFuncNum');
+
+        function selectImage(url) {
+            if (window.opener && window.opener.CKEDITOR) {
+                window.opener.CKEDITOR.tools.callFunction(funcNum, url);
+                window.close();
+            }
+        }
+
+        const elListe = document.getElementById('view-liste');
+        const elMosaique = document.getElementById('view-mosaique');
+        const elBtnListe = document.getElementById('btn-liste');
+        const elBtnMosaique = document.getElementById('btn-mosaique');
+        const elSort = document.getElementById('sort-controls');
+
+        function setView(mode) {
+            if (mode === 'mosaique') {
+                elListe.style.display = 'none';
+                elMosaique.style.display = 'block';
+                elBtnListe.classList.remove('active');
+                elBtnMosaique.classList.add('active');
+                elSort.classList.remove('d-none');
+                elSort.classList.add('d-flex');
+
+            } else {
+                elMosaique.style.display = 'none';
+                elListe.style.display = 'block';
+                elBtnMosaique.classList.remove('active');
+                elBtnListe.classList.add('active');
+                elSort.classList.add('d-none');
+                elSort.classList.remove('d-flex');
+
+            }
+            localStorage.setItem('imagesView', mode);
+        }
+    </script>
+{% endblock %}
