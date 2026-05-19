@@ -24,7 +24,7 @@ class Odpfdocuments_browserController extends AbstractController
         $subfolder = $request->query->get('subfolder') ?? '';
         $subfolder = str_replace(['..', './'], '', $subfolder);
         $subfolder = trim($subfolder, '/');
-        
+
         $path = $subfolder !== '' ? $basePath . $subfolder : $basePath;
         $path = rtrim($path, '/');
 
@@ -34,7 +34,7 @@ class Odpfdocuments_browserController extends AbstractController
         foreach ($listFilesbrut as $file) {
             if ($file !== '.tmb' && $file !== '.' && $file !== '..') {
                 $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
-                $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type];
+                $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
             }
         }
         usort($listFiles, function ($a, $b) use ($sort) {

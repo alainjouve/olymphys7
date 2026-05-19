@@ -148,7 +148,9 @@
                         {% endif %}
                     </a>
                 </div>
-
+                <div class="col-md-1 d-none d-md-block">
+                    Taille(oct.)
+                </div>
                 <div class="col-md-2 d-none d-md-block">
                     Créée le
                 </div>
@@ -197,7 +199,8 @@
                                    title="Sélectionner le fichier"></i>
                             {% endif %}
                         </div>
-                        <div class="col-md-5 col-sm-12">{{ file[0] }}</div>
+                        <div class="col-md-4 col-sm-12">{{ file[0] }}</div>
+                        <div class="col-md-1 col-sm-12">{{ file[4] }}</div>
                         <div class="col-md-2 col-sm-12">
                             <span class="d-md-none">Créée le </span>{{ file[1] }}
                         </div>
