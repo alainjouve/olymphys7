@@ -128,7 +128,8 @@
                 <hr class="mt-0">
             </div>
         </div>
-
+        {% set subs=subfolder|split('/') %}
+        {% set sub=subs[subs|length-1] %}
         {# Vue liste #}
         <div id="view-list" style="padding-top: 150px">
             <div class="row text-center">
@@ -164,6 +165,7 @@
                 </div>
             </div>
             <hr>
+
             {% if listeFiles != null %}
                 {% for file in listeFiles %}
                     <div class="row text-center">
@@ -174,7 +176,8 @@
                                     <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
                                 </a>
                             {% elseif file[3] == 'image' %}
-                                <img src="{{ asset(path~'/thumbs/'~file[0]) }}" alt="vignette"
+                                <img src="{{ sub !='photoeqs' ?asset(path~'/'~file[0]): asset(path~'/thumbs/'~file[0]) }}"
+                                     alt="vignette"
                                      style="max-width:50px; max-height: 50px; transition: transform 0.3s;"
                                      onmouseover="this.style.transform='scale(4)'"
                                      onmouseout="this.style.transform='scale(1)'"
@@ -223,9 +226,9 @@
                             </div>
                         {% elseif file[3] == 'image' %}
                             <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
-                                <img src="{{ (subfolder !='photoseq' ? asset(path~'/'~file[0]) : asset(path~'/thumbs/'~file[0])) }}"
+                                <img src="{{ (sub !='photoseq' ? asset(path~'/'~file[0]) : asset(path~'/thumbs/'~file[0])) }}"
                                      alt="{{ file[0] }}"
-                                     onmouseover="this.style.transform='scale(4)'"
+                                     onmouseover="this.style.transform='scale(2)'"
                                      onmouseout="this.style.transform='scale(1)'"
                                      title="{{ file[0] }}">
                                 <div class="mosaic-name">{{ file[0] }}</div>

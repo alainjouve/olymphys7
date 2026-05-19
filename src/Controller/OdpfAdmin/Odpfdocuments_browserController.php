@@ -16,7 +16,7 @@ class Odpfdocuments_browserController extends AbstractController
     #[Isgranted('ROLE_ADMIN')]
     public function index(Request $request): Response
     {
-        $basePath = 'public/odpf/';
+        $basePath = 'odpf/';
 
         if (str_contains($_SERVER['SERVER_NAME'], 'localhost')) $basePath = 'odpf/';
         $sort = $request->query->get('sort', 'nom');
