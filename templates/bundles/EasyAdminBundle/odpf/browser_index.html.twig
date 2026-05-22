@@ -178,7 +178,7 @@
                                     <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
                                 </a>
                             {% elseif file[3] == 'image' %}
-                                <img src="{{ sub !='photoeqs' ?asset(path~'/'~file[0]): asset(path~'/thumbs/'~file[0]) }}"
+                                <img src="{{ sub =='photoseq' ? asset(path~'/thumbs/'~file[0]) : asset(path~'/'~file[0]) }}"
                                      alt="vignette"
                                      style="max-width:50px; max-height: 50px; transition: transform 0.3s;"
                                      onmouseover="this.style.transform='scale(4)'"
