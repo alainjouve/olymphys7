@@ -130,8 +130,14 @@
         </div>
         {% set subs=subfolder|split('/') %}
         {% set sub=subs[subs|length-1] %}
+
+		{# Message d'attente #}
+		<div id="view-wait" style="padding-top: 150px">
+			<div class="row text-center">Chargement en cours ...</div>
+		</div>
+
         {# Vue liste #}
-        <div id="view-list" style="padding-top: 150px">
+        <div id="view-list" style="display:none; padding-top: 150px">
             <div class="row text-center">
                 <div class="col-md-3 d-none d-md-block">
                     Vignette
@@ -263,6 +269,9 @@
 
         function applyView() {
             var btn = document.getElementById('btn-toggle-view');
+
+            document.getElementById('view-wait').style.display = 'none';
+
             if (currentView === 'mosaic') {
                 document.getElementById('view-list').style.display = 'none';
                 document.getElementById('view-mosaic').style.display = 'block';
