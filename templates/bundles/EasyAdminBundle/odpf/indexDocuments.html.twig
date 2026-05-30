@@ -2,7 +2,7 @@
 {# @var entities \EasyCorp\Bundle\EasyAdminBundle\Collection\EntityCollection #}
 {# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
 {% extends '@EasyAdmin/page/content.html.twig' %}
-
+{# Pour l'explorateur de media #}
  {% block page_title %}
      Les documents et images du site OdPF(Réservé aux super administrateurs)
 
@@ -33,7 +33,7 @@
                     Accueil
                 </a>
             </li>
-            {% set currentPath = '' %}
+            {% set currentPath = '/odpf' %}
             {% if subfolder != '' %}
                 {% set breadcrumbParts = subfolder|split('/') %}
 
@@ -145,7 +145,6 @@
             </div>
 
             <hr>
-
             {% if listeFiles != null %}
                 {% for file in listeFiles %}
                     <div class="row text-center">

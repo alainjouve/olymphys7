@@ -1,5 +1,5 @@
 {% extends 'baseckeditor.html.twig' %}
-
+{# Pour l'affichage à partir de CKEditor #}
 {% block body %}
     <style>
         .mosaic-grid {
@@ -72,6 +72,7 @@
         }
     </style>
     {% set baseUrl = path('odpfdocuments_browser') %}
+
     {% set nextOrderNom  = (sort == 'nom'  and order == 'asc') ? 'desc' : 'asc' %}
     {% set nextOrderDate = (sort == 'date' and order == 'asc') ? 'desc' : 'asc' %}
     <div class="container">
@@ -131,10 +132,10 @@
         {% set subs=subfolder|split('/') %}
         {% set sub=subs[subs|length-1] %}
 
-		{# Message d'attente #}
-		<div id="view-wait" style="padding-top: 150px">
-			<div class="row text-center">Chargement en cours ...</div>
-		</div>
+        {# Message d'attente #}
+        <div id="view-wait" style="padding-top: 150px">
+            <div class="row text-center">Chargement en cours ...</div>
+        </div>
 
         {# Vue liste #}
         <div id="view-list" style="display:none; padding-top: 150px">
