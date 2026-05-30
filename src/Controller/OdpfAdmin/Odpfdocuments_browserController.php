@@ -32,13 +32,14 @@ class Odpfdocuments_browserController extends AbstractController
 
         $listFiles = [];
         foreach ($listFilesbrut as $file) {
-            if ($file !== '.tmb' && $file !== '.' && $file !== '..') {
+            if ($file[0] !== '.' && $file !== 'thumbs') {
                 $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
                 $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
             }
         }
         usort($listFiles, function ($a, $b) use ($sort) {
-            return $sort === 'date' ? ($a[3] <=> $b[3]) : strcasecmp($a[0], $b[0]);
+            // on trie sur la date de création ou sur le nom de fichier
+            return $sort === 'date' ? ($a[2] <=> $b[2]) : strcasecmp($a[0], $b[0]);
         });
         if ($order === 'desc') {
             $listFiles = array_reverse($listFiles);
