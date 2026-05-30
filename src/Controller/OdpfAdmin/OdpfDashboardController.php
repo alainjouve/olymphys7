@@ -36,6 +36,7 @@ use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 #[AllowDynamicProperties]
 class OdpfDashboardController extends AbstractDashboardController
@@ -192,16 +193,19 @@ class OdpfDashboardController extends AbstractDashboardController
 
     }
 
-    #[Route('/deocuments/supprimer', name: 'supprimer_doc')]
+    #[Route('/documents/supprimer', name: 'supprimer_doc')]
     #[isGranted('ROLE_SUPER_ADMIN')]
     public function supprimer_doc(Request $request, AdminUrlGenerator $adminUrlGenerator): Response
     {
 
         $doc = $request->request->get('filename');
-        $subfolder = $request->query->get('subfolder');
-        $filePath = 'odpf' . $subfolder . '/' . $doc;
-        dd($filePath);
-        if (str_contains($_SERVER['SERVER_NAME'], 'olymphys.fr')) $filePath = 'public/odpf' . $subfolder . '/' . $doc;
+        $subfolder = trim($request->request->get('subfolder', ''));
+        $subfolder = str_replace(['../', './'], '', $subfolder);
+        $basePath = $this->getParameter('kernel.project_dir') . '/public/odpf';
+        $path = $basePath . '/' . $subfolder;
+        $filePath = $path . '/' . $doc;
+        //if (str_contains($_SERVER['SERVER_NAME'], 'olymphys.fr')) $filePath = $this->getParameter('kernel.project_dir') . '/public/odpf' . $subfolder . '/' . $doc;
+
         if (file_exists($filePath)) {
             unlink($filePath);
             $this->addFlash('success', 'Le document ' . $doc . ' a été supprimée avec succès.');
@@ -216,6 +220,7 @@ class OdpfDashboardController extends AbstractDashboardController
     #[isGranted('ROLE_SUPER_ADMIN')]
     public function upload_doc_ajax(Request $request): JsonResponse
     {
+
         $token = $request->headers->get('X-CSRF-Token') ?? $request->request->get('_token');
         if (!$this->csrfTokenManager->isTokenValid(new CsrfToken('upload_documents', $token))) {
             {
@@ -223,15 +228,18 @@ class OdpfDashboardController extends AbstractDashboardController
             }
         }
 
-        $path = $this->getParameter('kernel.project_dir') . '/public/odpf/' . $request->files->get('subfolder');
-
         $file = $request->files->get('doc');
         if (!$file) {
             return new JsonResponse(['error' => 'Aucun fichier reçu.'], 400);
         }
 
-
+        // Nettoyage du subfolder
+        $subfolder = trim($request->request->get('subfolder', ''));
+        $subfolder = str_replace(['../', './'], '', $subfolder);
+        $basePath = $this->getParameter('kernel.project_dir') . '/public/odpf';
+        $path = $basePath . '/' . $subfolder;
         $originalFilename = $file->getClientOriginalName();
+
         $file->move($path, $originalFilename);
 
         return new JsonResponse(['success' => true, 'filename' => $originalFilename]);
@@ -241,7 +249,7 @@ class OdpfDashboardController extends AbstractDashboardController
     #[isGranted('ROLE_SUPER_ADMIN')]
     public function deposer_documents(Request $request, AdminUrlGenerator $adminUrlGenerator): Response
     {
-        $path = '/';
+        $path = 'odpf/';
 
 
         $listeDocumentsbrut = scandir($path);
@@ -254,9 +262,7 @@ class OdpfDashboardController extends AbstractDashboardController
         $this->requestStack->getSession()->set('listeDocuments', $listeDocuments);
         $form = $this->createFormBuilder()
             ->add('document', FileType::class, [
-                'constraints' => [
-                    new File(mimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp',], mimeTypesMessage: 'Veuillez télécharger une image au format JPEG, PNG, GIF ou WEBP')
-                ],
+                
                 'label' => 'Sélectionnez un document à déposer',
                 'required' => true,
                 'attr' => ['onchange' => 'chargedocument(this)']
