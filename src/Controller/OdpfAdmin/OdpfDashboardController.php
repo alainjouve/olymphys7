@@ -200,7 +200,7 @@ class OdpfDashboardController extends AbstractDashboardController
         $doc = $request->request->get('filename');
         $subfolder = $request->query->get('subfolder');
         $filePath = 'odpf' . $subfolder . '/' . $doc;
-        
+        dd($filePath);
         if (str_contains($_SERVER['SERVER_NAME'], 'olymphys.fr')) $filePath = 'public/odpf' . $subfolder . '/' . $doc;
         if (file_exists($filePath)) {
             unlink($filePath);
