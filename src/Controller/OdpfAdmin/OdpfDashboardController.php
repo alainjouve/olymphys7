@@ -17,6 +17,7 @@ use App\Entity\Odpf\OdpfLogos;
 use App\Entity\Odpf\OdpfPartenaires;
 use App\Entity\Odpf\OdpfVideosequipes;
 use App\Entity\Photos;
+use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -41,13 +42,15 @@ class OdpfDashboardController extends AbstractDashboardController
 {
     private AdminContextProvider $adminContextProvider;
     private AdminUrlGenerator $adminUrlGenerator;
+    private EntityManagerInterface $doctrine;
 
-    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, AdminUrlGenerator $adminUrlGenerator, private CsrfTokenManagerInterface $csrfTokenManager)
+    public function __construct(RequestStack $requestStack, EntityManagerInterface $doctrine, AdminContextProvider $adminContextProvider, AdminUrlGenerator $adminUrlGenerator, private CsrfTokenManagerInterface $csrfTokenManager)
     {
 
         $this->adminUrlGenerator = $adminUrlGenerator;
         $this->adminContextProvider = $adminContextProvider;
         $this->requestStack = $requestStack;
+        $this->doctrine = $doctrine;
 
     }
 
@@ -141,15 +144,33 @@ class OdpfDashboardController extends AbstractDashboardController
         $subfolder = trim($subfolder, '/');
 
         $path = $subfolder !== '/' ? $basePath . $subfolder : $basePath;
-        $path = rtrim($path, '/');
 
-        $listFilesbrut = scandir($path);
+        $path = rtrim($path, '/');
+        $listFilesbrut = null;
+        if (str_contains($path, 'photoseq') === true) {
+
+            $edition = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => explode('/', $path)[count(explode('/', $path)) - 2]]);
+
+            $images = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $edition]);
+            $i = 0;
+            foreach ($images as $image) {
+                if (file_exists($path . '/thumbs/' . $image->getPhoto())) {
+                    $listFilesbrut[$i] = $image->getPhoto();
+                    $i++;
+                }
+            }
+
+        } else {
+            $listFilesbrut = scandir($path);
+        }
 
         $listFiles = [];
         foreach ($listFilesbrut as $file) {
             if ($file !== '.tmb' && $file !== '.' && $file !== '..') {
-                $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
-                $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
+                if (file_exists($path . '/' . $file)) {
+                    $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
+                    $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
+                }
             }
         }
         usort($listFiles, function ($a, $b) use ($sort) {
@@ -171,15 +192,16 @@ class OdpfDashboardController extends AbstractDashboardController
 
     }
 
-    #[Route('/images/supprimer', name: 'supprimer_doc')]
+    #[Route('/deocuments/supprimer', name: 'supprimer_doc')]
     #[isGranted('ROLE_SUPER_ADMIN')]
     public function supprimer_doc(Request $request, AdminUrlGenerator $adminUrlGenerator): Response
     {
 
-        $doc = $request->query->get('filename');
+        $doc = $request->request->get('filename');
         $subfolder = $request->query->get('subfolder');
-        $filePath = $subfolder . '/' . $doc;
-
+        $filePath = 'odpf' . $subfolder . '/' . $doc;
+        
+        if (str_contains($_SERVER['SERVER_NAME'], 'olymphys.fr')) $filePath = 'public/odpf' . $subfolder . '/' . $doc;
         if (file_exists($filePath)) {
             unlink($filePath);
             $this->addFlash('success', 'Le document ' . $doc . ' a été supprimée avec succès.');

@@ -33,7 +33,7 @@
                     Accueil
                 </a>
             </li>
-            {% set currentPath = '/odpf' %}
+            {% set currentPath = '' %}
             {% if subfolder != '' %}
                 {% set breadcrumbParts = subfolder|split('/') %}
 
@@ -155,8 +155,9 @@
                                     <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
                                 </a>
                             {% elseif file[3] == 'image' %}
-                                <img src="{{ sub !='photoseq' ?asset(currentPath~'/'~file[0]): asset(currentPath~'/'~'thumbs/'~file[0]) }}"
+                                <img src="{{ sub !='photoseq' ?asset('odpf/'~currentPath~'/'~file[0]): asset('odpf/'~currentPath~'/'~'thumbs/'~file[0]) }}"
                                      alt="vignette"
+                                     loading="lazy"
                                      style="max-width:50px; max-height: 50px; transition: transform 0.3s;"
                                      onmouseover="this.style.transform='scale(4)'"
                                      onmouseout="this.style.transform='scale(1)'"
@@ -221,9 +222,10 @@
                                     </div>
                                 {% elseif file[3] == 'image' %}
                                     <div class="mosaic-item"
-                                         onclick="selectImage('{{ asset(currentPath~'/'~file[0]) }}')">
-                                        <img src="{{ (sub =='photoseq' ? asset(currentPath~'/thumbs/'~file[0]) :  asset(currentPath~'/'~file[0])) }}"
+                                         onclick="selectImage('{{ asset('odpf/'~currentPath~'/'~file[0]) }}')">
+                                        <img src="{{ (sub =='photoseq' ? asset('odpf/'~currentPath~'/thumbs/'~file[0]) :  asset('odpf/'~currentPath~'/'~file[0])) }}"
                                              alt="{{ file[0] }}"
+                                             loading="lazy"
                                              onmouseover="this.style.transform='scale(2)'"
                                              onmouseout="this.style.transform='scale(1)'"
                                              title="{{ file[0] }}">

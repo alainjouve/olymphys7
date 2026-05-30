@@ -28,13 +28,20 @@ class Odpfdocuments_browserController extends AbstractController
         $path = $subfolder !== '' ? $basePath . $subfolder : $basePath;
         $path = rtrim($path, '/');
 
-        $listFilesbrut = scandir($path);
+        $listFilesbrut = null;
+        if (str_contains($path, 'photoseq') === true) {
+            $listFilesbrut = scandir($path . '/thumbs');
+        } else {
+            $listFilesbrut = scandir($path);
+        }
 
         $listFiles = [];
         foreach ($listFilesbrut as $file) {
-            if ($file[0] !== '.' && $file !== 'thumbs') {
-                $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
-                $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
+            if ($file !== '.tmb' && $file !== '.' && $file !== '..' && $file !== 'thumbs') {
+                if (file_exists($path . '/' . $file)) {
+                    $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
+                    $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
+                }
             }
         }
         usort($listFiles, function ($a, $b) use ($sort) {
