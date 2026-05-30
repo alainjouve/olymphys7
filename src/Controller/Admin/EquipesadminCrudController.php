@@ -807,117 +807,125 @@ class EquipesadminCrudController extends AbstractCrudController
 
                 $listeEquipes = $this->doctrine->getRepository(Equipesadmin::class)->findBy(['edition' => $edition], ['numero' => 'ASC']);
                 $mailprof1 = $worksheet->getCell([27, $row])->getValue();
-                $prof = $repoUser->findOneBy(['email' => $mailprof1]);
-                $uai = $worksheet->getCell([3, $row])->getValue();
-                $etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
-                if ($etablissement == null) {//Nouvel établissement pas encore dans notre table uai
-                    $etablissement = new Uai();
-                    $etablissement->setUai($uai);
-                }
-
-                //on réécrit les données de l'établissement s'il existe déjà, on suppose que les données adage sont plus à jour que nos données
-                $etablissement->setNom($worksheet->getCell([9, $row])->getValue());
-                $etablissement->setCourriel($worksheet->getCell([17, $row])->getValue());
-                $etablissement->setProviseur($worksheet->getCell([16, $row])->getValue());
-                $etablissement->setAdresse($worksheet->getCell([18, $row])->getValue());
-                $etablissement->setCodePostal($worksheet->getCell([19, $row])->getValue());
-                $etablissement->setCommune($worksheet->getCell([10, $row])->getValue());
-                $etablissement->setAcademie($worksheet->getCell([13, $row])->getValue());
-                $etablissement->setTel($worksheet->getCell([20, $row])->getValue());
-                $this->doctrine->getManager()->persist($etablissement);
-                $this->doctrine->getManager()->flush();
-
-                if ($prof == null)//Pour retouver le professeur à partir de son uai et de son nom si son compte olymphys a un email non académique
-                {
-                    $nomProf = explode(' ', $worksheet->getCell([26, $row])->getValue())[1];
-                    $prenomProf = explode(' ', $worksheet->getCell([26, $row])->getValue())[2];
-                    $prof = $repoUser->findOneBy(['prenom' => $prenomProf, 'nom' => $nomProf, 'uaiId' => $etablissement]);
-                    if ($prof != null) {//On garde le login initial du professeur mais on ajoute dans contact son adresse académique
-                        $prof->setContact($worksheet->getCell([27, $row])->getValue());
-
+                if ($mailprof1 != null) {
+                    $prof = $repoUser->findOneBy(['email' => $mailprof1]);
+                    $uai = $worksheet->getCell([3, $row])->getValue();
+                    $etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
+                    if ($etablissement == null) {//Nouvel établissement pas encore dans notre table uai
+                        $etablissement = new Uai();
+                        $etablissement->setUai($uai);
                     }
-                }
-                if ($prof == null) {//Il n'y a pas d'user correspondant au professeur : nouveau participant
-                    $prof = new User();
-                    $prof->setCreatedAt(new \DateTime('now'));
-                    $nomPrenomProf = $worksheet->getCell([26, $row])->getValue();//Adage fournit NOM Prénom, pas le nom et le prénom séparés
-                    $prof->setEmail($mailprof1);
-                    $prof->setUsername($sluger->slug($nomPrenomProf)->toString());
-                    $prof->setUai($uai);
-                    $prof->setUaiId($etablissement);
-                    $prof->setNom(mb_strtoupper(explode(' ', $nomPrenomProf)[2]));
-                    $prof->setPrenom(ucfirst(strtolower(explode(' ', $nomPrenomProf)[1])));
-                    $plainPassword = 'olymphys_' . explode(' ', $nomPrenomProf)[2];//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
-                    $password = $passwordHasher->hashPassword($prof, $plainPassword);
-                    $prof->setPassword($password);
-                    $prof->setRoles(['ROLE_PROF']);
-                    $this->doctrine->getManager()->persist($prof);
+
+                    //on réécrit les données de l'établissement s'il existe déjà, on suppose que les données adage sont plus à jour que nos données
+                    $etablissement->setNom($worksheet->getCell([9, $row])->getValue());
+                    $etablissement->setCourriel($worksheet->getCell([17, $row])->getValue());
+                    $etablissement->setProviseur($worksheet->getCell([16, $row])->getValue());
+                    $etablissement->setAdresse($worksheet->getCell([18, $row])->getValue());
+                    $etablissement->setCodePostal($worksheet->getCell([19, $row])->getValue());
+                    $etablissement->setCommune($worksheet->getCell([10, $row])->getValue());
+                    $etablissement->setAcademie($worksheet->getCell([13, $row])->getValue());
+                    $etablissement->setTel($worksheet->getCell([20, $row])->getValue());
+                    $this->doctrine->getManager()->persist($etablissement);
                     $this->doctrine->getManager()->flush();
 
+                    if ($prof == null)//Pour retouver le professeur à partir de son uai et de son nom si son compte olymphys a un email non académique
+                    {
+                        $nomProf = explode(' ', $worksheet->getCell([26, $row])->getValue())[1];
+                        $prenomProf = explode(' ', $worksheet->getCell([26, $row])->getValue())[2];
+                        $prof = $repoUser->findOneBy(['prenom' => $prenomProf, 'nom' => $nomProf, 'uaiId' => $etablissement]);
+                        if ($prof != null) {//On garde le login initial du professeur mais on ajoute dans contact son adresse académique
+                            $prof->setContact($worksheet->getCell([27, $row])->getValue());
 
-                    $mailerUtil->sendCreationCompteProf($prof, $nomPrenomProf, $plainPassword);//on informe le professeur de son inscription sur Olymphys avec ses identifiants
-                }
-                $idAdage = $worksheet->getCell([1, $row])->getValue();//l'id adage évite  de créer  plusieurs fois la même équipe
-                $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['idAdage' => $idAdage]);//L'id d'adage est sensé discriminer les équipes du tableau excel
-                if (!$equipe) {//pas d'équipe avec cet idadage, donc il faut créer l'équipe
-
-                    $equipe = new Equipesadmin();
-                    $equipe->setIdAdage($idAdage);
-                    $numero = [];
-                    if (count($listeEquipes) == 0) {//Pour la première équipe qui s'inscrit
-                        $num = 1;
-                        $equipe->setNumero($num);
-                    } else {
-                        $i = 0;
-                        foreach ($listeEquipes as $equipelist) {
-                            $numero[$i] = $equipelist->getNumero();
-                            $i = $i + 1;
                         }
-                        $maxNumero = max($numero);
-                        $num = $maxNumero + 1;
-                        $equipe->setNumero($num);
                     }
-                    $equipe->setEdition($edition);
+                    if ($prof == null) {//Il n'y a pas d'user correspondant au professeur : nouveau participant
+                        $prof = new User();
+                        $prof->setCreatedAt(new \DateTime('now'));
+                        $nomPrenomProf = $worksheet->getCell([26, $row])->getValue();//Adage fournit NOM Prénom, pas le nom et le prénom séparés
+                        $prof->setEmail($mailprof1);
+                        $prof->setUsername($sluger->slug($nomPrenomProf)->toString());
+                        $prof->setUai($uai);
+                        $prof->setUaiId($etablissement);
+                        $prof->setNom(mb_strtoupper(explode(' ', $nomPrenomProf)[2]));
+                        $prof->setPrenom(ucfirst(strtolower(explode(' ', $nomPrenomProf)[1])));
+                        $plainPassword = 'olymphys_' . explode(' ', $nomPrenomProf)[2];//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
+                        $password = $passwordHasher->hashPassword($prof, $plainPassword);
+                        $prof->setPassword($password);
+                        $prof->setRoles(['ROLE_PROF']);
+                        $this->doctrine->getManager()->persist($prof);
+                        $this->doctrine->getManager()->flush();
+
+
+                        $mailerUtil->sendCreationCompteProf($prof, $nomPrenomProf, $plainPassword);//on informe le professeur de son inscription sur Olymphys avec ses identifiants
+                    }
+                    $nlleEquipe = false;
+                    $idAdage = $worksheet->getCell([1, $row])->getValue();//l'id adage évite  de créer  plusieurs fois la même équipe
+                    $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['idAdage' => $idAdage]);//L'id d'adage est sensé discriminer les équipes du tableau excel
+                    if (!$equipe) {//pas d'équipe avec cet idadage, donc il faut créer l'équipe
+
+                        $equipe = new Equipesadmin();
+                        $equipe->setIdAdage($idAdage);
+                        $numero = [];
+                        if (count($listeEquipes) == 0) {//Pour la première équipe qui s'inscrit
+                            $num = 1;
+                            $equipe->setNumero($num);
+                        } else {
+                            $i = 0;
+                            foreach ($listeEquipes as $equipelist) {
+                                $numero[$i] = $equipelist->getNumero();
+                                $i = $i + 1;
+                            }
+                            $maxNumero = max($numero);
+                            $num = $maxNumero + 1;
+                            $equipe->setNumero($num);
+                        }
+                        $equipe->setEdition($edition);
+                        $equipe->setCreatedAt(new \DateTime($worksheet->getCell([2, $row])->getValue()));
+                        $equipe->setLyceeLocalite($etablissement->getCommune());
+                        $equipe->setDenominationLycee($etablissement->getDenominationPrincipale());
+                        $equipe->setNomLycee($etablissement->getnom());
+                        $equipe->setSelectionnee(false);
+                        $equipe->setUaiId($etablissement);
+                        $equipe->setUai($etablissement->getUai());
+                        $equipe->setLyceeAcademie($worksheet->getCell([13, $row])->getValue());
+                        $nlleEquipe = true;
+                        /*dd($worksheet->getCell([2, $row])->getValue());
+                        $createdAt = new \DateTime($worksheet->getCell([2, $row])->getValue());
+                        $equipe->setCreatedAt($createdAt);*/
+                    }
+
+                    $equipe->setTitreProjet($worksheet->getCell([23, $row])->getValue());
+                    $equipe->setIdProf1($prof);
+                    $equipe->setNomProf1($prof->getNom());
+                    $equipe->setPrenomProf1($prof->getPrenom());
+                    //$equipe->setNbeleves($worksheet->getCell([28, $row])->getValue());
+                    $equipe->setPartenaire($worksheet->getCell([30, $row])->getValue()
+                        . ', ' . $worksheet->getCell([31, $row])->getValue()
+                        . ', ' . $worksheet->getCell([32, $row])->getValue());
+                    //$equipe->setDescription($worksheet->getCell([36, $row])->getValue());
+
+                    $this->doctrine->getManager()->persist($equipe);
+                    $this->doctrine->getManager()->flush();
+                    //createdAt est par défaut fixée à la date de traitement du fichier, et remplace createdAt par la date actuelle
+                    //pas trouvé où cette commande est écrite
+                    //un deuxième persist et flush est un update et la date d'inscription est bonne
                     $equipe->setCreatedAt(new \DateTime($worksheet->getCell([2, $row])->getValue()));
-                    $equipe->setLyceeLocalite($etablissement->getCommune());
-                    $equipe->setDenominationLycee($etablissement->getDenominationPrincipale());
-                    $equipe->setNomLycee($etablissement->getnom());
-                    $equipe->setSelectionnee(false);
-                    $equipe->setUaiId($etablissement);
-                    $equipe->setUai($etablissement->getUai());
-                    $equipe->setLyceeAcademie($worksheet->getCell([13, $row])->getValue());
-                    /*dd($worksheet->getCell([2, $row])->getValue());
-                    $createdAt = new \DateTime($worksheet->getCell([2, $row])->getValue());
-                    $equipe->setCreatedAt($createdAt);*/
+                    $this->doctrine->getManager()->persist($equipe);
+                    $this->doctrine->getManager()->flush();
+                    $professeur = $this->doctrine->getRepository(Professeurs::class)->findOneBy(['user' => $prof]);
+                    if ($professeur == null) {
+                        $professeur = new Professeurs();
+                        $professeur->setUser($prof);
+                    }
+                    $professeur->addEquipe($equipe);
+                    $this->doctrine->getManager()->persist($professeur);
+                    $this->doctrine->getManager()->flush();
+                    if ($nlleEquipe) $mailerUtil->sendConfirmeInscriptionEquipe($equipe, $prof, null, null);//on informe le professeur de l'inscription de son équipe sur Olymphys
                 }
+                if (!$mailprof1) {
+                    $this->addFlash('warning', 'Le mail du prof 1 de l\'équipe du lycée ' . $worksheet->getCell([9, $row]) . '  est vide, équipe non ajoutée');
 
-                $equipe->setTitreProjet($worksheet->getCell([23, $row])->getValue());
-                $equipe->setIdProf1($prof);
-                $equipe->setNomProf1($prof->getNom());
-                $equipe->setPrenomProf1($prof->getPrenom());
-                //$equipe->setNbeleves($worksheet->getCell([28, $row])->getValue());
-                $equipe->setPartenaire($worksheet->getCell([30, $row])->getValue()
-                    . ', ' . $worksheet->getCell([31, $row])->getValue()
-                    . ', ' . $worksheet->getCell([32, $row])->getValue());
-                //$equipe->setDescription($worksheet->getCell([36, $row])->getValue());
-
-                $this->doctrine->getManager()->persist($equipe);
-                $this->doctrine->getManager()->flush();
-                //createdAt est par défaut fixée à la date de traitement du fichier, et remplace createdAt par la date actuelle
-                //pas trouvé où cette commande est écrite
-                //un deuxième persist et flush est un update et la date d'inscription est bonne
-                $equipe->setCreatedAt(new \DateTime($worksheet->getCell([2, $row])->getValue()));
-                $this->doctrine->getManager()->persist($equipe);
-                $this->doctrine->getManager()->flush();
-                $professeur = $this->doctrine->getRepository(Professeurs::class)->findOneBy(['user' => $prof]);
-                if ($professeur == null) {
-                    $professeur = new Professeurs();
-                    $professeur->setUser($prof);
                 }
-                $professeur->addEquipe($equipe);
-                $this->doctrine->getManager()->persist($professeur);
-                $this->doctrine->getManager()->flush();
-
             }
             $url = $this->adminUrlGenerator->setDashboard(DashboardController::class)
                 ->setController(EquipesadminCrudController::class)
