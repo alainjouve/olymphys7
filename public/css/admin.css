@@ -12,9 +12,11 @@
     --header-index-height: 0px;
     --responsive-header-bg: #FFFFFF
 }
+
 .ck-editor__editable {
     min-height: 500px;
 }
+
 .header-index {
     position: sticky;
     top: 0;
@@ -22,6 +24,7 @@
     background: var(--responsive-header-bg);
     /*background: #ffffff; /* ensure content doesn’t show through */
 }
+
 .content-header {
     position: sticky;
     top: 0;
@@ -40,6 +43,7 @@
 .table.datagrid {
     scroll-margin-top: var(--header-index-height, 0px); /* align anchor jumps below sticky header */
 }
+
 .datagrid thead th {
     position: sticky;
     top: var(--header-index-height, 0px);
@@ -52,10 +56,11 @@
     transform: scale(1.2);
 
 }
-.header-photos{
+
+.header-photos {
     position: sticky;
     padding-top: 20px;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 
 
 }
@@ -106,9 +111,10 @@
 }
 
 @media only screen and (max-width: 500px) {
-    body{
+    body {
         font-size: 2rem;
     }
+
     .btn {
 
         font-size: 2rem;
@@ -116,13 +122,84 @@
 
 
 }
+
 @media only screen and (max-width: 950px) {
-    body{
+    body {
         font-size: 1.5rem;
     }
+
     .btn {
 
         font-size: 1.5rem;
     }
 
+}
+
+.mosaic-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.mosaic-item {
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mosaic-item img, .mosaic-item i.fa-5x {
+    width: 110px;
+    height: 90px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.mosaic-item img {
+    object-fit: cover;
+}
+
+.mosaic-item i.fa-5x {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.mosaic-item img:hover, .mosaic-item i.fa-5x:hover {
+    border-color: #f0a500;
+    transform: scale(1.05);
+}
+
+.mosaic-item .mosaic-name {
+    font-size: 11px;
+    word-break: break-all;
+    margin-top: 4px;
+}
+
+#btn-toggle-view.active-mosaic {
+    background-color: #f0a500;
+    color: #fff;
+    border-color: #f0a500;
+}
+
+/* Style pour le breadcrumb */
+.breadcrumb {
+    background-color: transparent;
+    padding: 8px 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .active {
+    color: #6c757d;
 }

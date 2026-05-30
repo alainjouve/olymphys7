@@ -1,0 +1,81 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var entities \EasyCorp\Bundle\EasyAdminBundle\Collection\EntityCollection #}
+{# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block main %}
+    <div class="text-center">
+        <h3>
+                <span style="background-color:#f6c41a;color:#000;padding:4px 8px;display:inline-block;">
+                    Déposer un document
+                </span>
+        </h3>
+        <hr>
+
+    </div>
+    <div class="container">
+        <div class="row   text-center">
+
+            <div class="col-md-6 col-sm-12" id="formDeposerImage">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                {{ form_label(form.document) }}<br>
+                {{ form_widget(form.document) }}<br>
+                {{ form_widget(form.submit) }}
+                {{ form_end(form) }}
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div id="previewImageContainer"
+                     style="margin-top: 20px; border: 1px dashed #ccc; padding: 10px; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                    <img id="previewImage" src="{{ asset('img/logos/no-picture.png') }}" alt="Aperçu de l'image"
+                         style="max-width: 100%; max-height: 400px;">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    {# Modale d'avertissement #}
+    <div class="modal fade" id="modalImageExiste" tabindex="-1" aria-labelledby="modalImageExisteLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalImageExisteLabel">Attention</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Une image portant le même nom existe déjà dans le répertoire. Si vous continuez, elle sera
+                    remplacée.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" id="confirmUpload">Confirmer le remplacement</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="listeImagesExistantes" value="{{ app.session.get('listeImages')|json_encode }}">
+
+    <script>
+        function chargeimage(input) {
+            const preview = document.getElementById('previewImage');
+            const defaultImage = "{{ asset('img/logos/no-picture.png') }}";
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = defaultImage;
+            }
+        }
+    </script>
+{% endblock main %}

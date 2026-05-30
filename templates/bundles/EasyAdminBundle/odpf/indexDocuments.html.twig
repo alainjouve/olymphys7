@@ -1,0 +1,386 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var entities \EasyCorp\Bundle\EasyAdminBundle\Collection\EntityCollection #}
+{# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+ {% block page_title %}
+     Les documents et images du site OdPF(Réservé aux super administrateurs)
+
+
+
+ {% endblock %}
+
+{% block page_content %}
+    {% set baseUrl = path('app_odpfadmin_odpfdocumentsbrowser') %}
+    {% set nextOrderNom  = (sort == 'nom'  and order == 'asc') ? 'desc' : 'asc' %}
+    {% set nextOrderDate = (sort == 'date' and order == 'asc') ? 'desc' : 'asc' %}
+
+    <div class="text-center mb-1">
+
+        {% if subfolder != '' %}
+            {% set parentFolder = subfolder|split('/')|slice(0, -1)|join('/') %}
+            <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': parentFolder }) }}"
+               class="btn btn-sm btn-outline-primary" title="Retour au dossier parent">
+                <i class="fas fa-arrow-left"></i> Retour
+            </a>
+        {% endif %}
+    </div>
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb text-center">
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': '' }) }}">
+                    Accueil
+                </a>
+            </li>
+            {% set currentPath = '' %}
+            {% if subfolder != '' %}
+                {% set breadcrumbParts = subfolder|split('/') %}
+
+                {% for part in breadcrumbParts %}
+                    {% set currentPath = (currentPath ~ '/' ~ part)|trim('/', 'left') %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': currentPath }) }}">
+                            {{ part }}
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ol>
+    </nav>
+    <hr class="mt-0">
+
+    {% set subs=subfolder|split('/') %}
+    {% set sub=subs[subs|length-1] %}
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <span><a href="{{ path('odpf_deposer_documents') }}"
+                 class="btn btn-primary">Ajouter un document</a></span>
+        <div id="sort-controls" class="d-flex align-items-center gap-2" style="flex-wrap:wrap;">
+            <span class="text-muted small me-1">Trier par :</span>
+            <a href="{{ baseUrl }}?sort=nom&order={{ nextOrderNom }}"
+               class="btn btn-sm {{ sort == 'nom' ? 'btn-secondary' : 'btn-outline-secondary' }}">
+                Nom
+                <i class="fa fa-{{ sort == 'nom' ? (order == 'asc' ? 'sort-alpha-asc' : 'sort-alpha-desc') : 'sort' }}"></i>
+            </a>
+            <a href="{{ baseUrl }}?sort=date&order={{ nextOrderDate }}"
+               class="btn btn-sm {{ sort == 'date' ? 'btn-secondary' : 'btn-outline-secondary' }}">
+                Date
+                <i class="fa fa-{{ sort == 'date' ? (order == 'asc' ? 'sort-numeric-asc' : 'sort-numeric-desc') : 'sort' }}"></i>
+            </a>
+        </div>
+        <div class="btn-group" role="group" aria-label="Mode d'affichage">
+            <button type="button" id="btn-liste" class="btn btn-outline-secondary" title="Vue liste"
+                    onclick="setView('liste')">
+                <i class="fa fa-list"></i> Liste
+            </button>
+            <button type="button" id="btn-mosaique" class="btn btn-outline-secondary active" title="Vue mosaïque"
+                    onclick="setView('mosaique')">
+                <i class="fa fa-th"></i> Mosaïque
+            </button>
+        </div>
+    </div>
+
+    <div class="text-center">
+    </div>
+    {% for type, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ type }} mt-3">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <!-- Zone glisser-déposer -->
+    <div id="drop-zone"
+         style="border: 2px dashed #adb5bd; border-radius: 8px; padding: 30px; text-align: center; color: #6c757d; background: #f8f9fa; cursor: pointer; transition: border-color .2s, background .2s;"
+         ondragover="dzDragOver(event)" ondragleave="dzDragLeave(event)" ondrop="dzDrop(event)"
+         onclick="document.getElementById('dz-file-input').click()">
+        <i class="fa fa-cloud-upload fa-2x mb-2"></i>
+        <p class="mb-0">Glissez-déposez des documents ici, ou <u>cliquez pour sélectionner</u></p>
+        <p class="small text-muted mt-1">JPEG, PNG, GIF, WEBP</p>
+        <input type="file" id="dz-file-input" accept="image/jpeg,image/png,image/gif,image/webp" multiple
+               style="display:none;" onchange="dzHandleFiles(this.files)">
+    </div>
+    <div id="dz-progress" class="mt-2" style="display:none;"></div>
+
+    <hr>
+    <div class="container" id="contenu">
+        {# Vue liste #}
+        <div id="view-liste" style="padding-top: 130px">
+            <div class="row text-center">
+                <div class="col-md-2 d-none d-md-block">
+                    Vignette
+                </div>
+                <div class="col-md-4 d-none d-md-block">
+
+                    <a href="{{ baseUrl }}?sort=nom&order={{ nextOrderNom }}&subfolder={{ subfolder }}"
+                       class="text-decoration-none text-dark fw-bold">
+                        Nom
+                        {% if sort == 'nom' %}
+                            <i class="fas fa-{{ order == 'asc' ? 'sort-down' : 'sort-up' }}"></i>
+                        {% else %}
+                            <i class="fas fa-sort"></i>
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="col-md-1 d-none d-md-block">
+                    Taille(oct.)
+                </div>
+                <div class="col-md-2 d-none d-md-block">
+                    Créée le
+                </div>
+                <div class="col-md-2 d-none d-md-block">
+                    <a href="{{ baseUrl }}?sort=date&order={{ nextOrderDate }}&subfolder={{ subfolder }}"
+                       class="text-decoration-none text-dark fw-bold">
+                        Modifiée le
+                        {% if sort == 'date' %}
+                            <i class="fas fa-{{ order == 'asc' ? 'sort-up' : 'sort-down' }}"></i>
+                        {% else %}
+                            <i class="fas fa-sort"></i>
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="col-md-1 d-none d-md-block">
+                    Actions
+                </div>
+            </div>
+
+            <hr>
+
+            {% if listeFiles != null %}
+                {% for file in listeFiles %}
+                    <div class="row text-center">
+                        <div class="col-md-2 col-sm-12~'/'">
+                            {% if file[3] == 'folder' %}
+                                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                                   title="Ouvrir le dossier">
+                                    <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
+                                </a>
+                            {% elseif file[3] == 'image' %}
+                                <img src="{{ sub !='photoseq' ?asset(currentPath~'/'~file[0]): asset(currentPath~'/'~'thumbs/'~file[0]) }}"
+                                     alt="vignette"
+                                     style="max-width:50px; max-height: 50px; transition: transform 0.3s;"
+                                     onmouseover="this.style.transform='scale(4)'"
+                                     onmouseout="this.style.transform='scale(1)'"
+                                     onclick="selectImage('{{ asset(currentPath~'/'~file[0]) }}')">
+                            {% elseif file[3] == 'file' %}
+                                {% set extension = file[0]|split('.')|last|lower %}
+                                {% set icon = 'fa-file' %}
+                                {% if extension == 'pdf' %}{% set icon = 'fa-file-pdf' %}
+                                {% elseif extension in ['doc', 'docx'] %}{% set icon = 'fa-file-word' %}
+                                {% elseif extension in ['xls', 'xlsx'] %}{% set icon = 'fa-file-excel' %}
+                                {% elseif extension in ['ppt', 'pptx'] %}{% set icon = 'fa-file-powerpoint' %}
+                                {% elseif extension in ['zip', 'rar', '7z'] %}{% set icon = 'fa-file-archive' %}
+                                {% elseif extension == 'txt' %}{% set icon = 'fa-file-alt' %}
+                                {% endif %}
+                                <i class="fas {{ icon }} fa-2x" style="color: #6c757d; cursor: pointer"
+                                   onclick="selectImage('{{ asset(currentPath~'/'~file[0]) }}')"
+                                   title="Sélectionner le fichier"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4 col-sm-12">{{ file[0] }}</div>
+                        <div class="col-md-1 col-sm-12">{{ file[4] }}</div>
+                        <div class="col-md-2 col-sm-12">
+                            <span class="d-md-none">Créée le </span>{{ file[1] }}
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <span class="d-md-none">Modifiée le </span>{{ file[2] }}
+                        </div>
+                        <div class="col-md-1 col-sm-12">
+                            <div class="btn-group" role="group" aria-label="Actions">
+                                {% if file[3] != 'folder' %}
+
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-delete_doc" type="button"
+                                       data-bs-filename="{{ file[0] }}"
+                                    >
+                                        <i class="fas fa-trash-alt" style="color: #dc3545;"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {# Vue mosaïque #}
+        <div id="view-mosaic" style=" padding-top: 120px">
+            <div class="row text-center">
+
+                <div class="mosaic-grid">
+                    {% if listeFiles != null %}
+                        {% for file in listeFiles %}
+                            <div class="col">
+                                {% if file[3] == 'folder' %}
+                                    <div class="mosaic-item">
+                                        <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0] }) }}"
+                                           style="text-decoration: none; color: inherit;">
+                                            <i class="fas fa-folder fa-5x"
+                                               style="color: #f0a500; display: block; margin: 0 auto 5px;"></i>
+                                            <div class="mosaic-name">{{ file[0] }}</div>
+                                        </a>
+                                    </div>
+                                {% elseif file[3] == 'image' %}
+                                    <div class="mosaic-item"
+                                         onclick="selectImage('{{ asset(currentPath~'/'~file[0]) }}')">
+                                        <img src="{{ (sub =='photoseq' ? asset(currentPath~'/thumbs/'~file[0]) :  asset(currentPath~'/'~file[0])) }}"
+                                             alt="{{ file[0] }}"
+                                             onmouseover="this.style.transform='scale(2)'"
+                                             onmouseout="this.style.transform='scale(1)'"
+                                             title="{{ file[0] }}">
+                                        <div class="mosaic-name">{{ file[0] }}</div>
+                                    </div>
+                                {% elseif file[3] == 'file' %}
+                                    <div class="mosaic-item" onclick="selectImage('{{ asset(subpath~'/'~file[0]) }}')">
+                                        {% set extension = file[0]|split('.')|last|lower %}
+                                        {% set icon = 'fa-file' %}
+                                        {% if extension == 'pdf' %}{% set icon = 'fa-file-pdf' %}
+                                        {% elseif extension in ['doc', 'docx'] %}{% set icon = 'fa-file-word' %}
+                                        {% elseif extension in ['xls', 'xlsx'] %}{% set icon = 'fa-file-excel' %}
+                                        {% elseif extension in ['ppt', 'pptx'] %}{% set icon = 'fa-file-powerpoint' %}
+                                        {% elseif extension in ['zip', 'rar', '7z'] %}{% set icon = 'fa-file-archive' %}
+                                        {% elseif extension == 'txt' %}{% set icon = 'fa-file-alt' %}
+                                        {% endif %}
+                                        <i class="fas {{ icon }} fa-5x"
+                                           style="color: #6c757d; display: block; margin: 0 auto 5px;"></i>
+                                        <div class="mosaic-name">{{ file[0] }}</div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal de confirmation de suppression -->
+    <div class="modal fade" id="modal-delete_doc" tabindex="-1" role="dialog" aria-labelledby="modalDeleteLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDeleteLabel">Confirmation de suppression</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Êtes-vous sûr de vouloir supprimer le document <span id="image-name-to-delete"
+                                                                         style="font-weight: bold;"></span> ?
+                    {% set safeSubfolder = subfolder|replace({'/': '%2F'}) %}
+                    <form id="delete-form" method="POST"
+                          action="{{ path('supprimer_doc', { 'subfolder': safeSubfolder }) }}">
+                        <input type="hidden" name="filename" id="delete-filename" value="">
+                        <input type="hidden" name="subfolder" id="delete-subfolder" value="{{ subfolder }}">
+                        <input type="submit" class="btn btn-danger" value="Supprimer le document">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Glisser-Déposer ---
+        const dzZone = document.getElementById('drop-zone');
+        const dzProgress = document.getElementById('dz-progress');
+        const DZ_CSRF = '{{ csrf_token }}';
+        const DZ_URL = '{{ path('upload_documents_ajax') }}';
+
+        function dzDragOver(e) {
+            e.preventDefault();
+            dzZone.style.borderColor = '#0d6efd';
+            dzZone.style.background = '#e7f1ff';
+        }
+
+        function dzDragLeave(e) {
+            dzZone.style.borderColor = '#adb5bd';
+            dzZone.style.background = '#f8f9fa';
+        }
+
+        function dzDrop(e) {
+            e.preventDefault();
+            dzDragLeave(e);
+            dzHandleFiles(e.dataTransfer.files);
+        }
+
+        async function dzHandleFiles(files) {
+            if (!files || files.length === 0) return;
+            dzProgress.style.display = 'block';
+            dzProgress.innerHTML = '';
+            for (const file of files) {
+                const row = document.createElement('div');
+                row.className = 'alert alert-info py-1 px-2 mb-1';
+                row.textContent = `Envoi de ${file.name}…`;
+                dzProgress.appendChild(row);
+
+                const fd = new FormData();
+                fd.append('doc', file);
+                fd.append('subfolder', '{{ subfolder }}');
+                fd.append('_token', DZ_CSRF);
+                try {
+                    const resp = await fetch(DZ_URL, {method: 'POST', body: fd});
+                    const data = await resp.json();
+                    if (data.success) {
+                        row.className = 'alert alert-success py-1 px-2 mb-1';
+                        row.textContent = `✓ ${data.filename} déposée avec succès.`;
+                    } else {
+                        row.className = 'alert alert-danger py-1 px-2 mb-1';
+                        row.textContent = `✗ ${file.name} : ${data.error}`;
+                    }
+                } catch (err) {
+                    row.className = 'alert alert-danger py-1 px-2 mb-1';
+                    row.textContent = `✗ ${file.name} : erreur réseau.`;
+                }
+            }
+            // Recharger la page après 1,5s pour afficher les nouvelles images
+            setTimeout(() => location.reload(), 1500);
+        }
+
+        // --- Vue Liste / Mosaïque ---
+        const elListe = document.getElementById('view-liste');
+        const elMosaique = document.getElementById('view-mosaic');
+        const elBtnListe = document.getElementById('btn-liste');
+        const elBtnMosaique = document.getElementById('btn-mosaique');
+        const elSort = document.getElementById('sort-controls');
+
+        function setView(mode) {
+            if (mode === 'mosaique') {
+                console.log(mode)
+                elListe.style.display = 'none';
+                elMosaique.style.display = 'block';
+                elBtnListe.classList.remove('active');
+                elBtnMosaique.classList.add('active');
+                elSort.classList.remove('d-none');
+                elSort.classList.add('d-flex');
+
+            } else {
+                elMosaique.style.display = 'none';
+                elListe.style.display = 'block';
+                elBtnMosaique.classList.remove('active');
+                elBtnListe.classList.add('active');
+                elSort.classList.add('d-none');
+                elSort.classList.remove('d-flex');
+
+            }
+            localStorage.setItem('imagesView', mode);
+        }
+
+        // Initialisation immédiate (tous les éléments sont déjà dans le DOM)
+        setView(localStorage.getItem('imagesView') ?? 'mosaique');
+        $('#modal-delete_doc').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var filename = button.data('bs-filename') // Extract info from data-* attributes;
+
+            var modal = $(this)
+            modal.find('.modal-title').text('Attention!!!!')
+            var input = document.getElementById('delete-filename')
+            input.value = filename;
+        });
+    </script>
+{% endblock page_content %}

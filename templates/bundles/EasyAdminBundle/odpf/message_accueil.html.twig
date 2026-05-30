@@ -7,9 +7,13 @@
     <div class="rougeodpf"><h1>Administration du site</h1></div>
     <hr>
 
-    <a href="{{ path('odpfdocuments_browser') }}" type="button" class="btn btn-primary" target="_blank">Voir les
-        médias</a>
-    <hr>
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser') }}" type="button" class="btn btn-primary"
+        >Voir
+            les
+            médias</a>
+        <hr>
+    {% endif %}
     {% set urlphotos = ea_url()
         .setDashboard('App\\Controller\\OdpfAdmin\\OdpfDashboardController')
         .setController('App\\Controller\\OdpfAdmin\\OdpfPhotosCrudController')
