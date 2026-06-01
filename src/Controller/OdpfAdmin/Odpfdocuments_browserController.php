@@ -4,17 +4,29 @@ declare(strict_types=1);
 
 namespace App\Controller\OdpfAdmin;
 
+use AllowDynamicProperties;
+use App\Entity\Odpf\OdpfEditionsPassees;
+use App\Entity\Photos;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
+#[AllowDynamicProperties]
 class Odpfdocuments_browserController extends AbstractController
 {
-    #[Route('/odpfdocuments_browser', name: 'odpfdocuments_browser')]
+    public function __construct(EntityManagerInterface $doctrine)
+    {
+        $this->doctrine = $doctrine;
+
+
+    }
+
+    #[Route('/odpfdocuments_browser,{page}', name: 'odpfdocuments_browser')]
     #[Isgranted('ROLE_ADMIN')]
-    public function index(Request $request): Response
+    public function index(Request $request, $page): Response
     {
         $basePath = 'odpf/';
 
@@ -30,24 +42,49 @@ class Odpfdocuments_browserController extends AbstractController
 
         $listFilesbrut = null;
         if (str_contains($path, 'photoseq') === true) {
-            $listFilesbrut = scandir($path . '/thumbs');
+            $edition = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => explode('/', $path)[count(explode('/', $path)) - 2]]);
+
+            $images = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $edition]);
+            $i = 0;
+            foreach ($images as $image) {
+                if (file_exists($path . '/thumbs/' . $image->getPhoto())) {
+                    $listFilesbrut[$i] = $image->getPhoto();
+                    $i++;
+                }
+            }
         } else {
             $listFilesbrut = scandir($path);
         }
+        $nbFiles = count($listFilesbrut);
+        $nbPages = (int)($nbFiles / 20) + 1;
 
-        $listFiles = [];
-        foreach ($listFilesbrut as $file) {
+        $offset = 0;
+        if (str_contains($path, 'photoseq') === true) {
+            if ($page == 0) {
+
+                $page = $nbPages;
+                $offset = ($page - 1) * 20;
+            }
+            if ($page > 1) $offset = ($page - 1) * 20;
+
+            if ($offset >= count($listFilesbrut)) {
+                $page = 1;
+                $offset = 0;
+
+            };
+            $listFilesPage = array_slice($listFilesbrut, $offset, 20);
+        } else($listFilesPage = $listFilesbrut);
+
+        $i = 0;
+        foreach ($listFilesPage as $file) {
             if ($file !== '.tmb' && $file !== '.' && $file !== '..' && $file !== 'thumbs') {
                 if (file_exists($path . '/' . $file)) {
                     $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
-                    $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
+                    $listFiles[] = [$file, $type];
                 }
             }
         }
-        usort($listFiles, function ($a, $b) use ($sort) {
-            // on trie sur la date de création ou sur le nom de fichier
-            return $sort === 'date' ? ($a[2] <=> $b[2]) : strcasecmp($a[0], $b[0]);
-        });
+
         if ($order === 'desc') {
             $listFiles = array_reverse($listFiles);
         }
@@ -57,8 +94,10 @@ class Odpfdocuments_browserController extends AbstractController
             'listeFiles' => $listFiles,
             'sort' => $sort,
             'order' => $order,
+            'page' => $page,
+            'nbPages' => $nbPages,
         ]);
     }
-    
+
 
 }

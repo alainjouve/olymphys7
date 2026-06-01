@@ -10,7 +10,8 @@ fos_ck_editor:
       language: fr
       toolbar: full
       filebrowserBrowseRoute: odpfdocuments_browser
-      filebrowserBrowseRouteParameters: [ ]
+      filebrowserBrowseRouteParameters:
+        page: 1
       config.extraPlugins: 'wordcount,notification,autogrow'
       width: 900px
 

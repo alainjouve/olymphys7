@@ -131,10 +131,12 @@ class OdpfDashboardController extends AbstractDashboardController
         ];
     }
 
-    #[Route('/odpfadmin/documentsbrowser', name: 'app_odpfadmin_odpfdocumentsbrowser')]
+    #[Route('/odpfadmin/documentsbrowser,{page}', name: 'app_odpfadmin_odpfdocumentsbrowser')]
     #[isGranted('ROLE_SUPER_ADMIN')]
-    public function les_documents(Request $request): Response
+    public function les_documents(Request $request, $page): Response
     {
+
+
         $basePath = $this->getParameter('kernel.project_dir') . '/public/odpf/';
         //if (str_contains($_SERVER['SERVER_NAME'], 'localhost')) $basePath = 'odpf/';
         $sort = $request->query->get('sort', 'nom');
@@ -164,22 +166,40 @@ class OdpfDashboardController extends AbstractDashboardController
         } else {
             $listFilesbrut = scandir($path);
         }
+        $offset = 0;
+        if (str_contains($path, 'photoseq') === true) {
+            if ($page == 0) {
+                $offset = 0;
+                $page = 1;
+            }
+            if ($page > 1) $offset = ($page - 1) * 20;
 
-        $listFiles = [];
-        foreach ($listFilesbrut as $file) {
+            if ($offset >= count($listFilesbrut)) {
+                $page = 1;
+                $offset = 0;
+
+            };
+            $listFilesPage = array_slice($listFilesbrut, $offset, 20);
+        } else($listFilesPage = $listFilesbrut);
+
+        $i = 0;
+        foreach ($listFilesPage as $file) {
             if ($file !== '.tmb' && $file !== '.' && $file !== '..') {
                 if (file_exists($path . '/' . $file)) {
                     $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
-                    $listFiles[] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
+                    $listFiles[$i] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
+                    $i++;
                 }
             }
         }
+
         usort($listFiles, function ($a, $b) use ($sort) {
             return $sort === 'date' ? ($a[3] <=> $b[3]) : strcasecmp($a[0], $b[0]);
         });
         if ($order === 'desc') {
             $listFiles = array_reverse($listFiles);
         }
+
         return $this->render('bundles/EasyAdminBundle/odpf/indexDocuments.html.twig', [
             'path' => $path,
             'subpath' => $subpath,
@@ -187,11 +207,13 @@ class OdpfDashboardController extends AbstractDashboardController
             'listeFiles' => $listFiles,
             'sort' => $sort,
             'order' => $order,
+            'page' => $page,
             'csrf_token' => $this->csrfTokenManager->getToken('upload_documents')->getValue(),
         ]);
 
 
     }
+
 
     #[Route('/documents/supprimer', name: 'supprimer_doc')]
     #[isGranted('ROLE_SUPER_ADMIN')]
@@ -262,7 +284,7 @@ class OdpfDashboardController extends AbstractDashboardController
         $this->requestStack->getSession()->set('listeDocuments', $listeDocuments);
         $form = $this->createFormBuilder()
             ->add('document', FileType::class, [
-                
+
                 'label' => 'Sélectionnez un document à déposer',
                 'required' => true,
                 'attr' => ['onchange' => 'chargedocument(this)']

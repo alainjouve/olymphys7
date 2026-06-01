@@ -11,7 +11,7 @@
  {% endblock %}
 
 {% block page_content %}
-    {% set baseUrl = path('app_odpfadmin_odpfdocumentsbrowser') %}
+    {% set baseUrl = path('app_odpfadmin_odpfdocumentsbrowser',{'page':page}) %}
     {% set nextOrderNom  = (sort == 'nom'  and order == 'asc') ? 'desc' : 'asc' %}
     {% set nextOrderDate = (sort == 'date' and order == 'asc') ? 'desc' : 'asc' %}
 
@@ -19,7 +19,7 @@
 
         {% if subfolder != '' %}
             {% set parentFolder = subfolder|split('/')|slice(0, -1)|join('/') %}
-            <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': parentFolder }) }}"
+            <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page':page,'subfolder': parentFolder }) }}"
                class="btn btn-sm btn-outline-primary" title="Retour au dossier parent">
                 <i class="fas fa-arrow-left"></i> Retour
             </a>
@@ -29,7 +29,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb text-center">
         <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item">
-                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': '' }) }}">
+                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page}) }}">
                     Accueil
                 </a>
             </li>
@@ -40,7 +40,7 @@
                 {% for part in breadcrumbParts %}
                     {% set currentPath = (currentPath ~ '/' ~ part)|trim('/', 'left') %}
                     <li class="breadcrumb-item">
-                        <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': currentPath }) }}">
+                        <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page':page,'subfolder': currentPath }) }}">
                             {{ part }}
                         </a>
                     </li>
@@ -53,8 +53,10 @@
     {% set subs=subfolder|split('/') %}
     {% set sub=subs[subs|length-1] %}
     <div class="d-flex justify-content-between align-items-center mb-2">
-        <span><a href="{{ path('odpf_deposer_documents') }}"
-                 class="btn btn-primary">Ajouter un document</a></span>
+        {% if subfolder|split('/')[(subfolder|split('/')|length)-1]!='photoseq' %}
+            <span><a href="{{ path('odpf_deposer_documents') }}"
+                     class="btn btn-primary">Ajouter un document</a></span>
+        {% endif %}
         <div id="sort-controls" class="d-flex align-items-center gap-2" style="flex-wrap:wrap;">
             <span class="text-muted small me-1">Trier par :</span>
             <a href="{{ baseUrl }}?sort=nom&order={{ nextOrderNom }}"
@@ -68,6 +70,19 @@
                 <i class="fa fa-{{ sort == 'date' ? (order == 'asc' ? 'sort-numeric-asc' : 'sort-numeric-desc') : 'sort' }}"></i>
             </a>
         </div>
+        {% if subfolder|split('/')[(subfolder|split('/')|length)-1]=='photoseq' %}
+            <div class="btn-group" role="group" aria-label="Navigation">
+                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page-1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
+                   type="button">
+                    <i class="fa fa-arrow-circle-left fa-3x"></i>
+                </a>
+                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page+1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
+                   type="button">
+                    <i class="fa fa-arrow-circle-right fa-3x"></i>
+                </a>
+            </div>
+        {% endif %}
+
         <div class="btn-group" role="group" aria-label="Mode d'affichage">
             <button type="button" id="btn-liste" class="btn btn-outline-secondary" title="Vue liste"
                     onclick="setView('liste')">
@@ -90,17 +105,18 @@
         {% endfor %}
     {% endfor %}
     <!-- Zone glisser-déposer -->
-    <div id="drop-zone"
-         style="border: 2px dashed #adb5bd; border-radius: 8px; padding: 30px; text-align: center; color: #6c757d; background: #f8f9fa; cursor: pointer; transition: border-color .2s, background .2s;"
-         ondragover="dzDragOver(event)" ondragleave="dzDragLeave(event)" ondrop="dzDrop(event)"
-         onclick="document.getElementById('dz-file-input').click()">
-        <i class="fa fa-cloud-upload fa-2x mb-2"></i>
-        <p class="mb-0">Glissez-déposez des documents ici, ou <u>cliquez pour sélectionner</u></p>
-        <input type="file" id="dz-file-input" multiple
-               style="display:none;" onchange="dzHandleFiles(this.files)">
-    </div>
-    <div id="dz-progress" class="mt-2" style="display:none;"></div>
-
+    {% if subfolder|split('/')[(subfolder|split('/')|length)-1]!='photoseq' %}
+        <div id="drop-zone"
+             style="border: 2px dashed #adb5bd; border-radius: 8px; padding: 30px; text-align: center; color: #6c757d; background: #f8f9fa; cursor: pointer; transition: border-color .2s, background .2s;"
+             ondragover="dzDragOver(event)" ondragleave="dzDragLeave(event)" ondrop="dzDrop(event)"
+             onclick="document.getElementById('dz-file-input').click()">
+            <i class="fa fa-cloud-upload fa-2x mb-2"></i>
+            <p class="mb-0">Glissez-déposez des documents ici, ou <u>cliquez pour sélectionner</u></p>
+            <input type="file" id="dz-file-input" multiple
+                   style="display:none;" onchange="dzHandleFiles(this.files)">
+        </div>
+        <div id="dz-progress" class="mt-2" style="display:none;"></div>
+    {% endif %}
     <hr>
     <div class="container" id="contenu">
         {# Vue liste #}
@@ -149,7 +165,7 @@
                     <div class="row text-center">
                         <div class="col-md-2 col-sm-12~'/'">
                             {% if file[3] == 'folder' %}
-                                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page , 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0] }) }}"
                                    title="Ouvrir le dossier">
                                     <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
                                 </a>
@@ -212,7 +228,7 @@
                             <div class="col">
                                 {% if file[3] == 'folder' %}
                                     <div class="mosaic-item">
-                                        <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0] }) }}"
+                                        <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page, 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0] }) }}"
                                            style="text-decoration: none; color: inherit;">
                                             <i class="fas fa-folder fa-5x"
                                                style="color: #f0a500; display: block; margin: 0 auto 5px;"></i>
@@ -284,6 +300,7 @@
             </div>
         </div>
     </div>
+
 
     <script>
         // --- Glisser-Déposer ---

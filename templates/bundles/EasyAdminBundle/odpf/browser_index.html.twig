@@ -71,10 +71,9 @@
             color: #6c757d;
         }
     </style>
-    {% set baseUrl = path('odpfdocuments_browser') %}
+    {% set baseUrl = path('odpfdocuments_browser', { 'page': page }) %}
 
     {% set nextOrderNom  = (sort == 'nom'  and order == 'asc') ? 'desc' : 'asc' %}
-    {% set nextOrderDate = (sort == 'date' and order == 'asc') ? 'desc' : 'asc' %}
     <div class="container">
         <div class="row" id="header-bar"
              style="position: fixed; z-index: 10; background: #fff; padding-bottom: 4px; left: 0; right: 0; margin: 0 auto; max-width: inherit;">
@@ -98,7 +97,7 @@
                     </button>
                     {% if subfolder != '' %}
                         {% set parentFolder = subfolder|split('/')|slice(0, -1)|join('/') %}
-                        <a href="{{ path('odpfdocuments_browser', { 'subfolder': parentFolder, 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                        <a href="{{ path('odpfdocuments_browser', {'page':page, 'subfolder': parentFolder, 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
                            class="btn btn-sm btn-outline-primary" title="Retour au dossier parent">
                             <i class="fas fa-arrow-left"></i> Retour
                         </a>
@@ -108,7 +107,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb text-center">
                     <ol class="breadcrumb justify-content-center mb-0">
                         <li class="breadcrumb-item">
-                            <a href="{{ path('odpfdocuments_browser', { 'subfolder': '', 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}">
+                            <a href="{{ path('odpfdocuments_browser', { 'page': page, 'subfolder': '', 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}">
                                 Accueil
                             </a>
                         </li>
@@ -118,15 +117,33 @@
                             {% for part in breadcrumbParts %}
                                 {% set currentPath = (currentPath ~ '/' ~ part)|trim('/', 'left') %}
                                 <li class="breadcrumb-item">
-                                    <a href="{{ path('odpfdocuments_browser', { 'subfolder': currentPath, 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}">
+                                    <a href="{{ path('odpfdocuments_browser', { 'page': page, 'subfolder': currentPath, 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}">
                                         {{ part }}
                                     </a>
                                 </li>
                             {% endfor %}
                         {% endif %}
                     </ol>
+                    {% if subfolder|split('/')[(subfolder|split('/')|length)-1]=='photoseq' %}
+
+
+                        <div class="btn-group" role="group" aria-label="Navigation" style="margin: auto">
+                            <a href="{{ path('odpfdocuments_browser', { 'page': page-1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
+                               type="button">
+                                <i class="fa fa-arrow-circle-left fa-2x"></i>
+                            </a>
+                            <a href="{{ path('odpfdocuments_browser', { 'page': page+1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
+                               type="button">
+                                <i class="fa fa-arrow-circle-right fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Navigation"
+                             style="margin: auto"> {{ 'Page'~' ' ~ page ~ ' / ' ~ nbPages }}
+                        </div>
+                    {% endif %}
                 </nav>
                 <hr class="mt-0">
+
             </div>
         </div>
         {% set subs=subfolder|split('/') %}
@@ -155,23 +172,6 @@
                         {% endif %}
                     </a>
                 </div>
-                <div class="col-md-1 d-none d-md-block">
-                    Taille(oct.)
-                </div>
-                <div class="col-md-2 d-none d-md-block">
-                    Créée le
-                </div>
-                <div class="col-md-2 d-none d-md-block">
-                    <a href="{{ baseUrl }}?sort=date&order={{ nextOrderDate }}&subfolder={{ subfolder }}"
-                       class="text-decoration-none text-dark fw-bold">
-                        Modifiée le
-                        {% if sort == 'date' %}
-                            <i class="fas fa-{{ order == 'asc' ? 'sort-up' : 'sort-down' }}"></i>
-                        {% else %}
-                            <i class="fas fa-sort"></i>
-                        {% endif %}
-                    </a>
-                </div>
             </div>
             <hr>
 
@@ -179,12 +179,12 @@
                 {% for file in listeFiles %}
                     <div class="row text-center">
                         <div class="col-md-3 col-sm-12">
-                            {% if file[3] == 'folder' %}
-                                <a href="{{ path('odpfdocuments_browser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                            {% if file[1] == 'folder' %}
+                                <a href="{{ path('odpfdocuments_browser', { 'page': page, 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
                                    title="Ouvrir le dossier">
                                     <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
                                 </a>
-                            {% elseif file[3] == 'image' %}
+                            {% elseif file[1] == 'image' %}
                                 <img src="{{ sub =='photoseq' ? asset(path~'/thumbs/'~file[0]) : asset(path~'/'~file[0]) }}"
                                      alt="vignette"
                                      loading="lazy"
@@ -192,7 +192,7 @@
                                      onmouseover="this.style.transform='scale(4)'"
                                      onmouseout="this.style.transform='scale(1)'"
                                      onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
-                            {% elseif file[3] == 'file' %}
+                            {% elseif file[1] == 'file' %}
                                 {% set extension = file[0]|split('.')|last|lower %}
                                 {% set icon = 'fa-file' %}
                                 {% if extension == 'pdf' %}{% set icon = 'fa-file-pdf' %}
@@ -208,13 +208,7 @@
                             {% endif %}
                         </div>
                         <div class="col-md-4 col-sm-12">{{ file[0] }}</div>
-                        <div class="col-md-1 col-sm-12">{{ file[4] }}</div>
-                        <div class="col-md-2 col-sm-12">
-                            <span class="d-md-none">Créée le </span>{{ file[1] }}
-                        </div>
-                        <div class="col-md-2 col-sm-12">
-                            <span class="d-md-none">Modifiée le </span>{{ file[2] }}
-                        </div>
+
                     </div>
                     <hr>
                 {% endfor %}
@@ -226,25 +220,26 @@
             <div class="mosaic-grid">
                 {% if listeFiles != null %}
                     {% for file in listeFiles %}
-                        {% if file[3] == 'folder' %}
+                        {% if file[1] == 'folder' %}
                             <div class="mosaic-item">
-                                <a href="{{ path('odpfdocuments_browser', { 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                                <a href="{{ path('odpfdocuments_browser', { 'page': page, 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
                                    style="text-decoration: none; color: inherit;">
                                     <i class="fas fa-folder fa-5x"
                                        style="color: #f0a500; display: block; margin: 0 auto 5px;"></i>
                                     <div class="mosaic-name">{{ file[0] }}</div>
                                 </a>
                             </div>
-                        {% elseif file[3] == 'image' %}
+                        {% elseif file[1] == 'image' %}
                             <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
                                 <img src="{{ (sub !='photoseq' ? asset(path~'/'~file[0]) : asset(path~'/thumbs/'~file[0])) }}"
                                      alt="{{ file[0] }}"
+                                     loading="lazy"
                                      onmouseover="this.style.transform='scale(2)'"
                                      onmouseout="this.style.transform='scale(1)'"
                                      title="{{ file[0] }}">
                                 <div class="mosaic-name">{{ file[0] }}</div>
                             </div>
-                        {% elseif file[3] == 'file' %}
+                        {% elseif file[1] == 'file' %}
                             <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
                                 {% set extension = file[0]|split('.')|last|lower %}
                                 {% set icon = 'fa-file' %}
