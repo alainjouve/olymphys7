@@ -25,6 +25,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -150,22 +151,43 @@ class OdpfDashboardController extends AbstractDashboardController
 
         $path = rtrim($path, '/');
         $listFilesbrut = null;
-        if (str_contains($path, 'photoseq') === true) {
 
-            $edition = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => explode('/', $path)[count(explode('/', $path)) - 2]]);
+        $finder = new Finder();
+        $finder->in($path)->sortByName()->depth('== 0')
+            ->ignoreDotFiles(true)
+            ->ignoreVCS(true);
 
-            $images = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $edition]);
-            $i = 0;
-            foreach ($images as $image) {
-                if (file_exists($path . '/thumbs/' . $image->getPhoto())) {
-                    $listFilesbrut[$i] = $image->getPhoto();
-                    $i++;
-                }
+        $i = 0;
+        $listFilesbrut = [];
+
+        foreach ($finder as $file) {
+            if ($file->getRelativePathname() !== 'photoseq' && $file->getRelativePathname() !== 'fichiers') {
+                // Détection du type MIME
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                $mime = finfo_file($finfo, $file->getRealPath());
+                finfo_close($finfo);
+
+                // Détermination du type
+                $type = $file->isDir()
+                    ? 'folder'
+                    : (str_starts_with($mime, 'image/') ? 'image' : 'file');
+                $mTimeFormatted = date('d/m/Y H:i:s', $file->getMTime());
+                $cTimeFormatted = date('d/m/Y H:i:s', $file->getCTime());
+                $listFilesbrut[$i] = [
+                    $file->getRelativePathname(),
+                    $mTimeFormatted,
+                    $cTimeFormatted,
+                    $type,
+                    $file->getSize()
+                ];
+
+                $i++;
             }
-
-        } else {
-            $listFilesbrut = scandir($path);
         }
+
+        // return $this->json($files);
+
+
         $offset = 0;
         if (str_contains($path, 'photoseq') === true) {
             if ($page == 0) {
@@ -182,29 +204,19 @@ class OdpfDashboardController extends AbstractDashboardController
             $listFilesPage = array_slice($listFilesbrut, $offset, 20);
         } else($listFilesPage = $listFilesbrut);
 
-        $i = 0;
-        foreach ($listFilesPage as $file) {
-            if ($file !== '.tmb' && $file !== '.' && $file !== '..') {
-                if (file_exists($path . '/' . $file)) {
-                    $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
-                    $listFiles[$i] = [$file, date('d/m/Y à H:i', filemtime($path . '/' . $file)), date('d/m/Y à H:i', filectime($path . '/' . $file)), $type, filesize($path . '/' . $file)];
-                    $i++;
-                }
-            }
-        }
 
-        usort($listFiles, function ($a, $b) use ($sort) {
+        usort($listFilesPage, function ($a, $b) use ($sort) {
             return $sort === 'date' ? ($a[3] <=> $b[3]) : strcasecmp($a[0], $b[0]);
         });
         if ($order === 'desc') {
-            $listFiles = array_reverse($listFiles);
+            $listFiles = array_reverse($listFilesPage);
         }
 
         return $this->render('bundles/EasyAdminBundle/odpf/indexDocuments.html.twig', [
             'path' => $path,
             'subpath' => $subpath,
             'subfolder' => $subfolder,
-            'listeFiles' => $listFiles,
+            'listeFiles' => $listFilesPage,
             'sort' => $sort,
             'order' => $order,
             'page' => $page,
