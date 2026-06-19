@@ -70,6 +70,7 @@
     "symfony/webpack-encore-bundle": "^1.11",
     "symfony/yaml": "6.4.*",
     "twig/cssinliner-extra": "^3.5",
+    "twig/html-extra": "*",
     "twig/inky-extra": "^3.5",
     "twig/twig": "^2.12|^3.0",
     "vich/uploader-bundle": "2.4.0",
@@ -112,7 +113,7 @@
     "auto-scripts": {
       "cache:clear": "symfony-cmd",
       "assets:install %PUBLIC_DIR%": "symfony-cmd",
-      "ckeditor:install  --tag=4.22.1": "symfony-cmd",
+      //"ckeditor:install  --tag=4.22.1": "symfony-cmd",
       "elfinder:install": "symfony-cmd",
       "requirements-checker": "script"
     },

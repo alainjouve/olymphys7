@@ -179,13 +179,21 @@
                 {% for file in listeFiles %}
                     <div class="row text-center">
                         <div class="col-md-3 col-sm-12">
-                            {% if file[1] == 'folder' %}
+                            {% if sub == 'photoseq' %}
+                                <img src="{{ asset(path~'/thumbs/'~file.photo) }}"
+                                     alt="vignette"
+                                     loading="lazy"
+                                     style="max-width:50px; max-height: 50px; transition: transform 0.3s;"
+                                     onmouseover="this.style.transform='scale(4)'"
+                                     onmouseout="this.style.transform='scale(1)'"
+                                     onclick="selectImage('{{ asset(path~'/'~file.photo) }}')">
+                            {% elseif file[1] == 'folder' %}
                                 <a href="{{ path('odpfdocuments_browser', { 'page': page, 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
                                    title="Ouvrir le dossier">
                                     <i class="fas fa-folder fa-2x" style="color: #f0a500;"></i>
                                 </a>
                             {% elseif file[1] == 'image' %}
-                                <img src="{{ sub =='photoseq' ? asset(path~'/thumbs/'~file[0]) : asset(path~'/'~file[0]) }}"
+                                <img src="{{ asset(path~'/'~file[0]) }}"
                                      alt="vignette"
                                      loading="lazy"
                                      style="max-width:50px; max-height: 50px; transition: transform 0.3s;"
@@ -207,7 +215,7 @@
                                    title="Sélectionner le fichier"></i>
                             {% endif %}
                         </div>
-                        <div class="col-md-4 col-sm-12">{{ file[0] }}</div>
+                        <div class="col-md-4 col-sm-12">{{ sub == 'photoseq' ? file.photo : file[0] }}</div>
 
                     </div>
                     <hr>
@@ -220,39 +228,51 @@
             <div class="mosaic-grid">
                 {% if listeFiles != null %}
                     {% for file in listeFiles %}
-                        {% if file[1] == 'folder' %}
-                            <div class="mosaic-item">
-                                <a href="{{ path('odpfdocuments_browser', { 'page': page, 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
-                                   style="text-decoration: none; color: inherit;">
-                                    <i class="fas fa-folder fa-5x"
-                                       style="color: #f0a500; display: block; margin: 0 auto 5px;"></i>
+                        {% if sub!='photoseq' %}
+                            {% if file[1] == 'folder' %}
+                                <div class="mosaic-item">
+                                    <a href="{{ path('odpfdocuments_browser', { 'page': page, 'subfolder': (subfolder ? subfolder ~ '/' : '') ~ file[0], 'CKEditor': app.request.query.get('CKEditor'), 'CKEditorFuncNum': app.request.query.get('CKEditorFuncNum'), 'langCode': app.request.query.get('langCode') }) }}"
+                                       style="text-decoration: none; color: inherit;">
+                                        <i class="fas fa-folder fa-5x"
+                                           style="color: #f0a500; display: block; margin: 0 auto 5px;"></i>
+                                        <div class="mosaic-name">{{ file[0] }}</div>
+                                    </a>
+                                </div>
+                            {% elseif file[1] == 'image' %}
+                                <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
+                                    <img src="{{ (sub !='photoseq' ? asset(path~'/'~file[0]) : asset(path~'/thumbs/'~file[0])) }}"
+                                         alt="{{ file[0] }}"
+                                         loading="lazy"
+                                         onmouseover="this.style.transform='scale(2)'"
+                                         onmouseout="this.style.transform='scale(1)'"
+                                         title="{{ file[0] }}">
                                     <div class="mosaic-name">{{ file[0] }}</div>
-                                </a>
-                            </div>
-                        {% elseif file[1] == 'image' %}
-                            <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
-                                <img src="{{ (sub !='photoseq' ? asset(path~'/'~file[0]) : asset(path~'/thumbs/'~file[0])) }}"
-                                     alt="{{ file[0] }}"
+                                </div>
+                            {% elseif file[1] == 'file' %}
+                                <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
+                                    {% set extension = file[0]|split('.')|last|lower %}
+                                    {% set icon = 'fa-file' %}
+                                    {% if extension == 'pdf' %}{% set icon = 'fa-file-pdf' %}
+                                    {% elseif extension in ['doc', 'docx'] %}{% set icon = 'fa-file-word' %}
+                                    {% elseif extension in ['xls', 'xlsx'] %}{% set icon = 'fa-file-excel' %}
+                                    {% elseif extension in ['ppt', 'pptx'] %}{% set icon = 'fa-file-powerpoint' %}
+                                    {% elseif extension in ['zip', 'rar', '7z'] %}{% set icon = 'fa-file-archive' %}
+                                    {% elseif extension == 'txt' %}{% set icon = 'fa-file-alt' %}
+                                    {% endif %}
+                                    <i class="fas {{ icon }} fa-5x"
+                                       style="color: #6c757d; display: block; margin: 0 auto 5px;"></i>
+                                    <div class="mosaic-name">{{ file[0] }}</div>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file.photo) }}')">
+                                <img src="{{ asset(path~'/thumbs/'~file.photo) }}"
+                                     alt="{{ file.photo }}"
                                      loading="lazy"
                                      onmouseover="this.style.transform='scale(2)'"
                                      onmouseout="this.style.transform='scale(1)'"
-                                     title="{{ file[0] }}">
-                                <div class="mosaic-name">{{ file[0] }}</div>
-                            </div>
-                        {% elseif file[1] == 'file' %}
-                            <div class="mosaic-item" onclick="selectImage('{{ asset(path~'/'~file[0]) }}')">
-                                {% set extension = file[0]|split('.')|last|lower %}
-                                {% set icon = 'fa-file' %}
-                                {% if extension == 'pdf' %}{% set icon = 'fa-file-pdf' %}
-                                {% elseif extension in ['doc', 'docx'] %}{% set icon = 'fa-file-word' %}
-                                {% elseif extension in ['xls', 'xlsx'] %}{% set icon = 'fa-file-excel' %}
-                                {% elseif extension in ['ppt', 'pptx'] %}{% set icon = 'fa-file-powerpoint' %}
-                                {% elseif extension in ['zip', 'rar', '7z'] %}{% set icon = 'fa-file-archive' %}
-                                {% elseif extension == 'txt' %}{% set icon = 'fa-file-alt' %}
-                                {% endif %}
-                                <i class="fas {{ icon }} fa-5x"
-                                   style="color: #6c757d; display: block; margin: 0 auto 5px;"></i>
-                                <div class="mosaic-name">{{ file[0] }}</div>
+                                     title="{{ file.photo }}">
+                                <div class="mosaic-name">{{ file.photo }}</div>
                             </div>
                         {% endif %}
                     {% endfor %}

@@ -44,14 +44,9 @@ class Odpfdocuments_browserController extends AbstractController
         if (str_contains($path, 'photoseq') === true) {
             $edition = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => explode('/', $path)[count(explode('/', $path)) - 2]]);
 
-            $images = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $edition]);
+            $listFilesbrut = $this->doctrine->getRepository(Photos::class)->findBy(['editionspassees' => $edition]);
             $i = 0;
-            foreach ($images as $image) {
-                if (file_exists($path . '/thumbs/' . $image->getPhoto())) {
-                    $listFilesbrut[$i] = $image->getPhoto();
-                    $i++;
-                }
-            }
+
         } else {
             $listFilesbrut = scandir($path);
         }
@@ -73,25 +68,29 @@ class Odpfdocuments_browserController extends AbstractController
 
             };
             $listFilesPage = array_slice($listFilesbrut, $offset, 20);
-        } else($listFilesPage = $listFilesbrut);
+        } else {
+            $listFilesPage = null;
 
-        $i = 0;
-        foreach ($listFilesPage as $file) {
-            if ($file !== '.tmb' && $file !== '.' && $file !== '..' && $file !== 'thumbs') {
-                if (file_exists($path . '/' . $file)) {
-                    $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
-                    $listFiles[] = [$file, $type];
+            $i = 0;
+            foreach ($listFilesbrut as $file) {
+                if ($file !== '.tmb' && $file !== '.' && $file !== '..' && $file !== 'thumbs') {
+                    if (file_exists($path . '/' . $file)) {
+                        $type = is_dir($path . '/' . $file) ? 'folder' : (str_contains(mime_content_type($path . '/' . $file), 'image') ? 'image' : 'file');
+                        $listFilesPage[$i] = [$file, $type];
+                        $i++;
+                    }
                 }
             }
         }
 
         if ($order === 'desc') {
-            $listFiles = array_reverse($listFiles);
+            $listFilesPage = array_reverse($listFilesPage);
         }
+        
         return $this->render('bundles/EasyAdminBundle/odpf/browser_index.html.twig', [
             'path' => $path,
             'subfolder' => $subfolder,
-            'listeFiles' => $listFiles,
+            'listeFiles' => $listFilesPage,
             'sort' => $sort,
             'order' => $order,
             'page' => $page,
