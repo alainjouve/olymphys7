@@ -51,23 +51,23 @@ class Odpfdocuments_browserController extends AbstractController
             $listFilesbrut = scandir($path);
         }
         $nbFiles = count($listFilesbrut);
-        $nbPages = (int)($nbFiles / 20) + 1;
+        $nbPages = (int)($nbFiles / 50) + 1;
 
         $offset = 0;
         if (str_contains($path, 'photoseq') === true) {
             if ($page == 0) {
 
                 $page = $nbPages;
-                $offset = ($page - 1) * 20;
+                $offset = ($page - 1) * 50;
             }
-            if ($page > 1) $offset = ($page - 1) * 20;
+            if ($page > 1) $offset = ($page - 1) * 50;
 
             if ($offset >= count($listFilesbrut)) {
                 $page = 1;
                 $offset = 0;
 
             };
-            $listFilesPage = array_slice($listFilesbrut, $offset, 20);
+            $listFilesPage = array_slice($listFilesbrut, $offset, 50);
         } else {
             $listFilesPage = null;
 
@@ -86,7 +86,7 @@ class Odpfdocuments_browserController extends AbstractController
         if ($order === 'desc') {
             $listFilesPage = array_reverse($listFilesPage);
         }
-        
+
         return $this->render('bundles/EasyAdminBundle/odpf/browser_index.html.twig', [
             'path' => $path,
             'subfolder' => $subfolder,
