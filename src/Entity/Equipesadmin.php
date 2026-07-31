@@ -115,6 +115,9 @@ class Equipesadmin
     #[ORM\Column(nullable: true)]
     private ?int $idAdage = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTime $uploadedAt = null;
+
 
     public function __construct()
     {
@@ -575,6 +578,18 @@ class Equipesadmin
     public function setIdAdage(?int $idAdage): static
     {
         $this->idAdage = $idAdage;
+
+        return $this;
+    }
+
+    public function getUploadedAt(): ?\DateTime
+    {
+        return $this->uploadedAt;
+    }
+
+    public function setUploadedAt(?\DateTime $uploadedAt): static
+    {
+        $this->uploadedAt = $uploadedAt;
 
         return $this;
     }

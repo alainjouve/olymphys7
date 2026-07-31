@@ -128,13 +128,14 @@
 
 
                         <div class="btn-group" role="group" aria-label="Navigation" style="margin: auto">
-                            <a href="{{ path('odpfdocuments_browser', { 'page': page-1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
-                               type="button">
+                            <a
+                                    href="{{ path('odpfdocuments_browser', { 'page': page-1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
+                                    type="button">Page prédente
                                 <i class="fa fa-arrow-circle-left fa-2x"></i>
                             </a>
                             <a href="{{ path('odpfdocuments_browser', { 'page': page+1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
                                type="button">
-                                <i class="fa fa-arrow-circle-right fa-2x"></i>
+                                <i class="fa fa-arrow-circle-right fa-2x"></i>Page suivante
                             </a>
                         </div>
                         <div class="btn-group" role="group" aria-label="Navigation"

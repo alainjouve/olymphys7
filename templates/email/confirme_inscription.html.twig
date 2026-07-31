@@ -68,18 +68,40 @@
             </div>
             <div class="content">
                 <p class="block">Bonjour<br>
-                Nous confirmons que <b>{{ userNom }} </b> (<a href="mailto : {{ userMail }}">{{ userMail }}
-                </a>) du lycée {{ equipe.nomLycee }} de {{ equipe.lyceeLocalite }} a inscrit une nouvelle équipe
+                    Nous confirmons que <b>{{ userNom }} </b> (<a href="mailto : {{ userMail }}">{{ userMail }}
+                    </a>) du lycée {{ equipe.nomLycee }} de {{ equipe.lyceeLocalite }} a inscrit une nouvelle équipe
                     denommée :</p>
                 <p class="block" style="color : blue; text-align: center">{{ equipe.titreProjet }}.</p>
 
                 <p class="block">Les données fournies sur Adage ont été transférées sur le site Olymphys.<br>
                     Vous pouvez vous connecter à votre compte Olymphys pour les vérifier. <br>
-                    Pour les équipes inscrites avant début septembre {{ date|date('Y') }} les élèves n'y figurent pas car non renseignés sur Adage.<br>
-                    Les diverses opérations concernant votre équipe (ajout, désinscription  d'élèves, dépôts des documents, etc.) se font sur le site Olymphys.<br>
-                <br>D'autre part, veuillez prendre connaissance de la fiche sécurité disponible dans votre espace et vérifier que
-                les
-                expériences de votre projet sont conformes aux exigences de sécurité imposées dans un établissement
+
+                    Pour les équipes inscrites avant début septembre {{ 'now'|date('Y') }} les élèves n'y figurent pas
+                    car non renseignés sur Adage.<br>
+
+
+                    <br>
+                    Les diverses opérations concernant votre équipe (ajout, désinscription d'élèves, dépôts des
+                    documents, etc.) se font sur le site <a href="https://olymphys.fr">Olymphys</a> qui devra être
+                    utilisé pour toutes les démarches concernant votre équipe à présent.<br>
+                </p>
+                <p class="block">
+                    Il faudra que vous indiquiez assez rapidement dans l'espace de votre équipe le mode de versement
+                    de la contribution financière que vous choisissez.
+                </p>
+
+
+                <p class="block">
+                    Cependant les inscriptions aux diverses activités extrasolaires répertoriées sur Adage auxquelles
+                    vos élèves participent peuvent être utilisées par les établissements du supérieur pour vérifier
+                    les informations concernant ces activités dans les dossiers Parcours Sup déposés par les élèves.
+                    Aussi il est recommandé de modifier si nécessaire également la composition de vos équipes sur Adage.
+                </p>
+                <p class="block">D'autre part, veuillez prendre connaissance de la fiche sécurité disponible dans votre
+                    espace et
+                    vérifier que
+                    les
+                    expériences de votre projet sont conformes aux exigences de sécurité imposées dans un établissement
                     scolaire<br></p>
 
             </div>

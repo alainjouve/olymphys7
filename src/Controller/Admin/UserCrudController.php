@@ -58,7 +58,7 @@ class UserCrudController extends AbstractCrudController
     {
         return $crud
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index'=> 'bundles/EasyAdminBundle/indexEntities.html.twig', ])
+            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',])
             ->setSearchFields(['id', 'username', 'roles', 'email', 'token', 'uai', 'nom', 'prenom', 'adresse', 'ville', 'code', 'phone', 'civilite']);
     }
 
@@ -77,7 +77,7 @@ class UserCrudController extends AbstractCrudController
             'ROLE_JURYCIA' => 'ROLE_JURYCIA',
             'ROLE_ORGACIA' => 'ROLE_ORGACIA',
             'ROLE_COMITE' => 'ROLE_COMITE',
-            'ROLE_SECRETARIAT_JURY'=>'ROLE_SECRETARIAT_JURY'])
+            'ROLE_SECRETARIAT_JURY' => 'ROLE_SECRETARIAT_JURY'])
             ->setFormTypeOption('multiple', true);
         $password = Field::new('password')->setFormType(PasswordType::class)->onlyOnForms();
         if ($pageName == 'edit') {
@@ -102,13 +102,13 @@ class UserCrudController extends AbstractCrudController
                 'ROLE_JURYCIA' => 'ROLE_JURYCIA',
                 'ROLE_ORGACIA' => 'ROLE_ORGACIA',
                 'ROLE_COMITE' => 'ROLE_COMITE',
-                'ROLE_SECRETARIAT_JURY'=>'ROLE_SECRETARIAT_JURY'])
+                'ROLE_SECRETARIAT_JURY' => 'ROLE_SECRETARIAT_JURY'])
                 ->setFormTypeOption('multiple', true)->onlyOnForms(),
             TextField::new('uai')->onlyOnIndex(),
             TextField::new('plainPassword', 'Mot de passe')->onlyOnForms(),
             AssociationField::new('uaiId', 'UAI')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             //AssociationField::new('centrecia')->setFormTypeOptions(['required' => false])->onlyOnForms(),
-
+            $contact = TextField::new('contact')->hideOnIndex(),//Doit être différente de l'adresse email identifiant du compte
             $isActive = Field::new('isActive'),
             $adresse = TextField::new('adresse'),
             $ville = TextField::new('ville'),
@@ -129,7 +129,7 @@ class UserCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        $addUsers = Action::new('addUsers', 'Ajouter des users', 'fa fa_users',)
+        $addUsers = Action::new('addUsers', 'Ajouter des users', 'fa fa_users')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('secretariatadmin_charge_user')
@@ -137,18 +137,20 @@ class UserCrudController extends AbstractCrudController
 
 
         $actions = $actions
-            ->update('index', Action::DELETE,function  (Action $action) {
-                return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
+            ->update('index', Action::DELETE, function (Action $action) {
+                return $action->setIcon('fa fa-trash-alt')->setLabel(false);
+            }
             )
-            ->update('index', Action::EDIT,function  (Action $action) {
-                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
+            ->update('index', Action::EDIT, function (Action $action) {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);
+            }
             )
-
             ->add(Crud::PAGE_EDIT, Action::INDEX, 'Retour à la liste')
             ->add(Crud::PAGE_NEW, Action::INDEX, 'Retour à la liste')
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->update('index', Action::DETAIL,function  (Action $action) {
-                return $action->setIcon('fa fa-eye')->setLabel(false);}
+            ->update('index', Action::DETAIL, function (Action $action) {
+                return $action->setIcon('fa fa-eye')->setLabel(false);
+            }
             )
             ->add(Crud::PAGE_INDEX, $addUsers);
         return $actions;

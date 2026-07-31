@@ -259,7 +259,7 @@ class Mailer
             ->context(['NomPrenomProf' => $nomPrenomProf,
                 'mailProf' => $prof->getEmail(),
                 'pwd' => $pwd])
-            ->subject('OdPF-Votre compte professeur du concours national ');
+            ->subject('OdPF-Votre compte professeur du site Olymphys ');
 
 
         $this->mailer->send($email);
