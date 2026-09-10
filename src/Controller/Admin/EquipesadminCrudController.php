@@ -300,7 +300,7 @@ class EquipesadminCrudController extends AbstractCrudController
         $centreCentre = AssociationField::new('centre', 'Centre CIA');
         $lycee = TextareaField::new('Lycee');
 
-        $nbeleves = IntegerField::new('nbeleves', 'Nbre elev')->setColumns(1);
+        $nbeleves = IntegerField::new('nbeleves', 'Nbre elev');
         $idAdage = IntegerField::new('idAdage')->hideOnIndex();
         $uploadedAt = DateField::new('uploadedAt');
         $createdAt = DateField::new('createdAt');
@@ -327,7 +327,7 @@ class EquipesadminCrudController extends AbstractCrudController
         } elseif (Crud::PAGE_NEW === $pageName) {
             return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $titreProjet, $centre, $IdProf1, $IdProf2, $idAdage];
         } elseif (Crud::PAGE_EDIT === $pageName) {
-            return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $lyceeLocalite, $titreProjet, $centre, $selectionneeForm, $IdProf1, $IdProf2, $inscrite, $description, $contribfinance, $partenaire, $retiree, $uploadedAt, $createdAt, $idAdage];
+            return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $lyceeLocalite, $titreProjet, $nbeleves, $centre, $selectionneeForm, $IdProf1, $IdProf2, $inscrite, $description, $contribfinance, $partenaire, $retiree, $uploadedAt, $createdAt, $idAdage];
         }
 
     }
@@ -805,7 +805,7 @@ class EquipesadminCrudController extends AbstractCrudController
 
             for ($row = 2; $row <= $highestRow; ++$row) {
                 //1     2	            3     4	      5	        6	         7	        8	        9	            10	    11	                        12	        13	      14	15	            16	          17	       18	19  20    21	      22	 23	        24	        25	            26	        27	         28	     29	            30                      31	         32	               33               34	                 35	          36	                37	           38             39
-                //ID	DATE CREATION	UAI	DEGRE	SECTEUR	CIRCONSCRIPTION	TYPE	MINISTÈRE	DENOMINATION	COMMUNE	COMMUNAUTE D'AGGLOMERATION	DEPARTEMENT	ACADEMIE	REGION	REP	CHEF ETAB / DIRECTEUR	COURRIEL	ADRESSE	CP	TEL	SIRET	DECLINAISON	TITRE	DOMAINE 1	DOMAINE 2	COORDONNATEUR	COURRIEL	  CLASSE  EFFECTIF	PARTENAIRE 1	PARTENAIRE 2	AUTRE PARTENAIRE	NOMBRE DE CLASSES	AVIS CHEF ETAB / IEN	OBSERVATIONS	AVIS COMMISSION	OBSERVATIONS	FINANCEMENT DEMANDE   ETAT
+                //ID	DATE CREATION	UAI	DEGRE	SECTEUR	CIRCONSCRIPTION	TYPE	MINISTÈRE	DENOMINATION	COMMUNE	COMMUNAUTE D'AGGLOMERATION	DEPARTEMENT	ACADEMIE	REGION	REP	CHEF ETAB / DIRECTEUR	COURRIEL	ADRESSE	CP	TEL	SIRET	DECLINAISON	TITRE	DOMAINE 1	DOMAINE 2	COORDONNATEUR	COURRIEL	  CLASSE1   CLASSE2       EFFECTIF	         PARTENAIRE 1	PARTENAIRE 2	AUTRE PARTENAIRE	NOMBRE DE CLASSES	AVIS CHEF ETAB / IEN	OBSERVATIONS	AVIS COMMISSION	OBSERVATIONS	FINANCEMENT DEMANDE   ETAT
 
                 $listeEquipes = $this->doctrine->getRepository(Equipesadmin::class)->findBy(['edition' => $edition], ['numero' => 'ASC']);
                 $mailprof1 = $worksheet->getCell([27, $row])->getValue();
@@ -899,11 +899,11 @@ class EquipesadminCrudController extends AbstractCrudController
                     $titreProjet = $worksheet->getCell([23, $row])->getValue();
                     $nomProf1 = $prof->getNom();
                     $prenomProf1 = $prof->getPrenom();
-                    $nbEleves = (int)$worksheet->getCell([29, $row])->getValue() > 5 ? 5 : (int)$worksheet->getCell([29, $row])->getValue();
+                    $nbEleves = (int)$worksheet->getCell([30, $row])->getValue() > 5 ? 5 : (int)$worksheet->getCell([30, $row])->getValue();
                     $partenaires = array_filter([
-                        trim((string)$worksheet->getCell([30, $row])->getValue()),
                         trim((string)$worksheet->getCell([31, $row])->getValue()),
                         trim((string)$worksheet->getCell([32, $row])->getValue()),
+                        trim((string)$worksheet->getCell([33, $row])->getValue()),
                     ], static fn(string $value): bool => $value !== '');
                     $partenaire = implode(', ', $partenaires);
 
