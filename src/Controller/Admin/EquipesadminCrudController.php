@@ -327,7 +327,7 @@ class EquipesadminCrudController extends AbstractCrudController
         } elseif (Crud::PAGE_NEW === $pageName) {
             return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $titreProjet, $centre, $IdProf1, $IdProf2, $idAdage];
         } elseif (Crud::PAGE_EDIT === $pageName) {
-            return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $lyceeLocalite, $titreProjet, $centre, $selectionneeForm, $IdProf1, $IdProf2, $inscrite, $description, $contribfinance, $partenaire, $retiree,$uploadedAt,$createdAt, $idAdage];
+            return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $lyceeLocalite, $titreProjet, $centre, $selectionneeForm, $IdProf1, $IdProf2, $inscrite, $description, $contribfinance, $partenaire, $retiree, $uploadedAt, $createdAt, $idAdage];
         }
 
     }
@@ -899,7 +899,7 @@ class EquipesadminCrudController extends AbstractCrudController
                     $titreProjet = $worksheet->getCell([23, $row])->getValue();
                     $nomProf1 = $prof->getNom();
                     $prenomProf1 = $prof->getPrenom();
-                    $nbEleves = $worksheet->getCell([29, $row])->getValue() > 5 ? 5 : $worksheet->getCell([29, $row])->getValue();
+                    $nbEleves = (int)$worksheet->getCell([29, $row])->getValue() > 5 ? 5 : (int)$worksheet->getCell([29, $row])->getValue();
                     $partenaires = array_filter([
                         trim((string)$worksheet->getCell([30, $row])->getValue()),
                         trim((string)$worksheet->getCell([31, $row])->getValue()),
