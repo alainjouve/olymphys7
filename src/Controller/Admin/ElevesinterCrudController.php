@@ -11,6 +11,7 @@ use App\Entity\Elevesinter;
 use App\Entity\Equipesadmin;
 use App\Entity\Odpf\OdpfEditionsPassees;
 use App\Entity\Odpf\OdpfEquipesPassees;
+use App\Entity\Uai;
 use App\Service\createAttestationsElevesCia;
 use DateTime;
 use Doctrine\ORM\QueryBuilder;
@@ -46,7 +47,10 @@ use PhpOffice\PhpWord\Settings;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\HeaderUtils;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -1889,6 +1893,45 @@ class ElevesinterCrudController extends AbstractCrudController
         $prof == null ? $prefix = 'eleve' : $prefix = 'professeur';
         $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/' . $equipe->getEdition()->getEd() . '_eq-' . $equipe->getLettre() . '_' . $slugger->slug('_invitation_' . $prefix . '-' . $prenom . '_' . $nom) . '.pdf';
         $pdf->Output('F', $fileNamepdf);
+
+
+    }
+
+    public function importElevesAdage(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('fichier', FileType::class, ['required' => true])
+            ->add('Valider', SubmitType::class)
+            ->getForm();
+        $edition = $this->doctrine->getRepository(Edition::class)->find($this->requestStack->getSession()->get('edition')->getId());
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            //      A     B    C       D       E                         F            G
+            // CIVILITE	NOM	PRENOM	NIVEAU	CLASSE D'AFFECTATION	GROUPE ADAGE	UAI
+            $fichier = $form->get('fichier')->getData();
+            $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($fichier);
+            $worksheet = $spreadsheet->getActiveSheet();
+            $highestRow = $worksheet->getHighestDataRow();
+
+            for ($row = 2; $row <= $highestRow; ++$row) {
+                $civilite = $worksheet->getCell('A' . $row)->getValue();
+                $nom = $worksheet->getCell('B' . $row)->getValue();
+                $prenom = $worksheet->getCell('C' . $row)->getValue();
+                $niveau = $worksheet->getCell('D' . $row)->getValue();
+                $classe = $worksheet->getCell('E' . $row)->getValue();
+                $groupeadage = $worksheet->getCell('F' . $row)->getValue();
+                $uai = $worksheet->getCell('G' . $row)->getValue();
+                $etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
+                // Ici vous pouvez créer un nouvel objet Elevesinter et le remplir avec les données extraites
+                // puis l'enregistrer dans la base de données.
+
+                $eleve = new Elevesinter();
+
+            }
+
+        }
+        return $this->render('bundles/EasyAdminBundle/extractionAdage.html.twig', array('form' => $form->createView()));
 
 
     }
