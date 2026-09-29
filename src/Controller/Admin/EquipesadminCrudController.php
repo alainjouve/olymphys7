@@ -27,6 +27,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
@@ -51,12 +52,15 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\String\UnicodeString;
 use Twig\Environment;
@@ -83,6 +87,11 @@ class EquipesadminCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Equipesadmin::class;
+    }
+
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addJsFile('js/equipesadmin-professeurs.js');
     }
 
     public function configureCrud(Crud $crud): Crud
@@ -254,6 +263,8 @@ class EquipesadminCrudController extends AbstractCrudController
             $etablissement = $equipe->getUaiId();
             $listProfs = $this->doctrine->getManager()->getRepository(User::class)->findBy(['uaiId' => $etablissement, 'isActive' => true]);//pour que seuls les profs rattachés au lycée de l'équipe soient proposés dans le choix des profs du formulaire d'édition
             $listeCentres = $this->doctrine->getManager()->getRepository(Centrescia::class)->findBy(['actif' => true], ['centre' => 'ASC']);
+        } elseif ($pageName === Crud::PAGE_NEW) {
+            $listProfs = $this->getProfesseursPourUai($this->getUaiIdFromSubmittedForm());
         } else {
             $listProfs = [];
             //$listeCentres = [];
@@ -295,6 +306,10 @@ class EquipesadminCrudController extends AbstractCrudController
         $inscrite = BooleanField::new('inscrite');
         $retiree = BooleanField::new('retiree');
         $uaiId = AssociationField::new('uaiId')->setFormTypeOption('required', false);
+        if ($pageName === Crud::PAGE_NEW) {
+            $uaiId->setFormTypeOption('attr.data-professeurs-url', $this->generateUrl('admin_equipesadmin_professeurs'));
+            $uaiId->setFormTypeOption('attr.onchange', 'chargerProfesseurs(this)');
+        }
         $edition = AssociationField::new('edition', 'Edition');
         $editionEd = TextareaField::new('edition.ed', 'Edition');
         $centreCentre = AssociationField::new('centre', 'Centre CIA');
@@ -330,6 +345,61 @@ class EquipesadminCrudController extends AbstractCrudController
             return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $lyceeLocalite, $titreProjet, $nbeleves, $centre, $selectionneeForm, $IdProf1, $IdProf2, $inscrite, $description, $contribfinance, $partenaire, $retiree, $uploadedAt, $createdAt, $idAdage];
         }
 
+    }
+
+    #[Route('/admin/equipesadmin/professeurs', name: 'admin_equipesadmin_professeurs', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
+    public function professeursPourEtablissement(Request $request): JsonResponse
+    {
+        $uaiId = $request->query->getInt('uaiId');
+        if ($uaiId <= 0) {
+            return new JsonResponse(['error' => 'Un établissement valide est requis.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $uai = $this->doctrine->getRepository(Uai::class)->find($uaiId);
+        if ($uai === null) {
+            return new JsonResponse(['error' => 'Établissement introuvable.'], Response::HTTP_NOT_FOUND);
+        }
+
+        $professeurs = array_map(
+            static fn(User $professeur): array => [
+                'id' => $professeur->getId(),
+                'label' => $professeur->getPrenomNom(),
+            ],
+            $this->getProfesseursPourUai($uai)
+        );
+
+        return new JsonResponse($professeurs);
+    }
+
+    private function getProfesseursPourUai(?Uai $uai): array
+    {
+        if ($uai === null) {
+            return [];
+        }
+
+        $users = $this->doctrine->getRepository(User::class)->findBy(
+            ['uaiId' => $uai, 'isActive' => true],
+            ['nom' => 'ASC', 'prenom' => 'ASC']
+        );
+
+        return $users;
+    }
+
+    private function getUaiIdFromSubmittedForm(): ?Uai
+    {
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request === null) {
+            return null;
+        }
+
+        $formData = $request->request->all()['Equipesadmin'] ?? [];
+        $uaiId = is_array($formData) ? filter_var($formData['uaiId'] ?? null, FILTER_VALIDATE_INT) : false;
+        if ($uaiId === false || $uaiId === null || $uaiId <= 0) {
+            return null;
+        }
+
+        return $this->doctrine->getRepository(Uai::class)->find($uaiId);
     }
 
     public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
@@ -762,13 +832,35 @@ class EquipesadminCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $uai = $entityInstance->getUaiId();
+        $edition=$entityInstance->getEdition();
         if ($uai !== null) {
             $entityInstance->setUai($uai->getUai());
             $entityInstance->setNomLycee($uai->getNom());
             $entityInstance->setLyceeLocalite($uai->getCommune());
             $entityInstance->setLyceeAcademie($uai->getAcademie());
             $maj_profsequipes = new Maj_profsequipes($this->doctrine);
-            $maj_profsequipes->maj_profsequipes($entityInstance);
+
+            if ($this->adminContextProvider->getContext()->getRequest()->query->get('crudAction') !== 'new') {
+                $maj_profsequipes->maj_profsequipes($entityInstance);
+            }
+            else{
+                $listeEquipes = $this->doctrine->getRepository(Equipesadmin::class)->findBy(['edition' => $edition]);
+                if (count($listeEquipes) == 0) {//Pour la première équipe qui s'inscrit
+                    $numero = 1;
+                    $entityInstance->setNumero($numero);
+                } else {
+                    $i = 0;
+                    foreach ($listeEquipes as $equipelist) {
+                        $numero[$i] = $equipelist->getNumero();
+                        $i = $i + 1;
+                    }
+                    $maxNumero = max($numero);
+                    $numero = $maxNumero + 1;
+                    $entityInstance->setNumero($numero);
+                }
+
+
+            }
         } else {//equipes technique
             //pour les cia
             if ($entityInstance->getCentre() != null) {

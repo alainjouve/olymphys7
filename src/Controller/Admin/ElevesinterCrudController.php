@@ -11,6 +11,7 @@ use App\Entity\Elevesinter;
 use App\Entity\Equipesadmin;
 use App\Entity\Odpf\OdpfEditionsPassees;
 use App\Entity\Odpf\OdpfEquipesPassees;
+use App\Entity\Uai;
 use App\Service\createAttestationsElevesCia;
 use DateTime;
 use Doctrine\ORM\QueryBuilder;
@@ -46,7 +47,10 @@ use PhpOffice\PhpWord\Settings;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\HeaderUtils;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -113,7 +117,7 @@ class ElevesinterCrudController extends AbstractCrudController
 
         }
 
-        if ($_REQUEST['crudAction'] == 'edit') {
+        if ($_REQUEST['crudAction'] === 'edit') {
             $idEleve = $_REQUEST['entityId'];
             $eleve = $this->doctrine->getRepository(Elevesinter::class)->findOneBy(['id' => $idEleve]);
             $crud->setPageTitle('edit', 'Eleve ' . $eleve->getPrenom() . ' ' . $eleve->getNom());
@@ -177,6 +181,8 @@ class ElevesinterCrudController extends AbstractCrudController
                 //$editionEd = $this->doctrine->getRepository(Edition::class)->findOneBy(['id' => $editionId]);
 
             }
+            $importElevesAdage= Action::new('importElevesAdage', 'Importer les élèves depuis Adage')->linkToCrudAction('importElevesAdage')
+                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
             $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations des élèves non sélectionnés(après CIA)')->linkToRoute('attestations_eleves_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
             $attestationsElevesNat = Action::new('Attestions_eleves_nat', 'Créer les attestations des élèves sélectionnés(après CN)')->linkToRoute('attestations_eleves_nat_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
@@ -1889,6 +1895,53 @@ class ElevesinterCrudController extends AbstractCrudController
         $prof == null ? $prefix = 'eleve' : $prefix = 'professeur';
         $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/' . $equipe->getEdition()->getEd() . '_eq-' . $equipe->getLettre() . '_' . $slugger->slug('_invitation_' . $prefix . '-' . $prenom . '_' . $nom) . '.pdf';
         $pdf->Output('F', $fileNamepdf);
+
+
+    }
+
+    public function importElevesAdage(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('fichier', FileType::class, ['required' => true])
+            ->add('Valider', SubmitType::class)
+            ->getForm();
+        $edition = $this->doctrine->getRepository(Edition::class)->find($this->requestStack->getSession()->get('edition')->getId());
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            //      A     B    C       D       E                         F            G
+            // CIVILITE	NOM	PRENOM	NIVEAU	CLASSE D'AFFECTATION	GROUPE ADAGE	UAI
+            $fichier = $form->get('fichier')->getData();
+            $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($fichier);
+            $worksheet = $spreadsheet->getActiveSheet();
+            $highestRow = $worksheet->getHighestDataRow();
+
+            for ($row = 2; $row <= $highestRow; ++$row) {
+                $civilite = $worksheet->getCell('A' . $row)->getValue();
+                $nom = $worksheet->getCell('B' . $row)->getValue();
+                $prenom = $worksheet->getCell('C' . $row)->getValue();
+                $niveau = $worksheet->getCell('D' . $row)->getValue();
+                $classe = $worksheet->getCell('E' . $row)->getValue();
+                $groupeadage = $worksheet->getCell('F' . $row)->getValue();
+                $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(array('groupeadage' => $groupeadage));
+                $uai = $worksheet->getCell('G' . $row)->getValue();
+                //$etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
+                $eleve=$this->doctrine->getRepository(Elevesinter::class)->findOneBy(array('prenom'    => $prenom, 'nom' => $nom, 'equipe' => $equipe));
+                if($eleve==null) {
+                    $eleve = new Elevesinter();
+                    $eleve->setPrenom($prenom);
+                    $eleve->setNom($nom);
+                    //$eleve->setCivilite($civilite);
+                    //$eleve->setNiveau($niveau);
+                    $eleve->setEquipe($equipe);
+                    $this->doctrine->getManager()->persist($eleve);
+                    $this->doctrine->getManager()->flush();
+                }
+
+            }
+
+        }
+        return $this->render('bundles/EasyAdminBundle/extractionAdage.html.twig', array('form' => $form->createView()));
 
 
     }
