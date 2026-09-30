@@ -125,7 +125,7 @@ class Mailer
     /**
      * @throws TransportExceptionInterface
      */
-    public function sendConfirmeInscriptionEquipe(Equipesadmin $equipe, $user, $modif, $checkChange): Email
+    public function sendConfirmeInscriptionEquipe(Equipesadmin $equipe, $user, $modif, $checkChange, ?User $prof2 = null): Email
     {
 
         if (!$modif) {
@@ -139,6 +139,11 @@ class Mailer
                 ->htmlTemplate('email/confirme_inscription.html.twig')
                 ->subject('Inscription de l\'équipe  ' . $equipe->getNumero() . ' par ' . $user->getPrenomNom())
                 ->context(['equipe' => $equipe, 'userNom' => $user->getPrenomNom(), 'userMail' => $user->getEmail()]);//la valeur de la variable user ne passe pas dans le template, sécurité ? D'où les strings Nom et images
+            if ($prof2 !== null && $prof2->getEmail() !== null && $prof2->getEmail() !== ''
+                && $prof2->getEmail() !== $user->getEmail()) {
+                $email->addTo($prof2->getEmail());
+            }
+            $this->mailer->send($email);
             /* ->attachFromPath('docequipes/30-fiche matériel-sécurité.doc');
          ->html('Bonjour<br>
                      Nous confirmons que ' . $equipe->getIdProf1()->getPrenomNom() . '(<a href="' . $user->getEmail() . '">' . $user->getEmail() .
@@ -182,6 +187,42 @@ class Mailer
                     '</a>)  du lycée ' . $equipe->getNomLycee() . ' de ' . $equipe->getLyceeLocalite() . ' a modifié l\'équipe  n° ' . $equipe->getNumero() . ' : ' . $equipe->getTitreProjet()
                     . '<br> Modifications apportées :<br>' . $changetext . '<br> <br>Le comité national des Olympiades de Physique France');
         }
+        $this->mailer->send($email);
+
+        return $email;
+
+    }
+
+    /**
+     * @throws TransportExceptionInterface
+     */
+    public function sendConfirmeAdminInscriptionEquipe(Equipesadmin $equipe, $user, ?User $prof2 = null): Email
+    {
+
+
+        $email = (new TemplatedEmail())
+            ->from('info@olymphys.fr')
+            ->addCc('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
+            ->addTo($user->getEmail())
+            ->addCc('webmestre3@olymphys.fr')
+            ->addCc('webmestre4@olymphys.fr')
+            ->addCc('emma.gosse@orange.fr')
+            ->htmlTemplate('email/confirme_admin_inscription.html.twig')
+            ->subject('Inscription de l\'équipe  ' . $equipe->getNumero() . ' par ' . $user->getPrenomNom())
+            ->context(['equipe' => $equipe, 'userNom' => $user->getPrenomNom(), 'userMail' => $user->getEmail()]);//la valeur de la variable user ne passe pas dans le template, sécurité ? D'où les strings Nom et images
+        if ($prof2 !== null && $prof2->getEmail() !== null && $prof2->getEmail() !== ''
+            && $prof2->getEmail() !== $user->getEmail()) {
+            $email->addTo($prof2->getEmail());
+        }
+        /* ->attachFromPath('docequipes/30-fiche matériel-sécurité.doc');
+     ->html('Bonjour<br>
+                 Nous confirmons que ' . $equipe->getIdProf1()->getPrenomNom() . '(<a href="' . $user->getEmail() . '">' . $user->getEmail() .
+         '</a>) du lycée ' . $equipe->getNomLycee() . ' de ' . $equipe->getLyceeLocalite() . ' a inscrit une nouvelle équipe denommée : ' . $equipe->getTitreProjet() .
+         '<br>Veuillez prendre connaissance de la fiche sécurité disponible dans votre espace pour vérifier que les expériences de votre projet sont conformes aux exigences de sécurité imposées dans un établissement scolaire
+          <br>Le comité national des Olympiades de Physique');
+     */
+
+
         $this->mailer->send($email);
 
         return $email;

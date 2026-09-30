@@ -11,6 +11,7 @@ use App\Entity\Elevesinter;
 use App\Entity\Equipesadmin;
 use App\Entity\Fichiersequipes;
 use App\Entity\Odpf\OdpfEditionsPassees;
+use App\Entity\Odpf\OdpfEquipesPassees;
 use App\Entity\Professeurs;
 use App\Entity\Uai;
 use App\Entity\User;
@@ -20,13 +21,16 @@ use App\Service\Mailer;
 use App\Service\Maj_profsequipes;
 use App\Service\OdpfRempliEquipesPassees;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Query\Parameter;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
@@ -51,12 +55,15 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\String\UnicodeString;
 use Twig\Environment;
@@ -68,21 +75,29 @@ class EquipesadminCrudController extends AbstractCrudController
     private RequestStack $requestStack;
     private AdminContextProvider $adminContextProvider;
     private ManagerRegistry $doctrine;
+    private Mailer $mailerService;
 
     public function __construct(RequestStack         $requestStack,
                                 AdminContextProvider $adminContextProvider,
                                 ManagerRegistry      $doctrine,
+                                Mailer               $mailerService,
                                 AdminUrlGenerator    $adminUrlGenerator)
     {
         $this->requestStack = $requestStack;;
         $this->adminContextProvider = $adminContextProvider;
         $this->doctrine = $doctrine;
+        $this->mailerService = $mailerService;
         $this->adminUrlGenerator = $adminUrlGenerator;
     }
 
     public static function getEntityFqcn(): string
     {
         return Equipesadmin::class;
+    }
+
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addJsFile('js/equipesadmin-professeurs.js');
     }
 
     public function configureCrud(Crud $crud): Crud
@@ -254,6 +269,8 @@ class EquipesadminCrudController extends AbstractCrudController
             $etablissement = $equipe->getUaiId();
             $listProfs = $this->doctrine->getManager()->getRepository(User::class)->findBy(['uaiId' => $etablissement, 'isActive' => true]);//pour que seuls les profs rattachés au lycée de l'équipe soient proposés dans le choix des profs du formulaire d'édition
             $listeCentres = $this->doctrine->getManager()->getRepository(Centrescia::class)->findBy(['actif' => true], ['centre' => 'ASC']);
+        } elseif ($pageName === Crud::PAGE_NEW) {
+            $listProfs = $this->getProfesseursPourUai($this->getUaiIdFromSubmittedForm());
         } else {
             $listProfs = [];
             //$listeCentres = [];
@@ -295,7 +312,11 @@ class EquipesadminCrudController extends AbstractCrudController
         $inscrite = BooleanField::new('inscrite');
         $retiree = BooleanField::new('retiree');
         $uaiId = AssociationField::new('uaiId')->setFormTypeOption('required', false);
-        $edition = AssociationField::new('edition', 'Edition');
+        if ($pageName === Crud::PAGE_NEW) {
+            $uaiId->setFormTypeOption('attr.data-professeurs-url', $this->generateUrl('admin_equipesadmin_professeurs'));
+            $uaiId->setFormTypeOption('attr.onchange', 'chargerProfesseurs(this)');
+        }
+        $edition = AssociationField::new('edition', 'Edition')->setSortProperty('ed');
         $editionEd = TextareaField::new('edition.ed', 'Edition');
         $centreCentre = AssociationField::new('centre', 'Centre CIA');
         $lycee = TextareaField::new('Lycee');
@@ -330,6 +351,61 @@ class EquipesadminCrudController extends AbstractCrudController
             return [$edition, $numero, $lettre, $uaiId, $lyceeAcademie, $lyceeLocalite, $titreProjet, $nbeleves, $centre, $selectionneeForm, $IdProf1, $IdProf2, $inscrite, $description, $contribfinance, $partenaire, $retiree, $uploadedAt, $createdAt, $idAdage];
         }
 
+    }
+
+    #[Route('/admin/equipesadmin/professeurs', name: 'admin_equipesadmin_professeurs', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
+    public function professeursPourEtablissement(Request $request): JsonResponse
+    {
+        $uaiId = $request->query->getInt('uaiId');
+        if ($uaiId <= 0) {
+            return new JsonResponse(['error' => 'Un établissement valide est requis.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $uai = $this->doctrine->getRepository(Uai::class)->find($uaiId);
+        if ($uai === null) {
+            return new JsonResponse(['error' => 'Établissement introuvable.'], Response::HTTP_NOT_FOUND);
+        }
+
+        $professeurs = array_map(
+            static fn(User $professeur): array => [
+                'id' => $professeur->getId(),
+                'label' => $professeur->getPrenomNom(),
+            ],
+            $this->getProfesseursPourUai($uai)
+        );
+
+        return new JsonResponse($professeurs);
+    }
+
+    private function getProfesseursPourUai(?Uai $uai): array
+    {
+        if ($uai === null) {
+            return [];
+        }
+
+        $users = $this->doctrine->getRepository(User::class)->findBy(
+            ['uaiId' => $uai, 'isActive' => true],
+            ['nom' => 'ASC', 'prenom' => 'ASC']
+        );
+
+        return $users;
+    }
+
+    private function getUaiIdFromSubmittedForm(): ?Uai
+    {
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request === null) {
+            return null;
+        }
+
+        $formData = $request->request->all()['Equipesadmin'] ?? [];
+        $uaiId = is_array($formData) ? filter_var($formData['uaiId'] ?? null, FILTER_VALIDATE_INT) : false;
+        if ($uaiId === false || $uaiId === null || $uaiId <= 0) {
+            return null;
+        }
+
+        return $this->doctrine->getRepository(Uai::class)->find($uaiId);
     }
 
     public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
@@ -762,13 +838,41 @@ class EquipesadminCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $uai = $entityInstance->getUaiId();
-        if ($uai !== null) {
+        $edition = $entityInstance->getEdition();
+        if ($uai !== null) {//pour les équipes inscrites directement par l'admin (étranger)
             $entityInstance->setUai($uai->getUai());
             $entityInstance->setNomLycee($uai->getNom());
             $entityInstance->setLyceeLocalite($uai->getCommune());
             $entityInstance->setLyceeAcademie($uai->getAcademie());
+            $entityInstance->setNomProf1($entityInstance->getIdProf1()->getNom());
+
+            $entityInstance->setPrenomProf1($entityInstance->getIdProf1()->getNom());
+            if ($entityInstance->getIdProf2() !== null) {
+                $entityInstance->setNomProf2($entityInstance->getIdProf2()->getNom());
+                $entityInstance->setPrenomProf2($entityInstance->getIdProf2()->getPrenom());
+            }
             $maj_profsequipes = new Maj_profsequipes($this->doctrine);
-            $maj_profsequipes->maj_profsequipes($entityInstance);
+
+            if ($this->adminContextProvider->getContext()->getRequest()->query->get('crudAction') !== 'new') {
+                $maj_profsequipes->maj_profsequipes($entityInstance);
+            } else {
+                $listeEquipes = $this->doctrine->getRepository(Equipesadmin::class)->findBy(['edition' => $edition]);
+                if (count($listeEquipes) == 0) {//Pour la première équipe qui s'inscrit
+                    $numero = 1;
+                    $entityInstance->setNumero($numero);
+                } else {
+                    $i = 0;
+                    foreach ($listeEquipes as $equipelist) {
+                        $numero[$i] = $equipelist->getNumero();
+                        $i = $i + 1;
+                    }
+                    $maxNumero = max($numero);
+                    $numero = $maxNumero + 1;
+                    $entityInstance->setNumero($numero);
+                }
+
+
+            }
         } else {//equipes technique
             //pour les cia
             if ($entityInstance->getCentre() != null) {
@@ -781,7 +885,10 @@ class EquipesadminCrudController extends AbstractCrudController
         }
         $rempliOdpfEquipesPassees = new OdpfRempliEquipesPassees($this->doctrine);
         $rempliOdpfEquipesPassees->OdpfRempliEquipePassee($entityInstance);
+
         parent::persistEntity($entityManager, $entityInstance);
+        //l'envoi du mail de confirmation au prof1 est effectué via l'évènement afterPersistEntity du EasyAdminSubsciber
+
     }
 
     public function extractionAdage(Request $request, UserPasswordHasherInterface $passwordHasher, MailerInterface $mailer, Environment $twig)
@@ -801,10 +908,10 @@ class EquipesadminCrudController extends AbstractCrudController
             $fichier = $form->get('fichier')->getData();
             $spreadsheet = IOFactory::load($fichier);
             $worksheet = $spreadsheet->getActiveSheet();
-            $highestRow = $worksheet->getHighestDataRow();
+            $highestRow = $worksheet->getHighestDataRow() - 1;//car la dernière ligne du tableau ne correspond pas à une équipe mais comporte TOTAL = nb equipe
 
             for ($row = 2; $row <= $highestRow; ++$row) {
-                //1     2	            3     4	      5	        6	         7	        8	        9	            10	    11	                        12	        13	      14	15	            16	          17	       18	19  20    21	      22	 23	        24	        25	            26	        27	         28	     29	            30                      31	         32	               33               34	                 35	          36	                37	           38             39
+                //1     2	            3     4	      5	        6	         7	        8	        9	            10	    11	                        12	        13	      14	15	            16	          17	       18	19  20    21	      22	 23	        24	        25	            26	        27	         28	     29	            30                      31	         32	               33               34	                 35	          36	                37	                   38             39              40
                 //ID	DATE CREATION	UAI	DEGRE	SECTEUR	CIRCONSCRIPTION	TYPE	MINISTÈRE	DENOMINATION	COMMUNE	COMMUNAUTE D'AGGLOMERATION	DEPARTEMENT	ACADEMIE	REGION	REP	CHEF ETAB / DIRECTEUR	COURRIEL	ADRESSE	CP	TEL	SIRET	DECLINAISON	TITRE	DOMAINE 1	DOMAINE 2	COORDONNATEUR	COURRIEL	  CLASSE1   CLASSE2       EFFECTIF	         PARTENAIRE 1	PARTENAIRE 2	AUTRE PARTENAIRE	NOMBRE DE CLASSES	AVIS CHEF ETAB / IEN	OBSERVATIONS	AVIS COMMISSION	OBSERVATIONS	FINANCEMENT DEMANDE   ETAT
 
                 $listeEquipes = $this->doctrine->getRepository(Equipesadmin::class)->findBy(['edition' => $edition], ['numero' => 'ASC']);
@@ -860,9 +967,10 @@ class EquipesadminCrudController extends AbstractCrudController
 
                         $mailerUtil->sendCreationCompteProf($prof, $nomPrenomProf, $plainPassword);//on informe le professeur de son inscription sur Olymphys avec ses identifiants
                     }
-                    $nlleEquipe = false;
+                    //$nlleEquipe = false;
                     $idAdage = $worksheet->getCell([1, $row])->getValue();//l'id adage évite  de créer  plusieurs fois la même équipe
                     $equipe = $this->doctrine->getRepository(Equipesadmin::class)->findOneBy(['idAdage' => $idAdage]);//L'id d'adage est sensé discriminer les équipes du tableau excel
+                    //Attention les équipe créées directement sur olymphys n'ont pas d'id adage
                     if (!$equipe) {//pas d'équipe avec cet idadage, donc il faut créer l'équipe
 
                         $equipe = new Equipesadmin();
@@ -894,85 +1002,125 @@ class EquipesadminCrudController extends AbstractCrudController
                         /*dd($worksheet->getCell([2, $row])->getValue());
                         $createdAt = new \DateTime($worksheet->getCell([2, $row])->getValue());
                         $equipe->setCreatedAt($createdAt);*/
-                    }
-                    //on met à jour les données à partir des données adages
-                    $titreProjet = $worksheet->getCell([23, $row])->getValue();
-                    $nomProf1 = $prof->getNom();
-                    $prenomProf1 = $prof->getPrenom();
-                    $nbEleves = (int)$worksheet->getCell([30, $row])->getValue() > 5 ? 5 : (int)$worksheet->getCell([30, $row])->getValue();
-                    $partenaires = array_filter([
-                        trim((string)$worksheet->getCell([31, $row])->getValue()),
-                        trim((string)$worksheet->getCell([32, $row])->getValue()),
-                        trim((string)$worksheet->getCell([33, $row])->getValue()),
-                    ], static fn(string $value): bool => $value !== '');
-                    $partenaire = implode(', ', $partenaires);
 
-                    $equipeExistanteModifiee = false;
-
-                    if ($nlleEquipe || $equipe->getTitreProjet() !== $titreProjet) {
-                        $equipe->setTitreProjet($titreProjet);
-                        if (!$nlleEquipe) {
-                            $equipeExistanteModifiee = true;
-                        }
-                    }
-                    if ($nlleEquipe || $equipe->getIdProf1()?->getId() !== $prof->getId()) {
+                        //on met à jour les données à partir des données adages : pas bonne idée ça détruit les modifs qu'on fait les profs sur olymphys
+                        $titreProjet = $worksheet->getCell([23, $row])->getValue();
                         $equipe->setIdProf1($prof);
-                        if (!$nlleEquipe) {
-                            $equipeExistanteModifiee = true;
-                        }
-                    }
-                    if ($nlleEquipe || $equipe->getNomProf1() !== $nomProf1) {
+                        $nomProf1 = $prof->getNom();
+                        $prenomProf1 = $prof->getPrenom();
                         $equipe->setNomProf1($nomProf1);
-                        if (!$nlleEquipe) {
-                            $equipeExistanteModifiee = true;
-                        }
-                    }
-                    if ($nlleEquipe || $equipe->getPrenomProf1() !== $prenomProf1) {
                         $equipe->setPrenomProf1($prenomProf1);
-                        if (!$nlleEquipe) {
-                            $equipeExistanteModifiee = true;
-                        }
-                    }
-                    if ($nlleEquipe || $equipe->getNbeleves() !== $nbEleves) {
-                        $equipe->setNbeleves($nbEleves);
-                        if (!$nlleEquipe) {
-                            $equipeExistanteModifiee = true;
-                        }
-                    }
-                    if ($nlleEquipe || $equipe->getPartenaire() !== $partenaire) {
+                        $nbEleves = (int)$worksheet->getCell([30, $row])->getValue() > 5 ? 5 : (int)$worksheet->getCell([30, $row])->getValue();
+                        $partenaires = array_filter([
+                            trim((string)$worksheet->getCell([31, $row])->getValue()),
+                            trim((string)$worksheet->getCell([32, $row])->getValue()),
+                            trim((string)$worksheet->getCell([33, $row])->getValue()),
+                        ], static fn(string $value): bool => $value !== '');
+                        $partenaire = implode(', ', $partenaires);
                         $equipe->setPartenaire($partenaire);
-                        if (!$nlleEquipe) {
-                            $equipeExistanteModifiee = true;
-                        }
-                    }
-                    if (!$nlleEquipe && $equipeExistanteModifiee) {
-                        $equipe->setUploadedAt(new \DateTime('now'));
-                    }
-                    //$equipe->setDescription($worksheet->getCell([36, $row])->getValue());
+                        $equipe->setTitreProjet($titreProjet);
+                        $equipe->setNbeleves($nbEleves);
+                        $equipe->setDescription($worksheet->getCell([36, $row])->getValue());
 
-                    $this->doctrine->getManager()->persist($equipe);
-                    $this->doctrine->getManager()->flush();
-                    //createdAt est par défaut fixée à la date de traitement du fichier, et remplace createdAt par la date actuelle
-                    //pas trouvé où cette commande est écrite
-                    //un deuxième persist et flush est un update et la date d'inscription est bonne
-                    //$equipe->setCreatedAt(new \DateTime($worksheet->getCell([2, $row])->getValue()));
-                    // $this->doctrine->getManager()->persist($equipe);
-                    //$this->doctrine->getManager()->flush();
-                    $professeur = $this->doctrine->getRepository(Professeurs::class)->findOneBy(['user' => $prof]);
-                    if ($professeur == null) {
-                        $professeur = new Professeurs();
-                        $professeur->setUser($prof);
+                        /* $equipeExistanteModifiee = false;
+
+                         if ($nlleEquipe || $equipe->getTitreProjet() !== $titreProjet) {
+
+                             if (!$nlleEquipe) {
+                                 $equipeExistanteModifiee = true;
+                             }
+                         }
+                         if ($nlleEquipe || $equipe->getIdProf1()?->getId() !== $prof->getId()) {
+                             $equipe->setIdProf1($prof);
+                             if (!$nlleEquipe) {
+                                 $equipeExistanteModifiee = true;
+                             }
+                         }
+                         if ($nlleEquipe || $equipe->getNomProf1() !== $nomProf1) {
+                             $equipe->setNomProf1($nomProf1);
+                             if (!$nlleEquipe) {
+                                 $equipeExistanteModifiee = true;
+                             }
+                         }
+                         if ($nlleEquipe || $equipe->getPrenomProf1() !== $prenomProf1) {
+                             $equipe->setPrenomProf1($prenomProf1);
+                             if (!$nlleEquipe) {
+                                 $equipeExistanteModifiee = true;
+                             }
+                         }
+                         if ($nlleEquipe || $equipe->getNbeleves() !== $nbEleves) {
+
+                             if (!$nlleEquipe) {
+                                 $equipeExistanteModifiee = true;
+                             }
+                         }
+                         if ($nlleEquipe || $equipe->getPartenaire() !== $partenaire) {
+
+                             if (!$nlleEquipe) {
+                                 $equipeExistanteModifiee = true;
+                             }
+                         }
+                         if (!$nlleEquipe && $equipeExistanteModifiee) {
+                             $equipe->setUploadedAt(new \DateTime('now'));
+                         }
+                         //
+                          */
+                        $this->doctrine->getManager()->persist($equipe);
+                        $this->doctrine->getManager()->flush();
+                        $rempliOdpfEquipesPassees = new OdpfRempliEquipesPassees($this->doctrine);
+                        $rempliOdpfEquipesPassees->OdpfRempliEquipePassee($equipe);
+                        //createdAt est par défaut fixée à la date de traitement du fichier, et remplace createdAt par la date actuelle
+                        //pas trouvé où cette commande est écrite
+                        //un deuxième persist et flush est un update et la date d'inscription est bonne
+                        //$equipe->setCreatedAt(new \DateTime($worksheet->getCell([2, $row])->getValue()));
+                        // $this->doctrine->getManager()->persist($equipe);
+                        //$this->doctrine->getManager()->flush();
+                        $professeur = $this->doctrine->getRepository(Professeurs::class)->findOneBy(['user' => $prof]);
+                        if ($professeur == null) {
+                            $professeur = new Professeurs();
+                            $professeur->setUser($prof);
+                        }
+                        $professeur->addEquipe($equipe);
+                        $this->doctrine->getManager()->persist($professeur);
+                        $this->doctrine->getManager()->flush();
+                        if ($nlleEquipe) $mailerUtil->sendConfirmeInscriptionEquipe($equipe, $prof, null, null);//on informe le professeur de l'inscription de son équipe sur Olymphys
+
+
                     }
-                    $professeur->addEquipe($equipe);
-                    $this->doctrine->getManager()->persist($professeur);
-                    $this->doctrine->getManager()->flush();
-                    if ($nlleEquipe) $mailerUtil->sendConfirmeInscriptionEquipe($equipe, $prof, null, null);//on informe le professeur de l'inscription de son équipe sur Olymphys
+                    if ($equipe) {
+                        //vérification équipes passées création si pas encore créée
+                        $edition = $equipe->getEdition();
+                        $repositoryEquipesPassees = $this->doctrine->getRepository(OdpfEquipesPassees::class);
+                        $repositoryEditionsPassees = $this->doctrine->getRepository(OdpfEditionsPassees::class);
+                        //$repositoryEleves = $this->doctrine->getRepository(Elevesinter::class);
+                        $editionPassee = $repositoryEditionsPassees->findOneBy(['edition' => $edition->getEd()]);
+                        //$em = $this->doctrine->getManager();
+                        $OdpfEquipepassee = $repositoryEquipesPassees->createQueryBuilder('e')
+                            ->where('e.numero =:numero')
+                            ->andWhere('e.editionspassees= :edition')
+                            ->setParameters(new ArrayCollection([
+                                new Parameter('numero', $equipe->getNumero()),
+                                new Parameter('edition', $editionPassee)
+                            ]))
+                            ->getQuery()->getOneOrNullResult();
+
+                        if ($OdpfEquipepassee === null) {
+                            $rempliOdpfEquipesPassees = new OdpfRempliEquipesPassees($this->doctrine);
+                            $rempliOdpfEquipesPassees->OdpfRempliEquipePassee($equipe);
+                        }
+
+
+                    }
+
+
                 }
                 if (!$mailprof1) {
+
                     $this->addFlash('warning', 'Le mail du prof 1 de l\'équipe du lycée ' . $worksheet->getCell([9, $row]) . '  est vide, équipe non ajoutée');
 
                 }
             }
+
             $url = $this->adminUrlGenerator->setDashboard(DashboardController::class)
                 ->setController(EquipesadminCrudController::class)
                 ->setAction('index')->generateUrl();

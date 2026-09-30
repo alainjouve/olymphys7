@@ -117,7 +117,7 @@ class ElevesinterCrudController extends AbstractCrudController
 
         }
 
-        if ($_REQUEST['crudAction'] == 'edit') {
+        if ($_REQUEST['crudAction'] === 'edit') {
             $idEleve = $_REQUEST['entityId'];
             $eleve = $this->doctrine->getRepository(Elevesinter::class)->findOneBy(['id' => $idEleve]);
             $crud->setPageTitle('edit', 'Eleve ' . $eleve->getPrenom() . ' ' . $eleve->getNom());
@@ -181,6 +181,8 @@ class ElevesinterCrudController extends AbstractCrudController
                 //$editionEd = $this->doctrine->getRepository(Edition::class)->findOneBy(['id' => $editionId]);
 
             }
+            $importElevesAdage= Action::new('importElevesAdage', 'Importer les élèves depuis Adage')->linkToCrudAction('importElevesAdage')
+                ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
             $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations des élèves non sélectionnés(après CIA)')->linkToRoute('attestations_eleves_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
             $attestationsElevesNat = Action::new('Attestions_eleves_nat', 'Créer les attestations des élèves sélectionnés(après CN)')->linkToRoute('attestations_eleves_nat_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
@@ -1921,12 +1923,20 @@ class ElevesinterCrudController extends AbstractCrudController
                 $niveau = $worksheet->getCell('D' . $row)->getValue();
                 $classe = $worksheet->getCell('E' . $row)->getValue();
                 $groupeadage = $worksheet->getCell('F' . $row)->getValue();
+                $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(array('groupeadage' => $groupeadage));
                 $uai = $worksheet->getCell('G' . $row)->getValue();
-                $etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
-                // Ici vous pouvez créer un nouvel objet Elevesinter et le remplir avec les données extraites
-                // puis l'enregistrer dans la base de données.
-
-                $eleve = new Elevesinter();
+                //$etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
+                $eleve=$this->doctrine->getRepository(Elevesinter::class)->findOneBy(array('prenom'    => $prenom, 'nom' => $nom, 'equipe' => $equipe));
+                if($eleve==null) {
+                    $eleve = new Elevesinter();
+                    $eleve->setPrenom($prenom);
+                    $eleve->setNom($nom);
+                    //$eleve->setCivilite($civilite);
+                    //$eleve->setNiveau($niveau);
+                    $eleve->setEquipe($equipe);
+                    $this->doctrine->getManager()->persist($eleve);
+                    $this->doctrine->getManager()->flush();
+                }
 
             }
 

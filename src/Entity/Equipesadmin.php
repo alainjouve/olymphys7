@@ -118,6 +118,9 @@ class Equipesadmin
     #[ORM\Column(nullable: true)]
     private ?\DateTime $uploadedAt = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $groupeAdage = null;
+
 
     public function __construct()
     {
@@ -590,6 +593,18 @@ class Equipesadmin
     public function setUploadedAt(?\DateTime $uploadedAt): static
     {
         $this->uploadedAt = $uploadedAt;
+
+        return $this;
+    }
+
+    public function getGroupeAdage(): ?int
+    {
+        return $this->groupeAdage;
+    }
+
+    public function setGroupeAdage(?int $groupeAdage): static
+    {
+        $this->groupeAdage = $groupeAdage;
 
         return $this;
     }

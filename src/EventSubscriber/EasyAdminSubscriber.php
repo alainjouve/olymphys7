@@ -2,10 +2,12 @@
 //source : https://grafikart.fr/forum/33951
 namespace App\EventSubscriber;
 
+use App\Entity\Equipesadmin;
 use App\Entity\Fichiersequipes;
 use App\Entity\Odpf\OdpfFichierspasses;
 use App\Entity\Photos;
 use App\Entity\User;
+use App\Service\Mailer;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Event\AfterEntityPersistedEvent;
@@ -13,18 +15,26 @@ use EasyCorp\Bundle\EasyAdminBundle\Event\AfterEntityUpdatedEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityUpdatedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 
 class EasyAdminSubscriber implements EventSubscriberInterface
 {
 
     private EntityManagerInterface $entityManager;
     private UserPasswordHasherInterface $passwordEncoder;
+    private Mailer $mailerService;
 
-    public function __construct(EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordEncoder)
+    public function __construct(
+        EntityManagerInterface      $entityManager,
+        UserPasswordHasherInterface $passwordEncoder,
+        Mailer                      $mailerService
+    )
     {
         $this->entityManager = $entityManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->mailerService = $mailerService;
     }
 
     public static function getSubscribedEvents(): array
@@ -53,7 +63,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         $entity = $event->getEntityInstance();
 
         if (!($entity instanceof User)) {
-            
+
             return;
         }
 
@@ -88,6 +98,9 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         $this->entityManager->flush();
     }
 
+    /**
+     * @throws TransportExceptionInterface
+     */
     public function Traitement(AfterEntityPersistedEvent $event)
     {
         $entity = $event->getEntityInstance();
@@ -102,6 +115,29 @@ class EasyAdminSubscriber implements EventSubscriberInterface
                 $entity->moveFile();
 
             }
+        }
+        if ($entity instanceof Equipesadmin) {
+            $slugger = new AsciiSlugger();
+            $academie = $entity->getLyceeAcademie();
+
+            if (
+                $entity->getUaiId() !== null
+                && $academie !== null
+                && strtolower($slugger->slug($academie)->toString()) === 'etranger'
+            ) {
+                $prof1 = $entity->getIdProf1();
+                $prof2 = $entity->getIdProf2();
+
+
+                $this->mailerService->sendConfirmeAdminInscriptionEquipe(
+                    $entity,
+                    $prof1,
+                    $prof2
+                );
+
+            }
+
+
         }
 
         return;
