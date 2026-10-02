@@ -272,6 +272,7 @@ class UtilisateurController extends AbstractController
                             }
                         }
                     }
+                    $nbeleves = count($eleve);
                     $equipe->setNbEleves($nbeleves);
                     $this->doctrine->getManager()->persist($equipe);
                     $this->doctrine->getManager()->flush();
