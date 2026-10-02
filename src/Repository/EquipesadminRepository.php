@@ -150,7 +150,7 @@ class EquipesadminRepository extends ServiceEntityRepository
 
         }
 
-        $concours == 'interacadémique' ? $selectionnee = 0 : $selectionnee = 1;
+        $concours === 'interacadémique' ? $selectionnee = 0 : $selectionnee = 1;
 
         $qb = $em->getRepository(Equipesadmin::class)->createQueryBuilder('e')
             ->andWhere('e.edition =:edition')
@@ -163,30 +163,33 @@ class EquipesadminRepository extends ServiceEntityRepository
          $Y = $edition->getConcourscia()->format('Y');*/
         $m = 5;//Pour que les professeurs puissent télécharger les attestations cia jusqu'au 1 mai environ.
         $dateciastr = $edition->getConcourscia()->format('Y-m-d');//Les organisateurs et profs  peuvent déposer les fichiers 20 jours après la date du concours CIA pour compléter leur dossier
-        $datelim = new DateTime($dateciastr);//il faut créer une nouvelle date à partir de la date ia chaîne de caractère et ensuite ajoputer les 30 jours
+        $datelim = new DateTime($dateciastr);//il faut créer une nouvelle date à partir de la date en chaîne de caractère et ensuite ajouter les 5 mois pour ne pas modifier la date du concourscia dans la variable session
         $datelim = $datelim->modify('+' . $m . ' month');//L'ajout direct des 5 mois  à la date concourscia modifie la date concourscia dans la variable session !
 
         if ($date > $dateouvertureSite and $date <= $datelim) {
             //$datelim pour permettre au prof  de déposer les autorisations après les CIA pour les équipes non sélectionné.
 
             if (in_array('ROLE_PROF', $user->getRoles()) and (!in_array('ROLE_JURY', $user->getRoles()))) {// à cause du juré qui est prof et juré selon les années
-                $qb->andWhere('e.idProf1 =:prof or e.idProf2 =:prof')
-                    ->setParameter('prof', $user);
+                $qb->andWhere('e.uai =:uai')
+                    ->setParameter('uai', $user->getUaiId()->getUai());//Tous les profs d'un lycée ont accès à toutes les équipes de ce lycée, même si elles ne sont pas les leurs.
+
+                //->andWhere('e.idProf1 =:prof or e.idProf2 =:prof')
+                // ->setParameter('prof', $user);
             }
         }
         if ($date > $datelim) {
 
             if (in_array('ROLE_PROF', $user->getRoles()) and (!in_array('ROLE_JURY', $user->getRoles()))) {// à cause du juré qui est prof et juré selon les années
-                $qb->andWhere('e.idProf1 =:prof or e.idProf2 =:prof')
+                $qb->andWhere('e.uai =:uai')
+                    ->setParameter('uai', $user->getUaiId()->getUai())//Tous les profs d'un lycée ont accès à toutes les équipes de ce lycée, même si elles ne sont pas les leurs.
                     ->andWhere('e.selectionnee =:selectionnee')
-                    ->setParameter('prof', $user)
                     ->setParameter('selectionnee', $selectionnee);
 
             }
         }
 
 
-        $concours == 'interacadémique' ? $qb->orderBy('e.numero', 'ASC') : $qb->orderBy('e.lettre', 'ASC');
+        $concours === 'interacadémique' ? $qb->orderBy('e.numero', 'ASC') : $qb->orderBy('e.lettre', 'ASC');
 
 
         if (in_array('ROLE_JURY', $user->getRoles()) or in_array('ROLE_JURYCIA', $user->getRoles()) or in_array('ROLE_COMITE', $user->getRoles()) or in_array('ROLE_ORGACIA', $user->getRoles()) or in_array('ROLE_SUPER_ADMIN', $user->getRoles()) or in_array('ROLE_SECRETARIAT_JURY', $user->getRoles())) {
@@ -205,7 +208,7 @@ class EquipesadminRepository extends ServiceEntityRepository
         }
 
         $listeEquipes = $qb->getQuery()->getResult();
-       
+
         return $listeEquipes;
     }
 
