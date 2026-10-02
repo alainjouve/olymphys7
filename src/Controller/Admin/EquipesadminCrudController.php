@@ -1013,7 +1013,8 @@ class EquipesadminCrudController extends AbstractCrudController
                         $prenomProf1 = $prof->getPrenom();
                         $equipe->setNomProf1($nomProf1);
                         $equipe->setPrenomProf1($prenomProf1);
-                        $nbEleves = (int)$worksheet->getCell([30, $row])->getValue() > 5 ? 5 : (int)$worksheet->getCell([30, $row])->getValue();
+
+                        (int)$worksheet->getCell([30, $row])->getValue() > 5 ? $nbEleves=5 : $nbEleves = (int)$worksheet->getCell([30, $row])->getValue();
                         $partenaires = array_filter([
                             trim((string)$worksheet->getCell([31, $row])->getValue()),
                             trim((string)$worksheet->getCell([32, $row])->getValue()),
