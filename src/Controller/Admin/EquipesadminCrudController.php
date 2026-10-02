@@ -950,13 +950,16 @@ class EquipesadminCrudController extends AbstractCrudController
                     if ($prof == null) {//Il n'y a pas d'user correspondant au professeur : nouveau participant
                         $prof = new User();
                         $prof->setCreatedAt(new \DateTime('now'));
-                        $nomPrenomProf = $worksheet->getCell([26, $row])->getValue();//Adage fournit NOM Prénom, pas le nom et le prénom séparés
+                        //$nomPrenomProf = $worksheet->getCell([26, $row])->getValue();//Adage fournit NOM Prénom, pas le nom et le prénom séparés
+                        //Le mail académique est de la form prenom.nom@ac-x.fr
+                        $nomPrenomProf = explode('@', $mailprof1)[0];
                         $prof->setEmail($mailprof1);
                         $prof->setUsername($sluger->slug($nomPrenomProf)->toString());
                         $prof->setUai($uai);
                         $prof->setUaiId($etablissement);
-                        $prof->setNom(mb_strtoupper(explode(' ', $nomPrenomProf)[2]));
-                        $prof->setPrenom(ucfirst(strtolower(explode(' ', $nomPrenomProf)[1])));
+                        $prof->setCivilite(explode(' ', $worksheet->getCell([26, $row])->getValue())[0]);
+                        $prof->setNom(mb_strtoupper(explode('.', $nomPrenomProf)[1]));
+                        $prof->setPrenom(ucfirst(strtolower(explode('.', $nomPrenomProf)[0])));
                         $plainPassword = 'olymphys_' . explode(' ', $nomPrenomProf)[2];//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
                         $password = $passwordHasher->hashPassword($prof, $plainPassword);
                         $prof->setPassword($password);
