@@ -78,7 +78,7 @@ class Mailer
     {
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
-            ->to('webmestre2@olymphys.fr')
+            //->to('webmestre2@olymphys.fr')
             ->addCc('webmestre3@olymphys.fr')
             ->addCc('webmestre4@olymphys.fr')
             ->addCc($user->getEmail());//'webmestre2@olymphys.fr', 'Denis'*/
@@ -131,7 +131,7 @@ class Mailer
         if (!$modif) {
             $email = (new TemplatedEmail())
                 ->from('info@olymphys.fr')
-                ->addCc('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
+                //->addCc('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
                 ->addTo($user->getEmail())
                 ->addCc('webmestre3@olymphys.fr')
                 ->addCc('webmestre4@olymphys.fr')
@@ -139,10 +139,7 @@ class Mailer
                 ->htmlTemplate('email/confirme_inscription.html.twig')
                 ->subject('Inscription de l\'équipe  ' . $equipe->getNumero() . ' par ' . $user->getPrenomNom())
                 ->context(['equipe' => $equipe, 'userNom' => $user->getPrenomNom(), 'userMail' => $user->getEmail()]);//la valeur de la variable user ne passe pas dans le template, sécurité ? D'où les strings Nom et images
-            if ($prof2 !== null && $prof2->getEmail() !== null && $prof2->getEmail() !== ''
-                && $prof2->getEmail() !== $user->getEmail()) {
-                $email->addTo($prof2->getEmail());
-            }
+
             $this->mailer->send($email);
             /* ->attachFromPath('docequipes/30-fiche matériel-sécurité.doc');
          ->html('Bonjour<br>
@@ -178,8 +175,9 @@ class Mailer
 
             $email = (new Email())
                 ->from('info@olymphys.fr')
-                ->to('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
+                //->to('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
                 ->cc('webmestre3@olymphys.fr')
+                ->addCc('webmestre4@olymphys.fr')
                 ->addCc('emma.gosse@orange.fr')
                 ->subject('Modification de l\'équipe ' . $equipe->getTitreProjet() . ' par ' . $user->getPrenomNom())
                 ->html('Bonjour<br>' .
@@ -202,7 +200,7 @@ class Mailer
 
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
-            ->addCc('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
+            //->addCc('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
             ->addTo($user->getEmail())
             ->addCc('webmestre3@olymphys.fr')
             ->addCc('webmestre4@olymphys.fr')
