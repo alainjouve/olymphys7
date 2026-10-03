@@ -102,6 +102,7 @@ class SecurityController extends AbstractController
             // enregistrement de la date de création du token
             $user->setPasswordRequestedAt(new DateTime());
             $user->setCreatedAt(new DateTime());
+            $user->setCivilite($form->get('civilite')->getData());
             $nom = $form->get('nom')->getData();
             $nom = mb_strtoupper($nom);
             $user->setNom($nom);
@@ -158,7 +159,7 @@ class SecurityController extends AbstractController
         $uai = $user->getUai();
         $uai_obj = $uaiRepository->findOneBy(['uai' => $uai]);
         $mailer->sendMessage($user, $uai_obj);
-        $request->getSession()->getFlashBag()->add('success', "Votre inscription est terminée, vous pouvez vous connecter.");
+        $request->getSession()->getFlashBag()->add('success', "Votre inscription est validée et terminée, vous pouvez vous connecter.");
 
         return $this->redirectToRoute('login');
 
@@ -220,12 +221,15 @@ class SecurityController extends AbstractController
 
             $email = (new TemplatedEmail())
                 ->from(new Address('info@olymphys.fr', 'Équipe Olymphys'))
-                ->to(new Address($user->getEmail(), $user->getNom()))
+                ->to($user->getEmail())
                 ->subject('Renouvellement du mot de passe')
                 ->htmlTemplate('email/password_mail.html.twig')
                 ->context([
                     'user' => $user,
                 ]);
+            if ($user->getContact() !== null) {
+                $email->cc($user->getContact());
+            }
             $mailer->send($email);
             $this->requestStack->getSession()->set('info', "Un mail va vous être envoyé afin que vous puissiez renouveler votre mot de passe. Le lien que vous recevrez sera valide 24h.");
 

@@ -317,6 +317,12 @@ class EquipesadminCrudController extends AbstractCrudController
             $uaiId->setFormTypeOption('attr.onchange', 'chargerProfesseurs(this)');
         }
         $edition = AssociationField::new('edition', 'Edition')->setSortProperty('ed');
+        if ($pageName === Crud::PAGE_NEW) {
+            $editionEnCours = $this->doctrine->getRepository(Edition::class)->find(
+                $session->get('edition')->getId()
+            );
+            $edition->setFormTypeOption('data', $editionEnCours);
+        }
         $editionEd = TextareaField::new('edition.ed', 'Edition');
         $centreCentre = AssociationField::new('centre', 'Centre CIA');
         $lycee = TextareaField::new('Lycee');
@@ -873,6 +879,7 @@ class EquipesadminCrudController extends AbstractCrudController
 
 
             }
+
         } else {//equipes technique
             //pour les cia
             if ($entityInstance->getCentre() != null) {
@@ -918,6 +925,9 @@ class EquipesadminCrudController extends AbstractCrudController
                 $mailprof1 = $worksheet->getCell([27, $row])->getValue();
                 if ($mailprof1 != null) {
                     $prof = $repoUser->findOneBy(['email' => $mailprof1]);
+                    if ($prof == null) {
+                        $prof = $repoUser->findOneBy(['contact' => $mailprof1]);//Pour retouver le professeur à partir de son mail contact qui peut être un mail académique
+                    }
                     $uai = $worksheet->getCell([3, $row])->getValue();
                     $etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
                     if ($etablissement == null) {//Nouvel établissement pas encore dans notre table uai
@@ -1014,7 +1024,7 @@ class EquipesadminCrudController extends AbstractCrudController
                         $equipe->setNomProf1($nomProf1);
                         $equipe->setPrenomProf1($prenomProf1);
 
-                        (int)$worksheet->getCell([30, $row])->getValue() > 5 ? $nbEleves=5 : $nbEleves = (int)$worksheet->getCell([30, $row])->getValue();
+                        (int)$worksheet->getCell([30, $row])->getValue() > 5 ? $nbEleves = 5 : $nbEleves = (int)$worksheet->getCell([30, $row])->getValue();
                         $partenaires = array_filter([
                             trim((string)$worksheet->getCell([31, $row])->getValue()),
                             trim((string)$worksheet->getCell([32, $row])->getValue()),

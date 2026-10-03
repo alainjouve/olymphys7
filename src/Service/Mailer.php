@@ -55,7 +55,8 @@ class Mailer
     {
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
-            ->to($user->getEmail())//new Address($user->getEmail())
+            ->to($user->getEmail(), $user->getContact())
+            //new Address($user->getEmail())
             ->subject('Olymphys-Confirmation de votre inscription')
 
             // path of the Twig template to render
@@ -81,9 +82,9 @@ class Mailer
             //->to('webmestre2@olymphys.fr')
             ->addCc('webmestre3@olymphys.fr')
             ->addCc('webmestre4@olymphys.fr')
-            ->addCc($user->getEmail());//'webmestre2@olymphys.fr', 'Denis'*/
+            ->addCc($user->getEmail(), $user->getContact());//'webmestre2@olymphys.fr', 'Denis'*/
 
-        if ($type_fichier == 'fiche securité(présentation)' or $type_fichier == 'fiche securité(exposition)') {
+        if ($type_fichier === 'fiche securité(présentation)' or $type_fichier === 'fiche securité(exposition)') {
 
             $email->addCc('lahmidani.fouad@free.fr', 'pascale.rv@gmail.com', 'claire.chalnot@gmail.com')
                 ->attachFromPath('odpf/odpf-archives/' . $this->requestStack->getSession()->get('edition')->getEd() . '/fichiers/fichessecur/' . $fichier->getFichier());
@@ -121,6 +122,36 @@ class Mailer
         $this->mailer->send($email);
         return $email;
     }
+
+    /**
+     * @throws TransportExceptionInterface
+     */
+    public function adminConfirmeInscriptionEquipeHorsAdage(Equipesadmin $equipe, $prof1, ?User $prof2 = null): Email
+    {
+        $email = (new TemplatedEmail())
+            ->from('info@olymphys.fr')
+            //->addCc('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
+            ->addTo($prof1->getEmail())
+            ->addCc('webmestre3@olymphys.fr')
+            ->addCc('webmestre4@olymphys.fr')
+            ->addCc('emma.gosse@orange.fr')
+            ->htmlTemplate('email/confirme_inscription_hors_adage.html.twig')
+            ->subject('Inscription de l\'équipe  ' . $equipe->getNumero() . ' par ' . $prof1->getPrenomNom())
+            ->context(['equipe' => $equipe, 'userNom' => $prof1->getPrenomNom(), 'userMail' => $prof1->getEmail()]);//la valeur de la variable user ne passe pas dans le template, sécurité ? D'où les strings Nom et images
+        if ($prof1->getContact() !== null) {
+            $email->addCc($prof1->getContact());
+        }
+        if ($prof2 !== null) {
+            $email->addTo($prof2->getEmail());
+            if ($prof2->getContact() !== null) {
+                $email->addCc($prof2->getContact());
+            }
+        }
+        $this->mailer->send($email);
+
+        return $email;
+    }
+
 
     /**
      * @throws TransportExceptionInterface
@@ -299,7 +330,9 @@ class Mailer
                 'mailProf' => $prof->getEmail(),
                 'pwd' => $pwd])
             ->subject('OdPF-Votre compte professeur du site Olymphys ');
-
+        if ($prof->getContact() !== null) {
+            $email->cc($prof->getContact());
+        }
 
         $this->mailer->send($email);
         return $email;
@@ -316,6 +349,9 @@ class Mailer
             ->to($prof1->getEmail());
         if ($prof2 !== null) {
             $email->cc($prof2->getEmail());
+            if ($prof2->getContact() !== null) {
+                $email->cc($prof2->getContact());
+            }
         }
         $email->subject('Conseils du jury Cia à votre équipe')
             ->htmlTemplate('email/conseilCia.html.twig')
@@ -324,6 +360,9 @@ class Mailer
                 'equipe' => $conseil->getEquipe()
 
             ]);
+        if ($prof1->getContact() !== null) {
+            $email->cc($prof1->getContact());
+        }
         $this->mailer->send($email);
         return $email;
     }
@@ -335,6 +374,9 @@ class Mailer
             ->to($prof1->getEmail());
         if ($prof2 !== null) {
             $email->cc($prof2->getEmail());
+            if ($prof2->getContact() !== null) {
+                $email->cc($prof2->getContact());
+            }
         }
         $email->subject($conseil->getEquipe()->getEquipeinter()->getEdition()->getEd() . 'e-OdPF-Conseils du jury du concours national  à votre équipe')
             ->htmlTemplate('email/conseilCn.html.twig')
@@ -343,6 +385,9 @@ class Mailer
                 'equipe' => $conseil->getEquipe()->getEquipeinter()
 
             ]);
+        if ($prof1->getContact() !== null) {
+            $email->cc($prof1->getContact());
+        }
         $this->mailer->send($email);
         return $email;
     }

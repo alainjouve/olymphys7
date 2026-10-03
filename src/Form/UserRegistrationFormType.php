@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -30,6 +31,7 @@ class UserRegistrationFormType extends AbstractType
                 'second_options' => array('label' => 'Vérification du courriel*'),
             ])
             ->add('contact', TextType::class, ['required' => false, 'label' => 'Adresse mail de contact autre que l\'adresse académique, recommandée car les couriels provenant d\'Olymphys sous souvent bloqués par les serveurs académiques'])
+            ->add('civilite', ChoiceType::class, ['required' => false, 'label' => 'Votre civilité', 'choices' => ['M.' => 'M.', 'Mme' => 'Mme']])
             ->add('nom', TextType::class, ['required' => true, 'label' => 'Votre nom*'])
             ->add('prenom', TextType::class, ['required' => true, 'label' => 'Votre prénom*'])
             ->add('plainPassword', RepeatedType::class, array('required' => true,

@@ -129,7 +129,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
                 $prof2 = $entity->getIdProf2();
 
 
-                $this->mailerService->sendConfirmeAdminInscriptionEquipe(
+                $this->mailerService->adminConfirmeInscriptionEquipeHorsAdage(
                     $entity,
                     $prof1,
                     $prof2

@@ -6,6 +6,8 @@
 
     {# <h1> Connexion </h1> #}
 
+    {{ include('flash.html.twig') }}
+
     <form class="form-signin" method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -43,4 +45,10 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/password-visibility.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/password-visibility.js') }}"></script>
 {% endblock %}

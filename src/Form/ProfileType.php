@@ -5,6 +5,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -18,6 +19,7 @@ class ProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('civilite', ChoiceType::class, ['required' => false, 'label' => 'Votre civilité', 'attr' => ['placeholder' => 'Civilité'], 'choices' => ['M.' => 'M.', 'Mme' => 'Mme']])
             ->add('nom', TextType::class, ['required' => true, 'label' => 'Votre nom', 'attr' => ["placeholder" => "Votre nom"]])
             ->add('prenom', TextType::class, ['required' => true, 'label' => 'Votre prénom', 'attr' => ['placeholder' => "Votre prenom"]])
             ->add('adresse', TextType::class, ['required' => true, 'label' => 'Votre adresse (numéro +rue)', 'attr' => ['placeholder' => "Votre adresse"]])
