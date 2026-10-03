@@ -363,13 +363,14 @@ class ProfesseursCrudController extends AbstractCrudController
                     ->setCellValue('I' . $ligne, $prof->getUser()->getUaiId()->getNom())
                     ->setCellValue('J' . $ligne, $prof->getUser()->getUaiId()->getCommune())
                     ->setCellValue('K' . $ligne, $prof->getUser()->getUaiId()->getAcademie())
-                    ->setCellValue('L' . $ligne, $prof->getUser()->getContact());
+                    ->setCellValue('L' . $ligne, $prof->getEquipesstring())
+                    ->setCellValue('M' . $ligne, $prof->getUser()->getContact());
             }
 
             //$equipesstring = explode('-', $prof->getEquipesstring());
 
             $sheet->getCell('L' . $ligne)->setValueExplicit($prof->getEquipesstring());//'abc \n cde'
-            $sheet->getStyle('A' . $ligne . ':L' . $ligne)->getAlignment()->setWrapText(true);
+            $sheet->getStyle('A' . $ligne . ':M' . $ligne)->getAlignment()->setWrapText(true);
 
             $sheet->getRowDimension($ligne)->setRowHeight(2 * count($equipes), 'cm');
             $ligne += 1;
@@ -540,7 +541,6 @@ class ProfesseursCrudController extends AbstractCrudController
         $em = $this->doctrine->getManager();
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);
         $repositoryEquipes = $this->doctrine->getRepository(Equipesadmin::class);
-        $edition = null;
         $edition = $repositoryEdition->findOneBy(['id' => $idEdition]);
 
         $repositoryProfs = $this->doctrine->getManager()->getRepository(Professeurs::class);
@@ -559,7 +559,7 @@ class ProfesseursCrudController extends AbstractCrudController
         if ($listProfs != null) {
             foreach ($listProfs as $prof) {
                 $n = 0;
-                $equipes = null;
+
                 $equipes = $repositoryEquipes->createQueryBuilder('e')
                     ->where('e.edition =:edition')
                     ->setParameter('edition', $edition)

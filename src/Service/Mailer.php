@@ -216,7 +216,7 @@ class Mailer
                     '</a>)  du lycée ' . $equipe->getNomLycee() . ' de ' . $equipe->getLyceeLocalite() . ' a modifié l\'équipe  n° ' . $equipe->getNumero() . ' : ' . $equipe->getTitreProjet()
                     . '<br> Modifications apportées :<br>' . $changetext . '<br> <br>Le comité national des Olympiades de Physique France');
 
-        $this->mailer->send($email);
+            $this->mailer->send($email);
         }
         return $email;
 
