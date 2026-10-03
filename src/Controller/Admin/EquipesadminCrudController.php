@@ -970,7 +970,7 @@ class EquipesadminCrudController extends AbstractCrudController
                         $prof->setCivilite(explode(' ', $worksheet->getCell([26, $row])->getValue())[0]);
                         $prof->setNom(mb_strtoupper(explode('.', $nomPrenomProf)[1]));
                         $prof->setPrenom(ucfirst(strtolower(explode('.', $nomPrenomProf)[0])));
-                        $plainPassword = 'olymphys_' . explode(' ', $nomPrenomProf)[2];//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
+                        $plainPassword = 'olymphys_' . explode(' ', $nomPrenomProf)[0];//On invite le professeur à changer ce mdp dans le mail d'info de création du compte
                         $password = $passwordHasher->hashPassword($prof, $plainPassword);
                         $prof->setPassword($password);
                         $prof->setRoles(['ROLE_PROF']);
