@@ -40,6 +40,9 @@ class Elevesinter
     #[ORM\OneToOne(targetEntity: Fichiersequipes::class, mappedBy: 'eleve', cascade: ['persist', 'remove'])]
     private ?Fichiersequipes $autorisationphotos;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $idGroupeAdage = null;
+
     public function __toString()
     {
         return $this->getNomPrenomlivre();
@@ -100,6 +103,7 @@ class Elevesinter
 
         return $this;
     }
+
     public function getEquipeNomPrenom(): string
     {
 
@@ -192,6 +196,18 @@ class Elevesinter
         }
 
         $this->fichiersequipes = $fichiersequipes;
+
+        return $this;
+    }
+
+    public function getIdGroupeAdage(): ?int
+    {
+        return $this->idGroupeAdage;
+    }
+
+    public function setIdGroupeAdage(?int $idGroupeAdage): static
+    {
+        $this->idGroupeAdage = $idGroupeAdage;
 
         return $this;
     }

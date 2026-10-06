@@ -47,3 +47,6 @@ yarn-error.log
 
 .vscode/
 /MT_fichiers_perso/
+/tests/
+/tests/Service/
+/tests/

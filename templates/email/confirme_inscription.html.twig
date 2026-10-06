@@ -76,9 +76,13 @@
                 <p class="block">Les données fournies sur Adage ont été transférées sur le site Olymphys.<br>
                     Vous pouvez vous connecter à votre compte Olymphys pour les vérifier. <br>
 
-                    Les élèves n'y figurent pas car non renseignés sur Adage.<br>
-                    Nous vous demandons donc de compléter le dossier Olymphys des équipes en saisissant les noms,
-                    prénoms, mails, genres et classe des élèves.
+                    {% if hasStudents %}
+                        Les élèves sont déjà enregistrés dans le dossier Olymphys de votre équipe. Vous pouvez vous
+                        connecter à votre compte pour vérifier leurs informations et les compléter si nécessaire.
+                    {% else %}
+                        Les élèves ne sont pas encore enregistrés dans le dossier Olymphys de votre équipe. Nous vous
+                        demandons de compléter ce dossier en saisissant leurs noms, prénoms, mails, genres et classes.
+                    {% endif %}
 
 
                     <br>

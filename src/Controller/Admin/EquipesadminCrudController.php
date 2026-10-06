@@ -902,7 +902,12 @@ class EquipesadminCrudController extends AbstractCrudController
     {//Importe les données adage depuis le tableau excel
         $repoUser = $this->doctrine->getRepository(User::class);
         $sluger = new AsciiSlugger();
-        $mailerUtil = new Mailer($mailer, $twig, $this->requestStack);
+        $mailerUtil = new Mailer(
+            $mailer,
+            $twig,
+            $this->requestStack,
+            $this->doctrine->getRepository(Elevesinter::class)
+        );
         $form = $this->createFormBuilder()
             ->add('fichier', FileType::class, ['required' => true])
             ->add('Valider', SubmitType::class)
@@ -1036,49 +1041,7 @@ class EquipesadminCrudController extends AbstractCrudController
                         $equipe->setNbeleves($nbEleves);
                         $equipe->setDescription($worksheet->getCell([36, $row])->getValue());
 
-                        /* $equipeExistanteModifiee = false;
 
-                         if ($nlleEquipe || $equipe->getTitreProjet() !== $titreProjet) {
-
-                             if (!$nlleEquipe) {
-                                 $equipeExistanteModifiee = true;
-                             }
-                         }
-                         if ($nlleEquipe || $equipe->getIdProf1()?->getId() !== $prof->getId()) {
-                             $equipe->setIdProf1($prof);
-                             if (!$nlleEquipe) {
-                                 $equipeExistanteModifiee = true;
-                             }
-                         }
-                         if ($nlleEquipe || $equipe->getNomProf1() !== $nomProf1) {
-                             $equipe->setNomProf1($nomProf1);
-                             if (!$nlleEquipe) {
-                                 $equipeExistanteModifiee = true;
-                             }
-                         }
-                         if ($nlleEquipe || $equipe->getPrenomProf1() !== $prenomProf1) {
-                             $equipe->setPrenomProf1($prenomProf1);
-                             if (!$nlleEquipe) {
-                                 $equipeExistanteModifiee = true;
-                             }
-                         }
-                         if ($nlleEquipe || $equipe->getNbeleves() !== $nbEleves) {
-
-                             if (!$nlleEquipe) {
-                                 $equipeExistanteModifiee = true;
-                             }
-                         }
-                         if ($nlleEquipe || $equipe->getPartenaire() !== $partenaire) {
-
-                             if (!$nlleEquipe) {
-                                 $equipeExistanteModifiee = true;
-                             }
-                         }
-                         if (!$nlleEquipe && $equipeExistanteModifiee) {
-                             $equipe->setUploadedAt(new \DateTime('now'));
-                         }
-                         //
-                          */
                         $this->doctrine->getManager()->persist($equipe);
                         $this->doctrine->getManager()->flush();
                         $rempliOdpfEquipesPassees = new OdpfRempliEquipesPassees($this->doctrine);
@@ -1089,6 +1052,25 @@ class EquipesadminCrudController extends AbstractCrudController
                         //$equipe->setCreatedAt(new \DateTime($worksheet->getCell([2, $row])->getValue()));
                         // $this->doctrine->getManager()->persist($equipe);
                         //$this->doctrine->getManager()->flush();
+
+                        //Les élèves sont importés depuis adage avant l'import des équipes pou'on puisse les affecter à l'équipe
+
+                        //On ajoute les élèves à cette équipe
+                        $eleves = null;
+                        /*if ($equipe->getIdAdage() != null) {
+                            $eleves = $this->doctrine->getRepository(Elevesinter::class)->findBy(['idAdage' => $equipe->getIdAdage()]);
+                            if ($eleves) {
+
+
+                                foreach ($eleves as $eleve) {
+                                    $eleve->setEquipe($equipe);
+                                    $this->doctrine->getManager()->persist($eleve);
+                                    $this->doctrine->getManager()->flush();
+                                }
+                            }
+                        }*/
+
+
                         $professeur = $this->doctrine->getRepository(Professeurs::class)->findOneBy(['user' => $prof]);
                         if ($professeur == null) {
                             $professeur = new Professeurs();

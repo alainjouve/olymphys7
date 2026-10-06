@@ -123,7 +123,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
             if (
                 $entity->getUaiId() !== null
                 && $academie !== null
-                && strtolower($slugger->slug($academie)->toString()) === 'etranger'
+                //&& strtolower($slugger->slug($academie)->toString()) === 'etranger'
             ) {
                 $prof1 = $entity->getIdProf1();
                 $prof2 = $entity->getIdProf2();

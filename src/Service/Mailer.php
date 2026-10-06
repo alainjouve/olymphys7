@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Entity\Equipesadmin;
 use App\Entity\Uai;
 use App\Entity\User;
+use App\Repository\ElevesinterRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
@@ -19,14 +20,21 @@ class Mailer
 {
     private RequestStack $requestStack;
     private MailerInterface $mailer;
+    private ElevesinterRepository $elevesinterRepository;
     private $twig;
 
-    public function __construct(MailerInterface $mailer, Environment $twig, RequestStack $requestStack)
+    public function __construct(
+        MailerInterface $mailer,
+        Environment $twig,
+        RequestStack $requestStack,
+        ElevesinterRepository $elevesinterRepository
+    )
     {
 
         $this->mailer = $mailer;
         $this->twig = $twig;
         $this->requestStack = $requestStack;
+        $this->elevesinterRepository = $elevesinterRepository;
     }
 
     /**
@@ -160,6 +168,7 @@ class Mailer
     {
 
         if (!$modif) {
+            $hasStudents = $this->elevesinterRepository->findOneBy(['equipe' => $equipe]) !== null;
             $email = (new TemplatedEmail())
                 ->from('info@olymphys.fr')
                 //->addCc('webmestre2@olymphys.fr') //'webmestre2@olymphys.fr', 'Denis'
@@ -169,7 +178,12 @@ class Mailer
                 ->addCc('emma.gosse@orange.fr')
                 ->htmlTemplate('email/confirme_inscription.html.twig')
                 ->subject('Inscription de l\'équipe  ' . $equipe->getNumero() . ' par ' . $user->getPrenomNom())
-                ->context(['equipe' => $equipe, 'userNom' => $user->getPrenomNom(), 'userMail' => $user->getEmail()]);//la valeur de la variable user ne passe pas dans le template, sécurité ? D'où les strings Nom et images
+                ->context([
+                    'equipe' => $equipe,
+                    'userNom' => $user->getPrenomNom(),
+                    'userMail' => $user->getEmail(),
+                    'hasStudents' => $hasStudents,
+                ]);//la valeur de la variable user ne passe pas dans le template, sécurité ? D'où les strings Nom et images
 
             $this->mailer->send($email);
             /* ->attachFromPath('docequipes/30-fiche matériel-sécurité.doc');
