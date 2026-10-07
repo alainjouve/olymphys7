@@ -2,9 +2,48 @@
 
 
 {% block content_title %}
-    Importation des données des équipes depuis Adage
+    Importation des élèves depuis Adage
 {% endblock %}
 
 {% block main %}
-    {{ form(form) }}
+    {% if conflit is not null %}
+        <div class="modal fade" id="adageConflictModal" tabindex="-1" aria-labelledby="adageConflictModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="adageConflictModalLabel">Vérifier l’élève importé</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            L’équipe {{ conflit.equipe }} possède déjà des élèves.
+                            L’élève importé est <strong>{{ conflit.prenom }} {{ conflit.nom }}</strong>.
+                            Choisissez s’il faut l’ajouter ou modifier un élève existant. Vous pouvez aussi poursuivre sans modification.
+                        </p>
+                        <p>Élèves actuellement dans l’équipe :</p>
+                        <ul>
+                            {% for eleve in conflit.eleves %}
+                                <li>{{ eleve.prenom }} {{ eleve.nom }}</li>
+                            {% endfor %}
+                        </ul>
+                        {{ form_start(conflictForm) }}
+                        {{ form_row(conflictForm.decision) }}
+                        {{ form_widget(conflictForm.index) }}
+                        {{ form_row(conflictForm.eleve) }}
+                        <div class="d-flex gap-2">
+                            {{ form_widget(conflictForm.Valider) }}
+                            {{ form_widget(conflictForm.continuerSansModification, {'attr': {'class': 'btn btn-secondary'}}) }}
+                        </div>
+                        {{ form_end(conflictForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                bootstrap.Modal.getOrCreateInstance(document.getElementById('adageConflictModal')).show();
+            });
+        </script>
+    {% else %}
+        {{ form(form) }}
+    {% endif %}
 {% endblock %}

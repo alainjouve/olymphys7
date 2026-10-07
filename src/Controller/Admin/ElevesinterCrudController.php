@@ -48,6 +48,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Request;
@@ -181,7 +182,7 @@ class ElevesinterCrudController extends AbstractCrudController
                 //$editionEd = $this->doctrine->getRepository(Edition::class)->findOneBy(['id' => $editionId]);
 
             }
-            $importElevesAdage= Action::new('importElevesAdage', 'Importer les élèves depuis Adage')->linkToCrudAction('importElevesAdage')
+            $importElevesAdage = Action::new('importElevesAdage', 'Importer les élèves depuis Adage')->linkToCrudAction('importElevesAdage')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
             $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations des élèves non sélectionnés(après CIA)')->linkToRoute('attestations_eleves_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
@@ -205,7 +206,9 @@ class ElevesinterCrudController extends AbstractCrudController
                 ->add(Crud::PAGE_INDEX, $tableauexceleleves)
                 ->add(Crud::PAGE_INDEX, $elevessel)
                 ->add(Crud::PAGE_INDEX, $invitationsCN)
-                ->setPermission($invitationsCN, 'ROLE_SUPER_ADMIN');
+                ->add(Crud::PAGE_INDEX, $importElevesAdage)
+                ->setPermission($invitationsCN, 'ROLE_SUPER_ADMIN')
+                ->setPermission($importElevesAdage, 'ROLE_SUPER_ADMIN');
 
 
         }
@@ -1899,49 +1902,199 @@ class ElevesinterCrudController extends AbstractCrudController
 
     }
 
-    public function importElevesAdage(Request $request)
+    public function importElevesAdage(Request $request)//Les élèves sont ajoutés depuis le tableau adage que s'ils ne sont pas déjà inscrits.
+        //Si un élève est déjà inscrit sans idGroupeAdage cela signifie que le prof l'a inscrit
+        // avant la remontée des élèves, une modale s'affiche pour vérifier les noms prénoms et éventuellement les modifier à partir des données Adage
+        //si un élève se trouve dans le tableau Adage mais qu'il n'y a pas d'équipe correspondante, un message d'avertissement s'affiche et l'élève n'est pas importé.
+        //Les élèves des lycées AEFE ne sont pas importés car ils ne sont pas dans le tableau Adage et leur idGroupeAdage restent null
     {
-        $form = $this->createFormBuilder()
+        $uploadForm = $this->createFormBuilder()
             ->add('fichier', FileType::class, ['required' => true])
             ->add('Valider', SubmitType::class)
             ->getForm();
-        $edition = $this->doctrine->getRepository(Edition::class)->find($this->requestStack->getSession()->get('edition')->getId());
+        $session = $request->getSession();
+        $pendingImport = $session->get('adage_import');
 
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            //      A     B    C       D       E                         F            G
-            // CIVILITE	NOM	PRENOM	NIVEAU	CLASSE D'AFFECTATION	GROUPE ADAGE	UAI
-            $fichier = $form->get('fichier')->getData();
-            $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($fichier);
-            $worksheet = $spreadsheet->getActiveSheet();
-            $highestRow = $worksheet->getHighestDataRow();
+        if ($pendingImport === null) {
+            $uploadForm->handleRequest($request);
+            if ($uploadForm->isSubmitted() && $uploadForm->isValid()) {
+                $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($uploadForm->get('fichier')->getData());
+                $worksheet = $spreadsheet->getActiveSheet();
+                $rows = [];
+                $equipeVideAuDebut = [];
 
-            for ($row = 2; $row <= $highestRow; ++$row) {
-                $civilite = $worksheet->getCell('A' . $row)->getValue();
-                $nom = $worksheet->getCell('B' . $row)->getValue();
-                $prenom = $worksheet->getCell('C' . $row)->getValue();
-                $niveau = $worksheet->getCell('D' . $row)->getValue();
-                $classe = $worksheet->getCell('E' . $row)->getValue();
-                $groupeadage = $worksheet->getCell('F' . $row)->getValue();
-                $equipe=$this->doctrine->getRepository(Equipesadmin::class)->findOneBy(array('groupeadage' => $groupeadage));
-                $uai = $worksheet->getCell('G' . $row)->getValue();
-                //$etablissement = $this->doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
-                $eleve=$this->doctrine->getRepository(Elevesinter::class)->findOneBy(array('prenom'    => $prenom, 'nom' => $nom, 'equipe' => $equipe));
-                if($eleve==null) {
-                    $eleve = new Elevesinter();
-                    $eleve->setPrenom($prenom);
-                    $eleve->setNom($nom);
-                    //$eleve->setCivilite($civilite);
-                    //$eleve->setNiveau($niveau);
-                    $eleve->setEquipe($equipe);
-                    $this->doctrine->getManager()->persist($eleve);
-                    $this->doctrine->getManager()->flush();
+                for ($row = 2; $row <= $worksheet->getHighestDataRow(); ++$row) {
+                    $groupeAdage = trim((string)$worksheet->getCell('F' . $row)->getValue());
+                    $nom = trim((string)$worksheet->getCell('B' . $row)->getValue());
+                    $prenom = trim((string)$worksheet->getCell('C' . $row)->getValue());
+                    if ($groupeAdage === '' || ($nom === '' && $prenom === '')) {
+                        continue;
+                    }
+
+                    $equipe = $this->doctrine->getRepository(Equipesadmin::class)
+                        ->findOneBy(['idAdage' => $groupeAdage]);
+                    if ($equipe !== null && !array_key_exists($equipe->getId(), $equipeVideAuDebut)) {
+                        $equipeVideAuDebut[$equipe->getId()] =
+                            $this->doctrine->getRepository(Elevesinter::class)->findOneBy(['equipe' => $equipe]) === null;
+                    }
+                    $rows[] = [
+                        'equipeId' => $equipe?->getId(),
+                        'idAdage' => $groupeAdage,
+                        'nom' => $nom,
+                        'prenom' => $prenom,
+                        'equipeVideAuDebut' => $equipe !== null && $equipeVideAuDebut[$equipe->getId()],
+                    ];
                 }
 
+                $pendingImport = ['rows' => $rows, 'index' => 0];
+                $session->set('adage_import', $pendingImport);
+            }
+        }
+
+        while ($pendingImport !== null && $pendingImport['index'] < count($pendingImport['rows'])) {
+            $row = $pendingImport['rows'][$pendingImport['index']];
+            $equipe = $row['equipeId'] === null
+                ? null
+                : $this->doctrine->getRepository(Equipesadmin::class)->find($row['equipeId']);
+
+            if ($equipe === null) {
+                $this->addFlash('warning', 'Aucune équipe ne correspond au groupe Adage « ' . $row['idAdage'] . ' ».');
+                ++$pendingImport['index'];
+                $session->set('adage_import', $pendingImport);
+                continue;
             }
 
+            $repositoryEleves = $this->doctrine->getRepository(Elevesinter::class);
+            $equipeVideAuDebut = $row['equipeVideAuDebut']
+                ?? ($repositoryEleves->findOneBy(['equipe' => $equipe]) === null);
+            $elevesNonAssocies = $repositoryEleves->findBy(['equipe' => $equipe, 'idGroupeAdage' => null]);
+           
+            $normaliserNom = static fn(?string $nom): string => (new UnicodeString(trim($nom ?? '')))->lower()->toString();
+            foreach ($elevesNonAssocies as $eleveExistant) {
+                if (
+                    $normaliserNom($eleveExistant->getNom()) === $normaliserNom($row['nom'])
+                    && $normaliserNom($eleveExistant->getPrenom()) === $normaliserNom($row['prenom'])
+                ) {
+                    $eleveExistant->setIdGroupeAdage($equipe->getIdAdage());
+                    $this->doctrine->getManager()->flush();
+                    ++$pendingImport['index'];
+                    $session->set('adage_import', $pendingImport);
+                    continue 2;
+                }
+            }
+
+            if (!$equipeVideAuDebut && $elevesNonAssocies !== []) {
+                $listEleves = $elevesNonAssocies;
+                $conflictForm = $this->createFormBuilder()
+                    ->add('decision', ChoiceType::class, [
+                        'choices' => [
+                            'Importer cet élève' => 'import',
+                            'Modifier le nom et le prénom d’un élève existant' => 'update',
+                        ],
+                        'expanded' => true,
+                        'required' => false,
+                        'placeholder' => false,
+                        'label' => false,
+                    ])
+                    ->add('index', HiddenType::class, ['data' => (string)$pendingImport['index']])
+                    ->add('eleve', EntityType::class, [
+                        'class' => Elevesinter::class,
+                        'choices' => $listEleves,
+                        'choice_label' => static fn(Elevesinter $eleve): string => $eleve->getPrenom() . ' ' . $eleve->getNom(),
+                        'required' => false,
+                        'placeholder' => 'Choisir un élève à modifier',
+                        'label' => 'Élève existant',
+                    ])
+                    ->add('Valider', SubmitType::class)
+                    ->add('continuerSansModification', SubmitType::class, [
+                        'label' => 'Poursuivre sans modification',
+                    ])
+                    ->getForm();
+
+                $conflictForm->handleRequest($request);
+                $submittedFormData = $request->request->all($conflictForm->getName());
+                if ($request->isMethod('POST') && isset($submittedFormData['index'])) {
+                    if ((string)$submittedFormData['index'] !== (string)$pendingImport['index']) {
+                        $conflictForm->get('index')->addError(new \Symfony\Component\Form\FormError('Cette ligne a déjà été traitée. Vérifiez le choix pour l’élève affiché.'));
+                    } else {
+                        $eleveAmodifier = null;
+                        $action = $submittedFormData['decision'] ?? null;
+                        if (isset($submittedFormData['continuerSansModification'])) {
+                            $action = 'skip';
+                        } elseif ($action === 'update' && !empty($submittedFormData['eleve'])) {
+                            foreach ($listEleves as $eleveExistant) {
+                                if ((string)$eleveExistant->getId() === (string)$submittedFormData['eleve']) {
+                                    $eleveAmodifier = $eleveExistant;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if ($action === 'update' && $eleveAmodifier === null) {
+                            $conflictForm->get('eleve')->addError(new \Symfony\Component\Form\FormError('Sélectionnez l’élève à modifier.'));
+                        } elseif (!in_array($action, ['import', 'update', 'skip'], true)) {
+                            $conflictForm->get('decision')->addError(new \Symfony\Component\Form\FormError('Choisissez une action ou poursuivez sans modification.'));
+                        } else {
+                            foreach ($listEleves as $eleveExistant) {
+                                $eleveExistant->setIdGroupeAdage($equipe->getIdAdage());
+                            }
+
+                            if ($action === 'import') {
+                                $eleve = new Elevesinter();
+                                $eleve->setEquipe($equipe);
+                                $eleve->setIdGroupeAdage($equipe->getIdAdage());
+                                $eleve->setNom($row['nom']);
+                                $eleve->setPrenom($row['prenom']);
+                                $this->doctrine->getManager()->persist($eleve);
+                            } elseif ($action === 'update') {
+                                $eleveAmodifier->setNom($row['nom']);
+                                $eleveAmodifier->setPrenom($row['prenom']);
+                            }
+
+                            $this->doctrine->getManager()->flush();
+                            ++$pendingImport['index'];
+                            $session->set('adage_import', $pendingImport);
+
+                            return $this->redirect($request->getUri());
+                        }
+                    }
+                }
+
+                return $this->render('bundles/EasyAdminBundle/extractionAdage.html.twig', [
+                    'form' => $uploadForm->createView(),
+                    'conflictForm' => $conflictForm->createView(),
+                    'conflit' => ['nom' => $row['nom'], 'prenom' => $row['prenom'], 'equipe' => $equipe, 'eleves' => $listEleves],
+                ]);
+            }
+
+            if (!$equipeVideAuDebut) {
+                ++$pendingImport['index'];
+                $session->set('adage_import', $pendingImport);
+                continue;
+            }
+
+            $eleve = new Elevesinter();
+            $eleve->setEquipe($equipe);
+            $eleve->setIdGroupeAdage($equipe->getIdAdage());
+            $eleve->setNom($row['nom']);
+            $eleve->setPrenom($row['prenom']);
+            $this->doctrine->getManager()->persist($eleve);
+            $this->doctrine->getManager()->flush();
+
+            ++$pendingImport['index'];
+            $session->set('adage_import', $pendingImport);
         }
-        return $this->render('bundles/EasyAdminBundle/extractionAdage.html.twig', array('form' => $form->createView()));
+
+        if ($pendingImport !== null) {
+            $session->remove('adage_import');
+            $this->addFlash('success', 'Importation des élèves Adage terminée.');
+        }
+
+        return $this->render('bundles/EasyAdminBundle/extractionAdage.html.twig', [
+            'form' => $uploadForm->createView(),
+            'conflictForm' => null,
+            'conflit' => null,
+        ]);
 
 
     }
