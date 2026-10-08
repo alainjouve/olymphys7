@@ -11,6 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -62,6 +63,13 @@ class UserCrudController extends AbstractCrudController
             ->setSearchFields(['id', 'username', 'roles', 'email', 'token', 'uai', 'nom', 'prenom', 'adresse', 'ville', 'code', 'phone', 'civilite']);
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets
+            ->addCssFile('css/password-visibility.css')
+            ->addJsFile('js/password-visibility.js');
+    }
+
     public function configureFields(string $pageName): iterable
     {
         $id = IntegerField::new('id', 'ID');
@@ -79,12 +87,6 @@ class UserCrudController extends AbstractCrudController
             'ROLE_COMITE' => 'ROLE_COMITE',
             'ROLE_SECRETARIAT_JURY' => 'ROLE_SECRETARIAT_JURY'])
             ->setFormTypeOption('multiple', true);
-        $password = Field::new('password')->setFormType(PasswordType::class)->onlyOnForms();
-        if ($pageName == 'edit') {
-            $iD = $_REQUEST['entityId'];
-            $user = $this->doctrine->getRepository(User::class)->findOneBy(['id' => $iD]);
-            $password->setFormTypeOptions(['required' => false, 'mapped' => true, 'empty_data' => $user->getPassword()]);
-        }
 
 
         return [
@@ -105,7 +107,12 @@ class UserCrudController extends AbstractCrudController
                 'ROLE_SECRETARIAT_JURY' => 'ROLE_SECRETARIAT_JURY'])
                 ->setFormTypeOption('multiple', true)->onlyOnForms(),
             TextField::new('uai')->onlyOnIndex(),
-            TextField::new('plainPassword', 'Mot de passe')->onlyOnForms(),
+            Field::new('plainPassword', 'Mot de passe')
+                ->setFormType(PasswordType::class)
+                ->setFormTypeOption('always_empty', true)
+                ->setFormTypeOption('attr', ['autocomplete' => 'new-password'])
+                ->setFormTypeOption('row_attr', ['class' => 'user-plain-password-row'])
+                ->onlyOnForms(),
             AssociationField::new('uaiId', 'UAI')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             //AssociationField::new('centrecia')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             $contact = TextField::new('contact')->hideOnIndex(),//Doit être différente de l'adresse email identifiant du compte
@@ -162,8 +169,7 @@ class UserCrudController extends AbstractCrudController
             $uai = $entityInstance->getUaiId()->getUai();
 
             $entityInstance->setUai($uai);
-        }
-        else{
+        } else {
             $entityInstance->setUai(null);
         }
 
