@@ -163,6 +163,9 @@ class UserCrudController extends AbstractCrudController
 
             $entityInstance->setUai($uai);
         }
+        else{
+            $entityInstance->setUai(null);
+        }
 
         if ($entityInstance->getPlainPassword() != null) {
             $hashpassword = $this->passwordEncoder->hashPassword($entityInstance, $entityInstance->getPlainPassword());
