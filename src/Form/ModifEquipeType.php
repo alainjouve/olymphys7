@@ -36,8 +36,8 @@ class ModifEquipeType extends AbstractType
         $uai = $options['uai'];
         $eleves = $options['eleves'];
         $nbEleves = count($eleves);
-        $required = [true, true, false, false, false, false];
-        $disabled = [false, false, false, false, false, false];//Pour éviter l'ajout d'élève après la concours cia
+        $required = [true, true, false, false, false];
+        $disabled = [false, false, false, false, false];//Pour éviter l'ajout d'élève après la concours cia
         $datelim = $this->requestStack->getSession()->get('edition')->getDatelimNat();
         $datelimCia = $this->requestStack->getSession()->get('edition')->getConcoursCia();//Date du concours cia au delà de laquelle l'ajoût d'élèves n'est plus possible
         $date = new \DateTime('now');
@@ -51,10 +51,10 @@ class ModifEquipeType extends AbstractType
 
         }
         $tag = false;
-        $label='Titre du projet(max 80 cars)';
+        $label = 'Titre du projet(max 80 cars)';
         if ($date > new \DateTime($datelimCia->format('Y') . '-12-31')) {
             $tag = true;
-            $label='Il n\'est plus possible de modifier le nom du projet';
+            $label = 'Il n\'est plus possible de modifier le nom du projet';
         }
 
         $builder->add('titreProjet', TextType::class, [
@@ -94,6 +94,7 @@ class ModifEquipeType extends AbstractType
 
             ]);
         $i = 1;
+
         foreach ($eleves as $eleve) {
 
             $builder->add('prenomeleve' . $i, TextType::class, [

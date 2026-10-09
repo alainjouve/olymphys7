@@ -68,16 +68,23 @@
 
 
     <hr>
-    <div class="row>">
+    <div class="d-flex align-items-center gap-2 flex-wrap">
         {% for action in global_actions %}
             {% if action.name=='new' %}
-                <div class="col">
-
+                <div>
                     {{ include(action.templatePath, { action: action }, with_context = false) }}
                 </div>
             {% endif %}
         {% endfor %}
-
+        {% block batch_actions %}
+            {% if has_batch_actions %}
+                <div class="batch-actions d-none">
+                    {% for action in batch_actions %}
+                        {{ include(action.templatePath, { action: action }, with_context = false) }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endblock batch_actions %}
     </div>
     {% if entities|length > 0 %}
         <div class="content-panel-footer without-padding without-border">
@@ -246,5 +253,13 @@
     </div>
     {% if has_filters %}
         {{ include('@EasyAdmin/crud/includes/_filters_modal.html.twig') }}
+    {% endif %}
+
+    {% block delete_form %}
+        {{ include('@EasyAdmin/crud/includes/_delete_form.html.twig', with_context = false) }}
+    {% endblock delete_form %}
+
+    {% if has_batch_actions %}
+        {{ include('@EasyAdmin/crud/includes/_batch_action_modal.html.twig', {}, with_context = false) }}
     {% endif %}
 {% endblock main %}

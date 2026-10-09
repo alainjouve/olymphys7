@@ -14,6 +14,7 @@ use App\Entity\Odpf\OdpfEquipesPassees;
 use App\Entity\Uai;
 use App\Service\createAttestationsElevesCia;
 use DateTime;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
@@ -220,7 +221,8 @@ class ElevesinterCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-plus')->setLabel('Inscrire un nouvel élève')->setCssClass('btn btn-success');
             })
             ->setPermission('new', 'ROLE_SUPER_ADMIN')
-            ->remove(Crud::PAGE_INDEX, Action::DELETE)
+            ->setPermission('delete', 'ROLE_SUPER_ADMIN')
+            //->remove(Crud::PAGE_INDEX, Action::DELETE)
             ->update('index', Action::EDIT, function (Action $action) {
                 return $action->setIcon('fa fa-pencil fa-lg')->setLabel(false);
             })
@@ -228,6 +230,27 @@ class ElevesinterCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-eye fa-lg')->setLabel(false);
             });
         return $actions;
+    }
+
+    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        if ($entityInstance instanceof Elevesinter) {
+            $nom = $entityInstance->getNom();
+            if ($nom !== null) {
+                $entityInstance->setNom(mb_strtoupper($nom, 'UTF-8'));
+            }
+
+            $prenom = $entityInstance->getPrenom();
+            if ($prenom !== null && $prenom !== '') {
+                $prenom = mb_strtolower($prenom, 'UTF-8');
+                $entityInstance->setPrenom(
+                    mb_strtoupper(mb_substr($prenom, 0, 1, 'UTF-8'), 'UTF-8')
+                    . mb_substr($prenom, 1, null, 'UTF-8')
+                );
+            }
+        }
+
+        parent::persistEntity($entityManager, $entityInstance);
     }
 
     public function configureFields(string $pageName): iterable
@@ -1968,7 +1991,7 @@ class ElevesinterCrudController extends AbstractCrudController
             $equipeVideAuDebut = $row['equipeVideAuDebut']
                 ?? ($repositoryEleves->findOneBy(['equipe' => $equipe]) === null);
             $elevesNonAssocies = $repositoryEleves->findBy(['equipe' => $equipe, 'idGroupeAdage' => null]);
-           
+
             $normaliserNom = static fn(?string $nom): string => (new UnicodeString(trim($nom ?? '')))->lower()->toString();
             foreach ($elevesNonAssocies as $eleveExistant) {
                 if (
