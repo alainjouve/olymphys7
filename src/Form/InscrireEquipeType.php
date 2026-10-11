@@ -38,7 +38,12 @@ class InscrireEquipeType extends AbstractType
                         ->addOrderBy('u.nom', 'ASC');
                 },
                 'choice_value' => 'getId',
-                'choice_label' => 'getPrenomNom',
+                'choice_label' => static fn(User $prof): string => sprintf(
+                    '%s %s (%s)',
+                    $prof->getPrenom() ?? '',
+                    $prof->getNom() ?? '',
+                    $prof->getEmail() ?? ''
+                ),
                 'mapped' => true,
                 'required' => true,
             ])
@@ -53,7 +58,12 @@ class InscrireEquipeType extends AbstractType
                         ->addOrderBy('u.nom', 'ASC');
                 },
                 'choice_value' => 'getId',
-                'choice_label' => 'getPrenomNom',
+                'choice_label' => static fn(User $prof): string => sprintf(
+                    '%s %s (%s)',
+                    $prof->getPrenom() ?? '',
+                    $prof->getNom() ?? '',
+                    $prof->getEmail() ?? ''
+                ),
 
                 'mapped' => true,
 

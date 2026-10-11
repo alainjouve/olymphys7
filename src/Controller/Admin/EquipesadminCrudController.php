@@ -281,8 +281,20 @@ class EquipesadminCrudController extends AbstractCrudController
             ->setChoices(['A' => 'A', 'B' => 'B', 'C' => 'C', 'D' => 'D', 'E' => 'E', 'F' => 'F', 'G' => 'G', 'H' => 'H', 'I' => 'I', 'J' => 'J', 'K' => 'K', 'L' => 'L', 'M' => 'M', 'N' => 'N', 'O' => 'O', 'P' => 'P', 'Q' => 'Q', 'R' => 'R', 'S' => 'S', 'T' => 'T', 'U' => 'U', 'V' => 'V', 'W' => 'W', 'X' => 'X', 'Y' => 'Y', 'Z' => 'Z']);
         $titreProjet = TextField::new('titreProjet', 'Projet');
         $centre = AssociationField::new('centre')->setFormTypeOptions(['choices' => $listeCentres, 'required' => false]);
-        $IdProf1 = AssociationField::new('idProf1', 'Prof1')->setFormTypeOptions(['choices' => $listProfs])->setFormTypeOption('required', false);
-        $IdProf2 = AssociationField::new('idProf2', 'Prof2')->setFormTypeOptions(['choices' => $listProfs])->setFormTypeOption('required', false);
+        $profChoiceLabel = static fn(User $prof): string => sprintf(
+            '%s %s (%s)',
+            $prof->getPrenom() ?? '',
+            $prof->getNom() ?? '',
+            $prof->getEmail() ?? ''
+        );
+        $IdProf1 = AssociationField::new('idProf1', 'Prof1')
+            ->renderAsNativeWidget()
+            ->setFormTypeOptions(['choices' => $listProfs, 'choice_label' => $profChoiceLabel])
+            ->setFormTypeOption('required', false);
+        $IdProf2 = AssociationField::new('idProf2', 'Prof2')
+            ->renderAsNativeWidget()
+            ->setFormTypeOptions(['choices' => $listProfs, 'choice_label' => $profChoiceLabel])
+            ->setFormTypeOption('required', false);
 
         $selectionnee = BooleanField::new('selectionnee');
         $selectionneeForm = BooleanField::new('selectionnee')->renderAsSwitch(false);
@@ -376,7 +388,12 @@ class EquipesadminCrudController extends AbstractCrudController
         $professeurs = array_map(
             static fn(User $professeur): array => [
                 'id' => $professeur->getId(),
-                'label' => $professeur->getPrenomNom(),
+                'label' => sprintf(
+                    '%s %s (%s)',
+                    $professeur->getPrenom() ?? '',
+                    $professeur->getNom() ?? '',
+                    $professeur->getEmail() ?? ''
+                ),
             ],
             $this->getProfesseursPourUai($uai)
         );
