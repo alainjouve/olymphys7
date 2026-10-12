@@ -2083,7 +2083,7 @@ class ElevesinterCrudController extends AbstractCrudController
                     }
                 }
 
-                return $this->render('bundles/EasyAdminBundle/extractionAdage.html.twig', [
+                return $this->render('bundles/EasyAdminBundle/extractionElevesAdage.html.twig', [
                     'form' => $uploadForm->createView(),
                     'conflictForm' => $conflictForm->createView(),
                     'conflit' => ['nom' => $row['nom'], 'prenom' => $row['prenom'], 'equipe' => $equipe, 'eleves' => $listEleves],
