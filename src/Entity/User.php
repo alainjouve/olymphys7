@@ -101,6 +101,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $contact = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $autorisationInscription = null;
+
 
     #[Pure] public function __construct()
     {
@@ -484,6 +487,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setContact(?string $contact): static
     {
         $this->contact = $contact;
+
+        return $this;
+    }
+
+    public function isAutorisationInscription(): ?bool
+    {
+        return $this->autorisationInscription;
+    }
+
+    public function setAutorisationInscription(?bool $autorisationInscription): static
+    {
+        $this->autorisationInscription = $autorisationInscription;
 
         return $this;
     }

@@ -115,6 +115,7 @@ class UserCrudController extends AbstractCrudController
                 ->onlyOnForms(),
             AssociationField::new('uaiId', 'UAI')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             //AssociationField::new('centrecia')->setFormTypeOptions(['required' => false])->onlyOnForms(),
+            BooleanField::new('autorisationInscription')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             $contact = TextField::new('contact')->hideOnIndex(),//Doit être différente de l'adresse email identifiant du compte
             $isActive = Field::new('isActive'),
             $adresse = TextField::new('adresse'),
