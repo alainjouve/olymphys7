@@ -96,7 +96,10 @@ class SecurityController extends AbstractController
             $user->setPassword($password);
             $user->setUai($uai);
             $user->setUaiId($uaiId);
-            if ($uaiId->getAcademie() === 'Etranger') {
+            if ($uaiId) {
+                $user->setRoles(['ROLE_PROF']);
+            }
+            if ($uaiId && $uaiId->getAcademie() === 'Etranger') {
                 $user->setAutorisationInscription(true);//Les utilisateurs étrangers sont autorisés à s'inscrire directement sur Olymphys car ils n'ont pas accès à Adage
             }
             $user->setIsActive(0);//inactive l'User en attente de la vérification du mail
@@ -154,7 +157,6 @@ class SecurityController extends AbstractController
         $user->setIsActive(1);
         $user->setUpdatedAt(new DateTime());
         $user->setLastVisit(new DateTime());
-        $user->setRoles(['ROLE_PROF']);
         $em = $this->doctrine->getManager();
         $em->persist($user);
         $em->flush();
