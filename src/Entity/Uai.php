@@ -60,7 +60,7 @@ class Uai
     private ?string $nature = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $nom;
+    private ?string $nom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $tel = null;

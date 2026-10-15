@@ -18,6 +18,7 @@ use App\Entity\Jures;
 use App\Entity\Photos;
 use App\Entity\Prix;
 use App\Entity\User;
+use App\Entity\Uai;
 use App\Entity\Videosequipes;
 use App\Entity\Visites;
 use App\Entity\Professeurs;
@@ -85,6 +86,9 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Etablissements', 'fas fa-school', Equipesadmin::class)
             ->setController(EquipesadminCrudController::class)
             ->setQueryParameter('lycees', 1),
+            MenuItem::linkToCrud('Gestion des UAI', 'fas fa-school', Uai::class)
+                ->setController(UaiCrudController::class)
+                ->setPermission('ROLE_SUPER_ADMIN'),
             MenuItem::subMenu('Concours interacadémiques', 'fa fa-article')->setSubItems([
                 MenuItem::linkToCrud('Centres interacadémiques', 'fas fa-city', Centrescia::class),
 
