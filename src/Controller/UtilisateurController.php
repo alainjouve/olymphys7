@@ -63,8 +63,9 @@ class UtilisateurController extends AbstractController
             $user->setPrenom($prenom);
             $em = $doctrine->getManager();
             $uai = $form->get('uai')->getData();
-            $uiaEtablissement = $doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
-            $user->setUai($uiaEtablissement);
+            $uaiEtablissement = $doctrine->getRepository(Uai::class)->findOneBy(['uai' => $uai]);
+            $user->setUai($uai);
+            $user->setUaiId($uaiEtablissement);
             $em->persist($user);
             $em->flush();
 
