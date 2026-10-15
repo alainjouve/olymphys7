@@ -91,7 +91,10 @@ class UserCrudController extends AbstractCrudController
             'ROLE_COMITE' => 'ROLE_COMITE',
             'ROLE_SECRETARIAT_JURY' => 'ROLE_SECRETARIAT_JURY'])
             ->setFormTypeOption('multiple', true);
-        $autorisationListeDiffusion = BooleanField::new('autorisationListeDiffusion')
+        $autorisationListeDiffusion = BooleanField::new(
+            'autorisationListeDiffusion',
+            'J’accepte de recevoir des messages de diffusion d’Olymphys, notamment les informations importantes concernant les OdPF'
+        )
             ->setFormTypeOptions(['required' => false]);
 
         if ($pageName === Crud::PAGE_NEW) {

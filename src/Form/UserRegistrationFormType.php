@@ -48,7 +48,7 @@ class UserRegistrationFormType extends AbstractType
             ->add('phone', TextType::class, ['required' => true, 'label' => 'Votre téléphone, portable, de préférence*',])
             ->add('autorisationListeDiffusion', CheckboxType::class, [
                 'required' => false,
-                'label' => 'J’accepte de recevoir des messages de diffusion d’Olymphys.',
+                'label' => 'J’accepte de recevoir des messages de diffusion d’Olymphys, notamment les informations importantes concernant les OdPF.',
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

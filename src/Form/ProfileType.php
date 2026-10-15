@@ -32,7 +32,7 @@ class ProfileType extends AbstractType
             ->add('uai', TextType::class, ['required' => false, 'label' => 'UAI de votre établissement, si vous comptez inscrire une équipe', 'attr' => ['placeholder' => 'UAI']])
             ->add('autorisationListeDiffusion', CheckboxType::class, [
                 'required' => false,
-                'label' => 'J’accepte de recevoir des messages de diffusion d’Olymphys.',
+                'label' => 'J’accepte de recevoir des messages de diffusion d’Olymphys, notamment les informations importantes concernant les OdPF.',
             ])
             ->add('Modification', SubmitType::class, ['label' => 'Valider ces modifications']);;
     }

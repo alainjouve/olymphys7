@@ -26,9 +26,11 @@
             sur Adage)
             <br>
             {{ form_row(new_form.autorisationInscription) }}
-            Accepte de recevoir des messages de diffusion d'olymphys
-            <br>
-            {{ form_row(new_form.autorisationListeDiffusion) }}
+            {{ form_widget(new_form.autorisationListeDiffusion, {label: ' '}) }}
+            <label for="{{ new_form.autorisationListeDiffusion.vars.id }}">
+                J’accepte de recevoir des messages de diffusion d’Olymphys, notamment les informations importantes
+                concernant les OdPF
+            </label>
             {{ form_row(new_form.isActive) }}
             {{ form_row(new_form.token) }}
             {{ form_row(new_form.createdAt) }}
