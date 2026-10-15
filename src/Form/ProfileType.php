@@ -5,6 +5,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -29,6 +30,10 @@ class ProfileType extends AbstractType
             ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code postal', 'attr' => ['placeholder' => "Code postal"]])
             ->add('phone', TextType::class, ['required' => false, 'label' => 'Votre téléphone, portable, si possible', 'attr' => ['placeholder' => 'tel']])
             ->add('uai', TextType::class, ['required' => false, 'label' => 'UAI de votre établissement, si vous comptez inscrire une équipe', 'attr' => ['placeholder' => 'UAI']])
+            ->add('autorisationListeDiffusion', CheckboxType::class, [
+                'required' => false,
+                'label' => 'J’accepte de recevoir des messages de diffusion d’Olymphys.',
+            ])
             ->add('Modification', SubmitType::class, ['label' => 'Valider ces modifications']);;
     }
 

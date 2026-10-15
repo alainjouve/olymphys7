@@ -104,6 +104,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(nullable: true)]
     private ?bool $autorisationInscription = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $autorisationListeDiffusion = null;
+
 
     #[Pure] public function __construct()
     {
@@ -499,6 +502,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAutorisationInscription(?bool $autorisationInscription): static
     {
         $this->autorisationInscription = $autorisationInscription;
+
+        return $this;
+    }
+
+    public function isAutorisationListeDiffusion(): ?bool
+    {
+        return $this->autorisationListeDiffusion;
+    }
+
+    public function setAutorisationListeDiffusion(?bool $autorisationListeDiffusion): static
+    {
+        $this->autorisationListeDiffusion = $autorisationListeDiffusion;
 
         return $this;
     }

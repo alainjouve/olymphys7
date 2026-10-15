@@ -95,28 +95,28 @@ class ProfesseursCrudController extends AbstractCrudController
         }
 
 
-        $tableauexcel = Action::new('profs_tableau_excel', 'Créer un tableau excel des professeurs', 'fas fa-columns')
+        $tableauexcel = Action::new('profs_tableau_excel', 'Créer un tableau excel des professeurs de l\'édition', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('profs_tableau_excel', ['idEdition' => $editionId])
             ->createAsGlobalAction();
         //->displayAsButton()->setCssClass('btn btn-primary');
-        $tableauexcelsel = Action::new('profs_tableau_excel_sel', 'Créer un tableau excel des professeurs sélectionnés', 'fas fa-columns')
+        $tableauexcelsel = Action::new('profs_tableau_excel_sel', 'Créer un tableau excel des professeurs sélectionnés de l\'édition', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId, 'sel' => true])
             ->createAsGlobalAction();
-        $tableauexcelnonsel = Action::new('profs_tableau_excel_non-sel', 'Créer un tableau excel des professeurs non sélectionnés', 'fas fa-columns')
+        $tableauexcelnonsel = Action::new('profs_tableau_excel_non-sel', 'Créer un tableau excel des professeurs non sélectionnés de l\'édition', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId, 'sel' => false])
             ->createAsGlobalAction();
-        $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs pour mailings info centrecia en octobre', 'fas fa-columns')
+        $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs de l\'édition pour mailings info centrecia en octobre', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_mailing', ['idEdition' => $editionId])
             ->createAsGlobalAction();
-        $tableauexcelmailingTous = Action::new('profs_tableau_excel_mailing_Tous', 'Créer un tableau excel de tous les  professeurs pour mailings', 'fas fa-columns')
+        $tableauexcelmailingTous = Action::new('profs_tableau_excel_mailing_Tous', 'Créer un tableau excel de tous les  professeurs inscrits sur Olymphys pour mailings', 'fas fa-columns')
             // if the route needs parameters, you can define them:
             // 1) using an array
             ->linkToRoute('profs_tableau_excel_mailing_tous')
@@ -661,6 +661,7 @@ class ProfesseursCrudController extends AbstractCrudController
         $queryBuilder = $repositoryProfs->createQueryBuilder('p')
             ->leftJoin('p.equipes', 'eqs')
             ->leftJoin('p.user', 'u')
+            ->andWhere('u.autorisationListeDiffusion = true')
             ->orderBY('u.nom', 'ASC');
 
 

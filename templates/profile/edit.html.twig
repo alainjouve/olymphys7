@@ -27,6 +27,11 @@
                         <div class="col">
                             <h6>{{ field.vars['label'] }}</h6>
                             {{ form_widget(field) }}
+                            {% if field.vars.name == 'uai' and user.uaiId %}
+                                <small class="form-text text-muted">
+                                    Établissement associé : {{ user.uaiId.nom }} - {{ user.uaiId.academie }}
+                                </small>
+                            {% endif %}
                         </div>
                     </div>
                     <br>

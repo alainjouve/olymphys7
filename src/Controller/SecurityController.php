@@ -75,6 +75,7 @@ class SecurityController extends AbstractController
 
         // création du formulaire
         $user = new User();
+        $user->setAutorisationListeDiffusion(true);
         // instancie le formulaire avec les contraintes par défaut, + la contrainte registration pour que la saisie du mot de passe soit obligatoire
         $form = $this->createForm(UserRegistrationFormType::class, $user, [
             'validation_groups' => array('User', 'registration'),

@@ -13,10 +13,9 @@
     <p>Ville : {{ user.ville }}</p>
     <p>Code : {{ user.code }}</p>
     <p>Téléphone : {{ user.phone }}</p>
-    <p>UAI : {{ user.uai }}</p>
+    <p>UAI : {{ user.uai }}{% if user.uaiId %} - {{ user.uaiId.nom }} - {{ user.uaiId.academie }}{% endif %}</p>
     <p></p>
     <p>Vous souhaitez modifier le profil, changer votre mot de passe : <a href="{{ path('profile_edit') }}">cliquez
             ici</a></p>
 {% endblock %}
-
 

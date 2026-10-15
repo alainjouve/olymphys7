@@ -59,7 +59,11 @@ class UserCrudController extends AbstractCrudController
     {
         return $crud
             ->showEntityActionsInlined()
-            ->overrideTemplates(['crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',])
+            ->overrideTemplates([
+                'crud/index' => 'bundles/EasyAdminBundle/indexEntities.html.twig',
+                'crud/edit' => 'bundles/EasyAdminBundle/editUsers.html.twig',
+                'crud/new' => 'bundles/EasyAdminBundle/newUsers.html.twig',
+            ])
             ->setSearchFields(['id', 'username', 'roles', 'email', 'token', 'uai', 'nom', 'prenom', 'adresse', 'ville', 'code', 'phone', 'civilite']);
     }
 
@@ -87,6 +91,12 @@ class UserCrudController extends AbstractCrudController
             'ROLE_COMITE' => 'ROLE_COMITE',
             'ROLE_SECRETARIAT_JURY' => 'ROLE_SECRETARIAT_JURY'])
             ->setFormTypeOption('multiple', true);
+        $autorisationListeDiffusion = BooleanField::new('autorisationListeDiffusion')
+            ->setFormTypeOptions(['required' => false]);
+
+        if ($pageName === Crud::PAGE_NEW) {
+            $autorisationListeDiffusion->setFormTypeOption('data', true);
+        }
 
 
         return [
@@ -116,6 +126,7 @@ class UserCrudController extends AbstractCrudController
             AssociationField::new('uaiId', 'UAI')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             //AssociationField::new('centrecia')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             BooleanField::new('autorisationInscription')->setFormTypeOptions(['required' => false])->onlyOnForms(),
+            $autorisationListeDiffusion->onlyOnForms(),
             $contact = TextField::new('contact')->hideOnIndex(),//Doit être différente de l'adresse email identifiant du compte
             $isActive = Field::new('isActive'),
             $adresse = TextField::new('adresse'),

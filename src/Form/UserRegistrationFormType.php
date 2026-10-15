@@ -46,6 +46,10 @@ class UserRegistrationFormType extends AbstractType
             ->add('ville', TextType::class, ['required' => true, 'label' => 'Votre ville*'])
             ->add('code', TextType::class, ['required' => true, 'label' => 'Votre code postal*'])
             ->add('phone', TextType::class, ['required' => true, 'label' => 'Votre téléphone, portable, de préférence*',])
+            ->add('autorisationListeDiffusion', CheckboxType::class, [
+                'required' => false,
+                'label' => 'J’accepte de recevoir des messages de diffusion d’Olymphys.',
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'required' => true,

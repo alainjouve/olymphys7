@@ -1,0 +1,40 @@
+{% extends '@EasyAdmin/crud/edit.html.twig' %}
+
+{% block edit_form %}
+    {{ form_start(edit_form) }}
+    {{ form_errors(edit_form) }}
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            {{ form_row(edit_form.id) }}
+            {{ form_row(edit_form.civilite) }}
+            {{ form_row(edit_form.nom) }}
+            {{ form_row(edit_form.prenom) }}
+            {{ form_row(edit_form.uaiId) }}
+            {{ form_row(edit_form.adresse) }}
+            {{ form_row(edit_form.ville) }}
+            {{ form_row(edit_form.code) }}
+            {{ form_row(edit_form.phone) }}
+            {{ form_row(edit_form.contact) }}
+
+        </div>
+        <div class="col-md-6 col-sm-12">
+            {{ form_row(edit_form.email) }}
+            {{ form_row(edit_form.username) }}
+            {{ form_row(edit_form.plainPassword) }}
+            {{ form_row(edit_form.roles) }}
+            On donne l'autorisation à l'utilisateur de s'inscrire directement sur la plateforme Olymphys(AEFE,
+            etrangers, ou pb sur Adage)
+            <br>
+            {{ form_row(edit_form.autorisationInscription) }}
+            Accepte de recevoir des messages de diffusion d'olymphys
+            <br>
+            {{ form_row(edit_form.autorisationListeDiffusion) }} : {{ form_row(edit_form.isActive) }}
+            {{ form_row(edit_form.token) }}
+            {{ form_row(edit_form.createdAt) }}
+            {{ form_row(edit_form.updatedAt) }}
+            {{ form_row(edit_form.lastVisit) }}
+            {{ form_row(edit_form.passwordRequestedAt) }}
+        </div>
+    </div>
+    {{ form_end(edit_form) }}
+{% endblock edit_form %}
