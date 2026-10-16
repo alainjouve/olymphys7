@@ -5,8 +5,10 @@ namespace App\Entity;
 use App\Repository\UaiRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: UaiRepository::class)]
+#[UniqueEntity(fields: ['uai'])]
 class Uai
 {
     #[ORM\Id]
@@ -14,7 +16,7 @@ class Uai
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255, nullable: true, unique: true)]
     private ?string $uai = null;
 
     #[ORM\Column(length: 255, nullable: true)]
