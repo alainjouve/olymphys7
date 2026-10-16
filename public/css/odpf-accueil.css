@@ -142,6 +142,15 @@ body {
     color: #ffffff;
     text-decoration: none;
 }
+.bouton-contribuer {
+    display: block;
+    width: 80%;
+    max-width: 320px;
+    margin: 12px auto;
+    padding: 10px 16px;
+    border-radius: 12px;
+    text-align: center;
+}
 .bloc-concours::after {
     content: ' ';
     position: relative;
