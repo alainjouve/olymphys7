@@ -66,6 +66,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\String\UnicodeString;
+use Symfony\Component\Validator\Constraints\File as FileConstraint;
 use Twig\Environment;
 
 #[AllowDynamicProperties]
@@ -217,12 +218,16 @@ class EquipesadminCrudController extends AbstractCrudController
         }
         $extractionAdage = Action::new('extractionAdage')->createAsGlobalAction()
             ->linkToCrudAction('extractionAdage');
+        $affecterCentresCia = Action::new('affecterCentresCia', 'Affecter les centres CIA', 'fa fa-map-marker-alt')
+            ->createAsGlobalAction()
+            ->linkToCrudAction('affecterCentresCia');
         $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
             ->add(Crud::PAGE_INDEX, $extractionAdage)
             ->setPermission($extractionAdage, 'ROLE_SUPER_ADMIN')
+            ->setPermission($affecterCentresCia, 'ROLE_SUPER_ADMIN')
             ->update('index', Action::DELETE, function (Action $action) {
                 return $action->setIcon('fa fa-trash-alt')->setLabel(false);
             }
@@ -241,6 +246,9 @@ class EquipesadminCrudController extends AbstractCrudController
             })
             ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
             ->setPermission(Action::EDIT, 'ROLE_COMITE');
+        if (!isset($_REQUEST['lycees'])) {
+            $actions->add(Crud::PAGE_INDEX, $affecterCentresCia);
+        }
         if (isset($_REQUEST['lycees'])) {
             $actions->remove(Crud::PAGE_INDEX, Action::NEW)
                 ->remove(Crud::PAGE_INDEX, Action::DELETE)
@@ -913,6 +921,161 @@ class EquipesadminCrudController extends AbstractCrudController
         parent::persistEntity($entityManager, $entityInstance);
         //l'envoi du mail de confirmation au prof1 est effectué via l'évènement afterPersistEntity du EasyAdminSubsciber
 
+    }
+
+    public function affecterCentresCia(Request $request): Response
+    {
+        $form = $this->createFormBuilder()
+            ->add('fichier', FileType::class, [
+                'label' => 'Fichier Excel des affectations CIA',
+                'required' => true,
+                'attr' => ['accept' => '.xlsx,.xls'],
+                'constraints' => [
+                    new FileConstraint(
+                        extensions: ['xls', 'xlsx'],
+                        extensionsMessage: 'Veuillez sélectionner un fichier Excel au format .xls ou .xlsx.'
+                    ),
+                ],
+            ])
+            ->add('Valider', SubmitType::class, ['label' => 'Affecter les centres'])
+            ->getForm();
+        $form->handleRequest($request);
+        if (!$form->isSubmitted() || !$form->isValid()) {
+            return $this->render('bundles/EasyAdminBundle/affecterCentresCia.html.twig', [
+                'form' => $form->createView(),
+            ]);
+        }
+
+        $edition = $this->getEditionDuTableau();
+        if ($edition === null) {
+            $this->addFlash('danger', 'Impossible de déterminer l’édition courante.');
+            return $this->redirectVersIndexEquipes();
+        }
+
+        $fichier = $form->get('fichier')->getData();
+        $worksheet = IOFactory::load($fichier->getPathname())->getSheetByName('34_affectations-1');
+        if ($worksheet === null) {
+            $this->addFlash('danger', 'La feuille « 34_affectations-1 » est absente du fichier des affectations CIA.');
+            return $this->redirectVersIndexEquipes();
+        }
+
+        $slugger = new AsciiSlugger();
+        $normaliserCentre = static fn(?string $nom): string => strtolower($slugger->slug(trim($nom ?? ''))->toString());
+        $centresParSlug = [];
+        foreach ($this->doctrine->getRepository(Centrescia::class)->findAll() as $centre) {
+            $slug = $normaliserCentre($centre->getCentre());
+            if ($slug !== '') {
+                $centresParSlug[$slug][] = $centre;
+            }
+        }
+
+        if ($centresParSlug === []) {
+            $this->addFlash('danger', 'Aucun centre CIA n’est enregistré pour l’édition ' . $edition->getEd() . '.');
+            return $this->redirectVersIndexEquipes();
+        }
+
+        $affectationsParNumero = [];
+        $numerosExcelDupliques = [];
+        $centresInconnus = [];
+        $centresAmbigus = [];
+        for ($row = 2, $lastRow = $worksheet->getHighestDataRow(); $row <= $lastRow; ++$row) {
+            $numeroValue = $worksheet->getCell([4, $row])->getValue();
+            if (!is_numeric($numeroValue) || (float)$numeroValue <= 0 || (float)$numeroValue !== (float)(int)$numeroValue) {
+                continue;
+            }
+
+            $numero = (int)$numeroValue;
+            $nomCentre = trim((string)$worksheet->getCell([1, $row])->getValue());
+            $slugCentre = $normaliserCentre($nomCentre);
+            $centresCorrespondants = $centresParSlug[$slugCentre] ?? [];
+            if (count($centresCorrespondants) !== 1) {
+                if ($centresCorrespondants === []) {
+                    $centresInconnus[$nomCentre] = true;
+                } else {
+                    $centresAmbigus[$nomCentre] = true;
+                }
+                continue;
+            }
+
+            if (isset($affectationsParNumero[$numero])) {
+                $numerosExcelDupliques[$numero] = true;
+                unset($affectationsParNumero[$numero]);
+                continue;
+            }
+            if (!isset($numerosExcelDupliques[$numero])) {
+                $affectationsParNumero[$numero] = $centresCorrespondants[0];
+            }
+        }
+
+        $equipesParNumero = [];
+        foreach ($this->doctrine->getRepository(Equipesadmin::class)->findBy(['edition' => $edition]) as $equipe) {
+            if ($equipe->getNumero() !== null) {
+                $equipesParNumero[$equipe->getNumero()][] = $equipe;
+            }
+        }
+
+        $equipesAffectees = 0;
+        $numerosSansEquipe = [];
+        foreach ($affectationsParNumero as $numero => $centre) {
+            $equipesCorrespondantes = $equipesParNumero[$numero] ?? [];
+            if (count($equipesCorrespondantes) !== 1) {
+                $numerosSansEquipe[] = $numero;
+                continue;
+            }
+            $equipesCorrespondantes[0]->setCentre($centre);
+            ++$equipesAffectees;
+        }
+
+        $this->doctrine->getManager()->flush();
+        $this->addFlash('success', $equipesAffectees . ' équipe(s) affectée(s) au centre CIA pour l’édition ' . $edition->getEd() . '.');
+
+        $equipesSansAffectation = array_diff(array_keys($equipesParNumero), array_keys($affectationsParNumero));
+        $details = [];
+        if ($numerosSansEquipe !== []) {
+            $details[] = 'Numéros sans équipe unique en base : ' . implode(', ', $numerosSansEquipe);
+        }
+        if ($equipesSansAffectation !== []) {
+            $details[] = 'Équipes sans affectation dans le fichier : ' . implode(', ', $equipesSansAffectation);
+        }
+        if ($numerosExcelDupliques !== []) {
+            $details[] = 'Numéros présents plusieurs fois dans le fichier : ' . implode(', ', array_keys($numerosExcelDupliques));
+        }
+        if ($centresInconnus !== []) {
+            $details[] = 'Centres sans correspondance : ' . implode(', ', array_keys($centresInconnus));
+        }
+        if ($centresAmbigus !== []) {
+            $details[] = 'Centres avec plusieurs correspondances : ' . implode(', ', array_keys($centresAmbigus));
+        }
+        if ($details !== []) {
+            $this->addFlash('warning', implode(' — ', $details));
+        }
+
+        return $this->redirectVersIndexEquipes();
+    }
+
+    private function getEditionDuTableau(): ?Edition
+    {
+        $edition = $this->requestStack->getSession()->get('edition');
+        if (!$edition instanceof Edition) {
+            return null;
+        }
+
+        $dateOuverture = $edition->getDateOuvertureSite();
+        if ($dateOuverture !== null && new DateTime('now') < $dateOuverture) {
+            return $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => (int)$edition->getEd() - 1]);
+        }
+
+        return $edition;
+    }
+
+    private function redirectVersIndexEquipes(): Response
+    {
+        $url = $this->adminUrlGenerator->setDashboard(DashboardController::class)
+            ->setController(self::class)
+            ->setAction(Action::INDEX)
+            ->generateUrl();
+
+        return $this->redirect($url);
     }
 
     public function extractionAdage(Request $request, UserPasswordHasherInterface $passwordHasher, MailerInterface $mailer, Environment $twig)
