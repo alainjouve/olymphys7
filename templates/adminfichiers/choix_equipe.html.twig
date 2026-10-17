@@ -158,14 +158,14 @@
         <div class="table">
             <table>
                 <tr>
-                    {% if  app.user.autorisationInscription== true%}}
-                    <td> {% if date()< app.session.get('edition').dateclotureinscription and date()>=app.session.get('edition').dateouverturesite %}
-                            <a type="button" class="btn btn-primary"
-                               href="{{ path('inscrire_equipe',{idequipe : 'x'}) }}"
-                               title="Inscrire une nouvelle équipe">Nouvelle équipe</a>
-                        {% endif %}
-                    </td>
-                        {% endif %}
+                    {% if  app.user.autorisationInscription== true or app.user.uaiId.uai=='Etranger' %}
+                        <td> {% if date()< app.session.get('edition').dateclotureinscription and date()>=app.session.get('edition').dateouverturesite %}
+                                <a type="button" class="btn btn-primary"
+                                   href="{{ path('inscrire_equipe',{idequipe : 'x'}) }}"
+                                   title="Inscrire une nouvelle équipe">Nouvelle équipe</a>
+                            {% endif %}
+                        </td>
+                    {% endif %}
                 </tr>
 
                 <tr>

@@ -2,98 +2,95 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Edition;
 use App\Entity\Uai;
-use Doctrine\ORM\QueryBuilder;
-use Doctrine\Persistence\ManagerRegistry;
-use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
-use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
-use EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Orm\EntityRepository;
-use EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class UaiCrudController extends AbstractCrudController
 {
-    private RequestStack $requestStack;
-    private AdminContextProvider $adminContextProvider;
-    private ManagerRegistry $doctrine;
-
-    public function __construct(RequestStack $requestStack, AdminContextProvider $adminContextProvider, ManagerRegistry $doctrine)
-    {
-        $this->requestStack = $requestStack;;
-        $this->adminContextProvider = $adminContextProvider;
-        $this->doctrine = $doctrine;
-    }
-
     public static function getEntityFqcn(): string
     {
         return Uai::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->showEntityActionsInlined()
+            ->overrideTemplate('crud/index', 'bundles/EasyAdminBundle/indexEntities.html.twig')
+            ->setEntityLabelInSingular('Établissement UAI')
+            ->setEntityLabelInPlural('Établissements UAI')
+            ->setSearchFields(['uai', 'nom', 'appellationOfficielle', 'commune', 'academie', 'pays'])
+            ->setDefaultSort(['uai' => 'ASC']);
+    }
 
     public function configureFields(string $pageName): iterable
     {
-
-        $nom = TextField::new('appellationOfficielle', 'Nom');
-        $adresse = TextField::new('adresse', 'Adresse');
-        $CP = TextField::new('codePostal', 'CP');
-        $ville = TextField::new('commune', 'Ville');
+        $id = IntegerField::new('id', 'ID')->hideOnForm();
+        $uai = TextField::new('uai', 'Code UAI')
+            ->setFormTypeOption('required', true);
+        $nom = TextField::new('nom', 'Nom');
+        $appellationOfficielle = TextField::new('appellationOfficielle', 'Appellation officielle');
+        $denominationPrincipale = TextField::new('denominationPrincipale', 'Dénomination principale');
+        $sigle = TextField::new('sigle', 'Sigle');
+        $nature = TextField::new('nature', 'Nature');
+        $commune = TextField::new('commune', 'Commune');
         $academie = TextField::new('academie', 'Académie');
-        $codeUAI = IntegerField::new('uai', 'Code UAI');
+        $pays = TextField::new('pays', 'Pays');
+        $adresse = TextField::new('adresse', 'Adresse');
+        $boitePostale = TextField::new('boitePostale', 'Boîte postale');
+        $codePostal = TextField::new('codePostal', 'Code postal');
+        $acheminement = TextField::new('acheminement', 'Acheminement');
+        $coordonneeX = TextField::new('coordonneeX', 'Coordonnée X');
+        $coordonneeY = TextField::new('coordonneeY', 'Coordonnée Y');
+        $tel = TextField::new('tel', 'Téléphone');
+        $courriel = TextField::new('courriel', 'Courriel');
+        $proviseur = TextField::new('proviseur', 'Chef d’établissement');
+
         if (Crud::PAGE_INDEX === $pageName) {
-            return [$nom, $adresse, $CP, $ville, $academie, $codeUAI,];
-        } elseif (Crud::PAGE_DETAIL === $pageName) {
-            return [$nom, $adresse, $CP, $ville, $academie, $codeUAI,];
+            return [$id, $uai, $nom, $appellationOfficielle, $commune, $academie, $pays];
         }
+
+        return [
+            $id,
+            $uai,
+            $nom,
+            $appellationOfficielle,
+            $denominationPrincipale,
+            $sigle,
+            $nature,
+            $commune,
+            $academie,
+            $pays,
+            $adresse,
+            $boitePostale,
+            $codePostal,
+            $acheminement,
+            $coordonneeX,
+            $coordonneeY,
+            $tel,
+            $courriel,
+            $proviseur,
+        ];
     }
 
     public function configureActions(Actions $actions): Actions
     {
-
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->remove(Crud::PAGE_INDEX, Action::NEW)
-            ->remove(Crud::PAGE_INDEX, Action::EDIT)
-            ->remove(Crud::PAGE_INDEX, Action::DELETE);
-
-
+            ->update(Crud::PAGE_INDEX, Action::EDIT, static function (Action $action): Action {
+                return $action->setIcon('fa fa-pencil-alt')->setLabel(false);
+            })
+            ->update(Crud::PAGE_INDEX, Action::DETAIL, static function (Action $action): Action {
+                return $action->setIcon('fa fa-eye')->setLabel(false);
+            })
+            ->remove(Crud::PAGE_INDEX, Action::DELETE)
+            ->remove(Crud::PAGE_DETAIL, Action::DELETE)
+            ->add(Crud::PAGE_EDIT, Action::INDEX, 'Retour à la liste')
+            ->add(Crud::PAGE_NEW, Action::INDEX, 'Retour à la liste');
     }
-
-    public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
-    {
-        $session = $this->requestStack->getSession();
-        $context = $this->adminContextProvider->getContext();
-        $repositoryEdition = $this->doctrine->getManager()->getRepository(Edition::class);
-
-        if ($context->getRequest()->query->get('filters') == null) {
-            $edition = $session->get('edition');
-
-        } else {
-            if (isset($context->getRequest()->query->get('filters')['edition'])) {
-
-                $idEdition = $context->getRequest()->query->get('filters')['edition'];
-                $edition = $repositoryEdition->findOneBy(['id' => $idEdition]);
-                $session->set('titreedition', $edition);
-            }
-
-
-        }
-        $qb = $this->createQueryBuilder($searchDto, $entityDto, $fields, $filters)
-            ->leftJoin('entity.equipes', 'eq')
-            ->andWhere('eq.edition =:edition')
-            ->setParameter('edition', $edition)
-            ->leftJoin('entity.user', 'u')
-            ->orderBy('u.nom', 'ASC');;
-        $this->set_equipeString($edition, $qb);
-        return $qb;
-    }
-
 }
