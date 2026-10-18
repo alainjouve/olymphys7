@@ -26,7 +26,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider;
 use PhpOffice\PhpSpreadsheet\Shared\PasswordHasher;
+use PhpOffice\PhpSpreadsheet\Cell\DataType;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\HttpFoundation\HeaderUtils;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
@@ -156,6 +162,9 @@ class UserCrudController extends AbstractCrudController
             // 1) using an array
             ->linkToRoute('secretariatadmin_charge_user')
             ->createAsGlobalAction();
+        $exportUsers = Action::new('exportUsersExcel', 'Exporter tous les utilisateurs (Excel)', 'fa fa-file-excel')
+            ->createAsGlobalAction()
+            ->linkToCrudAction('exportUsersExcel');
 
 
         $actions = $actions
@@ -174,8 +183,141 @@ class UserCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-eye')->setLabel(false);
             }
             )
-            ->add(Crud::PAGE_INDEX, $addUsers);
+            ->add(Crud::PAGE_INDEX, $addUsers)
+            ->add(Crud::PAGE_INDEX, $exportUsers)
+            ->setPermission($exportUsers, 'ROLE_SUPER_ADMIN');
         return $actions;
+    }
+
+    public function exportUsersExcel(): Response
+    {
+        $users = $this->doctrine->getRepository(User::class)->createQueryBuilder('user')
+            ->leftJoin('user.uaiId', 'uai')
+            ->addSelect('uai')
+            ->leftJoin('user.centrecia', 'centre')
+            ->addSelect('centre')
+            ->leftJoin('user.autorisationphotos', 'autorisationPhoto')
+            ->addSelect('autorisationPhoto')
+            ->orderBy('user.id', 'ASC')
+            // ->addOrderBy('user.prenom', 'ASC')
+            ->getQuery()
+            ->toIterable();
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Utilisateurs');
+
+        $headers = [
+            'ID',
+            'Prénom',
+            'Nom',
+            'Adresse e-mail',
+            'Identifiant',
+            'Rôles',
+            'Compte actif',
+            'Fichier d’autorisation photo',
+            'Code UAI',
+            'Établissement',
+            'Ville',
+            'Académie',
+            'Contact',
+            'Adresse',
+            'Ville',
+            'Code postal',
+            'Téléphone',
+            'Civilité',
+            'Centre CIA',
+            'Newsletter',
+            'Autorisation d’inscription',
+            'Autorisation de diffusion',
+            'Créé le',
+            'Mis à jour le',
+            'Dernière visite',
+            'Demande de réinitialisation le',
+        ];
+
+        foreach ($headers as $columnIndex => $header) {
+            $coordinate = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex($columnIndex + 1) . '1';
+            $sheet->setCellValueExplicit($coordinate, $header, DataType::TYPE_STRING);
+        }
+
+        $row = 2;
+        foreach ($users as $user) {
+            $uai = $user->getUaiId();
+            $centre = $user->getCentrecia();
+            $values = [
+                $user->getId(),
+                $user->getPrenom(),
+                $user->getNom(),
+                $user->getEmail(),
+                $user->getUsername(),
+                implode(', ', $user->getRoles()),
+                $this->formatBooleanPourExcel($user->getIsActive()),
+                $user->getAutorisationphotos()?->getFichier(),
+                $uai?->getUai() ?? $user->getUai(),
+                $uai?->getNom(),
+                $uai?->getCommune(),
+                strtoupper($uai?->getAcademie() ?? ''),
+                $user->getContact(),
+                $user->getAdresse(),
+                $user->getVille(),
+                $user->getCode(),
+                $user->getPhone(),
+                $user->getCivilite(),
+                $centre?->getCentre(),
+                $this->formatBooleanPourExcel($user->getNewsletter()),
+                $this->formatBooleanPourExcel($user->isAutorisationInscription()),
+                $this->formatBooleanPourExcel($user->isAutorisationListeDiffusion()),
+                $user->getCreatedAt()?->format('Y-m-d H:i:s'),
+                $user->getUpdatedAt()?->format('Y-m-d H:i:s'),
+                $user->getLastVisit()?->format('Y-m-d H:i:s'),
+                $user->getPasswordRequestedAt()?->format('Y-m-d H:i:s'),
+            ];
+
+            foreach ($values as $columnIndex => $value) {
+                $coordinate = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex($columnIndex + 1) . $row;
+                if ($columnIndex === 0 && $value !== null) {
+                    $sheet->setCellValue($coordinate, $value);
+                    continue;
+                }
+
+                $sheet->setCellValueExplicit($coordinate, (string)($value ?? ''), DataType::TYPE_STRING);
+            }
+            ++$row;
+        }
+
+        $lastColumn = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex(count($headers));
+        $sheet->getStyle('A1:' . $lastColumn . '1')->getFont()->setBold(true);
+        $sheet->freezePane('A2');
+        $sheet->setAutoFilter('A1:' . $lastColumn . max(1, $row - 1));
+        foreach (range(1, count($headers)) as $columnIndex) {
+            $sheet->getColumnDimension(
+                \PhpOffice\PhpSpreadsheet\Cell\Coordinate::stringFromColumnIndex($columnIndex)
+            )->setAutoSize(true);
+        }
+
+        $filename = 'utilisateurs_' . date('Y-m-d_H-i-s') . '.xlsx';
+        $response = new StreamedResponse(static function () use ($spreadsheet): void {
+            (new Xlsx($spreadsheet))->save('php://output');
+            $spreadsheet->disconnectWorksheets();
+        });
+        $response->headers->set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        $response->headers->set(
+            'Content-Disposition',
+            HeaderUtils::makeDisposition(HeaderUtils::DISPOSITION_ATTACHMENT, $filename)
+        );
+        $response->headers->set('Cache-Control', 'max-age=0, private');
+
+        return $response;
+    }
+
+    private function formatBooleanPourExcel(?bool $value): string
+    {
+        return match ($value) {
+            true => 'Oui',
+            false => 'Non',
+            null => '',
+        };
     }
 
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
