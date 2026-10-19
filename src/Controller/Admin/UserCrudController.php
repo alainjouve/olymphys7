@@ -125,6 +125,10 @@ class UserCrudController extends AbstractCrudController
                 'ROLE_COMITE' => 'ROLE_COMITE',
                 'ROLE_SECRETARIAT_JURY' => 'ROLE_SECRETARIAT_JURY'])
                 ->setFormTypeOption('multiple', true)->onlyOnForms(),
+            AssociationField::new('centrecia')
+                ->setHelp('Ne doit être rempli que pour les comptes organisateurs locaux des cia')
+                ->setFormTypeOptions(['required' => false])
+                ->onlyOnForms(),
             TextField::new('uai')->onlyOnIndex(),
             Field::new('plainPassword', 'Mot de passe')
                 ->setFormType(PasswordType::class)
@@ -133,7 +137,6 @@ class UserCrudController extends AbstractCrudController
                 ->setFormTypeOption('row_attr', ['class' => 'user-plain-password-row'])
                 ->onlyOnForms(),
             AssociationField::new('uaiId', 'UAI')->setFormTypeOptions(['required' => false])->onlyOnForms(),
-            //AssociationField::new('centrecia')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             BooleanField::new('autorisationInscription')->setFormTypeOptions(['required' => false])->onlyOnForms(),
             $autorisationListeDiffusion->onlyOnForms(),
             $contact = TextField::new('contact')->hideOnIndex(),//Doit être différente de l'adresse email identifiant du compte
