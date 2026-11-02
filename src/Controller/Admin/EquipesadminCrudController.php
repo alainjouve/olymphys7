@@ -221,12 +221,18 @@ class EquipesadminCrudController extends AbstractCrudController
         $affecterCentresCia = Action::new('affecterCentresCia', 'Affecter les centres CIA', 'fa fa-map-marker-alt')
             ->createAsGlobalAction()
             ->linkToCrudAction('affecterCentresCia');
+        $mettreNbelevesANull = Action::new('mettreNbelevesANull', 'Mettre à null les effectifs sans élèves inscrits', 'fa fa-eraser')
+            ->createAsGlobalAction()
+            ->linkToCrudAction('mettreNbelevesANull')
+            ->setCssClass('btn btn-warning');
         $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->add(Crud::PAGE_INDEX, $tableauexcel)
             ->add(Crud::PAGE_INDEX, $extractionAdage)
+            ->add(Crud::PAGE_INDEX, $mettreNbelevesANull)
             ->setPermission($extractionAdage, 'ROLE_SUPER_ADMIN')
+            ->setPermission($mettreNbelevesANull, 'ROLE_SUPER_ADMIN')
             ->setPermission($affecterCentresCia, 'ROLE_SUPER_ADMIN')
             ->update('index', Action::DELETE, function (Action $action) {
                 return $action->setIcon('fa fa-trash-alt')->setLabel(false);
@@ -1076,6 +1082,32 @@ class EquipesadminCrudController extends AbstractCrudController
             ->generateUrl();
 
         return $this->redirect($url);
+    }
+
+    public function mettreNbelevesANull(): Response
+    {
+        $equipesSansEleves = $this->doctrine->getRepository(Equipesadmin::class)
+            ->createQueryBuilder('e')
+            ->where('e.nbeleves IS NOT NULL')
+            ->andWhere('NOT EXISTS (
+                SELECT el.id
+                FROM App\Entity\Elevesinter el
+                WHERE el.equipe = e
+            )')
+            ->getQuery()
+            ->getResult();
+
+        foreach ($equipesSansEleves as $equipe) {
+            $equipe->setNbeleves(null);
+        }
+
+        $this->doctrine->getManager()->flush();
+        $this->addFlash('success', sprintf(
+            'Le nombre d’élèves a été mis à null pour %d équipe(s) sans élève inscrit.',
+            count($equipesSansEleves)
+        ));
+
+        return $this->redirectVersIndexEquipes();
     }
 
     public function extractionAdage(Request $request, UserPasswordHasherInterface $passwordHasher, MailerInterface $mailer, Environment $twig)

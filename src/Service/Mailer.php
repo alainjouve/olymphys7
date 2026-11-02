@@ -24,9 +24,9 @@ class Mailer
     private $twig;
 
     public function __construct(
-        MailerInterface $mailer,
-        Environment $twig,
-        RequestStack $requestStack,
+        MailerInterface       $mailer,
+        Environment           $twig,
+        RequestStack          $requestStack,
         ElevesinterRepository $elevesinterRepository
     )
     {
@@ -90,8 +90,10 @@ class Mailer
             //->to('webmestre2@olymphys.fr')
             ->addCc('webmestre3@olymphys.fr')
             ->addCc('webmestre4@olymphys.fr')
-            ->addCc($user->getEmail(), $user->getContact());//'webmestre2@olymphys.fr', 'Denis'*/
-
+            ->addCc($user->getEmail());//'webmestre2@olymphys.fr', 'Denis'*/
+        if ($user->getContact()) {
+            $email->addCc($user->getContact());
+        }
         if ($type_fichier === 'fiche securité(présentation)' or $type_fichier === 'fiche securité(exposition)') {
 
             $email->addCc('lahmidani.fouad@free.fr', 'pascale.rv@gmail.com', 'claire.chalnot@gmail.com')
