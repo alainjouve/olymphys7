@@ -63,9 +63,12 @@ class Mailer
     {
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
-            ->to($user->getEmail(), $user->getContact())
+            ->to($user->getEmail());
+            if ($user->getContact()) {
+                $email->addCc($user->getContact());
+            }
             //new Address($user->getEmail())
-            ->subject('Olymphys-Confirmation de votre inscription')
+            $email->subject('Olymphys-Confirmation de votre inscription')
 
             // path of the Twig template to render
             ->htmlTemplate('email/bienvenue.html.twig')
@@ -286,7 +289,7 @@ class Mailer
             ->addCc($orgacia->getEmail())// prévient l'oganisateur cia
             ->htmlTemplate('email/confirme_user_jure.html.twig')
             ->subject('Votre compte Olymphys a été créé')
-            ->context(['centrecia' => $centre, 'jureNom' => $jure->getprenomNom(), 'jureLogin' => $jure->getEmail(), 'pwd' => $pwd, 'courriel' => $jure->getEmail()]);
+            ->context(['centrecia' => $centre, 'jureNom' => $jure->getprenomNom(), 'jureLogin' => $jure->getEmail(), 'mailJure' => $jure->getEmail(), 'pwd' => $pwd, 'courriel' => $jure->getEmail()]);
 
         $this->mailer->send($email);
         return $email;
