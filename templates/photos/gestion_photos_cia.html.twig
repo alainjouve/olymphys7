@@ -1,121 +1,207 @@
 {% extends "base1.html.twig" %}
+
+{% block title %}{{ edition.ed }}e — Photos des épreuves interacadémiques{% endblock %}
+
 {% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .photo-management {
+            --photo-border: #e2e8f0;
+            padding-bottom: 2rem;
+        }
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          id="bootstrap-css">
+        .photo-management__heading {
+            margin-bottom: 1.5rem;
+        }
+
+        .photo-management__subtitle {
+            color: #64748b;
+            font-size: 1rem;
+            font-weight: 400;
+            margin: .5rem 0 0;
+        }
+
+        .photo-management__toolbar {
+            align-items: center;
+            background: #f8fafc;
+            border: 1px solid var(--photo-border);
+            border-radius: .75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.25rem;
+        }
+
+        .photo-management__grid {
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+        }
+
+        .photo-card {
+            background: #fff;
+            border: 1px solid var(--photo-border);
+            border-radius: .75rem;
+            box-shadow: 0 3px 12px rgba(15, 23, 42, .06);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        .photo-card:hover {
+            box-shadow: 0 8px 24px rgba(15, 23, 42, .12);
+            transform: translateY(-2px);
+        }
+
+        .photo-card__preview {
+            align-items: center;
+            background: #f1f5f9;
+            display: flex;
+            height: 190px;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .photo-card__preview img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .photo-card__form {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .photo-card__form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .photo-card__actions {
+            display: flex;
+            gap: .5rem;
+            margin-top: auto;
+        }
+
+        .photo-card__actions .btn {
+            flex: 1;
+        }
+
+        .photo-card__delete {
+            border-top: 1px solid var(--photo-border);
+            padding: .75rem 1rem;
+            text-align: right;
+        }
+
+        @media (max-width: 575.98px) {
+            .photo-management__toolbar {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .photo-management__toolbar .btn {
+                width: 100%;
+            }
+        }
+    </style>
 {% endblock %}
-
-{% block title %} {{ edition.ed }}   Les photos des épreuves interacadémiques {% endblock %}
-
-
 
 {% block titre3 %}
-    <div class="text-center">{{ edition.ed }}<sup>e</sup> Les photos des épreuves interacadémiques.</div></br>
-    {% if centre!='prof' %}
-        <div class="text-center" style="color: #1d4ed8">Gestion des photos du centre : {{ centre }}  </div>
-    {% endif %}
-    {% if centre=='prof' %}
-        <div class="text-center" style="color: #1d4ed8">Gestion des photos de mes equipes</div>
-    {% endif %}
-
-
+    <div class="photo-management__heading">
+        <div>{{ edition.ed }}<sup>e</sup> — Photos des épreuves interacadémiques</div>
+        {% if centre != 'prof' %}
+            <p class="photo-management__subtitle">Gestion des photos du centre {{ centre }}</p>
+        {% else %}
+            <p class="photo-management__subtitle">Gestion des photos de mes équipes</p>
+        {% endif %}
+    </div>
 {% endblock %}
+
 {% block body %}
-    {% if is_granted('ROLE_COMITE')  or is_granted('ROLE_ORGACIA') %}
-        {% if concours=='cia' %}
+    <div class="photo-management">
+        <div class="photo-management__toolbar">
+            {% if is_granted('ROLE_COMITE') or is_granted('ROLE_ORGACIA') %}
+                {% if concours == 'cia' %}
+                    <a href="{{ path('core_home') }}" class="btn btn-outline-secondary">Retour</a>
+                    <a href="{{ path('telecharger_photos') }}" class="btn btn-primary">
+                        <i class="fas fa-cloud-upload-alt mr-1" aria-hidden="true"></i>
+                        Télécharger des photos
+                    </a>
+                {% else %}
+                    <a href="{{ path('core_home') }}" class="btn btn-outline-secondary">Retour à la liste des équipes</a>
+                {% endif %}
+            {% elseif is_granted('ROLE_PROF') %}
+                <a href="{{ path('fichiers_choix_equipe', {choix: 'liste_prof'}) }}" class="btn btn-outline-secondary">Retour</a>
+                <a href="{{ path('telecharger_photos') }}" class="btn btn-primary">
+                    <i class="fas fa-cloud-upload-alt mr-1" aria-hidden="true"></i>
+                    Télécharger les photos
+                </a>
+            {% endif %}
+            <span class="text-muted">{{ liste_photos|length }} photo{% if liste_photos|length != 1 %}s{% endif %}</span>
+        </div>
 
-            <div class="text-center"><a href="{{ path('core_home') }}">Retour</a></div>
-            <a type="button" href="{{ path('telecharger_photos') }}" class="btn btn-primary">Télécharger des photos</a>
-        {% endif %}
-
-
-        {% if concours=='national' %}
-            <div class="text-center"><a href="{{ path('core_home') }}">Retour
-                    à la liste des équipes</a></div>
-        {% endif %}
-    {% elseif is_granted('ROLE_PROF') %}
-        <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix:'liste_prof'}) }}">Retour</a></div>
-        <a type="button" href="{{ path('telecharger_photos') }}" class="btn btn-primary">Télécharger les photos</a>
-    {% endif %}
-
-
-
-    <div class="container-fluid">
-        <div class="d-inline-flex flex-wrap">
-
+        <div class="photo-management__grid">
             {% for photo in liste_photos %}
-                <div class="p-2"
-                     style="width: 250px; background-color: lightgrey; color: black; margin-left: 10px;margin-bottom: 10px">
-                    <form action="{{ path('photos_gestion_photos',{'infos':infos}) }}" method="post"
-                          id="{{ photo.id }}">
+                {% set photo_path = 'odpf/odpf-archives/' ~ photo.editionspassees.edition ~ '/photoseq/' ~ photo.photo %}
+                {% set thumbnail_path = 'odpf/odpf-archives/' ~ photo.editionspassees.edition ~ '/photoseq/thumbs/' ~ photo.photo %}
+                <article class="photo-card">
+                    <a class="photo-card__preview"
+                       href="{{ asset(photo_path) }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Ouvrir la photo en taille réelle">
+                        <img src="{{ asset(thumbnail_path) }}" alt="Aperçu de la photo">
+                    </a>
+
+                    <form class="photo-card__form"
+                          action="{{ path('photos_gestion_photos', {infos: infos}) }}"
+                          method="post">
                         <input type="hidden" name="id" value="{{ photo.id }}">
                         <input type="hidden" name="enregistrer" value="enregistrer">
-                        <a href="{{ asset('odpf/odpf-archives/'~photo.editionspassees.edition~'/photoseq/'~photo.photo) }}"
-                           target="_blank">
-                            <img src="{{ asset('odpf/odpf-archives/'~photo.editionspassees.edition~'/photoseq/thumbs/'~photo.photo) }}"
-                                 class="img-thumbnail">
-                        </a>
-                        <label for="coment">Commentaire</label>
-                        <input type="text" name="coment" value="{{ photo.coment }}" class="form-control">
-                        <label for="equipe">Equipe</label>
-                        <select name="equipe" style="width: 100%" class="form-control">
-                            {% for equipe in liste_equipes %}
-                                {% set select='' %}
-                                {% if equipe==photo.equipe %}
-                                    {% set select='selected' %}
-                                {% endif %}
-                                <option value="{{ equipe.id }}" {{ select }}>{{ equipe.infoequipe }}</option>
-                            {% endfor %}
-                        </select>
-                        <div style="text-align: center"><input type="submit" value="Enregistrer""></div>
+
+                        <div class="form-group">
+                            <label for="comment-{{ photo.id }}">Commentaire</label>
+                            <input id="comment-{{ photo.id }}"
+                                   type="text"
+                                   name="coment"
+                                   value="{{ photo.coment }}"
+                                   class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="equipe-{{ photo.id }}">Équipe associée</label>
+                            <select id="equipe-{{ photo.id }}" name="equipe" class="form-control">
+                                {% for equipe in liste_equipes %}
+                                    <option value="{{ equipe.id }}" {% if equipe == photo.equipe %}selected{% endif %}>
+                                        {{ equipe.infoequipe }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="photo-card__actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save mr-1" aria-hidden="true"></i>Enregistrer
+                            </button>
+                        </div>
                     </form>
-                    <form action="{{ path('photos_gestion_photos',{'infos':infos}) }}" method="post" id="{{ photo.id }}"
-                          style="margin-top: 10px; text-align: center">
+
+                    <form class="photo-card__delete"
+                          action="{{ path('photos_gestion_photos', {infos: infos}) }}"
+                          method="post">
                         <input type="hidden" name="id" value="{{ photo.id }}">
                         <input type="hidden" name="supprimer" value="supprimer">
-                        <input type="submit" value="Supprimer" ">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash-alt mr-1" aria-hidden="true"></i>Supprimer
+                        </button>
                     </form>
-                </div>
+                </article>
             {% endfor %}
         </div>
     </div>
-
-    {% if is_granted('ROLE_COMIE')  or is_granted('ROLE_ORGACIA') %}
-        {% if concours=='cia' %}
-
-            <div class="text-center"><a href="{{ path('core_home') }}">Retour</a></div>
-        {% endif %}
-
-
-        {% if concours=='national' %}
-            <div class="text-center"><a href="{{ path('core_home') }}">Retour
-                    à la liste des équipes</a></div>
-        {% endif %}
-    {% elseif is_granted('ROLE_PROF') %}
-        <div class="text-center"><a href="{{ path('fichiers_choix_equipe',{choix:'liste_prof'}) }}">Retour</a></div>
-    {% endif %}
-    {% block javascripts %}
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
-
-
-
-
-
-
-    {% endblock %}
-
-
-
-
-
-
 {% endblock %}

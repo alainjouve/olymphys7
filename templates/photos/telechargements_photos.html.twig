@@ -1,80 +1,211 @@
 {% extends "base1.html.twig" %}
+
 {% block title %}Téléchargement des photos{% endblock %}
 
-{% block navigation %}
-    {% set centre=null %}
-    {% if is_granted('ROLE_ORGACIA') %}
-        {% set centre=app.user.centrecia %}
-    {% endif %}
-    {{ include ("cyberjuryCia/navigation.html.twig") }}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .photo-download {
+            padding-bottom: 2rem;
+        }
 
+        .photo-download__toolbar,
+        .photo-download__selection {
+            align-items: center;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: .75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            padding: 1rem 1.25rem;
+        }
+
+        .photo-download__selection {
+            justify-content: flex-start;
+            margin-bottom: .75rem;
+        }
+
+        .photo-download__selection .btn {
+            margin-left: auto;
+        }
+
+        .photo-download__notice {
+            color: #64748b;
+            margin: 0 0 1.25rem;
+        }
+
+        .photo-download__grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+        }
+
+        .photo-download__card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: .75rem;
+            box-shadow: 0 3px 12px rgba(15, 23, 42, .06);
+            overflow: hidden;
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        .photo-download__card:has(input[type="checkbox"]:checked) {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, .18);
+        }
+
+        .photo-download__card:hover {
+            box-shadow: 0 8px 20px rgba(15, 23, 42, .12);
+            transform: translateY(-2px);
+        }
+
+        .photo-download__image {
+            background: #f1f5f9;
+            display: block;
+            height: 165px;
+            overflow: hidden;
+        }
+
+        .photo-download__image img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform .2s ease;
+            width: 100%;
+        }
+
+        .photo-download__image:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-download__card-footer {
+            align-items: center;
+            display: flex;
+            gap: .6rem;
+            padding: .75rem 1rem;
+        }
+
+        .photo-download__card-footer .form-check {
+            margin: 0;
+            min-height: 0;
+        }
+
+        .photo-download__card-footer .form-check-input {
+            margin-top: .2rem;
+            position: static;
+        }
+
+        .photo-download__card-footer label {
+            color: #334155;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .photo-download__empty {
+            background: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: .75rem;
+            color: #64748b;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 575.98px) {
+            .photo-download__toolbar,
+            .photo-download__selection {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .photo-download__toolbar .btn,
+            .photo-download__selection .btn {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block page_alert %}
+    {{ include('flash.html.twig') }}
+{% endblock %}
+
+{% block navigation %}
+    {% set centre = is_granted('ROLE_ORGACIA') ? app.user.centrecia : null %}
+    {{ include("cyberjuryCia/navigation.html.twig") }}
 {% endblock %}
 
 {% block titre3 %}
-    {% set centre=null %}
-    {% if is_granted('ROLE_ORGACIA') %}
-        {% set centre=app.user.centrecia %}
-    {% endif %}
-
-    Téléchargement des photos du centre de {{ centre.centre }}
+    {% set centre = is_granted('ROLE_ORGACIA') ? app.user.centrecia : null %}
+    Téléchargement des photos{% if centre %} du centre de {{ centre.centre }}{% endif %}
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        {% if listePhotos!=null %}
-            <div class="row">
-                <div class="col-lg-2 sm-12">
-                    <a href="{{ path('photos_gestion_photos',{'infos':'inter-'~app.session.get('edition').id~'-'~centre.id~'-'}) }}"
-                       type="button" class="btn btn-primary">Vers la gestion des photos</a>
+    <div class="photo-download">
+        {% if listePhotos is not empty %}
+            <div class="photo-download__toolbar">
+                <a href="{{ path('photos_gestion_photos', {infos: 'inter-' ~ app.session.get('edition').id ~ '-' ~ centre.id ~ '-'}) }}"
+                   class="btn btn-outline-secondary">
+                    <i class="fas fa-images mr-1" aria-hidden="true"></i>Gérer les photos
+                </a>
+                <form action="{{ path('telecharger_photos') }}" method="post">
+                    <input type="hidden" name="telecharger" value="telecharger">
+                    <button type="submit"
+                            class="btn btn-outline-primary"
+                            title="Le volume important peut occasionner un dysfonctionnement">
+                        <i class="fas fa-file-archive mr-1" aria-hidden="true"></i>Tout télécharger
+                    </button>
+                </form>
+                <span class="text-muted">{{ listePhotos|length }} photo{% if listePhotos|length != 1 %}s{% endif %}</span>
+            </div>
 
-                </div>
-                <div class="col-lg-2 sm-12">
-                    <form name="tout_telecherger" action="{{ path('telecharger_photos') }}" method="post">
-                        <input type="hidden" name="telecharger" value="telecharger">
-                        <input type="submit" class="btn btn-primary" value="Tout télécharger"
-                               title="Le volume important peut occasionner un dysfonctionnement">
-                    </form>
-                </div>
-                <div class="col-lg-8 sm-12">
-                    {{ form_start(form) }}
-                    {{ form_errors(form) }}
-                    {{ form_widget(form.valider, {'label':'Télécharger une sélection'}) }} <span
-                            style="font-size: small"> Cocher les cases des photos à télécharger. Pour
-                une seule photo cliquer sur la photo puis, avec un  clic droit sur la photo HD qui s'affiche, choisir "enregistrer l'image sous" </span>
-                </div>
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div class="photo-download__selection">
+                <label for="checkAll" class="mb-0">
+                    <input type="checkbox" id="checkAll" onclick="allcheck(this.checked);">
+                    Tout cocher
+                </label>
+                {{ form_widget(form.valider, {
+                    label: 'Télécharger la sélection',
+                    attr: {class: 'btn btn-primary'}
+                }) }}
             </div>
-            <div class="row">
-                <div class="col-lg-12 sm-12">
-                    <label for="checkAll">Tout cocher</label>
-                    <input type="Checkbox" id="checkAll" onclick="allcheck(this.checked);">
 
-                </div>
-            </div>
-            <div>Eviter le téléchargement d'un nombre de photos supérieur à 5, le volume très important rend l'opération
-                très lente avec des risques de dysfonctionnement
-            </div>
-            <div class="d-flex flex-wrap">
+            <p class="photo-download__notice">
+                Sélectionnez les photos à télécharger. Pour enregistrer une seule photo, cliquez sur son aperçu puis choisissez
+                « Enregistrer l’image sous » avec un clic droit. Pour éviter les téléchargements trop longs, limitez la sélection à 5 photos.
+            </p>
+
+            <div class="photo-download__grid">
                 {% for photo in listePhotos %}
-                    <div class="p-2">
-                        {% for key in form.children|keys %}
-                            {% if  key == 'check'~photo.id %}
-                                {{ form_widget(form.children[key],{'label':'Eq'~  photo.equipe.numero, 'attr':{'z-index':1} }) }}
-
-                                <a href="{{ asset('odpf/odpf-archives/'~photo.edition.ed~'/photoseq/'~photo.photo) }}"
-                                   target="_blank">
-                                    <img src="{{ asset('odpf/odpf-archives/'~photo.edition.ed~'/photoseq/thumbs/'~photo.photo) }}"
-                                         class="zoom">
-                                </a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% set checkbox_name = 'check' ~ photo.id %}
+                    <article class="photo-download__card">
+                        <a class="photo-download__image"
+                           href="{{ asset('odpf/odpf-archives/' ~ photo.edition.ed ~ '/photoseq/' ~ photo.photo) }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Ouvrir la photo en taille réelle">
+                            <img src="{{ asset('odpf/odpf-archives/' ~ photo.edition.ed ~ '/photoseq/thumbs/' ~ photo.photo) }}"
+                                 alt="Aperçu de la photo">
+                        </a>
+                        <div class="photo-download__card-footer">
+                            {{ form_widget(form.children[checkbox_name], {label: false}) }}
+                            <label for="{{ form.children[checkbox_name].vars.id }}">
+                                {{ photo.photo }}
+                            </label>
+                        </div>
+                    </article>
                 {% endfor %}
             </div>
             {{ form_end(form) }}
         {% else %}
-            <span style="text-align: center">Pas de photo déposée pour ce centre pour le moment</span>
+            <div class="photo-download__empty">
+                <i class="far fa-image fa-2x mb-2" aria-hidden="true"></i>
+                <p class="mb-0">Aucune photo n’a encore été déposée pour ce centre.</p>
+            </div>
         {% endif %}
-
     </div>
-
 {% endblock %}

@@ -635,22 +635,32 @@ class PhotosController extends AbstractController
 
             $form = $this->createForm(TelechargementPhotosType::class, null, ['listePhotos' => $listePhotos]);
             $form->handleRequest($request);
-            if (($form->isSubmitted() && $form->isValid()) or ($request->get('telecharger'))) {
+            $telechargerTout = $request->isMethod('POST')
+                && $request->request->get('telecharger') === 'telecharger';
+            if (($form->isSubmitted() && $form->isValid()) || $telechargerTout) {
+                $photosSelectionnees = $telechargerTout
+                    ? $listePhotos
+                    : array_filter($listePhotos, static function (Photos $photo) use ($form): bool {
+                        return $form->get('check' . $photo->getId())->getData();
+                    });
+
+                if ($photosSelectionnees === []) {
+                    $request->getSession()->getFlashBag()->add('warning', 'Veuillez sélectionner au moins une photo à télécharger.');
+
+                    return $this->render('photos/telechargements_photos.html.twig', [
+                        'listePhotos' => $listePhotos,
+                        'form' => $form->createView(),
+                        'centre' => $user->getCentrecia(),
+                    ]);
+                }
+
                 $zipFile = new ZipArchive();
                 $now = new \DateTime('now');
                 $fileNameZip = $edition->getEd() . '-photos-' . $slugger->slug($user->getCentrecia())->toString() . '-' . $now->format('d-m-Y\-Hi-s') . '.zip';
                 if ($zipFile->open($fileNameZip, ZipArchive::CREATE) === TRUE) {
-                    foreach ($listePhotos as $photo) {
-                        if ($request->get('telecharger')) {
-                            $fileName = $this->getParameter('app.path.odpf_archives') . '/' . $photo->getEdition()->getEd() . '/photoseq/' . $photo->getPhoto();
-                            $zipFile->addFromString(basename($fileName), file_get_contents($fileName));
-                        } elseif ($form->get('check' . $photo->getId())->getData()) {
-                            $fileName = $this->getParameter('app.path.odpf_archives') . '/' . $photo->getEdition()->getEd() . '/photoseq/' . $photo->getPhoto();
-                            $zipFile->addFromString(basename($fileName), file_get_contents($fileName));
-
-                        }
-
-
+                    foreach ($photosSelectionnees as $photo) {
+                        $fileName = $this->getParameter('app.path.odpf_archives') . '/' . $photo->getEdition()->getEd() . '/photoseq/' . $photo->getPhoto();
+                        $zipFile->addFromString(basename($fileName), file_get_contents($fileName));
                     }
                     $zipFile->close();
                 }
@@ -770,4 +780,3 @@ class PhotosController extends AbstractController
         return $equipes;
     }
 }
-
