@@ -64,6 +64,11 @@
 
 #photo-upload-progress {
     height: 1.5rem;
+    background-color: #f1d0cf;
+}
+
+#photo-upload-progress-bar {
+    background-color: #B21B16;
 }
 
 .photo-delete-button {
