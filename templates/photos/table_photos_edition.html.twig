@@ -5,7 +5,8 @@
 
 {% block body %}
 
-    <h1 class="text-center">Photos de l'édition {{ app.session.get('edition').ed }}{% if is_granted('ROLE_ORGACIA') %} du centre de {{ app.user.centrecia.centre }}{% endif %}</h1>
+    <h1 class="text-center">Photos de
+        l'édition {{ app.session.get('edition').ed }}{% if app.user.roles|filter(v => v =='ROLE_ORGACIA')!=[] %} du centre de {{ app.user.centrecia.centre }}{% endif %}</h1>
     <div class="text-center mb-3">
         <a href="{{ path('photos_deposephotos', {concours: 'inter'}) }}" class="btn btn-primary">
             Déposer des photos
@@ -76,10 +77,19 @@
                             {% if  formphoto.vars.attr['id'] == photo.id %}
 
                                 <small class="d-block">Equipe {{ photo.equipepassee.numero }}</small>
-                                <span title="{{ photo.equipepassee }}"><img
-                                            src="{{ asset('odpf/odpf-archives/'~editionPassee.edition~'/photoseq/thumbs/'~photo.photo) }}"
-                                            class="photolist" onclick="imClick('{{ photo.id }}')">
-                                 </span>
+                                <span class="d-inline-flex align-items-center" title="{{ photo.equipepassee }}">
+                                    <img src="{{ asset('odpf/odpf-archives/'~editionPassee.edition~'/photoseq/thumbs/'~photo.photo) }}"
+                                         class="photolist" onclick="imClick('{{ photo.id }}')">
+                                    {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ORGACIA') %}
+                                        <button type="button" class="photo-delete-button"
+                                                aria-label="Supprimer cette photo"
+                                                title="Supprimer cette photo"
+                                                data-url="{{ path('photos_supprimer_table_edition', {id: photo.id}) }}"
+                                                data-csrf-token="{{ csrf_token('supprimer-photo-' ~ photo.id) }}">
+                                            <i class="fas fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    {% endif %}
+                                </span>
                                 {% if is_granted('ROLE_SUPER_ADMIN') or (app.user and 'ROLE_ORGACIA' in app.user.roles) %}
                                     <div style="padding-top: 10px">
                                         <label for="sujet_photo-{{ photo.id }}">Type de sujet</label>

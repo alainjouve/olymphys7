@@ -949,5 +949,28 @@ class PhotosController extends AbstractController
 
     }
 
+    #[Route("/photos/table-edition/{id}/supprimer", name: "photos_supprimer_table_edition", methods: ["POST"])]
+    #[IsGranted('ROLE_ORGACIA')]
+    public function supprimerPhotoTableEdition(Request $request, int $id): Response
+    {
+
+
+        $photo = $this->doctrine->getRepository(Photos::class)->find($id);
+
+
+        $edition = $photo->getEditionspassees()?->getEdition();
+        if ($edition !== null && $photo->getPhoto() !== null) {
+            $thumbnailPath = $this->getParameter('app.path.odpf_archives')
+                . '/' . $edition . '/photoseq/thumbs/' . $photo->getPhoto();
+            (new Filesystem())->remove($thumbnailPath);
+        }
+
+        $entityManager = $this->doctrine->getManager();
+        $entityManager->remove($photo);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('affiche_table_photos_edition');
+    }
+
 
 }

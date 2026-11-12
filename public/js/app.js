@@ -162,6 +162,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    document.addEventListener('click', function (event) {
+        var deleteButton = event.target.closest('.photo-delete-button');
+        if (!deleteButton) {
+            return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+        if (!window.confirm('Supprimer définitivement cette photo ?')) {
+            return;
+        }
+
+        deleteButton.disabled = true;
+        fetch(deleteButton.dataset.url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+            body: new URLSearchParams({_token: deleteButton.dataset.csrfToken}),
+            credentials: 'same-origin'
+        }).then(function (response) {
+            if (!response.ok) {
+                throw new Error('La suppression de la photo a échoué.');
+            }
+            window.location.reload();
+        }).catch(function (error) {
+            deleteButton.disabled = false;
+            window.alert(error.message);
+        });
+    });
+
 
 });
 

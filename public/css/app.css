@@ -65,3 +65,17 @@
 #photo-upload-progress {
     height: 1.5rem;
 }
+
+.photo-delete-button {
+    margin-left: 0.4rem;
+    padding: 0.25rem;
+    border: 0;
+    background: transparent;
+    color: #b21b16;
+    cursor: pointer;
+}
+
+.photo-delete-button:hover,
+.photo-delete-button:focus {
+    color: #7a100d;
+}
