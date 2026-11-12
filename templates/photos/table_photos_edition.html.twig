@@ -1,0 +1,187 @@
+{% extends("base1.html.twig") %}
+{% block main_navigation %}
+    {{ include('core/odpf-menu-haut.html.twig', {listfaq: listfaq}) }}
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center">Photos de l'édition {{ app.session.get('edition').ed }}{% if is_granted('ROLE_ORGACIA') %} du centre de {{ app.user.centrecia.centre }}{% endif %}</h1>
+    <div class="text-center mb-3">
+        <a href="{{ path('photos_deposephotos', {concours: 'inter'}) }}" class="btn btn-primary">
+            Déposer des photos
+        </a>
+    </div>
+    <button id="scroll-top-btn" class="scroll-btn">↑</button>
+    <button id="scroll-bottom-btn" class="scroll-btn">↓</button>
+    <div class="container-fluid">
+        <div class="header-photos">
+
+            <div class="row">
+                <div class="col">
+                    Pour télécharger des photos cliquer sur la case à cocher ou la photo elle-même. Ensuite, tout en bas
+                    de la page, cliquer sur télécharger.
+                    <br>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col text-center">
+                    Pour choisir un type de sujet :<br>
+                    <select id="choixtypesujet" autocomplete="off" name="choixtypesujet"
+                            onchange="choixtypesujet(this)">
+                        {% for typeSujet in listeTypesSujets %}
+                            <option value={{ typeSujet.id }}
+                                {% if app.session.get('idTypesujet')==typeSujet.id %}
+                                    selected
+                                    {% endif %}
+
+                            >{{ typeSujet.libelle }}</option>
+
+
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col text-center">
+                    Pour choisir une équipe :<br>
+                    <select id="choixequipe" autocomplete="off" name="choixequipe" onchange="choixEquipe(this)">
+                        <option value="">Toutes</option>
+                        {% for equipe in listeEquipes %}
+
+                            <option value={{ equipe.id }}
+                                {% if app.session.get('idEquipe')==equipe.id %}
+                                    selected
+                                    {% endif %}
+
+                            >{{ equipe.numero }} - {{ equipe.titreProjet }}</option>
+
+
+                        {% endfor %}
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        {{ form_start(form) }}
+
+        <div class="row">
+
+            {% for formphoto in form.children %}
+            {% if formphoto.vars.name!='telecharger' %}
+            <div class="col text-center">
+                {% if formphoto.vars.attr!=[] %}
+                    {% if formphoto.vars.attr['id'] is defined %}
+                        {% for photo in listePhotos %}
+                            {% if  formphoto.vars.attr['id'] == photo.id %}
+
+                                <small class="d-block">Equipe {{ photo.equipepassee.numero }}</small>
+                                <span title="{{ photo.equipepassee }}"><img
+                                            src="{{ asset('odpf/odpf-archives/'~editionPassee.edition~'/photoseq/thumbs/'~photo.photo) }}"
+                                            class="photolist" onclick="imClick('{{ photo.id }}')">
+                                 </span>
+                                {% if is_granted('ROLE_SUPER_ADMIN') or (app.user and 'ROLE_ORGACIA' in app.user.roles) %}
+                                    <div style="padding-top: 10px">
+                                        <label for="sujet_photo-{{ photo.id }}">Type de sujet</label>
+                                        <select id="sujet_photo-{{ photo.id }}" autocomplete="off" name="sujet_photo"
+                                                data-url="{{ path('set_type_sujet_photo') }}"
+                                                onchange="setSujetPhoto({{ photo.id }})">
+
+                                            {% for typeSujet in listeTypesSujets %}
+                                                <option value="{{ typeSujet.id }}"
+                                                        {% if photo.typeSujet and photo.typeSujet.id == typeSujet.id %}
+                                                            selected
+                                                        {% endif %}
+                                                >
+                                                    {% if  typeSujet.libelle!='Tous' %}
+                                                        {{ typeSujet.libelle }}
+                                                    {% endif %}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                {% endif %}
+
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+                <div style="padding-top: 10px">
+                    {{ form_widget(formphoto) }}
+                </div>
+
+            </div>
+            {% else %}
+        </div>
+        <div class="row text-center">
+
+            <div class="col text-center">
+                {{ form_widget(formphoto) }}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {{ form_end(form) }}
+
+        <div class="row text-center">
+            <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                <p>Nombre de photos sélectionnées : <span id="sp_nbPhotosSel">0</span></p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                <button class="btn btn-secondary" onclick="raz_sel()">Supprimer la sélection</button>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        function affichePhotosEdition() {
+            const url = new URL('{{ path('affiche_table_photos_edition') }}', window.location.origin);
+            url.searchParams.set('idTypesujet', document.getElementById('choixtypesujet').value);
+            url.searchParams.set('idEquipe', document.getElementById('choixequipe').value);
+            window.location.href = url.toString();
+        }
+
+        function choixtypesujet() {
+            affichePhotosEdition();
+        }
+
+        function choixEquipe() {
+            affichePhotosEdition();
+        }
+    </script>
+{% endblock %}
+
+{% block content_title %}
+    <h1>Photos de l'édition {{ app.session.get('edition').ed }}</h1>
+    <h4> Type de sujet :
+        {% if app.session.get('idTypesujet')==null %}
+            Tous
+        {% else %}
+            {% for typeSujet in listeTypesSujets %}
+                {% if app.session.get('idTypesujet')==typeSujet.id %}
+                    {{ typeSujet.libelle }}
+                {% endif %}
+
+            {% endfor %}
+        {% endif %}
+    </h4>
+    <h4> Equipe :
+        {% if app.session.get('idEquipe')=='' %}
+            Toutes
+        {% endif %}
+        {% for equipe in listeEquipes %}
+            {% if app.session.get('idEquipe')==equipe.id %}
+                {{ equipe }}
+            {% endif %}
+        {% endfor %}
+
+
+    </h4>
+    <br> {{ listePhotos|length }} photos
+{% endblock %}

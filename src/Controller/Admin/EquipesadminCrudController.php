@@ -604,11 +604,14 @@ class EquipesadminCrudController extends AbstractCrudController
         $liste_equipes = $queryBuilder->getQuery()->getResult();
 
         //dd($edition);
+        $dateCreation = new \DateTimeImmutable();
+        $dateCreationTableau = $dateCreation->format('Y-m-d_H-i-s');
+        $nomFichier = 'equipes_' . $dateCreationTableau . '.xls';
         $spreadsheet = new Spreadsheet();
         $spreadsheet->getProperties()
             ->setCreator("Olymphys")
             ->setLastModifiedBy("Olymphys")
-            ->setTitle("CN  " . $numEdition . " -Tableau destiné au comité")
+            ->setTitle("CN  " . $numEdition . " -Tableau destiné au comité - " . $dateCreation->format('Y-m-d H:i:s'))
             ->setSubject("Tableau destiné au comité")
             ->setDescription("Office 2007 XLSX liste des équipes")
             ->setKeywords("Office 2007 XLSX")
@@ -698,8 +701,9 @@ class EquipesadminCrudController extends AbstractCrudController
         $sheet->getColumnDimension('P')->setWidth(12.0, 'cm');
         $sheet->getColumnDimension('Q')->setAutoSize(false);
         $sheet->getColumnDimension('Q')->setWidth(8.0, 'cm');
+        $sheet->setAutoFilter('A1:V' . max(1, $ligne - 1));
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="equipes.xls"');
+        header('Content-Disposition: attachment;filename="' . $nomFichier . '"');
         header('Cache-Control: max-age=0');
 
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xls($spreadsheet);

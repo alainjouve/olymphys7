@@ -9,6 +9,8 @@ use App\Entity\Edition;
 use App\Entity\Equipesadmin;
 use App\Entity\Odpf\OdpfEditionsPassees;
 use App\Entity\Odpf\OdpfEquipesPassees;
+use App\Entity\Odpf\OdpfArticle;
+use App\Entity\Odpf\OdpfSujetsPhotos;
 use App\Entity\Photos;
 use App\Form\ConfirmType;
 use App\Form\PhotosType;
@@ -20,6 +22,7 @@ use ImagickException;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -233,7 +236,10 @@ class PhotosController extends AbstractController
         $Form = $form->createView();
 
         return $this->render('photos/deposephotos.html.twig', [
-            'form' => $Form, 'edition' => $edition, 'concours' => $concours,
+            'form' => $Form,
+            'edition' => $edition,
+            'concours' => $concours,
+            'listfaq' => $this->doctrine->getRepository(OdpfArticle::class)->listfaq(),
         ]);
     }
 
@@ -556,7 +562,7 @@ class PhotosController extends AbstractController
             }
 
             $photos = $this->getPhotosEquipes($edition);
-            
+
             $listeEquipes = $this->doctrine->getRepository(OdpfEquipesPassees::class)
                 ->createQueryBuilder('e')
                 ->andWhere('e.editionspassees =:edition')
@@ -779,4 +785,169 @@ class PhotosController extends AbstractController
         }
         return $equipes;
     }
+
+    #[Route("/photos/afficheTablePhotosEdition", name: "affiche_table_photos_edition")]
+    #[IsGranted('ROLE_PROF')]
+    public function afficheTablePhotosEdition(Request $request): Response
+    {
+
+        $idTypeSujet = null;
+        if ($request->query->has('idTypesujet')) {
+            $this->requestStack->getSession()->set('idTypesujet', $request->query->get('idTypesujet'));
+        }
+        if ($request->query->has('idEquipe')) {
+            $this->requestStack->getSession()->set('idEquipe', $request->query->get('idEquipe'));
+        }
+        $ed = $this->requestStack->getSession()->get('edition')->getEd();
+        if (new \DateTime('now') < $this->requestStack->getSession()->get('edition')->getdateOuvertureSite()) {
+            $ed = $this->requestStack->getSession()->get('edition')->getEd() - 1;//L'édition qui précéde l'édition en cours
+        }
+        $idEdPassee = $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => $ed])->getId();
+        $idTypeSujet = $this->requestStack->getSession()->get('idTypesujet');
+        $idEquipe = $this->requestStack->getSession()->get('idEquipe');
+        $user = $this->getUser();
+        $isOrgaCia = $user !== null && in_array('ROLE_ORGACIA', $user->getRoles(), true);
+        $centreCia = $isOrgaCia ? $user->getCentrecia()?->getCentre() : null;
+        if ($this->requestStack->getSession()->get('idEdPassee')) {//Dans ce cas un choix de l'édition a été réalisée sur la planche contact
+            // dd($this->requestStack->getSession()->get('idEdPassee'));
+            $idEdPassee = $this->requestStack->getSession()->get('idEdPassee');
+        }
+        $editionPassee = $this->doctrine->getRepository(OdpfEditionsPassees::class)->find($idEdPassee);
+        $listeEditionsPassees = $this->doctrine->getRepository(OdpfEditionsPassees::class)->createQueryBuilder('p')//Pour les choix des éditions de l'input select
+        ->where('p.edition >:value')
+            ->setParameter('value', 20)
+            ->orderBy('p.edition', 'DESC')
+            ->getQuery()->getResult();
+
+        $photosQueryBuilder = $this->doctrine->getRepository(Photos::class)->createQueryBuilder('p')
+            ->leftJoin('p.equipepassee', 'e')
+            ->where('p.editionspassees = :editionPassee')
+            ->setParameter('editionPassee', $editionPassee)
+            ->orderBy('e.numero', 'ASC')
+            ->addOrderBy('p.id', 'ASC');
+        if ($isOrgaCia) {
+            $photosQueryBuilder
+                ->andWhere('e.centrecia = :centreCia')
+                ->setParameter('centreCia', $centreCia);
+        }
+        $equipe = null;
+        if ($idEquipe != null) {
+            $criteriaEquipe = ['id' => $idEquipe, 'editionspassees' => $editionPassee];
+            if ($isOrgaCia) {
+                $criteriaEquipe['centrecia'] = $centreCia;
+            }
+            $equipe = $this->doctrine->getRepository(OdpfEquipesPassees::class)->findOneBy($criteriaEquipe);
+            if ($equipe !== null) {
+                $photosQueryBuilder
+                    ->andWhere('p.equipepassee = :equipe')
+                    ->setParameter('equipe', $equipe);
+            }
+        }
+
+        $qbEquipes = $this->doctrine->getRepository(OdpfEquipesPassees::class)->createQueryBuilder('e')
+            ->where('e.editionspassees = :editionpassee')
+            ->setParameter('editionpassee', $editionPassee)
+            ->orderBy('e.numero', 'ASC');
+        if ($isOrgaCia) {
+            $qbEquipes
+                ->andWhere('e.centrecia = :centreCia')
+                ->setParameter('centreCia', $centreCia);
+        }
+        $listeEquipes = $qbEquipes->getQuery()->getResult();
+        if ($idTypeSujet != null) {
+            $typeSujet = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->find($idTypeSujet);
+            if ($typeSujet->getLibelle() != null and $typeSujet->getLibelle() != 'Tous') {
+                $photosQueryBuilder
+                    ->andWhere('p.typeSujet = :typeSujet')
+                    ->setParameter('typeSujet', $typeSujet);
+            }
+        }
+        $listePhotos = $photosQueryBuilder->getQuery()->getResult();
+
+        $typesSujets = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->findAll();
+        $builder = $this->createFormBuilder();
+        foreach ($listePhotos as $photo) {
+
+            $builder->add('photo-' . $photo->getId(), CheckboxType::class, [
+                'required' => false,
+                'label' => false,
+                'attr' => ['id' => $photo->getId()],
+
+            ]);
+
+        }
+        $builder->add('telecharger', SubmitType::class, [
+            'label' => 'Télécharger',
+            'attr' => ['class' => 'btn btn-primary'],
+        ]);
+        $form = $builder->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $datas = $form->getData();
+            $i = 0;
+            $photosChoisies = [];
+            $photosDisponibles = [];
+            foreach ($listePhotos as $photo) {
+                $photosDisponibles[$photo->getId()] = $photo;
+            }
+            foreach ($datas as $key => $value) {
+                if ($datas[$key] == true) {
+                    $photoId = explode('-', $key, 2)[1] ?? null;
+                    if ($photoId !== null && isset($photosDisponibles[$photoId])) {
+                        $photosChoisies[$i] = $photosDisponibles[$photoId];
+                        $i++;
+                    }
+                }
+
+            }
+            if ($photosChoisies != []) {
+                $zipFile = new ZipArchive();
+                $now = new \DateTime();
+                $fileNameZip = 'Telechargement_olymphys_Photos-' . $now->format('d-m-Y\-His') . '.zip';
+
+                if (($zipFile->open($fileNameZip, ZipArchive::CREATE) === TRUE) and (null !== $photosChoisies)) {
+
+                    foreach ($photosChoisies as $fichier) {
+                        try {
+                            $fileName = $this->getParameter('app.path.odpf_archives') . '/' . $fichier->getEditionspassees()->getEdition() . '/photoseq/' . $fichier->getPhoto();
+                            $zipFile->addFromString(basename($fileName), file_get_contents($fileName));//voir https://stackoverflow.com/questions/20268025/symfony2-create-and-download-zip-file
+
+                        } catch (Exception $e) {
+
+                        }
+
+                    }
+
+                    $zipFile->close();
+
+
+                }
+
+                $response = new Response(file_get_contents($fileNameZip));//voir https://stackoverflow.com/questions/20268025/symfony2-create-and-download-zip-file
+
+                $disposition = HeaderUtils::makeDisposition(
+                    HeaderUtils::DISPOSITION_ATTACHMENT,
+                    $fileNameZip
+                );
+                $response->headers->set('Content-Type', 'application/zip');
+                $response->headers->set('Content-Disposition', $disposition);
+
+                @unlink($fileNameZip);
+                return $response;
+            }
+        }
+
+        return $this->render('photos/table_photos_edition.html.twig', [
+            'form' => $form->createView(),
+            'listePhotos' => $listePhotos,
+            'editionPassee' => $editionPassee,
+            'listeTypesSujets' => $typesSujets,
+            'listeEquipes' => $listeEquipes,
+            'equipe' => $equipe,
+            'listfaq' => $this->doctrine->getRepository(OdpfArticle::class)->listfaq(),
+        ]);
+
+    }
+
+
 }

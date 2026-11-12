@@ -1,76 +1,169 @@
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function () {
 
     $("#form1").on('change', function () {
         $("#form1").submit();
     });
 
-    var inputPhoto = document.getElementById('photos_photoFiles')
-    var image = document.getElementById('photo_preview')
-    var affichephotos = document.getElementById('affichephotos')
-    if (inputPhoto !== null) {
+    var inputPhoto = document.querySelector('#photo-drop-zone input[type="file"]')
+        || document.getElementById('photos_files')
+        || document.getElementById('photos_photoFiles');
+    var previewContainer = document.getElementById('affichephotos');
+    var dropZone = document.getElementById('photo-drop-zone');
+    var dropMessage = document.getElementById('photo-drop-message');
 
-        inputPhoto.addEventListener('change', function (event) {
+    function showPhotoPreviews(files) {
+        if (!previewContainer) {
+            return;
+        }
 
-            image.src = inputPhoto.value;
-            var files = event.target.files; // Récupère le fichier sélectionné
-            const paragraph = document.createElement('p');
-            paragraph.innerHTML = '';
-            affichephotos.innerHTML = '';
-            var container = document.createElement('div');
-            container.className = 'row';
-            affichephotos.appendChild(container);
-            for (var i = 0; i < files.length; i++) {
+        previewContainer.innerHTML = '';
+        var container = document.createElement('div');
+        container.className = 'row';
+        previewContainer.appendChild(container);
 
-                const file = files[i];
-                /*if (!file.type.startsWith('image/')) {
-                    alert("Veuillez sélectionner uniquement des images");
-                    continue;
-                }*/
-                var fileName = slugify(file.name.split('.')[0]);
+        Array.from(files).forEach(function (file) {
+            var column = document.createElement('div');
+            column.className = 'col';
+            var card = document.createElement('div');
+            card.className = 'card';
+            card.style.width = '250px';
+            var header = document.createElement('div');
+            header.className = 'card-header';
+            header.textContent = file.name;
+            var body = document.createElement('div');
+            body.className = 'card-body';
+            var image = document.createElement('img');
+            image.width = 220;
+            image.alt = file.name;
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'checkbox#' + slugify(file.name.split('.')[0]);
+            checkbox.checked = true;
 
-                //var nameCheckbox = file.name.split('.')[0];
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                image.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
 
-                //image=document.getElementById('photo_preview' + i);
-                const image = document.createElement('img');
-                const checkbox = document.createElement("input");
-                checkbox.type = 'checkbox';
-                checkbox.name = 'checkbox#' + fileName;
-                checkbox.label = 'Cocher pour téléverser';
-                checkbox.checked = !checkbox.checked;
-                image.width = 220;
-                image.setAttribute('name', file.name);
-                const reader = new FileReader();
-                reader.onload = function (e) {
+            body.append(image, checkbox);
+            card.append(header, body);
+            column.appendChild(card);
+            container.appendChild(column);
+        });
+    }
 
-                    var div0 = document.createElement('div');
-                    div0.className = 'col';
-                    var div1 = document.createElement("div");
-                    div1.setAttribute('class', 'card');
-                    div1.style.width = '250px';
-                    var div2 = document.createElement("div");
-                    div2.setAttribute('class', 'card-header');
-                    div2.innerHTML = 'photo-' + file.name;
-                    var div3 = document.createElement("div");
-                    div3.setAttribute('class', 'card-body');
-                    container.append(div0);
-                    div0.appendChild(div1);
-                    div1.appendChild(div2);
-                    div1.appendChild(div3);
-                    image.src = e.target.result;
-                    div3.appendChild(image);
-                    div3.appendChild(checkbox);
+    if (inputPhoto) {
+        inputPhoto.addEventListener('change', function () {
+            if (dropMessage) {
+                dropMessage.textContent = '';
+            }
+            if (inputPhoto.files.length > 5) {
+                inputPhoto.value = '';
+                if (dropMessage) {
+                    dropMessage.textContent = 'Vous pouvez choisir au maximum 5 photos à la fois.';
+                }
+                showPhotoPreviews([]);
+                return;
+            }
+            showPhotoPreviews(inputPhoto.files);
+        });
+    }
 
-                };
+    if (dropZone && inputPhoto) {
+        dropZone.addEventListener('click', function (event) {
+            if (event.target !== inputPhoto && event.target.tagName !== 'LABEL') {
+                inputPhoto.click();
+            }
+        });
+        dropZone.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                inputPhoto.click();
+            }
+        });
+        ['dragenter', 'dragover'].forEach(function (eventName) {
+            dropZone.addEventListener(eventName, function (event) {
+                event.preventDefault();
+                dropZone.classList.add('is-dragging');
+            });
+        });
+        ['dragleave', 'drop'].forEach(function (eventName) {
+            dropZone.addEventListener(eventName, function (event) {
+                event.preventDefault();
+                dropZone.classList.remove('is-dragging');
+            });
+        });
+        dropZone.addEventListener('drop', function (event) {
+            var droppedFiles = event.dataTransfer.files;
+            if (droppedFiles.length > 5) {
+                if (dropMessage) {
+                    dropMessage.textContent = 'Vous pouvez déposer au maximum 5 photos à la fois.';
+                }
+                return;
+            }
+            var transfer = new DataTransfer();
+            Array.from(droppedFiles).forEach(function (file) {
+                transfer.items.add(file);
+            });
+            inputPhoto.files = transfer.files;
+            inputPhoto.dispatchEvent(new Event('change', {bubbles: true}));
+        });
+    }
 
-                reader.readAsDataURL(file);
+    var uploadForm = document.getElementById('photo-upload-form');
+    if (uploadForm) {
+        uploadForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var progress = document.getElementById('photo-upload-progress');
+            var progressBar = document.getElementById('photo-upload-progress-bar');
+            var status = document.getElementById('photo-upload-status');
+            var submitButton = event.submitter;
+            var formData = new FormData(uploadForm);
+            if (submitButton && submitButton.name) {
+                formData.append(submitButton.name, submitButton.value);
             }
 
+            progress.style.display = 'flex';
+            status.textContent = 'Envoi des photos…';
+            if (submitButton) {
+                submitButton.disabled = true;
+            }
 
-        })
+            var request = new XMLHttpRequest();
+            request.open(uploadForm.method || 'POST', uploadForm.action);
+            request.upload.addEventListener('progress', function (progressEvent) {
+                if (progressEvent.lengthComputable) {
+                    var percent = Math.round(progressEvent.loaded * 100 / progressEvent.total);
+                    progressBar.style.width = percent + '%';
+                    progressBar.textContent = percent + '%';
+                    progress.setAttribute('aria-valuenow', String(percent));
+                }
+            });
+            request.addEventListener('load', function () {
+                if (request.status >= 200 && request.status < 400) {
+                    status.textContent = 'Envoi terminé. Chargement du résultat…';
+                    window.location.assign(request.responseURL || uploadForm.action);
+                    return;
+                }
+                status.textContent = 'Le dépôt a échoué. Veuillez réessayer.';
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+            });
+            request.addEventListener('error', function () {
+                status.textContent = 'Erreur réseau pendant le dépôt. Veuillez réessayer.';
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+            });
+            request.send(formData);
+        });
     }
 
 
-};
+});
 
 
 function changejure(j) {//j est l'objet input qui a lancé la fonction, pour le formulaire de gestion des jures des cia
@@ -359,3 +452,76 @@ function slugify(str) {
         .replace(/[\s_-]+/g, "-")
         .replace(/^-+|-+$/g, "");
 }
+
+function imClick(id) {
+    var checkbox = document.getElementById('form_photo-' + id);
+    if (checkbox) {
+        checkbox.checked = !checkbox.checked;
+        checkbox.dispatchEvent(new Event('change', {bubbles: true}));
+    }
+}
+
+function raz_sel() {
+    var count = document.getElementById('sp_nbPhotosSel');
+    var submit = document.getElementById('form_telecharger');
+    var form = submit ? submit.closest('form') : null;
+
+    if (form) {
+        form.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+            checkbox.checked = false;
+        });
+    }
+    if (count) {
+        count.textContent = '0';
+    }
+    if (submit) {
+        submit.disabled = true;
+    }
+}
+
+function setSujetPhoto(id) {
+    var input = document.getElementById('sujet_photo-' + id);
+    if (!input) {
+        return;
+    }
+
+    $.ajax({
+        url: input.dataset.url,
+        type: 'POST',
+        data: {idPhoto: id, idSujetPhoto: input.value},
+        error: function () {
+            alert('Erreur lors de l’enregistrement du type de sujet.');
+        }
+    });
+}
+
+$(document).ready(function () {
+    var count = document.getElementById('sp_nbPhotosSel');
+    var submit = document.getElementById('form_telecharger');
+    var form = submit ? submit.closest('form') : null;
+
+    if (form && count && submit) {
+        form.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                var selectedCount = form.querySelectorAll('input[type="checkbox"]:checked').length;
+                count.textContent = selectedCount;
+                submit.disabled = selectedCount === 0;
+            });
+        });
+        submit.disabled = form.querySelectorAll('input[type="checkbox"]:checked').length === 0;
+    }
+
+    var scrollTopButton = document.getElementById('scroll-top-btn');
+    if (scrollTopButton) {
+        scrollTopButton.addEventListener('click', function () {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    }
+
+    var scrollBottomButton = document.getElementById('scroll-bottom-btn');
+    if (scrollBottomButton) {
+        scrollBottomButton.addEventListener('click', function () {
+            window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
+        });
+    }
+});

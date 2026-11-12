@@ -1,0 +1,67 @@
+.scroll-btn {
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: #B21B16;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#scroll-top-btn {
+    bottom: 500px;
+}
+
+#scroll-bottom-btn {
+    bottom: 400px;
+}
+
+@media only screen and (max-height: 500px) {
+    #scroll-top-btn {
+        bottom: 250px;
+    }
+
+    #scroll-bottom-btn {
+        bottom: 150px;
+    }
+}
+
+.photo-drop-zone {
+    min-height: 150px;
+    padding: 1rem;
+    border: 2px dashed #6c757d;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.photo-drop-zone:focus,
+.photo-drop-zone.is-dragging {
+    border-color: #007bff;
+    background-color: #e9f4ff;
+    outline: none;
+}
+
+.photo-drop-zone p {
+    text-align: center;
+}
+
+.photo-drop-zone .custom-file-label::after {
+    content: "Parcourir l'ordinateur";
+}
+
+#photo-upload-progress {
+    height: 1.5rem;
+}

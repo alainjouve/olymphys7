@@ -632,6 +632,16 @@ class OdpfPhotosCrudController extends AbstractCrudController
         $idSujetPhoto = $request->get('idSujetPhoto');
         $sujetPhoto = $this->doctrine->getRepository(OdpfSujetsPhotos::class)->find($idSujetPhoto);
         $photo = $this->doctrine->getRepository(Photos::class)->find($idPhoto);
+        $user = $this->getUser();
+        if ($user !== null && in_array('ROLE_ORGACIA', $user->getRoles(), true)) {
+            $centreCia = $user->getCentrecia()?->getCentre();
+            if ($centreCia === null || $photo?->getEquipepassee()?->getCentrecia() !== $centreCia) {
+                throw $this->createAccessDeniedException();
+            }
+        }
+        if ($photo === null || $sujetPhoto === null) {
+            throw $this->createNotFoundException();
+        }
         $photo->setTypeSujet($sujetPhoto);
         $this->doctrine->persist($photo);
         $this->doctrine->flush();
