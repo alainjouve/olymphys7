@@ -778,26 +778,46 @@ class SecretariatadminController extends AbstractController
         $sheet->getColumnDimension("C")->setWidth(40);
         $sheet->getColumnDimension("D")->setWidth(40);
         $ligne++;
-        $sheet->getStyle('A' . $ligne . ':D' . $ligne)
+        $sheet->getStyle('A' . $ligne . ':E' . $ligne)
             ->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
         $sheet->getRowDimension($ligne)->setRowHeight(20);
-        $sheet->getStyle('A' . $ligne . ':D' . $ligne)->getFont()->setBold(true)->setSize('14');
+        $sheet->getStyle('A' . $ligne . ':E' . $ligne)->getFont()->setBold(true)->setSize('14');
         $sheet
             ->setCellValue('A' . $ligne, 'NOM')
             ->setCellValue('B' . $ligne, 'Prénom')
             ->setCellValue('C' . $ligne, 'Qualité')
-            ->setCellValue('D' . $ligne, 'Email');
+            ->setCellValue('D' . $ligne, 'Email')
+            ->setCellValue('E' . $ligne, 'Présent');
         $ligne++;
 
         foreach ($invitations as $invitation) {
-            $sheet->getRowDimension($ligne)->setRowHeight(20);
-            $sheet
-                ->setCellValue('A' . $ligne, $invitation->getNom())
-                ->setCellValue('B' . $ligne, $invitation->getPrenom())
-                ->setCellValue('C' . $ligne, $invitation->getQualite())
-                ->setCellValue('D' . $ligne, $invitation->getEmail());
+            if ($invitation->getIpAdress() !== null) {
+                continue;
+            }
 
-            $ligne++;
+            $personnes = $invitation->getPersonnes();
+            if ($personnes === []) {
+                $personnes = [[
+                    'nom' => $invitation->getNom(),
+                    'prenom' => $invitation->getPrenom(),
+                    'present' => false,
+                ]];
+            }
+
+            foreach ($personnes as $personne) {
+                $sheet->getRowDimension($ligne)->setRowHeight(20);
+                $sheet
+                    ->setCellValue('A' . $ligne, $personne['nom'] ?? '')
+                    ->setCellValue('B' . $ligne, $personne['prenom'] ?? '')
+                    ->setCellValue('C' . $ligne, $invitation->getQualite())
+                    ->setCellValue('D' . $ligne, $invitation->getEmail());
+
+                if (($personne['present'] ?? false) === true) {
+                    $sheet->setCellValue('E' . $ligne, true);
+                }
+
+                $ligne++;
+            }
         }
 
         $filename = 'Liste_des invitations au cn de Marseille.xls';
