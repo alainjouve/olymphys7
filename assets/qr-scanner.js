@@ -10,11 +10,16 @@ if (scanner) {
     const validationUrl = scanner.dataset.validationUrl;
     const reader = new BrowserQRCodeReader();
     let controls;
+    let mediaStream;
     let validating = false;
 
     function stopScanner() {
         controls?.stop();
         controls = undefined;
+        mediaStream?.getTracks().forEach((track) => track.stop());
+        mediaStream = undefined;
+        video.pause();
+        video.srcObject = null;
         startButton.disabled = false;
     }
 
@@ -95,7 +100,7 @@ if (scanner) {
         }
 
         status.className = 'alert alert-info';
-        status.textContent = 'Autorisez l’accès à la caméra si le navigateur le demande.';
+        status.textContent = 'Demande d’accès à la caméra…';
         startButton.disabled = true;
         video.setAttribute('autoplay', '');
         video.setAttribute('muted', '');
@@ -104,10 +109,14 @@ if (scanner) {
         video.playsInline = true;
 
         try {
-            controls = await reader.decodeFromConstraints({
+            mediaStream = await navigator.mediaDevices.getUserMedia({
                 audio: false,
                 video: { facingMode: { ideal: 'environment' } },
-            }, video, (result, _error, scanControls) => {
+            });
+            video.srcObject = mediaStream;
+            await video.play();
+            status.textContent = 'Caméra active. Présentez le QR code devant l’objectif.';
+            controls = await reader.decodeFromVideoElement(video, (result, _error, scanControls) => {
                 if (result) {
                     controls = scanControls;
                     validateQrCode(result.getText());
