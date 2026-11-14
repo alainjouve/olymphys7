@@ -1,0 +1,23 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.61b1725c.js",
+        "/build/368.44eab1de.js",
+        "/build/930.a0d6d449.js",
+        "/build/app.82965b6b.js"
+      ],
+      "css": [
+        "/build/app.615f2d0b.css"
+      ]
+    },
+    "qr-scanner": {
+      "js": [
+        "/build/runtime.61b1725c.js",
+        "/build/368.44eab1de.js",
+        "/build/873.f84cd861.js",
+        "/build/qr-scanner.f3c89387.js"
+      ]
+    }
+  }
+}

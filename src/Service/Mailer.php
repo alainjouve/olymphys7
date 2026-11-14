@@ -64,11 +64,11 @@ class Mailer
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
             ->to($user->getEmail());
-            if ($user->getContact()) {
-                $email->addCc($user->getContact());
-            }
-            //new Address($user->getEmail())
-            $email->subject('Olymphys-Confirmation de votre inscription')
+        if ($user->getContact()) {
+            $email->addCc($user->getContact());
+        }
+        //new Address($user->getEmail())
+        $email->subject('Olymphys-Confirmation de votre inscription')
 
             // path of the Twig template to render
             ->htmlTemplate('email/bienvenue.html.twig')
@@ -449,6 +449,11 @@ class Mailer
 
     public function sendIntivationCn($quidam, $fichier, $flyer, $politesse)
     {
+
+        $edition = $this->requestStack->getSession()->get('edition');
+        $lieu = $edition->getLieu();
+        $structure = explode(',', $lieu)[0];
+        $adress = explode(',', $lieu)[1];
         $email = (new TemplatedEmail())
             ->from('info@olymphys.fr')
             ->to($quidam[2])
@@ -456,7 +461,7 @@ class Mailer
             ->attachFromPath($flyer)
             ->htmlTemplate('email/envoi_invitation.html.twig')
             ->subject('OdPF-Votre invitation pour le concours national')
-            ->context(['quidam' => $quidam, 'politesse' => $politesse]);
+            ->context(['quidam' => $quidam, 'politesse' => $politesse, 'edition' => $edition->getEd(), 'structure' => $structure, 'adress' => $adress]);
 
         $this->mailer->send($email);
 

@@ -5,9 +5,14 @@
 {% block body %}
     <div style="text-align: center"><h4>Création d'une invitation au concours national
             à {{ app.session.get('edition').ville }}</h4></div>
+    {% if is_granted('ROLE_COMITE') %}
+        <a href="{{ path('validation_invitations_cn') }}" class="btn btn-outline-primary mb-3">
+            Valider les invitations
+        </a>
+    {% endif %}
     <div>
         Ce formulaire générera un fichier .pdf qui sera automatiquement envoyé par courriel en pièce jointe<br>
-        Saisir le nom et le prénom de la personne, pour les familles <span style="font-weight: bold">une inscription par personne</span>.<br>
+        Ajoutez le nom et le prénom de chaque personne à inviter. Vous pouvez ajouter autant de personnes que nécessaire.<br>
         Saisir une adresse mail à laquelle sera envoyée l'invitation, elle sera enregistrée uniquement pour le seul
         envoi de l'autorisation et en raison du plan vigipirate. Ces données seront détruites à la fin du concours.<br>
         {% if app.user %}
@@ -15,6 +20,78 @@
             La formule de politesse apparaît uniquement dans le texte du courriel accompagnant l'invitation.
         {% endif %}
     </div>
-    {{ form(form) }}
+    {{ form_start(form) }}
+    {{ form_row(form.personnes) }}
+    <button type="button" id="ajouter-personne" class="btn btn-secondary mb-3">Ajouter une personne</button>
+    {{ form_row(form.email) }}
+    <div class="sr-only" aria-hidden="true">
+        {{ form_widget(form.mail2, {'attr': {'autocomplete': 'off', 'tabindex': '-1'}}) }}
+    </div>
+    {% if form.politesse is defined %}
+        {{ form_row(form.politesse) }}
+    {% endif %}
+    {{ form_row(form.valider) }}
+    {{ form_end(form) }}
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const collection = document.querySelector('[data-prototype]');
+            const addButton = document.getElementById('ajouter-personne');
+
+            if (!collection || !addButton) {
+                return;
+            }
+
+            let index = Array.from(collection.children).reduce(function (nextIndex, entry) {
+                const field = entry.querySelector('[name]');
+                const match = field && field.name.match(/\[(\d+)]/);
+
+                return match ? Math.max(nextIndex, Number(match[1]) + 1) : nextIndex;
+            }, 0);
+
+            function updateRemoveButtons() {
+                const entries = Array.from(collection.children);
+                entries.forEach(function (entry) {
+                    entry.classList.add('d-flex', 'align-items-end');
+                    Array.from(entry.children).forEach(function (field) {
+                        field.classList.add('flex-fill', 'mr-2');
+                    });
+
+                    if (!entry.querySelector('[data-remove-personne]')) {
+                        const removeButton = document.createElement('button');
+                        removeButton.type = 'button';
+                        removeButton.className = 'btn btn-outline-danger mb-3 flex-shrink-0';
+                        removeButton.dataset.removePersonne = '';
+                        removeButton.title = 'Supprimer cette personne';
+                        removeButton.setAttribute('aria-label', 'Supprimer cette personne');
+                        removeButton.innerHTML = '<i class="fas fa-trash" aria-hidden="true"></i>';
+                        entry.appendChild(removeButton);
+                    }
+                    entry.querySelector('[data-remove-personne]').disabled = entries.length === 1;
+                });
+            }
+
+            addButton.addEventListener('click', function () {
+                const prototype = collection.dataset.prototype.replace(/__name__/g, String(index++));
+                const entry = document.createElement('div');
+                entry.innerHTML = prototype;
+                collection.appendChild(entry.firstElementChild);
+                updateRemoveButtons();
+            });
+
+            collection.addEventListener('click', function (event) {
+                const removeButton = event.target.closest('[data-remove-personne]');
+                if (removeButton && collection.children.length > 1) {
+                    removeButton.parentElement.remove();
+                    updateRemoveButtons();
+                }
+            });
+
+            updateRemoveButtons();
+        });
+    </script>
 {% endblock %}

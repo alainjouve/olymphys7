@@ -35,6 +35,12 @@
             padding: 10px 20px 20px 20px;
         }
 
+        .blockcenter {
+            text-align: center;
+            margin: 0;
+            padding: 10px 20px 20px 20px;
+        }
+
         {#  .logo {
              width: 100%;
         }#}
@@ -62,7 +68,7 @@
         <div class="container">
             <div class="header text-left">
                 <a href="{{ url('core_home') }}">
-                    <img src="{{ email.image('@images/email/logo-phy.png') }}" class="logo" width="50"
+                    <img src="{{ email.image('@images/logo.png') }}" class="logo" width="50"
                          alt="Logo Odpf">
                 </a>
             </div>
@@ -70,9 +76,11 @@
                 <p class="block">
                     Bonjour<br><br>
                     Nous avons {{ politesse }} de vous adresser votre invitation au concours national des Olympiades de
-                    Physique France, elle est nécessaire pour entrer sur le campus de Marseille Saint-Charles pour
-                    assister aux présentations des équipes.<br>
-                    Vous trouverez, ci-joint également, un planning du déroulement de la journée.
+                    Physique France, elle est nécessaire pour entrer dans </p>
+                <p class="blockcenter">l'{{ structure }}<br>
+                    {{ adress }}</p>
+                <p class="block"> pour assister aux présentations des équipes.<br>
+                    Vous trouverez, ci-joint votre fichier invitation et un planning du déroulement de la journée.
                 </p>
             </div>
             <div class="footer">

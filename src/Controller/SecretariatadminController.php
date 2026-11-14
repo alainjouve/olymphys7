@@ -10,6 +10,7 @@ use App\Entity\InscriptionsCN;
 use App\Entity\Jures;
 use App\Entity\Uai;
 use App\Entity\User;
+use App\Form\PersonneCNType;
 use App\Service\CreateInvitationPdf;
 use App\Service\Mailer;
 use DateTime;
@@ -23,12 +24,14 @@ use PhpOffice\PhpSpreadsheet\Writer\Xls;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\ExpressionLanguage\Expression;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,6 +40,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\AsciiSlugger;
+use Symfony\Component\Validator\Constraints\Count;
 use Symfony\Component\Validator\Constraints\Ip;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use function mysql_xdevapi\getSession;
@@ -494,10 +498,11 @@ class SecretariatadminController extends AbstractController
 
     }
 
-    #[IsGranted("ROLE_JURY")]
+
     #[Route("/secretariatadmin/invitations_cn", name: "invitations_cn")]
     public function createinvitationCnPdf(Request $request, Mailer $mailer): Response
     {
+        $edition=$this->requestStack->getSession()->get('edition');
         $robots = $this->doctrine->getRepository(InscriptionsCN::class)->createQueryBuilder('i')
             ->select('i')
             ->where('i.ipAdress is not null')
@@ -522,26 +527,30 @@ class SecretariatadminController extends AbstractController
         if ($_SERVER['SERVER_NAME'] == '127.0.0.1' or $_SERVER['SERVER_NAME'] == 'localhost') {
             $path = 'odpf/odpf-images/';
         }
+        $session = $this->requestStack->getSession();
+        if (!$request->isMethod('POST')) {
+            $session->set('invitations_cn_form_started_at', time());
+        }
         $builder = $this->createFormBuilder()
-            ->add('nom', TextType::class, [
-                'label' => 'Nom',
-                'attr' => ['placeholder' => 'NOM']
-
-            ])
-            ->add('prenom', TextType::class, [
-                'label' => 'Prénom',
-                'attr' => ['placeholder' => 'Prénom']
-
+            ->add('personnes', CollectionType::class, [
+                'entry_type' => PersonneCNType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'data' => [['nom' => '', 'prenom' => '']],
+                'label' => 'Personnes à inviter',
+                'constraints' => [new Count(min: 1, minMessage: 'Ajoutez au moins une personne.')],
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Email',
                 'attr' => ['placeholder' => 'E-mail']
 
             ])
-            ->add('mail2', EmailType::class, [//antirobot si on rend public le formulaire:  les robots vont remplir ce champ qui doit rester vide
+            ->add('mail2', EmailType::class, [
                 'label' => ' ',
                 'required' => false,
-                'attr' => ['placeholder' => 'E-mail', 'color' => 'white', 'hidden' => 'true']
+                'attr' => ['placeholder' => 'E-mail']
 
             ]);
         if ($this->getUser()) {
@@ -554,9 +563,17 @@ class SecretariatadminController extends AbstractController
         $form = $builder->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($form->get('mail2')->getData() == null) {//pour éviter les robots si on décide rendre publique cette fonction
-                $nom = $slugger->slug(mb_strtoupper($form['nom']->getData()));
-                $prenom = $slugger->slug($form['prenom']->getData());
+            $startedAt = $session->get('invitations_cn_form_started_at');
+            $isRobot = !empty($form->get('mail2')->getData())
+                || !is_int($startedAt)
+                || time() - $startedAt < 3;
+            $session->remove('invitations_cn_form_started_at');
+            if (!$isRobot) {
+                $personnes = array_values($form['personnes']->getData());
+                $personnes = array_map(static fn (array $personne): array => $personne + ['present' => false], $personnes);
+                $premierePersonne = $personnes[0];
+                $nom = $slugger->slug(mb_strtoupper($premierePersonne['nom']));
+                $prenom = $slugger->slug($premierePersonne['prenom']);
                 $politesse = 'le plaisir';
                 $flyer = 'flyer-inscriptionExt-.pdf';
                 if ($this->getUser()) {
@@ -564,12 +581,47 @@ class SecretariatadminController extends AbstractController
                     $flyer = 'flyer.pdf';
                 }
                 $mail = $form['email']->getData();
-                $quidam = [$nom, $prenom, $mail];
+                $inscription = new InscriptionsCN();
+                $inscription->setNom($nom);
+                $inscription->setPrenom($prenom);
+                $inscription->setPersonnes($personnes);
+                $inscription->setEmail($mail);
+                $qualite = 'Visiteur';
+                if ($this->getUser()) {
+                    if (in_array('ROLE_COMITE', $this->getUser()->getRoles())
+                        || in_array('ROLE_SUPER_ADMIN', $this->getUser()->getRoles())
+                        || in_array('ROLE_JURY', $this->getUser()->getRoles())
+                        || in_array('ROLE_ORGACIA', $this->getUser()->getRoles())) {
+                        $qualite = '';
+                    }
+                }
+                $inscription->setQualite($qualite);
+                $this->em->persist($inscription);
+                $this->em->flush();
+                $reservationId = $inscription->getId();
+                if ($reservationId === null) {
+                    throw new \RuntimeException('Impossible de récupérer l’identifiant de la réservation.');
+                }
+
                 $createPdf = new CreateInvitationPdf();
-                $pdf = $createPdf->createInvitationPdf($quidam, '32');
-                $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/32-' . $prenom . '_' . $nom . '.pdf';
-                $flyer = $this->getParameter('app.path.odpf_archives') . '/32/documents/' . $flyer;
-                $pdf->Output('F', $fileNamepdf);
+                try {
+                    $pdf = $createPdf->createInvitationPdf(
+                        $personnes,
+                        $edition->getEd(),
+                        $edition->getlieu(),
+                        $reservationId,
+                        $edition->getConcoursCn()
+                    );
+                    $quidam = [$nom, $prenom, $mail];
+                    $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/'.$edition->getEd().'-' . $prenom . '_' . $nom . '.pdf';
+                    $flyer = $this->getParameter('app.path.odpf_archives') . '/'.$edition->getEd().'/documents/' . $flyer;
+                    $pdf->Output('F', $fileNamepdf);
+                } catch (\Throwable $exception) {
+                    $this->em->remove($inscription);
+                    $this->em->flush();
+
+                    throw $exception;
+                }
                 $e = null;
                 try {
                     $mailer->sendIntivationCn($quidam, $fileNamepdf, $flyer, $politesse);
@@ -579,37 +631,11 @@ class SecretariatadminController extends AbstractController
                 }
 
                 if ($e === null) {
-
-                    $inscription = new InscriptionsCN();
-                    $inscription->setNom($nom);
-                    $inscription->setPrenom($prenom);
-                    //$inscription->setEmail($mail);
-                    $qualite = 'Visiteur';
-                    if ($this->getUser()) {
-                        if (in_array('ROLE_COMITE', $this->getUser()->getRoles())) {
-                            $qualite = '';
-                        }
-                        if (in_array('ROLE_SUPER_ADMIN', $this->getUser()->getRoles())) {
-                            $qualite = '';
-                        }
-                        if (in_array('ROLE_JURY', $this->getUser()->getRoles())) {
-
-                            $qualite = '';
-                        }
-                        if (in_array('ROLE_ORGACIA', $this->getUser()->getRoles())) {
-
-                            $qualite = '';
-                        }
-                    }
-                    $inscription->setEmail($mail);
-                    $inscription->setQualite($qualite);
-                    $this->em->persist($inscription);
-                    $this->em->flush();
-
-
                     $this->requestStack->getSession()->set('info', 'L\'invitation  de  ' . $prenom . ' ' . $nom . ' à bien été envoyée à l\'adresse : ' . $mail);
 
                 } else {
+                    $this->em->remove($inscription);
+                    $this->em->flush();
 
                     $this->requestStack->getSession()->set('info', 'Une erreur est survenue lors de l\'envoi de l\'invitation.');
                 }
@@ -646,11 +672,80 @@ class SecretariatadminController extends AbstractController
             $inscription->setIpAdress($_SERVER['REMOTE_ADDR']);
             $this->em->persist($inscription);
             $this->em->flush();
+            $session->set('invitations_cn_form_started_at', time());
 
 
         }
 
         return $this->render('secretariatadmin/invitations_cn.html.twig', ['form' => $form->createView()]);
+    }
+
+    #[IsGranted('ROLE_COMITE')]
+    #[Route('/secretariatadmin/validation_invitations_cn', name: 'validation_invitations_cn', methods: ['GET'])]
+    public function validationInvitationsCn(): Response
+    {
+        return $this->render('secretariatadmin/validation_invitations_cn.html.twig');
+    }
+
+    #[IsGranted('ROLE_COMITE')]
+    #[Route('/secretariatadmin/validation_invitations_cn/valider', name: 'valider_invitation_cn', methods: ['POST'])]
+    public function validerInvitationCn(Request $request): JsonResponse
+    {
+        if (!$this->isCsrfTokenValid('validation_invitations_cn', $request->headers->get('X-CSRF-TOKEN', ''))) {
+            return $this->json(['message' => 'Jeton de sécurité invalide.'], Response::HTTP_FORBIDDEN);
+        }
+
+        try {
+            $qrData = json_decode($request->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        } catch (\JsonException) {
+            return $this->json(['message' => 'Le QR code est illisible.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        if (!is_array($qrData)
+            || !isset($qrData['reservation_id'], $qrData['nom'], $qrData['prenom'])
+            || !is_int($qrData['reservation_id'])
+            || $qrData['reservation_id'] < 1
+            || !is_string($qrData['nom'])
+            || !is_string($qrData['prenom'])) {
+            return $this->json(['message' => 'Ce QR code ne correspond pas à une invitation valide.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $inscription = $this->em->getRepository(InscriptionsCN::class)->find((int) $qrData['reservation_id']);
+        if ($inscription === null || $inscription->getIpAdress() !== null) {
+            return $this->json(['message' => 'Réservation introuvable.'], Response::HTTP_NOT_FOUND);
+        }
+
+        $personnes = $inscription->getPersonnes();
+        $matchingIndices = [];
+        foreach ($personnes as $index => $personne) {
+            if (($personne['nom'] ?? null) === $qrData['nom']
+                && ($personne['prenom'] ?? null) === $qrData['prenom']) {
+                $matchingIndices[] = $index;
+            }
+        }
+
+        $personIndex = $qrData['person_index'] ?? null;
+        if (is_int($personIndex)) {
+            if (!isset($personnes[$personIndex])
+                || !in_array($personIndex, $matchingIndices, true)) {
+                return $this->json(['message' => 'Cette personne ne correspond pas à la réservation.'], Response::HTTP_BAD_REQUEST);
+            }
+        } elseif (count($matchingIndices) === 1) {
+            $personIndex = $matchingIndices[0];
+        } else {
+            return $this->json(['message' => 'Impossible d’identifier cette personne dans la réservation.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $alreadyPresent = ($personnes[$personIndex]['present'] ?? false) === true;
+        $personnes[$personIndex]['present'] = true;
+        $inscription->setPersonnes($personnes);
+        $this->em->flush();
+
+        return $this->json([
+            'nom' => $qrData['nom'],
+            'prenom' => $qrData['prenom'],
+            'alreadyPresent' => $alreadyPresent,
+        ]);
     }
 
     #[IsGranted('ROLE_COMITE')]

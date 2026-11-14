@@ -6,6 +6,7 @@
   "require": {
     "php": ">=8.3",
     "ext-fileinfo": "*",
+    "ext-gd": "*",
     "ext-http": "*",
     "ext-iconv": "*",
     "ext-imagick": "*",
@@ -19,6 +20,7 @@
     "dompdf/dompdf": "^2.0",
     "easycorp/easyadmin-bundle": "^v4.20.0",
     "egulias/email-validator": "^3.1",
+    "endroid/qr-code": "^5.1",
     "fpdf/fpdf": "^1.86",
     "friendsofsymfony/ckeditor-bundle": "^2.4",
     "friendsofsymfony/jsrouting-bundle": "^3.3",
@@ -113,7 +115,6 @@
     "auto-scripts": {
       "cache:clear": "symfony-cmd",
       "assets:install %PUBLIC_DIR%": "symfony-cmd",
-      //"ckeditor:install  --tag=4.22.1": "symfony-cmd",
       "elfinder:install": "symfony-cmd",
       "requirements-checker": "script"
     },

@@ -28,6 +28,9 @@ class InscriptionsCN
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $email = null;
 
+    #[ORM\Column(type: 'json', nullable: true)]
+    private ?array $personnes = [];
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,27 @@ class InscriptionsCN
     public function setEmail(?string $email): static
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return array<int, array{nom: string, prenom: string, present: bool}>
+     */
+    public function getPersonnes(): array
+    {
+        return array_map(
+            static fn (array $personne): array => $personne + ['present' => false],
+            $this->personnes ?? []
+        );
+    }
+
+    /**
+     * @param array<int, array{nom: string, prenom: string, present: bool}> $personnes
+     */
+    public function setPersonnes(array $personnes): static
+    {
+        $this->personnes = $personnes;
 
         return $this;
     }

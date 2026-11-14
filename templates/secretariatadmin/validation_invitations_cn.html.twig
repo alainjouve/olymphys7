@@ -1,0 +1,29 @@
+{% extends 'base1.html.twig' %}
+
+{% block titre3 %}
+    Validation des invitations au concours national
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <p>Scannez le QR code de l’invitation pour valider la présence de la personne.</p>
+        <p class="text-muted">L’accès à la caméra nécessite une connexion sécurisée (HTTPS).</p>
+        <div id="invitation-qr-scanner"
+             data-csrf-token="{{ csrf_token('validation_invitations_cn') }}"
+             data-validation-url="{{ path('valider_invitation_cn') }}">
+            <video id="qr-video" class="w-100" style="max-height: 60vh; object-fit: cover;" playsinline></video>
+        </div>
+        <div class="my-3">
+            <button type="button" id="qr-start" class="btn btn-primary">Démarrer le scan</button>
+            <a href="{{ path('liste_excel_invitations_cn') }}" class="btn btn-secondary">Liste des invitations</a>
+        </div>
+        <div id="qr-status" class="alert alert-secondary" role="status" aria-live="polite">
+            Appuyez sur « Démarrer le scan » pour activer la caméra.
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('qr-scanner') }}
+{% endblock %}
