@@ -627,7 +627,6 @@ class SecretariatadminController extends AbstractController
                     $mailer->sendIntivationCn($quidam, $fileNamepdf, $flyer, $politesse);
                 } catch (\Exception $e) {
 
-
                 }
 
                 if ($e === null) {
@@ -637,7 +636,7 @@ class SecretariatadminController extends AbstractController
                     $this->em->remove($inscription);
                     $this->em->flush();
 
-                    $this->requestStack->getSession()->set('info', 'Une erreur est survenue lors de l\'envoi de l\'invitation.');
+                    $this->requestStack->getSession()->set('info', 'Une erreur est survenue lors de l\'envoi de l\'invitation.'.$e);
                 }
 
                 unlink($fileNamepdf);

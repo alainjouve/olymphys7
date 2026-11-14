@@ -10,6 +10,7 @@ if (scanner) {
     const validationUrl = scanner.dataset.validationUrl;
     const reader = new BrowserQRCodeReader();
     let controls;
+    let validating = false;
 
     function stopScanner() {
         controls?.stop();
@@ -18,7 +19,12 @@ if (scanner) {
     }
 
     async function validateQrCode(qrText) {
+        if (validating) {
+            return;
+        }
+        validating = true;
         stopScanner();
+        startButton.disabled = true;
         status.className = 'alert alert-info';
         status.textContent = 'Vérification de l’invitation…';
 
@@ -35,6 +41,8 @@ if (scanner) {
         } catch {
             status.className = 'alert alert-danger';
             status.textContent = 'Impossible de contacter le serveur. Vérifiez la connexion puis réessayez.';
+            validating = false;
+            startButton.disabled = false;
             return;
         }
 
@@ -44,12 +52,16 @@ if (scanner) {
         } catch {
             status.className = 'alert alert-danger';
             status.textContent = 'Le serveur a renvoyé une réponse invalide.';
+            validating = false;
+            startButton.disabled = false;
             return;
         }
 
         if (!response.ok) {
             status.className = 'alert alert-danger';
             status.textContent = result.message || 'Cette invitation n’a pas pu être validée.';
+            validating = false;
+            startButton.disabled = false;
             return;
         }
 
@@ -62,15 +74,40 @@ if (scanner) {
         name.className = 'h3 mt-2';
         name.textContent = `${result.prenom} ${result.nom}`;
         status.append(label, name);
+        validating = false;
+        startButton.disabled = false;
     }
 
     startButton.addEventListener('click', async function () {
+        if (validating) {
+            return;
+        }
+        if (!window.isSecureContext) {
+            status.className = 'alert alert-danger';
+            status.textContent = 'La caméra nécessite une connexion HTTPS sécurisée.';
+            return;
+        }
+
+        if (!navigator.mediaDevices?.getUserMedia) {
+            status.className = 'alert alert-danger';
+            status.textContent = 'Ce navigateur ne permet pas l’accès à la caméra. Ouvrez cette page avec un navigateur récent.';
+            return;
+        }
+
         status.className = 'alert alert-info';
-        status.textContent = 'Autorisez l’accès à la caméra et présentez le QR code devant l’objectif.';
+        status.textContent = 'Autorisez l’accès à la caméra si le navigateur le demande.';
         startButton.disabled = true;
+        video.setAttribute('autoplay', '');
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.muted = true;
+        video.playsInline = true;
 
         try {
-            controls = await reader.decodeFromVideoDevice(undefined, video, (result, _error, scanControls) => {
+            controls = await reader.decodeFromConstraints({
+                audio: false,
+                video: { facingMode: { ideal: 'environment' } },
+            }, video, (result, _error, scanControls) => {
                 if (result) {
                     controls = scanControls;
                     validateQrCode(result.getText());
@@ -79,9 +116,15 @@ if (scanner) {
         } catch (error) {
             stopScanner();
             status.className = 'alert alert-danger';
-            status.textContent = error.name === 'NotAllowedError'
-                ? 'L’accès à la caméra est refusé. Autorisez-le dans les réglages du navigateur.'
-                : 'Impossible de démarrer la caméra. Vérifiez ses autorisations et que le site utilise HTTPS.';
+            if (error.name === 'NotAllowedError' || error.name === 'SecurityError') {
+                status.textContent = 'L’accès à la caméra est refusé. Autorisez-le dans les réglages du navigateur puis réessayez.';
+            } else if (error.name === 'NotFoundError' || error.name === 'OverconstrainedError') {
+                status.textContent = 'Aucune caméra compatible n’a été trouvée sur cet appareil.';
+            } else if (error.name === 'NotReadableError' || error.name === 'AbortError') {
+                status.textContent = 'La caméra est utilisée par une autre application ou ne peut pas démarrer.';
+            } else {
+                status.textContent = `Impossible de démarrer la caméra${error.message ? ` : ${error.message}` : '.'}`;
+            }
         }
     });
 }
