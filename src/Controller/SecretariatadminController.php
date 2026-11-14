@@ -813,7 +813,7 @@ class SecretariatadminController extends AbstractController
                     ->setCellValue('D' . $ligne, $invitation->getEmail());
 
                 if (($personne['present'] ?? false) === true) {
-                    $sheet->setCellValue('E' . $ligne, true);
+                    $sheet->setCellValue('E' . $ligne, 'P');
                 }
 
                 $ligne++;
