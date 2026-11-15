@@ -505,7 +505,7 @@ class SecretariatadminController extends AbstractController
         $edition = $this->requestStack->getSession()->get('edition');
         if ($edition === null) {
             $edition = $this->doctrine->getRepository(Edition::class)->findOneBy([], ['id' => 'desc']);
-
+            $this->requestStack->getSession()->set('edition', $edition);
         }
         $robots = $this->doctrine->getRepository(InscriptionsCN::class)->createQueryBuilder('i')
             ->select('i')
