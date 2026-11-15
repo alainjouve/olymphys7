@@ -19,10 +19,10 @@ class CreateInvitationPdf
      * @param array<int, array{nom: string, prenom: string}> $personnes
      */
     public function createInvitationPdf(
-        array $personnes,
-        string $numEdition,
-        string $lieu,
-        int $reservationId,
+        array              $personnes,
+        string             $numEdition,
+        string             $lieu,
+        int                $reservationId,
         ?DateTimeInterface $dateConcours = null
     ): Fpdf
 
@@ -58,7 +58,7 @@ class CreateInvitationPdf
             $str = 'Document indispensable pour être autorisé à entrer dans ';
             $strl = 'l\'enceinte de ' . $tructure;
             $str_ = 'pour assister ou participer aux Olympiades de Physique France';
-            $strprim = 'A présenter au gardien sur support papier ou en version numérique';
+            $strprim = 'A présenter à l\'entrée sur support papier ou en version numérique';
             $str = iconv('UTF-8', 'ISO-8859-1', $str);
             $strl = iconv('UTF-8', 'ISO-8859-1', $strl);
             $str_ = iconv('UTF-8', 'ISO-8859-1', $str_);

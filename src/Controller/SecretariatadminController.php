@@ -502,14 +502,14 @@ class SecretariatadminController extends AbstractController
     #[Route("/secretariatadmin/invitations_cn", name: "invitations_cn")]
     public function createinvitationCnPdf(Request $request, Mailer $mailer): Response
     {
-        $edition=$this->requestStack->getSession()->get('edition');
+        $edition = $this->requestStack->getSession()->get('edition');
         $robots = $this->doctrine->getRepository(InscriptionsCN::class)->createQueryBuilder('i')
             ->select('i')
             ->where('i.ipAdress is not null')
             ->getQuery()->getResult();
         $ipAdresses = [];
         foreach ($robots as $robot) {//on teste si le robot fait des requêtes en série, auquel cas il est redirigé ailleurs
-            if (in_array($_SERVER['REMOTE_ADDR'], $robot->getIpAdresses())) {
+            if ($_SERVER['REMOTE_ADDR'] === $robot->getIpAdress()) {
 
                 return $this->redirect('https://rien');
 
@@ -570,7 +570,7 @@ class SecretariatadminController extends AbstractController
             $session->remove('invitations_cn_form_started_at');
             if (!$isRobot) {
                 $personnes = array_values($form['personnes']->getData());
-                $personnes = array_map(static fn (array $personne): array => $personne + ['present' => false], $personnes);
+                $personnes = array_map(static fn(array $personne): array => $personne + ['present' => false], $personnes);
                 $premierePersonne = $personnes[0];
                 $nom = $slugger->slug(mb_strtoupper($premierePersonne['nom']));
                 $prenom = $slugger->slug($premierePersonne['prenom']);
@@ -613,8 +613,8 @@ class SecretariatadminController extends AbstractController
                         $edition->getConcoursCn()
                     );
                     $quidam = [$nom, $prenom, $mail];
-                    $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/'.$edition->getEd().'-' . $prenom . '_' . $nom . '.pdf';
-                    $flyer = $this->getParameter('app.path.odpf_archives') . '/'.$edition->getEd().'/documents/' . $flyer;
+                    $fileNamepdf = $this->getParameter('app.path.tempdirectory') . '/' . $edition->getEd() . '-' . $prenom . '_' . $nom . '.pdf';
+                    $flyer = $this->getParameter('app.path.odpf_archives') . '/' . $edition->getEd() . '/documents/' . $flyer;
                     $pdf->Output('F', $fileNamepdf);
                 } catch (\Throwable $exception) {
                     $this->em->remove($inscription);
@@ -636,7 +636,7 @@ class SecretariatadminController extends AbstractController
                     $this->em->remove($inscription);
                     $this->em->flush();
 
-                    $this->requestStack->getSession()->set('info', 'Une erreur est survenue lors de l\'envoi de l\'invitation.'.$e);
+                    $this->requestStack->getSession()->set('info', 'Une erreur est survenue lors de l\'envoi de l\'invitation.' . $e);
                 }
 
                 unlink($fileNamepdf);
@@ -709,7 +709,7 @@ class SecretariatadminController extends AbstractController
             return $this->json(['message' => 'Ce QR code ne correspond pas à une invitation valide.'], Response::HTTP_BAD_REQUEST);
         }
 
-        $inscription = $this->em->getRepository(InscriptionsCN::class)->find((int) $qrData['reservation_id']);
+        $inscription = $this->em->getRepository(InscriptionsCN::class)->find((int)$qrData['reservation_id']);
         if ($inscription === null || $inscription->getIpAdress() !== null) {
             return $this->json(['message' => 'Réservation introuvable.'], Response::HTTP_NOT_FOUND);
         }
