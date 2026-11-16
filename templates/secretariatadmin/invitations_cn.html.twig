@@ -21,6 +21,7 @@
         {% endif %}
     </div>
     {{ form_start(form) }}
+    {{ form_errors(form) }}
     {{ form_row(form.personnes) }}
     <button type="button" id="ajouter-personne" class="btn btn-secondary mb-3">Ajouter une personne</button>
     {{ form_row(form.email) }}

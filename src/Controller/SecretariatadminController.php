@@ -30,6 +30,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -564,9 +565,26 @@ class SecretariatadminController extends AbstractController
             $isRobot = !is_int($startedAt)
                 || time() - $startedAt < 3;
             $session->remove('invitations_cn_form_started_at');
-            if (!$isRobot) {
-                $personnes = array_values($form['personnes']->getData());
-                $personnes = array_map(static fn(array $personne): array => $personne + ['present' => false], $personnes);
+            $personnes = array_values($form['personnes']->getData());
+            $personnes = array_map(static fn(array $personne): array => $personne + ['present' => false], $personnes);
+            $normalizeName = static fn(string $name): string => mb_strtolower($slugger->slug(trim($name))->toString());
+            $seenPersonnes = [];
+            $duplicateNames = [];
+            foreach ($personnes as $personne) {
+                $key = $normalizeName($personne['nom']) . '|' . $normalizeName($personne['prenom']);
+                if (isset($seenPersonnes[$key])) {
+                    $duplicateNames[] = trim($personne['prenom'] . ' ' . $personne['nom']);
+                }
+                $seenPersonnes[$key] = true;
+            }
+            $hasDuplicates = $duplicateNames !== [];
+            if ($hasDuplicates) {
+                $form->addError(new FormError(
+                    'Cette personne apparaît plusieurs fois dans le formulaire : ' . implode(', ', array_unique($duplicateNames)) . '.'
+                ));
+            }
+
+            if (!$isRobot && !$hasDuplicates) {
                 $premierePersonne = $personnes[0];
                 $nom = $slugger->slug(mb_strtoupper($premierePersonne['nom']));
                 $prenom = $slugger->slug($premierePersonne['prenom']);
@@ -658,16 +676,17 @@ class SecretariatadminController extends AbstractController
                 return $this->redirectToRoute('core_pages', ['choix' => 'le_concours_national']);
 
 
+            } elseif ($isRobot) {
+                //on relève l'adresse IP du robot
+                $inscription = new InscriptionsCN();
+                $inscription->setNom('robot');
+                $inscription->setPrenom('robot');
+                $inscription->setEmail('robot');
+                $inscription->setIpAdress($_SERVER['REMOTE_ADDR']);
+                $this->em->persist($inscription);
+                $this->em->flush();
+                $session->set('invitations_cn_form_started_at', time());
             }
-            //on relève l'adresse IP du robot
-            $inscription = new InscriptionsCN();
-            $inscription->setNom('robot');
-            $inscription->setPrenom('robot');
-            $inscription->setEmail('robot');
-            $inscription->setIpAdress($_SERVER['REMOTE_ADDR']);
-            $this->em->persist($inscription);
-            $this->em->flush();
-            $session->set('invitations_cn_form_started_at', time());
 
 
         }
