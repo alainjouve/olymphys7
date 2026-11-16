@@ -24,9 +24,6 @@
     {{ form_row(form.personnes) }}
     <button type="button" id="ajouter-personne" class="btn btn-secondary mb-3">Ajouter une personne</button>
     {{ form_row(form.email) }}
-    <div class="sr-only" aria-hidden="true">
-        {{ form_widget(form.mail2, {'attr': {'autocomplete': 'off', 'tabindex': '-1'}}) }}
-    </div>
     {% if form.politesse is defined %}
         {{ form_row(form.politesse) }}
     {% endif %}

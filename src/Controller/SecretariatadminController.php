@@ -512,14 +512,14 @@ class SecretariatadminController extends AbstractController
             ->where('i.ipAdress is not null')
             ->getQuery()->getResult();
         $ipAdresses = [];
-        foreach ($robots as $robot) {//on teste si le robot fait des requêtes en série, auquel cas il est redirigé ailleurs
+        /*foreach ($robots as $robot) {//on teste si le robot fait des requêtes en série, auquel cas il est redirigé ailleurs
             if ($_SERVER['REMOTE_ADDR'] === $robot->getIpAdress()) {
 
                 return $this->redirect('https://rien');
 
             }
 
-        }
+        }*/
         $slugger = new AsciiSlugger();
 
         if ($_SERVER['SERVER_NAME'] == 'www.olymphys.fr') {
@@ -549,13 +549,6 @@ class SecretariatadminController extends AbstractController
             ->add('email', EmailType::class, [
                 'label' => 'Email',
                 'attr' => ['placeholder' => 'E-mail']
-
-            ])
-            ->add('mail2', EmailType::class, [
-                'label' => ' ',
-                'required' => false,
-                'attr' => ['placeholder' => 'E-mail']
-
             ]);
         if ($this->getUser()) {
             $builder->add('politesse', ChoiceType::class, [
@@ -568,8 +561,7 @@ class SecretariatadminController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $startedAt = $session->get('invitations_cn_form_started_at');
-            $isRobot = !empty($form->get('mail2')->getData())
-                || !is_int($startedAt)
+            $isRobot = !is_int($startedAt)
                 || time() - $startedAt < 3;
             $session->remove('invitations_cn_form_started_at');
             if (!$isRobot) {
