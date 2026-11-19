@@ -24,7 +24,7 @@ if (scanner) {
     let lastQrText;
     let qrMissingSince;
 
-    function prepareSuccessBeep() {
+    function prepareFeedbackAudio() {
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         if (!AudioContext) {
             return;
@@ -42,12 +42,15 @@ if (scanner) {
         }
     }
 
-    async function playSuccessBeep() {
+    async function playFeedbackBeep(startFrequency, endFrequency, duration) {
         if (!audioContext) {
             return;
         }
 
         try {
+            if (audioContextReady) {
+                await audioContextReady;
+            }
             if (audioContext.state !== 'running') {
                 await audioContext.resume();
             }
@@ -58,16 +61,32 @@ if (scanner) {
             const oscillator = audioContext.createOscillator();
             const volume = audioContext.createGain();
             const now = audioContext.currentTime;
-            oscillator.frequency.value = 880;
+            oscillator.frequency.setValueAtTime(startFrequency, now);
+            oscillator.frequency.exponentialRampToValueAtTime(endFrequency, now + duration);
             volume.gain.setValueAtTime(0.15, now);
-            volume.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+            volume.gain.exponentialRampToValueAtTime(0.001, now + duration);
             oscillator.connect(volume);
             volume.connect(audioContext.destination);
             oscillator.start(now);
-            oscillator.stop(now + 0.2);
+            oscillator.stop(now + duration);
         } catch (error) {
-            console.error('Impossible de jouer le son de validation.', error);
+            console.error('Impossible de jouer le bip de validation.', error);
         }
+    }
+
+    function playSuccessBeep() {
+        return playFeedbackBeep(880, 880, 0.2);
+    }
+
+    function playFailureBeep() {
+        return playFeedbackBeep(880, 220, 0.45);
+    }
+
+    async function showValidationFailure(message) {
+        await new Promise((resolve) => setTimeout(resolve, scanFeedbackDelay));
+        status.className = 'alert alert-danger';
+        statusMessage.textContent = message;
+        await playFailureBeep();
     }
 
     function stopScanner() {
@@ -111,8 +130,7 @@ if (scanner) {
                     body: qrText,
                 });
             } catch {
-                status.className = 'alert alert-danger';
-                statusMessage.textContent = 'Impossible de contacter le serveur. Vérifiez la connexion puis réessayez.';
+                await showValidationFailure('Impossible de contacter le serveur. Vérifiez la connexion puis réessayez.');
                 return;
             }
 
@@ -121,14 +139,12 @@ if (scanner) {
                 // Le serveur renvoie le nom et indique si la présence avait déjà été validée.
                 result = await response.json();
             } catch {
-                status.className = 'alert alert-danger';
-                statusMessage.textContent = 'Le serveur a renvoyé une réponse invalide.';
+                await showValidationFailure('Le serveur a renvoyé une réponse invalide.');
                 return;
             }
 
             if (!response.ok) {
-                status.className = 'alert alert-danger';
-                statusMessage.textContent = result.message || 'Cette invitation n’a pas pu être validée.';
+                await showValidationFailure(result.message || 'Cette invitation n’a pas pu être validée.');
                 return;
             }
 
@@ -143,9 +159,6 @@ if (scanner) {
             name.className = 'h3 mt-2';
             name.textContent = `${result.prenom} ${result.nom}`;
             resultContainer.append(label, name);
-            if (audioContextReady) {
-                await audioContextReady;
-            }
             await playSuccessBeep();
         } finally {
             loadingSpinner.classList.add('d-none');
@@ -178,7 +191,7 @@ if (scanner) {
             return;
         }
 
-        prepareSuccessBeep();
+        prepareFeedbackAudio();
         status.className = 'alert alert-info';
         statusMessage.textContent = 'Demande d’accès à la caméra…';
         loadingSpinner.classList.remove('d-none');
