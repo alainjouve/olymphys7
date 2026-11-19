@@ -1,6 +1,7 @@
 import { BrowserQRCodeReader } from '@zxing/browser';
 
 const scanner = document.getElementById('invitation-qr-scanner');
+const scanFeedbackDelay = 700;
 
 // Le script est aussi chargé sur d’autres pages : on ne l’initialise que si le scanner existe.
 if (scanner) {
@@ -14,12 +15,53 @@ if (scanner) {
     const validationUrl = scanner.dataset.validationUrl;
     // Lecteur ZXing qui utilise les API du navigateur pour décoder les QR codes depuis la vidéo.
     const reader = new BrowserQRCodeReader();
+    let audioContext;
+    let audioContextReady;
     let controls;
     let mediaStream;
     // Empêche une seconde validation pendant qu’une première requête est en cours.
     let validating = false;
     let lastQrText;
     let qrMissingSince;
+
+    function prepareSuccessBeep() {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) {
+            return;
+        }
+
+        try {
+            audioContext ??= new AudioContext();
+            if (audioContext.state === 'suspended') {
+                audioContextReady = audioContext.resume().catch((error) => {
+                    console.error('Impossible d’activer le son de validation.', error);
+                });
+            }
+        } catch (error) {
+            console.error('Impossible d’initialiser le son de validation.', error);
+        }
+    }
+
+    function playSuccessBeep() {
+        if (!audioContext || audioContext.state !== 'running') {
+            return;
+        }
+
+        try {
+            const oscillator = audioContext.createOscillator();
+            const volume = audioContext.createGain();
+            const now = audioContext.currentTime;
+            oscillator.frequency.value = 880;
+            volume.gain.setValueAtTime(0.15, now);
+            volume.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+            oscillator.connect(volume);
+            volume.connect(audioContext.destination);
+            oscillator.start(now);
+            oscillator.stop(now + 0.2);
+        } catch (error) {
+            console.error('Impossible de jouer le son de validation.', error);
+        }
+    }
 
     function stopScanner() {
         // Arrête le décodeur ZXing et libère aussi la caméra du navigateur.
@@ -45,56 +87,63 @@ if (scanner) {
         }
         validating = true;
         status.className = 'alert alert-info';
-        statusMessage.textContent = 'Vérification de l’invitation…';
+        statusMessage.textContent = 'Scan pris en compte. Vérification de l’invitation…';
+        loadingSpinner.classList.remove('d-none');
         resultContainer.replaceChildren();
 
-        let response;
         try {
-            // Le QR contient les données de réservation envoyées au serveur pour validation.
-            response = await fetch(validationUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken,
-                },
-                body: qrText,
-            });
-        } catch {
-            status.className = 'alert alert-danger';
-            statusMessage.textContent = 'Impossible de contacter le serveur. Vérifiez la connexion puis réessayez.';
-            validating = false;
-            return;
-        }
+            let response;
+            try {
+                // Le QR contient les données de réservation envoyées au serveur pour validation.
+                response = await fetch(validationUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken,
+                    },
+                    body: qrText,
+                });
+            } catch {
+                status.className = 'alert alert-danger';
+                statusMessage.textContent = 'Impossible de contacter le serveur. Vérifiez la connexion puis réessayez.';
+                return;
+            }
 
-        let result;
-        try {
-            // Le serveur renvoie le nom et indique si la présence avait déjà été validée.
-            result = await response.json();
-        } catch {
-            status.className = 'alert alert-danger';
-            statusMessage.textContent = 'Le serveur a renvoyé une réponse invalide.';
-            validating = false;
-            return;
-        }
+            let result;
+            try {
+                // Le serveur renvoie le nom et indique si la présence avait déjà été validée.
+                result = await response.json();
+            } catch {
+                status.className = 'alert alert-danger';
+                statusMessage.textContent = 'Le serveur a renvoyé une réponse invalide.';
+                return;
+            }
 
-        if (!response.ok) {
-            status.className = 'alert alert-danger';
-            statusMessage.textContent = result.message || 'Cette invitation n’a pas pu être validée.';
-            validating = false;
-            return;
-        }
+            if (!response.ok) {
+                status.className = 'alert alert-danger';
+                statusMessage.textContent = result.message || 'Cette invitation n’a pas pu être validée.';
+                return;
+            }
 
-        status.className = result.alreadyPresent ? 'alert alert-warning' : 'alert alert-success';
-        statusMessage.textContent = '';
-        // Affiche le résultat sans injecter directement de contenu HTML provenant du serveur.
-        const label = document.createElement('div');
-        label.className = result.alreadyPresent ? 'display-4' : 'display-1 font-weight-bold';
-        label.textContent = result.alreadyPresent ? 'Déjà validée' : 'Valide';
-        const name = document.createElement('div');
-        name.className = 'h3 mt-2';
-        name.textContent = `${result.prenom} ${result.nom}`;
-        resultContainer.append(label, name);
-        validating = false;
+            await new Promise((resolve) => setTimeout(resolve, scanFeedbackDelay));
+            status.className = result.alreadyPresent ? 'alert alert-warning' : 'alert alert-success';
+            statusMessage.textContent = '';
+            // Affiche le résultat sans injecter directement de contenu HTML provenant du serveur.
+            const label = document.createElement('div');
+            label.className = result.alreadyPresent ? 'display-4' : 'display-1 font-weight-bold';
+            label.textContent = result.alreadyPresent ? 'Déjà validée' : 'Valide';
+            const name = document.createElement('div');
+            name.className = 'h3 mt-2';
+            name.textContent = `${result.prenom} ${result.nom}`;
+            resultContainer.append(label, name);
+            if (audioContextReady) {
+                await audioContextReady;
+            }
+            playSuccessBeep();
+        } finally {
+            loadingSpinner.classList.add('d-none');
+            validating = false;
+        }
     }
 
     startButton.addEventListener('click', async function () {
@@ -104,6 +153,7 @@ if (scanner) {
         // Si un flux existe, le bouton sert à arrêter le scan au lieu de relancer la caméra.
         if (mediaStream) {
             stopScanner();
+            resultContainer.replaceChildren();
             status.className = 'alert alert-secondary';
             statusMessage.textContent = 'Scan arrêté. Appuyez sur « Démarrer le scan » pour reprendre.';
             return;
@@ -121,6 +171,7 @@ if (scanner) {
             return;
         }
 
+        prepareSuccessBeep();
         status.className = 'alert alert-info';
         statusMessage.textContent = 'Demande d’accès à la caméra…';
         loadingSpinner.classList.remove('d-none');
