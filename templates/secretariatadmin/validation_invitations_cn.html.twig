@@ -5,22 +5,37 @@
 {% endblock %}
 
 {% block body %}
+    <style>
+        #qr-video {
+            max-height: 60vh;
+            min-height: 240px;
+            object-fit: cover;
+            background: #000;
+        }
+
+        @media (max-width: 576px) {
+            #qr-video {
+                max-height: 38vh;
+                min-height: 180px;
+            }
+        }
+    </style>
     <div class="container">
         <p>Scannez le QR code de l’invitation pour valider la présence de la personne.</p>
         <p class="text-muted">L’accès à la caméra nécessite une connexion sécurisée (HTTPS).</p>
         <div id="invitation-qr-scanner"
              data-csrf-token="{{ csrf_token('validation_invitations_cn') }}"
              data-validation-url="{{ path('valider_invitation_cn') }}">
-            <video id="qr-video" class="w-100"
-                   style="max-height: 60vh; min-height: 240px; object-fit: cover; background: #000;"
+            <video id="qr-video" class="w-100" hidden
                    autoplay muted playsinline></video>
+            <div id="qr-status" class="alert alert-secondary" role="status" aria-live="polite">
+                <span id="qr-loading-spinner" class="spinner-border spinner-border-sm mr-2 d-none" aria-hidden="true"></span>
+                <span id="qr-status-message">Appuyez sur « Démarrer le scan » pour activer la caméra.</span>
+            </div>
         </div>
         <div class="my-3">
             <button type="button" id="qr-start" class="btn btn-primary">Démarrer le scan</button>
             <a href="{{ path('liste_excel_invitations_cn') }}" class="btn btn-secondary">Liste des invitations</a>
-        </div>
-        <div id="qr-status" class="alert alert-secondary" role="status" aria-live="polite">
-            Appuyez sur « Démarrer le scan » pour activer la caméra.
         </div>
     </div>
 {% endblock %}
