@@ -8,7 +8,7 @@ framework:
   secret: '%env(APP_SECRET)%'
   handle_all_throwables: true
   assets:
-    version: '20261008-1'
+    version: '20261119-1'
   #csrf_protection: ~
   #http_method_override: true
   #http_cache: true
