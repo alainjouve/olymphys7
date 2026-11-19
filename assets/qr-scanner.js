@@ -140,16 +140,9 @@ if (scanner) {
             });
             video.hidden = false;
             video.style.display = '';
-            video.srcObject = mediaStream;
-            await video.play();
             loadingSpinner.classList.add('d-none');
-            statusMessage.textContent = 'Caméra active. Présentez le QR code devant l’objectif.';
-            startButton.disabled = false;
-            startButton.textContent = 'Arrêter le scan';
-            startButton.classList.remove('btn-primary');
-            startButton.classList.add('btn-danger');
-            // Analyse le flux vidéo en continu et valide le premier QR code détecté.
-            controls = await reader.decodeFromVideoElement(video, (result, _error, scanControls) => {
+            // ZXing attache le flux vidéo, démarre la lecture et fournit les contrôles du scan.
+            controls = await reader.decodeFromStream(mediaStream, video, (result, _error, scanControls) => {
                 if (result) {
                     qrMissingSince = undefined;
                     const qrText = result.getText();
@@ -168,6 +161,11 @@ if (scanner) {
                     }
                 }
             });
+            statusMessage.textContent = 'Caméra active. Présentez le QR code devant l’objectif.';
+            startButton.disabled = false;
+            startButton.textContent = 'Arrêter le scan';
+            startButton.classList.remove('btn-primary');
+            startButton.classList.add('btn-danger');
         } catch (error) {
             // Arrête tout flux éventuellement ouvert avant d’afficher une erreur adaptée.
             stopScanner();
