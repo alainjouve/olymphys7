@@ -238,9 +238,9 @@ if (scanner) {
             startButton.classList.remove('btn-primary');
             startButton.classList.add('btn-danger');
             if (window.matchMedia('(max-width: 767.98px)').matches) {
-                requestAnimationFrame(() => {
-                    startButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                });
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                    startButton.parentElement?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }));
             }
         } catch (error) {
             // Arrête tout flux éventuellement ouvert avant d’afficher une erreur adaptée.
