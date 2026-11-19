@@ -8,6 +8,7 @@ if (scanner) {
     const startButton = document.getElementById('qr-start');
     const status = document.getElementById('qr-status');
     const statusMessage = document.getElementById('qr-status-message');
+    const resultContainer = document.getElementById('qr-result');
     const loadingSpinner = document.getElementById('qr-loading-spinner');
     const csrfToken = scanner.dataset.csrfToken;
     const validationUrl = scanner.dataset.validationUrl;
@@ -17,6 +18,8 @@ if (scanner) {
     let mediaStream;
     // Empêche une seconde validation pendant qu’une première requête est en cours.
     let validating = false;
+    let lastQrText;
+    let qrMissingSince;
 
     function stopScanner() {
         // Arrête le décodeur ZXing et libère aussi la caméra du navigateur.
@@ -41,10 +44,9 @@ if (scanner) {
             return;
         }
         validating = true;
-        stopScanner();
-        startButton.disabled = true;
         status.className = 'alert alert-info';
         statusMessage.textContent = 'Vérification de l’invitation…';
+        resultContainer.replaceChildren();
 
         let response;
         try {
@@ -61,7 +63,6 @@ if (scanner) {
             status.className = 'alert alert-danger';
             statusMessage.textContent = 'Impossible de contacter le serveur. Vérifiez la connexion puis réessayez.';
             validating = false;
-            startButton.disabled = false;
             return;
         }
 
@@ -73,7 +74,6 @@ if (scanner) {
             status.className = 'alert alert-danger';
             statusMessage.textContent = 'Le serveur a renvoyé une réponse invalide.';
             validating = false;
-            startButton.disabled = false;
             return;
         }
 
@@ -81,7 +81,6 @@ if (scanner) {
             status.className = 'alert alert-danger';
             statusMessage.textContent = result.message || 'Cette invitation n’a pas pu être validée.';
             validating = false;
-            startButton.disabled = false;
             return;
         }
 
@@ -94,9 +93,8 @@ if (scanner) {
         const name = document.createElement('div');
         name.className = 'h3 mt-2';
         name.textContent = `${result.prenom} ${result.nom}`;
-        status.append(label, name);
+        resultContainer.append(label, name);
         validating = false;
-        startButton.disabled = false;
     }
 
     startButton.addEventListener('click', async function () {
@@ -153,8 +151,21 @@ if (scanner) {
             // Analyse le flux vidéo en continu et valide le premier QR code détecté.
             controls = await reader.decodeFromVideoElement(video, (result, _error, scanControls) => {
                 if (result) {
+                    qrMissingSince = undefined;
+                    const qrText = result.getText();
+                    if (qrText === lastQrText || validating) {
+                        return;
+                    }
+
+                    lastQrText = qrText;
                     controls = scanControls;
-                    validateQrCode(result.getText());
+                    validateQrCode(qrText);
+                } else if (_error?.name === 'NotFoundException') {
+                    // Réautorise le même QR après qu’il a quitté le champ de la caméra.
+                    qrMissingSince ??= Date.now();
+                    if (Date.now() - qrMissingSince >= 1000) {
+                        lastQrText = undefined;
+                    }
                 }
             });
         } catch (error) {
