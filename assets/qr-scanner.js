@@ -32,7 +32,7 @@ if (scanner) {
 
         try {
             audioContext ??= new AudioContext();
-            if (audioContext.state === 'suspended') {
+            if (audioContext.state !== 'running') {
                 audioContextReady = audioContext.resume().catch((error) => {
                     console.error('Impossible d’activer le son de validation.', error);
                 });
@@ -42,12 +42,19 @@ if (scanner) {
         }
     }
 
-    function playSuccessBeep() {
-        if (!audioContext || audioContext.state !== 'running') {
+    async function playSuccessBeep() {
+        if (!audioContext) {
             return;
         }
 
         try {
+            if (audioContext.state !== 'running') {
+                await audioContext.resume();
+            }
+            if (audioContext.state !== 'running') {
+                throw new Error(`Le contexte audio est ${audioContext.state}.`);
+            }
+
             const oscillator = audioContext.createOscillator();
             const volume = audioContext.createGain();
             const now = audioContext.currentTime;
@@ -139,7 +146,7 @@ if (scanner) {
             if (audioContextReady) {
                 await audioContextReady;
             }
-            playSuccessBeep();
+            await playSuccessBeep();
         } finally {
             loadingSpinner.classList.add('d-none');
             validating = false;
