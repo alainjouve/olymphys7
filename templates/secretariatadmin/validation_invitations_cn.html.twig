@@ -4,8 +4,47 @@
     Validation des invitations au concours national
 {% endblock %}
 
+{% block main_navigation %}
+    <nav class="navbar navbar-expand-md navbar-light justify-content-center py-1">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#invitation-navigation"
+                aria-controls="invitation-navigation" aria-expanded="false" aria-label="Afficher le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="invitation-navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item menurouge">
+                    <a class="nav-link" href="{{ path('core_home') }}">Accueil du site</a>
+                </li>
+                {% block navigation %}{% endblock %}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li class="nav-item menu_haut">
+                        <a class="nav-link" href="{{ path('profile_show') }}">{{ app.user.prenomNom }}</a>
+                    </li>
+                    <li class="nav-item menurouge">
+                        <a class="nav-link" href="{{ path('logout') }}">Déconnexion</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item menurouge">
+                        <a class="nav-link" href="{{ path('login') }}">Connexion</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
 {% block body %}
     <style>
+        .logo {
+            position: relative;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 180px;
+            height: auto;
+        }
+
         #qr-video {
             max-height: 60vh;
             min-height: 240px;
@@ -14,6 +53,19 @@
         }
 
         @media (max-width: 576px) {
+            .logo ~ br {
+                display: none;
+            }
+
+            .logo ~ .row h3 {
+                margin: 0.5rem 0;
+                font-size: 1.25rem;
+            }
+
+            .logo img {
+                width: 130px;
+            }
+
             #qr-video {
                 max-height: 38vh;
                 min-height: 180px;
