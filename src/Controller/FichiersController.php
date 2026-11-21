@@ -126,7 +126,11 @@ class FichiersController extends AbstractController
         $dateOuvertureSite = $editionN->getDateouverturesite();
         $dateconnect > $dateciaN1 and $dateconnect < $dateOuvertureSite ? $phase = 'national' : $phase = 'interacadémique';//Dans le cas da période de l'après concours CN
         $dateconnect > $datecia and $dateconnect > $dateOuvertureSite ? $phase = 'national' : $phase = 'interacadémique';//Dans le cas de la période antérieure au concours cn
-
+        $mois = $dateconnect->format('m');
+        $chargementAttestationCN = false;
+        if ($mois >= 1 and $mois <= 6) {
+            $chargementAttestationCN = true;
+        }
         $user = $this->getUser();
         $roles = $user->getRoles();
         $jure = null;
@@ -171,7 +175,8 @@ class FichiersController extends AbstractController
             'jure' => $jure,
             'doc_equipes' => $docequipes,
             'uaiObj' => $uai_objet,
-            'centre' => $centre));
+            'centre' => $centre,
+            'chargementAttestationCN' => $chargementAttestationCN,));
 
         return new Response($content);
 
@@ -814,9 +819,21 @@ class FichiersController extends AbstractController
         if (!isset($liste_fichiers)) {
             $liste_fichiers = [];
         }
-        return $this->render('adminfichiers\espace_prof.html.twig', array('listevideos' => $listevideos, 'liste_autorisations' => $autorisations,
-                'equipe' => $equipe_choisie, 'centre' => $equipe_choisie->getCentre(), 'concours' => $concours, 'edition' => $edition, 'choix' => $choix,
-                'liste_prof' => $liste_prof, 'listeEleves' => $listeEleves, 'liste_fichiers' => $liste_fichiers)
+        $mois= date('m');
+        $chargementAttestationCN = false;
+        if ($mois >= 1 and $mois <= 6) {
+            $chargementAttestationCN = true;
+        }
+        return $this->render('adminfichiers\espace_prof.html.twig', array('listevideos' => $listevideos,
+                'liste_autorisations' => $autorisations,
+                'equipe' => $equipe_choisie,
+                'centre' => $equipe_choisie->getCentre(),
+                'concours' => $concours, 'edition' => $edition,
+                'choix' => $choix,
+                'liste_prof' => $liste_prof,
+                'listeEleves' => $listeEleves,
+                'liste_fichiers' => $liste_fichiers,
+                'chargementAttestationCN' => $chargementAttestationCN)
         );
     }
 
