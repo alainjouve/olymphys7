@@ -77,18 +77,21 @@ class EquipesadminCrudController extends AbstractCrudController
     private AdminContextProvider $adminContextProvider;
     private ManagerRegistry $doctrine;
     private Mailer $mailerService;
+    private EntityRepository $entityRepository;
 
     public function __construct(RequestStack         $requestStack,
                                 AdminContextProvider $adminContextProvider,
                                 ManagerRegistry      $doctrine,
                                 Mailer               $mailerService,
-                                AdminUrlGenerator    $adminUrlGenerator)
+                                AdminUrlGenerator    $adminUrlGenerator,
+                                EntityRepository    $entityRepository)
     {
         $this->requestStack = $requestStack;;
         $this->adminContextProvider = $adminContextProvider;
         $this->doctrine = $doctrine;
         $this->mailerService = $mailerService;
         $this->adminUrlGenerator = $adminUrlGenerator;
+        $this->entityRepository = $entityRepository;
     }
 
     public static function getEntityFqcn(): string
@@ -448,15 +451,14 @@ class EquipesadminCrudController extends AbstractCrudController
     public function createIndexQueryBuilder(SearchDto $searchDto, EntityDto $entityDto, FieldCollection $fields, FilterCollection $filters): QueryBuilder
     {
         $session = $this->requestStack->getSession();
-        $context = $this->adminContextProvider->getContext();
         $edition = $session->get('edition');
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);
         if (new Datetime('now') < $session->get('edition')->getDateouverturesite()) {
             $edition = $repositoryEdition->findOneBy(['ed' => $edition->getEd() - 1]);
         }
         $repositoryCentrescia = $this->doctrine->getManager()->getRepository(Centrescia::class);
-        $qb = $this->doctrine->getRepository(Equipesadmin::class)->createQueryBuilder('e')
-            ->andWhere('e.edition =:edition')
+        $qb = $this->entityRepository->createQueryBuilder($searchDto, $entityDto, $fields, $filters)
+            ->andWhere('entity.edition = :edition')
             //->andWhere('e.numero <:value')
             ->setParameter('edition', $edition);
         //->setParameter('value', 100);;
@@ -465,7 +467,7 @@ class EquipesadminCrudController extends AbstractCrudController
                 $editionId = $_REQUEST['filters']['edition'];
 
                 $editioned = $repositoryEdition->findOneBy(['id' => $editionId]);
-                $qb->andWhere('e.edition =:edition')
+                $qb->andWhere('entity.edition = :edition')
                     ->setParameter('edition', $editioned);
             }
 
@@ -473,52 +475,52 @@ class EquipesadminCrudController extends AbstractCrudController
                 $idCentre = $_REQUEST['filters']['centre'];
                 $centre = $repositoryCentrescia->findOneBy(['id' => $idCentre]);
                 $session->set('titrecentre', $centre);
-                $qb->andWhere('e.centre =:centre')
+                $qb->andWhere('entity.centre = :centre')
                     ->setParameter('centre', $centre);
             }
             if (isset($_REQUEST['filters']['selectionnee'])) {
                 $selectionnee = $_REQUEST['filters']['selectionnee'];
-                $qb->andWhere('e.selectionnee =:selectionnee')
+                $qb->andWhere('entity.selectionnee = :selectionnee')
                     ->setParameter('selectionnee', $selectionnee);
             }
 
         }
         if ($this->adminContextProvider->getContext()->getRequest()->query->get('lycees')) {
-            $qb->groupBy('e.uai');
+            $qb->groupBy('entity.uai');
         } else {
             $date = new \datetime('now');
             if ($date > $session->get('edition')->getDateclotureinscription()) {
-                $qb->addOrderBy('e.numero', 'ASC');
+                $qb->addOrderBy('entity.numero', 'ASC');
             }
             if ($date <= $session->get('edition')->getDateclotureinscription()) {
-                $qb->addOrderBy('e.numero', 'DESC');
+                $qb->addOrderBy('entity.numero', 'DESC');
             }
             if ($date > $session->get('edition')->getDatelimnat()) {
-                $qb->addOrderBy('e.lettre', 'ASC');
+                $qb->addOrderBy('entity.lettre', 'ASC');
             }
         }
         if (isset($_REQUEST['sort'])) {
             $qb->resetDQLPart('orderBy');
             $sort = $_REQUEST['sort'];
             if (key($sort) === 'lettre') {
-                $qb->addOrderBy('e.lettre', $sort['lettre']);
+                $qb->addOrderBy('entity.lettre', $sort['lettre']);
             }
             if (key($sort) == 'numero') {
-                $qb->addOrderBy('e.numero', $sort['numero']);
+                $qb->addOrderBy('entity.numero', $sort['numero']);
             }
             if (key($sort) == 'selectionnee') {
-                $qb->addOrderBy('e.selectionnee', $sort['selectionnee'])
-                    ->addOrderBy('e.lettre', 'ASC');
+                $qb->addOrderBy('entity.selectionnee', $sort['selectionnee'])
+                    ->addOrderBy('entity.lettre', 'ASC');
             }
             if (key($sort) == 'lyceeAcademie') {
-                $qb->addOrderBy('e.lyceeAcademie', $sort['lyceeAcademie'])
-                    ->addOrderBy('e.nomLycee', 'ASC');
+                $qb->addOrderBy('entity.lyceeAcademie', $sort['lyceeAcademie'])
+                    ->addOrderBy('entity.nomLycee', 'ASC');
             }
             if (key($sort) == 'createdAt') {
-                $qb->addOrderBy('e.createdAt', $sort['createdAt']);
+                $qb->addOrderBy('entity.createdAt', $sort['createdAt']);
             }
             if (key($sort) == 'centre') {
-                $qb->join('e.centre', 'c')
+                $qb->join('entity.centre', 'c')
                     ->addOrderBy('c.centre', $sort['centre']);
             }
         }
