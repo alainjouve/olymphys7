@@ -6,6 +6,7 @@ namespace App\Controller\Aide;
 use App\Entity\AideEnLigne;
 use App\Entity\CategorieAide;
 use App\Entity\SousCategorieAide;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -44,6 +45,11 @@ class AideDashboardController extends AbstractDashboardController
             ->setDefaultColorScheme('light');
     }
 
+    public function configureAssets(): Assets
+    {
+        return Assets::new()
+            ->addJsFile('js/easyadmin-color-scheme-migration.js');
+    }
 
     public function configureMenuItems(): iterable
     {

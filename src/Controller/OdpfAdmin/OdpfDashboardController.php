@@ -78,6 +78,7 @@ class OdpfDashboardController extends AbstractDashboardController
 
         return Assets::new()->addCssFile('css/admin.css')
             ->addJsFile("https://code.jquery.com/jquery-3.6.0.min.js")
+            ->addJsFile('js/easyadmin-color-scheme-migration.js')
             ->addJsFile('js/admin.js');
     }
 
