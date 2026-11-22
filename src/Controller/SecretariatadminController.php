@@ -600,6 +600,7 @@ class SecretariatadminController extends AbstractController
                 $inscription->setPrenom($prenom);
                 $inscription->setPersonnes($personnes);
                 $inscription->setEmail($mail);
+                $inscription->setCreatedAt(new DateTime());
                 $qualite = 'Visiteur';
                 if ($this->getUser()) {
                     if (in_array('ROLE_COMITE', $this->getUser()->getRoles())
@@ -682,6 +683,7 @@ class SecretariatadminController extends AbstractController
                 $inscription->setNom('robot');
                 $inscription->setPrenom('robot');
                 $inscription->setEmail('robot');
+                $inscription->setCreatedAt(new DateTime());
                 $inscription->setIpAdress($_SERVER['REMOTE_ADDR']);
                 $this->em->persist($inscription);
                 $this->em->flush();
@@ -786,23 +788,25 @@ class SecretariatadminController extends AbstractController
         /*foreach (['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'] as $letter) {
             $sheet->getColumnDimension($letter)->setAutoSize(true);
         }*/
-        $sheet->getStyle('A' . $ligne . ':D' . $ligne)
+        $sheet->getStyle('A' . $ligne . ':F' . $ligne)
             ->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->getColumnDimension("A")->setWidth(40);
         $sheet->getColumnDimension("B")->setWidth(40);
         $sheet->getColumnDimension("C")->setWidth(40);
         $sheet->getColumnDimension("D")->setWidth(40);
+        $sheet->getColumnDimension("F")->setWidth(22);
         $ligne++;
-        $sheet->getStyle('A' . $ligne . ':E' . $ligne)
+        $sheet->getStyle('A' . $ligne . ':F' . $ligne)
             ->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
         $sheet->getRowDimension($ligne)->setRowHeight(20);
-        $sheet->getStyle('A' . $ligne . ':E' . $ligne)->getFont()->setBold(true)->setSize('14');
+        $sheet->getStyle('A' . $ligne . ':F' . $ligne)->getFont()->setBold(true)->setSize('14');
         $sheet
             ->setCellValue('A' . $ligne, 'NOM')
             ->setCellValue('B' . $ligne, 'Prénom')
             ->setCellValue('C' . $ligne, 'Qualité')
             ->setCellValue('D' . $ligne, 'Email')
-            ->setCellValue('E' . $ligne, 'Présent');
+            ->setCellValue('E' . $ligne, 'Présent')
+            ->setCellValue('F' . $ligne, 'Date de création');
         $ligne++;
 
         foreach ($invitations as $invitation) {
@@ -825,7 +829,8 @@ class SecretariatadminController extends AbstractController
                     ->setCellValue('A' . $ligne, $personne['nom'] ?? '')
                     ->setCellValue('B' . $ligne, $personne['prenom'] ?? '')
                     ->setCellValue('C' . $ligne, $invitation->getQualite())
-                    ->setCellValue('D' . $ligne, $invitation->getEmail());
+                    ->setCellValue('D' . $ligne, $invitation->getEmail())
+                    ->setCellValue('F' . $ligne, $invitation->getCreatedAt()?->format('d/m/Y H:i') ?? '');
 
                 if (($personne['present'] ?? false) === true) {
                     $sheet->setCellValue('E' . $ligne, 'P');

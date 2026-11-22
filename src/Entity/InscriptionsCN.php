@@ -31,6 +31,9 @@ class InscriptionsCN
     #[ORM\Column(type: 'json', nullable: true)]
     private ?array $personnes = [];
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTime $createdAt = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -113,6 +116,18 @@ class InscriptionsCN
     public function setPersonnes(array $personnes): static
     {
         $this->personnes = $personnes;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTime $createdAt): static
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
