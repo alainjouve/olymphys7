@@ -130,10 +130,10 @@ class PrixCrudController extends AbstractCrudController
     {
 
         $uploadPrix = Action::new('excel_prix', 'Charger les prix', 'fa fa-upload')
-            ->linkToRoute('secretariatjury_excel_prix')
+            ->linkToCrudAction('chargerPrix')
             ->createAsGlobalAction();
         $tableauExcel = Action::new('prix_tableau_excel', 'Extraire un tableau Excel', 'fa fa_array')
-            ->linkToRoute('prix_tableau_excel')
+            ->linkToCrudAction('prixtableauexcel')
             ->createAsGlobalAction();
 
         return $actions->update('index', Action::DELETE, function (Action $action) {
@@ -147,6 +147,11 @@ class PrixCrudController extends AbstractCrudController
             ->add(Crud::PAGE_INDEX, $uploadPrix)
             ->add(Crud::PAGE_INDEX, $tableauExcel)
             ->add(Crud::PAGE_EDIT, 'index');
+    }
+
+    public function chargerPrix()
+    {
+        return $this->redirectToRoute('secretariatjury_excel_prix');
     }
 
     #[Route("/Admin/PrixCrud/prix_tableau_excel", name: "prix_tableau_excel")]

@@ -94,32 +94,26 @@ class ProfesseursCrudController extends AbstractCrudController
             $editionId = $_REQUEST['filters']['edition'];
         }
 
+        $session->set('professeurs_export_edition', $editionId);
 
         $tableauexcel = Action::new('profs_tableau_excel', 'Créer un tableau excel des professeurs de l\'édition', 'fas fa-columns')
-            // if the route needs parameters, you can define them:
-            // 1) using an array
-            ->linkToRoute('profs_tableau_excel', ['idEdition' => $editionId])
+            ->linkToCrudAction('editer_tableau_excel')
             ->createAsGlobalAction();
         //->displayAsButton()->setCssClass('btn btn-primary');
+        $session->set('professeurs_export_selectionnes', ['idEdition' => $editionId, 'sel' => true]);
         $tableauexcelsel = Action::new('profs_tableau_excel_sel', 'Créer un tableau excel des professeurs sélectionnés de l\'édition', 'fas fa-columns')
-            // if the route needs parameters, you can define them:
-            // 1) using an array
-            ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId, 'sel' => true])
+            ->linkToCrudAction('exporterProfesseursSelectionnes')
             ->createAsGlobalAction();
+        $session->set('professeurs_export_non_selectionnes', ['idEdition' => $editionId, 'sel' => false]);
         $tableauexcelnonsel = Action::new('profs_tableau_excel_non-sel', 'Créer un tableau excel des professeurs non sélectionnés de l\'édition', 'fas fa-columns')
-            // if the route needs parameters, you can define them:
-            // 1) using an array
-            ->linkToRoute('profs_tableau_excel_sel', ['idEdition' => $editionId, 'sel' => false])
+            ->linkToCrudAction('exporterProfesseursNonSelectionnes')
             ->createAsGlobalAction();
+        $session->set('professeurs_mailing_edition', $editionId);
         $tableauexcelmailing = Action::new('profs_tableau_excel_mailing', 'Créer un tableau excel des professeurs de l\'édition pour mailings info centrecia en octobre', 'fas fa-columns')
-            // if the route needs parameters, you can define them:
-            // 1) using an array
-            ->linkToRoute('profs_tableau_excel_mailing', ['idEdition' => $editionId])
+            ->linkToCrudAction('editer_tableau_excel_mailing')
             ->createAsGlobalAction();
         $tableauexcelmailingTous = Action::new('profs_tableau_excel_mailing_Tous', 'Créer un tableau excel de tous les  professeurs inscrits sur Olymphys pour mailings', 'fas fa-columns')
-            // if the route needs parameters, you can define them:
-            // 1) using an array
-            ->linkToRoute('profs_tableau_excel_mailing_tous')
+            ->linkToCrudAction('editer_tableau_excel_mailing_Tous')
             ->createAsGlobalAction();
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
@@ -137,6 +131,20 @@ class ProfesseursCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-eye')->setLabel(false);
             });
 
+    }
+
+    public function exporterProfesseursSelectionnes()
+    {
+        $parameters = $this->requestStack->getSession()->get('professeurs_export_selectionnes');
+
+        return $this->editer_tableau_excel_sel($parameters['idEdition'], $parameters['sel']);
+    }
+
+    public function exporterProfesseursNonSelectionnes()
+    {
+        $parameters = $this->requestStack->getSession()->get('professeurs_export_non_selectionnes');
+
+        return $this->editer_tableau_excel_sel($parameters['idEdition'], $parameters['sel']);
     }
 
     public function configureFields(string $pageName): iterable
@@ -254,9 +262,9 @@ class ProfesseursCrudController extends AbstractCrudController
     }
 
     #[Route("/Professeurs/editer_tableau_excel,{idEdition}", name: "profs_tableau_excel")]
-    public function editer_tableau_excel($idEdition)
+    public function editer_tableau_excel(?int $idEdition = null)
     {
-
+        $idEdition ??= (int) $this->requestStack->getSession()->get('professeurs_export_edition');
 
         $em = $this->doctrine->getManager();
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);
@@ -389,8 +397,13 @@ class ProfesseursCrudController extends AbstractCrudController
     }
 
     #[Route("/Professeurs/editer_tableau_excel_sel,{idEdition,sel}", name: "profs_tableau_excel_sel")]
-    public function editer_tableau_excel_sel($idEdition, $sel)
+    public function editer_tableau_excel_sel(?int $idEdition = null, ?bool $sel = null)
     {
+        if ($idEdition === null || $sel === null) {
+            $parameters = $this->requestStack->getSession()->get('professeurs_export_selectionnes');
+            $idEdition ??= (int) $parameters['idEdition'];
+            $sel ??= $parameters['sel'];
+        }
         $em = $this->doctrine->getManager();
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);
         $repositoryEquipes = $this->doctrine->getRepository(Equipesadmin::class);
@@ -534,9 +547,9 @@ class ProfesseursCrudController extends AbstractCrudController
     }
 
     #[Route("/Professeurs/editer_tableau_excel_mailing,{idEdition}", name: "profs_tableau_excel_mailing")]
-    public function editer_tableau_excel_mailing($idEdition)
+    public function editer_tableau_excel_mailing(?int $idEdition = null)
     {
-
+        $idEdition ??= (int) $this->requestStack->getSession()->get('professeurs_mailing_edition');
 
         $em = $this->doctrine->getManager();
         $repositoryEdition = $this->doctrine->getRepository(Edition::class);

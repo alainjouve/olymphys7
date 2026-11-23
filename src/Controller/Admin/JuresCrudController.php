@@ -57,7 +57,7 @@ class JuresCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
-        $gestionjures = Action::new('gestionjures')->createAsGlobalAction()->linkToRoute('secretariatjury_gestionjures');
+        $gestionjures = Action::new('gestionjures')->createAsGlobalAction()->linkToCrudAction('gestionJures');
             return $actions ->update('index', Action::DELETE,function  (Action $action) {
             return $action->setIcon('fa fa-trash-alt')->setLabel(false);}
              )
@@ -65,6 +65,11 @@ class JuresCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-pencil-alt')->setLabel(false);}
             )->
         add(Crud::PAGE_INDEX, $gestionjures);
+    }
+
+    public function gestionJures()
+    {
+        return $this->redirectToRoute('secretariatjury_gestionjures');
     }
 
     public function configureFields(string $pageName): iterable

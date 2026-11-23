@@ -422,11 +422,8 @@ class OdpfPhotosCrudController extends AbstractCrudController
     {
 
         $this->requestStack->getSession()->set('idEdPassee', null);//remise à zéro de l'affichage de la planche contact
-        /* $attribEditionPassee = Action::new('charger-photos-passees', 'Attribuer les photos passees', 'fa fa-file-download')
-             ->linkToRoute('charge-photos')->createAsGlobalAction();*/ //fonction qui n'a servi que lors du passe de odpf.org à olymphys.
-
         $afficheTablePhotos = Action::new('afficheTablePhotos', 'Afficher les photos dans un tableau', 'fa fa-th')
-            ->linkToRoute('affiche_table_photos')->createAsGlobalAction();//affichage de la page des planches contact
+            ->linkToCrudAction('afficheTablePhotos')->createAsGlobalAction();//affichage de la page des planches contact
         return $actions
             ->add(Crud::PAGE_EDIT, Action::INDEX)
             ->remove(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE)

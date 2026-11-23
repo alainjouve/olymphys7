@@ -68,12 +68,10 @@ class SelectionneesCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $attribHeuresSalles = Action::new('attrib_heures_salles', 'Attribuer les salles et heures', 'fa fa_array',)
-            // if the route needs parameters, you can define them:
-            // 1) using an array
-            ->linkToRoute('attrib_heures_salles')
+            ->linkToCrudAction('attrib_heure_salle')
             ->createAsGlobalAction();
         $tableauExcel = Action::new('equipes_tableau_excel', 'Extraire un tableau Excel', 'fa fa_array')
-            ->linkToRoute('equipes_sel_tableau_excel')
+            ->linkToCrudAction('equipestableauexcel')
             ->createAsGlobalAction();
         return $actions->update('index', Action::DELETE,function  (Action $action) {
             return $action->setIcon('fa fa-trash-alt')->setLabel(false);}

@@ -17,6 +17,7 @@ use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
+use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminRoute;
 use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -169,9 +170,10 @@ class ElevesinterCrudController extends AbstractCrudController
         if (isset($_REQUEST['filters']['equipe'])) {
             $equipeId = $_REQUEST['filters']['equipe'];
             $editionId = $repositoryEquipe->findOneBy(['id' => $equipeId])->getEdition()->getId();
+            $session->set('ideditionequipe_equipe', $editionId . '-' . $equipeId);
 
             $tableauexcelelevesequipe = Action::new('eleves_tableau_excel_equipe', 'Créer un tableau excel de ces élèves', 'fas fa_array')
-                ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId])
+                ->linkToCrudAction('exportElevesEquipe')
                 ->createAsGlobalAction();
             $actions->add(Crud::PAGE_INDEX, $tableauexcelelevesequipe);
         }
@@ -185,23 +187,32 @@ class ElevesinterCrudController extends AbstractCrudController
                 //$editionEd = $this->doctrine->getRepository(Edition::class)->findOneBy(['id' => $editionId]);
 
             }
-            $importElevesAdage = Action::new('importElevesAdage', 'Importer les élèves depuis Adage')->linkToCrudAction('importElevesAdage')
+            $importElevesAdage = Action::new('importElevesAdage', 'Importer les élèves depuis Adage')
+                ->linkToCrudAction('importElevesAdage')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
-            $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations des élèves non sélectionnés(après CIA)')->linkToRoute('attestations_eleves_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
+            $session->set('ideditionequipe_attestations_cia', $editionId . '-' . $equipeId . '-ns');
+            $attestationsEleves = Action::new('Attestions_eleves', 'Créer les attestations des élèves non sélectionnés(après CIA)')
+                ->linkToCrudAction('attestationsElevesPdf')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
-            $attestationsElevesNat = Action::new('Attestions_eleves_nat', 'Créer les attestations des élèves sélectionnés(après CN)')->linkToRoute('attestations_eleves_nat_pdf', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
+            $session->set('ideditionequipe_attestations_cn', $editionId . '-' . $equipeId . '-sel');
+            $attestationsElevesNat = Action::new('Attestions_eleves_nat', 'Créer les attestations des élèves sélectionnés(après CN)')
+                ->linkToCrudAction('attestationsElevesNatPdf')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+            $session->set('ideditionequipe_ns', $editionId . '-' . $equipeId . '-ns');
             $tableauexcelnonsel = Action::new('eleves_tableau_excel', 'Créer un tableau excel des élèves non sélectionnés', 'fas fa_array')
-                ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId . '-ns'])
+                ->linkToCrudAction('exportElevesNonSelectionnes')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
-            $tableauexceleleves = Action::new('eleves_tableau_excel_tous', 'Créer un tableau excel des tous les élèves', 'fas fa_array')
-                ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId . '-na'])
+            $tableauexceleleves = Action::new('eleves_tableau_excel_tous', 'Créer un tableau excel de tous les élèves', 'fas fa_array')
+                ->linkToCrudAction('exportTousLesEleves')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
+            $session->set('ideditionequipe_na', $editionId . '-' . $equipeId . '-na');
+            $session->set('ideditionequipe_sel', $editionId . '-' . $equipeId . '-sel');
             $elevessel = Action::new('eleves_tableau_excel_sel', 'Créer un tableau excel des élèves sélectionnés', 'fas fa_array')
-                ->linkToRoute('eleves_tableau_excel', ['ideditionequipe' => $editionId . '-' . $equipeId . '-sel'])
+                ->linkToCrudAction('exportElevesSelectionnes')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
-            $invitationsCN = Action::new('invitationsCN', 'Créer les invitations au CN')->linkToRoute('invitations',
-                ['editionIdequipeId' => $edition->getId()])
+            $session->set('editionIdequipeId_invitations', (string) $edition->getId());
+            $invitationsCN = Action::new('invitationsCN', 'Créer les invitations au CN')
+                ->linkToCrudAction('invitationsCN')
                 ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
             $actions->add(Crud::PAGE_INDEX, $tableauexcelnonsel)
                 ->add(Crud::PAGE_INDEX, $attestationsEleves)
@@ -216,8 +227,9 @@ class ElevesinterCrudController extends AbstractCrudController
 
         }
 
+        $session->set('idedition_equipes_sans_eleves', $editionId);
         $equipesSansEleves = Action::new('equipes_sans_eleves_excel', 'Exporter les équipes sans élèves inscrits', 'fas fa_array')
-            ->linkToRoute('equipes_sans_eleves_excel', ['idedition' => $editionId])
+            ->linkToCrudAction('equipesSansElevesExcel')
             ->createAsGlobalAction()->setCssClass('btn btn-outline-primary');
         $actions->add(Crud::PAGE_INDEX, $equipesSansEleves);
 
@@ -237,6 +249,35 @@ class ElevesinterCrudController extends AbstractCrudController
                 return $action->setIcon('fa fa-eye fa-lg')->setLabel(false);
             });
         return $actions;
+    }
+
+    public function exportElevesEquipe(): void
+    {
+        $this->exportElevesFromSession('ideditionequipe_equipe');
+    }
+
+    public function exportElevesNonSelectionnes(): void
+    {
+        $this->exportElevesFromSession('ideditionequipe_ns');
+    }
+
+    public function exportTousLesEleves(): void
+    {
+        $this->exportElevesFromSession('ideditionequipe_na');
+    }
+
+    public function exportElevesSelectionnes(): void
+    {
+        $this->exportElevesFromSession('ideditionequipe_sel');
+    }
+
+    private function exportElevesFromSession(string $sessionKey): void
+    {
+        $this->requestStack->getSession()->set(
+            'ideditionequipe',
+            $this->requestStack->getSession()->get($sessionKey)
+        );
+        $this->elevestableauexcel();
     }
 
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
@@ -430,9 +471,11 @@ class ElevesinterCrudController extends AbstractCrudController
         //return parent::createIndexQueryBuilder($searchDto, $entityDto, $fields, $filters); // TODO: Change the autogenerated stub
     }
 
-    #[Route("/Admin/ElevesinteradminCrud/eleves_tableau_excel,{ideditionequipe}", name: "eleves_tableau_excel")]
-    public function elevestableauexcel($ideditionequipe)
+    //#[Route("/admin/eleves_tableau_excel,{ideditionequipe}", name: "admin_eleves_tableau_excel")]
+    //public function elevestableauexcel($ideditionequipe)
+    public function elevestableauexcel()
     {
+        $ideditionequipe = $this->requestStack->getSession()->get('ideditionequipe');
         $idedition = explode('-', $ideditionequipe)[0];
         $idequipe = explode('-', $ideditionequipe)[1];
 
@@ -557,8 +600,9 @@ class ElevesinterCrudController extends AbstractCrudController
     }
 
     #[Route("/Admin/ElevesinteradminCrud/equipes_sans_eleves,{idedition}", name: "equipes_sans_eleves_excel")]
-    public function equipesSansElevesExcel(int $idedition): Response
+    public function equipesSansElevesExcel(?int $idedition = null): Response
     {
+        $idedition ??= (int) $this->requestStack->getSession()->get('idedition_equipes_sans_eleves');
         $edition = $this->doctrine->getRepository(Edition::class)->find($idedition);
         if ($edition === null) {
             throw $this->createNotFoundException('Édition introuvable.');
@@ -805,9 +849,10 @@ class ElevesinterCrudController extends AbstractCrudController
     }
 
     #[Route("/Admin/ElevesinteradminCrud/attestationsElevesTwig,{ideditionequipe}", name: "attestations_eleves_pdf")]
-    public function attestationsElevesPdf($ideditionequipe)//Cette fonction crée les deux fichiers word et pdf en même temps
+    public function attestationsElevesPdf(?string $ideditionequipe = null)//Cette fonction crée les deux fichiers word et pdf en même temps
         //Un essai de conversion d'un twig avec  $knpSnappyPdf mais problème du this->render qui va chercher dans les templates, répertoire protégé;
     {
+        $ideditionequipe ??= $this->requestStack->getSession()->get('ideditionequipe_attestations_cia');
         $slugger = new AsciiSlugger();
         $idedition = explode('-', $ideditionequipe)[0];
         $idequipe = explode('-', $ideditionequipe)[1];
@@ -1302,8 +1347,9 @@ class ElevesinterCrudController extends AbstractCrudController
     }
 
     #[Route("/Admin/ElevesinteradminCrud/attestationsElevesTwigPdf,{ideditionequipe}", name: "attestations_eleves_nat_pdf")]
-    public function attestationsElevesNatPdf($ideditionequipe)//Un essais de conversion d'un twig avec  $knpSnappyPdf mais problème du this->render qui va chercher dans les templates, répertoire protégé;
+    public function attestationsElevesNatPdf(?string $ideditionequipe = null)//Un essais de conversion d'un twig avec  $knpSnappyPdf mais problème du this->render qui va chercher dans les templates, répertoire protégé;
     {
+        $ideditionequipe ??= $this->requestStack->getSession()->get('ideditionequipe_attestations_cn');
         $slugger = new AsciiSlugger();
         $idedition = explode('-', $ideditionequipe)[0];
         $idequipe = explode('-', $ideditionequipe)[1];
@@ -1645,8 +1691,9 @@ class ElevesinterCrudController extends AbstractCrudController
     }
 
     #[Route("/Admin/ElevesinteradminCrud/invitations,{editionIdequipeId}", name: "invitations")]
-    public function invitationsCN($editionIdequipeId)
+    public function invitationsCN(?string $editionIdequipeId = null)
     {
+        $editionIdequipeId ??= $this->requestStack->getSession()->get('editionIdequipeId_invitations');
         $editionId = explode('-', $editionIdequipeId)[0];
         $equipe = null;
         if (isset(explode('-', $editionIdequipeId)[1])) {

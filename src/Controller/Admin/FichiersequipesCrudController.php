@@ -294,17 +294,17 @@ class FichiersequipesCrudController extends AbstractCrudController
 
         }
 
+        $this->requestStack->getSession()->set(
+            'ideditionequipe_telechargement_fichiers',
+            $editionId . '-' . $equipeId . '-' . $concours . '-' . $typefichier . '-' . $typefichierfiltre
+        );
         $telechargerFichiers = Action::new('telecharger', 'Télécharger les fichiers', 'fa fa-file-download')
-            ->linkToRoute('telechargerFichiers', ['ideditionequipe' => $editionId . '-' . $equipeId . '-' . $concours . '-' . $typefichier . '-' . $typefichierfiltre])
+            ->linkToCrudAction('telechargerFichiers')
             ->createAsGlobalAction();
         //->displayAsButton()            ->setCssClass('btn btn-primary');;
         $telechargerUnFichier = Action::new('telechargerunfichier', '', 'fa fa-file-download')
-            ->linkToRoute('telechargerUnFichier', function (Fichiersequipes $fichier): array {
-                return [
-                    'idEntity' => $fichier->getId(),
-
-                ];
-            })->setHtmlAttributes(['title' => 'Telecharger ce fichier']);
+            ->linkToCrudAction('telechargerUnFichier')
+            ->setHtmlAttributes(['title' => 'Telecharger ce fichier']);
 
         $newFichier = Action::new('deposer', 'Déposer un fichier')->linkToCrudAction('new')->setHtmlAttributes(['typefichier' => $this->requestStack->getCurrentRequest()->query->get('typefichier')])->createAsGlobalAction();
         $actions = $actions
@@ -340,8 +340,9 @@ class FichiersequipesCrudController extends AbstractCrudController
 
 
     #[Route("/Admin/FichiersequipesCrud/telechargerFichiers,{ideditionequipe}", name: "telechargerFichiers")]
-    public function telechargerFichiers(AdminContext $context, $ideditionequipe)
+    public function telechargerFichiers(AdminContext $context, ?string $ideditionequipe = null)
     {
+        $ideditionequipe ??= $this->requestStack->getSession()->get('ideditionequipe_telechargement_fichiers');
         $session = $this->requestStack->getSession();
         $typefichier = $this->requestStack->getSession()->get('typefichier');
         $typefichierfiltre = explode('-', $ideditionequipe)[4];
@@ -490,11 +491,12 @@ class FichiersequipesCrudController extends AbstractCrudController
     #[Route("/Admin/FichiersequipesCrud/telechargerUnFichier", name: "telechargerUnFichier")]
     public function telechargerUnFichier(AdminContext $context)
     {
+        $idFichier = $context->getRequest()->get('entityId');
         if (isset($_REQUEST['routeParams'])) {
-            $idFichier = $_REQUEST['routeParams']['idEntity'];
+            $idFichier ??= $_REQUEST['routeParams']['idEntity'];
         }
         if (isset($_REQUEST['entityId'])) {
-            $idFichier = $_REQUEST['entityId'];
+            $idFichier ??= $_REQUEST['entityId'];
 
         }
         $fichier = $this->doctrine->getRepository(Fichiersequipes::class)->findOneBy(['id' => $idFichier]);

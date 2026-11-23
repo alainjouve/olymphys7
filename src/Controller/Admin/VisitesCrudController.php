@@ -58,7 +58,7 @@ class VisitesCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $tableauExcel = Action::new('visites_tableau_excel', 'Extraire un tableau Excel', 'fa fa_array')
-            ->linkToRoute('visites_tableau_excel')
+            ->linkToCrudAction('visitestableauexcel')
             ->createAsGlobalAction();
 
         return $actions

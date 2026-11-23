@@ -73,17 +73,14 @@ class OdpfFichiersPassesCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $typefichier = $this->requestStack->getCurrentRequest()->query->get('typefichier');
+        $this->requestStack->getSession()->set('odpf_fichierspasses_typefichier', $typefichier);
 
         $setPublie = Action::new('setPublies', 'Publier les fichiers')
-            ->linkToRoute('setPublies', ['typefichier' => $typefichier])
+            ->linkToCrudAction('setPublies')
             ->createAsGlobalAction();
 
         $telechargerUnFichierOdpf = Action::new('telechargerunfichierOdpf', 'Télécharger', 'fa fa-file-download')
-            ->linkToRoute('telechargerUnFichierOdpf', function (OdpfFichierspasses $fichier): array {
-                return [
-                    'idEntity' => $fichier->getId(),
-                ];
-            });
+            ->linkToCrudAction('telechargerUnFichierOdpf');
 
         $actions->add(Crud::PAGE_INDEX, $telechargerUnFichierOdpf);
         if ($typefichier < 4) {
@@ -330,8 +327,9 @@ class OdpfFichiersPassesCrudController extends AbstractCrudController
     #[Route("/Admin/FichiersequipesCrud/telechargerUnFichierOdpf", name: "telechargerUnFichierOdpf")]
     public function telechargerUnFichierOdpf(AdminContext $context)
     {
-
-        $idFichier = $_REQUEST['routeParams']['idEntity'];
+        $idFichier = $context->getRequest()->get('entityId')
+            ?? $_REQUEST['routeParams']['idEntity']
+            ?? null;
         $fichier = $this->doctrine->getRepository(OdpfFichierspasses::class)->findOneBy(['id' => $idFichier]);
         $edition = $fichier->getEditionspassees();
         $typefichier = $fichier->getTypefichier();
@@ -401,8 +399,9 @@ class OdpfFichiersPassesCrudController extends AbstractCrudController
 
     #[IsGranted('ROLE_SUPER_ADMIN')]
     #[Route("setPublies,{typefichier}", name: "setPublies")]
-    public function setPublies(\Symfony\Component\HttpFoundation\Request $request, $typefichier): Response//rend public les fichiers des mémoires, annexes, résumés diaporamas des équipes sélectionnées
+    public function setPublies(\Symfony\Component\HttpFoundation\Request $request, $typefichier = null): Response//rend public les fichiers des mémoires, annexes, résumés diaporamas des équipes sélectionnées
     {
+        $typefichier ??= $this->requestStack->getSession()->get('odpf_fichierspasses_typefichier');
         $qb = $this->doctrine->getRepository(OdpfEditionsPassees::class)->createQueryBuilder('f')
             ->orderBy('f.edition', 'DESC');
         $form = $this->createFormBuilder()

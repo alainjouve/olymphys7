@@ -199,11 +199,10 @@ class EquipesadminCrudController extends AbstractCrudController
         }
 
         if (!isset($_REQUEST['lycees'])) {
+            $session->set('ideditioncentre_equipes', $editionId . '-' . $centreId . '-' . $selectionnee);
 
             $tableauexcel = Action::new('equipestableauexcel', 'Créer un tableau excel des équipes', 'fa fa_array')
-                // if the route needs parameters, you can define them:
-                // 1) using an array
-                ->linkToRoute('equipes_tableau_excel', ['ideditioncentre' => $editionId . '-' . $centreId . '-' . $selectionnee])
+                ->linkToCrudAction('equipestableauexcel')
                 ->createAsGlobalAction();
 
             //->displayAsButton()->setCssClass('btn btn-primary');
@@ -211,11 +210,10 @@ class EquipesadminCrudController extends AbstractCrudController
         }
         if (isset($_REQUEST['lycees'])) {
 
+            $session->set('ideditioncentre_etablissements', $editionId . '-' . $centreId);
 
             $tableauexcel = Action::new('equipestableauexcel', 'Créer un tableau excel des lycées', 'fa fa_array')
-                // if the route needs parameters, you can define them:
-                // 1) using an array
-                ->linkToRoute('etablissements_tableau_excel', ['ideditioncentre' => $editionId . '-' . $centreId])
+                ->linkToCrudAction('etablissementstableauexcel')
                 ->createAsGlobalAction();
             //->displayAsButton()->setCssClass('btn btn-primary');
         }
@@ -549,8 +547,9 @@ class EquipesadminCrudController extends AbstractCrudController
     */
 
     #[Route("/Admin/EquipesadminCrud/equipes_tableau_excel,{ideditioncentre}", name: "equipes_tableau_excel")]
-    public function equipestableauexcel($ideditioncentre)
+    public function equipestableauexcel(?string $ideditioncentre = null)
     {
+        $ideditioncentre ??= $this->requestStack->getSession()->get('ideditioncentre_equipes');
 
         $idedition = explode('-', $ideditioncentre)[0];
         $idcentre = explode('-', $ideditioncentre)[1];
@@ -719,8 +718,9 @@ class EquipesadminCrudController extends AbstractCrudController
 
 
     #[Route("/Admin/EquipesadminCrud/etablissements_tableau_excel,{ideditioncentre}", name: "etablissements_tableau_excel")]
-    public function etablissementstableauexcel($ideditioncentre)
+    public function etablissementstableauexcel(?string $ideditioncentre = null)
     {
+        $ideditioncentre ??= $this->requestStack->getSession()->get('ideditioncentre_etablissements');
         $idedition = explode('-', $ideditioncentre)[0];
         $idcentre = explode('-', $ideditioncentre)[1];
 

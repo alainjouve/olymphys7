@@ -130,7 +130,7 @@ class CadeauxCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $tableauExcel = Action::new('cadeaux_tableau_excel', 'Extraire un tableau Excel', 'fa fa_array')
-            ->linkToRoute('cadeaux_tableau_excel')
+            ->linkToCrudAction('cadeauxstableauexcel')
             ->createAsGlobalAction();
 
         return $actions->update('index', Action::EDIT, function (Action $action) {

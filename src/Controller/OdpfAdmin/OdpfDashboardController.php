@@ -152,66 +152,107 @@ class OdpfDashboardController extends AbstractDashboardController
         $path = $subfolder !== '/' ? $basePath . $subfolder : $basePath;
 
         $path = rtrim($path, '/');
-        $listFilesbrut = null;
+        $isPhotoSequence = basename($path) === 'photoseq';
+        $page = max(1, (int)$page);
+        $order = strtolower($order) === 'desc' ? 'DESC' : 'ASC';
+        $nbPages = 1;
+        $totalDocuments = null;
 
-        $finder = new Finder();
-        $finder->in($path)->sortByName()->depth('== 0')
-            ->ignoreDotFiles(true)
-            ->ignoreVCS(true);
+        if ($isPhotoSequence) {
+            $pathParts = explode('/', $subfolder);
+            $editionNumber = $pathParts[count($pathParts) - 2] ?? null;
+            $edition = ctype_digit((string)$editionNumber)
+                ? $this->doctrine->getRepository(OdpfEditionsPassees::class)->findOneBy(['edition' => (int)$editionNumber])
+                : null;
 
-        $i = 0;
-        $listFilesbrut = [];
+            $listFilesPage = [];
+            if ($edition !== null) {
+                $photoRepository = $this->doctrine->getRepository(Photos::class);
+                $photoQuery = $photoRepository->createQueryBuilder('photo')
+                    ->andWhere('photo.editionspassees = :edition')
+                    ->andWhere('photo.photo IS NOT NULL')
+                    ->setParameter('edition', $edition);
 
-        foreach ($finder as $file) {
-            if ($file->getRelativePathname() !== 'photoseq' && $file->getRelativePathname() !== 'fichiers') {
-                // Détection du type MIME
-                $finfo = finfo_open(FILEINFO_MIME_TYPE);
-                $mime = finfo_file($finfo, $file->getRealPath());
-                finfo_close($finfo);
+                $totalDocuments = (int)(clone $photoQuery)
+                    ->select('COUNT(photo.id)')
+                    ->getQuery()
+                    ->getSingleScalarResult();
+                $nbPages = max(1, (int)ceil($totalDocuments / 50));
 
-                // Détermination du type
-                $type = $file->isDir()
-                    ? 'folder'
-                    : (str_starts_with($mime, 'image/') ? 'image' : 'file');
-                $mTimeFormatted = date('d/m/Y H:i:s', $file->getMTime());
-                $cTimeFormatted = date('d/m/Y H:i:s', $file->getCTime());
-                $listFilesbrut[$i] = [
-                    $file->getRelativePathname(),
-                    $mTimeFormatted,
-                    $cTimeFormatted,
-                    $type,
-                    $file->getSize()
-                ];
+                $offset = ($page - 1) * 50;
+                if ($offset >= $totalDocuments && $page > 1) {
+                    $page = 1;
+                    $offset = 0;
+                }
 
-                $i++;
+                $sortField = $sort === 'date' ? 'photo.updatedAt' : 'photo.photo';
+                $photos = $photoQuery
+                    ->orderBy($sortField, $order)
+                    ->setFirstResult($offset)
+                    ->setMaxResults(50)
+                    ->getQuery()
+                    ->getResult();
+
+                foreach ($photos as $index => $photo) {
+                    $filePath = $path . '/' . $photo->getPhoto();
+                    $fileStats = is_file($filePath) ? stat($filePath) : false;
+                    $updatedAt = $photo->getUpdatedAt();
+                    $modifiedAt = $fileStats !== false
+                        ? $fileStats['mtime']
+                        : ($updatedAt?->getTimestamp() ?? 0);
+                    $createdAt = $fileStats !== false
+                        ? $fileStats['ctime']
+                        : $modifiedAt;
+
+                    $listFilesPage[$index] = [
+                        $photo->getPhoto(),
+                        date('d/m/Y H:i:s', $createdAt),
+                        date('d/m/Y H:i:s', $modifiedAt),
+                        'image',
+                        $fileStats !== false ? $fileStats['size'] : 0,
+                    ];
+                }
             }
-        }
+        } else {
+            $finder = new Finder();
+            $finder->in($path)->sortByName()->depth('== 0')
+                ->ignoreDotFiles(true)
+                ->ignoreVCS(true);
 
-        // return $this->json($files);
+            $listFilesPage = [];
+            foreach ($finder as $file) {
+                if ($file->getRelativePathname() !== 'fichiers') {
+                    $mime = '';
+                    if (!$file->isDir()) {
+                        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                        $mime = finfo_file($finfo, $file->getRealPath()) ?: '';
+                        finfo_close($finfo);
+                    }
 
-
-        $offset = 0;
-        if (str_contains($path, 'photoseq') === true) {
-            if ($page == 0) {
-                $offset = 0;
-                $page = 1;
+                    $type = $file->isDir()
+                        ? 'folder'
+                        : (str_starts_with($mime, 'image/') ? 'image' : 'file');
+                    $listFilesPage[] = [
+                        $file->getRelativePathname(),
+                        date('d/m/Y H:i:s', $file->getMTime()),
+                        date('d/m/Y H:i:s', $file->getCTime()),
+                        $type,
+                        $file->getSize(),
+                    ];
+                }
             }
-            if ($page > 1) $offset = ($page - 1) * 20;
 
-            if ($offset >= count($listFilesbrut)) {
-                $page = 1;
-                $offset = 0;
+            usort($listFilesPage, static function ($a, $b) use ($sort, $order) {
+                if ($sort === 'date') {
+                    $dateA = \DateTime::createFromFormat('d/m/Y H:i:s', $a[2]);
+                    $dateB = \DateTime::createFromFormat('d/m/Y H:i:s', $b[2]);
+                    $comparison = ($dateA?->getTimestamp() ?? 0) <=> ($dateB?->getTimestamp() ?? 0);
+                } else {
+                    $comparison = strcasecmp($a[0], $b[0]);
+                }
 
-            };
-            $listFilesPage = array_slice($listFilesbrut, $offset, 20);
-        } else($listFilesPage = $listFilesbrut);
-
-
-        usort($listFilesPage, function ($a, $b) use ($sort) {
-            return $sort === 'date' ? ($a[3] <=> $b[3]) : strcasecmp($a[0], $b[0]);
-        });
-        if ($order === 'desc') {
-            $listFiles = array_reverse($listFilesPage);
+                return $order === 'DESC' ? -$comparison : $comparison;
+            });
         }
 
         return $this->render('bundles/EasyAdminBundle/odpf/indexDocuments.html.twig', [
@@ -220,8 +261,10 @@ class OdpfDashboardController extends AbstractDashboardController
             'subfolder' => $subfolder,
             'listeFiles' => $listFilesPage,
             'sort' => $sort,
-            'order' => $order,
+            'order' => strtolower($order),
             'page' => $page,
+            'nbPages' => $nbPages,
+            'totalDocuments' => $totalDocuments,
             'csrf_token' => $this->csrfTokenManager->getToken('upload_documents')->getValue(),
         ]);
 

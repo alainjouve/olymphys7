@@ -72,14 +72,21 @@
         </div>
         {% if subfolder|split('/')[(subfolder|split('/')|length)-1]=='photoseq' %}
             <div class="btn-group" role="group" aria-label="Navigation">
-                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page-1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
-                   type="button">
-                    <i class="fa fa-arrow-circle-left fa-3x"></i>
-                </a>
-                <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page+1, 'subfolder': (subfolder ? subfolder ~ '/' : '') }) }}"
-                   type="button">
-                    <i class="fa fa-arrow-circle-right fa-3x"></i>
-                </a>
+                {% if page > 1 %}
+                    <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page-1, 'subfolder': subfolder, 'sort': sort, 'order': order }) }}"
+                       type="button" aria-label="Page précédente">
+                        <i class="fa fa-arrow-circle-left fa-3x"></i>
+                    </a>
+                {% endif %}
+                <span class="align-self-center mx-2">
+                    Page {{ page }} / {{ nbPages }} — {{ totalDocuments }} fichier{{ totalDocuments == 1 ? '' : 's' }} au total
+                </span>
+                {% if page < nbPages %}
+                    <a href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page+1, 'subfolder': subfolder, 'sort': sort, 'order': order }) }}"
+                       type="button" aria-label="Page suivante">
+                        <i class="fa fa-arrow-circle-right fa-3x"></i>
+                    </a>
+                {% endif %}
             </div>
         {% endif %}
 
@@ -121,6 +128,23 @@
     <div class="container" id="contenu">
         {# Vue liste #}
         <div id="view-liste" style="padding-top: 130px">
+            {% if sub == 'photoseq' %}
+                <nav class="d-flex justify-content-center align-items-center gap-3 mb-3" aria-label="Pagination supérieure">
+                    {% if page > 1 %}
+                        <a class="btn btn-outline-primary"
+                           href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page-1, 'subfolder': subfolder, 'sort': sort, 'order': order }) }}">
+                            <i class="fa fa-arrow-left"></i> Précédent
+                        </a>
+                    {% endif %}
+                    <span>Page {{ page }} / {{ nbPages }}</span>
+                    {% if page < nbPages %}
+                        <a class="btn btn-outline-primary"
+                           href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page+1, 'subfolder': subfolder, 'sort': sort, 'order': order }) }}">
+                            Suivant <i class="fa fa-arrow-right"></i>
+                        </a>
+                    {% endif %}
+                </nav>
+            {% endif %}
             <div class="row text-center">
                 <div class="col-md-2 d-none d-md-block">
                     Vignette
@@ -215,6 +239,23 @@
                     </div>
                     <hr>
                 {% endfor %}
+            {% endif %}
+            {% if sub == 'photoseq' %}
+                <nav class="d-flex justify-content-center align-items-center gap-3 my-3" aria-label="Pagination inférieure">
+                    {% if page > 1 %}
+                        <a class="btn btn-outline-primary"
+                           href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page-1, 'subfolder': subfolder, 'sort': sort, 'order': order }) }}">
+                            <i class="fa fa-arrow-left"></i> Précédent
+                        </a>
+                    {% endif %}
+                    <span>Page {{ page }} / {{ nbPages }}</span>
+                    {% if page < nbPages %}
+                        <a class="btn btn-outline-primary"
+                           href="{{ path('app_odpfadmin_odpfdocumentsbrowser', { 'page': page+1, 'subfolder': subfolder, 'sort': sort, 'order': order }) }}">
+                            Suivant <i class="fa fa-arrow-right"></i>
+                        </a>
+                    {% endif %}
+                </nav>
             {% endif %}
         </div>
 

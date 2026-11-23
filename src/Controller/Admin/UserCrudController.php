@@ -161,9 +161,7 @@ class UserCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $addUsers = Action::new('addUsers', 'Ajouter des users', 'fa fa_users')
-            // if the route needs parameters, you can define them:
-            // 1) using an array
-            ->linkToRoute('secretariatadmin_charge_user')
+            ->linkToCrudAction('chargerUtilisateurs')
             ->createAsGlobalAction();
         $exportUsers = Action::new('exportUsersExcel', 'Exporter tous les utilisateurs (Excel)', 'fa fa-file-excel')
             ->createAsGlobalAction()
@@ -190,6 +188,11 @@ class UserCrudController extends AbstractCrudController
             ->add(Crud::PAGE_INDEX, $exportUsers)
             ->setPermission($exportUsers, 'ROLE_SUPER_ADMIN');
         return $actions;
+    }
+
+    public function chargerUtilisateurs()
+    {
+        return $this->redirectToRoute('secretariatadmin_charge_user');
     }
 
     public function exportUsersExcel(): Response
