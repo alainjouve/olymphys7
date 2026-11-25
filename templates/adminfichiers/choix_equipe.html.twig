@@ -158,6 +158,13 @@
         <div class="table">
             <table>
                 <tr>
+                    <td> A lire très attentivement :
+                        <a href="{{ asset('odpf/odpf-documents/Reglement_2026-2027_mars2026.pdf') }}"
+                           type="button" class="btn btn-danger" target="_blank">Réglement du concours</a>
+
+                    </td>
+                </tr>
+                <tr>
                     {% if  app.user.autorisationInscription== true or app.user.uaiId.uai=='Etranger' %}
                         <td> {% if date()< app.session.get('edition').dateclotureinscription and date()>=app.session.get('edition').dateouverturesite %}
                                 <a type="button" class="btn btn-primary"

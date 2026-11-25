@@ -302,7 +302,7 @@ class PhotosController extends AbstractController
 
             $concours = 'inter';
         }
-        if ($concours == 'inter') {
+        if ($concours === 'inter') {
 
             $qb = $repositoryEquipesadmin->createQueryBuilder('e')
                 ->andWhere('e.edition =:edition')
@@ -324,25 +324,28 @@ class PhotosController extends AbstractController
             }
             if (in_array('ROLE_PROF', $user->getRoles())) {
                 if (new \DateTime('now') <= $datelimite) {
-
+                    $etablissement = $user->getUaiId();
+                    /* $qb->andWhere($qb->expr()->orX('e.idProf1 = :prof', 'e.idProf2 = :prof'))
+                         ->setParameter('prof', $prof);*/
+                    $qb->andWhere('e.uaiId = :etablissement')
+                        ->setParameter('etablissement', $etablissement);
 
                     $ville = 'prof';
-                    $qb->andWhere('e.idProf1 =:prof or e.idProf2 =:prof')
-                        ->setParameter('prof', $id_user);
+
                 }
 
             }
 
             $liste_equipes = $qb->getQuery()->getResult();
-
+            $equipeIds = array_map(static fn(Equipesadmin $equipe): ?int => $equipe->getId(), $liste_equipes);
 
             $qb2 = $repositoryPhotos->createQueryBuilder('p')
                 ->andWhere('p.national =:valeur')
-                ->setParameter('valeur', '0')
+                ->setParameter('valeur', false)
                 ->andWhere('p.edition =:edition')
                 ->setParameter('edition', $edition)
-                ->andWhere('p.equipe in(:equipes)')
-                ->setParameter('equipes', $liste_equipes)
+                ->andWhere('IDENTITY(p.equipe) IN (:equipeIds)')
+                ->setParameter('equipeIds', $equipeIds)
                 ->leftJoin('p.equipe', 'e')
                 ->addOrderBy('e.numero', 'ASC');
 
@@ -359,7 +362,7 @@ class PhotosController extends AbstractController
 
         }
 
-        if ($concours == 'cn') {
+        if ($concours === 'cn') {
 
             $equipe = $repositoryEquipesadmin->findOneBy(['id' => $concourseditioncentre[2]]);
 
@@ -370,11 +373,12 @@ class PhotosController extends AbstractController
                 ->andWhere('eq.edition =:edition')
                 ->setParameter('edition', $edition)
                 ->getQuery()->getResult();
+            $equipeIds = array_map(static fn(Equipesadmin $equipe): ?int => $equipe->getId(), $equipes);
 
             $qb2 = $repositoryPhotos->createQueryBuilder('p')
                 ->andWhere('p.national = 1')
-                ->andWhere('p.equipe in(:equipes)')
-                ->setParameter('equipes', $equipes)
+                ->andWhere('IDENTITY(p.equipe) IN (:equipeIds)')
+                ->setParameter('equipeIds', $equipeIds)
                 ->leftJoin('p.equipe', 'e')
                 ->addOrderBy('e.lettre', 'ASC');
 
@@ -434,7 +438,7 @@ class PhotosController extends AbstractController
         }
 
 
-        if ($concours == 'inter') {
+        if ($concours === 'inter') {
             $content = $this
                 ->renderView('photos/gestion_photos_cia.html.twig', array(
                     'liste_photos' => $liste_photos, 'centre' => $ville, 'choix' => $choix,
@@ -442,7 +446,7 @@ class PhotosController extends AbstractController
             return new Response($content);
         }
 
-        if ($concours == 'cn') {
+        if ($concours === 'cn') {
 
             $content = $this
                 ->renderView('photos/gestion_photos_cn.html.twig', array('liste_photos' => $liste_photos,

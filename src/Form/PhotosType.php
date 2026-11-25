@@ -32,38 +32,36 @@ class PhotosType extends AbstractType
         $this->doctrine = $doctrine;
     }
 
-    public function buildForm(FormBuilderInterface $builder, array $options) : void
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $session = $this->requestStack->getSession();
 
         $edition = $this->requestStack->getSession()->get('edition');
-        $editionN1 = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed'=>$edition->getEd()-1]);
-        if (new DateTime('now')<$session->get('edition')->getDateouverturesite()){
+        $editionN1 = $this->doctrine->getRepository(Edition::class)->findOneBy(['ed' => $edition->getEd() - 1]);
+        if (new DateTime('now') < $session->get('edition')->getDateouverturesite()) {
             $edition = $editionN1;
         }
         $centre = null;
-        $options['data']['concours']=='cn'?$valSel= true: $valSel=false;
+        $options['data']['concours'] === 'cn' ? $valSel = true : $valSel = false;
         $qb = $this->doctrine->getRepository(Equipesadmin::class)->createQueryBuilder('e')
-                ->andWhere('e.edition =:edition')
-                ->setParameter('edition', $edition)
-                ->andWhere('e.inscrite = 1')
-                ->leftJoin('e.edition','ed')
-                ->addOrderBy('ed.ed','DESC');
-        if ($valSel==false){
-            $qb->andWhere('e.numero <100 or e.numero >200')//Pour ne pas avoir les équipes "techniques" du national
-            ;//pour avoir les équipes "techniques" des CIA : photos des centres
-            $infoEquipe='infoequipe';
+            ->andWhere('e.edition =:edition')
+            ->setParameter('edition', $edition)
+            ->andWhere('e.inscrite = 1')
+            ->leftJoin('e.edition', 'ed')
+            ->addOrderBy('ed.ed', 'DESC');
+        if ($valSel === false) {
+            $qb->andWhere($qb->expr()->orX('e.numero < 100', 'e.numero > 200'));//Pour ne pas avoir les équipes "techniques" du national, sauf celles des CIA
+            $infoEquipe = 'infoequipe';
         }
-        if ($valSel==true){
-            $qb ->addOrderBy('e.lettre', 'ASC')
+        if ($valSel === true) {
+            $qb->addOrderBy('e.lettre', 'ASC')
                 ->andWhere('e.selectionnee =:valeur')
-                ->setParameter('valeur',$valSel);
+                ->setParameter('valeur', $valSel);
 
-            $infoEquipe='infoequipenat';
-            }
-        else{
-                $qb->addOrderBy('e.numero', 'ASC')
-                   ->addOrderBy('e.centre', 'ASC');
+            $infoEquipe = 'infoequipenat';
+        } else {
+            $qb->addOrderBy('e.numero', 'ASC')
+                ->addOrderBy('e.centre', 'ASC');
         }
         if ($options['data']['centre'] != '') {
             $centre = $this->doctrine->getRepository(Centrescia::class)->findOneBy(['centre' => $options['data']['centre']]);
@@ -71,35 +69,34 @@ class PhotosType extends AbstractType
                 ->setParameter('centre', $centre);
         }
 
-        if ($options['data']['role'] != 'ROLE_PROF') {
+        if ($options['data']['role'] !== 'ROLE_PROF') {
 
-                $builder->add('equipe', EntityType::class, [
-                    'class' => Equipesadmin::class,
-                    'query_builder' => $qb,
-                    'choice_label' => $infoEquipe,
-                    'label' => 'Choisir une équipe',
-                    'mapped' => false
-                ]);
+            $builder->add('equipe', EntityType::class, [
+                'class' => Equipesadmin::class,
+                'query_builder' => $qb,
+                'choice_label' => $infoEquipe,
+                'label' => 'Choisir une équipe',
+                'mapped' => false
+            ]);
 
 
         }
 
-        if ($options['data']['role'] == 'ROLE_PROF') {
+        if ($options['data']['role'] === 'ROLE_PROF') {
             $prof = $options['data']['prof'];
+            $etablissement = $prof->getUaiId();
+            /* $qb->andWhere($qb->expr()->orX('e.idProf1 = :prof', 'e.idProf2 = :prof'))
+                 ->setParameter('prof', $prof);*/
+            $qb->andWhere('e.uaiId = :etablissement')
+                ->setParameter('etablissement', $etablissement);
 
-            $qb->andWhere('e.idProf1 =:id or e.idProf2 =:id')
-                ->setParameter('id', $prof)
-                ->andWhere('e.inscrite = 1');
-
-
-                $builder->add('equipe', EntityType::class, [
-                    'class' => Equipesadmin::class,
-                    'query_builder' => $qb,
-                    'choice_label' => 'getInfoequipe',
-                    'label' => 'Choisir une équipe',
-                    'mapped' => false
-                ]);
-
+            $builder->add('equipe', EntityType::class, [
+                'class' => Equipesadmin::class,
+                'query_builder' => $qb,
+                'choice_label' => 'getInfoequipe',
+                'label' => 'Choisir une équipe',
+                'mapped' => false
+            ]);
 
 
         }
@@ -108,7 +105,7 @@ class PhotosType extends AbstractType
             'mapped' => false,
             'required' => false,
             'multiple' => true,
-            'attr'=>['id'=>'photos_files']
+            'attr' => ['id' => 'photos_files']
         ])
             ->add('Valider', SubmitType::class);
 
@@ -118,7 +115,7 @@ class PhotosType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver) : void
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(['data_class' => null, 'concours' => '',
             'role' => '', 'prof' => null]);

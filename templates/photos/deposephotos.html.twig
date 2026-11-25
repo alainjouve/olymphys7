@@ -17,6 +17,184 @@
 
 {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .photo-upload-page {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 1rem 2.5rem;
+        }
+
+        .photo-upload-notices {
+            max-width: 1040px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .photo-upload-card {
+            overflow: hidden;
+            border: 1px solid #e1e6ed;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 8px 26px rgba(27, 45, 70, .08);
+        }
+
+        .photo-upload-card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid #e9edf2;
+            background: #f8fafc;
+        }
+
+        .photo-upload-card-header h4 {
+            margin: 0;
+            color: #23364d;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .photo-upload-card-body {
+            padding: 1.5rem;
+        }
+
+        .photo-upload-notice {
+            margin: 0 auto 1.25rem;
+            padding: .9rem 1.1rem;
+            border: 1px solid #f0d7a7;
+            border-radius: 10px;
+            background: #fff8e8;
+            color: #714d08;
+        }
+
+        .photo-drop-zone {
+            min-height: 190px;
+            padding: 1.5rem;
+            border: 2px dashed #b9c7d8;
+            border-radius: 12px;
+            background: #f8fbff;
+            color: #334b66;
+            text-align: center;
+            transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+        }
+
+        .photo-drop-zone:hover,
+        .photo-drop-zone:focus {
+            border-color: #426b9b;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(66, 107, 155, .12);
+        }
+
+        .photo-drop-zone.is-dragging {
+            border-color: #b1191d;
+            background: #fff7f7;
+        }
+
+        .photo-drop-zone > p {
+            margin-bottom: .75rem;
+            font-weight: 600;
+        }
+
+        .photo-drop-zone .form-group {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .photo-drop-zone .custom-file-label {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .photo-preview-section {
+            margin-top: 1.5rem;
+        }
+
+        .photo-preview-title {
+            margin-bottom: .75rem;
+            color: #23364d;
+            font-weight: 700;
+        }
+
+        #affichephotos {
+            min-height: 125px;
+            padding: .75rem;
+            border: 1px solid #e9edf2;
+            border-radius: 10px;
+            background: #fbfcfe;
+        }
+
+        #affichephotos > .row {
+            align-items: center;
+            margin: 0;
+            gap: .75rem;
+        }
+
+        #photo_preview {
+            display: block;
+            width: 180px;
+            max-width: 100%;
+            height: 110px;
+            object-fit: contain;
+            opacity: .55;
+        }
+
+        #affichephotos .card {
+            overflow: hidden;
+            margin: .25rem;
+            border: 1px solid #e1e6ed;
+            border-radius: 10px;
+        }
+
+        #affichephotos .card-header {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        #affichephotos .card-body img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .photo-upload-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: .75rem;
+            margin-top: 1.5rem;
+        }
+
+        .photo-upload-actions .btn {
+            min-width: 150px;
+        }
+
+        .photo-manage-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #315d8a;
+            font-weight: 600;
+        }
+
+        @media (max-width: 767.98px) {
+            .photo-upload-page {
+                padding: 0 .25rem 2rem;
+            }
+
+            .photo-upload-card-body {
+                padding: 1rem;
+            }
+
+            .photo-drop-zone {
+                min-height: 170px;
+                padding: 1rem;
+            }
+
+            .photo-upload-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+{% endblock %}
 
 
 {% block titre3 %}Déposer les photos des épreuves
@@ -36,98 +214,95 @@
 
 
 {% block body %}
-    <div class="w-50 p-3">
-        {% for message in app.session.flashbag.get('info') %}
-            <div class="alert alert-info"> {{ message }}</div>
-        {% endfor %}
-        {% for message in app.session.flashbag.get('alert') %}
-            <div class="alert alert-danger"> {{ message|raw }}</div>
-        {% endfor %}
-        {% for message in app.session.flashbag.get('success') %}
-            <div class="alert alert-info"> {{ message }}</div>
-        {% endfor %}
-    </div>
-
-    <div class="well">
-        {% if app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
-
-            <div style="color: #960004"> Ces photos ne seront visibles en public que le lendemain du concours
-                {% if concours =='cia' %}
-                    interacadémique
-                {% endif %}
-                {% if concours =='cn' %}
-                    national
-                {% endif %}
+            <div class="photo-upload-notices">
+                {% for message in app.session.flashbag.get('info') %}
+                    <div class="alert alert-info mb-2">{{ message }}</div>
+                {% endfor %}
+                {% for message in app.session.flashbag.get('alert') %}
+                    <div class="alert alert-danger mb-2">{{ message|raw }}</div>
+                {% endfor %}
+                {% for message in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success mb-2">{{ message }}</div>
+                {% endfor %}
             </div>
-        {% endif %}
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {# if your application defines multiple Dashboards #}
-                {% if is_granted('ROLE_ORGACIA') %}
 
-                    <a href="{{ path('affiche_table_photos_edition') }}" type="button" class="btn btn-secondary">
-                        Voir les photos déposées
-                    </a>
-                {% endif %}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                {% form_theme form 'bootstrap_4_layout.html.twig' %}
-                {{ form_start(form, {'attr': {'id': 'photo-upload-form'}}) }}
-                <div class="my-custom-class-for-errors">
-                    {{ form_errors(form) }}
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-6">
-                        {{ form_row(form.equipe,{'label': 'Choisissez l\'équipe'}) }}
+            <div class="photo-upload-page">
+                {% if is_granted('ROLE_PROF') %}
+                    <div class="photo-upload-notice">
+                        <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
+                        Ces photos ne seront visibles en public que le lendemain du concours
+                        {% if concours == 'cia' %}interacadémique{% endif %}
+                        {% if concours == 'cn' %}national{% endif %}.
                     </div>
-                    <div class="form-group col-6">
+                {% endif %}
+
+                {% if is_granted('ROLE_ORGACIA') %}
+                    <div class="mb-3 text-right">
+                        <a href="{{ path('affiche_table_photos_edition') }}" class="btn btn-outline-secondary">
+                            <i class="fas fa-images mr-1" aria-hidden="true"></i> Voir les photos déposées
+                        </a>
+                    </div>
+                {% endif %}
+
+                <section class="photo-upload-card" aria-label="Formulaire de dépôt de photos">
+                    <div class="photo-upload-card-header">
+                        <h4><i class="fas fa-camera mr-2" aria-hidden="true"></i>Ajouter des photos</h4>
+                    </div>
+                    <div class="photo-upload-card-body">
+                        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                        {{ form_start(form, {'attr': {'id': 'photo-upload-form'}}) }}
+                        {{ form_errors(form) }}
+
+                        <div class="form-group">
+                            {{ form_row(form.equipe, {'label': 'Choisissez l’équipe'}) }}
+                        </div>
+
                         <div id="photo-drop-zone" class="photo-drop-zone" tabindex="0" role="button"
                              aria-controls="photos_files">
-                            <p>Glissez-déposez vos photos ici ou cliquez pour les choisir.</p>
-                            {{ form_row(form.photoFiles, {'label': 'Choisissez jusqu’à 5 fichiers (13 Mo maximum par photo)'}) }}
-                            <div id="photo-drop-message" class="text-danger" role="alert"></div>
+                            <p><i class="fas fa-cloud-upload-alt fa-2x d-block mb-2" aria-hidden="true"></i>
+                                Glissez-déposez vos photos ici ou cliquez pour les choisir</p>
+                            {{ form_row(form.photoFiles, {'label': 'Jusqu’à 5 photos — 13 Mo maximum par photo'}) }}
+                            <div id="photo-drop-message" class="text-danger mt-2" role="alert"></div>
                         </div>
+
+                        <div class="photo-preview-section">
+                            <div class="photo-preview-title">Aperçu des photos sélectionnées</div>
+                            <div id="affichephotos">
+                                <div class="row">
+                                    <img src="{{ asset('odpf/odpf-images/no_image_avalaible.png') }}" id="photo_preview"
+                                         alt="Aucune photo sélectionnée">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-upload-actions">
+                            {{ form_widget(form.Valider, {'label': 'Charger les photos', 'attr': {'class': 'btn btn-primary btn-lg'}}) }}
+                            {% if is_granted('ROLE_PROF') %}
+                                <a href="{{ path('fichiers_choix_equipe', {choix: 'liste_prof'}) }}" class="btn btn-outline-secondary">
+                                    Annuler
+                                </a>
+                            {% else %}
+                                <a href="{{ path('core_home') }}" class="btn btn-outline-secondary">Annuler</a>
+                            {% endif %}
+                        </div>
+
+                        <div id="photo-upload-progress" class="progress mt-4" style="display: none;"
+                             role="progressbar" aria-label="Progression du dépôt" aria-valuemin="0" aria-valuemax="100"
+                             aria-valuenow="0">
+                            <div id="photo-upload-progress-bar"
+                                 class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+                        </div>
+                        <div id="photo-upload-status" class="mt-2" role="status" aria-live="polite"></div>
+                        {{ form_end(form) }}
+
+                        {% if is_granted('ROLE_PROF') %}
+                            <a class="photo-manage-link"
+                               href="{{ path('photos_gestion_photos', {infos: concours ~ '-' ~ edition.id ~ '-prof-1'}) }}">
+                                <i class="fas fa-images mr-1" aria-hidden="true"></i> Gérer les photos déjà déposées
+                            </a>
+                        {% endif %}
                     </div>
-                </div>
-                <div>Photos choisies</div>
-                <div id="affichephotos">
-                    <div class="row">
-
-                        <img src="{{ asset('odpf/odpf-images/no_image_avalaible.png') }}" id="photo_preview"
-                             width="220px">
-                    </div>
-
-                </div>
-                <div class="form-row">
-
-                    {% if app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
-                        {{ form_widget(form.Valider, {'label':'Charger les photos '}) }}
-                        <a href="{{ path('fichiers_choix_equipe',{choix:'liste_prof'}) }}" class="btn-secondary btn-lg"
-                           role="button"> Annuler </a>
-                    {% endif %}
-                    {% if app.user.roles|filter(v => v =='ROLE_PROF')==[] %}
-                        {{ form_widget(form.Valider, {'label':'Charger les photos '}) }}
-                        <a href="{{ path('core_home') }}" class="btn-secondary btn-lg" role="button"> Annuler </a>
-                    {% endif %}
-                </div>
-                <div id="photo-upload-progress" class="progress mt-3" style="display: none;"
-                     role="progressbar" aria-label="Progression du dépôt" aria-valuemin="0" aria-valuemax="100"
-                     aria-valuenow="0">
-                    <div id="photo-upload-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated"
-                         style="width: 0%">0%</div>
-                </div>
-                <div id="photo-upload-status" class="mt-2" role="status" aria-live="polite"></div>
-
-                {{ form_end(form) }}
-                {% if app.user.roles|filter(v => v =='ROLE_PROF')!=[] %}
-                    <a href="{{ path('photos_gestion_photos',{infos:concours~'-'~edition.id~'-prof-1'}) }}">Gerer les
-                        photos</a>
-
-                {% endif %}
+                </section>
             </div>
         </div>
     </div>
